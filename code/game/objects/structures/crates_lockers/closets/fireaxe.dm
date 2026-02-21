@@ -1,7 +1,7 @@
 //I still dont think this should be a closet but whatever
 /obj/structure/closet/fireaxecabinet
-	name = "Fire Axe Cabinet"
-	desc = "There is small label that reads \"For Emergency use only\" along with details for safe use of the axe. As if."
+	name = "消防斧柜"
+	desc = "标签上有一行小字写着'仅供紧急情况使用'，还附有安全使用这把斧头的说明。说得好像真的一样。"
 	var/obj/item/weapon/twohanded/fireaxe/fireaxe = new/obj/item/weapon/twohanded/fireaxe
 	icon_state = "fireaxe1000"
 	icon_closed = "fireaxe1000"
@@ -23,11 +23,11 @@
 
 	if (locked)
 		if(ismultitool(O))
-			to_chat(user, span_warning("Resetting circuitry..."))
+			to_chat(user, span_warning("正在重置电路..."))
 			playsound(user, 'sound/machines/lockreset.ogg', 25, 1)
 			if(do_after(user, 20, NONE, src, BUSY_ICON_BUILD))
 				locked = FALSE
-				to_chat(user, "<span class = 'caution'>You disable the locking modules.</span>")
+				to_chat(user, "<span class = 'caution'>你已禁用锁定模块。</span>")
 				update_icon()
 			return
 		else if(!(O.item_flags & NOBLUDGEON) && O.force)
@@ -41,7 +41,7 @@
 			else
 				playsound(user, 'sound/effects/Glasshit.ogg', 25, 1) //We don't want this playing every time
 			if(W.force < 15)
-				to_chat(user, span_notice("The cabinet's protective glass glances off the hit."))
+				to_chat(user, span_notice("柜子的防护玻璃弹开了这次攻击。"))
 			else
 				src.hitstaken++
 				if(src.hitstaken == 4)
@@ -54,12 +54,12 @@
 	if (istype(O, /obj/item/weapon/twohanded/fireaxe) && src.localopened)
 		if(!fireaxe)
 			if(O.item_flags & WIELDED)
-				to_chat(user, span_warning("Unwield the axe first."))
+				to_chat(user, span_warning("先收起斧头。"))
 				return
 			fireaxe = O
 			user.drop_held_item()
 			src.contents += O
-			to_chat(user, span_notice("You place the fire axe back in the [src.name]."))
+			to_chat(user, span_notice("你将消防斧放回了[src.name]。"))
 			update_icon()
 		else
 			if(src.smashed)
@@ -85,14 +85,14 @@
 				update_icon()
 				return
 			else
-				to_chat(user, span_warning("Resetting circuitry..."))
+				to_chat(user, span_warning("正在重置电路..."))
 				sleep(5 SECONDS)
 				src.locked = 1
-				to_chat(user, span_notice("You re-enable the locking modules."))
+				to_chat(user, span_notice("你重新启用了锁定模块。"))
 				playsound(user, 'sound/machines/lockenable.ogg', 25, 1)
 				if(do_after(user,20, NONE, src, BUSY_ICON_BUILD))
 					locked = TRUE
-					to_chat(user, "<span class = 'caution'> You re-enable the locking modules.</span>")
+					to_chat(user, "<span class = 'caution'> 你重新启用了锁定模块。</span>")
 				return
 		else
 			localopened = !localopened
@@ -114,13 +114,13 @@
 		hasaxe = 1
 	if(!ishuman(user)) return
 	if(src.locked)
-		to_chat(user, span_warning("The cabinet won't budge!"))
+		to_chat(user, span_warning("柜子纹丝不动！"))
 		return
 	if(localopened)
 		if(fireaxe)
 			user.put_in_hands(fireaxe)
 			fireaxe = null
-			to_chat(user, span_notice("You take the fire axe from the [name]."))
+			to_chat(user, span_notice("你从[name]那里拿走了消防斧。"))
 			update_icon()
 		else
 			if(src.smashed)
@@ -153,9 +153,9 @@
 
 	if (locked || smashed)
 		if(src.locked)
-			to_chat(usr, span_warning("The cabinet won't budge!"))
+			to_chat(usr, span_warning("柜子纹丝不动！"))
 		else if(src.smashed)
-			to_chat(usr, span_notice("The protective glass is broken!"))
+			to_chat(usr, span_notice("防护玻璃已破碎！"))
 		return
 
 	localopened = !localopened
@@ -172,23 +172,23 @@
 		if(fireaxe)
 			usr.put_in_hands(fireaxe)
 			fireaxe = null
-			to_chat(usr, span_notice("You take the Fire axe from the [name]."))
+			to_chat(usr, span_notice("你从[name]那里拿走了消防斧。"))
 		else
-			to_chat(usr, span_notice("The [src.name] is empty."))
+			to_chat(usr, span_notice("[src.name]是空的。"))
 	else
-		to_chat(usr, span_notice("The [src.name] is closed."))
+		to_chat(usr, span_notice("[src.name]已关闭。"))
 	update_icon()
 
 /obj/structure/closet/fireaxecabinet/attack_ai(mob/user as mob)
 	if(src.smashed)
-		to_chat(user, span_warning("The security of the cabinet is compromised."))
+		to_chat(user, span_warning("柜子的安全已受到威胁。"))
 		return
 	else
 		locked = !locked
 		if(locked)
-			to_chat(user, span_warning("Cabinet locked."))
+			to_chat(user, span_warning("储物柜已上锁。"))
 		else
-			to_chat(user, span_notice("Cabinet unlocked."))
+			to_chat(user, span_notice("储物柜已解锁。"))
 		return
 
 //Template: fireaxe[has fireaxe][is opened][hits taken][is smashed]. If you want the opening or closing animations, add "opening" or "closing" right after the numbers

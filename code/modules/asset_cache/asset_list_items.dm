@@ -55,7 +55,7 @@
 	)
 
 /datum/asset/spritesheet/chat
-	name = "chat"
+	name = "聊天"
 
 /datum/asset/spritesheet/chat/create_spritesheets()
 	InsertAll("emoji", EMOJI_SET)
@@ -101,37 +101,37 @@
 		var/datum/language/L = new path ()
 		L.get_icon()
 /datum/asset/spritesheet/blessingmenu
-	name = "blessingmenu"
+	name = "祝福菜单"
 
 /datum/asset/spritesheet/blessingmenu/create_spritesheets()
 	InsertAll("", 'icons/UI_Icons/buyable_icons.dmi')
 
 /datum/asset/spritesheet/mechaarmor
-	name = "mechaarmor"
+	name = "机甲护甲"
 
 /datum/asset/spritesheet/mechaarmor/create_spritesheets()
 	InsertAll("", 'icons/UI_Icons/mecha/armor.dmi')
 
 /datum/asset/spritesheet/mech_builder
-	name = "mech_builder"
+	name = "机甲建造器"
 
 /datum/asset/spritesheet/mech_builder/create_spritesheets()
 	InsertAll("", 'icons/mecha/mecha_equipment_64x32.dmi')
 
 /datum/asset/spritesheet/mech_ammo
-	name = "mech_ammo"
+	name = "机甲弹药"
 
 /datum/asset/spritesheet/mech_ammo/create_spritesheets()
 	InsertAll("", 'icons/mecha/mecha_ammo.dmi')
 
 /datum/asset/spritesheet/hivestatus
-	name = "hivestatus"
+	name = "蜂巢状态"
 
 /datum/asset/spritesheet/hivestatus/create_spritesheets()
 	InsertAll("", 'icons/UI_Icons/hive_status_icons.dmi')
 
 /datum/asset/spritesheet/campaign
-	name = "campaign_base"
+	name = "战役基地"
 	///The dmi file used for this spritesheet
 	var/icon_sheet
 	///The list of icon names to use for this sprite sheet
@@ -147,14 +147,14 @@
 		Insert("[icon_name]_big", iconBig)
 
 /datum/asset/spritesheet/campaign/missions
-	name = "campaign_missions"
+	name = "战役任务"
 	icon_sheet = 'icons/UI_Icons/campaign/mission_icons.dmi'
 
 /datum/asset/spritesheet/campaign/missions/New()
 	icon_names = GLOB.campaign_mission_icons
 	return ..()
 /datum/asset/spritesheet/campaign/assets
-	name = "campaign_assets"
+	name = "战役资产"
 	icon_sheet = 'icons/UI_Icons/campaign/asset_icons.dmi'
 
 /datum/asset/spritesheet/campaign/assets/New()
@@ -162,7 +162,7 @@
 	return ..()
 
 /datum/asset/spritesheet/campaign/perks
-	name = "campaign_perks"
+	name = "战役技能"
 	icon_sheet = 'icons/UI_Icons/campaign/perk_icons.dmi'
 
 /datum/asset/spritesheet/campaign/perks/New()
@@ -170,7 +170,7 @@
 	return ..()
 
 /datum/asset/spritesheet/campaign/loadout_items
-	name = "campaign_loadout_items"
+	name = "战役配装物品"
 	icon_sheet = 'icons/UI_Icons/campaign/loadout_item_icons.dmi'
 
 /datum/asset/spritesheet/campaign/loadout_items/New()

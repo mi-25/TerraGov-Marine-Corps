@@ -1,7 +1,7 @@
 //effects are placed on maps but only generate objectives for applicable missions, so maps can be valid for multiple missions if desired.
 /obj/effect/landmark/campaign_structure
-	name = "GENERIC CAMPAIGN STRUCTURE"
-	desc = "THIS SHOULDN'T BE VISIBLE"
+	name = "通用战役结构"
+	desc = "这不应可见"
 	icon = 'icons/obj/structures/campaign_structures.dmi'
 	atom_flags = CRITICAL_ATOM
 	///Missions that trigger this landmark to spawn an objective
@@ -24,8 +24,8 @@
 
 
 /obj/structure/campaign_objective
-	name = "GENERIC CAMPAIGN STRUCTURE"
-	desc = "THIS SHOULDN'T BE VISIBLE"
+	name = "通用战役结构"
+	desc = "这不应可见"
 	density = TRUE
 	anchored = TRUE
 	allow_pass_flags = PASSABLE

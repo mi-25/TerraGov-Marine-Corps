@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/baneling
 	caste_base_type = /datum/xeno_caste/baneling
 	name = "Baneling"
-	desc = "An oozy, squishy alien that can roll in agile speeds, storing various dangerous chemicals in its sac..."
+	desc = "一种黏糊糊、软绵绵的外星生物，能以敏捷的速度滚动，在其囊袋中储存着各种危险的化学物质……"
 	icon = 'icons/Xeno/castes/baneling.dmi'
 	icon_state = "Baneling Walking"
 	bubble_icon = "alienleft"

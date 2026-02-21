@@ -1,63 +1,63 @@
 /obj/structure/prop/urban
-	name = "GENERIC URBAN PROP NAME"
+	name = "通用城市建筑名称"
 
 // Supermart
 
 /obj/structure/prop/urban/supermart
-	name = "long rack"
+	name = "长弹匣"
 	icon_state = "longrack1"
-	desc = "A long shelf filled with various foodstuffs"
+	desc = "一个长长的货架，上面摆满了各种食品"
 	icon = 'icons/obj/structures/prop/urban/supermart.dmi'
 	density = TRUE
 
 /obj/structure/prop/urban/supermart/rack/longrackempty
-	name = "shelf"
-	desc = "A long empty shelf."
+	name = "货架"
+	desc = "一个空荡荡的长架子。"
 	icon_state = "longrackempty"
 
 /obj/structure/prop/urban/supermart/rack/longrack1
-	name = "shelf"
-	desc = "A long shelf filled with various foodstuffs"
+	name = "货架"
+	desc = "一个长长的货架，上面摆满了各种食品"
 	icon_state = "longrack1"
 
 /obj/structure/prop/urban/supermart/rack/longrack2
-	name = "shelf"
-	desc = "A long shelf filled with various foodstuffs"
+	name = "货架"
+	desc = "一个长长的货架，上面摆满了各种食品"
 	icon_state = "longrack2"
 
 /obj/structure/prop/urban/supermart/rack/longrack3
-	name = "shelf"
-	desc = "A long shelf filled with various foodstuffs"
+	name = "货架"
+	desc = "一个长长的货架，上面摆满了各种食品"
 	icon_state = "longrack3"
 
 /obj/structure/prop/urban/supermart/rack/longrack4
-	name = "shelf"
-	desc = "A long shelf filled with various foodstuffs"
+	name = "货架"
+	desc = "一个长长的货架，上面摆满了各种食品"
 	icon_state = "longrack4"
 
 /obj/structure/prop/urban/supermart/rack/longrack5
-	name = "shelf"
-	desc = "A long shelf filled with various foodstuffs"
+	name = "货架"
+	desc = "一个长长的货架，上面摆满了各种食品"
 	icon_state = "longrack5"
 
 /obj/structure/prop/urban/supermart/rack/longrack6
-	name = "shelf"
-	desc = "A long shelf filled with various foodstuffs"
+	name = "货架"
+	desc = "一个长长的货架，上面摆满了各种食品"
 	icon_state = "longrack6"
 
 /obj/structure/prop/urban/supermart/rack/longrack7
-	name = "shelf"
-	desc = "A long shelf filled with various foodstuffs"
+	name = "货架"
+	desc = "一个长长的货架，上面摆满了各种食品"
 	icon_state = "longrack7"
 
 /obj/structure/prop/urban/supermart/supermartbelt
-	name = "conveyor belt"
-	desc = "A conveyor belt."
+	name = "传送带"
+	desc = "传送带。"
 	icon_state = "checkoutbelt"
 
 /obj/structure/prop/urban/supermart/freezer
-	name = "commercial freezer"
-	desc = "A commercial grade freezer."
+	name = "商用冰柜"
+	desc = "商用级冷冻柜。"
 	icon_state = "freezerupper"
 	density = TRUE
 /obj/structure/prop/urban/supermart/freezer/supermartfreezer1
@@ -79,33 +79,33 @@
 	icon_state = "freezermid1"
 
 /obj/structure/prop/urban/supermart/supermartfruitbasketempty
-	name = "basket"
-	desc = "A basket."
+	name = "篮筐"
+	desc = "一个篮子。"
 	icon_state = "supermarketbasketempty"
 
 /obj/structure/prop/urban/supermart/supermartfruitbasketoranges
-	name = "basket"
-	desc = "A basket full of oranges."
+	name = "篮筐"
+	desc = "装满橙子的篮子。"
 	icon_state = "supermarketbasket1"
 
 /obj/structure/prop/urban/supermart/supermartfruitbasketpears
-	name = "basket"
-	desc = "A basket full of pears."
+	name = "篮筐"
+	desc = "一篮梨子。"
 	icon_state = "supermarketbasket2"
 
 /obj/structure/prop/urban/supermart/supermartfruitbasketcarrots
-	name = "basket"
-	desc = "A basket full of carrots."
+	name = "篮筐"
+	desc = "装满胡萝卜的篮子。"
 	icon_state = "supermarketbasket3"
 
 /obj/structure/prop/urban/supermart/supermartfruitbasketmelons
-	name = "basket"
-	desc = "A basket full of melons."
+	name = "篮筐"
+	desc = "一篮满满的甜瓜。"
 	icon_state = "supermarketbasket4"
 
 /obj/structure/prop/urban/supermart/supermartfruitbasketapples
-	name = "basket"
-	desc = "A basket full of apples."
+	name = "篮筐"
+	desc = "装满苹果的篮子。"
 	icon_state = "supermarketbasket5"
 
 // Furniture
@@ -119,8 +119,8 @@
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASSABLE|PASS_WALKOVER
 
 /obj/structure/prop/urban/furniture/tables/tableblack
-	name = "large metal table"
-	desc = "A large black metal table, looks very expensive."
+	name = "大型金属桌"
+	desc = "一张大型黑色金属桌，看起来非常昂贵。"
 	icon_state = "blackmetaltable"
 	density = TRUE
 	climbable = TRUE
@@ -131,8 +131,8 @@
 	icon_state = "blackmetaltable_computer"
 
 /obj/structure/prop/urban/furniture/tables/tablewood
-	name = "large wood table"
-	desc = "A large wooden table, looks very expensive."
+	name = "大型木桌"
+	desc = "一张大型木桌，看起来非常昂贵。"
 	icon_state = "brownlargetable"
 	density = TRUE
 	climbable = TRUE
@@ -143,8 +143,8 @@
 	icon_state = "brownlargetable_computer"
 
 /obj/structure/prop/urban/furniture/tables/tablepool
-	name = "pool table"
-	desc = "A large table used for Pool."
+	name = "台球桌"
+	desc = "用于台球游戏的大型球桌。"
 	icon_state = "table_pool"
 	density = TRUE
 	bound_height = 32
@@ -152,8 +152,8 @@
 	climbable = TRUE
 
 /obj/structure/prop/urban/furniture/tables/tablegambling
-	name = "gambling table"
-	desc = "A large table used for gambling."
+	name = "赌桌"
+	desc = "用于赌博的大桌子。"
 	icon_state = "table_cards"
 	density = TRUE
 	bound_height = 32
@@ -162,8 +162,8 @@
 
 // Chairs
 /obj/structure/bed/urban/chairs
-	name = "expensive chair"
-	desc = "An expensive looking chair"
+	name = "昂贵的椅子"
+	desc = "一把看起来昂贵的椅子"
 	resistance_flags = XENO_DAMAGEABLE
 	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 
@@ -186,46 +186,46 @@
 	icon_state = "hybrisa"
 
 /obj/structure/bed/urban/prisonbed
-	name = "bunk bed"
-	desc = "A sorry looking bunk-bed."
+	name = "双层床"
+	desc = "一张看起来破旧的上下铺。"
 	icon_state = "prisonbed"
 
 /obj/structure/bed/urban/bunkbed1
-	name = "bunk bed"
-	desc = "A comfy looking bunk-bed."
+	name = "双层床"
+	desc = "一张看起来舒适的上下铺。"
 	icon_state = "zbunkbed"
 
 /obj/structure/bed/urban/bunkbed2
-	name = "bunk bed"
-	desc = "A comfy looking bunk-bed."
+	name = "双层床"
+	desc = "一张看起来舒适的上下铺床。"
 	icon_state = "zbunkbed2"
 
 /obj/structure/bed/urban/bunkbed3
-	name = "bunk bed"
-	desc = "A comfy looking bunk-bed."
+	name = "双层床"
+	desc = "一张看起来舒适的上下铺床。"
 	icon_state = "zbunkbed3"
 
 /obj/structure/bed/urban/bunkbed4
-	name = "bunk bed"
-	desc = "A comfy looking bunk-bed."
+	name = "双层床"
+	desc = "一张看起来舒适的上下铺床。"
 	icon_state = "zbunkbed4"
 
 /obj/structure/bed/urban/hospitalbeds
 	icon_state = "hospital"
 
 /obj/structure/bed/urban/hospitalbeds/hospitalbed1
-	name = "hospital bed"
-	desc = "A mattress seated on a rectangular metallic frame with wheels. This is used to support a lying person in a comfortable manner."
+	name = "医疗床"
+	desc = "一张安装在带轮金属矩形框架上的床垫。用于以舒适的方式支撑躺卧的人。"
 	icon_state = "bigrollerempty2_up"
 
 /obj/structure/bed/urban/hospitalbeds/hospitalbed2
-	name = "hospital bed"
-	desc = "A mattress seated on a rectangular metallic frame with wheels. This is used to support a lying person in a comfortable manner."
+	name = "病床"
+	desc = "一张安装在带轮金属矩形框架上的床垫。用于以舒适的方式支撑躺卧的人。"
 	icon_state = "bigrollerempty_up"
 
 /obj/structure/bed/urban/hospitalbeds/hospitalbed3
-	name = "hospital bed"
-	desc = "A mattress seated on a rectangular metallic frame with wheels. This is used to support a lying person in a comfortable manner."
+	name = "医疗床"
+	desc = "一张安装在带轮金属矩形框架上的床垫。用于以舒适的方式支撑躺卧的人。"
 	icon_state = "bigrollerempty3_up"
 
 // Xenobiology
@@ -237,56 +237,56 @@
 
 
 /obj/structure/prop/urban/xenobiology/small/empty
-	name = "specimen containment cell"
-	desc = "It's empty."
+	name = "样本收容单元"
+	desc = "它是空的。"
 	icon_state = "xenocellemptyon"
 	density = TRUE
 
 /obj/structure/prop/urban/xenobiology/small/offempty
-	name = "specimen containment cell"
-	desc = "It's turned off and empty."
+	name = "样本收容单元"
+	desc = "它已关闭且为空。"
 	icon_state = "xenocellemptyoff"
 	density = TRUE
 
 /obj/structure/prop/urban/xenobiology/small/larva
-	name = "specimen containment cell"
-	desc = "There is something worm-like inside..."
+	name = "样本收容单元"
+	desc = "里面好像有蠕虫一样的东西..."
 	icon_state = "xenocelllarva"
 	density = TRUE
 
 /obj/structure/prop/urban/xenobiology/small/egg
-	name = "specimen containment cell"
-	desc = "There is, what looks like some sort of egg inside..."
+	name = "样本收容单元"
+	desc = "里面看起来像是某种卵……"
 	icon_state = "xenocellegg"
 	density = TRUE
 
 /obj/structure/prop/urban/xenobiology/small/hugger
-	name = "specimen containment cell"
-	desc = "There's something spider-like inside..."
+	name = "样本收容单元"
+	desc = "里面好像有蜘蛛一样的东西……"
 	icon_state = "xenocellhugger"
 	density = TRUE
 
 /obj/structure/prop/urban/xenobiology/small/cracked1
-	name = "specimen containment cell"
-	desc = "Looks like something broke it...from the inside."
+	name = "样本收容单元"
+	desc = "看起来有什么东西从内部破坏了它……"
 	icon_state = "xenocellcrackedempty"
 	density = TRUE
 
 /obj/structure/prop/urban/xenobiology/small/cracked2
-	name = "specimen containment cell"
-	desc = "Looks like something broke it...from the inside."
+	name = "样本收容单元"
+	desc = "看起来有什么东西从内部破坏了它……"
 	icon_state = "xenocellcrackedempty2"
 	density = TRUE
 
 /obj/structure/prop/urban/xenobiology/small/crackedegg
-	name = "specimen containment cell"
-	desc = "Looks like something broke it, there's a giant empty egg inside."
+	name = "样本收容单元"
+	desc = "看起来有什么东西把它弄破了，里面有个巨大的空卵。"
 	icon_state = "xenocellcrackedegg"
 	density = TRUE
 
 /obj/structure/prop/urban/xenobiology/big
-	name = "specimen containment cell"
-	desc = "A giant tube with a hulking monstrosity inside, is this thing alive?"
+	name = "样本收容单元"
+	desc = "一根巨大的管道，里面装着一个庞大的怪物，这东西还活着吗？"
 	icon = 'icons/obj/structures/prop/urban/urbanxenocryogenics2.dmi'
 	icon_state = "bigqueencryo1"
 
@@ -313,8 +313,8 @@
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/prop/urban/xenobiology/misc
-	name = "strange egg"
-	desc = "A strange ancient looking egg, it seems to be inert."
+	name = "奇怪的蛋"
+	desc = "一颗看起来古老而奇异的卵，它似乎处于惰性状态。"
 	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "inertegg"
 	layer = 2
@@ -324,16 +324,16 @@
 	icon = 'icons/obj/structures/prop/urban/engineerjockey.dmi'
 
 /obj/structure/prop/urban/engineer/spacejockey
-	name = "Giant Pilot"
-	desc = "A Giant Alien life form. Looks like it's been dead a long time. Fossilized. Looks like it's growing out of the chair. Bones are bent outward, like it exploded from inside."
+	name = "巨型驾驶员"
+	desc = "一个巨大的外星生命体。看起来已经死去很久了。已经石化了。看起来像是从椅子里长出来的。骨头向外弯曲，像是从内部爆炸开来。"
 	icon = 'icons/obj/structures/prop/urban/engineerjockey.dmi'
 	icon_state = "spacejockey"
 	layer = ABOVE_MOB_LAYER
 	resistance_flags = RESIST_ALL
 
 /obj/structure/prop/urban/engineer/giantconsole
-	name = "Giant Alien Console"
-	desc = "A Giant Alien console of some kind, unlike anything you've ever seen before. Who knows the purpose of this strange technology..."
+	name = "巨型异形控制台"
+	desc = "某种巨大的外星控制台，与你见过的任何东西都不同。谁知道这种奇怪技术的用途……"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "engineerconsole"
 	bound_height = 32
@@ -347,87 +347,87 @@
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/prop/urban/engineer/engineerpillar/northwesttop
-	name = "strange pillar"
+	name = "奇怪的柱子"
 	icon_state = "engineerpillar_NW1"
 /obj/structure/prop/urban/engineer/engineerpillar/northwestbottom
-	name = "strange pillar"
+	name = "奇怪的柱子"
 	icon_state = "engineerpillar_NW2"
 /obj/structure/prop/urban/engineer/engineerpillar/southwesttop
-	name = "strange pillar"
+	name = "奇怪的柱子"
 	icon_state = "engineerpillar_SW1"
 /obj/structure/prop/urban/engineer/engineerpillar/southwestbottom
-	name = "strange pillar"
+	name = "奇怪的柱子"
 	icon_state = "engineerpillar_SW2"
 /obj/structure/prop/urban/engineer/engineerpillar/smallsouthwest1
-	name = "strange pillar"
+	name = "奇怪的柱子"
 	icon_state = "engineerpillar_SW1fade"
 /obj/structure/prop/urban/engineer/engineerpillar/smallsouthwest2
-	name = "strange pillar"
+	name = "奇怪的柱子"
 	icon_state = "engineerpillar_SW2fade"
 
 // Airport
 
 /obj/structure/prop/urban/airport
-	name = "nose cone"
+	name = "机头整流罩"
 	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "dropshipfrontwhite1"
 
 /obj/structure/prop/urban/airport/dropshipnosecone
-	name = "nose cone"
+	name = "机头整流罩"
 	icon_state = "dropshipfrontwhite1"
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/prop/urban/airport/dropshipwingleft
-	name = "wing"
+	name = "翼"
 	icon_state = "dropshipwingtop1"
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/prop/urban/airport/dropshipwingright
-	name = "wing"
+	name = "翼"
 	icon_state = "dropshipwingtop2"
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/prop/urban/airport/dropshipvent1left
-	name = "vent"
+	name = "通风口"
 	icon_state = "dropshipvent1"
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/prop/urban/airport/dropshipvent2right
-	name = "vent"
+	name = "通风口"
 	icon_state = "dropshipvent2"
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/prop/urban/airport/dropshipventleft
-	name = "vent"
+	name = "通风口"
 	icon_state = "dropshipvent3"
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/prop/urban/airport/dropshipventright
-	name = "vent"
+	name = "通风口"
 	icon_state = "dropshipvent4"
 	layer = ABOVE_MOB_LAYER
 
 // Dropship damage
 
 /obj/structure/prop/urban/airport/dropshipenginedamage
-	name = "dropship damage"
-	desc = "the engine appears to have severe damage."
+	name = "运输机受损"
+	desc = "引擎似乎遭受了严重损坏。"
 	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "dropship_engine_damage"
 	bound_height = 64
 	bound_width = 96
 
 /obj/structure/prop/urban/airport/dropshipenginedamagenofire
-	name = "dropship damage"
-	desc = "the engine appears to have severe damage."
+	name = "运输机受损"
+	desc = "引擎似乎遭受了严重损坏。"
 	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "dropship_engine_damage_nofire"
 	bound_height = 64
 	bound_width = 96
 
 /obj/structure/prop/urban/airport/refuelinghose
-	name = "refueling hose"
-	desc = "A long refueling hose that connects to various types of dropships."
+	name = "加油软管"
+	desc = "一根连接各类运输艇的长加油软管。"
 	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "fuelline1"
 	bound_height = 64
@@ -437,8 +437,8 @@
 
 
 /obj/structure/prop/urban/airport/refuelinghose2
-	name = "refueling hose"
-	desc = "A long refueling hose that connects to various types of dropships."
+	name = "加油软管"
+	desc = "一根连接各类运输艇的长加油软管。"
 	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "fuelline2"
 	bound_height = 64
@@ -449,16 +449,16 @@
 // Pilot body
 
 /obj/structure/prop/urban/airport/deadpilot1
-	name = "decapitated Nanotrasen Pilot"
-	desc = "What remains of a Nanotrasen Pilot. Their entire head is missing. Where'd it roll off to?..."
+	name = "被斩首的纳米传讯飞行员"
+	desc = "纳米传讯飞行员的残骸。他们的整个头部都不见了。滚到哪里去了呢？..."
 	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "pilotbody_decap1"
 	bound_height = 64
 	bound_width = 96
 
 /obj/structure/prop/urban/airport/deadpilot2
-	name = "decapitated Nanotrasen Pilot"
-	desc = "What remains of a Nanotrasen Pilot. Their entire head is missing. Where'd it roll off to?..."
+	name = "被斩首的纳米传讯飞行员"
+	desc = "纳米传讯飞行员的残骸。他们的整个头部都不见了。滚到哪里去了呢？..."
 	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "pilotbody_decap2"
 	bound_height = 64
@@ -476,43 +476,43 @@
 	icon_state = "solidgrate1"
 
 /obj/structure/prop/urban/misc/floorprops/grate
-	name = "solid metal grate"
-	desc = "A metal grate."
+	name = "实心金属格栅"
+	desc = "一个金属格栅。"
 	icon_state = "solidgrate1"
 	layer = LATTICE_LAYER
 
 /obj/structure/prop/urban/misc/floorprops/grate2
-	name = "solid metal grate"
-	desc = "A metal grate."
+	name = "实心金属格栅"
+	desc = "一个金属格栅。"
 	icon_state = "solidgrate5"
 	layer = LATTICE_LAYER
 
 /obj/structure/prop/urban/misc/floorprops/grate3
-	name = "solid metal grate"
-	desc = "A metal grate."
+	name = "实心金属格栅"
+	desc = "一个金属格栅。"
 	icon_state = "zhalfgrate1"
 	layer = LATTICE_LAYER
 
 /obj/structure/prop/urban/misc/floorprops/floorglass
-	name = "reinforced glass floor"
-	desc = "A heavily reinforced glass floor panel, this looks almost indestructible."
+	name = "强化玻璃地板"
+	desc = "一块经过强化的玻璃地板板，看起来几乎坚不可摧。"
 	icon_state = "solidgrate2"
 
 /obj/structure/prop/urban/misc/floorprops/floorglass2
-	name = "reinforced glass floor"
-	desc = "A heavily reinforced glass floor panel, this looks almost indestructible."
+	name = "强化玻璃地板"
+	desc = "一块经过强化的玻璃地板板，看起来几乎坚不可摧。"
 	icon_state = "solidgrate3"
 	layer = 2.1
 
 /obj/structure/prop/urban/misc/floorprops/floorglass3
-	name = "reinforced glass floor"
-	desc = "A heavily reinforced glass floor panel, this looks almost indestructible."
+	name = "强化玻璃地板"
+	desc = "一块经过强化的玻璃地板板，看起来几乎坚不可摧。"
 	icon_state = "solidgrate4"
 
 // Graffiti
 
 /obj/structure/prop/urban/misc/graffiti
-	name = "graffiti"
+	name = "涂鸦"
 	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zgraffiti4"
 	bound_height = 64
@@ -550,7 +550,7 @@
 // Wall Blood
 
 /obj/structure/prop/urban/misc/blood
-	name = "blood"
+	name = "血液"
 	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "wallblood_floorblood"
 
@@ -569,8 +569,8 @@
 // Fire
 
 /obj/structure/prop/urban/misc/fire/fire1
-	name = "fire"
-	desc = "It's hot, smoking even."
+	name = "火焰"
+	desc = "很烫，甚至还在冒烟。"
 	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zfire_smoke"
 	layer = 5
@@ -579,8 +579,8 @@
 	light_range = 3
 
 /obj/structure/prop/urban/misc/fire/fire2
-	name = "fire"
-	desc = "It's hot, smoking even."
+	name = "火焰"
+	desc = "很烫，甚至还在冒烟。"
 	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zfire_smoke2"
 	layer = 5
@@ -589,8 +589,8 @@
 	light_range = 3
 
 /obj/structure/prop/urban/misc/fire/firebarrel
-	name = "barrel"
-	desc = "A flaming barrel filled with hazardous substances."
+	name = "枪管"
+	desc = "装满危险物质的燃烧桶。"
 	icon = 'icons/obj/structures/prop/urban/64x96-urbanrandomprops.dmi'
 	icon_state = "zbarrelfireon"
 	layer = 5
@@ -601,40 +601,40 @@
 // Misc
 
 /obj/structure/prop/urban/misc/commandosuitemptyprop
-	name = "\improper Nanotrasen 'Ape-Suit' Showcase"
-	desc = "A display model of the Nanotrasen 'Apesuit', shame it's only a model..."
+	name = "\improper 纳米传讯'猿服'展示"
+	desc = "纳米传讯'猿服'的展示模型，可惜只是个模型……"
 	icon_state = "dogcatchersuitempty1"
 
 /obj/structure/prop/urban/misc/cabinet
-	name = "cabinet"
-	desc = "a small cabinet with drawers."
+	name = "储物柜"
+	desc = "一个带抽屉的小柜子。"
 	icon_state = "sidecabinet"
 
 /obj/structure/prop/urban/misc/trash/green
-	name = "trash bin"
-	desc = "A Nanotrasen trash bin used for disposing your unwanted items, or you can just throw your shit on the ground like every other asshole."
+	name = "垃圾桶"
+	desc = "一个纳米传讯的垃圾桶，用于丢弃你不想要的物品，或者你也可以像其他混蛋一样直接把东西扔在地上。"
 	icon_state = "trashgreen"
 
 /obj/structure/prop/urban/misc/trash/blue
-	name = "trash bin"
-	desc = "A Nanotrasen trash bin used for disposing your unwanted items, or you can just throw your shit on the ground like every other asshole."
+	name = "垃圾桶"
+	desc = "一个纳米传讯的垃圾桶，用于丢弃你不想要的物品，或者你也可以像其他混蛋一样直接把东西扔在地上。"
 	icon_state = "trashblue"
 
 /obj/structure/prop/urban/misc/redmeter
-	name = "meter"
+	name = "米"
 	icon_state = "redmeter"
 
 /obj/structure/prop/urban/misc/firebarreloff
-	name = "barrel"
+	name = "枪管"
 	icon_state = "zfirebarreloff"
 
 /obj/structure/prop/urban/misc/trashbagfullprop
-	name = "trash bag"
+	name = "垃圾袋"
 	icon_state = "ztrashbag"
 
 /obj/structure/prop/urban/misc/slotmachine
-	name = "slot machine"
-	desc = "A slot machine."
+	name = "老虎机"
+	desc = "一台老虎机。"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "slotmachine"
 	bound_width = 32
@@ -644,8 +644,8 @@
 	layer = 3.2
 
 /obj/structure/prop/urban/misc/atm
-	name = "\improper NanoTrasen Automatic Teller Machine"
-	desc = "For all your monetary needs!"
+	name = "\improper 纳米传讯自动取款机"
+	desc = "满足您的一切资金需求！"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "atm"
 	bound_width = 32
@@ -655,8 +655,8 @@
 	layer = 3.2
 
 /obj/structure/prop/urban/misc/slotmachine_broken
-	name = "slot machine"
-	desc = "A broken slot machine."
+	name = "老虎机"
+	desc = "一台损坏的老虎机。"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "slotmachine_broken"
 	bound_width = 32
@@ -666,17 +666,17 @@
 	layer = 3.2
 
 /obj/structure/prop/urban/misc/coffeestuff/coffeemachine1
-	name = "coffee machine"
-	desc = "A coffee machine."
+	name = "咖啡机"
+	desc = "一台咖啡机。"
 	icon_state = "coffee"
 
 /obj/structure/prop/urban/misc/coffeestuff/coffeemachine2
-	name = "coffee machine"
-	desc = "A coffee machine."
+	name = "咖啡机"
+	desc = "一台咖啡机。"
 	icon_state = "coffee_cup"
 
 /obj/structure/prop/urban/misc/machinery/computers
-	name = "computer"
+	name = "电脑"
 	icon_state = "mapping_comp"
 	resistance_flags = XENO_DAMAGEABLE
 	max_integrity = 80
@@ -714,8 +714,8 @@
 
 
 /obj/structure/prop/urban/misc/machinery/screens
-	name = "monitor"
-	desc = "A screen, useful for broadcasting events. It looks like it's seen better days."
+	name = "监控器"
+	desc = "一块屏幕，可用于广播事件。看起来它经历过更好的日子。"
 	resistance_flags = XENO_DAMAGEABLE
 	max_integrity = 50
 
@@ -795,8 +795,8 @@
 	icon_state = "wallegg_on"
 
 /obj/structure/prop/urban/misc/fake/pipes
-	name = "disposal pipe"
-	desc = "A small pipe."
+	name = "处理管道"
+	desc = "一根小管道。"
 
 /obj/structure/prop/urban/misc/fake/pipes/pipe1
 	layer = 2
@@ -819,8 +819,8 @@
 	icon_state = "pipe-b"
 
 /obj/structure/prop/urban/misc/fake/wire
-	name = "power cable"
-	desc = "A small gauge wire for conducting electricity."
+	name = "电源线"
+	desc = "用于导电的小规格电线。"
 	layer = ABOVE_NORMAL_TURF_LAYER
 
 /obj/structure/prop/urban/misc/fake/wire/red
@@ -837,8 +837,8 @@
 
 
 /obj/structure/prop/urban/misc/fake/heavydutywire
-	name = "heavy duty wire"
-	desc = "A heavy duty wire for conducting electricity."
+	name = "重型线缆"
+	desc = "用于导电的重型电线。"
 
 /obj/structure/prop/urban/misc/fake/heavydutywire/heavy1
 	layer = 2
@@ -861,7 +861,7 @@
 	icon_state = "1-2-4-8"
 
 /obj/structure/prop/urban/misc/fake/lattice
-	name = "structural lattice"
+	name = "结构晶格"
 
 /obj/structure/prop/urban/misc/fake/lattice/full
 	icon_state = "latticefull"
@@ -870,8 +870,8 @@
 // Barriers
 
 /obj/structure/prop/urban/misc/road
-	name = "road barrier"
-	desc = "A plastic barrier for blocking entry."
+	name = "路障"
+	desc = "用于阻挡进入的塑料屏障。"
 
 /obj/structure/prop/urban/misc/road/roadbarrierred
 	icon_state = "roadbarrier"
@@ -898,8 +898,8 @@
 	icon_state = "roadbarrierjoined"
 
 /obj/structure/prop/urban/misc/road/wood
-	name = "road barrier"
-	desc = "A wooden barrier for blocking entry."
+	name = "路障"
+	desc = "一道用于阻挡进入的木制屏障。"
 	icon_state = "roadbarrierwood"
 
 /obj/structure/prop/urban/misc/road/wood/roadbarrierwoodorange
@@ -911,8 +911,8 @@
 // Cargo Containers extended
 
 /obj/structure/prop/urban/containersextended
-	name = "cargo container"
-	desc = "a cargo container."
+	name = "货物集装箱"
+	desc = "一个货物集装箱。"
 	icon = 'icons/obj/structures/prop/urban/containersextended.dmi'
 	icon_state = "blackwyleft"
 	bound_width = 32
@@ -924,157 +924,157 @@
 	layer = 5
 
 /obj/structure/prop/urban/containersextended/blueleft
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "blueleft"
 
 /obj/structure/prop/urban/containersextended/blueright
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "blueright"
 
 /obj/structure/prop/urban/containersextended/greenleft
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "greenleft"
 
 /obj/structure/prop/urban/containersextended/greenright
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "greenright"
 
 /obj/structure/prop/urban/containersextended/tanleft
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "tanleft"
 
 /obj/structure/prop/urban/containersextended/tanright
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "tanright"
 
 /obj/structure/prop/urban/containersextended/redleft
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "redleft"
 
 /obj/structure/prop/urban/containersextended/redright
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "redright"
 
 /obj/structure/prop/urban/containersextended/greywyleft
-	name = "\improper Nanotrasen cargo container"
+	name = "\improper 纳米传讯货物集装箱"
 	icon_state = "greywyleft"
 
 /obj/structure/prop/urban/containersextended/greywyright
-	name = "\improper Nanotrasen cargo container"
+	name = "\improper 纳米传讯货物集装箱"
 	icon_state = "greywyright"
 
 /obj/structure/prop/urban/containersextended/lightgreywyleft
-	name = "\improper Nanotrasen cargo container"
+	name = "\improper 纳米传讯货柜"
 	icon_state = "lightgreywyleft"
 
 /obj/structure/prop/urban/containersextended/lightgreywyright
-	name = "\improper Nanotrasen cargo container"
+	name = "\improper 纳米传讯货物集装箱"
 	icon_state = "lightgreywyright"
 
 /obj/structure/prop/urban/containersextended/blackwyleft
-	name = "\improper Nanotrasen cargo container"
+	name = "\improper 纳米传讯货物集装箱"
 	icon_state = "blackwyleft"
 
 /obj/structure/prop/urban/containersextended/blackwyright
-	name = "\improper Nanotrasen cargo container"
+	name = "\improper 纳米传讯货柜"
 	icon_state = "blackwyright"
 
 /obj/structure/prop/urban/containersextended/whitewyleft
-	name = "\improper Nanotrasen cargo container"
+	name = "\improper 纳米传讯货物集装箱"
 	icon_state = "whitewyleft"
 
 /obj/structure/prop/urban/containersextended/whitewyright
-	name = "\improper Nanotrasen cargo container"
+	name = "\improper 纳米传讯货柜"
 	icon_state = "whitewyright"
 
 /obj/structure/prop/urban/containersextended/tanwywingsleft
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "tanwywingsleft"
 
 /obj/structure/prop/urban/containersextended/tanwywingsright
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "tanwywingsright"
 
 /obj/structure/prop/urban/containersextended/greenwywingsleft
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "greenwywingsleft"
 
 /obj/structure/prop/urban/containersextended/greenwywingsright
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "greenwywingsright"
 
 /obj/structure/prop/urban/containersextended/bluewywingsleft
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "bluewywingsleft"
 
 /obj/structure/prop/urban/containersextended/bluewywingsright
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "bluewywingsright"
 
 /obj/structure/prop/urban/containersextended/redwywingsleft
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "redwywingsleft"
 
 /obj/structure/prop/urban/containersextended/redwywingsright
-	name = "cargo container"
+	name = "货物集装箱"
 	icon_state = "redwywingsright"
 
 /obj/structure/prop/urban/containersextended/medicalleft
-	name = "medical cargo containers"
+	name = "医疗货物集装箱"
 	icon_state = "medicalleft"
 
 /obj/structure/prop/urban/containersextended/medicalright
-	name = "medical cargo containers"
+	name = "医疗货物集装箱"
 	icon_state = "medicalright"
 
 /obj/structure/prop/urban/containersextended/emptymedicalleft
-	name = "medical cargo container"
+	name = "医疗货物集装箱"
 	icon_state = "emptymedicalleft"
 
 /obj/structure/prop/urban/containersextended/emptymedicalright
-	name = "medical cargo container"
+	name = "医疗货物集装箱"
 	icon_state = "emptymedicalright"
 
 /obj/structure/prop/urban/containersextended/graffiti
-	name = "defaced cargo container"
+	name = "被涂污的货柜"
 	icon_state = "grafcontain_l"
 
 /obj/structure/prop/urban/containersextended/graffiti/two
-	name = "defaced cargo container"
+	name = "被涂污的货物集装箱"
 	icon_state = "grafcontain_rm"
 
 /obj/structure/prop/urban/containersextended/graffiti/three
-	name = "defaced cargo container"
+	name = "被涂污的货物集装箱"
 	icon_state = "grafcontain_r"
 
 /obj/structure/prop/urban/containersextended/graffiti/four
-	name = "defaced cargo container"
+	name = "被涂污的货柜"
 	icon_state = "grafcontain2_l"
 
 /obj/structure/prop/urban/containersextended/graffiti/five
-	name = "defaced cargo container"
+	name = "被涂污的货物集装箱"
 	icon_state = "grafcontain2_rm"
 
 /obj/structure/prop/urban/containersextended/graffiti/six
-	name = "defaced cargo container"
+	name = "被涂污的货柜"
 	icon_state = "grafcontain2_r"
 
 /obj/structure/prop/urban/containersextended/graffiti/seven
-	name = "defaced cargo container"
+	name = "被涂污的货物集装箱"
 	icon_state = "grafcontain3_l"
 
 /obj/structure/prop/urban/containersextended/graffiti/eight
-	name = "defaced cargo container"
+	name = "被涂污的货柜"
 	icon_state = "grafcontain3_rm"
 
 /obj/structure/prop/urban/containersextended/graffiti/nine
-	name = "defaced cargo container"
+	name = "被涂污的货柜"
 	icon_state = "grafcontain3_r"
 
 /// Fake Platforms
 
 /obj/structure/prop/urban/fakeplatforms
-	name = "platform"
+	name = "平台"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 
@@ -1101,8 +1101,8 @@
 
 // Greeblies
 /obj/structure/prop/urban/misc/buildinggreeblies
-	name = "machinery"
-	desc = "A strange piece of machinery attached to a wall..."
+	name = "机械装置"
+	desc = "墙上附着着一台奇怪的机器……"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "buildingventbig1"
 	bound_width = 64
@@ -1197,39 +1197,39 @@
 	density = TRUE
 
 /obj/structure/prop/urban/misc/buildinggreebliessmall
-	name = "wall vent"
-	desc = "A small piece of odd looking machinery..."
+	name = "通风管道"
+	desc = "一小块外观奇特的机械装置..."
 	icon_state = "smallwallvent1"
 	density = FALSE
 
 /obj/structure/prop/urban/misc/buildinggreebliessmall2
-	name = "wall vent"
+	name = "通风口"
 	icon_state = "smallwallvent2"
 
 /obj/structure/prop/urban/misc/buildinggreebliessmall2
-	name = "wall vent"
+	name = "通风管道"
 	icon_state = "smallwallvent2"
 
 /obj/structure/prop/urban/misc/buildinggreebliessmall3
-	name = "wall vent"
+	name = "通风管道"
 	icon_state = "smallwallvent3"
 
 
 /obj/structure/prop/urban/misc/buildinggreebliessmall/computer
-	name = "machinery"
+	name = "机械装置"
 	icon_state = "zcomputermachine"
 	density = TRUE
 
 /obj/structure/prop/urban/misc/metergreen
-	name = "meter"
-	desc = "A power meter, useful for gauging energy fluctuations."
+	name = "米"
+	desc = "能量计量表，用于测量能量波动。"
 	icon_state = "biggreenmeter1"
 
 
 // MISC
 /obj/structure/prop/urban/misc/concretestatue
-	name = "concrete statue"
-	desc = "A decorative statue with the Nanotrasen 'Wings' adorned on it, A corporate brutalist piece of art."
+	name = "混凝土雕像"
+	desc = "一座装饰性雕像，上面装饰着纳米传讯的'翅膀'标志，是一件企业粗野主义风格的艺术品。"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "concretesculpture"
 	bound_width = 64
@@ -1238,8 +1238,8 @@
 	anchored = TRUE
 
 /obj/structure/prop/urban/misc/detonator
-	name = "detonator"
-	desc = "A detonator for explosives, armed and ready."
+	name = "引爆器"
+	desc = "引爆器，已装填完毕，随时可用。"
 	icon_state = "detonator"
 	density = FALSE
 	anchored = TRUE
@@ -1247,8 +1247,8 @@
 	var/range = 15
 
 /obj/structure/prop/urban/misc/firehydrant
-	name = "fire hydrant"
-	desc = "A fire hydrant public water outlet, designed for quick access to water."
+	name = "消防栓"
+	desc = "消防栓公共出水口，专为快速取水而设计。"
 	icon_state = "firehydrant"
 	density = FALSE
 	anchored = TRUE
@@ -1256,8 +1256,8 @@
 	max_integrity = 150
 
 /obj/structure/prop/urban/misc/phonebox
-	name = "phonebox"
-	desc = "A phone-box, it doesn't seem to be working, the line must be down."
+	name = "电话亭"
+	desc = "一个电话亭，看起来无法使用，线路肯定断了。"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "phonebox_closed"
 	layer = ABOVE_MOB_LAYER
@@ -1267,16 +1267,16 @@
 	anchored = TRUE
 
 /obj/structure/prop/urban/misc/phonebox/broken
-	desc = "A phone-box, it doesn't seem to be working, the line must be down. The glass has been broken."
+	desc = "一个电话亭，看起来已经坏了，线路肯定断了。玻璃也碎了。"
 	icon_state = "phonebox_closed_broken"
 
 /obj/structure/prop/urban/misc/phonebox/lightup
-	desc = "A phone-box, it doesn't seem to be working, the line must be down."
+	desc = "一个电话亭，看起来无法使用，线路肯定断了。"
 	icon_state = "phonebox_closed_light"
 
 /obj/structure/prop/urban/misc/bench
-	name = "bench"
-	desc = "A metal frame, with seats that are fitted with synthetic leather, they've faded in time."
+	name = "工作台"
+	desc = "一个金属框架，配有合成皮革座椅，随着时间流逝已经褪色。"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "seatedbench"
 	bound_width = 32
@@ -1290,7 +1290,7 @@
 // Signs
 
 /obj/structure/prop/urban/signs
-	name = "neon sign"
+	name = "霓虹灯牌"
 	icon = 'icons/obj/structures/prop/urban/urban64x64_signs.dmi'
 	icon_state = "jacksopen_on"
 	bound_height = 64
@@ -1300,50 +1300,50 @@
 	max_integrity = 80
 
 /obj/structure/prop/urban/signs/casniosign
-	name = "casino sign"
+	name = "赌场招牌"
 	icon_state = "nightgoldcasinoopen_on"
 
 /obj/structure/prop/urban/signs/jackssign
-	name = "jack's surplus sign"
+	name = "杰克军品店招牌"
 	icon_state = "jacksopen_on"
 
 /obj/structure/prop/urban/signs/opensign
-	name = "open sign"
+	name = "营业中"
 	icon_state = "open_on"
 /obj/structure/prop/urban/signs/opensign2
-	name = "open sign"
+	name = "营业中"
 	icon_state = "open_on2"
 
 /obj/structure/prop/urban/signs/pizzasign
-	name = "pizza sign"
+	name = "披萨招牌"
 	icon_state = "pizzaneon_on"
 
 /obj/structure/prop/urban/signs/weymartsign
-	name = "ntmart sign"
+	name = "军械库"
 	icon_state = "weymartsign2"
 
 /obj/structure/prop/urban/signs/mechanicsign
-	name = "mechanic sign"
+	name = "机械师标识"
 	icon_state = "mechanicopen_on2"
 
 /obj/structure/prop/urban/signs/cuppajoessign
-	name = "cuppa joe's sign"
+	name = "乔氏咖啡的招牌"
 	icon_state = "cuppajoes"
 
 /obj/structure/prop/urban/signs/barsign
-	name = "bar sign"
+	name = "酒吧招牌"
 	icon_state = "barsign_on"
 
 // Small Sign
 /obj/structure/prop/urban/signs/high_voltage
-	name = "warning sign"
-	desc = "DANGER - HIGH VOLTAGE - DEATH!."
+	name = "警告标志"
+	desc = "危险 - 高压电 - 致命！"
 	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "shockyBig"
 
 /obj/structure/prop/urban/signs/high_voltage/small
-	name = "warning sign"
-	desc = "DANGER - HIGH VOLTAGE - DEATH!."
+	name = "警告标志"
+	desc = "危险 - 高压电 - 致命！"
 	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "shockyTiny"
 
@@ -1351,8 +1351,8 @@
 
 /// Alien Isolation - posters used as reference (direct downscale of the image for some) If anyone wants to name the billboards individually ///
 /obj/structure/prop/urban/billboardsandsigns/bigbillboards
-	name = "billboard"
-	desc = "A advertisement billboard."
+	name = "广告牌"
+	desc = "广告牌。"
 	icon = 'icons/obj/structures/prop/urban/32x64_urbanbillboards.dmi'
 	icon_state = "billboard_bigger"
 	density = FALSE
@@ -1376,8 +1376,8 @@
 
 // Big Road Signs
 /obj/structure/prop/urban/billboardsandsigns/bigroadsigns
-	name = "road sign"
-	desc = "A road sign."
+	name = "路牌"
+	desc = "一个路标。"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "roadsign_1"
 	bound_width = 64
@@ -1400,8 +1400,8 @@
 	icon_state = "factory_roboticarm"
 
 /obj/structure/prop/urban/factory/robotic_arm
-	name = "Robotic arm"
-	desc = "A robotic arm used in the construction of 'Meridian' Automobiles."
+	name = "机械臂"
+	desc = "用于建造'子午线'牌汽车的机械臂。"
 	icon_state = "factory_roboticarm"
 	bound_width = 64
 	bound_height = 32
@@ -1411,8 +1411,8 @@
 	icon_state = "factory_roboticarm2"
 
 /obj/structure/prop/urban/factory/conveyor_belt
-	name = "large conveyor belt"
-	desc = "A large conveyor belt used in industrial factories."
+	name = "大型传送带"
+	desc = "工业工厂中使用的大型传送带。"
 	icon_state = "factory_conveyer"
 	density = FALSE
 
@@ -1420,8 +1420,8 @@
 // Hybrisa Lattice
 
 /obj/structure/prop/urban/lattice_prop
-	desc = "A support lattice."
-	name = "lattice"
+	desc = "一个支撑结构。"
+	name = "格栅"
 	icon = 'icons/obj/structures/prop/urban/urban_lattice.dmi'
 	icon_state = "lattice1"
 	density = FALSE

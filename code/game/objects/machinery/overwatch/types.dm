@@ -2,31 +2,31 @@
 /obj/machinery/computer/camera_advanced/overwatch/req
 	icon_state = "overwatch_req"
 	screen_overlay = "overwatch_req_screen"
-	name = "Requisition Overwatch Console"
-	desc = "Big Brother Requisition demands to see money flowing into the void that is greed."
+	name = "补给监控控制台"
+	desc = "补给大哥要求看到金钱流入贪婪的虚空。"
 	circuit = /obj/item/circuitboard/computer/supplyoverwatch
 	overwatch_title = "Requisition"
 
 /obj/machinery/computer/camera_advanced/overwatch/medical
 	screen_overlay = "overwatch_med_screen"
-	name = "Medical Overwatch Console"
-	desc = "Overwatching patients are one of the responsibilities of shipside medical personnel. Just make sure you don't get bored."
+	name = "医疗监控控制台"
+	desc = "监控病患是舰上医疗人员的职责之一。只要确保你不会感到无聊就行。"
 	req_access = list(ACCESS_MARINE_MEDBAY)
 	circuit = /obj/item/circuitboard/computer/supplyoverwatch
 	overwatch_title = "Medical"
 
 //Military overwatch
 /obj/machinery/computer/camera_advanced/overwatch/military/alpha
-	name = "Alpha Overwatch Console"
+	name = "阿尔法监控控制台"
 
 /obj/machinery/computer/camera_advanced/overwatch/military/bravo
-	name = "Bravo Overwatch Console"
+	name = "布拉沃监控控制台"
 
 /obj/machinery/computer/camera_advanced/overwatch/military/charlie
-	name = "Charlie Overwatch Console"
+	name = "查理监控台"
 
 /obj/machinery/computer/camera_advanced/overwatch/military/delta
-	name = "Delta Overwatch Console"
+	name = "德尔塔监控控制台"
 
 /obj/machinery/computer/camera_advanced/overwatch/military/som
 	faction = FACTION_SOM
@@ -38,22 +38,22 @@
 	map_flags = MINIMAP_FLAG_MARINE_SOM
 
 /obj/machinery/computer/camera_advanced/overwatch/military/som/zulu
-	name = "\improper Zulu Overwatch Console"
+	name = "\improper 祖鲁监控控制台"
 
 /obj/machinery/computer/camera_advanced/overwatch/military/som/yankee
-	name = "\improper Yankee Overwatch Console"
+	name = "\improper 扬基监控控制台"
 
 /obj/machinery/computer/camera_advanced/overwatch/military/som/xray
-	name = "\improper X-ray Overwatch Console"
+	name = "\improper X射线监控控制台"
 
 /obj/machinery/computer/camera_advanced/overwatch/military/som/whiskey
-	name = "\improper Whiskey Overwatch Console"
+	name = "\improper 威士忌监控控制台"
 
 /obj/machinery/computer/camera_advanced/overwatch/military/main
 	icon_state = "overwatch_main"
 	screen_overlay = "overwatch_main_screen"
-	name = "Main Overwatch Console"
-	desc = "State of the art machinery for general overwatch purposes."
+	name = "主监控控制台"
+	desc = "用于通用监控目的的最先进设备。"
 	overwatch_title = "Main"
 
 /obj/machinery/computer/camera_advanced/overwatch/military/main/som

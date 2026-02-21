@@ -35,14 +35,14 @@
 
 /datum/loadout_item/suit_slot/light_shield
 	name = "L shield armor"
-	desc = "Light armor with a Svallin shield module. Provides excellent mobility but lower protection."
+	desc = "轻型装甲，配备斯瓦林护盾模块。提供出色的机动性，但防护能力较低。"
 	ui_icon = "light_armour_shield"
 	req_desc = "Requires a light helmet."
 	item_typepath = /obj/item/clothing/suit/modular/tdf/light/shield
 	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER)
 
 /datum/loadout_item/suit_slot/light_shield/overclocked
-	desc = "Light armor with a Svallin shield module. Provides excellent mobility but lower protection. The shield module has been overclocked for improved performance."
+	desc = "轻型护甲，配备斯瓦林护盾模块。提供出色的机动性，但防护较低。护盾模块已超频以提升性能。"
 	item_typepath = /obj/item/clothing/suit/modular/tdf/light/shield_overclocked
 	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER)
 	loadout_item_flags = null
@@ -68,14 +68,14 @@
 
 /datum/loadout_item/suit_slot/medium_shield
 	name = "M shield armor"
-	desc = "Medium armor with a Svallin shield module. Provides balanced mobility and protection."
+	desc = "中等护甲，配备斯瓦林护盾模块。提供均衡的机动性与防护。"
 	ui_icon = "medium_armour_shield"
 	req_desc = "Requires a medium helmet."
 	item_typepath = /obj/item/clothing/suit/modular/tdf/shield
 	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER)
 
 /datum/loadout_item/suit_slot/medium_shield/overclocked
-	desc = "Medium armor with a Svallin shield module. Provides balanced mobility and protection."
+	desc = "中等护甲，配备斯瓦林护盾模块。提供均衡的机动性与防护。"
 	item_typepath = /obj/item/clothing/suit/modular/tdf/shield_overclocked
 	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER)
 	loadout_item_flags = null
@@ -101,7 +101,7 @@
 
 /datum/loadout_item/suit_slot/heavy_shield
 	name = "H shield armor"
-	desc = "Heavy armor with a Svallin shield module. Provides excellent protection but lower mobility. The shield module has been overclocked for improved performance."
+	desc = "重型装甲，配备斯瓦林护盾模块。提供卓越防护但机动性较低。护盾模块已超频以提升性能。"
 	ui_icon = "heavy_armour_shield"
 	req_desc = "Requires a heavy or smartgunner helmet."
 	item_typepath = /obj/item/clothing/suit/modular/tdf/heavy/shield
@@ -113,7 +113,7 @@
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/suit_slot/heavy_shield/overclocked
-	desc = "Heavy armor with a Svallin shield module. Provides excellent protection but lower mobility. The shield module has been overclocked for improved performance."
+	desc = "重型装甲，配备斯瓦林护盾模块。提供卓越防护但机动性较低。护盾模块已超频以提升性能。"
 	item_typepath = /obj/item/clothing/suit/modular/tdf/heavy/shield_overclocked
 	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER)
 	loadout_item_flags = null
@@ -132,7 +132,7 @@
 
 /datum/loadout_item/suit_slot/heavy_surt
 	name = "H Surt armor"
-	desc = "Heavy armor with a Surt fireproof module. Provides excellent protection and almost total fire immunity, but has poor mobility."
+	desc = "重型护甲，配备苏尔特防火模块。提供卓越的防护和近乎完全的火焰免疫，但机动性较差。"
 	ui_icon = "heavy_armour"
 	req_desc = "Requires a FL-84 flamethrower."
 	item_typepath = /obj/item/clothing/suit/modular/tdf/heavy/surt
@@ -141,7 +141,7 @@
 
 /datum/loadout_item/suit_slot/heavy_tyr
 	name = "H Tyr armor"
-	desc = "Heavy armor with a Tyr extra armor module. Provides incredible protection at the cost of with further reduced mobility."
+	desc = "重型装甲，配备泰尔额外装甲模块。提供惊人的防护能力，代价是机动性进一步降低。"
 	req_desc = "Requires a ALF-51B or SMG-25."
 	ui_icon = "tyr"
 	item_typepath = /obj/item/clothing/suit/modular/tdf/heavy/tyr_two
@@ -191,14 +191,14 @@
 
 /datum/loadout_item/suit_slot/medium_valk
 	name = "M Valkyrie armor"
-	desc = "Medium armor with a Valkyrie automedical module. Provides respectable protection, powerful automatic medical assistance, but modest mobility."
+	desc = "中等护甲，配备瓦尔基里自动医疗模块。提供可观的防护、强大的自动医疗辅助，但机动性一般。"
 	ui_icon = "medium_armour"
 	item_typepath = /obj/item/clothing/suit/modular/tdf/valk
 	jobs_supported = list(SQUAD_LEADER, FIELD_COMMANDER)
 
 /datum/loadout_item/suit_slot/heavy_valk
 	name = "H Valkyrie armor"
-	desc = "Heavy armor with a Valkyrie automedical module. Provides excellent protection, powerful automatic medical assistance, but reduced mobility."
+	desc = "重型装甲，配备瓦尔基里自动医疗模块。提供卓越的防护和强大的自动医疗辅助，但机动性降低。"
 	ui_icon = "heavy_armour"
 	item_typepath = /obj/item/clothing/suit/modular/tdf/heavy/leader
 	jobs_supported = list(SQUAD_LEADER, FIELD_COMMANDER)
@@ -206,14 +206,14 @@
 
 /datum/loadout_item/suit_slot/white_dress
 	name = "Dress jacket"
-	desc = "The perfect white jacket to go with your white dress uniform. WARNING: Incompatible with almost all weapons."
+	desc = "与您的白色礼服完美搭配的白色夹克。警告：与几乎所有武器不兼容。"
 	item_typepath = /obj/item/clothing/suit/white_dress_jacket
 	jobs_supported = list(SQUAD_MARINE, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN)
 
 //corpsman
 /datum/loadout_item/suit_slot/medium_mimir
 	name = "M Mimir armor"
-	desc = "Medium armor with a Mimir environmental protection module. Provides respectable armor and total immunity to chemical attacks, and improved radiological protection. Has modest mobility."
+	desc = "中等护甲，配备米米尔环境防护模块。提供可观的防护能力，对化学攻击完全免疫，并增强辐射防护。机动性一般。"
 	ui_icon = "medium_armour"
 	item_typepath = /obj/item/clothing/suit/modular/tdf/mimir
 	jobs_supported = list(SQUAD_CORPSMAN)
@@ -226,7 +226,7 @@
 //engineer
 /datum/loadout_item/suit_slot/medium_engineer
 	name = "M armor"
-	desc = "Medium armor with engineering storage. Provides balanced armor and mobility."
+	desc = "中等护甲，带有工程储物空间。提供均衡的防护和机动性。"
 	ui_icon = "medium_armour"
 	item_typepath = /obj/item/clothing/suit/modular/tdf/engineer
 	jobs_supported = list(SQUAD_ENGINEER)

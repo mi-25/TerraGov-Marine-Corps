@@ -4,30 +4,30 @@
 	set hidden = 1
 
 	if (stat == DEAD)
-		to_chat(src, "You're already dead!")
+		to_chat(src, "你已经死了！")
 		return
 
 	if (!SSticker)
-		to_chat(src, "You can't commit suicide before the game starts!")
+		to_chat(src, "游戏开始前不能自杀！")
 		return
 
 
 	if(!mind?.bypass_ff)
 		message_admins("[ADMIN_TPMONTY(usr)] has tried to suicide using the suicide verb, but they were not permitted due to not being an antagonist.")
-		to_chat(src, "Suicide is easy! Just attack yourself with a gun, while targeting your mouth.")
-		to_chat(src, "Please don't do so flippantly! If you want to just leave the round, enter a hypersleep bed.")
+		to_chat(src, "自杀很简单！只需用枪瞄准自己的嘴攻击即可。")
+		to_chat(src, "请不要这么轻率！如果你想退出本轮游戏，请进入休眠舱。")
 		return
 
 
 	if (suiciding)
-		to_chat(src, "You're already committing suicide! Be patient!")
+		to_chat(src, "你已经准备自杀了！耐心点！")
 		return
 
 	var/confirm = tgui_alert(usr, "Are you sure you want to commit suicide?", "Confirm Suicide", list("Yes", "No"))
 
 	if(confirm == "Yes")
 		if(!canmove || restrained())	//just while I finish up the new 'fun' suiciding verb. This is to prevent metagaming via suicide
-			to_chat(src, "You can't commit suicide whilst restrained! ((You can type Ghost instead however.))")
+			to_chat(src, "你被束缚时无法自杀！((不过你可以输入Ghost。))")
 			return
 		suiciding = 1
 		var/obj/item/held_item = get_active_held_item()
@@ -85,15 +85,15 @@
 	set hidden = 1
 
 	if (stat == 2)
-		to_chat(src, "You're already dead!")
+		to_chat(src, "你已经死了！")
 		return
 
 	if (!SSticker)
-		to_chat(src, "You can't commit suicide before the game starts!")
+		to_chat(src, "游戏开始前不能自杀！")
 		return
 
 	if (suiciding)
-		to_chat(src, "You're already committing suicide! Be patient!")
+		to_chat(src, "你已经准备自杀了！耐心点！")
 		return
 
 	var/confirm = tgui_alert(usr, "Are you sure you want to commit suicide?", "Confirm Suicide", list("Yes", "No"))

@@ -1,6 +1,6 @@
 /obj/item/clothing/head/soft
-	name = "cargo cap"
-	desc = "It's a baseball hat in a tasteless yellow color."
+	name = "补给上限"
+	desc = "这是一顶品味不佳的黄色棒球帽。"
 	icon_state = "cargosoft"
 	worn_icon_state = "cargosoft"
 	inventory_flags = COVEREYES
@@ -22,75 +22,75 @@
 		src.flipped = !src.flipped
 		if(src.flipped)
 			icon_state = "[cap_color]soft_flipped"
-			to_chat(usr, "You flip the hat backwards.")
+			to_chat(usr, "你把帽子反戴过来。")
 		else
 			icon_state = "[cap_color]soft"
-			to_chat(usr, "You flip the hat back in normal position.")
+			to_chat(usr, "你将帽子翻回正常位置。")
 		update_clothing_icon()	//so our mob-overlays update
 
 /obj/item/clothing/head/soft/red
-	name = "red cap"
-	desc = "It's a baseball hat in a tasteless red color."
+	name = "红帽"
+	desc = "这是一顶品味不佳的红色棒球帽。"
 	icon_state = "redsoft"
 	cap_color = "red"
 
 /obj/item/clothing/head/soft/blue
-	name = "blue cap"
-	desc = "It's a baseball hat in a tasteless blue color."
+	name = "蓝色贝雷帽"
+	desc = "这是一顶品味不佳的蓝色棒球帽。"
 	icon_state = "bluesoft"
 	cap_color = "blue"
 
 /obj/item/clothing/head/soft/green
-	name = "green cap"
-	desc = "It's a baseball hat in a tasteless green color."
+	name = "绿色贝雷帽"
+	desc = "这是一顶品味欠佳的绿色棒球帽。"
 	icon_state = "greensoft"
 	cap_color = "green"
 
 /obj/item/clothing/head/soft/yellow
-	name = "yellow cap"
-	desc = "It's a baseball hat in a tasteless yellow color."
+	name = "黄帽"
+	desc = "这是一顶品味不佳的黄色棒球帽。"
 	icon_state = "yellowsoft"
 	cap_color = "yellow"
 
 /obj/item/clothing/head/soft/grey
-	name = "grey cap"
-	desc = "It's a baseball hat in a tasteful grey color."
+	name = "灰帽"
+	desc = "这是一顶品味优雅的灰色棒球帽。"
 	icon_state = "greysoft"
 	cap_color = "grey"
 
 /obj/item/clothing/head/soft/orange
-	name = "orange cap"
-	desc = "It's a baseball hat in a tasteless orange color."
+	name = "橙色贝雷帽"
+	desc = "这是一顶品味不佳的橙色棒球帽。"
 	icon_state = "orangesoft"
 	cap_color = "orange"
 
 /obj/item/clothing/head/soft/mime
-	name = "white cap"
-	desc = "It's a baseball hat in a tasteless white color."
+	name = "白帽"
+	desc = "这是一顶品味不佳的白色棒球帽。"
 	icon_state = "mimesoft"
 	cap_color = "mime"
 
 /obj/item/clothing/head/soft/purple
-	name = "purple cap"
-	desc = "It's a baseball hat in a tasteless purple color."
+	name = "紫色菌帽"
+	desc = "这是一顶品味不佳的紫色棒球帽。"
 	icon_state = "purplesoft"
 	cap_color = "purple"
 
 /obj/item/clothing/head/soft/rainbow
-	name = "rainbow cap"
-	desc = "It's a baseball hat in a bright rainbow of colors."
+	name = "彩虹帽"
+	desc = "这是一顶色彩鲜艳的彩虹色棒球帽。"
 	icon_state = "rainbowsoft"
 	cap_color = "rainbow"
 
 /obj/item/clothing/head/soft/sec
-	name = "security cap"
-	desc = "It's baseball hat in tasteful red color."
+	name = "安保帽"
+	desc = "这是一顶品味出众的红色棒球帽。"
 	icon_state = "secsoft"
 	cap_color = "sec"
 
 /obj/item/clothing/head/soft/sec/corp
-	name = "corporate security cap"
-	desc = "It's baseball hat in corporate colors."
+	name = "企业安保帽"
+	desc = "这是企业配色的棒球帽。"
 	icon_state = "corpsoft"
 	cap_color = "corp"
 
@@ -99,34 +99,34 @@
 //marine cap
 
 /obj/item/clothing/head/soft/marine
-	name = "marine sergeant cap"
-	desc = "It's a soft cap made from advanced ballistic-resistant fibres. Fails to prevent lumps in the head."
+	name = "陆战队士官帽"
+	desc = "这是一顶由先进防弹纤维制成的软帽。无法防止头上起包。"
 	icon_state = "greysoft"
 	cap_color = "grey"
 	soft_armor = list(MELEE = 35, BULLET = 35, LASER = 35, ENERGY = 15, BOMB = 10, BIO = 0, FIRE = 15, ACID = 15)
 	inventory_flags = BLOCKSHARPOBJ
 
 /obj/item/clothing/head/soft/marine/alpha
-	name = "alpha squad sergeant cap"
+	name = "阿尔法班班长帽"
 	icon_state = "redsoft"
 	cap_color = "red"
 
 /obj/item/clothing/head/soft/marine/beta
-	name = "beta squad sergeant cap"
+	name = "布拉沃班班长帽"
 	icon_state = "yellowsoft"
 	cap_color = "yellow"
 
 /obj/item/clothing/head/soft/marine/charlie
-	name = "charlie squad sergeant cap"
+	name = "查理班班长帽"
 	icon_state = "purplesoft"
 	cap_color = "purple"
 
 /obj/item/clothing/head/soft/marine/delta
-	name = "delta squad sergeant cap"
+	name = "德尔塔班班长帽"
 	icon_state = "bluesoft"
 	cap_color = "blue"
 
 /obj/item/clothing/head/soft/marine/mp
-	name = "marine police sergeant cap"
+	name = "陆战队宪兵军士帽"
 	icon_state = "greensoft"
 	cap_color = "green"

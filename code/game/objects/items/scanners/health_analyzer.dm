@@ -1,8 +1,8 @@
 //! Most of the functionality for health analyzers is on [/datum/health_scan], see that file for explanation
 
 /obj/item/healthanalyzer
-	name = "\improper HF2 health analyzer"
-	desc = "A high-tech hand-held body scanner able to distinguish vital signs of subjects. The front panel is able to provide the readout of a subject's status."
+	name = "\improper HF2健康分析仪"
+	desc = "一款高科技手持式身体扫描仪，能够识别目标的生命体征。其前面板可显示目标的状态读数。"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "health"
 	worn_icon_list = list(

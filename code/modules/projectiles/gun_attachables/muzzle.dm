@@ -1,6 +1,6 @@
 /obj/item/attachable/suppressor
-	name = "suppressor"
-	desc = "A small tube with exhaust ports to expel noise and gas.\nDoes not completely silence a weapon, but does make it much quieter and a little more accurate and stable at the cost of bullet speed."
+	name = "消音器"
+	desc = "一个带有排气口的小管，用于排出噪音和气体。\n不能完全消音武器，但能使其安静得多，并略微提高精度和稳定性，代价是降低弹道速度。"
 	icon_state = "suppressor"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
 	slot = ATTACHMENT_SLOT_MUZZLE
@@ -24,8 +24,8 @@
 	. = ..()
 
 /obj/item/attachable/bayonet
-	name = "\improper M-22 bayonet"
-	desc = "A sharp knife that is the standard issue combat knife of the TerraGov Marine Corps can be attached to a variety of weapons at will or used as a standard knife."
+	name = "\improper M-22刺刀"
+	desc = "一把锋利的刀，是地球政府殖民地海军陆战队的标准配发战斗刀，可以随意安装到多种武器上，或作为标准刀具使用。"
 	icon_state = "bayonetknife"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
 	worn_icon_list = list(
@@ -57,15 +57,15 @@
 	AddElement(/datum/element/scalping)
 
 /obj/item/attachable/bayonet/som
-	name = "\improper S20 SOM bayonet"
-	desc = "A large knife that is the standard issue combat knife of the SOM. Can be attached to a variety of weapons at will or used as a standard knife."
+	name = "\improper S20火星之子刺刀"
+	desc = "一把大型刀具，是火星之子的标准制式战斗刀。可随意安装到多种武器上，也可作为普通刀具使用。"
 	icon_state = "bayonetknife_som"
 	worn_icon_state = "bayonetknife"
 	force = 30
 
 /obj/item/attachable/bayonet/converted
-	name = "bayonet"
-	desc = "A sharp blade for mounting on a weapon. It can be used to stab manually on anything but harm intent. Slightly reduces the accuracy of the gun when mounted."
+	name = "刺刀"
+	desc = "一种锋利的刀刃，可安装在武器上。除伤害意图外，可用于手动刺击任何目标。安装后会略微降低枪支的精确度。"
 	icon_state = "bayonet"
 	force = 20
 	throwforce = 10
@@ -73,7 +73,7 @@
 	pixel_shift_y = 18
 
 /obj/item/attachable/bayonet/converted/screwdriver_act(mob/living/user, obj/item/I)
-	to_chat(user, span_notice("You modify the bayonet back into a combat knife."))
+	to_chat(user, span_notice("你将刺刀改装回了战斗刀。"))
 	if(loc == user)
 		user.dropItemToGround(src)
 	var/obj/item/weapon/combat_knife/knife = new(loc)
@@ -83,8 +83,8 @@
 	qdel(src)
 
 /obj/item/attachable/extended_barrel
-	name = "extended barrel"
-	desc = "A lengthened barrel allows for lessened scatter, greater accuracy and muzzle velocity due to increased stabilization and shockwave exposure."
+	name = "加长枪管"
+	desc = "加长枪管通过增强稳定性和冲击波暴露，可减少散射，提高精度和枪口初速。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	icon_state = "ebarrel"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
@@ -101,8 +101,8 @@
 	)
 
 /obj/item/attachable/heavy_barrel
-	name = "barrel charger"
-	desc = "A fitted barrel extender that goes on the muzzle, with a small shaped charge that propels a bullet much faster.\nGreatly increases projectile speed and reduces damage falloff."
+	name = "枪管充能器"
+	desc = "一种安装在枪口的加长枪管，带有小型聚能装药，能大幅提升子弹速度。\n显著提高弹道速度并减少伤害衰减。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	icon_state = "hbarrel"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
@@ -111,8 +111,8 @@
 	damage_falloff_mod = -0.2
 
 /obj/item/attachable/compensator
-	name = "recoil compensator"
-	desc = "A muzzle attachment that reduces recoil and scatter by diverting expelled gasses upwards. \nSignificantly reduces recoil and scatter, regardless of if the weapon is wielded."
+	name = "后坐力补偿器"
+	desc = "一种枪口配件，通过将排出的气体向上引导来减少后坐力和散射。\n无论武器是否被手持，都能显著降低后坐力和散射。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	icon_state = "comp"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
@@ -131,26 +131,26 @@
 	)
 
 /obj/item/attachable/sniperbarrel
-	name = "sniper barrel"
+	name = "狙击枪管"
 	icon_state = "sniperbarrel" // missing icon?
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
-	desc = "A heavy barrel. CANNOT BE REMOVED."
+	desc = "重型枪管。无法拆卸。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	attach_features_flags = NONE
 	accuracy_mod = 0.15
 	scatter_mod = -3
 
 /obj/item/attachable/smartbarrel
-	name = "smartgun barrel"
+	name = "智能机枪枪管"
 	icon_state = "smartbarrel"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
-	desc = "A heavy rotating barrel. CANNOT BE REMOVED."
+	desc = "重型旋转枪管。无法移除。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	attach_features_flags = NONE
 
 /obj/item/attachable/focuslens
-	name = "M43 focused lens"
-	desc = "Directs the beam into one specialized lens, allowing the lasgun to use the deadly focused bolts on overcharge, making it more like a high damage sniper."
+	name = "M43聚焦透镜"
+	desc = "将光束导向一个专用透镜，使激光枪能在过载时发射致命的聚焦光束，使其更像一把高伤害的狙击枪。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	icon_state = "focus"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
@@ -160,8 +160,8 @@
 	damage_mod = -0.15
 
 /obj/item/attachable/widelens
-	name = "M43 wide lens"
-	desc = "Splits the lens into three, allowing the lasgun to use a deadly close-range blast on overcharge akin to a traditional pellet based shotgun shot."
+	name = "M43广角镜"
+	desc = "将透镜分裂为三片，使激光枪在过载时能发射致命的近距离散射，效果类似传统的霰弹枪弹丸。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	icon_state = "wide"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
@@ -171,8 +171,8 @@
 	damage_mod = -0.15
 
 /obj/item/attachable/heatlens
-	name = "M43 heat lens"
-	desc = "Changes the intensity and frequency of the laser. This makes your target be set on fire at a cost of upfront damage and penetration."
+	name = "M43热成像镜"
+	desc = "调整激光的强度和频率。这会以牺牲直接伤害和穿透力为代价，使你的目标着火。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	icon_state = "heat"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
@@ -182,8 +182,8 @@
 	damage_mod = -0.15
 
 /obj/item/attachable/efflens
-	name = "M43 efficient lens"
-	desc = "Makes the lens smaller and lighter to use, allowing the lasgun to use its energy much more efficiently. \nDecreases energy output of the lasgun."
+	name = "M43高效镜片"
+	desc = "使镜片更小更轻，让激光枪的能量利用效率大幅提升。\n降低激光枪的能量输出。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	icon_state = "efficient"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
@@ -192,16 +192,16 @@
 	charge_mod = -5
 
 /obj/item/attachable/sx16barrel
-	name = "SX-16 barrel"
-	desc = "The standard barrel on the SX-16. CANNOT BE REMOVED."
+	name = "SX-16枪管"
+	desc = "SX-16的标准枪管。无法拆卸。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	icon_state = "sx16barrel" // missing icon?
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
 	attach_features_flags = NONE
 
 /obj/item/attachable/pulselens
-	name = "M43 pulse lens"
-	desc = "Agitates the lens, allowing the lasgun to discharge at a rapid rate. \nAllows the weapon to be fired automatically."
+	name = "M43脉冲透镜"
+	desc = "搅动透镜，使激光枪能够以高速率发射。\n允许武器自动射击。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	icon_state = "pulse"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
@@ -211,16 +211,16 @@
 	gun_firemode_list_mod = list(GUN_FIREMODE_AUTOMATIC)
 
 /obj/item/attachable/sgbarrel
-	name = "SG-29 barrel"
+	name = "SG-29 枪管"
 	icon_state = "sg29barrel"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
-	desc = "A heavy barrel. CANNOT BE REMOVED."
+	desc = "重型枪管。无法拆卸。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	attach_features_flags = NONE
 
 /obj/item/attachable/lace
-	name = "pistol lace"
-	desc = "A simple lace to wrap around your wrist."
+	name = "手枪蕾丝"
+	desc = "一条简单的腕带，可缠绕在你的手腕上。"
 	icon_state = "lace"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
 	slot = ATTACHMENT_SLOT_MUZZLE //so you cannot have this and RC at once aka balance
@@ -230,7 +230,7 @@
 /obj/item/attachable/lace/activate(mob/living/user, turn_off)
 	if(lace_deployed)
 		REMOVE_TRAIT(master_gun, TRAIT_NODROP, PISTOL_LACE_TRAIT)
-		to_chat(user, span_notice("You feel the [src] loosen around your wrist!"))
+		to_chat(user, span_notice("你感觉[src]从手腕上松脱了！"))
 		playsound(user, 'sound/weapons/fistunclamp.ogg', 25, 1, 7)
 		icon_state = "lace"
 	else if(turn_off)
@@ -238,9 +238,9 @@
 	else
 		if(user.do_actions)
 			return
-		to_chat(user, span_notice("You deploy the [src]."))
+		to_chat(user, span_notice("你部署了[src]。"))
 		ADD_TRAIT(master_gun, TRAIT_NODROP, PISTOL_LACE_TRAIT)
-		to_chat(user, span_warning("You feel the [src] shut around your wrist!"))
+		to_chat(user, span_warning("你感觉到[src]扣在了你的手腕上！"))
 		playsound(user, 'sound/weapons/fistclamp.ogg', 25, 1, 7)
 		icon_state = "lace-on"
 
@@ -250,9 +250,9 @@
 	return TRUE
 
 /obj/item/attachable/at45barrel
-	name = "\improper CC/AT45 barrel"
+	name = "\improper CC/AT45 枪管"
 	icon_state = "at45barrel"
 	icon = 'icons/obj/items/guns/attachments/muzzle.dmi'
-	desc = "A heavy barrel. CANNOT BE REMOVED."
+	desc = "重型枪管。无法拆卸。"
 	slot = ATTACHMENT_SLOT_MUZZLE
 	attach_features_flags = NONE

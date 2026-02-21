@@ -1,5 +1,5 @@
 /obj/effect/landmark/excavation_site_spawner
-	name = "excavation site spawner"
+	name = "挖掘场生成器"
 	icon_state = "clockwork_orange"
 	///List of possible reward buckets
 	var/list/rewards_datums = list(

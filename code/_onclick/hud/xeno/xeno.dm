@@ -7,7 +7,7 @@
 	return TRUE
 
 /atom/movable/screen/alien/nightvision
-	name = "toggle night vision"
+	name = "切换夜视仪"
 	icon_state = "nightvision2"
 	screen_loc = ui_alien_nightvision
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -32,7 +32,7 @@
 
 /atom/movable/screen/alien/queen_locator
 	icon_state = "trackoff"
-	name = "queen locator (click for hive status)"
+	name = "异形女王定位器（点击查看蜂巢状态）"
 	screen_loc = ui_queen_locator
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
@@ -45,7 +45,7 @@
 	X.hive_status()
 
 /atom/movable/screen/alien/plasmadisplay
-	name = "plasma stored"
+	name = "等离子体储量"
 	icon_state = "power_display2"
 	screen_loc = ui_alienplasmadisplay
 

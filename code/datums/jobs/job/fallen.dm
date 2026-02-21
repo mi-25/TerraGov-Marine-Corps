@@ -29,7 +29,7 @@
 	SIGNAL_HANDLER
 	if(QDELING(source))
 		return
-	source.visible_message(span_danger("[source] suddenly disappears!"))
+	source.visible_message(span_danger("[source] 突然消失了！"))
 	qdel(source)
 
 /datum/job/fallen/marine

@@ -1,6 +1,6 @@
 /obj/item/storage/backpack/marine/duffelbag/xenosaddle
 	name = "\improper Runner Saddle"
-	desc = "A rugged saddle, designed to be worn by runners. You can alt-click to change the style"
+	desc = "一副坚固的鞍具，专为奔跑者设计。你可以按住Alt键点击来更换样式。"
 	icon = 'icons/Xeno/saddles/saddles.dmi'
 	//Same as icon state; We need to cache it so that update icons works later in the code and fetches the right style
 	var/style = "cowboybags"
@@ -42,7 +42,7 @@
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_NODROP) && slot != SLOT_L_HAND && slot != SLOT_R_HAND && !override_nodrop) //No drops can only be equipped to a hand slot
 		if(slot == SLOT_L_HAND || slot == SLOT_R_HAND)
-			to_chat(user, span_notice("[src] is stuck to your hand!"))
+			to_chat(user, span_notice("[src] 粘在你手上了！"))
 			return FALSE
 	if(isxenorunner(user))
 		return TRUE
@@ -56,10 +56,10 @@
 		return
 	var/mob/living/carbon/xenomorph/runner/rouny = target
 	if(rouny.back)
-		balloon_alert(user, "it has a saddle on already!")
+		balloon_alert(user, "它已经装好鞍座了！")
 		return
 	if(rouny.stat == DEAD)
-		balloon_alert(user, "it's dead!")
+		balloon_alert(user, "它死了！")
 		return
 	if(!do_after(user, 3 SECONDS, NONE, target))
 		return

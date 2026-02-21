@@ -1,6 +1,6 @@
 /obj/item/explosive/plastique/genghis_charge
-	name = "EX-62 Genghis incendiary charge"
-	desc = "A specialized device for incineration of bulk organic matter, patented Thermal Memory ensuring that all ignition proceeds safely away from the user. Will not attach to plants due to environmental concerns."
+	name = "EX-62 成吉思汗燃烧弹"
+	desc = "一种用于批量焚烧有机物的专用设备，采用专利热记忆技术，确保所有点火过程安全远离使用者。出于环境考虑，不会附着于植物。"
 	icon_state = "genghis-charge"
 
 /obj/item/explosive/plastique/genghis_charge/afterattack(atom/target, mob/user, flag)
@@ -8,7 +8,7 @@
 		return ..()
 	if(istype(target, /obj/structure/mineral_door/resin))
 		return ..()
-	balloon_alert(user, "Insufficient organic matter!")
+	balloon_alert(user, "有机质不足！")
 
 /obj/item/explosive/plastique/genghis_charge/detonate()
 	var/turf/flame_target = get_turf(plant_target)

@@ -1,5 +1,5 @@
 /mob/living/carbon/human
-	name = "unknown"
+	name = "未知"
 	real_name = "unknown"
 	icon = 'icons/mob/human.dmi'
 	icon_state = "body_m_s"
@@ -159,7 +159,7 @@
 	destination.undershirt = undershirt
 
 /mob/living/carbon/human/replace_by_ai()
-	to_chat(src, span_warning("Sorry, your skill level was deemed too low by our automatic skill check system. Your body has as such been given to a more capable brain, our state of the art AI technology piece. Do not hesitate to take back your body after you've improved!"))
+	to_chat(src, span_warning("抱歉，您的技能等级被我们的自动技能检测系统判定为过低。因此，您的身体已被移交给一个更强大的大脑——我们最先进的人工智能技术。请在您有所提升后，随时取回您的身体！"))
 	ghostize(TRUE)//Can take back its body
 	GLOB.offered_mob_list -= src
 	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/human)

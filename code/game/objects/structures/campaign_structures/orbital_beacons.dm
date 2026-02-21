@@ -1,6 +1,6 @@
 /obj/item/campaign_beacon
-	name = "default campaign beacon"
-	desc = "what smelly admin spawned this?"
+	name = "默认战役信标"
+	desc = "这是哪个臭管理员刷出来的？"
 	icon = 'icons/obj/items/beacon.dmi'
 	icon_state = "motion_4"
 	w_class = WEIGHT_CLASS_SMALL
@@ -21,8 +21,8 @@
 	return TRUE
 
 /obj/item/campaign_beacon/bunker_buster
-	name = "orbital beacon"
-	desc = "A bulky device that is used to provide precision guidance to powerful orbital weapon systems."
+	name = "轨道信标"
+	desc = "一种笨重的设备，用于为强大的轨道武器系统提供精确制导。"
 	icon_state = "motion_4"
 	deployable_type = /obj/structure/campaign_objective/destruction_objective/bunker_buster
 	deploy_time = 2 SECONDS
@@ -58,12 +58,12 @@
 	if(beacon_area.type in valid_deploy_areas)
 		return TRUE
 	if(user)
-		user.balloon_alert(user, "can't deploy here!")
+		user.balloon_alert(user, "无法在此处部署！")
 	return FALSE
 
 /obj/item/campaign_beacon/bunker_buster/bluespace
-	name = "bluespace beacon"
-	desc = "A bulky device that is used to provide precision guidance for powerful bluespace weapon systems."
+	name = "蓝空信标"
+	desc = "一种笨重的设备，用于为强大的蓝空间武器系统提供精确制导。"
 	icon_state = "bluespace"
 	deployable_type = /obj/structure/campaign_objective/destruction_objective/bunker_buster/bluespace
 
@@ -71,8 +71,8 @@
 #define CAMPAIGN_OB_BEACON_IMPACT_DELAY 10 SECONDS
 
 /obj/structure/campaign_objective/destruction_objective/bunker_buster
-	name = "deployed orbital beacon"
-	desc = "An ominous red beacon, used to provide precision guidance to powerful orbital weapon systems."
+	name = "已部署轨道信标"
+	desc = "一个不祥的红色信标，用于为强大的轨道武器系统提供精确制导。"
 	icon = 'icons/obj/items/beacon.dmi'
 	icon_state = "motion_1"
 	faction = FACTION_TERRAGOV
@@ -126,8 +126,8 @@
 		mob.playsound_local(loc, play_sound, 125, falloff = 10, distance_multiplier = 0.2)
 
 /obj/structure/campaign_objective/destruction_objective/bunker_buster/bluespace
-	name = "deployed bluespace beacon"
-	desc = "An ominous blue beacon, used to provide precision guidance for powerful bluespace weapon systems."
+	name = "已部署的蓝空信标"
+	desc = "一个不祥的蓝色信标，用于为强大的蓝空间武器系统提供精确制导。"
 	icon_state = "bluespace_deployed"
 	faction = FACTION_SOM
 

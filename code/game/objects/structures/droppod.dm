@@ -10,8 +10,8 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 
 ///base marine drop pod. can be controlled by an attached [/obj/structure/droppod/leader] or [/obj/machinery/computer/droppod_control]
 /obj/structure/droppod
-	name = "\improper TGMC Zeus orbital drop pod"
-	desc = "A menacing metal hunk of steel that is used by the TGMC for quick tactical redeployment."
+	name = "\improper 地球政府殖民地海军陆战队宙斯轨道空降舱"
+	desc = "一个由地球政府殖民地海军陆战队用于快速战术重新部署的、充满威胁感的金属钢铁块。"
 	icon = 'icons/obj/structures/droppod.dmi'
 	icon_state = "singlepod_green"
 	density = TRUE
@@ -127,7 +127,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 /obj/structure/droppod/buckle_mob(mob/living/buckling_mob, force, check_loc, lying_buckle, hands_needed, target_hands_needed, silent)
 	if(drop_state != DROPPOD_READY)
 		if(!silent)
-			balloon_alert(buckling_mob, "already used!")
+			balloon_alert(buckling_mob, "已使用！")
 		return FALSE
 	setDir(SOUTH) //this is dirty but supply elevator still tehnically being a shuttle forced my hand TODO: undirty this
 	. = ..()
@@ -150,7 +150,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 	var/mob/notified_user = LAZYACCESS(buckled_mobs, 1)
 	. = checklanding(notified_user)
 	if(notified_user && .)
-		balloon_alert(notified_user, "coordinates updated")
+		balloon_alert(notified_user, "坐标已更新")
 
 ///Updates the z-level this pod drops to
 /obj/structure/droppod/proc/change_targeted_z(datum/source, new_z)
@@ -166,29 +166,29 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 	var/turf/target = optional_turf ? optional_turf : locate(target_x, target_y, target_z)
 	if(target.density)
 		if(user)
-			balloon_alert(user, "dense area!")
+			balloon_alert(user, "密集区域！")
 		return FALSE
 	if(is_type_in_typecache(target, GLOB.blocked_droppod_tiles))
 		if(user)
-			balloon_alert(user, "hazardous zone!")
+			balloon_alert(user, "危险区域！")
 		return FALSE
 	var/area/targetarea = get_area(target)
 	if(targetarea.area_flags & NO_DROPPOD) // Thou shall not pass!
 		if(user)
-			balloon_alert(user, "invalid area!")
+			balloon_alert(user, "无效区域！")
 		return FALSE
 	if(!targetarea.outside)
 		if(user)
-			balloon_alert(user, "roofed area!")
+			balloon_alert(user, "屋顶区域！")
 		return FALSE
 	if(targetarea.ceiling > CEILING_METAL)
 		if(user)
-			balloon_alert(user, "area underground!")
+			balloon_alert(user, "地下区域！")
 		return FALSE
 	for(var/atom/movable/object AS in target.contents)
 		if(object.density)
 			if(user)
-				balloon_alert(user, "dense object detected!")
+				balloon_alert(user, "侦测到高密度物体！")
 			return FALSE
 	return TRUE
 
@@ -199,18 +199,18 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 	#ifndef TESTING
 	if(!operation_started && world.time < SSticker.round_start_time + SSticker.mode.deploy_time_lock + DROPPOD_DEPLOY_DELAY)
 		if(user)
-			to_chat(user, span_notice("Unable to launch, the ship has not yet reached the combat area."))
+			to_chat(user, span_notice("无法发射，舰船尚未抵达作战区域。"))
 		return
 	#endif
 
 	if(!locate(/obj/structure/drop_pod_launcher) in get_turf(src))
 		if(user)
-			to_chat(user, span_notice("Error. Cannot launch [name] without a droppod launcher."))
+			to_chat(user, span_notice("错误。没有空降舱发射器，无法发射[name]。"))
 		return
 
 	if(!launch_allowed)
 		if(user)
-			to_chat(user, span_notice("Error. Ship calibration unavailable. Please %#&ç:*"))
+			to_chat(user, span_notice("错误。舰船校准不可用。请%#&ç:*"))
 		return
 
 	if(drop_state != DROPPOD_READY)
@@ -255,7 +255,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 		return attemptdrop
 
 	if(user)
-		to_chat(user, span_warning("[icon2html(src, user)] RECALCULATION FAILED!"))
+		to_chat(user, span_warning("[icon2html(src, user)] 重新计算失败！"))
 	return locate(target_x, target_y, target_z) //no other alt spots found, we return our original target
 
 ///actually launches the pod
@@ -267,7 +267,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 			deployed.forceMove(loc)
 		update_icon()
 		if(user)
-			to_chat(user, span_notice("Error. Ship calibration unavailable. Please %#&ç:*"))
+			to_chat(user, span_notice("错误。舰船校准不可用。请%#&ç:*"))
 		return
 
 	playsound(src, 'sound/effects/escape_pod_launch.ogg', 70)
@@ -294,8 +294,8 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 		if(!target.density)
 			continue
 		if(user)
-			to_chat(user, span_warning("[icon2html(src, user)] WARNING! TARGET ZONE OCCUPIED! EVADING!"))
-			balloon_alert(user, "EVADING")
+			to_chat(user, span_warning("[icon2html(src, user)] 警告！目标区域已被占用！正在规避！"))
+			balloon_alert(user, "规避中")
 		targetturf = find_new_target(user)
 		break
 	forceMove(targetturf)
@@ -320,14 +320,14 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 
 
 /obj/structure/droppod/leader
-	name = "\improper TGMC Zeus command drop pod"
-	desc = "A menacing metal hunk of steel that is used by the TGMC for quick tactical redeployment. This one comes with command capabilities."
+	name = "\improper 地球政府殖民地海军陆战队宙斯指挥空降舱"
+	desc = "一个由地球政府殖民地海军陆战队用于快速战术重新部署的、具有威慑力的金属钢铁块。这个型号具备指挥能力。"
 	icon_state = "singlepod_red"
 	light_color = LIGHT_COLOR_EMISSIVE_RED
 
 /obj/structure/droppod/leader/buckle_mob(mob/living/buckling_mob, force, check_loc, lying_buckle, hands_needed, target_hands_needed, silent)
 	if(buckling_mob.skills.getRating(SKILL_LEADERSHIP) < SKILL_LEAD_TRAINED)
-		balloon_alert(buckling_mob, "can't use that!") // basically squad lead+ cant touch this
+		balloon_alert(buckling_mob, "无法使用！") // basically squad lead+ cant touch this
 		return FALSE
 	return ..()
 
@@ -373,11 +373,11 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 /obj/structure/droppod/leader/start_launch_pod(mob/user, commanded_drop = FALSE)
 	#ifndef TESTING
 	if(!operation_started && world.time < SSticker.round_start_time + SSticker.mode.deploy_time_lock + DROPPOD_DEPLOY_DELAY)
-		to_chat(user, span_notice("Unable to launch, the ship has not yet reached the combat area."))
+		to_chat(user, span_notice("无法发射，舰船尚未抵达作战区域。"))
 		return
 	#endif
 	if(!launch_allowed)
-		to_chat(user, span_notice("Error. Ship calibration unavailable. Please %#&ç:*"))
+		to_chat(user, span_notice("错误。舰船校准不可用。请%#&ç:*"))
 		return
 	if(commanded_drop)
 		return ..()
@@ -445,8 +445,8 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 	update_icon()
 
 /obj/structure/droppod/nonmob/supply_pod
-	name = "\improper TGMC Zeus supply drop pod"
-	desc = "A menacing metal hunk of steel that is used by the TGMC for quick tactical redeployment. This one is designed to carry supplies."
+	name = "\improper 地球政府殖民地海军陆战队宙斯补给空投舱"
+	desc = "一个由地球政府殖民地海军陆战队用于快速战术重新部署的、具有威慑力的金属钢铁块。这个型号设计用于运送补给品。"
 	icon_state = "supplypod"
 	light_color = LIGHT_COLOR_EMISSIVE_ORANGE
 
@@ -459,7 +459,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 		if(istype(attached_clamp.loaded, /obj/structure/droppod))
 			return //no recursive pods please
 		if(stored_object)
-			balloon_alert(user, "occupied!")
+			balloon_alert(user, "已占用！")
 			return
 		var/obj/structure/closet/clamped_closet = attached_clamp.loaded
 		playsound(src, 'sound/machines/hydraulics_1.ogg', 40, 1)
@@ -471,7 +471,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 		attached_clamp.loaded = null
 		playsound(src, 'sound/machines/hydraulics_2.ogg', 40, 1)
 		attached_clamp.update_icon()
-		to_chat(user, span_notice("You load [clamped_closet] into [src]."))
+		to_chat(user, span_notice("你将[clamped_closet]装填进[src]。"))
 	else if(stored_object)
 		playsound(src, 'sound/machines/hydraulics_2.ogg', 40, 1)
 		if(!do_after(user, 30, IGNORE_HELD_ITEM, src, BUSY_ICON_BUILD))
@@ -479,7 +479,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 		if(!stored_object || !LAZYLEN(attached_clamp.linked_powerloader?.buckled_mobs) || attached_clamp.linked_powerloader.buckled_mobs[1] != user)
 			return
 		playsound(src, 'sound/machines/hydraulics_1.ogg', 40, 1)
-		to_chat(user, span_notice("You've removed [stored_object] from [src] and loaded it into [attached_clamp]."))
+		to_chat(user, span_notice("你已从[src]中取出[stored_object]并将其装填至[attached_clamp]。"))
 		attached_clamp.loaded = stored_object
 		stored_object.forceMove(attached_clamp.linked_powerloader)
 		attached_clamp.update_icon()
@@ -487,8 +487,8 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 		return ..()
 
 /obj/structure/droppod/nonmob/turret_pod
-	name = "\improper TGMC Zeus sentry drop pod"
-	desc = "A menacing metal hunk of steel that is used by the TGMC for quick tactical redeployment. This one carries a self deploying sentry system."
+	name = "\improper TGMC宙斯哨戒炮空投舱"
+	desc = "一个用于地球政府殖民地海军陆战队快速战术重新部署的威慑性金属块。这个携带了一套自部署哨戒炮系统。"
 	icon_state = "sentrypod"
 	light_color = LIGHT_COLOR_EMISSIVE_RED
 
@@ -500,8 +500,8 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 	load_package(contents[1])
 
 /obj/structure/droppod/nonmob/mech_pod
-	name = "\improper TGMC Zeus mech drop pod"
-	desc = "A menacing metal hunk of steel that is used by the TGMC for quick tactical redeployment. This is a larger model designed specifically to carry mechs. Shift click to enter when inside a mech."
+	name = "\improper TGMC 宙斯机甲空投舱"
+	desc = "一个由地球政府殖民地海军陆战队用于快速战术重新部署的、具有威慑力的金属钢铁块。这是专门为运载机甲而设计的更大型号。在机甲内部时，按住Shift键并点击以进入。"
 	icon = 'icons/obj/structures/big_droppod.dmi'
 	icon_state = "mechpod"
 	light_range = 2
@@ -554,7 +554,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 	addtimer(CALLBACK(src, PROC_REF(completedrop), user), 7) //dramatic effect
 
 /datum/action/innate/launch_droppod
-	name = "Begin Launch"
+	name = "开始发射"
 	action_icon = 'icons/mob/actions/actions_mecha.dmi'
 	action_icon_state = "land"
 
@@ -564,7 +564,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 	pod.start_launch_pod(owner)
 
 /datum/action/innate/set_drop_target
-	name = "Set drop pod target"
+	name = "设置空降舱目标"
 	action_icon = 'icons/mob/actions/actions_mecha.dmi'
 	action_icon_state = "mech_zoom_off"
 	///Locks activating this action again while choosing to prevent signal shenanigan runtimes.
@@ -579,7 +579,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 	. = ..()
 	var/obj/structure/droppod/pod = target
 	if(!pod.target_z)
-		to_chat(owner, span_danger("No active combat zone detected."))
+		to_chat(owner, span_danger("未检测到活跃交战区。"))
 		return
 	var/atom/movable/screen/minimap/map = SSminimaps.fetch_minimap_object(pod.target_z, MINIMAP_FLAG_MARINE)
 	owner.client.screen += map
@@ -601,8 +601,8 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 	return ..()
 
 /obj/structure/drop_pod_launcher
-	name = "Zeus pod launch bay"
-	desc = "A hatch in the ground wih support for a Zeus drop pod launch."
+	name = "宙斯舱发射舱"
+	desc = "地面上的一个舱口，带有宙斯空降舱发射支持。"
 	icon = 'icons/obj/structures/droppod.dmi'
 	icon_state = "launch_bay"
 	density = FALSE
@@ -621,7 +621,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 /obj/structure/drop_pod_launcher/attack_powerloader(mob/living/user, obj/item/powerloader_clamp/attached_clamp)
 	if(!istype(attached_clamp.loaded, /obj/structure/droppod))
 		return ..()
-	user.visible_message(span_notice("[user] drops [attached_clamp.loaded] onto [src] and it clicks into place!"),
+	user.visible_message(span_notice("[user]将[attached_clamp.loaded]丢到[src]上，咔哒一声就位了！"),
 	span_notice("You drop [attached_clamp.loaded] onto [src] and it clicks into place!"))
 	attached_clamp.loaded.forceMove(get_turf(src))
 	attached_clamp.loaded = null

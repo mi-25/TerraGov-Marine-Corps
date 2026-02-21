@@ -1,5 +1,5 @@
 /obj/machinery/computer/prisoner
-	name = "Prisoner Management"
+	name = "囚犯管理"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	screen_overlay = "explosive"

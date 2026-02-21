@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/regenerative_armor
 	name = "Regenerative Armor"
-	desc = "Whenever you passively regenerate health, you will also gain 2.5/5/7.5% of your maximum plasma. This scales with regenerative power."
+	desc = "当你被动恢复生命值时，你还会获得最大等离子体值的2.5/5/7.5%。此效果随再生能力增强而提升。"
 	/// For each structure, the percentage (0-1) of the owner's maximum plasma to regenerate.
 	var/percentage_per_structure = 0.025
 
@@ -36,7 +36,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/breath_of_variety
 	name = "Breath of Variety"
-	desc = "Dragon Breath can switch between additional fire types to replace it with different effects: shatter or melting acid. Dragon Breath's cooldown is set to 150/125/100% of its original cooldown."
+	desc = "龙息可以在额外火焰类型之间切换，以替换为不同效果：碎裂或熔化酸液。龙息的冷却时间设定为原始冷却时间的150/125/100%。"
 	/// For the first structure, the multiplier of Dragon Breath's initial cooldown duration to add to the ability.
 	var/multiplier_initial = 0.75
 	/// For each structure, the multiplier of Dragon Breath's initial cooldown duration to add to the ability.
@@ -81,7 +81,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/benevolence
 	name = "Benevolence"
-	desc = "You emit all types of pheromones at 2/2.5/3 power in a radius of 14/15/16."
+	desc = "你以2/2.5/3的强度在14/15/16的半径范围内释放所有类型的信息素。"
 	/// For the first structure, the amount of power to increase the pheromones by.
 	var/power_increase_initial = 1.5
 	/// For each structure, the amount of power to increase the pheromones by.

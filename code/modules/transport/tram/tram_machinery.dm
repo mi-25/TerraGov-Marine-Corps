@@ -20,16 +20,16 @@
 		return
 
 	if(get_dist(change_platform, src) > 15)
-		balloon_alert(user, "out of range!")
+		balloon_alert(user, "超出射程！")
 		return
 
 	id = change_platform.platform_code
-	balloon_alert(user, "platform changed")
-	to_chat(user, span_notice("You change the platform ID to [change_platform.name]."))
+	balloon_alert(user, "平台已变更")
+	to_chat(user, span_notice("你将平台ID更改为[change_platform.name]。"))
 
 /obj/item/assembly/control/transport/call_button
 	name = "tram call button"
-	desc = "A small device used to bring trams to you."
+	desc = "用于将轨道电车召唤至当前位置的小型设备。"
 	///ID to link to allow us to link to one specific tram in the world
 	id = 0
 
@@ -50,24 +50,24 @@
 
 	switch(response_code)
 		if(REQUEST_SUCCESS)
-			say("The tram has been called to the platform.")
+			say("电车已呼叫至站台。")
 
 		if(REQUEST_FAIL)
 			switch(response_info)
 				if(BROKEN_BEYOND_REPAIR)
-					say("The tram has suffered a catastrophic failure. Please seek alternate modes of travel.")
+					say("电车已发生灾难性故障。请寻找其他出行方式。")
 				if(NOT_IN_SERVICE) //tram has no power or other fault, but it's not broken forever
-					say("The tram is not in service due to loss of power or system problems. Please contact the nearest engineer to check power and controller.")
+					say("电车因电力中断或系统故障暂停服务。请联系最近的工程师检查电源和控制器。")
 				if(INVALID_PLATFORM) //engineer needs to fix button
-					say("Button configuration error. Please contact the nearest engineer.")
+					say("按钮配置错误。请联络最近的工程师。")
 				if(TRANSPORT_IN_USE)
-					say("The tram is tramversing the station, please wait.")
+					say("电车正在站内穿行，请稍候。")
 				if(INTERNAL_ERROR)
-					say("Tram controller error. Please contact the nearest engineer or crew member with telecommunications access to reset the controller.")
+					say("电车控制器错误。请联系最近拥有电信访问权限的工程师或船员重置控制器。")
 				if(NO_CALL_REQUIRED) //already here
-					say("The tram is already here. Please board the tram and select a destination.")
+					say("电车已就位。请上车并选择目的地。")
 				else
-					say("Tram controller error. Please contact the nearest engineer or crew member with telecommunications access to reset the controller.")
+					say("电车控制器错误。请联系最近拥有电信访问权限的工程师或船员重置控制器。")
 
 /obj/item/assembly/control/transport/call_button/activate()
 	if(cooldown)
@@ -80,7 +80,7 @@
 
 /obj/machinery/button/transport/tram
 	name = "tram request"
-	desc = "A button for calling the tram. It has a speakerbox in it with some internals."
+	desc = "呼叫轨道车的按钮。内部装有带扬声器的通话盒。"
 	base_icon_state = "tram"
 	icon_state = "tram"
 	light_color = COLOR_DISPLAY_BLUE
@@ -99,7 +99,7 @@
 	if(in_range(user, src))
 		return attack_hand(user)
 	else
-		to_chat(user, span_warning("You are too far away to activate the button!"))
+		to_chat(user, span_warning("你距离太远，无法激活按钮！"))
 
 /obj/machinery/button/transport/tram/setup_device()
 	var/obj/item/assembly/control/transport/call_button/tram_device = device

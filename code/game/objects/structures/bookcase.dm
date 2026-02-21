@@ -1,6 +1,6 @@
 
 /obj/structure/bookcase
-	name = "bookcase"
+	name = "书架"
 	icon = 'icons/obj/structures/structures.dmi'
 	icon_state = "book-0"
 	max_integrity = 200
@@ -83,7 +83,7 @@
 
 
 /obj/structure/bookcase/manuals/medical
-	name = "Medical Manuals bookcase"
+	name = "医疗手册书架"
 
 
 /obj/structure/bookcase/manuals/medical/Initialize(mapload)
@@ -96,7 +96,7 @@
 
 
 /obj/structure/bookcase/manuals/engineering
-	name = "Engineering Manuals bookcase"
+	name = "工程手册书架"
 
 
 /obj/structure/bookcase/manuals/engineering/Initialize(mapload)
@@ -111,7 +111,7 @@
 	update_icon()
 
 /obj/structure/bookcase/manuals/research_and_development
-	name = "R&D Manuals bookcase"
+	name = "研发手册书架"
 
 /obj/structure/bookcase/manuals/research_and_development/Initialize(mapload)
 	. = ..()

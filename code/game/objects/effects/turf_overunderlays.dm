@@ -1,6 +1,6 @@
 // make subtypes of these for turf under/overlays
 /obj/effect/turf_overlay
-	name = "abstract type"
+	name = "抽象类型"
 
 /obj/effect/turf_overlay/Initialize(mapload)
 	. = ..()
@@ -23,7 +23,7 @@
 
 
 /obj/effect/turf_underlay
-	name = "abstract type"
+	name = "抽象类型"
 
 /obj/effect/turf_underlay/Initialize(mapload)
 	. = ..()

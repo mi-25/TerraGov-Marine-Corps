@@ -1,6 +1,6 @@
 /obj/machinery/power/generator_type2
-	name = "thermoelectric generator"
-	desc = "It's a high efficiency thermoelectric generator."
+	name = "热电发电机"
+	desc = "这是一个高效热电发电机。"
 	icon_state = "teg"
 	anchored = TRUE
 	density = TRUE

@@ -1,6 +1,6 @@
 /obj/structure/support
-	name = "wooden support pillar"
-	desc = "This pillar seems to be holding up the ceiling, careful not to break it. The ceiling could collapse."
+	name = "木质支撑柱"
+	desc = "这根柱子似乎在支撑着天花板，小心别弄坏了。天花板可能会坍塌。"
 	icon = 'icons/turf/wood.dmi'
 	icon_state = "wood0"
 	density = TRUE

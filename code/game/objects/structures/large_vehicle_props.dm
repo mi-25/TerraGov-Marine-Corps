@@ -24,8 +24,8 @@
 			. += image(icon, src, "[initial(icon_state)]_top_lb", layer = ABOVE_ALL_MOB_LAYER)
 
 /obj/structure/prop/urban/vehicles/large/ambulance
-	name = "ambulance"
-	desc = "Seems to be broken down."
+	name = "救护车"
+	desc = "似乎已损坏。"
 	icon_state = "ambulance"
 	bound_height = 32
 	bound_width = 96
@@ -38,37 +38,37 @@
 	bound_width = 96
 
 /obj/structure/prop/urban/vehicles/large/armored_trucks/nt_security/truck_1
-	name = "\improper Nanotrasen security truck"
-	desc = "Seems to be broken down."
+	name = "\improper 纳米传讯安保卡车"
+	desc = "似乎已损坏。"
 	icon_state = "armoredtruck_nt_security_1"
 
 /obj/structure/prop/urban/vehicles/large/armored_trucks/nt_security/truck_2
-	name = "\improper Nanotrasen security truck"
-	desc = "Seems to be broken down."
+	name = "\improper 纳米传讯安保卡车"
+	desc = "似乎已损坏。"
 	icon_state = "armoredtruck_nt_security_2"
 
 // Armored Truck Goods
 /obj/structure/prop/urban/vehicles/large/armored_trucks/heavy_loader/white
-	name = "heavy loader truck"
-	desc = "Seems to be broken down."
+	name = "重型装载卡车"
+	desc = "似乎已损坏。"
 	icon_state = "armoredtruck_white_white"
 
 /obj/structure/prop/urban/vehicles/large/armored_trucks/heavy_loader/white_teal
-	name = "heavy loader truck"
-	desc = "Seems to be broken down."
+	name = "重型装载卡车"
+	desc = "似乎已损坏。"
 	icon_state = "armoredtruck_white_teal"
 
 /obj/structure/prop/urban/vehicles/large/armored_trucks/heavy_loader/blue_white
-	name = "heavy loader truck"
-	desc = "Seems to be broken down."
+	name = "重型装载卡车"
+	desc = "似乎已经损坏了。"
 	icon_state = "armoredtruck_blue_white"
 
 // Mega-Hauler Trucks 128x64
 
 /obj/structure/prop/urban/vehicles/large/mega_hauler_truck
-	name = "mega-hauler truck"
+	name = "重型运输卡车"
 	icon_state = "longtruck_kellandmining"
-	desc = "Seems to be broken down."
+	desc = "似乎已损坏。"
 	icon = 'icons/obj/structures/prop/urban/128x32_vehiclesexpanded.dmi'
 	bound_height = 32
 	bound_width = 128
@@ -95,17 +95,17 @@
 
 //WY
 /obj/structure/prop/urban/vehicles/large/mega_hauler_truck/nt_black
-	name = "\improper Nanotrasen mega-hauler truck"
+	name = "\improper 纳米传讯重型运输卡车"
 	icon_state = "longtruck_nt_black"
 
 /obj/structure/prop/urban/vehicles/large/mega_hauler_truck/nt_blue
-	name = "\improper Nanotrasen mega-hauler truck"
+	name = "\improper 纳米传讯重型运输卡车"
 	icon_state = "longtruck_nt_blue"
 
 // SUV
 /obj/structure/prop/urban/vehicles/large/suv
-	name = "SUV"
-	desc = "Seems to be broken down."
+	name = "运动型多用途车"
+	desc = "似乎已损坏。"
 	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	icon_state = "SUV"
 	bound_height = 32
@@ -133,8 +133,8 @@
 // damaged suv
 
 /obj/structure/prop/urban/vehicles/large/suv/suvdamaged
-	name = "heavily damaged SUV"
-	desc = "A shell of a vehicle, broken down beyond repair."
+	name = "严重受损的SUV"
+	desc = "车辆残骸，损毁严重，无法修复。"
 	icon_state = "SUV_damaged"
 
 /obj/structure/prop/urban/vehicles/large/suv/suvdamaged/suv_damaged1
@@ -146,9 +146,9 @@
 // small trucks
 
 /obj/structure/prop/urban/vehicles/large/truck
-	name = "truck"
+	name = "卡车"
 	icon_state = "zentruck1"
-	desc = "Seems to be broken down."
+	desc = "似乎已损坏。"
 	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	bound_height = 32
 	bound_width = 64
@@ -173,20 +173,20 @@
 	icon_state = "truck"
 
 /obj/structure/prop/urban/vehicles/large/truck/garbage
-	name = "garbage truck"
+	name = "垃圾车"
 	icon_state = "zengarbagetruck"
-	desc = "Seems to be broken down."
+	desc = "似乎已损坏。"
 
 /obj/structure/prop/urban/vehicles/large/truck/mining
-	name = "mining supply truck"
+	name = "采矿补给卡车"
 	icon_state = "truck_mining"
-	desc = "Seems to be broken down."
+	desc = "似乎已损坏。"
 
 // large trucks
 /obj/structure/prop/urban/vehicles/large/big_truck
-	name = "mega-hauler truck"
+	name = "重型运输卡车"
 	icon_state = "zenithlongtruck4"
-	desc = "Seems to be broken down."
+	desc = "似乎已经损坏。"
 	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	bound_height = 32
 	bound_width = 64
@@ -209,7 +209,7 @@
 	icon_state = "zenithlongtruckkellandmining1"
 
 /obj/structure/prop/urban/vehicles/large/big_truck/largetruckmining
-	name = "Kelland mining mega-hauler truck"
+	name = "凯兰矿业重型运输卡车"
 
 /obj/structure/prop/urban/vehicles/large/big_truck/largetruckmining/mining
 	icon_state = "zenithlongtruckkellandmining1"
@@ -220,7 +220,7 @@
 	icon_state = "zenithlongtruckweyland1"
 
 /obj/structure/prop/urban/vehicles/large/big_truck/largetruckwy
-	name = "\improper Nanotrasen mega-hauler truck"
+	name = "\improper 纳米传讯重型运输卡车"
 
 /obj/structure/prop/urban/vehicles/large/big_truck/largetruckwy/wy1
 	icon_state = "zenithlongtruckweyland1"
@@ -238,17 +238,17 @@
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/mining
 	icon_state = "miningcrawler1"
-	desc = "It is a tread bound crawler used in harsh conditions. Supplied by The Kelland Mining Company; A subsidiary of Nanotrasen."
+	desc = "这是一种用于恶劣环境的履带式爬行器。由凯兰矿业公司提供；该公司是纳米传讯的子公司。"
 	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/mining2
 	icon_state = "crawler_fuel"
-	desc = "It is a tread bound crawler used in harsh conditions. Supplied by The Kelland Mining Company; A subsidiary of Nanotrasen."
+	desc = "这是一种用于恶劣环境的履带式爬行器。由凯兰矿业公司提供；该公司是纳米传讯的子公司。"
 	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/mining3
 	icon_state = "crawler_covered_bed"
-	desc = "It is a tread bound crawler used in harsh conditions. Supplied by The Kelland Mining Company; A subsidiary of Nanotrasen."
+	desc = "这是一种用于恶劣环境的履带式爬行器。由凯兰德矿业公司提供；该公司是纳米传讯的子公司。"
 	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/science
@@ -259,7 +259,7 @@
 // science crawlers
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/science
-	name = "\improper Nanotrasen colony crawler"
+	name = "\improper 纳米传讯殖民地爬行者"
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/science/science1
 	icon_state = "crawler_wy1"
@@ -272,29 +272,29 @@
 // Mining Crawlers
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/mining
-	name = "kelland mining colony crawler"
+	name = "凯兰采矿殖民地爬行者"
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/mining/mining1
-	desc = "It is a tread bound crawler used in harsh conditions. Supplied by The Kelland Mining Company; A subsidiary of Nanotrasen."
+	desc = "这是一种用于恶劣环境的履带式爬行器。由凯兰矿业公司提供；该公司是纳米传讯的子公司。"
 	icon_state = "miningcrawler2"
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/mining/mining2
-	desc = "It is a tread bound crawler used in harsh conditions. Supplied by The Kelland Mining Company; A subsidiary of Nanotrasen."
+	desc = "这是一种用于恶劣环境的履带式爬行器。由凯兰矿业公司提供；该公司是纳米传讯的子公司。"
 	icon_state = "miningcrawler3"
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/mining/mining3
-	desc = "It is a tread bound crawler used in harsh conditions. Supplied by The Kelland Mining Company; A subsidiary of Nanotrasen."
+	desc = "这是一种用于恶劣环境的履带式爬行器。由凯兰矿业公司提供；该公司是纳米传讯的子公司。"
 	icon_state = "miningcrawler4"
 
 /obj/structure/prop/urban/vehicles/large/colonycrawlers/mining/mining4
-	desc = "It is a tread bound crawler used in harsh conditions. Supplied by The Kelland Mining Company; A subsidiary of Nanotrasen."
+	desc = "这是一种用于恶劣环境的履带式爬行器。由凯兰德矿业公司提供；该公司是纳米传讯的子公司。"
 	icon_state = "miningcrawlerblank"
 
 // Special SUV's
 
 /obj/structure/prop/urban/vehicles/large/suv/misc
-	name = "\improper Nanotrasen rapid response vehicle"
-	desc = "Seems to be broken down."
+	name = "\improper 纳米传讯快速反应载具"
+	desc = "似乎已损坏。"
 	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	icon_state = "WYSUV1"
 	bound_height = 32
@@ -310,70 +310,70 @@
 	icon_state = "WYSUV3"
 
 /obj/structure/prop/urban/vehicles/large/suv/misc/ambulance
-	name = "emergency response medical van"
-	desc = "Seems to be broken down."
+	name = "紧急医疗响应车"
+	desc = "似乎已损坏。"
 	icon_state = "ambulance"
 
 /obj/structure/prop/urban/vehicles/large/suv/misc/whitevan
-	name = "maintenance SUV"
-	desc = "Seems to be broken down."
+	name = "维修用SUV"
+	desc = "似乎已损坏。"
 	icon_state = "whitevan"
 
 /obj/structure/prop/urban/vehicles/large/suv/misc/maintenance
-	name = "maintenance SUV"
-	desc = "Seems to be broken down."
+	name = "维修用SUV"
+	desc = "似乎已损坏。"
 	icon_state = "maintenaceSUV"
 
 /obj/structure/prop/urban/vehicles/large/suv/misc/marshalls
-	name = "colonial marshalls rapid response SUV"
-	desc = "Seems to be broken down."
+	name = "殖民地法警快速反应SUV"
+	desc = "似乎已损坏。"
 	icon_state = "marshalls"
 
 /obj/structure/prop/urban/vehicles/large/suv/misc/expensive
-	name = "Expensive looking SUV"
-	desc = "Seems to be broken down."
+	name = "外观昂贵的SUV"
+	desc = "似乎已损坏。"
 	icon_state = "SUV9"
 
 /obj/structure/prop/urban/vehicles/large/suv/misc/expensive2
-	name = "Expensive Nanotrasen SUV"
-	desc = "Seems to be broken down."
+	name = "昂贵的纳米传讯SUV"
+	desc = "似乎已损坏。"
 	icon_state = "blackSUV"
 
 /obj/structure/prop/urban/vehicles/large/suv/misc/expensive3
-	name = "The Pimp-Mobile"
-	desc = "Seems to be broken down."
+	name = "皮条客号"
+	desc = "似乎已经损坏。"
 	icon_state = "pimpmobile"
 
 // Vans
 
 /obj/structure/prop/urban/vehicles/large/van
-	name = "van"
-	desc = "Seems to be broken down."
+	name = "范"
+	desc = "似乎已经损坏了。"
 	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	icon_state = "greyvan"
 	bound_height = 32
 	bound_width = 64
 
 /obj/structure/prop/urban/vehicles/large/van/vandamaged
-	name = "van"
-	desc = "A shell of a vehicle, broken down beyond repair."
+	name = "范"
+	desc = "一辆载具的残骸，已损毁到无法修复。"
 	icon_state = "greyvan_damaged"
 
 /obj/structure/prop/urban/vehicles/large/van/vanpizza
-	name = "pizza delivery van"
+	name = "披萨配送车"
 	icon_state = "pizzavan"
 
 /obj/structure/prop/urban/vehicles/large/van/vanmining
-	name = "Kelland Mining van"
+	name = "凯兰矿业货车"
 	icon_state = "kellandminingvan"
 
 /obj/structure/prop/urban/vehicles/large/van/hyperdynevan
-	name = "Hyperdyne van"
+	name = "海珀戴恩货车"
 	icon_state = "hyperdynevan"
 
 /obj/structure/prop/urban/vehicles/large/crashedcarsleft
-	name = "car pileup"
-	desc = "Burned out wrecked vehicles block your path."
+	name = "车辆连环相撞"
+	desc = "烧毁的车辆残骸挡住了你的去路。"
 	icon = 'icons/obj/structures/prop/urban/crashedcars.dmi'
 	icon_state = "crashedcarsleft"
 	bound_height = 64
@@ -381,8 +381,8 @@
 	layer = 5
 
 /obj/structure/prop/urban/vehicles/large/crashedcarsright
-	name = "car pileup"
-	desc = "Burned out wrecked vehicles block your path."
+	name = "车辆连环相撞"
+	desc = "烧毁的车辆残骸挡住了你的去路。"
 	icon = 'icons/obj/structures/prop/urban/crashedcars.dmi'
 	icon_state = "crashedcarsright"
 	bound_height = 64

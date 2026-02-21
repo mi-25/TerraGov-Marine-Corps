@@ -37,7 +37,7 @@
 
 /datum/loadout_item/secondary/empty
 	name = "None"
-	desc = "Nothing. Nadda."
+	desc = "什么都没有。啥也没有。"
 	ui_icon = "empty"
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 	req_desc = null

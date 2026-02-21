@@ -4,7 +4,7 @@ GLOBAL_DATUM_INIT(datacore, /datum/datacore, new)
 	var/name = "data"
 
 /datum/data/record
-	name = "record"
+	name = "记录"
 	var/list/fields = list()
 
 /datum/datacore

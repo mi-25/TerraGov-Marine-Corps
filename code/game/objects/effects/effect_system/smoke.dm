@@ -4,7 +4,7 @@
 /////////////////////////////////////////////
 
 /obj/effect/particle_effect/smoke
-	name = "smoke"
+	name = "烟雾"
 	icon_state = "smoke"
 	opacity = TRUE
 	anchored = TRUE
@@ -331,7 +331,7 @@
 ////////////////////////////////////
 
 /obj/effect/particle_effect/smoke/flashbang
-	name = "illumination"
+	name = "照明"
 	lifetime = 2
 	opacity = FALSE
 	icon_state = "sparks"

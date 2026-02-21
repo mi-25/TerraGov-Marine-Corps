@@ -1,7 +1,7 @@
 //Robot armour
 /obj/item/clothing/suit/modular/robot
-	name = "\improper XR-1 armor plating"
-	desc = "Medium armor plating designed for self mounting on TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	name = "\improper XR-1型装甲板"
+	desc = "专为地球政府战斗机器人自行安装设计的中型装甲板。配有自密封螺栓，用于安装在内部的机器人所有者身上。"
 
 	worn_icon_list = list(slot_wear_suit_str = 'icons/mob/modular/robot_armor.dmi')
 	icon_state = "chest"
@@ -48,7 +48,7 @@
 /obj/item/clothing/suit/modular/robot/mob_can_equip(mob/user, slot, warning = TRUE, override_nodrop = FALSE, bitslot = FALSE)
 	. = ..()
 	if(!isrobot(user))
-		to_chat(user, span_warning("You can't equip this as it requires mounting bolts on your body!"))
+		to_chat(user, span_warning("你无法装备此物品，因为它需要在你的身体上安装固定螺栓！"))
 		return FALSE
 
 //---- Medium armor with attachments
@@ -77,8 +77,8 @@
 	)
 
 /obj/item/clothing/suit/modular/robot/light
-	name = "\improper XR-1-L armor plating"
-	desc = "Light armor plating designed for self mounting on TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	name = "\improper XR-1-L 型装甲板"
+	desc = "专为地球政府战斗机器人自行安装设计的轻型装甲板。内置自密封螺栓，便于机器人所有者安装。"
 	soft_armor = MARINE_ARMOR_LIGHT
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	greyscale_config = /datum/greyscale_config/robot/light
@@ -92,8 +92,8 @@
 
 
 /obj/item/clothing/suit/modular/robot/heavy
-	name = "\improper XR-1-H armor plating"
-	desc = "Heavy armor plating designed for self mounting on TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	name = "\improper XR-1-H 装甲板"
+	desc = "专为地球政府战斗机器人自行安装设计的重型装甲板。配有自密封螺栓，用于安装在内部的机器人所有者身上。"
 	soft_armor = MARINE_ARMOR_HEAVY
 	slowdown = SLOWDOWN_ARMOR_HEAVY
 	greyscale_config = /datum/greyscale_config/robot/heavy
@@ -125,8 +125,8 @@
 
 //robot hats
 /obj/item/clothing/head/modular/robot
-	name = "\improper XN-1 upper armor plating"
-	desc = "Medium armor plating designed for self mounting on the upper half of TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	name = "\improper XN-1 上装甲板"
+	desc = "专为地球政府战斗机器人上半身自行安装设计的中型装甲板。配有自密封螺栓，用于安装在内部的机器人所有者身上。"
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/items/items_left.dmi',
 		slot_r_hand_str = 'icons/mob/inhands/items/items_right.dmi',
@@ -166,7 +166,7 @@
 /obj/item/clothing/head/modular/robot/mob_can_equip(mob/user, slot, warning = TRUE, override_nodrop = FALSE, bitslot = FALSE)
 	. = ..()
 	if(!isrobot(user))
-		to_chat(user, span_warning("You can't equip this as it requires mounting bolts on your body!"))
+		to_chat(user, span_warning("你无法装备此物品，因为它需要在你的身体上安装固定螺栓！"))
 		return FALSE
 
 //---- Medium helmets with attachments
@@ -174,14 +174,14 @@
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot, /obj/item/armor_module/module/hod_head)
 
 /obj/item/clothing/head/modular/robot/light
-	name = "\improper XN-1-L upper armor plating"
-	desc = "Light armor plating designed for self mounting on the upper half of TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	name = "\improper XN-1-L 上装甲板"
+	desc = "专为地球政府战斗机器人上半身自行安装设计的轻型装甲板。内置自密封螺栓，用于安装在机器人内部。"
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot/light)
 	greyscale_config = /datum/greyscale_config/robot/light
 
 /obj/item/clothing/head/modular/robot/heavy
-	name = "\improper XN-1-H upper armor plating"
-	desc = "Heavy armor plating designed for self mounting on the upper half of TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	name = "\improper XN-1-H 上装甲板"
+	desc = "专为地球政府战斗机器人上半身自行安装设计的重型装甲板。配有自密封螺栓，用于安装在内部机器人所有者身上。"
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot/heavy)
 	greyscale_config = /datum/greyscale_config/robot/heavy
 

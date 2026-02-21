@@ -98,7 +98,7 @@
 		return
 
 	if(busy)
-		to_chat(user, span_warning("Someone else is currently using [src]."))
+		to_chat(user, span_warning("其他人正在使用[src]。"))
 		return
 
 	ui_interact(user)
@@ -166,7 +166,7 @@
 			new_name = params["name"]
 			last_three_inputs["coords_three"]["name"] = new_name
 	if((coords["targ_x"] != 0 && coords["targ_y"] != 0))
-		usr.visible_message(span_notice("[usr] adjusts [src]'s firing angle and distance."),
+		usr.visible_message(span_notice("[usr] 调整了 [src] 的射击角度和距离。"),
 		span_notice("You adjust [src]'s firing angle and distance to match the new coordinates."))
 		playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
 
@@ -192,25 +192,25 @@
 		return
 
 	if(firing)
-		user.balloon_alert(user, "barrel too hot—wait a while!")
+		user.balloon_alert(user, "枪管过热——稍等片刻！")
 		return
 
 	if(istype(I, /obj/item/mortal_shell))
 		var/obj/item/mortal_shell/mortar_shell = I
 
 		if(length(chamber_items) >= max_rounds)
-			user.balloon_alert(user, "you cannot fit more!")
+			user.balloon_alert(user, "你装不下了！")
 			return
 
 		if(!(I.type in allowed_shells))
-			user.balloon_alert(user, "this shell doesn't fit!")
+			user.balloon_alert(user, "这个弹壳不匹配！")
 			return
 
 		if(busy)
-			user.balloon_alert(user, "someone else is using this!")
+			user.balloon_alert(user, "其他人正在使用这个！")
 			return
 
-		user.visible_message(span_notice("[user] starts loading \a [mortar_shell.name] into [src]."),
+		user.visible_message(span_notice("[user]开始将\a [mortar_shell.name]装入[src]。"),
 		span_notice("You start loading \a [mortar_shell.name] into [src]."))
 		playsound(loc, reload_sound, 50, 1)
 		busy = TRUE
@@ -220,23 +220,23 @@
 
 		busy = FALSE
 
-		user.visible_message(span_notice("[user] loads \a [mortar_shell.name] into [src]."),
+		user.visible_message(span_notice("[user]将\a [mortar_shell.name]装填进[src]。"),
 		span_notice("You load \a [mortar_shell.name] into [src]."))
 		chamber_items += mortar_shell
-		user.balloon_alert(user, "right click to fire!")
+		user.balloon_alert(user, "右键开火！")
 		mortar_shell.forceMove(src)
 		user.temporarilyRemoveItemFromInventory(mortar_shell)
 
 	if(istype(I, /obj/item/ai_target_beacon))
 		if(!length(GLOB.ai_list))
-			to_chat(user, span_notice("There is no AI to associate with."))
+			to_chat(user, span_notice("没有可关联的AI。"))
 			return
 
 		var/mob/living/silicon/ai/AI = tgui_input_list(usr, "Which AI would you like to associate this gun with?", null, GLOB.ai_list)
 		if(!AI)
 			return
-		to_chat(user, span_notice("You attach the [I], allowing for remote targeting."))
-		to_chat(AI, span_notice("NOTICE - [src] has been linked to your systems, allowing for remote targeting. Use shift click to set a target."))
+		to_chat(user, span_notice("你将[I]安装完毕，现在可以进行远程瞄准了。"))
+		to_chat(AI, span_notice("注意 - [src]已链接至您的系统，允许远程锁定目标。使用Shift+点击来设定目标。"))
 		user.transferItemToLoc(I, src)
 		AI.associate_artillery(src)
 		playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
@@ -255,9 +255,9 @@
 	var/obj/item/binoculars/tactical/binocs = I
 	playsound(src, 'sound/effects/binoctarget.ogg', 35)
 	if(binocs.set_mortar(src))
-		balloon_alert(user, "linked")
+		balloon_alert(user, "已链接")
 		return
-	balloon_alert(user, "unlinked")
+	balloon_alert(user, "未连接")
 
 ///Start firing the gun on target and increase tally
 /obj/machinery/deployable/mortar/proc/begin_fire(atom/target, obj/item/mortal_shell/arty_shell)
@@ -325,7 +325,7 @@
 
 ///Unlinking the AI from this mortar
 /obj/machinery/deployable/mortar/proc/unset_targeter()
-	say("Linked AI spotter has relinquished targeting privileges. Ejecting targeting device.")
+	say("已解除链接AI观测员的目标锁定权限。正在弹出目标锁定装置。")
 	ai_targeter.forceMove(src.loc)
 	ai_targeter = null
 
@@ -344,37 +344,37 @@
 		return
 
 	if(issynth(user) && !CONFIG_GET(flag/allow_synthetic_gun_use))
-		user.balloon_alert(user, "you can't operate this!")
+		user.balloon_alert(user, "你无法操作这个！")
 		return
 
 	if(firing)
-		user.balloon_alert(user, "the gun is still firing!")
+		user.balloon_alert(user, "枪还在开火！")
 		return
 
 	if(length(chamber_items) <= 0)
-		user.balloon_alert(user, "there is nothing loaded!")
+		user.balloon_alert(user, "没有装弹！")
 		return
 
 	if(!is_ground_level(z))
-		user.balloon_alert(user, "you can't fire the gun here!")
+		user.balloon_alert(user, "你不能在这里开枪！")
 		return
 
 	if(coords["targ_x"] == 0 && coords["targ_y"] == 0) //Mortar wasn't set
-		user.balloon_alert(user, "the gun needs to be aimed first!")
+		user.balloon_alert(user, "枪械需要先瞄准！")
 		return
 
 	var/turf/target = locate(coords["targ_x"] + coords["dial_x"], coords["targ_y"]  + coords["dial_y"], z)
 	if(get_dist(loc, target) < minimum_range)
-		user.balloon_alert(user, "the target is too close to the gun!")
+		user.balloon_alert(user, "目标距离枪械太近！")
 		return
 	if(!isturf(target))
-		user.balloon_alert(user, "you can't fire the gun at this target!")
+		user.balloon_alert(user, "你无法向此目标开火！")
 		return
 	setDir(get_cardinal_dir(src, target))
 
 	var/area/A = get_area(target)
 	if(istype(A) && A.ceiling >= CEILING_UNDERGROUND)
-		user.balloon_alert(user, "the target is underground!")
+		user.balloon_alert(user, "目标在地下！")
 		return
 
 	visible_message("[icon2html(src, viewers(src))] [span_danger("The [name] fires!")]")
@@ -417,7 +417,7 @@
 // Artillery cameras. Together with the artillery impact hud tablet, shows a live feed of imapcts.
 
 /obj/machinery/camera/artillery
-	name = "artillery camera"
+	name = "火炮观测镜"
 	network = list("terragovartillery")
 	alpha = 0 //we shouldn't be able to see this!
 	internal_light = FALSE
@@ -426,8 +426,8 @@
 
 //The portable mortar item
 /obj/item/mortar_kit
-	name = "\improper TA-50S mortar"
-	desc = "A manual, crew-operated mortar system intended to rain down 80mm goodness on anything it's aimed at. Needs to be set down first to fire. Ctrl+Click on a tile to deploy, drag the mortar's sprites to mob's sprite to undeploy."
+	name = "\improper TA-50S迫击炮"
+	desc = "一门手动操作、由乘员操控的迫击炮系统，旨在向瞄准的任何目标倾泻80毫米的'善意'。需要先架设才能开火。Ctrl+点击一个格子进行部署，将迫击炮的精灵图拖拽到生物的精灵图上以收起。"
 	icon = 'icons/obj/machines/deployable/mortar.dmi'
 	icon_state = "mortar"
 	max_integrity = 200
@@ -450,15 +450,15 @@
 /obj/item/mortar_kit/unique_action(mob/user)
 	var/area/current_area = get_area(src)
 	if(current_area.ceiling >= CEILING_OBSTRUCTED)
-		to_chat(user, span_warning("You probably shouldn't deploy [src] indoors."))
+		to_chat(user, span_warning("你最好不要在室内部署[src]。"))
 		return
 	return ..()
 
 //tadpole mounted double barrel mortar
 
 /obj/item/mortar_kit/double
-	name = "\improper TA-55DB mortar"
-	desc = "A manual, crew-operated mortar system intended to rain down 80mm goodness on anything it's aimed at. Needs to be set down first to fire. This one is a double barreled mortar that can hold 2 rounds, and is usually fitted in TAVs."
+	name = "\improper TA-55DB迫击炮"
+	desc = "一种手动操作、由乘员操控的迫击炮系统，旨在向瞄准目标倾泻80毫米的'福音'。需要先架设才能开火。这是一门双管迫击炮，可容纳2发炮弹，通常安装在战术突击载具上。"
 	icon_state = "mortar_db"
 	max_integrity = 400
 	item_flags = IS_DEPLOYABLE|TWOHANDED|DEPLOYED_NO_PICKUP|DEPLOY_ON_INITIALIZE

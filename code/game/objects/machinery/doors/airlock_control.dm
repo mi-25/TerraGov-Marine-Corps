@@ -133,7 +133,7 @@
 /obj/machinery/access_button
 	icon = 'icons/obj/airlock_machines.dmi'
 	icon_state = "access_button_standby"
-	name = "access button"
+	name = "访问按钮"
 
 	anchored = TRUE
 	power_channel = ENVIRON
@@ -167,7 +167,7 @@
 	if(.)
 		return
 	if(!allowed(user))
-		to_chat(user, span_warning("Access Denied"))
+		to_chat(user, span_warning("访问被拒绝"))
 
 	else if(radio_connection)
 		var/datum/signal/signal = new

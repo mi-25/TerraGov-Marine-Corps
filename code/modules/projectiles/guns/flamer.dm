@@ -3,8 +3,8 @@
 //FLAMETHROWER
 
 /obj/item/weapon/gun/flamer
-	name = "flamer"
-	desc = "flame go froosh"
+	name = "喷火器"
+	desc = "火焰去呼呼"
 	equip_slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	force = 15
@@ -143,7 +143,7 @@
 	if(!.)
 		return
 	if(!istype(attachments_by_slot[ATTACHMENT_SLOT_FLAMER_NOZZLE], /obj/item/attachable/flamer_nozzle))
-		to_chat(user, span_warning("[src] does not have a nozzle installed!"))
+		to_chat(user, span_warning("[src] 未安装喷嘴！"))
 		return FALSE
 	return TRUE
 
@@ -281,8 +281,8 @@
 		to_chat(mob_caught, isxeno(mob_caught) ? span_xenodanger(burn_message) : span_userdanger(burn_message))
 
 /obj/item/weapon/gun/flamer/big_flamer
-	name = "\improper FL-240 incinerator unit"
-	desc = "The FL-240 has proven to be one of the most effective weapons at clearing out soft-targets. This is a weapon to be feared and respected as it is quite deadly."
+	name = "\improper FL-240 焚化单元"
+	desc = "FL-240已被证明是清除软目标最有效的武器之一。这是一种令人畏惧且值得敬畏的武器，因为它极具致命性。"
 	icon = 'icons/obj/items/guns/special.dmi'
 	icon_state = "m240"
 	worn_icon_state = "m240"
@@ -291,8 +291,8 @@
 	starting_attachment_types = list(/obj/item/attachable/motiondetector, /obj/item/attachable/flamer_nozzle/wide,)
 
 /obj/item/weapon/gun/flamer/som
-	name = "\improper V-62 incinerator"
-	desc = "The V-62 is a deadly weapon employed in close quarter combat, favoured as much for the terror it inspires as the actual damage it inflicts. It has good range for a flamer, but lacks the integrated extinguisher of its TGMC equivalent."
+	name = "\improper V-62焚化器"
+	desc = "V-62是一种在近距离作战中使用的致命武器，其引发的恐惧与实际造成的伤害同样令人畏惧。作为一款喷火器，它拥有不错的射程，但缺少地球政府殖民地海军陆战队同类武器所配备的集成灭火器。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "v62"
 	worn_icon_state = "v62"
@@ -329,8 +329,8 @@
 
 //dedicated engineer pyro kit flamer
 /obj/item/weapon/gun/flamer/big_flamer/marinestandard/engineer
-	name = "\improper FL-86 incinerator unit"
-	desc = "The FL-86 is a more light weight incinerator unit designed specifically to fit into its accompanying engineers bag. Can only be used with magazine fuel tanks however."
+	name = "\improper FL-86 焚化器单元"
+	desc = "FL-86是一种更轻型的喷火器单元，专门设计用于装入配套的工程师包中。但只能使用弹匣式燃料罐。"
 	default_ammo_type = /obj/item/ammo_magazine/flamer_tank/large
 	allowed_ammo_types = list(
 		/obj/item/ammo_magazine/flamer_tank,
@@ -357,8 +357,8 @@
 	)
 
 /obj/item/weapon/gun/flamer/mini_flamer
-	name = "mini flamethrower"
-	desc = "A weapon-mounted refillable flamethrower attachment.\nIt is designed for short bursts."
+	name = "迷你喷火器"
+	desc = "一款可重复装填的枪械配件式火焰喷射器。\n专为短点射设计。"
 	icon = 'icons/obj/items/guns/attachments/flamer.dmi'
 	icon_state = "flamethrower"
 
@@ -394,8 +394,8 @@
 
 
 /obj/item/weapon/gun/flamer/big_flamer/marinestandard
-	name = "\improper FL-84 flamethrower"
-	desc = "The FL-84 flamethrower is the current standard issue flamethrower of the TGMC, and is used for area control and urban combat. Use unique action to use hydro cannon"
+	name = "\improper FL-84 喷火器"
+	desc = "FL-84喷火器是地球政府殖民地海军陆战队的现役标准制式喷火器，用于区域控制和城市作战。使用特殊动作来使用水炮。"
 	default_ammo_type = /obj/item/ammo_magazine/flamer_tank/large
 	icon_state = "tl84"
 	worn_icon_state = "tl84"
@@ -502,8 +502,8 @@ GLOBAL_LIST_EMPTY(flamer_particles)
 		color = set_color
 
 /obj/item/weapon/gun/flamer/hydro_cannon
-	name = "underslung hydrocannon"
-	desc = "For the quenching of unfortunate mistakes."
+	name = "下挂式水炮"
+	desc = "用于消除不幸的错误。"
 	icon = 'icons/obj/items/guns/attachments/gun.dmi'
 	icon_state = "hydrocannon"
 
@@ -546,8 +546,8 @@ GLOBAL_LIST_EMPTY(flamer_particles)
 #undef FLAMER_WATER
 
 /obj/item/weapon/gun/flamer/vsd
-	name = "\improper CC/21 flamer"
-	desc = "The CC/21 flamer, a new design made by CrashCore and is truly a sight to behold. For its heavy duty look, it makes up for it with its firepower. Canister fed and fueled by X-fuel."
+	name = "\improper CC/21喷火器"
+	desc = "CC/21喷火器，由CrashCore设计的新型号，确实令人叹为观止。其重型外观，以其火力弥补。弹匣供弹，使用X燃料。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "c21"
 	worn_icon_state = "c21"

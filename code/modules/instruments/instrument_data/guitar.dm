@@ -1,10 +1,10 @@
 /datum/instrument/guitar
-	name = "Generic guitar-like instrument"
+	name = "通用吉他类乐器"
 	category = "Guitar"
 	abstract_type = /datum/instrument/guitar
 
 /datum/instrument/guitar/steel_crisis
-	name = "Crisis Steel String Guitar"
+	name = "危机钢弦吉他"
 	id = "csteelgt"
 	real_samples = list(
 		"36"='sound/runtime/instruments/synthesis_samples/guitar/crisis_steel/c2.ogg',
@@ -14,7 +14,7 @@
 	)
 
 /datum/instrument/guitar/nylon_crisis
-	name = "Crisis Nylon String Guitar"
+	name = "危机尼龙弦吉他"
 	id = "cnylongt"
 	real_samples = list(
 		"36"='sound/runtime/instruments/synthesis_samples/guitar/crisis_nylon/c2.ogg',
@@ -24,7 +24,7 @@
 	)
 
 /datum/instrument/guitar/clean_crisis
-	name = "Crisis Clean Guitar"
+	name = "危机清理吉他"
 	id = "ccleangt"
 	real_samples = list(
 		"36"='sound/runtime/instruments/synthesis_samples/guitar/crisis_clean/c2.ogg',
@@ -34,7 +34,7 @@
 	)
 
 /datum/instrument/guitar/muted_crisis
-	name = "Crisis Muted Guitar"
+	name = "危机静音吉他"
 	id = "cmutedgt"
 	real_samples = list(
 		"36"='sound/runtime/instruments/synthesis_samples/guitar/crisis_muted/c2.ogg',

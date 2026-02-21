@@ -16,10 +16,10 @@
 ///Attaches plasteel to the wreck, the first stage of extraction
 /obj/vehicle/sealed/armored/proc/start_wreck_prep(mob/user, obj/item/stack/sheet/plasteel/plasteel)
 	if(armored_flags & ARMORED_WRECK_PREP_STAGE_ONE)
-		user.balloon_alert(user, "already prepped")
+		user.balloon_alert(user, "已准备就绪")
 		return
 	if(plasteel.amount < ARMORED_WRECK_PLASTEEL_REQ)
-		user.balloon_alert(user, "need [ARMORED_WRECK_PLASTEEL_REQ]")
+		user.balloon_alert(user, "需要 [ARMORED_WRECK_PLASTEEL_REQ]")
 		return
 	if(LAZYACCESS(user.do_actions, src))
 		return FALSE
@@ -29,21 +29,21 @@
 	if(!do_after(user, (5 + skill_diff) SECONDS, NONE, src, BUSY_ICON_BUILD))
 		return
 	if(armored_flags & ARMORED_WRECK_PREP_STAGE_ONE)
-		user.balloon_alert(user, "already prepped")
+		user.balloon_alert(user, "已准备就绪")
 		return
 	if(!plasteel.use(ARMORED_WRECK_PLASTEEL_REQ))
-		user.balloon_alert(user, "need [ARMORED_WRECK_PLASTEEL_REQ]")
+		user.balloon_alert(user, "需要 [ARMORED_WRECK_PLASTEEL_REQ]")
 		return
 	playsound(loc, 'sound/items/ratchet.ogg', 25, TRUE)
 	armored_flags |= ARMORED_WRECK_PREP_STAGE_ONE
-	balloon_alert_to_viewers("wreck prepped!")
+	balloon_alert_to_viewers("残骸已准备就绪！")
 
 ///The fastening process for the fulton on the wreck, the final stage of extraction
 /obj/vehicle/sealed/armored/proc/prep_wreck(mob/user)
 	if(LAZYACCESS(user.do_actions, src))
 		return FALSE
 	if(wreck_repair_stage >= ARMORED_WRECK_STAGE_MAX)
-		user.balloon_alert(user, "ready to extract")
+		user.balloon_alert(user, "准备撤离")
 		return
 
 	var/skill_diff = SKILL_ENGINEER_ENGI - user.skills.getRating(SKILL_ENGINEER)
@@ -58,7 +58,7 @@
 			return
 		wreck_repair_stage++
 
-	balloon_alert_to_viewers("ready to extract!")
+	balloon_alert_to_viewers("准备撤离！")
 	SEND_SIGNAL(src, COMSIG_ARMORED_DO_EXTRACT, user)
 
 ///Returns the vehicle to base and restores it to working order

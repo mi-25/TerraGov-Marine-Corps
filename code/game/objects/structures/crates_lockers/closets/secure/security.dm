@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/captains
-	name = "Captain's Locker"
+	name = "舰长储物柜"
 	req_access = list(ACCESS_MARINE_CAPTAIN)
 	icon_state = "capsecure1"
 	icon_closed = "capsecure"
@@ -30,7 +30,7 @@
 
 
 /obj/structure/closet/secure_closet/hop
-	name = "Head of Personnel's Locker"
+	name = "人事主管储物柜"
 	req_access = list(ACCESS_MARINE_BRIDGE)
 	icon_state = "hopsecure1"
 	icon_closed = "hopsecure"
@@ -50,7 +50,7 @@
 
 
 /obj/structure/closet/secure_closet/hop2
-	name = "Head of Personnel's Attire"
+	name = "人事主管制服"
 	req_access = list(ACCESS_MARINE_BRIDGE)
 	icon_state = "hopsecure1"
 	icon_closed = "hopsecure"
@@ -77,7 +77,7 @@
 
 
 /obj/structure/closet/secure_closet/hos
-	name = "Head of Security's Locker"
+	name = "安保主管储物柜"
 	req_access = list(ACCESS_MARINE_BRIDGE)
 	icon_state = "hossecure1"
 	icon_closed = "hossecure"
@@ -111,7 +111,7 @@
 
 
 /obj/structure/closet/secure_closet/warden
-	name = "Warden's Locker"
+	name = "典狱长储物柜"
 	req_access = list(ACCESS_MARINE_BRIG)
 	icon_state = "wardensecure1"
 	icon_closed = "wardensecure"
@@ -143,7 +143,7 @@
 
 
 /obj/structure/closet/secure_closet/marshal
-	name = "Marshal's Locker"
+	name = "元帅储物柜"
 	req_access = list(ACCESS_MARINE_BRIG)
 	icon_state = "secure_locked_warrant"
 	icon_closed = "secure_unlocked_warrant"
@@ -162,7 +162,7 @@
 
 
 /obj/structure/closet/secure_closet/security
-	name = "Security Officer's Locker"
+	name = "安全军官储物柜"
 	req_access = list(ACCESS_MARINE_BRIG)
 	icon_state = "secure_locked_police"
 	icon_closed = "secure_closed_police"
@@ -211,7 +211,7 @@
 
 
 /obj/structure/closet/secure_closet/security_empty
-	name = "Security Officer's Locker"
+	name = "安全军官储物柜"
 	req_access = list(ACCESS_MARINE_BRIG)
 	icon_state = "secure_open_police"
 	icon_closed = "secure_closed_police"
@@ -226,12 +226,12 @@
 
 
 /obj/structure/closet/secure_closet/evidence
-	name = "Secure Evidence Locker"
+	name = "证据保险库"
 	req_access = list(ACCESS_MARINE_BRIG)
 
 
 /obj/structure/closet/secure_closet/detective
-	name = "Detective's Cabinet"
+	name = "侦探的档案柜"
 	req_access = list(ACCESS_MARINE_BRIG)
 	icon_state = "cabinetdetective_locked"
 	icon_closed = "cabinetdetective"
@@ -274,7 +274,7 @@
 
 
 /obj/structure/closet/secure_closet/injection
-	name = "Lethal Injections"
+	name = "致命注射"
 	req_access = list(ACCESS_MARINE_CAPTAIN)
 
 
@@ -284,20 +284,20 @@
 
 
 /obj/structure/closet/secure_closet/brig
-	name = "Brig Locker"
+	name = "禁闭室储物柜"
 	req_access = list(ACCESS_MARINE_BRIG)
 	anchored = TRUE
 	var/id = null
 
 /obj/structure/closet/secure_closet/brig/cell
-	name = "Cell Locker"
+	name = "储物柜"
 
 /obj/structure/closet/secure_closet/brig/cell/cell1
-	name = "Cell 1"
+	name = "牢房 1"
 	id = "Cell 1"
 
 /obj/structure/closet/secure_closet/brig/cell/cell2
-	name = "Cell 2"
+	name = "2号牢房"
 	id = "Cell 2"
 
 
@@ -312,7 +312,7 @@
 	return ..()
 
 /obj/structure/closet/secure_closet/courtroom
-	name = "Courtroom Locker"
+	name = "法庭储物柜"
 	req_access = list(ACCESS_MARINE_BRIG)
 
 
@@ -328,7 +328,7 @@
 
 
 /obj/structure/closet/secure_closet/wall
-	name = "wall locker"
+	name = "储物柜"
 	req_access = list(ACCESS_MARINE_BRIG)
 	icon_state = "wall-locker1"
 	density = TRUE

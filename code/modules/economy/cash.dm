@@ -1,6 +1,6 @@
 /obj/item/spacecash
-	name = "0 dollars"
-	desc = "You have no dollars."
+	name = "0美元"
+	desc = "你没有钱。"
 	gender = PLURAL
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "spacecash1"
@@ -38,18 +38,18 @@
 			h_user.temporarilyRemoveItemFromInventory(src)
 			h_user.temporarilyRemoveItemFromInventory(bundle)
 			h_user.put_in_hands(bundle)
-		to_chat(user, span_notice("You add [worth] dollars worth of money to the bundles.<br>It holds [bundle.worth] dollars now."))
+		to_chat(user, span_notice("你向钱捆中添加了价值[worth]美元的钱币。<br>它现在持有[bundle.worth]美元。"))
 		qdel(src)
 
 /obj/item/spacecash/bundle
-	name = "stack of dollars"
+	name = "一叠美元"
 	icon_state = "blank"
-	desc = "They are worth 0 dollars."
+	desc = "它们价值0美元。"
 	worth = 0
 
 /obj/item/spacecash/bundle/update_desc(updates)
 	. = ..()
-	desc = "They are worth [worth] dollars."
+	desc = "它们价值[worth]美元。"
 
 /obj/item/spacecash/bundle/update_overlays()
 	. = ..()
@@ -97,45 +97,45 @@
 		qdel(src)
 
 /obj/item/spacecash/c1
-	name = "1 dollar bill"
+	name = "1美元钞票"
 	icon_state = "spacecash1"
-	desc = "A single US Government minted one dollar bill. It has a picture of George Washington printed on it. Makes most people of english origin cry, but isn't worth very much. Could probably get you half a hot-dog in some systems. "
+	desc = "一张美国政府发行的1美元纸币。上面印有乔治·华盛顿的头像。会让大多数英语裔的人哭泣，但本身价值不高。在某些星系里，大概能给你换来半个热狗。"
 	worth = 1
 
 /obj/item/spacecash/c10
-	name = "10 dollar bill"
+	name = "10美元钞票"
 	icon_state = "spacecash10"
-	desc = "A single US Government minted ten dollar bill. It has a picture of Alexander Hamilton on it, federal bank enthusiast, and victim of a terrible griefing incident. Could probably pay for a meal at a cheap restaurant, before tax and tip."
+	desc = "一张美国政府发行的十美元纸币。上面印有亚历山大·汉密尔顿的肖像，他是联邦银行的狂热支持者，也是一次恶劣恶作剧事件的受害者。在支付税费和小费之前，大概能在廉价餐馆买一顿饭。"
 	worth = 10
 
 /obj/item/spacecash/c20
-	name = "20 dollar bill"
+	name = "20美元钞票"
 	icon_state = "spacecash20"
-	desc = "A single US Government minted twenty dollar bill. It has a picture of Andrew Jackson on it, famed hero of the War of 1812 and slayer of indigenous peoples everywhere. Could probably afford you a nice 2-course meal at the local colony steakhouse."
+	desc = "一张美国政府发行的二十美元纸币。上面印有安德鲁·杰克逊的肖像，他是1812年战争的著名英雄，也是各地原住民的屠杀者。这张钞票大概够你在当地殖民地的牛排馆享用一顿不错的两道菜套餐。"
 	worth = 20
 
 /obj/item/spacecash/c50
-	name = "50 dollar bill"
+	name = "50美元钞票"
 	icon_state = "spacecash50"
-	desc = "A single US Government minted fifty dollar bill. It has a picture of Ulysses S. Grant, a man known for expendable troop tactics in the civil war, and probable distant relative of Bill Carson. You could probably buy the whole bar a beer with this, assuming there are 4 other people in the bar."
+	desc = "一张美国政府发行的五十美元纸币。上面印有尤利西斯·S·格兰特的肖像，这位以在内战中采用消耗性部队战术而闻名的人物，很可能是比尔·卡森的远亲。如果酒吧里还有另外4个人，你大概能用这张钞票请整个酒吧的人喝杯啤酒。"
 	worth = 50
 
 /obj/item/spacecash/c100
-	name = "100 dollar bill"
+	name = "100美元钞票"
 	icon_state = "spacecash100"
-	desc = "A single US Government minted hundred dollar bill. It has a picture of Ben Franklin, lightning kite extraordinaire. You could probably pay for an entire day of shore leave activities with this, provided you aren't careless. (which you are)"
+	desc = "一张美国政府发行的百元钞票。上面印着本杰明·富兰克林，那位著名的风筝引雷者。用这张钞票，你大概能支付一整天的上岸休假活动——前提是你不乱花钱。（但你肯定会乱花。）"
 	worth = 100
 
 /obj/item/spacecash/c200
-	name = "200 dollars"
+	name = "200美元"
 	icon_state = "spacecash200"
-	desc = "Two US Government minted hundred dollar bills. They both have pictures of Ben Franklin on them. Both Bens look at you expectedly and passionately from different angles."
+	desc = "两张美国政府发行的百元美钞。上面都印着本杰明·富兰克林的肖像。两个本杰明从不同的角度热切而充满期待地注视着你。"
 	worth = 200
 
 /obj/item/spacecash/c500
-	name = "500 dollars"
+	name = "500美元"
 	icon_state = "spacecash500"
-	desc = "Five US Government minted hundred dollar bills. All of them have pictures of Ben Franklin on them. They all eagarly glare at you, making you feel as if you owe them something. "
+	desc = "五张美国政府发行的百元钞票。上面都印着本杰明·富兰克林的肖像。它们全都急切地瞪着你，让你感觉好像欠了它们什么似的。"
 	worth = 500
 
 
@@ -153,10 +153,10 @@
 		human_user.put_in_hands(bundle)
 
 /obj/item/spacecash/ewallet
-	name = "\improper Nanotrasen cash card"
+	name = "\improper 纳米传讯现金卡"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "efundcard"
-	desc = "A Nanotrasen backed cash card that holds an amount of money."
+	desc = "一张由纳米传讯支持的现金卡，内存储一定金额。"
 	var/owner_name = "" //So the ATM can set it so the EFTPOS can put a valid name on transactions.
 
 /obj/item/spacecash/ewallet/examine(mob/user)

@@ -1,5 +1,5 @@
 /datum/ammo/xeno/spine //puppeteer spines(???)
-	name = "spine"
+	name = "脊柱"
 	damage = 35
 	icon_state = "spine"
 	damage_type = BRUTE

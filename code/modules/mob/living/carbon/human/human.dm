@@ -184,7 +184,7 @@
 	else
 		if(M.attack_sound)
 			playsound(loc, M.attack_sound, 25, 1)
-		visible_message(span_danger("[M] [M.attacktext] [src]!"))
+		visible_message(span_danger("[M] [M.attacktext] [src]！"))
 		log_combat(M, src, "attacked")
 		var/dam_zone = pick("chest", "l_hand", "r_hand", "l_leg", "r_leg")
 		dam_zone = ran_zone(dam_zone)
@@ -350,7 +350,7 @@
 				sec_hud_set_security_status()
 				return
 
-		to_chat(usr, span_warning("Unable to locate a data core entry for this person."))
+		to_chat(usr, span_warning("无法定位此人的数据核心条目。"))
 
 	if(href_list["secrecord"])
 		if(!hasHUD(usr, "security"))
@@ -381,7 +381,7 @@
 				to_chat(usr, "<a href='byond://?src=[text_ref(src)];secrecordComment=`'>\[View Comment Log\]</a>")
 				return
 
-		to_chat(usr, span_warning("Unable to locate a data core entry for this person."))
+		to_chat(usr, span_warning("无法定位此人的数据核心条目。"))
 
 	if(href_list["secrecordComment"])
 		if(!hasHUD(usr, "security"))
@@ -409,11 +409,11 @@
 					to_chat(usr, "[security_record.fields["com_[counter]"]]")
 					counter++
 				if(counter == 1)
-					to_chat(usr, "No comment found")
+					to_chat(usr, "未找到评论")
 				to_chat(usr, "<a href='byond://?src=[text_ref(src)];secrecordadd=`'>\[Add comment\]</a>")
 				return
 
-		to_chat(usr, span_warning("Unable to locate a data core entry for this person."))
+		to_chat(usr, span_warning("无法定位此人的数据核心条目。"))
 
 	if(href_list["secrecordadd"])
 		if(!hasHUD(usr, "security"))
@@ -476,7 +476,7 @@
 				U.handle_regular_hud_updates()
 			return
 
-		to_chat(usr, span_warning("Unable to locate a data core entry for this person."))
+		to_chat(usr, span_warning("无法定位此人的数据核心条目。"))
 
 	if(href_list["medrecord"])
 		if(!hasHUD(usr, "medical"))
@@ -510,7 +510,7 @@
 				to_chat(usr, "<a href='byond://?src=[text_ref(src)];medrecordComment=`'>\[View Comment Log\]</a>")
 				return
 
-		to_chat(usr, span_warning("Unable to locate a data core entry for this person."))
+		to_chat(usr, span_warning("无法定位此人的数据核心条目。"))
 
 	if(href_list["medrecordComment"])
 		if(!hasHUD(usr, "medical"))
@@ -539,11 +539,11 @@
 					to_chat(usr, "[medical_record.fields["com_[counter]"]]")
 					counter++
 				if(counter == 1)
-					to_chat(usr, "No comment found")
+					to_chat(usr, "未找到评论")
 				to_chat(usr, "<a href='byond://?src=[text_ref(src)];medrecordadd=`'>\[Add comment\]</a>")
 				return
 
-		to_chat(usr, span_warning("Unable to locate a data core entry for this person."))
+		to_chat(usr, span_warning("无法定位此人的数据核心条目。"))
 
 	if(href_list["medrecordadd"])
 		if(!hasHUD(usr, "medical"))
@@ -578,31 +578,31 @@
 
 	if(href_list["medholocard"])
 		if(!species?.count_human)
-			to_chat(usr, span_warning("Triage holocards only works on organic humanoid entities."))
+			to_chat(usr, span_warning("分类全息卡仅对有机类人实体有效。"))
 			return
 		var/newcolor = tgui_input_list(usr, "Choose a triage holo card to add to the patient:", "Triage holo card", list("black", "red", "orange", "none"))
 		if(!newcolor)
 			return
 		if(get_dist(usr, src) > 7)
-			to_chat(usr, span_warning("[src] is too far away."))
+			to_chat(usr, span_warning("[src]距离太远。"))
 			return
 		if(newcolor == "none")
 			if(!holo_card_color)
 				return
 			holo_card_color = null
-			to_chat(usr, span_notice("You remove the holo card on [src]."))
+			to_chat(usr, span_notice("你取下了[src]上的全息卡。"))
 		else if(newcolor != holo_card_color)
 			holo_card_color = newcolor
-			to_chat(usr, span_notice("You add a [newcolor] holo card on [src]."))
+			to_chat(usr, span_notice("你在[src]上添加了一张[newcolor]色的全息卡片。"))
 
 	if(href_list["scanreport"])
 		if(!hasHUD(usr,"medical"))
 			return
 		if(!ishuman(src))
-			to_chat(usr, span_warning("This only works on humanoids."))
+			to_chat(usr, span_warning("这仅对人类有效。"))
 			return
 		if(get_dist(usr, src) > 7)
-			to_chat(usr, span_warning("[src] is too far away."))
+			to_chat(usr, span_warning("[src]距离太远。"))
 			return
 
 		var/datum/data/record/medical_record = find_medical_record(src)
@@ -630,13 +630,13 @@
 
 /mob/living/carbon/human/proc/fireman_carry(mob/living/carbon/target)
 	if(!can_be_firemanned(target) || incapacitated(restrained_flags = RESTRAINED_NECKGRAB))
-		to_chat(src, span_warning("You can't fireman carry [target] while they're standing!"))
+		to_chat(src, span_warning("你无法在[target]站立时进行消防员式搬运！"))
 		return
-	visible_message(span_notice("[src] starts lifting [target] onto [p_their()] back..."),
+	visible_message(span_notice("[src] 正将 [target] 抬到 [p_their()] 背上..."),
 	span_notice("You start to lift [target] onto your back..."))
 	var/delay = 5 SECONDS - LERP(0 SECONDS, 4 SECONDS, skills.getPercent(SKILL_MEDICAL, SKILL_MEDICAL_MASTER))
 	if(!do_after(src, delay, NONE, target, target_display = BUSY_ICON_HOSTILE))
-		visible_message(span_warning("[src] fails to fireman carry [target]!"))
+		visible_message(span_warning("[src] 无法对 [target] 进行消防员式搬运！"))
 		return
 	//Second check to make sure they're still valid to be carried
 	if(!can_be_firemanned(target) || incapacitated(restrained_flags = RESTRAINED_NECKGRAB))
@@ -691,7 +691,7 @@
 
 
 /mob/living/carbon/human/proc/play_xylophone()
-	visible_message(span_warning("[src] begins playing his ribcage like a xylophone. It's quite spooky."),span_notice("You begin to play a spooky refrain on your ribcage."),span_warning("You hear a spooky xylophone melody."))
+	visible_message(span_warning("[src] 开始像弹木琴一样弹奏自己的肋骨。这相当诡异。"),span_notice("You begin to play a spooky refrain on your ribcage."),span_warning("You hear a spooky xylophone melody."))
 	var/song = pick('sound/effects/xylophone1.ogg','sound/effects/xylophone2.ogg','sound/effects/xylophone3.ogg')
 	playsound(loc, song, 25, 1)
 
@@ -722,22 +722,22 @@
 		self = TRUE
 
 	if(!self)
-		usr.visible_message(span_notice("[usr] kneels down, puts [usr.p_their()] hand on [src]'s wrist and begins counting their pulse."),
+		usr.visible_message(span_notice("[usr] 单膝跪地，将[usr.p_their()]的手放在[src]的手腕上，开始测量脉搏。"),
 		span_notice("You begin counting [src]'s pulse."), null, 3)
 	else
-		usr.visible_message(span_notice("[usr] begins counting their pulse."),
+		usr.visible_message(span_notice("[usr] 开始测量自己的脉搏。"),
 		span_notice("You begin counting your pulse."), null, 3)
 
 	if(handle_pulse())
 		to_chat(usr, span_notice("[self ? "You have a" : "[src] has a"] pulse! Counting..."))
 	else
-		to_chat(usr, span_warning("[src] has no pulse!"))
+		to_chat(usr, span_warning("[src] 没有脉搏！"))
 		return
 
 	to_chat(usr, "You must[self ? "" : " both"] remain still until counting is finished.")
 
 	if(!do_after(usr, 6 SECONDS, NONE, src))
-		to_chat(usr, span_warning("You failed to check the pulse. Try again."))
+		to_chat(usr, span_warning("你未能检测到脉搏。请再试一次。"))
 		return
 
 	to_chat(usr, span_notice("[self ? "Your" : "[src]'s"] pulse is [get_pulse(GETPULSE_HAND)]."))
@@ -909,19 +909,19 @@
 		spark_system.start(src)
 	if(!silent)
 		if(goes_out && light_off)
-			to_chat(src, span_notice("Your sources of light short and fizzle out."))
+			to_chat(src, span_notice("你的光源短暂闪烁后熄灭了。"))
 			return
 		if(goes_out)
 			if(goes_out > 1)
-				to_chat(src, span_notice("Your sources of light fizzle out."))
+				to_chat(src, span_notice("你的光源熄灭了。"))
 				return
-			to_chat(src, span_notice("Your source of light fizzles out."))
+			to_chat(src, span_notice("你的光源熄灭了。"))
 			return
 		if(light_off)
 			if(light_off > 1)
-				to_chat(src, span_notice("Your sources of light short out."))
+				to_chat(src, span_notice("你的光源短路了。"))
 				return
-			to_chat(src, span_notice("Your source of light shorts out."))
+			to_chat(src, span_notice("你的光源短路了。"))
 
 
 

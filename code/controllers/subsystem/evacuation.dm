@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(evacuation)
-	name = "Evacuation"
+	name = "撤离"
 	flags = SS_NO_INIT|SS_TICKER
 
 	var/list/pod_list = list()
@@ -155,7 +155,7 @@ SUBSYSTEM_DEF(evacuation)
 	for(i in SSevacuation.dest_rods)
 		I = i
 		if(I.active_state == SELF_DESTRUCT_MACHINE_ARMED && !override)
-			dest_master.visible_message(span_warning("WARNING: Unable to cancel detonation. Please disarm all control rods."))
+			dest_master.visible_message(span_warning("警告：无法取消引爆。请解除所有控制棒。"))
 			return FALSE
 
 	dest_status = NUKE_EXPLOSION_INACTIVE
@@ -181,7 +181,7 @@ SUBSYSTEM_DEF(evacuation)
 	for(var/i in dest_rods)
 		I = i
 		if(I.active_state != SELF_DESTRUCT_MACHINE_ARMED && !override)
-			dest_master.visible_message(span_warning("WARNING: Unable to trigger detonation. Please arm all control rods."))
+			dest_master.visible_message(span_warning("警告：无法触发引爆。请将所有控制棒置于待发状态。"))
 			return FALSE
 
 	priority_announce("DANGER. DANGER. Self destruct system activated. DANGER. DANGER. Self destruct in progress. DANGER. DANGER.", title = "Self Destruct System", type = ANNOUNCEMENT_PRIORITY, color_override = "purple")

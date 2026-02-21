@@ -1,6 +1,6 @@
 // Streetlights
 /obj/machinery/streetlight/street
-	name = "Colony Streetlight"
+	name = "殖民地路灯"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "street_off"
 	layer = MOB_BELOW_PIGGYBACK_LAYER
@@ -23,8 +23,8 @@
 // Traffic
 
 /obj/machinery/streetlight/traffic
-	name = "traffic light"
-	desc = "A traffic light"
+	name = "交通信号灯"
+	desc = "交通信号灯"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "trafficlight"
 	bound_width = 32
@@ -47,8 +47,8 @@
 		set_light(0)
 
 /obj/machinery/streetlight/traffic_alt
-	name = "traffic light"
-	desc = "A traffic light"
+	name = "交通信号灯"
+	desc = "交通信号灯"
 	icon = 'icons/obj/structures/prop/urban/64x64_urbanrandomprops.dmi'
 	icon_state = "trafficlight_alt"
 	bound_width = 32
@@ -70,9 +70,9 @@
 		set_light(0)
 
 /obj/machinery/streetlight/engineer_circular
-	name = "circular light"
+	name = "圆形灯"
 	icon_state = "engineerlight_off"
-	desc = "A huge circular light"
+	desc = "一个巨大的圆形灯"
 	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	density = FALSE
 	resistance_flags = RESIST_ALL

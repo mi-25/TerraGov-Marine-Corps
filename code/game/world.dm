@@ -299,7 +299,7 @@ GLOBAL_VAR(restart_counter)
 		if(length(msg))
 			send2chat(msg.Join(" | "), CONFIG_GET(string/end_of_round_channel))
 
-	to_chat(world, span_boldannounce("Rebooting world..."))
+	to_chat(world, span_boldannounce("正在重启世界..."))
 	Master.Shutdown()
 
 	#ifdef UNIT_TESTS

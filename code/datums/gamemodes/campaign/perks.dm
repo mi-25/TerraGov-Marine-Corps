@@ -150,7 +150,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/trait/hp_boost/two
 	name = "Extreme constitution"
-	desc = "Military grade biological augmentations are used to harden your body against grievous bodily harm. Provides an additional +25 max health and +10 pain resistance."
+	desc = "军用级生化增强用于强化你的身体，抵御严重伤害。提供额外+25最大生命值和+10疼痛抗性。"
 	req_desc = "Requires Improved constitution."
 	ui_icon = "health_2"
 	prereq_perks = list(/datum/perk/trait/hp_boost)
@@ -162,7 +162,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/trait/quiet
 	name = "Light footed"
-	desc = "Quiet when running, silent when walking."
+	desc = "奔跑时安静，行走时无声。"
 	ui_icon = "soft_footed"
 	traits = list(TRAIT_LIGHT_STEP)
 	all_jobs = TRUE
@@ -170,7 +170,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/trait/axe_master
 	name = "Axe master"
-	desc = "You are able to wield a breaching axe with considerable skill. Grants access to a special sweep attack when wielded, and allows some roles to select an axe as a back stored weapon."
+	desc = "你能够熟练地使用破门斧。持握时可解锁特殊横扫攻击，并允许部分角色选择斧头作为背部存放武器。"
 	req_desc = "Requires Melee specialisation."
 	ui_icon = "axe"
 	traits = list(TRAIT_AXE_EXPERT)
@@ -185,7 +185,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/trait/sword_master
 	name = "Sword master"
-	desc = "You are able to wield a sword with considerable skill. Grants access to a special lunge attack when wielding any sword, and allows some roles to select a sword in different slots."
+	desc = "你能够相当熟练地使用剑。在装备任何剑时，可解锁特殊的突刺攻击，并允许某些角色在不同装备槽位选择剑。"
 	req_desc = "Requires Melee specialisation."
 	ui_icon = "sword"
 	traits = list(TRAIT_SWORD_EXPERT)
@@ -235,7 +235,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/unarmed
 	name = "Hand to hand expertise"
-	desc = "Advanced hand to hand combat training gives you an edge when you need to punch someone in the face. Improved unarmed damage and stun chance."
+	desc = "高级徒手格斗训练让你在需要猛击对方面门时占据优势。提升徒手伤害与击晕几率。"
 	ui_icon = "cqc_1"
 	unarmed = 1
 	all_jobs = TRUE
@@ -243,7 +243,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/unarmed/two
 	name = "Hand to hand specialisation"
-	desc = "Muscle augments combined with specialised hand to hand combat training turn your body into a lethal weapon. Greatly improved unarmed damage and stun chance."
+	desc = "肌肉增强结合专业徒手格斗训练，将你的身体化为致命武器。徒手伤害与击晕几率大幅提升。"
 	req_desc = "Requires Hand to hand expertise."
 	ui_icon = "cqc_2"
 	unlock_cost = 350
@@ -251,7 +251,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/melee
 	name = "Melee expertise"
-	desc = "Improved damage with melee weapons."
+	desc = "提升近战武器的伤害。"
 	ui_icon = "melee_1"
 	melee_weapons = 1
 	all_jobs = TRUE
@@ -259,7 +259,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/melee/two
 	name = "Melee specialisation"
-	desc = "Greatly improved damage with melee weapons."
+	desc = "大幅提升近战武器的伤害。"
 	req_desc = "Requires Melee expertise."
 	ui_icon = "melee_2"
 	prereq_perks = list(/datum/perk/skill_mod/melee)
@@ -267,7 +267,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/combat
 	name = "Advanced combat training"
-	desc = "Improved handling for all firearms. A prerequisite for all gun skills perks, and increases the speed of tactical reloads."
+	desc = "提升所有枪械的操控性。这是所有枪械技能特长的先决条件，并加快战术换弹速度。"
 	ui_icon = "firearms"
 	combat = 1
 	all_jobs = TRUE
@@ -275,7 +275,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/pistols
 	name = "Advanced pistol training"
-	desc = "Improved damage, accuracy and scatter with pistol type firearms. Unlocks additional pistols for some roles."
+	desc = "提升手枪类武器的伤害、精度并减少散布。为部分角色解锁额外的手枪。"
 	req_desc = "Requires Advanced combat training."
 	ui_icon = "pistols"
 	pistols = 1
@@ -294,7 +294,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/shotguns
 	name = "Advanced shotgun training"
-	desc = "Improved damage, accuracy and scatter with shotgun type firearms. Unlocks access to a shotgun secondary weapon in the backslot for some roles."
+	desc = "提升霰弹枪类武器的伤害、精度和散布。为部分角色解锁背部槽位的霰弹枪副武器。"
 	req_desc = "Requires Advanced combat training."
 	ui_icon = "shotguns"
 	shotguns = 1
@@ -310,7 +310,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/rifles
 	name = "Advanced rifle training"
-	desc = "Improved damage, accuracy and scatter with rifle type firearms. Unlocks new weapons and ammo types for some roles."
+	desc = "提升步枪类武器的伤害、精度和散布。为部分职业解锁新武器和弹药类型。"
 	req_desc = "Requires Advanced combat training."
 	ui_icon = "rifles"
 	rifles = 1
@@ -353,7 +353,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/smgs
 	name = "Advanced SMG training"
-	desc = "Improved damage, accuracy and scatter with SMG type firearms. Unlocks new weapons and ammo types for some roles."
+	desc = "提升冲锋枪类武器的伤害、精度和散射。为部分角色解锁新武器和弹药类型。"
 	req_desc = "Requires Advanced combat training."
 	ui_icon = "smgs"
 	smgs = 1
@@ -384,7 +384,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/heavy_weapons
 	name = "Heavy weapon specialisation"
-	desc = "Improved damage, accuracy and scatter with heavy weapon type firearms. Unlocks new weapons and ammo types for some roles."
+	desc = "提升重型枪械的伤害、精度和散布。为部分角色解锁新武器和弹药类型。"
 	req_desc = "Requires Advanced combat training."
 	ui_icon = "heavy"
 	heavy_weapons = 1
@@ -405,7 +405,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/smartgun
 	name = "Advanced smartgun training"
-	desc = "Improved damage, accuracy and scatter with smartguns type firearms."
+	desc = "提升智能机枪类枪械的伤害、精度和散射。"
 	req_desc = "Requires Advanced combat training."
 	ui_icon = "smartguns"
 	smartgun = 1
@@ -415,7 +415,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/construction
 	name = "Advanced construction training"
-	desc = "Faster construction times when building. Some items may no longer have a penalty delay when constructing, and engineers exclusively build tougher barricades."
+	desc = "建造速度更快。某些物品在建造时可能不再有惩罚延迟，且工程兵会建造更坚固的路障。"
 	ui_icon = "construction"
 	construction = 2
 	all_jobs = TRUE
@@ -433,7 +433,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/leadership
 	name = "Advanced leadership training"
-	desc = "Advanced leadership training and battlefield experience resulting in an improved ability to command and control the soldiers under your command. Improved effectiveness and range when issuing orders."
+	desc = "高级领导力训练与战场经验使您指挥下属士兵的能力得到提升。下达命令时效果与范围均有所增强。"
 	ui_icon = "leadership"
 	leadership = 1
 	jobs_supported = list(SQUAD_LEADER, FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN, SOM_SQUAD_LEADER, SOM_STAFF_OFFICER, SOM_FIELD_COMMANDER, SOM_COMMANDER)
@@ -441,7 +441,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/medical
 	name = "Advanced medical training"
-	desc = "Faster at applying medical items. Some items may no longer have a penalty delay. Unlocks access to improved first aid pouches if not already available."
+	desc = "加快使用医疗物品的速度。部分物品可能不再有惩罚延迟。如果尚未解锁，将获得使用改进型急救附包的权限。"
 	ui_icon = "medical"
 	medical = 2
 	all_jobs = TRUE
@@ -462,7 +462,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/stamina
 	name = "Improved stamina"
-	desc = "Superior physical conditioning results in overall improved stamina. Improved max stamina, stamina regen rate, and reduces the delay before stamina begins to regenerate after stamina loss."
+	desc = "卓越的身体素质带来整体耐力的全面提升。提高最大耐力值、耐力恢复速率，并缩短耐力损耗后的恢复延迟。"
 	ui_icon = "stamina_1"
 	stamina = 1
 	all_jobs = TRUE
@@ -482,7 +482,7 @@ Needed both for a purchase list and effected list (if one perk impacts multiple 
 
 /datum/perk/skill_mod/stamina/two
 	name = "Extreme stamina"
-	desc = "Mechanically augmented physical conditioning results in significantly enhanced overall stamina. Further improved max stamina, stamina regen rate, and reduced delay before stamina begins to regenerate after stamina loss."
+	desc = "机械增强的体能训练显著提升了整体耐力。进一步提高了最大耐力值、耐力恢复速率，并缩短了耐力损耗后的恢复延迟。"
 	req_desc = "Requires Improved stamina."
 	ui_icon = "stamina_2"
 	prereq_perks = list(/datum/perk/skill_mod/stamina)

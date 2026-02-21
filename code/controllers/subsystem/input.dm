@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(input)
-	name = "Input"
+	name = "输入"
 	wait = 1
 	init_stage = INITSTAGE_EARLY
 	flags = SS_TICKER

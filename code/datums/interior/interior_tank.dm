@@ -18,7 +18,7 @@
 		enterer.forceMove(door.get_enter_location())
 		enterer.setDir(EAST)
 		return ..()
-	to_chat(enterer, span_userdanger("AN ERROR OCCURED PUTTING YOU INTO AN INTERIOR"))
+	to_chat(enterer, span_userdanger("发生错误，正在将您放入内部空间"))
 	stack_trace("a [enterer.type] could not find a door when entering an interior")
 	enterer.forceMove(pick(loaded_turfs))
 	return ..()
@@ -27,7 +27,7 @@
 	template = /datum/map_template/interior/som_tank
 
 /turf/closed/interior/tank
-	name = "\improper Banteng tank interior"
+	name = "\improper 蛮牛坦克内部"
 	icon = 'icons/obj/armored/3x3/tank_interior.dmi'
 
 /turf/closed/interior/tank/one
@@ -76,7 +76,7 @@
 	icon_state = "tank_interior_28"
 
 /turf/closed/interior/tank/door
-	name = "exit hatch"
+	name = "出口舱门"
 	icon = 'icons/obj/armored/3x3/tank_interior.dmi'
 	icon_state = "tank_interior_7"
 	resistance_flags = RESIST_ALL
@@ -110,7 +110,7 @@
 		if(isitem(dropping))
 			user.temporarilyRemoveItemFromInventory(dropping)
 		dropping.forceMove(owner.exit_location(dropping))
-		user.balloon_alert(user, "item thrown outside")
+		user.balloon_alert(user, "物品被扔到外面")
 		return
 	return ..()
 
@@ -123,7 +123,7 @@
 		if(isitem(grabbed_thing.type))
 			user.temporarilyRemoveItemFromInventory(grabbed_thing)
 		grabbed_thing.forceMove(owner.exit_location(grabbed_thing))
-		user.balloon_alert(user, "item thrown outside")
+		user.balloon_alert(user, "物品被扔到外面")
 		return
 	return ..()
 
@@ -133,7 +133,7 @@
 	return get_step(src, EAST)
 
 /turf/open/interior/tank
-	name = "\improper Banteng tank interior"
+	name = "\improper 班腾坦克内部"
 	icon = 'icons/obj/armored/3x3/tank_interior.dmi'
 
 /turf/open/interior/tank/eight
@@ -156,16 +156,16 @@
 	icon_state = "tank_interior_22"
 
 /area/interior/tank
-	name = "Tank Interior"
+	name = "坦克内部"
 	icon_state = "shuttle"
 
 /area/interior/tank/som
-	name = "Tank Interior"
+	name = "坦克内部"
 	icon_state = "shuttle"
 	base_lighting_alpha = 90
 
 /turf/closed/interior/tank/som
-	name = "\improper Gorgon tank interior"
+	name = "\improper 戈耳工坦克内部"
 	icon = 'icons/obj/armored/3x4/som_tank_interior.dmi'
 
 /turf/closed/interior/tank/som/thirteen
@@ -199,7 +199,7 @@
 	icon_state = "tank_interior_21"
 
 /turf/open/interior/tank/som
-	name = "\improper Gorgon tank interior"
+	name = "\improper 戈耳工坦克内部"
 	icon = 'icons/obj/armored/3x4/som_tank_interior.dmi'
 
 /turf/open/interior/tank/som/one
@@ -239,7 +239,7 @@
 	icon_state = "tank_interior_12"
 
 /turf/closed/interior/tank/door/som
-	name = "exit hatch"
+	name = "出口舱口"
 	icon = 'icons/obj/armored/3x4/som_tank_interior.dmi'
 	icon_state = "hatch"
 	plane = FLOOR_PLANE

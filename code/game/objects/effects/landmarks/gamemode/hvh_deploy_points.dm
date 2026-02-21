@@ -4,7 +4,7 @@
 #define RAPPEL_HEIGHT 128
 
 /obj/effect/landmark/patrol_point
-	name = "Patrol exit point"
+	name = "巡逻撤离点"
 	icon = 'icons/effects/campaign_effects.dmi'
 	faction = FACTION_TERRAGOV
 	///ID to link with an associated start point
@@ -111,12 +111,12 @@
 	user.status_flags &= ~GODMODE
 
 /obj/effect/landmark/patrol_point/tgmc_11
-	name = "TGMC exit point 1"
+	name = "地球政府殖民地海军陆战队撤离点 1"
 	id = "TGMC_1"
 	icon_state = "blue_1"
 
 /obj/effect/landmark/patrol_point/tgmc_21
-	name = "TGMC exit point 2"
+	name = "地球政府殖民地海军陆战队撤离点2"
 	id = "TGMC_2"
 	icon_state = "blue_2"
 	minimap_icon = "patrol_2"
@@ -125,20 +125,20 @@
 	faction = FACTION_SOM
 
 /obj/effect/landmark/patrol_point/som/som_11
-	name = "SOM exit point 1"
+	name = "火星之子撤离点 1"
 	icon_state = "red_1"
 	id = "SOM_1"
 	minimap_icon = "som_patrol_1"
 
 /obj/effect/landmark/patrol_point/som/som_21
-	name = "SOM exit point 2"
+	name = "火星之子撤离点2"
 	id = "SOM_2"
 	icon_state = "red_2"
 	minimap_icon = "som_patrol_2"
 
 
 /atom/movable/effect/rappel_rope
-	name = "rope"
+	name = "绳索"
 	icon = 'icons/obj/structures/prop/mainship.dmi'
 	icon_state = "rope"
 	layer = ABOVE_MOB_LAYER
@@ -152,7 +152,7 @@
 	playsound(loc, 'sound/effects/rappel.ogg', 50, TRUE, falloff = 2)
 	playsound(loc, 'sound/effects/tadpolehovering.ogg', 100, TRUE, falloff = 2.5)
 	balloon_alert_to_viewers("!!!")
-	visible_message(span_userdanger("You see a dropship fly overhead and begin dropping ropes!"))
+	visible_message(span_userdanger("你看到一架运输机从头顶飞过，开始投放绳索！"))
 	ropeanimation()
 
 ///Starts the rope animation

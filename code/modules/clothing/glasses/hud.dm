@@ -1,6 +1,6 @@
 /obj/item/clothing/glasses/hud
-	name = "HUD"
-	desc = "A heads-up display that provides important info in (almost) real time."
+	name = "抬头显示器"
+	desc = "一个能（几乎）实时提供重要信息的抬头显示器。"
 	atom_flags = null //doesn't protect eyes because it's a monocle, duh
 	///The hud type(s) to give this type of glasses
 	var/hud_type
@@ -73,8 +73,8 @@
 
 
 /obj/item/clothing/glasses/hud/health
-	name = "\improper HealthMate HUD"
-	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status. The projector can be attached to compatable eyewear."
+	name = "\improper 健康伴侣抬头显示器"
+	desc = "一种抬头显示器，可扫描视野内的人类并提供其健康状况的准确数据。该投影仪可安装在兼容的眼镜上。"
 	icon_state = "healthhud"
 	deactive_state = "degoggles_med"
 	armor_protection_flags = NONE
@@ -91,8 +91,8 @@
 	prescription = TRUE
 
 /obj/item/clothing/glasses/hud/medgoggles
-	name = "\improper HealthMate ballistic goggles"
-	desc = "Standard issue TGMC goggles. This pair has been fitted with an internal HealthMate HUD projector."
+	name = "\improper HealthMate 弹道护目镜"
+	desc = "标准配发的TGMC护目镜。这副护目镜已内置健康伴侣HUD投影仪。"
 	icon_state = "medgoggles"
 	worn_icon_state = "medgoggles"
 	deactive_state = "degoggles_medgoggles"
@@ -111,13 +111,13 @@
 	goggles = TRUE
 
 /obj/item/clothing/glasses/hud/medgoggles/prescription
-	name = "\improper HealthMate prescription ballistic goggles"
-	desc = "Standard issue TGMC prescription goggles. This pair has been fitted with an internal HealthMate HUD projector."
+	name = "\improper HealthMate 处方弹道护目镜"
+	desc = "标准配发的TGMC处方护目镜。这副护目镜已内置健康伴侣HUD投影仪。"
 	prescription = TRUE
 
 /obj/item/clothing/glasses/hud/medpatch
-	name = "\improper Medpatch HUD"
-	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status. For the disabled and/or edgy Corpsman."
+	name = "\improper 医疗贴片HUD"
+	desc = "一种抬头显示器，可扫描视野内的人类并提供其健康状况的准确数据。专为行动不便和/或追求个性的卫生兵设计。"
 	icon_state = "medpatchhud"
 	deactive_state = "degoggles_medpatch"
 	species_exception = list(/datum/species/robot)
@@ -132,8 +132,8 @@
 	actions_types = list(/datum/action/item_action/toggle)
 
 /obj/item/clothing/glasses/hud/medglasses
-	name = "\improper HealthMate regulation prescription glasses"
-	desc = "Standard issue TGMC Regulation Prescription Glasses. This pair has been fitted with an internal HealthMate HUD projector."
+	name = "\improper HealthMate 标准处方眼镜"
+	desc = "标准配发的TGMC制式处方眼镜。这副眼镜已内置健康伴侣HUD投影仪。"
 	icon_state = "medglasses"
 	worn_icon_state = "medglasses"
 	deactive_state = "degoggles_medglasses"
@@ -150,8 +150,8 @@
 	actions_types = list(/datum/action/item_action/toggle)
 
 /obj/item/clothing/glasses/hud/medsunglasses
-	name = "\improper HealthMate sunglasses"
-	desc = "A pair of designer sunglasses. This pair has been fitted with an internal HealthMate HUD projector."
+	name = "\improper 健康伴侣太阳镜"
+	desc = "一副设计师太阳镜。这副眼镜配备了内置的HealthMate HUD投影仪。"
 	icon_state = "medsunglasses"
 	worn_icon_state = "medsunglasses"
 	deactive_state = "degoggles_medsunglasses"
@@ -168,8 +168,8 @@
 	actions_types = list(/datum/action/item_action/toggle)
 
 /obj/item/clothing/glasses/hud/security
-	name = "\improper PatrolMate HUD"
-	desc = "A heads-up display that scans the humans in view and provides accurate data about their ID status and security records."
+	name = "\improper 巡逻伙伴抬头显示器"
+	desc = "一种抬头显示器，可扫描视野内的人类并提供其身份状态和安全记录的准确数据。"
 	species_exception = list(/datum/species/robot)
 	sprite_sheets = list(
 		"Combat Robot" = 'icons/mob/species/robot/glasses.dmi',
@@ -186,8 +186,8 @@
 	var/global/list/jobs[0]
 
 /obj/item/clothing/glasses/hud/security/jensenshades
-	name = "augmented shades"
-	desc = "Polarized bioneural eyewear, designed to augment your vision."
+	name = "增强护目镜"
+	desc = "偏振式生物神经护目镜，旨在增强您的视觉。"
 	icon_state = "jensenshades"
 	worn_icon_state = "jensenshades"
 	vision_flags = SEE_MOBS
@@ -195,8 +195,8 @@
 	actions_types = null
 
 /obj/item/clothing/glasses/hud/xenohud
-	name = "XenoMate HUD"
-	desc = "A heads-up display that scans any nearby xenomorph's data."
+	name = "异形伴侣HUD"
+	desc = "一个可扫描附近异形数据的抬头显示器。"
 	icon_state = "securityhud"
 	deactive_state = "degoggles_sec"
 	species_exception = list(/datum/species/robot)
@@ -212,8 +212,8 @@
 	actions_types = list(/datum/action/item_action/toggle)
 
 /obj/item/clothing/glasses/hud/painhud
-	name = "Pain HUD"
-	desc = "A heads-up display that scans human pain and perceived health."
+	name = "痛觉HUD"
+	desc = "扫描人类痛觉与感知健康状况的抬头显示器。"
 	icon_state = "securityhud"
 	deactive_state = "degoggles_sec"
 	species_exception = list(/datum/species/robot)
@@ -228,8 +228,8 @@
 	actions_types = list(/datum/action/item_action/toggle)
 
 /obj/item/clothing/glasses/hud/sa
-	name = "spatial agent's sunglasses"
-	desc = "Glasses worn by a spatial agent."
+	name = "空间特工的太阳镜"
+	desc = "空间特工佩戴的眼镜。"
 	icon_state = "sun"
 	worn_icon_state = "sunglasses"
 	eye_protection = 2
@@ -244,5 +244,5 @@
 	AddComponent(/datum/component/clothing_tint, TINT_NONE)
 
 /obj/item/clothing/glasses/hud/sa/nodrop
-	desc = "Glasses worn by a spatial agent. They delete themselves if you take them off!"
+	desc = "空间特工佩戴的眼镜。一旦摘下就会自我销毁！"
 	item_flags = DELONDROP

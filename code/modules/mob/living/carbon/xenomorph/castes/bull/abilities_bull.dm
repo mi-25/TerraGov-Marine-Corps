@@ -6,7 +6,7 @@
 	name = "Plow Charge"
 	action_icon_state = "bull_charge"
 	action_icon = 'icons/Xeno/actions/bull.dmi'
-	desc = "When you hit a host, knock them out of your way while continuing your charge undeterred. The force of your charge also disarms them."
+	desc = "当你击中宿主时，将其撞开并继续不受阻碍地冲锋。冲锋的力量还会解除他们的武装。"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_BULLCHARGE,
 	)
@@ -21,7 +21,7 @@
 	name = "Headbutt Charge"
 	action_icon_state = "bull_headbutt"
 	action_icon = 'icons/Xeno/actions/bull.dmi'
-	desc = "When you hit a host, stops your charge while headbutting them, flinging them in the air and stunning them for some time."
+	desc = "当你击中宿主时，会停止冲锋并用头撞击他们，将其甩投到空中并使其眩晕一段时间。"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_BULLHEADBUTT,
 	)
@@ -31,7 +31,7 @@
 	name = "Gore Charge"
 	action_icon_state = "bull_gore"
 	action_icon = 'icons/Xeno/actions/bull.dmi'
-	desc = "When you hit a host, stops your charge while piercing and injecting them with Ozelomelyn."
+	desc = "当你击中宿主时，会停止冲锋，同时刺穿并注入奥泽洛梅林。"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_BULLGORE,
 	)

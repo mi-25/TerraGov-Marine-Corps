@@ -16,7 +16,7 @@
 	name = "Essence Link"
 	action_icon_state = "essence_link_0"
 	action_icon = 'icons/Xeno/actions/drone.dmi'
-	desc = "Link to a xenomorph. This changes some of your abilities, and grants them and you both various bonuses."
+	desc = "链接至一个异形。这会改变你的部分能力，并为你和该异形双方提供各种增益。"
 	cooldown_duration = 5 SECONDS
 	ability_cost = 0
 	target_flags = ABILITY_MOB_TARGET
@@ -43,34 +43,34 @@
 	if(!isxeno(target) || target.get_xeno_hivenumber() != xeno_owner.get_xeno_hivenumber())
 		return FALSE
 	if(!xeno_owner.Adjacent(target))
-		xeno_owner.balloon_alert(xeno_owner, "not adjacent!")
+		xeno_owner.balloon_alert(xeno_owner, "未相邻！")
 		return FALSE
 	if(target.tier == XENO_TIER_ZERO || target.tier == XENO_TIER_MINION)
-		target.balloon_alert(xeno_owner, "we can't link to her!")
+		target.balloon_alert(xeno_owner, "我们无法与她建立链接！")
 		return FALSE
 	if(HAS_TRAIT(xeno_owner, TRAIT_ESSENCE_LINKED))
-		target.balloon_alert(xeno_owner, "we're already linked!")
+		target.balloon_alert(xeno_owner, "我们已经连接上了！")
 		return FALSE
 	if(HAS_TRAIT(target, TRAIT_ESSENCE_LINKED))
-		target.balloon_alert(xeno_owner, "she's already linked!")
+		target.balloon_alert(xeno_owner, "她已经链接过了！")
 		return FALSE
 	return ..()
 
 /datum/action/ability/activable/xeno/essence_link/use_ability(atom/target)
 	if(!HAS_TRAIT(xeno_owner, TRAIT_ESSENCE_LINKED))
-		target.balloon_alert(xeno_owner, "linking...")
+		target.balloon_alert(xeno_owner, "正在连接...")
 		if(!do_after(xeno_owner, DRONE_ESSENCE_LINK_WINDUP, NONE, target, BUSY_ICON_FRIENDLY, BUSY_ICON_FRIENDLY))
-			xeno_owner.balloon_alert(xeno_owner, "link cancelled!")
+			xeno_owner.balloon_alert(xeno_owner, "链接已取消！")
 			return
 		xeno_owner.apply_status_effect(STATUS_EFFECT_XENO_ESSENCE_LINK, 1, target, lifesteal_percentage, revenge_modifier)
 		existing_link = xeno_owner.has_status_effect(STATUS_EFFECT_XENO_ESSENCE_LINK)
 		linked_target = target
-		target.balloon_alert(target, "essence link established")
+		target.balloon_alert(target, "蜂巢意志连接已建立")
 	succeed_activate()
 
 /datum/action/ability/activable/xeno/essence_link/alternate_action_activate()
 	if(!HAS_TRAIT(xeno_owner, TRAIT_ESSENCE_LINKED))
-		xeno_owner.balloon_alert(xeno_owner, "no link to cancel!")
+		xeno_owner.balloon_alert(xeno_owner, "没有链接可取消！")
 		return
 	end_ability(TRUE)
 	return COMSIG_KB_ACTIVATED
@@ -100,7 +100,7 @@
 	name = "Acidic Salve"
 	action_icon_state = "heal_xeno"
 	action_icon = 'icons/Xeno/actions/drone.dmi'
-	desc = "Apply a minor heal to the target. If applied to a linked sister, it will also apply a regenerative buff. Additionally, if that linked sister is near death, the heal's potency is increased."
+	desc = "对目标施加轻微治疗。若目标为链接的姐妹，还将施加再生增益。此外，若该链接的姐妹濒临死亡，治疗效果将增强。"
 	cooldown_duration = 5 SECONDS
 	ability_cost = 150
 	keybinding_signals = list(
@@ -122,7 +122,7 @@
 	if((!bypass_cast_time_on_threshold || (living_target.health > (living_target.maxHealth * bonus_healing_threshold))))
 		if(!do_after(xeno_owner, 1 SECONDS, NONE, target, BUSY_ICON_FRIENDLY, BUSY_ICON_MEDICAL))
 			return FALSE
-	xeno_owner.visible_message(span_xenowarning("\the [xeno_owner] vomits acid over [target], mending their wounds!"))
+	xeno_owner.visible_message(span_xenowarning("\the [xeno_owner] 向 [target] 吐出酸液，治愈了他们的伤口！"))
 	owner.changeNext_move(CLICK_CD_RANGE)
 	salve_healing(target)
 	succeed_activate()
@@ -158,7 +158,7 @@
 	name = "Enhancement"
 	action_icon_state = "enhancement"
 	action_icon = 'icons/Xeno/actions/drone.dmi'
-	desc = "Apply an enhancement to the linked xeno, increasing their capabilities beyond their limits. You can see if a xeno can be empowered by checking their codex."
+	desc = "对链接的异形施加强化，使其能力突破极限。你可以通过查看它们的法典来确认异形是否可以被赋能。"
 	cooldown_duration = 120 SECONDS
 	ability_cost = 0
 	keybinding_signals = list(

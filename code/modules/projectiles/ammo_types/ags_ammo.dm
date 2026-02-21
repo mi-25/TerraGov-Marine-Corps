@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/ags_shrapnel
-	name = "fragmentation grenade"
+	name = "破片手雷"
 	icon_state = "grenade_projectile"
 	hud_state = "grenade_frag"
 	hud_state_empty = "grenade_empty"
@@ -47,11 +47,11 @@
 	fire_directionalburst(proj, proj.firer, proj.shot_from, bonus_projectile_quantity, Get_Angle(proj.starting_turf, target_turf), loc_override = det_turf)
 
 /datum/ammo/ags_shrapnel/incendiary
-	name = "white phosphorous grenade"
+	name = "白磷手雷"
 	bonus_projectiles_type = /datum/ammo/bullet/ags_spread/incendiary
 
 /datum/ammo/bullet/ags_spread
-	name = "Shrapnel"
+	name = "破片"
 	icon_state = "flechette"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOB
 	accuracy_variation = 15
@@ -62,7 +62,7 @@
 	damage_falloff = 0
 
 /datum/ammo/bullet/ags_spread/incendiary
-	name = "White phosphorous shrapnel"
+	name = "白磷破片"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_INCENDIARY
 	damage = 20
 	penetration = 10

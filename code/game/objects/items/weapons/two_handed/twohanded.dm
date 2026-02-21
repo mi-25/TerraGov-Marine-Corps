@@ -31,7 +31,7 @@
 		else if(offhand == user.l_hand)
 			user.drop_l_hand()
 		if(user.get_inactive_held_item()) //Failsafe; if there's somehow still something in the off-hand (undroppable), bail.
-			to_chat(user, span_warning("You need your other hand to be empty!"))
+			to_chat(user, span_warning("你需要另一只手空出来！"))
 			return FALSE
 
 	if(ishuman(user))
@@ -39,16 +39,16 @@
 		var/mob/living/carbon/human/wielder = user
 		var/datum/limb/hand = wielder.get_limb(check_hand)
 		if(!istype(hand) || !hand.is_usable())
-			to_chat(user, span_warning("Your other hand can't hold [src]!"))
+			to_chat(user, span_warning("你的另一只手拿不了[src]！"))
 			return FALSE
 
 	if(!place_offhand(user))
-		to_chat(user, span_warning("You cannot wield [src] right now."))
+		to_chat(user, span_warning("你现在无法装备[src]。"))
 		return FALSE
 
 	toggle_wielded(user, TRUE)
 	SEND_SIGNAL(src, COMSIG_ITEM_WIELD, user)
-	name = "[name] (Wielded)"
+	name = "[name]（已持握）"
 	update_item_state()
 	user.update_inv_l_hand()
 	user.update_inv_r_hand()
@@ -74,13 +74,13 @@
 	if(!user.put_in_inactive_hand(offhand))
 		qdel(offhand)
 		return FALSE
-	to_chat(user, span_notice("You grab [src] with both hands."))
+	to_chat(user, span_notice("你用双手抓住了[src]。"))
 	offhand.name = "[name] - offhand"
 	offhand.desc = "Your second grip on [src]."
 	return TRUE
 
 /obj/item/proc/remove_offhand(mob/user)
-	to_chat(user, span_notice("You are now carrying [src] with one hand."))
+	to_chat(user, span_notice("你正用一只手拿着[src]。"))
 	var/obj/item/weapon/twohanded/offhand/offhand = user.get_inactive_held_item()
 	if(istype(offhand) && !QDELETED(offhand))
 		qdel(offhand)
@@ -128,7 +128,7 @@
 /obj/item/weapon/twohanded/offhand
 	w_class = WEIGHT_CLASS_HUGE
 	icon_state = "offhand"
-	name = "offhand"
+	name = "副手"
 	item_flags = DELONDROP|TWOHANDED|WIELDED
 	resistance_flags = RESIST_ALL
 	layer = BELOW_OBJ_LAYER

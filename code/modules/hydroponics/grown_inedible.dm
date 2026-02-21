@@ -35,7 +35,7 @@
 
 /obj/item/grown/log
 	name = "tower-cap log"
-	desc = "It's better than bad, it's good!"
+	desc = "这比糟糕好，这很棒！"
 	icon_state = "logs"
 	force = 5
 	atom_flags = NONE
@@ -63,7 +63,7 @@
 /obj/item/grown/sunflower // FLOWER POWER!
 	plantname = "sunflowers"
 	name = "sunflower"
-	desc = "It's beautiful! A certain person might beat you to death if you trample these."
+	desc = "真漂亮！要是你踩坏了这些，某人可能会把你打死。"
 	icon_state = "sunflower"
 	damtype = BURN
 	force = 0
@@ -74,12 +74,12 @@
 	throw_range = 3
 
 /obj/item/grown/sunflower/attack(mob/M as mob, mob/user as mob)
-	to_chat(M, "<font color='green'><b> [user] smacks you with a sunflower!</font><font color='yellow'><b>FLOWER POWER<b></font>")
-	to_chat(user, "<font color='green'> Your sunflower's </font><font color='yellow'><b>FLOWER POWER</b></font><font color='green'> strikes [M]</font>")
+	to_chat(M, "<font color='green'><b> [user] 用向日葵拍打你！</font><font color='yellow'><b>鲜花力量<b></font>")
+	to_chat(user, "<font color='green'> 你的向日葵的 </font><font color='yellow'><b>花朵之力</b></font><font color='green'> 击中了 [M]</font>")
 
 /obj/item/grown/nettle // -- Skie
 	plantname = "nettle"
-	desc = "It's probably <B>not</B> wise to touch it with bare hands..."
+	desc = "徒手触摸它可能<B>不是</B>明智之举……"
 	name = "nettle"
 	icon_state = "nettle"
 	damtype = BURN
@@ -100,7 +100,7 @@
 
 /obj/item/grown/nettle/pickup(mob/living/carbon/human/user as mob)
 	if(istype(user) && !user.gloves)
-		to_chat(user, span_warning("The nettle burns your bare hand!"))
+		to_chat(user, span_warning("荨麻灼伤了你的赤手！"))
 		if(ishuman(user))
 			var/organ = ((user.hand ? "l_":"r_") + "arm")
 			var/datum/limb/affecting = user.get_limb(organ)
@@ -121,7 +121,7 @@
 
 	if(force <= 0)
 		if(user)
-			to_chat(user, "All the leaves have fallen off \the [src] from violent whacking.")
+			to_chat(user, "所有叶子都因剧烈的拍打从\the [src]上掉落了。")
 			user.temporarilyRemoveItemFromInventory(src)
 		qdel(src)
 
@@ -136,7 +136,7 @@
 
 	if(..() && prob(50))
 		user.Unconscious(10 SECONDS)
-		to_chat(user, span_warning("You are stunned by the deathnettle when you try picking it up!"))
+		to_chat(user, span_warning("你试图拾取死亡荨麻时被它蜇晕了！"))
 
 /obj/item/grown/nettle/attack(mob/living/carbon/M as mob, mob/user as mob)
 
@@ -149,7 +149,7 @@
 	if(!..()) return
 
 	if(isliving(M))
-		to_chat(M, span_warning("You are stunned by the powerful acid of the deathnettle!"))
+		to_chat(M, span_warning("你被死亡荨麻的强力酸液击晕了！"))
 
 		log_combat(user, M, "hit", src)
 
@@ -161,7 +161,7 @@
 
 /obj/item/corncob
 	name = "corn cob"
-	desc = "A reminder of meals gone by."
+	desc = "昔日餐食的残迹。"
 	icon = 'icons/obj/items/harvest.dmi'
 	icon_state = "corncob"
 	worn_icon_state = "corncob"
@@ -175,6 +175,6 @@
 		return
 
 	if(I.sharp == IS_SHARP_ITEM_ACCURATE)
-		to_chat(user, span_notice("You use [I] to fashion a pipe out of the corn cob!"))
+		to_chat(user, span_notice("你用[I]把玉米芯做成了烟斗！"))
 		new /obj/item/clothing/mask/cigarette/pipe/cobpipe(user.loc)
 		qdel(src)

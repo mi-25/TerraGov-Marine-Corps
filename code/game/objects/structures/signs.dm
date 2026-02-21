@@ -81,7 +81,7 @@
 		return
 
 	if(isscrewdriver(I) && !istype(src, /obj/structure/sign/double))
-		to_chat(user, "You unfasten the sign with your [I].")
+		to_chat(user, "你用[I]解开了标识牌。")
 		var/obj/item/sign/S = new(loc)
 		S.name = name
 		S.desc = desc
@@ -90,7 +90,7 @@
 		qdel(src)
 
 /obj/item/sign
-	name = "sign"
+	name = "标记"
 	desc = ""
 	icon = 'icons/obj/decals.dmi'
 	w_class = WEIGHT_CLASS_NORMAL		//big
@@ -120,13 +120,13 @@
 		S.name = name
 		S.desc = desc
 		S.icon_state = sign_state
-		to_chat(user, "You fasten \the [S] with your [I].")
+		to_chat(user, "你用[I]固定了\the [S]。")
 		qdel(src)
 
 
 /obj/structure/sign/double/map
-	name = "station map"
-	desc = "A framed picture of the station."
+	name = "站点地图"
+	desc = "一张空间站的裱框照片。"
 
 /obj/structure/sign/double/map/left
 	icon_state = "map-left"
@@ -135,106 +135,106 @@
 	icon_state = "map-right"
 
 /obj/structure/sign/securearea
-	name = "\improper SECURE AREA"
-	desc = "A warning sign which reads 'SECURE AREA'."
+	name = "\improper 安全区域"
+	desc = "一块写着'管制区域'的警告牌。"
 	icon_state = "securearea"
 
 /obj/structure/sign/securearea/firingrange
-	name = "\improper FIRING RANGE"
-	desc = "A warning sign which reads 'LIVE AMMUNITION RANGE'."
+	name = "\improper 射击场"
+	desc = "一个警告标志，上面写着'实弹射击场'。"
 	icon_state = "firingrange"
 
 /obj/structure/sign/biohazard
-	name = "\improper BIOHAZARD"
-	desc = "A warning sign which reads 'BIOHAZARD'."
+	name = "\improper 生化危害"
+	desc = "一个写着'生化危害'的警告标志。"
 	icon_state = "bio"
 
 /obj/structure/sign/electricshock
-	name = "\improper HIGH VOLTAGE"
-	desc = "A warning sign which reads 'HIGH VOLTAGE'."
+	name = "\improper 高压危险"
+	desc = "一个警示标志，上面写着'高压危险'。"
 	icon_state = "shock"
 
 /obj/structure/sign/cold
-	name = "\improper LOW TEMPERATURE"
-	desc = "A warning sign which reads 'LOW TEMPERATURE'."
+	name = "\improper 低温"
+	desc = "一个写着'低温'的警告标志。"
 	icon_state = "cold"
 
 /obj/structure/sign/heat
-	name = "\improper HIGH TEMPERATURE"
-	desc = "A warning sign which reads 'HIGH TEMPERATURE'."
+	name = "\improper 高温"
+	desc = "一个警告标志，上面写着'高温'。"
 	icon_state = "heat"
 
 /obj/structure/sign/gas
-	name = "\improper GAS WARNING"
-	desc = "A warning sign which reads 'GAS MASKS REQUIRED'."
+	name = "\improper 气体警报"
+	desc = "一块警示牌，上面写着'必须佩戴防毒面具'。"
 	icon_state = "gasmask"
 
 /obj/structure/sign/examroom
-	name = "\improper EXAM"
-	desc = "A guidance sign which reads 'EXAM ROOM'."
+	name = "\improper 检查"
+	desc = "一块写着'检查室'的指示牌。"
 	icon_state = "examroom"
 
 /obj/structure/sign/vacuum
-	name = "\improper HARD VACUUM AHEAD"
-	desc = "A warning sign which reads 'HARD VACUUM AHEAD'."
+	name = "\improper 前方为硬真空区域"
+	desc = "一个警告标志，上面写着'前方为硬真空环境'。"
 	icon_state = "space"
 
 /obj/structure/sign/deathsposal
-	name = "\improper DISPOSAL LEADS TO SPACE"
-	desc = "A warning sign which reads 'DISPOSAL LEADS TO SPACE'."
+	name = "\improper 垃圾处理管道通往太空"
+	desc = "一个警告标志，上面写着'垃圾处理通往太空'。"
 	icon_state = "deathsposal"
 
 /obj/structure/sign/pods
-	name = "\improper ESCAPE PODS"
-	desc = "A warning sign which reads 'ESCAPE PODS'."
+	name = "\improper 逃生舱"
+	desc = "一个写着'逃生舱'的警告标志。"
 	icon_state = "pods"
 
 /obj/structure/sign/fire
-	name = "\improper DANGER: FIRE"
-	desc = "A warning sign which reads 'DANGER: FIRE'."
+	name = "\improper 危险：火焰"
+	desc = "一个写着'危险：火焰'的警告标志。"
 	icon_state = "fire"
 
 /obj/structure/sign/nosmoking_1
-	name = "\improper NO SMOKING"
-	desc = "A warning sign which reads 'NO SMOKING'."
+	name = "\improper 禁止吸烟"
+	desc = "一块写着'禁止吸烟'的警示牌。"
 	icon_state = "nosmoking"
 
 /obj/structure/sign/nosmoking_2
-	name = "\improper NO SMOKING"
-	desc = "A warning sign which reads 'NO SMOKING'."
+	name = "\improper 禁止吸烟"
+	desc = "一块写着'禁止吸烟'的警示牌。"
 	icon_state = "nosmoking2"
 
 /obj/structure/sign/redcross
-	name = "medbay"
-	desc = "The Intergalactic symbol of Medical institutions. You'll probably get help here."
+	name = "医疗舱"
+	desc = "星际医疗机构的标志。你或许能在这里得到帮助。"
 	icon_state = "redcross"
 
 /obj/structure/sign/greencross
-	name = "medbay"
-	desc = "The Intergalactic symbol of Medical institutions. You'll probably get help here."
+	name = "医疗舱"
+	desc = "星际医疗机构的标志。你或许能在这里得到帮助。"
 	icon_state = "greencross"
 
 /obj/structure/sign/greencross/star
 	icon_state = "lifestar"
 
 /obj/structure/sign/goldenplaque
-	name = "The Most Robust Men Award for Robustness"
-	desc = "To be Robust is not an action or a way of life, but a mental state. Only those with the force of Will strong enough to act during a crisis, saving friend from foe, are truly Robust. Stay Robust my friends."
+	name = "最坚韧猛男奖"
+	desc = "所谓强大，并非一种行为或生活方式，而是一种精神状态。唯有意志力足够坚定，能在危机中果断行动，从敌人手中拯救战友之人，才真正称得上强大。保持强大，我的朋友们。"
 	icon_state = "goldenplaque"
 
 /obj/structure/sign/kiddieplaque
-	name = "AI developers plaque"
-	desc = "Next to the extremely long list of names and job titles, there is a drawing of a little child. The child appears to be disabled. Beneath the image, someone has scratched the word \"PACKETS\""
+	name = "AI开发者铭牌"
+	desc = "在那一长串姓名和职务旁边，画着一个小孩子的涂鸦。这孩子看起来有残疾。画像下方，有人潦草地刻着'数据包'这个词。"
 	icon_state = "kiddieplaque"
 
 /obj/structure/sign/atmosplaque
-	name = "\improper FEA Atmospherics Division plaque"
-	desc = "This plaque commemorates the fall of the Atmos FEA division. For all the charred, dizzy, and brittle men who have died in its hands."
+	name = "\improper 联邦紧急事务管理局大气处理部铭牌"
+	desc = "此牌匾纪念大气控制FEA部门的陨落。献给所有在其手中化为焦炭、头晕目眩、粉身碎骨的逝者。"
 	icon_state = "atmosplaque"
 
 /obj/structure/sign/double/maltesefalcon	//The sign is 64x32, so it needs two tiles. ;3
-	name = "The Maltese Falcon"
-	desc = "The Maltese Falcon, Space Bar and Grill."
+	name = "马耳他之鹰"
+	desc = "马耳他猎鹰号，太空酒吧与烧烤店。"
 
 /obj/structure/sign/double/maltesefalcon/left
 	icon_state = "maltesefalcon-left"
@@ -243,82 +243,82 @@
 	icon_state = "maltesefalcon-right"
 
 /obj/structure/sign/science
-	name = "\improper SCIENCE!"
-	desc = "A warning sign which reads 'SCIENCE!'."
+	name = "\improper 科学！"
+	desc = "一块写着'科学！'的警告牌。"
 	icon_state = "science1"
 
 /obj/structure/sign/science/two
 	icon_state = "science2"
 
 /obj/structure/sign/xenobio
-	name = "\improper SCIENCE!"
-	desc = "A warning sign which reads 'SCIENCE!'."
+	name = "\improper 科学！"
+	desc = "一个写着'科学！'的警告标志。"
 	icon_state = "xenobio4"
 
 /obj/structure/sign/xenobio/two
 	icon_state = "xenobio"
 
 /obj/structure/sign/chemistry
-	name = "\improper CHEMISTRY"
-	desc = "A warning sign which reads 'CHEMISTRY'."
+	name = "\improper 化学"
+	desc = "一个警告标志，上面写着'化学实验室'。"
 	icon_state = "chemistry1"
 
 /obj/structure/sign/chemistry2
 	icon_state = "chemistry2"
 
 /obj/structure/sign/pharmacy
-	name = "\improper PHARMACY"
-	desc = "A guidance sign which reads 'PHARMACY'."
+	name = "\improper 药房"
+	desc = "一块指示牌，上面写着'药房'。"
 	icon_state = "pharmacy"
 
 /obj/structure/sign/botany
-	name = "\improper HYDROPONICS"
-	desc = "A guidance sign which reads 'HYDROPONICS'."
+	name = "\improper 水培室"
+	desc = "一块指示牌，上面写着'水培区'。"
 	icon_state = "hydro1"
 
 /obj/structure/sign/holy
-	name = "\improper Chapel sign"
-	desc = "A sign labelling a religious area."
+	name = "\improper 礼拜堂标识"
+	desc = "标识宗教区域的标牌。"
 	icon_state = "holy"
 
 /obj/structure/sign/custodian
-	name = "\improper Janitor sign"
-	desc = "A sign labelling an area where the janitor works."
+	name = "\improper 清洁工标识"
+	desc = "标识清洁工工作区域的标牌。"
 	icon_state = "custodian"
 
 /obj/structure/sign/mait
-	name = "\improper Maintenance Tunnel sign"
-	desc = "A sign labelling an area where the departments are linked together."
+	name = "\improper 维护隧道标识"
+	desc = "标识各部门连接区域的指示牌。"
 	icon_state = "mait1"
 
 /obj/structure/sign/mait/alt
-	name = "\improper Maintenance Tunnel sign"
-	desc = "A sign labelling an area where the departments are linked together."
+	name = "\improper 维护通道 标识"
+	desc = "标识各部门连接区域的指示牌。"
 	icon_state = "mait2"
 
 /obj/structure/sign/botany
-	name = "\improper BODY DISPOSAL"
-	desc = "A guidance sign which reads 'BODY DISPOSAL'."
+	name = "\improper 尸体处理"
+	desc = "一个指示牌，上面写着'尸体处理处'。"
 	icon_state = "bodysposal"
 
 /obj/structure/sign/doors
-	name = "\improper DOORS"
-	desc = "A guidance sign which reads 'DOORS'."
+	name = "\improper 门"
+	desc = "一个写着'门'的指示牌。"
 	icon_state = "doors"
 
 /obj/structure/sign/engie
-	name = "\improper ENGINEERING"
-	desc = "A guidance sign which reads 'ENGINEERING'."
+	name = "\improper 工程部"
+	desc = "一块写着'工程部'的指示牌。"
 	icon_state = "engine"
 
 /obj/structure/sign/evac
-	name = "\improper EVACUATION"
-	desc = "A guidance sign which reads 'EVACUATION'."
+	name = "\improper 撤离"
+	desc = "一块写着'撤离'的指示牌。"
 	icon_state = "evac"
 
 /obj/structure/sign/hydro
-	name = "\improper HYDROPNICS"
-	desc = "A guidance sign which reads 'HYDROPNICS'."
+	name = "\improper 水培室"
+	desc = "一块指示牌，上面写着'水培区'。"
 	icon_state = "hydro1"
 
 /obj/structure/sign/hydro/two
@@ -328,59 +328,59 @@
 	icon_state = "hydro3"
 
 /obj/structure/sign/restroom
-	name = "\improper RESTROOM"
-	desc = "A guidance sign which reads 'RESTROOM'."
+	name = "\improper 洗手间"
+	desc = "一块指示牌，上面写着'洗手间'。"
 	icon_state = "restroom"
 
 /obj/structure/sign/security
-	name = "\improper SECURITY"
-	desc = "A guidance sign which reads 'SECURITY'."
+	name = "\improper 安全"
+	desc = "一块写着'安保'的指示牌。"
 	icon_state = "security"
 
 /obj/structure/sign/testchamber
-	name = "\improper TEST CHAMBER"
-	desc = "A guidance sign which reads 'TEST CHAMBER'."
+	name = "\improper 测试舱室"
+	desc = "一块写着'测试室'的指示牌。"
 	icon_state = "testchamber"
 
 
 /obj/structure/sign/directions/science
-	name = "\improper Science department"
-	desc = "A direction sign, pointing out which way the Science department is."
+	name = "\improper 科研部门"
+	desc = "指向科学部门方向的路标。"
 	icon_state = "direction_sci"
 
 /obj/structure/sign/directions/engineering
-	name = "\improper Engineering department"
-	desc = "A direction sign, pointing out which way the Engineering department is."
+	name = "\improper 工程部"
+	desc = "一个方向指示牌，指向工程部门的方向。"
 	icon_state = "direction_eng"
 
 /obj/structure/sign/directions/security
-	name = "\improper Security department"
-	desc = "A direction sign, pointing out which way the Security department is."
+	name = "\improper 安全部门"
+	desc = "一个方向指示牌，指向安保部门所在的方向。"
 	icon_state = "direction_sec"
 
 /obj/structure/sign/directions/medical
-	name = "\improper Medical Bay"
-	desc = "A direction sign, pointing out which way the Medical Bay is."
+	name = "\improper 医疗湾"
+	desc = "一个方向指示牌，指向医疗舱的方向。"
 	icon_state = "direction_med"
 
 /obj/structure/sign/directions/supply
-	name = "cargo sign"
-	desc = "A direction sign, pointing out which way the Cargo Bay is."
+	name = "货物标识"
+	desc = "一个方向指示牌，指向货舱的方向。"
 	icon_state = "direction_supply"
 
 /obj/structure/sign/directions/evac
-	name = "\improper Escape Arm"
-	desc = "A direction sign, pointing out which way the escape shuttle dock is."
+	name = "\improper 逃生臂"
+	desc = "方向指示牌，指向逃生穿梭机停靠口的方向。"
 	icon_state = "direction_evac"
 
 /obj/structure/sign/directions/command
-	name = "command department sign"
-	desc = "A direction sign, pointing out which way the Command department is."
+	name = "指挥部门标识"
+	desc = "一个方向指示牌，指向指挥部门所在的方向。"
 	icon_state = "direction_bridge"
 
 /obj/structure/sign/directions/mining
-	name = "mining department sign"
-	desc = "A direction sign, pointing out which way the Mining department is."
+	name = "采矿部门标识"
+	desc = "一个方向指示牌，指向采矿部门的方向。"
 	icon_state = "direction_mining"
 
 
@@ -389,198 +389,198 @@
 	directional = FALSE
 
 /obj/structure/sign/fixedinplace/science
-	name = "\improper Science department"
-	desc = "A direction sign, pointing out which way the Science department is."
+	name = "\improper 科研部门"
+	desc = "方向指示牌，指向科学部门所在的方向。"
 	icon_state = "direction_sci"
 
 /obj/structure/sign/fixedinplace/engineering
-	name = "\improper Engineering department"
-	desc = "A direction sign, pointing out which way the Engineering department is."
+	name = "\improper 工程部"
+	desc = "一个方向指示牌，指向工程部门的方向。"
 	icon_state = "direction_eng"
 
 /obj/structure/sign/fixedinplace/security
-	name = "\improper Security department"
-	desc = "A direction sign, pointing out which way the Security department is."
+	name = "\improper 安保部门"
+	desc = "一个方向指示牌，指向安保部门所在的方向。"
 	icon_state = "direction_sec"
 
 /obj/structure/sign/fixedinplace/medical
-	name = "\improper Medical Bay"
-	desc = "A direction sign, pointing out which way the Medical Bay is."
+	name = "\improper 医疗湾"
+	desc = "指向医疗舱方向的路标。"
 	icon_state = "direction_med"
 
 /obj/structure/sign/fixedinplace/supply
-	name = "cargo sign"
-	desc = "A direction sign, pointing out which way the Cargo Bay is."
+	name = "货物标识"
+	desc = "一个方向指示牌，指向货舱的方向。"
 	icon_state = "direction_supply"
 
 /obj/structure/sign/fixedinplace/evac
-	name = "\improper Escape Arm"
-	desc = "A direction sign, pointing out which way the escape shuttle dock is."
+	name = "\improper 逃生装甲"
+	desc = "方向指示牌，指向逃生飞船停靠口的方向。"
 	icon_state = "direction_evac"
 
 /obj/structure/sign/fixedinplace/command
-	name = "command department sign"
-	desc = "A direction sign, pointing out which way the Command department is."
+	name = "指挥部门标识"
+	desc = "方向指示牌，指向指挥部门的方向。"
 	icon_state = "direction_bridge"
 
 /obj/structure/sign/fixedinplace/mining
-	name = "mining department sign"
-	desc = "A direction sign, pointing out which way the Mining department is."
+	name = "采矿部门标识"
+	desc = "方向指示牌，指向采矿部门的方向。"
 	icon_state = "direction_mining"
 
 //end nondirectional signs
 
 /obj/structure/sign/safety/
-	name = "sign"
+	name = "标记"
 	icon = 'icons/obj/safety_signs_arrow.dmi'
-	desc = "A sign warning of a particular hazard"
+	desc = "警告特定危险的标志"
 	anchored = TRUE
 	opacity = FALSE
 	density = FALSE
 
 /obj/structure/sign/safety/airlock
-	name = "\improper Airlock"
-	desc = "A sign denoting the presence of an airlock nearby."
+	name = "\improper 气闸门"
+	desc = "标示附近存在气闸的标志。"
 	icon_state = "sign_airlock"
 
 /obj/structure/sign/safety/rad_shield
-	name = "\improper Radiation shielded area"
-	desc = "A sign denoting the presence of a lead radiation shielding."
+	name = "\improper 辐射屏蔽区域"
+	desc = "一块标示着铅辐射屏蔽层存在的标牌。"
 	icon_state = "sign_rad_shield"
 
 /obj/structure/sign/safety/no_grav
-	name = "\improper Caution: Zero Gravity Area"
-	desc = "A warning sign that warns of a Zero Gravity Area"
+	name = "\improper 警告：零重力区域"
+	desc = "警告零重力区域的警示牌"
 	icon_state = "sign_nograv"
 
 /obj/structure/sign/safety/grav_suit
-	name = "\improper Caution: Artifical Gravity Suit Required"
-	desc = "A warning sign advising the use of an artifical gravity suit"
+	name = "\improper 警告：需要人工重力服"
+	desc = "警告标志：建议使用人工重力服"
 	icon_state = "sign_artgrav_suit"
 
 /obj/structure/sign/safety/electronics
-	name = "\improper Caution: Electrical Systems"
-	desc = "A warning sign that warns of electrical systems"
+	name = "\improper 警告：电气系统"
+	desc = "警告电气系统的警示标志"
 	icon_state = "sign_electronics"
 
 /obj/structure/sign/safety/autodoc
-	name = "\improper Autodoc"
-	desc = "A sign denoting the presence of a automated doctor nearby"
+	name = "\improper 自动医疗舱"
+	desc = "附近有自动医生的标识"
 	icon_state = "sign_autodoc"
 
 /obj/structure/sign/safety/bridge
-	name = "\improper Bridge"
-	desc = "A sign signifying the bridge"
+	name = "\improper 舰桥"
+	desc = "舰桥标识"
 	icon_state = "sign_bridge"
 
 /obj/structure/sign/safety/blast_door
-	name = "\improper Caution: Bulkhead"
-	desc = "A sign warning of a bulkhead door nearby"
+	name = "\improper 警告：舱壁"
+	desc = "附近有舱壁门的警示标志"
 	icon_state = "sign_blastdoor"
 
 /obj/structure/sign/safety/breakroom
-	name = "\improper Breakroom"
-	desc = "A sign denoting the presence of a breakroom nearby"
+	name = "\improper 休息室"
+	desc = "附近设有休息室的标识"
 	icon_state = "sign_coffee"
 
 /obj/structure/sign/safety/medical
-	name = "\improper Medical Bay"
-	desc = "A sign that denotes the proximity of a medical facility"
+	name = "\improper 医疗湾"
+	desc = "医疗设施附近标识"
 	icon_state = "sign_medical"
 
 /obj/structure/sign/safety/maintenance
-	name = "\improper Maintenance Shaft"
-	desc = "A sign warning of a nearby maintenance shaft."
+	name = "\improper 维护竖井"
+	desc = "警告附近有维修竖井的标志。"
 	icon_state = "sign_maint"
 
 /obj/structure/sign/safety/galley
-	name = "\improper Galley"
-	desc = "A sign that denotes the proximity of food nearby."
+	name = "\improper 厨房"
+	desc = "一块指示附近有食物存在的标识。"
 	icon_state = "sign_galley"
 
 /obj/structure/sign/safety/atmospherics
-	name = "\improper Life Support System"
-	desc = "A sign that denotes the proximity of a life supprot system."
+	name = "\improper 生命维持系统"
+	desc = "标示生命维持系统临近的标志。"
 	icon_state = "sign_life_support"
 
 /obj/structure/sign/safety/vent
-	name = "\improper Warning: Exhaust Vent"
-	desc = "A warning sign that indicates a hazardous exhaust vent nearby"
+	name = "\improper 警告：排气口"
+	desc = "警告标志，指示附近有危险排气口"
 	icon_state = "sign_exhaust"
 
 /obj/structure/sign/safety/storage
-	name = "\improper Storage Area"
-	desc = "A sign that denotes the proximity of a storage facility."
+	name = "\improper 存储区"
+	desc = "标识存储设施邻近区域的标牌。"
 	icon_state = "sign_storage"
 
 /obj/structure/sign/safety/medical_supplies
-	name = "\improper First-Aid"
-	desc = "A sign denoting the presence of nearby "
+	name = "\improper 急救"
+	desc = "标示附近存在"
 	icon_state = "sign_medical_life_support"
 
 /obj/structure/sign/safety/EVA
-	name = "\improper EVA Suit Locker"
-	desc = "A sign that indicates the presence of a EVA Suit Locker"
+	name = "\improper 舱外活动服储物柜"
+	desc = "EVA 太空服储物柜标识"
 	icon_state = "sign_space_suit_locker"
 
 /obj/structure/sign/safety/laser
-	name = "\improper Warning: High-Energy Laser"
-	desc = "A warning sign that warns of a lethal energy laser nearby"
+	name = "\improper 警告：高能激光"
+	desc = "警告附近有致命能量激光的警示标志"
 	icon_state = "sign_laser"
 
 /obj/structure/sign/safety/vacuum
-	name = "\improper Warning: Vacuum"
-	desc = "A warning sign indicating a pressureless area nearby"
+	name = "\improper 警告：真空环境"
+	desc = "附近有失压区域的警告标志"
 	icon_state = "sign_vacuum"
 
 /obj/structure/sign/safety/ladder
-	name = "\improper Warning: Ladder"
-	desc = "A sign that denotes the proximity of a ladder"
+	name = "\improper 警告：梯子"
+	desc = "指示梯子位置的标识"
 	icon_state = "sign_ladder"
 
 /obj/structure/sign/safety/pressure
-	name = "\improper Warning: Pressurised Area Ahead"
-	desc = "A sign that warns of a pressurised area nearby"
+	name = "\improper 警告：前方为加压区域"
+	desc = "附近有加压区域"
 	icon_state = "sign_pressurised_area"
 
 /obj/structure/sign/safety/high_radiation
-	name = "\improper Warning:HIGH RADIATION LEVELS"
-	desc = "A sign that warns of dangerous radiation nearby"
+	name = "\improper 警告：高辐射水平"
+	desc = "警告：附近有危险辐射"
 	icon_state = "sign_high_rad"
 
 /obj/structure/sign/safety/rad_hazard
-	name = "\improper Warning: Radiation Hazard"
-	desc = "A sign that warns of radiation nearby"
+	name = "\improper 警告：辐射危害"
+	desc = "警告：附近有辐射"
 	icon_state = "sign_rad_hazard"
 
 /obj/structure/sign/safety/cryogenic
-	name = "\improper Cryogenic Vault"
-	desc = "A sign that denotes the presence of a cryogenic vault"
+	name = "\improper 低温储藏库"
+	desc = "标识低温储藏库存在的标牌"
 	icon_state = "sign_cryo_vault"
 
 /obj/structure/sign/safety/hazard
-	name = "\improper Warning: Hazardous Materials"
-	desc = "A sign that warns of hazardous materials nearby"
+	name = "\improper 警告：危险材料"
+	desc = "警告：附近有危险物品"
 	icon_state = "sign_hazard"
 
 /obj/structure/sign/safety/computer
-	name = "\improper Warning: Critical System"
-	desc = "A warning sign that warns of facility critical computer systems"
+	name = "\improper 警告：系统严重故障"
+	desc = "警告设施关键计算机系统的警示标志"
 	icon_state = "sign_computer"
 
 /obj/structure/sign/safety/hydro
-	name = "\improper Hydrophonics"
-	desc = "A sign that denotes the presence of a hydrophonic facility"
+	name = "\improper 水培室"
+	desc = "水培设施标识"
 	icon_state = "sign_food_fridge"
 
 /obj/structure/sign/safety/fridge
-	name = "\improper Refridgerated Storage"
-	desc = "A sign that denotes the presence of a refridgeration facility"
+	name = "\improper 冷藏储存"
+	desc = "标识冷藏设施存在的标牌"
 	icon_state = "sign_cold_storage"
 
 /obj/structure/sign/safety/radio
-	name = "\improper Intercommunication System"
-	desc = "A sign notifying the presence of a intercomm system."
+	name = "\improper 内部通信系统"
+	desc = "一个通知对讲系统存在的标志。"
 	icon_state = "sign_intercomm"
 
 /obj/structure/sign/safety/Initialize(mapload)
@@ -590,26 +590,26 @@
 //Marine signs
 
 /obj/structure/sign/ROsign
-	name = "\improper TGMC requisitions office guidelines"
-	desc = " 1. You are not entitled to service or equipment. Attachments are a privilege, not a right.\n 2. You must be fully dressed to obtain service. Cryosleep underwear is non-permissible.\n 3. The Requsitions Officer has the final say and the right to decline service. Only the Acting Captain may override his decisions.\n 4. Please treat your Requsitions staff with respect. They work hard."
+	name = "\improper 地球政府殖民地海军陆战队补给办公室指导原则"
+	desc = "1. 你无权要求服务或装备。枪械配件是特权，而非权利。\n2. 你必须着装整齐才能获得服务。低温休眠内衣不可接受。\n3. 补给军官拥有最终决定权，并有权拒绝服务。只有代理舰长可以推翻他的决定。\n4. 请尊重你的补给人员。他们工作很努力。"
 	icon_state = "roplaque"
 
 /obj/structure/sign/prop1
-	name = "\improper TerraGov poster"
-	desc = "The symbol of the Terran Goverment."
+	name = "\improper 地球政府海报"
+	desc = "地球政府的标志。"
 	icon_state = "prop1"
 
 /obj/structure/sign/prop2
-	name = "\improper TGMC poster"
-	desc = "A deeply faded poster of a group of glamorous TerraGov Marine Corps in uniform. Probably taken pre-Alpha."
+	name = "\improper 地球政府殖民地海军陆战队海报"
+	desc = "一张严重褪色的海报，上面是一群身着制服、光彩照人的地球政府殖民地海军陆战队队员。可能拍摄于阿尔梅耶号之前。"
 	icon_state = "prop2"
 
 /obj/structure/sign/prop3
-	name = "\improper TGMC poster"
-	desc = "An old recruitment poster for the TGMC. Looking at it floods you with a mixture of pride and sincere regret."
+	name = "\improper 地球政府殖民地海军陆战队海报"
+	desc = "一张TGMC的旧征兵海报。凝视着它，自豪与真切的悔恨交织着涌上心头。"
 	icon_state = "prop3"
 
 /obj/structure/sign/prop4
-	name = "TerraGov: United for Humanity"
-	desc = "A poster depicting TerraGov's logo and motto, reminding marines of who's looking out for humankind against the Xenomorph menace."
+	name = "地球政府：为人类团结"
+	desc = "一张描绘地球政府标志和座右铭的海报，提醒陆战队员们是谁在守护人类对抗异形威胁。"
 	icon_state = "prop4"

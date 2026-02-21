@@ -1,7 +1,7 @@
 // This is a typepath to just sit in baseturfs and act as a marker for other things.
 /turf/baseturf_skipover
-	name = "Baseturf skipover placeholder"
-	desc = "This shouldn't exist"
+	name = "基底层跳过占位符"
+	desc = "这不应该存在"
 
 /turf/baseturf_skipover/Initialize(mapload)
 	. = ..()
@@ -9,10 +9,10 @@
 	ScrapeAway()
 
 /turf/baseturf_skipover/shuttle
-	name = "Shuttle baseturf skipover"
-	desc = "Acts as the bottom of the shuttle, if this isn't here the shuttle floor is broken through."
+	name = "穿梭机基地图块跳过层"
+	desc = "作为穿梭机的底部，如果这里不存在，穿梭机的地板就会被破坏。"
 
 /turf/baseturf_bottom
-	name = "Z-level baseturf placeholder"
-	desc = "Marker for z-level baseturf, usually resolves to space."
+	name = "Z层级基地图块占位符"
+	desc = "z层级基础地形标记，通常解析为太空。"
 	baseturfs = /turf/baseturf_bottom

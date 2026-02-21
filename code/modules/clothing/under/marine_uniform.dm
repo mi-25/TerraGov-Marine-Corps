@@ -2,8 +2,8 @@
 
 
 /obj/item/clothing/under/marine
-	name = "\improper TGMC uniform"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented marine uniform. You suspect it's not as robust-proof as advertised."
+	name = "\improper TGMC 制服"
+	desc = "一套标准配发的、凯夫拉编织、经过危险品测试、电磁场增强的陆战队制服。你怀疑它并不像宣传的那样坚固耐用。"
 	siemens_coefficient = 0.9
 	icon = 'icons/obj/clothing/uniforms/marine_uniforms.dmi'
 	icon_state = "marine_jumpsuit"
@@ -32,8 +32,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/holster)
 
 /obj/item/clothing/under/marine/hyperscale
-	name = "\improper 8E Chameleon TGMC uniform"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented marine uniform BUT colorable with a facepaint! You suspect it's not as robust-proof as advertised."
+	name = "\improper 8E变色龙TGMC制服"
+	desc = "一件标准配发的、凯夫拉编织、经过危险品测试、电磁场增强的陆战队制服，但可以用迷彩油彩上色！你怀疑它并不像广告宣传的那么坚固。"
 	icon_state = "hyperscale_marine_jumpsuit"
 	worn_icon_state = "hyperscale_marine_jumpsuit"
 	greyscale_colors = ARMOR_PALETTE_BLACK
@@ -43,66 +43,66 @@
 
 //Squad colored turtlenecks
 /obj/item/clothing/under/marine/squad/neck
-	name = "\improper TGMC Delta turtleneck"
-	desc = "A standard issued TGMC turtleneck colored blue."
+	name = "\improper TGMC 德尔塔 高领衫"
+	desc = "一件标准配发的蓝色地球政府殖民地海军陆战队高领衫。"
 	icon_state = "delta_merc"
 	adjustment_variants = list(
 		"Rolled Sleeves" = "_d",
 	)
 
 /obj/item/clothing/under/marine/squad/neck/delta
-	name = "\improper TGMC Delta turtleneck"
-	desc = "A standard issued TGMC turtleneck colored blue, with a slight hint of bravery."
+	name = "\improper TGMC 德尔塔 高领衫"
+	desc = "一件标准配发的TGMC蓝色高领衫，略带一丝英勇气息。"
 	icon_state = "delta_merc"
 
 /obj/item/clothing/under/marine/squad/neck/charlie
-	name = "\improper TGMC Charlie turtleneck"
-	desc = "A standard issued TGMC turtleneck colored purple, you're reminded of how proper squad cohesion can make or break a mission."
+	name = "\improper 地球政府殖民地海军陆战队 查理 高领衫"
+	desc = "一件标准配发的TGMC紫色高领衫，让你想起良好的小队协同对任务成败至关重要。"
 	icon_state = "charlie_merc"
 
 /obj/item/clothing/under/marine/squad/neck/bravo
-	name = "\improper TGMC Bravo turtleneck"
-	desc = "A standard issued TGMC turtleneck colored yellow, you suddenly get thoughts of how to improve the FOB, if slightly."
+	name = "\improper TGMC 布拉沃 高领衫"
+	desc = "一件标准配发的TGMC黄色高领衫，你突然开始思考如何稍微改进前线作战基地。"
 	icon_state = "bravo_merc"
 
 /obj/item/clothing/under/marine/squad/neck/alpha
-	name = "\improper TGMC Alpha turtleneck"
-	desc = "A standard issued TGMC turtleneck colored red, you feel as if you can face the world and all it has to bring against you."
+	name = "\improper 地球政府殖民地海军陆战队 阿尔法 高领衫"
+	desc = "一件标准配发的红色地球政府殖民地海军陆战队高领衫，穿上它，你感觉仿佛能直面整个世界及其带来的一切挑战。"
 	icon_state = "alpha_merc"
 
 // camo things stuff yeah!
 
 /obj/item/clothing/under/marine/camo
-	name = "\improper TGMC camo fatigues (jungle)"
+	name = "\improper TGMC 迷彩作训服（丛林）"
 	icon_state = "m_marine_jumpsuit"
 
 /obj/item/clothing/under/marine/camo/snow
-	name = "\improper TGMC camo fatigues (snow)"
+	name = "\improper TGMC 雪地迷彩作战服"
 	icon_state = "s_marine_jumpsuit"
 
 /obj/item/clothing/under/marine/camo/desert
-	name = "\improper TGMC camo fatigues (desert)"
+	name = "\improper TGMC 沙漠迷彩作训服"
 	icon_state = "d_marine_jumpsuit"
 
 /obj/item/clothing/under/marine/corpsman
-	name = "\improper TGMC corpsman fatigues"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented combat corpsman fatigues. You suspect it's not as robust-proof as advertised."
+	name = "\improper TGMC 卫生兵作训服"
+	desc = "一套标准配发的、凯夫拉编织、经过危险品测试、电磁场增强的战斗卫生兵作训服。你怀疑它并不像广告宣传的那样坚固耐用。"
 	icon_state = "marine_medic"
 
 /obj/item/clothing/under/marine/corpsman/corpman_vest
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/white_vest)
 
 /obj/item/clothing/under/marine/engineer
-	name = "\improper TGMC engineer fatigues"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented combat engineer fatigues. You suspect it's not as robust-proof as advertised."
+	name = "\improper TGMC 工程兵作训服"
+	desc = "一套标准配发的、凯夫拉编织、经过危险品测试、电磁场增强的战斗工程兵作训服。你怀疑它并不像宣传的那样坚固耐用。"
 	icon_state = "marine_engineer"
 
 /obj/item/clothing/under/marine/engineer/black_vest
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/marine/jaeger
-	name = "\improper TGMC jaeger undersuit"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented marine uniform. You suspect it's not as robust-proof as advertised."
+	name = "\improper TGMC 机甲驾驶员连体服"
+	desc = "一件标准配发的、凯夫拉编织、经过危险品测试、电磁场增强的陆战队制服。你怀疑它并不像宣传的那样坚固耐用。"
 	siemens_coefficient = 0.9
 	icon_state = "marine_undersuit"
 	adjustment_variants = list()
@@ -110,14 +110,14 @@
 	item_map_variant_flags = null
 
 /obj/item/clothing/under/marine/mp
-	name = "military police uniform"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented military police uniform. You suspect it's not as robust-proof as advertised."
+	name = "宪兵制服"
+	desc = "一套标准配发的、凯夫拉编织、经过危险品测试、电磁场增强的军警制服。你怀疑它并不像宣传的那样坚固耐用。"
 	icon_state = "MP_jumpsuit"
 	adjustment_variants = list()
 
 /obj/item/clothing/under/marine/orion_fatigue
-	name = "\improper Orion fatigues"
-	desc = "Originated from Orion Military Outpost. Designed for ship and urban environments, they're meant for recon, stealth, and evac operations. They come with a built in cassette player hearable only to the user to help pass time, during any possible long waits. They're the definition of over-funded ideas, least they look neat. It is very likely that a boot fresh from boot camp to buy this at the BX with his E-1 pay because of how tacticool it looks."
+	name = "\improper 猎户座作战服"
+	desc = "源自猎户座军事前哨。专为舰船和城市环境设计，用于侦察、潜行和撤离行动。内置仅使用者可闻的卡带播放器，以帮助消磨任何可能的漫长等待时间。它们是资金过剩理念的典范，至少外观很整洁。新兵训练营刚毕业的列兵很可能用他E-1级别的薪水在基地超市购买这款装备，因为它看起来太战术酷了。"
 	icon_state = "orion_fatigues"
 	worn_icon_state = "orion_fatigues"
 	adjustment_variants = list(
@@ -128,8 +128,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/marine/red_fatigue
-	name = "\improper Big Red fatigues"
-	desc = "Originated from Big Red. Designed for dry, low humid, and Mars-eqse environments, they're meant for recon, stealth, and evac operations. They come with a built in cassette player hearable only to the user to help pass time, during any possible long waits. They make you feel like one with the desert, forged by the beating Sun. Rumors had it that it can recycle your sweat and urine for drinkable water!"
+	name = "\improper 大红迷彩服"
+	desc = "源自大红星。专为干燥、低湿度和类火星环境设计，用于侦察、潜行和撤离行动。内置仅使用者可闻的卡带播放器，帮助消磨任何可能的漫长等待时间。它们让你感觉与沙漠融为一体，由灼热骄阳锻造而成。传闻它能将你的汗液和尿液回收为饮用水！"
 	icon_state = "red_fatigues"
 	worn_icon_state = "red_fatigues"
 	adjustment_variants = list(
@@ -140,8 +140,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/marine/lv_fatigue
-	name = "\improper LV-624 fatigues"
-	desc = "Originated from LV-624. Designed for wet, high humid, and jungle environments, they're meant for recon, stealth, and evac operations. They come with a built in cassette player hearable only to the user to help pass time, during any possible long waits. Somewhere, someone is playing 'Fortunate Sons' in the background, and you can smell napalm and Agent Orange in the air..."
+	name = "\improper LV-624 作战服"
+	desc = "源自LV-624。专为潮湿、高湿度和丛林环境设计，用于侦察、潜行和撤离行动。内置仅使用者可闻的卡带播放器，以帮助在可能的长时等待中消磨时间。某处，有人在背景中播放着《幸运之子》，空气中弥漫着凝固汽油弹和橙剂的气味……"
 	icon_state = "lv_fatigues"
 	worn_icon_state = "lv_fatigues"
 	adjustment_variants = list(
@@ -152,8 +152,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/marine/striped
-	name = "\improper Striped fatigues"
-	desc = "A simple set of camo pants and a striped shirt."
+	name = "\improper 条纹迷彩服"
+	desc = "一套简单的迷彩裤和条纹衬衫。"
 	icon_state = "marine_striped"
 	worn_icon_state = "marine_striped"
 	adjustment_variants = list()
@@ -162,51 +162,51 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/marine/black_suit
-	name = "\improper marine black suit"
-	desc = "A easy fitting black suit, somehow exactly your size."
+	name = "\improper 陆战队黑色制服"
+	desc = "一套合身的黑色西装，不知为何正好是你的尺码。"
 	icon_state = "marine_suit"
 	worn_icon_state = "marine_suit"
 	adjustment_variants = list()
 /obj/item/clothing/under/marine/officer
-	name = "marine officer uniform"
-	desc = "A kevlar-weaved, hazmat-tested, EMF-augmented, yet extra-soft and extra-light officer uniform. You suspect it's not as extra-fancy as advertised."
+	name = "陆战队军官制服"
+	desc = "一件凯夫拉编织、经过危险品测试、电磁场增强，却又格外柔软轻便的军官制服。你怀疑它并不像广告宣传的那么'格外考究'。"
 	icon_state = "officertanclothes"
 	worn_icon_state = "officertanclothes"
 	adjustment_variants = list()
 
 /obj/item/clothing/under/marine/officer/warden
-	name = "marine officer uniform"
-	desc = "A kevlar-weaved, hazmat-tested, EMF-augmented, yet extra-soft and extra-light officer uniform. You suspect it's not as extra-fancy as advertised."
+	name = "陆战队军官制服"
+	desc = "一件凯夫拉编织、经过危险品测试、电磁场增强，却又格外柔软轻便的军官制服。你怀疑它并不像广告宣传的那么高级。"
 	icon_state = "wardentanclothes"
 	worn_icon_state = "wardentanclothes"
 
 /obj/item/clothing/under/marine/officer/hos
-	name = "marine officer uniform"
-	desc = "A kevlar-weaved, hazmat-tested, EMF-augmented, yet extra-soft and extra-light officer uniform. You suspect it's not as extra-fancy as advertised."
+	name = "陆战队军官制服"
+	desc = "一件凯夫拉编织、经过危险品测试、电磁场增强，却又格外柔软轻便的军官制服。你怀疑它并不像广告宣传的那么'格外考究'。"
 	icon_state = "hostanclothes"
 	worn_icon_state = "hostanclothes"
 
 /obj/item/clothing/under/marine/officer/warrant
-	name = "Command Master at Arms uniform"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented uniform worn by lawful-good warrant officers. You suspect it's not as robust-proof as advertised."
+	name = "宪兵司令制服"
+	desc = "一件标准配发的、凯夫拉编织的、经过危险品测试的、电磁场增强的制服，由守序善良的准尉穿着。你怀疑它并不像宣传的那样坚固耐用。"
 	icon_state = "WO_jumpsuit"
 	worn_icon_state = "WO_jumpsuit"
 
 /obj/item/clothing/under/marine/officer/logistics
-	name = "marine officer uniform"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented uniform worn by logistics officers of the TGMC. Do the corps proud."
+	name = "陆战队军官制服"
+	desc = "地球政府殖民地海军陆战队补给军官的标准制式制服，采用凯夫拉编织面料，经过危险品测试，并增强了电磁场防护功能。为陆战队争光。"
 	icon_state = "BO_jumpsuit"
 	item_map_variant_flags = (ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT)
 
 /obj/item/clothing/under/marine/officer/ro_suit
-	name = "requisition officer suit"
-	desc = "A nicely-fitting, kevlar-weaved, hazmat-tested, EMF-augmented requisition officer suit. You suspect it's not as robust-proof as advertised."
+	name = "补给军官制服"
+	desc = "一件合身、凯夫拉编织、经过危险品测试、电磁场增强的补给军官制服。你怀疑它并不像广告宣传的那么坚固。"
 	icon_state = "RO_jumpsuit"
 	adjustment_variants = list()
 
 /obj/item/clothing/under/marine/officer/pilot
-	name = "pilot officer flightsuit"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented, survival-friendly pilot flightsuit. Fly the marines onwards to glory."
+	name = "飞行员飞行服"
+	desc = "一件标准配发、凯夫拉编织、经过危险品测试、电磁场增强、适合生存的飞行员飞行服。带领陆战队员们飞向荣耀。"
 	icon_state = "pilot_flightsuit"
 	cold_protection_flags = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 	item_map_variant_flags = null
@@ -215,29 +215,29 @@
 	)
 
 /obj/item/clothing/under/marine/officer/mech
-	name = "mech pilot uniform"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented uniform worn by mech pilots. Not as impressive as a titanium robot but good enough."
+	name = "机甲驾驶员制服"
+	desc = "一件标准配发的、凯夫拉编织、经过危险品测试、电磁场增强的制服，供机甲驾驶员穿着。虽不如钛合金机器人那般令人印象深刻，但也足够胜任。"
 	icon_state = "marine_mech_pilot"
 
 /obj/item/clothing/under/marine/officer/assault_crewman
-	name = "assault crewman uniform"
-	desc = "A standard-issue, carbon fibre uniform optimised for operating heavy equipment. Feels like a hand-me-down from last decade."
+	name = "突击队员制服"
+	desc = "一件标准配发的碳纤维制服，专为操作重型设备优化。感觉像是上个年代传下来的旧货。"
 	icon_state = "marine_assault_crewman"
 
 /obj/item/clothing/under/marine/officer/transport_crewman
-	name = "transport crewman uniform"
-	desc = "A standard issue comfortable uniform designed for sitting all day."
+	name = "运输船员制服"
+	desc = "一件标准配发的舒适制服，专为整天坐着设计。"
 	icon_state = "marine_transport_crewman"
 
 /obj/item/clothing/under/marine/officer/bridge
-	name = "staff officer uniform"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented staff officer uniform. Do the navy proud."
+	name = "参谋军官制服"
+	desc = "一件标准配发的、凯夫拉编织的、经过危险品测试的、电磁场增强的参谋军官制服。为海军争光。"
 	icon_state = "BO_jumpsuit"
 	item_map_variant_flags = (ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT)
 
 /obj/item/clothing/under/marine/officer/exec
-	name = "field commander uniform"
-	desc = "A special-issue, kevlar-weaved, hazmat-tested, EMF-augmented worn by a field-grade officer of the TGMC. You suspect it's not as robust-proof as advertised."
+	name = "战地指挥官制服"
+	desc = "一件由TGMC战地军官穿着的特制、凯夫拉编织、防化测试、电磁场增强的装备。你怀疑它并不像宣传的那样坚固。"
 	icon_state = "XO_jumpsuit"
 	item_map_variant_flags = (ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT)
 
@@ -245,48 +245,48 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/marine/officer/command
-	name = "captain uniform"
-	desc = "A special-issue, well-ironed, kevlar-weaved, hazmat-tested, EMF-augmented uniform worth of a TerraGov Naval Captain. Even looking at it the wrong way could result in being court-martialed."
+	name = "舰长制服"
+	desc = "一套特制、熨烫平整、凯夫拉编织、经过危险品测试、电磁场增强的地球政府海军舰长制服。光是看它一眼都可能让你被送上军事法庭。"
 	icon_state = "CO_jumpsuit"
 	item_map_variant_flags = (ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT)
 
 /obj/item/clothing/under/marine/officer/admiral
-	name = "admiral uniform"
-	desc = "A uniform worn by a fleet admiral. It comes in a shade of deep black, and has a light shimmer to it. The weave looks strong enough to provide some light protections."
+	name = "海军上将制服"
+	desc = "舰队上将所穿的制服。采用深黑色调，带有微光效果。织物结构看起来足够坚固，能提供一定的轻量防护。"
 	worn_icon_state = "admiral_jumpsuit"
 
 /obj/item/clothing/under/marine/officer/ce
-	name = "chief ship engineer uniform"
-	desc = "An engine-friendly, kevlar-weaved, hazmat-tested, EMF-augmented ship engineer uniform. You suspect it's not as robust-proof as advertised."
+	name = "首席舰船工程师制服"
+	desc = "一款引擎友好、凯夫拉编织、经过危险品测试、电磁场增强的舰船工程师制服。你怀疑它并不像广告宣传的那样坚固耐用。"
 	icon_state = "EC_jumpsuit"
 	adjustment_variants = list(
 		"Half" = "_h",
 	)
 
 /obj/item/clothing/under/marine/officer/engi
-	name = "engineer uniform"
-	desc = "An engine-friendly, kevlar-weaved, hazmat-tested, EMF-augmented chief ship engineer uniform. You suspect it's not as robust-proof as advertised."
+	name = "工程兵制服"
+	desc = "一件引擎友好、凯夫拉编织、防化测试、电磁场增强的首席舰船工程师制服。你怀疑它并不像广告宣传的那样坚固。"
 	icon_state = "E_jumpsuit"
 	adjustment_variants = list(
 		"Half" = "_h",
 	)
 
 /obj/item/clothing/under/marine/officer/researcher
-	name = "researcher clothes"
-	desc = "A set of formal, yet comfy, clothing worn by scholars and researchers alike."
+	name = "研究员服装"
+	desc = "一套正式而舒适的服装，学者与研究员皆宜。"
 	icon_state = "research_jumpsuit"
 
 /obj/item/clothing/under/marine/whites
-	name = "\improper TGMC white dress uniform"
-	desc = "A standard-issue TerraGov Marine Corps white dress uniform. The starch in the fabric chafes a small amount but it pales in comparison to the pride you feel when you first put it on during graduation from boot camp. Doesn't seem to fit perfectly around the waist though."
+	name = "\improper 地球政府殖民地海军陆战队白色礼服"
+	desc = "一套标准配发的地球政府殖民地海军陆战队白色礼服。面料中的浆料有些磨人，但与你在新兵训练营毕业典礼上首次穿上它时感受到的自豪相比，这根本不算什么。不过腰身似乎不太合身。"
 	siemens_coefficient = 0.9
 	icon_state = "marine_whites" //with thanks to Manezinho
 	worn_icon_state = "marine_whites" //with thanks to Manezinho
 	adjustment_variants = list()
 
 /obj/item/clothing/under/marine/service
-	name = "\improper TGMC service uniform"
-	desc = "A standard-issue TerraGov Marine Corps dress uniform. Sometimes, you hate wearing this since you remember wearing this to Infantry School and have to wear this when meeting a commissioned officer. This is what you wear when you are not deployed and are working in an office. Doesn't seem to fit perfectly around the waist."
+	name = "\improper TGMC 常服"
+	desc = "一套标准配发的地球政府殖民地海军陆战队常服。有时你会讨厌穿它，因为这会让你想起在步兵学校时不得不穿着它去见委任军官。这是你在非部署状态、在办公室工作时穿着的服装。腰身似乎不太合身。"
 	siemens_coefficient = 0.9
 	icon_state = "marine_service" //with thanks to Fitz 'Pancake' Sholl
 	worn_icon_state = "marine_service" //with thanks to Fitz 'Pancake' Sholl
@@ -297,8 +297,8 @@
 /*=========================Imperium=================================*/
 
 /obj/item/clothing/under/marine/imperial
-	name = "\improper Imperial uniform"
-	desc = "This uniform is given out to pretty much every soldier in the Imperium."
+	name = "\improper 帝国制服"
+	desc = "这件制服几乎分发给帝国里的每一位士兵。"
 	adjustment_variants = list() // don't disrespect the EMPEROR!
 	icon = 'icons/obj/clothing/uniforms/ert_uniforms.dmi'
 	icon_state = "guardjumpsuit"
@@ -311,8 +311,8 @@
 	soft_armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 10, FIRE = 10, ACID = 10)
 
 /obj/item/clothing/under/marine/imperial/commissar
-	name = "\improper commissar uniform"
-	desc = "A commissars noble uniform."
+	name = "\improper 政委制服"
+	desc = "政委的华丽制服。"
 	adjustment_variants = list() // don't disrespect the EMPEROR!
 	icon_state = "commissar_uniform"
 	worn_icon_state = "commissar_uniform"
@@ -328,8 +328,8 @@
 	adjustment_variants = list()
 
 /obj/item/clothing/under/marine/veteran/pmc
-	name = "\improper PMC fatigues"
-	desc = "A white set of fatigues, designed for private security contractors. The symbol of the Nanotrasen corporation is emblazed on the suit."
+	name = "\improper PMC作战服"
+	desc = "一套白色的作战服，专为私人安保承包商设计。纳米传讯公司的标志醒目地印在制服上。"
 	icon_state = "pmc_jumpsuit"
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 
@@ -339,65 +339,65 @@
 /obj/item/clothing/under/marine/veteran/pmc/webbing
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 /obj/item/clothing/under/marine/veteran/pmc/leader
-	name = "\improper PMC command fatigues"
-	desc = "A white set of fatigues, designed for private security contractors. The symbol of the Nanotrasen corporation is emblazed on the suit with golden inclusions all over the uniform."
+	name = "\improper PMC 作战服"
+	desc = "一套白色的作战服，专为私人安保承包商设计。纳米传讯公司的标志醒目地印在制服上，并配有金色的装饰点缀。"
 	icon_state = "officer_jumpsuit"
 
 /obj/item/clothing/under/marine/veteran/pmc/leader/holster
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/holster)
 
 /obj/item/clothing/under/marine/veteran/pmc/commando
-	name = "\improper PMC commando uniform"
-	desc = "An armored uniform worn by Nanotrasen elite commandos. It is well protected while remaining light and comfortable."
+	name = "\improper PMC 突击队制服"
+	desc = "纳米传讯精英突击队员穿戴的装甲制服。它在保持轻便舒适的同时提供了良好的防护。"
 	icon_state = "commando_jumpsuit"
 	soft_armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 20, BOMB = 10, BIO = 10, FIRE = 20, ACID = 20)
 	has_sensor = 0
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/holster/deathsquad)
 
 /obj/item/clothing/under/marine/veteran/UPP
-	name = "\improper USL fatigues"
-	desc = "A well used set of USL fatigues, mass-produced for the pirates of the Lepidoptera."
+	name = "\improper 联合太空鳞翅目作战服"
+	desc = "一套使用已久的联合太空鳞翅目作战服，为鳞翅目海盗大规模生产。"
 	icon_state = "upp_uniform"
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 	has_sensor = 0
 
 /obj/item/clothing/under/marine/veteran/UPP/medic
-	name = "\improper USL medic fatigues"
+	name = "\improper 联合太空鳞翅目医疗兵作战服"
 	icon_state = "upp_uniform_medic"
 
 //Freelancers
 
 /obj/item/clothing/under/marine/veteran/freelancer
-	name = "freelancer fatigues"
-	desc = "A set of loose fitting fatigues, perfect for an informal mercenary. Smells like gunpowder, corn syrup, and covered in grease and sake stains."
+	name = "自由佣兵作训服"
+	desc = "一套宽松的作训服，非常适合非正式佣兵穿着。散发着火药、玉米糖浆的气味，还沾满了油脂和清酒的污渍。"
 	icon_state = "freelancer_uniform"
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 	has_sensor = 0
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/brown_vest)
 
 /obj/item/clothing/under/marine/veteran/freelancer/medic
-	name = "freelancer corpsman fatigues"
-	desc = "A set of loose fitting fatigues, perfect for an informal mercenary. Has much better state than regular fatigues, and don't smell that bad."
+	name = "自由佣兵卫生兵作训服"
+	desc = "一套宽松的作训服，非常适合非正式佣兵穿着。比普通作训服状态好得多，而且没那么难闻。"
 	icon_state = "freelancer_uniform_medic"
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/white_vest)
 
 /*===========================HELGHAST - MERCENARY================================*/
 
 /obj/item/clothing/under/marine/veteran/mercenary
-	name = "mercenary fatigues"
-	desc = "A beige suit with a red armband. Sturdy and thick, simply imposing. A mysterious crest emblazons it."
+	name = "佣兵作战服"
+	desc = "一套米色制服，配有红色臂章。坚固厚实，气势逼人。上面印着一个神秘的徽章。"
 	icon_state = "mercenary_heavy_uniform"
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 	soft_armor = list(MELEE = 10, BULLET = 10, LASER = 0, ENERGY = 0, BOMB = 10, BIO = 1, FIRE = 0, ACID = 0)
 
 /obj/item/clothing/under/marine/veteran/mercenary/miner
-	name = "mercenary miner fatigues"
-	desc = "A beige suit with a red armband. The silky thin weaves of its design almost fool its purposes. A mysterious crest emblazons it."
+	name = "佣兵矿工服"
+	desc = "一套米色西装，配有红色臂章。其丝滑细密的编织几乎掩盖了它的真实用途。一个神秘的徽章醒目地装饰其上。"
 	icon_state = "mercenary_miner_uniform"
 
 /obj/item/clothing/under/marine/veteran/mercenary/engineer
-	name = "mercenary engineer fatigues"
-	desc = "A blue suit with yellow accents. A work of tailoring hardly seen on combat fatigues. A mysterious crest emblazons it."
+	name = "佣兵工程兵作训服"
+	desc = "一套蓝色制服，点缀着黄色装饰。这种在作战服上难得一见的剪裁工艺堪称杰作。一个神秘的徽章闪耀其上。"
 	icon_state = "mercenary_engineer_uniform"
 
 
@@ -405,15 +405,15 @@
 
 
 /obj/item/clothing/under/pizza
-	name = "pizza delivery uniform"
-	desc = "An ill-fitting, slightly stained uniform for a pizza delivery pilot. Smells of cheese."
+	name = "披萨配送制服"
+	desc = "一件不合身、略有污渍的披萨配送飞行员制服。散发着奶酪的气味。"
 	icon_state = "redshirt2"
 	worn_icon_state = "r_suit"
 	has_sensor = 0
 
 /obj/item/clothing/under/colonist
-	name = "colonist uniform"
-	desc = "A stylish grey-green jumpsuit - standard issue for colonists."
+	name = "殖民者制服"
+	desc = "一件时尚的灰绿色连体服——殖民者的标准配置。"
 	icon_state = "colonist"
 	has_sensor = 2
 
@@ -421,55 +421,55 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/CM_uniform
-	name = "colonial marshal uniform"
-	desc = "A blue shirt and tan trousers - the official uniform for a Colonial Marshal."
+	name = "殖民地治安官制服"
+	desc = "蓝色衬衫与卡其色长裤——殖民地执法官的正式制服。"
 	icon_state = "marshal"
 	has_sensor = 2
 
 /obj/item/clothing/under/liaison_suit
-	name = "liaison's tan suit"
-	desc = "A stiff, stylish tan suit commonly worn by businessmen from the Nanotrasen corporation. Expertly crafted to make you look like a prick."
+	name = "联络官的棕色西装"
+	desc = "一套挺括时尚的浅棕色西装，常见于纳米传讯公司的商务人士。精湛剪裁，专为让你看起来像个混蛋而设计。"
 	icon_state = "liaison_regular"
 
 /obj/item/clothing/under/liaison_suit/outing
-	name = "liaison's outfit"
-	desc = "A casual outfit consisting of a collared shirt and a vest. Looks like something you might wear on the weekends, or on a visit to a derelict colony."
+	name = "联络官制服"
+	desc = "一件休闲装，由带领衬衫和马甲组成。看起来像是你周末会穿的，或者去废弃殖民地时会穿的衣服。"
 	icon_state = "liaison_outing"
 
 /obj/item/clothing/under/liaison_suit/formal
-	name = "liaison's white suit"
-	desc = "A formal, white suit, something you'd wear to a funeral, a corporate dinner, or both. Stiff as a board, but makes you feel like rolling out of a Rolls-Royce."
+	name = "企业联络官的白色西装"
+	desc = "一套正式的白色西装，适合出席葬礼、公司晚宴，或两者兼而有之。它挺括如板，却能让你感觉像是从劳斯莱斯里款款而出。"
 	icon_state = "liaison_formal"
 
 /obj/item/clothing/under/liaison_suit/suspenders
-	name = "liaison's attire"
-	desc = "A collared shirt, complimented by a pair of suspenders. Worn by Nanotrasen employees who ask the tough questions. Smells faintly of cigars and bad acting."
+	name = "联络官制服"
+	desc = "一件带衣领的衬衫，搭配一副背带。纳米传讯员工穿着它提出尖锐问题。隐约散发着雪茄和拙劣演技的气味。"
 	icon_state = "liaison_suspenders"
 
 /obj/item/clothing/under/liaison_suit/galaxy_blue
-	name = "\improper De Void of Soul"
-	desc = "A suit of stars and high-V gas. One that screams the cosmos and unfathomnable vastness. Earned by only the best of the best."
+	name = "\improper 灵魂之虚"
+	desc = "一套由星辰与高速气体构成的装甲。它诉说着宇宙与深不可测的浩瀚。唯有最顶尖的精英方能获得。"
 	icon_state = "liaison_galaxy_blue" // Thanks to Manezinho
 
 /obj/item/clothing/under/liaison_suit/galaxy_red
-	name = "\improper Pulsar gonne"
-	desc = "A suit of stars and high-V gas. One that screams stellar fusion and re-entry burn. Earned by only the best of the best."
+	name = "\improper 脉冲枪"
+	desc = "一套星光与高速气体构成的战甲。它诉说着恒星聚变与重返大气层的灼烧。唯有最顶尖的战士方能获得。"
 	icon_state = "liaison_galaxy_red" // Thanks to Manezinho
 
 /obj/item/clothing/under/rank/chef/exec
-	name = "\improper Nanotrasen suit"
-	desc = "A formal white undersuit."
+	name = "\improper 纳米传讯防护服"
+	desc = "一件正式的白色内衬服。"
 	adjustment_variants = list()
 
 /obj/item/clothing/under/rank/synthetic
-	name = "\improper TGMC Support Uniform"
-	desc = "A simple uniform made for Synthetic crewmembers."
+	name = "\improper 地球政府殖民地海军陆战队支援制服"
+	desc = "专为合成人船员设计的简易制服。"
 	icon_state = "rdalt"
 	adjustment_variants = list()
 
 /obj/item/clothing/under/som
-	name = "\improper SOM uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies."
+	name = "\improper 火星之子制服"
+	desc = "火星之子军事人员的标准制服。其设计明显源自旧采矿殖民地使用的采矿服。"
 	icon = 'icons/obj/clothing/uniforms/ert_uniforms.dmi'
 	icon_state = "som_uniform"
 	worn_icon_list = list(
@@ -485,8 +485,8 @@
 
 
 /obj/item/clothing/under/som/medic
-	name = "\improper SOM medical uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has medical markings."
+	name = "\improper SOM医疗制服"
+	desc = "火星之子军事人员的标准制服。其设计明显源自旧采矿殖民地使用的采矿服。这件带有医疗标识。"
 	icon_state = "som_uniform_medic"
 	worn_icon_state = "som_uniform_medic"
 
@@ -497,8 +497,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/som/veteran
-	name = "\improper SOM veteran uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has markings indicating specialist status."
+	name = "\improper 火星之子老兵制服"
+	desc = "火星之子军事人员的标准制服。其设计明显源自旧采矿殖民地使用的采矿服。这件带有专家身份的标识。"
 	icon_state = "som_uniform_veteran"
 	worn_icon_state = "som_uniform_veteran"
 
@@ -506,8 +506,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/brown_vest)
 
 /obj/item/clothing/under/som/leader
-	name = "\improper SOM leader uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has leadership markings."
+	name = "\improper 火星之子军官制服"
+	desc = "火星之子军事人员的标准制服。其设计明显源自旧采矿殖民地使用的采矿服。这件带有领导标识。"
 	icon_state = "som_uniform_leader"
 	worn_icon_state = "som_uniform_leader"
 
@@ -515,8 +515,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/brown_vest)
 
 /obj/item/clothing/under/som/officer
-	name = "\improper SOM officer uniform"
-	desc = "The distinct black uniform of a SOM officer. Usually worn by junior officers."
+	name = "\improper 火星之子军官制服"
+	desc = "火星之子军官的独特黑色制服。通常由初级军官穿着。"
 	icon_state = "som_officer_uniform"
 	worn_icon_state = "som_officer_uniform"
 	adjustment_variants = list()
@@ -525,14 +525,14 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/som/officer/senior
-	name = "\improper SOM officer uniform"
-	desc = "The distinct jacketed black uniform of a SOM officer. Usually worn by senior officers."
+	name = "\improper 火星之子军官制服"
+	desc = "火星之子军官标志性的黑色夹克制服。通常由高级军官穿着。"
 	icon_state = "som_senior_officer_uniform"
 	worn_icon_state = "som_senior_officer_uniform"
 
 /obj/item/clothing/under/icc
-	name = "\improper Modelle/30 uniform"
-	desc = "The standard uniform of ICC military personnel. The design is clearly dual purpose, meant to be both a combat uniform and one fit for daily tasks abord ships."
+	name = "\improper 30型制服"
+	desc = "ICC军事人员的标准制服。其设计显然具有双重用途，既可作为战斗服，也适合在舰船上执行日常任务。"
 	icon = 'icons/obj/clothing/uniforms/ert_uniforms.dmi'
 	icon_state = "icc"
 	worn_icon_list = list(
@@ -547,8 +547,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/brown_vest)
 
 /obj/item/clothing/under/sectoid
-	name = "psionic field"
-	desc = "A field of invisible energy, it protects the wearer but prevents any clothing from being worn."
+	name = "灵能场"
+	desc = "一片无形的能量场，它能保护穿戴者，但无法同时穿戴任何衣物。"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "shield-blue"
 	item_flags = DELONDROP
@@ -558,8 +558,8 @@
 	ADD_TRAIT(src, TRAIT_NODROP, SECTOID_TRAIT)
 
 /obj/item/clothing/under/marine/robotic
-	name = "robotic armor suit mount"
-	desc = "Additional structural armor plate used for mounting equipment on a combat robot."
+	name = "机器人装甲服挂载"
+	desc = "用于在战斗机器人上安装设备的附加结构装甲板。"
 	worn_icon_state = "chest_rig"
 	icon_state = "chest_rig"
 	adjustment_variants = list()
@@ -568,7 +568,7 @@
 /obj/item/clothing/under/marine/robotic/mob_can_equip(mob/user, slot, warning = TRUE, override_nodrop = FALSE, bitslot = FALSE)
 	. = ..()
 	if(!isrobot(user))
-		to_chat(user, span_warning("You can't equip this as it requires mounting screws on your body!"))
+		to_chat(user, span_warning("你无法装备此物品，因为它需要在你的身体上安装固定螺丝！"))
 		return FALSE
 
 /obj/item/clothing/under/marine/robotic/black_vest
@@ -587,8 +587,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/holster)
 
 /obj/item/clothing/under/marine/specops
-	name = "Tactical turtleneck"
-	desc = "A TGMC turtleneck issued to special operation units"
+	name = "战术高领衫"
+	desc = "一件配发给特种作战单位的TGMC高领毛衣"
 	icon = 'icons/mob/clothing/uniforms/ert_uniforms.dmi'
 	icon_state = "specops_uniform"
 	worn_icon_list = list(
@@ -600,8 +600,8 @@
 	has_sensor = 0
 
 /obj/item/clothing/under/vsd
-	name = "\improper VSD jumpsuit"
-	desc = "The standard uniform for the Vyacheslav Security Detail, weaved with kevlar and marked with blood."
+	name = "\improper VSD连体服"
+	desc = "维雅切斯拉夫安保分队的标准制服，采用凯夫拉纤维编织，带有血迹标记。"
 	icon = 'icons/mob/clothing/uniforms/ert_uniforms.dmi'
 	icon_state = "vsd_uniform_main"
 	worn_icon_state = "vsd_uniform_main"
@@ -627,7 +627,7 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/white_vest)
 
 /obj/item/clothing/under/vsd/officer
-	desc = "The standard uniform for officers in the Vyacheslav Security Detail, weaved with kevlar and marked with blood."
+	desc = "维雅切斯拉夫安保分队军官的标准制服，采用凯夫拉纤维编织，带有血迹标记。"
 	icon_state = "vsd_uniform_officer"
 	worn_icon_state = "vsd_uniform_officer"
 
@@ -642,7 +642,7 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/vsd/upp
-	desc = "A standard uniform for a division in the Vyacheslav Security Detail, it's colors feel reminiscent."
+	desc = "这是维雅切斯拉夫安保分队某支队的标准制服，其配色令人感到似曾相识。"
 	icon_state = "upp_retired"
 	worn_icon_state = "upp_retired"
 
@@ -663,7 +663,7 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/white_vest)
 
 /obj/item/clothing/under/vsd/upp/officer
-	desc = "A standard uniform for a officer in a division of the Vyacheslav Security Detail, it's colors feel reminiscent."
+	desc = "这是维雅切斯拉夫安保分队军官的标准制服，其配色令人感到似曾相识。"
 	icon_state = "upp_retired_officer"
 	worn_icon_state = "upp_retired_officer"
 
@@ -671,7 +671,7 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/vsd/shirt
-	name = "VSD shirt"
+	name = "VSD衬衫"
 	icon_state = "vsd_shirt"
 	worn_icon_state = "vsd_shirt"
 
@@ -679,7 +679,7 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/vsd/juggernaut
-	name = "VSD overalls"
+	name = "VSD连体服"
 	icon_state = "vsd_alt_juggernaut"
 	worn_icon_state = "vsd_alt_juggernaut"
 
@@ -688,8 +688,8 @@
 
 //TDF
 /obj/item/clothing/under/tdf
-	name = "\improper TDF uniform"
-	desc = "The standard uniform of TDF military personnel. A very easy to recognize design with its distinct blues to represent the TDF."
+	name = "\improper 殖民地解放阵线制服"
+	desc = "TDF 军事人员的标准制服。采用标志性的蓝色设计，易于识别，代表了 TDF。"
 	icon = 'icons/obj/clothing/uniforms/ert_uniforms.dmi'
 	icon_state = "tdf_uniform"
 	worn_icon_list = list(

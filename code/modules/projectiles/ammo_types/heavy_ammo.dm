@@ -6,7 +6,7 @@
 */
 
 /datum/ammo/bullet/machinegun //Adding this for the MG Nests (~Art)
-	name = "machinegun bullet"
+	name = "机枪弹道"
 	icon_state = "bullet" // Keeping it bog standard with the turret but allows it to be changed.
 	ammo_behavior_flags = AMMO_BALLISTIC
 	hud_state = "minigun"
@@ -19,7 +19,7 @@
 	sundering = 5
 
 /datum/ammo/bullet/minigun
-	name = "minigun bullet"
+	name = "迷你机枪弹道"
 	hud_state = "minigun"
 	hud_state_empty = "smartgun_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -31,7 +31,7 @@
 	sundering = 2.5
 
 /datum/ammo/bullet/minigun_light
-	name = "minigun bullet"
+	name = "迷你机枪弹道"
 	hud_state = "minigun"
 	hud_state_empty = "smartgun_empty"
 	accurate_range = 6
@@ -42,7 +42,7 @@
 
 
 /datum/ammo/bullet/minigun/ltaap
-	name = "chaingun bullet"
+	name = "链炮弹道"
 	damage = 30
 	penetration = 35
 	sundering = 1
@@ -60,7 +60,7 @@
 	hud_state_empty = "hivelo_empty"
 
 /datum/ammo/bullet/auto_cannon
-	name = "autocannon high-velocity bullet"
+	name = "自动炮高速弹道"
 	hud_state = "minigun"
 	hud_state_empty = "smartgun_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_TURF|AMMO_PASS_THROUGH_MOVABLE
@@ -88,7 +88,7 @@
 	proj.proj_max_range -= 5
 
 /datum/ammo/bullet/bike_autocannon
-	name = "autocannon high-velocity bullet"
+	name = "自动炮高速弹道"
 	hud_state = "minigun"
 	hud_state_empty = "smartgun_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -98,7 +98,7 @@
 	max_range = 15
 
 /datum/ammo/bullet/auto_cannon/flak
-	name = "autocannon smart-detonating bullet"
+	name = "自动炮智能引爆弹道"
 	hud_state = "sniper_flak"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_TARGET_TURF
 	damage = 50
@@ -115,7 +115,7 @@
 	airburst(target_turf, proj)
 
 /datum/ammo/bullet/auto_cannon/anti_tank
-	name = "autocannon solid-shot bullet"
+	name = "自动炮实心弹道弹"
 	hud_state = "railgun_hvap"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_TARGET_TURF
 	damage = 85
@@ -123,7 +123,7 @@
 	autocannon_wall_bonus = 100
 
 /datum/ammo/bullet/railgun
-	name = "armor piercing railgun slug"
+	name = "穿甲导轨炮弹"
 	hud_state = "railgun_ap"
 	icon_state = "blue_bullet"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_TURF|AMMO_PASS_THROUGH_MOVABLE
@@ -143,7 +143,7 @@
 	proj.proj_max_range -= 3
 
 /datum/ammo/bullet/railgun/hvap
-	name = "high velocity railgun slug"
+	name = "高速导轨炮弹"
 	hud_state = "railgun_hvap"
 	shell_speed = 5
 	max_range = 21
@@ -155,7 +155,7 @@
 	staggerstun(target_mob, proj, stagger = 2 SECONDS, knockback = 3)
 
 /datum/ammo/bullet/railgun/smart
-	name = "smart armor piercing railgun slug"
+	name = "智能穿甲导轨炮弹"
 	hud_state = "railgun_smart"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_TURF|AMMO_PASS_THROUGH_MOVABLE|AMMO_IFF
 	damage = 100
@@ -167,7 +167,7 @@
 	shake_camera(target_mob, 0.2 SECONDS, 1)
 
 /datum/ammo/bullet/apfsds
-	name = "\improper APFSDS round"
+	name = "\improper 尾翼稳定脱壳穿甲弹"
 	hud_state = "alloy_spike"
 	icon_state = "blue_bullet"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOVABLE|AMMO_UNWIELDY
@@ -189,7 +189,7 @@
 		proj.proj_max_range = 0
 
 /datum/ammo/bullet/coilgun // ICC coilgun
-	name = "high-velocity tungsten slug"
+	name = "高速钨芯弹"
 	hud_state = "railgun_ap"
 	icon_state = "blue_bullet"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOVABLE
@@ -208,7 +208,7 @@
 // Tank Autocannon
 
 /datum/ammo/bullet/tank_autocannon_ap
-	name = "autocannon armor piercing"
+	name = "自动炮穿甲弹"
 	hud_state = "hivelo"
 	hud_state_empty = "hivelo_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -217,7 +217,7 @@
 	sundering = 4
 
 /datum/ammo/rocket/tank_autocannon_he
-	name = "autocannon high explosive"
+	name = "自动炮高爆弹"
 	icon_state = "bullet"
 	hud_state = "hivelo_fire"
 	hud_state_empty = "hivelo_empty"
@@ -236,7 +236,7 @@
 // SARDEN
 
 /datum/ammo/bullet/sarden
-	name = "heavy autocannon armor piercing"
+	name = "重型机炮穿甲弹"
 	hud_state = "alloy_spike"
 	hud_state_empty = "smartgun_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -245,7 +245,7 @@
 	sundering = 3.5
 
 /datum/ammo/bullet/sarden/high_explosive
-	name = "heavy autocannon high explosive"
+	name = "重型机炮高爆弹"
 	hud_state = "alloy_spike"
 	hud_state_empty = "smartgun_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC

@@ -49,8 +49,8 @@
 	return ..()
 
 /obj/item/attachable/motiondetector
-	name = "tactical sensor"
-	desc = "A device that detects hostile movement. Hostiles appear as red blips. Friendlies with the correct IFF signature appear as green, and their bodies as blue, unrevivable bodies as dark blue. It has a mode selection interface."
+	name = "战术传感器"
+	desc = "一种探测敌对运动的设备。敌对目标显示为红色光点。带有正确敌我识别信号的我方单位显示为绿色，其尸体显示为蓝色，无法复苏的尸体显示为深蓝色。它配有模式选择界面。"
 	icon_state = "minidetector"
 	icon = 'icons/obj/items/guns/attachments/rail.dmi'
 	slot = ATTACHMENT_SLOT_RAIL

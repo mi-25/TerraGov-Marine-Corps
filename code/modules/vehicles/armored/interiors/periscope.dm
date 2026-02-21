@@ -1,7 +1,7 @@
 
 /obj/structure/periscope
-	name = "tank periscope"
-	desc = "A periscope for viewing the outside of the vehicle. Resist or move to stop looking through it."
+	name = "坦克潜望镜"
+	desc = "用于观察车辆外部的潜望镜。抵抗或移动以停止观察。"
 	icon = 'icons/obj/armored/3x3/tank_interior.dmi'
 	icon_state = "periscope"
 	density = FALSE
@@ -43,7 +43,7 @@
 	user.update_sight()
 
 /obj/structure/periscope/apc
-	name = "apc periscope"
+	name = "APC潜望镜"
 
 /obj/structure/periscope/som
 	icon = 'icons/obj/armored/3x4/som_interior_small_props.dmi'

@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/spitter
 	caste_base_type = /datum/xeno_caste/spitter
 	name = "Spitter"
-	desc = "A gross, oozing alien of some kind."
+	desc = "某种令人作呕、渗出粘液的外星生物。"
 	icon = 'icons/Xeno/castes/spitter.dmi'
 	icon_state = "Spitter Walking"
 	bubble_icon = "alienroyal"
@@ -18,4 +18,4 @@
 /mob/living/carbon/xenomorph/spitter/globadier
 	caste_base_type = /datum/xeno_caste/spitter/globadier
 	name = "Globadier"
-	desc = "A disformed spitter. Carries some form of acid on its back"
+	desc = "一只畸形的喷射者。其背部携带着某种酸液。"

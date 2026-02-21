@@ -197,16 +197,16 @@
 
 
 /obj/item/camera_film
-	name = "film cartridge"
+	name = "胶卷"
 	icon = 'icons/obj/device.dmi'
-	desc = "A camera film cartridge. Insert it into a camera to reload it."
+	desc = "相机胶卷盒。将其插入相机以重新装填。"
 	icon_state = "film"
 	worn_icon_state = "electropack"
 	w_class = WEIGHT_CLASS_TINY
 
 
 /obj/item/photo
-	name = "photo"
+	name = "照片"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "photo"
 	worn_icon_list = list(
@@ -256,14 +256,14 @@
 		if(name_override)
 			name = P.picture_name
 		else
-			name = "photo - [P.picture_name]"
+			name = "照片 - [P.picture_name]"
 	if(setdesc && P.picture_desc)
 		desc = P.picture_desc
 
 
 /obj/item/photo/proc/show(mob/user)
 	if(!istype(picture) || !picture.picture_image)
-		to_chat(user, span_warning("[src] seems to be blank..."))
+		to_chat(user, span_warning("[src] 似乎是空白的..."))
 		return
 	var/width_height = "width"
 	if(picture.psize_y > picture.psize_x)
@@ -289,9 +289,9 @@
 
 
 /obj/item/camera
-	name = "camera"
+	name = "摄像头"
 	icon = 'icons/obj/device.dmi'
-	desc = "A polaroid camera."
+	desc = "拍立得相机。"
 	icon_state = "camera"
 	worn_icon_state = "camera"
 	light_color = COLOR_WHITE
@@ -344,11 +344,11 @@
 
 	if(istype(I, /obj/item/camera_film))
 		if(pictures_left)
-			to_chat(user, span_notice("[src] still has some film in it!"))
+			to_chat(user, span_notice("[src] 里面还有胶卷！"))
 			return
 		if(!user.temporarilyRemoveItemFromInventory(I))
 			return
-		to_chat(user, span_notice("You insert [I] into [src]."))
+		to_chat(user, span_notice("你将[I]插入[src]。"))
 		qdel(I)
 		pictures_left = pictures_max
 
@@ -468,7 +468,7 @@
 	if(in_range(src, user)) //needed because of TK
 		user.put_in_hands(p)
 		pictures_left--
-		to_chat(user, span_notice("[pictures_left] photos left."))
+		to_chat(user, span_notice("[pictures_left] 张照片剩余。"))
 		var/customise = "No"
 		if(can_customise)
 			customise = tgui_alert(user, "Do you want to customize the photo?", "Customization", list("Yes", "No"))
@@ -643,8 +643,8 @@
 #undef PHYSICAL_POSITION
 
 /obj/item/camera/oldcamera
-	name = "Old Camera"
-	desc = "An old, slightly beat-up digital camera, with a cheap photo printer taped on. It's a nice shade of blue."
+	name = "旧摄像头"
+	desc = "一台略显陈旧的数码相机，上面用胶带粘着一台廉价照片打印机。机身是漂亮的蓝色调。"
 	icon_state = "oldcamera"
 	pictures_left = 30
 

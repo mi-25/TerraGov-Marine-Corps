@@ -4,8 +4,8 @@
 
 
 /obj/structure/closet
-	name = "closet"
-	desc = "It's a basic storage unit."
+	name = "储物柜"
+	desc = "这是一个基础存储单元。"
 	icon = 'icons/obj/structures/closet.dmi'
 	icon_state = "closed"
 	density = TRUE
@@ -109,7 +109,7 @@
 /obj/structure/closet/proc/can_open(mob/living/user)
 	if(welded || locked)
 		if(user)
-			balloon_alert(user, "won't budge!")
+			balloon_alert(user, "纹丝不动！")
 		return FALSE
 	return TRUE
 
@@ -118,12 +118,12 @@
 	for(var/obj/structure/closet/blocking_closet in loc)
 		if(blocking_closet != src && !blocking_closet.wall_mounted && !blocking_closet.opened)
 			if(user)
-				balloon_alert(user, "too cramped!")
+				balloon_alert(user, "太挤了！")
 			return FALSE
 	for(var/mob/living/mob_to_stuff in loc)
 		if(mob_to_stuff.anchored || mob_to_stuff.mob_size > max_mob_size)
 			if(user)
-				balloon_alert(user, "something huge is in the way!")
+				balloon_alert(user, "有庞然大物挡路！")
 			return FALSE
 	return TRUE
 
@@ -211,7 +211,7 @@
 
 /obj/structure/closet/attack_animal(mob/living/user)
 	if(user.wall_smash)
-		balloon_alert_to_viewers("[user] destroys the [src]")
+		balloon_alert_to_viewers("[user]摧毁了[src]")
 		dump_contents()
 		qdel(src)
 
@@ -250,7 +250,7 @@
 		return
 
 	if(!attached_clamp.loaded && mob_size_counter)
-		balloon_alert(user, "something's inside!")
+		balloon_alert(user, "里面有东西！")
 		return
 
 /obj/structure/closet/welder_act(mob/living/user, obj/item/tool/weldingtool/welder)
@@ -259,16 +259,16 @@
 
 	if(opened)
 		if(!welder.use_tool(src, user, 2 SECONDS, 1, 50))
-			balloon_alert(user, "not enough fuel!")
+			balloon_alert(user, "燃料不足！")
 			return TRUE
 		if(drop_material)
 			new drop_material(drop_location())
-		balloon_alert_to_viewers("\The [src] is cut apart by [user]!")
+		balloon_alert_to_viewers("\The [src] 被 [user] 切开了！")
 		qdel(src)
 		return TRUE
 
 	if(!welder.use_tool(src, user, 2 SECONDS, 1, 50))
-		balloon_alert(user, "not enough fuel!")
+		balloon_alert(user, "燃料不足！")
 		return TRUE
 	welded = !welded
 	update_icon()
@@ -280,7 +280,7 @@
 	if(opened)
 		return FALSE
 	if(isspaceturf(loc) && !anchored)
-		balloon_alert(user, "need a firmer floor!")
+		balloon_alert(user, "需要更坚固的地板！")
 		return TRUE
 	setAnchored(!anchored)
 	wrenchy_tool.play_tool_sound(src, 75)
@@ -301,11 +301,11 @@
 	if(open())
 		return
 
-	balloon_alert(user, "won't budge!")
+	balloon_alert(user, "纹丝不动！")
 	if(!lastbang)
 		lastbang = TRUE
 		for(var/mob/M in hearers(src, null))
-			to_chat(M, "<FONT size=[max(0, 5 - get_dist(src, M))]>BANG, bang!</FONT>")
+			to_chat(M, "<FONT size=[max(0, 5 - get_dist(src, M))]>砰，砰！</FONT>")
 		addtimer(VARSET_CALLBACK(src, lastbang, FALSE), 3 SECONDS)
 
 
@@ -327,7 +327,7 @@
 	if(ishuman(usr))
 		src.toggle(usr)
 	else
-		balloon_alert(usr, "can't do this!")
+		balloon_alert(usr, "做不到！")
 
 /obj/structure/closet/update_icon_state()//Putting the welded stuff in updateicon() so it's easy to overwrite for special cases (Fridges, cabinets, and whatnot)
 	. = ..()
@@ -358,11 +358,11 @@
 	//okay, so the closet is either welded or locked... resist!!!
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	TIMER_COOLDOWN_START(user, COOLDOWN_RESIST, CLICK_CD_BREAKOUT)
-	balloon_alert_to_viewers("shaking violently!", ignored_mobs = user)
-	to_chat(user, span_notice("You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)"))
+	balloon_alert_to_viewers("剧烈地颤抖着！", ignored_mobs = user)
+	to_chat(user, span_notice("你靠在[src]的背面，开始把门推开……（这大约需要[DisplayTimeText(breakout_time)]。）"))
 	if(!do_after(user, breakout_time, target = src))
 		if(!opened) //Didn't get opened in the meatime.
-			balloon_alert(user, "failed!")
+			balloon_alert(user, "失败！")
 		return FALSE
 	if(opened || (!locked && !welded) ) //Did get opened in the meatime.
 		return TRUE
@@ -396,20 +396,20 @@
 		return FALSE
 	if(!user.dextrous)
 		if(!silent)
-			balloon_alert(user, "not enough dexterity!")
+			balloon_alert(user, "敏捷不足！")
 		return
 	if(opened)
 		if(!silent)
-			balloon_alert(user, "close it first!")
+			balloon_alert(user, "先把它关上！")
 		return
 	if(broken)
 		if(!silent)
-			balloon_alert(user, "it's broken!")
+			balloon_alert(user, "它坏了！")
 		return FALSE
 
 	if(!allowed(user))
 		if(!silent)
-			balloon_alert(user, "access denied!")
+			balloon_alert(user, "访问被拒绝！")
 		return FALSE
 
 	locked = !locked
@@ -483,8 +483,8 @@
 /mob/living/proc/on_closet_dump(obj/structure/closet/origin)
 	SetStun(origin.closet_stun_delay)
 	if(!lying_angle && IsStun())
-		balloon_alert_to_viewers("gets out", ignored_mobs = src)
-		balloon_alert(src, "you struggle to get your bearings")
+		balloon_alert_to_viewers("离开", ignored_mobs = src)
+		balloon_alert(src, "你挣扎着想要站稳")
 
 #undef CLOSET_INSERT_END
 #undef CLOSET_INSERT_FAIL

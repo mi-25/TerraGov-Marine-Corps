@@ -1,5 +1,5 @@
 /obj/vehicle/ridden
-	name = "ridden vehicle"
+	name = "载具"
 	buckle_flags = CAN_BUCKLE|BUCKLE_PREVENTS_PULL
 	max_buckled_mobs = 1
 	buckle_lying = -1
@@ -46,9 +46,9 @@
 	if(!key_type || is_key(inserted_key) || !is_key(I))
 		return ..()
 	if(!user.transferItemToLoc(I, src))
-		to_chat(user, span_warning("[I] seems to be stuck to your hand!"))
+		to_chat(user, span_warning("[I] 似乎粘在你手上了！"))
 		return
-	to_chat(user, span_notice("You insert \the [I] into \the [src]."))
+	to_chat(user, span_notice("你将\the [I]插入\the [src]。"))
 	if(inserted_key) //just in case there's an invalid key
 		inserted_key.forceMove(drop_location())
 	inserted_key = I
@@ -57,9 +57,9 @@
 	if(!inserted_key || (!user.Adjacent(src) && user.dextrous))
 		return ..()
 	if(!is_occupant(user))
-		to_chat(user, span_warning("You must be riding the [src] to remove [src]'s key!"))
+		to_chat(user, span_warning("你必须骑在[src]上才能取下[src]的钥匙！"))
 		return
-	to_chat(user, span_notice("You remove \the [inserted_key] from \the [src]."))
+	to_chat(user, span_notice("你将\the [inserted_key]从\the [src]中取出。"))
 	inserted_key.forceMove(drop_location())
 	user.put_in_hands(inserted_key)
 	inserted_key = null

@@ -1,7 +1,7 @@
 /// A medical bot designed to clean up blood and other trash that accumulates in medbay
 /obj/machinery/bot/cleanbot
-	name = "Nanotrasen cleanbot"
-	desc = "A robot cleaning automaton, an offshoot of the trash-cleaning roomba. The cleanbot is designed to clean dirt and blood from floors, and thankfully it does not touch items. It has an off and on switch."
+	name = "纳米传讯清洁机器人"
+	desc = "一个机器人清洁自动化装置，是垃圾清洁扫地机器人的分支。清洁机器人设计用于清理地板上的污垢和血迹，幸运的是它不会触碰物品。它有一个开关。"
 	icon = 'icons/obj/aibots.dmi'
 	icon_state = "cleanbot0"
 	density = FALSE
@@ -121,7 +121,7 @@
 			highestdirtvalue = sampledirtvalue
 			destdir = dirn
 	if(!length(dirtyfloors)) //no viable turfs, we're entirely enclosed by dense objects
-		say("ERROR 401, PLEASE CONSULT YOUR INCLUDED NANOTRASEN OWNERS MANUAL")
+		say("错误 401，请查阅您随附的纳米传讯所有者手册")
 		stop_processing()
 		addtimer(CALLBACK(src, PROC_REF(reactivate)), 1 MINUTES)
 		return

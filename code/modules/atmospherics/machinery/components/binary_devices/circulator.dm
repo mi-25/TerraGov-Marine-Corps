@@ -4,8 +4,8 @@
 #define CIRCULATOR_COLD 1
 
 /obj/machinery/atmospherics/components/binary/circulator
-	name = "circulator/heat exchanger"
-	desc = "A gas circulator pump and heat exchanger."
+	name = "循环器/热交换器"
+	desc = "气体循环泵和热交换器。"
 	icon_state = "circ-off-0"
 
 	var/active = FALSE
@@ -110,9 +110,9 @@
 		return
 
 	if(anchored)
-		to_chat(usr, span_danger("[src] is anchored!"))
+		to_chat(usr, span_danger("[src] 已固定！"))
 		return
 
 	flipped = !flipped
-	to_chat(usr, span_notice("You flip [src]."))
+	to_chat(usr, span_notice("你将[src]翻了个面。"))
 	update_icon()

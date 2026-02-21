@@ -118,7 +118,7 @@
 
 /atom/movable/screen/alert/shell
 	name = "Shell Mutation"
-	desc = "Your Shell Mutation is taking effect."
+	desc = "你的外壳突变正在生效。"
 	icon_state = "xeno_mutation_shell"
 
 /**
@@ -131,7 +131,7 @@
 
 /atom/movable/screen/alert/spur
 	name = "Spur Mutation"
-	desc = "Your Spur Mutation is taking effect."
+	desc = "你的刺突突变正在生效。"
 	icon_state = "xeno_mutation_spur"
 
 /**
@@ -144,6 +144,6 @@
 
 /atom/movable/screen/alert/veil
 	name = "Veil Mutation"
-	desc = "Your Veil Mutation is taking effect."
+	desc = "你的面纱突变正在生效。"
 	icon_state = "xeno_mutation_veil"
 

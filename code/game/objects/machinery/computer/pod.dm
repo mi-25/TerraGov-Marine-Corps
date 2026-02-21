@@ -1,6 +1,6 @@
 /obj/machinery/computer/pod
-	name = "Pod Launch Control"
-	desc = "A controll for launching pods. Some people prefer firing Mechas."
+	name = "吊舱发射控制"
+	desc = "一个用于发射吊舱的控制台。有些人更喜欢发射机甲。"
 	icon_state = "computer"
 	screen_overlay = "computer_generic"
 	circuit = /obj/item/circuitboard/computer/pod
@@ -12,14 +12,14 @@
 /obj/machinery/computer/pod/old
 	icon_state = "old"
 	screen_overlay = "old_screen"
-	name = "DoorMex Control Computer"
+	name = "舱门控制计算机"
 	title = "Door Controls"
 
 /obj/machinery/computer/pod/old/syndicate
-	name = "ProComp Executive IIc"
-	desc = "The Syndicate operate on a tight budget. Operates external airlocks."
+	name = "ProComp 行政版 IIc"
+	desc = "辛迪加预算紧张。操作外部气闸。"
 	title = "External Airlock Controls"
 
 /obj/machinery/computer/pod/old/swf
-	name = "Magix System IV"
-	desc = "An arcane artifact that holds much magic. Running E-Knock 2.2: Sorceror's Edition"
+	name = "魔幻系统IV"
+	desc = "一件蕴含强大魔力的神秘法器。正在运行 E-Knock 2.2：巫师版。"

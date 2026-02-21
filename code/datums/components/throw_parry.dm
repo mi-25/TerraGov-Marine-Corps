@@ -59,4 +59,4 @@
  */
 /atom/proc/on_parry_throw(atom/reflector, atom/movable/thrown)
 	SIGNAL_HANDLER
-	reflector.visible_message(span_warning("[reflector] deflects [thrown]!"), span_notice("[isxeno(reflector) ? "We" : "You"] bounce [thrown] back towards its source!"))
+	reflector.visible_message(span_warning("[reflector] 偏转了 [thrown]！"), span_notice("[isxeno(reflector) ? "We" : "You"] bounce [thrown] back towards its source!"))

@@ -2,8 +2,8 @@
 	icon_state = "filter_off"
 	density = FALSE
 
-	name = "gas filter"
-	desc = "Very useful for filtering gasses."
+	name = "气体过滤器"
+	desc = "非常适用于过滤气体。"
 
 	can_unwrench = FALSE
 
@@ -45,7 +45,7 @@
 /obj/machinery/atmospherics/components/trinary/filter/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational())
-		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
+		to_chat(user, span_warning("你无法拆卸[src]，请先关闭它！"))
 		return FALSE
 
 // mapping
@@ -94,36 +94,36 @@
 	on = TRUE
 	icon_state = "filter_on"
 /obj/machinery/atmospherics/components/trinary/filter/atmos/n2
-	name = "nitrogen filter"
+	name = "氮气过滤器"
 	filter_type = "n2"
 /obj/machinery/atmospherics/components/trinary/filter/atmos/o2
-	name = "oxygen filter"
+	name = "氧气过滤器"
 	filter_type = "o2"
 /obj/machinery/atmospherics/components/trinary/filter/atmos/co2
-	name = "carbon dioxide filter"
+	name = "二氧化碳过滤器"
 	filter_type = "co2"
 /obj/machinery/atmospherics/components/trinary/filter/atmos/n2o
-	name = "nitrous oxide filter"
+	name = "一氧化二氮过滤器"
 	filter_type = "n2o"
 /obj/machinery/atmospherics/components/trinary/filter/atmos/plasma
-	name = "plasma filter"
+	name = "等离子体过滤器"
 	filter_type = "plasma"
 
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped //This feels wrong, I know
 	icon_state = "filter_on_f"
 	flipped = TRUE
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2
-	name = "nitrogen filter"
+	name = "氮气过滤器"
 	filter_type = "n2"
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2
-	name = "oxygen filter"
+	name = "氧气过滤器"
 	filter_type = "o2"
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/co2
-	name = "carbon dioxide filter"
+	name = "二氧化碳过滤器"
 	filter_type = "co2"
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2o
-	name = "nitrous oxide filter"
+	name = "一氧化二氮过滤器"
 	filter_type = "n2o"
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/plasma
-	name = "plasma filter"
+	name = "等离子体过滤器"
 	filter_type = "plasma"

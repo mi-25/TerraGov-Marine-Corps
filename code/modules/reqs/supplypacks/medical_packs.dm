@@ -6,7 +6,7 @@ MEDICAL
 	containertype = /obj/structure/closet/crate/medical
 
 /datum/supply_packs/medical/advanced_medical
-	name = "Emergency medical supplies"
+	name = "紧急医疗物资"
 	contains = list(
 		/obj/item/storage/pouch/medical_injectors/medic,
 		/obj/item/storage/pouch/medical_injectors/medic,
@@ -20,21 +20,21 @@ MEDICAL
 	cost = 300
 
 /datum/supply_packs/medical/biomass
-	name = "Biomass beaker"
+	name = "生物质烧杯"
 	contains = list(
 		/obj/item/reagent_containers/glass/beaker/biomass,
 	)
 	cost = 150
 
 /datum/supply_packs/medical/Medical_hud
-	name = "Healthmate medical hud"
+	name = "健康伴侣医疗抬头显示器"
 	contains = list(
 		/obj/item/clothing/glasses/hud/health,
 	)
 	cost = 20
 
 /datum/supply_packs/medical/medical
-	name = "Pills and chemicals"
+	name = "药片与化学品"
 	contains = list(
 		/obj/item/storage/box/autoinjectors,
 		/obj/item/storage/box/syringes,
@@ -58,23 +58,23 @@ MEDICAL
 	cost = 100
 
 /datum/supply_packs/medical/firstaid
-	name = "Advanced first aid kit"
+	name = "高级急救包"
 	contains = list(/obj/item/storage/firstaid/adv)
 	cost = 50
 
 /datum/supply_packs/medical/bodybag
-	name = "Body bags"
+	name = "裹尸袋"
 	notes = "Contains 7 bodybags"
 	contains = list(/obj/item/storage/box/bodybags)
 	cost = 50
 
 /datum/supply_packs/medical/cryobag
-	name = "Stasis bag"
+	name = "休眠袋"
 	contains = list(/obj/item/bodybag/cryobag)
 	cost = 50
 
 /datum/supply_packs/medical/surgery
-	name = "Surgical equipment"
+	name = "手术器械"
 	contains = list(
 		/obj/item/storage/surgical_tray,
 		/obj/item/clothing/mask/breath/medical,
@@ -87,21 +87,21 @@ MEDICAL
 	containertype = /obj/structure/closet/crate/secure/surgery
 
 /datum/supply_packs/medical/hypospray
-	name = "Advanced hypospray"
+	name = "高级注射器"
 	contains = list(/obj/item/reagent_containers/hypospray/advanced)
 	cost = 50
 	containertype = /obj/structure/closet/crate/secure/surgery
 	access = ACCESS_MARINE_MEDBAY
 
 /datum/supply_packs/medical/hypospray
-	name = "Advanced big hypospray"
+	name = "高级大型注射器"
 	contains = list(/obj/item/reagent_containers/hypospray/advanced/big)
 	cost = 120 //just a little over the regular hypo.
 	containertype = /obj/structure/closet/crate/secure/surgery
 	access = ACCESS_MARINE_MEDBAY
 
 /datum/supply_packs/medical/medvac
-	name = "MEDEVAC system"
+	name = "医疗后送系统"
 	contains = list(
 		/obj/item/roller/medevac,
 		/obj/item/medevac_beacon,
@@ -111,7 +111,7 @@ MEDICAL
 	access = ACCESS_MARINE_MEDBAY
 
 /datum/supply_packs/medical/lemolime
-	name = "Lemoline bottle"
+	name = "莱莫林瓶"
 	notes = "Contains 1 bottle of lemoline with 30 units each."
 	contains = list(
 		/obj/item/reagent_containers/glass/bottle/lemoline/doctor,
@@ -119,7 +119,7 @@ MEDICAL
 	cost = 80
 
 /datum/supply_packs/medical/advancedKits
-	name = "Advanced medical packs"
+	name = "高级医疗包"
 	notes = "Contains 5 advanced packs of each type and 5 splints."
 	contains = list(
 		/obj/item/stack/medical/heal_pack/advanced/bruise_pack,
@@ -143,7 +143,7 @@ MEDICAL
 	access = ACCESS_MARINE_MEDBAY
 
 /datum/supply_packs/medical/tweezers
-	name = "Tweezers"
+	name = "镊子"
 	notes = "contains a pair of tweezers."
 	contains = list(/obj/item/tweezers)
 	cost = 200  //shouldn't be easy to get

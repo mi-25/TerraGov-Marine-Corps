@@ -241,7 +241,7 @@
 	friction = 0.1
 
 /obj/effect/temp_visual/explosion
-	name = "boom"
+	name = "爆炸"
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "explosion"
 	light_system = STATIC_LIGHT

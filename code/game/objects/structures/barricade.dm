@@ -82,7 +82,7 @@
 		return FALSE
 
 	if(is_wired)
-		balloon_alert(xeno_attacker, "barbed wire slicing into you!")
+		balloon_alert(xeno_attacker, "铁丝网割伤了你！")
 		xeno_attacker.apply_damage(15, blocked = MELEE , sharp = TRUE, updating_health = TRUE)
 
 	return ..()
@@ -93,7 +93,7 @@
 		return
 
 	if(get_self_acid())
-		balloon_alert(user, "it's melting!")
+		balloon_alert(user, "它正在熔化！")
 		return TRUE
 
 	if(!istype(I, /obj/item/stack/barbed_wire) || !can_wire)
@@ -101,12 +101,12 @@
 
 	var/obj/item/stack/barbed_wire/B = I
 
-	balloon_alert_to_viewers("setting up wire...")
+	balloon_alert_to_viewers("正在架设线缆...")
 	if(!do_after(user, 2 SECONDS, NONE, src, BUSY_ICON_BUILD) || !can_wire)
 		return
 
 	if(get_self_acid())
-		balloon_alert(user, "it's melting!")
+		balloon_alert(user, "它正在熔化！")
 		return TRUE
 
 	playsound(loc, 'sound/effects/barbed_wire_movement.ogg', 25, 1)
@@ -126,13 +126,13 @@
 	if(!is_wired || LAZYACCESS(user.do_actions, src))
 		return FALSE
 
-	balloon_alert_to_viewers("removing wire...")
+	balloon_alert_to_viewers("正在移除导线...")
 
 	if(!do_after(user, 2 SECONDS, NONE, src, BUSY_ICON_BUILD))
 		return TRUE
 
 	playsound(loc, 'sound/items/wirecutter.ogg', 25, TRUE)
-	balloon_alert_to_viewers("removed")
+	balloon_alert_to_viewers("已移除")
 	modify_max_integrity(max_integrity - 50)
 	can_wire = TRUE
 	is_wired = FALSE
@@ -224,7 +224,7 @@
 	set src in oview(1)
 
 	if(anchored)
-		balloon_alert(usr, "fastened to the floor")
+		balloon_alert(usr, "固定在地板上")
 		return FALSE
 
 	setDir(turn(dir, 90))
@@ -235,7 +235,7 @@
 	set src in oview(1)
 
 	if(anchored)
-		balloon_alert(usr, "fastened to the floor")
+		balloon_alert(usr, "固定在地板上")
 		return FALSE
 
 	setDir(turn(dir, 270))
@@ -243,7 +243,7 @@
 
 /obj/structure/barricade/attack_hand_alternate(mob/living/user)
 	if(anchored)
-		balloon_alert(usr, "fastened to the floor")
+		balloon_alert(usr, "固定在地板上")
 		return FALSE
 
 	setDir(turn(dir, 270))
@@ -254,8 +254,8 @@
 /*----------------------*/
 
 /obj/structure/barricade/snow
-	name = "snow barricade"
-	desc = "A mound of snow shaped into a sloped wall. Statistically better than thin air as cover."
+	name = "雪地路障"
+	desc = "一堆雪堆成的斜坡墙。作为掩体，统计上比稀薄的空气要好。"
 	icon = 'icons/obj/structures/barricades/snow.dmi'
 	icon_state = "snow_0"
 	barricade_type = "snow"
@@ -282,10 +282,10 @@
 		return
 
 	if(LAZYACCESS(user.do_actions, src))
-		balloon_alert(user, "already shoveling!")
+		balloon_alert(user, "已经在铲了！")
 		return
 
-	user.visible_message("[user] starts clearing out \the [src].", "You start removing \the [src].")
+	user.visible_message("[user]开始清理\the [src]。", "You start removing \the [src].")
 
 	if(!do_after(user, ET.shovelspeed, NONE, src, BUSY_ICON_BUILD))
 		return
@@ -299,8 +299,8 @@
 /*----------------------*/
 
 /obj/structure/barricade/guardrail
-	name = "guard rail"
-	desc = "A short wall made of rails to prevent entry into dangerous areas."
+	name = "前护栏"
+	desc = "由导轨制成的矮墙，用于防止进入危险区域。"
 	icon = 'icons/obj/structures/barricades/misc.dmi'
 	icon_state = "railing_0"
 	coverage = 25
@@ -317,8 +317,8 @@
 /*----------------------*/
 
 /obj/structure/barricade/wooden
-	name = "wooden barricade"
-	desc = "A wall made out of wooden planks nailed together. Not very sturdy, but can provide some concealment."
+	name = "木质路障"
+	desc = "由木板钉合而成的墙壁。不算很坚固，但能提供一些隐蔽。"
 	icon = 'icons/obj/structures/barricades/misc.dmi'
 	icon_state = "wooden"
 	max_integrity = 100
@@ -346,26 +346,26 @@
 		return
 
 	if(D.get_amount() < 1)
-		balloon_alert(user, "need more wood!")
+		balloon_alert(user, "需要更多木材！")
 		return
 
 	if(LAZYACCESS(user.do_actions, src))
 		return
 
-	balloon_alert_to_viewers("repairing...")
+	balloon_alert_to_viewers("修复中...")
 
 	if(!do_after(user, 2 SECONDS, NONE, src, BUSY_ICON_FRIENDLY) || obj_integrity >= max_integrity)
 		return
 
 	if(get_self_acid())
-		balloon_alert(user, "it's melting!")
+		balloon_alert(user, "它正在熔化！")
 		return TRUE
 
 	if(!D.use(1))
 		return
 
 	repair_damage(max_integrity, user)
-	balloon_alert_to_viewers("repaired")
+	balloon_alert_to_viewers("已修复")
 	update_icon()
 
 
@@ -389,8 +389,8 @@
 #define CADE_UPGRADE_ACID 35
 
 /obj/structure/barricade/solid
-	name = "metal barricade"
-	desc = "A sturdy and easily assembled barricade made of metal plates, often used for quick fortifications. Use a blowtorch to repair."
+	name = "金属路障"
+	desc = "一种由金属板制成的坚固且易于组装的路障，常用于快速构筑防御工事。使用喷灯进行维修。"
 	icon = 'icons/obj/structures/barricades/metal.dmi'
 	icon_state = "metal_0"
 	max_integrity = 250
@@ -452,39 +452,39 @@
 		return attempt_barricade_upgrade(I, user, params)
 
 	if(metal_sheets.get_amount() < 2)
-		balloon_alert(user, "2 metal sheets needed!")
+		balloon_alert(user, "需要2块金属板！")
 		return FALSE
 
 	if(LAZYACCESS(user.do_actions, src))
 		return
 
-	balloon_alert_to_viewers("repairing base...")
+	balloon_alert_to_viewers("正在修复基地...")
 
 	if(!do_after(user, 2 SECONDS, NONE, src, BUSY_ICON_FRIENDLY) || obj_integrity >= max_integrity * 0.3)
 		return FALSE
 
 	if(get_self_acid())
-		balloon_alert(user, "it's melting!")
+		balloon_alert(user, "它在熔化！")
 		return TRUE
 
 	if(!metal_sheets.use(2))
 		return FALSE
 
 	repair_damage(max_integrity * 0.3, user)
-	balloon_alert_to_viewers("base repaired")
+	balloon_alert_to_viewers("基础已修复")
 	update_icon()
 
 
 /obj/structure/barricade/solid/proc/attempt_barricade_upgrade(obj/item/stack/sheet/metal/metal_sheets, mob/user, params)
 	if(barricade_upgrade_type)
-		balloon_alert(user, "already upgraded!")
+		balloon_alert(user, "已升级！")
 		return FALSE
 	if(obj_integrity < max_integrity)
-		balloon_alert(user, "not at full health!")
+		balloon_alert(user, "未满血！")
 		return FALSE
 
 	if(metal_sheets.get_amount() < CADE_UPGRADE_REQUIRED_SHEETS)
-		balloon_alert(user, "[CADE_UPGRADE_REQUIRED_SHEETS] metal sheets required!")
+		balloon_alert(user, "需要 [CADE_UPGRADE_REQUIRED_SHEETS] 张金属板！")
 		return FALSE
 
 	var/static/list/cade_types = list(CADE_TYPE_BOMB = image(icon = 'icons/obj/structures/barricades/upgrades.dmi', icon_state = "explosive_obj"), CADE_TYPE_MELEE = image(icon = 'icons/obj/structures/barricades/upgrades.dmi', icon_state = "brute_obj"), CADE_TYPE_ACID = image(icon = 'icons/obj/structures/barricades/upgrades.dmi', icon_state = "burn_obj"))
@@ -494,16 +494,16 @@
 		return
 
 	if(user.skills.getRating(SKILL_CONSTRUCTION) < SKILL_CONSTRUCTION_METAL)
-		balloon_alert(user, "fumbling...")
+		balloon_alert(user, "笨手笨脚地...")
 		var/fumbling_time = 2 SECONDS * ( SKILL_CONSTRUCTION_METAL - user.skills.getRating(SKILL_CONSTRUCTION) )
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 			return FALSE
 
-	balloon_alert_to_viewers("attaching [choice]...")
+	balloon_alert_to_viewers("正在安装[choice]...")
 	if(!do_after(user, 2 SECONDS, NONE, src, BUSY_ICON_BUILD))
 		return FALSE
 	if(barricade_upgrade_type)
-		balloon_alert(user, "already upgraded!")
+		balloon_alert(user, "已升级！")
 		return FALSE
 
 	if(!metal_sheets.use(CADE_UPGRADE_REQUIRED_SHEETS))
@@ -521,7 +521,7 @@
 	barricade_upgrade_type = choice
 	stack_amount += 1
 
-	balloon_alert_to_viewers("[choice] attached")
+	balloon_alert_to_viewers("[choice] 已安装")
 
 	playsound(loc, 'sound/items/screwdriver.ogg', 25, TRUE)
 	update_icon()
@@ -542,7 +542,7 @@
 /obj/structure/barricade/solid/welder_act(mob/living/user, obj/item/I)
 	. = welder_repair_act(user, I, 85, 2.5 SECONDS, 0.3, SKILL_ENGINEER_METAL, 1)
 	if(. == BELOW_INTEGRITY_THRESHOLD)
-		balloon_alert(user, "too damaged, need metal sheets!")
+		balloon_alert(user, "损坏严重，需要金属板！")
 
 
 /obj/structure/barricade/solid/screwdriver_act(mob/living/user, obj/item/I)
@@ -559,7 +559,7 @@
 			if(!do_after(user, 1 SECONDS, NONE, src, BUSY_ICON_BUILD))
 				return TRUE
 
-			balloon_alert_to_viewers("bolt protection panel replaced")
+			balloon_alert_to_viewers("螺栓防护板已更换")
 			build_state = BARRICADE_METAL_FIRM
 			return TRUE
 
@@ -574,7 +574,7 @@
 			if(!do_after(user, 1 SECONDS, NONE, src, BUSY_ICON_BUILD))
 				return TRUE
 
-			balloon_alert_to_viewers("bolt protection panel removed")
+			balloon_alert_to_viewers("螺栓防护板已移除")
 			build_state = BARRICADE_METAL_ANCHORED
 			return TRUE
 
@@ -593,7 +593,7 @@
 			if(!do_after(user, 1 SECONDS, NONE, src, BUSY_ICON_BUILD))
 				return TRUE
 
-			balloon_alert_to_viewers("anchor bolts loosened")
+			balloon_alert_to_viewers("锚栓已松开")
 			build_state = BARRICADE_METAL_LOOSE
 			anchored = FALSE
 			modify_max_integrity(initial(max_integrity) * 0.5)
@@ -604,13 +604,13 @@
 
 			var/turf/mystery_turf = get_turf(src)
 			if(!isopenturf(mystery_turf))
-				balloon_alert(user, "can't anchor here!")
+				balloon_alert(user, "无法在此处固定！")
 				return TRUE
 
 			var/turf/open/T = mystery_turf
 			var/area/area = get_area(T)
 			if(!T.allow_construction || area.area_flags & NO_CONSTRUCTION) //We shouldn't be able to anchor in areas we're not supposed to build; loophole closed.
-				balloon_alert(user, "can't anchor here!")
+				balloon_alert(user, "无法在此处固定！")
 				return TRUE
 
 			if(user.skills.getRating(SKILL_CONSTRUCTION) < SKILL_CONSTRUCTION_METAL)
@@ -620,14 +620,14 @@
 
 			for(var/obj/structure/barricade/B in loc)
 				if(B != src && B.dir == dir)
-					balloon_alert(user, "already a barricade here!")
+					balloon_alert(user, "这里已经有路障了！")
 					return TRUE
 
 			playsound(loc, 'sound/items/ratchet.ogg', 25, TRUE)
 			if(!do_after(user, 1 SECONDS, NONE, src, BUSY_ICON_BUILD))
 				return TRUE
 
-			balloon_alert_to_viewers("anchor bolts secured")
+			balloon_alert_to_viewers("锚栓已固定")
 			build_state = BARRICADE_METAL_ANCHORED
 			anchored = TRUE
 			modify_max_integrity(initial(max_integrity))
@@ -645,13 +645,13 @@
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return TRUE
 
-			balloon_alert_to_viewers("disassembling")
+			balloon_alert_to_viewers("拆卸中")
 
 			playsound(loc, 'sound/items/crowbar.ogg', 25, 1)
 			if(!do_after(user, 5 SECONDS, NONE, src, BUSY_ICON_BUILD))
 				return TRUE
 
-			user.visible_message(span_notice("[user] takes [src]'s panels apart."),
+			user.visible_message(span_notice("[user] 拆开了 [src] 的面板。"),
 			span_notice("You take [src]'s panels apart."))
 			playsound(loc, 'sound/items/deconstruct.ogg', 25, 1)
 			deconstruct(!get_self_acid())
@@ -659,7 +659,7 @@
 		if(BARRICADE_METAL_FIRM)
 
 			if(!barricade_upgrade_type) //Check to see if we actually have upgrades to remove.
-				balloon_alert(user, "no upgrades to remove!")
+				balloon_alert(user, "没有可移除的升级！")
 				return TRUE
 
 			if(user.skills.getRating(SKILL_CONSTRUCTION) < SKILL_CONSTRUCTION_METAL)
@@ -667,13 +667,13 @@
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return TRUE
 
-			balloon_alert_to_viewers("removing armor plates...")
+			balloon_alert_to_viewers("正在移除装甲板...")
 
 			playsound(loc, 'sound/items/crowbar.ogg', 25, 1)
 			if(!do_after(user, 5 SECONDS, NONE, src, BUSY_ICON_BUILD))
 				return TRUE
 
-			balloon_alert_to_viewers("removed armor plates")
+			balloon_alert_to_viewers("已移除装甲板")
 			playsound(loc, 'sound/items/deconstruct.ogg', 25, 1)
 
 			switch(barricade_upgrade_type)
@@ -710,8 +710,8 @@
 #undef BARRICADE_METAL_FIRM
 
 /obj/structure/barricade/solid/plasteel
-	name = "plasteel barricade"
-	desc = "A sturdy and easily assembled barricade made of reinforced plasteel plates, the pinnacle of strongpoints. Use a blowtorch to repair."
+	name = "塑钢路障"
+	desc = "一种坚固且易于组装的由强化塑钢制成的路障，是坚固据点的巅峰之作。使用喷枪进行维修。"
 	icon = 'icons/obj/structures/barricades/plasteel.dmi'
 	icon_state = "plasteel_0"
 	max_integrity = 400
@@ -730,8 +730,8 @@
 #define BARRICADE_PLASTEEL_FIRM 2
 
 /obj/structure/barricade/folding
-	name = "folding plasteel barricade"
-	desc = "A very sturdy barricade made out of plasteel panels, the pinnacle of strongpoints. Use a blowtorch to repair. Can be flipped down to create a path."
+	name = "折叠式塑钢路障"
+	desc = "由塑钢板制成的非常坚固的路障，是坚固据点的巅峰之作。使用喷枪进行维修。可以放倒以开辟通道。"
 	icon = 'icons/obj/structures/barricades/plasteel.dmi'
 	icon_state = "folding_plasteel_0"
 	max_integrity = 550
@@ -784,7 +784,7 @@
 /obj/structure/barricade/folding/welder_act(mob/living/user, obj/item/I)
 	. = welder_repair_act(user, I, 85, 2.5 SECONDS, 0.3, skilltype, 1)
 	if(. == BELOW_INTEGRITY_THRESHOLD)
-		balloon_alert(user, "too damaged, need [barricade_type] sheets!")
+		balloon_alert(user, "损坏严重，需要[barricade_type]张板材！")
 
 /obj/structure/barricade/folding/screwdriver_act(mob/living/user, obj/item/I)
 	if(!isscrewdriver(I))
@@ -807,13 +807,13 @@
 
 			for(var/obj/structure/barricade/B in loc)
 				if(B != src && B.dir == dir)
-					balloon_alert(user, "already a barricade here!")
+					balloon_alert(user, "这里已经有路障了！")
 					return
 
 			if(!do_after(user, 1, NONE, src, BUSY_ICON_BUILD))
 				return
 
-			balloon_alert_to_viewers("bolt protection panel removed")
+			balloon_alert_to_viewers("螺栓防护板已移除")
 			playsound(loc, 'sound/items/screwdriver.ogg', 25, 1)
 			build_state = BARRICADE_PLASTEEL_ANCHORED
 		if(BARRICADE_PLASTEEL_ANCHORED) //Protection panel removed step. Screwdriver to put the panel back, wrench to unsecure the anchor bolts
@@ -821,7 +821,7 @@
 				var/fumbling_time = 1 SECONDS * ( skilltype - user.skills.getRating(SKILL_ENGINEER) )
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return
-			balloon_alert_to_viewers("bolt protection panel replaced")
+			balloon_alert_to_viewers("螺栓防护板已更换")
 			playsound(loc, 'sound/items/screwdriver.ogg', 25, 1)
 			build_state = BARRICADE_PLASTEEL_FIRM
 
@@ -851,7 +851,7 @@
 				var/fumbling_time = 5 SECONDS * ( skilltype - user.skills.getRating(SKILL_ENGINEER) )
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return
-			balloon_alert_to_viewers("disassembling...")
+			balloon_alert_to_viewers("拆卸中...")
 			playsound(loc, 'sound/items/crowbar.ogg', 25, 1)
 			busy = TRUE
 
@@ -860,7 +860,7 @@
 				return
 
 			busy = FALSE
-			user.visible_message(span_notice("[user] takes [src]'s panels apart."),
+			user.visible_message(span_notice("[user] 拆开了 [src] 的面板。"),
 			span_notice("You take [src]'s panels apart."))
 			playsound(loc, 'sound/items/deconstruct.ogg', 25, 1)
 			deconstruct(!get_self_acid())
@@ -883,7 +883,7 @@
 				var/fumbling_time = 1 SECONDS * ( skilltype - user.skills.getRating(SKILL_ENGINEER) )
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return
-			balloon_alert_to_viewers("anchor bolts loosened")
+			balloon_alert_to_viewers("锚栓已松开")
 			playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
 			anchored = FALSE
 			modify_max_integrity(initial(max_integrity) * 0.5)
@@ -892,20 +892,20 @@
 		if(BARRICADE_PLASTEEL_LOOSE) //Anchor bolts loosened step. Apply crowbar to unseat the panel and take apart the whole thing. Apply wrench to rescure anchor bolts
 			var/turf/mystery_turf = get_turf(src)
 			if(!isopenturf(mystery_turf))
-				balloon_alert(user, "can't anchor here!")
+				balloon_alert(user, "无法在此处固定！")
 				return
 
 			var/turf/open/T = mystery_turf
 			var/area/area = get_area(T)
 			if(!T.allow_construction || area.area_flags & NO_CONSTRUCTION) //We shouldn't be able to anchor in areas we're not supposed to build; loophole closed.
-				balloon_alert(user, "can't anchor here!")
+				balloon_alert(user, "无法在此处固定！")
 				return
 
 			if(user.skills.getRating(SKILL_ENGINEER) < skilltype)
 				var/fumbling_time = 1 SECONDS * ( skilltype - user.skills.getRating(SKILL_ENGINEER) )
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return
-			balloon_alert_to_viewers("secured bolts")
+			balloon_alert_to_viewers("加固螺栓")
 			playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
 			anchored = TRUE
 			modify_max_integrity(initial(max_integrity))
@@ -924,26 +924,26 @@
 		return
 
 	if(stack.get_amount() < 2)
-		balloon_alert(user, "2 [barricade_type] sheets required!")
+		balloon_alert(user, "需要 2 张 [barricade_type] 路障板！")
 		return
 
 	if(LAZYACCESS(user.do_actions, src))
 		return
 
-	balloon_alert_to_viewers("repairing base...")
+	balloon_alert_to_viewers("正在修复基地...")
 
 	if(!do_after(user, 2 SECONDS, NONE, src, BUSY_ICON_FRIENDLY) || obj_integrity >= max_integrity * 0.3)
 		return
 
 	if(get_self_acid())
-		balloon_alert(user, "it's melting!")
+		balloon_alert(user, "它正在熔化！")
 		return TRUE
 
 	if(!stack.use(2))
 		return
 
 	repair_damage(max_integrity * 0.3, user)
-	balloon_alert_to_viewers("base repaired")
+	balloon_alert_to_viewers("基座已修复")
 	update_icon()
 
 /obj/structure/barricade/folding/attack_hand(mob/living/user)
@@ -1000,8 +1000,8 @@
 #undef BARRICADE_PLASTEEL_FIRM
 
 /obj/structure/barricade/folding/metal
-	name = "folding metal barricade"
-	desc = "A folding barricade made out of metal, making it slightly stronger than a normal metal barricade. Use a blowtorch to repair. Can be flipped down to create a path."
+	name = "折叠金属路障"
+	desc = "一种由金属制成的折叠路障，比普通金属路障略坚固。使用喷灯进行维修。可以放倒以开辟通道。"
 	icon_state = "folding_metal_0"
 	icon = 'icons/obj/structures/barricades/metal.dmi'
 	max_integrity = 350
@@ -1017,8 +1017,8 @@
 /*----------------------*/
 
 /obj/structure/barricade/sandbags
-	name = "sandbag barricade"
-	desc = "A bunch of bags filled with sand, stacked into a small wall. Surprisingly sturdy, albeit labour intensive to set up. Trusted to do the job since 1914."
+	name = "沙袋路障"
+	desc = "装满沙子的袋子，堆叠成一道矮墙。虽然搭建起来很费力，但出人意料地坚固。自1914年以来，一直可靠地履行着它的职责。"
 	icon = 'icons/obj/structures/barricades/sandbags.dmi'
 	icon_state = "sandbag_0"
 	max_integrity = 325
@@ -1045,23 +1045,23 @@
 		var/obj/item/tool/shovel/ET = I
 		if(ET.folded)
 			return TRUE
-		balloon_alert_to_viewers("disassembling...")
+		balloon_alert_to_viewers("拆卸中...")
 		if(!do_after(user, ET.shovelspeed, NONE, src, BUSY_ICON_BUILD))
 			return TRUE
-		user.visible_message(span_notice("[user] disassembles [src]."),
+		user.visible_message(span_notice("[user] 拆解了 [src]。"),
 		span_notice("You disassemble [src]."))
 		deconstruct(!get_self_acid())
 		return TRUE
 
 	if(istype(I, /obj/item/stack/sandbags))
 		if(obj_integrity == max_integrity)
-			balloon_alert(user, "already repaired!")
+			balloon_alert(user, "已修复！")
 			return
 		var/obj/item/stack/sandbags/D = I
 		if(D.get_amount() < 1)
-			balloon_alert(user, "not enough sandbags!")
+			balloon_alert(user, "沙袋不足！")
 			return
-		balloon_alert_to_viewers("replacing sandbags...")
+		balloon_alert_to_viewers("正在更换沙袋...")
 
 		if(LAZYACCESS(user.do_actions, src))
 			return
@@ -1070,14 +1070,14 @@
 			return
 
 		if(get_self_acid())
-			balloon_alert(user, "it's melting!")
+			balloon_alert(user, "它正在熔化！")
 			return
 
 		if(!D.use(1))
 			return
 
 		repair_damage(max_integrity * 0.2, user) //Each sandbag restores 20% of max health as 5 sandbags = 1 sandbag barricade.
-		balloon_alert_to_viewers("repaired")
+		balloon_alert_to_viewers("已修复")
 		update_icon()
 
 /obj/structure/barricade/solid/deployable
@@ -1143,8 +1143,8 @@
 /*----------------------*/
 
 /obj/structure/barricade/concrete
-	name = "concrete barricade"
-	desc = "A short wall made of reinforced concrete. It looks like it can take a lot of punishment."
+	name = "混凝土路障"
+	desc = "由钢筋混凝土制成的矮墙。看起来能承受大量打击。"
 	icon = 'icons/obj/structures/barricades/concrete.dmi'
 	icon_state = "concrete_0"
 	coverage = 100

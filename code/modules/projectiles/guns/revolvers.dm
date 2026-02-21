@@ -46,8 +46,8 @@
 //R-44 COMBAT REVOLVER
 
 /obj/item/weapon/gun/revolver/standard_revolver
-	name = "\improper R-44 combat revolver"
-	desc = "The R-44 standard combat revolver, produced by Terran Armories. A sturdy and hard hitting firearm that loads .44 Magnum rounds. Holds 7 rounds in the cylinder. Due to an error in the cylinder rotation system the fire rate of the gun is much faster than intended, it ended up being billed as a feature of the system."
+	name = "\improper R-44战斗左轮手枪"
+	desc = "R-44标准战斗左轮手枪，由泰伦军械库生产。这是一种坚固耐用、威力强大的枪械，使用.44马格南弹药。转轮弹巢可容纳7发子弹。由于转轮旋转系统存在设计缺陷，该枪的实际射速远高于预期，最终被宣传为该系统的特色功能。"
 	icon_state = "tp44"
 	worn_icon_state = "tp44"
 	fire_sound = 'sound/weapons/guns/fire/tgmc/kinetic/gun_r44.ogg'
@@ -87,8 +87,8 @@
 //RUSSIAN REVOLVER //Based on the 7.62mm Russian revolvers.
 
 /obj/item/weapon/gun/revolver/upp
-	name = "\improper N-Y 7.62mm revolver"
-	desc = "The Nagant-Yamasaki 7.62 is an effective killing machine designed by a consortion of shady Not-Americans. It is frequently found in the hands of criminals or mercenaries."
+	name = "\improper N-Y 7.62毫米左轮手枪"
+	desc = "Nagant-Yamasaki 7.62是一款由一群可疑的非美国人联合设计的致命武器。它常见于罪犯或雇佣兵之手。"
 	icon_state = "ny762"
 	worn_icon_state = "ny762"
 	caliber = CALIBER_762X38 //codex
@@ -115,8 +115,8 @@
 //A generic 357 revolver. With a twist.
 
 /obj/item/weapon/gun/revolver/small
-	name = "\improper FFA 'Rebota' revolver"
-	desc = "A lean .357 made by Falffearmeria. A timeless design, from antiquity to the future. This one is well known for it's strange ammo, which ricochets off walls constantly. Which went from being a defect to a feature."
+	name = "\improper 自由混战'回弹'左轮手枪"
+	desc = "一把由法尔费尔梅里亚制造的纤巧型.357左轮手枪。从古代到未来，永恒的设计。这把枪以其奇特的弹药而闻名，子弹会不断从墙壁上反弹。这从缺陷变成了特色。"
 	icon_state = "rebota"
 	worn_icon_state = "sw357"
 	caliber = CALIBER_357 //codex
@@ -144,8 +144,8 @@
 //Mateba is pretty well known. The cylinder folds up instead of to the side. This has a non-marine version and a marine version.
 
 /obj/item/weapon/gun/revolver/mateba
-	name = "\improper R-24 'Mateba' autorevolver"
-	desc = "The R-24 is the rather rare autorevolver used by the TGMC issued in rather small numbers to backline personnel and officers it uses recoil to spin the cylinder. Uses heavy .454 rounds."
+	name = "\improper R-24'马特巴'自动左轮手枪"
+	desc = "R-24是一种相当罕见的自动左轮手枪，由地球政府殖民地海军陆战队配发，仅少量配发给后方人员和军官。它利用后坐力旋转弹巢。使用重型.454口径子弹。"
 	icon_state = "mateba"
 	worn_icon_state = "mateba"
 	fire_animation = "mateba_fire"
@@ -178,13 +178,13 @@
 	scatter_unwielded = 7
 
 /obj/item/weapon/gun/revolver/mateba/notmarine
-	name = "\improper Mateba autorevolver"
-	desc = "The Mateba is a powerful, fast-firing revolver that uses its own recoil to rotate the cylinders. Uses .454 rounds."
+	name = "\improper 马特巴自动左轮手枪"
+	desc = "马特巴是一款威力强大、射速迅捷的左轮手枪，利用自身后坐力驱动转轮旋转。使用.454口径弹药。"
 
 
 /obj/item/weapon/gun/revolver/mateba/custom
-	name = "\improper R-24 autorevolver special"
-	desc = "The Mateba is a powerful, fast-firing revolver that uses its own recoil to rotate the cylinders. This one appears to have had more love and care put into it. Uses .454 rounds."
+	name = "\improper R-24 自动左轮手枪 特种型"
+	desc = "马特巴是一款威力强大、射速迅捷的左轮手枪，利用自身后坐力驱动转轮旋转。这把枪似乎倾注了更多心血与呵护。使用.454口径弹药。"
 	icon_state = "mateba"
 	worn_icon_state = "mateba"
 
@@ -192,8 +192,8 @@
 //MARSHALS REVOLVER
 
 /obj/item/weapon/gun/revolver/cmb
-	name = "\improper CMB autorevolver"
-	desc = "An automatic revolver chambered in .357 magnum. Commonly issued to Nanotrasen security. It has a burst mode. Currently in trial with other revolvers across Terra and other colonies."
+	name = "\improper CMB 自动左轮手枪"
+	desc = "一把使用.357马格南弹药的自动左轮手枪。通常配发给纳米传讯安保人员。它具有连发模式。目前正在地球及其他殖民地的其他左轮手枪中进行试用。"
 	icon_state = "cmb"
 	worn_icon_state = "cmb"
 	caliber = CALIBER_357 //codex
@@ -223,8 +223,8 @@
 //The Judge, a shotgun and revolver in one
 
 /obj/item/weapon/gun/revolver/judge
-	name = "\improper 'Judge' revolver"
-	desc = "An incredibly uncommon revolver utilizing a oversized chamber to be able to both fire 45 Long at the cost of firing speed. Normal rounds have no falloff, and next to no scatter. Due to the short barrel, buckshot out of it has high spread."
+	name = "\improper '法官'左轮手枪"
+	desc = "一把极其罕见的左轮手枪，采用超大弹膛设计，能够发射.45长弹，但牺牲了射速。普通子弹没有射程衰减，且几乎没有散射。由于枪管较短，发射的鹿弹散布范围很大。"
 	icon_state = "judge"
 	worn_icon_state = "m44"
 	fire_animation = "judge_fire"
@@ -259,8 +259,8 @@
 // The R-76 Magnum. Fires a big round, equal to a slug. Has a windup.
 
 /obj/item/weapon/gun/revolver/standard_magnum
-	name = "\improper R-76 KC magnum"
-	desc = "The R-76 magnum is an absolute beast of a handgun used by the TGMC, rumors say it was created as a money laundering scheme by some general due to the sheer inpracticality of this firearm. Hits hard, recommended to be used with its stock attachment. Chambered in 12.7mm."
+	name = "\improper R-76 KC 马格南"
+	desc = "R-76马格南是TGMC使用的一款绝对凶悍的手枪，传闻称由于其极不实用的特性，它是由某位将军作为洗钱计划而创造的。威力巨大，建议搭配其枪托配件使用。使用12.7毫米口径弹药。"
 	icon = 'icons/obj/items/guns/pistols64.dmi'
 	icon_state = "t76"
 	worn_icon_state = "t76"
@@ -314,19 +314,19 @@
 	)
 
 /obj/item/weapon/gun/revolver/standard_magnum/fancy/gold
-	desc = "A gold plated R-76 magnum, to ensure it's incredibly expensive as well as incredibly impractical. The R-76 magnum is an absolute beast of a handgun used by the TGMC, rumors say it was created as a money laundering scheme by some general due to the sheer inpracticality of this firearm. Hits hard, recommended to be used with its stock attachment. Chambered in 12.7mm."
+	desc = "一把镀金的R-76马格南手枪，确保它既极其昂贵又极其不实用。R-76马格南是地球政府殖民地海军陆战队使用的一款绝对的猛兽级手枪，传闻称它是由某位将军为了洗钱而制造的，纯粹是因为这款枪械的极度不实用性。威力巨大，建议配合其枪托配件使用。使用12.7毫米口径弹药。"
 	icon_state = "g_t76"
 	worn_icon_state = "g_t76"
 	fire_animation = "g_t76_fire"
 
 /obj/item/weapon/gun/revolver/standard_magnum/fancy/silver
-	desc = "A silver plated R-76 magnum, to ensure it's incredibly expensive as well as incredibly impractical. The R-76 magnum is an absolute beast of a handgun used by the TGMC, rumors say it was created as a money laundering scheme by some general due to the sheer inpracticality of this firearm. Hits hard, recommended to be used with its stock attachment. Chambered in 12.7mm."
+	desc = "一把镀银的R-76马格南手枪，以确保它既极其昂贵又极其不实用。R-76马格南是地球政府殖民地海军陆战队使用的一款绝对的猛兽级手枪，有传言称，由于这款枪械的极度不实用性，它是由某位将军作为洗钱计划而创造的。威力巨大，建议搭配其枪托配件使用。使用12.7毫米口径弹药。"
 	icon_state = "s_t76"
 	worn_icon_state = "s_t76"
 	fire_animation = "s_t76_fire"
 
 /obj/item/weapon/gun/revolver/standard_magnum/fancy/nickle
-	desc = "A nickle plated R-76 magnum, for a more tasteful finish. The R-76 magnum is an absolute beast of a handgun used by the TGMC, rumors say it was created as a money laundering scheme by some general due to the sheer inpracticality of this firearm. Hits hard, recommended to be used with its stock attachment. Chambered in 12.7mm."
+	desc = "一把镀镍的R-76马格南手枪，拥有更雅致的表面处理。R-76马格南是TGMC使用的一款绝对的猛兽级手枪，有传言称，由于这款枪械极不实用，它是由某位将军作为洗钱计划而创造的。威力巨大，建议配合其枪托配件使用。使用12.7毫米口径弹药。"
 	icon_state = "n_t76"
 	worn_icon_state = "n_t76"
 	fire_animation = "n_t76_fire"
@@ -335,8 +335,8 @@
 //---------------------------------------------------
 
 /obj/item/weapon/gun/revolver/single_action //This town aint big enuf fer the two of us
-	name = "single action revolver"
-	desc = "you should not be seeing this."
+	name = "单动式左轮手枪"
+	desc = "你不应该看到这个。"
 	reload_sound = 'sound/weapons/guns/interact/revolver_cocked.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/revolver_cocked.ogg'
 	default_ammo_type = /obj/item/ammo_magazine/revolver/standard_revolver
@@ -351,8 +351,8 @@
 //R-44, based off the SAA.
 
 /obj/item/weapon/gun/revolver/single_action/m44
-	name = "\improper R-44 SAA revolver"
-	desc = "A uncommon revolver occasionally carried by civilian law enforcement that's very clearly based off a modernized Single Action Army. Has to be manully primed with each shot. Uses .44 Magnum rounds."
+	name = "\improper R-44 SAA 左轮手枪"
+	desc = "一种偶尔由民间执法部门携带的罕见左轮手枪，明显基于现代化的单动式陆军左轮。每次射击后需手动扳动击锤。使用.44马格南子弹。"
 	icon_state = "m44"
 	worn_icon_state = "m44"
 	caliber = CALIBER_44 //codex

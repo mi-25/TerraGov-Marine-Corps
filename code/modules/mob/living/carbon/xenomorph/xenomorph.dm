@@ -314,7 +314,7 @@
 		return FALSE //to stop xeno from pulling marines on roller beds.
 	if(ishuman(L))
 		if(L.stat == DEAD && !(SSticker.mode.round_type_flags & MODE_XENO_GRAB_DEAD_ALLOWED)) // Can't drag dead human bodies.
-			to_chat(usr,span_xenowarning("This looks gross, better not touch it."))
+			to_chat(usr,span_xenowarning("这看起来真恶心，最好别碰。"))
 			return FALSE
 		if(pulling != L)
 			pull_speed += XENO_DEADHUMAN_DRAG_SLOWDOWN
@@ -337,13 +337,13 @@
 		return TRUE
 	H.Paralyze(rand(xeno_caste.tacklemin,xeno_caste.tacklemax) * 20)
 	playsound(H.loc, 'sound/weapons/pierce.ogg', 25, 1)
-	H.visible_message(span_warning("[H] tried to pull [src] but instead gets a tail swipe to the head!"))
+	H.visible_message(span_warning("[H]试图拉动[src]，却反而被一记甩尾击中了头部！"))
 	H.stop_pulling()
 	return FALSE
 
 /mob/living/carbon/xenomorph/resist_grab()
 	if(pulledby.grab_state)
-		visible_message(span_danger("[src] has broken free of [pulledby]'s grip!"), null, null, 5)
+		visible_message(span_danger("[src] 挣脱了 [pulledby] 的控制！"), null, null, 5)
 	pulledby.stop_pulling()
 	. = 1
 
@@ -433,7 +433,7 @@
 	return ..()
 
 /mob/living/carbon/xenomorph/replace_by_ai()
-	to_chat(src, span_warning("Sorry, your skill level was deemed too low by our automatic skill check system. Your body has as such been given to a more capable brain, our state of the art AI technology piece. Do not hesitate to take back your body after you've improved!"))
+	to_chat(src, span_warning("抱歉，您的技能等级被我们的自动技能检测系统判定为过低。因此，您的身体已被移交给一个更强大的大脑——我们最先进的人工智能技术部件。在您有所提升后，请随时取回您的身体！"))
 	ghostize(TRUE)//Can take back its body
 	GLOB.offered_mob_list -= src
 	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)
@@ -483,11 +483,11 @@ Returns TRUE when loc_weeds_type changes. Returns FALSE when it doesn’t change
 		return
 	if(resting)
 		if(!COOLDOWN_FINISHED(src, xeno_resting_cooldown))
-			balloon_alert(src, "can't get up so soon!")
+			balloon_alert(src, "还站不起来！")
 			return
 
 	if(!COOLDOWN_FINISHED(src, xeno_unresting_cooldown))
-		balloon_alert(src, "can't rest so soon!")
+		balloon_alert(src, "还不能这么快休息！")
 		return
 	return ..()
 
@@ -563,9 +563,9 @@ Returns TRUE when loc_weeds_type changes. Returns FALSE when it doesn’t change
 /mob/living/carbon/xenomorph/proc/carry_target(mob/living/carbon/target, target_mounting = FALSE)
 	if(incapacitated(restrained_flags = RESTRAINED_NECKGRAB))
 		if(target_mounting)
-			to_chat(target, span_xenowarning("You cannot mount [src]!"))
+			to_chat(target, span_xenowarning("你无法骑乘[src]！"))
 			return
-		to_chat(src, span_xenowarning("[target] cannot mount you!"))
+		to_chat(src, span_xenowarning("[target] 无法骑乘你！"))
 		return
 	visible_message(span_notice("[target_mounting ? "[target] starts to mount on [src]" : "[src] starts hoisting [target] onto [p_their()] back..."]"),
 	span_notice("[target_mounting ? "[target] starts to mount on your back" : "You start to lift [target] onto your back..."]"))

@@ -175,7 +175,7 @@
 		switch(action)
 			if("stopmaint")
 				if(construction_state > MECHA_LOCKED)
-					to_chat(usr, span_warning("You must end Maintenance Procedures first!"))
+					to_chat(usr, span_warning("你必须先结束维护程序！"))
 					return
 				mecha_flags &= ~ADDING_MAINT_ACCESS_POSSIBLE
 				ui.close()
@@ -185,10 +185,10 @@
 					return FALSE
 				if(construction_state == MECHA_LOCKED)
 					construction_state = MECHA_SECURE_BOLTS
-					to_chat(usr, span_notice("The securing bolts are now exposed."))
+					to_chat(usr, span_notice("固定螺栓现已暴露。"))
 				else if(construction_state == MECHA_SECURE_BOLTS)
 					construction_state = MECHA_LOCKED
-					to_chat(usr, span_notice("The securing bolts are now hidden."))
+					to_chat(usr, span_notice("固定螺栓现已隐藏。"))
 			if("drop_cell")
 				if(construction_state != MECHA_OPEN_HATCH)
 					return
@@ -209,7 +209,7 @@
 				if(isnull(new_pressure) || !construction_state)
 					return
 				internal_tank_valve = new_pressure
-				to_chat(usr, span_notice("The internal pressure valve has been set to [internal_tank_valve]kPa."))
+				to_chat(usr, span_notice("内部压力阀已设置为[internal_tank_valve]千帕。"))
 			if("add_req_access")
 				if(!(mecha_flags & ADDING_ACCESS_POSSIBLE))
 					return

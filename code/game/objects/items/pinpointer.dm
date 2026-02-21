@@ -1,5 +1,5 @@
 /obj/item/pinpointer
-	name = "Xeno structure pinpointer"
+	name = "异形建筑定位器"
 	icon = 'icons/obj/items/pinpointer.dmi'
 	icon_state = "pinpointer_off"
 	atom_flags = CONDUCT
@@ -49,14 +49,14 @@
 		tracked_list = GLOB.xeno_critical_structures_by_hive[tracked_hivenumber]
 
 	if(!length(tracked_list))
-		balloon_alert(user, "no signal!")
+		balloon_alert(user, "无信号！")
 		return
 	target = tgui_input_list(user, "Select the structure you wish to track.", "Pinpointer", tracked_list)
 	if(QDELETED(target))
 		return
 	var/turf/pinpointer_loc = get_turf(src)
 	if(target.z != pinpointer_loc.z)
-		balloon_alert(user, "signal too weak!")
+		balloon_alert(user, "信号太弱！")
 		target = null
 		return
 
@@ -72,14 +72,14 @@
 		return
 	active = TRUE
 	START_PROCESSING(SSobj, src)
-	balloon_alert(user, "pinpointer activated")
+	balloon_alert(user, "定位器已激活")
 
 /obj/item/pinpointer/proc/deactivate(mob/living/user)
 	active = FALSE
 	target = null
 	STOP_PROCESSING(SSobj, src)
 	icon_state = "pinpointer_off"
-	balloon_alert(user, "pinpointer deactivated")
+	balloon_alert(user, "定位器已停用")
 
 /obj/item/pinpointer/process()
 	if(QDELETED(target))

@@ -1,7 +1,7 @@
 
 /obj/item/armor_module
-	name = "armor module"
-	desc = "A dis-figured armor module, in its prime this would've been a key item in your modular armor... now its just trash."
+	name = "装甲模块"
+	desc = "一个变形的装甲模块，在它完好的时候，这曾是你模块化装甲的关键部件……现在它只是垃圾。"
 	icon = 'icons/mob/modular/modular_armor.dmi'
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0) // This is here to overwrite code over at objs.dm line 41. Marines don't get funny 200+ bio buff anymore.
 
@@ -138,7 +138,7 @@
  */
 
 /obj/item/armor_module/armor
-	name = "modular armor - armor module"
+	name = "模块化护甲 - 护甲模块"
 	icon = 'icons/mob/modular/modular_armor.dmi'
 
 	/// The additional armor provided by equipping this piece.

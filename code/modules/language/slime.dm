@@ -1,6 +1,6 @@
 /datum/language/slime
-	name = "Slime"
-	desc = "A melodic and complex language spoken by slimes. Some of the notes are inaudible to humans."
+	name = "史莱姆"
+	desc = "一种由史莱姆使用的旋律复杂语言。其中部分音符对人类而言无法听见。"
 	speech_verb = "warbles"
 	ask_verb = "warbles"
 	exclaim_verb = "warbles"

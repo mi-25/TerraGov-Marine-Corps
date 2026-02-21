@@ -6,9 +6,9 @@
 	Link to Processor Units in case receiver can't send to bus units.
 */
 /obj/machinery/telecomms/receiver
-	name = "subspace receiver"
+	name = "子空间接收器"
 	icon_state = "broadcast receiver"
-	desc = "This machine has a dish-like shape and green lights. It is designed to detect and process subspace radio activity."
+	desc = "这台机器呈碟状，带有绿色指示灯。它被设计用于探测和处理子空间无线电活动。"
 	telecomms_type = /obj/machinery/telecomms/receiver
 	density = TRUE
 	use_power = IDLE_POWER_USE

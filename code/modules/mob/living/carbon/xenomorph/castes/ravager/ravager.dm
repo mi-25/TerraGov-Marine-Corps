@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/ravager
 	caste_base_type = /datum/xeno_caste/ravager
 	name = "Ravager"
-	desc = "A huge, nasty red alien with enormous scythed claws."
+	desc = "一个巨大、丑陋的红色异形，长着巨大的镰刀状爪子。"
 	icon = 'icons/Xeno/castes/ravager.dmi'
 	icon_state = "Ravager Walking"
 	health = 250
@@ -33,7 +33,7 @@
 	TIMER_COOLDOWN_START(src, COOLDOWN_RAVAGER_FLAMER_ACT, 1 SECONDS)
 	if(prob(30))
 		emote("roar")
-		to_chat(src, span_xenodanger("The heat of the fire roars in our veins! KILL! CHARGE! DESTROY!"))
+		to_chat(src, span_xenodanger("火焰的热量在我们血管中咆哮！杀！冲锋！毁灭！"))
 
 /mob/living/carbon/xenomorph/ravager/bloodthirster
 	caste_base_type = /datum/xeno_caste/ravager/bloodthirster

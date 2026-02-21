@@ -13,7 +13,7 @@
 
 ///spawns a bunch of debris and plays a sound when a vehicle is wrecked
 /obj/structure/prop/urban/vehicles/proc/explode(mob/blame_mob)
-	src.visible_message(span_danger("<B>[src] blows apart!</B>"), null, null, 1)
+	src.visible_message(span_danger("<B>[src] 炸得粉碎！</B>"), null, null, 1)
 	if(prob(explosion_probability))
 		explosion(loc, light_impact_range = 3, flame_range = 2, explosion_cause=blame_mob)
 	playsound(loc, 'sound/effects/car_crush.ogg', 25)
@@ -29,8 +29,8 @@
 
 // Meridian Cars - Damage States
 /obj/structure/prop/urban/vehicles/meridian
-	name = "\improper Mono-Spectra"
-	desc = "The 'Mono-Spectra', a mass-produced civilian vehicle for extraterrestrial markets, in and outside of Terra controlled space. Produced by 'Meridian' a car marque and associated operating division of the Nanotrasen Corporation."
+	name = "\improper 单光谱"
+	desc = "'单光谱'，一款面向地外市场的大规模量产民用车辆，适用于地球控制空间内外。由'子午线'品牌生产，该品牌是纳米传讯公司旗下的汽车品牌及相关运营部门。"
 	icon = 'icons/obj/structures/prop/urban_vehicles/meridian_red.dmi'
 	icon_state = "meridian_red"
 	bound_height = 32
@@ -422,8 +422,8 @@
 	max_integrity = 10
 
 /obj/structure/prop/urban/vehicles/meridian/marshalls
-	name = "colonial marshalls rapid response SUV"
-	desc = "Seems to be broken down."
+	name = "殖民地法警快速反应SUV"
+	desc = "似乎已损坏。"
 	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	icon_state = "marshalls2"
 
@@ -432,8 +432,8 @@
 
 // Car Chassis
 /obj/structure/prop/urban/vehicles/meridian/chassis
-	name = "\improper Mono-Spectra Chassis"
-	desc = "A Mono-Spectra chassis in the early stages of assembly."
+	name = "\improper 单光谱底盘"
+	desc = "处于早期组装阶段的单光谱底盘。"
 	icon = 'icons/obj/structures/prop/urban/vehiclesexpanded.dmi'
 	icon_state = "MeridianCar_shell"
 

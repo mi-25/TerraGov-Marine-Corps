@@ -1,8 +1,8 @@
 // The big boy, the Howtizer.
 
 /obj/item/mortar_kit/howitzer
-	name = "\improper TA-100Y howitzer"
-	desc = "A manual, crew-operated and towable howitzer, will rain down 150mm laserguided and accurate shells on any of your foes."
+	name = "\improper TA-100Y 榴弹炮"
+	desc = "一门手动操作、可牵引的榴弹炮，能向任何敌人倾泻150毫米激光制导的精确炮弹。"
 	icon = 'icons/obj/machines/deployable/howitzer.dmi'
 	icon_state = "howitzer"
 	max_integrity = 400
@@ -38,10 +38,10 @@
 
 	if(!anchored)
 		anchored = TRUE
-		to_chat(user, span_warning("You have anchored the gun to the ground. It may not be moved."))
+		to_chat(user, span_warning("你已将机枪固定在地面上。它无法被移动。"))
 	else
 		anchored = FALSE
-		to_chat(user, span_warning("You unanchored the gun from the ground. It may be moved."))
+		to_chat(user, span_warning("你已将机枪从地面解锚。现在可以移动它了。"))
 
 
 /obj/machinery/deployable/mortar/howitzer/perform_firing_visuals()

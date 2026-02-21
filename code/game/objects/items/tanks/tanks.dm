@@ -2,7 +2,7 @@
 #define TANK_DEFAULT_RELEASE_PRESSURE 24
 
 /obj/item/tank
-	name = "tank"
+	name = "坦克"
 	icon = 'icons/obj/items/tank.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/equipment/tanks_left.dmi',
@@ -58,17 +58,17 @@
 		return
 
 	if((istype(I, /obj/item/tool/analyzer)) && get_dist(user, src) <= 1)
-		visible_message(span_warning("[user] has used [I] on [icon2html(src, user)] [src]"))
+		visible_message(span_warning("[user] 已对 [icon2html(src, user)] [src] 使用了 [I]"))
 
 		manipulated_by = user.real_name			//This person is aware of the contents of the tank.
 
-		to_chat(user, span_notice("Results of analysis of [icon2html(src, user)]"))
+		to_chat(user, span_notice("[icon2html(src, user)]的分析结果"))
 		if(pressure > 0)
-			to_chat(user, span_notice("Pressure: [round(pressure, 0.1)] kPa"))
+			to_chat(user, span_notice("压力：[round(pressure, 0.1)] 千帕"))
 			to_chat(user, span_notice("[gas_type]: 100%"))
-			to_chat(user, span_notice("Temperature: [round(temperature - T0C)]&deg;C"))
+			to_chat(user, span_notice("温度：[round(temperature - T0C)]°C"))
 		else
-			to_chat(user, span_notice("Tank is empty!"))
+			to_chat(user, span_notice("油箱已空！"))
 
 /obj/item/tank/return_air()
 	return list(gas_type, temperature, distribute_pressure)

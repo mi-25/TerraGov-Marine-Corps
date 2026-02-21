@@ -1,0 +1,156 @@
+english,chinese,category,notes
+Runner,奔跑者,异形形态,T1 基础形态
+Melter,熔化者,异形形态,奔跑者变异体
+Larva,幼虫,异形形态,初始形态
+Nymph,若虫,异形形态,
+Hunter,猎手,异形形态,T2 隐身形态
+Weapon X,武器X,异形形态,猎手变异体
+Warrior,战士,异形形态,T2 近战形态
+Defender,防御者,异形形态,T2 坦克形态
+Carrier,携带者,异形形态,T2 抱脸虫携带者
+Drone,工蜂,异形形态,T2 建造形态
+Beetle,甲虫,异形形态,T2
+Baneling,爆虫,异形形态,T2 自爆形态
+Praetorian,禁卫军,异形形态,T3
+Dancer,舞者,异形形态,禁卫军变异体
+Oppressor,压迫者,异形形态,禁卫军变异体
+Boiler,沸腾者,异形形态,T3 远程酸液
+Sizzler,灼烧者,异形形态,沸腾者变异体
+Crusher,碾压者,异形形态,T3 重型冲锋
+Ravager,掠夺者,异形形态,T3 高伤近战
+Bloodthirster,嗜血者,异形形态,掠夺者变异体
+Sentinel,哨兵,异形形态,T3 毒液远程
+Spitter,喷射者,异形形态,T3 酸液远程
+Globadier,掷弹者,异形形态,喷射者变异体
+Defiler,亵渎者,异形形态,T3 化学战
+Warlock,术士,异形形态,T3 灵能
+Pyrogen,焰魔,异形形态,T3 火焰
+Mantis,螳螂,异形形态,T3
+Gorger,暴食者,异形形态,T3 吸血
+Hivelord,巢主,异形形态,T3 建造/治疗
+Scorpion,蝎子,异形形态,T3
+Widow,黑寡妇,异形形态,T3 蛛网
+Wraith,幽灵,异形形态,T3 传送
+Bull,蛮牛,异形形态,T3 冲锋
+Behemoth,巨兽,异形形态,T3 重型
+Dragon,龙,异形形态,T3 飞行
+Shrike,伯劳,异形形态,T4 灵能领袖
+Puppeteer,傀儡师,异形形态,T3 召唤
+Puppet,傀儡,异形形态,傀儡师召唤物
+King,异形之王,异形形态,T4 领袖
+Conqueror,征服者,异形形态,异形之王变异体
+Queen,异形女王,异形形态,T4 领袖
+Hivemind,蜂巢意志,异形形态,T4 全局控制
+Xenomorph,异形,阵营,外星生物总称
+Xeno,异形,阵营,简称
+Facehugger,抱脸虫,异形,寄生体
+Hugger,抱脸虫,异形,简称
+Captain,舰长,陆战队职位,最高指挥官
+Executive Officer,副官,陆战队职位,XO
+Field Commander,战地指挥官,陆战队职位,
+Staff Officer,参谋军官,陆战队职位,
+Pilot Officer,飞行员,陆战队职位,
+Transport Officer,运输军官,陆战队职位,
+Mech Pilot,机甲驾驶员,陆战队职位,
+Requisitions Officer,补给军官,陆战队职位,
+Chief Ship Engineer,首席舰船工程师,陆战队职位,
+Ship Technician,舰船技术员,陆战队职位,
+Chief Medical Officer,首席医疗官,陆战队职位,CMO
+Medical Doctor,医生,陆战队职位,
+Medical Researcher,医学研究员,陆战队职位,
+Squad Leader,班长,陆战队职位,SL
+Squad Marine,陆战队员,陆战队职位,基础兵种
+Squad Smartgunner,智能机枪手,陆战队职位,
+Squad Corpsman,卫生兵,陆战队职位,医疗兵
+Squad Engineer,工程兵,陆战队职位,
+Squad Specialist,专家,陆战队职位,特殊武器
+Corporate Liaison,企业联络官,陆战队职位,
+Synthetic,合成人,陆战队职位,机器人
+TerraGov,地球政府,阵营,TGMC 所属
+TGMC,地球政府殖民地海军陆战队,阵营,TerraGov Marine Corps
+Nanotrasen,纳米传讯,阵营,PMC 企业
+Colonial Liberation Force,殖民地解放阵线,阵营,CLF
+Sons of Mars,火星之子,阵营,SOM
+Freelancers,自由佣兵,阵营,
+Deathsquad,死亡小队,阵营,
+Sectoids,脑魔,阵营,
+United Space Lepidoptera,联合太空鳞翅目,阵营,USL
+Pirates,海盗,阵营,
+Alpha,阿尔法,小队名,小队代号
+Bravo,布拉沃,小队名,小队代号
+Charlie,查理,小队名,小队代号
+Delta,德尔塔,小队名,小队代号
+Plasma,等离子体,游戏机制,异形能量资源
+Weeds,菌毯,游戏机制,异形地形
+Resin,树脂,游戏机制,异形建筑材料
+Pheromones,信息素,游戏机制,异形团队增益
+Sunder,破甲,游戏机制,护甲削弱效果
+Evolution,进化,游戏机制,异形升级系统
+Maturity,成熟度,游戏机制,异形成长阶段
+Tier,阶级,游戏机制,异形等级划分
+Primordial,原始形态,游戏机制,最终进化阶段
+Tackle,扑摔,战斗,近战动作
+Slash,斩击,战斗,异形基础攻击
+Pounce,猛扑,战斗,跳跃攻击
+Lunge,突刺,战斗,冲刺攻击
+Fling,甩投,战斗,投掷敌人
+Stomp,践踏,战斗,碾压者技能
+Screech,尖啸,战斗,女王技能
+Defib,除颤器,医疗,电击复苏设备
+Defibrillator,除颤器,医疗,全称
+Medevac,医疗后送,医疗,医疗撤离
+Fracture,骨折,医疗,伤害类型
+FOB,前线作战基地,地点,Forward Operating Base
+LZ,着陆区,地点,Landing Zone
+USS Almayer,阿尔梅耶号,地点,主舰名称
+Tadpole,蝌蚪号,地点,登陆艇
+Alamo,阿拉莫号,地点,登陆艇
+Requisition,补给,系统,物资请求系统
+Overwatch,监控,系统,指挥监视系统
+CAS,近距空中支援,系统,Close Air Support
+OB,轨道轰炸,系统,Orbital Bombardment
+Melee,近战,伤害类型,
+Bullet,弹道,伤害类型,
+Laser,激光,伤害类型,
+Energy,能量,伤害类型,
+Bomb,爆炸,伤害类型,
+Bio,生化,伤害类型,
+Fire,火焰,伤害类型,
+Acid,酸液,伤害类型,
+Machete,砍刀,武器,M2132
+Survival Knife,求生刀,武器,M5
+Spear,长矛,武器,M23
+Throwing Knife,飞刀,武器,M11
+Powerfist,动力拳套,武器,
+Claymore,阔剑,武器,
+Chainsaw,链锯,武器,
+Chainsword,链刃剑,武器,
+Fire Axe,消防斧,武器,
+Boarding Axe,登舰斧,武器,
+Energy Sword,能量剑,武器,
+Energy Axe,能量斧,武器,
+Stunbaton,电击警棍,武器,
+Riot Shield,防暴盾,装备,
+Smartgun,智能机枪,武器,自动瞄准重武器
+Flamer,喷火器,武器,火焰喷射器
+Shotgun,霰弹枪,武器,
+Pistol,手枪,武器,
+Rifle,步枪,武器,
+SMG,冲锋枪,武器,Submachine Gun
+Grenade,手雷,武器,
+Rocket Launcher,火箭发射器,武器,
+Mortar,迫击炮,武器,固定式间接火力
+Sentry,哨戒炮,装备,自动防御炮塔
+Barricade,路障,装备,防御工事
+Crate,板条箱,物品,物资箱
+Webbing,织带,装备,额外存储空间
+Backpack,背包,装备,
+Satchel,挎包,装备,
+Pouch,附包,装备,腰带附件
+Magazine,弹匣,武器配件,
+Attachment,枪械配件,武器配件,
+Scope,瞄准镜,武器配件,
+Suppressor,消音器,武器配件,
+Underbarrel,下挂,武器配件,枪管下方配件
+Rail,导轨,武器配件,顶部导轨配件
+Stock,枪托,武器配件,

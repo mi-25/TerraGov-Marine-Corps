@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(statpanels)
-	name = "Stat Panels"
+	name = "状态面板"
 	wait = 4
 	init_stage = INITSTAGE_EARLY
 	priority = FIRE_PRIORITY_STATPANEL

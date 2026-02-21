@@ -3,7 +3,7 @@
 //Multi area shuttles are a thing now, use subtypes! ~ninjanomnom
 
 /area/shuttle
-	name = "Shuttle"
+	name = "穿梭机"
 	requires_power = FALSE
 	always_unpowered = FALSE
 //	valid_territory = FALSE
@@ -30,19 +30,19 @@
 	area.area_flags |= MARINE_BASE
 
 /area/shuttle/dropship/alamo
-	name = "Dropship Alamo"
+	name = "阿拉莫号运输船"
 
 /area/shuttle/dropship/normandy
-	name = "Dropship Normandy"
+	name = "诺曼底号运输船"
 
 /area/shuttle/dropship/triumph
-	name = "Dropship Triumph"
+	name = "胜利号运输船"
 
 /area/shuttle/cas
-	name = "Condor Jet"
+	name = "秃鹫喷气机"
 
 /area/shuttle/minidropship
-	name = "Tadpole Drop Shuttle"
+	name = "蝌蚪号空降穿梭机"
 	area_flags = NO_CONSTRUCTION
 
 /area/shuttle/minidropship/Initialize(mapload, ...)
@@ -51,105 +51,105 @@
 	area.area_flags |= MARINE_BASE
 
 /area/shuttle/ert
-	name = "Emergency Response Team"
+	name = "紧急响应小组"
 
 /area/shuttle/ert/upp
-	name = "UPP ERT"
+	name = "火星之子"
 
 /area/shuttle/ert/pmc
-	name = "PMC ERT"
+	name = "PMC 应急响应小组"
 
 /area/shuttle/big_ert
-	name = "Big ERT Ship"
+	name = "大型紧急响应部队飞船"
 
 /area/shuttle/ert/ufo
-	name = "Small UFO"
+	name = "小型不明飞行物"
 
 /area/shuttle/transit
-	name = "Hyperspace"
-	desc = "Weeeeee"
+	name = "超空间"
+	desc = "哇哦哦哦哦"
 	base_lighting_alpha = 255
 
 
 /area/shuttle/escape_pod
-	name = "Escape Pod"
+	name = "逃生舱"
 	minimap_color = MINIMAP_AREA_ESCAPE
 
 /area/shuttle/custom
-	name = "Custom player shuttle"
+	name = "自定义玩家穿梭机"
 
 /area/shuttle/arrival
-	name = "Arrival Shuttle"
+	name = "抵达穿梭机"
 	unique = TRUE  // SSjob refers to this area for latejoiners
 
 /area/shuttle/pod_1
-	name = "Escape Pod One"
+	name = "逃生舱一号"
 
 /area/shuttle/pod_2
-	name = "Escape Pod Two"
+	name = "逃生舱二号"
 
 /area/shuttle/pod_3
-	name = "Escape Pod Three"
+	name = "逃生舱三号"
 
 /area/shuttle/pod_4
-	name = "Escape Pod Four"
+	name = "逃生舱四号"
 
 /area/shuttle/mining
-	name = "Mining Shuttle"
+	name = "采矿穿梭机"
 
 /area/shuttle/labor
-	name = "Labor Camp Shuttle"
+	name = "劳改营穿梭机"
 
 /area/shuttle/supply
-	name = "Supply Shuttle"
+	name = "补给穿梭机"
 
 /area/shuttle/vehicle_supply
-	name = "Vehicle Supply Shuttle"
+	name = "载具补给穿梭机"
 
 /*
 /area/shuttle/escape
-	name = "Emergency Shuttle"
+	name = "紧急穿梭机"
 
 /area/shuttle/escape/backup
-	name = "Backup Emergency Shuttle"
+	name = "备用紧急穿梭机"
 
 /area/shuttle/escape/luxury
-	name = "Luxurious Emergency Shuttle"
+	name = "豪华紧急穿梭机"
 	noteleport = TRUE
 
 /area/shuttle/escape/arena
-	name = "The Arena"
+	name = "竞技场"
 	noteleport = TRUE
 
 /area/shuttle/escape/meteor
-	name = "\proper a meteor with engines strapped to it"*/
+	name = "\proper 一台绑着引擎的流星"*/
 
 /area/shuttle/transport
-	name = "Transport Shuttle"
+	name = "运输穿梭机"
 //	blob_allowed = FALSE
 
 /area/shuttle/assault_pod
-	name = "Steel Rain"
+	name = "钢铁之雨"
 //	blob_allowed = FALSE
 
 /area/shuttle/sbc_starfury
-	name = "SBC Starfury"
+	name = "SBC 星怒号"
 //	blob_allowed = FALSE
 
 /area/shuttle/sbc_fighter1
-	name = "SBC Fighter 1"
+	name = "SBC 战斗机 1"
 //	blob_allowed = FALSE
 
 /area/shuttle/sbc_fighter2
-	name = "SBC Fighter 2"
+	name = "SBC 战斗机 2"
 //	blob_allowed = FALSE
 
 /area/shuttle/sbc_corvette
-	name = "SBC corvette"
+	name = "SBC 护卫舰"
 //	blob_allowed = FALSE
 
 /area/shuttle/syndicate_scout
-	name = "Syndicate Scout"
+	name = "辛迪加侦察兵"
 //	blob_allowed = FALSE
 
 /area/shuttle/caravan
@@ -157,28 +157,28 @@
 	requires_power = TRUE
 
 /area/shuttle/caravan/syndicate1
-	name = "Syndicate Fighter"
+	name = "辛迪加战斗机"
 
 /area/shuttle/caravan/syndicate2
-	name = "Syndicate Fighter"
+	name = "辛迪加战斗机"
 
 /area/shuttle/caravan/syndicate3
-	name = "Syndicate Drop Ship"
+	name = "辛迪加空降艇"
 
 /area/shuttle/caravan/pirate
-	name = "Pirate Cutter"
+	name = "海盗快艇"
 
 /area/shuttle/caravan/freighter1
-	name = "Small Freighter"
+	name = "小型货船"
 
 /area/shuttle/caravan/freighter2
-	name = "Tiny Freighter"
+	name = "小型货船"
 
 /area/shuttle/caravan/freighter3
-	name = "Tiny Freighter"
+	name = "小型货船"
 
 /area/shuttle/canterbury
-	name = "Canterbury"
+	name = "坎特伯雷"
 	requires_power = TRUE
 	always_unpowered = FALSE
 
@@ -188,10 +188,10 @@
 	area.area_flags |= MARINE_BASE
 
 /area/shuttle/canterbury/cic
-	name = "Combat Information Center"
+	name = "作战信息中心"
 
 /area/shuttle/canterbury/medical
-	name = "Medical"
+	name = "医疗"
 
 /area/shuttle/canterbury/general
-	name = "Canterbury"
+	name = "坎特伯雷"

@@ -4,8 +4,8 @@
 	icon = 'icons/obj/atmospherics/pipes/he-manifold.dmi'
 	icon_state = "manifold-2"
 
-	name = "pipe manifold"
-	desc = "A manifold composed of regular pipes."
+	name = "管道歧管"
+	desc = "由标准管道组成的歧管。"
 
 	dir = SOUTH
 	initialize_directions = EAST|NORTH|WEST

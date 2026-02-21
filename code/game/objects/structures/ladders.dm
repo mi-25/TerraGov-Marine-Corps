@@ -1,7 +1,7 @@
 // Basic ladder. By default links to the z-level above/below.
 /obj/structure/ladder
-	name = "ladder"
-	desc = "A sturdy metal ladder."
+	name = "梯子"
+	desc = "一把坚固的金属梯子。"
 	icon = 'icons/obj/structures/structures.dmi'
 	icon_state = "ladder11"
 	base_icon_state = "ladder"
@@ -229,13 +229,13 @@
 		return
 
 	if(!up && !down)
-		balloon_alert(user, "doesn't lead anywhere!")
+		balloon_alert(user, "没有通往任何地方！")
 		return
 	if(going_up ? !up : !down)
 		balloon_alert(user, "can't go any further [going_up ? "up" : "down"]!")
 		return
 	if(user.buckled && user.buckled.anchored)
-		balloon_alert(user, "buckled to something anchored!")
+		balloon_alert(user, "被固定在某个锚定物上！")
 		return
 	if(travel_time)
 		INVOKE_ASYNC(src, PROC_REF(start_travelling), user, going_up)
@@ -256,13 +256,13 @@
 /// The message shown when the player starts climbing the ladder
 /obj/structure/ladder/proc/show_initial_fluff_message(mob/user, going_up)
 	var/up_down = going_up ? "up" : "down"
-	user.balloon_alert_to_viewers("climbing [up_down]...")
+	user.balloon_alert_to_viewers("攀爬[up_down]中...")
 
 ///handles actual teleportation of mobs
 /obj/structure/ladder/proc/travel(mob/user, going_up = TRUE, is_ghost = FALSE)
 	var/obj/structure/ladder/ladder = going_up ? up : down
 	if(!ladder)
-		balloon_alert(user, "there's nothing that way!")
+		balloon_alert(user, "那边什么都没有！")
 		return
 	var/response = SEND_SIGNAL(user, COMSIG_LADDER_TRAVEL, src, ladder, going_up)
 	if(response & LADDER_TRAVEL_BLOCK)
@@ -285,9 +285,9 @@
 	var/up_down = going_up ? "up" : "down"
 
 	//POV of players around the source
-	visible_message(span_notice("[user] climbs [up_down] [src]."))
+	visible_message(span_notice("[user] [up_down]爬上了[src]。"))
 	//POV of players around the destination
-	user.balloon_alert_to_viewers("climbed [up_down]")
+	user.balloon_alert_to_viewers("攀爬[up_down]")
 
 /// Shows a radial menu that players can use to climb up and down a stair.
 /obj/structure/ladder/proc/show_options(mob/user, is_ghost = FALSE)
@@ -337,7 +337,7 @@
 	if(.)
 		return
 	if (!up && !down)
-		balloon_alert(user, "doesn't lead anywhere!")
+		balloon_alert(user, "没有通往任何地方！")
 		return
 	if(!up) //only goes down
 		travel(user, going_up = FALSE, is_ghost = FALSE)
@@ -351,7 +351,7 @@
 	if(.)
 		return
 	if (!up && !down)
-		balloon_alert(user, "doesn't lead anywhere!")
+		balloon_alert(user, "没有通往任何地方！")
 		return
 	if(!up) //only goes down
 		travel(user, going_up = FALSE, is_ghost = FALSE)
@@ -372,7 +372,7 @@
 	if(.)
 		return
 	if (!up && !down)
-		balloon_alert(user, "doesn't lead anywhere!")
+		balloon_alert(user, "没有通往任何地方！")
 		return
 	if(!up) //only goes down
 		travel(user, going_up = FALSE, is_ghost = FALSE)
@@ -398,16 +398,16 @@
 ///throws an item held by a user up or down a ladder
 /obj/structure/ladder/proc/throw_object(obj/item/item, mob/user, going_up=TRUE)
 	if(going_up && !up)
-		balloon_alert(user, "no stairs above!")
+		balloon_alert(user, "上方无楼梯！")
 		return
 	if(!going_up && !down)
-		balloon_alert(user, "no stairs below!")
+		balloon_alert(user, "下方无楼梯！")
 		return
 	var/turf/destination = going_up ? get_turf(up) : get_turf(down)
 	if(!do_after(user, 1 SECONDS, NONE, src))
 		return
 	var/ladder_dir_name = going_up ? "up" : "down"
-	user.visible_message(span_warning("[user] throws [item] [ladder_dir_name] [src]!"),
+	user.visible_message(span_warning("[user]将[item]扔向[src]的[ladder_dir_name]！"),
 		span_warning("You throw [item] [ladder_dir_name] [src]"))
 	user.dropItemToGround(item)
 	item.forceMove(destination)
@@ -426,7 +426,7 @@
 ///Ghosts use the byond default popup menu function on right click, so this is going to work a little differently for them.
 /obj/structure/ladder/proc/ghost_use(mob/user)
 	if (!up && !down)
-		balloon_alert(user, "doesn't lead anywhere!")
+		balloon_alert(user, "没有通往任何地方！")
 		return
 	if(!up) //only goes down
 		travel(user, going_up = FALSE, is_ghost = TRUE)
@@ -454,21 +454,21 @@
 	if(over_object != usr || !in_range(src, usr))
 		return
 	if(usr.incapacitated() || is_blind(usr) || usr.lying_angle)
-		to_chat(usr, "You can't do that in your current state.")
+		to_chat(usr, "你目前的状态无法执行此操作。")
 		return
 	if (!up && !down)
-		balloon_alert(usr, "doesn't lead anywhere!")
+		balloon_alert(usr, "没有通往任何地方！")
 		return
 
 	if(up && down)
 		switch(tgui_alert(usr, "Look up or down the ladder?", "Ladder", list("Up", "Down", "Cancel")))
 			if("Up")
-				usr.visible_message(span_notice("[usr] looks up [src]!"),
+				usr.visible_message(span_notice("[usr]抬头看向[src]！"),
 				span_notice("You look up [src]!"))
 				usr.set_interaction(up)
 
 			if("Down")
-				usr.visible_message(span_notice("[usr] looks down [src]!"),
+				usr.visible_message(span_notice("[usr]低头看着[src]！"),
 				span_notice("You look down [src]!"))
 				usr.set_interaction(down)
 
@@ -476,20 +476,20 @@
 				return
 
 	else if(up)
-		usr.visible_message(span_notice("[usr] looks up [src]!"),
+		usr.visible_message(span_notice("[usr]抬头看向[src]！"),
 		span_notice("You look up [src]!"))
 		usr.set_interaction(up)
 
 	else if(down)
-		usr.visible_message(span_notice("[usr] looks down [src]!"),
+		usr.visible_message(span_notice("[usr]低头看着[src]！"),
 		span_notice("You look down [src]!"))
 		usr.set_interaction(down)
 
 
 // Indestructible away mission ladders which link based on a mapped ID and height value rather than X/Y/Z.
 /obj/structure/ladder/id_linked
-	name = "sturdy ladder"
-	desc = "An extremely sturdy metal ladder."
+	name = "坚固的梯子"
+	desc = "一把极其坚固的金属梯子。"
 	resistance_flags = INDESTRUCTIBLE
 	var/id
 	var/height = 0  // higher numbers are considered physically higher

@@ -21,7 +21,7 @@ ADMIN_VERB(reset_tram, R_DEBUG|R_ADMIN, "Reset Tram", "Reset a tram controller o
 			break
 
 	if(isnull(broken_controller))
-		to_chat(user, span_warning("Couldn't find a transport controller datum with ID [selected_transport_id]!"))
+		to_chat(user, span_warning("未找到ID为[selected_transport_id]的运输控制器数据！"))
 		return
 
 	switch(reset_type)

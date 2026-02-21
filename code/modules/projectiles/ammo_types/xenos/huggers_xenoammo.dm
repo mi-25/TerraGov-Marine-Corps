@@ -6,7 +6,7 @@
 */
 
 /datum/ammo/xeno/hugger
-	name = "hugger ammo"
+	name = "抱脸虫弹药"
 	ping = ""
 	ammo_behavior_flags = AMMO_XENO
 	damage = 0

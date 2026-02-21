@@ -1,6 +1,6 @@
 /obj/item/deploy_capsule
-	name = "mystery capsule"
-	desc = "An emergency shelter stored within a pocket of bluespace."
+	name = "神秘胶囊"
+	desc = "一个存储在蓝空间口袋中的紧急避难所。"
 	icon_state = "capsule"
 	icon = 'icons/obj/items/capsules.dmi'
 	w_class = WEIGHT_CLASS_TINY
@@ -33,7 +33,7 @@
 	if(primed)
 		return FALSE
 
-	loc.visible_message(span_warning("[src] begins to shake. Stand back!"))
+	loc.visible_message(span_warning("[src]开始震动。退后！"))
 	var/expand_time = rand(3 SECONDS, 5 SECONDS)
 	Shake(duration = expand_time)
 	primed = TRUE
@@ -86,9 +86,9 @@
 /obj/item/deploy_capsule/proc/fail_feedback(status)
 	switch(status)
 		if(SHELTER_DEPLOY_BAD_AREA)
-			loc.visible_message(span_warning("[src] will not function in this area."))
+			loc.visible_message(span_warning("[src]在此区域无法运作。"))
 		if(SHELTER_DEPLOY_BAD_TURFS, SHELTER_DEPLOY_ANCHORED_OBJECTS, SHELTER_DEPLOY_OUTSIDE_MAP, SHELTER_DEPLOY_BANNED_OBJECTS)
-			loc.visible_message(span_warning("[src] doesn't have room to deploy! You need to clear a [template.width]x[template.height] area!"))
+			loc.visible_message(span_warning("[src]没有足够的空间部署！你需要清理出一块[template.width]x[template.height]的区域！"))
 
 /// Throws any mobs near the deployed location away from the item / shelter
 /// Does some math to make closer mobs get thrown further
@@ -118,8 +118,8 @@
 //Non-default pods
 
 /obj/item/deploy_capsule/barricade
-	name = "barricade fort capsule"
-	desc = "A basic barricade fort in a convenient capsule form. Requires a 5x5 open area to deploy."
+	name = "路障强化胶囊"
+	desc = "一种基础路障堡垒，采用便捷的胶囊形式。需要5x5的开放区域来部署。"
 	template_id = "barricade_capsule"
 
 /obj/item/deploy_capsule/barricade/get_ignore_flags()

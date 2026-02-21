@@ -29,27 +29,27 @@
 
 /datum/loadout_item/feet/marine_boots
 	name = "Combat boots"
-	desc = "Standard issue combat boots for combat scenarios or combat situations. All combat, all the time."
+	desc = "标准制式作战靴，专为战斗场景或作战环境设计。全天候战斗，随时待命。"
 	item_typepath = /obj/item/clothing/shoes/marine/tdf/full
 	jobs_supported = list(SQUAD_MARINE, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/feet/marine_brown_boots
 	name = "Brown boots"
-	desc = "Standard issue combat boots for combat scenarios or combat situations. All combat, all the time."
+	desc = "标准制式作战靴，专为战斗场景或作战环境设计。全天候作战，随时待命。"
 	item_typepath = /obj/item/clothing/shoes/marine/brown/full
 	jobs_supported = list(SQUAD_MARINE, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN)
 
 /datum/loadout_item/feet/white_dress
 	name = "Dress shoes"
-	desc = "Fancy white shoes to go with your white dress uniform. Do not come with a combat knife."
+	desc = "配白色礼服制服用的精致白鞋。不附带战斗刀。"
 	item_typepath = /obj/item/clothing/shoes/white
 	jobs_supported = list(SQUAD_MARINE, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN)
 
 //Captain
 /datum/loadout_item/feet/captain
 	name = "Captain's shoes"
-	desc = "Has special soles for better trampling those underneath."
+	desc = "鞋底经过特殊设计，能更好地践踏脚下的目标。"
 	item_typepath = /obj/item/clothing/shoes/marinechief/captain
 	jobs_supported = list(CAPTAIN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE

@@ -1,5 +1,5 @@
 /datum/reagent/blood
-	name = "Blood"
+	name = "Blood-血液"
 	reagent_state = LIQUID
 	color = "#A10808"
 	taste_description = "iron"
@@ -15,13 +15,13 @@
 	T.add_blood(L , color)
 
 /datum/reagent/blood/synth_blood
-	name = "Synthetic Blood"
+	name = "Synthetic Blood-合成人血液"
 	color = "#EEEEEE"
 	taste_description = "sludge"
 	description = "A white blood-like liquid used by all Synthetics."
 
 /datum/reagent/water
-	name = "Water"
+	name = "Water-水"
 	description = "A ubiquitous chemical substance that is composed of hydrogen and oxygen."
 	reagent_state = LIQUID
 	color = "#0064C8" // rgb: 0, 100, 200
@@ -38,8 +38,8 @@
 
 /datum/glass_style/drinking_glass/water
 	required_drink_type = /datum/reagent/water
-	name = "glass of water"
-	desc = "The father of all refreshments."
+	name = "glass of water-一杯水"
+	desc = "所有提神饮品的始祖。"
 	icon_state = "glass_clear"
 
 /datum/reagent/water/reaction_turf(turf/T, volume)
@@ -79,22 +79,22 @@
 /datum/reagent/water/overdose_process(mob/living/L, metabolism)
 	if(prob(10))
 		L.adjustStaminaLoss(50*effect_str)
-		to_chat(L, span_warning("You cramp up! Too much water!"))
+		to_chat(L, span_warning("你抽筋了！水喝太多了！"))
 
 /datum/reagent/water/holywater
-	name = "Holy Water"
+	name = "Holy Water-圣水"
 	description = "An ashen-obsidian-water mix, this solution will alter certain sections of the brain's rationality."
 	color = "#E0E8EF" // rgb: 224, 232, 239
 	default_container = /obj/item/reagent_containers/cup/glass/bottle/holywater
 
 /datum/glass_style/drinking_glass/holywater
 	required_drink_type = /datum/reagent/water/holywater
-	name = "glass of holy water"
-	desc = "A glass of holy water."
+	name = "glass of holy water-圣水杯"
+	desc = "一杯圣水。"
 	icon_state = "glass_clear"
 
 /datum/reagent/lube
-	name = "Space Lube"
+	name = "Space Lube-太空润滑剂"
 	description = "Lubricant is a substance introduced between two moving surfaces to reduce the friction and wear between them. giggity."
 	reagent_state = LIQUID
 	color = "#009CA8" // rgb: 0, 156, 168
@@ -115,7 +115,7 @@
 	L.apply_damage(3, TOX)
 
 /datum/reagent/space_drugs
-	name = "Space drugs"
+	name = "Space drugs-太空毒品"
 	description = "An illegal chemical compound used as drug."
 	reagent_state = LIQUID
 	color = "#60A584" // rgb: 96, 165, 132
@@ -145,7 +145,7 @@
 		L.dizzy(8)
 
 /datum/reagent/serotrotium
-	name = "Serotrotium"
+	name = "Serotrotium-血清素"
 	description = "A chemical compound that promotes concentrated production of the serotonin neurotransmitter in humans."
 	reagent_state = LIQUID
 	color = "#202040" // rgb: 20, 20, 40
@@ -171,7 +171,7 @@
 	L.setDrowsyness(max(L.drowsyness, 30))
 
 /datum/reagent/oxygen
-	name = "Oxygen"
+	name = "Oxygen-氧气"
 	description = "A colorless, odorless gas."
 	reagent_state = GAS
 	color = "#808080" // rgb: 128, 128, 128
@@ -180,7 +180,7 @@
 	custom_metabolism = REAGENTS_METABOLISM * 0.05
 
 /datum/reagent/copper
-	name = "Copper"
+	name = "Copper-铜"
 	description = "A highly ductile metal."
 	color = "#6E3B08" // rgb: 110, 59, 8
 	taste_description = "metal"
@@ -188,7 +188,7 @@
 	custom_metabolism = REAGENTS_METABOLISM * 0.05
 
 /datum/reagent/nitrogen
-	name = "Nitrogen"
+	name = "Nitrogen-氮气"
 	description = "A colorless, odorless, tasteless gas."
 	reagent_state = GAS
 	color = "#808080" // rgb: 128, 128, 128
@@ -197,7 +197,7 @@
 	custom_metabolism = REAGENTS_METABOLISM * 0.05
 
 /datum/reagent/hydrogen
-	name = "Hydrogen"
+	name = "Hydrogen-氢气"
 	description = "A colorless, odorless, nonmetallic, tasteless, highly combustible diatomic gas."
 	reagent_state = GAS
 	color = "#808080" // rgb: 128, 128, 128
@@ -205,7 +205,7 @@
 	taste_multi = 0
 
 /datum/reagent/potassium
-	name = "Potassium"
+	name = "Potassium-钾"
 	description = "A soft, low-melting solid that can easily be cut with a knife. Reacts violently with water."
 	color = "#A0A0A0" // rgb: 160, 160, 160
 	taste_description = "sweetness"
@@ -213,7 +213,7 @@
 	custom_metabolism = REAGENTS_METABOLISM * 0.05
 
 /datum/reagent/mercury
-	name = "Mercury"
+	name = "Mercury-水星"
 	description = "A chemical element."
 	reagent_state = LIQUID
 	color = "#484848" // rgb: 72, 72, 72
@@ -229,14 +229,14 @@
 	return ..()
 
 /datum/reagent/sulfur
-	name = "Sulfur"
+	name = "Sulfur-硫磺"
 	description = "A chemical element with a pungent smell."
 	color = "#BF8C00" // rgb: 191, 140, 0
 	custom_metabolism = REAGENTS_METABOLISM * 0.05
 	taste_description = "rotten eggs"
 
 /datum/reagent/carbon
-	name = "Carbon"
+	name = "Carbon-碳"
 	description = "A chemical element, the builing block of life."
 	color = "#1C1300" // rgb: 30, 20, 0
 	custom_metabolism = REAGENTS_METABOLISM * 0.05
@@ -252,7 +252,7 @@
 			dirtoverlay.alpha = min(dirtoverlay.alpha+volume*30, 255)
 
 /datum/reagent/chlorine
-	name = "Chlorine"
+	name = "Chlorine-氯气"
 	description = "A chemical element with a characteristic odour."
 	reagent_state = GAS
 	color = "#808080" // rgb: 128, 128, 128
@@ -272,7 +272,7 @@
 	L.apply_damage(1, TOX)
 
 /datum/reagent/fluorine
-	name = "Fluorine"
+	name = "Fluorine-氟"
 	description = "A highly-reactive chemical element."
 	reagent_state = GAS
 	color = "#808080" // rgb: 128, 128, 128
@@ -292,21 +292,21 @@
 	L.apply_damage(1, TOX)
 
 /datum/reagent/sodium
-	name = "Sodium"
+	name = "Sodium-钠"
 	description = "A chemical element, readily reacts with water."
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "salty metal"
 	custom_metabolism = REAGENTS_METABOLISM * 0.05
 
 /datum/reagent/phosphorus
-	name = "Phosphorus"
+	name = "Phosphorus-白磷"
 	description = "A chemical element, the backbone of biological energy carriers."
 	color = "#832828" // rgb: 131, 40, 40
 	custom_metabolism = REAGENTS_METABOLISM * 0.05
 	taste_description = "vinegar"
 
 /datum/reagent/lithium
-	name = "Lithium"
+	name = "Lithium-锂"
 	description = "A chemical element, used as antidepressant."
 	reagent_state = SOLID
 	color = "#808080" // rgb: 128, 128, 128
@@ -328,14 +328,14 @@
 	L.apply_damage(2, TOX)
 
 /datum/reagent/glycerol
-	name = "Glycerol"
+	name = "Glycerol-甘油"
 	description = "Glycerol is a simple polyol compound. Glycerol is sweet-tasting and of low toxicity."
 	reagent_state = LIQUID
 	color = "#808080" // rgb: 128, 128, 128
 	custom_metabolism = REAGENTS_METABOLISM * 0.05
 
 /datum/reagent/nitroglycerin
-	name = "Nitroglycerin"
+	name = "Nitroglycerin-硝化甘油"
 	description = "Nitroglycerin is a heavy, colorless, oily, explosive liquid obtained by nitrating glycerol."
 	reagent_state = LIQUID
 	color = "#808080" // rgb: 128, 128, 128
@@ -344,7 +344,7 @@
 	trait_flags = TACHYCARDIC
 
 /datum/reagent/radium
-	name = "Radium"
+	name = "Radium-镭"
 	description = "Radium is an alkaline earth metal. It is extremely radioactive."
 	reagent_state = SOLID
 	color = "#C7C7C7" // rgb: 199,199,199
@@ -364,7 +364,7 @@
 
 
 /datum/reagent/iron
-	name = "Iron"
+	name = "Iron-铁"
 	description = "Pure iron is a metal."
 	color = "#C8A5DC" // rgb: 200, 165, 220
 	overdose_threshold = REAGENTS_OVERDOSE
@@ -378,19 +378,19 @@
 	L.apply_damages(1, 0, 1)
 
 /datum/reagent/gold
-	name = "Gold"
+	name = "Gold-黄金"
 	description = "Gold is a dense, soft, shiny metal and the most malleable and ductile metal known."
 	color = "#F7C430" // rgb: 247, 196, 48
 	taste_description = "expensive metal"
 
 /datum/reagent/silver
-	name = "Silver"
+	name = "Silver-银"
 	description = "A soft, white, lustrous transition metal, it has the highest electrical conductivity of any element and the highest thermal conductivity of any metal."
 	color = "#D0D0D0" // rgb: 208, 208, 208
 	taste_description = "expensive yet reasonable metal"
 
 /datum/reagent/uranium
-	name ="Uranium"
+	name ="Uranium-铀"
 	description = "A silvery-white metallic chemical element in the actinide series, weakly radioactive."
 	color = "#B8B8C0" // rgb: 184, 184, 192
 	taste_description = "the inside of a reactor"
@@ -408,19 +408,19 @@
 		new /obj/effect/decal/cleanable/greenglow(T)
 
 /datum/reagent/aluminum
-	name = "Aluminum"
+	name = "Aluminum-铝"
 	description = "A silvery white and ductile member of the boron group of chemical elements."
 	color = "#A8A8A8" // rgb: 168, 168, 168
 	taste_description = "metal"
 
 /datum/reagent/silicon
-	name = "Silicon"
+	name = "Silicon-合成人"
 	description = "A tetravalent metalloid, silicon is less reactive than its chemical analog carbon."
 	color = "#A8A8A8" // rgb: 168, 168, 168
 	taste_multi = 0
 
 /datum/reagent/fuel
-	name = "Welding fuel"
+	name = "Welding fuel-焊接燃料"
 	description = "Required for blowtorches. Highly flamable."
 	color = "#660000" // rgb: 102, 0, 0
 	overdose_threshold = REAGENTS_OVERDOSE
@@ -452,13 +452,13 @@
 	L.apply_damage(1, TOX)
 
 /datum/reagent/fuel/xfuel
-	name = "X-fuel"
+	name = "X-fuel-X燃料"
 	description = "Type X fuel, for use in flamers for when you really want something nice and crispy"
 	color = COLOR_MODERATE_BLUE
 	effect_type = /obj/effect/decal/cleanable/liquid_fuel/xfuel
 
 /datum/reagent/space_cleaner
-	name = "Space cleaner"
+	name = "Space cleaner-空间清洁剂"
 	description = "A compound used to clean things. Now with 50% more sodium hypochlorite!"
 	reagent_state = LIQUID
 	color = "#A5F0EE" // rgb: 165, 240, 238
@@ -486,7 +486,7 @@
 	L.apply_damage(1, TOX)
 
 /datum/reagent/cryptobiolin
-	name = "Cryptobiolin"
+	name = "Cryptobiolin-隐生质"
 	description = "Cryptobiolin causes confusion and dizzyness."
 	reagent_state = LIQUID
 	color = "#C8A5DC" // rgb: 200, 165, 220
@@ -505,7 +505,7 @@
 	L.apply_damage(1, TOX)
 
 /datum/reagent/impedrezene
-	name = "Impedrezene"
+	name = "Impedrezene-伊姆佩德雷津"
 	description = "Impedrezene is a narcotic that impedes one's ability by slowing down the higher brain cell functions."
 	reagent_state = LIQUID
 	color = "#C8A5DC" // rgb: 200, 165, 220
@@ -535,27 +535,27 @@
 
 
 /datum/reagent/xenomicrobes
-	name = "Xenomicrobes"
+	name = "Xenomicrobes-异形微生物"
 	description = "Microbes with an entirely alien cellular structure."
 	reagent_state = LIQUID
 	color = "#535E66" // rgb: 83, 94, 102
 	taste_description = "sludge"
 
 /datum/reagent/fluorosurfactant//foam precursor
-	name = "Fluorosurfactant"
+	name = "Fluorosurfactant-氟表面活性剂"
 	description = "A perfluoronated sulfonic acid that forms a foam when mixed with water."
 	reagent_state = LIQUID
 	color = "#9E6B38" // rgb: 158, 107, 56
 	taste_description = "metal"
 
 /datum/reagent/foaming_agent// Metal foaming agent. This is lithium hydride. Add other recipes (e.g. LiH + H2O -> LiOH + H2) eventually.
-	name = "Foaming agent"
+	name = "Foaming agent-发泡剂"
 	description = "A agent that yields metallic foam when mixed with light metal and a strong acid."
 	color = "#664B63" // rgb: 102, 75, 99
 	taste_description = "metal"
 
 /datum/reagent/nicotine
-	name = "Nicotine"
+	name = "Nicotine-尼古丁"
 	description = "A highly addictive stimulant extracted from the tobacco plant."
 	reagent_state = LIQUID
 	color = "#181818" // rgb: 24, 24, 24
@@ -563,27 +563,27 @@
 	trait_flags = TACHYCARDIC
 
 /datum/reagent/ammonia
-	name = "Ammonia"
+	name = "Ammonia-氨"
 	description = "A caustic substance commonly used in fertilizer or household cleaners."
 	reagent_state = GAS
 	color = "#404030" // rgb: 64, 64, 48
 	taste_description = "mordant"
 
 /datum/reagent/ultraglue
-	name = "Ultra Glue"
+	name = "Ultra Glue-超强胶水"
 	description = "An extremely powerful bonding agent."
 	color = "#FFFFCC" // rgb: 255, 255, 204
 	taste_description = "something chewy"
 
 /datum/reagent/diethylamine
-	name = "Diethylamine"
+	name = "Diethylamine-二乙胺"
 	description = "A secondary amine, mildly corrosive."
 	reagent_state = LIQUID
 	color = "#604030" // rgb: 96, 64, 48
 	taste_description = "iron"
 
 /datum/reagent/consumable/lipozine
-	name = "Lipozine" // The anti-nutriment.
+	name = "Lipozine-脂溶素" // The anti-nutriment.
 	description = "A chemical compound that causes a powerful fat-burning reaction."
 	reagent_state = LIQUID
 	color = "#BBEDA4" // rgb: 187, 237, 164
@@ -614,7 +614,7 @@
 	L.apply_damages(1, 3, 1)
 
 /datum/reagent/sterilizine
-	name = "Sterilizine"
+	name = "Sterilizine-消毒液"
 	description = "Sterilizes wounds in preparation for surgery."
 	color = "#C8A5DC" // rgb: 200, 165, 220
 	reagent_ui_priority = REAGENT_UI_TOXINS
@@ -634,7 +634,7 @@
 			if(C.species.species_flags & NO_PAIN)
 				return
 		if(show_message)
-			to_chat(L, span_warning("Your open wounds feel like they're on fire!"))
+			to_chat(L, span_warning("你敞开的伤口感觉像在燃烧！"))
 		L.emote(pick("scream","pain","moan"))
 		L.flash_pain()
 		L.reagent_shock_modifier -= PAIN_REDUCTION_MEDIUM
@@ -644,7 +644,7 @@
 	return ..()
 
 /datum/reagent/virilyth
-	name = "Virilyth"
+	name = "Virilyth-维里利斯"
 	description = "A strange substance with high regenerative properties."
 	color = "#488C54"
 	taste_description = "slimy lemon"

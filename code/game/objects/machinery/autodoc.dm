@@ -33,8 +33,8 @@
 
 //Autodoc
 /obj/machinery/autodoc
-	name = "\improper autodoc medical system"
-	desc = "A fancy machine developed to be capable of operating on people with minimal human intervention. However, the interface is rather complex and most of it would only be useful to trained medical personnel."
+	name = "\improper 自动医疗系统"
+	desc = "一款设计精密的机器，能够在最少人工干预的情况下对人体进行手术。然而，其操作界面相当复杂，大部分功能只对受过训练的医疗人员有用。"
 	icon = 'icons/obj/machines/cryogenics.dmi'
 	icon_state = "autodoc_open"
 	density = TRUE
@@ -102,7 +102,7 @@
 	. = ..()
 	if(is_operational() || !occupant)
 		return
-	visible_message("[src] engages the safety override, ejecting the occupant.")
+	visible_message("[src] 启动了安全超控程序，弹出了乘员。")
 	do_eject(AUTODOC_NOTICE_NO_POWER)
 
 /obj/machinery/autodoc/update_icon()
@@ -138,16 +138,16 @@
 	if(!occupant)
 		return
 	if(occupant.stat == DEAD)
-		say("Patient has expired.")
+		say("患者已死亡。")
 		do_eject(AUTODOC_NOTICE_DEATH)
 		return
 	if(!length(surgery_list) && !is_active()) // Everything, including external surgeries, are done.
-		visible_message("\The [src] clicks and opens up having finished the requested operations.")
+		visible_message("\The [src] 咔哒一声打开，已完成所请求的操作。")
 		do_eject(AUTODOC_NOTICE_SUCCESS)
 		return
 
 	if(prob(5))
-		visible_message("[src] beeps as it continues working.")
+		visible_message("[src] 在继续工作时发出哔哔声。")
 
 	occupant.adjustToxLoss(-0.5) // Pretend that they're getting dylovene. We don't want to add reagents only for it to be filtered away.
 	occupant.adjustOxyLoss(-occupant.getOxyLoss()) // Pretend that they're getting Dexalin+. Ditto above.
@@ -158,22 +158,22 @@
 				something_filtered = TRUE
 		if(!something_filtered)
 			filtering = 0
-			say("Blood filtering complete.")
+			say("血液过滤完成。")
 		else if(prob(10))
-			visible_message("[src] whirrs and gurgles as the dialysis module operates.")
-			to_chat(occupant, span_info("You feel slightly better."))
+			visible_message("[src] 嗡嗡作响并发出咕噜声，透析模块正在运行。")
+			to_chat(occupant, span_info("你感觉好一些了。"))
 	if(blood_transfer)
 		if(connected && occupant.blood_volume < BLOOD_VOLUME_NORMAL)
 			if(connected.blood_pack.reagents.get_reagent_amount(/datum/reagent/blood) < 4)
 				connected.blood_pack.reagents.add_reagent(/datum/reagent/blood, 195, list("donor" = null,"blood_DNA" = null,"blood_type" = "O-"))
-				say("Blood reserves depleted, switching to fresh bag.")
+				say("血液储备已耗尽，正在更换新血袋。")
 			occupant.inject_blood(connected.blood_pack, blood_transfer)
 			if(prob(10))
-				visible_message("[src] whirrs and gurgles as it tranfuses blood.")
-				to_chat(occupant, span_info("You feel slightly less faint."))
+				visible_message("[src] 一边输血一边发出嗡嗡声和咕噜声。")
+				to_chat(occupant, span_info("你感觉没那么晕了。"))
 		else
 			blood_transfer = 0
-			say("Blood transfer complete.")
+			say("血液转移完成。")
 
 	var/should_update_health = FALSE
 	if(heal_brute)
@@ -181,31 +181,31 @@
 			occupant.heal_limb_damage(heal_brute, 0)
 			should_update_health = TRUE
 			if(prob(10))
-				visible_message("[src] whirrs and clicks as it stitches flesh together.")
-				to_chat(occupant, span_info("You feel your wounds being stitched and sealed shut."))
+				visible_message("[src] 嗡嗡作响，咔哒咔哒地将皮肉缝合在一起。")
+				to_chat(occupant, span_info("你感觉伤口正在被缝合和愈合。"))
 		else
 			heal_brute = 0
-			say("Trauma repair surgery complete.")
+			say("创伤修复手术完成。")
 	if(heal_burn)
 		if(occupant.getFireLoss() > 0)
 			occupant.heal_limb_damage(0, heal_burn)
 			should_update_health = TRUE
 			if(prob(10))
-				visible_message("[src] whirrs and clicks as it grafts synthetic skin.")
-				to_chat(occupant, span_info("You feel your burned flesh being sliced away and replaced."))
+				visible_message("[src] 发出嗡嗡声和咔嗒声，开始移植合成皮肤。")
+				to_chat(occupant, span_info("你感觉烧伤的皮肉被切掉并重新长了出来。"))
 		else
 			heal_burn = 0
-			say("Skin grafts complete.")
+			say("皮肤移植完成。")
 	if(heal_toxin)
 		if(occupant.getToxLoss() > 0)
 			occupant.adjustToxLoss(-heal_toxin)
 			should_update_health = TRUE
 			if(prob(10))
-				visible_message("[src] whirrs and gurgles as it kelates the occupant.")
-				to_chat(occupant, span_info("You feel slighly less ill."))
+				visible_message("[src] 一边发出嗡嗡声和咕噜声，一边为乘员进行螯合治疗。")
+				to_chat(occupant, span_info("你感觉稍微好了一些。"))
 		else
 			heal_toxin = 0
-			say("Chelation complete.")
+			say("螯合完成。")
 	if(should_update_health)
 		occupant.updatehealth()
 
@@ -220,21 +220,21 @@
 	if(istype(I, /obj/item/stack/sheet/metal))
 		var/obj/item/stack/sheet/metal/metal_stack = I
 		if(stored_metal >= stored_metal_max)
-			to_chat(user, span_warning("[src]'s metal reservoir is full; it can't hold any more material!"))
+			to_chat(user, span_warning("[src]的金属储罐已满；无法容纳更多材料！"))
 			return
 		var/amount_to_use = min(metal_stack.amount, CEILING((stored_metal_max - stored_metal) / 100, 1)) // Only insert as much metal as required to completely fill it up.
 		stored_metal = min(stored_metal_max, stored_metal + (amount_to_use * 100))
-		to_chat(user, span_notice("[src] processes \the [metal_stack]. Its metal reservoir now contains [stored_metal] of [stored_metal_max] units."))
+		to_chat(user, span_notice("[src]正在处理\the [metal_stack]。其金属储存器现在包含[stored_metal]/[stored_metal_max]单位。"))
 		metal_stack.use(amount_to_use) // Will qdel if there is no metal remaining.
 		return
 
 /obj/machinery/autodoc/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(xeno_attacker, span_xenowarning("里面没什么值得注意的东西。"))
 		return
 	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
 		return
-	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
+	visible_message(span_warning("[xeno_attacker] 开始撬开 [src] 的盖子！"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)
 	if(!do_after(xeno_attacker, 2 SECONDS))
 		return
@@ -251,13 +251,13 @@
 	else if(istype(grab.grabbed_thing,/obj/structure/closet/bodybag/cryobag))
 		var/obj/structure/closet/bodybag/cryobag/cryobag = grab.grabbed_thing
 		if(!cryobag.bodybag_occupant)
-			to_chat(user, span_warning("The stasis bag is empty!"))
+			to_chat(user, span_warning("停滞袋是空的！"))
 			return
 		grabbed_mob = cryobag.bodybag_occupant
 		cryobag.open()
 		user.start_pulling(grabbed_mob)
 	if(!ishuman(grabbed_mob))
-		to_chat(user, span_notice("[src] is compatible with humanoid anatomies only!"))
+		to_chat(user, span_notice("[src]仅兼容类人生物解剖结构！"))
 		return
 	try_entering(user, grabbed_mob)
 	return TRUE
@@ -274,10 +274,10 @@
 		return
 	if(forcibly_ejected)
 		if(!active_surgery)
-			visible_message("\The [src] is destroyed, ejecting [occupant] and showering them in debris.")
+			visible_message("\The [src] 被摧毁了，将 [occupant] 弹射出来，并用碎片淋了他们一身。")
 			occupant.take_limb_damage(rand(10, 20), rand(10, 20))
 		else
-			visible_message("\The [src] malfunctions as it is destroyed mid-surgery, ejecting [occupant] with surgical wounds and showering them in debris.")
+			visible_message("\The [src]在手术过程中被摧毁而故障，将[occupant]弹出并造成手术伤口，同时碎片如雨般洒落在他们身上。")
 			occupant.take_limb_damage(rand(30, 50), rand(30, 50))
 		do_eject(AUTODOC_NOTICE_FORCE_EJECT)
 		return
@@ -288,16 +288,16 @@
 		return
 	if(ejector == occupant)
 		if(active_surgery)
-			to_chat(ejector, span_warning("There's no way you're getting out while this thing is operating on you!"))
+			to_chat(ejector, span_warning("这东西还在你身上运作，你绝对逃不掉的！"))
 			return
-		visible_message("[ejector] engages the internal release mechanism, and climbs out of \the [src].")
+		visible_message("[ejector]启动内部释放机制，从\the [src]中爬出。")
 		do_eject()
 		return
 	var/skilled_enough = ejector.skills.getRating(SKILL_SURGERY) >= required_skill_level
 	if(skilled_enough)
 		do_eject()
 		return
-	ejector.visible_message(span_notice("[ejector] fumbles around figuring out how to use [src]."),
+	ejector.visible_message(span_notice("[ejector] 笨手笨脚地摸索着如何使用 [src]。"),
 		span_notice("You fumble around figuring out how to use [src]."))
 	var/fumbling_time = max(0 , SKILL_TASK_TOUGH - (SKILL_TASK_EASY * ejector.skills.getRating(SKILL_SURGERY))) // 8 seconds. Each skill level decreases it by 3 seconds.
 	if(!do_after(ejector, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED) || !occupant)
@@ -306,7 +306,7 @@
 		do_eject()
 		return
 	// Untrained people will fail to terminate the surgery properly.
-	visible_message("\The [src] malfunctions as [ejector] aborts the surgery in progress.")
+	visible_message("\The [src] 发生故障，[ejector] 中止了正在进行的手术。")
 	occupant.take_limb_damage(rand(30, 50), rand(30, 50))
 	log_game("[key_name(ejector)] ejected [key_name(occupant)] from the autodoc during surgery causing damage.")
 	message_admins("[ADMIN_TPMONTY(ejector)] ejected [ADMIN_TPMONTY(occupant)] from the autodoc during surgery causing damage.")
@@ -362,23 +362,23 @@
 /obj/machinery/autodoc/proc/can_enter(mob/living/carbon/human/mover_of_occupant, mob/living/carbon/human/future_occupant, silent = FALSE)
 	if(occupant)
 		if(!silent)
-			to_chat(mover_of_occupant, span_notice("[src] is already occupied!"))
+			to_chat(mover_of_occupant, span_notice("[src] 已被占用！"))
 		return FALSE
 	if(machine_stat & (NOPOWER|BROKEN))
 		if(!silent)
-			to_chat(mover_of_occupant, span_notice("[src] is non-functional!"))
+			to_chat(mover_of_occupant, span_notice("[src] 已失效！"))
 		return FALSE
 	if(mover_of_occupant.incapacitated(TRUE))
 		if(!silent)
-			to_chat(mover_of_occupant, span_notice("You need to be standing for this!"))
+			to_chat(mover_of_occupant, span_notice("你得站着才能这么做！"))
 		return FALSE
 	var/subject_name = mover_of_occupant == future_occupant ? "You" : "Subject"
 	if(future_occupant.stat == DEAD)
 		if(!silent)
-			to_chat(mover_of_occupant, span_notice("[subject_name] need to be alive to enter!"))
+			to_chat(mover_of_occupant, span_notice("[subject_name]必须活着才能进入！"))
 		return FALSE
 	if(future_occupant.abiotic())
-		to_chat(mover_of_occupant, span_warning("[subject_name] cannot have abiotic items on."))
+		to_chat(mover_of_occupant, span_warning("[subject_name] 不能穿戴非生化物品。"))
 		return
 	return TRUE
 
@@ -387,7 +387,7 @@
 	if(!can_enter(mover_of_occupant, future_occupant))
 		return
 	if(mover_of_occupant.skills.getRating(SKILL_SURGERY) < required_skill_level)
-		mover_of_occupant.visible_message(span_notice("[mover_of_occupant] fumbles around figuring out how to use [src]."),
+		mover_of_occupant.visible_message(span_notice("[mover_of_occupant] 笨手笨脚地摸索着如何使用 [src]。"),
 			span_notice("You fumble around figuring out how to use [src]."))
 		var/fumbling_time = max(0 , SKILL_TASK_TOUGH - (SKILL_TASK_EASY * mover_of_occupant.skills.getRating(SKILL_SURGERY))) // 8 seconds. Each skill level decreases it by 3 seconds.
 		if(!do_after(mover_of_occupant, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
@@ -402,7 +402,7 @@
 	update_icon()
 	autodoc_scan(occupant)
 	if(automatic_mode)
-		say("Automatic mode engaged, initialising procedures.")
+		say("自动模式已启动，正在初始化程序。")
 		autostart_timer_id = addtimer(CALLBACK(src, PROC_REF(auto_start)), 5 SECONDS, TIMER_UNIQUE|TIMER_STOPPABLE)
 
 /// Callback to start the surgery operation for automatic mode.
@@ -413,10 +413,10 @@
 	if(active_surgery)
 		return
 	if(!occupant)
-		say("Occupant missing, procedures canceled.")
+		say("乘员缺失，程序已取消。")
 		return
 	if(!automatic_mode)
-		say("Automatic mode disengaged, awaiting manual inputs.")
+		say("自动模式已解除，等待手动输入。")
 		return
 	begin_surgery_operation()
 
@@ -440,7 +440,7 @@
 	var/datum/data/record/final_record = find_medical_record(patient, TRUE)
 	final_record.fields["autodoc_data"] = generate_autodoc_surgery_list(patient)
 	use_power(active_power_usage)
-	visible_message(span_notice("\The [src] pings as it stores the scan report of [patient.real_name]."))
+	visible_message(span_notice("\The [src] 在存储[patient.real_name]的扫描报告时发出提示音。"))
 	playsound(loc, 'sound/machines/ping.ogg', 25, 1)
 
 /// Verb to move yourself into the autodoc.
@@ -461,7 +461,7 @@
 	if(usr.incapacitated())
 		return
 	if(locked && !allowed(usr)) // Check access if locked.
-		to_chat(usr, span_warning("Access denied."))
+		to_chat(usr, span_warning("访问被拒绝。"))
 		playsound(loc,'sound/machines/buzz-two.ogg', 25, 1)
 		return
 	do_eject()
@@ -551,7 +551,7 @@
 	if(QDELETED(occupant) || occupant.stat == DEAD)
 		if(!ishuman(occupant))
 			stack_trace("Non-human occupant made its way into the autodoc: [occupant] | [occupant?.type].")
-		visible_message("[src] buzzes.")
+		visible_message("[src] 发出嗡嗡声。")
 		do_eject(AUTODOC_NOTICE_DEATH) // Kick them out too.
 		return
 
@@ -560,12 +560,12 @@
 		if (R.fields["name"] == occupant.real_name)
 			N = R
 	if(isnull(N))
-		visible_message("[src] buzzes: No records found for occupant.")
+		visible_message("[src] 发出嗡嗡声：未找到乘员记录。")
 		do_eject(AUTODOC_NOTICE_NO_RECORD) // Kick them out too.
 		return
 	surgery_list = automatic_mode ?	N.fields["autodoc_data"] : N.fields["autodoc_manual"]
 	if(!length(surgery_list))
-		visible_message("[src] buzzes, no surgical procedures were queued.")
+		visible_message("[src] 发出嗡嗡声，没有排队等待的手术程序。")
 		return
 
 	start_processing()
@@ -584,7 +584,7 @@
 			if(SURGERY_PROCEDURE_EXTERNAL_BLOOD)
 				blood_transfer = 8 // Double IV stand rate.
 		surgery_list -= surgery_in_list
-	visible_message("[src] begins to operate, the pod locking shut with a loud click.")
+	visible_message("[src]开始运作，舱门伴随着一声响亮的咔哒声锁闭。")
 	loop_surgery_operation()
 	update_icon()
 
@@ -605,7 +605,7 @@
 			switch(active_surgery.surgery_procedure)
 				if(SURGERY_PROCEDURE_ORGAN_DAMAGE)
 					if(!active_surgery.checked_for_necessity)
-						say("Beginning organ restoration.")
+						say("开始器官修复。")
 						active_surgery.checked_for_necessity = TRUE
 						if(!organ_ref)
 							handle_unnecessary_surgery()
@@ -638,7 +638,7 @@
 					return
 				if(SURGERY_PROCEDURE_ORGAN_EYES)
 					if(!active_surgery.checked_for_necessity)
-						say("Beginning corrective eye surgery.")
+						say("开始矫正性眼部手术。")
 						active_surgery.checked_for_necessity = TRUE
 						if(!organ_ref || !istype(organ_ref, /datum/internal_organ/eyes))
 							handle_unnecessary_surgery()
@@ -666,8 +666,8 @@
 						return
 				if(SURGERY_PROCEDURE_ORGAN_GERMS)
 					if(!active_surgery.checked_for_necessity)
-						say("Beginning organ disinfection.")
-						to_chat(occupant, span_info("You feel a soft prick from a needle."))
+						say("开始器官消毒。")
+						to_chat(occupant, span_info("你感到一阵轻微的针刺感。"))
 						active_surgery.checked_for_necessity = TRUE
 					var/datum/reagent/spaceacillin_reagent = GLOB.chemical_reagents_list[/datum/reagent/medicine/spaceacillin]
 					var/injection_amount = min(3, spaceacillin_reagent.overdose_threshold - occupant.reagents.get_reagent_amount(/datum/reagent/medicine/spaceacillin))
@@ -680,7 +680,7 @@
 			switch(active_surgery.surgery_procedure)
 				if(SURGERY_PROCEDURE_LIMB_INTERNAL)
 					if(!active_surgery.checked_for_necessity)
-						say("Beginning internal bleeding procedure.")
+						say("开始内出血处理程序。")
 						active_surgery.checked_for_necessity = TRUE
 						if(!limb_ref)
 							handle_unnecessary_surgery()
@@ -701,7 +701,7 @@
 					return
 				if(SURGERY_PROCEDURE_LIMB_BROKEN)
 					if(!active_surgery.checked_for_necessity)
-						say("Beginning broken bone procedure.")
+						say("开始骨折处理程序。")
 						active_surgery.checked_for_necessity = TRUE
 						if(!limb_ref)
 							handle_unnecessary_surgery()
@@ -733,20 +733,20 @@
 					return
 				if(SURGERY_PROCEDURE_LIMB_MISSING)
 					if(!active_surgery.checked_for_necessity)
-						say("Beginning limb replacement.")
+						say("开始肢体替换。")
 						active_surgery.checked_for_necessity = TRUE
 						if(!limb_ref)
 							handle_unnecessary_surgery()
 							return
 					if(stored_metal < LIMB_METAL_AMOUNT)
-						say("Metal reserves depleted.")
+						say("金属储备已耗尽。")
 						playsound(loc, 'sound/machines/buzz-two.ogg', 15, TRUE)
 						surgery_list -= active_surgery
 						active_surgery = null
 						loop_in_time(1)
 						return
 					if(limb_ref.parent.limb_status & LIMB_DESTROYED)
-						say("Limb attachment failed.")
+						say("肢体枪械配件安装失败。")
 						playsound(loc, 'sound/machines/buzz-two.ogg', 15, TRUE)
 						surgery_list -= active_surgery
 						active_surgery = null
@@ -776,7 +776,7 @@
 					return
 				if(SURGERY_PROCEDURE_LIMB_NECROTIZED)
 					if(!active_surgery.checked_for_necessity)
-						say("Beginning necrotic tissue removal.")
+						say("开始清除坏死组织。")
 						active_surgery.checked_for_necessity = TRUE
 						if(!limb_ref)
 							handle_unnecessary_surgery()
@@ -800,7 +800,7 @@
 					occupant.update_body()
 				if(SURGERY_PROCEDURE_LIMB_IMPLANTS)
 					if(!active_surgery.checked_for_necessity)
-						say("Beginning foreign body removal.")
+						say("开始移除异物。")
 						active_surgery.checked_for_necessity = TRUE
 						if(!limb_ref)
 							handle_unnecessary_surgery()
@@ -837,7 +837,7 @@
 						if(embyro)
 							for(embyro in occupant)
 								loop_in_time(HEMOSTAT_REMOVE_MAX_DURATION)
-								occupant.visible_message(span_warning("[src] defty extracts a wriggling parasite from [occupant]'s ribcage!"))
+								occupant.visible_message(span_warning("[src] 灵巧地从[occupant]的胸腔中取出一条蠕动的寄生虫！"))
 								var/mob/living/carbon/xenomorph/larva/live_larva = locate() in occupant // The larva was fully grown, ready to burst.
 								if(live_larva)
 									live_larva.forceMove(get_turf(src))
@@ -854,8 +854,8 @@
 							return
 				if(SURGERY_PROCEDURE_LIMB_GERMS)
 					if(!active_surgery.checked_for_necessity)
-						say("Beginning limb disinfection.")
-						to_chat(occupant, span_info("You feel a soft prick from a needle."))
+						say("开始肢体消毒。")
+						to_chat(occupant, span_info("你感到一阵轻微的针刺感。"))
 						active_surgery.checked_for_necessity = TRUE
 					var/datum/reagent/spaceacillin_reagent = GLOB.chemical_reagents_list[/datum/reagent/medicine/spaceacillin]
 					var/injection_amount = min(3, spaceacillin_reagent.overdose_threshold - occupant.reagents.get_reagent_amount(/datum/reagent/medicine/spaceacillin))
@@ -866,7 +866,7 @@
 					handle_completed_surgery()
 				if(SURGERY_PROCEDURE_LIMB_FACIAL)
 					if(!active_surgery.checked_for_necessity)
-						say("Beginning facial reconstruction surgery.")
+						say("开始面部重建手术。")
 						active_surgery.checked_for_necessity = TRUE
 						if(!limb_ref)
 							handle_unnecessary_surgery()
@@ -896,7 +896,7 @@
 							head_limb.face_surgery_stage = 0
 				if(SURGERY_PROCEDURE_LIMB_OPEN)
 					if(!active_surgery.checked_for_necessity)
-						say("Beginning facial reconstruction surgery.")
+						say("开始面部重建手术。")
 						active_surgery.checked_for_necessity = TRUE
 						if(!limb_ref || !limb_ref.surgery_open_stage)
 							handle_unnecessary_surgery()
@@ -912,14 +912,14 @@
 
 /// Reports and ends the active surgery as an unnecessary surgery.
 /obj/machinery/autodoc/proc/handle_unnecessary_surgery()
-	say("Procedure has been deemed unnecessary.")
+	say("程序已被判定为不必要。")
 	surgery_list -= active_surgery
 	active_surgery = null
 	loop_in_time(UNNEEDED_DELAY)
 
 /// Reports and ends the active surgery as a completed surgery.
 /obj/machinery/autodoc/proc/handle_completed_surgery(time_to_loop = 1)
-	say("Procedure complete.")
+	say("程序完成。")
 	surgery_list -= active_surgery
 	active_surgery = null
 	loop_in_time(time_to_loop)
@@ -979,7 +979,7 @@
 
 //Auto Doc console that links up to it.
 /obj/machinery/computer/autodoc_console
-	name = "autodoc medical system control console"
+	name = "自动医疗系统控制台"
 	icon = 'icons/obj/machines/cryogenics.dmi'
 	icon_state = "sleeperconsole"
 	screen_overlay = "sleeperconsole_emissive"
@@ -1360,14 +1360,14 @@
 			locked = !locked
 			connected.locked = !connected.locked
 		else
-			to_chat(usr, span_warning("Access denied."))
+			to_chat(usr, span_warning("访问被拒绝。"))
 			playsound(loc,'sound/machines/buzz-two.ogg', 25, 1)
 
 	if(href_list["noticetoggle"]) //Toggle notifications on/off if we have authorization.
 		if(allowed(usr))
 			release_notice = !release_notice
 		else
-			to_chat(usr, span_warning("Access denied."))
+			to_chat(usr, span_warning("访问被拒绝。"))
 			playsound(loc,'sound/machines/buzz-two.ogg', 25, 1)
 
 	if(href_list["automatictoggle"] && !connected.is_active())
@@ -1375,9 +1375,9 @@
 		if(!connected.automatic_mode && connected.autostart_timer_id)
 			deltimer(connected.autostart_timer_id)
 			connected.autostart_timer_id = null
-			connected.say("Automatic mode disengaged, awaiting manual inputs.")
+			connected.say("自动模式已解除，等待手动输入。")
 		if(connected.automatic_mode && !connected.autostart_timer_id)
-			connected.say("Automatic mode engaged, initialising procedures.")
+			connected.say("自动模式已启用，正在初始化程序。")
 			connected.autostart_timer_id = addtimer(CALLBACK(connected, TYPE_PROC_REF(/obj/machinery/autodoc, auto_start)), 5 SECONDS, TIMER_UNIQUE|TIMER_STOPPABLE)
 
 	if(href_list["surgery"])
@@ -1399,7 +1399,7 @@
 
 /obj/machinery/autodoc/examine(mob/living/user)
 	. = ..()
-	to_chat(user, span_notice("Its metal reservoir contains [stored_metal] of [stored_metal_max] units."))
+	to_chat(user, span_notice("其金属储存器包含 [stored_metal] / [stored_metal_max] 单位。"))
 	if(!occupant) //Allows us to reference medical files/scan reports for cryo via examination.
 		return
 	if(!ishuman(occupant))

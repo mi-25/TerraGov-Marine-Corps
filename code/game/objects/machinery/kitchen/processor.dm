@@ -1,5 +1,5 @@
 /obj/machinery/processor
-	name = "Food Processor"
+	name = "食品加工机"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "processor"
 	layer = GIB_LAYER
@@ -41,11 +41,11 @@
 		return
 
 	if(processing)
-		to_chat(user, span_warning("The processor is in the process of processing."))
+		to_chat(user, span_warning("处理器正在处理中。"))
 		return TRUE
 
 	if(length(contents))
-		to_chat(user, span_warning("Something is already in the processing chamber."))
+		to_chat(user, span_warning("处理室中已有物品。"))
 		return TRUE
 
 	var/obj/O = I
@@ -56,9 +56,9 @@
 
 	var/datum/food_processor_process/P = select_recipe(O)
 	if(!P)
-		to_chat(user, span_warning("That probably won't blend."))
+		to_chat(user, span_warning("这大概不会混合。"))
 		return TRUE
-	user.visible_message("[user] puts [O] into [src].", \
+	user.visible_message("[user]将[O]放入[src]。", \
 		"You put the [O] into [src].")
 	user.drop_held_item()
 	O.forceMove(src)
@@ -73,14 +73,14 @@
 	if(user.a_intent != INTENT_HARM)
 		return
 	if(user.grab_state <= GRAB_AGGRESSIVE)
-		to_chat(user, span_warning("You need a better grip to do that!"))
+		to_chat(user, span_warning("你需要握得更稳才能做到！"))
 		return
 	var/mob/living/grabbed_mob = grab.grabbed_thing
-	user.visible_message(span_danger("[user] starts to force [grabbed_mob] into [src]!"), span_notice("You start to force [grabbed_mob] into [src]!"))
+	user.visible_message(span_danger("[user] 开始将 [grabbed_mob] 强行塞入 [src]！"), span_notice("You start to force [grabbed_mob] into [src]!"))
 	if(!do_after(user, 3 SECONDS, NONE, src, BUSY_ICON_HOSTILE))
 		return
 
-	user.visible_message(span_danger("[user] processes [grabbed_mob]!"), span_notice("You process [grabbed_mob]!"), "You hear churning.")
+	user.visible_message(span_danger("[user] 正在处理 [grabbed_mob]！"), span_notice("You process [grabbed_mob]!"), "You hear churning.")
 	log_combat(user, grabbed_mob, "food processed")
 	playsound(loc, 'sound/machines/blender.ogg', 25, 1)
 	grabbed_mob.apply_damage(80, BRUTE, "head", MELEE, TRUE, updating_health = TRUE, attacker = user)
@@ -93,10 +93,10 @@
 	if (src.machine_stat != 0) //NOPOWER etc
 		return
 	if(src.processing)
-		to_chat(user, span_warning("The processor is in the process of processing."))
+		to_chat(user, span_warning("处理器正在处理中。"))
 		return 1
 	if(length(src.contents) == 0)
-		to_chat(user, span_warning("The processor is empty."))
+		to_chat(user, span_warning("处理器为空。"))
 		return 1
 	for(var/O in src.contents)
 		var/datum/food_processor_process/P = select_recipe(O)
@@ -104,7 +104,7 @@
 			stack_trace("[O] in processor doesn't have a suitable recipe.") //-rastaf0
 			continue
 		src.processing = 1
-		user.visible_message(span_notice("[user] turns on [src]."), \
+		user.visible_message(span_notice("[user] 启动了 [src]。"), \
 			"You turn on [src].", \
 			"You hear a food processor.")
 		playsound(src.loc, 'sound/machines/blender.ogg', 25, 1)
@@ -112,5 +112,5 @@
 		sleep(P.time)
 		P.process(src.loc, O)
 		src.processing = 0
-	src.visible_message(span_notice("\the [src] finished processing."), \
+	src.visible_message(span_notice("\the [src] 处理完毕。"), \
 		"You hear the food processor stopping/")

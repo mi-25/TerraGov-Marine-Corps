@@ -1,6 +1,6 @@
 /obj/item/explosive/grenade/sticky/xeno
-	name = "slime grenade"
-	desc = "A fleshy mass oozing acid. It appears to be rapidly decomposing."
+	name = "粘液手雷"
+	desc = "一团渗着酸液的肉质团块。它似乎在快速分解。"
 	greyscale_colors = "#42A500"
 	greyscale_config = /datum/greyscale_config/xenogrenade
 	arm_sound = 'sound/voice/alien/yell_alt.ogg'
@@ -22,7 +22,7 @@
 	attack_hand(xeno_attacker)
 
 /obj/item/explosive/grenade/sticky/xeno/resin
-	desc = "A fleshy mass oozing resin. It appears to be rapidly decomposing."
+	desc = "一团渗出树脂的肉质团块。它似乎在快速分解。"
 	greyscale_colors = "#a200ff"
 
 /obj/item/explosive/grenade/sticky/xeno/resin/prime()

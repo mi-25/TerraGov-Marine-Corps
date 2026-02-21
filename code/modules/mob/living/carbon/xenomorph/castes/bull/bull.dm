@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/bull
 	caste_base_type = /datum/xeno_caste/bull
 	name = "Bull"
-	desc = "A bright red alien with a matching temper."
+	desc = "一只鲜红色的异形，脾气也同样火爆。"
 	icon = 'icons/Xeno/castes/bull.dmi'
 	icon_state = "Bull Walking"
 	bubble_icon = "alienleft"

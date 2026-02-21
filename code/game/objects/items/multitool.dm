@@ -5,8 +5,8 @@
 */
 
 /obj/item/tool/multitool
-	name = "multitool"
-	desc = "You can use this on airlocks or APCs to try to hack them without cutting wires."
+	name = "多功能工具"
+	desc = "你可以用它来尝试破解气闸或APC，无需剪断电线。"
 	icon_state = "multitool"
 	atom_flags = CONDUCT
 	force = 5
@@ -27,14 +27,14 @@
 	var/area/current_area = get_area(src)
 	var/atom/area_apc = current_area ? current_area.get_apc() : null
 	if(!area_apc)
-		to_chat(user, span_warning("ERROR: Could not locate local APC."))
-		user.balloon_alert(user, "could not locate!")
+		to_chat(user, span_warning("错误：无法定位本地 APC。"))
+		user.balloon_alert(user, "无法定位！")
 		return
 
 	var/dist = get_dist(src, area_apc)
 	var/direction = angle_to_dir(Get_Angle(get_turf(src), get_turf(area_apc)))
 	to_chat(user, span_notice("The local APC is located at [span_bold("[dist] units [dir2text(direction)]")]."))
-	user.balloon_alert(user, "[dist] units [dir2text(direction)]")
+	user.balloon_alert(user, "[dist] 单位 [dir2text(direction)]")
 
 	//Create the appearance so we have something to apply the filter to.
 	var/mutable_appearance/apc_appearance = new(area_apc)

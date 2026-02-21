@@ -2,8 +2,8 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 
 // todo replace me with tg code and uncamelcase me
 /obj/structure/bigDelivery
-	desc = "A big wrapped package."
-	name = "large parcel"
+	desc = "一个大包裹。"
+	name = "大型包裹"
 	icon = 'icons/obj/items/storage/misc.dmi'
 	icon_state = "deliverycloset"
 	var/obj/wrapped = null
@@ -57,9 +57,9 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 	..()
 	if(get_dist(src, user) <= 4)
 		if(sortTag)
-			to_chat(user, span_notice("It is labeled \"[sortTag]\""))
+			to_chat(user, span_notice("标签上写着'[sortTag]'。"))
 		if(examtext)
-			to_chat(user, span_notice("It has a note attached which reads, \"[examtext]\""))
+			to_chat(user, span_notice("上面附着一张纸条，写着：'[examtext]'"))
 	return
 
 /obj/structure/bigDelivery/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
@@ -73,14 +73,14 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 	if(istype(I, /obj/item/destTagger))
 		var/obj/item/destTagger/O = I
 		if(!O.currTag)
-			to_chat(user, span_warning("You need to set a destination first!"))
+			to_chat(user, span_warning("你需要先设定目的地！"))
 			return
 
 		if(sortTag == O.currTag)
-			to_chat(user, span_warning("The package is already labeled for [O.currTag]."))
+			to_chat(user, span_warning("包裹已贴好[O.currTag]的标签。"))
 			return
 
-		to_chat(user, span_notice("You have labeled the destination as [O.currTag]."))
+		to_chat(user, span_notice("你已将目的地标记为[O.currTag]。"))
 		if(!sortTag)
 			sortTag = O.currTag
 			update_icon()
@@ -93,9 +93,9 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 			if("Title")
 				var/str = stripped_input(user, "Label text?", "Set label", max_length = MAX_NAME_LEN)
 				if(!str)
-					to_chat(user, span_warning("Invalid text."))
+					to_chat(user, span_warning("无效文本。"))
 					return
-				user.visible_message("\The [user] titles \the [src] with \a [I], marking down: \"[str]\"",\
+				user.visible_message("\The [user] 授予 \the [src] 头衔 \a [I]，并记录下：'[str]'",\
 				span_notice("You title \the [src]: \"[str]\""),\
 				"You hear someone scribbling a note.")
 				name = "[name] ([str])"
@@ -107,21 +107,21 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 			if("Description")
 				var/str = stripped_input(user, "Label text?", "Set label", max_length = MAX_NAME_LEN)
 				if(!str)
-					to_chat(user, span_warning("Invalid text."))
+					to_chat(user, span_warning("无效文本。"))
 					return
 				if(!examtext && !nameset)
 					examtext = str
 					update_icon()
 				else
 					examtext = str
-				user.visible_message("\The [user] labels \the [src] with \a [I], scribbling down: \"[examtext]\"",\
+				user.visible_message("\The [user] 给 \the [src] 贴上了 \a [I] 标签，草草写下：'[examtext]'",\
 				span_notice("You label \the [src]: \"[examtext]\""),\
 				"You hear someone scribbling a note.")
 
 
 /obj/item/smallDelivery
-	desc = "A small wrapped package."
-	name = "small parcel"
+	desc = "一个小包裹。"
+	name = "小包裹"
 	icon = 'icons/obj/items/storage/misc.dmi'
 	icon_state = "deliverycrate3"
 	var/obj/item/wrapped = null
@@ -170,9 +170,9 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 	..()
 	if(get_dist(src, user) <= 4)
 		if(sortTag)
-			to_chat(user, span_notice("It is labeled \"[sortTag]\""))
+			to_chat(user, span_notice("标签上写着'[sortTag]'。"))
 		if(examtext)
-			to_chat(user, span_notice("It has a note attached which reads, \"[examtext]\""))
+			to_chat(user, span_notice("上面附着一张纸条，写着：'[examtext]'"))
 
 /obj/item/smallDelivery/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -182,14 +182,14 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 	if(istype(I, /obj/item/destTagger))
 		var/obj/item/destTagger/O = I
 		if(!O.currTag)
-			to_chat(user, span_warning("You need to set a destination first!"))
+			to_chat(user, span_warning("你需要先设定目的地！"))
 			return
 
 		if(sortTag == O.currTag)
-			to_chat(user, span_warning("The package is already labeled for [O.currTag]."))
+			to_chat(user, span_warning("包裹已标记为[O.currTag]。"))
 			return
 
-		to_chat(user, span_notice("You have labeled the destination as [O.currTag]."))
+		to_chat(user, span_notice("你已将目的地标记为[O.currTag]。"))
 		if(!sortTag)
 			sortTag = O.currTag
 			update_icon()
@@ -202,9 +202,9 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 			if("Title")
 				var/str = stripped_input(user, "Label text?", "Set label", max_length = MAX_NAME_LEN)
 				if(!str)
-					to_chat(user, span_warning("Invalid text."))
+					to_chat(user, span_warning("无效文本。"))
 					return
-				user.visible_message("\The [user] titles \the [src] with \a [I], marking down: \"[str]\"",\
+				user.visible_message("\The [user] 授予 \the [src] 头衔 \a [I]，并记录下：'[str]'",\
 				span_notice("You title \the [src]: \"[str]\""),\
 				"You hear someone scribbling a note.")
 				name = "[name] ([str])"
@@ -216,20 +216,20 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 			if("Description")
 				var/str = stripped_input(user, "Label text?", "Set label", max_length = MAX_NAME_LEN)
 				if(!str)
-					to_chat(user, span_warning("Invalid text."))
+					to_chat(user, span_warning("无效文本。"))
 					return
 				if(!examtext && !nameset)
 					examtext = str
 					update_icon()
 				else
 					examtext = str
-				user.visible_message("\The [user] labels \the [src] with \a [I], scribbling down: \"[examtext]\"",\
+				user.visible_message("\The [user] 给 \the [src] 贴上了 \a [I] 标签，草草写下：'[examtext]'",\
 				span_notice("You label \the [src]: \"[examtext]\""),\
 				"You hear someone scribbling a note.")
 
 
 /obj/item/packageWrap
-	name = "package wrapper"
+	name = "包装器"
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "deliveryPaper"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -277,7 +277,7 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 				P.icon_state = "deliverycrate5"
 				P.name = "huge parcel"
 			src.amount -= 1
-			user.visible_message("\The [user] wraps \a [target] with \a [src].",\
+			user.visible_message("\The [user] 用 \a [src] 包裹住 \a [target]。",\
 			span_notice("You wrap \the [target], leaving [amount] units of paper on \the [src]."),\
 			"You hear someone taping paper around a small object.")
 	else if (istype(target, /obj/structure/closet/crate))
@@ -288,11 +288,11 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 			P.wrapped = O
 			O.loc = P
 			src.amount -= 3
-			user.visible_message("\The [user] wraps \a [target] with \a [src].",\
+			user.visible_message("\The [user] 用 \a [src] 包裹住 \a [target]。",\
 			span_notice("You wrap \the [target], leaving [amount] units of paper on \the [src]."),\
 			"You hear someone taping paper around a large object.")
 		else if(src.amount < 3)
-			to_chat(user, span_warning("You need more paper."))
+			to_chat(user, span_warning("你需要更多纸张。"))
 	else if (istype (target, /obj/structure/closet))
 		var/obj/structure/closet/O = target
 		if (src.amount > 3 && !O.opened)
@@ -301,13 +301,13 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 			O.welded = 1
 			O.loc = P
 			src.amount -= 3
-			user.visible_message("\The [user] wraps \a [target] with \a [src].",\
+			user.visible_message("\The [user] 用 \a [src] 包裹住了 \a [target]。",\
 			span_notice("You wrap \the [target], leaving [amount] units of paper on \the [src]."),\
 			"You hear someone taping paper around a large object.")
 		else if(src.amount < 3)
-			to_chat(user, span_warning("You need more paper."))
+			to_chat(user, span_warning("你需要更多纸张。"))
 	else
-		to_chat(user, span_notice("The object you are trying to wrap is unsuitable for the sorting machinery!"))
+		to_chat(user, span_notice("您试图打包的物品不适合分拣机械！"))
 	if (src.amount <= 0)
 		new /obj/item/trash/c_tube( src.loc )
 		qdel(src)
@@ -317,12 +317,12 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 /obj/item/packageWrap/examine(mob/user)
 	..()
 	if(get_dist(src, user) < 2)
-		to_chat(user, span_notice("There are [amount] units of package wrap left!"))
+		to_chat(user, span_notice("还剩下 [amount] 单位的包装纸！"))
 
 
 /obj/item/destTagger
-	name = "destination tagger"
-	desc = "Used to set the destination of properly wrapped packages."
+	name = "目的地标记器"
+	desc = "用于设置正确包装包裹的目的地。"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "dest_tagger"
 	var/currTag = 0
@@ -363,8 +363,8 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 	openwindow(usr)
 
 /obj/machinery/disposal/deliveryChute
-	name = "Delivery chute"
-	desc = "A chute for big and small packages alike!"
+	name = "投递滑槽"
+	desc = "大小包裹皆可用的滑槽！"
 	density = TRUE
 	icon_state = "intake"
 
@@ -436,25 +436,25 @@ GLOBAL_LIST_EMPTY(tagger_locations)
 		c_mode = !c_mode
 		if(c_mode)
 			playsound(loc, 'sound/items/screwdriver.ogg', 25, 1)
-			to_chat(user, "You remove the screws around the power connection.")
+			to_chat(user, "你卸下了电源接口周围的螺丝。")
 		else
 			playsound(loc, 'sound/items/screwdriver.ogg', 25, 1)
-			to_chat(user, "You attach the screws around the power connection.")
+			to_chat(user, "你将螺丝固定在电源接口周围。")
 
 	else if(istype(I, /obj/item/tool/weldingtool) && c_mode)
 		var/obj/item/tool/weldingtool/W = I
 
 		if(!W.remove_fuel(0, user))
-			to_chat(user, "You need more welding fuel to complete this task.")
+			to_chat(user, "你需要更多焊接燃料来完成此任务。")
 			return
 
 		playsound(loc, 'sound/items/welder2.ogg', 25, 1)
-		to_chat(user, "You start slicing the floorweld off the delivery chute.")
+		to_chat(user, "你开始切割卸货滑槽上的地板焊接点。")
 
 		if(!do_after(user, 20, NONE, src, BUSY_ICON_BUILD, extra_checks = CALLBACK(W, TYPE_PROC_REF(/obj/item/tool/weldingtool, isOn))))
 			return
 
-		to_chat(user, "You sliced the floorweld off the delivery chute.")
+		to_chat(user, "你切断了传送滑槽上的地板焊接点。")
 		var/obj/structure/disposalconstruct/C = new(loc)
 		C.ptype = 8 // 8 = Delivery chute
 		C.update()

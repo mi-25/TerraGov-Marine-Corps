@@ -9,42 +9,42 @@
 * Security
 */
 /obj/item/clothing/under/rank/warden
-	name = "security suit"
-	desc = "A formal security suit for officers complete with Nanotrasen belt buckle."
+	name = "安保服"
+	desc = "一套配有纳米传讯皮带扣的军官正式安保制服。"
 	icon_state = "wardenred"
 	worn_icon_state = "r_suit"
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/rank/warden/white
-	name = "white security suit"
-	desc = "A formal relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood."
+	name = "白色安保服"
+	desc = "一件来自多年前的正式遗物，那时纳米传讯还没决定把制服染红比洗掉血迹更便宜。"
 	icon_state = "wardenwhite"
 	worn_icon_state = "wardenwhite"
 
 /obj/item/clothing/under/rank/security
-	name = "security officer's jumpsuit"
-	desc = "It's made of a slightly sturdier material than standard jumpsuits, to allow for robust protection."
+	name = "安全军官连体服"
+	desc = "它采用比标准连体服更坚固的材料制成，以提供可靠的防护。"
 	icon_state = "securityred"
 	worn_icon_state = "r_suit"
 	siemens_coefficient = 0.9
 
 /obj/item/clothing/under/rank/security/white
-	name = "white security jumpsuit"
-	desc = "A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood."
+	name = "白色安保连体服"
+	desc = "一件来自多年前的战术遗物，那时纳米传讯还没决定把制服染红比洗掉血迹更便宜。"
 	icon_state = "securitywhite"
 	worn_icon_state = "securitywhite"
 
 /obj/item/clothing/under/rank/dispatch
-	name = "dispatcher's uniform"
-	desc = "A dress shirt and khakis with a security patch sewn on."
+	name = "调度员制服"
+	desc = "一件缝有安保徽章的衬衫和卡其裤。"
 	icon_state = "dispatch"
 	armor_protection_flags = CHEST|GROIN|LEGS
 	siemens_coefficient = 0.9
 	adjustment_variants = list()
 
 /obj/item/clothing/under/rank/security2
-	name = "security officer's uniform"
-	desc = "It's made of a slightly sturdier material, to allow for robust protection."
+	name = "安保人员制服"
+	desc = "它采用更坚固的材料制成，以提供可靠的防护。"
 	icon_state = "redshirt2"
 	worn_icon_state = "r_suit"
 	siemens_coefficient = 0.9
@@ -59,8 +59,8 @@
 	adjustment_variants = list()
 
 /obj/item/clothing/under/tactical
-	name = "tactical jumpsuit"
-	desc = "It's made of a slightly sturdier material than standard jumpsuits, to allow for robust protection."
+	name = "战术连体服"
+	desc = "它采用比标准连体服更坚固的材料制成，以提供可靠的防护。"
 	icon_state = "swatunder"
 	siemens_coefficient = 0.9
 
@@ -68,8 +68,8 @@
 * Detective
 */
 /obj/item/clothing/under/rank/det
-	name = "hard-worn suit"
-	desc = "Someone who wears this means business."
+	name = "磨损严重的防护服"
+	desc = "佩戴此物者，绝非等闲之辈。"
 	icon_state = "detective"
 	worn_icon_state = "det"
 	siemens_coefficient = 0.9
@@ -86,8 +86,8 @@
 	)
 
 /obj/item/clothing/under/rank/det/grey
-	name = "noir suit"
-	desc = "A hard-boiled private investigator's grey suit, complete with tie clip."
+	name = "黑色西装"
+	desc = "一位硬汉派私家侦探的灰色西装，配有领带夹。"
 	icon_state = "greydet"
 	worn_icon_state = "greydet"
 	adjustment_variants = list()
@@ -96,21 +96,21 @@
 * Head of Security
 */
 /obj/item/clothing/under/rank/head_of_security
-	desc = "It's a jumpsuit worn by those few with the dedication to achieve the position of \"Head of Security\". It has additional armor to protect the wearer."
-	name = "head of security's jumpsuit"
+	desc = "这是一套为少数有决心晋升至'安保主管'职位者所配备的连体服。它带有额外的护甲，以保护穿着者。"
+	name = "安保主管连体服"
 	icon_state = "hosred"
 	worn_icon_state = "r_suit"
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/head_of_security/white
-	name = "head of security's white jumpsuit"
-	desc = "There are old men, and there are bold men, but there are very few old, bold men."
+	name = "安保主管的白色连体服"
+	desc = "有老成持重者，有勇猛无畏者，但鲜有既老成又勇猛之人。"
 	icon_state = "hoswhite"
 	worn_icon_state = "hoswhite"
 
 /obj/item/clothing/under/rank/head_of_security/alt
-	name = "head of security's turtleneck"
-	desc = "A stylish alternative to the normal head of security jumpsuit, complete with tactical pants."
+	name = "安保主管的高领毛衣"
+	desc = "标准安保连体服的时尚替代品，配有战术长裤。"
 	icon_state = "hosalt"
 	worn_icon_state = "hosalt"
 
@@ -120,8 +120,8 @@
 
 //Jensen cosplay gear
 /obj/item/clothing/under/rank/head_of_security/jensen
-	desc = "You never asked for anything that stylish."
-	name = "head of security's jumpsuit"
+	desc = "你从未要求过如此时髦的东西。"
+	name = "安保主管连体服"
 	icon_state = "jensen"
 	worn_icon_state = "jensen"
 	siemens_coefficient = 0.6
@@ -131,8 +131,8 @@
 *Blart Uniform
 */
 /obj/item/clothing/under/rank/security/mallcop
-	name = "NT mall cop uniform"
-	desc = "The radio and badge are sewn on, what a crappy knock off. Secway not included."
+	name = "纳米传讯商场保安制服"
+	desc = "无线电和徽章是缝上去的，真是劣质的仿冒品。赛格威不包含在内。"
 	icon_state = "mallcop"
 	worn_icon_state = "mallcop"
 
@@ -141,19 +141,19 @@
 */
 
 /obj/item/clothing/under/rank/security/navyblue
-	name = "security officer's uniform"
-	desc = "The latest in fashionable security outfits."
+	name = "安保人员制服"
+	desc = "最新款的安保制服。"
 	icon_state = "officerblueclothes"
 	worn_icon_state = "officerblueclothes"
 
 /obj/item/clothing/under/rank/head_of_security/navyblue
-	desc = "The insignia on this uniform tells you that this uniform belongs to the Head of Security."
-	name = "head of security's uniform"
+	desc = "这身制服上的徽章告诉你，这身制服属于安保主管。"
+	name = "安保主管制服"
 	icon_state = "hosblueclothes"
 	worn_icon_state = "hosblueclothes"
 
 /obj/item/clothing/under/rank/warden/navyblue
-	desc = "The insignia on this uniform tells you that this uniform belongs to the Warden."
-	name = "warden's uniform"
+	desc = "这身制服上的徽章告诉你，这身制服属于典狱长。"
+	name = "典狱长制服"
 	icon_state = "wardenblueclothes"
 	worn_icon_state = "wardenblueclothes"

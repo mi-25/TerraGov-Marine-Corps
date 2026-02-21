@@ -77,7 +77,7 @@
 	set_new_hud(hud_owner = null)
 
 /atom/movable/screen/swap_hand
-	name = "swap hand"
+	name = "切换手"
 	icon_state = "swap_1_m"
 	screen_loc = ui_swaphand1
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -96,14 +96,14 @@
 	icon_state = "swap_1"
 
 /atom/movable/screen/craft
-	name = "crafting menu"
+	name = "制作菜单"
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "craft"
 	screen_loc = ui_crafting
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
 /atom/movable/screen/language_menu
-	name = "language menu"
+	name = "语言菜单"
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "talk_wheel"
 	screen_loc = ui_language_menu
@@ -145,7 +145,7 @@
 	var/hand_tag = ""
 
 /atom/movable/screen/inventory/hand/left
-	name = "l_hand"
+	name = "左手"
 	icon_state = "hand_l"
 	screen_loc = ui_lhand
 	hand_tag = "l"
@@ -163,7 +163,7 @@
 		C.activate_hand(hand_tag)
 
 /atom/movable/screen/inventory/hand/right
-	name = "r_hand"
+	name = "右手"
 	icon_state = "hand_r"
 	screen_loc = ui_rhand
 	hand_tag = "r"
@@ -175,7 +175,7 @@
 	. += "hand_active"
 
 /atom/movable/screen/close
-	name = "close"
+	name = "关闭"
 	plane = ABOVE_HUD_PLANE
 	icon_state = "backpack_close"
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -188,7 +188,7 @@
 
 
 /atom/movable/screen/act_intent
-	name = "intent"
+	name = "意图"
 	icon_state = "help"
 	screen_loc = ui_acti
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -216,7 +216,7 @@
 
 
 /atom/movable/screen/mov_intent
-	name = "run/walk toggle"
+	name = "奔跑/行走切换"
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "running"
 	screen_loc = ui_movi
@@ -242,7 +242,7 @@
 	icon = 'icons/mob/screen/alien.dmi'
 
 /atom/movable/screen/rest
-	name = "rest"
+	name = "休息"
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "act_rest"
 	screen_loc = ui_above_movement
@@ -262,7 +262,7 @@
 	icon_state = "act_rest[L.resting ? "0" : ""]"
 
 /atom/movable/screen/pull
-	name = "stop pulling"
+	name = "停止拖拽"
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "pull0"
 	screen_loc = ui_above_movement
@@ -286,7 +286,7 @@
 
 
 /atom/movable/screen/resist
-	name = "resist"
+	name = "抵抗"
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "act_resist"
 	screen_loc = ui_above_intent
@@ -302,7 +302,7 @@
 
 
 /atom/movable/screen/storage
-	name = "storage"
+	name = "储物"
 	icon_state = "block"
 	screen_loc = "7,7 to 10,8"
 
@@ -355,7 +355,7 @@
 			color = null
 
 /atom/movable/screen/throw_catch
-	name = "throw/catch"
+	name = "投掷/接住"
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "act_throw_off"
 	screen_loc = ui_drop_throw
@@ -369,7 +369,7 @@
 	C.toggle_throw_mode()
 
 /atom/movable/screen/zone_sel
-	name = "damage zone"
+	name = "伤害区域"
 	icon_state = "zone_sel"
 	screen_loc = ui_zonesel
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -487,7 +487,7 @@
 	z_prefix = "ay_"
 
 /atom/movable/screen/healths
-	name = "health"
+	name = "生命值"
 	icon_state = "health0"
 	screen_loc = ui_health
 	icon = 'icons/mob/screen/health.dmi'
@@ -498,7 +498,7 @@
 
 /atom/movable/screen/stamina_hud
 	icon = 'icons/mob/screen/health.dmi'
-	name = "stamina"
+	name = "耐力"
 	icon_state = "stamloss-14"
 	screen_loc = UI_STAMINA
 	mouse_opacity = MOUSE_OPACITY_ICON
@@ -525,9 +525,9 @@
 		return
 	var/mob/living/living_user = usr
 	if(living_user.getStaminaLoss() < 0 && living_user.max_stamina)
-		living_user.balloon_alert(living_user, "stamina buffer:[(-living_user.getStaminaLoss() * 100 / living_user.max_stamina)]%")
+		living_user.balloon_alert(living_user, "耐力缓冲：[(-living_user.getStaminaLoss() * 100 / living_user.max_stamina)]%")
 		return
-	living_user.balloon_alert(living_user, "you have [living_user.getStaminaLoss()] stamina loss")
+	living_user.balloon_alert(living_user, "你损失了[living_user.getStaminaLoss()]点体力")
 
 
 /atom/movable/screen/component_button
@@ -574,7 +574,7 @@
 	return "WEST[coord_col]:[coord_col_offset],NORTH[coord_row]:[coord_row_offset]"
 
 /atom/movable/screen/action_button/hide_toggle
-	name = "Hide Buttons"
+	name = "隐藏按钮"
 	icon = 'icons/mob/actions.dmi'
 	icon_state = "hide"
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -585,16 +585,16 @@
 	usr.hud_used.action_buttons_hidden = !usr.hud_used.action_buttons_hidden
 	hidden = usr.hud_used.action_buttons_hidden
 	if(hidden)
-		name = "Show Buttons"
+		name = "显示按钮"
 		icon_state = "show"
 	else
-		name = "Hide Buttons"
+		name = "隐藏按钮"
 		icon_state = "hide"
 	usr.update_action_buttons()
 	return TRUE
 
 /atom/movable/screen/SL_locator
-	name = "sl locator"
+	name = "从属定位器"
 	icon = 'icons/mob/screen/arrows.dmi'
 	icon_state = "Blue_arrow"
 	alpha = 0 //invisible
@@ -602,7 +602,7 @@
 	screen_loc = ui_sl_dir
 
 /atom/movable/screen/drop
-	name = "drop"
+	name = "丢弃"
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "act_drop"
 	screen_loc = ui_drop_throw
@@ -612,7 +612,7 @@
 	usr.drop_item_v()
 
 /atom/movable/screen/toggle_inv
-	name = "toggle inventory"
+	name = "切换物品栏"
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "toggle"
 	screen_loc = ui_inventory
@@ -637,7 +637,7 @@
  * Displays a number and an icon representing the ammo for up to 4 at a time
  */
 /atom/movable/screen/ammo
-	name = "ammo"
+	name = "弹药"
 	icon = 'icons/mob/ammoHUD.dmi'
 	icon_state = "ammo"
 	screen_loc = ui_ammo1
@@ -766,37 +766,37 @@
 	return ..()
 
 /atom/movable/screen/arrow/leader_tracker_arrow
-	name = "hive leader tracker arrow"
+	name = "蜂巢领袖追踪箭头"
 	icon_state = "Blue_arrow"
 	duration = XENO_RALLYING_POINTER_DURATION
 
 /atom/movable/screen/arrow/silo_damaged_arrow
-	name = "Hive damaged tracker arrow"
+	name = "蜂巢受损追踪箭头"
 	icon_state = "Red_arrow"
 	duration = XENO_STRUCTURE_DAMAGE_POINTER_DURATION
 
 /atom/movable/screen/arrow/turret_attacking_arrow
-	name = "Turret attacking arrow"
+	name = "炮塔攻击箭头"
 	icon_state = "Green_arrow"
 	duration = XENO_STRUCTURE_DAMAGE_POINTER_DURATION
 
 /atom/movable/screen/arrow/attack_order_arrow
-	name = "attack order arrow"
+	name = "攻击指令箭头"
 	icon_state = "Attack_arrow"
 	duration = CIC_ORDER_DURATION
 
 /atom/movable/screen/arrow/rally_order_arrow
-	name = "Rally order arrow"
+	name = "集结命令箭头"
 	icon_state = "Rally_arrow"
 	duration = CIC_ORDER_DURATION
 
 /atom/movable/screen/arrow/defend_order_arrow
-	name = "Defend order arrow"
+	name = "防御命令箭头"
 	icon_state = "Defend_arrow"
 	duration = CIC_ORDER_DURATION
 
 /atom/movable/screen/arrow/hunter_mark_arrow
-	name = "hunter mark arrow"
+	name = "猎手标记箭"
 	icon_state = "Red_arrow"
 	duration = HUNTER_PSYCHIC_TRACE_COOLDOWN
 	color = COLOR_ORANGE

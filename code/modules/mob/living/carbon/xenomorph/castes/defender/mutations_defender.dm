@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/carapace_waxing
 	name = "Carapace Waxing"
-	desc = "Regenerate Skin additionally reduces various debuffs by 1/2/3 stacks or 2/4/6 seconds."
+	desc = "再生皮肤额外减少各类减益效果1/2/3层或2/4/6秒。"
 	/// For each structure, the amount (in stacks / 2x seconds) that Regenerate Skin will increase negative status effects by.
 	var/debuffs_per_structure = -1
 
@@ -27,7 +27,7 @@
 
 /datum/mutation_upgrade/shell/brittle_upclose
 	name = "Brittle Upclose"
-	desc = "You can no longer be staggered by projectiles and gain 5/7.5/10 bullet armor, but lose 30/35/40 melee armor. Projectiles from pointblank range negate this bonus bullet armor."
+	desc = "你不再会被弹道武器击退，并获得5/7.5/10点弹道护甲，但失去30/35/40点近战护甲。来自近距离的弹道攻击会无视此额外弹道护甲。"
 	/// For the first structure, the amount of bullet armor to increase by.
 	var/bullet_armor_increase_initial = 2.5
 	/// For each structure, the amount of additional bullet armor to increase by.
@@ -79,7 +79,7 @@
 
 /datum/mutation_upgrade/shell/carapace_regrowth
 	name = "Carapace Regrowth"
-	desc = "Regenerate Skin additionally recovers 50/60/70% of your maximum health, but will reduce all of your armor values by 30 for 6 seconds."
+	desc = "再生皮肤额外恢复50/60/70%的最大生命值，但会使你的所有护甲值降低30点，持续6秒。"
 	/// For the first structure, the amount to increase Regenerate Skin's healing multiplier by.
 	var/heal_multiplier_initial = 0.4
 	/// For each structure, the amount to increase Regenerate Skin's healing multiplier by.
@@ -126,7 +126,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/breathtaking_spin
 	name = "Breathtaking Spin"
-	desc = "Tail Swipe deals stamina damage instead. It no longer paralyzes and deals 1.5x/1.75/2x more damage."
+	desc = "甩尾攻击现在造成耐力伤害。它不再造成麻痹，并且造成1.5倍/1.75倍/2倍更多伤害。"
 	/// For the first structure, the amount to increase Tail Swipe's damage multiplier by.
 	var/damage_multiplier_initial = 1.25
 	/// For each structure, the amount to increase Tail Swipe's damage multiplier by.
@@ -170,7 +170,7 @@
 
 /datum/mutation_upgrade/spur/power_spin
 	name = "Power Spin"
-	desc = "Tail Swipe's knockback is increased by 1 tile and staggers for 1/2/3 seconds."
+	desc = "甩尾击退距离增加1格，并造成1/2/3秒踉跄。"
 	/// The amount to increase Tail Swipe's knockback by.
 	var/knockback_amount = 1
 	/// For each structure, the amount of deciseconds to increase Tail Swipe's stagger duration by.
@@ -210,7 +210,7 @@
 
 /datum/mutation_upgrade/spur/sharpening_claws
 	name = "Sharpening Claws"
-	desc = "For each 10 sunder / missing armor, your melee damage multiplier is increased by 3/6/9%."
+	desc = "每有10点破甲/缺失护甲，你的近战伤害倍率增加3/6/9%。"
 	/// The amount of sunder used to determine the final multiplier.
 	var/sunder_repeating_threshold = 10
 	/// For each structure, the amount to increase the melee damage modifier by for each time the sunder threshold is passed.
@@ -257,7 +257,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/carapace_sweat
 	name = "Carapace Sweat"
-	desc = "Regenerate Skin can be used while on fire and will apply Resin Jelly to you for 2/4/6 seconds. If you were on fire, you will be extinguished and set nearby humans on fire."
+	desc = "再生皮肤可在着火时使用，并会为你施加2/4/6秒的树脂凝胶。如果你当时正在着火，你将被熄灭，并使附近的人类着火。"
 	/// For each structure, the amount of deciseconds that the Resin Jelly status effect will have.
 	var/duration_per_structure = 2 SECONDS
 
@@ -279,7 +279,7 @@
 
 /datum/mutation_upgrade/veil/slow_and_steady
 	name = "Slow and Steady"
-	desc = "You are no longer immobilized during Fortify. However, your move delay is increased by 1.2/1/0.8 seconds while it is active."
+	desc = "你不再会在'坚守阵地'期间被定身。然而，激活期间，你的移动延迟会增加1.2/1/0.8秒。"
 	/// For the first structure, the amount of deciseconds of delay to add to movement while Fortify is active.
 	var/movement_delay_initial = 1.4 SECONDS
 	/// For each structure, the amount of deciseconds of delay to add to movement while Fortify is active.
@@ -320,7 +320,7 @@
 
 /datum/mutation_upgrade/veil/carapace_sharing
 	name = "Carapace Sharing"
-	desc = "Regenerate Skin additionally removes 8/16/24% sunder of a nearby friendly xenomorph. This prioritizes those with the highest sunder."
+	desc = "再生皮肤还会为附近的一名友方异形移除8/16/24%的破甲。此效果优先作用于破甲值最高的目标。"
 	/// For each structure, the amount to increase Regenerate Skin's ally sunder healing multiplier by.
 	var/ally_unsunder_multiplier_per_structure = 0.08
 

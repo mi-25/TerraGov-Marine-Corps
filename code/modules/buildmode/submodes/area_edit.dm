@@ -32,7 +32,7 @@
 	var/target_path = input(user, "Enter typepath:", "Typepath", "/area")
 	var/area/chosen_area = pick_closest_path(target_path, make_types_fancy(subtypesof(/area)))
 	if(!ispath(chosen_area, /area))
-		to_chat(user, span_warning("Invalid area type."))
+		to_chat(user, span_warning("无效区域类型。"))
 		return
 
 	var/areaname = input(user, "Enter area name (leave \"Area\" for default name of the type):", "Area name", "Area")
@@ -56,7 +56,7 @@
 	var/turf/T = get_turf(object)
 	selected_area = get_area(T)
 	areaimage.loc = selected_area // color our area
-	to_chat(user, span_notice("Succesfully selected area of type [selected_area.type]."))
+	to_chat(user, span_notice("成功选择区域类型[selected_area.type]。"))
 
 /datum/buildmode_mode/selection/area_edit/handle_selected_area(client/user, params)
 	var/list/modifiers = params2list(params)
@@ -67,5 +67,5 @@
 			return
 		for(var/turf/T in block(get_turf(corner_a), get_turf(corner_b)))
 			selected_area.contents.Add(T)
-		to_chat(user, span_notice("Success."))
+		to_chat(user, span_notice("成功。"))
 		log_admin("Build Mode: [key_name(user)] set the area of the region from [AREACOORD(corner_a)] through [AREACOORD(corner_b)] to [selected_area].")

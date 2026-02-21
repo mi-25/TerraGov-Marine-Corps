@@ -211,7 +211,7 @@
 			else
 				msg += "[span_deadsay("...")]\n"
 		if(ishuman(user) && !user.stat && Adjacent(user))
-			user.visible_message("<b>[user]</b> checks [src]'s pulse.", "You check [src]'s pulse.", null, 4)
+			user.visible_message("<b>[user]</b>检查[src]的脉搏。", "You check [src]'s pulse.", null, 4)
 		addtimer(CALLBACK(src, PROC_REF(take_pulse), user), 15)
 	msg += "<span class='alert'>"
 
@@ -615,9 +615,9 @@
 		return
 	var/pulse_taken = get_pulse(GETPULSE_HAND)
 	if(pulse_taken == PULSE_NONE)
-		to_chat(user, span_deadsay("[p_they(TRUE)] [p_have()] no pulse..."))
+		to_chat(user, span_deadsay("[p_they(TRUE)] [p_have()] 没有脉搏了……"))
 	else
-		to_chat(user, span_deadsay("[p_their(TRUE)] pulse is [pulse_taken]."))
+		to_chat(user, span_deadsay("[p_their(TRUE)]脉搏为[pulse_taken]。"))
 
 //Helper procedure. Called by /mob/living/carbon/human/examine() and /mob/living/carbon/human/Topic() to determine HUD access to security and medical records.
 /proc/hasHUD(mob/M, hudtype)

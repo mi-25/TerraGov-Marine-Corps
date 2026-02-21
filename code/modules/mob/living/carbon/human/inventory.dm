@@ -524,7 +524,7 @@
 		return
 	log_combat(src, M, "attempted to remove [key_name(I)] ([slot_to_process])")
 
-	M.visible_message(span_danger("[src] tries to remove [M]'s [I.name]."), \
+	M.visible_message(span_danger("[src]试图取下[M]的[I.name]。"), \
 					span_userdanger("[src] tries to remove [M]'s [I.name]."), null, 5)
 	if(do_after(src, I.getstripdelay(), NONE, M, BUSY_ICON_HOSTILE))
 		if(Adjacent(M) && I && I == M.get_item_by_slot(slot_to_process))

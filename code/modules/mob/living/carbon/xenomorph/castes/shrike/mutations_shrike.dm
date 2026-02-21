@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/lone_healer
 	name = "Lone Healer"
-	desc = "Psychic Cure can now target yourself. Healing yourself is only 50/60/70% as effective."
+	desc = "心灵治愈现在可以以自身为目标。治疗自身的效果只有50/60/70%。"
 	/// For the first structure, the multiplier of Psychic Cure's initial healing power to add to the ability.
 	var/self_heal_multiplier_initial = -0.6
 	/// For each structure, the multiplier of Psychic Cure's initial healing power to add to the ability.
@@ -43,7 +43,7 @@
 
 /datum/mutation_upgrade/shell/shared_cure
 	name = "Shared Cure"
-	desc = "20/35/50% of the health restored from Psychic Cure is reapplied to you."
+	desc = "20/35/50% 的'心灵治愈'所恢复的生命值会重新施加于你自身。"
 	/// For the first structure, the percentage of restored health from Psychic Cure to heal the owner. 1 = 100%, 0.01 = 1%.
 	var/rebound_initial = 0.05
 	/// For each structure, the additional percentage of restored health from Psychic Cure to heal the owner.
@@ -81,7 +81,7 @@
 
 /datum/mutation_upgrade/shell/resistant_cure
 	name = "Resistant Cure"
-	desc = "Psychic Cure now also applies the effects of resin jelly to you and your target for 40/50/60 seconds."
+	desc = "心灵治愈现在还会为你和你的目标施加树脂凝胶的效果，持续40/50/60秒。"
 	/// For the first structure, the amount of deciseconds that Psychic Cure will give fire immunity.
 	var/duration_initial = 30 SECONDS
 	/// For each structure, the amount of deciseconds that Psychic Cure will give fire immunity.
@@ -122,7 +122,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/smashing_fling
 	name = "Smashing Fling"
-	desc = "Psychic Fling deals 150/175/200% damage equal to your melee damage, enables collusions, but no longer immediately stuns. If the target collides with a human, object, or wall: both are briefly paralyzed and dealt damage again."
+	desc = "心灵甩投造成相当于你近战伤害的150/175/200%伤害，可引发碰撞，但不再立即击晕。如果目标与人类、物体或墙壁碰撞：双方都会被短暂麻痹并再次受到伤害。"
 	/// For the first structure, the multiplier of the owner's melee damage to deal as both immediate and collusion damage.
 	var/multiplier_initial = 1.25
 	/// For each structure, the multiplier of the owner's melee damage to deal as both immediate and collusion damage.
@@ -168,7 +168,7 @@
 
 /datum/mutation_upgrade/spur/gravity_tide
 	name = "Gravity Tide"
-	desc = "Unrelenting Force pulls things towards you then pushes them away. The distance they are thrown is increased by 2/3/4."
+	desc = "不灭之力将物体拉向你，然后将其推开。投掷距离增加2/3/4。"
 	/// For the first structure, the amount of distance that Unrelenting Force will throw things.
 	var/distance_initial = 1
 	/// For each structure, the additional amount of distance that Unrelenting Force will throw things.
@@ -208,7 +208,7 @@
 
 /datum/mutation_upgrade/spur/body_fling
 	name = "Body Fling"
-	desc = "Psychic Fling can be used on yourself and allied xenomorphs. Humans who are hit by a flung xenomorph are paralyzed for 2 seconds and dealt 150/175/200% of your slash damage."
+	desc = "心灵甩投可对自身和友方异形使用。被甩投异形击中的人类将麻痹2秒，并受到相当于你斩击伤害150/175/200%的伤害。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/veil/psychic_choke
 	)
@@ -258,7 +258,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/delayed_condition
 	name = "Delayed Condition"
-	desc = "Psychic Heal grants slowdown immunity and delays all inbound stun, knockdown, and stagger effects caused to your target by 8/10/12 seconds. At the end of this duration, delayed status effects are reapplied."
+	desc = "心灵治愈赋予目标减速免疫，并延迟所有对其造成的击晕、击倒和踉跄效果8/10/12秒。延迟结束后，状态效果将重新施加。"
 	/// For the first structure, the amount of deciseconds that Psychic Cure will delay various status effects by.
 	var/duration_initial = 6 SECONDS
 	/// For each structure, the amount of deciseconds that Psychic Cure will delay various status effects by.
@@ -296,7 +296,7 @@
 
 /datum/mutation_upgrade/veil/deflective_force
 	name = "Deflective Force"
-	desc = "Unrelenting Force now reflects all projectiles in its affected area. Reflecting more than 50 projectile damage resets Psychic Scream's cooldown to 50/40/30% of its original value."
+	desc = "不屈之力现在会反弹其影响区域内的所有抛射物。反弹超过50点抛射物伤害时，会将心灵尖啸的冷却时间重置为原始值的50/40/30%。"
 	/// For the first structure, the amount to multiply Psychic Scream's cooldown by if enough projectile damage was reflected.
 	var/multiplier_initial = 0.6
 	/// For each structure, the additional amount to multiply Psychic Scream's cooldown by if enough projectile damage was reflected.
@@ -334,7 +334,7 @@
 
 /datum/mutation_upgrade/veil/psychic_choke
 	name = "Psychic Choke"
-	desc = "You lose the ability Psychic Fling in exchange for the ability Psychic Choke. Psychic Choke lets you paralyze a marine as long you channel it. The damage threshold to disrupt Psychic Choke is 20/35/50."
+	desc = "你失去了心灵甩投能力，换来了心灵扼喉能力。心灵扼喉能让你在持续引导时麻痹一名陆战队员。打断心灵扼喉的伤害阈值为20/35/50。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/spur/body_fling
 	)

@@ -1,7 +1,7 @@
 //Base Instance
 
 /area/outpost
-	name = "Research outpost"
+	name = "研究前哨站"
 
 
 //	ceiling = CEILING_GLASS
@@ -12,14 +12,14 @@
 // LZ Areas
 
 /area/outpost/lz1
-	name = "Landing Zone 1"
+	name = "着陆区1"
 	ceiling = CEILING_NONE
 	icon_state="red"
 	outside = FALSE
 	minimap_color = MINIMAP_AREA_LZ
 
 /area/outpost/lz2
-	name = "Landing Zone 2"
+	name = "着陆区2"
 	ceiling = CEILING_NONE
 	icon_state="red"
 	outside = FALSE
@@ -30,25 +30,25 @@
 // Cargo Areas
 
 /area/outpost/cargo
-	name = "Cargo Bay"
+	name = "货舱"
 	icon_state="orange"
 	ceiling = CEILING_GLASS
 	outside = FALSE
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/outpost/cargo/office
-	name = "Cargo Office"
+	name = "货物办公室"
 	icon_state="orange"
 	ceiling = CEILING_GLASS
 
 /area/outpost/cargo/security
-	name = "Cargo Security Outpost"
+	name = "货物安保前哨站"
 	icon_state="brig"
 	ceiling = CEILING_GLASS
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/outpost/cargo/engineering
-	name = "Cargo Engineering"
+	name = "货物工程"
 	icon_state="orange"
 	ceiling = CEILING_GLASS
 	minimap_color = MINIMAP_AREA_REQ
@@ -56,57 +56,57 @@
 // Cave Areas, cave.
 
 /area/outpost/caves
-	name = "Caves"
+	name = "洞穴"
 	icon_state="cave"
 	ceiling = CEILING_NONE
 	outside = FALSE
 	always_unpowered = TRUE
 
 /area/outpost/caves/central
-	name = "Central Caves"
+	name = "中央洞穴"
 	icon_state="cave"
 	ceiling = CEILING_NONE
 
 /area/outpost/caves/north
-	name = "Northern Caves"
+	name = "北部洞穴"
 	icon_state="cave"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	minimap_color = MINIMAP_AREA_CAVES
 
 /area/outpost/caves/north_east
 	// Note: This is where the hive is
-	name = "North Eastern Caves"
+	name = "东北洞穴"
 	icon_state="cave"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	minimap_color = MINIMAP_AREA_CAVES
 
 /area/outpost/caves/east
-	name = "Eastern Caves"
+	name = "东部洞穴"
 	icon_state="cave"
 	ceiling = CEILING_NONE
 
 /area/outpost/caves/south_east
-	name = "South Eastern Caves"
+	name = "东南洞穴"
 	icon_state="cave"
 	ceiling = CEILING_NONE
 
 /area/outpost/caves/south
-	name = "Southern Caves"
+	name = "南部洞穴"
 	icon_state="cave"
 	ceiling = CEILING_NONE
 
 /area/outpost/caves/south_west
-	name = "South Western Caves"
+	name = "西南洞穴"
 	icon_state="cave"
 	ceiling = CEILING_NONE
 
 /area/outpost/caves/west
-	name = "Western Caves"
+	name = "西部洞穴"
 	icon_state="cave"
 	ceiling = CEILING_NONE
 
 /area/outpost/caves/north_west
-	name = "North Western Caves"
+	name = "西北洞穴"
 	icon_state="cave"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	minimap_color = MINIMAP_AREA_CAVES
@@ -116,54 +116,54 @@
 // Yard Areas, there are a lot of these because there are a lot of open /areas.
 
 /area/outpost/yard
-	name = "Yard"
+	name = "船坞"
 	icon_state="thunder"
 	ceiling = CEILING_NONE
 	minimap_color = MINIMAP_AREA_COLONY
 	always_unpowered = TRUE
 
 /area/outpost/yard/central
-	name = "Central Yard"
+	name = "中央庭院"
 	icon_state="thunder"
 	ceiling = CEILING_NONE
 
 /area/outpost/yard/north
-	name = "Northern Yard"
+	name = "北部庭院"
 	icon_state="thunder"
 	ceiling = CEILING_NONE
 
 /area/outpost/yard/north_east
-	name = "North Eastern Yard"
+	name = "东北侧船坞"
 	icon_state="thunder"
 	ceiling = CEILING_NONE
 
 /area/outpost/yard/east
-	name = "Eastern Yard"
+	name = "东部庭院"
 	icon_state="thunder"
 	ceiling = CEILING_NONE
 
 /area/outpost/yard/south_east
-	name = "South Eastern Yard"
+	name = "东南船坞"
 	icon_state="thunder"
 	ceiling = CEILING_NONE
 
 /area/outpost/yard/south
-	name = "Southern Yard"
+	name = "南院"
 	icon_state="thunder"
 	ceiling = CEILING_NONE
 
 /area/outpost/yard/south_west
-	name = "South West Yard"
+	name = "西南庭院"
 	icon_state="thunder"
 	ceiling = CEILING_NONE
 
 /area/outpost/yard/west
-	name = "Western Yard"
+	name = "西部庭院"
 	icon_state="thunder"
 	ceiling = CEILING_NONE
 
 /area/outpost/yard/north_west
-	name = "North Western Yard"
+	name = "西北庭院"
 	icon_state="thunder"
 	ceiling = CEILING_NONE
 
@@ -172,19 +172,19 @@
 // Arrivals Areas, where you arrive
 
 /area/outpost/arrivals
-	name = "Arrivals"
+	name = "抵达区"
 	icon_state="entry"
 	ceiling = CEILING_GLASS
 	outside = FALSE
 
 /area/outpost/arrivals/securitylz1
-	name = "LZ1 Security Outpost"
+	name = "LZ1 安全前哨站"
 	icon_state="brig"
 	ceiling = CEILING_GLASS
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/outpost/arrivals/securitylz2
-	name = "LZ2 Security Outpost"
+	name = "LZ2 安全前哨站"
 	icon_state="brig"
 	ceiling = CEILING_GLASS
 	minimap_color = MINIMAP_AREA_SEC
@@ -192,43 +192,43 @@
 // Hallway Areas, a few of these, somewhat annoying as the south hallway branches out more than the others.
 
 /area/outpost/hallway
-	name = "Hallway"
+	name = "走廊"
 	icon_state="green"
 	ceiling = CEILING_GLASS
 	outside = FALSE
 
 /area/outpost/hallway/northern
-	name = "Northern Hallway"
+	name = "北部走廊"
 	icon_state="green"
 	ceiling = CEILING_GLASS
 
 /area/outpost/hallway/central
-	name = "Central Hallway"
+	name = "中央走廊"
 	icon_state="green"
 	ceiling = CEILING_GLASS
 
 /area/outpost/hallway/west
-	name = "Western Hallway"
+	name = "西侧走廊"
 	icon_state="green"
 	ceiling = CEILING_GLASS
 
 /area/outpost/hallway/south_cent
-	name = "South Central Hallway"
+	name = "南侧中央走廊"
 	icon_state="green"
 	ceiling = CEILING_GLASS
 
 /area/outpost/hallway/south_east
-	name = "South Eastern Hallway"
+	name = "东南走廊"
 	icon_state="green"
 	ceiling = CEILING_GLASS
 
 /area/outpost/hallway/south_west
-	name = "South Western Hallway"
+	name = "西南走廊"
 	icon_state="green"
 	ceiling = CEILING_GLASS
 
 /area/outpost/hallway/east
-	name = "South Western Hallway"
+	name = "西南走廊"
 	icon_state="green"
 	ceiling = CEILING_GLASS
 
@@ -237,30 +237,30 @@
 // Medbay
 
 /area/outpost/medbay
-	name="Medbay"
+	name="医疗舱"
 	icon_state="blue"
 	ceiling = CEILING_GLASS
 	outside = FALSE
 	minimap_color = MINIMAP_AREA_MEDBAY
 
 /area/outpost/medbay/security
-	name="Medbay Security Outpost"
+	name="医疗区安全前哨站"
 	icon_state="blue"
 	ceiling = CEILING_GLASS
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/outpost/medbay/storage
-	name="Medbay Storage"
+	name="医疗舱储藏室"
 	icon_state="blue"
 	ceiling = CEILING_GLASS
 
 /area/outpost/medbay/surgery
-	name="Surgery"
+	name="手术"
 	icon_state="blue"
 	ceiling = CEILING_GLASS
 
 /area/outpost/medbay/chemistry
-	name="Chemistry"
+	name="化学"
 	icon_state="blue"
 	ceiling = CEILING_GLASS
 
@@ -269,7 +269,7 @@
 // Dorms, it feels like a waste of space to put in a comment for a single /area.
 
 /area/outpost/dormitories
-	name = "Dormitiories"
+	name = "宿舍区"
 	icon_state="Sleep"
 	ceiling = CEILING_GLASS
 	outside = FALSE
@@ -278,24 +278,24 @@
 // Brig
 
 /area/outpost/brig
-	name = "Brig"
+	name = "禁闭室"
 	icon_state="brig"
 	ceiling = CEILING_METAL
 	outside = FALSE
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/outpost/brig/gear_room
-	name = "Brig Gear Room"
+	name = "禁闭室装备间"
 	icon_state="brig"
 	ceiling = CEILING_METAL
 
 /area/outpost/brig/wardens_office
-	name = "Brig Gear Room"
+	name = "禁闭室装备间"
 	icon_state="brig"
 	ceiling = CEILING_METAL
 
 /area/outpost/brig/armoury
-	name = "Armoury"
+	name = "军械库"
 	icon_state="brig"
 	ceiling = CEILING_METAL
 
@@ -304,31 +304,31 @@
 // Science, man turns himself into a pickle, this is somehow a funny joke and you should laugh. //ha ha very funny
 
 /area/outpost/science
-	name = "Science Department"
+	name = "科研部"
 	icon_state="purple"
 	ceiling = CEILING_METAL
 	outside = FALSE
 	minimap_color = MINIMAP_AREA_RESEARCH
 
 /area/outpost/science/research
-	name = "Research and Development"
+	name = "研发部"
 	icon_state="purple"
 	ceiling = CEILING_METAL
 
 /area/outpost/science/security
-	name = "Science Security Outpost"
+	name = "科研安全前哨站"
 	icon_state="brig"
 	ceiling = CEILING_METAL
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/outpost/science/hydponics
 	// LOCAL DEGENERATE BOTANIST STOLE THE CHEM DISPENSER AGAIN
-	name = "Plant Sciences"
+	name = "植物科学"
 	icon_state="purple"
 	ceiling = CEILING_METAL
 
 /area/outpost/science/rd_office
-	name = "Research Directors Office"
+	name = "研究主管办公室"
 	icon_state="purple"
 	ceiling = CEILING_METAL
 
@@ -347,7 +347,7 @@
 	*SMASH*
 	*WARNING, CONTAINMENT BREACH DETECTED IN XENOBIOLOGY LAB*
 	*/
-	name = "Xenobiology"
+	name = "异形生物学"
 	icon_state="purple"
 	ceiling = CEILING_METAL
 	outside = FALSE
@@ -357,25 +357,25 @@
 // Engineering
 
 /area/outpost/engineering
-	name = "Engineering Hallway"
+	name = "工程走廊"
 	icon_state="engine"
 	ceiling = CEILING_GLASS
 	outside = FALSE
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/outpost/engineering/hallway
-	name = "Engineering Hallway"
+	name = "工程走廊"
 	icon_state="engine"
 	ceiling = CEILING_GLASS
 
 /area/outpost/engineering/security
-	name = "Engineering Security Outpost"
+	name = "工程安全前哨站"
 	icon_state="engine"
 	ceiling = CEILING_GLASS
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/outpost/engineering/engine
-	name = "Engine Room"
+	name = "引擎室"
 	icon_state="engine"
 	ceiling = CEILING_UNDERGROUND
 	minimap_color = MINIMAP_AREA_ENGI_CAVE

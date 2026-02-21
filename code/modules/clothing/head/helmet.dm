@@ -1,7 +1,7 @@
 
 /obj/item/clothing/head/helmet
-	name = "helmet"
-	desc = "Standard Security gear. Protects the head from impacts."
+	name = "头盔"
+	desc = "标准安保装备。保护头部免受冲击。"
 	icon_state = "helmet"
 	worn_icon_state = "helmet"
 	accuracy_mod = 0
@@ -19,8 +19,8 @@
 	item_flags = SYNTH_RESTRICTED
 
 /obj/item/clothing/head/helmet/riot
-	name = "riot helmet"
-	desc = "It's a helmet specifically designed to protect against close range attacks. It covers your ears."
+	name = "防暴头盔"
+	desc = "这是一款专为防护近距离攻击而设计的头盔。它能覆盖你的耳朵。"
 	icon_state = "riot"
 	soft_armor = list(MELEE = 82, BULLET = 15, LASER = 5, ENERGY = 5, BOMB = 5, BIO = 2, FIRE = 5, ACID = 5)
 	inventory_flags = COVEREYES|BLOCKSHARPOBJ
@@ -28,8 +28,8 @@
 	item_flags = SYNTH_RESTRICTED
 
 /obj/item/clothing/head/helmet/HoS
-	name = "Head of Security Hat"
-	desc = "The hat of the Head of Security. For showing the officers who's in charge."
+	name = "安保主管帽"
+	desc = "安保部长的帽子。用于向警员们展示谁才是负责人。"
 	icon_state = "hoscap"
 	soft_armor = list(MELEE = 80, BULLET = 60, LASER = 50, ENERGY = 10, BOMB = 25, BIO = 10, FIRE = 10, ACID = 10)
 	inventory_flags = COVEREYES
@@ -39,39 +39,39 @@
 	item_flags = SYNTH_RESTRICTED
 
 /obj/item/clothing/head/helmet/HoS/dermal
-	name = "Dermal Armour Patch"
-	desc = "You're not quite sure how you manage to take it on and off, but it implants nicely in your head."
+	name = "皮肤装甲贴片"
+	desc = "你不太确定自己是怎么把它戴上又摘下的，但它完美地植入到了你的脑袋里。"
 	icon_state = "dermal"
 	worn_icon_state = "dermal"
 	siemens_coefficient = 0.6
 
 /obj/item/clothing/head/helmet/warden
-	name = "warden's hat"
-	desc = "It's a special helmet issued to the Warden of a securiy force. Protects the head from impacts."
+	name = "典狱长帽"
+	desc = "这是安保部队典狱长配发的专用头盔。可保护头部免受冲击伤害。"
 	icon_state = "policehelm"
 	inventory_flags = NONE
 	inv_hide_flags = NONE
 	armor_protection_flags = NONE
 
 /obj/item/clothing/head/helmet/hop
-	name = "crew resource's hat"
-	desc = "A stylish hat that both protects you from enraged former-crewmembers and gives you a false sense of authority."
+	name = "乘员资源帽"
+	desc = "一顶时髦的帽子，既能保护你免受愤怒的前船员的伤害，又能给你一种虚假的权威感。"
 	icon_state = "hopcap"
 	inventory_flags = NONE
 	inv_hide_flags = NONE
 	armor_protection_flags = NONE
 
 /obj/item/clothing/head/helmet/formalcaptain
-	name = "parade hat"
-	desc = "No one in a commanding position should be without a perfect, white hat of ultimate authority."
+	name = "阅兵帽"
+	desc = "任何指挥岗位的人员都应当配备一顶象征绝对权威的完美白色军帽。"
 	icon_state = "officercap"
 	inventory_flags = NONE
 	inv_hide_flags = NONE
 	armor_protection_flags = NONE
 
 /obj/item/clothing/head/helmet/swat
-	name = "\improper SWAT helmet"
-	desc = "They're often used by highly trained Swat Members."
+	name = "\improper 特警头盔"
+	desc = "它们通常由训练有素的特警队员使用。"
 	icon_state = "swat"
 	worn_icon_state = "swat"
 	soft_armor = list(MELEE = 80, BULLET = 60, LASER = 50, ENERGY = 25, BOMB = 50, BIO = 10, FIRE = 25, ACID = 25)
@@ -84,8 +84,8 @@
 	item_flags = SYNTH_RESTRICTED
 
 /obj/item/clothing/head/helmet/thunderdome
-	name = "\improper Thunderdome helmet"
-	desc = "<i>'Let the battle commence!'</i>"
+	name = "\improper 雷霆穹顶头盔"
+	desc = "<i>'战斗开始！'</i>"
 	icon_state = "thunderdome"
 	inventory_flags = COVEREYES|BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDEEYES
@@ -96,8 +96,8 @@
 	siemens_coefficient = 1
 
 /obj/item/clothing/head/helmet/gladiator
-	name = "gladiator helmet"
-	desc = "Ave, Imperator, morituri te salutant."
+	name = "角斗士头盔"
+	desc = "万岁，皇帝，赴死者向您致敬。"
 	icon_state = "gladiator"
 	worn_icon_state = "gladiator"
 	inventory_flags = BLOCKSHARPOBJ
@@ -109,8 +109,8 @@
 
 
 /obj/item/clothing/head/helmet/marine
-	name = "\improper M10 pattern marine helmet"
-	desc = "A standard M10 Pattern Helmet. It reads on the label, 'The difference between an open-casket and closed-casket funeral. Wear on head for best results.'."
+	name = "\improper M10型陆战队头盔"
+	desc = "一顶标准的M10型头盔。标签上写着：'开棺葬礼与闭棺葬礼的区别。戴在头上效果最佳。'"
 	icon = 'icons/obj/clothing/headwear/marine_helmets.dmi'
 	worn_icon_list = list(
 		slot_head_str = 'icons/mob/clothing/headwear/marine_helmets.dmi',
@@ -210,8 +210,8 @@
 		standing.overlays += M
 
 /obj/item/clothing/head/helmet/marine/specialist
-	name = "\improper B18 helmet"
-	desc = "The B18 Helmet that goes along with the B18 Defensive Armor. It's heavy, reinforced, and protects more of the face."
+	name = "\improper B18头盔"
+	desc = "与B18防御护甲配套的B18头盔。它沉重、加固，能提供更全面的面部防护。"
 	icon_state = "minigunner_helmet"
 	soft_armor = list(MELEE = 75, BULLET = 80, LASER = 75, ENERGY = 65, BOMB = 70, BIO = 65, FIRE = 65, ACID = 65)
 	inv_hide_flags = HIDEALLHAIR|HIDEEARS
@@ -221,8 +221,8 @@
 	item_map_variant_flags = (ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT|ITEM_PRISON_VARIANT)
 
 /obj/item/clothing/head/helmet/marine/specialist/tdf
-	name = "\improper Ace Class Hardsuit Helmet"
-	desc = "The helmet that pairs with the Ace hardsuit, heavily armored and reinforced."
+	name = "\improper 王牌级硬质头盔"
+	desc = "与王牌硬质作战服配套的头盔，经过重装甲和加固处理。"
 	icon = 'icons/mob/modular/tdf_helmets.dmi'
 	worn_icon_list = list(
 		slot_head_str = 'icons/mob/modular/tdf_helmets.dmi',
@@ -234,8 +234,8 @@
 	item_map_variant_flags = NONE
 
 /obj/item/clothing/head/helmet/marine/grenadier
-	name = "\improper B17 helmet"
-	desc = "A heavy duty helmet created to complement the B17 marine armor. Practically explosive proof. Unless you stand next to a nuke or something like that."
+	name = "\improper B17头盔"
+	desc = "专为配合B17陆战队护甲设计的重型头盔。几乎能防爆。除非你站在核弹旁边之类的地方。"
 	icon_state = "grenadier_helmet"
 	soft_armor = list(MELEE = 75, BULLET = 70, LASER = 60, ENERGY = 65, BOMB = 100, BIO = 60, FIRE = 65, ACID = 60)
 	inv_hide_flags = HIDEALLHAIR|HIDEEARS
@@ -246,8 +246,8 @@
 	item_map_variant_flags = (ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT|ITEM_PRISON_VARIANT)
 
 /obj/item/clothing/head/helmet/marine/pilot
-	name = "\improper M30 tactical helmet"
-	desc = "The M30 tactical helmet has a visor displaying the pilot tactical data. It is used by pilots in the TGN."
+	name = "\improper M30战术头盔"
+	desc = "M30战术头盔配有显示飞行员战术数据的护目镜。TGN的飞行员使用它。"
 	icon_state = "pilot_helmet"
 	soft_armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 50, BIO = 50, FIRE = 50, ACID = 50)
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
@@ -257,26 +257,26 @@
 	item_map_variant_flags = null
 
 /obj/item/clothing/head/helmet/marine/mech_pilot
-	name = "\improper M12C pattern neurolink helmet"
+	name = "\improper M12C型神经链接头盔"
 	icon_state = "mech_pilot_helmet"
-	desc = "A lightweight helmet with a small port in the back. Offers lower response times for TGMC mech pilots by integrating them directly into their mech suit's systems, though it certainly doesn't make them smarter."
+	desc = "一款轻量化头盔，背面带有一个小型接口。通过将机甲驾驶员直接接入其机甲服系统，降低了地球政府殖民地海军陆战队的机甲驾驶员的反应时间，不过这当然不会让他们变得更聪明。"
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/head/helmet/marine/assault_crewman
-	name = "\improper M12B pattern tanker helmet"
+	name = "\improper M12B型坦克兵头盔"
 	icon_state = "assault_crewman_helmet"
-	desc = "A lightweight helmet. Offers the user protection from being hit in the hell by ejected shell casings, mostly."
+	desc = "一顶轻型头盔。主要为佩戴者提供防护，避免被抛出的弹壳击中头部。"
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/head/helmet/marine/transport_crewman
-	name = "\improper M12A pattern transport helmet"
+	name = "\improper M12A型运输头盔"
 	icon_state = "transport_crewman_helmet"
-	desc = "A lightweight helmet with a small port in the back. Offers decent protection against reckless driving."
+	desc = "一顶轻便的头盔，背面有一个小孔。能为鲁莽驾驶提供不错的防护。"
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/head/helmet/marine/riot
-	name = "M8 riot helmet"
-	desc = "It's a modified version of the widely used Riot Helmets for use against angry jarheads. Boasts high ballistic protection"
+	name = "M8防暴头盔"
+	desc = "这是广泛使用的防暴头盔的改进型，用于对抗愤怒的陆战队员。具备高弹道防护能力。"
 	icon_state = "marine_riot"
 	soft_armor = list(MELEE = 65, BULLET = 110, LASER = 110, ENERGY = 5, BOMB = 50, BIO = 50, FIRE = 50, ACID = 30)
 	inventory_flags = COVEREYES|BLOCKSHARPOBJ
@@ -296,8 +296,8 @@
 	item_flags = SYNTH_RESTRICTED
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc
-	name = "\improper M4 pattern PMC open helmet"
-	desc = "An open version of standard enclosed helmets. It lacks filtration and HUD systems, but the ease of use and price make it a good choice for low ranking mercenaries and security."
+	name = "\improper M4型PMC开放式头盔"
+	desc = "标准封闭式头盔的开放版本。它缺乏过滤系统和抬头显示器，但易用性和价格使其成为低级佣兵和安保人员的不错选择。"
 	icon_state = "pmc_helmet"
 	soft_armor = list(MELEE = 65, BULLET = 75, LASER = 65, ENERGY = 65, BOMB = 60, BIO = 30, FIRE = 45, ACID = 55)
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
@@ -307,73 +307,73 @@
 	marine_helmet_flags = NONE
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/standard
-	name = "\improper M4 Legionary pattern PMC helmet"
-	desc = "Standard issue enclosed helmet, produced by Nanotrasen Armory Division for their mercenaries and security assets."
+	name = "\improper M4军团式PMC头盔"
+	desc = "标准配发封闭式头盔，由纳米传讯军械部门为其雇佣兵和安全人员生产。"
 	icon_state = "pmc_helmet_standard"
 	soft_armor = list(MELEE = 65, BULLET = 75, LASER = 65, ENERGY = 65, BOMB = 60, BIO = 50, FIRE = 65, ACID = 55)
 	inventory_flags = COVEREYES|COVERMOUTH|BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDEEYES|HIDEFACE|HIDEMASK|HIDEALLHAIR
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/standard/stripes
-	desc = "Standard issue enclosed helmet, produced by Nanotrasen Armory Division for their mercenaries and security assets. You like stripes, don't you?"
+	desc = "标准配发封闭式头盔，由纳米传讯军械部门为其雇佣兵和安全人员生产。你喜欢条纹，对吧？"
 	icon_state = "pmc_helmet_standard_stripes"
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/standard/twoface
-	desc = "Standard issue enclosed helmet, produced by Nanotrasen Armory Division for their mercenaries and security assets. You could say we're of two minds on the subject."
+	desc = "标准配发封闭式头盔，由纳米传讯军械部门为其雇佣兵和安全资产生产。可以说，我们对这个问题的看法是双重的。"
 	icon_state = "pmc_helmet_standard_twoface"
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/standard/mantis
-	desc = "Standard issue enclosed helmet, produced by Nanotrasen Armory Division for their mercenaries and security assets. You feel quite hungry."
+	desc = "标准配发封闭式头盔，由纳米传讯军械部门为其雇佣兵和安全人员生产。你感到相当饥饿。"
 	icon_state = "pmc_helmet_standard_mantis"
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/leader
-	name = "\improper PMC beret"
-	desc = "The pinacle of fashion, combined with protective faceplate, for any aspiring mercenary leader."
+	name = "\improper PMC 贝雷帽"
+	desc = "时尚的巅峰之作，搭配防护面罩，专为有抱负的佣兵领袖打造。"
 	icon_state = "officer_hat"
 	soft_armor = list(MELEE = 70, BULLET = 80, LASER = 70, ENERGY = 70, BOMB = 65, BIO = 50, FIRE = 60, ACID = 60)
 	inventory_flags = BLOCKSHARPOBJ|BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEYES|HIDEFACE
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/sniper
-	name = "\improper M4-L Sagittarii pattern PMC helmet"
-	desc = "A custom model of M4 helmet for snipers with additional enviromental protection."
+	name = "\improper M4-L 人马座型 PMC 头盔"
+	desc = "狙击手专用M4头盔定制型号，提供额外的环境防护。"
 	icon_state = "pmc_sniper_hat"
 	soft_armor = list(MELEE = 60, BULLET = 70, LASER = 60, ENERGY = 60, BOMB = 50, BIO = 75, FIRE = 75, ACID = 75)
 	inventory_flags = COVEREYES|COVERMOUTH|BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDEEYES|HIDEFACE|HIDEMASK|HIDEALLHAIR
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/gunner
-	name = "\improper M7-H Cathaphract pattern PMC helmet"
-	desc = "A newest generation of Nanotrasen Armory. The heavy enclosed helmet with hardened cameras, a wise choice for mercenary who prefers close quarters combat."
+	name = "\improper M7-H 重骑兵型 PMC 头盔"
+	desc = "纳米传讯最新一代的军械库。重型封闭式头盔配备硬化摄像头，是偏爱近身作战的佣兵的明智之选。"
 	icon_state = "pmc_heavyhelmet"
 	soft_armor = list(MELEE = 75, BULLET = 85, LASER = 75, ENERGY = 75, BOMB = 80, BIO = 50, FIRE = 65, ACID = 65)
 	inventory_flags = COVEREYES|COVERMOUTH|BLOCKSHARPOBJ
 	inv_hide_flags = HIDEEARS|HIDEEYES|HIDEFACE|HIDEMASK|HIDEALLHAIR
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/gunner/skull
-	desc = "A newest generation of Nanotrasen Armory. The heavy enclosed helmet with hardened cameras, a wise choice for mercenary who prefers close quarters combat. It's rattling time."
+	desc = "纳米传讯最新一代的军械库。配备加固摄像头的重型封闭式头盔，是偏爱近身作战的佣兵明智之选。是时候大干一场了。"
 	icon_state = "pmc_heavyhelmet_skull"
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/gunner/hunter
-	desc = "A newest generation of Nanotrasen Armory. The heavy enclosed helmet with hardened cameras, a wise choice for mercenary who prefers close quarters combat. I've got you in my sights."
+	desc = "纳米传讯最新一代的军械库。重型封闭式头盔配备强化摄像头，是偏爱近距离作战的佣兵的明智之选。你已进入我的视线。"
 	icon_state = "pmc_heavyhelmet_hunter"
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/gunner/joker
-	desc = "A newest generation of Nanotrasen Armory. The heavy enclosed helmet with hardened cameras, a wise choice for mercenary who prefers close quarters combat. You love seeing people smile."
+	desc = "纳米传讯最新一代的军械库装备。带有加固摄像头的重型封闭式头盔，是偏爱近距离作战的佣兵的明智之选。你喜欢看到人们微笑。"
 	icon_state = "pmc_heavyhelmet_joker"
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/gunner/stripes
-	desc = "A newest generation of Nanotrasen Armory. The heavy enclosed helmet with hardened cameras, a wise choice for mercenary who prefers close quarters combat. You like stripes, don't you?"
+	desc = "纳米传讯最新一代的军械库。重型封闭式头盔配备加固摄像头，是偏爱近身作战的佣兵的明智之选。你喜欢条纹，对吧？"
 	icon_state = "pmc_heavyhelmet_stripes"
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/gunner/leader
-	name = "\improper M7-H Cathaphract pattern PMC officer helmet"
-	desc = "A newest generation of Nanotrasen Armory. The heavy enclosed helmet with hardened cameras, a wise choice for mercenary who prefers close quarters combat. This particular helmet looks like it belongs to a high-ranking officer."
+	name = "\improper M7-H 重骑兵型 PMC 军官头盔"
+	desc = "纳米传讯最新一代的军械库装备。带有加固摄像头的重型封闭式头盔，是偏爱近身作战的佣兵的明智之选。这顶特殊的头盔看起来像是属于高级军官的。"
 	icon_state = "pmc_heavyhelmet_officer"
 
 /obj/item/clothing/head/helmet/marine/veteran/pmc/commando
-	name = "\improper PMC commando helmet"
-	desc = "A fully enclosed, armored helmet made for Nanotrasen elite commandos."
+	name = "\improper PMC 突击队头盔"
+	desc = "专为纳米传讯精英突击队员设计的全封闭式装甲头盔。"
 	icon_state = "commando_helmet"
 	armor_protection_flags = HEAD|FACE|EYES
 	soft_armor = list(MELEE = 95, BULLET = 120, LASER = 200, ENERGY = 200, BOMB = 90, BIO = 100, FIRE = 90, ACID = 95)
@@ -389,8 +389,8 @@
 /*===========================FREELANCER================================*/
 
 /obj/item/clothing/head/helmet/marine/freelancer
-	name = "\improper M3 pattern Freelancer helmet"
-	desc = "A sturdy freelancer's blue helmet. Many years ago on the Terra, the sign of that helmet was inspiring hope, but now - only apathy."
+	name = "\improper M3型自由佣兵头盔"
+	desc = "一顶结实的自由佣兵蓝色头盔。多年前在地球上，这顶头盔的标志曾鼓舞希望，但如今——只剩冷漠。"
 	icon = 'icons/mob/clothing/headwear/ert_headwear.dmi'
 	worn_icon_list = list(
 		slot_head_str = 'icons/mob/clothing/headwear/ert_headwear.dmi',
@@ -415,8 +415,8 @@
 	)
 
 /obj/item/clothing/head/helmet/marine/freelancer/beret
-	name = "\improper Freelancer beret"
-	desc = "A white beret, with worned out TerraGov emblem. Not many people you can see wear such things, especially when they're not part of the TerraGov military. Additionally issued with armored platemask."
+	name = "\improper 自由佣兵贝雷帽"
+	desc = "一顶白色贝雷帽，上面有磨损的地球政府徽章。能见到佩戴这种东西的人不多，尤其当他们并非地球政府军队成员时。额外配发带装甲的面罩。"
 	icon = 'icons/obj/clothing/headwear/ert_headwear.dmi'
 	icon_state = "freelancer_beret"
 	soft_armor = list(MELEE = 60, BULLET = 80, LASER = 80, ENERGY = 70, BOMB = 60, BIO = 55, FIRE = 60, ACID = 65)
@@ -429,8 +429,8 @@
 	)
 
 /obj/item/clothing/head/helmet/marine/freelancer/medic
-	name = "\improper M3 pattern CBRN Freelancer helmet"
-	desc = "A sturdy freelancer's blue helmet with white stripe ontop and integrated mimir filtration system. Many years ago on the Terra, the sign of that helmet was inspiring hope, but now - only apathy."
+	name = "\improper M3型CBRN自由佣兵头盔"
+	desc = "一顶坚固的自由佣兵蓝色头盔，顶部带有白色条纹并集成了米米尔过滤系统。多年前在地球上，这种头盔的标识曾激发希望，但如今——只剩冷漠。"
 	icon_state = "freelancer_helmet_medic"
 	soft_armor = list(MELEE = 55, BULLET = 75, LASER = 75, ENERGY = 65, BOMB = 60, BIO = 70, FIRE = 65, ACID = 75)
 	attachments_by_slot = list(
@@ -441,14 +441,14 @@
 	)
 
 /obj/item/clothing/head/helmet/marine/freelancer/heavy
-	name = "\improper M3 pattern Freelancer heavy helmet"
-	desc = "A sturdy freelancer's helmet with additional plates. Many years ago on the Terra, the sign of that helmet was inspiring hope, but now - only apathy."
+	name = "\improper M3型自由佣兵重型头盔"
+	desc = "一顶坚固的自由佣兵头盔，带有额外的护板。多年前在地球上，这顶头盔的标志曾鼓舞希望，但如今——只剩冷漠。"
 	icon_state = "freelancer_helmet_heavy"
 	soft_armor = list(MELEE = 60, BULLET = 80, LASER = 80, ENERGY = 70, BOMB = 65, BIO = 55, FIRE = 55, ACID = 65)
 
 /obj/item/clothing/head/helmet/marine/freelancer/specialist
-	name = "\improper M3 pattern Freelancer rocketeer helmet"
-	desc = "A sturdy freelancer's helmet with additional plates and protective riot visor. Many years ago on the Terra, the sign of that helmet was inspiring hope, but now - only apathy."
+	name = "\improper M3型自由佣兵火箭兵头盔"
+	desc = "一顶坚固的自由佣兵头盔，带有额外的护板和防护面罩。多年前在地球上，这顶头盔的标志曾带来希望，但现在——只剩冷漠。"
 	icon_state = "freelancer_helmet_specialist"
 	soft_armor = list(MELEE = 60, BULLET = 80, LASER = 80, ENERGY = 70, BOMB = 80, BIO = 55, FIRE = 65, ACID = 65)
 	attachments_by_slot = list(
@@ -459,8 +459,8 @@
 	)
 
 /obj/item/clothing/head/helmet/marine/freelancer/specialist/pyro
-	name = "\improper B08 Freelancer pyro hood"
-	desc = "A repurposed firefighter helmet combined with hazmat filters and reinforced with metal plates. Though, only a complete psycho would wear this longer than a hour, sometimes desperate situations require desperate measures."
+	name = "\improper B08 自由佣兵 火焰兵 头罩"
+	desc = "一顶经过改造的消防头盔，结合了防化过滤器和金属板加固。不过，只有彻头彻尾的疯子才会戴着它超过一小时，但有时绝望的处境需要采取极端措施。"
 	icon_state = "freelancer_helmet_pyro"
 	soft_armor = list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 60, BOMB = 55, BIO = 100, FIRE = 90, ACID = 90)
 	inv_hide_flags = HIDEEARS|HIDETOPHAIR|HIDELOWHAIR
@@ -468,8 +468,8 @@
 /*=========================Imperium==================================*/
 
 /obj/item/clothing/head/helmet/marine/imperial
-	name = "\improper Imperial Guard flak helmet"
-	desc = "A standard Imperial Guard helmet that goes with the flak armour, it is also mass produced, and it can save your life, maybe."
+	name = "\improper 帝国卫队防破片头盔"
+	desc = "一顶标准的帝国卫队头盔，与防弹护甲配套使用，同样是大规模生产的，或许能救你一命。"
 	icon = 'icons/obj/clothing/headwear/ert_headwear.dmi'
 	icon_state = "guardhelm"
 	worn_icon_list = list(
@@ -482,20 +482,20 @@
 	soft_armor = list(MELEE = 85, BULLET = 75, LASER = 70, ENERGY = 70, BOMB = 60, BIO = 50, FIRE = 50, ACID = 50)
 
 /obj/item/clothing/head/helmet/marine/imperial/sergeant
-	name = "\improper Imperial Guard sergeant helmet"
-	desc = "A helmet that goes with the sergeant armour, unlike the flak variant, this one will actually protect you."
+	name = "\improper 帝国卫队士官头盔"
+	desc = "与班长护甲配套的头盔，与防弹款不同，这款真的能保护你。"
 	icon_state = "guardhelm"
 	soft_armor = list(MELEE = 85, BULLET = 85, LASER = 85, ENERGY = 85, BOMB = 85, BIO = 50, FIRE = 80, ACID = 80)
 
 /obj/item/clothing/head/helmet/marine/imperial/sergeant/veteran
-	name = "\improper Imperial Guard carapace helmet"
-	desc = "A helmet that goes with the heavy carapace armour, this is some serious protection."
+	name = "\improper 帝国卫队甲壳头盔"
+	desc = "与重型甲壳护甲配套的头盔，提供相当可靠的防护。"
 	icon_state = "guardvethelm"
 	soft_armor = list(MELEE = 90, BULLET = 90, LASER = 90, ENERGY = 90, BOMB = 90, BIO = 30, FIRE = 90, ACID = 90)
 
 /obj/item/clothing/head/helmet/UPP
-	name = "\improper UM4 helmet"
-	desc = "A skirted helmet designed for use with the UM/UH system."
+	name = "\improper UM4头盔"
+	desc = "专为UM/UH系统设计的带护颈头盔。"
 	icon = 'icons/obj/clothing/headwear/ert_headwear.dmi'
 	worn_icon_list = list(
 		slot_head_str = 'icons/mob/clothing/headwear/ert_headwear.dmi',
@@ -508,7 +508,7 @@
 	min_cold_protection_temperature = ICE_PLANET_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/head/helmet/UPP/heavy
-	name = "\improper UH7 helmet"
+	name = "\improper UH7头盔"
 	icon_state = "upp_helmet_heavy"
 	soft_armor = list(MELEE = 90, BULLET = 85, LASER = 60, ENERGY = 65, BOMB = 85, BIO = 5, FIRE = 65, ACID = 65)
 	resistance_flags = UNACIDABLE
@@ -517,8 +517,8 @@
 //head rag
 
 /obj/item/clothing/head/helmet/specrag
-	name = "specialist head-rag"
-	desc = "A hat worn by heavy-weapons operators to block sweat."
+	name = "专家头巾"
+	desc = "重型武器操作员佩戴的帽子，用于阻挡汗水。"
 	icon = 'icons/obj/clothing/headwear/marine_hats.dmi'
 	worn_icon_list = list(
 		slot_head_str = 'icons/mob/clothing/headwear/marine_hats.dmi',
@@ -534,8 +534,8 @@
 =====================================================================*/
 
 /obj/item/clothing/head/helmet/marine/veteran/mercenary
-	name = "\improper K12 ceramic helmet"
-	desc = "A sturdy helmet worn by an unknown mercenary group."
+	name = "\improper K12陶瓷头盔"
+	desc = "一顶坚固的头盔，由某个未知的佣兵团体使用。"
 	icon_state = "mercenary_heavy_helmet"
 	armor_protection_flags = HEAD|FACE|EYES
 	soft_armor = list(MELEE = 80, BULLET = 80, LASER = 50, ENERGY = 60, BOMB = 70, BIO = 10, FIRE = 60, ACID = 60)
@@ -544,16 +544,16 @@
 	marine_helmet_flags = NONE
 
 /obj/item/clothing/head/helmet/marine/veteran/mercenary/miner
-	name = "\improper Y8 miner helmet"
-	desc = "A sturdy helmet worn by an unknown mercenary group."
+	name = "\improper Y8矿工头盔"
+	desc = "一顶坚固的头盔，由某个未知的佣兵团体使用。"
 	icon_state = "mercenary_miner_helmet"
 	armor_protection_flags = HEAD|FACE|EYES
 	soft_armor = list(MELEE = 55, BULLET = 55, LASER = 45, ENERGY = 55, BOMB = 55, BIO = 10, FIRE = 55, ACID = 55)
 
 
 /obj/item/clothing/head/helmet/marine/veteran/mercenary/engineer
-	name = "\improper Z7 engineer helmet"
-	desc = "A sturdy helmet worn by an unknown mercenary group."
+	name = "\improper Z7 工程兵头盔"
+	desc = "一顶坚固的头盔，由某个未知的佣兵团体使用。"
 	icon_state = "mercenary_engineer_helmet"
 	armor_protection_flags = HEAD|FACE|EYES
 	soft_armor = list(MELEE = 55, BULLET = 60, LASER = 45, ENERGY = 55, BOMB = 60, BIO = 10, FIRE = 55, ACID = 55)
@@ -561,8 +561,8 @@
 
 
 /obj/item/clothing/head/helmet/marine/som
-	name = "\improper S6 combat helmet"
-	desc = "A helmet with origns of heavily modified head protection used back in the mining colonies. Protection from threats is bad but it's better than nothing."
+	name = "\improper S6作战头盔"
+	desc = "一顶源自采矿殖民地时期经过大幅改装的头部防护装备。防护能力不佳，但总比没有强。"
 	icon = 'icons/obj/clothing/headwear/ert_headwear.dmi'
 	icon_state = "som_helmet"
 	worn_icon_list = list(
@@ -579,23 +579,23 @@
 
 
 /obj/item/clothing/head/helmet/marine/som/veteran
-	name = "\improper S7 combat helmet"
-	desc = "A helmet of origins off of heavily modified helmets used back in the mining colonies. Seems to have extensive modification."
+	name = "\improper S7作战头盔"
+	desc = "一顶源自采矿殖民地时期经过大量改装的旧式头盔。似乎经过了大量改装。"
 	icon_state = "som_helmet_veteran"
 	worn_icon_state = "som_helmet_veteran"
 	soft_armor = list(MELEE = 65, BULLET = 65, LASER = 65, ENERGY = 35, BOMB = 30, BIO = 50, FIRE = 35, ACID = 50)
 
 
 /obj/item/clothing/head/helmet/marine/som/leader
-	name = "\improper S8 combat helmet"
-	desc = "A helmet of origins off of heavily modified helmets used back in the mining colonies."
+	name = "\improper S8战斗头盔"
+	desc = "一顶源自采矿殖民地时期经过大幅改装的旧式头盔。"
 	icon_state = "som_helmet_leader"
 	worn_icon_state = "som_helmet_leader"
 	soft_armor = list(MELEE = 55, BULLET = 65, LASER = 65, ENERGY = 30, BOMB = 20, BIO = 50, FIRE = 30, ACID = 50)
 
 /obj/item/clothing/head/helmet/sectoid
-	name = "psionic field"
-	desc = "A field of invisible energy, it protects the wearer but prevents any clothing from being worn."
+	name = "灵能场"
+	desc = "一片无形的能量场，它能保护穿戴者，但无法同时穿戴任何衣物。"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "shield-blue"
 	item_flags = DELONDROP
@@ -607,8 +607,8 @@
 	ADD_TRAIT(src, TRAIT_NODROP, SECTOID_TRAIT)
 
 /obj/item/clothing/head/helmet/marine/icc
-	name = "\improper Modelle/20 combat helmet"
-	desc = "A regular ICCAF helmet, used by all branches of its forces. It is made to fit in both a utility and combat role with noticeably high resistance to explosions and bullets. "
+	name = "\improper 20型作战头盔"
+	desc = "一款标准的 ICCAF 头盔，被其所有军种部队使用。它设计兼顾实用与战斗需求，对爆炸和弹道伤害具有显著的高抗性。"
 	icon = 'icons/obj/clothing/headwear/ert_headwear.dmi'
 	icon_state = "icc"
 	worn_icon_list = list(
@@ -620,22 +620,22 @@
 	soft_armor = list(MELEE = 50, BULLET = 60, LASER = 50, ENERGY = 60, BOMB = 70, BIO = 10, FIRE = 60, ACID = 50)
 
 /obj/item/clothing/head/helmet/marine/icc/guard
-	name = "\improper Modelle/21 combat helmet"
-	desc = "A high-quality ICCGF helmet, mostly seen worn by the ICC's highest quality troops, better well known as 'Guardsmen'. Like most helmets of the ICC it is made to fit a utility and combat role with noticeably high resistance to explosions and bullets."
+	name = "\improper 21型作战头盔"
+	desc = "一顶高品质的ICCGF头盔，通常由ICC最精锐的部队——即广为人知的'卫队'——所佩戴。与ICC的大多数头盔一样，它兼顾实用与战斗用途，对爆炸和弹道伤害具有显著的高抗性。"
 	icon_state = "icc_guard"
 	worn_icon_state = "icc_guard"
 	soft_armor = list(MELEE = 60, BULLET = 65, LASER = 40, ENERGY = 60, BOMB = 80, BIO = 10, FIRE = 55, ACID = 40)
 
 /obj/item/clothing/head/helmet/marine/icc/guard/heavy
-	name = "\improper Modelle/22 combat helmet"
-	desc = "A high-quality ICCGF helmet, mostly seen worn by the ICC's highest quality troops, better well known as 'Guardsmen'. Like most helmets of the ICC it is made to fit a utility and combat role with noticeably high resistance to explosions and bullets, this one is heavily reinforced."
+	name = "\improper 22型作战头盔"
+	desc = "一顶高品质的ICCGF头盔，通常由ICC最精锐的部队佩戴，更广为人知的称呼是'卫队士兵'。与大多数ICC头盔一样，它兼顾实用与战斗用途，对爆炸和弹道伤害具有显著的高抗性，这款头盔经过了特别加固。"
 	icon_state = "icc_guard_heavy"
 	worn_icon_state = "icc_guard_heavy"
 	soft_armor = list(MELEE = 65, BULLET = 70, LASER = 40, ENERGY = 60, BOMB = 85, BIO = 10, FIRE = 55, ACID = 40)
 
 /obj/item/clothing/head/helmet/marine/vsd
-	name = "\improper Crasher MT/43 ballistic helmet"
-	desc = "Vyacheslav Security Detail's quality helmet, designed with modular slots and combat readiness."
+	name = "\improper 撞击者MT/43弹道头盔"
+	desc = "维亚切斯拉夫安保小组的优质头盔，采用模块化插槽设计，具备战斗就绪性。"
 	icon = 'icons/mob/clothing/headwear/ert_headwear.dmi'
 	icon_state = "vsd_main"
 	worn_icon_state = "vsd_main"
@@ -645,30 +645,30 @@
 	soft_armor = list(MELEE = 50, BULLET = 60, LASER = 60, ENERGY = 60, BOMB = 60, BIO = 60, FIRE = 55, ACID = 40)
 
 /obj/item/clothing/head/helmet/marine/vsd/heavy
-	name = "\improper Crasher MT-H/43 powered ballistic helmet"
+	name = "\improper 撞击者MT-H/43动力弹道头盔"
 	icon_state = "vsd_heavy"
 	worn_icon_state = "vsd_heavy"
 	soft_armor = list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 60, BOMB = 60, BIO = 60, FIRE = 55, ACID = 40)
 
 /obj/item/clothing/head/helmet/marine/vsd/juggernaut
-	name = "\improper Crasher MT-H/43 'Ares' powered ballistic helmet"
-	desc = "Vyacheslav Security Detail's custom, modified helmet designed for the 'Ares' Juggernaut suit."
+	name = "\improper 撞击者MT-H/43'阿瑞斯'动力弹道头盔"
+	desc = "维雅切斯拉夫安保小组为'阿瑞斯'巨神兵护甲定制的改装头盔。"
 	icon_state = "vsd_juggernaut_ballistic"
 	worn_icon_state = "vsd_juggernaut_ballistic"
 	inv_hide_flags = HIDEALLHAIR|HIDEEARS|HIDEMASK
 	soft_armor = list(MELEE = 60, BULLET = 80, LASER = 80, ENERGY = 60, BOMB = 60, BIO = 60, FIRE = 55, ACID = 40)
 
 /obj/item/clothing/head/helmet/marine/vsd/eod
-	name = "\improper Crasher MT-H/43 'Zeus' powered explosive-defensive helmet"
-	desc = "Vyacheslav Security Detail's custom, modified helmet designed for the 'Zeus' Juggernaut suit."
+	name = "\improper 撞击者MT-H/43 '宙斯'动力爆炸防御头盔"
+	desc = "维亚切斯拉夫安保小组为'宙斯'巨神装甲定制的改装头盔。"
 	icon_state = "vsd_juggernaut_eod"
 	worn_icon_state = "vsd_juggernaut_eod"
 	inv_hide_flags = HIDEALLHAIR|HIDEEARS|HIDEMASK
 	soft_armor = list(MELEE = 60, BULLET = 75, LASER = 75, ENERGY = 60, BOMB = 80, BIO = 60, FIRE = 55, ACID = 40)
 
 /obj/item/clothing/head/helmet/marine/vsd/flamer
-	name = "\improper Crasher MT-H/43 'Apollo' powered fire-protected helmet"
-	desc = "Vyacheslav Security Detail's custom, modified helmet designed for the 'Apollo' Juggernaut suit."
+	name = "\improper 坠毁者 MT-H/43 '阿波罗' 动力防火头盔"
+	desc = "维亚切斯拉夫安保小组为'阿波罗'巨神兵护甲定制的改装头盔。"
 	icon_state = "vsd_juggernaut_pyro"
 	worn_icon_state = "vsd_juggernaut_pyro"
 	inv_hide_flags = HIDEALLHAIR|HIDEEARS|HIDEMASK

@@ -1,5 +1,5 @@
 /area/centcom
-	name = "Centcom"
+	name = "中央司令部"
 	icon_state = "centcom"
 	requires_power = FALSE
 	static_lighting = FALSE
@@ -8,66 +8,66 @@
 
 
 /area/centcom/control
-	name = "Centcom Control"
+	name = "中央司令部控制台"
 
 
 /area/centcom/supply
-	name = "Centcom Supply"
+	name = "中央司令部补给"
 
 
 /area/centcom/ferry
-	name = "Centcom Transport Shuttle"
+	name = "中央司令部运输穿梭机"
 
 
 /area/centcom/supplypod/flyMeToTheMoon
-	name = "Supplypod Shipping lane"
+	name = "补给舱运输航线"
 	icon_state = "supplypod_flight"
 
 
 /area/centcom/supplypod
-	name = "Supplypod Facility"
+	name = "补给舱设施"
 	icon_state = "supplypod"
 	static_lighting = FALSE
 
 
 /area/centcom/supplypod/podStorage
-	name = "Supplypod Storage"
+	name = "补给舱储存"
 	icon_state = "supplypod_holding"
 
 
 /area/centcom/supplypod/loading
-	name = "Supplypod Loading Facility"
+	name = "补给舱装载设施"
 	icon_state = "supplypod_loading"
 
 
 /area/centcom/supplypod/loading/one
-	name = "Bay #1"
+	name = "一号机库"
 
 
 /area/centcom/supplypod/loading/two
-	name = "Bay #2"
+	name = "二号机库"
 
 
 /area/centcom/supplypod/loading/three
-	name = "Bay #3"
+	name = "3号机库"
 
 
 /area/centcom/supplypod/loading/four
-	name = "Bay #4"
+	name = "4号机库"
 
 
 /area/centcom/supplypod/loading/ert
-	name = "ERT Bay"
+	name = "紧急响应小组舱"
 
 // Practice Areas
 /area/centcom/practice
-	name = "Practice Center"
+	name = "训练中心"
 
 /area/centcom/practice/medical
-	name = "Medical Practice Center"
+	name = "医疗实践中心"
 
 /area/valhalla
-	name = "Valhalla"
+	name = "瓦尔哈拉"
 	icon_state = "centcom"
 	requires_power = FALSE
 	static_lighting = FALSE

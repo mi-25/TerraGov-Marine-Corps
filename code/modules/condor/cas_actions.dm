@@ -1,5 +1,5 @@
 /datum/action/innate/camera_off/cas
-	name = "Exit CAS mode"
+	name = "退出近距空中支援模式"
 
 /datum/action/innate/camera_off/cas/Activate()
 	if(!isliving(target))
@@ -10,7 +10,7 @@
 	plane.end_cas_mission(living)
 
 /datum/action/innate/jump_to_lase
-	name = "Jump to Lase"
+	name = "跳转至激光瞄准"
 	action_icon_state = "aim_mode"
 	var/obj/docking_port/mobile/marine_dropship/casplane/plane
 
@@ -23,8 +23,8 @@
 		return
 	var/obj/effect/overlay/temp/laser_target/caspoint = tgui_input_list(usr, "Select a CAS target", "CAS Targeting", GLOB.active_cas_targets)
 	if(QDELETED(caspoint))
-		to_chat(usr, span_warning("That marker has expired."))
+		to_chat(usr, span_warning("那个标记已过期。"))
 		return
 
-	to_chat(usr, span_notice("Jumped to [caspoint]."))
+	to_chat(usr, span_notice("已跳转至[caspoint]。"))
 	plane.eyeobj.setLoc(get_turf(caspoint))

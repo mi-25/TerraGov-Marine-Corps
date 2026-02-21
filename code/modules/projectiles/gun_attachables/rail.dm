@@ -1,6 +1,6 @@
 /obj/item/attachable/reddot
-	name = "red-dot sight"
-	desc = "A red-dot sight for short to medium range. Does not have a zoom feature, but does increase weapon accuracy and fire rate while aiming by a good amount. \nNo drawbacks."
+	name = "红点瞄准镜"
+	desc = "一款用于中短距离的红色瞄准镜。不具备变焦功能，但能显著提高瞄准时的武器精度和射速。\n无缺点。"
 	icon_state = "reddot"
 	icon = 'icons/obj/items/guns/attachments/rail.dmi'
 	slot = ATTACHMENT_SLOT_RAIL
@@ -10,8 +10,8 @@
 	variants_by_parent_type = list(/obj/item/weapon/gun/rifle/som = "", /obj/item/weapon/gun/shotgun/som = "")
 
 /obj/item/attachable/m16sight
-	name = "M16 iron sights"
-	desc = "The iconic carry-handle iron sights for the m16. Usually removed once the user finds something worthwhile to attach to the rail."
+	name = "M16机械瞄具"
+	desc = "标志性的M16提把式机械瞄具。通常当用户找到值得安装在导轨上的配件时就会被拆下。"
 	icon_state = "m16sight" // missing icon?
 	icon = 'icons/obj/items/guns/attachments/rail.dmi'
 	slot = ATTACHMENT_SLOT_RAIL
@@ -20,8 +20,8 @@
 	movement_acc_penalty_mod = -0.1
 
 /obj/item/attachable/flashlight
-	name = "rail flashlight"
-	desc = "A simple flashlight used for mounting on a firearm. \nHas no drawbacks, but isn't particuraly useful outside of providing a light source."
+	name = "导轨手电筒"
+	desc = "一种简单的战术手电，用于安装在枪械上。\n除了提供光源外没有其他作用，但在提供光源方面也并非特别有用。"
 	icon_state = "flashlight"
 	icon = 'icons/obj/items/guns/attachments/rail.dmi'
 	light_mod = 6
@@ -70,7 +70,7 @@
 		return
 
 	if(istype(I,/obj/item/tool/screwdriver))
-		to_chat(user, span_notice("You modify the rail flashlight back into a normal flashlight."))
+		to_chat(user, span_notice("你将导轨手电筒改回成普通手电筒。"))
 		if(loc == user)
 			user.temporarilyRemoveItemFromInventory(src)
 		var/obj/item/flashlight/F = new(user)
@@ -78,16 +78,16 @@
 		qdel(src) //Delete da old flashlight
 
 /obj/item/attachable/flashlight/under
-	name = "underbarreled flashlight"
-	desc = "A simple flashlight used for mounting on a firearm. \nHas no drawbacks, but isn't particuraly useful outside of providing a light source."
+	name = "下挂手电筒"
+	desc = "一种简单的战术手电，用于安装在枪械上。\n除了提供光源外没有其他作用，但在提供光源方面也并非特别有用。"
 	icon_state = "uflashlight"
 	icon = 'icons/obj/items/guns/attachments/underbarrel.dmi'
 	slot = ATTACHMENT_SLOT_UNDER
 	attach_features_flags = ATTACH_REMOVABLE|ATTACH_ACTIVATION
 
 /obj/item/attachable/quickfire
-	name = "quickfire adapter"
-	desc = "An enhanced and upgraded autoloading mechanism to fire rounds more quickly. \nHowever, it also reduces accuracy and the number of bullets fired on burst."
+	name = "速射适配器"
+	desc = "一种增强升级的自动装填机制，能够更快地发射子弹。\n然而，它也会降低精度和点射时发射的弹道数量。"
 	slot = ATTACHMENT_SLOT_RAIL
 	icon_state = "autoloader"
 	icon = 'icons/obj/items/guns/attachments/rail.dmi'
@@ -97,8 +97,8 @@
 	accuracy_unwielded_mod = -0.15
 
 /obj/item/attachable/magnetic_harness
-	name = "magnetic harness"
-	desc = "A magnetically attached harness kit that attaches to the rail mount of a weapon. When dropped, the weapon will sling to a TGMC armor."
+	name = "磁力背带"
+	desc = "一种磁性连接的携行具套件，可安装在武器的导轨接口上。当武器掉落时，会通过吊带连接到TGMC护甲上。"
 	icon_state = "magnetic"
 	icon = 'icons/obj/items/guns/attachments/rail.dmi'
 	slot = ATTACHMENT_SLOT_RAIL
@@ -119,10 +119,10 @@
 	QDEL_NULL(reequip_component)
 
 /obj/item/attachable/buildasentry
-	name = "\improper Build-A-Sentry attachment system"
+	name = "\improper 哨戒炮组装枪械配件系统"
 	icon = 'icons/obj/machines/deployable/sentry/build_a_sentry.dmi'
 	icon_state = "build_a_sentry_attachment"
-	desc = "The Build-A-Sentry is the latest design in cheap, automated, defense. Simply attach it to the rail of a gun and deploy. Its that easy!"
+	desc = "Build-A-Sentry是廉价自动化防御的最新设计。只需将其安装在枪械的导轨上并部署即可。就是这么简单！"
 	slot = ATTACHMENT_SLOT_RAIL
 	size_mod = 1
 	pixel_shift_x = 10
@@ -137,7 +137,7 @@
 		return FALSE
 	var/obj/item/weapon/gun/attaching_gun = attaching_to
 	if(ispath(attaching_gun.deployable_item, /obj/machinery/deployable/mounted/sentry))
-		to_chat(attacher, span_warning("[attaching_gun] is already a sentry!"))
+		to_chat(attacher, span_warning("[attaching_gun] 已经是一台哨戒炮了！"))
 		return FALSE
 	return ..()
 

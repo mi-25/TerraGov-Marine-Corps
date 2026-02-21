@@ -28,7 +28,7 @@
 						return /mob/living/carbon/human/species/robot/deltad
 					if("Sterling")
 						return /mob/living/carbon/human/species/robot/bravada
-			to_chat(prefs.parent, span_danger("Robot species joins are currently disabled, your species has been defaulted to Human"))
+			to_chat(prefs.parent, span_danger("机器人种族加入当前已禁用，您的种族已默认设为人类"))
 			return /mob/living/carbon/human
 		if("Vatborn")
 			return /mob/living/carbon/human/species/vatborn

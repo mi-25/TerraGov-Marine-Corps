@@ -2,8 +2,8 @@
 
 //Empty sandbags
 /obj/item/stack/sandbags_empty
-	name = "empty sandbags"
-	desc = "Some empty sandbags, best to fill them up with an entrenching tool if you want to use them."
+	name = "空沙袋"
+	desc = "一些空沙袋，如果你想使用它们，最好用挖掘工具填满。"
 	singular_name = "sandbag"
 	icon_state = "sandbag_stack"
 	worn_icon_state = "sandbag_stack"
@@ -64,8 +64,8 @@
 
 //Full sandbags
 /obj/item/stack/sandbags
-	name = "sandbags"
-	desc = "Some bags filled with sand. For now, just cumbersome, but soon to be used for fortifications."
+	name = "沙袋"
+	desc = "一些装满沙子的袋子。目前只是累赘，但很快就会被用于构筑防御工事。"
 	singular_name = "sandbag"
 	icon_state = "sandbag_pile"
 	worn_icon_state = "sandbag_pile"
@@ -100,19 +100,19 @@
 	if(get_amount() < 1)
 		return
 	if(LAZYLEN(user.do_actions))
-		user.balloon_alert(user, "busy!")
+		user.balloon_alert(user, "忙！")
 		return
 
-	user.balloon_alert(user, "emptying...")
+	user.balloon_alert(user, "清空中...")
 	while(get_amount() > 0)
 		if(!do_after(user, 0.5 SECONDS, IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE, user))
-			user.balloon_alert(user, "stopped")
+			user.balloon_alert(user, "已停止")
 			break
 		// check if we can stuff it into the user's hands
 		if(!use(1))
 			break
 		if(amount < 1)
-			user.balloon_alert(user, "finished")
+			user.balloon_alert(user, "完成")
 		var/obj/item/stack/sandbag = user.get_inactive_held_item()
 		if(istype(sandbag, /obj/item/stack/sandbags_empty) && sandbag.add(1))
 			continue

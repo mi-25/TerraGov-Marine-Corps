@@ -1,8 +1,8 @@
 //SOM modular armour
 
 /obj/item/clothing/suit/modular/som
-	name = "\improper SOM medium battle armor"
-	desc = "The M-21 battle armor is typically used by SOM infantry. It utilizes special light-weight alloys that provides good protection with only minor impairment to the users mobility. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 火星之子中型战斗护甲"
+	desc = "M-21战斗装甲通常由火星之子步兵使用。它采用特殊的轻质合金，在提供良好防护的同时仅对使用者的机动性造成轻微影响。Alt+点击以移除已安装的配件。使用它来切换内置手电筒。"
 	soft_armor = list(MELEE = 45, BULLET = 65, LASER = 60, ENERGY = 60, BOMB = 50, BIO = 50, FIRE = 55, ACID = 50)
 	icon = 'icons/mob/modular/som_armor.dmi'
 	worn_icon_list = list(
@@ -86,8 +86,8 @@
 	)
 
 /obj/item/clothing/suit/modular/som/light
-	name = "\improper SOM scout armor"
-	desc = "The M-11 scout armor is a lightweight suit that that allows for minimal encumberance while still providing reasonable protection. Often seen on scouts or other specialist units that aren't normally getting shot at. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 火星之子侦察兵护甲"
+	desc = "M-11侦察护甲是一款轻量化护甲，能在提供合理防护的同时将负重降至最低。通常配备于侦察兵或其他通常不会直接暴露在火力下的特种单位。Alt+点击可移除附件物品。使用可开关内置手电筒。"
 	soft_armor = list(MELEE = 35, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 45, BIO = 45, FIRE = 50, ACID = 40)
 	icon_state = "som_light"
 	worn_icon_state = "som_light"
@@ -131,8 +131,8 @@
 
 
 /obj/item/clothing/suit/modular/som/heavy
-	name = "\improper SOM heavy battle armor"
-	desc = "A standard suit of M-31 heavy duty combat armor worn by SOM shock troops. Provides excellent protection however it does reduce mobility somewhat. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 火星之子重型战斗护甲"
+	desc = "一套火星之子突击部队穿戴的M-31重型作战护甲标准套装。提供卓越的防护性能，但会略微降低机动性。Alt+点击可移除附件物品。使用可切换内置手电筒。"
 	soft_armor = list(MELEE = 50, BULLET = 70, LASER = 65, ENERGY = 65, BOMB = 55, BIO = 55, FIRE = 60, ACID = 55)
 	icon_state = "som_heavy"
 	worn_icon_state = "som_heavy"
@@ -187,8 +187,8 @@
 	)
 
 /obj/item/clothing/suit/modular/som/heavy/leader
-	name = "\improper SOM Gorgon pattern assault armor"
-	desc = "A bulky suit of heavy combat armor, the M-35 'Gorgon' armor provides the user with superior protection without severely impacting mobility. Typically seen on SOM leaders or their most elite combat units due to the significant construction and maintenance requirements. You'll need serious firepower to punch through this. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 火星之子戈耳工式突击护甲"
+	desc = "一套笨重的重型战斗装甲，M-35'戈耳工'装甲能为使用者提供卓越的防护，同时不会严重限制机动性。由于显著的制造和维护需求，通常只见于火星之子指挥官或其最精锐的战斗单位。你需要强大的火力才能击穿它。Alt-点击以移除附件物品。使用它来切换内置手电筒。"
 	soft_armor = list(MELEE = 60, BULLET = 75, LASER = 70, ENERGY = 70, BOMB = 60, BIO = 55, FIRE = 65, ACID = 55)
 	icon_state = "som_leader"
 	worn_icon_state = "som_leader"
@@ -224,7 +224,7 @@
 	)
 
 /obj/item/clothing/suit/modular/som/heavy/leader/officer
-	desc = "A bulky suit of heavy combat armor, the M-35 'Gorgon' armor provides the user with superior protection without severely impacting mobility. The gold markings on this one signify it is worn by a high ranking field officer. You'll need serious firepower to punch through this. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	desc = "一套厚重的重型战斗装甲，M-35'戈尔贡'装甲能为使用者提供卓越的防护，同时不会严重限制机动性。这套装甲上的金色标记表明它由一名高级战地军官穿着。你需要强大的火力才能击穿它。Alt-点击以移除附件物品。使用它来切换内置手电筒。"
 	icon_state = "som_officer"
 	worn_icon_state = "som_officer"
 	starting_attachments = list(
@@ -235,8 +235,8 @@
 //helmet
 
 /obj/item/clothing/head/modular/som
-	name = "\improper SOM infantry helmet"
-	desc = "The standard combat helmet worn by SOM combat troops. Made using advanced polymers to provide very effective protection without compromising visibility."
+	name = "\improper 火星之子步兵头盔"
+	desc = "火星之子作战部队配备的标准作战头盔。采用先进聚合物制造，在提供高效防护的同时不影响视野。"
 	icon = 'icons/mob/modular/som_helmets.dmi'
 	worn_icon_list = list(
 		slot_head_str = 'icons/mob/modular/som_helmets.dmi',
@@ -265,8 +265,8 @@
 	visorless_offset_y = 0
 
 /obj/item/clothing/head/modular/som/engineer
-	name = "\improper SOM engineering helmet"
-	desc = "A specialised helmet designed for use by combat engineers. Its main feature being an integrated welding mask."
+	name = "\improper 火星之子工程头盔"
+	desc = "专为战斗工程兵设计的特种头盔，主要特点是集成了焊接面罩。"
 	icon_state = "som_helmet_engineer"
 	worn_icon_state = "som_helmet_engineer"
 	attachments_allowed = list(
@@ -277,8 +277,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/module/welding/som)
 
 /obj/item/clothing/head/modular/som/bio
-	name = "\improper SOM biohazard helmet"
-	desc = "This specialised helmet is worn by SOM personel equipped to deal with dangerous chemical, radiological or otherwise hazard substances. Typical unleashed by the SOM themselves."
+	name = "\improper SOM生化危害头盔"
+	desc = "这款专用头盔由火星之子人员佩戴，用于应对危险的化学、放射性或其他有害物质。这些物质通常由火星之子自身释放。"
 	icon_state = "som_helmet_bio"
 	worn_icon_state = "som_helmet_bio"
 	soft_armor = list(MELEE = 45, BULLET = 65, LASER = 60, ENERGY = 60, BOMB = 50, BIO = 75, FIRE = 50, ACID = 70)
@@ -291,8 +291,8 @@
 	)
 
 /obj/item/clothing/head/modular/som/hades
-	name = "\improper Hades Helmet System"
-	desc = "A helmet paired with the 'Hades' armor module, designed for significantly improved protection from fire, without compromising normal durability."
+	name = "\improper 冥王头盔系统"
+	desc = "与'冥王'装甲模块配套的头盔，旨在显著提升对火焰的防护能力，同时不牺牲常规耐久性。"
 	icon_state = "som_helmet_light"
 	worn_icon_state = "som_helmet_light"
 	soft_armor = list(MELEE = 35, BULLET = 65, LASER = 60, ENERGY = 60, BOMB = 50, BIO = 50, FIRE = 95, ACID = 40)
@@ -302,13 +302,13 @@
 	)
 
 /obj/item/clothing/head/modular/som/veteran
-	name = "\improper SOM veteran helmet"
-	desc = "The standard combat helmet worn by SOM combat specialists. State of the art materials provides more protection for more valuable brains."
+	name = "\improper 火星之子老兵头盔"
+	desc = "火星之子战斗专家使用的标准作战头盔。采用尖端材料，为更宝贵的大脑提供更强防护。"
 	soft_armor = list(MELEE = 50, BULLET = 70, LASER = 65, ENERGY = 65, BOMB = 55, BIO = 55, FIRE = 60, ACID = 55)
 
 /obj/item/clothing/head/modular/som/lorica
-	name = "\improper Lorica Helmet System"
-	desc = "A bulky helmet paired with the 'Lorica' armor module, designed for outstanding protection at the cost of significant weight and reduced flexibility. Substantial additional armor improves protection against all damage."
+	name = "\improper 洛里卡头盔系统"
+	desc = "一款与'洛里卡'装甲模块配套的笨重头盔，旨在提供卓越防护，但代价是显著增加的重量和降低的灵活性。大幅增强的额外装甲提升了针对所有伤害类型的防护能力。"
 	icon_state = "som_helmet_lorica"
 	worn_icon_state = "som_helmet_lorica"
 	soft_armor = list(MELEE = 60, BULLET = 80, LASER = 80, ENERGY = 80, BOMB = 65, BIO = 55, FIRE = 70, ACID = 60)
@@ -318,8 +318,8 @@
 	)
 
 /obj/item/clothing/head/modular/som/leader
-	name = "\improper SOM Gorgon pattern helmet"
-	desc = "Made for use with Gorgon pattern assault armor, providing superior protection. Typically seen on SOM leaders or their most elite combat units."
+	name = "\improper 火星之子 戈耳工式头盔"
+	desc = "专为戈尔贡式突击装甲设计，提供卓越防护。通常见于火星之子指挥官或其最精锐的战斗单位。"
 	icon_state = "som_helmet_leader"
 	worn_icon_state = "som_helmet_leader"
 	soft_armor = list(MELEE = 60, BULLET = 75, LASER = 70, ENERGY = 70, BOMB = 60, BIO = 55, FIRE = 65, ACID = 55)
@@ -333,6 +333,6 @@
 	)
 
 /obj/item/clothing/head/modular/som/leader/officer
-	desc = "Made for use with Gorgon pattern assault armor, providing superior protection. This one has gold markings indicating it belongs to a high ranking field officer."
+	desc = "专为戈耳工式突击装甲设计，提供卓越防护。此件带有金色标记，表明其属于高级战地军官。"
 	icon_state = "som_helmet_officer"
 	worn_icon_state = "som_helmet_officer"

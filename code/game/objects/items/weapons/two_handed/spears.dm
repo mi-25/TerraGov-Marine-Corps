@@ -1,6 +1,6 @@
 /obj/item/weapon/twohanded/spear
-	name = "spear"
-	desc = "A haphazardly-constructed yet still deadly weapon of ancient design."
+	name = "长矛"
+	desc = "一把粗制滥造却依然致命的古老设计武器。"
 	icon_state = "spearglass"
 	worn_icon_state = "spearglass"
 	force = 40
@@ -39,8 +39,8 @@
 	current_angle = initial(current_angle)	//Reset the angle
 
 /obj/item/weapon/twohanded/spear/tactical
-	name = "M-23 spear"
-	desc = "A tactical spear. Used for 'tactical' combat."
+	name = "M-23长矛"
+	desc = "一把战术长矛。用于'战术'战斗。"
 	icon_state = "spear"
 	worn_icon_state = "spear"
 
@@ -49,9 +49,9 @@
 	AddElement(/datum/element/strappable)
 
 /obj/item/weapon/twohanded/spear/tactical/tacticool
-	name = "M-23 TACTICOOL spear"
+	name = "M-23 战术长矛"
 	icon = 'icons/obj/items/weapons/64x64.dmi'
-	desc = "A TACTICOOL spear. Used for TACTICOOLNESS in combat."
+	desc = "一把战术长矛。用于在战斗中展现战术风格。"
 
 /obj/item/weapon/twohanded/spear/tactical/tacticool/Initialize(mapload)
 	. = ..()

@@ -141,17 +141,17 @@
 	updatedtracks=0 // Clear our memory of updated tracks.
 
 /obj/effect/decal/cleanable/blood/tracks/footprints
-	name = "wet footprints"
-	desc = "Whoops..."
+	name = "湿脚印"
+	desc = "哎呀..."
 	coming_state = "human1"
 	going_state = "human2"
 	amount = 0
 
 /obj/effect/decal/cleanable/blood/tracks/wheels
-	name = "wet tracks"
+	name = "湿漉漉的足迹"
 	coming_state = "wheels"
 	going_state = ""
-	desc = "They look like tracks left by wheels."
+	desc = "看起来像是车轮留下的痕迹。"
 	gender = PLURAL
 	random_icon_states = null
 	amount = 0

@@ -1,5 +1,5 @@
 /obj/machinery/iv_drip
-	name = "\improper IV drip"
+	name = "\improper 静脉滴注"
 	icon = 'icons/obj/iv_drip.dmi'
 	anchored = FALSE
 	density = FALSE
@@ -57,7 +57,7 @@
 			return
 
 		if(attached)
-			H.visible_message("[H] detaches \the [src] from \the [attached].", \
+			H.visible_message("[H] 将 \the [src] 从 \the [attached] 上拆下。", \
 			"You detach \the [src] from \the [attached].")
 			attached = null
 			update_icon()
@@ -65,7 +65,7 @@
 			return
 
 		if(in_range(src, usr) && ishuman(over_object) && get_dist(over_object, src) <= 1)
-			H.visible_message("[H] attaches \the [src] to \the [over_object].", \
+			H.visible_message("[H]将\the [src]连接到\the [over_object]。", \
 			"You attach \the [src] to \the [over_object].")
 			attached = over_object
 			update_icon()
@@ -79,11 +79,11 @@
 
 	if(istype(I, /obj/item/reagent_containers))
 		if(beaker)
-			to_chat(user, span_warning("There is already a reagent container loaded!"))
+			to_chat(user, span_warning("已装载试剂容器！"))
 			return
 
 		if((!istype(I, /obj/item/reagent_containers/blood) && !istype(I, /obj/item/reagent_containers/glass)) || istype(I, /obj/item/reagent_containers/glass/bucket))
-			to_chat(user, span_warning("That won't fit!"))
+			to_chat(user, span_warning("那装不下！"))
 			return
 
 		if(!user.transferItemToLoc(I, src))
@@ -95,7 +95,7 @@
 		for(var/datum/reagent/R in beaker.reagents.reagent_list)
 			reagentnames += ";[R.name]"
 
-		to_chat(user, "You attach \the [I] to \the [src].")
+		to_chat(user, "你将\the [I]安装到\the [src]上。")
 		update_icon()
 
 
@@ -104,7 +104,7 @@
 		return
 
 	if(!(get_dist(src, attached) <= 1 && isturf(attached.loc)))
-		visible_message("The needle is ripped out of [attached], doesn't that hurt?")
+		visible_message("针头从[attached]身上被扯出来了，不疼吗？")
 		attached.apply_damage(3, BRUTE, pick("r_arm", "l_arm"))
 		attached = null
 		update_icon()
@@ -130,7 +130,7 @@
 		amount = min(amount, 4)
 		// If the beaker is full, ping
 		if(amount == 0 && TIMER_COOLDOWN_FINISHED(src, COOLDOWN_IV_PING))
-			visible_message("\The [src] pings.")
+			visible_message("\The [src] 发出哔哔声。")
 			TIMER_COOLDOWN_START(src, COOLDOWN_IV_PING, 2 SECONDS)
 			return
 
@@ -146,7 +146,7 @@
 
 		// If the human is losing too much blood, beep.
 		if(T.blood_volume < BLOOD_VOLUME_SAFE && TIMER_COOLDOWN_FINISHED(src, COOLDOWN_IV_PING))
-			visible_message("\The [src] beeps loudly.")
+			visible_message("\The [src] 发出响亮的哔哔声。")
 			TIMER_COOLDOWN_START(src, COOLDOWN_IV_PING, 2 SECONDS)
 
 		T.take_blood(beaker, amount)

@@ -1,5 +1,5 @@
 /obj/machinery/pipedispenser
-	name = "Pipe Dispenser"
+	name = "管道分发器"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "pipe_d"
 	density = TRUE
@@ -68,18 +68,18 @@
 		return
 
 	if(istype(I, /obj/item/pipe) || istype(I, /obj/item/pipe_meter))
-		to_chat(usr, span_notice("You put [I] back into [src]."))
+		to_chat(usr, span_notice("你将[I]放回了[src]。"))
 		qdel(I)
 
 	else if(iswrench(I))
 		if(anchored)
 			playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
-			to_chat(user, span_notice("You begin to unfasten \the [src] from the floor..."))
+			to_chat(user, span_notice("你开始将\the [src]从地板上解开..."))
 
 			if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD))
 				return
 
-			user.visible_message("[user] unfastens \the [src].", \
+			user.visible_message("[user] 解开了\the [src]。", \
 				span_notice("You have unfastened \the [src]. Now it can be pulled somewhere else."), \
 				"You hear ratchet.")
 			anchored = FALSE
@@ -89,12 +89,12 @@
 				usr << browse(null, "window=pipedispenser")
 		else
 			playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
-			to_chat(user, span_notice("You begin to fasten \the [src] to the floor..."))
+			to_chat(user, span_notice("你开始将\the [src]固定在地板上..."))
 
 			if(!do_after(user, 20, NONE, src, BUSY_ICON_BUILD))
 				return
 
-			user.visible_message("[user] fastens \the [src].", \
+			user.visible_message("[user] 固定了 \the [src]。", \
 				span_notice("You have fastened \the [src]. Now it can dispense pipes."), \
 				"You hear ratchet.")
 			anchored = TRUE
@@ -112,10 +112,10 @@
 
 
 /obj/machinery/pipedispenser/disposal
-	name = "disposal pipe dispenser"
+	name = "管道处理装置"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "pipe_d"
-	desc = "Dispenses pipes that will ultimately be used to move trash around."
+	desc = "分发用于运送垃圾的管道。"
 
 
 //Allow you to drag-drop disposal pipes and transit tubes into it
@@ -124,7 +124,7 @@
 	if(user.incapacitated() || !istype(pipe) || get_dist(user, src) > 1 || get_dist(src, pipe) > 1 || pipe.anchored)
 		return
 
-	user.balloon_alert(user, "recycled pipe")
+	user.balloon_alert(user, "回收管道")
 	qdel(pipe)
 
 /obj/machinery/pipedispenser/disposal/interact(mob/user)
@@ -161,7 +161,7 @@
 			var/obj/structure/disposalconstruct/C = new (loc, p_type)
 
 			//if(!C.can_place())
-			//	to_chat(usr, span_warning("There's not enough room to build that here!"))
+			//	to_chat(usr, span_warning("这里空间不够，无法建造！"))
 			//	qdel(C)
 			//	return
 			if(href_list["dir"])

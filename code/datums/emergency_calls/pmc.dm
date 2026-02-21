@@ -1,5 +1,5 @@
 /datum/emergency_call/pmc
-	name = "NT Private Military Contractor Squad"
+	name = "纳米传讯私人军事承包商小队"
 	base_probability = 11
 	alignement_factor = -2
 	shuttle_id = SHUTTLE_DISTRESS_PMC
@@ -17,9 +17,9 @@
 	to_chat(H, "<B>Working there has proven to be [pick(50;"very", 20;"somewhat", 5;"astoundingly")] profitable for you.</b>")
 	to_chat(H, "<B>While you are [pick("enlisted as", "officially", "part-time officially", "privately")] [pick("an employee", "a security officer", "an officer")], much of your work is off the books. You work as a skilled rapid-response contractor.</b>")
 	to_chat(H, "")
-	to_chat(H, "<B>Today, a TGMC vessel, [SSmapping.configs[SHIP_MAP].map_name], has sent out a distress signal on the orbit of [SSmapping.configs[GROUND_MAP].map_name]. Your time is running short, get your shuttle launching!</b>")
-	to_chat(H, "<B>Make sure the Corporate Liaison is safe.</b>")
-	to_chat(H, "<B>If there is no Liaison, eliminate the threat and cooperate with the Captain before returning back home.</b>")
+	to_chat(H, "<B>今日，一艘 TGMC 舰船，[SSmapping.configs[SHIP_MAP].map_name]，已在 [SSmapping.configs[GROUND_MAP].map_name] 轨道上发出求救信号。时间紧迫，立即发射你们的穿梭机！</b>")
+	to_chat(H, "<B>确保企业联络官的安全。</b>")
+	to_chat(H, "<B>如果没有联络官，则消灭威胁并与舰长合作后返回家园。</b>")
 
 
 /datum/emergency_call/pmc/create_member(datum/mind/M)

@@ -2,7 +2,7 @@
 //It also holds the datum ai_node, containing getter procs and handle info like weights
 
 /obj/effect/ai_node //A effect that has a ai_node datum in it, used by AIs to pathfind over long distances as well as knowing what's happening at it
-	name = "AI Node"
+	name = "AI节点"
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "ai_node" //Pure white 'X' with word "AI" beneath
 	anchored = TRUE //No pulling those nodes yo

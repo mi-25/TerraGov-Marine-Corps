@@ -2,7 +2,7 @@
 	name = "Return to Core"
 	action_icon_state = "lay_hivemind"
 	action_icon = 'icons/Xeno/actions/hivemind.dmi'
-	desc = "Teleport back to your core."
+	desc = "传送回你的核心。"
 	use_state_flags = ABILITY_USE_SOLIDOBJECT
 
 /datum/action/ability/xeno_action/return_to_core/action_activate()
@@ -18,7 +18,7 @@
 	name = "Change form"
 	action_icon_state = "manifest"
 	action_icon = 'icons/Xeno/actions/hivemind.dmi'
-	desc = "Change from your incorporeal form to your physical on and vice-versa."
+	desc = "从你的无形形态转变为实体形态，反之亦然。"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOMORPH_HIVEMIND_CHANGE_FORM,
 	)
@@ -31,7 +31,7 @@
 	name = "Command minions"
 	action_icon_state = "minion_agressive"
 	action_icon = 'icons/Xeno/actions/leader.dmi'
-	desc = "Command all minions, ordering them to converge on this location. Rightclick to change minion behaviour."
+	desc = "指挥所有仆从，命令它们向此位置集结。右键点击以更改仆从行为模式。"
 	ability_cost = 100
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_RALLY_MINION,
@@ -95,7 +95,7 @@
 /datum/action/ability/xeno_action/teleport
 	name = "Teleport"
 	action_icon_state = "resync" // TODO: i think i missed an icon
-	desc = "Pick a location on the map and instantly manifest there if possible."
+	desc = "在地图上选择一个位置，如果可能的话立即传送到那里。"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOMORPH_HIVEMIND_TELEPORT,
 	)
@@ -125,7 +125,7 @@
 		return
 
 	if(!xeno_owner.check_weeds(turf_to_teleport_to, TRUE))
-		owner.balloon_alert(owner, "no weeds in selected location!")
+		owner.balloon_alert(owner, "所选位置没有菌毯！")
 		return
 	if(!(xeno_owner.status_flags & INCORPOREAL) && isxenohivemind(xeno_owner))
 		var/mob/living/carbon/xenomorph/hivemind/hivemind_owner = xeno_owner
@@ -137,7 +137,7 @@
 	name = "Shoot Artillery"
 	action_icon_state = "bombard"
 	action_icon = 'icons/Xeno/actions/boiler.dmi'
-	desc = "Select one of the Hive's artillery buildings and shoot it at a target. Right-click to select which artillery to use."
+	desc = "选择蜂巢的一个炮台建筑，向目标开火。右键点击选择要使用的炮台。"
 	use_state_flags = ABILITY_USE_SOLIDOBJECT
 	/// The currently selected artillery to use/shoot.
 	var/obj/structure/xeno/acid_maw/selected_artillery
@@ -150,16 +150,16 @@
 		return
 	if(!GLOB.xeno_acid_jaws_by_hive[xeno_owner.hivenumber])
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "no xeno artillery found!")
+			xeno_owner.balloon_alert(xeno_owner, "未发现异形炮火！")
 		return FALSE
 	if(!selected_artillery || QDELING(selected_artillery))
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "pick an artillery first!")
+			xeno_owner.balloon_alert(xeno_owner, "先选择火炮！")
 		return FALSE
 	if(TIMER_COOLDOWN_RUNNING(selected_artillery, COOLDOWN_MAW_GLOB))
 		if(!silent)
 			var/timeleft = S_TIMER_COOLDOWN_TIMELEFT(selected_artillery, COOLDOWN_MAW_GLOB)
-			xeno_owner.balloon_alert(xeno_owner, "cooldown: [timeleft/10] seconds")
+			xeno_owner.balloon_alert(xeno_owner, "冷却时间：[timeleft/10]秒")
 		return FALSE
 
 /datum/action/ability/activable/xeno/shoot_xeno_artillery/fail_activate()
@@ -177,7 +177,7 @@
 		return
 	if(length(GLOB.xeno_acid_jaws_by_hive[xeno_owner.hivenumber]) == 1)
 		selected_artillery = GLOB.xeno_acid_jaws_by_hive[xeno_owner.hivenumber][1]
-		xeno_owner.balloon_alert(xeno_owner, "artillery selected")
+		xeno_owner.balloon_alert(xeno_owner, "火炮已选定")
 		update_button_icon()
 		return
 	INVOKE_ASYNC(src, PROC_REF(select_artillery_from_input_list))
@@ -186,5 +186,5 @@
 	selected_artillery = tgui_input_list(xeno_owner, "Which artillery to use?", "Artillery List",  GLOB.xeno_acid_jaws_by_hive[xeno_owner.hivenumber])
 	if(!selected_artillery)
 		return
-	xeno_owner.balloon_alert(xeno_owner, "artillery selected")
+	xeno_owner.balloon_alert(xeno_owner, "火炮已选定")
 	update_button_icon()

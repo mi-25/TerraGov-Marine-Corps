@@ -1,7 +1,7 @@
 /* SmartFridge.  Much todo
 */
 /obj/machinery/smartfridge
-	name = "\improper SmartFridge"
+	name = "\improper 智能冰箱"
 	icon = 'icons/obj/machines/vending.dmi'
 	icon_state = "smartfridge"
 	layer = BELOW_OBJ_LAYER
@@ -72,12 +72,12 @@
 		attack_hand(user)
 
 	else if(machine_stat & NOPOWER)
-		to_chat(user, span_notice("\The [src] is unpowered and useless."))
+		to_chat(user, span_notice("\The [src] 未通电，无法使用。"))
 		return
 
 	if(accept_check(I))
 		if(length(contents) >= max_n_of_items)
-			to_chat(user, span_notice("\The [src] is full."))
+			to_chat(user, span_notice("\The [src] 已满。"))
 			return TRUE
 		else if(!user.drop_held_item())
 			return TRUE
@@ -86,7 +86,7 @@
 
 		item_quants[strip_improper(I.name)]++
 
-		user.visible_message("<span class='notice'>[user] has added \the [I] to \the [src].", \
+		user.visible_message("<span class='notice'>[user] 已将 \the [I] 添加至 \the [src]。</span>", \
 							"<span class='notice'>You add \the [I] to \the [src].")
 		updateUsrDialog()
 
@@ -98,7 +98,7 @@
 				continue
 
 			if(length(contents) >= max_n_of_items)
-				to_chat(user, span_notice("\The [src] is full."))
+				to_chat(user, span_notice("\The [src] 已满。"))
 				return TRUE
 
 			P.storage_datum.remove_from_storage(G, src, user)
@@ -106,16 +106,16 @@
 			plants_loaded++
 
 		if(plants_loaded)
-			user.visible_message(span_notice("[user] loads \the [src] with \the [P]."), \
+			user.visible_message(span_notice("[user] 将 \the [P] 装填进 \the [src]。"), \
 				span_notice("You load \the [src] with \the [P]."))
 
 			if(length(P.contents) > 0)
-				to_chat(user, span_notice("Some items are refused."))
+				to_chat(user, span_notice("部分物品被拒收。"))
 
 		updateUsrDialog()
 
 	else
-		to_chat(user, span_notice("\The [src] smartly refuses [I]."))
+		to_chat(user, span_notice("\The [src] 明智地拒绝了[I]。"))
 		return TRUE
 
 
@@ -215,7 +215,7 @@
 		return 0
 	spawn(0)
 		throw_item.throw_at(target,16,3,src)
-	src.visible_message(span_danger("[src] launches [throw_item.name] at [target.name]!"))
+	src.visible_message(span_danger("[src]向[target.name]投掷了[throw_item.name]！"))
 	return 1
 
 
@@ -226,8 +226,8 @@
 *********************/
 
 /obj/machinery/smartfridge/seeds
-	name = "\improper MegaSeed Servitor"
-	desc = "When you need seeds fast!"
+	name = "\improper 巨型种子仆从"
+	desc = "急需种子时！"
 	icon = 'icons/obj/machines/vending.dmi'
 	icon_state = "seeds"
 	icon_on = "seeds"
@@ -240,8 +240,8 @@
 
 //the secure subtype does nothing, I'm only keeping it to avoid conflicts with maps.
 /obj/machinery/smartfridge/secure/medbay
-	name = "\improper Refrigerated Medicine Storage"
-	desc = "A refrigerated storage unit for storing medicine and chemicals."
+	name = "\improper 冷藏药品储存柜"
+	desc = "用于储存药品和化学品的冷藏储存单元。"
 	icon_state = "smartfridge" //To fix the icon in the map editor.
 	icon_on = "smartfridge"
 	icon_off = "smartfridge-off"
@@ -260,8 +260,8 @@
 
 
 /obj/machinery/smartfridge/secure/virology
-	name = "\improper Refrigerated Virus Storage"
-	desc = "A refrigerated storage unit for storing viral material."
+	name = "\improper 冷藏病毒储存柜"
+	desc = "用于储存病毒材料的冷藏储存单元。"
 	is_secure_fridge = TRUE
 	req_access = list(ACCESS_CIVILIAN_MEDICAL)
 	icon_state = "smartfridge"
@@ -275,8 +275,8 @@
 
 
 /obj/machinery/smartfridge/chemistry
-	name = "\improper Smart Chemical Storage"
-	desc = "A refrigerated storage unit for medicine and chemical storage."
+	name = "\improper 智能化学品储存"
+	desc = "用于储存药品和化学品的冷藏储存单元。"
 	is_secure_fridge = TRUE
 
 /obj/machinery/smartfridge/chemistry/accept_check(obj/item/O as obj)
@@ -286,13 +286,13 @@
 
 
 /obj/machinery/smartfridge/chemistry/virology
-	name = "\improper Smart Virus Storage"
-	desc = "A refrigerated storage unit for volatile sample storage."
+	name = "\improper 智能病毒储存"
+	desc = "用于储存挥发性样本的冷藏储存单元。"
 
 
 /obj/machinery/smartfridge/drinks
-	name = "\improper Drink Showcase"
-	desc = "A refrigerated storage unit for tasty tasty alcohol."
+	name = "\improper 饮品展示"
+	desc = "一个冷藏储存单元，用于存放美味可口的酒精饮料。"
 
 /obj/machinery/smartfridge/drinks/accept_check(obj/item/O as obj)
 	if(istype(O,/obj/item/reagent_containers/glass) || istype(O,/obj/item/reagent_containers/food/drinks) || istype(O,/obj/item/reagent_containers/food/condiment))

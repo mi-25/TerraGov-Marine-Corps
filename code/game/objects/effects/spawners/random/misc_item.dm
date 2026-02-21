@@ -1,6 +1,6 @@
 
 /obj/effect/spawner/random/misc
-	name = "Random base misc item spawner"
+	name = "随机基地杂物生成器"
 	icon = 'icons/effects/random/misc.dmi'
 	icon_state = "random_trash"
 	loot = list(
@@ -8,7 +8,7 @@
 	)
 
 /obj/effect/spawner/random/misc/shard
-	name = "Random shard spawner"
+	name = "随机碎片生成器"
 	icon_state = "random_shard"
 	spawn_random_offset = TRUE
 	spawn_loot_count = 2
@@ -20,7 +20,7 @@
 	)
 
 /obj/effect/spawner/random/misc/seeds
-	name = "Random seed spawner"
+	name = "随机种子生成器"
 	icon_state = "random_seed"
 	spawn_loot_chance = 90
 	loot = list(
@@ -44,14 +44,14 @@
 	)
 
 /obj/effect/spawner/random/misc/book
-	name = "Random book spawner"
+	name = "随机书籍生成器"
 	icon_state = "random_book"
 	spawn_loot_chance = 90
 	loot_subtype_path = /obj/item/book/manual
 	loot = list()
 
 /obj/effect/spawner/random/misc/table_lighting
-	name = "Random table lighting spawner"
+	name = "随机桌面照明生成器"
 	icon_state = "random_lamp"
 	spawn_loot_chance = 95
 	loot = list(
@@ -64,7 +64,7 @@
 	)
 
 /obj/effect/spawner/random/misc/earmuffs
-	name = "Random earmuffs spawner"
+	name = "随机耳罩生成器"
 	icon_state = "random_earmuffs"
 	spawn_loot_chance = 95
 	loot = list(
@@ -74,7 +74,7 @@
 	)
 
 /obj/effect/spawner/random/misc/cigarettes
-	name = "Random cigarette spawner"
+	name = "随机香烟生成器"
 	icon_state = "random_cigarette"
 	spawn_random_offset = TRUE
 	loot = list(
@@ -87,7 +87,7 @@
 	)
 
 /obj/effect/spawner/random/misc/soap
-	name = "Random soap spawner"
+	name = "随机肥皂生成器"
 	icon_state = "random_soap"
 	spawn_loot_chance = 50
 	loot = list(
@@ -115,7 +115,7 @@
 
 //random plushie spawner
 /obj/effect/spawner/random/misc/plushie
-	name = "Random plush spawner"
+	name = "随机毛绒玩具生成器"
 	icon_state = "random_plush"
 	spawn_loot_chance = 15
 	loot = list(
@@ -142,7 +142,7 @@
 	spawn_loot_chance = 1
 
 /obj/effect/spawner/random/misc/gnome
-	name = "Random gnome spawner"
+	name = "随机地精生成器"
 	icon_state = "random_gnome"
 	spawn_loot_chance = 15
 	loot = list(
@@ -154,7 +154,7 @@
 	spawn_loot_chance = 50
 
 /obj/effect/spawner/random/misc/plant
-	name = "Random potted plant spawner"
+	name = "随机盆栽生成器"
 	icon_state = "random_plant"
 	loot = list(
 		/obj/structure/flora/pottedplant,
@@ -184,7 +184,7 @@
 	)
 
 /obj/effect/spawner/random/misc/folder
-	name = "folder spawner"
+	name = "文件夹生成器"
 	icon_state = "random_folder"
 	spawn_random_offset = TRUE
 	loot = list(
@@ -202,13 +202,13 @@
 
 
 /obj/effect/spawner/random/misc/bedsheet
-	name = "bedsheet spawner"
+	name = "床单生成器"
 	icon_state = "random_bedsheet"
 	loot_subtype_path = /obj/item/bedsheet
 	loot = list()
 
 /obj/effect/spawner/random/misc/handcuffs
-	name = "handcuff spawner"
+	name = "手铐生成器"
 	icon_state = "random_handcuffs"
 	spawn_loot_chance = 85
 	spawn_random_offset = TRUE
@@ -218,7 +218,7 @@
 	)
 
 /obj/effect/spawner/random/misc/hand_labeler
-	name = "hand labeler spawner"
+	name = "手持标签机生成器"
 	icon_state = "random_labeler"
 	spawn_loot_chance = 90
 	spawn_random_offset = TRUE
@@ -229,7 +229,7 @@
 
 ///All the trash.
 /obj/effect/spawner/random/misc/trash
-	name = "Random trash"
+	name = "随机杂物"
 	icon_state = "random_trash"
 	loot = list(
 		/obj/item/trash/raisins,
@@ -265,7 +265,7 @@
 	)
 
 /obj/effect/spawner/random/misc/greytide
-	name = "greytide spawner"
+	name = "灰潮生成器"
 	icon_state = "random_greytide"
 	spawn_loot_chance = 25
 	spawn_loot_count = 2
@@ -285,13 +285,13 @@
 	)
 
 /obj/effect/spawner/random/misc/prizemecha
-	name = "random toy mecha"
+	name = "随机玩具机甲"
 	icon_state = "random_durand"
 	loot_type_path = /obj/item/toy/prize
 	loot = list()
 
 /obj/effect/spawner/random/misc/cigar
-	name = "random cigar spawner"
+	name = "随机雪茄生成器"
 	icon_state = "random_cigar"
 	spawn_loot_chance = 75
 	loot = list(
@@ -301,7 +301,7 @@
 	)
 
 /obj/effect/spawner/random/misc/paperbin
-	name = "random paperbin spawner"
+	name = "随机纸篓生成器"
 	icon_state = "random_paperbin"
 	spawn_loot_chance = 85
 	loot = list(
@@ -310,7 +310,7 @@
 	)
 
 /obj/effect/spawner/random/misc/clipboard
-	name = "random clipboard spawner"
+	name = "随机剪贴板生成器"
 	icon_state = "random_clipboard"
 	spawn_loot_chance = 65
 	spawn_random_offset = TRUE
@@ -320,7 +320,7 @@
 	)
 
 /obj/effect/spawner/random/misc/table_parts
-	name = "table parts spawner"
+	name = "部件生成器"
 	icon_state = "random_tableparts"
 	spawn_loot_chance = 95
 	loot = list(
@@ -336,13 +336,13 @@
 //random decals live in here
 
 /obj/effect/spawner/random/decal
-	name = "Random base misc decal spawner"
+	name = "随机基地杂项贴花生成器"
 	icon = 'icons/effects/random/misc.dmi'
 	loot_subtype_path = /obj/effect/spawner/random/decal
 	loot = list()
 
 /obj/effect/spawner/random/decal/blood
-	name = "random blood spawner"
+	name = "随机血液生成器"
 	icon_state = "random_blood_splatter"
 	spawn_loot_chance = 85
 	spawn_scatter_radius = 1

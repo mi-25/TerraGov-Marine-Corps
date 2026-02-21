@@ -3,7 +3,7 @@
 // An invisible (no icon) mob that the AI controls to look around the station with.
 // It streams chunks as it moves around, which will show it what the AI can and cannot see.
 /mob/camera/aiEye
-	name = "Inactive AI Eye"
+	name = "非活动AI之眼"
 	icon_state = "ai_camera"
 	icon = 'icons/mob/cameramob.dmi'
 	invisibility = INVISIBILITY_MAXIMUM
@@ -147,7 +147,7 @@
 	unset_interaction()
 
 	if(isturf(loc) && (QDELETED(eyeobj) || !eyeobj.loc))
-		to_chat(src, "ERROR: Eyeobj not found. Creating new eye...")
+		to_chat(src, "错误：眼体对象未找到。正在创建新眼体...")
 		create_eye()
 
 	eyeobj?.setLoc(loc)

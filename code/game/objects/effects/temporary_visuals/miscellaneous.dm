@@ -1,11 +1,11 @@
 /obj/effect/temp_visual/telekinesis
-	name = "telekinetic force"
+	name = "念动力"
 	icon_state = "empdisable"
 	duration = 0.5 SECONDS
 
 /// Used for globadiers heal grenades
 /obj/effect/temp_visual/heal
-	name = "healing splatter"
+	name = "治疗溅射"
 	icon_state = "mech_toxin"
 
 /particles/splatter
@@ -101,13 +101,13 @@
 	animate(src, alpha = 0, time = duration)
 
 /obj/effect/temp_visual/transfer_plasma
-	name = "transfer plasma"
+	name = "转移等离子体"
 	icon_state = "transfer_plasma"
 	duration = 0.5 SECONDS
 
 
 /obj/effect/temp_visual/after_image
-	name = "afterimage"
+	name = "残影"
 	layer = BELOW_MOB_LAYER
 	alpha = 64 //Translucent
 	density = FALSE
@@ -136,7 +136,7 @@
 	animate(src, alpha = 0, time = duration)
 
 /obj/effect/temp_visual/ob_impact
-	name = "ob impact animation"
+	name = "轨道轰炸命中动画"
 	layer = ABOVE_ALL_MOB_LAYER
 	duration = 0.7 SECONDS
 	density = FALSE
@@ -153,7 +153,7 @@
 	animate(icon_state=null, icon=null, time=2) // to vanish it immediately
 
 /obj/effect/temp_visual/heavyimpact
-	name = "heavy impact"
+	name = "重击"
 	icon = 'icons/effects/heavyimpact.dmi'
 	icon_state = ""
 	duration = 13
@@ -182,19 +182,19 @@
 	set_visuals(faction)
 
 /obj/effect/temp_visual/order/attack_order
-	name = "attack order"
+	name = "攻击指令"
 	icon_state_on = "attack"
 
 /obj/effect/temp_visual/order/defend_order
-	name = "defend order"
+	name = "防御命令"
 	icon_state_on = "defend"
 
 /obj/effect/temp_visual/order/retreat_order
-	name = "retreat order"
+	name = "撤退命令"
 	icon_state_on = "retreat"
 
 /obj/effect/temp_visual/order/rally_order
-	name = "rally order"
+	name = "集结命令"
 	icon_state_on = "rally"
 	duration = CIC_ORDER_DURATION
 
@@ -211,37 +211,37 @@
 	hud_list[hud_type] = holder
 
 /obj/effect/temp_visual/healing
-	name = "healing"
+	name = "治疗"
 	icon = 'icons/effects/progressicons.dmi'
 	icon_state = "busy_medical"
 	duration = 0.8 SECONDS
 
 
 /obj/effect/temp_visual/alien_fruit_eaten
-	name = "glitters"
+	name = "闪光"
 	icon_state = "shieldsparkles"
 	duration = 0.5 SECONDS
 
 /obj/effect/temp_visual/smoke
-	name = "smoke"
+	name = "烟雾"
 	icon = 'icons/obj/items/jetpack.dmi'
 	icon_state = "smoke"
 	duration = 1.2 SECONDS
 
 /obj/effect/temp_visual/acid_splatter
-	name = "acid_splatter"
+	name = "酸液飞溅"
 	icon = 'icons/Xeno/Effects.dmi'
 	icon_state = "splatter"
 	duration = 0.8 SECONDS
 
 /obj/effect/temp_visual/xadar_blast
-	name = "acid cascade"
+	name = "酸液连击"
 	icon = 'icons/Xeno/96x96.dmi'
 	icon_state = "xadar_splash"
 	duration = 0.4 SECONDS
 
 /obj/effect/temp_visual/acid_bath
-	name = "acid bath"
+	name = "酸液浴"
 	icon = 'icons/obj/items/projectiles.dmi'
 	icon_state = "boiler_gas"
 	duration = 0.8 SECONDS

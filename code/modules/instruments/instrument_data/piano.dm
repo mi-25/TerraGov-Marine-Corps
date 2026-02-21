@@ -1,10 +1,10 @@
 /datum/instrument/piano
-	name = "Generic piano"
+	name = "通用钢琴"
 	category = "Piano"
 	abstract_type = /datum/instrument/piano
 
 /datum/instrument/piano/fluid_piano
-	name = "FluidR3 Grand Piano"
+	name = "FluidR3 大钢琴"
 	id = "r3grand"
 	real_samples = list(
 		"36"='sound/runtime/instruments/synthesis_samples/piano/fluid_piano/c2.ogg',
@@ -17,7 +17,7 @@
 	)
 
 /datum/instrument/piano/fluid_harpsichord
-	name = "FluidR3 Harpsichord"
+	name = "FluidR3 大键琴"
 	id = "r3harpsi"
 	real_samples = list(
 		"36"='sound/runtime/instruments/synthesis_samples/piano/fluid_harpsi/c2.ogg',
@@ -30,7 +30,7 @@
 	)
 
 /datum/instrument/piano/crisis_harpsichord
-	name = "Crisis Harpsichord"
+	name = "危机大键琴"
 	id = "crharpsi"
 	real_samples = list(
 		"36"='sound/runtime/instruments/synthesis_samples/piano/crisis_harpsichord/c2.ogg',
@@ -40,7 +40,7 @@
 	)
 
 /datum/instrument/piano/crisis_grandpiano_uni
-	name = "Crisis Grand Piano One"
+	name = "危机大钢琴一号"
 	id = "crgrand1"
 	real_samples = list(
 		"36"='sound/runtime/instruments/synthesis_samples/piano/crisis_grand_piano/c2.ogg',
@@ -53,7 +53,7 @@
 	)
 
 /datum/instrument/piano/crisis_brightpiano_uni
-	name = "Crisis Bright Piano One"
+	name = "危机明亮钢琴一号"
 	id = "crbright1"
 	real_samples = list(
 		"36"='sound/runtime/instruments/synthesis_samples/piano/crisis_bright_piano/c2.ogg',

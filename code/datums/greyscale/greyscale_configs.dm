@@ -346,26 +346,26 @@
 //
 
 /datum/greyscale_config/bench_solo
-	name = "Bench Solo"
+	name = "单人长凳"
 	icon_file = 'icons/obj/chairs_wide.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bench_solo.json'
 
 /datum/greyscale_config/bench_middle
-	name = "Bench Middle"
+	name = "中段"
 	icon_file = 'icons/obj/chairs_wide.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bench_middle.json'
 
 /datum/greyscale_config/bench_left
-	name = "Bench Left"
+	name = "左工作台"
 	icon_file = 'icons/obj/chairs_wide.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bench_left.json'
 
 /datum/greyscale_config/bench_right
-	name = "Bench Right"
+	name = "右工作台"
 	icon_file = 'icons/obj/chairs_wide.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bench_right.json'
 
 /datum/greyscale_config/bench_corner
-	name = "Bench Corner"
+	name = "长凳转角"
 	icon_file = 'icons/obj/chairs_wide.dmi'
 	json_config = 'code/datums/greyscale/json_configs/bench_corner.json'

@@ -300,7 +300,7 @@
 						qdel(Obj)
 					CHECK_TICK
 				if(!i)
-					to_chat(usr, "No objects of this type exist")
+					to_chat(usr, "不存在此类型的物体")
 					return
 				log_admin("[key_name(usr)] deleted all objects of type [O_type] ([i] objects deleted) ")
 				message_admins(span_notice("[key_name(usr)] deleted all objects of type [O_type] ([i] objects deleted) "))
@@ -312,7 +312,7 @@
 						qdel(Obj)
 					CHECK_TICK
 				if(!i)
-					to_chat(usr, "No objects of this type exist")
+					to_chat(usr, "不存在此类型的物体")
 					return
 				log_admin("[key_name(usr)] deleted all objects of type or subtype of [O_type] ([i] objects deleted) ")
 				message_admins(span_notice("[key_name(usr)] deleted all objects of type or subtype of [O_type] ([i] objects deleted) "))
@@ -328,7 +328,7 @@
 ///Handles welder based repair of objects, normally called by welder_act
 /obj/proc/welder_repair_act(mob/living/user, obj/item/I, repair_amount = 150, repair_time = 5 SECONDS, repair_threshold = 0, skill_required = SKILL_ENGINEER_DEFAULT, fuel_req = 2, fumble_time)
 	if(user.do_actions)
-		balloon_alert(user, "busy!")
+		balloon_alert(user, "忙！")
 		return FALSE
 
 	if(user.a_intent == INTENT_HARM)
@@ -340,18 +340,18 @@
 		return FALSE
 
 	if(get_self_acid())
-		balloon_alert(user, "it's melting!")
+		balloon_alert(user, "它正在熔化！")
 		return TRUE
 
 	if(obj_integrity <= max_integrity * repair_threshold)
 		return BELOW_INTEGRITY_THRESHOLD
 
 	if(!needs_welder_repair(user))
-		balloon_alert(user, "already repaired")
+		balloon_alert(user, "已修复")
 		return TRUE
 
 	if(user.skills.getRating(SKILL_ENGINEER) < skill_required)
-		user.visible_message(span_notice("[user] fumbles around figuring out how to repair [src]."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何修理 [src]。"),
 		span_notice("You fumble around figuring out how to repair [src]."))
 		if(!do_after(user, (fumble_time ? fumble_time : repair_time) * (skill_required - user.skills.getRating(SKILL_ENGINEER)), NONE, src, BUSY_ICON_BUILD))
 			return TRUE
@@ -360,7 +360,7 @@
 		repair_amount *= (1+(0.1*(user.skills.getRating(SKILL_ENGINEER) - (skill_required + 1))))
 
 	repair_time *= welder.toolspeed
-	balloon_alert_to_viewers("starting repair...")
+	balloon_alert_to_viewers("开始维修...")
 	while(needs_welder_repair(user))
 		if(!I.use_tool(src, user, repair_time, fuel_req, 25, CALLBACK(src, PROC_REF(is_repaired_enough), user, repair_threshold), BUSY_ICON_FRIENDLY))
 			return TRUE
@@ -368,7 +368,7 @@
 		repair_damage(repair_amount, user)
 		update_icon()
 
-	balloon_alert_to_viewers("repaired")
+	balloon_alert_to_viewers("已修复")
 	return TRUE
 
 ///callback check to see if we're done repairing
@@ -387,7 +387,7 @@
 	if(!isliving(grab.grabbed_thing))
 		return
 	if(user.grab_state <= GRAB_AGGRESSIVE)
-		to_chat(user, span_warning("You need a better grip to do that!"))
+		to_chat(user, span_warning("你需要握得更稳才能做到！"))
 		return
 
 	var/mob/living/grabbed_mob = grab.grabbed_thing
@@ -397,7 +397,7 @@
 	step_towards(grabbed_mob, src)
 	var/damage = base_damage + (user.skills.getRating(SKILL_UNARMED) * UNARMED_SKILL_DAMAGE_MOD)
 	grabbed_mob.apply_damage(damage, BRUTE, "head", MELEE, is_sharp, updating_health = TRUE, attacker = user)
-	user.visible_message(span_danger("[user] slams [grabbed_mob]'s face against [src]!"),
+	user.visible_message(span_danger("[user] 将 [grabbed_mob] 的脸狠狠砸在 [src] 上！"),
 	span_danger("You slam [grabbed_mob]'s face against [src]!"))
 	log_combat(user, grabbed_mob, "slammed", "", "against \the [src]")
 	take_damage(damage, BRUTE, MELEE)
@@ -418,7 +418,7 @@
 		return FALSE
 	if(internal_item.item_flags & DEPLOYED_NO_PICKUP)
 		if(user)
-			balloon_alert(user, "can't disassemble!")
+			balloon_alert(user, "无法拆解！")
 		return FALSE
 	SEND_SIGNAL(src, COMSIG_ITEM_UNDEPLOY, user)
 	return TRUE

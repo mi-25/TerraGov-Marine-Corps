@@ -2,7 +2,7 @@
 #define CARRONADE_BEAM_TIME 0.6 SECONDS
 
 /obj/item/armored_weapon/volkite_carronade
-	name = "Volkite Cardanelle"
+	name = "沃尔凯特·卡达内尔"
 	desc = "A massive volkite weapon seen on SOM battle tanks, the cardanelle is a devestating anti infantry weapon, able to mow down whole groups of soft targets with ease. \
 	Against armored targets however, it can prove less effective."
 	icon_state = "volkite"
@@ -95,8 +95,8 @@
 	animate(alpha = 0, time = 0.4 SECONDS, easing = SINE_EASING|EASE_IN)
 
 /obj/item/armored_weapon/particle_lance
-	name = "particle lance"
-	desc = "The particle lance is a powerful energy beam weapon, able to tear apart anything in its path with a concentrated beam of charged particles. Particularly potent against armored targets."
+	name = "粒子长矛"
+	desc = "粒子长矛是一种强大的能量光束武器，能够用集中的带电粒子束撕裂路径上的一切。对装甲目标尤其有效。"
 	icon_state = "particle_beam"
 	ammo = /obj/item/ammo_magazine/tank/particle_lance
 	accepted_ammo = list(/obj/item/ammo_magazine/tank/particle_lance)
@@ -118,7 +118,7 @@
 #define COILGUN_HIGH_POWER 3
 
 /obj/item/armored_weapon/coilgun
-	name = "battle tank coilgun"
+	name = "主战坦克线圈炮"
 	desc = "The coilgun is considered the standard main weapon for SOM battle tanks. \
 	While technologically very different from a traditional cannon, fundamentally both serve the same purpose - to accelerate a large projectile at a high speed towards the enemy."
 	icon_state = "coilgun"
@@ -218,7 +218,7 @@
 			current_ammo_type = /datum/ammo/rocket/coilgun/high
 			windup_delay = 1 SECONDS
 			projectile_delay = 4.5 SECONDS
-	to_chat(user, "power level set to [power_level]")
+	to_chat(user, "功率等级设置为[power_level]")
 
 ///Gives the power setting action to the gunner
 /obj/item/armored_weapon/coilgun/proc/give_action(datum/source, mob/living/user, flags)
@@ -235,8 +235,8 @@
 	UnregisterSignal(chassis, COMSIG_VEHICLE_REVOKE_CONTROL_FLAG)
 
 /obj/item/armored_weapon/secondary_mlrs
-	name = "secondary MLRS"
-	desc = "A pair of forward facing multiple launch rocket systems with a total of 12 homing rockets. Can unleash its entire payload in rapid succession."
+	name = "二级多管火箭系统"
+	desc = "一套前向多管火箭发射系统，总计12枚制导火箭。可快速连续发射全部弹药。"
 	icon_state = "mlrs"
 	fire_sound = 'sound/vehicles/weapons/mlrs_fire.ogg'
 	interior_fire_sound = 'sound/vehicles/weapons/mlrs_interior.ogg'

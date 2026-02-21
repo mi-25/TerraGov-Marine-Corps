@@ -41,7 +41,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	name = "Use/Throw Facehugger"
 	action_icon_state = "throw_hugger"
 	action_icon = 'icons/Xeno/actions/carrier.dmi'
-	desc = "Throw a facehugger at something. Using this ability on a facehugger already on the ground will recycle it to your storage."
+	desc = "向目标投掷抱脸虫。对已在地面上的抱脸虫使用此能力可将其回收至储存空间。"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_THROW_HUGGER,
 	)
@@ -70,7 +70,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	if(istype(A, /obj/item/clothing/mask/facehugger) && !istype(A, /obj/item/clothing/mask/facehugger/combat/harmless))
 		if(isturf(get_turf(A)) && xeno_owner.Adjacent(A))
 			if(!xeno_owner.issamexenohive(A))
-				to_chat(xeno_owner, span_warning("That facehugger is tainted!"))
+				to_chat(xeno_owner, span_warning("那只抱脸虫被污染了！"))
 				xeno_owner.dropItemToGround(A)
 				return fail_activate()
 			xeno_owner.store_hugger(A)
@@ -80,14 +80,14 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	if(!istype(F) || F.stat == DEAD) //empty active hand
 		//if no hugger in active hand, we take one from our storage
 		if(!xeno_owner.huggers)
-			to_chat(xeno_owner, span_warning("We don't have any facehuggers to use!"))
+			to_chat(xeno_owner, span_warning("我们没有抱脸虫可用！"))
 			return fail_activate()
 
 		F = new xeno_owner.selected_hugger_type(get_turf(xeno_owner), xeno_owner.hivenumber, xeno_owner)
 		xeno_owner.huggers--
 
 		xeno_owner.put_in_active_hand(F)
-		to_chat(xeno_owner, span_xenonotice("We grab one of the facehuggers in our storage. Now sheltering: [xeno_owner.huggers] / [xeno_owner.xeno_caste.huggers_max]."))
+		to_chat(xeno_owner, span_xenonotice("我们从储存中取出一只抱脸虫。当前庇护数量：[xeno_owner.huggers] / [xeno_owner.xeno_caste.huggers_max]。"))
 
 	if(!cooldown_timer)
 		if(fire_immunity_transfer > 0)
@@ -118,7 +118,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 			fake.facehugger_register_source(xeno_owner)
 			fake.throw_at(get_step(A, pick(CARDINAL_ALL_DIRS)), CARRIER_HUGGER_THROW_DISTANCE, CARRIER_HUGGER_THROW_SPEED)
 			fake.color = gradient(initial(fake.color), initial(F.color), fake_hugger_gradiant_percentage)
-		xeno_owner.visible_message(span_xenowarning("\The [xeno_owner] throws something towards \the [A]!"), \
+		xeno_owner.visible_message(span_xenowarning("\The [xeno_owner] 向 \the [A] 投掷了什么东西！"), \
 		span_xenowarning("We throw a facehugger towards \the [A]!"))
 		add_cooldown()
 		return succeed_activate()
@@ -126,15 +126,15 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 /mob/living/carbon/xenomorph/proc/store_hugger(obj/item/clothing/mask/facehugger/F, message = TRUE, forced = FALSE) //todo: wrap this into ability
 	if(huggers < xeno_caste.huggers_max)
 		if(F.stat == DEAD && !forced)
-			to_chat(src, span_notice("This facehugger has already expired, we cannot salvage it."))
+			to_chat(src, span_notice("这只抱脸虫已经死亡，我们无法回收利用。"))
 			return
 		F.kill_hugger()
 		huggers++
 		if(message)
 			playsound(src, 'sound/voice/alien/drool2.ogg', 50, 0, 1)
-			to_chat(src, span_notice("We salvage this facehugger's biomass to produce another. Now sheltering: [huggers] / [xeno_caste.huggers_max]."))
+			to_chat(src, span_notice("我们回收这只抱脸虫的生物质来生产另一只。当前庇护数量：[huggers] / [xeno_caste.huggers_max]。"))
 	else if(message)
-		to_chat(src, span_warning("We can't carry any more facehuggers!"))
+		to_chat(src, span_warning("我们没法再带更多抱脸虫了！"))
 
 // ***************************************
 // ********* Trap
@@ -143,7 +143,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	name = "Place trap"
 	action_icon_state = "place_trap"
 	action_icon = 'icons/Xeno/actions/construction.dmi'
-	desc = "Place a hole on weeds that can be filled with a hugger or with acid. Activates when a marine steps on it."
+	desc = "在菌毯上放置一个可填入抱脸虫或酸液的坑洞。当陆战队员踩上时触发。"
 	ability_cost = 400
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PLACE_TRAP,
@@ -157,12 +157,12 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	var/turf/T = get_turf(owner)
 	if(!T || !T.is_weedable() || T.density)
 		if(!silent)
-			to_chat(owner, span_warning("We can't do that here."))
+			to_chat(owner, span_warning("这里不能这么做。"))
 		return FALSE
 
 	if(!xeno_owner.loc_weeds_type)
 		if(!silent)
-			to_chat(owner, span_warning("We can only shape on weeds. We must find some resin before we start building!"))
+			to_chat(owner, span_warning("我们只能在菌毯上塑形。在开始建造前，我们必须找到一些树脂！"))
 		return FALSE
 
 	if(!T.check_alien_construction(owner, silent, /obj/structure/xeno/trap) || !T.check_disallow_alien_fortification(owner, silent))
@@ -179,7 +179,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	owner.record_traps_created()
 	new /obj/structure/xeno/trap(T, owner.get_xeno_hivenumber(), trap_hugger_limit)
 
-	to_chat(owner, span_xenonotice("We place a trap on the weeds, but it still needs to be filled."))
+	to_chat(owner, span_xenonotice("我们在菌毯上放置了一个陷阱，但它还需要填充。"))
 
 // ***************************************
 // *********** Spawn hugger
@@ -188,7 +188,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	name = "Spawn Facehugger"
 	action_icon_state = "spawn_hugger"
 	action_icon = 'icons/Xeno/actions/carrier.dmi'
-	desc = "Spawn a facehugger that is stored on your body."
+	desc = "生成一只抱脸虫，储存在你的身体上。"
 	ability_cost = 200
 	cooldown_duration = 10 SECONDS
 	keybinding_signals = list(
@@ -199,7 +199,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	var/health_cost = 0
 
 /datum/action/ability/xeno_action/spawn_hugger/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("We can now spawn another facehugger."))
+	to_chat(owner, span_xenodanger("我们现在可以再生成一只抱脸虫。"))
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
@@ -209,12 +209,12 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 		return FALSE
 	if(xeno_owner.huggers >= xeno_owner.xeno_caste.huggers_max)
 		if(!silent)
-			to_chat(xeno_owner, span_xenowarning("We can't host any more facehugger!"))
+			to_chat(xeno_owner, span_xenowarning("我们无法容纳更多抱脸虫了！"))
 		return FALSE
 
 /datum/action/ability/xeno_action/spawn_hugger/action_activate()
 	xeno_owner.huggers++
-	to_chat(xeno_owner, span_xenowarning("We spawn a facehugger via the miracle of asexual internal reproduction, adding it to our stores. Now sheltering: [xeno_owner.huggers] / [xeno_owner.xeno_caste.huggers_max]."))
+	to_chat(xeno_owner, span_xenowarning("我们通过无性内部繁殖的奇迹生成了一只抱脸虫，并将其加入我们的储备。当前庇护数量：[xeno_owner.huggers] / [xeno_owner.xeno_caste.huggers_max]。"))
 	playsound(xeno_owner, 'sound/voice/alien/drool2.ogg', 50, 0, 1)
 	if(health_cost)
 		xeno_owner.adjustBruteLoss(health_cost, TRUE)
@@ -231,7 +231,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	name = "Carrier Panic"
 	action_icon_state = "carrier_panic"
 	action_icon = 'icons/Xeno/actions/carrier.dmi'
-	desc = "Drop all stored facehuggers in a fit of panic. Uses all remaining plasma!"
+	desc = "在恐慌中丢弃所有储存的抱脸虫。消耗所有剩余的等离子体！"
 	ability_cost = 10
 	cooldown_duration = 50 SECONDS
 	keybinding_signals = list(
@@ -260,18 +260,18 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 		return FALSE
 	if(xeno_owner.health > (xeno_owner.maxHealth * 0.56))
 		if(!silent)
-			to_chat(xeno_owner, span_xenowarning("We are not injured enough to panic yet!"))
+			to_chat(xeno_owner, span_xenowarning("我们还没伤到需要惊慌失措的地步！"))
 		return FALSE
 	if(xeno_owner.huggers < 1)
 		if(!silent)
-			to_chat(xeno_owner, span_xenowarning("We do not have any facehuggers to drop!"))
+			to_chat(xeno_owner, span_xenowarning("我们没有抱脸虫可供投放！"))
 		return FALSE
 
 /datum/action/ability/xeno_action/carrier_panic/action_activate()
 	if(!xeno_owner.huggers)
 		return
 
-	xeno_owner.visible_message(span_xenowarning("A chittering mass of tiny aliens is trying to escape [xeno_owner]!"))
+	xeno_owner.visible_message(span_xenowarning("一大群吱吱作响的小异形正试图逃离[xeno_owner]！"))
 	while(xeno_owner.huggers > 0)
 		var/obj/item/clothing/mask/facehugger/new_hugger = new /obj/item/clothing/mask/facehugger/larval(get_turf(xeno_owner), xeno_owner.hivenumber, xeno_owner)
 		step_away(new_hugger, xeno_owner, 1)
@@ -281,7 +281,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	add_cooldown()
 
 /datum/action/ability/xeno_action/carrier_panic/update_button_icon()
-	desc = "Drop all stored facehuggers in a fit of panic."
+	desc = "在恐慌中丢弃所有储存的抱脸虫。"
 	if(succeed_cost > 0)
 		desc += (succeed_cost == 1 ? " Uses all remaining plasma!" : " Uses [PERCENT(succeed_cost)]% of your maximum plasma!")
 	return ..()
@@ -294,7 +294,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	name = "Choose Hugger Type"
 	action_icon_state = "facehugger"
 	action_icon = 'icons/Xeno/actions/carrier.dmi'
-	desc = "Selects which hugger type you will build with the Use/Throw Facehugger ability."
+	desc = "选择你将通过使用/投掷抱脸虫能力构建的抱脸虫类型。"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_CHOOSE_HUGGER,
 		KEYBINDING_ALTERNATE = COMSIG_XENOABILITY_SWITCH_HUGGER,
@@ -319,7 +319,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 		xeno_owner.selected_hugger_type = GLOB.hugger_type_list[i+1]
 
 	var/atom/A = xeno_owner.selected_hugger_type
-	to_chat(xeno_owner, span_notice("We will now spawn <b>[initial(A.name)]\s</b> when using the Spawn Facehugger ability."))
+	to_chat(xeno_owner, span_notice("现在使用生成抱脸虫能力时，将生成<b>[initial(A.name)]\s</b>。"))
 	xeno_owner.balloon_alert(xeno_owner,"[initial(A.name)]")
 	update_button_icon()
 	succeed_activate()
@@ -333,7 +333,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 		if(initial(hugger_type.name) == hugger_choice)
 			xeno_owner.selected_hugger_type = hugger_type
 			break
-	to_chat(xeno_owner, span_notice("We will now spawn <b>[hugger_choice]\s</b> when using the Spawn Facehugger ability."))
+	to_chat(xeno_owner, span_notice("现在使用生成抱脸虫能力时，将生成<b>[hugger_choice]\s</b>。"))
 	xeno_owner.balloon_alert(xeno_owner, "[hugger_choice]")
 	update_button_icon()
 	return succeed_activate()
@@ -342,7 +342,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	name = "Build Hugger Turret"
 	action_icon_state = "hugger_turret"
 	action_icon = 'icons/Xeno/actions/carrier.dmi'
-	desc = "Construct a turret that will launch facehuggers at enemy marines. The type of facehugger currently selected when the turret is built will determine the type of facehugger that is fired."
+	desc = "建造一座会向敌方陆战队员发射抱脸虫的炮塔。建造炮塔时当前选中的抱脸虫类型将决定发射的抱脸虫种类。"
 	ability_cost = 800
 	cooldown_duration = 5 MINUTES
 	keybinding_signals = list(
@@ -355,7 +355,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	var/mob/living/carbon/xenomorph/blocker = locate() in T
 	if(blocker && blocker != owner && blocker.stat != DEAD)
 		if(!silent)
-			to_chat(owner, span_xenowarning("You cannot build with [blocker] in the way!"))
+			to_chat(owner, span_xenowarning("无法建造，[blocker]挡住了去路！"))
 		return FALSE
 
 	if(!T.is_weedable())
@@ -363,7 +363,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 
 	if(!xeno_owner.loc_weeds_type)
 		if(!silent)
-			to_chat(owner, span_xenowarning("No weeds here!"))
+			to_chat(owner, span_xenowarning("这里没有菌毯！"))
 		return FALSE
 
 	if(!T.check_alien_construction(owner, silent, /obj/structure/xeno/xeno_turret) || !T.check_disallow_alien_fortification(owner))
@@ -372,7 +372,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	for(var/obj/structure/xeno/xeno_turret/turret AS in GLOB.xeno_resin_turrets_by_hive[blocker.hivenumber])
 		if(get_dist(turret, owner) < XENO_TURRET_EXCLUSION_RANGE)
 			if(!silent)
-				to_chat(owner, span_xenowarning("Another turret is too close!"))
+				to_chat(owner, span_xenowarning("另一座炮塔距离太近！"))
 			return FALSE
 
 /datum/action/ability/xeno_action/build_hugger_turret/action_activate()
@@ -395,7 +395,7 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	name = "Call of Younger"
 	action_icon_state = "call_younger"
 	action_icon = 'icons/Xeno/actions/carrier.dmi'
-	desc = "Appeals to the larva inside a hugged target. The target loses their balance, gets pulled towards you, and their larva's growth progress accelerates."
+	desc = "吸引被抱脸目标体内的幼虫。目标失去平衡，被拉向你，同时其体内幼虫的成长进度加速。"
 	ability_cost = 150
 	cooldown_duration = 20 SECONDS
 	keybinding_signals = list(
@@ -410,24 +410,24 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 
 	if(!ishuman(A))
 		if(!silent)
-			A.balloon_alert(owner, "not human!")
+			A.balloon_alert(owner, "不是人类！")
 		return FALSE
 
 	var/mob/living/carbon/human/target = A
 
 	if(!(locate(/obj/item/alien_embryo) in target))
 		if(!silent)
-			target.balloon_alert(owner, "not infected!")
+			target.balloon_alert(owner, "未感染！")
 		return FALSE
 
 	if(target.stat == DEAD)
 		if(!silent)
-			target.balloon_alert(owner, "you're dead!")
+			target.balloon_alert(owner, "你死了！")
 		return FALSE
 
 	if(!line_of_sight(owner, target, 9))
 		if(!silent)
-			target.balloon_alert(owner, "need line of sight!")
+			target.balloon_alert(owner, "需要视线！")
 		return FALSE
 	return TRUE
 
@@ -447,9 +447,9 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 
 	xeno_owner.emote("roar5")
 	victim.emote("scream")
-	owner.visible_message(span_xenowarning("\the [owner] emits an unusual roar!"), \
+	owner.visible_message(span_xenowarning("\the [owner] 发出一声不同寻常的咆哮！"), \
 	span_xenowarning("We called out to the younger one inside [victim]!"))
-	victim.visible_message(span_xenowarning("\The [victim] loses [victim.p_their()] balance, falling to the side!"), \
+	victim.visible_message(span_xenowarning("\The [victim] 失去 [victim.p_their()] 平衡，侧身摔倒！"), \
 	span_xenowarning("You feel like something inside you is tearing out!"))
 
 	victim.apply_effects(2 SECONDS, 1 SECONDS)

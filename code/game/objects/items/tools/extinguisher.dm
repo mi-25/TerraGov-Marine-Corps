@@ -1,6 +1,6 @@
 /obj/item/tool/extinguisher
-	name = "fire extinguisher"
-	desc = "A traditional red fire extinguisher."
+	name = "灭火器"
+	desc = "一个传统的红色灭火器。"
 	icon = 'icons/obj/items/tank.dmi'
 	icon_state = "fire_extinguisher0"
 	worn_icon_list = list(
@@ -29,8 +29,8 @@
 	return /datum/reagent/water
 
 /obj/item/tool/extinguisher/mini
-	name = "mini fire extinguisher"
-	desc = "A light and compact fibreglass-framed model fire extinguisher."
+	name = "小型灭火器"
+	desc = "一款轻便紧凑的玻璃钢框架灭火器。"
 	icon_state = "miniFE0"
 	worn_icon_state = "miniFE"
 	hitsound = null	//it is much lighter, after all.
@@ -61,7 +61,7 @@
 	if( istype(target, /obj/structure/reagent_dispensers/watertank) && get_dist(src,target) <= 1)
 		var/obj/o = target
 		o.reagents.trans_to(src, 50)
-		balloon_alert(user, "refilled")
+		balloon_alert(user, "已补充")
 		playsound(src.loc, 'sound/effects/refill.ogg', 25, 1, 3)
 		return
 

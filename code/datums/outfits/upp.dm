@@ -1,5 +1,5 @@
 /datum/outfit/job/upp/standard
-	name = "USL Gunner"
+	name = "联合太空鳞翅目炮手"
 	jobtype = /datum/job/upp/standard
 
 	id = /obj/item/card/id/silver
@@ -47,13 +47,13 @@
 	)
 
 /datum/outfit/job/upp/standard/hvh
-	name = "USL Gunner (HvH)"
+	name = "联合太空鳞翅目炮手（人机对抗）"
 
 	wear_suit = /obj/item/clothing/suit/storage/faction/UPP/hvh
 
 
 /datum/outfit/job/upp/medic
-	name = "USL Surgeon"
+	name = "联合太空鳞翅目外科医生"
 	jobtype = /datum/job/upp/medic
 
 	id = /obj/item/card/id/silver
@@ -98,13 +98,13 @@
 
 
 /datum/outfit/job/upp/medic/hvh
-	name = "USL Surgeon (HvH)"
+	name = "联合太空鳞翅目外科医生（HvH）"
 
 	wear_suit = /obj/item/clothing/suit/storage/faction/UPP/hvh
 
 
 /datum/outfit/job/upp/heavy
-	name = "USL Powder Monkey"
+	name = "联合太空鳞翅目火药猴"
 	jobtype = /datum/job/upp/heavy
 
 	id = /obj/item/card/id/silver
@@ -146,13 +146,13 @@
 	)
 
 /datum/outfit/job/upp/heavy/hvh
-	name = "USL Powder Monkey (HvH)"
+	name = "联合太空鳞翅目炮手（HvH）"
 
 	wear_suit = /obj/item/clothing/suit/storage/faction/UPP/heavy/hvh
 
 
 /datum/outfit/job/upp/leader
-	name = "USL Captain"
+	name = "联合太空鳞翅目舰长"
 	jobtype = /datum/job/upp/leader
 
 	id = /obj/item/card/id/silver
@@ -194,6 +194,6 @@
 
 
 /datum/outfit/job/upp/leader/hvh
-	name = "USL Captain (HvH)"
+	name = "联合太空鳞翅目舰长（HvH）"
 
 	wear_suit = /obj/item/clothing/suit/storage/faction/UPP/heavy/hvh

@@ -13,7 +13,7 @@
 
 /datum/loadout_item/secondary/gun/marine/standard_pistol
 	name = "P-14"
-	desc = "The P-14, produced by Terran Armories. A reliable sidearm that loads 9x19mm Parabellum Auto munitions. Has a good rate of fire and takes 21-round 9mm magazines."
+	desc = "P-14，由泰伦军械库生产。一把可靠的副武器，使用9x19毫米帕拉贝鲁姆自动弹药。射速良好，使用21发9毫米弹匣。"
 	ui_icon = "tp14"
 	item_typepath = /obj/item/weapon/gun/pistol/standard_pistol/standard
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -29,7 +29,7 @@
 
 /datum/loadout_item/secondary/gun/marine/so_pistol
 	name = "RT-3 pistol"
-	desc = "TAn RT-3 target pistol, a common sight throughout the bubble and the standard sidearm for noncombat roles in the TGMC. Uses 9mm caseless ammunition."
+	desc = "RT-3 目标手枪，在整个殖民星区随处可见，是TGMC非战斗岗位的标准配枪。使用9毫米无壳弹药。"
 	ui_icon = "rt3"
 	item_typepath = /obj/item/weapon/gun/pistol/rt3
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -46,7 +46,7 @@
 
 /datum/loadout_item/secondary/gun/marine/standard_heavypistol
 	name = "P-23"
-	desc = "A standard P-23 chambered in .45 ACP. Has a smaller magazine capacity, but packs a better punch. Has an irremovable laser sight. Uses .45 magazines."
+	desc = "一把标准的P-23手枪，使用.45 ACP口径。弹匣容量较小，但威力更强。带有不可拆卸的激光瞄准器。使用.45弹匣。"
 	ui_icon = "tp23"
 	item_typepath = /obj/item/weapon/gun/pistol/standard_heavypistol/tactical
 
@@ -69,7 +69,7 @@
 
 /datum/loadout_item/secondary/gun/marine/highpower
 	name = "Highpower"
-	desc = "A powerful semi-automatic pistol chambered in the devastating .50 AE caliber rounds. Used for centuries by law enforcement and criminals alike, recently recreated with this new model."
+	desc = "一把强大的半自动手枪，使用威力巨大的.50 AE口径子弹。数百年来一直被执法部门和犯罪分子使用，最近通过这款新型号得以重现。"
 	ui_icon = "highpower"
 	item_typepath = /obj/item/weapon/gun/pistol/highpower/standard
 	loadout_item_flags = NONE
@@ -99,7 +99,7 @@
 
 /datum/loadout_item/secondary/gun/marine/standard_smg
 	name = "SMG-25"
-	desc = "The RivArms SMG-25 submachinegun, an update to a classic design. A light firearm capable of effective one-handed use that is ideal for close to medium range engagements. Uses 10x20mm rounds in a high capacity magazine."
+	desc = "RivArms SMG-25冲锋枪，一款经典设计的更新。一种能够有效单手使用的轻型枪械，是中近距离交战的理想选择。使用10x20mm弹药，配备大容量弹匣。"
 	ui_icon = "m25"
 	item_typepath = /obj/item/weapon/gun/smg/m25/holstered
 	item_whitelist = list(/obj/item/storage/holster/m25 = ITEM_SLOT_BELT)
@@ -134,7 +134,7 @@
 
 /datum/loadout_item/secondary/gun/marine/db_shotgun
 	name = "SH-34 shotgun"
-	desc = "A double barreled shotgun of archaic, but sturdy design used by the TGMC, loaded with buckshot. Uncommonly seen as a powerful secondary weapon when serious stopping power is required."
+	desc = "一把设计古老但坚固的双管霰弹枪，由地球政府殖民地海军陆战队使用，装填鹿弹。作为需要强大制止力时的强力副武器，并不常见。"
 	ui_icon = "tx34"
 	item_typepath = /obj/item/weapon/gun/shotgun/double/marine
 	item_whitelist = list(/obj/item/storage/holster/belt/ts34 = ITEM_SLOT_BELT)
@@ -149,7 +149,7 @@
 //non-standard
 /datum/loadout_item/secondary/machete
 	name = "Machete"
-	desc = "Latest issue of the TGMC Machete. Great for clearing out jungle or brush on outlying colonies, or cutting open heads. Found commonly in the hands of scouts and trackers, but difficult to carry with the usual kit."
+	desc = "最新一期《TGMC砍刀》。非常适合清理偏远殖民地的丛林或灌木，或者砍开头颅。常见于侦察兵和追踪者手中，但难以与常规装备一同携带。"
 	ui_icon = "machete"
 	jobs_supported = list(SQUAD_MARINE, SQUAD_LEADER, SQUAD_SMARTGUNNER)
 	item_typepath = /obj/item/weapon/sword/machete
@@ -162,7 +162,7 @@
 
 /datum/loadout_item/secondary/machete/officer
 	name = "Officers sword"
-	desc = "This appears to be a rather old blade that has been well taken care of, it is probably a family heirloom. Oddly despite its probable non-combat purpose it is sharpened and not blunt."
+	desc = "这似乎是一把相当古老的刀，保养得很好，很可能是一件家族传家宝。奇怪的是，尽管它可能并非用于战斗，但刀刃锋利，并不钝。"
 	ui_icon = "machete"
 	jobs_supported = list(FIELD_COMMANDER)
 	item_typepath = /obj/item/weapon/sword/officersword
@@ -172,7 +172,7 @@
 //kits
 /datum/loadout_item/secondary/kit/mirage_nades
 	name = "Mirage nades"
-	desc = "Three mirage grenades, can provide a handy distraction against unwitting opponents."
+	desc = "三枚幻影手雷，能在不经意间为粗心的对手制造绝佳的干扰。"
 	ui_icon = "grenade"
 	jobs_supported = list(SQUAD_MARINE, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_LEADER, SQUAD_SMARTGUNNER, FIELD_COMMANDER)
 
@@ -184,7 +184,7 @@
 
 /datum/loadout_item/secondary/kit/he_nades
 	name = "HE nades"
-	desc = "Three HE grenades, for a bit more bang."
+	desc = "三枚高爆手雷，威力更足。"
 	ui_icon = "grenade"
 	jobs_supported = list(SQUAD_MARINE, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_LEADER, SQUAD_SMARTGUNNER, FIELD_COMMANDER)
 
@@ -196,7 +196,7 @@
 
 /datum/loadout_item/secondary/kit/deploy_shield
 	name = "Deployable shield"
-	desc = "Two deployable shields. Can be used as strong, portable barricades, or as a shield in a pinch."
+	desc = "两个可部署的盾牌。可用作坚固的便携式路障，或在紧急情况下用作盾牌。"
 	ui_icon = "riot_shield"
 	jobs_supported = list(SQUAD_MARINE, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_LEADER, SQUAD_SMARTGUNNER, FIELD_COMMANDER)
 
@@ -207,7 +207,7 @@
 
 /datum/loadout_item/secondary/kit/binoculars
 	name = "Tac binos"
-	desc = "Tactical binoculars, used for scouting positions and calling in fire support, if it's available."
+	desc = "战术望远镜，用于侦察位置并在可用时呼叫火力支援。"
 	ui_icon = "default"
 	purchase_cost = 20
 	jobs_supported = list(SQUAD_MARINE, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_SMARTGUNNER)
@@ -220,7 +220,7 @@
 
 /datum/loadout_item/secondary/kit/cameras
 	name = "Cameras"
-	desc = "Two deployable cameras and a hud tablet. Useful for watching things remotely, and your command officers might appreciate it as well."
+	desc = "两个可部署摄像头和一个平视显示平板。用于远程监控，你的指挥军官可能也会觉得它有用。"
 	ui_icon = "default"
 	jobs_supported = list(SQUAD_LEADER)
 
@@ -235,7 +235,7 @@
 
 /datum/loadout_item/secondary/kit/tgmc_engineer/sentry
 	name = "Sentry gun"
-	desc = "A point defence sentry gun, with spare ammo. Because more guns are always better."
+	desc = "一座点防御哨戒炮，附带备用弹药。因为更多的枪总是更好的。"
 	ui_icon = "sentry"
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
@@ -246,7 +246,7 @@
 
 /datum/loadout_item/secondary/kit/tgmc_engineer/large_mines
 	name = "Claymores"
-	desc = "Two large boxes of claymores. Mines are extremely effective for creating deadzones or setting up traps. Great on the defence."
+	desc = "两大箱阔剑地雷。地雷在制造死亡区域或设置陷阱方面极为有效。防守时作用巨大。"
 	ui_icon = "claymore"
 
 /datum/loadout_item/secondary/kit/tgmc_engineer/large_mines/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -256,7 +256,7 @@
 
 /datum/loadout_item/secondary/kit/tgmc_engineer/materials
 	name = "Metal/plasteel"
-	desc = "A full stack of metal and plasteel. For maximum construction."
+	desc = "一整叠金属和塑钢。用于最大规模的建造。"
 	ui_icon = "materials"
 
 /datum/loadout_item/secondary/kit/tgmc_engineer/materials/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -266,7 +266,7 @@
 
 /datum/loadout_item/secondary/kit/tgmc_engineer/detpack
 	name = "Detpacks"
-	desc = "Detpacks, for blowing things up."
+	desc = "炸药包，用于爆破。"
 	ui_icon = "default"
 
 /datum/loadout_item/secondary/kit/tgmc_engineer/detpack/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -280,7 +280,7 @@
 
 /datum/loadout_item/secondary/kit/tgmc_engineer/razorburn
 	name = "Razorburn"
-	desc = "Three razorburn cannisters, able to make large fields of razorwire quickly. 'Everyone laughs at razorwire, until they're trying to get through it while being shot to pieces.' Unknown"
+	desc = "三罐剃刀燃烧剂，能快速制造大片剃刀铁丝网。'人人都嘲笑剃刀铁丝网，直到他们一边被子弹撕成碎片一边试图穿越它的时候。'——无名氏"
 	ui_icon = "default"
 	purchase_cost = 15
 
@@ -321,7 +321,7 @@
 
 /datum/loadout_item/secondary/kit/tgmc_corpsman/advanced
 	name = "Advanced meds"
-	desc = "A variety of advanced medical injectors including neuraline, rezadone and Re-Grow, allowing for the treatment of cloneloss and missing limbs."
+	desc = "一系列先进的医疗注射器，包含神经灵、再生酮和再生长剂，可用于治疗克隆损伤和肢体缺失。"
 	ui_icon = "medkit"
 	purchase_cost = 30
 

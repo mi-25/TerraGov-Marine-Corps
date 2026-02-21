@@ -1,5 +1,5 @@
 /turf/open/floor
-	name = "floor"
+	name = "地板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "floor"
 	baseturfs = /turf/open/floor/plating
@@ -150,10 +150,10 @@
 		broken = FALSE
 		burnt = FALSE
 		if(user && !silent)
-			to_chat(user, span_notice("You remove the broken plating."))
+			to_chat(user, span_notice("你移除了破损的装甲板。"))
 	else
 		if(user && !silent)
-			to_chat(user, span_notice("You remove the floor tile."))
+			to_chat(user, span_notice("你移开了地板砖。"))
 		if(make_tile)
 			spawn_tile()
 	return make_plating()

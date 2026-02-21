@@ -7,8 +7,8 @@
 #define DANGER (1<<6)
 
 /obj/machinery/portable_atmospherics/canister
-	name = "canister"
-	desc = "A canister for the storage of gas."
+	name = "储气罐"
+	desc = "用于储存气体的罐体。"
 	icon_state = "yellow"
 	density = TRUE
 
@@ -20,33 +20,33 @@
 
 
 /obj/machinery/portable_atmospherics/canister/nitrogen
-	name = "n2 canister"
-	desc = "Nitrogen gas. Reportedly useful for something."
+	name = "n2 气罐"
+	desc = "氮气。据称在某些方面有用。"
 	icon_state = "red"
 
 /obj/machinery/portable_atmospherics/canister/oxygen
-	name = "o2 canister"
-	desc = "Oxygen. Necessary for human life."
+	name = "氧气罐"
+	desc = "氧气。人类生存的必需品。"
 	icon_state = "blue"
 
 /obj/machinery/portable_atmospherics/canister/air
-	name = "air canister"
-	desc = "Pre-mixed air."
+	name = "气罐"
+	desc = "预混空气。"
 	icon_state = "grey"
 
 /obj/machinery/portable_atmospherics/canister/phoron
-	name = "phoron canister"
-	desc = "Toxic phoron in gas form."
+	name = "等离子体罐"
+	desc = "气态有毒等离子体。"
 	icon_state = "orange"
 
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide
-	name = "nitrous oxide canister"
-	desc = "Compressed nitrous oxide."
+	name = "氧化亚氮气罐"
+	desc = "压缩一氧化二氮。"
 	icon_state = "redws"
 
 /obj/machinery/portable_atmospherics/canister/co2
-	name = "carbon dioxide canister"
-	desc = "Carbon dioxide, commonly used for increasing the power generation of exotic engine types."
+	name = "二氧化碳罐"
+	desc = "二氧化碳，常用于提升异种引擎类型的发电功率。"
 	icon_state = "black"
 
 /obj/machinery/portable_atmospherics/canister/update_icon_state()

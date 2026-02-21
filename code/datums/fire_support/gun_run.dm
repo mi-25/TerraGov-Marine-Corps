@@ -1,5 +1,5 @@
 /datum/fire_support/gau
-	name = "Gun run"
+	name = "枪械冲刺"
 	fire_support_type = FIRESUPPORT_TYPE_GUN
 	impact_quantity = 5
 	uses = 5
@@ -43,7 +43,7 @@
 	uses = -1
 
 /datum/fire_support/laser
-	name = "Laser run"
+	name = "激光跑"
 	fire_support_type = FIRESUPPORT_TYPE_LASER
 	impact_quantity = 4
 	uses = 2
@@ -81,7 +81,7 @@
 		INVOKE_NEXT_TICK(src, PROC_REF(strafe_turfs), strafelist)
 
 /datum/fire_support/volkite
-	name = "Volkite gun run"
+	name = "沃尔坎枪械射击"
 	fire_support_type = FIRESUPPORT_TYPE_VOLKITE
 	impact_quantity = 3
 	icon_state = "volkite"

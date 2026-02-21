@@ -258,7 +258,7 @@
 		return FALSE
 	TIMER_COOLDOWN_START(src, COOLDOWN_RESIST, CLICK_CD_RESIST)
 	if(pulledby.grab_state >= GRAB_AGGRESSIVE)
-		visible_message(span_danger("[src] resists against [pulledby]'s grip!"))
+		visible_message(span_danger("[src] 正在抵抗 [pulledby] 的抓握！"))
 	return resist_grab()
 
 
@@ -269,7 +269,7 @@
 		return FALSE
 	TIMER_COOLDOWN_START(src, COOLDOWN_RESIST, CLICK_CD_RESIST)
 	if(pulledby.grab_state >= GRAB_AGGRESSIVE)
-		visible_message(span_danger("[src] struggles to break free of [pulledby]'s grip!"), null, null, 5)
+		visible_message(span_danger("[src] 奋力挣脱 [pulledby] 的控制！"), null, null, 5)
 	return resist_grab()
 
 
@@ -282,7 +282,7 @@
 		return FALSE
 	playsound(loc, 'sound/weapons/thudswoosh.ogg', 25, TRUE, 7)
 	if(pulledby.grab_state >= GRAB_AGGRESSIVE)
-		visible_message(span_danger("[src] has broken free of [pulledby]'s grip!"), null, null, 5)
+		visible_message(span_danger("[src] 挣脱了 [pulledby] 的控制！"), null, null, 5)
 	pulledby.stop_pulling()
 	grab_resist_level = 0 //zero it out.
 	return TRUE
@@ -336,7 +336,7 @@
 
 		if(L.pulledby && L.pulledby != src && L.restrained())
 			if(!(world.time % 5))
-				to_chat(src, span_warning("[L] is restrained, you cannot push past."))
+				to_chat(src, span_warning("[L] 被束缚住了，你无法挤过去。"))
 			return
 
 		if(L.pulling)
@@ -344,7 +344,7 @@
 				var/mob/P = L.pulling
 				if(P.restrained())
 					if(!(world.time % 5))
-						to_chat(src, span_warning("[L] is restraining [P], you cannot push past."))
+						to_chat(src, span_warning("[L] 正在压制 [P]，你无法挤过去。"))
 					return
 
 		if(!L.buckled && !L.anchored)
@@ -625,17 +625,17 @@ below 100 is not dizzy
 
 /mob/living/proc/take_over(mob/M, bypass)
 	if(!M.mind)
-		to_chat(M, span_warning("You don't have a mind."))
+		to_chat(M, span_warning("你没有心智。"))
 		return FALSE
 
 	if(!bypass)
 		if(client)
-			to_chat(M, span_warning("That mob has already been taken."))
+			to_chat(M, span_warning("该目标已被锁定。"))
 			GLOB.offered_mob_list -= src
 			return FALSE
 
 		if(job && is_banned_from(M.ckey, job.title))
-			to_chat(M, span_warning("You are jobbanned from that role."))
+			to_chat(M, span_warning("你被禁止担任该职位。"))
 			return FALSE
 
 		log_game("[key_name(M)] has taken over [key_name_admin(src)].")
@@ -817,7 +817,7 @@ below 100 is not dizzy
 			if(!(z_move_flags & ZMOVE_CAN_FLY_CHECKS) && !buckled.anchored)
 				return buckled.can_z_move(direction, start, destination, z_move_flags, src)
 			if(z_move_flags & ZMOVE_FEEDBACK)
-				to_chat(src, span_warning("Unbuckle from [buckled] first."))
+				to_chat(src, span_warning("先解开[buckled]的安全带。"))
 			return FALSE
 
 /mob/set_currently_z_moving(value)
@@ -869,7 +869,7 @@ below 100 is not dizzy
 		skip_knockdown = TRUE
 		if(small_surface_area)
 			visible_message(
-				span_notice("[src] makes a hard landing on [impacted_turf], but lands safely on [p_their()] feet!"),
+				span_notice("[src]在[impacted_turf]上重重着陆，但稳稳地站在了[p_their()]脚上！"),
 				span_notice("You make a hard landing on [impacted_turf], but land safely on your feet!"),
 			)
 			new /obj/effect/temp_visual/leap_dust/small(impacted_turf)
@@ -877,7 +877,7 @@ below 100 is not dizzy
 
 		incoming_damage *= 1.66
 		visible_message(
-			span_danger("[src] makes a hard landing on [impacted_turf], landing on [p_their()] feet painfully!"),
+			span_danger("[src]重重地摔在[impacted_turf]上，痛苦地用[p_their()]脚着地！"),
 			span_userdanger("You make a hard landing on [impacted_turf], and instinctively land on your feet - painfully!"),
 		)
 		new /obj/effect/temp_visual/leap_dust(impacted_turf)
@@ -1144,7 +1144,7 @@ below 100 is not dizzy
 	//down needs to check this floor
 	var/turf/check_turf = get_step_multiz(src, direction == DOWN ? NONE : direction)
 	if(!get_step_multiz(src, direction)) //We are at the edge z-level.
-		to_chat(src, span_warning("There's nothing interesting there."))
+		to_chat(src, span_warning("那里没什么有趣的。"))
 		return
 	else if(!istransparentturf(check_turf)) //There is no turf we can look through above us
 		var/turf/front_hole = get_step(check_turf, dir)

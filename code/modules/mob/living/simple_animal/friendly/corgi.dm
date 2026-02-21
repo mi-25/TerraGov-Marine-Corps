@@ -1,7 +1,7 @@
 /mob/living/simple_animal/corgi
-	name = "\improper corgi"
+	name = "\improper 柯基犬"
 	real_name = "corgi"
-	desc = "It's a corgi."
+	desc = "这是一只柯基犬。"
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "corgi"
 	icon_living = "corgi"
@@ -17,9 +17,9 @@
 	turns_per_move = 10
 
 /mob/living/simple_animal/corgi/german_shepherd
-	name = "\improper german shepherd"
+	name = "\improper 德国牧羊犬"
 	real_name = "german shepherd"
-	desc = "It's a german shepherd."
+	desc = "这是一只德国牧羊犬。"
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "german_shep"
 	icon_living = "german_shep"
@@ -27,10 +27,10 @@
 
 
 /mob/living/simple_animal/corgi/ranger
-	name = "Ranger"
+	name = "游骑兵"
 	real_name = "Ranger"
 	gender = MALE
-	desc = "That's Ranger, your friendly and fierce k9. He has seen the terror of Xenomorphs, so it's best to be nice to him. <b>RANGER LEAD THE WAY</b>!"
+	desc = "这是游骑兵，你友善而凶猛的朋友。它见识过异形的恐怖，所以最好对它友善点。<b>游骑兵带路</b>！"
 	icon_state = "ranger"
 	icon_living = "ranger"
 	icon_dead = "ranger_dead"
@@ -39,9 +39,9 @@
 
 
 /mob/living/simple_animal/corgi/bullterrier
-	name = "\improper bull terrier"
+	name = "\improper 蛮牛梗犬"
 	real_name = "bull terrier"
-	desc = "It's a bull terrier. Is that the Target dog?"
+	desc = "这是一只蛮牛犬。是那只广告狗吗？"
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "bullterrier"
 	icon_living = "bullterrier"
@@ -49,9 +49,9 @@
 
 
 /mob/living/simple_animal/corgi/walten
-	name = "Walten Clements"
+	name = "沃尔顿·克莱门茨"
 	gender = MALE
-	desc = "Sir, this is chief Walten Clements. He resides in medbay as this is also his realms. His minions wear scrubs for bacterial control, and they pay him in pets and treats. Do not be concern if he gets COPD as he is kept in a healthy diet full of black coffee and an exercise regimen with plenty of cardio and stretching. His daily concern is accounting; his supply of treats must be met with acute attention. Good day to you, marine."
+	desc = "长官，这位是首席沃尔顿·克莱门茨。他常驻医疗区，因为这里也是他的领地。他的随从们身着刷手服以控制细菌传播，他们用抚摸和零食作为报酬。如果他患上慢性阻塞性肺病也无需担心，因为他保持着健康饮食——以黑咖啡为主，并执行包含充足有氧运动和拉伸的训练计划。他每日关注的是账目管理；必须高度关注他的零食供应是否充足。祝您今日顺利，陆战队员。"
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "walten"
 	icon_living = "walten"
@@ -60,8 +60,8 @@
 
 
 /mob/living/simple_animal/corgi/exoticcorgi
-	name = "Exotic Corgi"
-	desc = "As cute as it is colorful!"
+	name = "异种柯基"
+	desc = "可爱又多彩！"
 	icon_state = "corgigrey"
 	icon_living = "corgigrey"
 	icon_dead = "corgigrey_dead"
@@ -74,17 +74,17 @@
 
 
 /mob/living/simple_animal/corgi/ian
-	name = "Ian"
+	name = "伊恩"
 	real_name = "Ian"
 	gender = MALE
-	desc = "It's the HoP's beloved corgi."
+	desc = "这是人事主管心爱的柯基犬。"
 	response_help = "pets"
 	response_disarm = "bops"
 	response_harm = "kicks"
 
 
 /mob/living/simple_animal/corgi/narsie
-	name = "Nars-Ian"
+	name = "纳尔斯-伊安"
 	desc = "Ia! Ia!"
 	icon_state = "narsian"
 	icon_living = "narsian"
@@ -97,16 +97,16 @@
 		if(P == src || !prob(5))
 			continue
 
-		visible_message(span_warning("[src] devours [P]!"), \
+		visible_message(span_warning("[src] 吞噬了 [P]！"), \
 		"<span class='cult big bold'>DELICIOUS SOULS</span>")
 		playsound(src, 'sound/effects/phasein.ogg', 75, TRUE)
 		P.gib()
 
 
 /mob/living/simple_animal/corgi/puppy
-	name = "\improper corgi puppy"
+	name = "\improper 柯基幼犬"
 	real_name = "corgi"
-	desc = "It's a corgi puppy!"
+	desc = "是只柯基幼犬！"
 	icon_state = "puppy"
 	icon_living = "puppy"
 	icon_dead = "puppy_dead"
@@ -117,25 +117,25 @@
 
 
 /mob/living/simple_animal/corgi/puppy/mrwiggles
-	name = "Mr. Wiggles"
+	name = "威格尔斯先生"
 	real_name = "Mr. Wiggles"
-	desc = "It's Mr. Wiggles!"
+	desc = "是威格尔斯先生！"
 
 
 /mob/living/simple_animal/corgi/puppy/void
-	name = "\improper void puppy"
+	name = "\improper 虚空幼犬"
 	real_name = "voidy"
-	desc = "A corgi puppy that has been infused with deep space energy. It's staring back..."
+	desc = "一只被深空能量灌注的柯基幼犬。它正回望着你……"
 	icon_state = "void_puppy"
 	icon_living = "void_puppy"
 	icon_dead = "void_puppy_dead"
 
 
 /mob/living/simple_animal/corgi/lisa
-	name = "Lisa"
+	name = "丽莎"
 	real_name = "Lisa"
 	gender = FEMALE
-	desc = "She's tearing you apart."
+	desc = "她正在把你撕碎。"
 	icon_state = "lisa"
 	icon_living = "lisa"
 	icon_dead = "lisa_dead"

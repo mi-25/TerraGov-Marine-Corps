@@ -1,6 +1,6 @@
 /obj/item/clothing/gloves/defibrillator
-	name = "advanced medical combat gloves"
-	desc = "Advanced medical gauntlets with small but powerful electrodes to resuscitate incapacitated patients. No more bulky units!"
+	name = "高级医疗作战手套"
+	desc = "配备小型强力电极的高级医疗护手，用于复苏失去行动能力的伤员。告别笨重的设备！"
 	icon_state = "defib_out"
 	worn_icon_state = "defib_gloves"
 	soft_armor = list(MELEE = 25, BULLET = 15, LASER = 10, ENERGY = 15, BOMB = 15, BIO = 5, FIRE = 15, ACID = 15)

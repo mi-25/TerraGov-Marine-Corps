@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/shared_jelly
 	name = "Shared Jelly"
-	desc = "If you are under the effect of Resin Jelly, all thrown huggers gain fire immunity. Each thrown hugger reduce the duration of the effect by 3/2/1 seconds."
+	desc = "如果你处于树脂凝胶效果下，所有投掷的抱脸虫都会获得火焰免疫。每个投掷的抱脸虫会使该效果的持续时间减少3/2/1秒。"
 	/// For the first structure, the length in deciseconds that Throw Facehugger will decrease the owner's Resin Jelly Coating status effect by.
 	var/length_initial = 4 SECONDS
 	/// For each structure, the length in deciseconds that Throw Facehugger will decrease the owner's Resin Jelly Coating status effect by.
@@ -41,7 +41,7 @@
 
 /datum/mutation_upgrade/shell/hugger_overflow
 	name = "Hugger Overflow"
-	desc = "While you have 8/7/6 or more stored huggers, you will automatically drop one underneath you when you become staggered."
+	desc = "当你拥有8/7/6个或更多储存的抱脸虫时，在被击晕时，你会自动在脚下掉落一个。"
 	/// For the first structure, the threshold of stored huggers that the owner must reach in order to drop one when staggered.
 	var/threshold_initial = 9
 	/// For each structure,  the amount to add to the threshold of stored huggers that the owner must reach in order to drop one when staggered.
@@ -75,7 +75,7 @@
 
 /datum/mutation_upgrade/shell/recurring_panic
 	name = "Recurring Panic"
-	desc = "If you're not resting, Carrier Panic will automatically attempt to activate when possible. The cooldown duration is set to 20% of its original value. It only consumes 50/40/30% of your maximum plasma."
+	desc = "如果你没有处于休息状态，携带者恐慌会在条件允许时自动尝试激活。冷却时间缩短为原值的20%。它只会消耗你最大等离子体的50/40/30%。"
 	/// For each structure, the multiplier to add to Carrier Panic's plasma consumption. 1 = 100% of the owner's maximum plasma. 0.1 = 10% of the owner's maximum plasma.
 	var/multiplier_initial = -0.4
 	/// For each structure, the multiplier to add to Carrier Panic's plasma consumption.
@@ -134,7 +134,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/leapfrog
 	name = "Leapfrog"
-	desc = "Thrown huggers can now leap 1 tile at a time. All activation times are 0.8/0.7/0.6x of their original value, but will never be faster than 0.5s."
+	desc = "投掷的抱脸虫现在可以一次跳跃1格。所有激活时间均为原值的0.8/0.7/0.6倍，但永远不会快于0.5秒。"
 	/// The leap range modified to bring it down to 1. This is used to add back range if the mutation is removed.
 	var/leap_range_modified = 0
 	/// For the first structure, the multiplier to add towards the various activation times that thrown facehuggers via Throw Facehugger will have.
@@ -178,7 +178,7 @@
 
 /datum/mutation_upgrade/spur/claw_delivered
 	name = "Claw Delivered"
-	desc = "Huggers from your eggs now have a reduced cast time against humans. The cast time is set to 60/50/40% of its original value."
+	desc = "你产下的抱脸虫现在对人类的施放时间缩短了。施放时间调整为原值的60/50/40%。"
 	/// For the first structure, the multiplier to add to the Hugger's cast time when trying to attach to humans manually.
 	var/multiplier_initial = -0.3
 	/// For each structure, the multiplier to add to the Hugger's cast time when trying to attach to humans manually.
@@ -216,7 +216,7 @@
 
 /datum/mutation_upgrade/spur/fake_huggers
 	name = "Fake Huggers"
-	desc = "Thrown huggers will accompanied by a fake facehugger which will mimic their behavior. Their color will be changed to match 50/70/90% of the original hugger's color."
+	desc = "投掷出的抱脸虫会伴随一个假抱脸虫，模仿其行为。它们的颜色会调整为原抱脸虫颜色的50/70/90%。"
 	/// For the first structure, the amount to add to Throw Huggers' gradiant to be applied to the fake huggers.
 	var/gradiant_initial = 0.3
 	/// For each structure, the amount to add to Throw Huggers' gradiant to be applied to the fake huggers.
@@ -257,7 +257,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/oviposition
 	name = "Oviposition"
-	desc = "Egg Lay now creates eggs with your selected type of hugger inside. The plasma cost is set to 50/40/30% of its their original value and its cooldown is set to 50% of its original value. You lose the ability, Spawn Huggers."
+	desc = "产卵现在会生成内含你所选抱脸虫类型的卵。等离子体消耗设定为原值的50/40/30%，冷却时间设定为原值的50%。你失去了生成抱脸虫的能力。"
 	/// For the first structure, the multiplier that will be added to the ability cost of Egg Lay.
 	var/multiplier_initial = -0.4
 	/// For each structure, the multiplier that will be added to the ability cost of Egg Lay.
@@ -311,7 +311,7 @@
 
 /datum/mutation_upgrade/veil/life_for_life
 	name = "Life for Life"
-	desc = "Spawn Facehugger's cooldown is set to 70% of its original value and costs zero plasma, but will deal 50/40/30 true damage to you."
+	desc = "生成抱脸虫的冷却时间缩短至原值的70%，且不消耗等离子体，但会对自身造成50/40/30点真实伤害。"
 	/// For the first structure, the amount of damage.
 	var/damage_initial = 60
 	/// For each structure, the additional amount of damage.
@@ -353,7 +353,7 @@
 
 /datum/mutation_upgrade/veil/swarm_trap
 	name = "Swarm Trap"
-	desc = "Your newly created traps can fit an additional 1/2/3 huggers, but the stun duration divided by the amount of the hugger inside the trap."
+	desc = "你新创建的陷阱可以额外容纳1/2/3只抱脸虫，但眩晕持续时间会根据陷阱内的抱脸虫数量进行均分。"
 	/// For each structure, the additional amount of huggers that can be stored in the traps.
 	var/huggers_per_structure = 1
 

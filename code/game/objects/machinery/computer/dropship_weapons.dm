@@ -1,7 +1,7 @@
 
 /obj/machinery/computer/dropship_weapons
-	name = "abstract dropship weapons controls"
-	desc = "A computer to manage equipments and weapons installed on the dropship."
+	name = "抽象化空降舱武器控制"
+	desc = "用于管理登陆艇上安装的装备和武器的计算机。"
 	density = TRUE
 	icon_state = "dropship_console_right"
 	screen_overlay = "dropship_console_right_emissive"
@@ -76,7 +76,7 @@
 			if(!istype(L))
 				return
 			if(!L.skills.getRating(SKILL_PILOT)) //everyone can fire dropship weapons while fumbling.
-				L.visible_message(span_notice("[L] fumbles around figuring out how to use the automated targeting system."),
+				L.visible_message(span_notice("[L] 手忙脚乱地摸索着如何使用自动瞄准系统。"),
 				span_notice("You fumble around figuring out how to use the automated targeting system."))
 				var/fumbling_time = 10 SECONDS
 				if(!do_after(L, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
@@ -85,19 +85,19 @@
 				var/obj/effect/overlay/temp/laser_target/LT = X
 				if(LT.target_id == targ_id)
 					if(shuttle.mode != SHUTTLE_CALL)
-						to_chat(L, span_warning("Dropship can only fire while in flight."))
+						to_chat(L, span_warning("运输机只能在飞行时开火。"))
 						return
 					if(shuttle.mode == SHUTTLE_HIJACK_LOCK)
 						return
 					if(!(selected_equipment?.dropship_equipment_flags & IS_WEAPON))
-						to_chat(L, span_warning("No weapon selected."))
+						to_chat(L, span_warning("未选择武器。"))
 						return
 					var/obj/structure/dropship_equipment/cas/weapon/DEW = selected_equipment
 					if(!DEW.ammo_equipped || DEW.ammo_equipped.ammo_count <= 0)
-						to_chat(L, span_warning("[DEW] has no ammo."))
+						to_chat(L, span_warning("[DEW] 弹药耗尽。"))
 						return
 					if(!COOLDOWN_FINISHED(DEW, last_fired))
-						to_chat(L, span_warning("[DEW] just fired, wait for it to cool down."))
+						to_chat(L, span_warning("[DEW] 刚刚开火，等待其冷却。"))
 						return
 					if(QDELETED(LT)) // Quick final check on the Laser target
 						return
@@ -111,7 +111,7 @@
 
 
 /obj/machinery/computer/dropship_weapons/dropship1
-	name = "\improper 'Alamo' weapons controls"
+	name = "\improper '阿拉莫号'武器控制系统"
 	req_access = list(ACCESS_MARINE_DROPSHIP)
 	opacity = FALSE
 
@@ -120,7 +120,7 @@
 	shuttle_tag = SHUTTLE_ALAMO
 
 /obj/machinery/computer/dropship_weapons/dropship2
-	name = "\improper 'Normandy' weapons controls"
+	name = "\improper '诺曼底'号武器控制系统"
 	req_access = list(ACCESS_MARINE_DROPSHIP)
 
 /obj/machinery/computer/dropship_weapons/dropship2/Initialize(mapload)

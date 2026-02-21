@@ -1,5 +1,5 @@
 /obj/machinery/door/poddoor/railing
-	name = "\improper retractable railing"
+	name = "\improper 可伸缩导轨"
 	icon = 'icons/obj/doors/railing.dmi'
 	icon_state = "railing1"
 	use_power = 0

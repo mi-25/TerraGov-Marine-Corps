@@ -1,5 +1,5 @@
 /obj/effect/landmark
-	name = "landmark"
+	name = "地标"
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "x2"
 	anchored = TRUE
@@ -22,7 +22,7 @@
 
 
 /obj/effect/landmark/start
-	name = "start"
+	name = "开始"
 	icon = 'icons/mob/landmarks.dmi'
 	icon_state = "x"
 	anchored = TRUE
@@ -119,7 +119,7 @@
 /obj/effect/landmark/distress_item
 
 /obj/effect/landmark/valhalla_weed_node
-	name = "valhalla xeno weed node spawn landmark"
+	name = "瓦尔哈拉异形菌毯节点生成地标"
 	icon = 'icons/Xeno/weeds.dmi'
 	icon_state = "weednode0"
 
@@ -130,7 +130,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/weed_node
-	name = "xeno weed node spawn landmark"
+	name = "异形菌毯节点生成地标"
 	icon = 'icons/Xeno/weeds.dmi'
 	icon_state = "weednode0"
 
@@ -140,7 +140,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/xeno_resin_door
-	name = "xeno resin door spawn landmark"
+	name = "异形树脂门生成地标"
 	icon = 'icons/Xeno/Effects.dmi'
 	icon_state = "resin"
 
@@ -150,7 +150,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/xeno_resin_wall
-	name = "xeno resin wall spawn landmark"
+	name = "异形树脂墙生成地标"
 	icon = 'icons/Xeno/structures.dmi'
 	icon_state = "resin0"
 
@@ -160,7 +160,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/xeno_silo_spawn
-	name = "xeno silo spawn landmark"
+	name = "异形孵化场生成地标"
 	icon = 'icons/Xeno/resin_silo.dmi'
 	icon_state = "weed_silo"
 
@@ -170,7 +170,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/xeno_spawner_spawn
-	name = "xeno spawner spawn landmark"
+	name = "异形生成点地标"
 	icon = 'icons/Xeno/3x3building.dmi'
 	icon_state = "spawner"
 
@@ -180,7 +180,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/xeno_tunnel_spawn
-	name = "xeno tunnel spawn landmark"
+	name = "异形隧道生成地标"
 	icon = 'icons/Xeno/Effects.dmi'
 	icon_state = "hole"
 
@@ -190,7 +190,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/resin_jelly_pod
-	name = "xeno jelly pod landmark"
+	name = "异形凝胶荚舱地标"
 	icon = 'icons/Xeno/resin_pod.dmi'
 	icon_state = "resinpod"
 
@@ -200,7 +200,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/zombie_spawner
-	name = "zombie tunnel spawn landmark"
+	name = "僵尸隧道生成地标"
 	icon = 'icons/Xeno/Effects.dmi'
 	icon_state = "hole"
 
@@ -210,7 +210,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/nuke_spawn
-	name = "nuke spawn landmark"
+	name = "核弹生成地标"
 	icon_state = "tdome_observer"
 
 /obj/effect/landmark/nuke_spawn/Initialize(mapload)
@@ -219,7 +219,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/dropship_start_location
-	name = "dropship_start_location"
+	name = "运输机起始位置"
 
 /obj/effect/landmark/dropship_start_location/Initialize(mapload)
 	GLOB.minidropship_start_loc = loc
@@ -227,7 +227,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/weapon_spawn
-	name = "Base Weapon Spawn"
+	name = "基础武器生成"
 	icon_state = "x"
 	var/weapon_list = list()
 	var/weapon_to_spawn = null
@@ -271,7 +271,7 @@
 		spawn_associated_ammo(weapon_to_spawn)
 
 /obj/effect/landmark/weapon_spawn/tier1_weapon_spawn
-	name = "Tier 1 Weapon Spawn"
+	name = "阶级 1 武器生成点"
 	icon_state = "weapon1"
 	weapon_list = list(
 		/obj/item/weapon/gun/energy/lasgun/M43/practice,
@@ -316,7 +316,7 @@
 	)
 
 /obj/effect/landmark/weapon_spawn/tier2_weapon_spawn
-	name = "Tier 2 Weapon Spawn"
+	name = "阶级2武器生成点"
 	icon_state = "weapon2"
 	weapon_list = list(
 		/obj/item/weapon/gun/energy/lasgun/M43,
@@ -353,7 +353,7 @@
 	)
 
 /obj/effect/landmark/weapon_spawn/tier3_weapon_spawn
-	name = "Tier 3 Weapon Spawn"
+	name = "阶级3武器生成点"
 	icon_state = "weapon3"
 	weapon_list = list(
 		/obj/item/weapon/gun/rifle/standard_carbine,
@@ -403,7 +403,7 @@
 	)
 
 /obj/effect/landmark/weapon_spawn/tier4_weapon_spawn
-	name = "Tier 4 Weapon Spawn"
+	name = "阶级4武器生成点"
 	icon_state = "weapon4"
 	weapon_list = list(
 		/obj/item/weapon/gun/rifle/lmg_d,
@@ -441,7 +441,7 @@
 	)
 
 /obj/effect/landmark/weapon_spawn/tier5_weapon_spawn
-	name = "Tier 5 Weapon Spawn"
+	name = "阶级5武器生成点"
 	icon_state = "weapon5"
 	weapon_list = list(
 		/obj/item/weapon/gun/launcher/rocket,
@@ -456,7 +456,7 @@
 	)
 
 /obj/effect/landmark/weapon_spawn/tier6_weapon_spawn
-	name = "Tier meme Weapon Spawn"
+	name = "阶级梗武器生成"
 	icon_state = "weapon6"
 	weapon_list = list(	/obj/item/weapon/gun/pistol/chimp,
 						/obj/item/weapon/banhammer,
@@ -464,7 +464,7 @@
 						)
 
 /obj/effect/landmark/sensor_tower
-	name = "Sensor tower"
+	name = "传感器塔"
 	icon = 'icons/obj/structures/sensor.dmi'
 	icon_state = "sensor"
 
@@ -485,20 +485,20 @@
 	GLOB.valhalla_button_spawn_landmark["[spawns][where]"] = src
 
 /obj/effect/landmark/valhalla/xeno_spawn_landmark
-	name = "Valhalla xeno spawn"
+	name = "英灵殿异形生成"
 	icon_state = "xeno_spawn_valhalla"
 	spawns = "xeno"
 
 /obj/effect/landmark/valhalla/marine_spawner_landmark
-	name = "Marine spawner landmark"
+	name = "陆战队生成点地标"
 	spawns = "marine"
 
 /obj/effect/landmark/valhalla/vehicle_spawner_landmark
-	name = "Vehicle spawner landmark"
+	name = "载具生成地标"
 	spawns = "vehicle"
 
 /obj/effect/landmark/eord_roomba
-	name = "EORD roomba spawn point"
+	name = "EORD 房间清洁机器人生成点"
 
 /obj/effect/landmark/eord_roomba/Initialize(mapload)
 	. = ..()
@@ -511,9 +511,9 @@
 /// Marks the bottom left of the testing zone.
 /// In landmarks.dm and not unit_test.dm so it is always active in the mapping tools.
 /obj/effect/landmark/unit_test_bottom_left
-	name = "unit test zone bottom left"
+	name = "单位测试区域左下角"
 
 /// Marks the top right of the testing zone.
 /// In landmarks.dm and not unit_test.dm so it is always active in the mapping tools.
 /obj/effect/landmark/unit_test_top_right
-	name = "unit test zone top right"
+	name = "单位测试区域 右上角"

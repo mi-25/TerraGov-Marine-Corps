@@ -1,6 +1,6 @@
 /datum/campaign_asset/mech
 	name = "Medium combat mech"
-	desc = "One medium combat mech"
+	desc = "一台中型战斗机甲"
 	detailed_desc = "Your battalion has been assigned a single Assault medium combat mech. The Assault mech features balanced armor and mobility, allowing it to keep up with infantry movements while still offering significant resilience. It is considered the general work horse combat mech."
 	ui_icon = "medium_mech"
 	uses = 1
@@ -15,14 +15,14 @@
 
 /datum/campaign_asset/mech/light
 	name = "Light combat mech"
-	desc = "One light combat mech"
+	desc = "一台轻型战斗机甲"
 	detailed_desc = "Your battalion has been assigned a single Recon light combat mech. The Recon mech is lightly armored but very nimble and is still capable of carrying a full suite of weapons. Commonly used for scouting, screening and flanking manoeuvres."
 	ui_icon = "light_mech"
 	spawner_type = /obj/effect/landmark/campaign/vehicle_spawner/mech/light
 
 /datum/campaign_asset/mech/heavy
 	name = "Heavy combat mech"
-	desc = "One heavy combat mech"
+	desc = "一台重型战斗机甲"
 	detailed_desc = "Your battalion has been assigned a single Vanguard heavy combat mech. The Vanguard has extreme durability and offensive capability. Able to wade through the thickest of fighting with ease, it is the galaxy's premier frontline combat mech, although its speed and maneuverability are somewhat lackluster."
 	ui_icon = "heavy_mech"
 	spawner_type = /obj/effect/landmark/campaign/vehicle_spawner/mech/heavy

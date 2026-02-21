@@ -18,7 +18,7 @@
 	if(greyscale_config)
 		return
 	greyscale_config = attaching_to.greyscale_config
-	name = "[attaching_to.name] secondary color"
+	name = "[attaching_to.name] 次要颜色"
 
 	update_icon()
 	update_greyscale()
@@ -37,7 +37,7 @@
 		update_greyscale()
 
 /obj/item/armor_module/armor/secondary_color/chest
-	name = "chest secondary color"
+	name = "胸部次要颜色"
 	icon_state = "chest_secondary_color"
 	slot = ATTACHMENT_SLOT_CHEST_SECONDARY_COLOR
 
@@ -50,22 +50,22 @@
 	)
 
 /obj/item/armor_module/armor/secondary_color/leg
-	name = "leg secondary color"
+	name = "腿部次要颜色"
 	icon_state = "leg_secondary_color"
 	slot = ATTACHMENT_SLOT_KNEE_SECONDARY_COLOR
 
 /obj/item/armor_module/armor/secondary_color/arm
-	name = "arm secondary color"
+	name = "副武器颜色"
 	icon_state = "arm_secondary_color"
 	slot = ATTACHMENT_SLOT_ARM_SECONDARY_COLOR
 
 /obj/item/armor_module/armor/secondary_color/helm
-	name = "helm secondary color"
+	name = "头盔次要颜色"
 	icon_state = "helm_secondary_color"
 	slot = ATTACHMENT_SLOT_HELM_SECONDARY_COLOR
 
 /obj/item/armor_module/armor/secondary_color/chest/visor_color
-	name = "chest secondary color"
+	name = "胸部次要颜色"
 	icon_state = "chest_secondary_color"
 	colorable_colors = VISOR_PALETTES_LIST
 

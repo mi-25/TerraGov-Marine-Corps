@@ -82,6 +82,6 @@
 	else
 		adjustOxyLoss(CARBON_RECOVERY_OXYLOSS, TRUE)
 		if(breath_failing)
-			to_chat(src, span_notice("Fresh air fills your lungs; you can breathe again!"))
+			to_chat(src, span_notice("新鲜空气涌入你的肺部；你又能呼吸了！"))
 			clear_alert(ALERT_NOT_ENOUGH_OXYGEN)
 			breath_failing = FALSE

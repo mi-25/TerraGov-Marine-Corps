@@ -28,7 +28,7 @@
 	if(current_version < 39)
 		key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key)
 		parent.set_macros()
-		to_chat(parent, span_userdanger("Empty keybindings, setting to default"))
+		to_chat(parent, span_userdanger("按键绑定为空，正在设为默认"))
 
 	// Add missing keybindings for T L O M for when they were removed as defaults
 	if(current_version < 42)
@@ -45,17 +45,17 @@
 			if(!(kb_path in key_bindings[key]))
 				key_bindings[key] += list(kb_path)
 
-		to_chat(parent, span_userdanger("Forced keybindings for say (T), me (M), ooc (O), looc (L) have been applied."))
+		to_chat(parent, span_userdanger("已强制应用以下按键绑定：发言（T）、动作（M）、OOC（O）、LOOC（L）。"))
 
 	// Reset the xeno crit health alerts to default
 	if(current_version < 43)
 		WRITE_FILE(S["mute_xeno_health_alert_messages"], TRUE)
 		mute_xeno_health_alert_messages = TRUE
-		to_chat(parent, span_userdanger("Preferences for Mute xeno health alert messages have been reverted to default settings; these are now muted. Go into Preferences and set Mute xeno health alert messages to No if you wish to get xeno critical health alerts."))
+		to_chat(parent, span_userdanger("异形生命值警报静音偏好已恢复为默认设置；现已静音。如需接收异形濒危生命值警报，请进入偏好设置，将'静音异形生命值警报'设为'否'。"))
 	if(current_version < 46)
 		toggles_sound |= SOUND_WEATHER
 		WRITE_FILE(S["toggles_sound"], toggles_sound)
-		to_chat(parent, span_userdanger("Due to a fix, preferences for weather sound have been reverted to default settings; these are now ON. Go into Preferences and set sound toggles to OFF if you wish to not hear these sounds."))
+		to_chat(parent, span_userdanger("由于一项修复，天气音效的偏好设置已恢复为默认设置；目前为开启状态。如果您不希望听到这些音效，请进入偏好设置并将音效开关设为关闭。"))
 
 
 //handles converting savefiles to new formats
@@ -297,7 +297,7 @@
 	try
 		WRITE_FILE(S["savefile_write_test"], "lebowskilebowski")
 	catch
-		to_chat(parent, span_warning("Writing to the savefile failed, please try again."))
+		to_chat(parent, span_warning("写入存档文件失败，请重试。"))
 		return FALSE
 
 	WRITE_FILE(S["version"], savefile_version)
@@ -615,7 +615,7 @@
 	try
 		WRITE_FILE(S["savefile_write_test"], "lebowskilebowski")
 	catch
-		to_chat(parent, span_warning("Writing to the savefile failed, please try again."))
+		to_chat(parent, span_warning("写入存档文件失败，请重试。"))
 		return FALSE
 
 	be_special = sanitize_integer(be_special, NONE, MAX_BITFLAG, initial(be_special))

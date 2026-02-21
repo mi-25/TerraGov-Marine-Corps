@@ -15,8 +15,8 @@ log transactions
 /obj/item/card/id/var/money = 2000
 
 /obj/machinery/atm
-	name = "NanoTrasen Automatic Teller Machine"
-	desc = "For all your monetary needs!"
+	name = "纳米传讯自动取款机"
+	desc = "满足您的一切货币需求！"
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "atm"
 	anchored = TRUE
@@ -98,7 +98,7 @@ log transactions
 		T.time = worldtime2text()
 		authenticated_account.transaction_log += T
 
-		to_chat(user, span_info("You insert [I] into [src]."))
+		to_chat(user, span_info("你将[I]插入[src]。"))
 		attack_hand(user)
 		qdel(I)
 
@@ -268,11 +268,11 @@ log transactions
 									T.time = worldtime2text()
 									failed_account.transaction_log.Add(T)
 							else
-								to_chat(usr, span_warning("[icon2html(src, usr)] Incorrect pin/account combination entered, [max_pin_attempts - number_incorrect_tries] attempts remaining."))
+								to_chat(usr, span_warning("[icon2html(src, usr)] 输入的PIN码/账户组合不正确，还剩[max_pin_attempts - number_incorrect_tries]次尝试机会。"))
 								previous_account_number = tried_account_num
 								playsound(src, 'sound/machines/buzz-sigh.ogg', 25, 1)
 						else
-							to_chat(usr, span_warning("[icon2html(src, usr)] incorrect pin/account combination entered."))
+							to_chat(usr, span_warning("[icon2html(src, usr)] 输入的PIN码/账户组合不正确。"))
 							number_incorrect_tries = 0
 					else
 						playsound(src, 'sound/machines/twobeep.ogg', 25, 1)
@@ -288,7 +288,7 @@ log transactions
 						T.time = worldtime2text()
 						authenticated_account.transaction_log.Add(T)
 
-						to_chat(usr, span_notice("[icon2html(src, usr)] Access granted. Welcome user '[authenticated_account.owner_name].'"))
+						to_chat(usr, span_notice("[icon2html(src, usr)] 访问已授权。欢迎用户 '[authenticated_account.owner_name]'。"))
 
 					previous_account_number = tried_account_num
 			if("e_withdrawal")
@@ -434,7 +434,7 @@ log transactions
 			if(I)
 				authenticated_account = attempt_account_access(I.associated_account_number)
 				if(authenticated_account)
-					to_chat(human_user, span_notice("[icon2html(src, human_user)] Access granted. Welcome user '[authenticated_account.owner_name].'"))
+					to_chat(human_user, span_notice("[icon2html(src, human_user)] 访问已授权。欢迎用户'[authenticated_account.owner_name]。'"))
 
 					//create a transaction log entry
 					var/datum/transaction/T = new()

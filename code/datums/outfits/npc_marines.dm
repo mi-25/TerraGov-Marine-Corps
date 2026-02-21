@@ -1,5 +1,5 @@
 /datum/outfit/job/npc/tgmc/squad_leader
-	name = "NPC TGMC squad leader"
+	name = "TGMC 班长"
 	jobtype = /datum/job/terragov/squad/leader
 
 	id = /obj/item/card/id/dogtag
@@ -42,7 +42,7 @@
 	)
 
 /datum/outfit/job/npc/tgmc/smartgunner
-	name = "NPC TGMC smartgunner"
+	name = "NPC 地球政府殖民地海军陆战队 智能机枪手"
 	jobtype = /datum/job/terragov/squad/smartgunner
 
 	id = /obj/item/card/id/dogtag
@@ -91,7 +91,7 @@
 	)
 
 /datum/outfit/job/npc/tgmc/corpsman
-	name = "NPC TGMC Corpsman"
+	name = "NPC TGMC 卫生兵"
 	jobtype = /datum/job/terragov/squad/corpsman
 
 	id = /obj/item/card/id/dogtag
@@ -153,7 +153,7 @@
 	)
 
 /datum/outfit/job/npc/tgmc/standard
-	name = "NPC TGMC standard"
+	name = "地球政府殖民地海军陆战队标准"
 	jobtype = /datum/job/terragov/squad/standard
 
 	id = /obj/item/card/id/dogtag
@@ -199,7 +199,7 @@
 	)
 
 /datum/outfit/job/npc/tgmc/standard/shotgunner
-	name = "NPC TGMC standard shotgunner"
+	name = "NPC 地球政府殖民地海军陆战队标准霰弹枪手"
 	jobtype = /datum/job/terragov/squad/standard
 
 	id = /obj/item/card/id/dogtag
@@ -251,7 +251,7 @@
 
 //
 /datum/outfit/job/npc/tgmc/squad_engineer
-	name = "NPC TGMC squad engineer"
+	name = "地球政府殖民地海军陆战队工程兵"
 	jobtype = /datum/job/terragov/squad/engineer
 
 	id = /obj/item/card/id/dogtag

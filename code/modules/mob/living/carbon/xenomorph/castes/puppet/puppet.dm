@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/puppet
 	caste_base_type = /datum/xeno_caste/puppet
 	name = "Puppet"
-	desc = "A reanimated body, crudely pieced together and held in place by an ominous energy tethered to some unknown force."
+	desc = "一具被复活的躯体，粗糙地拼凑在一起，由某种未知力量所束缚的不祥能量维系着。"
 	icon = 'icons/Xeno/castes/puppet.dmi'
 	icon_state = "Puppet Running"
 	health = 250

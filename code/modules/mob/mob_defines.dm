@@ -1,5 +1,5 @@
 /mob
-	name = "mob"
+	name = "生物"
 	density = TRUE
 	layer = MOB_LAYER
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC

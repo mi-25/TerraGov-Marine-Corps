@@ -1,6 +1,6 @@
 /obj/machinery/camera
-	name = "security camera"
-	desc = "It's used to monitor rooms."
+	name = "安全摄像头"
+	desc = "它用于监控房间。"
 	icon = 'icons/obj/machines/monitors.dmi'
 	icon_state = "camera_icon"
 	use_power = ACTIVE_POWER_USE
@@ -108,7 +108,7 @@
 		var/itemname = X.name
 		var/info = X.info
 
-		to_chat(U, span_notice("You hold \the [itemname] up to the camera..."))
+		to_chat(U, span_notice("你将\the [itemname]举到摄像头前……"))
 		U.changeNext_move(CLICK_CD_MELEE)
 		for(var/mob/O in GLOB.player_list)
 			if(isAI(O))
@@ -116,12 +116,12 @@
 				if(AI.control_disabled || (AI.stat == DEAD))
 					return
 				if(U.name == "Unknown")
-					to_chat(AI, "<b>[U]</b> holds <a href='byond://?_src_=usr;show_paper=1;'>\a [itemname]</a> up to one of your cameras ...")
+					to_chat(AI, "<b>[U]</b>将<a href='byond://?_src_=usr;show_paper=1;'>\a [itemname]</a>举到你的一个摄像头前……")
 				else
-					to_chat(AI, "<b><a href='byond://?src=[REF(AI)];track=[html_encode(U.name)]'>[U]</a></b> holds <a href='byond://?_src_=usr;show_paper=1;'>\a [itemname]</a> up to one of your cameras ...")
+					to_chat(AI, "<b><a href='byond://?src=[REF(AI)];track=[html_encode(U.name)]'>[U]</a></b>将<a href='byond://?_src_=usr;show_paper=1;'>\a [itemname]</a>举到你的一个摄像头前……")
 				AI.last_paper_seen = "<HTML><HEAD><TITLE>[itemname]</TITLE></HEAD><BODY><TT>[info]</TT></BODY></HTML>"
 			else if(O.client && O.client.eye == src)
-				to_chat(O, "[U] holds \a [itemname] up to one of the cameras ...")
+				to_chat(O, "[U] 将 \a [itemname] 举到其中一个摄像头前……")
 				O << browse(HTML_SKELETON_TITLE(itemname, info), "window=[itemname]")
 
 
@@ -162,10 +162,10 @@
 	if(!I.tool_start_check(user, amount = 0))
 		return TRUE
 
-	to_chat(user, span_notice("You start to weld [src]..."))
+	to_chat(user, span_notice("你开始焊接[src]..."))
 
 	if(I.use_tool(src, user, 100, volume = 50))
-		user.visible_message(span_warning("[user] unwelds [src], leaving it as just a frame bolted to the wall."),
+		user.visible_message(span_warning("[user] 拆除了 [src] 的焊接点，现在它只剩下一个用螺栓固定在墙上的框架。"),
 			span_warning("You unweld [src], leaving it as just a frame bolted to the wall"))
 		deconstruct(TRUE)
 
@@ -177,18 +177,18 @@
 		return FALSE
 
 	if(obj_integrity <= 0)
-		to_chat(xeno_attacker, span_warning("The camera is already disabled."))
+		to_chat(xeno_attacker, span_warning("摄像头已停用。"))
 		return
 
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	xeno_attacker.visible_message(span_danger("[xeno_attacker] slashes \the [src]!"), \
+	xeno_attacker.visible_message(span_danger("[xeno_attacker] 对 \the [src] 发动斩击！"), \
 	span_danger("We slash \the [src]!"))
 	playsound(loc, SFX_ALIEN_CLAW_METAL, 25, 1)
 
 	if(!CHECK_BITFIELD(machine_stat, PANEL_OPEN))
 		ENABLE_BITFIELD(machine_stat, PANEL_OPEN)
 		update_icon()
-		visible_message(span_danger("\The [src]'s cover swings open, exposing the wires!"))
+		visible_message(span_danger("\The [src]的盖子打开了，露出了里面的电线！"))
 		return
 
 	var/datum/effect_system/spark_spread/sparks = new
@@ -197,7 +197,7 @@
 	sparks.start()
 
 	deactivate()
-	visible_message(span_danger("\The [src]'s wires snap apart in a rain of sparks!"))
+	visible_message(span_danger("\The [src]的电线在一阵火花雨中崩断！"))
 
 
 /obj/machinery/camera/proc/deactivate(mob/user)
@@ -216,7 +216,7 @@
 		if(M.client?.eye && M.client.eye == src)
 			M.unset_interaction()
 			M.reset_perspective(null)
-			to_chat(M, "The screen bursts into static.")
+			to_chat(M, "屏幕突然爆发出静电噪音。")
 
 	if(!powered())
 		return
@@ -224,7 +224,7 @@
 	for(var/mob/living/silicon/ai/AI AS in GLOB.ai_list)
 		if(!AI.client)
 			continue
-		to_chat(AI, span_notice("[src] has been deactivated at [myarea]"))
+		to_chat(AI, span_notice("[src]已在[myarea]停用"))
 
 /obj/machinery/camera/update_icon_state()
 	. = ..()
@@ -257,9 +257,9 @@
 
 	if(displaymessage)
 		if(user)
-			visible_message(span_danger("[user] [change_msg] [src]!"))
+			visible_message(span_danger("[user] [change_msg] [src]！"))
 		else
-			visible_message(span_danger("\The [src] [change_msg]!"))
+			visible_message(span_danger("\The [src] [change_msg]！"))
 
 	update_icon() //update Initialize() if you remove this.
 
@@ -270,7 +270,7 @@
 		if(O.client && O.client.eye == src)
 			O.unset_interaction()
 			O.reset_perspective(null)
-			to_chat(O, "The screen bursts into static.")
+			to_chat(O, "屏幕突然爆发出静电噪音。")
 
 
 /obj/machinery/camera/proc/can_use()
@@ -363,7 +363,7 @@
 	c_tag = "[A.name] #[++id_by_area[A]]"
 
 /obj/machinery/camera/autoname/mainship
-	name = "military-grade camera"
+	name = "军用级摄像头"
 	network = list("marinemainship")
 
 /obj/machinery/camera/autoname/mainship/somship
@@ -378,7 +378,7 @@
 	network = list("marinemainship", "dropship2")
 
 /obj/machinery/camera/headset
-	name = "headset camera"
+	name = "耳机摄像头"
 	network = list("marine")
 	resistance_flags = RESIST_ALL //If the containing headset is not destroyed, neither should this be.
 	// role of the wearer, set on the headset itself
@@ -393,7 +393,7 @@
 
 //used by the laser camera dropship equipment
 /obj/machinery/camera/laser_cam
-	name = "laser camera"
+	name = "激光摄像头"
 	icon_state = ""
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	network = list("laser targets")
@@ -407,7 +407,7 @@
 		c_tag = "[laser_name] ([A.name])"
 
 /obj/machinery/camera/beacon_cam
-	name = "beacon camera"
+	name = "信标摄像头"
 	icon_state = ""
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	network = list("supply beacons")
@@ -426,7 +426,7 @@
 //used by the landing camera dropship equipment. Do not place them right under where the dropship lands.
 //Should place them near each corner of your LZs.
 /obj/machinery/camera/autoname/lz_camera
-	name = "landing zone camera"
+	name = "着陆区摄像头"
 	icon_state = "editor_icon"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	network = list("landing zones")
@@ -444,7 +444,7 @@
 
 //Thunderdome cameras
 /obj/machinery/camera/autoname/thunderdome
-	name = "thunderdome camera"
+	name = "雷霆穹顶摄像头"
 	network = list("thunder")
 	resistance_flags = RESIST_ALL
 

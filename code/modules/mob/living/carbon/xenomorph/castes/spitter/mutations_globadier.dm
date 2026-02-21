@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/self_explosion
 	name = "Self Explosion"
-	desc = "Toss Grenade can target yourself. Targeting yourself will toss the grenade under you and reduce the detonation time by 0.5/0.75/1 seconds. The resulting detonation time can never go under 0.5 seconds."
+	desc = "投掷手雷可以以自身为目标。以自身为目标会将手雷投掷到脚下，并使引爆时间减少0.5/0.75/1秒。最终的引爆时间永远不会低于0.5秒。"
 	/// For the first structure, the amount of deciseconds to increase the detonation time by.
 	var/duration_initial = -0.25 SECONDS
 	/// For each structure, the amount of deciseconds to increase the detonation time by.
@@ -46,7 +46,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/blood_grenades
 	name = "Blood Grenades"
-	desc = "Toss Grenade will deal damage equal to 20/17.5/15% of your maximum health and allow you to throw a non-healing grenade if you had none."
+	desc = "投掷手雷将造成相当于你最大生命值20/17.5/15%的伤害，并且如果你没有非治疗手雷，将允许你投掷一枚。"
 	/// For the first structure, the percentage of maximum health to lose.
 	var/percentage_initial = 0.225
 	/// For each structure, the additional percentage of maximum health to lose.
@@ -87,7 +87,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/repurposed_capacity
 	name = "Repurposed Capacity"
-	desc = "Toss Grenade stores 1/2/3 less grenades, but recharges a grenade 2/4/6 seconds faster."
+	desc = "投掷手雷减少1/2/3颗手雷携带量，但手雷充能速度加快2/4/6秒。"
 	/// For each structure, the amount to increase Toss Grenade's maximum grenade capacity by.
 	var/capacity_per_structure = -1
 	/// For each structure, the amount of deciseconds to increase Toss Grenade's recharge cooldown by.

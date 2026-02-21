@@ -4,8 +4,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber
 	icon_state = "scrub_map-2"
 
-	name = "air scrubber"
-	desc = "Has a valve and pump attached to it."
+	name = "空气净化器"
+	desc = "装有阀门和泵。"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	active_power_usage = 60
@@ -70,7 +70,7 @@
 		var/obj/item/tool/pickaxe/plasmacutter/P = W
 
 		if(!welded)
-			to_chat(user, span_warning("\The [P] can only cut open welds!"))
+			to_chat(user, span_warning("\The [P] 只能切开焊接点！"))
 			return FALSE
 		if(!(P.start_cut(user, src.name, src, PLASMACUTTER_BASE_COST * PLASMACUTTER_VLOW_MOD)))
 			return FALSE
@@ -85,15 +85,15 @@
 	if(iswelder(W))
 		var/obj/item/tool/weldingtool/WT = W
 		if(WT.isOn())
-			user.visible_message(span_notice("[user] starts welding [src] with [WT]."), \
+			user.visible_message(span_notice("[user]开始用[WT]焊接[src]。"), \
 			span_notice("You start welding [src] with [WT]."))
 			if(WT.use_tool(src, user, 5 SECONDS, 1, 25, null, BUSY_ICON_BUILD))
 				if(!welded)
-					user.visible_message(span_notice("[user] welds [src] shut."), \
+					user.visible_message(span_notice("[user]将[src]焊接关闭。"), \
 					span_notice("You weld [src] shut."))
 					welded = TRUE
 				else
-					user.visible_message(span_notice("[user] welds [src] open."), \
+					user.visible_message(span_notice("[user] 将 [src] 焊接切开。"), \
 					span_notice("You weld [src] open."))
 					welded = FALSE
 				update_icon()
@@ -101,13 +101,13 @@
 				SET_PLANE_EXPLICIT(pipe_vision_img, ABOVE_HUD_PLANE, src)
 				return TRUE
 		else
-			to_chat(user, span_warning("[WT] needs to be on to start this task."))
+			to_chat(user, span_warning("[WT] 需要开启才能开始此任务。"))
 	return FALSE
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational())
-		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
+		to_chat(user, span_warning("你无法拆卸[src]，请先关闭它！"))
 		return FALSE
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/examine(mob/user)
@@ -123,7 +123,7 @@
 		return
 	if(!welded || !(do_after(xeno_attacker, 2 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE)))
 		return
-	xeno_attacker.visible_message("[xeno_attacker] furiously claws at [src]!", "We manage to clear away the stuff blocking the scrubber.", "You hear loud scraping noises.")
+	xeno_attacker.visible_message("[xeno_attacker] 疯狂地抓挠着 [src]！", "We manage to clear away the stuff blocking the scrubber.", "You hear loud scraping noises.")
 	welded = FALSE
 	update_icon()
 	pipe_vision_img = image(src, loc, dir = dir)

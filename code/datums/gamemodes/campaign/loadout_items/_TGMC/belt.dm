@@ -28,7 +28,7 @@
 
 /datum/loadout_item/belt/ammo_belt
 	name = "Ammo belt"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version is the standard variant designed for bulk ammunition-carrying operations."
+	desc = "M276是地球政府殖民地海军陆战队的标准承载装备。它由一个模块化腰带和各种弹夹组成。此版本是为大量弹药携带行动设计的标准型号。"
 	item_typepath = /obj/item/storage/belt/marine
 	jobs_supported = list(SQUAD_MARINE, SQUAD_ENGINEER, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -43,7 +43,7 @@
 
 /datum/loadout_item/belt/sparepouch
 	name = "G8 pouch"
-	desc = "A small, lightweight pouch that can be clipped onto Armat Systems M3 Pattern armor or your belt to provide additional storage for miscellaneous gear or box and drum magazines."
+	desc = "一个轻便小巧的附包，可固定在阿玛特系统M3型护甲或腰带上，为杂项装备或弹匣/弹鼓提供额外存储空间。"
 	item_typepath = /obj/item/storage/belt/sparepouch
 	jobs_supported = list(SQUAD_MARINE)
 
@@ -59,7 +59,7 @@
 
 /datum/loadout_item/belt/shotgun_mixed
 	name = "Shotgun shell rig"
-	desc = "An ammunition belt designed to hold shotgun shells or individual bullets. Loaded full of buckshot and flechette shells."
+	desc = "一条设计用于容纳霰弹枪弹或单发弹药的弹链。装满了鹿弹和箭弹。"
 	item_typepath = /obj/item/storage/belt/shotgun/mixed
 	jobs_supported = list(SQUAD_MARINE)
 	item_whitelist = list(
@@ -79,7 +79,7 @@
 
 /datum/loadout_item/belt/scabbard
 	name = "Scabbard"
-	desc = "A large leather scabbard for carrying a M2132 machete. Blade comes separately."
+	desc = "一个用于携带M2132砍刀的大型皮质刀鞘。刀片需单独购买。"
 	ui_icon = "machete"
 	item_typepath = /obj/item/storage/holster/blade/machete
 	jobs_supported = list(SQUAD_MARINE, SQUAD_LEADER, SQUAD_SMARTGUNNER)
@@ -87,7 +87,7 @@
 	req_desc = "Requires a machete secondary."
 
 /datum/loadout_item/belt/scabbard/officer
-	desc = "A family heirloom sheath for an officer's sabre. Looks expensive."
+	desc = "一把军官马刀的传家宝刀鞘。看起来价值不菲。"
 	item_typepath = /obj/item/storage/holster/blade/officer
 	jobs_supported = list(FIELD_COMMANDER)
 	item_whitelist = list(/obj/item/weapon/sword/officersword = ITEM_SLOT_SECONDARY)
@@ -95,7 +95,7 @@
 
 /datum/loadout_item/belt/belt_harness
 	name = "Belt harness"
-	desc = "A shoulder worn strap with clamps that can attach to most anything. Should keep you from losing your weapon, hopefully."
+	desc = "肩部佩戴的带子，带有夹具，可固定到大多数物品上。应该能防止你丢失武器，但愿如此。"
 	item_typepath = /obj/item/belt_harness/marine
 	jobs_supported = list(SQUAD_MARINE, SQUAD_ENGINEER, SQUAD_LEADER, FIELD_COMMANDER)
 
@@ -105,7 +105,7 @@
 
 /datum/loadout_item/belt/pistol_holster
 	name = "Pistol holster"
-	desc = "A belt holster, able to carry any pistol and a good amount of ammunition."
+	desc = "一个腰带枪套，能够携带任何手枪和大量弹药。"
 	ui_icon = "vp70"
 	item_typepath = /obj/item/storage/holster/belt/pistol/standard_pistol
 	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER)
@@ -128,7 +128,7 @@
 
 /datum/loadout_item/belt/db_shotgun
 	name = "Shotgun holster"
-	desc = "A leather holster for a SH-34 shotgun."
+	desc = "SH-34霰弹枪的皮质枪套。"
 	ui_icon = "tx34"
 	item_typepath = /obj/item/storage/holster/belt/ts34
 	jobs_supported = list(SQUAD_SMARTGUNNER)
@@ -137,7 +137,7 @@
 
 /datum/loadout_item/belt/lifesaver
 	name = "Lifesaver bag"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. This configuration mounts a duffel bag filled with a range of injectors and light medical supplies and is common among medics."
+	desc = "M276是地球政府殖民地海军陆战队的标准负重装备。此配置挂载一个装有多种注射器和轻型医疗用品的帆布袋，常见于卫生兵。"
 	ui_icon = "medkit"
 	item_typepath = /obj/item/storage/belt/lifesaver/quick
 	jobs_supported = list(SQUAD_CORPSMAN)

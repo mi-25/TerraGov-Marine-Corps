@@ -15,7 +15,7 @@
 	return ..()
 
 /datum/action/vehicle/sealed/armored/eject
-	name = "Eject From Mech"
+	name = "脱离机甲"
 	action_icon_state = "mech_eject"
 
 /datum/action/vehicle/sealed/armored/eject/action_activate(trigger_flags)
@@ -26,7 +26,7 @@
 	chassis.resisted_against(owner)
 
 /datum/action/vehicle/sealed/armored/swap_seat
-	name = "Switch Seats"
+	name = "切换座位"
 	action_icon_state = "mech_seat_swap"
 
 #define ARMOR_DRIVER "Driver"
@@ -47,36 +47,36 @@
 		return
 	if(!transfer_checks(choice))
 		return
-	chassis.balloon_alert(owner, "moving to other seat...")
+	chassis.balloon_alert(owner, "正在移动到其他座位...")
 	if(!do_after(owner, chassis.enter_delay, target = chassis, extra_checks=CALLBACK(src, PROC_REF(transfer_checks), choice)))
-		chassis.balloon_alert(owner, "interrupted!")
+		chassis.balloon_alert(owner, "已中断！")
 		return
 	chassis.remove_control_flags(owner, VEHICLE_CONTROL_MELEE|VEHICLE_CONTROL_EQUIPMENT|VEHICLE_CONTROL_DRIVE|VEHICLE_CONTROL_SETTINGS)
 	switch(choice)
 		if(ARMOR_GUNNER)
-			chassis.balloon_alert(owner, "controlling gunner seat")
+			chassis.balloon_alert(owner, "控制机枪手座位")
 			chassis.add_control_flags(owner, VEHICLE_CONTROL_MELEE|VEHICLE_CONTROL_EQUIPMENT)
 		if(ARMOR_DRIVER)
-			chassis.balloon_alert(owner, "controlling pilot seat")
+			chassis.balloon_alert(owner, "控制飞行员座椅")
 			chassis.add_control_flags(owner, VEHICLE_CONTROL_DRIVE|VEHICLE_CONTROL_SETTINGS)
 		if(ARMOR_PASSENGER)
-			chassis.balloon_alert(owner, "entered passenger seat")
+			chassis.balloon_alert(owner, "进入乘客座位")
 
 ///checks if owner can still transfer
 /datum/action/vehicle/sealed/armored/swap_seat/proc/transfer_checks(choice)
 	if(!owner || !chassis || !(owner in chassis.occupants))
 		return FALSE
 	if(length(chassis.occupants) >= chassis.max_occupants)
-		chassis.balloon_alert(owner, "other seats occupied!")
+		chassis.balloon_alert(owner, "其他座位已被占用！")
 		return FALSE
 	switch(choice)
 		if(ARMOR_GUNNER)
 			if(length(chassis.return_controllers_with_flag(VEHICLE_CONTROL_EQUIPMENT)) >= 1)
-				chassis.balloon_alert(owner, "gunner occupied!")
+				chassis.balloon_alert(owner, "炮手已就位！")
 				return FALSE
 		if(ARMOR_DRIVER)
 			if(chassis.driver_amount() >= chassis.max_drivers)
-				chassis.balloon_alert(owner, "driver occupied!")
+				chassis.balloon_alert(owner, "驾驶员已就位！")
 				return FALSE
 	return TRUE
 
@@ -85,7 +85,7 @@
 #undef ARMOR_PASSENGER
 
 /datum/action/vehicle/sealed/armored/toggle_lights
-	name = "Toggle Lights"
+	name = "切换灯光"
 	action_icon_state = "mech_lights_off"
 
 /datum/action/vehicle/sealed/armored/toggle_lights/action_activate(trigger_flags)
@@ -93,7 +93,7 @@
 		return
 
 	if(!(chassis.armored_flags & ARMORED_HAS_HEADLIGHTS))
-		chassis.balloon_alert(owner, "the vehicle's lights are broken!")
+		chassis.balloon_alert(owner, "载具的灯光坏了！")
 		return
 	chassis.armored_flags ^= ARMORED_LIGHTS_ON
 	if(chassis.armored_flags & ARMORED_LIGHTS_ON)
@@ -108,7 +108,7 @@
 	update_button_icon()
 
 /datum/action/vehicle/sealed/armored/zoom
-	name = "Zoom"
+	name = "缩放"
 	action_icon_state = "mech_zoom_off"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_TOGGLE_ZOOM,
@@ -135,7 +135,7 @@
 	return ..()
 
 /datum/action/vehicle/sealed/armored/horn
-	name = "Honk Horn"
+	name = "鸣笛"
 	action_icon = 'icons/mob/actions/actions_vehicle.dmi'
 	action_icon_state = "car_horn"
 	keybinding_signals = list(
@@ -148,12 +148,12 @@
 	if(TIMER_COOLDOWN_RUNNING(chassis, COOLDOWN_ARMORED_HORN))
 		return
 
-	chassis.visible_message("[chassis] honks its horn!")
+	chassis.visible_message("[chassis] 按响了它的喇叭！")
 	playsound(chassis.loc, 'sound/vehicles/horns/armored_horn.ogg', 70)
 	TIMER_COOLDOWN_START(chassis, COOLDOWN_ARMORED_HORN, 15 SECONDS) //To keep people's eardrums intact
 
 /datum/action/vehicle/sealed/armored/strafe
-	name = "Toggle Strafing. Disabled when Alt is held."
+	name = "切换侧移。按住Alt时禁用。"
 	action_icon_state = "strafe"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_TOGGLE_STRAFE,
@@ -174,7 +174,7 @@
 		action?.update_button_icon()
 
 /datum/action/vehicle/sealed/armored/smoke_screen
-	name = "Smokescreen"
+	name = "烟雾弹"
 	action_icon_state = "mech_smoke"
 	keybinding_signals = list(KEYBINDING_NORMAL = COMSIG_VEHICLEABILITY_SMOKE)
 	///Uses of this ability remaining
@@ -194,7 +194,7 @@
 		return
 
 	shots_remaining --
-	chassis.visible_message("[chassis] pops smoke!")
+	chassis.visible_message("[chassis] 释放烟雾！")
 	playsound(chassis.loc, 'sound/weapons/guns/fire/grenadelauncher.ogg', 80, TRUE)
 	TIMER_COOLDOWN_START(chassis, COOLDOWN_ARMORED_SMOKE, 2 SECONDS)
 
@@ -225,7 +225,7 @@
 	return ..()
 
 /datum/action/vehicle/sealed/armored/tesla
-	name = "Tesla"
+	name = "特斯拉"
 	action_icon_state = "pulsearmor"
 	keybinding_signals = list(KEYBINDING_NORMAL = COMSIG_VEHICLEABILITY_TESLA)
 	COOLDOWN_DECLARE(tesla_cooldown)
@@ -238,10 +238,10 @@
 	if(!owner || !chassis || !(owner in chassis.occupants))
 		return
 	if(!COOLDOWN_FINISHED(src, tesla_cooldown))
-		chassis.balloon_alert(owner, "wait [DisplayTimeText(COOLDOWN_TIMELEFT(src, tesla_cooldown))]!")
+		chassis.balloon_alert(owner, "等待 [DisplayTimeText(COOLDOWN_TIMELEFT(src, tesla_cooldown))]！")
 		return
 
-	chassis.visible_message("[chassis] becomes electrified!")
+	chassis.visible_message("[chassis] 通电了！")
 	playsound(chassis.loc, 'sound/magic/lightningshock.ogg', 100, TRUE)
 	COOLDOWN_START(src, tesla_cooldown, 30 SECONDS)
 	chassis.add_filter("vehicle_tesla", 1, outline_filter(1, COLOR_PULSE_BLUE))

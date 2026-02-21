@@ -1,8 +1,8 @@
 #define DOOR_FLAG_OPEN_ONLY (1 << 0)
 
 /obj/machinery/button
-	name = "button"
-	desc = "A remote control switch."
+	name = "按钮"
+	desc = "一个遥控开关。"
 	icon = 'icons/obj/machines/buttons.dmi'
 	icon_state = "doorctrl"
 	power_channel = ENVIRON
@@ -62,7 +62,7 @@
 		return
 
 	if(!allowed(user))
-		to_chat(user, span_danger("Access Denied"))
+		to_chat(user, span_danger("访问被拒绝"))
 		flick("[initial(icon_state)]-denied", src)
 		return
 
@@ -83,8 +83,8 @@
 	return TRUE
 
 /obj/machinery/button/door
-	name = "door button"
-	desc = "A door remote control switch."
+	name = "门按钮"
+	desc = "一扇门的远程控制开关。"
 	var/specialfunctions = NONE
 
 
@@ -111,8 +111,8 @@
 
 
 /obj/machinery/button/door/open_only
-	name = "open button"
-	desc = "Opens whatever it is linked to. Does not close. Careful on what you release."
+	name = "开启按钮"
+	desc = "打开与其链接的任何东西。不会关闭。小心你释放的东西。"
 	specialfunctions = DOOR_FLAG_OPEN_ONLY
 
 /obj/machinery/button/door/open_only/Initialize(mapload)
@@ -129,7 +129,7 @@
 
 
 /obj/machinery/button/door/open_only/landing_zone
-	name = "lockdown override"
+	name = "封锁解除"
 	id = "landing_zone"
 	icon_state = "shutterctrl"
 	use_power = NO_POWER_USE
@@ -148,11 +148,11 @@
 		return
 	#ifndef TESTING
 	if(world.time < SSticker.round_start_time + SSticker.mode.deploy_time_lock)
-		to_chat(user, span_notice("The containment shutters can't open yet!"))
+		to_chat(user, span_notice("隔离闸门还不能开启！"))
 		return
 	#endif
 	if(!allowed(user))
-		to_chat(user, span_danger("Access Denied"))
+		to_chat(user, span_danger("访问被拒绝"))
 		flick("[initial(icon_state)]-denied", src)
 		return
 	if(alarm_played)
@@ -176,10 +176,10 @@
 
 
 /obj/machinery/driver_button
-	name = "mass driver button"
+	name = "质量驱动器按钮"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "launcherbtt"
-	desc = "A remote control switch for a mass driver."
+	desc = "质量加速器的远程控制开关。"
 	var/id = null
 	var/active = 0
 	anchored = TRUE
@@ -188,10 +188,10 @@
 	active_power_usage = 4
 
 /obj/machinery/ignition_switch
-	name = "ignition switch"
+	name = "点火开关"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "launcherbtt"
-	desc = "A remote control switch for a mounted igniter."
+	desc = "用于遥控点火器的开关。"
 	var/id = null
 	var/active = 0
 	anchored = TRUE
@@ -200,8 +200,8 @@
 	active_power_usage = 4
 
 /obj/machinery/flasher_button
-	name = "flasher button"
-	desc = "A remote control switch for a mounted flasher."
+	name = "闪光弹按钮"
+	desc = "用于遥控安装式闪光器的开关。"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "launcherbtt"
 	var/id = null
@@ -212,8 +212,8 @@
 	active_power_usage = 4
 
 /obj/machinery/crema_switch
-	desc = "Burn baby burn!"
-	name = "crematorium igniter"
+	desc = "烧吧，宝贝，烧吧！"
+	name = "焚化炉点火器"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "crema_switch"
 	anchored = TRUE
@@ -224,10 +224,10 @@
 	var/id = 1
 
 /obj/machinery/medical_help_button
-	name = "Medical attention required"
+	name = "需要医疗救助"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "doorctrl0"
-	desc = "A button for alerting doctors that you require assistance."
+	desc = "一个用于通知医生你需要协助的按钮。"
 	var/active = FALSE
 	anchored = TRUE
 	use_power = IDLE_POWER_USE
@@ -250,7 +250,7 @@
 	if(!istype(user))
 		return
 	if(machine_stat & (NOPOWER|BROKEN))
-		to_chat(user, span_warning("[src] doesn't seem to be working."))
+		to_chat(user, span_warning("[src]似乎无法运作。"))
 		return
 	if(active)
 		return
@@ -258,7 +258,7 @@
 	icon_state = "doorctrl1"
 
 	radio.talk_into(src, "<b>[user.name] is requesting medical attention at: [get_area(src)].</b>", RADIO_CHANNEL_MEDICAL)
-	visible_message("Remain calm, someone will be with you shortly.")
+	visible_message("保持冷静，很快会有人来帮你。")
 
 	active = TRUE
 	addtimer(CALLBACK(src, PROC_REF(icon_update_check)), 10 SECONDS)
@@ -286,7 +286,7 @@
 	return ..()
 
 /obj/machinery/button/valhalla/marine_button
-	name = "Xeno spawner"
+	name = "异形生成器"
 
 /obj/machinery/button/valhalla/marine_button/attack_hand(mob/living/user)
 	var/xeno_wanted = tgui_input_list(user, "What xeno do you want to spawn?", "Xeno spawn", GLOB.all_xeno_types)
@@ -294,12 +294,12 @@
 		return
 	QDEL_NULL(linked)
 	if(!get_turf(GLOB.valhalla_button_spawn_landmark[link]))
-		to_chat(user, span_warning("An error occured, yell at the coders."))
+		to_chat(user, span_warning("发生错误，请向程序员反馈。"))
 		CRASH("Valhalla button linked with an improper landmark: button ID: [link].")
 	linked = new xeno_wanted(get_turf(GLOB.valhalla_button_spawn_landmark[link]))
 
 /obj/machinery/button/valhalla/marine_spawner
-	name = "Marine spawner"
+	name = "陆战队生成器"
 
 /// Generates a list of jobs datums to spawn on a mob
 /obj/machinery/button/valhalla/marine_spawner/proc/spawn_humans(mob/living/user)
@@ -319,7 +319,7 @@
 
 	QDEL_NULL(linked)
 	if(!get_turf(GLOB.valhalla_button_spawn_landmark[link]))
-		to_chat(user, span_warning("An error occured, yell at the coders."))
+		to_chat(user, span_warning("发生错误，请向程序员反馈。"))
 		CRASH("Valhalla button linked with an improper landmark: button ID: [link].")
 	linked = new /mob/living/carbon/human(get_turf(GLOB.valhalla_button_spawn_landmark[link]))
 	if(selected_outfit == "Naked" || !selected_outfit)
@@ -344,7 +344,7 @@
 			qdel(item) // Prevents blacklisted items from being spawned, like ASRS tablets and headsets
 
 /obj/machinery/button/valhalla/vehicle_button
-	name = "Vehicle Spawner"
+	name = "载具生成器"
 
 /// Generates a list of vehicles to spawn
 /obj/machinery/button/valhalla/vehicle_button/proc/spawn_vehicles(mob/living/user)
@@ -365,7 +365,7 @@
 
 	QDEL_NULL(linked)
 	if(!get_turf(GLOB.valhalla_button_spawn_landmark[link]))
-		to_chat(user, span_warning("An error occured, yell at the coders."))
+		to_chat(user, span_warning("发生错误，请向程序员反馈。"))
 		CRASH("Valhalla button linked with an improper landmark: button ID: [link].")
 	linked = new selected_vehicle(get_turf(GLOB.valhalla_button_spawn_landmark[link]))
 

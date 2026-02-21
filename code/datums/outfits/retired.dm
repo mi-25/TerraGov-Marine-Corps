@@ -1,5 +1,5 @@
 /datum/outfit/job/retired
-	name = "TGMC retired veteran"
+	name = "地球政府殖民地海军陆战队退役老兵"
 	jobtype = /datum/job/retired
 
 	id = /obj/item/card/id/dogtag
@@ -41,7 +41,7 @@
 
 
 /datum/outfit/job/retired/leader
-	name = "TGMC retired veteran expedition leader"
+	name = "地球政府殖民地海军陆战队退役老兵探险队长"
 	jobtype = /datum/job/retired/leader
 
 	id = /obj/item/card/id/dogtag/fc

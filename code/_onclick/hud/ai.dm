@@ -9,7 +9,7 @@
 
 
 /atom/movable/screen/ai/aicore
-	name = "AI core"
+	name = "AI核心"
 	icon_state = "ai_core"
 
 
@@ -22,11 +22,11 @@
 
 
 /atom/movable/screen/ai/camera_list
-	name = "Show Camera List"
+	name = "显示摄像头列表"
 	icon_state = "camera"
 
 /atom/movable/screen/ai/announcement
-	name = "Make Vox Announcement"
+	name = "发布沃克斯公告"
 	icon_state = "announcement"
 
 /atom/movable/screen/ai/announcement/Click()
@@ -37,7 +37,7 @@
 	AI.announcement()
 
 /atom/movable/screen/ai/announcement_help
-	name = "Vox Announcement Help"
+	name = "沃克斯公告帮助"
 	icon_state = "alerts"
 
 /atom/movable/screen/ai/announcement_help/Click()
@@ -48,7 +48,7 @@
 	AI.announcement_help()
 
 /atom/movable/screen/ai/bioscan
-	name = "Issue Manual Bioscan"
+	name = "发布手动生化扫描"
 	icon_state = "bioscan"
 
 /atom/movable/screen/ai/bioscan/Click()
@@ -66,7 +66,7 @@
 
 
 /atom/movable/screen/ai/camera_track
-	name = "Track With Camera"
+	name = "使用摄像头追踪"
 	icon_state = "track"
 
 
@@ -80,7 +80,7 @@
 
 
 /atom/movable/screen/ai/camera_light
-	name = "Toggle Camera Light"
+	name = "切换摄像头灯光"
 	icon_state = "camera_light"
 
 
@@ -92,7 +92,7 @@
 	AI.toggle_camera_light()
 
 /atom/movable/screen/ai/supply_interface
-	name = "Supply Interface"
+	name = "补给界面"
 	icon_state = "pda"
 
 /atom/movable/screen/ai/supply_interface/Click()
@@ -104,7 +104,7 @@
 
 
 /atom/movable/screen/ai/multicam
-	name = "Multicamera Mode"
+	name = "多摄像头模式"
 	icon_state = "multicam"
 
 
@@ -116,7 +116,7 @@
 	AI.toggle_multicam()
 
 /atom/movable/screen/ai/add_multicam
-	name = "New Camera"
+	name = "新摄像头"
 	icon_state = "new_cam"
 
 
@@ -150,7 +150,7 @@
 	maptext = MAPTEXT_TINY_UNICODE("<div align='center' valign='middle' style='position:relative; top:0px; left:0px'>[text]</div>")
 
 /atom/movable/screen/ai/go_up
-	name = "go up"
+	name = "向上移动"
 	icon_state = "up"
 	screen_loc = ui_ai_godownup
 
@@ -162,7 +162,7 @@
 	ai.up()
 
 /atom/movable/screen/ai/go_up/down
-	name = "go down"
+	name = "下去"
 	icon_state = "down"
 
 /atom/movable/screen/ai/go_up/down/Click(location,control,params)
@@ -234,8 +234,8 @@
 	static_inventory += using
 
 /atom/movable/screen/alert/ai_notify
-	name = "Notification"
-	desc = "A new notification. You can enter it."
+	name = "通知"
+	desc = "新通知。你可以进入。"
 	icon_state = "template"
 	timeout = 15 SECONDS
 	var/atom/target = null

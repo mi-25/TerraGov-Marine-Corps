@@ -10,7 +10,7 @@
 // See initialization order in /code/game/world.dm
 GLOBAL_REAL(Master, /datum/controller/master)
 /datum/controller/master
-	name = "Master"
+	name = "班长"
 
 	/// Are we processing (higher values increase the processing delay by n ticks)
 	var/processing = TRUE
@@ -215,7 +215,7 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 		if("view_variables")
 			var/datum/controller/subsystem/subsystem = locate(params["ref"]) in subsystems
 			if(isnull(subsystem))
-				to_chat(ui.user, span_warning("Failed to locate subsystem."))
+				to_chat(ui.user, span_warning("未能定位子系统。"))
 				return
 			SSadmin_verbs.dynamic_invoke_verb(ui.user, /datum/admin_verb/debug_variables, subsystem)
 			return TRUE
@@ -299,7 +299,7 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 		current_runlevel = Master.current_runlevel
 		StartProcessing(10)
 	else
-		to_chat(world, span_boldannounce("The Master Controller is having some issues, we will need to re-initialize EVERYTHING"))
+		to_chat(world, span_boldannounce("主控制器出现了一些问题，我们需要重新初始化所有内容"))
 		Initialize(20, TRUE)
 
 
@@ -320,7 +320,7 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 	init_stage_completed = 0
 	var/mc_started = FALSE
 
-	to_chat(world, span_boldannounce("Initializing subsystems..."), MESSAGE_TYPE_DEBUG)
+	to_chat(world, span_boldannounce("正在初始化子系统..."), MESSAGE_TYPE_DEBUG)
 
 	var/list/stage_sorted_subsystems = new(INITSTAGE_MAX)
 	for (var/i in 1 to INITSTAGE_MAX)

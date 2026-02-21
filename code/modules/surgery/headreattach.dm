@@ -30,24 +30,24 @@
 
 
 /datum/surgery_step/head/peel/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] starts peeling back tattered flesh where [target]'s head used to be with \the [tool]."), \
+	user.visible_message(span_notice("[user]开始用\the [tool]剥开[target]原本是头部位置的破烂皮肉。"), \
 	span_notice("You start peeling back tattered flesh where [target]'s head used to be with \the [tool]."))
-	target.balloon_alert_to_viewers("Peeling...")
+	target.balloon_alert_to_viewers("剥离中...")
 	..()
 
 /datum/surgery_step/head/peel/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] peels back tattered flesh where [target]'s head used to be with \the [tool]."),	\
+	user.visible_message(span_notice("[user]用\the [tool]剥开[target]原本是头部位置的破烂皮肉。"),	\
 	span_notice("You peel back tattered flesh where [target]'s head used to be with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	affected.limb_replacement_stage = 1
 	return ..()
 
 /datum/surgery_step/head/peel/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
 	if(affected.parent)
 		affected = affected.parent
-		user.visible_message(span_warning("[user]'s hand slips, ripping [target]'s [affected.display_name] open!"), \
+		user.visible_message(span_warning("[user]的手一滑，撕开了[target]的[affected.display_name]！"), \
 		span_warning("Your hand slips,  ripping [target]'s [affected.display_name] open!"))
-		target.balloon_alert_to_viewers("Slipped!")
+		target.balloon_alert_to_viewers("滑倒了！")
 		affected.createwound(CUT, 10)
 		affected.update_wounds()
 
@@ -64,24 +64,24 @@
 	reattach_step = 1
 
 /datum/surgery_step/head/shape/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] is beginning to reshape [target]'s esophagal and vocal region with \the [tool]."), \
+	user.visible_message(span_notice("[user] 正开始用 \the [tool] 重塑 [target] 的食道和发声区域。"), \
 	span_notice("You start to reshape [target]'s head esophagal and vocal region with \the [tool]."))
-	target.balloon_alert_to_viewers("Reshaping...")
+	target.balloon_alert_to_viewers("重塑中...")
 	..()
 
 /datum/surgery_step/head/shape/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] has finished repositioning flesh and tissue to something anatomically recognizable where [target]'s head used to be with \the [tool]."),	\
+	user.visible_message(span_notice("[user] 已经用 \the [tool] 将[target]头部位置的皮肉和组织重新塑造成解剖学上可识别的形态。"),	\
 	span_notice("You have finished repositioning flesh and tissue to something anatomically recognizable where [target]'s head used to be with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	affected.limb_replacement_stage = 2
 	return ..()
 
 /datum/surgery_step/head/shape/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
 	if(affected.parent)
 		affected = affected.parent
-		user.visible_message(span_warning("[user]'s hand slips, further rending flesh on [target]'s neck!"), \
+		user.visible_message(span_warning("[user]的手滑了一下，在[target]的脖子上撕开了更深的伤口！"), \
 		span_warning("Your hand slips, further rending flesh on [target]'s neck!"))
-		target.balloon_alert_to_viewers("Slipped!")
+		target.balloon_alert_to_viewers("滑倒了！")
 		target.apply_damage(10, BRUTE, affected, updating_health = TRUE)
 
 
@@ -97,24 +97,24 @@
 	reattach_step = 2
 
 /datum/surgery_step/head/suture/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] is stapling and suturing flesh into place in [target]'s esophagal and vocal region with \the [tool]."), \
+	user.visible_message(span_notice("[user]正在用\the [tool]将皮肉钉合缝合到[target]的食管和发声区域。"), \
 	span_notice("You start to staple and suture flesh into place in [target]'s esophagal and vocal region with \the [tool]."))
-	target.balloon_alert_to_viewers("Suturing...")
+	target.balloon_alert_to_viewers("缝合中...")
 	..()
 
 /datum/surgery_step/head/suture/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] has finished stapling [target]'s neck into place with \the [tool]."),	\
+	user.visible_message(span_notice("[user] 已经用 \the [tool] 将 [target] 的脖子缝合固定到位。"),	\
 	span_notice("You have finished stapling [target]'s neck into place with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	affected.limb_replacement_stage = 3
 	return ..()
 
 /datum/surgery_step/head/suture/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
 	if(affected.parent)
 		affected = affected.parent
-		user.visible_message(span_warning("[user]'s hand slips, ripping apart flesh on [target]'s neck!"), \
+		user.visible_message(span_warning("[user]的手滑了一下，撕开了[target]脖子上的皮肉！"), \
 		span_warning("Your hand slips, ripping apart flesh on [target]'s neck!"))
-		target.balloon_alert_to_viewers("Slipped!")
+		target.balloon_alert_to_viewers("滑倒了！")
 		target.apply_damage(10, BRUTE, affected, updating_health = TRUE)
 
 
@@ -131,15 +131,15 @@
 	reattach_step = 3
 
 /datum/surgery_step/head/prepare/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] starts adjusting area around [target]'s neck with \the [tool]."), \
+	user.visible_message(span_notice("[user]开始用\the [tool]调整[target]颈部的区域。"), \
 	span_notice("You start adjusting area around [target]'s neck with \the [tool]."))
-	target.balloon_alert_to_viewers("Adjusting...")
+	target.balloon_alert_to_viewers("正在调整...")
 	..()
 
 /datum/surgery_step/head/prepare/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] has finished adjusting the area around [target]'s neck with \the [tool]."),	\
+	user.visible_message(span_notice("[user] 已经用 \the [tool] 完成了对 [target] 颈部区域的调整。"),	\
 	span_notice("You have finished adjusting the area around [target]'s neck with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	affected.limb_replacement_stage = 0
 	affected.add_limb_flags(LIMB_AMPUTATED)
 	affected.setAmputatedTree()
@@ -148,9 +148,9 @@
 /datum/surgery_step/head/prepare/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
 	if(affected.parent)
 		affected = affected.parent
-		user.visible_message(span_warning("[user]'s hand slips, searing [target]'s neck!"), \
+		user.visible_message(span_warning("[user]的手一滑，灼伤了[target]的脖子！"), \
 		span_warning("Your hand slips, searing [target]'s [affected.display_name]!"))
-		target.balloon_alert_to_viewers("Slipped!")
+		target.balloon_alert_to_viewers("滑倒了！")
 		target.apply_damage(10, BURN, affected, updating_health = TRUE)
 
 
@@ -168,15 +168,15 @@
 	return SURGERY_CANNOT_USE
 
 /datum/surgery_step/head/attach/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] starts attaching [tool] to [target]'s reshaped neck."), \
+	user.visible_message(span_notice("[user]开始将[tool]连接到[target]重塑的颈部。"), \
 	span_notice("You start attaching [tool] to [target]'s reshaped neck."))
-	target.balloon_alert_to_viewers("Attaching...")
+	target.balloon_alert_to_viewers("正在安装...")
 	..()
 
 /datum/surgery_step/head/attach/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] has attached [target]'s head to the body."),	\
+	user.visible_message(span_notice("[user] 已将 [target] 的头部连接到身体上。"),	\
 	span_notice("You have attached [target]'s head to the body."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 
 	//Update our dear victim to have a head again
 
@@ -198,7 +198,7 @@
 	return ..()
 
 /datum/surgery_step/head/attach/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_warning("[user]'s hand slips, damaging connectors on [target]'s neck!"), \
+	user.visible_message(span_warning("[user]的手滑了一下，损坏了[target]颈部的连接器！"), \
 	span_warning("Your hand slips, damaging connectors on [target]'s neck!"))
-	target.balloon_alert_to_viewers("Slipped!")
+	target.balloon_alert_to_viewers("滑倒了！")
 	target.apply_damage(10, BRUTE, affected, 0, TRUE, updating_health = TRUE)

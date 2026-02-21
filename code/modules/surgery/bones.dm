@@ -25,23 +25,23 @@
 	bone_step = 0
 
 /datum/surgery_step/bone/glue_bone/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] starts applying medication to the damaged bones in [target]'s [affected.display_name] with \the [tool].") , \
+	user.visible_message(span_notice("[user]开始使用\the [tool]为[target]的[affected.display_name]中受损的骨骼用药。") , \
 		span_notice("You start applying medication to the damaged bones in [target]'s [affected.display_name] with \the [tool]."))
-	target.balloon_alert_to_viewers("Applying gel...")
+	target.balloon_alert_to_viewers("正在涂抹凝胶...")
 	target.custom_pain("Something in your [affected.display_name] is causing you a lot of pain!", 1)
 	..()
 
 /datum/surgery_step/bone/glue_bone/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] applies some [tool] to [target]'s bone in [affected.display_name]."), \
+	user.visible_message(span_notice("[user] 将一些 [tool] 涂抹在 [target] 的 [affected.display_name] 骨骼上。"), \
 	span_notice("You apply some [tool] to [target]'s bone in [affected.display_name] with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	affected.bone_repair_stage = 1
 	return ..()
 
 /datum/surgery_step/bone/glue_bone/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_warning("[user]'s hand slips, smearing [tool] in the incision in [target]'s [affected.display_name]!") , \
+	user.visible_message(span_warning("[user]的手滑了一下，把[tool]抹在了[target]的[affected.display_name]切口上！") , \
 	span_warning("Your hand slips, smearing [tool] in the incision in [target]'s [affected.display_name]!"))
-	target.balloon_alert_to_viewers("Slipped!")
+	target.balloon_alert_to_viewers("滑倒了！")
 
 
 /datum/surgery_step/bone/set_bone
@@ -57,32 +57,32 @@
 
 /datum/surgery_step/bone/set_bone/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
 	if(affected.body_part == HEAD)
-		user.visible_message(span_notice("[user] is beginning to piece together [target]'s skull with \the [tool].")  , \
+		user.visible_message(span_notice("[user] 正开始用 \the [tool] 拼接 [target] 的头骨。")  , \
 		span_notice("You are beginning to piece together [target]'s skull with \the [tool]."))
 	else
-		user.visible_message(span_notice("[user] is beginning to set the bone in [target]'s [affected.display_name] in place with \the [tool].") , \
+		user.visible_message(span_notice("[user] 正在使用 \the [tool] 开始将 [target] 的 [affected.display_name] 处的骨头复位。") , \
 		span_notice("You are beginning to set the bone in [target]'s [affected.display_name] in place with \the [tool]."))
 		target.custom_pain("The pain in your [affected.display_name] is going to make you pass out!", 1)
-	target.balloon_alert_to_viewers("Setting...")
+	target.balloon_alert_to_viewers("设置中...")
 	..()
 
 /datum/surgery_step/bone/set_bone/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
 	if(affected.body_part == HEAD)
-		user.visible_message(span_notice("[user] sets [target]'s skull with \the [tool].") , \
+		user.visible_message(span_notice("[user]用\the [tool]固定了[target]的颅骨。") , \
 		span_notice("You set [target]'s skull with \the [tool]."))
 	else
-		user.visible_message(span_notice("[user] sets the bone in [target]'s [affected.display_name] in place with \the [tool]."), \
+		user.visible_message(span_notice("[user] 用 \the [tool] 将 [target] 的 [affected.display_name] 处的骨头复位。"), \
 		span_notice("You set the bone in [target]'s [affected.display_name] in place with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	affected.remove_limb_flags(LIMB_BROKEN | LIMB_SPLINTED | LIMB_STABILIZED)
 	affected.add_limb_flags(LIMB_REPAIRED)
 	affected.bone_repair_stage = 0
 	return ..()
 
 /datum/surgery_step/bone/set_bone/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	target.balloon_alert_to_viewers("Slipped!")
+	target.balloon_alert_to_viewers("滑倒了！")
 	if(affected.body_part == HEAD)
-		user.visible_message(span_warning("[user]'s hand slips, damaging [target]'s face with \the [tool]!")  , \
+		user.visible_message(span_warning("[user]的手滑了一下，用\the [tool]划伤了[target]的脸！")  , \
 		span_warning("Your hand slips, damaging [target]'s face with \the [tool]!"))
 		var/datum/limb/head/h = affected
 		h.createwound(BRUISE, 10)
@@ -90,7 +90,7 @@
 		h.owner.name = h.owner.get_visible_name()
 		h.update_wounds()
 	else
-		user.visible_message(span_warning("[user]'s hand slips, damaging the bone in [target]'s [affected.display_name] with \the [tool]!") , \
+		user.visible_message(span_warning("[user]的手滑了一下，用\the [tool]损伤了[target]的[affected.display_name]骨骼！") , \
 		span_warning("Your hand slips, damaging the bone in [target]'s [affected.display_name] with \the [tool]!"))
 		affected.createwound(BRUISE, 5)
 		affected.update_wounds()

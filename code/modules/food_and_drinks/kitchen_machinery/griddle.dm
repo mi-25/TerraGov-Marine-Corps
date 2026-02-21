@@ -1,6 +1,6 @@
 /obj/machinery/griddle
-	name = "griddle"
-	desc = "Because using pans is for pansies."
+	name = "烤盘"
+	desc = "因为用平底锅的都是娘娘腔。"
 	icon = 'icons/obj/machines/kitchenmachines.dmi'
 	icon_state = "griddle1_off"
 	density = TRUE
@@ -48,7 +48,7 @@
 
 /obj/machinery/griddle/attackby(obj/item/I, mob/user, params)
 	if(length(griddled_objects) >= max_items)
-		to_chat(user, span_notice("[src] can't fit more items!"))
+		to_chat(user, span_notice("[src]装不下更多物品了！"))
 		return
 	var/list/modifiers = params2list(params)
 	//Center the icon where the user clicked.
@@ -58,7 +58,7 @@
 		//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
 		I.pixel_x = clamp(text2num(LAZYACCESS(modifiers, "icon-x")) - 16, -(world.icon_size/2), world.icon_size/2)
 		I.pixel_y = clamp(text2num(LAZYACCESS(modifiers, "icon-y")) - 16, -(world.icon_size/2), world.icon_size/2)
-		to_chat(user, span_notice("You place [I] on [src]."))
+		to_chat(user, span_notice("你将[I]放置在[src]上。"))
 		AddToGrill(I, user)
 		update_icon()
 		return
@@ -122,15 +122,15 @@
 			continue
 		griddled_item.fire_act(40)
 		if(prob(10))
-			visible_message(span_danger("[griddled_item] doesn't seem to be doing too great on the [src]!"))
+			visible_message(span_danger("[griddled_item]在[src]上似乎不太妙！"))
 
 /obj/machinery/griddle/update_icon_state()
 	icon_state = "griddle[variant]_[on ? "on" : "off"]"
 	return ..()
 
 /obj/machinery/griddle/stand
-	name = "griddle stand"
-	desc = "A more commercialized version of your traditional griddle. What happened to the good old days where people griddled with passion?"
+	name = "烤架支架"
+	desc = "传统烤盘的商业化版本。人们满怀热情烤制美食的美好旧时光去哪儿了？"
 	variant = "stand"
 
 /obj/machinery/griddle/stand/update_overlays()

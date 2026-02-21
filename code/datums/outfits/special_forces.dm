@@ -1,5 +1,5 @@
 /datum/outfit/job/special_forces/standard
-	name = "Special Response Force Standard"
+	name = "特别反应部队标准型"
 	jobtype = /datum/job/special_forces/standard
 
 	glasses = /obj/item/clothing/glasses/night
@@ -46,7 +46,7 @@
 	)
 
 /datum/outfit/job/special_forces/breacher
-	name = "Special Response Force Breacher"
+	name = "特别反应部队破门手"
 	jobtype = /datum/job/special_forces/breacher
 
 	glasses = /obj/item/clothing/glasses/night
@@ -89,7 +89,7 @@
 
 
 /datum/outfit/job/special_forces/drone_operator
-	name = "Special Response Force Drone Operator"
+	name = "特殊反应部队工蜂操作员"
 	jobtype = /datum/job/special_forces/drone_operator
 
 	glasses = /obj/item/clothing/glasses/night
@@ -138,7 +138,7 @@
 	)
 
 /datum/outfit/job/special_forces/medic
-	name = "Special Response Force Medic"
+	name = "特种反应部队医疗兵"
 	jobtype = /datum/job/special_forces/medic
 
 	id = /obj/item/card/id/silver
@@ -177,7 +177,7 @@
 	)
 
 /datum/outfit/job/special_forces/leader
-	name = "Special Response Force Leader"
+	name = "特别反应部队队长"
 	jobtype = /datum/job/special_forces/leader
 
 	id = /obj/item/card/id/silver

@@ -1,13 +1,13 @@
 /datum/loadout_item/back/som_satchel
 	name = "Mining satchel"
-	desc = "A satchel with origins dating back to the mining colonies.. Carries less than a backpack, but items can be drawn instantly."
+	desc = "一款源自采矿殖民地的挎包。容量小于背包，但物品可以瞬间取出。"
 	item_typepath = /obj/item/storage/backpack/satchel/som
 	jobs_supported = list(SOM_SQUAD_MARINE, SOM_SQUAD_VETERAN, SOM_STAFF_OFFICER, SOM_COMMANDER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/back/som_combat_pack
 	name = "Mining rucksack"
-	desc = "A rucksack with origins dating back to the mining colonies. Has the storage capacity of a backpack but no draw delay."
+	desc = "一款源自采矿殖民地的帆布背包。拥有背包的存储容量且无取物延迟。"
 	purchase_cost = 25
 	item_typepath = /obj/item/storage/backpack/lightpack/som
 	jobs_supported = list(SOM_SQUAD_MARINE, SOM_SQUAD_VETERAN)
@@ -19,7 +19,7 @@
 
 /datum/loadout_item/back/som_flamer_tank
 	name = "Flame tank"
-	desc = "A specialized fuel tank for use with the V-62 incinerator."
+	desc = "V-62型喷火器专用燃料罐。"
 	req_desc = "Requires a V-62 incinerator."
 	item_typepath = /obj/item/ammo_magazine/flamer_tank/backtank
 	jobs_supported = list(SOM_SQUAD_MARINE)
@@ -27,7 +27,7 @@
 
 /datum/loadout_item/back/som_flamer_tank/x_fuel
 	name = "X-fuel tank"
-	desc = "A specialized fuel tank of ultra thick napthal type X, known for its extreme heat and slow burn rate, as well as its distinct blue flames. For use with the V-62 incinerator."
+	desc = "一种特制的超稠密萘X型燃料罐，以其极高的温度和缓慢的燃烧速率而闻名，并伴有独特的蓝色火焰。专为V-62焚化器设计使用。"
 	item_typepath = /obj/item/ammo_magazine/flamer_tank/backtank/X
 	purchase_cost = 50
 	unlock_cost = 200
@@ -35,7 +35,7 @@
 
 /datum/loadout_item/back/som_engineer_pack
 	name = "Welding bag"
-	desc = "A technician backpack with integrated welder tank. Has satchel storage."
+	desc = "带有集成焊枪气罐的技术员背包。带有挎包存储空间。"
 	jobs_supported = list(SOM_SQUAD_ENGINEER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 	item_typepath = /obj/item/storage/backpack/marine/engineerpack/som

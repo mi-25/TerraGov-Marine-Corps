@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/carrier
 	caste_base_type = /datum/xeno_caste/carrier
 	name = "Carrier"
-	desc = "A strange-looking alien creature. It carries a number of scuttling jointed crablike creatures."
+	desc = "一只外形奇特的异形生物。它携带着数只爬行的多关节蟹状生物。"
 	icon = 'icons/Xeno/castes/carrier.dmi' //They are now like, 2x2
 	icon_state = "Carrier Walking"
 	bubble_icon = "alienroyal"

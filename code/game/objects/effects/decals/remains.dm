@@ -1,6 +1,6 @@
 /obj/effect/decal/remains/human
-	name = "remains"
-	desc = "They look like human remains. They have a strange aura about them."
+	name = "残骸"
+	desc = "看起来像是人类遗骸。它们散发着一种诡异的气息。"
 	gender = PLURAL
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "remains"
@@ -8,8 +8,8 @@
 	layer = BELOW_OBJ_LAYER //Puts them under most objects.
 
 /obj/effect/decal/remains/xeno
-	name = "remains"
-	desc = "They look like the remains of some horrible creature. They are not pleasant to look at..."
+	name = "残骸"
+	desc = "它们看起来像是某种可怕生物的残骸。看着就让人不舒服……"
 	gender = PLURAL
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "remainsxeno"
@@ -17,8 +17,8 @@
 	layer = BELOW_OBJ_LAYER
 
 /obj/effect/decal/remains/robot
-	name = "remains"
-	desc = "They look like the remains of something mechanical. They have a strange aura about them."
+	name = "残骸"
+	desc = "它们看起来像是某种机械的残骸。周身散发着一种诡异的气息。"
 	gender = PLURAL
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "remainsrobot"
@@ -26,8 +26,8 @@
 	layer = BELOW_OBJ_LAYER
 
 /obj/effect/decal/remains/marauder
-	name = "remains"
-	desc = "They look like the remains of some kind of brass construct. Even now, their eye seems to emit a faint red glow."
+	name = "残骸"
+	desc = "它们看起来像是某种黄铜构造体的残骸。直到现在，它们的眼睛似乎还在散发着微弱的红光。"
 	gender = PLURAL
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "remainsmarauder"

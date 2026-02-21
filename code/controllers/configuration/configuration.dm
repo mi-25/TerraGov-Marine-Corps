@@ -1,5 +1,5 @@
 /datum/controller/configuration
-	name = "Configuration"
+	name = "配置"
 
 	var/directory = "config"
 

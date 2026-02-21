@@ -1,5 +1,5 @@
 /obj/machinery
-	name = "machinery"
+	name = "机械装置"
 	icon = 'icons/obj/stationobjs.dmi'
 	layer = BELOW_OBJ_LAYER
 	verb_say = "beeps"
@@ -63,10 +63,10 @@
 	machine_stat ^= PANEL_OPEN
 	if(machine_stat & PANEL_OPEN)
 		icon_state = icon_state_open
-		to_chat(user, span_notice("You open the maintenance hatch of [src]."))
+		to_chat(user, span_notice("你打开了[src]的维护舱口。"))
 	else
 		icon_state = icon_state_closed
-		to_chat(user, span_notice("You close the maintenance hatch of [src]."))
+		to_chat(user, span_notice("你关闭了[src]的维护舱口。"))
 	return TRUE
 
 /obj/machinery/proc/default_deconstruction_crowbar(obj/item/crowbar, ignore_panel = 0, custom_deconstruct = FALSE)
@@ -82,7 +82,7 @@
 
 	wrench.play_tool_sound(src, 50)
 	setDir(turn(dir,-90))
-	to_chat(user, span_notice("You rotate [src]."))
+	to_chat(user, span_notice("你旋转了[src]。"))
 	return TRUE
 
 /obj/machinery/deconstruct(disassembled = TRUE, mob/living/blame_mob)
@@ -264,10 +264,10 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.getBrainLoss() >= 60)
-			visible_message(span_warning("[H] stares cluelessly at [src] and drools."))
+			visible_message(span_warning("[H]茫然地盯着[src]，流着口水。"))
 			return FALSE
 		if(prob(H.getBrainLoss()))
-			to_chat(user, span_warning("You momentarily forget how to use [src]."))
+			to_chat(user, span_warning("你一时忘记了如何使用[src]。"))
 			return FALSE
 
 	return TRUE

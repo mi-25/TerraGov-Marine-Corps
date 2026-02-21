@@ -1,8 +1,8 @@
 
 //the holdable item
 /obj/item/campaign_beacon/npc_beacon
-	name = "\improper N.P.C. beacon"
-	desc = "A bulky device that is used to teleport emergency support units directly into battle. Often used for garrisoning important locations."
+	name = "\improper 非玩家信标"
+	desc = "一种笨重的装置，用于将紧急支援单位直接传送至战场。常用于驻守重要地点。"
 	icon = 'icons/obj/items/npc_beacon.dmi'
 	icon_state = "beacon_undeployed"
 	base_icon_state = "beacon"
@@ -35,8 +35,8 @@
 
 //The deployed beacon, although this could be map spawned as well
 /obj/structure/npc_beacon
-	name = "\improper N.P.C. beacon"
-	desc = "A bulky device that is used to teleport emergency support units directly into battle. Often used for garrisoning important locations."
+	name = "\improper 非玩家信标"
+	desc = "一种笨重的设备，用于将紧急支援单位直接传送至战场。常用于驻守重要地点。"
 	icon = 'icons/obj/items/npc_beacon.dmi'
 	icon_state = "beacon_activating"
 	base_icon_state = "beacon"

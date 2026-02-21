@@ -9,7 +9,7 @@
 
 // TAT spread ammo
 /datum/ammo/bullet/atgun_spread
-	name = "Shrapnel"
+	name = "破片"
 	icon_state = "flechette"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOB
 	accuracy_variation = 10
@@ -20,7 +20,7 @@
 	damage_falloff = 0
 
 /datum/ammo/bullet/atgun_spread/incendiary
-	name = "incendiary flechette"
+	name = "燃烧霰弹"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOB|AMMO_INCENDIARY|AMMO_LEAVE_TURF
 	damage = 20
 	penetration = 10
@@ -44,7 +44,7 @@
 */
 
 /datum/ammo/bullet/pepperball
-	name = "pepperball"
+	name = "胡椒弹"
 	hud_state = "pepperball"
 	hud_state_empty = "pepperball_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -72,7 +72,7 @@
 	plasma_drain = 15
 
 /datum/ammo/alloy_spike
-	name = "alloy spike"
+	name = "合金尖刺"
 	ping = "ping_s"
 	icon_state = "MSpearFlight"
 	sound_hit = SFX_ALLOY_HIT
@@ -87,7 +87,7 @@
 	shrapnel_chance = 75
 
 /datum/ammo/flamethrower
-	name = "flame"
+	name = "火焰"
 	icon_state = "pulse0"
 	hud_state = "flame"
 	hud_state_empty = "flame_empty"
@@ -134,7 +134,7 @@
 	flame_radius(1, T)
 
 /datum/ammo/flamethrower/blue
-	name = "blue flame"
+	name = "蓝色火焰"
 	hud_state = "flame_blue"
 	max_range = 7
 	fire_color = "blue"
@@ -143,7 +143,7 @@
 	bullet_color = COLOR_NAVY
 
 /datum/ammo/flamethrower/armored_spray // armored vehicle flamer that sprays a visual continual flame
-	name = "spraying flames"
+	name = "喷射火焰"
 	icon_state = "spray_flamer"
 	max_range = 7
 	shell_speed = 0.3
@@ -151,7 +151,7 @@
 	burntime = 0.3 SECONDS
 
 /datum/ammo/flamethrower/sentry // is also a spray
-	name = "spraying flames"
+	name = "喷射火焰"
 	icon_state = "spray_flamer"
 	max_range = 7
 	shell_speed = 0.3
@@ -159,7 +159,7 @@
 	burntime = 0.3 SECONDS
 
 /datum/ammo/water
-	name = "water"
+	name = "水"
 	icon_state = "pulse1"
 	hud_state = "water"
 	hud_state_empty = "water_empty"
@@ -192,11 +192,11 @@
 	splash(get_turf(target_turf), proj.dir)
 
 /datum/ammo/rocket/toy
-	name = "\improper toy rocket"
+	name = "\improper 玩具火箭"
 	damage = 1
 
 /datum/ammo/rocket/toy/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
-	to_chat(target_mob, "<font size=6 color=red>NO BUGS</font>")
+	to_chat(target_mob, "<font size=6 color=red>禁止异形</font>")
 
 /datum/ammo/rocket/toy/on_hit_obj(obj/target_obj, atom/movable/projectile/proj)
 	return
@@ -208,7 +208,7 @@
 	return
 
 /datum/ammo/grenade_container
-	name = "grenade shell"
+	name = "手雷弹壳"
 	ping = null
 	damage_type = BRUTE
 	var/nade_type = /obj/item/explosive/grenade
@@ -237,12 +237,12 @@
 	G.activate()
 
 /datum/ammo/grenade_container/smoke
-	name = "smoke grenade shell"
+	name = "烟雾手雷弹壳"
 	nade_type = /obj/item/explosive/grenade/smokebomb
 	icon_state = "smoke_shell"
 
 /datum/ammo/grenade_container/ags_grenade
-	name = "grenade shell"
+	name = "手雷弹壳"
 	ammo_behavior_flags = AMMO_TARGET_TURF
 	icon_state = "grenade_projectile"
 	hud_state = "grenade_he"

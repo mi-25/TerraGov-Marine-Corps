@@ -1,5 +1,5 @@
 /turf/open/space/transit
-	name = "\proper hyperspace"
+	name = "\proper 超空间"
 	icon_state = "black"
 	dir = SOUTH
 	baseturfs = /turf/open/space/transit
@@ -19,7 +19,7 @@
 	return ..()
 
 /turf/open/space/transit/atmos
-	name = "\proper high atmosphere"
+	name = "\proper 高层大气"
 	baseturfs = /turf/open/space/transit/atmos
 	available_icon_state_amounts = 8
 	plane = FLOOR_PLANE

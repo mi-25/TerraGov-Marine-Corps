@@ -1,5 +1,5 @@
 /obj/effect/ai_node/spawner
-	name = "AI spawner node"
+	name = "AI生成节点"
 	invisibility = INVISIBILITY_OBSERVER
 	/**
 	 * Possible spawn typepaths

@@ -1,5 +1,5 @@
 /obj/machinery/floodlight
-	name = "Emergency Floodlight"
+	name = "应急泛光灯"
 	icon = 'icons/obj/machines/floodlight.dmi'
 	icon_state = "flood00"
 	anchored = TRUE
@@ -30,18 +30,18 @@
 		return
 	if(toggle_on)
 		if(user)
-			to_chat(user, span_notice("You turn on the light."))
+			to_chat(user, span_notice("你打开了灯。"))
 		set_light(brightness_on)
 		DISABLE_BITFIELD(resistance_flags, UNACIDABLE)
 		return
 	if(user)
-		to_chat(user, span_notice("You turn off the light."))
+		to_chat(user, span_notice("你关掉了灯。"))
 	set_light(0)
 	ENABLE_BITFIELD(resistance_flags, UNACIDABLE)
 
 /obj/machinery/floodlight/landing
-	name = "Landing Light"
-	desc = "A powerful light stationed near landing zones to provide better visibility."
+	name = "着陆灯"
+	desc = "部署在着陆区附近提供更好视野的强力照明灯。"
 	icon_state = "flood01"
 	use_power = 0
 	brightness_on = 6
@@ -51,7 +51,7 @@
 	set_light(brightness_on)
 
 /obj/machinery/floodlight/outpost
-	name = "Outpost Light"
+	name = "前哨站轻型"
 	icon_state = "flood01"
 	use_power = FALSE
 	brightness_on = 10
@@ -64,13 +64,13 @@
 	set_light(brightness_on)
 
 /obj/machinery/floodlight/landing/hq
-	name = "Installation Light"
-	desc = "A powerful light stationed on the base to provide better visibility."
+	name = "安装指示灯"
+	desc = "部署在基地上的强力照明灯，用于提供更好的视野。"
 
 
 /obj/machinery/floodlight/landing/testroom
-	name = "Ambience Light"
-	desc = "A powerful light placed concealed on the base to provide better visibility."
+	name = "环境光照"
+	desc = "一个强大的隐蔽式光源，安装在底座上以提供更好的视野。"
 	density = 0
 	alpha = 0
 	resistance_flags = RESIST_ALL
@@ -112,11 +112,11 @@
 		return
 	if(toggle_on)
 		if(user)
-			to_chat(user, span_notice("You turn on the light."))
+			to_chat(user, span_notice("你打开了灯。"))
 		set_light(floodlight_light_range, 5, COLOR_WHITE)
 	else
 		if(user)
-			to_chat(user, span_notice("You turn off the light."))
+			to_chat(user, span_notice("你关掉了灯。"))
 		set_light(0)
 	playsound(src,'sound/machines/click.ogg', 15, 1)
 	update_icon()
@@ -129,8 +129,8 @@
 	icon_state = "floodlightcombat_deployed" + (light_on ? "_on" : "_off")
 
 /obj/item/deployable_floodlight
-	name = "\improper deployable floodlight"
-	desc = "A powerful light able to be transported and deployed easily for a very long lasting light."
+	name = "\improper 可部署泛光灯"
+	desc = "一种强大的便携式照明设备，易于运输和部署，能提供持久的照明。"
 	icon = 'icons/obj/machines/floodlight.dmi'
 	icon_state = "floodlightcombat"
 	max_integrity = 200
@@ -145,7 +145,7 @@
 #define FLOODLIGHT_TICK_CONSUMPTION 800
 
 /obj/machinery/floodlight/colony
-	name = "Colony Floodlight"
+	name = "殖民地探照灯"
 	icon_state = "floodoff"
 	brightness_on = 7
 	var/obj/machinery/colony_floodlight_switch/fswitch = null //Reverse lookup for power grabbing in area
@@ -188,10 +188,10 @@
 #undef FLOODLIGHT_TICK_CONSUMPTION
 
 /obj/machinery/colony_floodlight_switch
-	name = "Colony Floodlight Switch"
+	name = "殖民地探照灯开关"
 	icon = 'icons/obj/machines/floodlight.dmi'
 	icon_state = "panelnopower"
-	desc = "This switch controls the floodlights surrounding the archaeology complex. It only functions when there is power."
+	desc = "这个开关控制着考古建筑群周围的探照灯。只有在有电力供应时才能正常运作。"
 	density = FALSE
 	anchored = TRUE
 	use_power = IDLE_POWER_USE
@@ -226,10 +226,10 @@
 	if(.)
 		return
 	if(!ishuman(user))
-		to_chat(user, span_notice("Nice try."))
+		to_chat(user, span_notice("想得美。"))
 		return FALSE
 	if(machine_stat & NOPOWER)
-		to_chat(user, span_notice("Nothing happens."))
+		to_chat(user, span_notice("什么都没发生。"))
 		return FALSE
 	playsound(src,'sound/machines/click.ogg', 15, 1)
 	toggle_lights(turned_on ? FALSE : TRUE)

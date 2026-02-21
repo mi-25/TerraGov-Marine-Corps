@@ -36,11 +36,11 @@
 	for(var/obj/machinery/holopad/connected_holopad AS in callees)
 		if(!QDELETED(connected_holopad) && connected_holopad.is_operational())
 			dialed_holopads += connected_holopad
-			connected_holopad.say("Incoming call.")
+			connected_holopad.say("来电接入。")
 			connected_holopad.set_holocall(src)
 
 	if(!length(dialed_holopads))
-		calling_pad.say("Connection failure.")
+		calling_pad.say("连接失败。")
 		qdel(src)
 		return
 
@@ -81,9 +81,9 @@
 /datum/holocall/proc/Disconnect(obj/machinery/holopad/H)
 	if(H == connected_holopad)
 		var/area/A = get_area(connected_holopad)
-		calling_holopad.say("[A] holopad disconnected.")
+		calling_holopad.say("[A] 全息面板已断开连接。")
 	else if(H == calling_holopad && connected_holopad)
-		connected_holopad.say("[user] disconnected.")
+		connected_holopad.say("[user] 已断开连接。")
 
 	ConnectionFailure(H, TRUE)
 
@@ -92,7 +92,7 @@
 /datum/holocall/proc/ConnectionFailure(obj/machinery/holopad/disconnected_holopad, graceful = FALSE)
 	if(disconnected_holopad == connected_holopad || disconnected_holopad == calling_holopad)
 		if(!graceful && disconnected_holopad != calling_holopad)
-			calling_holopad.say("Connection failure.")
+			calling_holopad.say("连接失败。")
 		qdel(src)
 		return
 
@@ -101,7 +101,7 @@
 	dialed_holopads -= disconnected_holopad
 	if(!length(dialed_holopads))
 		if(graceful)
-			calling_holopad.say("Call rejected.")
+			calling_holopad.say("呼叫已拒绝。")
 		qdel(src)
 
 
@@ -147,7 +147,7 @@
 	hangup = new(eye, src)
 	hangup.give_action(user)
 	playsound(answering_holopad, 'sound/machines/ping.ogg', 100)
-	answering_holopad.say("Connection established.")
+	answering_holopad.say("连接已建立。")
 
 
 //Checks the validity of a holocall and qdels itself if it's not. Returns TRUE if valid, FALSE otherwise
@@ -165,7 +165,7 @@
 		if(!connected_holopad)
 			. = world.time < (call_start_time + HOLOPAD_MAX_DIAL_TIME)
 			if(!.)
-				calling_holopad.say("No answer received.")
+				calling_holopad.say("未收到回应。")
 				calling_holopad.temp = ""
 
 	if(!.)
@@ -173,7 +173,7 @@
 
 
 /datum/action/innate/end_holocall
-	name = "End Holocall"
+	name = "结束全息通话"
 	var/datum/holocall/hcall
 
 

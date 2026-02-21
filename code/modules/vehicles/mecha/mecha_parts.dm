@@ -3,321 +3,321 @@
 /////////////////////////
 
 /obj/item/mecha_parts
-	name = "mecha part"
+	name = "机甲部件"
 	icon = 'icons/mecha/mech_construct.dmi'
 	icon_state = "blank"
 	w_class = WEIGHT_CLASS_GIGANTIC
 
 /obj/item/mecha_parts/proc/try_attach_part(mob/user, obj/vehicle/sealed/mecha/M, attach_right = FALSE) //For attaching parts to a finished mech
 	if(!user.transferItemToLoc(src, M))
-		to_chat(user, span_warning("\The [src] is stuck to your hand, you cannot put it in \the [M]!"))
+		to_chat(user, span_warning("\The [src] 粘在你手上了，你无法把它放进 \the [M]！"))
 		return FALSE
-	user.visible_message(span_notice("[user] attaches [src] to [M]."), span_notice("You attach [src] to [M]."))
+	user.visible_message(span_notice("[user]将[src]安装到[M]上。"), span_notice("You attach [src] to [M]."))
 	return TRUE
 
 /obj/item/mecha_parts/part/try_attach_part(mob/user, obj/vehicle/sealed/mecha/M, attach_right = FALSE)
 	return
 
 /obj/item/mecha_parts/chassis
-	name = "Mecha Chassis"
+	name = "机甲底盘"
 	icon_state = "backbone"
 
 /////////// Ripley
 
 /obj/item/mecha_parts/chassis/ripley
-	name = "\improper Ripley chassis"
+	name = "\improper 里普利底盘"
 
 /obj/item/mecha_parts/part/ripley_torso
-	name = "\improper Ripley torso"
-	desc = "A torso part of Ripley APLU. Contains power unit, processing core and life support systems."
+	name = "\improper 里普利躯干"
+	desc = "雷普利APLU的躯干部分。包含动力单元、处理核心和生命维持系统。"
 	icon_state = "ripley_harness"
 
 /obj/item/mecha_parts/part/ripley_left_arm
-	name = "\improper Ripley left arm"
-	desc = "A Ripley APLU left arm. Data and power sockets are compatible with most exosuit tools."
+	name = "\improper 里普利左臂"
+	desc = "一台里普利APLU左臂。数据和电源接口与大多数外骨骼工具兼容。"
 	icon_state = "ripley_l_arm"
 
 /obj/item/mecha_parts/part/ripley_right_arm
-	name = "\improper Ripley right arm"
-	desc = "A Ripley APLU right arm. Data and power sockets are compatible with most exosuit tools."
+	name = "\improper 里普利右臂"
+	desc = "一台里普利APLU的右臂。数据和电源接口与大多数外骨骼工具兼容。"
 	icon_state = "ripley_r_arm"
 
 /obj/item/mecha_parts/part/ripley_left_leg
-	name = "\improper Ripley left leg"
-	desc = "A Ripley APLU left leg. Contains somewhat complex servodrives and balance maintaining systems."
+	name = "\improper 里普利左腿"
+	desc = "一台里普利APLU左腿。包含较为复杂的伺服驱动和平衡维持系统。"
 	icon_state = "ripley_l_leg"
 
 /obj/item/mecha_parts/part/ripley_right_leg
-	name = "\improper Ripley right leg"
-	desc = "A Ripley APLU right leg. Contains somewhat complex servodrives and balance maintaining systems."
+	name = "\improper 里普利右腿"
+	desc = "一台里普利APLU的右腿。包含相当复杂的伺服驱动器和平衡维持系统。"
 	icon_state = "ripley_r_leg"
 
 ////////// Firefighter
 
 /obj/item/mecha_parts/chassis/firefighter
-	name = "\improper Firefighter Chassis"
+	name = "\improper 消防员底盘"
 
 ///////// Odysseus
 
 /obj/item/mecha_parts/chassis/odysseus
-	name = "\improper Odysseus chassis"
+	name = "\improper 奥德修斯底盘"
 
 /obj/item/mecha_parts/part/odysseus_head
-	name = "\improper Odysseus head"
-	desc = "An Odysseus head. Contains an integrated medical HUD scanner."
+	name = "\improper 奥德修斯头部"
+	desc = "奥德修斯头部。包含集成的医疗HUD扫描仪。"
 	icon_state = "odysseus_head"
 
 /obj/item/mecha_parts/part/odysseus_torso
-	name = "\improper Odysseus torso"
-	desc = "A torso part of Odysseus. Contains power unit, processing core and life support systems along with an attachment port for a mounted sleeper."
+	name = "\improper 奥德修斯躯干"
+	desc = "奥德修斯躯干部件。包含动力单元、处理核心和生命维持系统，以及一个用于安装休眠舱的枪械配件接口。"
 	icon_state = "odysseus_torso"
 
 /obj/item/mecha_parts/part/odysseus_left_arm
-	name = "\improper Odysseus left arm"
-	desc = "An Odysseus left arm. Data and power sockets are compatible with specialized medical equipment."
+	name = "\improper 奥德修斯左臂"
+	desc = "奥德修斯左臂。数据与电源接口兼容专用医疗设备。"
 	icon_state = "odysseus_l_arm"
 
 /obj/item/mecha_parts/part/odysseus_right_arm
-	name = "\improper Odysseus right arm"
-	desc = "An Odysseus right arm. Data and power sockets are compatible with specialized medical equipment."
+	name = "\improper 奥德修斯右臂"
+	desc = "奥德修斯右臂。数据与电源接口兼容专用医疗设备。"
 	icon_state = "odysseus_r_arm"
 
 /obj/item/mecha_parts/part/odysseus_left_leg
-	name = "\improper Odysseus left leg"
-	desc = "An Odysseus left leg. Contains complex servodrives and balance maintaining systems to maintain stability for critical patients."
+	name = "\improper 奥德修斯左腿"
+	desc = "奥德修斯左腿。包含复杂的伺服驱动和平衡维持系统，为危重病人提供稳定性。"
 	icon_state = "odysseus_l_leg"
 
 /obj/item/mecha_parts/part/odysseus_right_leg
-	name = "\improper Odysseus right leg"
-	desc = "An odysseus right leg. Contains complex servodrives and balance maintaining systems to maintain stability for critical patients."
+	name = "\improper 奥德修斯右腿"
+	desc = "奥德修斯右腿。包含复杂的伺服驱动和平衡维持系统，为危重患者提供稳定性。"
 	icon_state = "odysseus_r_leg"
 
 ///////// Gygax
 
 /obj/item/mecha_parts/chassis/gygax
-	name = "\improper Gygax chassis"
+	name = "\improper 吉格斯底盘"
 
 /obj/item/mecha_parts/part/gygax_torso
-	name = "\improper Gygax torso"
-	desc = "A torso part of Gygax. Contains power unit, processing core and life support systems."
+	name = "\improper 吉格斯躯干"
+	desc = "Gygax 的躯干部分。包含动力单元、处理核心和生命维持系统。"
 	icon_state = "gygax_harness"
 
 /obj/item/mecha_parts/part/gygax_head
-	name = "\improper Gygax head"
-	desc = "A Gygax head. Houses advanced surveillance and targeting sensors."
+	name = "\improper 吉格斯头部"
+	desc = "一台吉格斯机甲头部。内置先进的监视与目标锁定传感器。"
 	icon_state = "gygax_head"
 
 /obj/item/mecha_parts/part/gygax_left_arm
-	name = "\improper Gygax left arm"
-	desc = "A Gygax left arm. Data and power sockets are compatible with most exosuit tools and weapons."
+	name = "\improper 吉格斯左臂"
+	desc = "一台吉格斯机甲的左臂。数据与电源接口兼容大多数外骨骼工具和武器。"
 	icon_state = "gygax_l_arm"
 
 /obj/item/mecha_parts/part/gygax_right_arm
-	name = "\improper Gygax right arm"
-	desc = "A Gygax right arm. Data and power sockets are compatible with most exosuit tools and weapons."
+	name = "\improper 吉格斯右臂"
+	desc = "一台吉格斯的右臂。数据和电源接口与大多数外骨骼工具和武器兼容。"
 	icon_state = "gygax_r_arm"
 
 /obj/item/mecha_parts/part/gygax_left_leg
-	name = "\improper Gygax left leg"
-	desc = "A Gygax left leg. Constructed with advanced servomechanisms and actuators to enable faster speed."
+	name = "\improper 吉格斯左腿"
+	desc = "一条吉格斯左腿。采用先进的伺服机构和致动器构建，以实现更快的速度。"
 	icon_state = "gygax_l_leg"
 
 /obj/item/mecha_parts/part/gygax_right_leg
-	name = "\improper Gygax right leg"
-	desc = "A Gygax right leg. Constructed with advanced servomechanisms and actuators to enable faster speed."
+	name = "\improper 吉格斯右腿"
+	desc = "一台吉格斯右腿。采用先进的伺服机构和致动器构建，以实现更快的速度。"
 	icon_state = "gygax_r_leg"
 
 /obj/item/mecha_parts/part/gygax_armor
 	gender = PLURAL
-	name = "\improper Gygax armor plates"
-	desc = "A set of armor plates designed for the Gygax. Designed to effectively deflect damage with a lightweight construction."
+	name = "\improper 盖高克斯装甲板"
+	desc = "一套专为吉格斯机甲设计的装甲板。采用轻量化结构，旨在有效偏转伤害。"
 	icon_state = "gygax_armor"
 
 //////////// Durand
 
 /obj/item/mecha_parts/chassis/durand
-	name = "\improper Durand chassis"
+	name = "\improper 杜兰德底盘"
 
 /obj/item/mecha_parts/part/durand_torso
-	name = "\improper Durand torso"
-	desc = "A torso part of Durand. Contains power unit, processing core and life support systems within a robust protective frame."
+	name = "\improper 杜兰德躯干"
+	desc = "杜兰德的躯干部分。包含动力单元、处理核心和生命支持系统，全部置于坚固的防护框架内。"
 	icon_state = "durand_harness"
 
 /obj/item/mecha_parts/part/durand_head
-	name = "\improper Durand head"
-	desc = "A Durand head. Houses advanced surveillance and targeting sensors."
+	name = "\improper 杜兰德头部"
+	desc = "一台杜兰德头部。内置先进的监视与目标传感器。"
 	icon_state = "durand_head"
 
 /obj/item/mecha_parts/part/durand_left_arm
-	name = "\improper Durand left arm"
-	desc = "A Durand left arm. Data and power sockets are compatible with most exosuit tools and weapons. Packs a really mean punch as well."
+	name = "\improper 杜兰德左臂"
+	desc = "一台杜兰德左臂。数据与电源接口兼容大多数外骨骼工具和武器。其拳击威力也相当惊人。"
 	icon_state = "durand_l_arm"
 
 /obj/item/mecha_parts/part/durand_right_arm
-	name = "\improper Durand right arm"
-	desc = "A Durand right arm. Data and power sockets are compatible with most exosuit tools and weapons. Packs a really mean punch as well."
+	name = "\improper 杜兰德右臂"
+	desc = "一台杜兰德右臂。数据与电源接口兼容大多数外骨骼工具和武器。其拳击威力也相当惊人。"
 	icon_state = "durand_r_arm"
 
 /obj/item/mecha_parts/part/durand_left_leg
-	name = "\improper Durand left leg"
-	desc = "A Durand left leg. Built particularly sturdy to support the Durand's heavy weight and defensive needs."
+	name = "\improper 杜兰德左腿"
+	desc = "一台杜兰德左腿。专为支撑杜兰德重型机甲的重量和防御需求而特别加固制造。"
 	icon_state = "durand_l_leg"
 
 /obj/item/mecha_parts/part/durand_right_leg
-	name = "\improper Durand right leg"
-	desc = "A Durand right leg. Built particularly sturdy to support the Durand's heavy weight and defensive needs."
+	name = "\improper 杜兰德右腿"
+	desc = "一台杜兰德右腿。建造得格外坚固，以支撑杜兰德的沉重重量和防御需求。"
 	icon_state = "durand_r_leg"
 
 /obj/item/mecha_parts/part/durand_armor
 	gender = PLURAL
-	name = "\improper Durand armor plates"
-	desc = "A set of armor plates for the Durand. Built heavy to resist an incredible amount of brute force."
+	name = "\improper 杜兰德装甲板"
+	desc = "一套为杜兰德机甲配备的装甲板。采用重型设计，能够抵御极其强大的物理冲击。"
 	icon_state = "durand_armor"
 
 ////////// Clarke
 
 /obj/item/mecha_parts/chassis/clarke
-	name = "\improper Clarke chassis"
+	name = "\improper 克拉克底盘"
 
 /obj/item/mecha_parts/part/clarke_torso
-	name = "\improper Clarke torso"
-	desc = "A torso part of Clarke. Contains power unit, processing core and life support systems."
+	name = "\improper 克拉克躯干"
+	desc = "克拉克的躯干部分。包含动力单元、处理核心和生命维持系统。"
 	icon_state = "clarke_harness"
 
 /obj/item/mecha_parts/part/clarke_head
-	name = "\improper Clarke head"
-	desc = "A Clarke head. Contains an integrated diagnostic HUD scanner."
+	name = "\improper 克拉克头盔"
+	desc = "一个克拉克头盔。内置集成式诊断HUD扫描仪。"
 	icon_state = "clarke_head"
 
 /obj/item/mecha_parts/part/clarke_left_arm
-	name = "\improper Clarke left arm"
-	desc = "A Clarke left arm. Data and power sockets are compatible with most exosuit tools."
+	name = "\improper 克拉克左臂"
+	desc = "一个克拉克左臂。数据和电源接口与大多数外骨骼工具兼容。"
 	icon_state = "clarke_l_arm"
 
 /obj/item/mecha_parts/part/clarke_right_arm
-	name = "\improper Clarke right arm"
-	desc = "A Clarke right arm. Data and power sockets are compatible with most exosuit tools."
+	name = "\improper 克拉克右臂"
+	desc = "一个克拉克右臂。数据和电源接口与大多数外骨骼工具兼容。"
 	icon_state = "clarke_r_arm"
 
 ////////// HONK
 
 /obj/item/mecha_parts/chassis/honker
-	name = "\improper H.O.N.K chassis"
+	name = "\improper H.O.N.K底盘"
 
 /obj/item/mecha_parts/part/honker_torso
-	name = "\improper H.O.N.K torso"
-	desc = "A torso part of H.O.N.K. Contains chuckle unit, bananium core and honk support systems."
+	name = "\improper H.O.N.K. 躯干"
+	desc = "H.O.N.K.的躯干部分。包含笑声单元、香蕉矿核心和鸣笛支持系统。"
 	icon_state = "honker_harness"
 
 /obj/item/mecha_parts/part/honker_head
-	name = "\improper H.O.N.K head"
-	desc = "A H.O.N.K head. Appears to lack a face plate."
+	name = "\improper 鸣鸣头"
+	desc = "一个H.O.N.K头部。似乎缺少了面部护板。"
 	icon_state = "honker_head"
 
 /obj/item/mecha_parts/part/honker_left_arm
-	name = "\improper H.O.N.K left arm"
-	desc = "A H.O.N.K left arm. With unique sockets that accept odd weaponry designed by clown scientists."
+	name = "\improper H.O.N.K 左臂"
+	desc = "一个H.O.N.K左臂。带有独特的插槽，可容纳由小丑科学家设计的古怪武器。"
 	icon_state = "honker_l_arm"
 
 /obj/item/mecha_parts/part/honker_right_arm
-	name = "\improper H.O.N.K right arm"
-	desc = "A H.O.N.K right arm. With unique sockets that accept odd weaponry designed by clown scientists."
+	name = "\improper H.O.N.K 右臂"
+	desc = "一个H.O.N.K右臂。带有独特的插槽，可容纳小丑科学家设计的奇特武器。"
 	icon_state = "honker_r_arm"
 
 /obj/item/mecha_parts/part/honker_left_leg
-	name = "\improper H.O.N.K left leg"
-	desc = "A H.O.N.K left leg. The foot appears just large enough to fully accommodate a clown shoe."
+	name = "\improper H.O.N.K 左腿"
+	desc = "一条H.O.N.K左腿。脚部尺寸刚好能完全容纳一只小丑鞋。"
 	icon_state = "honker_l_leg"
 
 /obj/item/mecha_parts/part/honker_right_leg
-	name = "\improper H.O.N.K right leg"
-	desc = "A H.O.N.K right leg. The foot appears just large enough to fully accommodate a clown shoe."
+	name = "\improper H.O.N.K 右腿"
+	desc = "一条 H.O.N.K 右腿。脚部看起来刚好大到能完全容纳一只小丑鞋。"
 	icon_state = "honker_r_leg"
 
 ////////// Phazon
 
 /obj/item/mecha_parts/chassis/phazon
-	name = "\improper Phazon chassis"
+	name = "\improper 法扎恩底盘"
 
 /obj/item/mecha_parts/part/phazon_torso
-	name = "\improper Phazon torso"
-	desc = "A Phazon torso part. The socket for the bluespace core that powers the exosuit's unique phase drives is located in the middle."
+	name = "\improper 法扎恩躯干"
+	desc = "一个法扎恩躯干部件。位于中央的是为外骨骼独特相位驱动器供能的蓝移核心插槽。"
 	icon_state = "phazon_harness"
 
 /obj/item/mecha_parts/part/phazon_head
-	name = "\improper Phazon head"
-	desc = "A Phazon head. Its sensors are carefully calibrated to provide vision and data even when the exosuit is phasing."
+	name = "\improper 法扎恩头盔"
+	desc = "一个法扎恩头部。其传感器经过精心校准，即使在相位移动时也能提供视觉和数据。"
 	icon_state = "phazon_head"
 
 /obj/item/mecha_parts/part/phazon_left_arm
-	name = "\improper Phazon left arm"
-	desc = "A Phazon left arm. Several microtool arrays are located under the armor plating, which can be adjusted to the situation at hand."
+	name = "\improper 法扎左臂"
+	desc = "一条法扎左臂。装甲板下方装有数个微型工具阵列，可根据当前情况进行调整。"
 	icon_state = "phazon_l_arm"
 
 /obj/item/mecha_parts/part/phazon_right_arm
-	name = "\improper Phazon right arm"
-	desc = "A Phazon right arm. Several microtool arrays are located under the armor plating, which can be adjusted to the situation at hand."
+	name = "\improper 法扎右臂"
+	desc = "一只法扎恩右臂。装甲板下方设有多个微型工具阵列，可根据当前情况进行调整。"
 	icon_state = "phazon_r_arm"
 
 /obj/item/mecha_parts/part/phazon_left_leg
-	name = "\improper Phazon left leg"
-	desc = "A Phazon left leg. It contains the unique phase drives that allow the exosuit to phase through solid matter when engaged."
+	name = "\improper 法扎左腿"
+	desc = "一条法扎恩左腿。它包含独特的相位驱动器，启动时能让外骨骼穿过固体物质。"
 	icon_state = "phazon_l_leg"
 
 /obj/item/mecha_parts/part/phazon_right_leg
-	name = "\improper Phazon right leg"
-	desc = "A Phazon right leg. It contains the unique phase drives that allow the exosuit to phase through solid matter when engaged."
+	name = "\improper 法扎右腿"
+	desc = "一条法扎恩右腿。它包含独特的相位驱动器，启动时能让外骨骼穿过固体物质。"
 	icon_state = "phazon_r_leg"
 
 /obj/item/mecha_parts/part/phazon_armor
-	name = "Phazon armor"
-	desc = "Phazon armor plates. They are layered with plasma to protect the pilot from the stress of phasing and have unusual properties."
+	name = "法扎护甲"
+	desc = "法扎装甲板。它们覆盖着等离子体层，以保护驾驶员免受相位移动的压力，并具有不寻常的特性。"
 	icon_state = "phazon_armor"
 
 // Savannah-Ivanov
 
 /obj/item/mecha_parts/chassis/savannah_ivanov
-	name = "\improper Savannah-Ivanov chassis"
+	name = "\improper 萨凡纳-伊万诺夫底盘"
 
 /obj/item/mecha_parts/part/savannah_ivanov_torso
-	name = "\improper Savannah-Ivanov torso"
-	desc = "A Savannah-Ivanov torso part. It's missing a huge chunk of space..."
+	name = "\improper 萨凡纳-伊万诺夫躯干"
+	desc = "一个萨凡纳-伊万诺夫躯干部件。它缺失了一大块空间……"
 	icon_state = "savannah_ivanov_harness"
 
 /obj/item/mecha_parts/part/savannah_ivanov_head
-	name = "\improper Savannah-Ivanov head"
-	desc = "A Savannah-Ivanov head. It's sensors have been adjusted to support graceful landings."
+	name = "\improper 萨凡纳-伊万诺夫弹头"
+	desc = "一个萨凡纳-伊万诺夫头部。它的传感器已调整为支持平稳着陆。"
 	icon_state = "savannah_ivanov_head"
 
 /obj/item/mecha_parts/part/savannah_ivanov_left_arm
-	name = "\improper Savannah-Ivanov left arm"
-	desc = "A Savannah-Ivanov left arm. Hidden rocket fabrication included in the wrists."
+	name = "\improper 萨凡纳-伊万诺夫左臂"
+	desc = "一个萨凡纳-伊万诺夫左臂。手腕内藏有火箭制造装置。"
 	icon_state = "savannah_ivanov_l_arm"
 
 /obj/item/mecha_parts/part/savannah_ivanov_right_arm
-	name = "\improper Savannah-Ivanov right arm"
-	desc = "A Savannah-Ivanov left arm. Hidden rocket fabrication included in the wrists."
+	name = "\improper 萨凡纳-伊万诺夫右臂"
+	desc = "萨凡纳-伊万诺夫左臂。手腕内藏火箭制造装置。"
 	icon_state = "savannah_ivanov_r_arm"
 
 /obj/item/mecha_parts/part/savannah_ivanov_left_leg
-	name = "\improper Savannah-Ivanov left leg"
-	desc = "A Savannah-Ivanov left leg. In production they were designed to carry more than two passengers, so the leaping functionality was added as to not waste potential."
+	name = "\improper 萨凡纳-伊万诺夫左腿"
+	desc = "一条萨凡纳-伊万诺夫左腿。在生产设计中，它们被要求能承载两名以上乘客，因此添加了跳跃功能以避免浪费潜力。"
 	icon_state = "savannah_ivanov_l_leg"
 
 /obj/item/mecha_parts/part/savannah_ivanov_right_leg
-	name = "\improper Savannah-Ivanov right leg"
-	desc = "A Savannah-Ivanov left leg. In production they were designed to carry more than two passengers, so the leaping functionality was added as to not waste potential."
+	name = "\improper 萨凡纳-伊万诺夫右腿"
+	desc = "一条萨凡纳-伊万诺夫左腿。在生产设计中，它们被要求能承载两名以上乘客，因此添加了跳跃功能以避免浪费潜力。"
 	icon_state = "savannah_ivanov_r_leg"
 
 /obj/item/mecha_parts/part/savannah_ivanov_armor
-	name = "Savannah-Ivanov armor"
-	desc = "Savannah-Ivanov armor plates. They are uniquely shaped and reinforced to deal with the stresses of two pilots, grandiose leaps, and missiles."
+	name = "萨凡纳-伊万诺夫护甲"
+	desc = "萨凡纳-伊万诺夫装甲板。其独特造型和强化设计旨在承受双驾驶员、大幅跳跃和导弹冲击带来的压力。"
 	icon_state = "savannah_ivanov_armor"
 
 ///////// Circuitboards
 
 /obj/item/circuitboard/mecha
-	name = "exosuit circuit board"
+	name = "外骨骼电路板"
 
 	icon_state = "std_mod"
 	force = 5
@@ -327,84 +327,84 @@
 	throw_range = 7
 
 /obj/item/circuitboard/mecha/ripley/peripherals
-	name = "Ripley Peripherals Control module (Exosuit Board)"
+	name = "里普利外设控制模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/ripley/main
-	name = "Ripley Central Control module (Exosuit Board)"
+	name = "里普利中央控制模块（外骨骼主板）"
 	icon_state = "mainboard"
 
 /obj/item/circuitboard/mecha/gygax/peripherals
-	name = "Gygax Peripherals Control module (Exosuit Board)"
+	name = "吉格斯外围控制模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/gygax/targeting
-	name = "Gygax Weapon Control and Targeting module (Exosuit Board)"
+	name = "吉格斯武器控制与瞄准模块（外骨骼控制板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/gygax/main
-	name = "Gygax Central Control module (Exosuit Board)"
+	name = "吉格斯中央控制模块（外骨骼主板）"
 	icon_state = "mainboard"
 
 /obj/item/circuitboard/mecha/durand/peripherals
-	name = "Durand Peripherals Control module (Exosuit Board)"
+	name = "杜兰德外设控制模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/durand/targeting
-	name = "Durand Weapon Control and Targeting module (Exosuit Board)"
+	name = "杜兰德武器控制与瞄准模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/durand/main
-	name = "Durand Central Control module (Exosuit Board)"
+	name = "杜兰德中央控制模块（外骨骼主板）"
 	icon_state = "mainboard"
 
 /obj/item/circuitboard/mecha/honker/peripherals
-	name = "H.O.N.K Peripherals Control module (Exosuit Board)"
+	name = "H.O.N.K 外设控制模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/honker/targeting
-	name = "H.O.N.K Weapon Control and Targeting module (Exosuit Board)"
+	name = "H.O.N.K 武器控制与瞄准模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/honker/main
-	name = "H.O.N.K Central Control module (Exosuit Board)"
+	name = "H.O.N.K 中央控制模块（外骨骼主板）"
 	icon_state = "mainboard"
 
 /obj/item/circuitboard/mecha/odysseus/peripherals
-	name = "Odysseus Peripherals Control module (Exosuit Board)"
+	name = "奥德修斯外设控制模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/odysseus/main
-	name = "Odysseus Central Control module (Exosuit Board)"
+	name = "奥德修斯中央控制模块（外骨骼主板）"
 	icon_state = "mainboard"
 
 /obj/item/circuitboard/mecha/phazon/peripherals
-	name = "Phazon Peripherals Control module (Exosuit Board)"
+	name = "法扎恩外设控制模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/phazon/targeting
-	name = "Phazon Weapon Control and Targeting module (Exosuit Board)"
+	name = "法扎武器控制与瞄准模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/phazon/main
-	name = "Phazon Central Control module (Exosuit Board)"
+	name = "法扎恩中央控制模块（外骨骼主板）"
 
 /obj/item/circuitboard/mecha/clarke/peripherals
-	name = "Clarke Peripherals Control module (Exosuit Board)"
+	name = "克拉克外设控制模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/clarke/main
-	name = "Clarke Central Control module (Exosuit Board)"
+	name = "克拉克中央控制模块（外骨骼主板）"
 	icon_state = "mainboard"
 
 /obj/item/circuitboard/mecha/savannah_ivanov/peripherals
-	name = "Savannah Peripherals Control module (Exosuit Board)"
+	name = "萨凡纳外围控制模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/savannah_ivanov/targeting
-	name = "Ivanov Weapon Control and Targeting module (Exosuit Board)"
+	name = "伊万诺夫武器控制与瞄准模块（外骨骼主板）"
 	icon_state = "mcontroller"
 
 /obj/item/circuitboard/mecha/savannah_ivanov/main
-	name = "Savannah-Ivanov Combination Control Lock module (Exosuit Board)"
+	name = "萨凡纳-伊万诺夫组合控制锁定模块（外骨骼主板）"
 	icon_state = "mainboard"

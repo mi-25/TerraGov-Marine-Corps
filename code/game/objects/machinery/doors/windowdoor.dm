@@ -1,6 +1,6 @@
 /obj/machinery/door/window
-	name = "interior door"
-	desc = "A strong door."
+	name = "内部舱门"
+	desc = "一扇坚固的门。"
 	icon = 'icons/obj/doors/windoor.dmi'
 	icon_state = "left"
 	layer = ABOVE_WINDOW_LAYER
@@ -17,8 +17,8 @@
 	var/obj/item/circuitboard/airlock/electronics = null
 
 /obj/machinery/door/window/secure
-	name = "Secure Door"
-	desc = "A strong, secure door."
+	name = "安全门"
+	desc = "一扇坚固、安全的门。"
 	icon_state = "leftsecure"
 	base_state = "leftsecure"
 	max_integrity = 100
@@ -142,12 +142,12 @@
 
 	else if(operating == -1 && iscrowbar(I))
 		playsound(loc, 'sound/items/crowbar.ogg', 25, 1)
-		user.visible_message("[user] starts to remove the electronics from the windoor.", "You start to remove electronics from the windoor.")
+		user.visible_message("[user]开始从风门中拆除电子元件。", "You start to remove electronics from the windoor.")
 
 		if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD))
 			return TRUE
 
-		to_chat(user, span_notice("You removed the windoor electronics!"))
+		to_chat(user, span_notice("你拆除了风门电子元件！"))
 
 		var/obj/structure/windoor_assembly/WA = new(loc)
 
@@ -207,31 +207,31 @@
 // Main ship brig doors
 /obj/machinery/door/window/secure/brig
 	req_access = list(ACCESS_MARINE_BRIG)
-	name = "Cell"
+	name = "电池"
 	id = "Cell"
 
 /obj/machinery/door/window/secure/brig/cell_1
-	name = "Cell 1"
+	name = "牢房 1"
 	id = "Cell 1"
 
 /obj/machinery/door/window/secure/brig/cell_2
-	name = "Cell 2"
+	name = "2号牢房"
 	id = "Cell 2"
 
 /obj/machinery/door/window/secure/brig/cell_3
-	name = "Cell 3"
+	name = "3号牢房"
 	id = "Cell 3"
 
 /obj/machinery/door/window/secure/brig/cell_4
-	name = "Cell 4"
+	name = "4号牢房"
 	id = "Cell 4"
 
 /obj/machinery/door/window/secure/brig/cell_5
-	name = "Cell 5"
+	name = "5号牢房"
 	id = "Cell 5"
 
 /obj/machinery/door/window/secure/brig/cell_6
-	name = "Cell 6"
+	name = "6号牢房"
 	id = "Cell 6"
 
 // Bridge Doors

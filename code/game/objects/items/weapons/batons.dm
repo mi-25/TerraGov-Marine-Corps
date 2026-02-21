@@ -2,8 +2,8 @@
 * Classic Baton
 */
 /obj/item/weapon/classic_baton
-	name = "police baton"
-	desc = "A wooden truncheon for beating criminal scum."
+	name = "电击警棍"
+	desc = "一根用于痛击罪犯渣滓的木制警棍。"
 	icon = 'icons/obj/items/weapons/batons.dmi'
 	icon_state = "baton"
 	worn_icon_state = "classic_baton"
@@ -16,17 +16,17 @@
 		return
 
 	M.set_timed_status_effect(16 SECONDS, /datum/status_effect/speech/stutter, only_if_higher = TRUE)
-	visible_message(span_danger("[M] has been beaten with \the [src] by [user]!"), null, span_warning("You hear someone fall"), 2)
+	visible_message(span_danger("[M]被[user]用\the [src]击打了！"), null, span_warning("You hear someone fall"), 2)
 
 /obj/item/weapon/classic_baton/black
-	desc = "A wooden truncheon for beating criminal scum. Comes in a shiny black finish for easier cleaning."
+	desc = "一根用于痛击罪犯渣滓的木制警棍。采用闪亮的黑色涂层，便于清洁。"
 	icon_state = "baton_black"
 	worn_icon_state = "baton_black"
 
 //Telescopic baton
 /obj/item/weapon/telebaton
-	name = "telescopic baton"
-	desc = "A compact yet rebalanced personal defense weapon. Can be concealed when folded."
+	name = "伸缩警棍"
+	desc = "一款紧凑但经过重新平衡的个人防卫武器。折叠后可隐蔽携带。"
 	icon = 'icons/obj/items/weapons/batons.dmi'
 	icon_state = "telebaton_0"
 	worn_icon_state = "telebaton_0"
@@ -38,7 +38,7 @@
 /obj/item/weapon/telebaton/attack_self(mob/user as mob)
 	on = !on
 	if(on)
-		user.visible_message(span_warning("With a flick of their wrist, [user] extends their telescopic baton."),\
+		user.visible_message(span_warning("[user]手腕一抖，甩出了伸缩警棍。"),\
 		span_warning("You extend the baton."),\
 		"You hear an ominous click.")
 		icon_state = "telebaton_1"
@@ -47,7 +47,7 @@
 		force = 20
 		attack_verb = list("smacks", "strikes", "slaps")
 	else
-		user.visible_message(span_notice("[user] collapses their telescopic baton."),\
+		user.visible_message(span_notice("[user] 收起了伸缩警棍。"),\
 		span_notice("You collapse the baton."),\
 		"You hear a click.")
 		icon_state = "telebaton_0"

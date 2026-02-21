@@ -104,7 +104,7 @@ Contains most of the procs that are called when a mob is attacked by something
 	if(!target_zone)
 		user.do_attack_animation(src)
 		playsound(loc, 'sound/weapons/punchmiss.ogg', 25, TRUE)
-		visible_message(span_danger("[user] tries to hit [src] with [user.p_their()] [I]!"), null, null, 5)
+		visible_message(span_danger("[user]试图用[user.p_their()]的[I]攻击[src]！"), null, null, 5)
 		log_combat(user, src, "[attack_verb]", "(missed)")
 		if(!user.mind?.bypass_ff && !mind?.bypass_ff && user.faction == faction)
 			var/turf/T = get_turf(src)
@@ -114,7 +114,7 @@ Contains most of the procs that are called when a mob is attacked by something
 
 	var/datum/limb/affecting = get_limb(target_zone)
 	if(affecting.limb_status & LIMB_DESTROYED)
-		to_chat(user, "What [affecting.display_name]?")
+		to_chat(user, "[affecting.display_name]怎么了？")
 		log_combat(user, src, "attacked", I, "(FAILED: target limb missing) (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(I.damtype)])")
 		return FALSE
 	var/hit_area = affecting.display_name
@@ -131,7 +131,7 @@ Contains most of the procs that are called when a mob is attacked by something
 	var/armor_verb
 	switch(percentage_penetration)
 		if(-INFINITY to 0)
-			visible_message(span_danger("[user] [attack_verb] [src] in the [hit_area] with [user.p_their()] [I.name], but the attack is deflected by [p_their()] armor!"),\
+			visible_message(span_danger("[user]用[user.p_their()]的[I.name][attack_verb]了[src]的[hit_area]，但攻击被[p_their()]的装甲弹开了！"),\
 			null, null, COMBAT_MESSAGE_RANGE, visible_message_flags = COMBAT_MESSAGE)
 			user.do_attack_animation(src, used_item = I)
 			log_combat(user, src, "attacked", I, "(FAILED: armor blocked) (INTENT: [uppertext(user.a_intent)]) (DAMTYE: [uppertext(I.damtype)])")
@@ -143,7 +143,7 @@ Contains most of the procs that are called when a mob is attacked by something
 		if(51 to 75)
 			armor_verb = " [p_their(TRUE)] armor has softened the hit!"
 
-	visible_message(span_danger("[user] [attack_verb] [src] in the [hit_area] with [user.p_their()] [I.name]![armor_verb]"),\
+	visible_message(span_danger("[user]用[user.p_their()]的[I.name][attack_verb]了[src]的[hit_area]！[armor_verb]"),\
 	null, null, 5, visible_message_flags = COMBAT_MESSAGE)
 
 	var/weapon_sharp = is_sharp(I)
@@ -180,7 +180,7 @@ Contains most of the procs that are called when a mob is attacked by something
 			if("head")//Harder to score a stun but if you do it lasts a bit longer
 				if(prob(applied_damage - 15) && stat == CONSCIOUS && !(HAS_TRAIT(user, TRAIT_NO_STUN_ATTACK)))
 					ParalyzeNoChain(modify_by_armor(10 SECONDS, MELEE, def_zone = target_zone) * 100 / maxHealth)
-					visible_message(span_danger("[src] has been knocked unconscious!"),
+					visible_message(span_danger("[src] 已被击昏！"),
 									span_danger("You have been knocked unconscious!"), null, 5)
 					hit_report += "(KO)"
 
@@ -198,7 +198,7 @@ Contains most of the procs that are called when a mob is attacked by something
 			if("chest")//Easier to score a stun but lasts less time
 				if(prob((applied_damage - 5)) && stat == CONSCIOUS && !(HAS_TRAIT(user, TRAIT_NO_STUN_ATTACK)))
 					ParalyzeNoChain(modify_by_armor(6 SECONDS, MELEE, def_zone = target_zone) * 100 / maxHealth)
-					visible_message(span_danger("[src] has been knocked down!"),
+					visible_message(span_danger("[src] 被击倒了！"),
 									span_danger("You have been knocked down!"), null, 5)
 					hit_report += "(KO)"
 
@@ -241,7 +241,7 @@ Contains most of the procs that are called when a mob is attacked by something
 
 		if(in_throw_mode && speed <= 5 && put_in_active_hand(thrown_item))
 			thrown_item.throwing = FALSE //Caught in hand.
-			visible_message(span_warning("[src] catches [thrown_item]!"), null, null, 5)
+			visible_message(span_warning("[src]接住了[thrown_item]！"), null, null, 5)
 			throw_mode_off()
 			if(living_thrower)
 				log_combat(living_thrower, src, "thrown at", thrown_item, "(FAILED: caught)")
@@ -259,7 +259,7 @@ Contains most of the procs that are called when a mob is attacked by something
 		zone = get_zone_with_miss_chance(zone, src)
 
 		if(!zone)
-			visible_message(span_notice("\The [thrown_item] misses [src] narrowly!"), null, null, 5)
+			visible_message(span_notice("\The [thrown_item] 差一点就击中了 [src]！"), null, null, 5)
 			if(living_thrower)
 				log_combat(living_thrower, src, "thrown at", thrown_item, "(FAILED: missed)")
 			return FALSE
@@ -268,7 +268,7 @@ Contains most of the procs that are called when a mob is attacked by something
 			throw_damage = check_shields(COMBAT_MELEE_ATTACK, throw_damage, MELEE)
 			if(!throw_damage)
 				thrown_item.set_throwing(FALSE)
-				visible_message(span_danger("[src] deflects \the [thrown_item]!"))
+				visible_message(span_danger("[src] 偏转了 \the [thrown_item]！"))
 				if(living_thrower)
 					log_combat(living_thrower, src, "thrown at", thrown_item, "(FAILED: shield blocked)")
 				return TRUE
@@ -283,11 +283,11 @@ Contains most of the procs that are called when a mob is attacked by something
 		var/applied_damage = modify_by_armor(throw_damage, MELEE, thrown_item.penetration, zone)
 
 		if(applied_damage <= 0)
-			visible_message(span_notice("\The [thrown_item] bounces on [src]'s armor!"), null, null, 5)
+			visible_message(span_notice("\The [thrown_item] 在 [src] 的装甲上弹开了！"), null, null, 5)
 			log_combat(living_thrower, src, "thrown at", thrown_item, "(FAILED: armor blocked)")
 			return TRUE
 
-		visible_message(span_warning("[src] has been hit in the [affecting.display_name] by \the [thrown_item]."), null, null, 5)
+		visible_message(span_warning("[src]的[affecting.display_name]被\the [thrown_item]击中。"), null, null, 5)
 
 		apply_damage(applied_damage, thrown_item.damtype, zone, 0, is_sharp(thrown_item), has_edge(thrown_item), updating_health = TRUE)
 
@@ -301,7 +301,7 @@ Contains most of the procs that are called when a mob is attacked by something
 			hit_report += "(embedded in [affecting.display_name])"
 
 	if(AM.throw_source && speed >= 15)
-		visible_message(span_warning("[src] staggers under the impact!"),span_warning("You stagger under the impact!"), null, null, 5)
+		visible_message(span_warning("[src] 在冲击下踉跄了一下！"),span_warning("You stagger under the impact!"), null, null, 5)
 		throw_at(get_edge_target_turf(src, get_dir(AM.throw_source, src)), 1, speed * 0.5)
 		hit_report += "(thrown away)"
 
@@ -384,7 +384,7 @@ Contains most of the procs that are called when a mob is attacked by something
 	var/reduction = max(min(1, reduce_within_sight - reduce_prot_aura), 0.1) // Capped at 90% reduction
 	var/stun_duration = (LERP(1, 0.4, dist_pct) * reduction) * 20 //Max 1.5 beside Queen, 0.4 at the edge.
 
-	to_chat(src, span_danger("An ear-splitting guttural roar tears through your mind and makes your world convulse!"))
+	to_chat(src, span_danger("一声震耳欲聋的嘶吼撕裂了你的脑海，让你的世界天旋地转！"))
 	Stun(stun_duration)
 	Paralyze(stun_duration)
 	//15 Next to queen , 3 at max distance.
@@ -399,22 +399,22 @@ Contains most of the procs that are called when a mob is attacked by something
 	if(stat != DEAD || I.sharp < IS_SHARP_ITEM_ACCURATE || user.a_intent != INTENT_HARM)
 		return ..()
 	if(iszombie(user))
-		to_chat(user, span_warning("You shouldn't rip out another zombie's heart."))
+		to_chat(user, span_warning("你不该撕扯其他僵尸的心脏。"))
 		return
 	if(!get_organ_slot(ORGAN_SLOT_HEART))
-		to_chat(user, span_notice("[src] no longer has a heart."))
+		to_chat(user, span_notice("[src] 的心脏已不复存在。"))
 		return
 	if(!HAS_TRAIT(src, TRAIT_UNDEFIBBABLE))
-		to_chat(user, span_warning("You cannot resolve yourself to destroy [src]'s heart, as [p_they()] can still be saved!"))
+		to_chat(user, span_warning("你无法下定决心摧毁[src]的心脏，因为[p_they()]还有救！"))
 		return
-	to_chat(user, span_notice("You start to remove [src]'s heart, preventing [p_them()] from rising again!"))
+	to_chat(user, span_notice("你开始摘除[src]的心脏，阻止[p_them()]再次复活！"))
 	if(!do_after(user, 2 SECONDS, NONE, src))
 		return
 	if(!get_organ_slot(ORGAN_SLOT_HEART))
-		to_chat(user, span_notice("The heart is no longer here!"))
+		to_chat(user, span_notice("心脏已经不在这里了！"))
 		return
 	log_combat(user, src, "ripped [src]'s heart", I)
-	visible_message(span_notice("[user] ripped off [src]'s heart!"), span_notice("You ripped off [src]'s heart!"))
+	visible_message(span_notice("[user] 撕下了 [src] 的心脏！"), span_notice("You ripped off [src]'s heart!"))
 	remove_organ_slot(ORGAN_SLOT_HEART)
 	var/obj/item/organ/heart/heart = new
 	heart.die()
@@ -437,15 +437,15 @@ Contains most of the procs that are called when a mob is attacked by something
 		return TRUE
 
 	if(!(affecting.limb_status & LIMB_ROBOT))
-		balloon_alert(user, "limb not robotic!")
+		balloon_alert(user, "肢体不是机械的！")
 		return TRUE
 
 	if(!affecting.brute_dam)
-		balloon_alert(user, "nothing to fix!")
+		balloon_alert(user, "无需修复！")
 		return TRUE
 
 	if(user.do_actions)
-		balloon_alert(user, "busy!")
+		balloon_alert(user, "忙！")
 		return TRUE
 
 	if(!I.tool_use_check(user, 2))
@@ -456,11 +456,11 @@ Contains most of the procs that are called when a mob is attacked by something
 		repair_time *= 3
 
 
-	user.visible_message(span_notice("[user] starts to fix some of the dents on [src]'s [affecting.display_name]."),\
+	user.visible_message(span_notice("[user]开始修复[src]的[affecting.display_name]上的一些凹痕。"),\
 		span_notice("You start fixing some of the dents on [src == user ? "your" : "[src]'s"] [affecting.display_name]."))
 
 	while(I.use_tool(src, user, repair_time, 2, 50, null, BUSY_ICON_BUILD))
-		user.visible_message(span_warning("\The [user] patches some dents on [src]'s [affecting.display_name]."), \
+		user.visible_message(span_warning("\The [user]修补了[src]的[affecting.display_name]上的一些凹痕。"), \
 			span_warning("You patch some dents on \the [src]'s [affecting.display_name]."))
 		if(affecting.heal_limb_damage(15, robo_repair = TRUE, updating_health = TRUE))
 			UpdateDamageIcon()
@@ -476,6 +476,6 @@ Contains most of the procs that are called when a mob is attacked by something
 				affecting = checked_limb
 				break
 			if(previous_limb == affecting)
-				balloon_alert(user, "dents fully repaired")
+				balloon_alert(user, "凹痕已完全修复")
 				break
 	return TRUE

@@ -29,14 +29,14 @@
 
 /datum/loadout_item/ears/marine_standard
 	name = "Standard headset"
-	desc = "A headset, allowing for communication with your team and access to the tactical minimap. You're in for a bad time if you don't use this."
+	desc = "一副耳机，允许你与团队通信并访问战术小地图。如果你不使用它，那你的日子可不好过。"
 	item_typepath = /obj/item/radio/headset/mainship/marine
 	jobs_supported = list(SQUAD_MARINE, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_SMARTGUNNER, SQUAD_LEADER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/ears/marine_command
 	name = "Command headset"
-	desc = "A command headset, allowing for communication with all squads and access to the tactical minimap. You're in for a bad time if you don't use this."
+	desc = "一副指挥耳机，可与所有小队通信并访问战术小地图。如果你不用这个，那可就惨了。"
 	item_typepath = /obj/item/radio/headset/mainship/mcom
 	jobs_supported = list(FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE

@@ -5,7 +5,7 @@
 */
 
 /obj/item/armor_module/armor/visor
-	name = "standard visor"
+	name = "标准护目镜"
 	icon_state = "visor"
 	slot = ATTACHMENT_SLOT_VISOR
 	attach_features_flags = ATTACH_SAME_ICON|ATTACH_APPLY_ON_MOB
@@ -52,84 +52,84 @@
 	. = ..()
 	if(!allow_emissive)
 		return
-	to_chat(user, "Right click the helmet to toggle the visor internal lighting.")
+	to_chat(user, "右键点击头盔以切换面罩内部照明。")
 
 /obj/item/armor_module/armor/visor/marine
-	name = "\improper Jaeger Pattern Infantry visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Infantry class of helmet."
+	name = "\improper 耶格尔式步兵护目镜"
+	desc = "耶格尔模块化头盔的护目镜枪械配件。这款专为步兵级头盔设计。"
 	icon_state = "infantry_visor"
 
 /obj/item/armor_module/armor/visor/marine/skirmisher
-	name = "\improper Jaeger Pattern Skirmisher visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Skirmisher class of helmet."
+	name = "\improper 游骑兵式样 斥候护目镜"
+	desc = "耶格尔模块化头盔的护目镜枪械配件。这款专为突击兵级头盔设计。"
 	icon_state = "skirmisher_visor"
 
 /obj/item/armor_module/armor/visor/marine/scout
-	name = "\improper Jaeger Pattern Scout visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Scout class of helmet."
+	name = "\improper 耶格尔式侦察护目镜"
+	desc = "耶格尔模块化头盔的护目镜枪械配件。这款专为侦察兵型头盔设计。"
 	icon_state = "scout_visor"
 
 /obj/item/armor_module/armor/visor/marine/helljumper
-	name = "\improper Jaeger Pattern hell Jumper visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Hell Jumper class of helmet."
+	name = "\improper 耶格型地狱伞兵护目镜"
+	desc = "耶格尔模块化头盔的护目镜枪械配件。这款专为地狱伞兵级头盔设计。"
 	icon_state = "helljumper_visor"
 
 /obj/item/armor_module/armor/visor/marine/ranger
-	name = "\improper Jaeger Pattern Ranger visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Ranger class of helmet."
+	name = "\improper 游侠型耶格护目镜"
+	desc = "耶格模块化头盔的护目镜枪械配件。这款专为游骑兵级头盔设计。"
 	icon_state = "ranger_visor"
 	colorable_allowed = COLOR_WHEEL_ALLOWED|PRESET_COLORS_ALLOWED
 
 /obj/item/armor_module/armor/visor/marine/traditional
-	name = "\improper Jaeger Pattern Traditional Ranger visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Traditional Ranger class of helmet."
+	name = "\improper 游侠传统型耶格尔护目镜"
+	desc = "耶格尔模块化头盔的护目镜枪械配件。这款专为传统游骑兵级头盔设计。"
 	icon_state = "traditional_visor"
 	colorable_allowed = COLOR_WHEEL_ALLOWED|PRESET_COLORS_ALLOWED
 
 /obj/item/armor_module/armor/visor/marine/trooper
-	name = "\improper Jaeger Pattern Trooper visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Trooper class of helmet."
+	name = "\improper 耶格式样突击队员面罩"
+	desc = "耶格模块化头盔的护目镜配件。此款专为突击兵级头盔设计。"
 	icon_state = "trooper_visor"
 	colorable_allowed = COLOR_WHEEL_ALLOWED|PRESET_COLORS_ALLOWED
 
 /obj/item/armor_module/armor/visor/marine/mjolnir
-	name = "\improper Jaeger Pattern Mjolnir visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Mjolnir class of helmet."
+	name = "\improper 耶格尔型雷神之锤护目镜"
+	desc = "耶格尔模块化头盔的护目镜配件。这款专为雷神级头盔设计。"
 	icon_state = "mjolnir_visor"
 	colorable_allowed = COLOR_WHEEL_ALLOWED|PRESET_COLORS_ALLOWED
 
 /obj/item/armor_module/armor/visor/marine/mjolnir_open
-	name = "\improper Jaeger Pattern Open Mjolnir visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Mjolnir class of helmet."
+	name = "\improper 耶格式开放型雷神护面"
+	desc = "耶格尔模块化头盔的护目镜配件。这款专为雷神级头盔设计。"
 	icon_state = "mjolnir_open_visor"
 	colorable_allowed = COLOR_WHEEL_ALLOWED|PRESET_COLORS_ALLOWED
 
 /obj/item/armor_module/armor/visor/marine/eva
-	name = "\improper Jaeger Pattern EVA visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the EVA class of helmet."
+	name = "\improper 耶格式样EVA护目镜"
+	desc = "耶格模块化头盔的护目镜配件。这款专为EVA级头盔设计。"
 	icon_state = "eva_visor"
 
 /obj/item/armor_module/armor/visor/marine/eva/skull
-	name = "\improper Jaeger Pattern EVA Skull visor"
+	name = "\improper 耶格式样EVA颅骨面罩"
 	icon_state = "eva_visor"
 	attachments_by_slot = list(ATTACHMENT_SLOT_CAPE_HIGHLIGHT)
 	attachments_allowed = list(/obj/item/armor_module/armor/visor_glyph)
 	starting_attachments = list(/obj/item/armor_module/armor/visor_glyph)
 
 /obj/item/armor_module/armor/visor/marine/assault
-	name = "\improper Jaeger Pattern Assault visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Assault class of helmet."
+	name = "\improper 耶格式突击护目镜"
+	desc = "耶格尔模块化头盔的护目镜配件。这款专为突击型头盔设计。"
 	icon_state = "assault_visor"
 
 /obj/item/armor_module/armor/visor/marine/eod
-	name = "\improper Jaeger Pattern EOD visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the EOD class of helmet."
+	name = "\improper 耶格尔式排爆护目镜"
+	desc = "耶格尔模块化头盔的护目镜枪械配件。这款专为EOD级头盔设计。"
 	icon_state = "eod_visor"
 	colorable_allowed = COLOR_WHEEL_ALLOWED|PRESET_COLORS_ALLOWED
 
 /obj/item/armor_module/armor/visor/marine/gungnir
-	name = "\improper Jaeger Pattern Gungnir visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Gungnir class of helmet."
+	name = "\improper 耶格尔型冈格尼尔护目镜"
+	desc = "耶格尔模块化头盔的护目镜枪械配件。这款专为冈格尼尔级头盔设计。"
 	icon_state = "gugnir"
 	greyscale_config = /datum/greyscale_config/visors/greyscale
 	colorable_allowed = COLOR_WHEEL_ALLOWED
@@ -137,99 +137,99 @@
 
 //Robots
 /obj/item/armor_module/armor/visor/marine/robot
-	name = "\improper XN-1 upper armor plating visor"
-	desc = "The visor attachment of the XN-1 upper armor plating."
+	name = "\improper XN-1 上装甲板面罩"
+	desc = "XN-1上装甲板的护目镜枪械配件。"
 	icon_state = "r_medium"
 	colorable_allowed = COLOR_WHEEL_ALLOWED|PRESET_COLORS_ALLOWED
 
 /obj/item/armor_module/armor/visor/marine/robot/light
-	name = "\improper XN-1-L upper armor plating visor"
-	desc = "The visor attachment of the XN-1-L upper armor plating."
+	name = "\improper XN-1-L 上装甲板面罩"
+	desc = "XN-1-L 上装甲板的护目镜枪械配件。"
 	icon_state = "r_light"
 
 /obj/item/armor_module/armor/visor/marine/robot/heavy
-	name = "\improper XN-1-H upper armor plating visor"
-	desc = "The visor attachment of the XN-1-H upper armor plating."
+	name = "\improper XN-1-H 上装甲板护目镜"
+	desc = "XN-1-H 上装甲板的护目镜枪械配件。"
 	icon_state = "r_heavy"
 
 
 //Xenonaut
 /obj/item/armor_module/armor/visor/marine/xenonaut
-	name = "\improper Xenonaut heavy visor"
-	desc = "The visor attachment of the Xenonaut heavy helmet"
+	name = "\improper 异形探索者重型面罩"
+	desc = "异形重盔的护目镜配件"
 	icon_state = "xenonaut"
 
 
 //old jaeger
 /obj/item/armor_module/armor/visor/marine/old
-	name = "\improper Jaeger Pattern Infantry visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Infantry class of helmet."
+	name = "\improper 耶格尔式步兵护目镜"
+	desc = "耶格尔模块化头盔的护目镜枪械配件。这款专为步兵级头盔设计。"
 	icon_state = "infantry_visor_old"
 
 /obj/item/armor_module/armor/visor/marine/old/skirmisher
-	name = "\improper Jaeger Pattern Skirmisher visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Skirmisher class of helmet."
+	name = "\improper 耶格式样游骑兵护目镜"
+	desc = "耶格尔模块化头盔的护目镜枪械配件。这款专为突击兵级头盔设计。"
 	icon_state = "skirmisher_visor_old"
 
 /obj/item/armor_module/armor/visor/marine/old/scout
-	name = "\improper Jaeger Pattern Scout visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Scout class of helmet."
+	name = "\improper 耶格式侦察护目镜"
+	desc = "耶格尔模块化头盔的护目镜枪械配件。这款专为侦察兵型头盔设计。"
 	icon_state = "scout_visor_old"
 	colorable_allowed = COLOR_WHEEL_ALLOWED|PRESET_COLORS_ALLOWED
 
 /obj/item/armor_module/armor/visor/marine/old/eva
-	name = "\improper Jaeger Pattern EVA visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the EVA class of helmet."
+	name = "\improper 耶格式样舱外活动护目镜"
+	desc = "耶格模块化头盔的护目镜枪械配件。这款专为EVA级头盔设计。"
 	icon_state = "eva_visor_old"
 
 /obj/item/armor_module/armor/visor/marine/old/eva/skull
-	name = "\improper Jaeger Pattern EVA Skull visor"
+	name = "\improper 耶格式样EVA颅骨面罩"
 	icon_state = "eva_visor_old"
 	attachments_by_slot = list(ATTACHMENT_SLOT_CAPE_HIGHLIGHT)
 	attachments_allowed = list(/obj/item/armor_module/armor/visor_glyph/old)
 	starting_attachments = list(/obj/item/armor_module/armor/visor_glyph/old)
 
 /obj/item/armor_module/armor/visor/marine/old/assault
-	name = "\improper Jaeger Pattern Assault visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the Assault class of helmet."
+	name = "\improper 耶格尔式突击护目镜"
+	desc = "耶格尔模块化头盔的护目镜配件。这款专为突击型头盔设计。"
 	icon_state = "assault_visor_old"
 	colorable_allowed = COLOR_WHEEL_ALLOWED|PRESET_COLORS_ALLOWED
 
 /obj/item/armor_module/armor/visor/marine/old/eod
-	name = "\improper Pattern EOD visor"
-	desc = "The visor attachment of the Jaeger modular helmets. This one is designed for the EOD class of helmet."
+	name = "\improper 排爆型护目镜"
+	desc = "耶格尔模块化头盔的护目镜枪械配件。这款专为EOD级头盔设计。"
 	icon_state = "eod_visor_old"
 	colorable_allowed = COLOR_WHEEL_ALLOWED|PRESET_COLORS_ALLOWED
 
 //Hardsuit Helmet Visors
 /obj/item/armor_module/armor/visor/marine/fourvisor
-	name = "\improper FleckTex Mark V helmet visor"
-	desc = "The visor attachment of the FleckTex WY-01 series modular helmets. This one is designed for the Mark V Breacher class of helmet."
+	name = "\improper FleckTex Mark V头盔护目镜"
+	desc = "弗莱克特克斯 WY-01 系列模块化头盔的护目镜枪械配件。此款专为马克 V 型破门手头盔设计。"
 	icon_state = "fourvisor_visor"
 
 /obj/item/armor_module/armor/visor/marine/foureyevisor
-	name = "\improper FleckTex Mark III helmet visor"
-	desc = "The visor attachment of the FleckTex WY-01 series modular helmets. This one is designed for the Mark III Marauder class of helmet."
+	name = "\improper 弗莱克泰克斯 Mark III 头盔面罩"
+	desc = "弗莱克泰克斯 WY-01 系列模块化头盔的护目镜枪械配件。此款专为 Mark III 掠夺者级头盔设计。"
 	icon_state = "foureye_visor"
 
 /obj/item/armor_module/armor/visor/marine/markonevisor
-	name = "\improper FleckTex Mark I helmet visor"
-	desc = "The visor attachment of the FleckTex WY-01 series modular helmets. This one is designed for the Mark I Raider class of helmet."
+	name = "\improper FleckTex Mark I 头盔护目镜"
+	desc = "弗莱克特克斯 WY-01 系列模块化头盔的护目镜枪械配件。这款专为马克 I 型掠夺者级头盔设计。"
 	icon_state = "markone_visor"
 
 //VSD hardsuit visor
 /obj/item/armor_module/armor/visor/marine/phobos
-	name = "\improper Crasher MT/41 'Phobos' helmet visor"
-	desc = "The visor attachment of the Crasher MT/41 series modular helmets. This one is designed for the 'Phobos' helmet."
+	name = "\improper 撞击者MT/41'火卫一'头盔护目镜"
+	desc = "Crasher MT/41系列模块化头盔的护目镜配件。此款专为'恐惧'头盔设计。"
 	icon_state = "phobos_visor"
 
 /obj/item/armor_module/armor/visor/marine/clementia
-	name = "\improper Crasher MT/41 'Clementia' helmet visor"
-	desc = "The visor attachment of the Crasher MT/41 series modular helmets. This one is designed for the 'Clementia' of helmet."
+	name = "\improper 撞击者MT/41'克莱门蒂亚'头盔面罩"
+	desc = "Crasher MT/41系列模块化头盔的护目镜配件。此款专为'克莱门蒂亚'型头盔设计。"
 	icon_state = "clementia_visor"
 
 /obj/item/armor_module/armor/visor/marine/hephaestus
-	name = "\improper Crasher MT/41 'Hephaestus' helmet visor"
-	desc = "The visor attachment of the Crasher MT/41 series modular helmets. This one is designed for the 'Hephaestus' of helmet."
+	name = "\improper 撞击者MT/41'赫菲斯托斯'头盔面罩"
+	desc = "Crasher MT/41系列模块化头盔的护目镜配件。此款专为'赫菲斯托斯'型头盔设计。"
 	icon_state = "hephaestus_visor"
 

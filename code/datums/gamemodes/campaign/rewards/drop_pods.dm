@@ -1,6 +1,6 @@
 /datum/campaign_asset/droppod_enabled
 	name = "Enable drop pods"
-	desc = "Enables the use of drop pods for the current or next mission"
+	desc = "启用当前或下一任务的空降舱"
 	detailed_desc = "Repositions the ship to allow for orbital drop pod insertion during the current or next mission."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/pod_officer
 	ui_icon = "droppod_active"
@@ -18,16 +18,16 @@
 	var/datum/game_mode/hvh/campaign/mode = SSticker.mode
 	var/datum/campaign_mission/current_mission = mode.current_mission
 	if(!current_mission.mission_z_level)
-		to_chat(faction.faction_leader, span_warning("New battlefield co-ordinates loading. Please try again in a moment."))
+		to_chat(faction.faction_leader, span_warning("正在加载新战场坐标。请稍后再试。"))
 		return TRUE
 
 /datum/campaign_asset/droppod_enabled/activated_effect()
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CAMPAIGN_ENABLE_DROPPODS)
-	to_chat(faction.faction_leader, span_warning("Ship repositioned, drop pods are now ready for use."))
+	to_chat(faction.faction_leader, span_warning("舰船已重新定位，空降舱现已准备就绪。"))
 
 /datum/campaign_asset/droppod_refresh
 	name = "Rearm drop pod bays"
-	desc = "replace all used drop pods"
+	desc = "替换所有已使用的空降舱"
 	detailed_desc = "Replace all drop pods that have been previously deployed with refurbished units or ones from fleet storage, ready for immediate use."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/pod_officer
 	ui_icon = "droppod_refresh"
@@ -47,11 +47,11 @@
 
 	for(var/obj/structure/drop_pod_launcher/launcher AS in GLOB.droppod_bays)
 		launcher.refresh_pod(z_level, active)
-	to_chat(faction.faction_leader, span_warning("All drop pods have been restocked."))
+	to_chat(faction.faction_leader, span_warning("所有空降舱均已补充完毕。"))
 
 /datum/campaign_asset/droppod_disable
 	name = "Disable drop pods"
-	desc = "Prevents the enemy from using drop pods in the current or next mission"
+	desc = "阻止敌人在当前或下一任务中使用空降舱"
 	detailed_desc = "Ground to Space weapon systems are activated to prevent TGMC close orbit support ships from positioning themselves for drop pod orbital assaults during the current or next mission."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/pod_officer
 	ui_icon = "droppod_broken"
@@ -65,4 +65,4 @@
 	var/datum/campaign_mission/current_mission = mode.current_mission
 	current_mission.mission_flags |= MISSION_DISALLOW_DROPPODS
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CAMPAIGN_DISABLE_DROPPODS)
-	to_chat(faction.faction_leader, span_warning("Orbital deterrence systems activated. Enemy drop pods disabled for this mission."))
+	to_chat(faction.faction_leader, span_warning("轨道威慑系统已激活。本次任务中敌方空降舱已禁用。"))

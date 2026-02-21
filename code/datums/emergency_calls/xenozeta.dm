@@ -1,14 +1,14 @@
 /datum/emergency_call/xenomorphs_zeta
-	name = "Xenomorphs (Zeta Hive)"
+	name = "异形（泽塔蜂巢）"
 	base_probability = 0
 	auto_shuttle_launch = TRUE
 	spawn_type = null
 
 
 /datum/emergency_call/xenomorphs_zeta/print_backstory(mob/living/carbon/xenomorph/X)
-	to_chat(X, "<B>We are a Xenomorph from the Zeta hive.</b>")
-	to_chat(X, "<B>We've been cruising in space for years until a new Queen reached out to us and took over the control of our shuttle.</b>") // Admin-only ERT, so queens only.
-	to_chat(X, "<B>Expand our hive and destroy any who dare to oppose our influence especially other hives. For the Zeta Hive!</b>")
+	to_chat(X, "<B>我们是泽塔蜂巢的异形。</b>")
+	to_chat(X, "<B>我们在太空中航行了数年，直到一位新的异形女王联系我们并接管了我们飞船的控制权。</b>") // Admin-only ERT, so queens only.
+	to_chat(X, "<B>扩张我们的蜂巢，消灭所有胆敢反抗我们统治的存在，尤其是其他蜂巢。为了泽塔蜂巢！</b>")
 
 
 /datum/emergency_call/xenomorphs_zeta/spawn_items()

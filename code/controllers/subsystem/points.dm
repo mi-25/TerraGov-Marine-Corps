@@ -3,7 +3,7 @@
 #define SUPPLY_POINT_RATE 20 * (GLOB.current_orbit/3)
 
 SUBSYSTEM_DEF(points)
-	name = "Points"
+	name = "点数"
 
 	priority = FIRE_PRIORITY_POINTS
 	flags = SS_KEEP_TIMING
@@ -103,7 +103,7 @@ SUBSYSTEM_DEF(points)
 	supply_points[user.faction] -= cost
 	LAZYADDASSOCSIMPLE(shoppinglist[O.faction], "[O.id]", O)
 	if(GLOB.directory[O.orderer])
-		to_chat(GLOB.directory[O.orderer], span_notice("Your request [O.id] has been approved!"))
+		to_chat(GLOB.directory[O.orderer], span_notice("你的请求 [O.id] 已获批准！"))
 	if(GLOB.personal_statistics_list[O.orderer_ckey])
 		var/datum/personal_statistics/personal_statistics = GLOB.personal_statistics_list[O.orderer_ckey]
 		personal_statistics.req_points_used += cost
@@ -113,7 +113,7 @@ SUBSYSTEM_DEF(points)
 	deniedrequests["[O.id]"] = O
 	O.authorised_by = "denied"
 	if(GLOB.directory[O.orderer])
-		to_chat(GLOB.directory[O.orderer], span_notice("Your request [O.id] has been denied!"))
+		to_chat(GLOB.directory[O.orderer], span_notice("您的请求 [O.id] 已被拒绝！"))
 
 /datum/controller/subsystem/points/proc/copy_order(datum/supply_order/O)
 	var/datum/supply_order/NO = new

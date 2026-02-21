@@ -1,6 +1,6 @@
 /datum/language/zombie
-	name = "Zombie"
-	desc = "The common tongue of the zombies."
+	name = "僵尸"
+	desc = "僵尸的通用语言。"
 	speech_verb = "moans"
 	ask_verb = "moans"
 	exclaim_verb = "moans"

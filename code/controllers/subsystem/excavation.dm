@@ -5,7 +5,7 @@
 #define MAX_ACTIVE_EXCAVATIONS 10
 
 SUBSYSTEM_DEF(excavation)
-	name = "Excavation"
+	name = "勘探"
 	flags = SS_BACKGROUND | SS_NO_INIT
 	wait = 5 MINUTES
 	//todo fix this being default priority, make it something super low

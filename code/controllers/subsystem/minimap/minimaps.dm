@@ -16,7 +16,7 @@
  * *: add a system for viscontents so things like minimap draw are more responsive
  */
 SUBSYSTEM_DEF(minimaps)
-	name = "Minimaps"
+	name = "小地图"
 	dependencies = list(
 		/datum/controller/subsystem/mapping,
 		/datum/controller/subsystem/modularmapping,
@@ -393,7 +393,7 @@ SUBSYSTEM_DEF(minimaps)
 
 ///Default HUD screen minimap object
 /atom/movable/screen/minimap
-	name = "Minimap"
+	name = "小地图"
 	icon = null
 	icon_state = ""
 	layer = MINIMAP_IMAGE_LAYER
@@ -462,7 +462,7 @@ SUBSYSTEM_DEF(minimaps)
 	return COMSIG_MOB_CLICK_CANCELED
 
 /atom/movable/screen/minimap_locator
-	name = "You are here"
+	name = "你在这里"
 	icon = 'icons/UI_icons/map_blips.dmi'
 	icon_state = "locator"
 	layer = MINIMAP_LOCATOR_LAYER // 1 above minimap
@@ -510,7 +510,7 @@ SUBSYSTEM_DEF(minimaps)
 	maptext = MAPTEXT_TINY_UNICODE("<div align='center' valign='middle' style='position:relative; top:0px; left:0px'>[text]</div>")
 
 /atom/movable/screen/minimap_extras/minimap_z_up
-	name = "go up"
+	name = "向上移动"
 	icon = 'icons/mob/screen_ai.dmi'
 	icon_state = "up"
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -532,7 +532,7 @@ SUBSYSTEM_DEF(minimaps)
 
 
 /atom/movable/screen/minimap_extras/minimap_z_down
-	name = "go down"
+	name = "下去"
 	icon = 'icons/mob/screen_ai.dmi'
 	icon_state = "down"
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -556,7 +556,7 @@ SUBSYSTEM_DEF(minimaps)
  * Action that gives the owner access to the minimap pool
  */
 /datum/action/minimap
-	name = "Toggle Minimap"
+	name = "切换小地图"
 	action_icon_state = "minimap"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_TOGGLE_MINIMAP,
@@ -625,7 +625,7 @@ SUBSYSTEM_DEF(minimaps)
 	var/atom/movable/tracking = locator_override ? locator_override : owner
 	if(force_state)
 		if(locate(/atom/movable/screen/minimap) in owner.client.screen) //This seems like the most effective way to do this without some wacky code
-			to_chat(owner, span_warning("You already have a minimap open!"))
+			to_chat(owner, span_warning("你已经打开了小地图！"))
 			return FALSE
 		owner.client.screen += map
 		owner.client.screen += locator

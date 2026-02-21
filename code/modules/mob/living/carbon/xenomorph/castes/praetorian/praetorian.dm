@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/praetorian
 	caste_base_type = /datum/xeno_caste/praetorian
 	name = "Praetorian"
-	desc = "A huge, looming beast of an alien."
+	desc = "一个巨大、若隐若现的异形巨兽。"
 	icon = 'icons/Xeno/castes/praetorian.dmi'
 	icon_state = "Praetorian Walking"
 	health = 210

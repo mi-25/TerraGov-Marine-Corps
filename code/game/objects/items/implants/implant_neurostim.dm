@@ -1,6 +1,6 @@
 /obj/item/implant/neurostim
-	name = "neurostimulator implant"
-	desc = "An implant which regulates nociception and sensory function. Benefits include pain reduction, improved balance, and improved resistance to overstimulation and disoritentation. To encourage compliance, negative stimulus is applied if the implant hears a (non-radio) spoken codeprhase. Implant may be degraded by the body's immune system over time, and thus may occasionally malfunction."
+	name = "神经刺激器植入体"
+	desc = "一种调节痛觉和感觉功能的植入体。其益处包括减轻疼痛、改善平衡能力，以及增强对过度刺激和方向迷失的抵抗力。为确保服从性，当植入体听到（非无线电）语音口令时，会施加负面刺激。该植入体可能随时间推移被身体免疫系统降解，因此偶尔可能发生故障。"
 	icon_state = "implant_evil"
 	implant_flags = ACTIVATE_ON_HEAR|BENEFICIAL_IMPLANT
 	var/phrase = "supercalifragilisticexpialidocious"
@@ -44,7 +44,7 @@
 
 ///Shocks the owner for whatever reason
 /obj/item/implant/neurostim/proc/shock_collar()
-	implant_owner.visible_message(span_danger("[implant_owner] convulses in pain!"), span_danger("Excruciating pain shoots through [part ? "your [part.display_name]" : "you"]!"))
+	implant_owner.visible_message(span_danger("[implant_owner] 痛苦地抽搐着！"), span_danger("Excruciating pain shoots through [part ? "your [part.display_name]" : "you"]!"))
 	implant_owner.flash_act(1, TRUE)
 	implant_owner.AdjustStun(20 SECONDS)
 	implant_owner.Paralyze(20 SECONDS)
@@ -58,7 +58,7 @@
 		return FALSE
 	phrase = p
 	user.mind.store_memory("[src] in [target] can be made to deliver negative stimulus by saying something containing the phrase ''[phrase]'', <B>say [phrase]</B> to attempt to activate.", 0, 0)
-	to_chat(user, span_notice("[src] in [target] can be made to deliver negative stimulus by saying something containing the phrase ''[phrase]'', <B>say [phrase]</B> to attempt to activate."))
+	to_chat(user, span_notice("[src] 在 [target] 中可以通过说出包含短语 ''[phrase]'' 的内容来传递负面刺激，<B>说 [phrase]</B> 以尝试激活。"))
 	return ..()
 
 

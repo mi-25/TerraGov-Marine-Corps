@@ -1,5 +1,5 @@
 /datum/emergency_call/upp
-	name = "USL Pirate Band"
+	name = "联合太空鳞翅目海盗团"
 	base_probability = 0
 	shuttle_id = SHUTTLE_DISTRESS_UPP
 	spawn_type = /mob/living/carbon/human/species/moth
@@ -10,8 +10,8 @@
 	to_chat(H, "<B>The family you grew up with were [pick(50;"getting by", 25;"impoverished", 25;"starving")] and you were one of [pick(10;"two", 20;"three", 30;"four", 20;"five", 20;"six")] children.</B>")
 	to_chat(H, "<B>You come from a long line of [pick(50;"pirates", 25;"renegades", 25;"rogue soldiers")] and quickly joined the local band to improve your living conditions.</B>")
 	to_chat(H, "")
-	to_chat(H, "<B>Today, a TGMC vessel, [SSmapping.configs[SHIP_MAP].map_name], has sent out a distress signal on the orbit of [SSmapping.configs[GROUND_MAP].map_name]. Your USL assault pirate warband heads out and your stealing begins!</b>")
-	to_chat(H, "<B>Eliminate the TGMC force if necessary. Do not harm the civilians unless they attack you first.</B>")
+	to_chat(H, "<B>今日，一艘 TGMC 舰船，[SSmapping.configs[SHIP_MAP].map_name]，在 [SSmapping.configs[GROUND_MAP].map_name] 轨道上发出了求救信号。你的 USL 突击海盗战帮出动，你的劫掠开始了！</b>")
+	to_chat(H, "<B>必要时消灭地球政府殖民地海军陆战队部队。除非平民先攻击你，否则不要伤害他们。</B>")
 	to_chat(H, span_notice("You speak in a language that humans cannot understand, only you and your fellow pirates can.<br>Type in <b>\",0 <text>\" in the say verb</b> to speak in Galactic Common.<br>Type in <b>\";,0 <text>\" in the say verb</b> to commincate the radio in Galactic Common."))
 
 
@@ -59,7 +59,7 @@
 	to_chat(H, "<p style='font-size:1.5em'>[span_notice("You are a member of the USL pirate band to respond to the TGMC distress signal sent nearby. Do not forget your training, stand tall with your other pirates!")]</p>")
 
 /datum/emergency_call/upphvh
-	name = "USL Pirate Band (Human vs. Human)"
+	name = "联合太空鳞翅目海盗帮（人类 vs 人类）"
 	base_probability = 0
 	shuttle_id = SHUTTLE_DISTRESS_UPP
 	spawn_type = /mob/living/carbon/human/species/moth
@@ -70,9 +70,9 @@
 	to_chat(H, "<B>The family you grew up with were [pick(50;"getting by", 25;"impoverished", 25;"starving")] and you were one of [pick(10;"two", 20;"three", 30;"four", 20;"five", 20;"six")] children.</B>")
 	to_chat(H, "<B>You come from a long line of [pick(50;"pirates", 25;"renegades", 25;"rogue soldiers")] and quickly joined the local band to improve your living conditions.</B>")
 	to_chat(H, "")
-	to_chat(H, "<B>Today, a TGMC vessel, [SSmapping.configs[SHIP_MAP].map_name], has sent out a distress signal on the orbit of [SSmapping.configs[GROUND_MAP].map_name]. Your USL assault pirate warband heads out and your stealing begins!</b>")
-	to_chat(H, "<B>Eliminate the TGMC force if necessary. Do not harm the civilians unless they attack you first.</B>")
-	to_chat(H, span_notice("You speak in a language that humans cannot understand, only you and your fellow pirates can.<br>Type in <b>\",0 <text>\" in the say verb</b> to speak in Galactic Common.<br>Type in <b>\";,0 <text>\" in the say verb</b> to commincate the radio in Galactic Common."))
+	to_chat(H, "<B>今日，一艘TGMC舰船，[SSmapping.configs[SHIP_MAP].map_name]，在[SSmapping.configs[GROUND_MAP].map_name]轨道上发出了求救信号。你们的联合太空鳞翅目突击海盗战帮出发了，你们的劫掠开始了！</b>")
+	to_chat(H, "<B>必要时消灭地球政府殖民地海军陆战队部队。除非平民先攻击你，否则不要伤害他们。</B>")
+	to_chat(H, span_notice("你使用一种人类无法理解的语言说话，只有你和你的海盗同伴能听懂。<br>在说话动词中输入<b>',0 <文本>'</b>来使用银河通用语说话。<br>在说话动词中输入<b>';,0 <文本>'</b>来使用银河通用语进行无线电通讯。"))
 
 
 /datum/emergency_call/upphvh/create_member(datum/mind/M)
@@ -119,5 +119,5 @@
 	to_chat(H, "<p style='font-size:1.5em'>[span_notice("You are a member of the USL pirate band to respond to the TGMC distress signal sent nearby. Do not forget your training, stand tall with your other pirates!")]</p>")
 
 /datum/emergency_call/upphvh/human
-	name = "USL Human Pirate Band (Human vs. Human)"
+	name = "联合太空鳞翅目海盗团（人类 vs 人类）"
 	spawn_type = /mob/living/carbon/human

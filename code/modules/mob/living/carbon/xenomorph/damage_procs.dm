@@ -176,7 +176,7 @@
 		for(var/mob/living/carbon/human/victim in range(radius,src)) //Loop through all nearby victims, including the tile.
 			splash_chance = (chance * 2) - (get_dist(src,victim) * 20)
 			if(prob(splash_chance))
-				victim.visible_message(span_danger("\The [victim] is scalded with hissing green blood!"), \
+				victim.visible_message(span_danger("\The [victim] 被嘶嘶作响的绿色血液烫伤了！"), \
 				span_danger("You are splattered with sizzling blood! IT BURNS!"))
 				if(victim.stat != CONSCIOUS && !(victim.species.species_flags & NO_PAIN) && prob(60))
 					victim.emote("scream")

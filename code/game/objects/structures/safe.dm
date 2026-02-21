@@ -7,7 +7,7 @@ FLOOR SAFES
 //SAFES
 
 /obj/item/paper/safe_key
-	name = "Secure Safe Combination"
+	name = "保险箱密码"
 	var/obj/structure/safe/safe = null
 
 /obj/item/paper/safe_key/Initialize(mapload)
@@ -20,8 +20,8 @@ FLOOR SAFES
 			break
 
 /obj/structure/safe
-	name = "safe"
-	desc = "A huge chunk of metal with a dial embedded in it. Fine print on the dial reads \"Scarborough Arms - 2 tumbler safe, guaranteed thermite resistant, explosion resistant, and assistant resistant.\""
+	name = "安全"
+	desc = "一块巨大的金属块，上面嵌着一个刻度盘。刻度盘上的小字写着'斯卡伯勒军械——双锁保险箱，保证耐热剂、防爆、防助手。'"
 	icon = 'icons/obj/structures/structures.dmi'
 	icon_state = "safe"
 	anchored = TRUE
@@ -185,21 +185,21 @@ FLOOR SAFES
 		return
 
 	else if(istype(I, /obj/item/clothing/tie/stethoscope))
-		to_chat(user, "Hold [I] in one of your hands while you manipulate the dial.")
+		to_chat(user, "按住 [I] 的同时拨动表盘。")
 
 	else if(I.w_class + space <= maxspace)
 		space += I.w_class
 		if(user.transferItemToLoc(I, src))
-			to_chat(user, span_notice("You put [I] in [src]."))
+			to_chat(user, span_notice("你将[I]放入[src]。"))
 		updateUsrDialog()
 
 	else
-		to_chat(user, span_notice("[I] won't fit in [src]."))
+		to_chat(user, span_notice("[I] 装不进 [src]。"))
 
 
 //FLOOR SAFES
 /obj/structure/safe/floor
-	name = "floor safe"
+	name = "地板保险箱"
 	icon_state = "floorsafe"
 	density = FALSE
 	level = 1	//underfloor
@@ -216,6 +216,6 @@ FLOOR SAFES
 	invisibility = intact ? INVISIBILITY_MAXIMUM : 0
 
 /obj/structure/safe/floor/lvcolony
-	name = "safe"
+	name = "安全"
 	spawnkey = FALSE
 	pixel_x = 30

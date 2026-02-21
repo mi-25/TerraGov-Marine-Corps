@@ -1,6 +1,6 @@
 /obj/vehicle
-	name = "generic vehicle"
-	desc = "Yell at coderbus."
+	name = "通用载具"
+	desc = "去骂coderbus。"
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "fuckyou"
 	max_integrity = 300

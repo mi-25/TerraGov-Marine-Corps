@@ -1,6 +1,6 @@
 /datum/language/beachbum
-	name = "Beachtongue"
-	desc = "An ancient language from the distant Beach Planet. People magically learn to speak it under the influence of space drugs."
+	name = "海滩舌"
+	desc = "来自遥远海滩星球的古老语言。在太空药物的影响下，人们会神奇地学会说这种语言。"
 	speech_verb = "mumbles"
 	ask_verb = "grills"
 	exclaim_verb = "hollers"

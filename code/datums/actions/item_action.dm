@@ -20,7 +20,7 @@
 	holder_item = holder
 	LAZYADD(holder_item.actions, src)
 	if(!name)
-		name = "Use [target]"
+		name = "使用[target]"
 	button.name = name
 
 /datum/action/item_action/Destroy()
@@ -57,7 +57,7 @@
 
 /datum/action/item_action/toggle/New(Target)
 	. = ..()
-	name = "Toggle [target]"
+	name = "切换 [target]"
 	button.name = name
 
 /datum/action/item_action/toggle/action_activate()
@@ -131,7 +131,7 @@
 	button.color = rgb(255,255,255,255)
 
 /datum/action/item_action/aim_mode
-	name = "Take Aim"
+	name = "瞄准"
 	action_icon_state = "aim_mode"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_AIMMODE,

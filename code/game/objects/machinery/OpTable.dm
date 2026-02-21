@@ -1,6 +1,6 @@
 /obj/machinery/optable
-	name = "Operating Table"
-	desc = "Used for advanced medical procedures."
+	name = "手术台"
+	desc = "用于高级医疗程序。"
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "table2-idle"
 	density = TRUE
@@ -64,7 +64,7 @@
 		return
 	if(anes_tank)
 		user.put_in_active_hand(anes_tank)
-		to_chat(user, span_notice("You remove \the [anes_tank] from \the [src]."))
+		to_chat(user, span_notice("你将\the [anes_tank]从\the [src]中取出。"))
 		playsound(loc, 'sound/effects/air_release.ogg', 25, 1)
 		anes_tank = null
 
@@ -75,33 +75,33 @@
 	if(buckling_mob == user)
 		return FALSE
 	if(!ishuman(user)) //xenos buckling humans into op tables and applying anesthetic masks? no way.
-		to_chat(user, span_xenowarning("We don't have the manual dexterity to do this."))
+		to_chat(user, span_xenowarning("我们没有足够的手部灵活性来完成这个。"))
 		return FALSE
 	if(buckling_mob != victim)
-		to_chat(user, span_warning("Lay the patient on the table first!"))
+		to_chat(user, span_warning("先把病人放到手术台上！"))
 		return FALSE
 	if(!anes_tank)
-		to_chat(user, span_warning("There is no anesthetic tank connected to the table, load one first."))
+		to_chat(user, span_warning("麻醉气罐未连接到手术台，请先装载一个。"))
 		return FALSE
-	buckling_mob.visible_message(span_notice("[user] begins to connect [buckling_mob] to the anesthetic system."))
+	buckling_mob.visible_message(span_notice("[user]开始将[buckling_mob]连接到麻醉系统。"))
 	if(!do_after(user, 2.5 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_GENERIC))
 		if(buckling_mob != victim)
-			to_chat(user, span_warning("The patient must remain on the table!"))
+			to_chat(user, span_warning("病人必须留在手术台上！"))
 			return FALSE
-		to_chat(user, span_notice("You stop placing the mask on [buckling_mob]'s face."))
+		to_chat(user, span_notice("你停止将面罩戴在[buckling_mob]的脸上。"))
 		return FALSE
 	if(!anes_tank)
-		to_chat(user, span_warning("There is no anesthetic tank connected to the table, load one first."))
+		to_chat(user, span_warning("麻醉气罐未连接到手术台，请先装载一个。"))
 		return FALSE
 	var/mob/living/carbon/human/buckling_human = buckling_mob
 	if(buckling_human.wear_mask && !buckling_human.dropItemToGround(buckling_human.wear_mask))
-		to_chat(user, span_danger("You can't remove their mask!"))
+		to_chat(user, span_danger("你不能取下他们的面罩！"))
 		return FALSE
 	if(!buckling_human.equip_to_slot_or_del(new /obj/item/clothing/mask/breath/medical(buckling_human), SLOT_WEAR_MASK))
-		to_chat(user, span_danger("You can't fit the gas mask over their face!"))
+		to_chat(user, span_danger("你无法将防毒面具戴在他们脸上！"))
 		return FALSE
 	buckling_human.visible_message("[span_notice("[user] fits the mask over [buckling_human]'s face and turns on the anesthetic.")]'")
-	to_chat(buckling_human, span_information("You begin to feel sleepy."))
+	to_chat(buckling_human, span_information("你开始感到困倦。"))
 	addtimer(CALLBACK(src, PROC_REF(knock_out_buckled), buckling_human), rand(2 SECONDS, 4 SECONDS))
 	buckling_human.setDir(SOUTH)
 	return ..()
@@ -117,7 +117,7 @@
 	if(!.)
 		return
 	if(!silent)
-		buckled_mob.visible_message(span_notice("[user] turns off the anesthetic and removes the mask from [buckled_mob]."))
+		buckled_mob.visible_message(span_notice("[user]关闭了麻醉剂，并从[buckled_mob]脸上取下了面罩。"))
 
 
 /obj/machinery/optable/post_unbuckle_mob(mob/living/buckled_mob)
@@ -162,9 +162,9 @@
 
 /obj/machinery/optable/proc/take_victim(mob/living/carbon/C, mob/living/carbon/user)
 	if (C == user)
-		user.visible_message(span_notice("[user] climbs on the operating table."), span_notice("You climb on the operating table."), null, null, 4)
+		user.visible_message(span_notice("[user] 爬上了手术台。"), span_notice("You climb on the operating table."), null, null, 4)
 	else
-		visible_message(span_notice("[C] has been laid on the operating table by [user]."), null, null, 4)
+		visible_message(span_notice("[C]已被[user]放置在手术台上。"), null, null, 4)
 	C.set_resting(TRUE)
 	C.forceMove(loc)
 
@@ -196,14 +196,14 @@
 			return
 		user.transferItemToLoc(I, src)
 		anes_tank = I
-		to_chat(user, span_notice("You connect \the [anes_tank] to \the [src]."))
+		to_chat(user, span_notice("你将 \the [anes_tank] 连接到 \the [src]。"))
 
 	if(istype(I, /obj/item/riding_offhand))
 		var/obj/item/riding_offhand/carry_obj = I
 		if(carry_obj.is_rider(user))
 			return
 		if(victim)
-			balloon_alert(user, "already has a patient!")
+			balloon_alert(user, "已有患者！")
 			return
 		if(!take_victim(carry_obj.rider, user))
 			return
@@ -214,13 +214,13 @@
 	if(.)
 		return
 	if(victim && victim != grab.grabbed_thing)
-		to_chat(user, span_warning("The table is already occupied!"))
+		to_chat(user, span_warning("桌子已经被占用了！"))
 		return
 	var/mob/living/carbon/grabbed_mob
 	if(iscarbon(grab.grabbed_thing))
 		grabbed_mob = grab.grabbed_thing
 		if(grabbed_mob.buckled)
-			to_chat(user, span_warning("Unbuckle first!"))
+			to_chat(user, span_warning("先解开！"))
 			return
 	else if(istype(grab.grabbed_thing, /obj/structure/closet/bodybag/cryobag))
 		var/obj/structure/closet/bodybag/cryobag/cryobag = grab.grabbed_thing
@@ -239,11 +239,11 @@
 
 /obj/machinery/optable/proc/check_table(mob/living/carbon/patient as mob)
 	if(victim)
-		to_chat(usr, span_boldnotice("The table is already occupied!"))
+		to_chat(usr, span_boldnotice("桌子已经被占用了！"))
 		return 0
 
 	if(patient.buckled)
-		to_chat(usr, span_boldnotice("Unbuckle first!"))
+		to_chat(usr, span_boldnotice("先解开！"))
 		return 0
 
 	return 1

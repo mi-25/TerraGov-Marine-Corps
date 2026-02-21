@@ -1,6 +1,6 @@
 //copy pasta of the space piano, don't hurt me -Pete
 /obj/item/instrument
-	name = "generic instrument"
+	name = "通用乐器"
 	force = 10
 	max_integrity = 100
 	icon = 'icons/obj/musician.dmi'
@@ -31,12 +31,12 @@
 	return user.incapacitated() || !((loc == user) || (isturf(loc) && Adjacent(user)))		// sorry, no more TK playing.
 
 /obj/item/instrument/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] begins to play 'Gloomy Sunday'! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user]开始播放《忧郁的星期天》！看起来[user.p_theyre()]想要自杀！"))
 	return (BRUTELOSS)
 
 /datum/action/item_action/instrument
-	name = "Use Instrument"
-	desc = "Use the instrument specified"
+	name = "使用乐器"
+	desc = "使用指定的乐器"
 
 /obj/item/instrument/attack_self(mob/user)
 	interact(user)
@@ -49,22 +49,22 @@
 	song.ui_interact(user)
 
 /obj/item/instrument/violin
-	name = "space violin"
-	desc = "A wooden musical instrument with four strings and a bow. \"The devil went down to space, he was looking for an assistant to grief.\""
+	name = "太空小提琴"
+	desc = "一把有四根弦和琴弓的木制乐器。{{P0}}魔鬼下凡到太空，他正在寻找一个助手来制造悲伤。{{P1}}"
 	icon_state = "violin"
 	worn_icon_state = "violin"
 	hitsound = SFX_SWING_HIT
 	allowed_instrument_ids = "violin"
 
 /obj/item/instrument/violin/golden
-	name = "golden violin"
-	desc = "A golden musical instrument with four strings and a bow. \"The devil went down to space, he was looking for an assistant to grief.\""
+	name = "金色小提琴"
+	desc = "一把金色的四弦乐器，配有一支琴弓。{{P0}}魔鬼降临太空，他正寻找一个制造悲伤的助手。{{P1}}"
 	icon_state = "golden_violin"
 	worn_icon_state = "golden_violin"
 
 /obj/item/instrument/piano_synth
-	name = "synthesizer"
-	desc = "An advanced electronic synthesizer that can be used as various instruments."
+	name = "合成器"
+	desc = "一种高级电子合成器，可用作多种乐器。"
 	icon_state = "synth"
 	worn_icon_state = "synth"
 	allowed_instrument_ids = "piano"
@@ -74,8 +74,8 @@
 	song.allowed_instrument_ids = SSinstruments.synthesizer_instrument_ids
 
 /obj/item/instrument/banjo
-	name = "banjo"
-	desc = "A drum with a neck and strings."
+	name = "班卓琴"
+	desc = "带颈弦的鼓。"
 	icon_state = "banjo"
 	worn_icon_state = "banjo"
 	attack_verb = list("scruggs-styles", "hum-diggitys", "shin-digs", "clawhammers")
@@ -83,8 +83,8 @@
 	allowed_instrument_ids = "banjo"
 
 /obj/item/instrument/guitar
-	name = "guitar"
-	desc = "It's made of wood and has bronze strings."
+	name = "吉他"
+	desc = "它由木头制成，并配有青铜琴弦。"
 	icon_state = "guitar"
 	worn_icon_state = "guitar"
 	attack_verb = list("serenades", "crashes", "smashes")
@@ -92,8 +92,8 @@
 	allowed_instrument_ids = list("guitar","csteelgt","cnylongt", "ccleangt", "cmutedgt")
 
 /obj/item/instrument/eguitar
-	name = "electric guitar"
-	desc = "Makes all your shredding needs possible."
+	name = "电吉他"
+	desc = "满足你的一切撕碎需求。"
 	icon_state = "eguitar"
 	worn_icon_state = "eguitar"
 	force = 12
@@ -102,52 +102,52 @@
 	allowed_instrument_ids = "eguitar"
 
 /obj/item/instrument/glockenspiel
-	name = "glockenspiel"
-	desc = "Smooth metal bars perfect for any marching band."
+	name = "钟琴"
+	desc = "光滑的金属条，适合任何军乐队使用。"
 	icon_state = "glockenspiel"
 	worn_icon_state = "glockenspiel"
 	allowed_instrument_ids = list("glockenspiel","crvibr", "sgmmbox", "r3celeste")
 
 /obj/item/instrument/accordion
-	name = "accordion"
-	desc = "Monkey not included."
+	name = "手风琴"
+	desc = "不含猴子。"
 	icon_state = "accordion"
 	worn_icon_state = "accordion"
 	allowed_instrument_ids = list("crack", "crtango", "accordion")
 
 /obj/item/instrument/trumpet
-	name = "trumpet"
-	desc = "To announce the arrival of the king!"
+	name = "小号"
+	desc = "宣布异形之王的降临！"
 	icon_state = "trumpet"
 	worn_icon_state = "trumpet"
 	allowed_instrument_ids = "crtrumpet"
 
 /obj/item/instrument/saxophone
-	name = "saxophone"
-	desc = "This soothing sound will be sure to leave your audience in tears."
+	name = "萨克斯风"
+	desc = "这舒缓的声音定会让你的听众潸然泪下。"
 	icon_state = "saxophone"
 	worn_icon_state = "saxophone"
 	allowed_instrument_ids = "saxophone"
 
 
 /obj/item/instrument/trombone
-	name = "trombone"
-	desc = "How can any pool table ever hope to compete?"
+	name = "长号"
+	desc = "哪张台球桌能与之抗衡？"
 	icon_state = "trombone"
 	worn_icon_state = "trombone"
 	allowed_instrument_ids = list("crtrombone", "crbrass", "trombone")
 
 /obj/item/instrument/recorder
-	name = "recorder"
-	desc = "Just like in school, playing ability and all."
+	name = "录音机"
+	desc = "就像在学校里一样，玩的能力和一切。"
 	force = 5
 	icon_state = "recorder"
 	worn_icon_state = "recorder"
 	allowed_instrument_ids = "recorder"
 
 /obj/item/instrument/harmonica
-	name = "harmonica"
-	desc = "For when you get a bad case of the space blues."
+	name = "口琴"
+	desc = "专治太空忧郁症。"
 	icon_state = "harmonica"
 	worn_icon_state = "harmonica"
 	allowed_instrument_ids = list("crharmony", "harmonica")
@@ -158,7 +158,7 @@
 
 /obj/item/instrument/harmonica/proc/handle_speech(datum/source, list/speech_args)
 	if(song.playing && ismob(loc))
-		to_chat(loc, span_warning("You stop playing the harmonica to talk..."))
+		to_chat(loc, span_warning("你停止吹口琴，开始说话……"))
 		song.playing = FALSE
 
 /obj/item/instrument/harmonica/equipped(mob/M, slot)
@@ -170,8 +170,8 @@
 	return ..()
 
 /obj/item/instrument/bikehorn
-	name = "gilded bike horn"
-	desc = "An exquisitely decorated bike horn, capable of honking in a variety of notes."
+	name = "镀金自行车喇叭"
+	desc = "一个装饰精美的自行车喇叭，能够发出多种音调。"
 	icon_state = "bike_horn"
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/items/toys_left.dmi',
@@ -186,8 +186,8 @@
 	hitsound = 'sound/items/bikehorn.ogg'
 
 /obj/item/instrument/musicalmoth
-	name = "musical moth"
-	desc = "Despite its popularity, this controversial musical toy was eventually banned due to its unethically sampled sounds of moths screaming in agony."
+	name = "音乐飞蛾"
+	desc = "尽管广受欢迎，这款备受争议的音乐玩具最终因使用了飞蛾痛苦尖叫的不道德采样声音而被禁止。"
 	icon_state = "mothsician"
 	allowed_instrument_ids = "mothscream"
 	attack_verb = list("flutters", "flaps")

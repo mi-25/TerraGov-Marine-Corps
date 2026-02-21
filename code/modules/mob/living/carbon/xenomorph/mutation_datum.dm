@@ -97,29 +97,29 @@
 	if(!(xenomorph_purchaser.xeno_caste.caste_flags & CASTE_MUTATIONS_ALLOWED))
 		return FALSE
 	if(!(mutation_typepath in xenomorph_purchaser.xeno_caste.mutations))
-		to_chat(xenomorph_purchaser, span_warning("That is not a valid mutation."))
+		to_chat(xenomorph_purchaser, span_warning("这不是一个有效的突变。"))
 		return FALSE
 	if(xenomorph_purchaser.fortify)
-		to_chat(xenomorph_purchaser, span_warning("You cannot buy mutations while fortified!"))
+		to_chat(xenomorph_purchaser, span_warning("你无法在加固状态下购买突变！"))
 		return FALSE
 	if(!HAS_TRAIT(xenomorph_purchaser, TRAIT_VALHALLA_XENO) && length(xenomorph_purchaser.owned_mutations) >= length(completed_disk_colors)) // Checking if buying another would put us over the completed disk count.
-		to_chat(xenomorph_purchaser, span_warning("The hive hasn't developed enough to get another mutation..."))
+		to_chat(xenomorph_purchaser, span_warning("蜂巢尚未发展到足以获得另一项突变..."))
 		return FALSE
 	if(has_mutation(xenomorph_purchaser, mutation_typepath))
-		to_chat(xenomorph_purchaser, span_warning("You already own this mutation!"))
+		to_chat(xenomorph_purchaser, span_warning("你已经拥有这个突变！"))
 		return FALSE
 	if(has_any_mutation_in_category(xenomorph_purchaser, mutation_typepath.category))
-		to_chat(xenomorph_purchaser, span_warning("You already have a mutation in this category!"))
+		to_chat(xenomorph_purchaser, span_warning("你已拥有此类突变！"))
 		return FALSE
 	if(!xenomorph_purchaser.hive.has_any_mutation_structures_in_category(mutation_typepath.required_structure))
-		to_chat(xenomorph_purchaser, span_warning("This mutation requires a [mutation_typepath.required_structure] chamber to exist!"))
+		to_chat(xenomorph_purchaser, span_warning("此突变需要存在一个[mutation_typepath.required_structure]腔室！"))
 		return FALSE
 	for(var/datum/mutation_upgrade/owned_mutation AS in xenomorph_purchaser.owned_mutations)
 		if(!(mutation_typepath in owned_mutation.conflicting_mutation_types))
 			continue
-		to_chat(xenomorph_purchaser, span_warning("That mutation is not compatible with the mutation: [owned_mutation.name]"))
+		to_chat(xenomorph_purchaser, span_warning("该突变与以下突变不兼容：[owned_mutation.name]"))
 		return FALSE
-	to_chat(xenomorph_purchaser, span_xenonotice("Mutation gained."))
+	to_chat(xenomorph_purchaser, span_xenonotice("获得突变。"))
 	xenomorph_purchaser.do_jitter_animation(500)
 	new mutation_typepath(xenomorph_purchaser) // Everything else in handled during the mutation's New().
 	return TRUE

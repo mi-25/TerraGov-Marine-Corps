@@ -1,5 +1,5 @@
 /obj/effect/spawner/random/engineering
-	name = "Random base engineering spawner"
+	name = "随机基地工程生成器"
 	icon = 'icons/effects/random/engineering.dmi'
 	icon_state = "random_tool"
 	loot = list(
@@ -7,7 +7,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/tool
-	name = "Random Tool"
+	name = "随机工具"
 	icon_state = "random_tool"
 	loot = list(
 		/obj/item/tool/screwdriver,
@@ -19,7 +19,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/technology_scanner
-	name = "Random Scanner"
+	name = "随机扫描仪"
 	icon_state = "random_scanner"
 	loot = list(
 		/obj/item/t_scanner = 4,
@@ -28,7 +28,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/powercell
-	name = "Random Powercell"
+	name = "随机能量电池"
 	icon_state = "random_cell"
 	loot = list(
 		/obj/item/cell = 40,
@@ -53,7 +53,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/pickaxe
-	name = "Random pickaxe spawner"
+	name = "随机镐生成器"
 	icon_state = "random_pickaxe"
 	loot = list(
 		/obj/item/tool/pickaxe = 600,
@@ -63,7 +63,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/shovel
-	name = "Random digging instrument spawner"
+	name = "随机挖掘工具生成器"
 	icon_state = "random_shovel"
 	loot = list(
 		/obj/item/tool/shovel = 700,
@@ -71,7 +71,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/bomb_supply
-	name = "Bomb Supply"
+	name = "爆炸物补给"
 	icon_state = "random_scanner"
 	loot = list(
 		/obj/item/assembly/igniter,
@@ -81,7 +81,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/toolbox
-	name = "Random Toolbox"
+	name = "随机工具箱"
 	icon_state = "random_toolbox"
 	loot = list(
 		/obj/item/storage/toolbox/mechanical = 5,
@@ -112,7 +112,7 @@
 
 
 /obj/effect/spawner/random/engineering/tech_supply
-	name = "Random Tech Supply"
+	name = "随机技术补给"
 	icon_state = "random_cell"
 	spawn_loot_chance = 50
 	loot = list(
@@ -129,7 +129,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/structure/inflatable
-	name = "inflatable spawner"
+	name = "充气式生成器"
 	icon_state = "random_inflatable"
 	spawn_loot_chance = 95
 	loot = list(
@@ -151,7 +151,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/structure/gascan
-	name = "gascan spawner"
+	name = "气罐生成器"
 	icon_state = "random_gascan"
 	spawn_loot_chance = 85
 	spawn_random_offset = TRUE
@@ -160,7 +160,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/structure/handheld_lighting
-	name = "handheld lighting spawner"
+	name = "手持照明生成器"
 	icon_state = "random_lighting"
 	spawn_loot_chance = 80
 	spawn_random_offset = TRUE
@@ -172,7 +172,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/fuelcell
-	name = "Random fuel cell spawner"
+	name = "随机燃料棒生成器"
 	icon_state = "random_fuelcell"
 	spawn_loot_chance = 95
 	loot = list(
@@ -190,7 +190,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/engibelt
-	name = "Random engi belt spawner"
+	name = "随机工程兵腰带生成器"
 	icon_state = "random_engibelt"
 	spawn_loot_chance = 45
 	loot = list(
@@ -209,7 +209,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/cable
-	name = "Random cable spawner"
+	name = "随机电缆生成器"
 	icon_state = "random_cable"
 	spawn_random_offset = TRUE
 	spawn_loot_chance = 90
@@ -221,7 +221,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/metal
-	name = "metal spawner"
+	name = "金属生成器"
 	icon_state = "random_metal"
 	spawn_loot_chance = 80
 	spawn_random_offset = TRUE
@@ -236,7 +236,7 @@
 	spawn_random_offset = FALSE
 
 /obj/effect/spawner/random/engineering/plasteel
-	name = "plasteel spawner"
+	name = "塑钢生成器"
 	icon_state = "random_plasteel"
 	spawn_loot_chance = 75
 	loot = list(
@@ -247,7 +247,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/wood
-	name = "wood spawner"
+	name = "木材生成器"
 	icon_state = "random_wood"
 	spawn_loot_chance = 80
 	spawn_random_offset = TRUE
@@ -257,7 +257,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/glass
-	name = "glass spawner"
+	name = "玻璃生成器"
 	icon_state = "random_glass"
 	spawn_loot_chance = 90
 	loot = list(
@@ -266,7 +266,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/insulatedgloves
-	name = "insulated glove spawner"
+	name = "绝缘手套生成器"
 	icon_state = "random_insuls"
 	spawn_scatter_radius = 1
 	spawn_random_offset = TRUE
@@ -282,7 +282,7 @@
 	spawn_loot_chance = 65
 
 /obj/effect/spawner/random/engineering/radio
-	name = "radio spawner"
+	name = "无线电生成器"
 	icon_state = "random_radio"
 	spawn_loot_chance = 35
 	loot = list(
@@ -294,7 +294,7 @@
 
 
 /obj/effect/spawner/random/engineering/structure/powergenerator
-	name = "generator spawner"
+	name = "生成器生成器"
 	icon_state = "random_generator"
 	spawn_loot_chance = 75
 	loot = list(
@@ -313,7 +313,7 @@
 
 
 /obj/effect/spawner/random/engineering/structure/tank_dispenser
-	name = "tank dispenser spawner"
+	name = "坦克补给机生成器"
 	icon_state = "random_dispenser"
 	loot = list(
 		/obj/structure/dispenser/oxygen,
@@ -333,7 +333,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/structure/tank
-	name = "tank spawner"
+	name = "坦克生成器"
 	icon_state = "random_watertank"
 	loot = list(
 		/obj/structure/reagent_dispensers/fueltank,
@@ -341,7 +341,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/structure/tank/fuelweighted
-	name = "fuel weighted tank spawner"
+	name = "燃料加重型坦克生成器"
 	icon_state = "random_weldtank"
 	loot = list(
 		/obj/structure/reagent_dispensers/fueltank = 8,
@@ -349,7 +349,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/structure/tank/waterweighted
-	name = "water weighted tank spawner"
+	name = "水压配重箱生成器"
 	icon_state = "random_watertank"
 	loot = list(
 		/obj/structure/reagent_dispensers/fueltank = 3,
@@ -357,7 +357,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/structure/atmospherics_portable
-	name = "portable atmospherics machine spawner"
+	name = "便携式大气设备生成器"
 	icon_state = "random_heater"
 	loot = list(
 		/obj/machinery/space_heater = 8,
@@ -373,14 +373,14 @@
 	)
 
 /obj/effect/spawner/random/engineering/computercircuit
-	name = "Random computer circuit spawner"
+	name = "随机电脑电路生成器"
 	icon_state = "random_ccircuit"
 	spawn_loot_chance = 75
 	loot_subtype_path = /obj/item/circuitboard/computer
 	loot = list()
 
 /obj/effect/spawner/random/engineering/structure/random_tank_holder
-	name = "random tankholder spawner"
+	name = "随机坦克乘员生成器"
 	icon_state = "random_tank_holder"
 	loot = list(
 		/obj/structure/tankholder,
@@ -396,7 +396,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/structure/canister
-	name = "air canister spawner"
+	name = "空气罐生成器"
 	icon_state = "random_canister"
 	loot = list(
 		/obj/machinery/portable_atmospherics/canister/air = 4,
@@ -404,20 +404,20 @@
 	)
 
 /obj/effect/spawner/random/engineering/assemblies
-	name = "random assembly spawner"
+	name = "随机装配生成器"
 	icon_state = "random_assembly"
 	loot_subtype_path = /obj/item/assembly
 	loot = list()
 
 /obj/effect/spawner/random/engineering/mineral
-	name = "mineral spawner"
+	name = "矿物生成器"
 	icon_state = "random_mineral"
 	spawn_loot_chance = 70
 	loot_subtype_path = /obj/item/stack/sheet/mineral
 	loot = list()
 
 /obj/effect/spawner/random/engineering/extinguisher
-	name = "extinguisher spawner"
+	name = "灭火器生成器"
 	icon_state = "random_extinguisher"
 	spawn_loot_chance = 95
 	loot = list(
@@ -426,7 +426,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/extinguisher/regularweighted
-	name = "extinguisher spawner"
+	name = "灭火器生成器"
 	spawn_loot_chance = 95
 	loot = list(
 		/obj/item/tool/extinguisher = 10,
@@ -434,7 +434,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/extinguisher/miniweighted
-	name = "extinguisher spawner"
+	name = "灭火器生成器"
 	spawn_loot_chance = 95
 	icon_state = "random_extinguisher_mini"
 	loot = list(
@@ -443,7 +443,7 @@
 	)
 
 /obj/effect/spawner/random/engineering/ore_box
-	name = "ore box spawner"
+	name = "矿石箱生成器"
 	icon_state = "random_orebox"
 	spawn_loot_chance = 40
 	loot = list(

@@ -1,8 +1,8 @@
 
 
 /obj/item/storage/belt
-	name = "belt"
-	desc = "Can hold various things."
+	name = "腰带"
+	desc = "可容纳多种物品。"
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "utilitybelt"
 	worn_icon_state = "utility"
@@ -26,8 +26,8 @@
 	return user.equip_to_appropriate_slot(src)
 
 /obj/item/storage/belt/champion
-	name = "championship belt"
-	desc = "Proves to the world that you are the strongest!"
+	name = "冠军腰带"
+	desc = "向世界证明你是最强的！"
 	icon_state = "championbelt"
 	worn_icon_state = "champion"
 	storage_type = /datum/storage/belt/champion
@@ -36,8 +36,8 @@
 =======================================================================*/
 
 /obj/item/storage/belt/utility
-	name = "\improper M276 pattern toolbelt rig" //Carn: utility belt is nicer, but it bamboozles the text parsing.
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version lacks any combat functionality, and is commonly used by engineers to transport important tools."
+	name = "\improper M276型工具带携行具" //Carn: utility belt is nicer, but it bamboozles the text parsing.
+	desc = "M276是地球政府殖民地海军陆战队的标准负重装备。它由一个模块化腰带和各种夹扣组成。此版本不具备任何战斗功能，通常由工程兵用于运输重要工具。"
 	icon_state = "utilitybelt"
 	worn_icon_state = "utility"
 	storage_type = /datum/storage/belt/utility
@@ -61,15 +61,15 @@
 	new /obj/item/t_scanner(src)
 
 /obj/item/storage/belt/medical_small
-	name = "\improper M276 pattern light medical rig"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This lightweight configuration is often used for bulk carrying of medical supplies by marines."
+	name = "\improper M276型轻型医疗携行具"
+	desc = "M276是地球政府殖民地海军陆战队的标准承载装备。它由一个带有各种夹扣的模块化腰带组成。这种轻量配置常被陆战队员用于大量携带医疗物资。"
 	icon_state = "medicalbelt_small"
 	worn_icon_state = "medicbag"
 	storage_type = /datum/storage/belt/medical_small
 
 /obj/item/storage/belt/lifesaver
-	name = "\improper M276 pattern lifesaver bag"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. This configuration mounts a duffel bag filled with a range of injectors and light medical supplies and is common among medics."
+	name = "\improper M276型救生包"
+	desc = "M276是地球政府殖民地海军陆战队的标准承载装备。此配置挂载一个装有多种注射器和轻型医疗用品的帆布袋，常见于卫生兵。"
 	icon_state = "medicalbag"
 	worn_icon_state = "medicbag"
 	storage_type = /datum/storage/belt/lifesaver
@@ -147,15 +147,15 @@
 	new /obj/item/healthanalyzer(src)
 
 /obj/item/storage/belt/lifesaver/full/upp
-	name ="\improper Type 41 pattern lifesaver bag"
-	desc = "The Type 41 load rig is the standard-issue LBE of the UPP military. This configuration mounts a satchel filled with a range of injectors and light medical supplies, common among medics and partisans."
+	name ="\improper 41型救生袋"
+	desc = "Type 41 携行具是 UPP 军队的标准配发 LBE。此配置挂载一个装有多种注射器和轻型医疗用品的挎包，常见于卫生兵和游击队员。"
 	icon_state = "medicbag_upp"
 	worn_icon_state = "medicbag_upp"
 
 
 /obj/item/storage/belt/lifesaver/som
-	name = "\improper S17 lifesaver bag"
-	desc = "A belt with heavy origins from the belt used by paramedics and doctors in the old mining colonies."
+	name = "\improper S17 救生包"
+	desc = "一条源自旧时采矿殖民地医护人员所用腰带的厚重腰带。"
 	icon_state = "medicbag_som"
 	worn_icon_state = "medicbag_som"
 
@@ -206,8 +206,8 @@
 	new /obj/item/healthanalyzer(src)
 
 /obj/item/storage/belt/lifesaver/icc
-	name = "\improper Modelle/129 lifesaver bag"
-	desc = "A medical belt made from synthetic tan fibres, carries just about anything you would need to respond to traumatic injury in combat."
+	name = "\improper 莫德尔/129 救生袋"
+	desc = "一条由合成棕褐色纤维制成的医疗腰带，几乎能装下你在战斗中处理创伤所需的一切物品。"
 	icon_state = "medicbag_icc"
 	worn_icon_state = "medicbag_icc"
 
@@ -235,8 +235,8 @@
 	new /obj/item/healthanalyzer(src)
 
 /obj/item/storage/belt/rig
-	name = "\improper M276 pattern medical storage rig"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version is a less common configuration, designed to transport medical supplies and heavier medical tools."
+	name = "\improper M276型医疗存储背心"
+	desc = "M276是地球政府殖民地海军陆战队的标准承载装备。它由一个模块化腰带和各种夹扣组成。这个版本是一种较少见的配置，专为运输医疗物资和较重的医疗工具而设计。"
 	icon_state = "medicalbelt"
 	worn_icon_state = "medical"
 	storage_type = /datum/storage/belt/rig
@@ -280,8 +280,8 @@
 	new /obj/item/healthanalyzer(src)
 
 /obj/item/storage/belt/hypospraybelt
-	name = "\improper M276 pattern hypospray belt"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version is a less common configuration, designed to transport hyposprays and reagent containers. You could probably fit a syringe case too."
+	name = "\improper M276型皮下注射器腰带"
+	desc = "M276是地球政府殖民地海军陆战队的标准负重装备。它由一条模块化腰带和各种夹扣组成。这个版本是一种不太常见的配置，设计用于携带注射器和试剂容器。你或许也能放进去一个注射器盒。"
 	icon_state = "hypospraybelt"
 	worn_icon_state = "medicbag"
 	storage_type = /datum/storage/belt/hypospraybelt
@@ -331,22 +331,22 @@
 
 
 /obj/item/storage/belt/security
-	name = "\improper M276 pattern security rig"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This configuration is commonly seen among TGMC Military Police and peacekeepers, though it can hold some light munitions."
+	name = "\improper M276型安保外骨骼"
+	desc = "M276是地球政府殖民地海军陆战队的标准负重装备。它由一个模块化腰带和各种夹扣组成。这种配置常见于地球政府殖民地海军陆战队宪兵和维和人员，不过也能携带一些轻型弹药。"
 	icon_state = "securitybelt"
 	worn_icon_state = "security"//Could likely use a better one.
 	storage_type = /datum/storage/belt/security
 
 /obj/item/storage/belt/security/tactical
-	name = "combat belt"
-	desc = "Can hold security gear like handcuffs and flashes, with more pouches for more storage."
+	name = "战斗腰带"
+	desc = "可存放手铐和闪光弹等安保装备，附包越多，存储空间越大。"
 	icon_state = "swatbelt"
 	worn_icon_state = "swatbelt"
 	storage_type = /datum/storage/belt/security/tactical
 
 /obj/item/storage/belt/marine
-	name = "\improper M276 pattern ammo load rig"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version is the standard variant designed for bulk ammunition-carrying operations."
+	name = "\improper M276型弹药装载背心"
+	desc = "M276是地球政府殖民地海军陆战队的标准承载装备。它由一个模块化腰带和各种弹夹组成。此版本是为大量弹药携带行动设计的标准型号。"
 	icon_state = "marinebelt"
 	worn_icon_state = "marinebelt"
 	w_class = WEIGHT_CLASS_BULKY
@@ -473,8 +473,8 @@
 	new /obj/item/ammo_magazine/rifle/standard_smarttargetrifle(src)
 
 /obj/item/storage/belt/marine/upp
-	name = "\improper Type 41 pattern load rig"
-	desc = "The Type 41 load rig is the standard-issue LBE of the USL pirates. The primary function of this belt is to provide easy access to mags for the Type 71 during operations. Despite being designed for the Type 71 weapon system, the pouches are modular enough to fit other types of ammo and equipment."
+	name = "\improper 41式装弹携行具"
+	desc = "41型装载带是联合太空鳞翅目海盗的标准配发LBE。这条腰带的主要功能是在行动中为71型武器提供便捷的弹匣取用。尽管专为71型武器系统设计，但其附包采用模块化设计，足以容纳其他类型的弹药和装备。"
 	icon_state = "upp_belt"
 	worn_icon_state = "upp_belt"
 
@@ -488,8 +488,8 @@
 	new /obj/item/ammo_magazine/rifle/type71(src)
 
 /obj/item/storage/belt/marine/som
-	name = "\improper S18 ammo belt"
-	desc = "A belt with origins traced to the M276 ammo belt and some old colony security."
+	name = "\improper S18 弹药带"
+	desc = "一条可追溯至M276弹药腰带和某些旧殖民地安保装备的腰带。"
 	icon_state = "som_belt"
 	worn_icon_state = "som_belt"
 
@@ -566,20 +566,20 @@
 	new /obj/item/ammo_magazine/rifle/mpi_km/carbine/black(src)
 
 /obj/item/storage/belt/marine/icc
-	name = "\improper Modello/120 ammo belt"
-	desc = "A belt purpose made to carry ammo, made with a tan synthetic fibre."
+	name = "\improper 120发弹链"
+	desc = "一条专为携带弹药设计的腰带，采用棕褐色合成纤维制成。"
 	icon_state = "icc_belt"
 
 /obj/item/storage/belt/marine/sectoid
-	name = "\improper strange ammo belt"
-	desc = "A belt made of a strong but unusual fabric, with clips to hold your equipment."
+	name = "\improper 奇怪的弹药带"
+	desc = "一条由坚固但特殊面料制成的腰带，带有用于固定装备的夹扣。"
 	icon_state = "swatbelt"
 	worn_icon_state = "swatbelt"
 	storage_type = /datum/storage/belt/marine/sectoid
 
 /obj/item/storage/belt/shotgun
-	name = "\improper shotgun shell load rig"
-	desc = "An ammunition belt designed to hold shotgun shells or individual bullets."
+	name = "\improper 霰弹枪弹壳装载带"
+	desc = "一种设计用于容纳霰弹枪弹壳或单发弹道子弹的弹药带。"
 	icon_state = "shotgunbelt"
 	worn_icon_state = "shotgunbelt"
 	w_class = WEIGHT_CLASS_BULKY
@@ -592,15 +592,15 @@
 			return ..()
 		if(M.magazine_flags & MAGAZINE_REFILLABLE)
 			if(!M.current_rounds)
-				to_chat(user, span_warning("[M] is empty."))
+				to_chat(user, span_warning("[M] 为空。"))
 				return
 
 			if(length(contents) >= storage_datum.storage_slots)
-				to_chat(user, span_warning("[src] is full."))
+				to_chat(user, span_warning("[src]已满。"))
 				return
 
 
-			to_chat(user, span_notice("You start refilling [src] with [M]."))
+			to_chat(user, span_notice("你开始用[M]重新装填[src]。"))
 			if(!do_after(user, 1.5 SECONDS, NONE, src, BUSY_ICON_GENERIC))
 				return
 
@@ -610,7 +610,7 @@
 					break
 
 			playsound(user.loc, SFX_RUSTLE, 15, TRUE, 6)
-			to_chat(user, span_notice("You refill [src] with [M]."))
+			to_chat(user, span_notice("你将[src]重新装填了[M]。"))
 			return TRUE
 
 	return ..()
@@ -650,7 +650,7 @@
 	new /obj/item/ammo_magazine/handful/flechette(src)
 
 /obj/item/storage/belt/shotgun/som
-	desc = "An ammunition belt designed to hold shotgun shells or individual bullets. Made with traditional SOM leather."
+	desc = "专为容纳霰弹枪弹或单发弹道弹药设计的弹药带。采用传统的火星之子皮革制成。"
 	icon_state = "shotgunbelt_som"
 
 /obj/item/storage/belt/shotgun/som/flechette/Initialize(mapload, ...)
@@ -688,8 +688,8 @@
 	new /obj/item/ammo_magazine/handful/flechette(src)
 
 /obj/item/storage/belt/shotgun/icc
-	name = "\improper Modelle/121 shell load rig"
-	desc = "An ammunition belt designed to hold shotgun shells or individual bullets, made with a synthetic tan fibre."
+	name = "\improper 莫德尔/121型 霰弹装弹带"
+	desc = "一条设计用于容纳霰弹枪弹或单发弹道的弹药带，采用合成棕褐色纤维制成。"
 	icon_state = "shotgunbelt_icc"
 
 /obj/item/storage/belt/shotgun/icc/flechette/Initialize(mapload, ...)
@@ -727,8 +727,8 @@
 	new /obj/item/ammo_magazine/handful/barrikada(src)
 
 /obj/item/storage/belt/shotgun/martini
-	name = "martini henry ammo belt"
-	desc = "A belt good enough for holding all your .577/400 ball rounds."
+	name = "马提尼-亨利弹药带"
+	desc = "一条足以容纳你所有 .577/400 球形弹的腰带。"
 	icon_state = "martini_belt"
 	atom_flags = DIRLOCK
 	storage_type = /datum/storage/belt/shotgun/martini
@@ -744,7 +744,7 @@
 
 	var/obj/item/ammo_magazine/new_mag = I
 	if(new_mag.caliber != CALIBER_557)
-		to_chat(user, span_notice("[src] can only be filled with .557/440 ball rifle rounds."))
+		to_chat(user, span_notice("[src]只能装填.557/440步枪弹。"))
 		return
 
 	return ..()
@@ -793,8 +793,8 @@
 	new /obj/item/ammo_magazine/handful/martini(src)
 
 /obj/item/storage/belt/knifepouch
-	name="\improper M276 pattern knife rig"
-	desc="The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version is specially designed with six holsters to store throwing knives. Not commonly issued, but kept in service."
+	name="\improper M276型刀套"
+	desc="M276是地球政府殖民地海军陆战队的标准承载装备。它由一个带有各种夹扣的模块化腰带组成。此版本专门设计有六个枪套，用于存放飞刀。不常配发，但仍在服役。"
 	icon_state="knifebelt"
 	worn_icon_state="knifebelt"
 	storage_type = /datum/storage/belt/knifepouch
@@ -808,8 +808,8 @@
 	new /obj/item/stack/throwing_knife(src)
 
 /obj/item/storage/belt/grenade
-	name="\improper M276 pattern M40 HEDP rig"
-	desc="The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version is designed to carry bulk quantities of M40 HEDP Grenades."
+	name="\improper M276型M40高爆双用途弹携行具"
+	desc="M276是TGMC的标准负重装备。它由一个带有多个夹扣的模块化腰带组成。此版本设计用于携带大量M40 HEDP手雷。"
 	icon_state="grenadebelt"
 	worn_icon_state="grenadebelt"
 	w_class = WEIGHT_CLASS_BULKY
@@ -826,8 +826,8 @@
 	new /obj/item/explosive/grenade(src)
 
 /obj/item/storage/belt/grenade/som
-	name = "\improper S16 pattern grenade rig"
-	desc = "A simple harness system available in many configurations. This version is designed to carry bulk quantities of grenades."
+	name = "\improper S16型手雷携行具"
+	desc = "一种简单的携行系统，有多种配置可选。此版本专为携带大量手雷而设计。"
 	icon_state = "grenadebelt_som"
 
 /obj/item/storage/belt/grenade/som/standard/PopulateContents()
@@ -841,7 +841,7 @@
 	new /obj/item/explosive/grenade/som(src)
 
 /obj/item/storage/belt/grenade/b17
-	name = "\improper M276 pattern M40 HEDP rig Mk II"
+	name = "\improper M276型M40高爆双用途榴弹携行具Mk II型"
 	w_class = WEIGHT_CLASS_BULKY
 	storage_type = /datum/storage/belt/grenade/b17
 
@@ -864,22 +864,22 @@
 	new /obj/item/explosive/grenade(src)
 
 /obj/item/storage/belt/sparepouch
-	name = "\improper G8 general utility pouch"
-	desc = "A small, lightweight pouch that can be clipped onto Armat Systems M3 Pattern armor or your belt to provide additional storage for miscellaneous gear or box and drum magazines."
+	name = "\improper G8通用附包"
+	desc = "一个小型轻量附包，可固定在阿玛特系统M3型护甲或腰带上，为杂项装备或盒式与弹鼓弹匣提供额外存储空间。"
 	w_class = WEIGHT_CLASS_BULKY
 	icon_state = "sparepouch"
 	worn_icon_state = "sparepouch"
 	storage_type = /datum/storage/belt/sparepouch
 
 /obj/item/storage/belt/sparepouch/som
-	name = "standard utility pouch"
-	desc = "A small, lightweight pouch that can be clipped onto armor or your belt to provide additional storage for miscellaneous gear or box and drum magazines. Made from genuine SOM leather."
+	name = "标准通用附包"
+	desc = "一个轻便小巧的附包，可固定在护甲或腰带上，为杂物或弹匣/弹鼓提供额外存储空间。采用正宗火星之子皮革制成。"
 	icon_state = "sparepouch_som"
 	worn_icon_state = "som_belt"
 
 /obj/item/storage/belt/protein_pack
-	name = "\improper protein pack load rig"
-	desc = "A storage belt designed to hold mass amounts of protein packs for those particuarly hungry marines."
+	name = "\improper 蛋白质包装载装置"
+	desc = "专为那些特别饥饿的陆战队员设计的存储腰带，可容纳大量蛋白质包。"
 	icon_state = "p_belt"
 	worn_icon_state = "shotgunbelt"
 	storage_type = /datum/storage/belt/protein_pack

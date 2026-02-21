@@ -8,8 +8,8 @@
 
 
 /obj/machinery/door/firedoor
-	name = "\improper Emergency Shutter"
-	desc = "Emergency air-tight shutter, capable of sealing off breached areas."
+	name = "\improper 紧急防护闸"
+	desc = "紧急气密闸门，能够封闭破损区域。"
 	icon = 'icons/obj/doors/DoorHazard.dmi'
 	icon_state = "door_open"
 	req_one_access = list(ACCESS_CIVILIAN_ENGINEERING)
@@ -123,26 +123,26 @@
 
 	var/turf/cur_loc = xeno_attacker.loc
 	if(blocked)
-		to_chat(xeno_attacker, span_warning("\The [src] is welded shut."))
+		to_chat(xeno_attacker, span_warning("\The [src] 已被焊接密封。"))
 		return FALSE
 	if(!istype(cur_loc))
 		return FALSE //Some basic logic here
 	if(!density)
-		to_chat(xeno_attacker, span_warning("\The [src] is already open!"))
+		to_chat(xeno_attacker, span_warning("\The [src] 已经打开了！"))
 		return FALSE
 
 	playsound(loc, 'sound/effects/metal_creaking.ogg', 25, 1)
-	xeno_attacker.visible_message(span_warning("\The [xeno_attacker] digs into \the [src] and begins to pry it open."), \
+	xeno_attacker.visible_message(span_warning("\The [xeno_attacker] 开始挖掘并试图撬开 \the [src]。"), \
 	span_warning("We dig into \the [src] and begin to pry it open."), null, 5)
 
 	if(do_after(xeno_attacker, 30, IGNORE_HELD_ITEM, src, BUSY_ICON_BUILD))
 		if(blocked)
-			to_chat(xeno_attacker, span_warning("\The [src] is welded shut."))
+			to_chat(xeno_attacker, span_warning("\The [src] 已被焊死。"))
 			return FALSE
 		if(density) //Make sure it's still closed
 			spawn(0)
 				open(1)
-				xeno_attacker.visible_message(span_danger("\The [xeno_attacker] pries \the [src] open."), \
+				xeno_attacker.visible_message(span_danger("\The [xeno_attacker] 撬开了 \the [src]。"), \
 				span_danger("We pry \the [src] open."), null, 5)
 
 /obj/machinery/door/firedoor/attack_hand(mob/living/user)
@@ -153,7 +153,7 @@
 		return//Already doing something.
 
 	if(blocked)
-		to_chat(user, span_warning("\The [src] is welded solid!"))
+		to_chat(user, span_warning("\The [src] 已被焊死！"))
 		return
 
 	var/alarmed = lockdown
@@ -166,14 +166,14 @@
 	if(answer == "No" || !answer)
 		return
 	if(user.incapacitated() || (!user.canmove && !isAI(user)) || (get_dist(src, user) > 1  && !isAI(user)))
-		to_chat(user, "Sorry, you must remain able bodied and close to \the [src] in order to use it.")
+		to_chat(user, "抱歉，你必须保持行动能力并靠近\the [src]才能使用它。")
 		return
 	if(density && (machine_stat & (BROKEN|NOPOWER))) //can still close without power
-		to_chat(user, "\The [src] is not functioning, you'll have to force it open manually.")
+		to_chat(user, "\The [src] 无法正常运作，你必须手动强行打开它。")
 		return
 
 	if(alarmed && density && lockdown && !allowed(user))
-		to_chat(user, span_warning("Access denied.  Please wait for authorities to arrive, or for the alert to clear."))
+		to_chat(user, span_warning("访问被拒绝。请等待当局抵达，或等待警报解除。"))
 		return
 	else
 		user.visible_message(span_notice("\The [src] [density ? "open" : "close"]s for \the [user]."),\
@@ -215,7 +215,7 @@
 
 		balloon_alert_to_viewers("[blocked ? "unwelding" : "welding"]...")
 		if(!do_after(user, 3 SECONDS, NONE, src, BUSY_ICON_GENERIC))
-			balloon_alert_to_viewers("interrupted!")
+			balloon_alert_to_viewers("中断！")
 			return
 
 		blocked = !blocked
@@ -226,7 +226,7 @@
 		update_icon()
 
 	else if(blocked)
-		user.visible_message(span_danger("\The [user] pries at \the [src] with \a [I], but \the [src] is welded in place!"),\
+		user.visible_message(span_danger("\The [user] 试图用 \a [I] 撬开 \the [src]，但 \the [src] 被焊死了！"),\
 		"You try to pry \the [src] [density ? "open" : "closed"], but it is welded in place!",\
 		"You hear someone struggle and metal straining.")
 
@@ -313,8 +313,8 @@
 			. += "welded_open"
 
 /obj/machinery/door/firedoor/mainship
-	name = "\improper Emergency Shutter"
-	desc = "Emergency air-tight shutter, capable of sealing off breached areas."
+	name = "\improper 紧急防护闸"
+	desc = "紧急气密闸门，能够封闭破损区域。"
 	icon = 'icons/obj/doors/mainship/purinadoor.dmi'
 	icon_state = "door_open"
 	openspeed = 4

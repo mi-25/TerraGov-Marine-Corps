@@ -59,7 +59,7 @@
 
 /** INTERNAL BLEEDING **/
 /datum/wound/internal_bleeding
-	desc = "damaged artery"
+	desc = "受损的动脉"
 	autoheal_cutoff = 0
 
 /datum/wound/internal_bleeding/process()

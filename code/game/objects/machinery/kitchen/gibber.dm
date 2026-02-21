@@ -1,7 +1,7 @@
 
 /obj/machinery/gibber
-	name = "Gibber"
-	desc = "The name isn't descriptive enough?"
+	name = "胡言乱语"
+	desc = "这名字描述得不够清楚吗？"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "grinder"
 	anchored = TRUE
@@ -46,7 +46,7 @@
 	if(.)
 		return
 	if(operating)
-		to_chat(user, span_warning("It's locked and running"))
+		to_chat(user, span_warning("它已锁定并正在运行"))
 		return
 
 	activate_gibber(user)
@@ -55,24 +55,24 @@
 	if(!is_operational())
 		return ..()
 	if(occupant)
-		to_chat(user, span_warning("The gibber is full, empty it first!"))
+		to_chat(user, span_warning("碎肉机已满，请先清空！"))
 		return
 	var/mob/living/grabbed_mob = grab.grabbed_thing
 	if(!iscarbon(grabbed_mob) && !istype(grabbed_mob, /mob/living/simple_animal))
-		to_chat(user, span_warning("This item is not suitable for the gibber!"))
+		to_chat(user, span_warning("此物品不适合放入碎物机！"))
 		return
 	if(user.grab_state < GRAB_AGGRESSIVE)
-		to_chat(user, span_warning("You need a better grip to do that!"))
+		to_chat(user, span_warning("你需要握得更稳才能做到！"))
 		return
 	if(grabbed_mob.abiotic(TRUE))
-		to_chat(user, span_warning("Subject may not have abiotic items on."))
+		to_chat(user, span_warning("受试者不得穿戴非生化物品。"))
 		return
-	user.visible_message(span_danger("[user] starts to put [grabbed_mob] into the gibber!"))
+	user.visible_message(span_danger("[user]开始将[grabbed_mob]放入绞肉机！"))
 
 	if(!do_after(user, 30, NONE, grabbed_mob, BUSY_ICON_DANGER) || QDELETED(src) || occupant)
 		return
 
-	user.visible_message(span_danger("[user] stuffs [grabbed_mob] into the gibber!"))
+	user.visible_message(span_danger("[user] 把 [grabbed_mob] 塞进了碎肉机！"))
 	grabbed_mob.forceMove(src)
 	occupant = grabbed_mob
 	update_icon()
@@ -105,10 +105,10 @@
 	if(operating)
 		return
 	if(!occupant)
-		visible_message(span_warning("You hear a loud metallic grinding sound."))
+		visible_message(span_warning("你听到一阵响亮的金属摩擦声。"))
 		return
 	use_power(active_power_usage)
-	visible_message(span_warning("You hear a loud squelchy grinding sound."))
+	visible_message(span_warning("你听到一阵响亮的黏糊糊的研磨声。"))
 	playsound(loc, 'sound/machines/juicer.ogg', 50, TRUE)
 	operating = TRUE
 	update_icon()
@@ -218,11 +218,11 @@
 	if(internal_beaker)
 		return
 	if(!istype(I, /obj/item/reagent_containers/glass/beaker))
-		balloon_alert(user, "not a beaker!")
+		balloon_alert(user, "不是烧杯！")
 		return
 	user.transferItemToLoc(I, src)
 	internal_beaker = I
-	balloon_alert(user, "beaker added")
+	balloon_alert(user, "烧杯已添加")
 
 /obj/machinery/gibber/apc/interact(mob/user)
 	. = ..()
@@ -239,6 +239,6 @@
 
 /obj/machinery/gibber/apc/grab_interact(obj/item/grab/grab, mob/user, base_damage = BASE_OBJ_SLAM_DAMAGE, is_sharp = FALSE)
 	if(HAS_TRAIT(grab.grabbed_thing, TRAIT_MAPSPAWNED))
-		balloon_alert(user, "bad meat!")
+		balloon_alert(user, "烂肉！")
 		return FALSE
 	return ..()

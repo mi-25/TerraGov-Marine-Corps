@@ -3,7 +3,7 @@
 
 //Base SOM standard outfit
 /datum/outfit/job/som/ert/standard
-	name = "SOM Marine"
+	name = "火星之子陆战队员"
 	jobtype = /datum/job/som/ert/standard
 
 	ears = /obj/item/radio/headset/distress/som
@@ -113,7 +113,7 @@
 
 //Base SOM medic outfit
 /datum/outfit/job/som/ert/medic
-	name = "SOM Medic"
+	name = "火星之子医疗兵"
 	jobtype = /datum/job/som/ert/medic
 
 	belt = /obj/item/storage/belt/lifesaver/som/quick
@@ -201,7 +201,7 @@
 
 //Base SOM veteran outfit
 /datum/outfit/job/som/ert/veteran
-	name = "SOM Veteran"
+	name = "火星之子老兵"
 	jobtype = /datum/job/som/ert/veteran
 
 	belt = /obj/item/storage/belt/marine/som/volkite
@@ -418,7 +418,7 @@
 
 //Base SOM leader outfit
 /datum/outfit/job/som/ert/leader
-	name = "SOM Leader"
+	name = "火星之子领袖"
 	jobtype = /datum/job/som/ert/leader
 
 	belt = /obj/item/storage/belt/marine/som/volkite

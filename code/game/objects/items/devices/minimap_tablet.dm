@@ -6,8 +6,8 @@ GLOBAL_PROTECT(roles_allowed_minimap_draw)
 #define MINIMAP_DRAW_OFFSET 8
 
 /obj/item/minimap_tablet
-	name = "minimap tablet"
-	desc = "A drawing tablet with included touch pen. While high command may treat you like a child, being able to plan effectively might be a worthy trade."
+	name = "迷你地图平板"
+	desc = "一块带触摸笔的绘图板。虽然高层指挥部可能把你当小孩看待，但能有效规划作战或许是个值得的交换。"
 	icon_state = "req_tablet_off"
 	/// List of references to the tools we will be using to shape what the map looks like
 	var/list/atom/movable/screen/drawing_tools = list(
@@ -44,10 +44,10 @@ GLOBAL_PROTECT(roles_allowed_minimap_draw)
 	if(!user.client)
 		return
 	if(user.skills.getRating(SKILL_LEADERSHIP) < SKILL_LEAD_EXPERT)
-		user.balloon_alert(user, "can't use that!")
+		user.balloon_alert(user, "无法使用！")
 		return
 	if(is_banned_from(user.client.ckey, GLOB.roles_allowed_minimap_draw))
-		to_chat(user, span_warning("You have been banned from a command role. You may not use [src] until the ban has been lifted."))
+		to_chat(user, span_warning("你已被禁止担任指挥职务。在禁令解除前，你无法使用[src]。"))
 		return
 	var/atom/movable/screen/minimap/mini = SSminimaps.fetch_minimap_object(editing_z, minimap_flag)
 	if(locate(mini) in user.client.screen)
@@ -136,7 +136,7 @@ GLOBAL_PROTECT(roles_allowed_minimap_draw)
 
 /atom/movable/screen/minimap_tool/draw_tool
 	icon_state = "draw"
-	desc = "Draw using a color. Drag to draw a line, right click to place a dot. Right click this button to unselect."
+	desc = "使用颜色绘制。拖动绘制线条，右键单击放置点。右键单击此按钮取消选择。"
 	// color that this draw tool will be drawing in
 	color = COLOR_PINK
 	var/list/last_drawn
@@ -262,14 +262,14 @@ GLOBAL_PROTECT(roles_allowed_minimap_draw)
 
 /atom/movable/screen/minimap_tool/draw_tool/erase
 	icon_state = "erase"
-	desc = "Drag to erase a line, right click to erase a dot. Right click this button to unselect."
+	desc = "拖动以擦除线条，右键点击以擦除点。右键点击此按钮以取消选择。"
 	active_mouse_icon = 'icons/UI_Icons/minimap_mouse/draw_erase.dmi'
 	screen_loc = "16,10"
 	color = null
 
 /atom/movable/screen/minimap_tool/label
 	icon_state = "label"
-	desc = "Click to place a label. Rightclick a label to remove it. Right click this button to remove all labels."
+	desc = "点击放置标签。右键点击标签可移除。右键点击此按钮可移除所有标签。"
 	active_mouse_icon = 'icons/UI_Icons/minimap_mouse/label.dmi'
 	screen_loc = "16,8"
 	/// List of turfs that have labels attached to them. kept around so it can be cleared
@@ -321,7 +321,7 @@ GLOBAL_PROTECT(roles_allowed_minimap_draw)
 	var/label_text = MAPTEXT(tgui_input_text(source, title = "Label Name", max_length = 35))
 	var/filter_result = CAN_BYPASS_FILTER(user) ? null : is_ic_filtered(label_text)
 	if(filter_result)
-		to_chat(source, span_warning("That label contained a word prohibited in IC chat! Consider reviewing the server rules.\n<span replaceRegex='show_filtered_ic_chat'>\"[label_text]\"</span>"))
+		to_chat(source, span_warning("该标签包含IC聊天中禁止的词汇！请考虑查阅服务器规则。\n<span replaceRegex='show_filtered_ic_chat'>'[label_text]'</span>"))
 		SSblackbox.record_feedback(FEEDBACK_TALLY, "ic_blocked_words", 1, lowertext(config.ic_filter_regex.match))
 		REPORT_CHAT_FILTER_TO_USER(src, filter_result)
 		log_filter("IC", label_text, filter_result)
@@ -346,7 +346,7 @@ GLOBAL_PROTECT(roles_allowed_minimap_draw)
 
 /atom/movable/screen/minimap_tool/clear
 	icon_state = "clear"
-	desc = "Remove all current labels and drawings."
+	desc = "移除所有当前标签和绘图。"
 	screen_loc = "16,9"
 
 /atom/movable/screen/minimap_tool/clear/Click()

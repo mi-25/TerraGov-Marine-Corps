@@ -38,7 +38,7 @@ export const CharacterCustomization = (props) => {
 
   const rgbToHex = (red, green, blue) => {
     const convert = (comp) => {
-      const hex = comp.toString(16);
+      const hex = (comp ?? 0).toString(16);
       return hex.length === 1 ? `0${hex}` : hex;
     };
     return '#' + convert(red) + convert(green) + convert(blue);

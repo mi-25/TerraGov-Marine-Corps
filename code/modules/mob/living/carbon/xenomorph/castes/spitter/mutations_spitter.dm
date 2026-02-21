@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/acid_sweat
 	name = "Acid Sweat"
-	desc = "If you are on fire, consume 20/15/10 plasma to extinguish yourself and any fire under you. This only can occur every 1 second."
+	desc = "如果你身上着火，消耗20/15/10等离子体来扑灭你自身以及你下方的火焰。此操作每1秒只能进行一次。"
 	/// For the first structure, the amount of plasma consumed.
 	var/cost_initial = 25
 	/// For each structure, the additional amount of plasma consumed.
@@ -63,7 +63,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/hit_and_run
 	name = "Hit and Run"
-	desc = "Scatter Spit's cast time is 60/40/20% of its original amount. It no longer deals bonus damage."
+	desc = "散射唾液的施法时间是原来的60/40/20%。它不再造成额外伤害。"
 	/// For the first structure, the multiplier used to add to Scatter Spit's cast time.
 	var/cast_multiplier_initial = -0.2
 	/// For each structure, the multiplier used to add to Scatter Spit's cast time.
@@ -106,7 +106,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/wet_claws
 	name = "Wet Claws"
-	desc = "Slashing humans will reduce their fire stacks by 1/2/3."
+	desc = "斩击人类将减少其火焰层数1/2/3点。"
 	/// For each structure, the amount of fire stacks to add.
 	var/stacks_per_structure = -1
 

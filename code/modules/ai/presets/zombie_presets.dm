@@ -69,7 +69,7 @@
 	ai_type = /datum/ai_behavior/xeno/zombie/patrolling
 
 /obj/effect/zombie_pack
-	name = "spawns a pack of zombies, plus a leader"
+	name = "生成一群僵尸，外加一个首领"
 	///Leader zombie typepath
 	var/leader_type = /mob/living/carbon/human/species/zombie/ai/patrol
 	///Minion zombie typepath

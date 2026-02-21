@@ -1,5 +1,5 @@
 /datum/asset/json/supply_packs
-	name = "supply_packs"
+	name = "补给包"
 	cross_round_cachable = TRUE
 
 /datum/asset/json/supply_packs/generate()

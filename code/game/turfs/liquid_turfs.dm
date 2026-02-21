@@ -1,5 +1,5 @@
 /turf/open/liquid //Basic liquid turf parent
-	name = "liquid"
+	name = "液体"
 	icon = 'icons/turf/ground_map.dmi'
 	can_bloody = FALSE
 	allow_construction = FALSE
@@ -73,7 +73,7 @@
 	living_target.next_move_slowdown += (living_target.get_liquid_slowdown() * slowdown_multiplier)
 
 /turf/open/liquid/water
-	name = "river"
+	name = "河流"
 	icon_state = "seashallow"
 	shoefootstep = FOOTSTEP_WATER
 	barefootstep = FOOTSTEP_WATER
@@ -104,11 +104,11 @@
 		carbon_mob.ExtinguishMob()
 
 /turf/open/liquid/water/sea
-	name = "water"
+	name = "水"
 	icon_state = "seadeep"
 
 /turf/open/liquid/water/river
-	name = "river"
+	name = "河流"
 	smoothing_groups = list(
 		SMOOTH_GROUP_RIVER,
 	)
@@ -153,7 +153,7 @@
 
 //Desert River
 /turf/open/liquid/water/river/desertdam
-	name = "river"
+	name = "河流"
 	icon = 'icons/turf/desertdam_map.dmi'
 
 //shallow water
@@ -208,8 +208,8 @@
 // desert dam turf that doesnt make you sink when ya step on it
 ww
 /turf/open/liquid/water/river/desertdam/notliquid
-	name = "shallow river"
-	desc = "It looks shallow enough to walk in with ease."
+	name = "浅滩"
+	desc = "看起来水很浅，可以轻松涉水而过。"
 	icon = 'icons/turf/desertdam_map.dmi'
 	mob_liquid_height = 0
 	mob_liquid_depth = 0
@@ -259,7 +259,7 @@ ww
 
 // LAVA
 /turf/open/liquid/lava
-	name = "lava"
+	name = "熔岩"
 	icon = 'icons/turf/lava.dmi'
 	icon_state = "full"
 	light_system = STATIC_LIGHT //theres a lot of lava, dont change this

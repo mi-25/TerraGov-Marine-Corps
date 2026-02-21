@@ -3,10 +3,10 @@
 #define LASER_TYPE_RAILGUN "railgun_laser"
 
 /obj/effect/overlay
-	name = "overlay"
+	name = "覆盖层"
 
 /obj/effect/overlay/beam//Not actually a projectile, just an effect.
-	name="beam"
+	name="光束"
 	icon='icons/effects/beam.dmi'
 	icon_state="b_beam"
 
@@ -15,7 +15,7 @@
 	QDEL_IN(src, 1 SECONDS)
 
 /obj/effect/overlay/palmtree_r
-	name = "Palm tree"
+	name = "棕榈树"
 	icon = 'icons/misc/beach2.dmi'
 	icon_state = "palm1"
 	density = TRUE
@@ -23,7 +23,7 @@
 	anchored = TRUE
 
 /obj/effect/overlay/palmtree_l
-	name = "Palm tree"
+	name = "棕榈树"
 	icon = 'icons/misc/beach2.dmi'
 	icon_state = "palm2"
 	density = TRUE
@@ -31,12 +31,12 @@
 	anchored = TRUE
 
 /obj/effect/overlay/coconut
-	name = "Coconuts"
+	name = "椰子"
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "coconuts"
 
 /obj/effect/overlay/sparks
-	name = "Sparks"
+	name = "火花"
 	layer = ABOVE_ALL_MOB_LAYER
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "electricity"
@@ -51,7 +51,7 @@
 //Lase dots
 
 /obj/effect/overlay/blinking_laser //Used to indicate incoming CAS
-	name = "blinking laser"
+	name = "闪烁激光"
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	icon = 'icons/effects/lases.dmi'
@@ -118,7 +118,7 @@
 
 //Marine-only visuals. Prediction HUD, etc. Does not show without marine headset
 /obj/effect/overlay/blinking_laser/marine
-	name = "prediction matrix"
+	name = "预测矩阵"
 	icon = 'icons/effects/lases.dmi'
 	icon_state = "nothing"
 	var/icon_state_on = "nothing"
@@ -152,7 +152,7 @@
 
 //Drop pod.
 /obj/effect/overlay/blinking_laser/marine/pod_warning
-	name = "pod warning"
+	name = "吊舱警告"
 	icon = 'icons/effects/lases.dmi'
 	icon_state_on = "pod_laser"
 
@@ -171,8 +171,8 @@
 	QDEL_IN(src, effect_duration ? effect_duration : src.effect_duration)
 
 /obj/effect/overlay/temp/point
-	name = "arrow"
-	desc = "It's an arrow hanging in mid-air. There may be a wizard about."
+	name = "箭头"
+	desc = "一支箭悬浮在半空中。附近可能有巫师出没。"
 	icon = 'icons/mob/screen/generic.dmi'
 	icon_state = "arrow"
 	plane = POINT_PLANE
@@ -185,7 +185,7 @@
 
 //Special laser for coordinates, not for CAS
 /obj/effect/overlay/temp/laser_coordinate
-	name = "laser"
+	name = "激光"
 	anchored = TRUE
 	mouse_opacity = 1
 	icon = 'icons/obj/items/projectiles.dmi'
@@ -200,7 +200,7 @@
 	return ..()
 
 /obj/effect/overlay/temp/laser_target
-	name = "laser"
+	name = "激光"
 	anchored = TRUE
 	mouse_opacity = 1
 	icon = 'icons/obj/items/projectiles.dmi'
@@ -282,7 +282,7 @@
 	return ..()
 
 /obj/effect/overlay/temp/blinking_laser //not used for CAS anymore but some admin buttons still use it
-	name = "blinking laser"
+	name = "闪烁激光"
 	anchored = TRUE
 	effect_duration = 10
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -291,7 +291,7 @@
 
 
 /obj/effect/overlay/temp/sniper_laser
-	name = "laser"
+	name = "激光"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	icon = 'icons/obj/items/projectiles.dmi'
 	icon_state = "sniper_laser"
@@ -300,7 +300,7 @@
 /obj/effect/overlay/temp/emp_sparks
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "empdisable"
-	name = "emp sparks"
+	name = "电磁火花"
 	effect_duration = 10
 
 /obj/effect/overlay/temp/emp_sparks/Initialize(mapload, effect_duration)
@@ -308,14 +308,14 @@
 	return ..()
 
 /obj/effect/overlay/temp/emp_pulse
-	name = "emp pulse"
+	name = "电磁脉冲"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "emppulse"
 	effect_duration = 20
 
 
 /obj/effect/overlay/temp/tank_laser
-	name = "tanklaser"
+	name = "坦克激光"
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	icon = 'icons/obj/items/projectiles.dmi'

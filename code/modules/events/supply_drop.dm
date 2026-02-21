@@ -1,6 +1,6 @@
 //Supplies are dropped onto the map for both factions to fight over
 /datum/round_event_control/supply_drop
-	name = "Supply drop"
+	name = "补给空投"
 	typepath = /datum/round_event/supply_drop
 	weight = 10
 	earliest_start = 5 MINUTES

@@ -1,6 +1,6 @@
 /obj/machinery/keycard_auth
 	name = "Keycard Authentication Device"
-	desc = "This device is used to trigger station functions, which require more than one ID card to authenticate."
+	desc = "此设备用于触发需要多张身份卡认证的站点功能。"
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "auth_off"
 	var/active = 0 //This gets set to 1 on all devices except the one where the initial request was made.
@@ -29,7 +29,7 @@
 		return
 
 	if(machine_stat & (NOPOWER|BROKEN))
-		to_chat(user, "This device is not powered.")
+		to_chat(user, "该设备未通电。")
 
 	else if(istype(I, /obj/item/card/id))
 		var/obj/item/card/id/ID = I

@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/bullet/rifle
-	name = "rifle bullet"
+	name = "步枪弹道"
 	hud_state = "rifle"
 	hud_state_empty = "rifle_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -15,35 +15,35 @@
 	sundering = 0.5
 
 /datum/ammo/bullet/rifle/ap
-	name = "armor-piercing rifle bullet"
+	name = "穿甲步枪弹道"
 	hud_state = "rifle_ap"
 	damage = 20
 	penetration = 25
 	sundering = 3
 
 /datum/ammo/bullet/rifle/hv
-	name = "high-velocity rifle bullet"
+	name = "高速步枪弹道"
 	hud_state = "hivelo"
 	damage = 20
 	penetration = 20
 	sundering = 0.5
 
 /datum/ammo/bullet/rifle/heavy
-	name = "heavy rifle bullet"
+	name = "重型步枪弹道"
 	hud_state = "rifle_heavy"
 	damage = 30
 	penetration = 10
 	sundering = 1.25
 
 /datum/ammo/bullet/rifle/heavy/ap
-	name = "heavy armor-piercing rifle bullet"
+	name = "重型穿甲步枪弹道"
 	hud_state = "rifle_ap"
 	damage = 25
 	penetration = 30
 	sundering = 4.5
 
 /datum/ammo/bullet/rifle/repeater
-	name = "heavy impact rifle bullet"
+	name = "重型冲击步枪弹道"
 	hud_state = "sniper"
 	damage = 70
 	penetration = 20
@@ -53,7 +53,7 @@
 	staggerstun(target_mob, proj, max_range = 3, slowdown = 2, stagger = 1 SECONDS)
 
 /datum/ammo/bullet/rifle/incendiary
-	name = "incendiary rifle bullet"
+	name = "燃烧步枪弹道"
 	hud_state = "rifle_fire"
 	damage_type = BURN
 	shrapnel_chance = 0
@@ -61,14 +61,14 @@
 	accuracy = -10
 
 /datum/ammo/bullet/rifle/machinegun
-	name = "machinegun bullet"
+	name = "机枪弹道"
 	hud_state = "rifle_heavy"
 	damage = 25
 	penetration = 10
 	sundering = 0.75
 
 /datum/ammo/bullet/rifle/som_machinegun
-	name = "machinegun bullet"
+	name = "机枪弹道"
 	hud_state = "rifle_heavy"
 	damage = 28
 	penetration = 12.5
@@ -78,7 +78,7 @@
 	staggerstun(target_mob, proj, max_range = 20, slowdown = 0.5)
 
 /datum/ammo/bullet/rifle/som_big
-	name = "heavy rifle bullet"
+	name = "重型步枪弹道"
 	hud_state = "hivelo"
 	hud_state_empty = "hivelo_empty"
 	damage_falloff = 0.5
@@ -92,7 +92,7 @@
 	staggerstun(target_mob, proj, max_range = 9, slowdown = 0.75)
 
 /datum/ammo/bullet/rifle/som_big/incendiary
-	name = "heavy incendiary bullet"
+	name = "重型燃烧弹道弹"
 	hud_state = "hivelo_fire"
 	damage = 40
 	penetration = 10
@@ -104,7 +104,7 @@
 	return
 
 /datum/ammo/bullet/rifle/som_big/anti_armour
-	name = "heavy AT bullet"
+	name = "重型弹道弹"
 	hud_state = "hivelo_impact"
 	damage = 40
 	penetration = 45
@@ -125,7 +125,7 @@
 	proj.proj_max_range = 0
 
 /datum/ammo/bullet/rifle/tx8
-	name = "A19 high velocity bullet"
+	name = "A19高速弹道弹"
 	icon_state = "bullet_red"
 	hud_state = "hivelo"
 	hud_state_empty = "hivelo_empty"
@@ -138,7 +138,7 @@
 	bullet_color = COLOR_SOFT_RED
 
 /datum/ammo/bullet/rifle/tx8/incendiary
-	name = "high velocity incendiary bullet"
+	name = "高速燃烧弹道弹"
 	hud_state = "hivelo_fire"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_INCENDIARY|AMMO_PASS_THROUGH_MOB
 	damage = 25
@@ -147,7 +147,7 @@
 	bullet_color = LIGHT_COLOR_FIRE
 
 /datum/ammo/bullet/rifle/tx8/impact
-	name = "high velocity impact bullet"
+	name = "高速弹道弹"
 	hud_state = "hivelo_impact"
 	damage = 30
 	penetration = 20
@@ -157,7 +157,7 @@
 	staggerstun(target_mob, proj, max_range = 14, slowdown = 1, knockback = 1)
 
 /datum/ammo/bullet/rifle/mpi_km
-	name = "crude heavy rifle bullet"
+	name = "粗制重型步枪弹道弹"
 	hud_state = "rifle_crude"
 	ammo_behavior_flags = AMMO_BALLISTIC
 	damage = 30
@@ -165,7 +165,7 @@
 	sundering = 1.75
 
 /datum/ammo/bullet/rifle/standard_dmr
-	name = "marksman bullet"
+	name = "神射手弹道"
 	hud_state = "hivelo"
 	hud_state_empty = "hivelo_empty"
 	damage_falloff = 0.5
@@ -177,7 +177,7 @@
 	sundering = 2
 
 /datum/ammo/bullet/rifle/garand
-	name = "heavy marksman bullet"
+	name = "重型狙击弹道"
 	hud_state = "sniper"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_SNIPER
 	damage = 75
@@ -185,7 +185,7 @@
 	sundering = 1.25
 
 /datum/ammo/bullet/rifle/standard_br
-	name = "light marksman bullet"
+	name = "轻型狙击弹道弹"
 	hud_state = "hivelo"
 	hud_state_empty = "hivelo_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -194,7 +194,7 @@
 	sundering = 1.25
 
 /datum/ammo/bullet/rifle/icc_confrontationrifle
-	name = "armor-piercing heavy rifle bullet"
+	name = "穿甲重型步枪弹道"
 	hud_state = "rifle_ap"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_SNIPER
 	damage = 50

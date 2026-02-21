@@ -38,7 +38,7 @@
 
 /datum/action/ability/activable/xeno/pounce/runner/New(Target)
 	. = ..()
-	desc = "Leap at a target up to [pounce_range] tiles away, stunning them for [XENO_POUNCE_STUN_DURATION / (1 SECONDS)] seconds. Alternate use toggles Savage off or on. When on, do an additional slash when pouncing."
+	desc = "向最远[pounce_range]格外的目标发动猛扑，使其眩晕[XENO_POUNCE_STUN_DURATION / (1 SECONDS)]秒。切换使用可开启或关闭野蛮模式。开启时，猛扑会额外造成一次斩击。"
 
 /datum/action/ability/activable/xeno/pounce/runner/give_action(mob/living/L)
 	. = ..()
@@ -75,12 +75,12 @@
 	if(!savage_activated)
 		return
 	if(!COOLDOWN_FINISHED(src, savage_cooldown))
-		owner.balloon_alert(owner, "Savage on cooldown ([COOLDOWN_TIMELEFT(src, savage_cooldown) * 0.1]s)")
+		owner.balloon_alert(owner, "野蛮冲撞冷却中（[COOLDOWN_TIMELEFT(src, savage_cooldown) * 0.1]秒）")
 		return
 	var/savage_damage = max(RUNNER_SAVAGE_DAMAGE_MINIMUM, xeno_owner.plasma_stored * savage_plasma_conversion_rate)
 	var/savage_cost = savage_damage * 2
 	if(xeno_owner.plasma_stored < savage_cost)
-		owner.balloon_alert(owner, "Not enough plasma to Savage ([savage_cost])")
+		owner.balloon_alert(owner, "等离子体不足，无法发动野蛮攻击（[savage_cost]）")
 		return
 	if(savage_damage_conversion_rate)
 		start_buff(savage_damage * savage_damage_conversion_rate)
@@ -102,7 +102,7 @@
 /datum/action/ability/activable/xeno/pounce/runner/process()
 	if(COOLDOWN_FINISHED(src, savage_cooldown))
 		button.cut_overlay(visual_references[VREF_MUTABLE_SAVAGE_COOLDOWN])
-		owner.balloon_alert(owner, "Savage ready")
+		owner.balloon_alert(owner, "野蛮就绪")
 		owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 		STOP_PROCESSING(SSprocessing, src)
 		return
@@ -175,14 +175,14 @@
 
 /datum/action/ability/xeno_action/evasion/on_cooldown_finish()
 	. = ..()
-	owner.balloon_alert(owner, "Evasion ready")
+	owner.balloon_alert(owner, "闪避就绪")
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 
 /datum/action/ability/xeno_action/evasion/can_use_action(silent, override_flags, selecting)
 	. = ..()
 	if(xeno_owner.on_fire)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "Can't while on fire!")
+			xeno_owner.balloon_alert(xeno_owner, "着火时无法进行！")
 		return FALSE
 
 /datum/action/ability/xeno_action/evasion/alternate_action_activate()
@@ -208,7 +208,7 @@
 	if(evade_active)
 		evasion_stacks = 0
 		evasion_duration = min(evasion_duration + evasion_starting_duration, RUNNER_EVASION_MAX_DURATION)
-		owner.balloon_alert(owner, "Extended evasion: [evasion_duration]s.")
+		owner.balloon_alert(owner, "延长闪避：[evasion_duration]秒。")
 		return
 	evade_active = TRUE
 	if(evasion_passthrough && !has_passthrough)
@@ -218,8 +218,8 @@
 		RegisterSignal(xeno_owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_passthrough_move))
 
 	evasion_duration = evasion_starting_duration
-	owner.balloon_alert(owner, "Begin evasion: [evasion_duration]s.")
-	to_chat(owner, span_userdanger("We take evasive action, making us impossible to hit."))
+	owner.balloon_alert(owner, "开始规避：[evasion_duration]秒。")
+	to_chat(owner, span_userdanger("我们采取规避动作，使其无法命中。"))
 	START_PROCESSING(SSprocessing, src)
 	RegisterSignals(owner, list(COMSIG_LIVING_STATUS_STUN,
 		COMSIG_LIVING_STATUS_KNOCKDOWN,
@@ -276,7 +276,7 @@
 		return
 	evasion_stacks = max(0, evasion_stacks - proj.damage) // We lose evasion stacks equal to the burn damage.
 	if(evasion_stacks)
-		owner.balloon_alert(owner, "Evasion reduced, damaged")
+		owner.balloon_alert(owner, "规避能力降低，受损")
 		to_chat(owner, span_danger("The searing fire compromises our ability to dodge![RUNNER_EVASION_COOLDOWN_REFRESH_THRESHOLD - evasion_stacks > 0 ? " We must dodge [RUNNER_EVASION_COOLDOWN_REFRESH_THRESHOLD - evasion_stacks] more projectile damage before Evasion's cooldown refreshes." : ""]"))
 	else // If we have no stacks left, disable Evasion.
 		evasion_deactivate()
@@ -316,7 +316,7 @@
 		has_passthrough = FALSE
 		touched_humans.Cut()
 		UnregisterSignal(xeno_owner, COMSIG_MOVABLE_MOVED)
-	owner.balloon_alert(owner, "Evasion ended")
+	owner.balloon_alert(owner, "闪避结束")
 	owner.playsound_local(owner, 'sound/voice/hiss5.ogg', 50)
 	hud_set_evasion(evasion_duration)
 
@@ -355,7 +355,7 @@
 
 /// Handles dodge effects and visuals for the Evasion ability.
 /datum/action/ability/xeno_action/evasion/proc/evasion_dodge_fx(atom/movable/proj)
-	xeno_owner.visible_message(span_warning("[xeno_owner] effortlessly dodges the [proj.name]!"), \
+	xeno_owner.visible_message(span_warning("[xeno_owner] 轻松躲开了 [proj.name]！"), \
 	span_xenodanger("We effortlessly dodge the [proj.name]![(RUNNER_EVASION_COOLDOWN_REFRESH_THRESHOLD - evasion_stacks) > 0 && evasion_stacks > 0 ? " We must dodge [RUNNER_EVASION_COOLDOWN_REFRESH_THRESHOLD - evasion_stacks] more projectile damage before [src]'s cooldown refreshes." : ""]"))
 	xeno_owner.add_filter("runner_evasion", 2, gauss_blur_filter(5))
 	addtimer(CALLBACK(xeno_owner, TYPE_PROC_REF(/datum, remove_filter), "runner_evasion"), 0.5 SECONDS)
@@ -387,7 +387,7 @@
 	name = "Snatch"
 	action_icon_state = "snatch"
 	action_icon = 'icons/Xeno/actions/runner.dmi'
-	desc = "Take an item equipped by your target in your mouth, and carry it away."
+	desc = "将目标装备的物品叼在嘴里，并带走。"
 	ability_cost = 75
 	cooldown_duration = 60 SECONDS
 	keybinding_signals = list(
@@ -416,20 +416,20 @@
 		return
 	if(!owner.Adjacent(A))
 		if(!silent)
-			owner.balloon_alert(owner, "Cannot reach")
+			owner.balloon_alert(owner, "无法触及")
 		return FALSE
 	if(!ishuman(A))
 		if(!silent)
-			owner.balloon_alert(owner, "Cannot snatch")
+			owner.balloon_alert(owner, "无法夺取")
 		return FALSE
 	var/mob/living/carbon/human/target = A
 	if(target.stat == DEAD)
 		if(!silent)
-			owner.balloon_alert(owner, "Cannot snatch")
+			owner.balloon_alert(owner, "无法夺取")
 		return FALSE
 	if(target.status_flags & GODMODE)
 		if(!silent)
-			owner.balloon_alert(owner, "Cannot snatch")
+			owner.balloon_alert(owner, "无法夺取")
 		return FALSE
 
 /datum/action/ability/activable/xeno/snatch/use_ability(atom/A)
@@ -444,7 +444,7 @@
 			if(stolen_item)
 				break
 	if(!stolen_item)
-		victim.balloon_alert(owner, "Snatch failed, no item")
+		victim.balloon_alert(owner, "抓取失败，无物品")
 		return fail_activate()
 	playsound(owner, 'sound/voice/alien/pounce2.ogg', 30)
 	victim.dropItemToGround(stolen_item, TRUE)
@@ -503,7 +503,7 @@
 	UnregisterSignal(owner, COMSIG_ATOM_DIR_CHANGE)
 
 /datum/action/ability/activable/xeno/corrosive_acid/melter
-	desc = "Cover an object with acid to slowly melt it. Takes less time than usual."
+	desc = "用酸液覆盖物体以缓慢熔化它。耗时比通常更短。"
 	ability_cost = 25
 	acid_type = /obj/effect/xenomorph/acid/weak
 	acid_speed_multiplier = 0.75 // 50% faster
@@ -520,13 +520,13 @@
 
 /datum/action/ability/activable/xeno/charge/acid_dash/melter/New(Target)
 	. = ..()
-	desc = "Instantly dash for [charge_range] tiles, tackling the first marine in your path. If you manage to tackle someone, gain another cast of the ability."
+	desc = "立即向[charge_range]格冲刺，扑摔路径上的第一名陆战队员。若成功扑摔目标，则获得一次额外施放机会。"
 
 /datum/action/ability/activable/xeno/melter_shroud
 	name = "Melter Shroud"
 	action_icon_state = "acid_shroud"
 	action_icon = 'icons/Xeno/actions/boiler.dmi'
-	desc = "Creates see-through acid smoke below yourself."
+	desc = "在自身下方生成透明的酸液烟雾。"
 	ability_cost = 50
 	use_state_flags = ABILITY_USE_BUSY|ABILITY_USE_LYING
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY | ABILITY_IGNORE_SELECTED_ABILITY
@@ -555,7 +555,7 @@
 	name = "Acidic Missile"
 	action_icon_state = "pounce"
 	action_icon = 'icons/Xeno/actions/runner.dmi'
-	desc = "Slowly build up acid in preparation to launch yourself as an acidic missile. Can launch yourself early if desired. Will slow you down initially, but will ramp up speed at maximum acid of 5x5."
+	desc = "缓慢积聚酸液，准备将自己发射为一枚酸性导弹。若需要，可提前发射。初始会减慢你的速度，但在达到最大酸液量5x5时速度将急剧提升。"
 	ability_cost = 100
 	cooldown_duration = 60 SECONDS
 	use_state_flags = ABILITY_USE_BUSY

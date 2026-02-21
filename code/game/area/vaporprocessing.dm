@@ -2,26 +2,26 @@
 	always_unpowered = TRUE
 
 /area/vapor_processing/west_compound
-	name = "West Compound"
+	name = "西侧营地"
 
 /area/vapor_processing/east_compound
-	name = "East Compound"
+	name = "东侧营地"
 
 /area/vapor_processing/south_compound
-	name = "South Compound"
+	name = "南侧营地"
 
 /area/vapor_processing/cargo2
-	name = "Cargo Bay 2"
+	name = "二号货舱"
 	outside = FALSE
 
 /area/vapor_processing/cargo3
-	name = "Cargo Bay 3"
+	name = "3号货舱"
 	outside = FALSE
 
 /area/vapor_processing/caves/se
-	name = "South Eastern Caves"
+	name = "东南洞穴"
 	outside = FALSE
 
 /area/vapor_processing/cargo_maint_s
-	name = "Cargo Maintenance South"
+	name = "货舱维护区南侧"
 	outside = FALSE

@@ -1,6 +1,6 @@
 /obj/item/storage/box/crate
-	name = "crate"
-	desc = "It's just an ordinary wooden crate."
+	name = "板条箱"
+	desc = "这只是一个普通的木质板条箱。"
 	icon = 'icons/obj/items/storage/marine_box.dmi'
 	icon_state = "case"
 
@@ -13,8 +13,8 @@
 	icon_state = length(contents) ? initial(icon_state) : "empty_case"
 
 /obj/item/storage/box/crate/heavy_armor
-	name = "\improper B-Series defensive armor crate"
-	desc = "A large case containing an experiemental suit of B18 armor for the discerning specialist."
+	name = "\improper B系列防御护甲板条箱"
+	desc = "一个装有实验性B18装甲的大型箱子，专为眼光独到的专家准备。"
 	icon_state = "armor_case"
 	w_class = WEIGHT_CLASS_HUGE
 
@@ -29,8 +29,8 @@
 	new /obj/item/clothing/head/helmet/marine/specialist(src)
 
 /obj/item/storage/box/crate/grenade_system
-	name = "\improper M92 grenade launcher case"
-	desc = "A large case containing a heavy-duty multi-shot grenade launcher, the Armat Systems M92. Drag this sprite into you to open it up!\nNOTE: You cannot put items back inside this case."
+	name = "\improper M92 榴弹发射器箱"
+	desc = "一个装有阿玛特系统M92重型多管榴弹发射器的大型箱子。将此图标拖入你的角色以打开它！\n注意：你无法将物品放回此箱子内。"
 	icon_state = "grenade_case"
 	w_class = WEIGHT_CLASS_HUGE
 	slowdown = 1
@@ -45,8 +45,8 @@
 	new /obj/item/storage/belt/grenade/b17(src)
 
 /obj/item/storage/box/crate/rocket_system
-	name = "\improper M5 RPG crate"
-	desc = "A large case containing a heavy-caliber antitank missile launcher and missiles. Drag this sprite into you to open it up!\nNOTE: You cannot put items back inside this case."
+	name = "\improper M5 RPG板条箱"
+	desc = "一个装有重型反坦克导弹发射器和导弹的大箱子。将此图标拖入你的角色以打开它！\n注意：你无法将物品放回此箱子内。"
 	icon_state = "rocket_case"
 	w_class = WEIGHT_CLASS_HUGE
 	slowdown = 1
@@ -65,8 +65,8 @@
 	new /obj/item/ammo_magazine/rocket/sadar/wp(src)
 
 /obj/item/storage/box/crate/heavy_grenadier
-	name = "\improper Heavy Grenadier case"
-	desc = "A large case containing B17 Heavy Armor and a heavy-duty multi-shot grenade launcher, the Armat Systems M92. Drag this sprite into you to open it up!\nNOTE: You cannot put items back inside this case."
+	name = "\improper 重型掷弹手携行箱"
+	desc = "一个装有B17重型护甲和阿玛特系统M92重型多管手雷发射器的大箱子。将此图标拖入角色以打开！\n注意：无法将物品放回此箱内。"
 	icon_state = "grenade_case"
 	w_class = WEIGHT_CLASS_HUGE
 	slowdown = 1
@@ -86,8 +86,8 @@
 	new /obj/item/storage/box/visual/grenade/incendiary(src)
 
 /obj/item/storage/box/crate/heavy_gunner
-	name = "\improper Heavy Minigunner case"
-	desc = "A large case containing B18 armor, munitions, and a goddamn minigun. Drag this sprite into you to open it up!\nNOTE: You cannot put items back inside this case."
+	name = "\improper 重型转轮机枪手装备箱"
+	desc = "一个装有B18护甲、弹药和一把该死加特林的大箱子。将此图标拖入你的角色来打开它！\n注意：你无法将物品放回此箱内。"
 	icon_state = "rocket_case"
 	w_class = WEIGHT_CLASS_HUGE
 	slowdown = 1
@@ -106,8 +106,8 @@
 	new /obj/item/ammo_magazine/minigun_powerpack(src)
 
 /obj/item/storage/box/crate/m42c_system
-	name = "\improper antimaterial scoped rifle system (recon set)"
-	desc = "A large case containing your very own long-range sniper rifle. Drag this sprite into you to open it up!\nNOTE: You cannot put items back inside this case."
+	name = "\improper 反器材狙击步枪系统（侦察套装）"
+	desc = "一个装有您专属远程狙击步枪的大箱子。将此图标拖到您身上即可打开！\n注意：您无法将物品放回此箱内。"
 	icon_state = "sniper_case"
 	w_class = WEIGHT_CLASS_HUGE
 	slowdown = 1
@@ -133,8 +133,8 @@
 	new /obj/item/bodybag/tarp(src)
 
 /obj/item/storage/box/crate/m42c_system_Jungle
-	name = "\improper antimaterial scoped rifle system (marksman set)"
-	desc = "A large case containing your very own long-range sniper rifle. Drag this sprite into you to open it up!\nNOTE: You cannot put items back inside this case."
+	name = "\improper 反器材狙击步枪系统（射手套装）"
+	desc = "一个装有您专属远程狙击步枪的大箱子。将此图标拖入您的角色以打开它！\n注意：您无法将物品放回此箱内。"
 	icon_state = "sniper_case"
 	w_class = WEIGHT_CLASS_HUGE
 	slowdown = 1

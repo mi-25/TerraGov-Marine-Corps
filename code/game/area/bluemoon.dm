@@ -1,40 +1,40 @@
 /area/bluemoon/outside
-	name = "Colony Grounds"
+	name = "殖民地地面"
 	icon_state = "blue"
 	ceiling = CEILING_NONE
 	minimap_color = MINIMAP_AREA_COLONY
 	always_unpowered = TRUE
 
 /area/bluemoon/outside/c
-	name = "Central Colony Grounds"
+	name = "中央殖民地地面"
 	icon_state = "central"
 
 /area/bluemoon/outside/n
-	name = "Northern Colony Grounds"
+	name = "北部殖民地地面"
 	icon_state = "north"
 
 /area/bluemoon/outside/w
-	name = "Western Colony Grounds"
+	name = "西部殖民地地面"
 	icon_state = "west"
 
 /area/bluemoon/outside/e
-	name = "Eastern Colony Grounds"
+	name = "东部殖民地地面"
 	icon_state = "east"
 
 /area/bluemoon/outside/s
-	name = "Southern Colony Grounds"
+	name = "南方殖民地地面"
 	icon_state = "south"
 
 /area/bluemoon/outside/se
-	name = "Southeastern Colony Grounds"
+	name = "东南殖民地地面"
 	icon_state = "southeast"
 
 /area/bluemoon/outside/ne
-	name = "Northeastern Colony Grounds"
+	name = "东北殖民地地面"
 	icon_state = "northeast"
 
 /area/bluemoon/caves
-	name = "Caverns"
+	name = "洞穴"
 	icon_state = "bluenew"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	outside = FALSE
@@ -43,190 +43,190 @@
 	always_unpowered = TRUE
 
 /area/bluemoon/caves/rock
-	name = "Enclosed Area"
+	name = "封闭区域"
 	icon_state = "transparent"
 	area_flags = CANNOT_NUKE
 
 /area/bluemoon/caves/w
-	name = "Western Caverns"
+	name = "西部洞穴"
 	icon_state = "west"
 	ceiling = CEILING_UNDERGROUND
 
 /area/bluemoon/caves/sw
-	name = "Southwestern Caverns"
+	name = "西南洞穴"
 	icon_state = "southwest"
 
 /area/bluemoon/caves/sw/shallow
 	ceiling = CEILING_UNDERGROUND
 
 /area/bluemoon/caves/s
-	name = "Southern Caverns"
+	name = "南部洞穴"
 	icon_state = "south"
 
 /area/bluemoon/caves/s/shallow
 	ceiling = CEILING_UNDERGROUND
 
 /area/bluemoon/caves/se
-	name = "Southeastern Caverns"
+	name = "东南洞穴"
 	icon_state = "southeast"
 	area_flags = CANNOT_NUKE
 
 /area/bluemoon/caves/e
-	name = "Eastern Caverns"
+	name = "东部洞穴"
 	icon_state = "east"
 
 /area/bluemoon/caves/e/shallow
 	ceiling = CEILING_UNDERGROUND
 
 /area/bluemoon/caves/ne
-	name = "Northeastern Caverns"
+	name = "东北洞穴区"
 	icon_state = "northeast"
 
 /area/bluemoon/caves/ne/shallow
 	ceiling = CEILING_UNDERGROUND
 
 /area/bluemoon/caves/n
-	name = "Northern Caverns"
+	name = "北部洞穴"
 	icon_state = "north"
 	ceiling = CEILING_UNDERGROUND
 
 /area/bluemoon/caves/facility
-	name = "Unknown Area"
+	name = "未知区域"
 	icon_state = "blue"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 	always_unpowered = FALSE
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
 /area/bluemoon/caves/facility/bunker
-	name = "Emergency Bunker"
+	name = "紧急掩体"
 	minimap_color = MINIMAP_AREA_LIVING_CAVE
 
 /area/bluemoon/caves/facility/omicron
-	name = "Omicron Research Facility"
+	name = "欧米茄研究设施"
 	icon_state = "anomaly"
 	area_flags = CANNOT_NUKE
 
 /area/bluemoon/caves/facility/eta
-	name = "Eta Research Facility"
+	name = "埃塔研究设施"
 	icon_state = "anog"
 	area_flags = CANNOT_NUKE
 
 /area/bluemoon/caves/facility/eta/e
-	name = "Eta Research Facility - Offices"
+	name = "埃塔研究设施 - 办公区"
 
 /area/bluemoon/caves/facility/eta/xeno
-	name = "Eta Research Facility - Xenomorph Cells"
+	name = "埃塔研究设施 - 异形收容单元"
 	icon_state = "xeno_lab"
 
 /area/bluemoon/caves/facility/lambda
-	name = "Lambda Research Facility"
+	name = "拉姆达研究设施"
 	icon_state = "research"
 
 /area/bluemoon/caves/facility/lambda/n
-	name = "Lambda Research Facility - North"
+	name = "拉姆达研究设施 - 北部"
 
 /area/bluemoon/caves/facility/lambda/s
-	name = "Lambda Research Facility - South"
+	name = "拉姆达研究设施 - 南部"
 
 /area/bluemoon/caves/facility/lambda/sec
-	name = "Lambda Research Facility - Security Checkpoint"
+	name = "Lambda研究设施 - 安全检查站"
 	ceiling = CEILING_METAL
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/bluemoon/outside/building
-	name = "Unknown Area"
+	name = "未知区域"
 	icon_state = "blue"
 	ceiling = CEILING_METAL
 	outside = FALSE
 	always_unpowered = FALSE
 
 /area/bluemoon/outside/building/lz
-	name = "Space Port"
+	name = "太空港"
 	icon_state = "shuttle"
 	minimap_color = MINIMAP_AREA_LZ
 	ceiling = CEILING_NONE
 	area_flags = NEAR_FOB
 
 /area/bluemoon/outside/building/marshal
-	name = "Marshals Office"
+	name = "宪兵办公室"
 	icon_state = "armory"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/bluemoon/outside/building/marshal/court
-	name = "Courtroom"
+	name = "法庭"
 
 /area/bluemoon/outside/building/med
-	name = "Medical Clinic"
+	name = "医疗诊所"
 	icon_state = "medbay"
 	minimap_color = MINIMAP_AREA_MEDBAY
 
 /area/bluemoon/outside/building/med/icu
-	name = "Medical Clinic Intensive Care Unit"
+	name = "医疗诊所重症监护室"
 	icon_state = "medbay2"
 
 /area/bluemoon/outside/building/cargo
-	name = "Cargo Bay"
+	name = "货舱"
 	icon_state = "ass_line"
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/bluemoon/outside/building/cargo/outpost
-	name = "Cargo Storage"
+	name = "货物储存区"
 
 /area/bluemoon/outside/building/cargo/shop
-	name = "General Store"
+	name = "综合商店"
 	icon_state = "yellow"
 
 /area/bluemoon/outside/building/virology
-	name = "Virology Laboratory"
+	name = "病毒学实验室"
 	icon_state = "toxlab"
 	minimap_color = MINIMAP_AREA_RESEARCH
 
 /area/bluemoon/outside/building/engi
-	name = "Electrical Substation"
+	name = "变电站"
 	icon_state = "engine"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/bluemoon/outside/building/engi/filt
-	name = "Filtration Plant"
+	name = "过滤厂"
 	icon_state = "engine_waste"
 
 /area/bluemoon/outside/building/admin
-	name = "Colony Administration Offices"
+	name = "殖民地行政办公室"
 	icon_state = "blue2"
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/bluemoon/outside/building/dorms
-	name = "Colony Dormitories"
+	name = "殖民地宿舍区"
 	icon_state = "restrooms"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/bluemoon/outside/building/dorms/rec
-	name = "Arcade"
+	name = "街机"
 	icon_state = "green"
 
 /area/bluemoon/outside/building/dorms/bar
-	name = "Bar"
+	name = "酒吧"
 	icon_state = "sensor"
 
 /area/bluemoon/outside/building/dorms/eat
-	name = "Cafeteria"
+	name = "食堂"
 	icon_state = "lava_civ_cargo"
 
 /area/bluemoon/outside/building/dorms/plant
-	name = "Hydroponics Bay"
+	name = "水培舱"
 	icon_state = "hydro"
 	ceiling = CEILING_GLASS
 
 /area/bluemoon/outside/building/dorms/chapel
-	name = "Chapel"
+	name = "礼拜堂"
 	icon_state = "library"
 
 /area/bluemoon/outside/building/mining
-	name = "Excavation Center"
+	name = "挖掘中心"
 	icon_state = "mining_outpost"
 	minimap_color = MINIMAP_AREA_ENGI_CAVE
 
 /area/bluemoon/outside/building/toolshed
-	name = "Tool Storage"
+	name = "工具储藏室"
 	icon_state = "auxstorage"
 	minimap_color = MINIMAP_AREA_REQ_CAVE

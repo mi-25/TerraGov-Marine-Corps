@@ -40,7 +40,7 @@
 	if(!parent_vehicle.is_equipment_controller(buckling_mob))	
 		return
 	if(!buckling_mob.put_in_active_hand(mounted_gun) && !buckling_mob.put_in_inactive_hand(mounted_gun))
-		to_chat(buckling_mob, span_warning("Could not equip weapon! Click [parent] with a free hand to equip."))
+		to_chat(buckling_mob, span_warning("无法装备武器！用空手点击[parent]来装备。"))
 		return
 
 ///Behaviour on unbuckle. Force drops the gun from the unbuckled mob's hands.
@@ -85,5 +85,5 @@
 /datum/component/vehicle_mounted_weapon/proc/on_weapon_drop(obj/item/dropped, mob/user)
 	SIGNAL_HANDLER
 	var/obj/vehicle/vehicle_parent = parent
-	vehicle_parent.visible_message(span_warning("[dropped] violently snaps back into it's place in [parent]!"))
+	vehicle_parent.visible_message(span_warning("[dropped] 猛地弹回了它在 [parent] 中的位置！"))
 	dropped.forceMove(vehicle_parent)

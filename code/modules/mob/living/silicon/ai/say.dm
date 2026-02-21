@@ -8,7 +8,7 @@
 	if(incapacitated())
 		return FALSE
 	if(control_disabled)
-		to_chat(src, span_danger("Your radio transmitter is offline!"))
+		to_chat(src, span_danger("你的无线电发射器已离线！"))
 		return FALSE
 	return ..()
 
@@ -21,7 +21,7 @@
 
 	var/obj/machinery/holopad/T = current
 	if(!istype(T) || !T.masters[src])
-		to_chat(src, span_warning("No holopad connected."))
+		to_chat(src, span_warning("未连接全息面板。"))
 		return
 
 	var/turf/padturf = get_turf(T)
@@ -32,7 +32,7 @@
 		padloc = "(UNKNOWN)"
 	log_talk(message, LOG_SAY, tag = "HOLOPAD in [padloc]")
 	send_speech(message, 7, T, "robot", message_language = language)
-	to_chat(src, span_notice("Holopad transmitted: [real_name]: \"[message]\""))
+	to_chat(src, span_notice("全息板传输：[real_name]：[message]"))
 
 
 /mob/living/silicon/ai/get_message_mode(message)
@@ -77,7 +77,7 @@
 /mob/living/silicon/ai/proc/announcement()
 	var/static/announcing_vox = 0 // Stores the time of the last announcement
 	if(announcing_vox > world.time)
-		to_chat(src, span_notice("Please wait [DisplayTimeText(announcing_vox - world.time)]."))
+		to_chat(src, span_notice("请等待[DisplayTimeText(announcing_vox - world.time)]。"))
 		return
 
 	var/message = tgui_input_text(src, "WARNING: Misuse of this verb can result in you being job banned. More help is available in 'Announcement Help'", "Announcement")
@@ -89,7 +89,7 @@
 		return
 
 	if(control_disabled)
-		to_chat(src, span_warning("Wireless interface disabled, unable to interact with announcement PA."))
+		to_chat(src, span_warning("无线接口已禁用，无法与公告广播系统交互。"))
 		return
 
 	var/list/words = splittext(trim(message), " ")
@@ -107,7 +107,7 @@
 			incorrect_words += word
 
 	if(length(incorrect_words))
-		to_chat(src, span_notice("These words are not available on the announcement system: [english_list(incorrect_words)]."))
+		to_chat(src, span_notice("这些词语在公告系统中不可用：[english_list(incorrect_words)]。"))
 		return
 
 	announcing_vox = world.time + VOX_DELAY

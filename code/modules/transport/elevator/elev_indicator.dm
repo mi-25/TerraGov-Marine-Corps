@@ -2,8 +2,8 @@
  * An indicator display aka an elevator hall lantern w/ floor number
  */
 /obj/machinery/lift_indicator
-	name = "elevator indicator"
-	desc = "Indicates what floor the elevator is at and which way it's going."
+	name = "电梯指示器"
+	desc = "指示电梯当前所在楼层及其运行方向。"
 	icon = 'icons/obj/machines/lift_indicator.dmi'
 	icon_state = "lift_indo-base"
 	base_icon_state = "lift_indo-"

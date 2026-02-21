@@ -1,6 +1,6 @@
 /obj/item/fulton_extraction_pack
-	name = "fulton extraction pack"
-	desc = "A balloon that can be used to extract equipment or personnel. Anything not bolted down can be moved."
+	name = "富尔顿回收包"
+	desc = "一个可用于提取装备或人员的气球。任何未固定的物品均可移动。"
 	icon = 'icons/obj/items/fulton.dmi'
 	icon_state = "extraction_pack"
 	worn_icon_state = "fulton"
@@ -41,7 +41,7 @@
 	var/datum/export_report/export_report = spirited_away.supply_export(user.faction)
 	if(export_report)
 		SSpoints.export_history += export_report
-	user.visible_message(span_notice("[user] finishes attaching [src] to [spirited_away] and activates it."),\
+	user.visible_message(span_notice("[user]完成了将[src]连接到[spirited_away]的操作并启动了它。"),\
 	span_notice("You attach the pack to [spirited_away] and activate it. This looks like it will yield [export_report.points ? export_report.points : "no"] point[export_report.points == 1 ? "" : "s"]."), null, 5)
 	uses--
 	if(uses < 1)
@@ -55,21 +55,21 @@
 	if(user.do_actions)
 		return FALSE
 	if(active)
-		balloon_alert(user, "Fulton not ready")
+		balloon_alert(user, "富尔顿未就绪")
 		return FALSE
-	user.visible_message(span_notice("[user] starts attaching [src] to [spirited_away]."),\
+	user.visible_message(span_notice("[user]开始将[src]安装到[spirited_away]上。"),\
 	span_notice("You start attaching the pack to [spirited_away]..."), null, 5)
 	if(!do_after(user, 5 SECONDS, NONE, spirited_away))
 		return FALSE
 	if(!isturf(spirited_away.loc))
-		balloon_alert(user, "Must extract on the ground")
+		balloon_alert(user, "必须在地面撤离")
 		return FALSE
 	if(spirited_away.anchored)
-		balloon_alert(user, "Cannot extract anchored")
+		balloon_alert(user, "无法提取已固定的物体")
 		return FALSE
 	var/area/bathhouse = get_area(spirited_away)
 	if(bathhouse.ceiling >= CEILING_OBSTRUCTED)
-		balloon_alert(user, "Cannot extract indoors")
+		balloon_alert(user, "无法在室内提取")
 		return FALSE
 	return TRUE
 
@@ -112,8 +112,8 @@
 	active = FALSE
 
 /obj/item/fulton_extraction_pack/tank
-	name = "heavy tank fulton"
-	desc = "A heavy duty balloon intended to be used to extract severely damaged tanks and other large vehicles."
+	name = "重型坦克富尔顿回收"
+	desc = "一种重型气球，用于吊运严重受损的坦克及其他大型载具。"
 	w_class = WEIGHT_CLASS_BULKY
 	uses = 1
 
@@ -129,7 +129,7 @@
 		return ..()
 	RegisterSignal(spirited_away, COMSIG_ARMORED_DO_EXTRACT, PROC_REF(extract_vehicle))
 
-	user.visible_message(span_notice("[user] finishes attaching [src] to [spirited_away], ready for fastening"),\
+	user.visible_message(span_notice("[user] 完成了将 [src] 安装到 [spirited_away] 上的操作，准备进行紧固。"),\
 	span_notice("You attach the pack to [spirited_away], ready for fastening."), null, 5)
 
 	user.temporarilyRemoveItemFromInventory(src) //Removes the item without qdeling it, qdeling it this early will break the rest of the procs
@@ -142,20 +142,20 @@
 	addtimer(CALLBACK(spirited_away, TYPE_PROC_REF(/obj/vehicle/sealed/armored, return_to_base)), 8 SECONDS)
 
 /obj/effect/fulton_extraction_holder
-	name = "fulton extraction holder"
-	desc = "You shouldn't see this."
+	name = "富尔顿回收装置"
+	desc = "你不应该看到这个。"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 
 //Overrides.
 /mob/living/carbon/xenomorph/fulton_act(mob/living/user, obj/item/I)
 	if(!SSpoints)
-		balloon_alert(user, "Failed to link with destination")
+		balloon_alert(user, "未能与目标建立链接")
 		return TRUE
 
 	if(stat != DEAD)
-		balloon_alert(user, "Target still alive")
-		to_chat(user, span_warning("The extraction device buzzes, complaining. This one seems to be alive still."))
+		balloon_alert(user, "目标仍然存活")
+		to_chat(user, span_warning("提取装置嗡嗡作响，发出抗议。这个似乎还活着。"))
 		return TRUE
 
 	var/obj/item/fulton_extraction_pack/ext_pack = I
@@ -164,11 +164,11 @@
 
 /mob/living/carbon/human/fulton_act(mob/living/user, obj/item/I)
 	if(!can_sell_human_body(src, user.faction))
-		balloon_alert(user, "High command not interested")
+		balloon_alert(user, "指挥部不感兴趣")
 		return TRUE
 	if(stat != DEAD)
-		balloon_alert(user, "Target still alive")
-		to_chat(user, span_warning("The extraction device buzzes, complaining. This one seems to be alive still."))
+		balloon_alert(user, "目标仍然存活")
+		to_chat(user, span_warning("提取装置嗡嗡作响，发出抗议。这个似乎还活着。"))
 		return TRUE
 	var/obj/item/fulton_extraction_pack/ext_pack = I
 	ext_pack.extract(src, user)
@@ -178,14 +178,14 @@
 /obj/structure/table/fulton_act(mob/living/user, obj/item/I)
 	if(!flipped)
 		return FALSE //Place it in.
-	balloon_alert(user, "Cannot extract")
+	balloon_alert(user, "无法提取")
 	return TRUE
 
 
 /obj/structure/closet/fulton_act(mob/living/user, obj/item/I)
 	if(opened)
 		return FALSE //Place it in.
-	balloon_alert(user, "Cannot extract")
+	balloon_alert(user, "无法提取")
 	return TRUE
 
 
@@ -194,12 +194,12 @@
 		return FALSE //Place it in.
 
 	if(!SSpoints)
-		balloon_alert(user, "Failed to link with destination")
+		balloon_alert(user, "未能与目的地建立链接")
 		return TRUE
 
 	if(length(contents))
-		balloon_alert(user, "[src] not empty")
-		to_chat(user, span_warning("Maximum weight surpassed. Empty [src] in order to extract it."))
+		balloon_alert(user, "[src] 不为空")
+		to_chat(user, span_warning("超过最大重量。清空[src]以将其取出。"))
 		return TRUE
 
 	var/obj/item/fulton_extraction_pack/ext_pack = I
@@ -226,27 +226,27 @@
 	if(!isturf(target.loc) || !ismovable(target))
 		return FALSE
 	if(active)
-		balloon_alert(user, "Fulton not ready")
+		balloon_alert(user, "富尔顿未就绪")
 		return FALSE
 	. = TRUE
 	if(istype(target, /obj/structure/fulton_extraction_point))
 		if(linked_extraction_point && linked_extraction_point == target)
 			linked_extraction_point = null
-			balloon_alert(user, "Extraction point unlinked")
+			balloon_alert(user, "撤离点已断开连接")
 		else
 			linked_extraction_point = target
-			balloon_alert(user, "Extraction point linked")
+			balloon_alert(user, "撤离点已连接")
 		return
 	if(length(allowed_target_tags) && !(target.tag in allowed_target_tags))
 		return
 	if(must_be_used_outdoors)
 		var/area/target_area = get_area(target)
 		if(target_area.ceiling >= CEILING_OBSTRUCTED)
-			balloon_alert(user, "Cannot extract indoors")
+			balloon_alert(user, "无法在室内提取")
 			return
 	var/atom/movable/movable_target = target
 	if(care_about_anchored && movable_target.anchored)
-		balloon_alert(user, "Cannot extract anchored")
+		balloon_alert(user, "无法提取已固定的物体")
 		return FALSE
 	if(do_after_time && (user.do_actions || !do_after(user, do_after_time, TRUE, target)))
 		return
@@ -267,18 +267,18 @@
 /obj/vehicle/sealed/armored/fulton_act(mob/living/user, obj/item/I)
 	. = TRUE
 	if(!istype(I, /obj/item/fulton_extraction_pack/tank))
-		user.balloon_alert(user, "needs a bigger fulton!")
+		user.balloon_alert(user, "需要更大的富尔顿！")
 		return
 	if((armored_flags & ARMORED_WRECK_PREP_STAGE_TWO))
-		user.balloon_alert(user, "already attached!")
+		user.balloon_alert(user, "已安装！")
 		return
 	if(!(armored_flags & ARMORED_WRECK_PREP_STAGE_ONE))
-		user.balloon_alert(user, "needs [ARMORED_WRECK_PLASTEEL_REQ] plasteel")
+		user.balloon_alert(user, "需要 [ARMORED_WRECK_PLASTEEL_REQ] 塑钢")
 		return
 	if(!do_after(user, 5 SECONDS, NONE, src, BUSY_ICON_BUILD))
 		return
 	if((armored_flags & ARMORED_WRECK_PREP_STAGE_TWO))
-		user.balloon_alert(user, "already attached!")
+		user.balloon_alert(user, "已安装！")
 		return
 
 	armored_flags |= ARMORED_WRECK_PREP_STAGE_TWO
@@ -288,8 +288,8 @@
 
 
 /obj/structure/fulton_extraction_point
-	name = "fulton recovery beacon"
-	desc = "A beacon for the fulton recovery system. Activate a pack in your hand to link it to a beacon."
+	name = "富尔顿回收信标"
+	desc = "富尔顿回收系统的信标。激活手中的回收包以将其链接至信标。"
 	icon = 'icons/obj/items/fulton.dmi'
 	icon_state = "extraction_point"
 	anchored = TRUE

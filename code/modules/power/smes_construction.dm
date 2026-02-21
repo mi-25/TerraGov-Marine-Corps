@@ -17,10 +17,10 @@
 	charge = 0
 
 /obj/machinery/power/smes/buildable/empty/dist
-	name = "colony distribution SMES"
+	name = "殖民地配电SMES"
 
 /obj/machinery/power/smes/buildable/empty/backup
-	name = "backup power SMES"
+	name = "备用电源 SMES"
 
 /obj/machinery/power/smes/buildable/Initialize(mapload)
 	. = ..()
@@ -85,9 +85,9 @@
 			s.set_up(2, 1, src)
 			s.start()
 			if (user_protected && prob(80))
-				to_chat(h_user, "Small electrical arc almost burns your hand. Luckily you had your gloves on!")
+				to_chat(h_user, "一道小电弧差点灼伤你的手。幸好你戴着手套！")
 			else
-				to_chat(h_user, "Small electrical arc sparks and burns your hand as you touch the [src]!")
+				to_chat(h_user, "小型电弧火花在你触摸[src]时迸发并灼伤了你的手！")
 				h_user.adjustFireLoss(rand(5,10))
 				h_user.Unconscious(4 SECONDS)
 			charge = 0
@@ -98,9 +98,9 @@
 			s.set_up(4,1,src)
 			s.start()
 			if (user_protected && prob(25))
-				to_chat(h_user, "Medium electrical arc sparks and almost burns your hand. Luckily you had your gloves on!")
+				to_chat(h_user, "中等强度的电弧火花迸发，差点灼伤你的手。幸好你戴着手套！")
 			else
-				to_chat(h_user, "Medium electrical sparks as you touch the [src], severely burning your hand!")
+				to_chat(h_user, "当你触摸[src]时，中等强度的电火花迸发，严重灼伤了你的手！")
 				h_user.adjustFireLoss(rand(10,25))
 				h_user.Unconscious(10 SECONDS)
 			INVOKE_ASYNC(src, PROC_REF(empulse), loc, 2, 4)
@@ -112,42 +112,42 @@
 			s.set_up(7,1,src)
 			s.start()
 			if (user_protected)
-				to_chat(h_user, "Strong electrical arc sparks between you and [src], ignoring your gloves and burning your hand!")
+				to_chat(h_user, "强烈的电弧在你和[src]之间迸发，无视你的手套灼伤了你的手！")
 				h_user.adjustFireLoss(rand(25,60))
 				h_user.Unconscious(16 SECONDS)
 			else
-				to_chat(h_user, "Strong electrical arc sparks between you and [src], knocking you out for a while!")
+				to_chat(h_user, "强烈的电弧在你和[src]之间迸发，将你击晕了一段时间！")
 				h_user.adjustFireLoss(rand(35,75))
 				h_user.Unconscious(24 SECONDS)
 			INVOKE_ASYNC(src, PROC_REF(empulse), loc, 8, 16)
 			charge = 0
 			apcs_overload(1, 10)
-			visible_message("Caution. Output regulators malfunction. Uncontrolled discharge detected.")
+			visible_message("警告。输出调节器故障。检测到不受控的放电。")
 
 		if (61 to INFINITY)
 			// Massive overcharge
 			// Sparks, Near - instantkill shock, Strong EMP, 25% light overload, 5% APC failure. 50% of SMES explosion. This is bad.
 			s.set_up(10,1,src)
 			s.start()
-			to_chat(h_user, "Massive electrical arc sparks between you and [src]. Last thing you can think about is \"Oh shit...\"")
+			to_chat(h_user, "巨大的电弧在你和[src]之间迸发。你脑海中最后的念头是'糟了……'")
 			// Remember, we have few gigajoules of electricity here.. Turn them into crispy toast.
 			h_user.adjustFireLoss(rand(150,195))
 			h_user.Unconscious(50 SECONDS)
 			INVOKE_ASYNC(src, PROC_REF(empulse), loc, 32, 64)
 			charge = 0
 			apcs_overload(5, 25)
-			visible_message("Caution. Output regulators malfunction. Significant uncontrolled discharge detected.")
+			visible_message("警告。输出调节器故障。检测到严重不受控放电。")
 
 			if (prob(50))
-				visible_message("DANGER! Magnetic containment field unstable! Containment field failure imminent!")
+				visible_message("危险！磁力约束场不稳定！约束场即将失效！")
 				failing = 1
 				// 30 - 60 seconds and then BAM!
 				spawn(rand(300,600))
 					if(!failing) // Admin can manually set this var back to 0 to stop overload, for use when griffed.
 						update_icon()
-						visible_message("Magnetic containment stabilised.")
+						visible_message("磁力约束已稳定。")
 						return
-					visible_message("DANGER! Magnetic containment field failure in 3 ... 2 ... 1 ...")
+					visible_message("危险！磁力约束场失效倒计时 3 ... 2 ... 1 ...")
 					explosion(loc, 2, 3, 5, 0, 8, explosion_cause=src)
 					// Not sure if this is necessary, but just in case the SMES *somehow* survived..
 					qdel(src)
@@ -176,7 +176,7 @@
 /obj/machinery/power/smes/buildable/attackby(obj/item/I, mob/user, params)
 	// No more disassembling of overloaded SMESs. You broke it, now enjoy the consequences.
 	if(failing)
-		to_chat(user, span_warning("The [src]'s screen is flashing with alerts. It seems to be overloaded! Touching it now is probably not a good idea."))
+		to_chat(user, span_warning("[src]的屏幕正闪烁着警报。它似乎过载了！现在触碰它可能不是个好主意。"))
 		return
 	// If parent returned 1:
 	// - Hatch is open, so we can modify the SMES
@@ -188,11 +188,11 @@
 
 	// Charged above 1% and safeties are enabled.
 	if((charge > (capacity / 100)) && safeties_enabled && !ismultitool(I))
-		to_chat(user, span_warning("Safety circuit of [src] is preventing modifications while it's charged!"))
+		to_chat(user, span_warning("[src]的安全电路在充能状态下阻止了修改！"))
 		return
 
 	if(outputting || input_attempt)
-		to_chat(user, span_warning("Turn off the [src] first!"))
+		to_chat(user, span_warning("先把 [src] 关掉！"))
 		return
 
 	// Probability of failure if safety circuit is disabled (in %)
@@ -205,11 +205,11 @@
 	// Crowbar - Disassemble the SMES.
 	if(iscrowbar(I))
 		if(terminal)
-			to_chat(user, span_warning("You have to disassemble the terminal first!"))
+			to_chat(user, span_warning("你得先拆解终端机！"))
 			return
 
 		playsound(get_turf(src), 'sound/items/crowbar.ogg', 25, 1)
-		to_chat(user, span_warning("You begin to disassemble the [src]!"))
+		to_chat(user, span_warning("你开始拆卸[src]！"))
 
 		if(!do_after(user, 10 SECONDS * cur_coils, NONE, src, BUSY_ICON_BUILD)) // More coils = takes longer to disassemble. It's complex so largest one with 5 coils will take 50s
 			return
@@ -218,7 +218,7 @@
 			total_system_failure(failure_probability, user)
 			return
 
-		to_chat(user, span_warning("You have disassembled the SMES cell!"))
+		to_chat(user, span_warning("你已拆解了SMES电池！"))
 		var/obj/machinery/constructable_frame/machine_frame/M = new(loc)
 		M.state = 2
 		M.icon_state = "box_1"
@@ -229,14 +229,14 @@
 	// Superconducting Magnetic Coil - Upgrade the SMES
 	else if(istype(I, /obj/item/stock_parts/smes_coil))
 		if(cur_coils >= max_coils)
-			to_chat(user, span_warning("You can't insert more coils to this SMES unit!"))
+			to_chat(user, span_warning("你无法向这个SMES单元插入更多线圈！"))
 			return
 
 		if(failure_probability && prob(failure_probability))
 			total_system_failure(failure_probability, user)
 			return
 
-		to_chat(user, "You install the coil into the SMES unit!")
+		to_chat(user, "你将线圈安装到SMES单元中！")
 		if(!user.transferItemToLoc(I, src))
 			return
 

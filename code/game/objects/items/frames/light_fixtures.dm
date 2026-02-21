@@ -1,8 +1,8 @@
 
 
 /obj/item/frame/light_fixture
-	name = "light fixture frame"
-	desc = "Used for building lights."
+	name = "灯具框架"
+	desc = "用于建造照明设备。"
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "tube-construct-item"
 	atom_flags = CONDUCT
@@ -26,10 +26,10 @@
 		return
 	var/turf/loc = get_turf(user)
 	if(!isfloorturf(loc))
-		loc.balloon_alert(user, "bad spot!")
+		loc.balloon_alert(user, "位置不好！")
 		return
 
-	user.balloon_alert_to_viewers("attaching")
+	user.balloon_alert_to_viewers("正在安装")
 	playsound(src.loc, 'sound/machines/click.ogg', 15, 1)
 	var/constrdir = user.dir
 	var/constrloc = user.loc
@@ -44,13 +44,13 @@
 			newlight = new /obj/machinery/light_construct(constrloc)
 	newlight.setDir(constrdir)
 
-	user.visible_message("[user.name] attaches [src] to the wall.", \
+	user.visible_message("[user.name] 将 [src] 安装到墙上。", \
 		"You attach [src] to the wall.")
 	qdel(src)
 
 /obj/item/frame/light_fixture/small
-	name = "small light fixture frame"
-	desc = "Used for building small lights."
+	name = "小型灯具框架"
+	desc = "用于建造小型照明灯。"
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "bulb-construct-item"
 	fixture_type = "bulb"

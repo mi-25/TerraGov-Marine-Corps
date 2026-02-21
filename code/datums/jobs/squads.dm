@@ -302,7 +302,7 @@
 		if(istype(ID))
 			ID.access -= list(ACCESS_MARINE_LEADER, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_TADPOLE)
 
-	to_chat(squad_leader, "<font size='3' color='blue'>You're no longer the Squad Leader for [src]!</font>")
+	to_chat(squad_leader, "<font size='3' color='blue'>你不再是 [src] 的班长了！</font>")
 	var/mob/living/carbon/human/H = squad_leader
 	squad_leader = null
 	H.hud_set_job(faction)
@@ -339,7 +339,7 @@
 	if(istype(squad_leader.wear_ear, /obj/item/radio/headset/mainship/))
 		var/obj/item/radio/headset/mainship/radio = squad_leader.wear_ear
 		radio.update_minimap_icon()
-	to_chat(squad_leader, "<font size='3' color='blue'>You're now the Squad Leader for [src]!</font>")
+	to_chat(squad_leader, "<font size='3' color='blue'>你现在是 [src] 的班长了！</font>")
 
 
 /datum/squad/proc/format_message(message, mob/living/carbon/human/sender)
@@ -353,7 +353,7 @@
 
 /datum/squad/proc/message_squad(message, mob/living/carbon/human/sender)
 	if(is_ic_filtered(message) || NON_ASCII_CHECK(message))
-		to_chat(sender, span_boldnotice("Message invalid. Check your message does not contain filtered words or characters."))
+		to_chat(sender, span_boldnotice("消息无效。请检查您的消息是否包含被过滤的词语或字符。"))
 		return
 	var/header = "AUTOMATED CIC NOTICE:"
 	var/sound = "sound/misc/notice3.ogg"
@@ -414,7 +414,7 @@
 	if(available_squads.Find(preferred_squad) && preferred_squad?.assign_initial(player, job, latejoin))
 		return TRUE
 	if(strict)
-		to_chat(player, span_warning("That squad is full!"))
+		to_chat(player, span_warning("那个班已满员！"))
 		return FALSE
 	//If our preferred squad is not available, we try every other squad
 	for(var/datum/squad/squad AS in shuffle(available_squads))

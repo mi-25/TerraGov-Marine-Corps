@@ -28,13 +28,13 @@
 
 /datum/loadout_item/eyes/ballistic_goggles
 	name = "Ballistic goggles"
-	desc = "Standard issue TGMC goggles. Mostly used to decorate one's helmet."
+	desc = "标准配发的TGMC护目镜。主要用于装饰头盔。"
 	item_typepath = /obj/item/clothing/glasses/mgoggles
 	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER)
 
 /datum/loadout_item/eyes/health_hud
 	name = "HealthMate HUD"
-	desc = "A heads-up display that scans the humans in view and provides accurate data about their health status. The projector can be attached to compatable eyewear."
+	desc = "一种抬头显示器，可扫描视野内的人类并提供其健康状况的准确数据。该投影仪可安装在兼容的眼镜上。"
 	item_typepath = /obj/item/clothing/glasses/hud/health
 	jobs_supported = list(SQUAD_CORPSMAN, SQUAD_LEADER, FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN, SOM_SQUAD_CORPSMAN, SOM_SQUAD_LEADER, SOM_FIELD_COMMANDER, SOM_STAFF_OFFICER, SOM_COMMANDER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -49,13 +49,13 @@
 
 /datum/loadout_item/eyes/welding
 	name = "Welding goggles"
-	desc = "Protects the eyes from welders, approved by the mad scientist association."
+	desc = "保护眼睛免受焊接伤害，已获疯狂科学家协会认证。"
 	item_typepath = /obj/item/clothing/glasses/welding
 	jobs_supported = list(SQUAD_MARINE, SQUAD_ENGINEER, SOM_SQUAD_MARINE, SOM_SQUAD_VETERAN)
 
 /datum/loadout_item/eyes/smartgun_imagers
 	name = "KTLD sight"
-	desc = "A headset and goggles system made to pair with any KTLD weapon, such as the SG type weapons. Has a low-res short range imager, allowing for view of terrain."
+	desc = "专为与KTLD武器（如SG型武器）配对设计的头戴式耳机和护目镜系统。配备低分辨率短程成像仪，可查看地形。"
 	item_typepath = /obj/item/clothing/glasses/night/m56_goggles
 	jobs_supported = list(SQUAD_SMARTGUNNER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE

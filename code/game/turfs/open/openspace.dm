@@ -1,6 +1,6 @@
 /turf/open/openspace
-	name = "open space"
-	desc = "Watch your step!"
+	name = "开阔空间"
+	desc = "注意脚下！"
 	// We don't actually draw openspace, but it needs to have color
 	// In its icon state so we can count it as a "non black" tile
 	icon_state = MAP_SWITCH("pure_white", "transparent")
@@ -109,23 +109,23 @@
 		var/obj/structure/lattice/L = locate(/obj/structure/lattice, src)
 		var/obj/structure/catwalk/W = locate(/obj/structure/catwalk, src)
 		if(W)
-			to_chat(user, span_warning("There is already a catwalk here!"))
+			to_chat(user, span_warning("这里已经有猫道了！"))
 			return
 		if(L)
 			if(R.use(1))
 				qdel(L)
-				to_chat(user, span_notice("You construct a catwalk."))
+				to_chat(user, span_notice("你建造了一条栈桥。"))
 				playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 				new /obj/structure/catwalk(src)
 			else
-				to_chat(user, span_warning("You need two rods to build a catwalk!"))
+				to_chat(user, span_warning("你需要两根金属杆来建造栈桥！"))
 			return
 		if(R.use(1))
-			to_chat(user, span_notice("You construct a lattice."))
+			to_chat(user, span_notice("你建造了一个树脂格栅。"))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			ReplaceWithLattice()
 		else
-			to_chat(user, span_warning("You need one rod to build a lattice."))
+			to_chat(user, span_warning("你需要一根金属棒来建造格栅。"))
 		return
 	if(istype(C, /obj/item/stack/tile/light))
 		if(!CanCoverUp())
@@ -136,12 +136,12 @@
 			if(S.use(1))
 				qdel(L)
 				playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
-				to_chat(user, span_notice("You build a floor."))
+				to_chat(user, span_notice("你建造了一个地板。"))
 				PlaceOnTop(/turf/open/floor/plating)
 			else
-				to_chat(user, span_warning("You need one floor tile to build a floor!"))
+				to_chat(user, span_warning("你需要一块地板砖来建造地板！"))
 		else
-			to_chat(user, span_warning("The plating is going to need some support! Place iron rods first."))
+			to_chat(user, span_warning("这层装甲板需要支撑！先放置铁条。"))
 
 /*
 /turf/open/openspace/can_cross_safely(atom/movable/crossing)

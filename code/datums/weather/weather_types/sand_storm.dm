@@ -1,6 +1,6 @@
 //Darude sandstorm starts playing
 /datum/weather/ash_storm/sand
-	name = "severe sandstorm"
+	name = "严重沙尘暴"
 	telegraph_message = span_userdanger("You see a dust cloud rising over the horizon. That can't be good...")
 	telegraph_duration = 600
 	telegraph_overlay = "dust_med"
@@ -27,7 +27,7 @@
 		return
 	if(is_storm_immune(L))
 		return
-	to_chat(L, span_danger("You are battered by the coarse sand!"))
+	to_chat(L, span_danger("你被粗糙的沙粒击中了！"))
 	if(!ishuman(L))
 		L.adjustBruteLoss(6)
 		return
@@ -37,8 +37,8 @@
 
 
 /datum/weather/ash_storm/sand/harmless
-	name = "Sandfall"
-	desc = "A passing sandstorm blankets the area in sand."
+	name = "沙暴"
+	desc = "一场经过的沙尘暴将这片区域笼罩在沙尘之中。"
 
 	telegraph_duration = 300
 	telegraph_message = span_danger("The wind begins to intensify, blowing sand up from the ground...")

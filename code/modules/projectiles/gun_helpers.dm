@@ -16,7 +16,7 @@
 /obj/item/weapon/gun/attack_hand_alternate(mob/user)
 	. = ..()
 	if(!active_attachable)
-		balloon_alert(user, "no attachment to unload")
+		balloon_alert(user, "无枪械配件可卸下")
 		return
 
 	var/mob/living/living_user = user
@@ -90,7 +90,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 		return TRUE
 	if(user.mind && allowed(user))
 		return TRUE
-	to_chat(user, span_warning("[src] flashes a warning sign indicating unauthorized use!"))
+	to_chat(user, span_warning("[src] 闪烁警告标志，表示未经授权使用！"))
 
 /obj/item/weapon/gun/proc/do_wield(mob/user, wdelay) //*shrugs*
 	if(wield_time > 0 && !do_after(user, wdelay, IGNORE_LOC_CHANGE, user, BUSY_ICON_HOSTILE, null, PROGRESS_CLOCK, CALLBACK(src, PROC_REF(is_wielded))))
@@ -117,19 +117,19 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 		if(active_attachable)
 			active_attachable.tactical_reload(new_magazine, user)
 			return
-		to_chat(user, span_warning("[new_magazine] cannot fit into [src]!"))
+		to_chat(user, span_warning("[new_magazine] 无法装入 [src]！"))
 		return
 	if(src != user.r_hand && src != user.l_hand && (!master_gun || (master_gun != user.r_hand && master_gun != user.l_hand)))
-		to_chat(user, span_warning("[src] must be in your hand to do that."))
+		to_chat(user, span_warning("[src]必须在你手中才能这样做。"))
 		return
 	if(!CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_MAGAZINES) || max_chamber_items > 1)
-		to_chat(user, span_warning("Can't do tactical reloads with [src]."))
+		to_chat(user, span_warning("无法对[src]进行战术换弹。"))
 		return
 	//no tactical reload for the untrained.
 	if(user.skills.getRating(SKILL_COMBAT) < SKILL_COMBAT_DEFAULT)
-		to_chat(user, span_warning("You don't know how to do tactical reloads."))
+		to_chat(user, span_warning("你不会战术换弹。"))
 		return
-	to_chat(user, span_notice("You start a tactical reload."))
+	to_chat(user, span_notice("你开始战术换弹。"))
 	if(length(chamber_items))
 		unload(user)
 	if(!do_after(user, max(0.5 SECONDS, 1.5 SECONDS - user.skills.getRating(SKILL_COMBAT) * 5), IGNORE_USER_LOC_CHANGE, new_magazine) && loc == user)
@@ -154,7 +154,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 	. = start_fire(gun_user, random_nearby_turf, random_nearby_turf, bypass_checks = TRUE) // Will return true if it successfully fired.
 	if(!.)
 		return
-	disarmed.visible_message(span_danger("[disarmed]'s [name] goes off during struggle!"), vision_distance = 5)
+	disarmed.visible_message(span_danger("[disarmed]的[name]在挣扎中走火了！"), vision_distance = 5)
 	log_combat(disarmer, disarmed, "disarmed", "making their [name] go off")
 	stop_fire() // Otherwise, they will keep firing endlessly.
 
@@ -168,7 +168,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 	if(user)
 		var/obj/item/weapon/gun/in_hand = user.get_inactive_held_item()
 		if( in_hand != src && !master_gun) //It has to be held.
-			to_chat(user, span_warning("You have to hold [src] to do that!"))
+			to_chat(user, span_warning("你必须手持[src]才能这么做！"))
 			return
 	return TRUE
 
@@ -178,7 +178,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 		var/obj/item/weapon/gun/in_handL = user.l_hand
 		var/obj/item/weapon/gun/in_handR = user.r_hand
 		if(in_handL != src && in_handR != src && !master_gun) //It has to be held.
-			to_chat(user, span_warning("You have to hold [src] to do that!"))
+			to_chat(user, span_warning("你必须手持[src]才能这么做！"))
 			return
 	return 1
 
@@ -207,11 +207,11 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 
 /proc/get_active_firearm(mob/user)
 	if(!user.dextrous)
-		to_chat(user, span_warning("You don't have the dexterity to do this."))
+		to_chat(user, span_warning("你没有足够的灵巧度来完成这个动作。"))
 		return
 
 	if(user.incapacitated() || !isturf(user.loc))
-		to_chat(user, span_warning("You can't do this right now."))
+		to_chat(user, span_warning("你现在无法这样做。"))
 		return
 
 	var/obj/item/weapon/gun/G = user.get_active_held_item()
@@ -219,7 +219,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 		G = user.get_inactive_held_item()
 
 	if(!istype(G))
-		to_chat(user, span_warning("You need a gun in your hands to do that!"))
+		to_chat(user, span_warning("你需要手持枪械才能这么做！"))
 		return
 
 	if(HAS_TRAIT(G, TRAIT_GUN_BURST_FIRING))
@@ -286,7 +286,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 			gun_firemode = gun_firemode_list[1]
 
 	if(ishuman(source))
-		to_chat(source, span_notice("[icon2html(src, source)] You switch to <b>[gun_firemode]</b>."))
+		to_chat(source, span_notice("[icon2html(src, source)] 你切换至<b>[gun_firemode]</b>。"))
 	playsound(src, 'sound/weapons/guns/interact/selector.ogg', 15, 1)
 	SEND_SIGNAL(src, COMSIG_GUN_FIRE_MODE_TOGGLE, gun_firemode)
 	setup_bullet_accuracy()
@@ -462,7 +462,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 	//	if(rail && (rail.attach_features_flags & ATTACH_ACTIVATION) )
 	//		usable_attachments += rail
 	if(!length(attachments_by_slot))
-		balloon_alert(usr, "No usable attachments")
+		balloon_alert(usr, "无可用的枪械配件")
 		return
 
 	for(var/key in attachments_by_slot)
@@ -474,7 +474,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 			usable_attachments += attachment
 
 	if(!length(usable_attachments)) //No usable attachments.
-		balloon_alert(usr, "No usable attachments")
+		balloon_alert(usr, "无可用的枪械配件")
 		return
 	var/obj/item/attachable/usable_attachment
 	if(length(usable_attachments) == 1)
@@ -504,7 +504,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 
 	if(activate_attachment(ATTACHMENT_SLOT_RAIL, usr))
 		return
-	balloon_alert(usr, "No usable rail attachments")
+	balloon_alert(usr, "无可用的导轨枪械配件")
 
 /obj/item/weapon/gun/verb/toggle_underrail_attachment()
 	set category = null
@@ -513,7 +513,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 
 	if(activate_attachment(ATTACHMENT_SLOT_UNDER, usr))
 		return
-	balloon_alert(usr, "No usable underrail attachments")
+	balloon_alert(usr, "无可用的下导轨枪械配件")
 
 ///Toggles weapons ejecting their magazines when they're empty. This one is one a gun level and is used via right clicking the gun.
 /obj/item/weapon/gun/verb/toggle_auto_eject()
@@ -534,7 +534,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 		acceptable_guns += attached_gun
 
 	if(!length(acceptable_guns))
-		balloon_alert(usr, "Cannot toggle ejection")
+		balloon_alert(usr, "无法切换弹射")
 		return
 
 	if(length(acceptable_guns) == 1)
@@ -616,10 +616,10 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 		return
 
 	if(!HAS_TRAIT(src, TRAIT_GUN_AUTO_AIM_MODE))
-		to_chat(user, span_notice("You will immediately aim upon wielding your weapon.</b>"))
+		to_chat(user, span_notice("<b>举枪时立即瞄准。</b>"))
 		ADD_TRAIT(src, TRAIT_GUN_AUTO_AIM_MODE, GUN_TRAIT)
 	else
-		to_chat(user, span_notice("You will wield your weapon without aiming with precision.</b>"))
+		to_chat(user, span_notice("你将无法精确瞄准使用你的武器。</b>"))
 		REMOVE_TRAIT(src, TRAIT_GUN_AUTO_AIM_MODE, GUN_TRAIT)
 
 /obj/item/weapon/gun/proc/toggle_aim_mode(mob/living/carbon/human/user)
@@ -636,24 +636,24 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 			REMOVE_TRAIT(gunattachment, TRAIT_GUN_IS_AIMING, GUN_TRAIT)
 			gunattachment.modify_fire_delay(-aim_fire_delay)
 			gunattachment.modify_auto_burst_delay(-aim_fire_delay)
-		to_chat(user, span_notice("You cease aiming."))
+		to_chat(user, span_notice("你停止了瞄准。"))
 		return
 	if(!(item_flags & WIELDED) && !(item_flags & IS_DEPLOYED))
-		to_chat(user, span_notice("You need to wield your gun before aiming."))
+		to_chat(user, span_notice("你需要先持握武器才能瞄准。"))
 		return
 	if(!user.wear_id)
-		to_chat(user, span_notice("You don't have distinguished allies you want to avoid shooting.</b>"))
+		to_chat(user, span_notice("<b>您没有需要避免射击的友军。</b>"))
 		return
-	to_chat(user, span_notice("You steady your breathing..."))
+	to_chat(user, span_notice("你稳住了呼吸……"))
 
 	if(user.do_actions)
 		return
 	if(!user.marksman_aura)
 		if(!do_after(user, aim_time, (item_flags & IS_DEPLOYED) ? NONE : IGNORE_USER_LOC_CHANGE, (item_flags & IS_DEPLOYED) ? loc : src, BUSY_ICON_BAR))
-			to_chat(user, span_warning("<b>Your concentration is interrupted!</b>"))
+			to_chat(user, span_warning("<b>你的专注被打断了！</b>"))
 			return
 	if(!(item_flags & WIELDED) && !(item_flags & IS_DEPLOYED))
-		to_chat(user, span_notice("You need to wield your gun before aiming."))
+		to_chat(user, span_notice("你需要先持握你的枪械才能进行瞄准。"))
 		return
 	user.overlays += aim_mode_visual
 	ADD_TRAIT(src, TRAIT_GUN_IS_AIMING, GUN_TRAIT)
@@ -665,7 +665,7 @@ As sniper rifles have both and weapon mods can change them as well. ..() deals w
 		ADD_TRAIT(gunattachment, TRAIT_GUN_IS_AIMING, GUN_TRAIT)
 		gunattachment.modify_fire_delay(aim_fire_delay)
 		gunattachment.modify_auto_burst_delay(aim_fire_delay)
-	to_chat(user, span_notice("You line up your aim, allowing you to shoot past allies.</b>"))
+	to_chat(user, span_notice("你调整好瞄准，可以越过友军射击。</b>"))
 
 /// Signal handler to activate the rail attachement of that gun if it's in our active hand
 /obj/item/weapon/gun/proc/activate_rail_attachment()

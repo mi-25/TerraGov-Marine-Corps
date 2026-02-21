@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/healing_jab
 	name = "Healing Jab"
-	desc = "The effects of Jab from Conqueror's Will is replaced. It will instead heal you for 5/10/15% of your maximum health."
+	desc = "征服者意志的猛刺效果已被替换。现在它将为你恢复最大生命值的5/10/15%。"
 	/// For each structure, the multiplier of the owner's maximium health that Jab from Conqueror's Will will heal.
 	var/percentage_per_structure = 0.05
 
@@ -42,7 +42,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/telefrag
 	name = "Telefrag"
-	desc = "Domination's radius is reduced by 1, but knocked down for 0.5/0.8/1.1 seconds longer."
+	desc = "支配的半径减少1，但击倒时间延长0.5/0.8/1.1秒。"
 	/// For the first structure, the amount to increase Domination's radius by.
 	var/radius_initial = -1
 	/// For the first structure, the amount of deciseconds to add to Domination's knockdown duration.
@@ -87,7 +87,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/dasher
 	name = "Dasher"
-	desc = "Dash can be activated at will as long it has charges. It can store up to 2/3/4 charges which are given at the rate of 200% of the ability's original cooldown."
+	desc = "冲刺可在有充能时随时激活。最多可储存2/3/4层充能，充能恢复速度为技能原始冷却时间的200%。"
 	/// For the first structure, the multiplier of Dash's initial cooldown in which a charge will be restored.
 	var/cooldown_multiplier_initial = 2
 	/// For each structure, the amount of charges to add to Dash.

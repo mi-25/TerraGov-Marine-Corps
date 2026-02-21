@@ -13,7 +13,7 @@
 
 //mech spawn points
 /obj/effect/landmark/campaign/vehicle_spawner/mech
-	name = "tgmc med mech spawner"
+	name = "地球政府殖民地海军陆战队医疗机甲生成器"
 	icon_state = "mech"
 	vehicle_type = /obj/vehicle/sealed/mecha/combat/greyscale/assault/noskill
 	///Colours to paint mechs from this spawner
@@ -40,32 +40,32 @@
 	new_mech.update_icon()
 
 /obj/effect/landmark/campaign/vehicle_spawner/mech/heavy
-	name = "tgmc heavy mech spawner"
+	name = "地球政府殖民地海军陆战队重型机甲生成器"
 	icon_state = "mech_heavy"
 	head_colors = list(ARMOR_PALETTE_RED, ARMOR_PALETTE_GREYISH_TURQUOISE, VISOR_PALETTE_SYNDIE_GREEN)
 	vehicle_type = /obj/vehicle/sealed/mecha/combat/greyscale/vanguard/noskill
 
 /obj/effect/landmark/campaign/vehicle_spawner/mech/light
-	name = "tgmc light mech spawner"
+	name = "地球政府殖民地海军陆战队轻型机甲生成器"
 	icon_state = "mech_light"
 	head_colors = list(ARMOR_PALETTE_SPACE_CADET, ARMOR_PALETTE_GREYISH_TURQUOISE, VISOR_PALETTE_SYNDIE_GREEN)
 	vehicle_type = /obj/vehicle/sealed/mecha/combat/greyscale/recon/noskill
 
 /obj/effect/landmark/campaign/vehicle_spawner/mech/som
-	name = "som med mech spawner"
+	name = "火星之子医疗机甲生成器"
 	faction = FACTION_SOM
 	colors = list(ARMOR_PALETTE_GINGER, ARMOR_PALETTE_ANGELIC)
 	head_colors = list(ARMOR_PALETTE_ANGELIC, ARMOR_PALETTE_GREY, VISOR_PALETTE_SYNDIE_GREEN)
 
 /obj/effect/landmark/campaign/vehicle_spawner/mech/som/heavy
-	name = "som heavy mech spawner"
+	name = "火星之子重型机甲生成器"
 	icon_state = "mech_heavy"
 	colors = list(ARMOR_PALETTE_GINGER, ARMOR_PALETTE_MAGENTA)
 	head_colors = list(ARMOR_PALETTE_MAGENTA, ARMOR_PALETTE_GRAPE, VISOR_PALETTE_ELITE_ORANGE)
 	vehicle_type = /obj/vehicle/sealed/mecha/combat/greyscale/vanguard/noskill
 
 /obj/effect/landmark/campaign/vehicle_spawner/mech/som/light
-	name = "som light mech spawner"
+	name = "火星之子轻型机甲生成器"
 	icon_state = "mech_light"
 	colors = list(ARMOR_PALETTE_GINGER, ARMOR_PALETTE_BLACK)
 	head_colors = list(ARMOR_PALETTE_GINGER, ARMOR_PALETTE_BLACK, VISOR_PALETTE_SYNDIE_GREEN)
@@ -73,7 +73,7 @@
 
 
 /obj/effect/landmark/campaign/vehicle_spawner/tank
-	name = "TGMC LTB tank spawner"
+	name = "地球政府殖民地海军陆战队 LTB 坦克生成器"
 	icon_state = "tank_spawner"
 	vehicle_type = /obj/vehicle/sealed/armored/multitile/campaign
 	///List of gear the tank spawns with
@@ -117,7 +117,7 @@
 		new /obj/item/pamphlet/tank_crew(pamphlet_turf)
 
 /obj/effect/landmark/campaign/vehicle_spawner/tank/ltaap_chaingun
-	name = "TGMC LTAAP tank spawner"
+	name = "地球政府殖民地海军陆战队 LTAAP 坦克生成器"
 	equipment_list = list(
 		/obj/item/armored_weapon/ltaap = 1,
 		/obj/item/armored_weapon/secondary_weapon = 1,
@@ -126,7 +126,7 @@
 	)
 
 /obj/effect/landmark/campaign/vehicle_spawner/tank/som
-	name = "SOM tank spawner - coilgun"
+	name = "火星之子坦克生成器 - 线圈炮"
 	faction = FACTION_SOM
 	vehicle_type = /obj/vehicle/sealed/armored/multitile/som_tank
 	equipment_list = list(
@@ -137,7 +137,7 @@
 	)
 
 /obj/effect/landmark/campaign/vehicle_spawner/tank/som/particle_lance
-	name = "SOM tank spawner - particle lance"
+	name = "火星之子坦克生成器 - 粒子长矛"
 	equipment_list = list(
 		/obj/item/armored_weapon/particle_lance = 1,
 		/obj/item/armored_weapon/secondary_mlrs = 1,
@@ -146,7 +146,7 @@
 	)
 
 /obj/effect/landmark/campaign/vehicle_spawner/tank/som/volkite_carronade
-	name = "SOM tank spawner - carronade"
+	name = "火星之子坦克生成器 - 卡隆炮"
 	equipment_list = list(
 		/obj/item/armored_weapon/volkite_carronade = 1,
 		/obj/item/armored_weapon/secondary_mlrs = 1,

@@ -3,7 +3,7 @@
 /////////////////////////////////////////
 
 /obj/machinery/computer/sleep_console
-	name = "Sleeper Console"
+	name = "休眠舱控制台"
 	icon = 'icons/obj/machines/cryogenics.dmi'
 	icon_state = "sleeperconsole"
 	screen_overlay = "sleeperconsole_emissive"
@@ -107,9 +107,9 @@
 	if(href_list["chemical"] && connected && connected.occupant)
 		var/datum/reagent/R = text2path(href_list["chemical"])
 		if(connected.occupant.stat == DEAD)
-			to_chat(usr, span_warning("This person has no life for to preserve anymore."))
+			to_chat(usr, span_warning("此人已无生命可延续。"))
 		else if(ismonkey(connected.occupant))
-			to_chat(usr, span_scanner("Unknown biological subject detected, chemical injection not available. Please contact a licensed supplier for further assistance."))
+			to_chat(usr, span_scanner("检测到未知生物样本，化学注射不可用。请联系持牌供应商获取进一步协助。"))
 		else if(!(R in connected.available_chemicals))
 			message_admins("[ADMIN_TPMONTY(usr)] has tried to inject an invalid chem with the sleeper. Looks like an exploit attempt, or a bug.")
 		else
@@ -130,8 +130,8 @@
 /////////////////////////////////////////
 
 /obj/machinery/sleeper
-	name = "Sleeper"
-	desc = "A fancy bed with built-in injectors, a dialysis machine, and a limited health scanner."
+	name = "休眠者"
+	desc = "一张配备内置注射器、透析机和有限健康扫描仪的豪华病床。"
 	icon = 'icons/obj/machines/cryogenics.dmi'
 	icon_state = "sleeper"
 	density = TRUE
@@ -216,7 +216,7 @@
 	if(!hasHUD(usr,"medical"))
 		return
 	if(get_dist(usr, src) > 7)
-		to_chat(usr, span_warning("[src] is too far away."))
+		to_chat(usr, span_warning("[src]距离太远。"))
 		return
 	if(!ishuman(occupant))
 		return
@@ -283,10 +283,10 @@
 	if(isxeno(user))
 		return
 	if(machine_stat & (NOPOWER|BROKEN))
-		to_chat(user, span_notice("\ [src] is non-functional!"))
+		to_chat(user, span_notice("[src] 已失效！"))
 		return
 	if(occupant)
-		to_chat(user, span_notice("\ [src] is already occupied!"))
+		to_chat(user, span_notice("[src] 已被占用！"))
 		return
 
 	var/mob/grabbed_mob
@@ -296,7 +296,7 @@
 	else if(istype(grab.grabbed_thing,/obj/structure/closet/bodybag/cryobag))
 		var/obj/structure/closet/bodybag/cryobag/cryobag = grab.grabbed_thing
 		if(!cryobag.bodybag_occupant)
-			to_chat(user, span_warning("The stasis bag is empty!"))
+			to_chat(user, span_warning("停滞袋是空的！"))
 			return
 		grabbed_mob = cryobag.bodybag_occupant
 		cryobag.open()
@@ -306,7 +306,7 @@
 
 	if(!grabbed_mob.forceMove(src))
 		return
-	visible_message("[user] puts [grabbed_mob] into the sleeper.", 3)
+	visible_message("[user] 将 [grabbed_mob] 放入冷冻睡眠舱。", 3)
 	occupant = grabbed_mob
 	start_processing()
 	connected.start_processing()
@@ -343,7 +343,7 @@
 		filtering = 0
 		return
 	if(ismonkey(occupant))
-		to_chat(usr, span_scanner("Unknown biological subject detected, dialysis not available. Please contact a licensed supplier for further assistance."))
+		to_chat(usr, span_scanner("检测到未知生物样本，无法进行透析。请联系持牌供应商获取进一步协助。"))
 		filtering = 0
 		return
 	if(filtering)
@@ -381,14 +381,14 @@
 	if(occupant?.reagents)
 		if(occupant.reagents.get_reagent_amount(chemical) + amount <= 20)
 			occupant.reagents.add_reagent(chemical, amount)
-			to_chat(user, span_notice("Occupant now has [occupant.reagents.get_reagent_amount(chemical)] units of [available_chemicals[chemical]] in his/her bloodstream."))
+			to_chat(user, span_notice("乘员血液中现有[occupant.reagents.get_reagent_amount(chemical)]单位的[available_chemicals[chemical]]。"))
 			return
-	to_chat(user, span_warning("There's no occupant in the sleeper or the subject has too many chemicals!"))
+	to_chat(user, span_warning("睡眠舱内没有乘员，或目标体内化学物质过多！"))
 
 
 /obj/machinery/sleeper/proc/check(mob/living/user)
 	if(occupant)
-		to_chat(user, span_boldnotice("Occupant ([occupant]) Statistics:"))
+		to_chat(user, span_boldnotice("乘员 ([occupant]) 状态："))
 		var/t1
 		switch(occupant.stat)
 			if(0)
@@ -404,18 +404,18 @@
 		to_chat(user, "[occupant.getOxyLoss() < 60 ? "<span color='#487553'> " : "<font color='#b54646'> "]\t -Respiratory Damage %: [occupant.getOxyLoss()]</font>")
 		to_chat(user, "[occupant.getToxLoss() < 60 ? "<font color='#487553'> " : "<font color='#b54646'> "]\t -Toxin Content %: [occupant.getToxLoss()]</font>")
 		to_chat(user, "[occupant.getFireLoss() < 60 ? "<font color='#487553'> " : "<font color='#b54646'> "]\t -Burn Severity %: [occupant.getFireLoss()]</font>")
-		to_chat(user, span_notice("Expected time till occupant can safely awake: (note: If health is below 20% these times are inaccurate)"))
-		to_chat(user, span_notice("\t [occupant.AmountUnconscious() * 0.1] second\s (if around 1 or 2 the sleeper is keeping them asleep.)"))
+		to_chat(user, span_notice("预计乘员可安全苏醒时间：（注意：若生命值低于20%，此时间可能不准确）"))
+		to_chat(user, span_notice("[occupant.AmountUnconscious() * 0.1] 秒（如果数值在1或2左右，说明休眠舱正在维持其睡眠状态。）"))
 	else
-		to_chat(user, span_notice("There is no one inside!"))
+		to_chat(user, span_notice("里面没有人！"))
 
 /obj/machinery/sleeper/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(xeno_attacker, span_xenowarning("里面没什么值得注意的东西。"))
 		return
 	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
 		return
-	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
+	visible_message(span_warning("[xeno_attacker] 开始撬开 [src] 的盖子！"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)
 	if(!do_after(xeno_attacker, 2 SECONDS))
 		return
@@ -442,7 +442,7 @@
 		return
 
 	if(occupant)
-		to_chat(user, span_notice("The sleeper is already occupied!"))
+		to_chat(user, span_notice("休眠舱已被占用！"))
 		return
 
 	if(ismob(target.pulledby))
@@ -453,7 +453,7 @@
 	if(!target.forceMove(src))
 		return
 
-	visible_message("[target] climbs into the sleeper.", null, null, 3)
+	visible_message("[target]爬进了休眠舱。", null, null, 3)
 	occupant = target
 
 	start_processing()

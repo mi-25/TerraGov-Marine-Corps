@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/bullet/pistol
-	name = "pistol bullet"
+	name = "手枪弹道"
 	hud_state = "pistol"
 	hud_state_empty = "pistol_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -15,14 +15,14 @@
 	sundering = 1
 
 /datum/ammo/bullet/pistol/tiny
-	name = "light pistol bullet"
+	name = "轻型手枪弹道"
 	hud_state = "pistol_light"
 	damage = 15
 	penetration = 5
 	sundering = 0.5
 
 /datum/ammo/bullet/pistol/tiny/ap
-	name = "light pistol bullet"
+	name = "轻型手枪弹道"
 	hud_state = "pistol_lightap"
 	damage = 22.5
 	penetration = 15 //So it can actually hurt something.
@@ -31,7 +31,7 @@
 
 
 /datum/ammo/bullet/pistol/tranq
-	name = "tranq bullet"
+	name = "麻醉弹"
 	hud_state = "pistol_tranq"
 	damage = 25
 	damage_type = STAMINA
@@ -42,7 +42,7 @@
 		carbon_victim.reagents.add_reagent(/datum/reagent/toxin/potassium_chlorophoride, 1)
 
 /datum/ammo/bullet/pistol/hollow
-	name = "hollowpoint pistol bullet"
+	name = "空尖弹手枪弹道"
 	hud_state = "pistol_hollow"
 	accuracy = -10
 	shrapnel_chance = 45
@@ -52,7 +52,7 @@
 	staggerstun(target_mob, proj, stagger = 2 SECONDS, slowdown = 0.5, knockback = 1)
 
 /datum/ammo/bullet/pistol/ap
-	name = "armor-piercing pistol bullet"
+	name = "穿甲手枪弹道"
 	hud_state = "pistol_ap"
 	damage = 20
 	penetration = 12.5
@@ -60,7 +60,7 @@
 	sundering = 0.5
 
 /datum/ammo/bullet/pistol/heavy
-	name = "heavy pistol bullet"
+	name = "重型手枪弹道"
 	hud_state = "pistol_heavy"
 	damage = 30
 	penetration = 5
@@ -68,7 +68,7 @@
 	sundering = 2.15
 
 /datum/ammo/bullet/pistol/superheavy
-	name = "high impact pistol bullet"
+	name = "高冲击弹道手枪弹"
 	hud_state = "pistol_superheavy"
 	damage = 45
 	penetration = 15
@@ -86,7 +86,7 @@
 	staggerstun(target_mob, proj, slowdown = 0.5)
 
 /datum/ammo/bullet/pistol/incendiary
-	name = "incendiary pistol bullet"
+	name = "燃烧弹道手枪弹"
 	hud_state = "pistol_fire"
 	damage_type = BURN
 	shrapnel_chance = 0
@@ -94,7 +94,7 @@
 	damage = 20
 
 /datum/ammo/bullet/pistol/squash
-	name = "squash-head pistol bullet"
+	name = "钝头手枪弹道"
 	hud_state = "pistol_squash"
 	accuracy = 5
 	damage = 32
@@ -103,7 +103,7 @@
 	sundering = 2
 
 /datum/ammo/bullet/pistol/mankey
-	name = "live monkey"
+	name = "活体猴子"
 	icon_state = "monkey1"
 	hud_state = "monkey"
 	hud_state_empty = "monkey_empty"
@@ -116,11 +116,11 @@
 
 /datum/ammo/bullet/pistol/mankey/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
 	if(!target_mob.stat && !ismonkey(target_mob))
-		proj.visible_message(span_danger("The [src] chimpers furiously!"))
+		proj.visible_message(span_danger("[src] 愤怒地吱吱叫！"))
 		new /mob/living/carbon/human/species/monkey(proj.loc)
 
 /datum/ammo/bullet/pistol/gyrojet
-	name = "Micro Rocket"
+	name = "微型火箭"
 	hud_state = "shell_heat"
 	hud_state_empty = "shell_empty"
 	damage = 40

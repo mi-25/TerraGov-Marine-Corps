@@ -1,6 +1,6 @@
 /datum/language/aphasia
-	name = "Gibbering"
-	desc = "It is theorized that any sufficiently brain-damaged person can speak this language."
+	name = "胡言乱语"
+	desc = "据推测，任何大脑受损足够严重的人都能说这种语言。"
 	speech_verb = "garbles"
 	ask_verb = "mumbles"
 	whisper_verb = "mutters"

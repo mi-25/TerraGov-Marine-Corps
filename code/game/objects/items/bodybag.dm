@@ -1,8 +1,8 @@
 //Also contains /obj/structure/closet/bodybag because I doubt anyone would think to look for bodybags in /object/structures
 
 /obj/item/bodybag
-	name = "body bag"
-	desc = "A folded bag designed for the storage and transportation of cadavers."
+	name = "运尸袋"
+	desc = "用于储存和运输尸体的折叠袋。"
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "bodybag_folded"
 	w_class = WEIGHT_CLASS_SMALL
@@ -49,9 +49,9 @@
 
 
 /obj/structure/closet/bodybag
-	name = "body bag"
+	name = "运尸袋"
 	var/bag_name = "body bag"
-	desc = "A plastic bag designed for the storage and transportation of cadavers."
+	desc = "用于储存和运输尸体的塑料袋。"
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "bodybag_closed"
 	icon_closed = "bodybag_closed"
@@ -106,7 +106,7 @@
 		if(bodybag_occupant)
 			name = "[bag_name] ([bodybag_occupant.get_visible_name()])"
 		else
-			name = "[bag_name] (empty)"
+			name = "[bag_name]（空）"
 
 
 /obj/structure/closet/bodybag/attackby(obj/item/I, mob/user, params)
@@ -123,15 +123,15 @@
 			return
 
 		if(t)
-			name = "body bag - "
+			name = "尸体袋"
 			name += t
 			overlays += image(icon, "bodybag_label")
 		else
-			name = "body bag"
+			name = "裹尸袋"
 
 	else if(iswirecutter(I))
-		balloon_alert(user, "tag cut off")
-		name = "body bag"
+		balloon_alert(user, "标签已切断")
+		name = "运尸袋"
 		overlays.Cut()
 
 
@@ -172,7 +172,7 @@
 		return
 	if(length(contents))
 		return FALSE
-	visible_message(span_notice("[usr] folds up [name]."))
+	visible_message(span_notice("[usr] 折叠起 [name]。"))
 	if(QDELETED(foldedbag_instance))
 		foldedbag_instance = new foldedbag_path(loc, src)
 	usr.put_in_hands(foldedbag_instance)
@@ -214,7 +214,7 @@
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
 	bodybag_occupant?.attack_alien(xeno_attacker)
 	open()
-	xeno_attacker.visible_message(span_danger("\The [xeno_attacker] slashes \the [src] open!"), \
+	xeno_attacker.visible_message(span_danger("\The [xeno_attacker] 将 \the [src] 斩击开膛！"), \
 		span_danger("We slash \the [src] open!"), null, 5)
 	return TRUE
 
@@ -225,23 +225,23 @@
 
 	if(!opened && bodybag_occupant)
 		bodybag_occupant.bullet_act(proj) //tarp isn't bullet proof; concealment, not cover; pass it on to the occupant.
-		to_chat(bodybag_occupant, span_userdanger("[proj] hits you through \the [src] and exposes you!"))
+		to_chat(bodybag_occupant, span_userdanger("[proj] 穿过 \the [src] 击中了你并暴露了你的位置！"))
 		open()
 
 /obj/structure/closet/bodybag/fire_act(burn_level)
 	if(!opened && bodybag_occupant)
-		to_chat(bodybag_occupant, span_userdanger("The fire burns you through \the [src] and exposes you!"))
+		to_chat(bodybag_occupant, span_userdanger("火焰透过\the [src]灼烧着你，将你暴露在外！"))
 		bodybag_occupant.fire_act(burn_level)
 		open()
 
 /obj/structure/closet/bodybag/ex_act(severity)
 	if(!opened && bodybag_occupant)
-		to_chat(bodybag_occupant, span_userdanger("The shockwave passes into you through \the [src] and exposes you!"))
+		to_chat(bodybag_occupant, span_userdanger("冲击波通过\the [src]传入你体内，将你暴露在外！"))
 		bodybag_occupant.ex_act(severity)
 		open()
 	switch(severity)
 		if(EXPLODE_DEVASTATE)
-			visible_message(span_danger("The shockwave blows [src] apart!"))
+			visible_message(span_danger("冲击波将[src]炸得粉碎！"))
 			qdel(src) //blown apart
 
 /obj/structure/closet/bodybag/proc/acidspray_act(datum/source, obj/effect/xenomorph/spray/acid_puddle)
@@ -251,7 +251,7 @@
 			var/mob/living/carbon/human/H = bodybag_occupant
 			SEND_SIGNAL(H, COMSIG_ATOM_ACIDSPRAY_ACT, src, acid_puddle.acid_damage, acid_puddle.slow_amt) //tarp isn't acid proof; pass it on to the occupant
 
-		to_chat(bodybag_occupant, span_userdanger("The acid burns you through \the [src] and exposes you!"))
+		to_chat(bodybag_occupant, span_userdanger("酸液烧穿了\the [src]并暴露了你！"))
 		open() //Get out
 
 /obj/structure/closet/bodybag/effect_smoke(obj/effect/particle_effect/smoke/S)
@@ -261,29 +261,29 @@
 
 	if((CHECK_BITFIELD(S.smoke_traits, SMOKE_BLISTERING) || CHECK_BITFIELD(S.smoke_traits, SMOKE_XENO_ACID)) && !opened && bodybag_occupant)
 		bodybag_occupant.effect_smoke(S) //tarp *definitely* isn't acid/phosphorous smoke proof, lol.
-		to_chat(bodybag_occupant, span_userdanger("The smoke burns you through \the [src] and exposes you!"))
+		to_chat(bodybag_occupant, span_userdanger("烟雾透过\the [src]灼伤了你并暴露了你的位置！"))
 		open() //Get out
 
 /obj/item/storage/box/bodybags
-	name = "body bags"
-	desc = "This box contains body bags."
+	name = "裹尸袋"
+	desc = "这个箱子里装有裹尸袋。"
 	icon_state = "bodybags"
 	w_class = WEIGHT_CLASS_NORMAL
 	spawn_type = /obj/item/bodybag
 	spawn_number = 7
 
 /obj/item/bodybag/cryobag
-	name = "stasis bag"
-	desc = "A folded, reusable bag designed to prevent additional damage to an occupant."
+	name = "休眠袋"
+	desc = "一种可折叠、可重复使用的袋子，旨在防止内部乘员受到额外伤害。"
 	icon = 'icons/obj/cryobag.dmi'
 	icon_state = "bodybag_folded"
 	unfoldedbag_path = /obj/structure/closet/bodybag/cryobag
 	var/used = FALSE
 
 /obj/structure/closet/bodybag/cryobag
-	name = "stasis bag"
+	name = "休眠袋"
 	bag_name = "stasis bag"
-	desc = "A reusable plastic bag designed to prevent additional damage to an occupant."
+	desc = "一种可重复使用的塑料袋，旨在防止对乘员造成额外伤害。"
 	icon = 'icons/obj/cryobag.dmi'
 	foldedbag_path = /obj/item/bodybag/cryobag
 
@@ -292,7 +292,7 @@
 		return ..()
 
 	if(!bodybag_occupant)
-		balloon_alert(user, "empty!")
+		balloon_alert(user, "空！")
 		return TRUE
 
 	var/obj/item/healthanalyzer/J = I
@@ -321,7 +321,7 @@
 /obj/structure/closet/bodybag/cryobag/proc/on_bodybag_occupant_death(mob/source, gibbing)
 	SIGNAL_HANDLER
 	if(!QDELETED(bodybag_occupant))
-		visible_message(span_notice("\The [src] rejects the corpse."))
+		visible_message(span_notice("\The [src] 拒绝了这具尸体。"))
 	open()
 
 /obj/structure/closet/bodybag/cryobag/examine(mob/living/user)
@@ -359,7 +359,7 @@
 		if(!hasHUD(usr,"medical"))
 			return
 		if(get_dist(usr, src) > WORLD_VIEW_NUM)
-			to_chat(usr, span_warning("[src] is too far away."))
+			to_chat(usr, span_warning("[src]距离太远。"))
 			return
 		var/datum/data/record/medical_record = find_medical_record(bodybag_occupant)
 		if(isnull(medical_record))
@@ -368,16 +368,16 @@
 		scan.ui_interact(usr)
 
 /obj/item/trash/used_stasis_bag
-	name = "used stasis bag"
+	name = "已使用停滞袋"
 	icon = 'icons/obj/cryobag.dmi'
 	icon_state = "bodybag_used"
-	desc = "It's been ripped open. You will need to find a machine capable of recycling it."
+	desc = "它已经被撕开了。你需要找一台能够回收它的机器。"
 
 //MARINE SNIPER TARPS
 
 /obj/item/bodybag/tarp
-	name = "\improper V1 thermal-dampening tarp (folded)"
-	desc = "A tarp carried by TGMC Snipers. When laying underneath the tarp, the sniper is almost indistinguishable from the landscape if utilized correctly. The tarp contains a thermal-dampening weave to hide the wearer's heat signatures, optical camoflauge, and smell dampening."
+	name = "\improper V1 热抑制伪装布（已折叠）"
+	desc = "地球政府殖民地海军陆战队狙击手携带的伪装布。当狙击手正确使用并卧于其下时，几乎与周围环境融为一体。该伪装布采用热信号抑制编织技术，可隐藏使用者的热信号、光学伪装并抑制气味。"
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "jungletarp_folded"
 	w_class = WEIGHT_CLASS_SMALL
@@ -411,9 +411,9 @@
 
 
 /obj/structure/closet/bodybag/tarp
-	name = "\improper V1 thermal-dampening tarp"
+	name = "\improper V1型热抑制帆布"
 	bag_name = "V1 thermal-dampening tarp"
-	desc = "An active camo tarp carried by TGMC Snipers. When laying underneath the tarp, the sniper is almost indistinguishable from the landscape if utilized correctly. The tarp contains a thermal-dampening weave to hide the wearer's heat signatures, optical camouflage, and smell dampening."
+	desc = "由TGMC狙击手携带的主动伪装篷布。当狙击手正确使用并卧于篷布之下时，几乎无法与周围环境区分开来。该篷布采用热信号抑制编织技术，可隐藏使用者的热特征、光学伪装并抑制气味。"
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "jungletarp_closed"
 	icon_closed = "jungletarp_closed"

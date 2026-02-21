@@ -100,7 +100,7 @@
 			return
 		else if(L.restrained(RESTRAINED_NECKGRAB))
 			move_delay = world.time + 1 SECONDS //to reduce the spam
-			to_chat(src, span_warning("You're restrained! You can't move!"))
+			to_chat(src, span_warning("你被束缚了！无法移动！"))
 			return
 		else
 			move_delay = world.time + 1 SECONDS
@@ -163,7 +163,7 @@
 
 	//Check to see if we slipped
 	if(prob(Process_Spaceslipping(5)))
-		to_chat(src, span_boldnotice("You slipped!"))
+		to_chat(src, span_boldnotice("你滑倒了！"))
 		step(src, src.inertia_dir)
 		return 0
 	//If not then we can reset inertia and move
@@ -363,11 +363,11 @@
 
 	if(!can_z_move(UP, current_turf, null, ZMOVE_CAN_FLY_CHECKS|ZMOVE_FEEDBACK))
 		return
-	balloon_alert(src, "moving up...")
+	balloon_alert(src, "正在前进...")
 	if(!do_after(src, 1 SECONDS))
 		return
 	if(zMove(UP, z_move_flags = ZMOVE_FLIGHT_FLAGS|ZMOVE_FEEDBACK))
-		to_chat(src, span_notice("You move upwards."))
+		to_chat(src, span_notice("你向上移动。"))
 
 
 ///Moves a mob down a z level
@@ -391,11 +391,11 @@
 
 	if(!can_z_move(DOWN, current_turf, null, ZMOVE_CAN_FLY_CHECKS|ZMOVE_FEEDBACK))
 		return
-	balloon_alert(src, "moving down...")
+	balloon_alert(src, "正在下降...")
 	if(!do_after(src, 1 SECONDS))
 		return
 	if(zMove(DOWN, z_move_flags = ZMOVE_FLIGHT_FLAGS|ZMOVE_FEEDBACK))
-		to_chat(src, span_notice("You move down."))
+		to_chat(src, span_notice("你向下移动。"))
 	return FALSE
 
 /mob/proc/toggle_move_intent(new_intent)

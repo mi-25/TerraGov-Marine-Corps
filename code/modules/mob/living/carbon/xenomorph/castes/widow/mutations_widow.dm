@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/hive_toughness
 	name = "Hive Toughness"
-	desc = "Being adjacent to any resin wall grants 10/15/20 soft armor in all categories."
+	desc = "靠近任何树脂墙可获得10/15/20点全类别软护甲。"
 	/// For the first structure, the amount of armor that should be given for being near resin walls.
 	var/armor_initial = 5
 	/// For each structure, the amount of armor that should be given for being near resin walls.
@@ -61,7 +61,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/web_yank
 	name = "Web Yank"
-	desc = "Leash Ball's cooldown is set to 80/65/50% of its original cooldown. Interacting with any Snaring Web will cause you to channel for 1 second which will stun and pull in leashed humans."
+	desc = "牵制球的冷却时间设定为原始冷却时间的80/65/50%。与任何缠缚蛛网互动将使你引导1秒，期间会击晕并拉回被牵制的人类。"
 	/// For the first structure, the multiplier to increase the cooldown by.
 	var/multiplier_initial = -0.05
 	/// For each structure, the multiplier to increase the cooldown by.
@@ -104,7 +104,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/incubator
 	name = "Incubator"
-	desc = "Birth Spiderling's cooldown is set to 80/65/50% of its original cooldown."
+	desc = "孵化蜘蛛幼虫的冷却时间设置为原始冷却时间的80/65/50%。"
 	/// For the first structure, the multiplier of Birth Spiderling's initial ability cooldown to add to it.
 	var/multiplier_initial = -0.05
 	/// For each structure, the multiplier of Birth Spiderling's initial ability cooldown to add to it.

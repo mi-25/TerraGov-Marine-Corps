@@ -1,6 +1,6 @@
 /obj/vehicle/ridden/big_bike
-	name = "big bike"
-	desc = "A TGMC heavy motorbike. Used to swiftly carry up to 2 soldiers over the roughest of terrain, at high speed and with respectable survivibility. Is typically armed with a pair of forwarded mounted weapons. Favoured for rapid assaults."
+	name = "大型摩托"
+	desc = "一辆地球政府殖民地海军陆战队重型摩托车。用于在崎岖地形上高速运送最多2名士兵，具备可观的生存能力。通常配备一对前向固定武器。适用于快速突击。"
 	icon = 'icons/obj/vehicles/big_bike.dmi'
 	icon_state = "big_bike"
 	max_integrity = 425
@@ -79,6 +79,6 @@
 	if(!COOLDOWN_FINISHED(src, rev_cooldown))
 		return FALSE
 	COOLDOWN_START(src, rev_cooldown, 3 SECONDS)
-	to_chat(user, span_notice("You rev the [src]'s engine."))
+	to_chat(user, span_notice("你启动了[src]的引擎。"))
 	playsound(src, pick('sound/vehicles/bikerev-1.ogg', 'sound/vehicles/bikerev-2.ogg', 'sound/vehicles/bikerev-3.ogg', 'sound/vehicles/bikerev-4.ogg'), 50, TRUE, falloff = 3)
 	return TRUE

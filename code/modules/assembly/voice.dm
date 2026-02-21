@@ -4,8 +4,8 @@
 #define VOICE_SENSOR_MODE 4
 
 /obj/item/assembly/voice
-	name = "voice analyzer"
-	desc = "A small electronic device able to record a voice sample, and send a signal when that sample is repeated."
+	name = "语音分析仪"
+	desc = "一种小型电子设备，能够录制语音样本，并在该样本被重复时发送信号。"
 	icon_state = "voice"
 	attachable = TRUE
 	verb_say = "beeps"
@@ -43,15 +43,15 @@
 		if(INCLUSIVE_MODE)
 			recorded = raw_message
 			listening = FALSE
-			say("Activation message is '[recorded]'.", message_language)
+			say("激活消息为'[recorded]'。", message_language)
 		if(EXCLUSIVE_MODE)
 			recorded = raw_message
 			listening = FALSE
-			say("Activation message is '[recorded]'.", message_language)
+			say("激活消息为'[recorded]'。", message_language)
 		if(RECOGNIZER_MODE)
 			recorded = speaker.GetVoice()
 			listening = FALSE
-			say("Your voice pattern is saved.", message_language)
+			say("你的声纹已保存。", message_language)
 		if(VOICE_SENSOR_MODE)
 			if(length(raw_message))
 				addtimer(CALLBACK(src, PROC_REF(pulse), 0), 10)
@@ -75,7 +75,7 @@
 /obj/item/assembly/voice/multitool_act(mob/living/user, obj/item/I)
 	mode %= length(modes)
 	mode++
-	to_chat(user, span_notice("You set [src] into [modes[mode]] mode."))
+	to_chat(user, span_notice("你将[src]设置为[modes[mode]]模式。"))
 	listening = FALSE
 	recorded = ""
 	return TRUE

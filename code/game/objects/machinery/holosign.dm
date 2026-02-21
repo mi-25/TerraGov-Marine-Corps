@@ -1,7 +1,7 @@
 ////////////////////HOLOSIGN///////////////////////////////////////
 /obj/machinery/holosign
-	name = "holosign"
-	desc = "Small wall-mounted holographic projector"
+	name = "全息标识"
+	desc = "小型壁挂式全息投影仪"
 	icon = 'icons/obj/machines/holosign.dmi'
 	icon_state = "sign_off"
 	layer = MOB_LAYER
@@ -29,16 +29,16 @@
 	update_icon()
 
 /obj/machinery/holosign/surgery
-	name = "surgery holosign"
-	desc = "Small wall-mounted holographic projector. This one reads SURGERY."
+	name = "手术全息标识"
+	desc = "小型壁挂式全息投影仪。这个显示着'手术室'。"
 	on_icon = "surgery"
 ////////////////////SWITCH///////////////////////////////////////
 
 /obj/machinery/holosign_switch
-	name = "holosign switch"
+	name = "全息标识切换"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "light1"
-	desc = "A remote control switch for holosign."
+	desc = "全息标识远程控制开关。"
 	var/id = null
 	var/active = 0
 	anchored = TRUE

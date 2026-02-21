@@ -5,8 +5,8 @@
 	icon = 'icons/obj/atmospherics/pipes/simple.dmi'
 	icon_state = "pipe11-2"
 
-	name = "pipe"
-	desc = "A one meter section of regular pipe."
+	name = "管道"
+	desc = "一段一米长的标准管道。"
 
 	dir = SOUTH
 	initialize_directions = SOUTH|NORTH

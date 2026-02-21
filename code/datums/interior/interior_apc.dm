@@ -11,7 +11,7 @@
 	template = /datum/map_template/interior/mrap
 
 /turf/closed/interior/apc
-	name = "\improper Athena tank interior"
+	name = "\improper 雅典娜号坦克内部"
 	icon = 'icons/obj/armored/3x3/apc_interior.dmi'
 
 /turf/closed/interior/apc/one
@@ -51,7 +51,7 @@
 	icon_state = "apc_interior_28"
 
 /turf/open/interior/apc
-	name = "\improper Athena tank interior"
+	name = "\improper 雅典娜号坦克内部"
 	icon = 'icons/obj/armored/3x3/apc_interior.dmi'
 
 /turf/open/interior/apc/eight
@@ -74,9 +74,9 @@
 	icon_state = "apc_interior_29"
 
 /obj/structure/bed/chair/dropship/doublewide/apc
-	name = "apc seat"
-	desc = "Stops you from bouncing around inside the APC. You don't see a seatbelt."
+	name = "APC座位"
+	desc = "防止你在装甲运兵车内颠簸。你没看到安全带。"
 
 /area/interior/apc
-	name = "APC Interior"
+	name = "APC 内部"
 	icon_state = "shuttle"

@@ -1,6 +1,6 @@
 /obj/item/alien_embryo
 	name = "alien embryo"
-	desc = "All slimy and yucky."
+	desc = "黏糊糊的，真恶心。"
 	icon = 'icons/Xeno/castes/larva.dmi'
 	icon_state = "Embryo"
 	var/grinder_datum = /datum/reagent/consumable/larvajelly //good ol cookin
@@ -102,7 +102,7 @@
 			if(prob(2))
 				to_chat(affected_mob, span_warning("[pick("Your throat feels sore", "Mucous runs down the back of your throat")]."))
 			else if(prob(1))
-				to_chat(affected_mob, span_warning("Your muscles ache."))
+				to_chat(affected_mob, span_warning("你的肌肉酸痛。"))
 				if(prob(20))
 					affected_mob.take_limb_damage(1)
 			else if(prob(2))
@@ -110,7 +110,7 @@
 		if(4)
 			if(prob(1))
 				if(!affected_mob.IsUnconscious())
-					affected_mob.visible_message(span_danger("\The [affected_mob] starts shaking uncontrollably!"), \
+					affected_mob.visible_message(span_danger("\The [affected_mob] 开始不受控制地颤抖！"), \
 												span_danger("You start shaking uncontrollably!"))
 					affected_mob.Unconscious(20 SECONDS)
 					affected_mob.jitter(105)
@@ -155,7 +155,7 @@
 	//If we have a candidate, transfer it over.
 	if(picked)
 		picked.mind.transfer_to(new_xeno, TRUE)
-		to_chat(new_xeno, span_xenoannounce("We are a xenomorph larva inside a host! Move to burst out of it!"))
+		to_chat(new_xeno, span_xenoannounce("我们是宿主体内的异形幼虫！移动到宿主体外破体而出！"))
 		new_xeno << sound('sound/effects/alien/new_larva.ogg')
 
 	stage = 6
@@ -167,10 +167,10 @@
 
 	victim.chestburst = CARBON_IS_CHEST_BURSTING
 	ADD_TRAIT(victim, TRAIT_PSY_DRAINED, TRAIT_PSY_DRAINED)
-	to_chat(src, span_danger("We start bursting out of [victim]'s chest!"))
+	to_chat(src, span_danger("我们开始从[victim]的胸口破体而出！"))
 
 	victim.Unconscious(40 SECONDS)
-	victim.visible_message(span_danger("\The [victim] starts shaking uncontrollably!"), \
+	victim.visible_message(span_danger("\The [victim] 开始不受控制地颤抖！"), \
 								span_danger("You feel something ripping up your insides!"))
 	victim.jitter(300)
 

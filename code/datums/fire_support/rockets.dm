@@ -1,5 +1,5 @@
 /datum/fire_support/rockets
-	name = "Rocket barrage"
+	name = "火箭弹幕"
 	fire_support_type = FIRESUPPORT_TYPE_ROCKETS
 	scatter_range = 9
 	impact_quantity = 15
@@ -16,7 +16,7 @@
 	uses = -1
 
 /datum/fire_support/incendiary_rockets
-	name = "Incendiary rocket barrage"
+	name = "燃烧火箭弹幕"
 	fire_support_type = FIRESUPPORT_TYPE_INCEND_ROCKETS
 	scatter_range = 9
 	impact_quantity = 9

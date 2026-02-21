@@ -1,0 +1,12 @@
+﻿id,file,line,context,original,translation,status,error
+4d674192,ashtray.dm,22,to_chat,This ashtray is full.,这个烟灰缸满了。,translated,
+43611d44,ashtray.dm,30,to_chat,You can't place [cig] in [src] without even smoking it. Why would you do that?,你甚至都没抽[cig]，怎么能把它放进[src]里呢？为什么要这么做？,translated,
+f93af921,ashtray.dm,33,visible_message,"[user] crushes [cig] in [src], putting it out.",[user] 在 [src] 中捻灭了 [cig]。,translated,
+75fc2c2c,ashtray.dm,38,visible_message,[user] places [I] in [src].,[user]将[I]放入[src]。,translated,
+d7366a00,ashtray.dm,42,visible_message,"[src] shatters, spilling its contents!",[src] 碎裂了，里面的东西洒了出来！,translated,
+6afb405f,ashtray.dm,73,name,plastic ashtray,塑料烟灰缸,translated,
+4c4c790f,ashtray.dm,86,name,bronze ashtray,青铜烟灰缸,translated,
+cf924384,ashtray.dm,99,name,glass ashtray,玻璃烟灰缸,translated,
+3b565867,ashtray.dm,74,desc,Cheap plastic ashtray.,廉价的塑料烟灰缸。,translated,
+751dfd00,ashtray.dm,87,desc,Massive bronze ashtray.,巨大的青铜烟灰缸。,translated,
+3d8c72bf,ashtray.dm,100,desc,Glass ashtray. Looks fragile.,玻璃烟灰缸。看起来易碎。,translated,

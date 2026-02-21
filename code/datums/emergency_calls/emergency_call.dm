@@ -101,27 +101,27 @@
 	var/datum/emergency_call/distress = SSticker?.mode?.picked_call //Just to simplify things a bit
 
 	if(is_banned_from(usr.ckey, ROLE_ERT))
-		to_chat(usr, span_danger("You are jobbanned from the emergency reponse team!"))
+		to_chat(usr, span_danger("你已被禁止加入紧急响应小组！"))
 		return
 
 	if(!istype(distress) || !SSticker.mode.waiting_for_candidates || distress.mob_max < 1)
-		to_chat(usr, span_warning("No distress beacons that need candidates are active. You will be notified if that changes."))
+		to_chat(usr, span_warning("当前没有需要候选人的求救信标。如有变化，您将收到通知。"))
 		return
 
 	var/deathtime = world.time - GLOB.key_to_time_of_role_death[key]
 
 	if(deathtime < 600 && !check_other_rights(usr.client, R_ADMIN, FALSE)) //They have ghosted after the announcement.
-		to_chat(usr, span_warning("You ghosted too recently. Try again later."))
+		to_chat(usr, span_warning("你最近刚变成幽灵。请稍后再试。"))
 		return
 
 	if(usr.mind in distress.candidates)
-		to_chat(usr, span_warning("You are already a candidate for this emergency response team."))
+		to_chat(usr, span_warning("你已经是这支紧急响应小组的候选人。"))
 		return
 
 	if(distress.add_candidate(usr))
-		to_chat(usr, span_boldnotice("You are now a candidate in the emergency response team! If there are enough candidates, you may be picked to be part of the team."))
+		to_chat(usr, span_boldnotice("你现在是紧急响应队的候选人了！如果候选人足够多，你可能会被选中成为小队的一员。"))
 	else
-		to_chat(usr, span_warning("Something went wrong while adding you into the candidate list!"))
+		to_chat(usr, span_warning("将您加入候选名单时出现错误！"))
 
 /datum/emergency_call/proc/reset()
 	if(candidate_timer)
@@ -170,11 +170,11 @@
 			continue
 		if(M.current) //If they still have a body
 			if(!isaghost(M.current) && M.current.stat != DEAD) // and not dead or admin ghosting,
-				to_chat(M.current, span_warning("You didn't get selected to join the distress team because you aren't dead."))
+				to_chat(M.current, span_warning("你没有被选入救援队，因为你还没死。"))
 				continue
 		if(name == "Xenomorphs" && is_banned_from(ckey(M.key), ROLE_XENOMORPH))
 			if(M.current)
-				to_chat(M, span_warning("You didn't get selected to join the distress team because you are jobbanned from Xenomorph."))
+				to_chat(M, span_warning("你没有被选入救援队，因为你被禁止扮演异形。"))
 			continue
 		valid_candidates += M
 
@@ -204,7 +204,7 @@
 
 		for(var/datum/mind/M in valid_candidates)
 			if(M.current)
-				to_chat(M.current, span_warning("You didn't get selected to join the distress team. Better luck next time!"))
+				to_chat(M.current, span_warning("你没有被选入救援队。下次好运！"))
 		message_admins("Distress beacon: [length(valid_candidates)] valid candidates were not selected.")
 	else
 		picked_candidates = valid_candidates // save some time

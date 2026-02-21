@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/warrior
 	caste_base_type = /datum/xeno_caste/warrior
 	name = "Warrior"
-	desc = "A beefy, alien with an armored carapace."
+	desc = "一个肌肉发达、身披甲壳的外星生物。"
 	icon = 'icons/Xeno/castes/warrior.dmi'
 	icon_state = "Warrior Walking"
 	bubble_icon = "alienroyal"

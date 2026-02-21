@@ -1,6 +1,6 @@
 /obj/item/assembly/prox_sensor
-	name = "proximity sensor"
-	desc = "Used for scanning and alerting when someone enters a certain proximity."
+	name = "近程传感器"
+	desc = "用于扫描并在有人进入特定范围时发出警报。"
 	icon_state = "prox"
 	attachable = TRUE
 

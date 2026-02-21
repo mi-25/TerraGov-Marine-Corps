@@ -11,7 +11,7 @@ ADMIN_VERB_AND_CONTEXT_MENU(debug_variables, R_DEBUG, "View Variables", "View th
 	var/static/cookieoffset = rand(1, 9999) //to force cookies to reset after the round.
 
 	if(!usr.client || !usr.client.holder) //This is usr because admins can call the proc on other clients, even if they're not admins, to show them VVs.
-		to_chat(usr, span_danger("You need to be an administrator to access this."))
+		to_chat(usr, span_danger("您需要管理员权限才能访问此功能。"))
 		return
 
 	if(!thing)

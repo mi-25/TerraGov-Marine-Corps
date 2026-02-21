@@ -13,8 +13,8 @@
  * ...Hilarious, right?
  */
 /obj/vehicle/sealed/mecha/combat/savannah_ivanov
-	name = "\improper Savannah-Ivanov"
-	desc = "An insanely overbulked mecha that handily crushes single-pilot opponents. The price is that you need two pilots to use it."
+	name = "\improper 萨凡纳-伊万诺夫"
+	desc = "一台体型异常庞大的机甲，能轻松碾压单驾驶员对手。代价是需要两名驾驶员才能操作。"
 	icon = 'icons/mecha/coop_mech.dmi'
 	base_icon_state = "savannah_ivanov"
 	icon_state = "savannah_ivanov_0_0"
@@ -59,7 +59,7 @@
 
 ///Savannah Skyfall
 /datum/action/vehicle/sealed/mecha/skyfall
-	name = "Savannah Skyfall"
+	name = "萨凡纳·天坠"
 	action_icon_state = "mech_savannah"
 	///cooldown time between skyfall uses
 	var/skyfall_cooldown_time = 1 MINUTES
@@ -73,16 +73,16 @@
 	if(!owner || !chassis || !(owner in chassis.occupants))
 		return
 	if(chassis.phasing)
-		to_chat(owner, span_warning("You're already airborne!"))
+		to_chat(owner, span_warning("你已经离地了！"))
 		return
 	if(TIMER_COOLDOWN_RUNNING(chassis, COOLDOWN_MECHA_SKYFALL))
 		var/timeleft = S_TIMER_COOLDOWN_TIMELEFT(chassis, COOLDOWN_MECHA_SKYFALL)
-		to_chat(owner, span_warning("You need to wait [DisplayTimeText(timeleft, 1)] before attempting to Skyfall."))
+		to_chat(owner, span_warning("你需要等待 [DisplayTimeText(timeleft, 1)] 才能尝试使用天降。"))
 		return
 	if(skyfall_charge_level)
 		abort_skyfall()
 		return
-	chassis.balloon_alert(owner, "charging skyfall...")
+	chassis.balloon_alert(owner, "正在充能天降...")
 	INVOKE_ASYNC(src, PROC_REF(skyfall_charge_loop))
 
 /**
@@ -98,23 +98,23 @@
 	skyfall_charge_level++
 	switch(skyfall_charge_level)
 		if(1)
-			chassis.visible_message(span_warning("[chassis] clicks and whirrs for a moment, with a low hum emerging from the legs."))
+			chassis.visible_message(span_warning("[chassis] 咔嗒作响并嗡鸣了片刻，腿部发出低沉的嗡鸣声。"))
 			playsound(chassis, 'sound/items/rped.ogg', 50, TRUE)
 		if(2)
-			chassis.visible_message(span_warning("[chassis] begins to shake, the sounds of electricity growing louder."))
+			chassis.visible_message(span_warning("[chassis]开始震动，电流声越来越响。"))
 			chassis.Shake(1, 1, SKYFALL_SINGLE_CHARGE_TIME-1) // -1 gives space between the animates, so they don't interrupt eachother
 		if(3)
-			chassis.visible_message(span_warning("[chassis] assumes a pose as it rattles violently."))
+			chassis.visible_message(span_warning("[chassis] 剧烈震动，摆出一个姿势。"))
 			chassis.Shake(2, 2, SKYFALL_SINGLE_CHARGE_TIME-1) // -1 gives space between the animates, so they don't interrupt eachother
 			chassis.spark_system.start()
 			chassis.update_icon()
 		if(4)
-			chassis.visible_message(span_warning("[chassis] sparks and shutters as it finalizes preparation."))
+			chassis.visible_message(span_warning("[chassis] 火花四溅，机体震颤，最终完成准备。"))
 			playsound(chassis, 'sound/mecha/skyfall_power_up.ogg', 50, TRUE)
 			chassis.Shake(3, 3, SKYFALL_SINGLE_CHARGE_TIME-1) // -1 gives space between the animates, so they don't interrupt eachother
 			chassis.spark_system.start()
 		if(SKYFALL_CHARGELEVEL_LAUNCH)
-			chassis.visible_message(span_danger("[chassis] leaps into the air!"))
+			chassis.visible_message(span_danger("[chassis] 跃入空中！"))
 			playsound(chassis, 'sound/weapons/guns/fire/tank_smokelauncher.ogg', 50, TRUE)
 	if(skyfall_charge_level != SKYFALL_CHARGELEVEL_LAUNCH)
 		skyfall_charge_loop()
@@ -156,7 +156,7 @@
  * it's just the animations of the mecha coming down + another timer for the final landing effect
  */
 /datum/action/vehicle/sealed/mecha/skyfall/proc/land()
-	chassis.visible_message(span_danger("[chassis] lands from above!"))
+	chassis.visible_message(span_danger("[chassis]从天而降！"))
 	playsound(chassis, 'sound/effects/explosion/large1.ogg', 50, 1)
 	chassis.resistance_flags &= ~INDESTRUCTIBLE
 	chassis.mecha_flags &= ~(QUIET_TURNS|CANNOT_INTERACT)
@@ -191,12 +191,12 @@
 			if(crushed_victim in chassis.occupants)
 				continue
 			if(!(crushed_victim in landed_on))
-				to_chat(crushed_victim, span_userdanger("The tremors from [chassis] landing sends you flying!"))
+				to_chat(crushed_victim, span_userdanger("[chassis]着陆时的震动将你震飞了！"))
 				var/fly_away_direction = get_dir(chassis, crushed_victim)
 				crushed_victim.throw_at(get_edge_target_turf(crushed_victim, fly_away_direction), 4, 3)
 				crushed_victim.adjustBruteLoss(15)
 				continue
-			to_chat(crushed_victim, span_userdanger("[chassis] crashes down on you from above!"))
+			to_chat(crushed_victim, span_userdanger("[chassis] 从上方猛砸在你身上！"))
 			if(crushed_victim.stat != CONSCIOUS)
 				crushed_victim.gib(FALSE, FALSE, FALSE)
 				continue
@@ -209,7 +209,7 @@
  * Applies cooldown and resets charge level
  */
 /datum/action/vehicle/sealed/mecha/skyfall/proc/abort_skyfall()
-	chassis.balloon_alert(owner, "skyfall aborted")
+	chassis.balloon_alert(owner, "天降中止")
 	S_TIMER_COOLDOWN_START(chassis, COOLDOWN_MECHA_MISSILE_STRIKE, skyfall_charge_level * 10 SECONDS) //so aborting skyfall later in the process imposes a longer cooldown
 	skyfall_charge_level = 0
 	chassis.update_icon()
@@ -224,7 +224,7 @@
 	update_button_icon()
 
 /datum/action/vehicle/sealed/mecha/ivanov_strike
-	name = "Ivanov Strike"
+	name = "伊万诺夫打击"
 	action_icon_state = "mech_ivanov"
 	///cooldown time between strike uses
 	var/strike_cooldown_time = 40 SECONDS
@@ -244,7 +244,7 @@
 		return
 	if(TIMER_COOLDOWN_RUNNING(chassis, COOLDOWN_MECHA_MISSILE_STRIKE))
 		var/timeleft = S_TIMER_COOLDOWN_TIMELEFT(chassis, COOLDOWN_MECHA_MISSILE_STRIKE)
-		to_chat(owner, span_warning("You need to wait [DisplayTimeText(timeleft, 1)] before firing another Ivanov Strike."))
+		to_chat(owner, span_warning("你需要等待 [DisplayTimeText(timeleft, 1)] 才能再次发射伊万诺夫打击。"))
 		return
 	if(aiming_missile)
 		end_missile_targeting()
@@ -267,7 +267,7 @@
  * Plus other flavor like the overlay
  */
 /datum/action/vehicle/sealed/mecha/ivanov_strike/proc/start_missile_targeting()
-	chassis.balloon_alert(owner, "missile mode on (click to target)")
+	chassis.balloon_alert(owner, "导弹模式开启（点击选择目标）")
 	aiming_missile = TRUE
 	rockets_left = 3
 	RegisterSignal(chassis, COMSIG_MECHA_MELEE_CLICK, PROC_REF(on_melee_click))
@@ -333,8 +333,8 @@
 
 ///a simple indicator of where the skyfall is going to land.
 /obj/effect/skyfall_landingzone
-	name = "Landing Zone Indicator"
-	desc = "A holographic projection designating the landing zone of something. It's probably best to stand back."
+	name = "着陆区指示器"
+	desc = "一个全息投影，标示着某物的着陆区。最好还是站远点。"
 	icon = 'icons/effects/telegraph_96x96.dmi'
 	icon_state = "target_largebox"
 	layer = BELOW_MOB_LAYER

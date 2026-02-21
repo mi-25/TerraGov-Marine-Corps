@@ -110,7 +110,7 @@
 	SET_PLANE_W_SCALAR(src, initial(plane), SSmapping.max_plane_offset)
 
 /area/ai_multicam_room
-	name = "AI Multicam Room"
+	name = "AI 多地形迷彩室"
 	icon_state = "ai_camera_room"
 	static_lighting = FALSE
 	base_lighting_alpha = 255
@@ -122,7 +122,7 @@
 GLOBAL_DATUM(ai_camera_room_landmark, /obj/effect/landmark/ai_multicam_room)
 
 /obj/effect/landmark/ai_multicam_room
-	name = "ai camera room"
+	name = "AI 摄像头房间"
 	icon = 'icons/mob/landmarks.dmi'
 	icon_state = "x"
 
@@ -141,7 +141,7 @@ GLOBAL_DATUM(ai_camera_room_landmark, /obj/effect/landmark/ai_multicam_room)
 
 //Dummy camera eyes
 /mob/camera/aiEye/hud/pic_in_pic
-	name = "Secondary AI Eye"
+	name = "次级AI眼"
 	invisibility = INVISIBILITY_OBSERVER
 	mouse_opacity = MOUSE_OPACITY_ICON
 	icon_state = "ai_pip_camera"
@@ -222,13 +222,13 @@ GLOBAL_DATUM(ai_camera_room_landmark, /obj/effect/landmark/ai_multicam_room)
 /mob/living/silicon/ai/proc/drop_new_multicam(silent = FALSE)
 	if(!CONFIG_GET(flag/allow_ai_multicam))
 		if(!silent)
-			to_chat(src, span_warning("This action is currently disabled. Contact an administrator to enable this feature."))
+			to_chat(src, span_warning("此功能当前已禁用。请联系管理员以启用此功能。"))
 		return
 	if(!eyeobj)
 		return
 	if(length(multicam_screens) >= max_multicams)
 		if(!silent)
-			to_chat(src, span_warning("Cannot place more than [max_multicams] multicamera windows."))
+			to_chat(src, span_warning("无法放置超过[max_multicams]个多摄像头窗口。"))
 		return
 	var/atom/movable/screen/movable/pic_in_pic/ai/C = new()
 	C.set_view_size(3, 3, FALSE)
@@ -236,13 +236,13 @@ GLOBAL_DATUM(ai_camera_room_landmark, /obj/effect/landmark/ai_multicam_room)
 	C.set_ai(src)
 	C.aiEye.name = "[name] (Secondary AI Eye)"
 	if(!silent)
-		to_chat(src, span_notice("Added new multicamera window."))
+		to_chat(src, span_notice("已添加新的多摄像头窗口。"))
 	return C
 
 
 /mob/living/silicon/ai/proc/toggle_multicam()
 	if(!CONFIG_GET(flag/allow_ai_multicam))
-		to_chat(src, span_warning("This action is currently disabled. Contact an administrator to enable this feature."))
+		to_chat(src, span_warning("此功能当前已禁用。请联系管理员以启用此功能。"))
 		return
 	if(multicam_on)
 		end_multicam()
@@ -254,11 +254,11 @@ GLOBAL_DATUM(ai_camera_room_landmark, /obj/effect/landmark/ai_multicam_room)
 	if(multicam_on || !isturf(loc))
 		return
 	if(!GLOB.ai_camera_room_landmark)
-		to_chat(src, span_warning("This function is not available at this time."))
+		to_chat(src, span_warning("此功能当前不可用。"))
 		return
 	multicam_on = TRUE
 	refresh_multicam()
-	to_chat(src, span_notice("Multiple-camera viewing mode activated."))
+	to_chat(src, span_notice("多摄像头观察模式已激活。"))
 
 
 /mob/living/silicon/ai/proc/refresh_multicam()
@@ -279,7 +279,7 @@ GLOBAL_DATUM(ai_camera_room_landmark, /obj/effect/landmark/ai_multicam_room)
 			var/atom/movable/screen/movable/pic_in_pic/P = V
 			P.unshow_to(client)
 	reset_perspective()
-	to_chat(src, span_notice("Multiple-camera viewing mode deactivated."))
+	to_chat(src, span_notice("多摄像头查看模式已停用。"))
 
 
 /mob/living/silicon/ai/proc/select_main_multicam_window(atom/movable/screen/movable/pic_in_pic/ai/P)

@@ -77,10 +77,10 @@
 		return COMSIG_MOB_CLICK_CANCELED
 	// Gestured across mob
 	else if(start_dir_from_mob == REVERSE_DIR(gesture_dir) && end_dir_from_mob == gesture_dir)
-		source.say("Push [dir2text(gesture_dir)][loudness]")
+		source.say("推向[dir2text(gesture_dir)][loudness]")
 		return COMSIG_MOB_CLICK_CANCELED
 	// Gesture torwards mob
 	else if(start_dir_from_mob == end_dir_from_mob)
-		source.say("Pull back [dir2text(gesture_dir)][loudness]")
+		source.say("向[dir2text(gesture_dir)]方向撤退[loudness]")
 		return COMSIG_MOB_CLICK_CANCELED
 

@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/flame_dance
 	name = "Flame Dance"
-	desc = "If you are on fire, Tail Trip and Tail Hook will extinguishes you and inflict nearby humans with an equal amount of melting fire. Your fire armor is reduced by 15/10/5."
+	desc = "如果你身上着火，尾绊和尾钩会扑灭你身上的火焰，并对附近的人类施加等量的熔化之火。你的火焰护甲降低15/10/5。"
 	/// For the first structure, the amount of fire armor that should be given for having this mutation.
 	var/armor_initial = -20
 	/// For each structure, the amount of fire armor that should be given for having this mutation.
@@ -61,7 +61,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/bob_and_weave
 	name = "Bob and Weave"
-	desc = "Tail Hook now pushes humans away instead of pulling them in. It deals 2/4/6 additional damage."
+	desc = "尾钩现在会将人类推开而非拉近。它造成额外2/4/6点伤害。"
 	/// For each structure, the amount to increase the damage that Tail Hook deals by.
 	var/damage_per_structure = 2
 
@@ -100,7 +100,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/eb_and_flow
 	name = "Eb and Flow"
-	desc = "Dodge now lets you walk over structures such as tables and window frames. It now costs 2/1.75/1.5x of its original cost."
+	desc = "闪避现在允许你越过桌子、窗框等结构。其消耗现在为原消耗的2/1.75/1.5倍。"
 	/// For the first structure, the multiplier to add as Dodge's initial ability cost to the ability.
 	var/cost_multiplier_initial = 1.25
 	/// For each structure, the multiplier to add as Dodge's initial ability cost to the ability.

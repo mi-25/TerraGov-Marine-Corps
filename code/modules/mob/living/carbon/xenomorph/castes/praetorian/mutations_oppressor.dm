@@ -28,7 +28,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/wall_bang
 	name = "Wall Bang"
-	desc = "Dislocate, Advance, and Tail Lash now causes thrown humans that hit a wall to take damage equal to 50/75/100% of your slash damage."
+	desc = "脱臼、突进和尾击现在会使撞到墙壁的被投掷人类受到相当于你斩击伤害50/75/100%的伤害。"
 	/// For the first structure, the percentage of the owner's slash damage to deal to humans that hit a wall.
 	var/percentage_initial = 0.25
 	/// For each structure, the percentage of the owner's slash damage to deal to humans that hit a wall.
@@ -94,7 +94,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/low_charge
 	name = "Low Charge"
-	desc = "Advance's cast time is 60/50/40% of its original value, but it stuns for half as long and flings humans away half the distance."
+	desc = "突进的施法时间是原值的60/50/40%，但眩晕时间减半，并将人类甩投至一半距离。"
 	/// For the first structure, the multiplier of Advance's initial cast time to add to it.
 	var/multiplier_initial = -0.3
 	/// For each structure, the multiplier of Advance's initial cast time to add to it.

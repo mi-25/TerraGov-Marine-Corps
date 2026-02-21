@@ -8,7 +8,7 @@
 */
 
 /datum/ammo/tx54/mech
-	name = "30mm fragmentation grenade"
+	name = "30毫米破片手雷"
 	bonus_projectiles_type = /datum/ammo/bullet/tx54_spread/mech
 	damage = 15
 	penetration = 10
@@ -28,7 +28,7 @@
 //================================================
 */
 /datum/ammo/rocket/mech
-	name = "large light explosive rocket"
+	name = "大型轻型高爆火箭"
 	damage = 10
 	penetration = 15
 	max_range = 30
@@ -38,7 +38,7 @@
 	explosion(T, 0, 0, 4, 0, 0, explosion_cause=src)
 
 /datum/ammo/rocket/mech/heavy
-	name = "large heavy explosive rocket"
+	name = "大型重型爆破火箭"
 	damage = 30
 	penetration = 30
 
@@ -52,13 +52,13 @@
 */
 
 /datum/ammo/bullet/minigun/mech
-	name = "vulcan bullet"
+	name = "蛮牛弹道"
 	damage = 30
 	penetration = 10
 	sundering = 0.5
 
 /datum/ammo/bullet/sniper/mech
-	name = "light anti-tank bullet"
+	name = "轻型反坦克弹道"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_BETTER_COVER_RNG|AMMO_SNIPER
 	damage = 100
 	penetration = 35
@@ -66,21 +66,21 @@
 	damage_falloff = 0.3
 
 /datum/ammo/bullet/pistol/mech
-	name = "super-heavy pistol bullet"
+	name = "超重型手枪弹道"
 	hud_state = "pistol_superheavy"
 	damage = 45
 	penetration = 20
 	sundering = 1
 
 /datum/ammo/bullet/pistol/mech/burst
-	name = "super-heavy pistol bullet"
+	name = "超重型手枪弹道"
 	damage = 35
 	penetration = 10
 	sundering = 0.5
 	damage_falloff = 0.4
 
 /datum/ammo/bullet/rifle/mech
-	name = "super-heavy rifle bullet"
+	name = "超重型步枪弹道"
 	damage = 35
 	penetration = 10
 	sundering = 1
@@ -96,14 +96,14 @@
 	damage_falloff = 0.7
 
 /datum/ammo/bullet/smg/mech
-	name = "super-heavy submachinegun bullet"
+	name = "超级重型冲锋枪弹道"
 	damage = 25
 	sundering = 0.5
 	penetration = 5
 	damage_falloff = 0.4
 
 /datum/ammo/bullet/shotgun/mech
-	name = "super-heavy shotgun buckshot shell"
+	name = "超重型霰弹枪鹿弹"
 	icon_state = "buckshot"
 	hud_state = "shotgun_buckshot"
 	bonus_projectiles_type = /datum/ammo/bullet/shotgun/mech/spread
@@ -117,7 +117,7 @@
 	damage_falloff = 4
 
 /datum/ammo/bullet/shotgun/mech/spread
-	name = "super-heavy additional buckshot"
+	name = "超重型附加鹿弹"
 	icon_state = "buckshot"
 	max_range = 10
 	damage = 60
@@ -129,7 +129,7 @@
 	staggerstun(target_mob, proj, paralyze = 2 SECONDS, stagger = 2 SECONDS, knockback = 2, slowdown = 0.5, max_range = 3)
 
 /datum/ammo/energy/lasgun/marine/mech
-	name = "superheated laser bolt"
+	name = "过热激光束"
 	damage = 45
 	penetration = 20
 	sundering = 1
@@ -142,13 +142,13 @@
 	damage_falloff = 0.6
 
 /datum/ammo/energy/lasgun/marine/mech/smg
-	name = "superheated pulsed laser bolt"
+	name = "超热脉冲激光束"
 	damage = 15
 	penetration = 10
 	hitscan_effect_icon = "beam_particle"
 
 /datum/ammo/energy/lasgun/marine/mech/lance_strike
-	name = "particle lance"
+	name = "粒子长矛"
 	ammo_behavior_flags = AMMO_ENERGY|AMMO_BETTER_COVER_RNG|AMMO_HITSCAN|AMMO_PASS_THROUGH_MOVABLE|AMMO_PASS_THROUGH_MOB
 	damage_type = BRUTE
 	damage = 100

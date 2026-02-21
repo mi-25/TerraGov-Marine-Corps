@@ -1,6 +1,6 @@
 /obj/structure/barricade/handrail
-	name = "handrail"
-	desc = "A railing, for your hands. Woooow."
+	name = "扶手"
+	desc = "一个导轨，给你的手用。哇哦。"
 	icon = 'icons/obj/structures/handrail.dmi'
 	icon_state = "handrail_a_0"
 	barricade_type = "handrail_a_0"
@@ -28,7 +28,7 @@
 /obj/structure/barricade/handrail/Bumped(atom/bumpingcreature)
 	if(!isxeno(bumpingcreature))
 		return
-	balloon_alert_to_viewers("breaks [src]")
+	balloon_alert_to_viewers("[src] 断裂")
 	qdel(src)
 
 /obj/structure/barricade/handrail/type_b
@@ -52,7 +52,7 @@
 	barricade_type = "wire_rail"
 
 /obj/structure/barricade/handrail/sandstone
-	name = "sandstone handrail"
+	name = "砂岩扶手"
 	icon_state = "hr_sandstone"
 	barricade_type = "hr_sandstone"
 	stack_type = /obj/item/stack/sheet/mineral/sandstone
@@ -72,55 +72,55 @@
 
 // Plastic
 /obj/structure/barricade/handrail/urban/road/plastic
-	name = "plastic road barrier"
+	name = "塑料路障"
 	icon_state = "plasticroadbarrierred"
 	barricade_type = "plasticroadbarrierred"
 
 /obj/structure/barricade/handrail/urban/road/plastic/red
-	name = "plastic road barrier"
+	name = "塑料路障"
 	icon_state = "plasticroadbarrierred"
 	barricade_type = "plasticroadbarrierred"
 
 /obj/structure/barricade/handrail/urban/road/plastic/blue
-	name = "plastic road barrier"
+	name = "塑料路障"
 	icon_state = "plasticroadbarrierblue"
 	barricade_type = "plasticroadbarrierblue"
 
 /obj/structure/barricade/handrail/urban/road/plastic/black
-	name = "plastic road barrier"
+	name = "塑料路障"
 	icon_state = "plasticroadbarrierblack"
 	barricade_type = "plasticroadbarrierblack"
 
 //Wood
 
 /obj/structure/barricade/handrail/urban/road/wood
-	name = "wood road barrier"
+	name = "木质路障"
 	icon_state = "roadbarrierwood"
 	barricade_type = "roadbarrierwood"
 
 /obj/structure/barricade/handrail/urban/road/wood/orange
-	name = "wood road barrier"
+	name = "木质路障"
 	icon_state = "roadbarrierwood"
 	barricade_type = "roadbarrierwood"
 
 /obj/structure/barricade/handrail/urban/road/wood/blue
-	name = "wood road barrier"
+	name = "木质路障"
 	icon_state = "roadbarrierpolice"
 	barricade_type = "roadbarrierpolice"
 
 // Metal
 /obj/structure/barricade/handrail/urban/road/metal
-	name = "metal road barrier"
+	name = "金属路障"
 	icon_state = "centerroadbarrier"
 	barricade_type = "centerroadbarrier"
 
 /obj/structure/barricade/handrail/urban/road/metal/metaltan
-	name = "metal road barrier"
+	name = "金属路障"
 	icon_state = "centerroadbarrier"
 	barricade_type = "centerroadbarrier"
 
 /obj/structure/barricade/handrail/urban/road/metal/metaldark
-	name = "metal road barrier"
+	name = "金属路障"
 	icon_state = "centerroadbarrier2"
 	barricade_type = "centerroadbarrier2"
 
@@ -130,7 +130,7 @@
 		density = FALSE
 
 /obj/structure/barricade/handrail/urban/road/metal/metaldark2
-	name = "metal road barrier"
+	name = "金属路障"
 	icon_state = "centerroadbarrier3"
 	barricade_type = "centerroadbarrier3"
 
@@ -140,7 +140,7 @@
 		density = FALSE
 
 /obj/structure/barricade/handrail/urban/road/metal/double
-	name = "metal road barrier"
+	name = "金属路障"
 	icon_state = "centerroadbarrierdouble"
 	barricade_type = "centerroadbarrierdouble"
 
@@ -158,6 +158,6 @@
 	barricade_type = "centerroadbarrierdouble_dark"
 
 /obj/structure/barricade/handrail/urban/handrail
-	name = "handrail"
+	name = "扶手"
 	icon_state = "handrail_hybrisa"
 	barricade_type = "handrail_hybrisa"

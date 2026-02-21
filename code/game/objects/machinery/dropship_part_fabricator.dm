@@ -2,8 +2,8 @@
 
 
 /obj/machinery/dropship_part_fabricator
-	name = "dropship part fabricator"
-	desc = "A large automated 3D printer for producing new dropship parts."
+	name = "运输机部件制造机"
+	desc = "一台大型自动化3D打印机，用于制造新的运输机部件。"
 	density = TRUE
 	anchored = TRUE
 	use_power = IDLE_POWER_USE
@@ -82,11 +82,11 @@
 		return
 
 	if(SSpoints.dropship_points < cost) //We'll check for points again here in case queue has taken too many points
-		balloon_alert_to_viewers("not enough points!")
+		balloon_alert_to_viewers("点数不足！")
 		next_queue()
 		return
 
-	balloon_alert_to_viewers("printing...")
+	balloon_alert_to_viewers("正在打印...")
 	playsound(src, 'sound/machines/dropship_fabricator.ogg', 55)
 	printing = part_type
 	SSpoints.dropship_points -= cost
@@ -138,7 +138,7 @@
 		return TRUE
 
 	//There's nothing left, finish up queue
-	balloon_alert_to_viewers("printing finished")
+	balloon_alert_to_viewers("打印完成")
 	playsound(src,'sound/machines/ping.ogg', 40, FALSE)
 	printing = null
 	busy = FALSE
@@ -152,7 +152,7 @@
 	if(href_list["choice"])
 		if(href_list["choice"] == "clear")
 			queue = list()
-			to_chat(usr, span_notice("Queue cleared entirely."))
+			to_chat(usr, span_notice("队列已完全清空。"))
 			return
 
 		var/build_type = text2path(href_list["choice"])
@@ -160,11 +160,11 @@
 			return
 
 		if(SSpoints.dropship_points < get_cost(build_type))
-			to_chat(usr, span_notice("There aren't enough points for that!"))
+			to_chat(usr, span_notice("点数不足！"))
 			return
 
 		if(busy)
-			to_chat(usr, span_notice("Part added to queue."))
+			to_chat(usr, span_notice("已加入队列。"))
 			queue.Add(list(list(build_type, usr)))
 			return
 
@@ -175,7 +175,7 @@
 //Tadpole fab
 
 /obj/machinery/dropship_part_fabricator/tadpole
-	name = "tadpole dropship fabricator"
+	name = "蝌蚪号运输机制造器"
 	icon_state = "drone_fab_idle_tadpole"
 
 /obj/machinery/dropship_part_fabricator/tadpole/update_icon_state()

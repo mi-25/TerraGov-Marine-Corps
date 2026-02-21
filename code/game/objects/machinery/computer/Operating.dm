@@ -1,5 +1,5 @@
 /obj/machinery/computer/operating
-	name = "Operating Computer"
+	name = "操作电脑"
 	anchored = TRUE
 	density = TRUE
 	icon_state = "computer_small"

@@ -1,5 +1,5 @@
 /obj/effect/spawner/random/medical
-	name = "Random base medical spawner"
+	name = "随机基础医疗生成器"
 	icon = 'icons/effects/random/medical.dmi'
 	icon_state = "random_syringe"
 	loot = list(
@@ -7,7 +7,7 @@
 	)
 
 /obj/effect/spawner/random/medical/health_analyzer
-	name = "health analyzer spawner"
+	name = "生命体征分析仪生成器"
 	icon_state = "random_healthanalyzer"
 	spawn_scatter_radius = 1
 	spawn_random_offset = TRUE
@@ -17,7 +17,7 @@
 	)
 
 /obj/effect/spawner/random/medical/bloodpack
-	name = "Random blood spawner"
+	name = "随机血液生成器"
 	icon_state = "random_bloodpack"
 	spawn_loot_chance = 80
 	loot = list(
@@ -31,7 +31,7 @@
 	)
 
 /obj/effect/spawner/random/medical/medbelt
-	name = "Random medical belt spawner"
+	name = "随机医疗腰带生成器"
 	icon_state = "random_medbelt"
 	spawn_loot_chance = 25
 	loot = list(
@@ -42,7 +42,7 @@
 	)
 
 /obj/effect/spawner/random/medical/medhud
-	name = "Random med hud spawner"
+	name = "随机医疗HUD生成器"
 	icon_state = "random_medhud"
 	spawn_loot_chance = 25
 	loot = list(
@@ -56,7 +56,7 @@
 
 
 /obj/effect/spawner/random/medical/surgical
-	name = "Random surgical instrument spawner"
+	name = "随机手术器械生成器"
 	icon_state = "random_surgical"
 	loot = list(
 		/obj/item/tool/surgery/scalpel/manager,
@@ -74,7 +74,7 @@
 	)
 
 /obj/effect/spawner/random/medical/heal_pack
-	name = "Random bruise pack spawner"
+	name = "随机瘀伤包生成器"
 	icon_state = "random_healpack"
 	spawn_loot_chance = 85
 	loot = list(
@@ -97,7 +97,7 @@
 	)
 
 /obj/effect/spawner/random/medical/organ
-	name = "Random surgical organ spawner"
+	name = "随机手术器官生成器"
 	icon_state = "random_organ"
 	loot = list(
 		/obj/item/prop/organ/brain,
@@ -110,7 +110,7 @@
 	)
 
 /obj/effect/spawner/random/medical/medbottle
-	name = "Random medical reagent bottle spawner"
+	name = "随机医疗试剂瓶生成器"
 	icon_state = "random_medbottle"
 	spawn_loot_chance = 50
 	loot = list(
@@ -128,7 +128,7 @@
 	)
 
 /obj/effect/spawner/random/medical/firstaid
-	name = "firstaid spawner"
+	name = "急救包生成器"
 	icon_state = "random_medkit"
 	spawn_loot_chance = 35
 	loot = list(
@@ -170,7 +170,7 @@
 	spawn_loot_chance = 100
 
 /obj/effect/spawner/random/medical/medicalcloset
-	name = "medical closet spawner"
+	name = "医疗柜生成器"
 	icon_state = "random_medical_closet"
 	spawn_loot_chance = 65
 	loot = list(
@@ -184,7 +184,7 @@
 
 
 /obj/effect/spawner/random/medical/structure/crate/medsupplies
-	name = "medical supplies spawner"
+	name = "医疗物资生成器"
 	icon_state = "random_medsupplies"
 	spawn_loot_chance = 75
 	loot = list(
@@ -198,7 +198,7 @@
 	spawn_loot_chance = 100
 
 /obj/effect/spawner/random/medical/structure/rollerbed
-	name = "rollerbed spawner"
+	name = "担架生成器"
 	icon_state = "random_rollerbed"
 	spawn_loot_chance = 85
 	spawn_scatter_radius = 1
@@ -209,7 +209,7 @@
 	)
 
 /obj/effect/spawner/random/medical/structure/ivdrip
-	name = "iv drip spawner"
+	name = "静脉注射器生成器"
 	icon_state = "random_ivdrip"
 	spawn_loot_chance = 50
 	loot = list(
@@ -219,7 +219,7 @@
 	)
 
 /obj/effect/spawner/random/medical/pillbottle
-	name = "Random pill bottle spawner"
+	name = "随机药瓶生成器"
 	icon_state = "random_medicine"
 	spawn_loot_chance = 50
 	loot = list(
@@ -234,7 +234,7 @@
 	)
 
 /obj/effect/spawner/random/medical/syringe
-	name = "Random syringe spawner"
+	name = "随机注射器生成器"
 	icon_state = "random_syringe"
 	spawn_loot_chance = 60
 	loot = list(
@@ -251,7 +251,7 @@
 	)
 
 /obj/effect/spawner/random/medical/beaker
-	name = "Random beaker spawner"
+	name = "随机烧杯生成器"
 	icon_state = "random_beaker"
 	spawn_loot_chance = 85
 	loot = list(
@@ -260,7 +260,7 @@
 	)
 
 /obj/effect/spawner/random/medical/beaker/bluespace
-	name = "Random bluespace beaker spawner"
+	name = "随机蓝空烧瓶生成器"
 	icon_state = "random_bluespace_beaker"
 	spawn_loot_chance = 100
 	loot = list(

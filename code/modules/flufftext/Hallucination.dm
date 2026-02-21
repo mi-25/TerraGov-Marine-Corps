@@ -124,14 +124,14 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	return ..()
 
 /obj/effect/hallucination/simple/xeno
-	name = "Mature Runner"
-	desc = "A small red alien that looks like it could run fairly quickly..."
+	name = "成熟奔跑者"
+	desc = "一只看起来能跑得相当快的小型红色异形……"
 	icon = 'icons/Xeno/castes/runner.dmi'
 	icon_state = "Runner Walking"
 
 /obj/effect/hallucination/simple/xeno/Initialize(mapload, mob/living/carbon/T)
 	. = ..()
-	name = "Mature Runner ([rand(100, 999)])"
+	name = "成熟奔跑者 ([rand(100, 999)])"
 
 /obj/effect/hallucination/simple/xeno/throw_impact(atom/hit_atom, speed)
 	. = ..()
@@ -139,7 +139,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		return
 	if(hit_atom == target && target.stat != DEAD)
 		target.Paralyze(3 SECONDS, TRUE, TRUE)
-		target.visible_message(span_danger("[target] flails around wildly."),span_xenowarning("\The [src] pounces at [target]!"))
+		target.visible_message(span_danger("[target] 疯狂地挥舞着手臂。"),span_xenowarning("\The [src] pounces at [target]!"))
 
 /datum/hallucination/xeno_attack
 	//Xeno crawls from nearby vent,jumps at you, and goes back in
@@ -161,9 +161,9 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		sleep(1 SECONDS)
 		xeno.throw_at(pump.loc, 7, 1, xeno, FALSE, TRUE)
 		sleep(1 SECONDS)
-		to_chat(target, span_notice("[xeno.name] begins climbing into the ventilation system..."))
+		to_chat(target, span_notice("[xeno.name] 开始爬入通风系统..."))
 		sleep(1.5 SECONDS)
-		to_chat(target, span_notice("[xeno.name] scrambles into the ventilation ducts!"))
+		to_chat(target, span_notice("[xeno.name] 匆忙爬进了通风管道！"))
 		playsound(src, SFX_ALIEN_VENTPASS, 35, 1)
 		qdel(xeno)
 	qdel(src)

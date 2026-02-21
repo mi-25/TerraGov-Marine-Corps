@@ -1,6 +1,6 @@
 /obj/vehicle/unmanned/droid
-	name = "XN-43-H combat droid"
-	desc = "A prototype combat droid, first deployed as a prototype to fight the xeno menace in the frontier sytems."
+	name = "XN-43-H 战斗机器人"
+	desc = "一款原型战斗机器人，最初作为原型机部署在边境星系对抗异形威胁。"
 	icon_state = "droidcombat"
 	move_delay = 3
 	max_integrity = 150
@@ -62,8 +62,8 @@
 
 ///stealth droid, like the normal droid but with stealthing ability on rclick
 /obj/vehicle/unmanned/droid/scout
-	name = "XN-43-S combat droid"
-	desc = "A prototype scout droid, rigged with top-of-the line cloaking technology to hide itself from view."
+	name = "XN-43-S战斗机器人"
+	desc = "一种原型侦察机器人，配备了顶级隐形技术以隐藏自身不被发现。"
 	icon_state = "droidscout"
 	move_delay = 2
 	max_integrity = 200
@@ -96,7 +96,7 @@
 ///Plays effects and doafter effects for the drone
 /obj/vehicle/unmanned/droid/scout/proc/start_cloak(mob/user)
 	if(!do_after(user, 3 SECONDS, IGNORE_HELD_ITEM, src))
-		to_chat(user, span_warning("WARNING. Cloak activation failed; Error code 423: Subject moved during activation."))
+		to_chat(user, span_warning("警告。隐形激活失败；错误代码423：目标在激活期间移动。"))
 		remove_wibbly_filters(src)
 		return
 	remove_wibbly_filters(src)
@@ -114,7 +114,7 @@
 	TIMER_COOLDOWN_START(src, COOLDOWN_DRONE_CLOAK, 12 SECONDS)
 
 /datum/action/antenna
-	name = "Use Antenna"
+	name = "使用天线"
 	action_icon_state = "signal_transmit"
 	///The droid linked to this ability
 	var/obj/vehicle/unmanned/droid/ai_droid
@@ -128,8 +128,8 @@
 		SEND_SIGNAL(ai_droid, COMSIG_UNMANNED_COORDINATES, owner)
 
 /obj/vehicle/unmanned/droid/ripley
-	name = "XN-27-C cargo droid"
-	desc = "A cargo droid, rigged with experimental technology to allow AI control. The claw is not standard and cannot grasp warheads."
+	name = "XN-27-C 货运机器人"
+	desc = "一台货运机器人，搭载了允许AI控制的实验性技术。其机械爪并非标准配置，无法抓取弹头。"
 	icon = 'icons/obj/powerloader.dmi'
 	icon_state = "ai_powerloader"
 	move_delay = 7
@@ -152,7 +152,7 @@
 	///used to hold whatever we're grabbing
 	var/obj/clamptarget = target
 	if(is_ground_level(z) && !isdropshiparea(get_area(src))) //AI powerloader is confined to shipside or the alamo
-		to_chat(user, "Connection too weak, return the droid shipside first.")
+		to_chat(user, "连接信号太弱，先将机器人送回舰上。")
 		return
 	if(!COOLDOWN_FINISHED(src, clamp_cooldown))
 		return
@@ -160,7 +160,7 @@
 		var/obj/structure/closet/attackedcloset = clamptarget
 		attackedcloset.toggle()
 	else if(cargo)
-		to_chat(user, "You unload [cargo].")
+		to_chat(user, "你卸下了[cargo]。")
 		cargo.forceMove(drop_location())
 		cargo = null
 		return
@@ -172,7 +172,7 @@
 		to_chat(user, "[icon2html(src, user)][span_notice("[target] contains a living organism, cannot load.")]")
 		return
 	if(!cargo)
-		balloon_alert_to_viewers("Loads [clamptarget]")
+		balloon_alert_to_viewers("装填[clamptarget]")
 		clamptarget.anchored = TRUE
 		cargo = clamptarget
 		clamptarget.forceMove(src)

@@ -1,6 +1,6 @@
 //antag spyglasses. meant to be an example for map_popups.dm
 /obj/item/clothing/glasses/regular/spy
-	desc = "Made by Nerd. Co's infiltration and surveillance department. Upon closer inspection, there's a small screen in each lens."
+	desc = "由 Nerd. Co 渗透与监视部门制造。仔细看，每个镜片里都有一个小屏幕。"
 	var/obj/item/spy_bug/linked_bug
 
 /obj/item/clothing/glasses/regular/spy/proc/show_to_user(mob/user)//this is the meat of it. most of the map_popup usage is in this.
@@ -40,10 +40,10 @@
 
 
 /obj/item/spy_bug
-	name = "pocket protector"
+	name = "口袋保护套"
 	icon = 'icons/obj/clothing/accessories.dmi'
 	icon_state = "pocketprotector"
-	desc = "an advanced peice of espionage equipment in the shape of a pocket protector. it has a built in 360 degree camera for all your nefarious needs. Microphone not included."
+	desc = "一款高级间谍设备，外形伪装成口袋保护套。内置360度摄像头，满足你的一切邪恶需求。麦克风不包含在内。"
 
 	var/obj/item/clothing/glasses/regular/spy/linked_glasses
 	var/atom/movable/screen/map_view/camera/cam_screen
@@ -72,13 +72,13 @@
 
 //it needs to be linked, hence a kit.
 /obj/item/storage/box/rxglasses/spyglasskit
-	name = "spyglass kit"
-	desc = "this box contains <i>cool</i> nerd glasses; with built-in displays to view a linked camera."
+	name = "侦察镜套件"
+	desc = "这个盒子里装着<i>酷炫的</i>极客眼镜；内置显示屏可查看已链接的摄像头。"
 
 /obj/item/paper/fluff/nerddocs
-	name = "Espionage For Dummies"
+	name = "间谍入门指南"
 	color = "#FFFF00"
-	desc = "An eye gougingly yellow pamphlet with a badly designed image of a detective on it. the subtext says \" The Latest way to violate privacy guidelines!\" "
+	desc = "一本刺眼亮黄色的小册子，上面印着设计拙劣的侦探图像。副标题写着：'侵犯隐私准则的最新方式！'"
 	info = @{"
 
 Thank you for your purchase of the Nerd Co SpySpeks <small>tm</small>, this paper will be your quick-start guide to violating the privacy of your crewmates in three easy steps!<br><br>Step One: Nerd Co SpySpeks <small>tm</small> upon your face. <br>

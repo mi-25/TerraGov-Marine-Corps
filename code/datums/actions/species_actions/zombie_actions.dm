@@ -2,10 +2,10 @@
 // *********** Emit Gas
 // ***************************************
 /datum/action/ability/emit_gas
-	name = "Emit Gas"
+	name = "释放气体"
 	action_icon_state = "emit_neurogas"
 	action_icon = 'icons/Xeno/actions/defiler.dmi'
-	desc = "Use to emit a cloud of blinding smoke."
+	desc = "用于释放一团致盲烟雾。"
 	cooldown_duration = 30 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY|ABILITY_IGNORE_SELECTED_ABILITY
 	keybinding_signals = list(
@@ -22,7 +22,7 @@
 
 /datum/action/ability/emit_gas/on_cooldown_finish()
 	playsound(owner.loc, 'sound/effects/alien/new_larva.ogg', 50, 0)
-	to_chat(owner, span_xenodanger("We feel our smoke filling us once more. We can emit gas again."))
+	to_chat(owner, span_xenodanger("我们感到烟雾再次充盈体内。我们可以再次释放气体了。"))
 	toggle_particles(TRUE)
 	return ..()
 
@@ -79,8 +79,8 @@
 
 
 /datum/action/ability/activable/pounce
-	name = "Pounce"
-	desc = "Leap at your target, tackling and disarming them."
+	name = "猛扑"
+	desc = "猛扑向你的目标，将其扑倒并解除武装。"
 	action_icon_state = "pounce"
 	action_icon = 'icons/Xeno/actions/runner.dmi'
 	cooldown_duration = 10 SECONDS
@@ -96,7 +96,7 @@
 	var/self_immobilize_duration = 1 SECONDS
 
 /datum/action/ability/activable/pounce/on_cooldown_finish()
-	owner.balloon_alert(owner, "pounce ready")
+	owner.balloon_alert(owner, "猛扑就绪")
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
@@ -180,10 +180,10 @@
 // *********** Boomer Explode
 // ***************************************
 /datum/action/ability/boomer_explode
-	name = "Boomer Explode"
+	name = "爆虫爆炸"
 	action_icon_state = "baneling_explode"
 	action_icon = 'icons/Xeno/actions/baneling.dmi'
-	desc = "Explode and spread dangerous toxins to hinder or kill your foes. You die."
+	desc = "爆炸并扩散危险毒素以阻碍或杀死你的敌人。你会死亡。"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_BANELING_EXPLODE,
 	)
@@ -236,10 +236,10 @@
 // *********** Bile spit
 // ***************************************
 /datum/action/ability/activable/bile_spit
-	name = "Bile spit"
+	name = "胆汁喷射"
 	action_icon_state = "spray_acid"
 	action_icon = 'icons/Xeno/actions/boiler.dmi'
-	desc = "Hurl a glob of bile at your foes."
+	desc = "向敌人投掷一团胆汁。"
 	cooldown_duration = 12 SECONDS
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PSYCHIC_BLAST,
@@ -248,7 +248,7 @@
 	var/spit_type = /datum/ammo/bile_spit
 
 /datum/action/ability/activable/bile_spit/on_cooldown_finish()
-	owner.balloon_alert(owner, "Bile ready")
+	owner.balloon_alert(owner, "胆汁就绪")
 	playsound(owner, 'sound/effects/refill.ogg', 50, 1)
 	return ..()
 

@@ -1,6 +1,6 @@
 /obj/item/cell
-	name = "power cell"
-	desc = "A rechargable electrochemical power cell."
+	name = "能量电池"
+	desc = "可充电电化学电池。"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "cell"
 	worn_icon_list = list(
@@ -76,10 +76,10 @@
 		return ..()
 
 	if(issynth(user) && !CONFIG_GET(flag/allow_synthetic_gun_use))
-		to_chat(user, span_warning("Your programming restricts using rigged power cells."))
+		to_chat(user, span_warning("你的程序限制使用改装过的能量电池。"))
 		return
 	log_bomber(user, "primed a rigged", src)
-	user.visible_message(span_danger("[user] destabilizes [src]; it will detonate shortly!"),
+	user.visible_message(span_danger("[user] 正在使 [src] 不稳定；它即将引爆！"),
 	span_danger("You destabilize [src]; it will detonate shortly!"))
 	var/datum/effect_system/spark_spread/spark_system = new /datum/effect_system/spark_spread()
 	spark_system.set_up(5, 0, src)
@@ -103,10 +103,10 @@
 		var/obj/item/reagent_containers/syringe/S = I
 
 		if(issynth(user) && !CONFIG_GET(flag/allow_synthetic_gun_use))
-			to_chat(user, span_warning("Your programming restricts rigging of power cells."))
+			to_chat(user, span_warning("你的程序限制了动力电池的改装。"))
 			return
 
-		to_chat(user, "You inject the solution into the power cell.")
+		to_chat(user, "你将溶液注入能量电池。")
 
 		if(S.reagents.has_reagent(/datum/reagent/toxin/phoron, 5))
 			rigged = TRUE
@@ -114,7 +114,7 @@
 
 	else if(ismultitool(I))
 		if(issynth(user) && !CONFIG_GET(flag/allow_synthetic_gun_use))
-			to_chat(user, span_warning("Your programming restricts rigging of power cells."))
+			to_chat(user, span_warning("你的程序限制了对动力电池的改装。"))
 			return
 		var/skill = user.skills.getRating(SKILL_ENGINEER)
 		var/delay = SKILL_TASK_EASY - (5 + skill * 1.25)
@@ -125,31 +125,31 @@
 
 		if(!rigged)
 			if(skill < SKILL_ENGINEER_ENGI) //Field engi skill or better or ya fumble.
-				user.visible_message(span_notice("[user] fumbles around figuring out how to manipulate [src]."),
+				user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何操作 [src]。"),
 				span_notice("You fumble around, trying to figure out how to rig [src] to explode."))
 				if(!do_after(user, delay, NONE, src, BUSY_ICON_UNSKILLED))
 					return
 
-			user.visible_message(span_notice("[user] begins manipulating [src] with [I]."),
+			user.visible_message(span_notice("[user]开始用[I]操作[src]。"),
 			span_notice("You begin rigging [src] to detonate with [I]."))
 			if(!do_after(user, delay, NONE, src, BUSY_ICON_BUILD))
 				return
 			rigged = TRUE
 			overlays += spark_overlay
-			user.visible_message(span_notice("[user] finishes manipulating [src] with [I]."),
+			user.visible_message(span_notice("[user]完成了对[src]的[I]操作。"),
 			span_notice("You rig [src] to explode on use with [I]."))
 		else
 			if(skill < SKILL_ENGINEER_ENGI)
-				user.visible_message(span_notice("[user] fumbles around figuring out how to manipulate [src]."),
+				user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何操作 [src]。"),
 				span_notice("You fumble around, trying to figure out how to stabilize [src]."))
 				var/fumbling_time = SKILL_TASK_EASY
 				if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 					return
 				if(prob((SKILL_ENGINEER_PLASTEEL - skill) * 20))
-					to_chat(user, "<font color='danger'>After several seconds of your clumsy meddling [src] buzzes angrily as if offended. You have a <b>very</b> bad feeling about this.</font>")
+					to_chat(user, "<font color='danger'>在你笨拙地摆弄了几秒钟后，[src]愤怒地嗡嗡作响，仿佛受到了冒犯。你有一种<b>非常</b>不祥的预感。</font>")
 					rigged = TRUE
 					explode() //Oops. Now you fucked up (or succeeded only too well). Immediate detonation.
-			user.visible_message(span_notice("[user] begins manipulating [src] with [I]."),
+			user.visible_message(span_notice("[user]开始用[I]操作[src]。"),
 			span_notice("You begin stabilizing [src] with [I] so it won't detonate on use."))
 			if(skill > SKILL_ENGINEER_ENGI)
 				delay = max(delay - 10, 0)
@@ -157,7 +157,7 @@
 				return
 			rigged = FALSE
 			overlays -= spark_overlay
-			user.visible_message(span_notice("[user] finishes manipulating [src] with [I]."),
+			user.visible_message(span_notice("[user]完成了用[I]对[src]的操作。"),
 			span_notice("You stabilize the [src] with [I]; it will no longer detonate on use."))
 
 /obj/item/cell/emp_act(severity)
@@ -186,7 +186,7 @@
 				corrupt()
 
 /obj/item/cell/suicide_act(mob/user)
-	user.visible_message(span_danger("[user] is licking the electrodes of the [src.name]! It looks like [user.p_theyre()] trying to commit suicide."))
+	user.visible_message(span_danger("[user]正在舔舐[src.name]的电极！看起来[user.p_theyre()]想自杀。"))
 	return (FIRELOSS)
 
 /obj/item/cell/use(amount) // use power from a cell
@@ -255,8 +255,8 @@
 			return 0
 
 /obj/item/cell/crap
-	name = "\improper Nanotrasen brand rechargable AA battery"
-	desc = "You can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
+	name = "\improper 纳米传讯品牌可充电AA电池"
+	desc = "你无法超越等离子体之巅。" //TOTALLY TRADEMARK INFRINGEMENT
 	maxcharge = 500
 
 /obj/item/cell/crap/empty/Initialize(mapload)
@@ -265,7 +265,7 @@
 	update_appearance(UPDATE_ICON)
 
 /obj/item/cell/secborg
-	name = "security borg rechargable D battery"
+	name = "安保机器人可充电D型电池"
 	maxcharge = 600	//600 max charge / 100 charge per shot = six shots
 
 /obj/item/cell/secborg/empty/Initialize(mapload)
@@ -274,11 +274,11 @@
 	update_appearance(UPDATE_ICON)
 
 /obj/item/cell/apc
-	name = "heavy-duty power cell"
+	name = "重型能量电池"
 	maxcharge = 5000
 
 /obj/item/cell/high
-	name = "high-capacity power cell"
+	name = "高容量能量电池"
 	icon_state = "hcell"
 	worn_icon_state = "hcell"
 	maxcharge = 10000
@@ -289,7 +289,7 @@
 	update_appearance(UPDATE_ICON)
 
 /obj/item/cell/super
-	name = "super-capacity power cell"
+	name = "超级容量能量电池"
 	icon_state = "scell"
 	worn_icon_state = "scell"
 	maxcharge = 20000
@@ -300,7 +300,7 @@
 	update_appearance(UPDATE_ICON)
 
 /obj/item/cell/hyper
-	name = "hyper-capacity power cell"
+	name = "超容量能量电池"
 	icon_state = "hpcell"
 	worn_icon_state = "hpcell"
 	maxcharge = 30000
@@ -311,7 +311,7 @@
 	update_appearance(UPDATE_ICON)
 
 /obj/item/cell/infinite
-	name = "infinite-capacity power cell!"
+	name = "无限容量能量电池！"
 	icon_state = "icell"
 	worn_icon_state = "icell"
 	maxcharge = 30000
@@ -320,8 +320,8 @@
 	return TRUE
 
 /obj/item/cell/potato
-	name = "potato battery"
-	desc = "A rechargable starch based power cell."
+	name = "土豆电池"
+	desc = "一种可充电的淀粉基能量电池。"
 	icon = 'icons/obj/power.dmi' //'icons/obj/items/harvest.dmi'
 	icon_state = "potato_cell" //"potato_battery"
 	charge = 100
@@ -332,8 +332,8 @@
 	charge_overlay = null
 
 /obj/item/cell/rtg/small
-	name = "recharger cell"
-	desc = "This is a miniature radioisotope generator that can fit into APC's, but not laser-based weapory. The needed shielding lowers the maximum capacity significantly."
+	name = "充能电池"
+	desc = "这是一个微型放射性同位素发电机，可装入 APC，但不适用于激光武器。所需的屏蔽层显著降低了最大容量。"
 	icon = 'icons/obj/items/stock_parts.dmi'
 	icon_state = "capacitor"
 	worn_icon_state = "capacitor"
@@ -343,16 +343,16 @@
 	charge_delay = 2 SECONDS //One hit on a resin thingy every 8 seconds, or one actual wall every 80 seconds.
 
 /obj/item/cell/rtg/plasma_cutter
-	name = "plasma cutter cell"
-	desc = "You shouldn't be seeing this"
+	name = "等离子体切割器电池"
+	desc = "你不应该看到这个"
 	maxcharge = 7500
 	self_recharge = TRUE
 	charge_amount = 25
 	charge_delay = 2 SECONDS //One hit on a resin thingy every 8 seconds, or one actual wall every 80 seconds.
 
 /obj/item/cell/rtg/large
-	name = "large recharger cell"
-	desc = "This is a radioisotope generator that can fit into APC's, but not laser-based weapory. It is too hot to be easily stored and cannot be handcharged."
+	name = "大型充能电池"
+	desc = "这是一个可以安装到 APC 中的放射性同位素发电机，但不适用于激光武器。它温度过高，不易储存，且无法手动充电。"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "trashmelt"
 	w_class = WEIGHT_CLASS_HUGE
@@ -362,8 +362,8 @@
 	charge_delay = 2 SECONDS //One hit on a resin thingy every 4 seconds, or one actual wall every 40 seconds.
 
 /obj/item/cell/mecha
-	name = "small radiotope cell"
-	desc = "A large twisting piece of metal that acts as the power core of a mecha. You probably shouldn't lick it, despite the blue glow."
+	name = "小型放射性同位素电池"
+	desc = "一块巨大的扭曲金属，作为机甲的动力核心。尽管它散发着蓝光，但你最好别去舔它。"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "trashmelt"
 	w_class = WEIGHT_CLASS_HUGE
@@ -373,13 +373,13 @@
 	charge_amount = 150
 
 /obj/item/cell/mecha/medium
-	name = "medium radiotope cell"
+	name = "中型放射性同位素电池"
 	maxcharge = 650
 	charge_amount = 200
 
 /obj/item/cell/night_vision_battery
-	name = "night vision goggle battery"
-	desc = "A small, non-rechargable, proprietary battery for night vision goggles."
+	name = "夜视仪电池"
+	desc = "一种小型、不可充电的专用于夜视镜的电池。"
 	icon_state = "night_vision"
 	maxcharge = 500
 	w_class = WEIGHT_CLASS_TINY

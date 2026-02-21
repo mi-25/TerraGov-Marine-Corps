@@ -1,6 +1,6 @@
 /obj/machinery/transport/power_rectifier
 	name = "tram power rectifier"
-	desc = "An electrical device that converts alternating current (AC) to direct current (DC) for powering the tram."
+	desc = "一种将交流电（AC）转换为直流电（DC）为轨道电车供电的电气设备。"
 	icon = 'icons/obj/tram/tram_controllers.dmi'
 	icon_state = "rectifier"
 	power_channel = ENVIRON

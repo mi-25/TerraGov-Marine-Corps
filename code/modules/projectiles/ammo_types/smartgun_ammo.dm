@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/bullet/smartmachinegun
-	name = "smartmachinegun bullet"
+	name = "智能机枪弹道"
 	icon_state = "bullet_red"
 	bullet_color = COLOR_SOFT_RED //Red bullets to indicate friendly fire restriction
 	hud_state = "smartgun"
@@ -17,7 +17,7 @@
 	sundering = 2
 
 /datum/ammo/bullet/smart_minigun
-	name = "smartminigun bullet"
+	name = "智能机枪 弹道"
 	icon_state = "bullet_red"
 	bullet_color = COLOR_SOFT_RED //Red bullets to indicate friendly fire restriction
 	hud_state = "smartgun_minigun"
@@ -30,7 +30,7 @@
 	damage_falloff = 0.1
 
 /datum/ammo/bullet/smarttargetrifle
-	name = "smart marksman bullet"
+	name = "智能射手弹道"
 	icon_state = "bullet_red"
 	bullet_color = COLOR_SOFT_RED //Red bullets to indicate friendly fire restriction
 	hud_state = "smartgun"
@@ -46,7 +46,7 @@
 	accurate_range_min = 3
 
 /datum/ammo/bullet/cupola
-	name = "cupola bullet"
+	name = "炮塔弹道"
 	icon_state = "bullet_red"
 	bullet_color = COLOR_SOFT_RED //Red bullets to indicate friendly fire restriction
 	hud_state = "smartgun"
@@ -58,7 +58,7 @@
 	sundering = 1
 
 /datum/ammo/bullet/spottingrifle
-	name = "smart spotting bullet"
+	name = "智能锁定弹道"
 	icon_state = "bullet_red"
 	bullet_color = COLOR_SOFT_RED //Red bullets to indicate friendly fire restriction
 	hud_state = "spotrifle"
@@ -71,7 +71,7 @@
 	shell_speed = 4
 
 /datum/ammo/bullet/spottingrifle/highimpact
-	name = "smart high-impact spotting bullet"
+	name = "智能高爆观测弹道"
 	hud_state = "spotrifle_impact"
 	damage = 10
 	sundering = 0.5
@@ -80,7 +80,7 @@
 	staggerstun(target_mob, proj, stagger = 1 SECONDS, slowdown = 1, max_range = 12)
 
 /datum/ammo/bullet/spottingrifle/heavyrubber
-	name = "smart heavy-rubber spotting bullet"
+	name = "智能重型橡胶标记弹道"
 	hud_state = "spotrifle_rubber"
 	damage = 10
 	sundering = 0.5
@@ -89,7 +89,7 @@
 	staggerstun(target_mob, proj, paralyze = 1 SECONDS, slowdown = 1, max_range = 12)
 
 /datum/ammo/bullet/spottingrifle/plasmaloss
-	name = "smart tanglefoot spotting bullet"
+	name = "智能绊足侦察弹道"
 	hud_state = "spotrifle_plasmaloss"
 	damage = 10
 	sundering = 0.5
@@ -100,7 +100,7 @@
 		target_xeno.use_plasma(20 + 0.2 * target_xeno.xeno_caste.plasma_max * target_xeno.xeno_caste.plasma_regen_limit) // This is draining 20%+20 flat per hit.
 
 /datum/ammo/bullet/spottingrifle/tungsten
-	name = "smart tungsten spotting bullet"
+	name = "智能钨芯指示弹"
 	hud_state = "spotrifle_tungsten"
 	damage = 10
 	sundering = 0.5
@@ -109,7 +109,7 @@
 	staggerstun(target_mob, proj, knockback = 3, max_range = 12)
 
 /datum/ammo/bullet/spottingrifle/flak
-	name = "smart flak spotting bullet"
+	name = "智能破片指示弹道"
 	hud_state = "spotrifle_flak"
 	damage = 60
 	sundering = 0.5
@@ -119,7 +119,7 @@
 	airburst(target_mob, proj)
 
 /datum/ammo/bullet/spottingrifle/incendiary
-	name = "smart incendiary spotting  bullet"
+	name = "智能燃烧指示弹道"
 	hud_state = "spotrifle_incend"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_INCENDIARY
 	damage_type = BURN

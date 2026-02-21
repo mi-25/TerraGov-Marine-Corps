@@ -85,12 +85,12 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 /datum/game_mode/proc/can_start(bypass_checks = FALSE)
 	if((!(config_tag in SSmapping.configs[GROUND_MAP].gamemodes) || (SSmapping.configs[GROUND_MAP].map_name in blacklist_ground_maps)) && !bypass_checks)
 		log_world("Attempted to start [name] on "+SSmapping.configs[GROUND_MAP].map_name+" which doesn't support it.")
-		to_chat(world, "<b>Unable to start [name].</b> [SSmapping.configs[GROUND_MAP].map_name] isn't supported on [name].")
+		to_chat(world, "<b>无法启动[name]。</b>[SSmapping.configs[GROUND_MAP].map_name]不支持在[name]上运行。")
 		// start a gamemode vote, in theory this should never happen.
 		addtimer(CALLBACK(SSvote, TYPE_PROC_REF(/datum/controller/subsystem/vote, initiate_vote), "gamemode", "SERVER"), 10 SECONDS)
 		return FALSE
 	if(length(GLOB.ready_players) < required_players && !bypass_checks)
-		to_chat(world, "<b>Unable to start [name].</b> Not enough players, [required_players] players needed.")
+		to_chat(world, "<b>无法启动[name]。</b>玩家不足，需要[required_players]名玩家。")
 		return FALSE
 	if(!set_valid_job_types() && !bypass_checks)
 		return FALSE
@@ -113,7 +113,7 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 
 	// Determine roundstart player count, used for population locks.
 	SSticker.mode.roundstart_players = length(GLOB.clients)
-	to_chat(world, "Round initialized with a Population of [SSticker.mode.roundstart_players]")
+	to_chat(world, "回合已初始化，玩家数量为[SSticker.mode.roundstart_players]")
 	SSblackbox.record_feedback("text", "initial_players", 1, SSticker.mode.roundstart_players)
 	for(var/datum/job/job AS in valid_job_types)
 		job = SSjob.GetJobType(job)
@@ -226,7 +226,7 @@ GLOBAL_VAR(common_report) //Contains common part of roundend report
 
 ///End of round messaging
 /datum/game_mode/proc/end_round_fluff()
-	to_chat(world, span_round_body("Thus ends the story of the brave men and women of the [SSmapping.configs[SHIP_MAP].map_name] and their struggle on [SSmapping.configs[GROUND_MAP].map_name]."))
+	to_chat(world, span_round_body("这就是[SSmapping.configs[SHIP_MAP].map_name]上英勇的男女将士们及其在[SSmapping.configs[GROUND_MAP].map_name]上奋战的故事结局。"))
 
 /datum/game_mode/proc/display_roundstart_logout_report()
 	var/msg = "<hr>[span_notice("<b>Roundstart logout report</b>")]<br>"
@@ -669,23 +669,23 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	if(!isnewplayer(NP))
 		return FALSE
 	if(!NP.IsJobAvailable(job, TRUE))
-		to_chat(usr, "<span class='warning'>Selected job is not available.<spawn>")
+		to_chat(usr, "<span class='warning'>所选职位不可用。<spawn>")
 		return FALSE
 	if(!SSticker || SSticker.current_state != GAME_STATE_PLAYING)
-		to_chat(usr, "<span class='warning'>The round is either not ready, or has already finished!<spawn>")
+		to_chat(usr, "<span class='warning'>回合尚未准备就绪，或已结束！<spawn>")
 		return FALSE
 	if(!GLOB.enter_allowed || (!GLOB.xeno_enter_allowed && istype(job, /datum/job/xenomorph)))
-		to_chat(usr, "<span class='warning'>Spawning currently disabled, please observe.<spawn>")
+		to_chat(usr, "<span class='warning'>当前已禁用生成，请观察。<spawn>")
 		return FALSE
 	if(!NP.client.prefs.random_name)
 		var/name_to_check = NP.client.prefs.real_name
 		if(job.job_flags & JOB_FLAG_SPECIALNAME)
 			name_to_check = job.get_special_name(NP.client)
 		if(CONFIG_GET(flag/prevent_dupe_names) && GLOB.real_names_joined.Find(name_to_check))
-			to_chat(usr, span_warning("Someone has already joined the round with this character name. Please pick another."))
+			to_chat(usr, span_warning("已有人使用此角色名称加入本轮游戏。请选择其他名称。"))
 			return FALSE
 	if(!SSjob.AssignRole(NP, job, TRUE))
-		to_chat(usr, "<span class='warning'>Failed to assign selected role.<spawn>")
+		to_chat(usr, "<span class='warning'>未能分配所选角色。<spawn>")
 		return FALSE
 	return TRUE
 
@@ -706,17 +706,17 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	qdel(player)
 
 /datum/game_mode/proc/attempt_to_join_as_larva(mob/xeno_candidate)
-	to_chat(xeno_candidate, span_warning("This is unavailable in this gamemode."))
+	to_chat(xeno_candidate, span_warning("此游戏模式中不可用。"))
 	return FALSE
 
 
 /datum/game_mode/proc/spawn_larva(mob/xeno_candidate)
-	to_chat(xeno_candidate, span_warning("This is unavailable in this gamemode."))
+	to_chat(xeno_candidate, span_warning("此游戏模式中不可用。"))
 	return FALSE
 
 /datum/game_mode/proc/set_valid_job_types()
 	if(!SSjob?.initialized)
-		to_chat(world, span_boldnotice("Error setting up valid jobs, no job subsystem found initialized."))
+		to_chat(world, span_boldnotice("错误：设置有效职位时出错，未找到已初始化的职位子系统。"))
 		CRASH("Error setting up valid jobs, no job subsystem found initialized.")
 	if(SSjob.ssjob_flags & SSJOB_OVERRIDE_JOBS_START) //This allows an admin to pause the roundstart and set custom jobs for the round.
 		SSjob.active_occupations = SSjob.joinable_occupations.Copy()
@@ -742,7 +742,7 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		job.total_positions = valid_job_types[job.type] //Same for this one, direct value assignment.
 		SSjob.active_occupations += job
 	if(!length(SSjob.active_occupations))
-		to_chat(world, span_boldnotice("Error, game mode has only invalid jobs assigned."))
+		to_chat(world, span_boldnotice("错误，游戏模式仅分配了无效职位。"))
 		return FALSE
 	SSjob.active_joinable_occupations = SSjob.active_occupations.Copy()
 	SSjob.set_active_joinable_occupations_by_category()
@@ -763,7 +763,7 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 		if(squad.faction == FACTION_TERRAGOV)
 			preferred_squads[squad.name] = 0
 	if(!length(preferred_squads))
-		to_chat(world, span_boldnotice("Error, no squads found."))
+		to_chat(world, span_boldnotice("错误，未找到任何小队。"))
 		return FALSE
 	for(var/mob/new_player/player AS in GLOB.new_player_list)
 		if(!player.ready || !player.client?.prefs?.preferred_squad)
@@ -907,7 +907,7 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	var/datum/action/report/R = new
 	C.player_details.player_actions += R
 	R.give_action(C.mob)
-	to_chat(C,"<span class='infoplain'><a href='byond://?src=[REF(R)];report=1'>Show roundend report again</a></span>")
+	to_chat(C,"<span class='infoplain'><a href='byond://?src=[REF(R)];report=1'>再次显示回合结束报告</a></span>")
 
 /datum/action/report
 	name = "Show roundend report"

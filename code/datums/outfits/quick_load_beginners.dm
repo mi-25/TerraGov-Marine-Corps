@@ -5,8 +5,8 @@
 ///When making new loadouts, remember to also add the typepath to the list under init_beginner_loadouts() or else it won't show up in the vendor
 
 /datum/outfit/quick/beginner
-	name = "Beginner loadout base"
-	desc = "The base loadout for beginners. You shouldn't be able to see this"
+	name = "新手基础装备"
+	desc = "新手的基础装备。你不应该看到这个。"
 	jobtype = "Squad Marine"
 
 	w_uniform = /obj/item/clothing/under/marine
@@ -27,7 +27,7 @@
 
 
 /datum/outfit/quick/beginner/marine/rifleman
-	name = "Rifleman"
+	name = "步枪兵"
 	desc = "A typical rifleman for the marines. \
 	Wields the AR-12, a versatile all-rounder assault rifle with a powerful underbarrel grenade launcher attached. \
 	Also carries the strong P-23 sidearm and a variety of flares, medical equipment, and more for every situation."
@@ -59,7 +59,7 @@
 	)
 
 /datum/outfit/quick/beginner/marine/machinegunner
-	name = "Machinegunner"
+	name = "机枪手"
 	desc = "The king of suppressive fire. Uses the MG-60, a fully automatic 200 round machine gun with a bipod attached. \
 	Excels at denying large areas to the enemy and eliminating those who refuse to leave."
 
@@ -93,7 +93,7 @@
 
 
 /datum/outfit/quick/beginner/marine/marksman
-	name = "Marksman"
+	name = "神射手"
 	desc = "Quality over quantity. Equipped with the DMR-37, an accurate long-range designated marksman rifle with a scope attached. \
 	While subpar in close quarters, the precision of the DMR is unmatched, exceeding at taking out threats from afar."
 
@@ -137,7 +137,7 @@
 
 
 /datum/outfit/quick/beginner/marine/shotgunner
-	name = "Shotgunner"
+	name = "霰弹枪手"
 	desc = "Up close and personal. Wields the SH-39, a semi-automatic shotgun loaded with slugs. \
 	An absolute monster at short to mid range, the shotgun will do heavy damage to any target hit, as well as stunning them briefly, staggering them, and knocking them back."
 
@@ -172,7 +172,7 @@
 	)
 
 /datum/outfit/quick/beginner/marine/shocktrooper
-	name = "Shocktrooper"
+	name = "突击兵"
 	desc = "The bleeding edge of the corps. \
 	Equipped with the experimental battery-fed laser rifle, featuring four different modes that can be freely swapped between, with an underbarrel flamethrower for area denial and clearing mazes."
 
@@ -215,7 +215,7 @@
 
 
 /datum/outfit/quick/beginner/marine/hazmat
-	name = "Hazmat"
+	name = "防化服"
 	desc = "Designed for danger. \
 	Wields the AR-11, a powerful yet innacurate assault rifle with high magazine size and an equipped tactical sensor that detects enemies through smoke and walls. \
 	Wears Mimir combat armor, rendering the user immune to the dangerous toxic gas possessed by many xenomorphs."
@@ -246,7 +246,7 @@
 
 
 /datum/outfit/quick/beginner/marine/cqc
-	name = "CQC"
+	name = "近身格斗"
 	desc = "Swift and lethal. \
 	Equipped with the AR-18, a lightweight carbine with a rapid-fire burst mode. Designed for maximum mobility, soldiers are able to rush in, assault the enemy, and retreat before they can respond."
 
@@ -278,7 +278,7 @@
 
 
 /datum/outfit/quick/beginner/marine/chad //Ya gotta be if you pick this loadout
-	name = "Grenadier"
+	name = "掷弹兵"
 	desc = "Explosive area denial. \
 	Uses the GL-70, a six shot semi-automatic grenade launcher, loaded with HEDP high explosive grenades. \
 	Boasts unmatched power, though heavy caution is advised to avoid harming friendlies."
@@ -364,8 +364,8 @@
 
 
 /datum/outfit/quick/beginner/engineer/builder
-	name = "Engineer Standard"
-	desc = "Born to build. Equipped with a metric ton of metal, you can be certain that a lack of barricades is not a possibility with you around."
+	name = "工程兵标准装备"
+	desc = "天生就是干这个的。装备了海量金属，有你在场，路障短缺绝无可能。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_lmg/beginner
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/heavy/mimirengi
@@ -392,8 +392,8 @@
 
 
 /datum/outfit/quick/beginner/engineer/burnitall
-	name = "Flamethrower"
-	desc = "For those who truly love to watch the world burn. Equipped with a laser carbine and a flamethrower, you can be certain that none of your enemies will be left un-burnt."
+	name = "喷火器"
+	desc = "献给那些真正热爱看世界燃烧的人。配备激光卡宾枪和火焰喷射器，确保你的敌人无一幸免。"
 
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/beginner
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/engineer
@@ -423,8 +423,8 @@
 
 
 /datum/outfit/quick/beginner/engineer/pcenjoyer
-	name = "Plasma Cutter"
-	desc = "For the open-air enjoyers. Equipped with a plasma cutter, you will be able to cut down all types of walls and obstacles that dare exist within your vicinity."
+	name = "等离子体切割器"
+	desc = "为露天爱好者准备。配备等离子切割器，你将能够切割所有胆敢出现在你附近的各种墙壁和障碍物。"
 
 	suit_store = /obj/item/tool/pickaxe/plasmacutter
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/engineer
@@ -450,8 +450,8 @@
 	)
 
 /datum/outfit/quick/beginner/engineer/point_sentry
-	name = "Sentry Pointman"
-	desc = "The perfect mobile guard. Equipped with a point defence sentry and flechette shotgun, you are the ideal engineer for protecting medics or locking down a flank."
+	name = "哨戒炮先锋"
+	desc = "完美的机动护卫。配备点防御哨戒炮和箭弹霰弹枪，你是保护医疗人员或封锁侧翼的理想工程兵。"
 
 	suit_store = /obj/item/weapon/gun/shotgun/pump/t35/beginner/flechette
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/mirage_engineer
@@ -476,8 +476,8 @@
 	)
 
 /datum/outfit/quick/beginner/engineer/mortar
-	name = "Mortar Firesupport"
-	desc = "For those cheering from a distance. Equipped with a mortar bag, range finder, and an AR11, you are perfect for providing supporting fire and securing positions."
+	name = "迫击炮火力支援"
+	desc = "为那些在远处欢呼的人准备。配备迫击炮包、测距仪和AR11步枪，你是提供火力支援和巩固阵地的完美人选。"
 	suit_store = /obj/item/weapon/gun/rifle/tx11/freelancerone
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/engineer
 	mask = /obj/item/clothing/mask/gas
@@ -525,7 +525,7 @@
 
 
 /datum/outfit/quick/beginner/corpsman/lifesaver
-	name = "Standard Lifesaver"
+	name = "标准救生员"
 	desc = "Miracle in progress. \
 	Wields the bolt action Leicaster Repeater, and is equipped with a large variety of medicine for keeping the entire corps topped up and in the fight."
 
@@ -567,7 +567,7 @@
 	)
 
 /datum/outfit/quick/beginner/corpsman/hypobelt
-	name = "Standard Hypobelt"
+	name = "标准型次腰带"
 	desc = "Putting the combat in combat medic. \
 	Wields the pump action SH-35 shotgun, and is equipped with a belt full of hyposprays for rapidly treating patients in bad condition."
 
@@ -624,7 +624,7 @@
 
 
 /datum/outfit/quick/beginner/smartgunner/sg29
-	name = "Standard Smartmachinegun"
+	name = "标准智能机枪"
 	desc = "Tactical support fire. \
 	Uses the SG-29, a specialist light machine gun that will shoot through your allies, \
 	equipped with a tactical sensor to detect enemies through smoke, walls, and darkness."
@@ -652,7 +652,7 @@
 
 
 /datum/outfit/quick/beginner/smartgunner/sg85
-	name = "Standard Smartminigun"
+	name = "标准智能转管机枪"
 	desc = "Lead wall! Wields the SG-85, a specialist minigun that holds one thousand rounds and can shoot through your allies, \
 	equipped with a tactical sensor to detect enemies through smoke, walls, and darkness."
 

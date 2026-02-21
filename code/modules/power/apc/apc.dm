@@ -7,8 +7,8 @@
 
 
 /obj/machinery/power/apc
-	name = "area power controller"
-	desc = "A control terminal for the area electrical systems."
+	name = "区域电力控制器"
+	desc = "区域电力系统的控制终端。"
 	icon = 'icons/obj/machines/apc.dmi'
 	icon_state = "apc0"
 	anchored = TRUE
@@ -275,7 +275,7 @@
 		return TRUE
 	if(isAI(user) && aidisabled)
 		if(!loud)
-			balloon_alert(user, "eee is disabled")
+			balloon_alert(user, "eee 已禁用")
 		return FALSE
 	return TRUE
 
@@ -287,7 +287,7 @@
 		if("lock")
 			if(usr.has_unlimited_silicon_privilege)
 				if((machine_stat & (BROKEN|MAINT)))
-					balloon_alert(usr, "APC unresponsive")
+					balloon_alert(usr, "APC无响应")
 				else
 					locked = !locked
 					update_icon()
@@ -578,12 +578,12 @@
 
 /obj/machinery/power/apc/proc/set_broken()
 	//Aesthetically much better!
-	visible_message(span_warning("[src]'s screen flickers with warnings briefly!"))
+	visible_message(span_warning("[src]的屏幕短暂闪烁警告！"))
 	addtimer(CALLBACK(src, PROC_REF(do_break)), rand(2, 5))
 
 
 /obj/machinery/power/apc/proc/do_break()
-	visible_message(span_danger("[src]'s screen suddenly explodes in rain of sparks and small debris!"))
+	visible_message(span_danger("[src]的屏幕突然爆裂，火花和小碎片四散飞溅！"))
 	machine_stat |= BROKEN
 	operating = FALSE
 	update_icon()
@@ -652,6 +652,6 @@
 	cell_type = /obj/item/cell/high
 
 /obj/machinery/power/apc/mainship/hardened
-	name = "hardened area power controller"
-	desc = "A control terminal for the area electrical systems. This one is hardened against sudden power fluctuations caused by electrical grid damage."
+	name = "硬化区域电力控制器"
+	desc = "区域电力系统控制终端。此终端经过加固，能够抵御电网损坏引起的突发电力波动。"
 	crash_break_probability = 0

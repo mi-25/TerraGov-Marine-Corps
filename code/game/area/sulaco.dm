@@ -1,34 +1,34 @@
 //SULACO AREAS--------------------------------------//
 
 /area/sulaco/bridge
-	name = "Sulaco Bridge"
+	name = "阿尔梅耶号舰桥"
 	icon_state = "bridge"
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/sulaco/bridge/quarters
-	name = "Sulaco Officer's Quarters"
+	name = "阿尔梅耶号军官宿舍"
 	icon_state = "bridge"
 
 /area/sulaco/bridge/office
-	name = "Sulaco Executive's Office"
+	name = "阿尔梅耶号副官办公室"
 	icon_state = "head_quarters"
 
 /area/sulaco/cap_office
-	name = "Sulaco Captain's Office"
+	name = "阿尔梅耶号舰长办公室"
 	icon_state = "captain"
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/sulaco/bridge/maint
-	name = "Sulaco Bridge Maintenance"
+	name = "阿尔梅耶号舰桥维护"
 	icon_state = "maintcentral"
 
 /area/sulaco/security
-	name = "Sulaco Foreship Security Office"
+	name = "阿尔梅耶号前舰安全办公室"
 	icon_state = "security"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/sulaco/hydro
-	name = "Sulaco Hydroponics"
+	name = "阿尔梅耶号水培室"
 	icon_state = "garden"
 	minimap_color = MINIMAP_AREA_LIVING
 
@@ -36,266 +36,266 @@
 	minimap_color = MINIMAP_AREA_MEDBAY
 
 /area/sulaco/medbay/cmo
-	name = "Sulaco Chief Medical Officer's Office"
+	name = "阿尔梅耶号首席医疗官办公室"
 	icon_state = "head_quarters"
 
 /area/sulaco/medbay
-	name = "Sulaco Medbay"
+	name = "阿尔梅耶号医疗舱"
 	icon_state = "medbay"
 	ambience = list('sound/ambience/signal.ogg'	)
 
 /area/sulaco/medbay/storage
-	name = "Sulaco Medbay Storage"
+	name = "阿尔梅耶号医疗舱储物间"
 	icon_state = "medbay2"
 	ambience = list('sound/ambience/signal.ogg'	)
 
 /area/sulaco/medbay/west
-	name = "Sulaco Medbay West"
+	name = "阿尔梅耶号医疗舱西区"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg'	)
 
 /area/sulaco/medbay/hangar
-	name = "Sulaco Medbay Hangar"
+	name = "苏拉科医疗湾机库"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg'	)
 
 /area/sulaco/medbay/surgery_one
-	name = "Sulaco Operating Theatre I"
+	name = "阿尔梅耶号手术室 I"
 	icon_state = "surgery"
 
 /area/sulaco/medbay/surgery_two
-	name = "Sulaco Operating Theatre II"
+	name = "阿尔梅耶号手术室 II"
 	icon_state = "surgery"
 
 /area/sulaco/medbay/chemistry
-	name = "Sulaco Chemistry"
+	name = "阿尔梅耶号化学实验室"
 	icon_state = "chem"
 
 /area/sulaco/disposal
-	name = "Sulaco Disposal"
+	name = "苏拉科号废弃物处理"
 	icon_state = "disposal"
 
 /area/sulaco/brig
-	name = "Sulaco Brig"
+	name = "苏拉科号禁闭室"
 	icon_state = "brig"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/sulaco/hallway
-	name = "Sulaco Hallway"
+	name = "苏拉科走廊"
 	icon_state = "hallC1"
 
 /area/sulaco/hallway/central_hall
-	name = "Sulaco Central Hallway"
+	name = "苏拉科中央走廊"
 	icon_state = "hallC1"
 
 /area/sulaco/hallway/central_hall2
-	name = "Sulaco Central Hallway"
+	name = "苏拉科中央走廊"
 	icon_state = "hallC2"
 
 /area/sulaco/hallway/central_hall3
-	name = "Sulaco Central Hallway"
+	name = "苏拉科中央走廊"
 	icon_state = "hallC3"
 
 /area/sulaco/hallway/evac
-	name = "Sulaco Evacuation Port"
+	name = "阿尔梅耶号撤离港"
 	icon_state = "purple"
 	minimap_color = MINIMAP_AREA_ESCAPE
 
 /area/sulaco/hallway/lower_foreship
-	name = "Sulaco Foreship Lower Hallway"
+	name = "苏拉科号前舰下层走廊"
 	icon_state = "yellow"
 
 /area/sulaco/hallway/lower_main_hall
-	name = "Sulaco Main Hallway"
+	name = "苏拉科号主走廊"
 	icon_state = "hallF"
 
 /area/sulaco/hallway/dropshipprep
-	name = "Sulaco Dropship Prep"
+	name = "阿尔梅耶号运输机准备"
 	icon_state = "red"
 
 /area/sulaco/briefing
-	name = "Sulaco Briefing Room"
+	name = "阿尔梅耶号简报室"
 	icon_state = "blue-red2"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/sulaco/cryosleep
-	name = "Sulaco Cryogenic Storage"
+	name = "苏拉科号低温储存室"
 	icon_state = "Sleep"
 
 /area/sulaco/showers
-	name = "Sulaco Showers"
+	name = "阿尔梅耶号淋浴间"
 	icon_state = "toilet"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/sulaco/cafeteria
-	name = "Sulaco Cafeteria"
+	name = "阿尔梅耶号食堂"
 	icon_state = "cafeteria"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/sulaco/cafeteria/kitchen
-	name = "Sulaco Kitchen"
+	name = "阿尔梅耶号厨房"
 	icon_state = "kitchen"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/sulaco/cargo
-	name = "Sulaco Main Cargo Bay"
+	name = "苏拉科号主货舱"
 	icon_state = "quartstorage"
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/sulaco/cargo/office
-	name = "Sulaco Cargo Office"
+	name = "阿尔梅耶号补给办公室"
 	icon_state = "quartoffice"
 
 /area/sulaco/cargo/prep
-	name = "Sulaco Prep Area"
+	name = "阿尔梅耶号准备区"
 	icon_state = "red"
 
 /area/sulaco/firingrange
-	name = "Sulaco Firing Range"
+	name = "阿尔梅耶号射击场"
 	icon_state = "red2"
 
 /area/sulaco/maintenance
-	name = "Sulaco Maintenance"
+	name = "苏拉科号维护区"
 	icon_state = "fmaint"
 	minimap_color = MINIMAP_AREA_CAVES
 
 /area/sulaco/mechpilotquarters
-	name = "Sulaco Mech Pilot Quarters"
+	name = "苏拉科号机甲驾驶员宿舍"
 	icon_state = "blueold"
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/sulaco/engineering
-	name = "Sulaco Engineering"
+	name = "阿尔梅耶号工程部"
 	icon_state = "engine"
 	minimap_color = MINIMAP_AREA_ENGI
 	ambience = list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg')
 
 /area/sulaco/engineering/lower_engineering
-	name = "Sulaco Lower Engineering"
+	name = "苏拉科号下层轮机舱"
 	icon_state = "red"
 	ambience = list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg')
 
 /area/sulaco/engineering/storage
-	name = "Sulaco Engineering Storage"
+	name = "苏拉科号工程存储室"
 	icon_state = "engine_storage"
 
 /area/sulaco/engineering/ce
-	name = "Sulaco Chief's Office"
+	name = "阿尔梅耶号舰长办公室"
 	icon_state = "head_quarters"
 
 /area/sulaco/engineering/atmos
-	name = "Sulaco Atmospherics"
+	name = "苏拉科号大气处理室"
 	icon_state = "atmos"
 	ambience = list('sound/ambience/ambiatm1.ogg','sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg')
 
 /area/sulaco/engineering/engine_monitoring
-	name = "Sulaco Engine Monitoring"
+	name = "阿尔梅耶号引擎监控"
 	icon_state = "engine_monitoring"
 	ambience = list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg')
 
 /area/sulaco/engineering/engine
-	name = "Sulaco Engine Chamber"
+	name = "苏拉科引擎舱"
 	icon_state = "yellow"
 	ambience = list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg')
 
 /area/sulaco/marine
-	name = "Sulaco Marine Prep"
+	name = "阿尔梅耶号陆战队准备区"
 	icon_state = "storage"
 	minimap_color = MINIMAP_AREA_PREP
 
 /area/sulaco/marine/chapel
-	name = "Sulaco Chapel"
+	name = "阿尔梅耶号礼拜堂"
 	icon_state = "chapel"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/sulaco/marine/chapel/chapel_office
-	name = "Sulaco Chapel Office"
+	name = "阿尔梅耶号小教堂办公室"
 	icon_state = "chapeloffice"
 
 /area/sulaco/command
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/sulaco/command/armory
-	name = "Sulaco Secure Armory"
+	name = "苏拉科安全军械库"
 	icon_state = "red"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/sulaco/research
-	name = "Sulaco Research Division"
+	name = "阿尔梅耶号研究部"
 	icon_state = "research"
 	minimap_color = MINIMAP_AREA_RESEARCH
 
 /area/sulaco/telecomms
-	name = "Sulaco Telecomms Central"
+	name = "苏拉科号通讯中心"
 	icon_state = "tcomsatcham"
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/sulaco/telecomms/office
-	name = "Sulaco Telecomms Monitoring"
+	name = "阿尔梅耶号通讯监控"
 	icon_state = "tcomsatstore"
 
 /area/sulaco/command/ai
-	name = "Sulaco AI Chamber"
+	name = "阿尔梅耶号人工智能室"
 	icon_state = "ai_chamber"
 
 /area/sulaco/liaison
-	name = "Sulaco Liaison's Office"
+	name = "阿尔梅耶号联络官办公室"
 	icon_state = "blue2"
 
 /area/sulaco/liaison/quarters
-	name = "Sulaco Liaison's Quarters"
+	name = "阿尔梅耶号联络官舱室"
 	icon_state = "red"
 
 /area/sulaco/morgue
-	name = "Sulaco Morgue"
+	name = "阿尔梅耶号太平间"
 	icon_state = "morgue"
 	minimap_color = MINIMAP_AREA_MEDBAY
 
 /area/sulaco/bar
-	name = "Sulaco Bar"
+	name = "苏拉科酒吧"
 	icon_state = "purple"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/sulaco/hangar
-	name = "Sulaco Dropship Hangar"
+	name = "苏拉科号空投机机库"
 	icon_state = "hangar"
 	minimap_color = MINIMAP_AREA_LZ
 
 /area/sulaco/hangar/droppod
-	name = "Sulaco Drop pod bay"
+	name = "苏拉科号空降舱舱室"
 	icon_state = "storage"
 
 /area/sulaco/hangar/storage
-	name = "Sulaco Hangar Workshop"
+	name = "阿尔梅耶号机库车间"
 	icon_state = "hangar_storage"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/sulaco/hangar/cas
-	name = "Sulaco Hangar CAS Plane"
+	name = "苏拉科机库近距空中支援飞机"
 	icon_state = "hangar_cas"
 
 /area/sulaco/command/eva
-	name = "Sulaco EVA Storage"
+	name = "苏拉科号舱外活动存储区"
 	icon_state = "storage"
 
 /area/sulaco/maintenance/upperdeck_AIcore_maint
-	name = "AI Core Maintenance"
+	name = "AI核心维护"
 	icon_state = "maintcentral"
 
 /area/sulaco/maintenance/upperdeck_north_maint
-	name = "Sulaco Upper Maintenance Deck"
+	name = "苏拉科号上层维护甲板"
 	icon_state = "maintcentral"
 
 /area/sulaco/maintenance/lower_maint3
-	name = "Sulaco Forship Lower Maintenance"
+	name = "苏拉科号护卫舰下层维护区"
 	icon_state = "maintcentral"
 
 /area/sulaco/maintenance/lower_maint2
-	name = "Sulaco Maintenance"
+	name = "苏拉科号维护区"
 	icon_state = "maintcentral"
 
 /area/sulaco/maintenance/lower_maint
-	name = "Sulaco Maintenance"
+	name = "苏拉科号维护区"
 	icon_state = "maintcentral"
 
 //Drop Pods
@@ -308,35 +308,35 @@
 	return TRUE
 
 /area/shuttle/drop1/sulaco
-	name = "Dropship Alamo"
+	name = "阿拉莫号运输船"
 	icon_state = "shuttlered"
 
 /area/shuttle/drop1/LV624
-	name = "Dropship Alamo"
+	name = "阿拉莫号运输船"
 	icon_state = "shuttle"
 
 /area/shuttle/drop1/Haunted
-	name = "Dropship Alamo"
+	name = "阿拉莫号运输船"
 	icon_state = "shuttle"
 
 /area/shuttle/drop1/prison
-	name = "Dropship Alamo"
+	name = "阿拉莫号运输船"
 	icon_state = "shuttle"
 
 /area/shuttle/drop1/BigRed
-	name = "Dropship Alamo"
+	name = "阿拉莫号运输船"
 	icon_state = "shuttle"
 
 /area/shuttle/drop1/ice_colony
-	name = "Dropship Alamo"
+	name = "阿拉莫号运输船"
 	icon_state = "shuttle"
 
 /area/shuttle/drop1/transit
-	name = "Dropship Alamo Transit"
+	name = "阿拉莫号运输穿梭机"
 	icon_state = "shuttle2"
 
 /area/shuttle/drop1/lz1
-	name = "Alamo Landing Zone"
+	name = "阿拉莫号着陆区"
 	icon_state = "away1"
 	area_flags = NONE
 
@@ -346,35 +346,35 @@
 	return TRUE
 
 /area/shuttle/drop2/sulaco
-	name = "Dropship Normandy"
+	name = "诺曼底号运输船"
 	icon_state = "shuttle"
 
 /area/shuttle/drop2/LV624
-	name = "Dropship Normandy"
+	name = "诺曼底号运输船"
 	icon_state = "shuttle2"
 
 /area/shuttle/drop2/Haunted
-	name = "Dropship Normandy"
+	name = "诺曼底号运输船"
 	icon_state = "shuttle2"
 
 /area/shuttle/drop2/prison
-	name = "Dropship Normandy"
+	name = "诺曼底号运输船"
 	icon_state = "shuttle2"
 
 /area/shuttle/drop2/BigRed
-	name = "Dropship Normandy"
+	name = "诺曼底号运输船"
 	icon_state = "shuttle2"
 
 /area/shuttle/drop2/ice_colony
-	name = "Dropship Normandy"
+	name = "诺曼底号运输船"
 	icon_state = "shuttle2"
 
 /area/shuttle/drop2/transit
-	name = "Dropship Normandy Transit"
+	name = "诺曼底号运输船转运"
 	icon_state = "shuttlered"
 
 /area/shuttle/drop2/lz2
-	name = "Normandy Landing Zone"
+	name = "诺曼底着陆区"
 	icon_state = "away2"
 	area_flags = NONE
 
@@ -383,62 +383,62 @@
 //DISTRESS SHUTTLES
 
 /area/shuttle/distress/start
-	name = "Distress Shuttle"
+	name = "求救穿梭机"
 	icon_state = "away1"
 
 /area/shuttle/distress/transit
-	name = "Distress Shuttle Transit"
+	name = "求救穿梭机运输"
 	icon_state = "away2"
 
 
 /area/shuttle/distress/start_pmc
-	name = "Distress Shuttle PMC"
+	name = "求救穿梭机 PMC"
 	icon_state = "away1"
 
 /area/shuttle/distress/transit_pmc
-	name = "Distress Shuttle PMC Transit"
+	name = "PMC 撤离穿梭机"
 	icon_state = "away2"
 
 
 /area/shuttle/distress/start_upp
-	name = "Distress Shuttle UPP"
+	name = "求救穿梭机 UPP"
 	icon_state = "away1"
 
 
 /area/shuttle/distress/transit_upp
-	name = "Distress Shuttle UPP Transit"
+	name = "求救穿梭机 UPP 运输"
 	icon_state = "away2"
 
 
 /area/shuttle/distress/start_big
-	name = "Distress Shuttle Big"
+	name = "求救穿梭机（大型）"
 	icon_state = "away1"
 
 
 /area/shuttle/distress/transit_big
-	name = "Distress Shuttle Big Transit"
+	name = "求救穿梭机大型跃迁"
 	icon_state = "away2"
 
 
 /area/shuttle/distress/arrive_1
-	name = "Distress Shuttle"
+	name = "求救穿梭机"
 	icon_state = "away3"
 	requires_power = TRUE
 
 /area/shuttle/distress/arrive_2
-	name = "Distress Shuttle"
+	name = "求救穿梭机"
 	icon_state = "away4"
 	requires_power = TRUE
 
 /area/shuttle/distress/arrive_3
-	name = "Distress Shuttle"
+	name = "求救穿梭机"
 	icon_state = "away"
 
 
 /area/shuttle/distress/arrive_n_hangar
-	name = "Distress Shuttle"
+	name = "求救穿梭机"
 	icon_state = "away"
 
 /area/shuttle/distress/arrive_s_hangar
-	name = "Distress Shuttle"
+	name = "求救穿梭机"
 	icon_state = "away3"

@@ -11,7 +11,7 @@
 
 /obj/structure/tram
 	name = "tram wall"
-	desc = "A lightweight titanium composite structure with titanium silicate panels."
+	desc = "轻质钛合金复合结构，带有硅酸钛面板。"
 	icon = 'icons/obj/tram/tram_structure.dmi'
 	icon_state = "tram-part-0"
 	base_icon_state = "tram-part"
@@ -86,11 +86,11 @@
 	. = ..()
 
 	if(user.a_intent != INTENT_HARM)
-		user.visible_message(span_notice("[user] knocks on [src]."), \
+		user.visible_message(span_notice("[user]敲了敲[src]。"), \
 			span_notice("You knock on [src]."))
 		playsound(src, knock_sound, 50, TRUE)
 	else
-		user.visible_message(span_warning("[user] bashes [src]!"), \
+		user.visible_message(span_warning("[user] 猛击了 [src]！"), \
 			span_warning("You bash [src]!"))
 		playsound(src, bash_sound, 100, TRUE)
 
@@ -101,14 +101,14 @@
 
 /obj/structure/tram/welder_act(mob/living/user, obj/item/tool)
 	if(obj_integrity >= max_integrity)
-		to_chat(user, span_warning("[src] is already in good condition!"))
+		to_chat(user, span_warning("[src] 已经处于良好状态！"))
 		return TRUE
 	if(!tool.tool_start_check(user, amount = 0))
 		return FALSE
-	to_chat(user, span_notice("You begin repairing [src]..."))
+	to_chat(user, span_notice("你开始修理[src]..."))
 	if(tool.use_tool(src, user, 4 SECONDS, volume = 50))
 		obj_integrity = max_integrity
-		to_chat(user, span_notice("You repair [src]."))
+		to_chat(user, span_notice("你修复了[src]。"))
 		update_appearance()
 	return TRUE
 
@@ -116,47 +116,47 @@
 	switch(state)
 		if(TRAM_SCREWED_TO_FRAME)
 			if(attacking_item.tool_behaviour == TOOL_SCREWDRIVER)
-				user.visible_message(span_notice("[user] begins to unscrew the tram panel from the frame..."),
+				user.visible_message(span_notice("[user]开始将电车面板从框架上拧下..."),
 				span_notice("You begin to unscrew the tram panel from the frame..."))
 				if(attacking_item.use_tool(src, user, 1 SECONDS, volume = 50))
 					state = TRAM_IN_FRAME
-					to_chat(user, span_notice("The screws come out, and a gap forms around the edge of the pane."))
+					to_chat(user, span_notice("螺丝松脱，窗玻璃边缘出现了一道缝隙。"))
 					return TRUE
 
 			if(attacking_item.tool_behaviour)
-				to_chat(user, span_warning("The security screws need to be removed first!"))
+				to_chat(user, span_warning("必须先卸下安全螺丝！"))
 
 		if(TRAM_IN_FRAME)
 			if(attacking_item.tool_behaviour == TOOL_CROWBAR)
-				user.visible_message(span_notice("[user] wedges \the [attacking_item] into the tram panel's gap in the frame and starts prying..."),
+				user.visible_message(span_notice("[user] 将 \the [attacking_item] 楔入电车面板的框架缝隙中，开始撬动……"),
 				span_notice("You wedge \the [attacking_item] into the tram panel's gap in the frame and start prying..."))
 				if(attacking_item.use_tool(src, user, 1 SECONDS, volume = 50))
 					state = TRAM_OUT_OF_FRAME
-					to_chat(user, span_notice("The panel pops out of the frame, exposing some cabling that look like they can be cut."))
+					to_chat(user, span_notice("面板从框架中弹出，露出一些看起来可以切断的线缆。"))
 					return TRUE
 
 			if(attacking_item.tool_behaviour == TOOL_SCREWDRIVER)
-				user.visible_message(span_notice("[user] resecures the tram panel to the frame..."),
+				user.visible_message(span_notice("[user] 将电车面板重新固定到框架上..."),
 				span_notice("You resecure the tram panel to the frame..."))
 				state = TRAM_SCREWED_TO_FRAME
 				return TRUE
 
 		if(TRAM_OUT_OF_FRAME)
 			if(attacking_item.tool_behaviour == TOOL_WIRECUTTER)
-				user.visible_message(span_notice("[user] starts cutting the connective cabling on \the [src]..."),
+				user.visible_message(span_notice("[user]开始切断\the [src]上的连接线缆..."),
 				span_notice("You start cutting the connective cabling on \the [src]"))
 				if(attacking_item.use_tool(src, user, 1 SECONDS, volume = 50))
-					to_chat(user, span_notice("The panels falls out of the way exposing the frame backing."))
+					to_chat(user, span_notice("面板脱落，露出了框架背板。"))
 					deconstruct(disassembled = TRUE)
 
 			if(attacking_item.tool_behaviour == TOOL_CROWBAR)
-				user.visible_message(span_notice("[user] snaps the tram panel into place."),
+				user.visible_message(span_notice("[user]将电车面板卡入到位。"),
 				span_notice("You snap the tram panel into place..."))
 				state = TRAM_IN_FRAME
 				return TRUE
 
 			if(attacking_item.tool_behaviour)
-				to_chat(user, span_warning("The cabling need to be cut first!"))
+				to_chat(user, span_warning("得先把电缆切断！"))
 
 	return ..()
 
@@ -194,7 +194,7 @@
 /*
 /obj/structure/tram/alt/titanium
 	name = "solid tram"
-	desc = "A lightweight titanium composite structure. There is further solid plating where the panels usually attach to the frame."
+	desc = "轻质钛合金复合结构。面板与框架连接处有额外的加固护板。"
 	icon = 'icons/turf/walls/shuttle_wall.dmi'
 	icon_state = "shuttle_wall-0"
 	base_icon_state = "shuttle_wall"
@@ -206,7 +206,7 @@
 
 /obj/structure/tram/alt/plastitanium
 	name = "reinforced tram"
-	desc = "An evil tram of plasma and titanium."
+	desc = "邪恶的等离子体与钛合金列车。"
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'
 	icon_state = "plastitanium_wall-0"
 	base_icon_state = "plastitanium_wall"
@@ -218,7 +218,7 @@
 
 /obj/structure/tram/alt/gold
 	name = "gold tram"
-	desc = "A solid gold tram. Swag!"
+	desc = "一辆纯金电车。太有范儿了！"
 	icon = 'icons/turf/walls/gold_wall.dmi'
 	icon_state = "gold_wall-0"
 	base_icon_state = "gold_wall"
@@ -231,7 +231,7 @@
 
 /obj/structure/tram/alt/silver
 	name = "silver tram"
-	desc = "A solid silver tram. Shiny!"
+	desc = "一辆坚固的银色轨道车。亮闪闪的！"
 	icon = 'icons/turf/walls/silver_wall.dmi'
 	icon_state = "silver_wall-0"
 	base_icon_state = "silver_wall"
@@ -244,7 +244,7 @@
 
 /obj/structure/tram/alt/diamond
 	name = "diamond tram"
-	desc = "A composite structure with diamond-plated panels. Looks awfully sharp..."
+	desc = "一种带有钻石镀层面板的复合结构。看起来锋利得可怕……"
 	icon = 'icons/turf/walls/diamond_wall.dmi'
 	icon_state = "diamond_wall-0"
 	base_icon_state = "diamond_wall"
@@ -259,7 +259,7 @@
 
 /obj/structure/tram/alt/bananium
 	name = "bananium tram"
-	desc = "A composite structure with bananium plating. Honk!"
+	desc = "带有香蕉矿镀层的复合结构。Honk！"
 	icon = 'icons/turf/walls/bananium_wall.dmi'
 	icon_state = "bananium_wall-0"
 	base_icon_state = "bananium_wall"
@@ -272,7 +272,7 @@
 
 /obj/structure/tram/alt/sandstone
 	name = "sandstone tram"
-	desc = "A composite structure with sandstone plating. Rough."
+	desc = "一种带有砂岩覆层的复合结构。表面粗糙。"
 	icon = 'icons/turf/walls/sandstone_wall.dmi'
 	icon_state = "sandstone_wall-0"
 	base_icon_state = "sandstone_wall"
@@ -287,7 +287,7 @@
 /obj/structure/tram/alt/uranium
 	article = "a"
 	name = "uranium tram"
-	desc = "A composite structure with uranium plating. This is probably a bad idea."
+	desc = "带有铀板层的复合结构。这大概不是个好主意。"
 	icon = 'icons/turf/walls/uranium_wall.dmi'
 	icon_state = "uranium_wall-0"
 	base_icon_state = "uranium_wall"
@@ -300,7 +300,7 @@
 
 /obj/structure/tram/alt/plasma
 	name = "plasma tram"
-	desc = "A composite structure with plasma plating. This is definitely a bad idea."
+	desc = "带有等离子体镀层的复合结构。这绝对是个坏主意。"
 	icon = 'icons/turf/walls/plasma_wall.dmi'
 	icon_state = "plasma_wall-0"
 	base_icon_state = "plasma_wall"
@@ -313,7 +313,7 @@
 
 /obj/structure/tram/alt/wood
 	name = "wooden tram"
-	desc = "A tram with wooden framing. Flammable. There's a reason we use metal now."
+	desc = "一辆带有木质框架的轨道车。易燃。这就是我们现在改用金属的原因。"
 	icon = 'icons/turf/walls/wood_wall.dmi'
 	icon_state = "wood_wall-0"
 	base_icon_state = "wood_wall"
@@ -327,7 +327,7 @@
 
 /obj/structure/tram/alt/bamboo
 	name = "bamboo tram"
-	desc = "A tram with a bamboo framing."
+	desc = "带有竹制框架的电车。"
 	icon = 'icons/turf/walls/bamboo_wall.dmi'
 	icon_state = "bamboo_wall-0"
 	base_icon_state = "wall"
@@ -339,7 +339,7 @@
 
 /obj/structure/tram/alt/iron
 	name = "rough iron tram"
-	desc = "A composite structure with rough iron plating."
+	desc = "一种带有粗糙铁板的复合结构。"
 	icon = 'icons/turf/walls/iron_wall.dmi'
 	icon_state = "iron_wall-0"
 	base_icon_state = "iron_wall"
@@ -353,7 +353,7 @@
 
 /obj/structure/tram/alt/abductor
 	name = "alien tram"
-	desc = "A composite structure made of some kind of alien alloy."
+	desc = "由某种外星合金制成的复合结构。"
 	icon = 'icons/turf/walls/abductor_wall.dmi'
 	icon_state = "abductor_wall-0"
 	base_icon_state = "abductor_wall"
@@ -369,7 +369,7 @@
 /obj/structure/tram/spoiler
 	name = "tram spoiler"
 	icon = 'icons/obj/tram/tram_structure.dmi'
-	desc = "Nanotrasen bought the luxury package under the impression titanium spoilers make the tram go faster. They're just for looks, or potentially stabbing anybody who gets in the way."
+	desc = "纳米传讯购买了豪华套餐，以为钛合金扰流板能让电车跑得更快。它们只是装饰品，或者可能用来刺伤挡路的人。"
 	icon_state = "tram-spoiler-retracted"
 	max_integrity = 400
 	obj_flags = CAN_BE_HIT
@@ -412,7 +412,7 @@
 		if(!deployed)
 			// Bring out the blades
 			if(locked)
-				visible_message(span_danger("\the [src] locks up due to its servo overheating!"))
+				visible_message(span_danger("\the [src] 因伺服器过热而卡住了！"))
 			do_sparks(3, FALSE, src)
 			deploy_spoiler()
 		return
@@ -470,11 +470,11 @@
 		update_appearance()
 		return TRUE
 
-	to_chat(user, span_notice("You begin repairing [src]..."))
+	to_chat(user, span_notice("你开始修理[src]..."))
 	if(!tool.use_tool(src, user, 4 SECONDS, volume = 50))
 		return
 	repair_damage(max_integrity)
-	to_chat(user, span_notice("You repair [src]."))
+	to_chat(user, span_notice("你修复了[src]。"))
 	update_appearance()
 	return TRUE
 
@@ -485,7 +485,7 @@
 
 /obj/structure/chair/sofa/bench/tram
 	name = "bench"
-	desc = "Perfectly designed to be comfortable to sit on, and hellish to sleep on."
+	desc = "完美设计，坐着舒适，睡如地狱。"
 	icon_state = "bench_middle"
 	greyscale_config = /datum/greyscale_config/bench_middle
 	greyscale_colors = COLOR_TRAM_BLUE

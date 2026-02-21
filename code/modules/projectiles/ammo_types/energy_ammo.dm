@@ -19,7 +19,7 @@
 	barricade_clear_distance = 2
 
 /datum/ammo/energy/emitter //Damage is determined in emitter.dm
-	name = "emitter bolt"
+	name = "发射器能量束"
 	icon_state = "emitter"
 	ammo_behavior_flags = AMMO_ENERGY
 	accurate_range = 10
@@ -27,7 +27,7 @@
 	bullet_color = COLOR_VIBRANT_LIME
 
 /datum/ammo/energy/taser
-	name = "taser bolt"
+	name = "电击弹"
 	icon_state = "stun"
 	hud_state = "taser"
 	hud_state_empty = "battery_empty"
@@ -43,7 +43,7 @@
 	staggerstun(target_mob, proj, stun = 20 SECONDS)
 
 /datum/ammo/energy/tesla
-	name = "energy ball"
+	name = "能量球"
 	icon_state = "tesla"
 	hud_state = "taser"
 	hud_state_empty = "battery_empty"
@@ -76,7 +76,7 @@
 
 #define BFG_SOUND_DELAY_SECONDS 1
 /datum/ammo/energy/bfg
-	name = "bfg glob"
+	name = "bfg 球体"
 	icon_state = "bfg_ball"
 	hud_state = "electrothermal"
 	hud_state_empty = "electrothermal_empty"
@@ -116,7 +116,7 @@
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf)
 
 /datum/ammo/energy/lasburster
-	name = "lasburster bolt"
+	name = "激光爆裂弹"
 	ammo_behavior_flags = AMMO_ENERGY|AMMO_HITSCAN
 	hud_state = "laser_overcharge"
 	armor_type = LASER
@@ -126,7 +126,7 @@
 	hitscan_effect_icon = "beam_heavy"
 
 /datum/ammo/energy/assault_armor
-	name = "assault armor bolt"
+	name = "突击护甲螺栓"
 	ammo_behavior_flags = AMMO_ENERGY|AMMO_HITSCAN
 	hud_state = "laser_overcharge"
 	armor_type = LASER
@@ -136,7 +136,7 @@
 	hitscan_effect_icon = "beam_heavy"
 
 /datum/ammo/energy/lasgun
-	name = "laser bolt"
+	name = "激光束"
 	icon_state = "laser"
 	hud_state = "laser"
 	armor_type = LASER
@@ -153,7 +153,7 @@
 	icon_state = "laser2"
 
 /datum/ammo/energy/lasgun/M43/overcharge
-	name = "overcharged laser bolt"
+	name = "过载激光束"
 	icon_state = "overchargedlaser"
 	hud_state = "laser_sniper"
 	damage = 40
@@ -162,7 +162,7 @@
 	sundering = 5
 
 /datum/ammo/energy/lasgun/M43/heat
-	name = "microwave heat bolt"
+	name = "微波热射弹"
 	icon_state = "microwavelaser"
 	hud_state = "laser_heat"
 	damage = 12 //requires mod with -0.15 multiplier should math out to 10
@@ -171,7 +171,7 @@
 	sundering = 1
 
 /datum/ammo/energy/lasgun/M43/blast
-	name = "wide range laser blast"
+	name = "大范围激光冲击"
 	icon_state = "heavylaser2"
 	hud_state = "laser_spread"
 	bonus_projectiles_type = /datum/ammo/energy/lasgun/M43/spread
@@ -186,7 +186,7 @@
 	sundering = 5
 
 /datum/ammo/energy/lasgun/M43/spread
-	name = "additional laser blast"
+	name = "额外激光射击"
 	icon_state = "laser2"
 	shell_speed = 2
 	accuracy_variation = 9
@@ -197,7 +197,7 @@
 	penetration = 0
 
 /datum/ammo/energy/lasgun/M43/disabler
-	name = "disabler bolt"
+	name = "失能光束"
 	icon_state = "disablershot"
 	hud_state = "laser_disabler"
 	damage = 45
@@ -209,7 +209,7 @@
 	staggerstun(target_mob, proj, stagger = 1 SECONDS, slowdown = 0.75)
 
 /datum/ammo/energy/lasgun/pulsebolt
-	name = "pulse bolt"
+	name = "脉冲弹"
 	icon_state = "pulse2"
 	hud_state = "pulse"
 	damage = 45 // this is gotta hurt...
@@ -219,7 +219,7 @@
 	bullet_color = COLOR_PULSE_BLUE
 
 /datum/ammo/energy/lasgun/M43/practice
-	name = "practice laser bolt"
+	name = "练习用激光束"
 	icon_state = "disablershot"
 	hud_state = "laser_disabler"
 	damage = 45
@@ -249,7 +249,7 @@
 	max_range = 18
 
 /datum/ammo/energy/lasgun/marine/overcharge
-	name = "overcharged laser bolt"
+	name = "过载激光束"
 	icon_state = "overchargedlaser"
 	hud_state = "laser_sniper"
 	damage = 40
@@ -258,7 +258,7 @@
 	hitscan_effect_icon = "beam_heavy"
 
 /datum/ammo/energy/lasgun/marine/weakening
-	name = "weakening laser bolt"
+	name = "削弱激光束"
 	icon_state = "overchargedlaser"
 	hud_state = "laser_efficiency"
 	damage = 30
@@ -279,7 +279,7 @@
 	xeno_victim.use_plasma(plasma_drain * xeno_victim.xeno_caste.plasma_regen_limit)
 
 /datum/ammo/energy/lasgun/marine/microwave
-	name = "microwave laser bolt"
+	name = "微波激光束"
 	icon_state = "overchargedlaser"
 	hud_state = "laser_xray"
 	damage = 20
@@ -303,7 +303,7 @@
 		living_victim.apply_status_effect(STATUS_EFFECT_MICROWAVE, microwave_stacks)
 
 /datum/ammo/energy/lasgun/marine/blast
-	name = "wide range laser blast"
+	name = "大范围激光冲击"
 	icon_state = "heavylaser2"
 	hud_state = "laser_spread"
 	bonus_projectiles_type = /datum/ammo/energy/lasgun/marine/blast/spread
@@ -320,10 +320,10 @@
 	bullet_color = LIGHT_COLOR_PURPLE
 
 /datum/ammo/energy/lasgun/marine/blast/spread
-	name = "additional laser blast"
+	name = "额外激光射击"
 
 /datum/ammo/energy/lasgun/marine/impact
-	name = "impact laser blast"
+	name = "冲击激光束"
 	icon_state = "overchargedlaser"
 	hud_state = "laser_impact"
 	damage = 35
@@ -337,7 +337,7 @@
 	staggerstun(target_mob, proj, max_range = 6, knockback = knockback_dist)
 
 /datum/ammo/energy/lasgun/marine/cripple
-	name = "crippling laser blast"
+	name = "致残激光冲击"
 	icon_state = "overchargedlaser"
 	hud_state = "laser_disabler"
 	damage = 20
@@ -350,18 +350,18 @@
 	staggerstun(target_mob, proj, slowdown = 1.5)
 
 /datum/ammo/energy/lasgun/marine/autolaser
-	name = "machine laser bolt"
+	name = "激光束"
 	damage = 18
 	penetration = 15
 	sundering = 1
 
 /datum/ammo/energy/lasgun/marine/autolaser/burst
-	name = "burst machine laser bolt"
+	name = "连发机炮激光束"
 	hud_state = "laser_efficiency"
 	damage = 12
 
 /datum/ammo/energy/lasgun/marine/autolaser/charge
-	name = "charged machine laser bolt"
+	name = "充能式机枪激光弹"
 	hud_state = "laser_overcharge"
 	damage = 50
 	penetration = 30
@@ -375,7 +375,7 @@
 		wall_victim.take_damage(proj.damage, proj.damtype, proj.armor_type)
 
 /datum/ammo/energy/lasgun/marine/autolaser/melting
-	name = "melting machine laser bolt"
+	name = "熔化者激光束"
 	hud_state = "laser_melting"
 	damage = 15
 	penetration = 20
@@ -398,7 +398,7 @@
 		living_victim.apply_status_effect(STATUS_EFFECT_MELTING, melt_stacks)
 
 /datum/ammo/energy/lasgun/marine/sniper
-	name = "sniper laser bolt"
+	name = "狙击激光束"
 	hud_state = "laser_sniper"
 	damage = 60
 	penetration = 30
@@ -410,7 +410,7 @@
 	hitscan_effect_icon = "beam_heavy"
 
 /datum/ammo/energy/lasgun/marine/sniper_heat
-	name = "sniper heat bolt"
+	name = "狙击手热熔弹"
 	icon_state = "microwavelaser"
 	hud_state = "laser_heat"
 	damage = 40
@@ -422,7 +422,7 @@
 	bullet_color = COLOR_DISABLER_BLUE
 
 /datum/ammo/energy/lasgun/marine/shatter
-	name = "sniper shattering bolt"
+	name = "狙击手破甲弹"
 	icon_state = "microwavelaser"
 	hud_state = "laser_impact"
 	damage = 40
@@ -446,7 +446,7 @@
 	accurate_range_min = 0
 
 /datum/ammo/energy/lasgun/marine/ricochet
-	name = "sniper laser bolt"
+	name = "狙击激光束"
 	icon_state = "microwavelaser"
 	hud_state = "laser_disabler"
 	damage = 100
@@ -480,7 +480,7 @@
 	reflect(get_turf(target_obj), proj, 5)
 
 /datum/ammo/energy/lasgun/marine/pistol
-	name = "pistol laser bolt"
+	name = "手枪激光束"
 	hud_state = "laser_efficiency"
 	damage = 20
 	penetration = 5
@@ -489,7 +489,7 @@
 	bullet_color = COLOR_DISABLER_BLUE
 
 /datum/ammo/energy/lasgun/marine/pistol/disabler
-	name = "disabler bolt"
+	name = "失能光束"
 	icon_state = "disablershot"
 	hud_state = "laser_disabler"
 	damage = 70
@@ -499,7 +499,7 @@
 	bullet_color = LIGHT_COLOR_YELLOW
 
 /datum/ammo/energy/lasgun/marine/pistol/heat
-	name = "microwave heat bolt"
+	name = "微波热射弹"
 	icon_state = "microwavelaser"
 	hud_state = "laser_heat"
 	damage = 20
@@ -514,7 +514,7 @@
 	staggerstun(target_mob, proj, stagger = 1 SECONDS, slowdown = 0.75)
 
 /datum/ammo/energy/lasgun/marine/incendiary
-	name = "xray heat bolt"
+	name = "X射线热熔弹"
 	hud_state = "laser_heat"
 	icon_state = "u_laser"
 	ammo_behavior_flags = AMMO_ENERGY|AMMO_INCENDIARY|AMMO_HITSCAN
@@ -525,7 +525,7 @@
 	hitscan_effect_icon = "u_laser_beam"
 
 /datum/ammo/energy/lasgun/marine/xray
-	name = "xray piercing bolt"
+	name = "X射线穿透弹"
 	hud_state = "laser_xray"
 	icon_state = "xray"
 	ammo_behavior_flags = AMMO_ENERGY|AMMO_HITSCAN|AMMO_PASS_THROUGH_TURF|AMMO_PASS_THROUGH_MOVABLE
@@ -572,7 +572,7 @@
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf)
 
 /datum/ammo/energy/lasersentry
-	name = "laser sentry bolt"
+	name = "激光哨戒炮射弹"
 	icon_state = "laser"
 	hud_state = "laser"
 	damage = 35
@@ -583,7 +583,7 @@
 	bullet_color = COLOR_LASER_RED
 
 /datum/ammo/energy/plasma
-	name = "superheated plasma"
+	name = "过热等离子体"
 	icon_state = "plasma_small"
 	hud_state = "plasma"
 	hud_state_empty = "battery_empty"
@@ -614,7 +614,7 @@
 	living_victim.apply_status_effect(STATUS_EFFECT_SHATTER, 2 SECONDS)
 
 /datum/ammo/energy/plasma/blast
-	name = "plasma blast"
+	name = "等离子体冲击"
 	icon_state = "plasma_ball_small"
 	hud_state = "plasma_blast"
 	damage = 30
@@ -669,7 +669,7 @@
 		living_victim.apply_status_effect(STATUS_EFFECT_SHATTER, 5 SECONDS)
 
 /datum/ammo/energy/plasma/blast/incendiary
-	name = "plasma glob"
+	name = "等离子体球"
 	damage = 30
 	ammo_behavior_flags = AMMO_ENERGY|AMMO_INCENDIARY
 	shell_speed = 2
@@ -685,7 +685,7 @@
 #define PLASMA_CANNON_STAGGER_DURATION 3 SECONDS
 #define PLASMA_CANNON_SHATTER_DURATION 5 SECONDS
 /datum/ammo/energy/plasma/cannon_heavy
-	name = "plasma heavy glob"
+	name = "等离子体重型弹"
 	icon_state = "plasma_ball_big"
 	hud_state = "plasma_sphere"
 	damage = 60
@@ -720,7 +720,7 @@
 		if(get_dist_euclidean(proj.starting_turf, vehicle_target) <= PLASMA_CANNON_STAGGERSTUN_RANGE) //staggerstun will fail on tank occupants if we just use staggerstun
 			for(var/mob/living/living_victim AS in vehicle_target.occupants)
 				living_victim.Stagger(PLASMA_CANNON_STAGGER_DURATION)
-				to_chat(living_victim, "You are knocked about by the impact, staggering you!")
+				to_chat(living_victim, "你被冲击力撞得踉跄后退！")
 	proj.damage *= damage_mult
 
 /datum/ammo/energy/plasma/cannon_heavy/on_hit_turf(turf/target_turf, atom/movable/projectile/proj)
@@ -759,7 +759,7 @@
 
 // Plasma //
 /datum/ammo/energy/sectoid_plasma
-	name = "plasma bolt"
+	name = "等离子体弹"
 	icon_state = "pulse2"
 	hud_state = "plasma"
 	armor_type = LASER
@@ -771,7 +771,7 @@
 	accuracy_variation = 3
 
 /datum/ammo/energy/plasma_pistol
-	name = "ionized plasma bolt"
+	name = "电离等离子体弹"
 	icon_state = "overchargedlaser_green"
 	hud_state = "electrothermal"
 	hud_state_empty = "electrothermal_empty"
@@ -815,7 +815,7 @@
 	drop_fire(target_turf, proj)
 
 /datum/ammo/energy/particle_lance
-	name = "particle beam"
+	name = "粒子束"
 	hitscan_effect_icon = "particle_lance"
 	hud_state = "plasma_blast"
 	hud_state_empty = "battery_empty_flash"

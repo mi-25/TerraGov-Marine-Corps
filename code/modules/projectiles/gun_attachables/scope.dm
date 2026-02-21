@@ -1,8 +1,8 @@
 /obj/item/attachable/scope
-	name = "rail scope"
+	name = "导轨瞄准镜"
 	icon_state = "sniper"
 	icon = 'icons/obj/items/guns/attachments/scope.dmi'
-	desc = "A rail mounted zoom sight scope. Allows zoom by activating the attachment."
+	desc = "导轨安装的变焦瞄准镜。激活枪械配件可进行变焦。"
 	slot = ATTACHMENT_SLOT_RAIL
 	aim_speed_mod = 0.5 //Extra slowdown when aiming
 	wield_delay_mod = 0.4 SECONDS
@@ -33,7 +33,7 @@
 
 	if(!(master_gun.item_flags & WIELDED) && !CHECK_BITFIELD(master_gun.item_flags, IS_DEPLOYED))
 		if(user)
-			to_chat(user, span_warning("You must hold [master_gun] with two hands to use [src]."))
+			to_chat(user, span_warning("你必须双手持握[master_gun]才能使用[src]。"))
 		return FALSE
 	if(CHECK_BITFIELD(master_gun.item_flags, IS_DEPLOYED) && user.dir != master_gun.loc.dir)
 		user.setDir(master_gun.loc.dir)
@@ -89,20 +89,20 @@
 		master_gun.zoom = FALSE
 
 /obj/item/attachable/scope/marine
-	name = "T-47 rail scope"
-	desc = "A marine standard mounted zoom sight scope. Allows zoom by activating the attachment."
+	name = "T-47导轨瞄准镜"
+	desc = "陆战队标准安装式变焦瞄准镜。激活枪械配件可进行变焦。"
 	icon_state = "marine"
 
 /obj/item/attachable/scope/nightvision
-	name = "T-46 Night vision scope"
+	name = "T-46 夜视瞄准镜"
 	icon_state = "nv"
-	desc = "A rail-mounted night vision scope developed by Roh-Easy industries for the TGMC. Allows zoom by activating the attachment."
+	desc = "一款由Roh-Easy工业为地球政府殖民地海军陆战队开发的导轨式夜视瞄准镜。激活该枪械配件可实现变焦。"
 	has_nightvision = TRUE
 
 /obj/item/attachable/scope/optical
-	name = "T-49 Optical imaging scope"
+	name = "T-49 光学成像瞄准镜"
 	icon_state = "imager"
-	desc = "A rail-mounted scope designed for the AR-55 and GL-54. Features low light optical imaging capabilities and assists with precision aiming. Allows zoom by activating the attachment."
+	desc = "为AR-55和GL-54设计的导轨安装式瞄准镜。具备微光光学成像能力，辅助精确瞄准。激活此配件可进行缩放。"
 	has_nightvision = TRUE
 	aim_speed_mod = 0.3
 	wield_delay_mod = 0.2 SECONDS
@@ -111,27 +111,27 @@
 	add_aim_mode = TRUE
 
 /obj/item/attachable/scope/mosin
-	name = "Mosin nagant rail scope"
+	name = "莫辛纳甘导轨瞄准镜"
 	icon_state = "mosin"
-	desc = "A Mosin specific mounted zoom sight scope. Allows zoom by activating the attachment."
+	desc = "莫辛纳甘专用安装式变焦瞄准镜。激活枪械配件可进行变焦。"
 
 /obj/item/attachable/scope/standard_magnum
-	name = "R-76 rail scope"
-	desc = "A custom rail mounted zoom sight scope designed specifically for the R-76 Magnum. Allows zoom by activating the attachment."
+	name = "R-76导轨瞄准镜"
+	desc = "专为R-76麦格农手枪设计的定制导轨安装变焦瞄准镜。激活此枪械配件可进行变焦。"
 	icon = 'icons/obj/items/guns/attachments/scope_64.dmi'
 	icon_state = "t76scope"
 
 /obj/item/attachable/scope/laser_sniper_scope
-	name = "Terra Experimental laser sniper rifle rail scope"
-	desc = "A marine standard mounted zoom sight scope made for the Terra Experimental laser sniper rifle otherwise known as TE-S abbreviated, allows zoom by activating the attachment."
+	name = "地球政府实验型激光狙击步枪导轨瞄准镜"
+	desc = "一款为地球政府实验型激光狙击步枪（简称TE-S）设计的陆战队标准安装式变焦瞄准镜，可通过激活该枪械配件实现变焦。"
 	icon_state = "tes"
 
 /obj/item/attachable/scope/unremovable
 	attach_features_flags = ATTACH_ACTIVATION
 
 /obj/item/attachable/scope/unremovable/flaregun
-	name = "long range ironsights"
-	desc = "An unremovable set of long range ironsights for a flaregun."
+	name = "远程机械瞄具"
+	desc = "一把信号枪的不可拆卸式远程机械瞄具。"
 	aim_speed_mod = 0
 	wield_delay_mod = 0
 	zoom_tile_offset = 5
@@ -140,23 +140,23 @@
 	zoom_slowdown = 0.50
 
 /obj/item/attachable/scope/unremovable/tl127
-	name = "T-45 rail scope"
+	name = "T-45导轨瞄准镜"
 	icon_state = "tl127"
 	aim_speed_mod = 0
 	wield_delay_mod = 0
-	desc = "A rail mounted zoom sight scope specialized for the SR-127 sniper rifle. Allows zoom by activating the attachment."
+	desc = "专为SR-127狙击步枪设计的导轨安装式变焦瞄准镜。激活该枪械配件可实现变焦。"
 
 /obj/item/attachable/scope/unremovable/heavymachinegun
-	name = "HMG-08 long range ironsights"
-	desc = "An unremovable set of long range ironsights for an HMG-08 machinegun."
+	name = "HMG-08 远程机械瞄具"
+	desc = "一套不可拆卸的HMG-08机枪远程机械瞄具。"
 	icon_state = "sniper_invisible"
 	zoom_viewsize = 0
 	zoom_tile_offset = 5
 
 /obj/item/attachable/scope/unremovable/mmg
-	name = "MG-27 rail scope"
+	name = "MG-27导轨瞄准镜"
 	icon_state = "mini"
-	desc = "A small rail mounted zoom sight scope. Allows zoom by activating the attachment."
+	desc = "小型导轨安装变焦瞄准镜。激活枪械配件可进行变焦。"
 	wield_delay_mod = 0.2 SECONDS
 	aim_speed_mod = 0.2
 	scoped_accuracy_mod = SCOPE_RAIL_MINI
@@ -165,15 +165,15 @@
 	zoom_viewsize = 0
 
 /obj/item/attachable/scope/unremovable/standard_atgun
-	name = "AT-36 long range scope"
-	desc = "An unremovable set of long range scopes, very complex to properly range. Requires time to aim.."
+	name = "AT-36 远程瞄准镜"
+	desc = "一套不可拆卸的远程瞄准镜，需要时间瞄准，正确测距非常复杂。"
 	icon_state = "sniper_invisible"
 	scope_delay = 2 SECONDS
 	zoom_tile_offset = 7
 
 /obj/item/attachable/scope/unremovable/hsg_102
-	name = "HSG-102 smart sight"
-	desc = "An unremovable smart sight built for use with the HSG-102, it does nearly all the aiming work for the gun's integrated IFF systems."
+	name = "HSG-102智能瞄准镜"
+	desc = "专为HSG-102设计的不可拆卸智能瞄具，它几乎承担了枪械集成敌我识别系统的全部瞄准工作。"
 	icon_state = "sniper_invisible"
 	zoom_viewsize = 0
 	zoom_tile_offset = 5
@@ -187,14 +187,14 @@
 	deployed_scope_rezoom = FALSE
 
 /obj/item/attachable/scope/unremovable/plasma_sniper_scope
-	name = "PL-02 sniper rifle rail scope"
-	desc = "A marine standard mounted zoom sight scope made for the PL-02 plasma sniper rifle, allows zoom by activating the attachment. Use F12 if your HUD doesn't come back."
+	name = "PL-02狙击步枪导轨瞄准镜"
+	desc = "为PL-02等离子体狙击步枪设计的陆战队标准安装式变焦瞄准镜，激活该枪械配件可实现变焦。如果HUD未恢复，请按F12。"
 	icon_state = "plasma_scope" // missing icon?
 
 /obj/item/attachable/scope/mini
-	name = "mini rail scope"
+	name = "微型导轨瞄准镜"
 	icon_state = "mini"
-	desc = "A small rail mounted zoom sight scope. Allows zoom by activating the attachment."
+	desc = "小型导轨安装变焦瞄准镜。激活该枪械配件可进行变焦。"
 	slot = ATTACHMENT_SLOT_RAIL
 	wield_delay_mod = 0.2 SECONDS
 	accuracy_unwielded_mod = -0.05
@@ -209,12 +209,12 @@
 	variants_by_parent_type = list(/obj/item/weapon/gun/rifle/som = "")
 
 /obj/item/attachable/scope/mini/tx11
-	name = "AR-11 mini rail scope"
+	name = "AR-11微型导轨瞄准镜"
 	icon_state = "tx11"
 
 /obj/item/attachable/scope/antimaterial
-	name = "antimaterial rail scope"
-	desc = "A rail mounted zoom sight scope specialized for the antimaterial Sniper Rifle . Allows zoom by activating the attachment. Can activate its targeting laser while zoomed to take aim for increased damage and penetration."
+	name = "反器材导轨瞄准镜"
+	desc = "一种专为反器材狙击步枪设计的导轨式变焦瞄准镜。激活该配件可实现变焦。变焦状态下可激活其目标指示激光进行瞄准，以提升伤害和穿透力。"
 	icon_state = "antimat"
 	scoped_accuracy_mod = SCOPE_RAIL_SNIPER
 	has_nightvision = TRUE
@@ -231,5 +231,5 @@
 	attach_features_flags = ATTACH_ACTIVATION
 
 /obj/item/attachable/scope/mini/dmr
-	name = "DMR-37 mini rail scope"
+	name = "DMR-37微型导轨瞄准镜"
 	icon_state = "t37"

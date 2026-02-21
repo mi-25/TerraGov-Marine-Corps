@@ -1,7 +1,7 @@
 
 /obj/machinery/reagentgrinder
-	name = "\improper All-In-One Grinder"
-	desc = "From BlenderTech. Will It Blend? Let's test it out!"
+	name = "\improper 全能研磨机"
+	desc = "来自BlenderTech。它能被搅拌吗？让我们来测试一下！"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "juicer1"
 	layer = BELOW_OBJ_LAYER
@@ -87,7 +87,7 @@
 		return FALSE
 
 	else if(length(holdingitems) >= limit)
-		to_chat(user, "The machine cannot hold anymore items.")
+		to_chat(user, "机器无法容纳更多物品。")
 		return TRUE
 
 	else if(istype(I, /obj/item/storage/bag/plants))
@@ -96,17 +96,17 @@
 			G.forceMove(src)
 			holdingitems += G
 			if(length(holdingitems) >= limit)
-				to_chat(user, "You fill the All-In-One grinder to the brim.")
+				to_chat(user, "你将全能研磨机装得满满当当。")
 				break
 
 		if(!length(I.contents))
-			to_chat(user, "You empty the plant bag into the All-In-One grinder.")
+			to_chat(user, "你将植物袋里的东西全部倒入了全能研磨机。")
 
 		updateUsrDialog()
 		return FALSE
 
 	else if(!is_type_in_list(I, blend_items) && !is_type_in_list(I, juice_items))
-		to_chat(user, "Cannot refine into a reagent.")
+		to_chat(user, "无法精炼成试剂。")
 		return TRUE
 
 	user.transferItemToLoc(I, src)

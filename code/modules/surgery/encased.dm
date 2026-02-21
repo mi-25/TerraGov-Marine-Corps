@@ -25,23 +25,23 @@
 	open_case_step = 2
 
 /datum/surgery_step/open_encased/saw/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] begins to cut through [target]'s [affected.encased] with \the [tool]."), \
+	user.visible_message(span_notice("[user]开始用\the [tool]切开[target]的[affected.encased]。"), \
 	span_notice("You begin to cut through [target]'s [affected.encased] with \the [tool]."))
-	target.balloon_alert_to_viewers("Sawing...")
+	target.balloon_alert_to_viewers("正在锯切...")
 	target.custom_pain("Something hurts horribly in your [affected.display_name]!", 1)
 	..()
 
 /datum/surgery_step/open_encased/saw/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] has cut [target]'s [affected.encased] open with \the [tool]."),		\
+	user.visible_message(span_notice("[user] 已用 \the [tool] 切开了 [target] 的 [affected.encased]。"),		\
 	span_notice("You have cut [target]'s [affected.encased] open with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	affected.surgery_open_stage = 2.5
 	return ..()
 
 /datum/surgery_step/open_encased/saw/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_warning("[user]'s hand slips, cracking [target]'s [affected.encased] with \the [tool]!") , \
+	user.visible_message(span_warning("[user]的手一滑，用\the [tool]砸裂了[target]的[affected.encased]！") , \
 	span_warning("Your hand slips, cracking [target]'s [affected.encased] with \the [tool]!") )
-	target.balloon_alert_to_viewers("Slipped!")
+	target.balloon_alert_to_viewers("滑倒了！")
 
 	affected.createwound(CUT, 20)
 	affected.fracture()
@@ -59,16 +59,16 @@
 	open_case_step = 2.5
 
 /datum/surgery_step/open_encased/retract/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] starts to force open the [affected.encased] in [target]'s [affected.display_name] with \the [tool]."), \
+	user.visible_message(span_notice("[user]开始用\the [tool]强行打开[target]的[affected.display_name]中的[affected.encased]。"), \
 	span_notice("You start to force open the [affected.encased] in [target]'s [affected.display_name] with \the [tool]."))
-	target.balloon_alert_to_viewers("Bending...")
+	target.balloon_alert_to_viewers("弯曲中...")
 	target.custom_pain("Something hurts horribly in your [affected.display_name]!", 1)
 	..()
 
 /datum/surgery_step/open_encased/retract/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] forces open [target]'s [affected.encased] with \the [tool]."), \
+	user.visible_message(span_notice("[user] 用 \the [tool] 强行撬开了 [target] 的 [affected.encased]。"), \
 	span_notice("You force open [target]'s [affected.encased] with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	affected.surgery_open_stage = 3
 
 	//Whoops!
@@ -78,9 +78,9 @@
 	return ..()
 
 /datum/surgery_step/open_encased/retract/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_warning("[user]'s hand slips, cracking [target]'s [affected.encased]!"), \
+	user.visible_message(span_warning("[user]的手滑了一下，敲裂了[target]的[affected.encased]！"), \
 	span_warning("Your hand slips, cracking [target]'s  [affected.encased]!"))
-	target.balloon_alert_to_viewers("Slipped!")
+	target.balloon_alert_to_viewers("滑倒了！")
 
 	affected.createwound(BRUISE, 20)
 	affected.fracture()
@@ -98,23 +98,23 @@
 	open_case_step = 3
 
 /datum/surgery_step/open_encased/close/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] starts bending [target]'s [affected.encased] back into place with \the [tool]."), \
+	user.visible_message(span_notice("[user] 开始用 \the [tool] 将 [target] 的 [affected.encased] 扳回原位。"), \
 	span_notice("You start bending [target]'s [affected.encased] back into place with \the [tool]."))
-	target.balloon_alert_to_viewers("Bending...")
+	target.balloon_alert_to_viewers("弯曲中...")
 	target.custom_pain("Something hurts horribly in your [affected.display_name]!", 1)
 	..()
 
 /datum/surgery_step/open_encased/close/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] bends [target]'s [affected.encased] back into place with \the [tool]."), \
+	user.visible_message(span_notice("[user]用\the [tool]将[target]的[affected.encased]扳回原位。"), \
 	span_notice("You bend [target]'s [affected.encased] back into place with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	affected.surgery_open_stage = 2.5
 	return ..()
 
 /datum/surgery_step/open_encased/close/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_warning("[user]'s hand slips, bending [target]'s [affected.encased] the wrong way!"), \
+	user.visible_message(span_warning("[user]的手滑了一下，把[target]的[affected.encased]掰错方向了！"), \
 	span_warning("Your hand slips, bending [target]'s [affected.encased] the wrong way!"))
-	target.balloon_alert_to_viewers("Slipped!")
+	target.balloon_alert_to_viewers("滑倒了！")
 	affected.createwound(BRUISE, 20)
 	affected.fracture()
 	affected.update_wounds()
@@ -131,16 +131,16 @@
 	open_case_step = 2.5
 
 /datum/surgery_step/open_encased/mend/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] starts applying \the [tool] to [target]'s [affected.encased]."), \
+	user.visible_message(span_notice("[user]开始将\the [tool]应用于[target]的[affected.encased]。"), \
 	span_notice("You start applying \the [tool] to [target]'s [affected.encased]."))
 	target.custom_pain("Something hurts horribly in your [affected.display_name]!",1)
-	target.balloon_alert_to_viewers("Applying gel...")
+	target.balloon_alert_to_viewers("正在涂抹凝胶...")
 	..()
 
 /datum/surgery_step/open_encased/mend/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] applied \the [tool] to [target]'s [affected.encased]."), \
+	user.visible_message(span_notice("[user] 将 \the [tool] 应用于 [target] 的 [affected.encased]。"), \
 	span_notice("You applied \the [tool] to [target]'s [affected.encased]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	affected.surgery_open_stage = 2
 	return ..()
 
@@ -173,25 +173,25 @@
 	return SURGERY_CAN_USE
 
 /datum/surgery_step/fat_removal/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] starts cutting away at [target]'s [affected.display_name] with \the [tool]."), \
+	user.visible_message(span_notice("[user]开始用\the [tool]切除[target]的[affected.display_name]。"), \
 	span_notice("You start carving out the fat from [target]'s [affected.display_name]."))
 	target.custom_pain("Something hurts horribly in your [affected.display_name]!",1)
-	target.balloon_alert_to_viewers("Carving")
+	target.balloon_alert_to_viewers("雕刻")
 	return ..()
 
 /datum/surgery_step/fat_removal/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] finishes slicing up [target]'s [affected.display_name]."), \
+	user.visible_message(span_notice("[user]完成了对[target]的[affected.display_name]的切片处理。"), \
 	span_notice("You remove the spare fat from [target]'s [affected.display_name]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	var/nutrition_removed = target.nutrition - (NUTRITION_HUNGRY + 50)
 	affected.take_damage_limb(nutrition_removed / 20, 0, TRUE, updating_health = TRUE)
 	target.set_nutrition(NUTRITION_HUNGRY + 50)
 	return ..()
 
 /datum/surgery_step/fat_removal/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_warning("[user]'s hand slips, cutting a gouge into [target]'s [affected.encased]!"), \
+	user.visible_message(span_warning("[user]的手滑了一下，在[target]的[affected.encased]上划出了一道口子！"), \
 	span_warning("Your hand slips, cutting deep into [target]'s [affected.encased]"))
-	target.balloon_alert_to_viewers("Slipped!")
+	target.balloon_alert_to_viewers("滑倒了！")
 	var/nutrition_removed = target.nutrition - (NUTRITION_HUNGRY + 50)
 	affected.take_damage_limb(nutrition_removed / 40, 0, TRUE, updating_health = TRUE)
 	return ..()

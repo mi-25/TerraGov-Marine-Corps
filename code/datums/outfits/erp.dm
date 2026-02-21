@@ -1,5 +1,5 @@
 /datum/outfit/job/erp
-	name = "ERP Prankster"
+	name = "ERP恶作剧者"
 	jobtype = /datum/job/erp
 
 	id = /obj/item/card/id/captains_spare
@@ -36,7 +36,7 @@
 	)
 
 /datum/outfit/job/erp/masterprankster
-	name = "ERP Master Prankster"
+	name = "ERP恶作剧大师"
 	jobtype = /datum/job/erp/masterprankster
 
 	head = /obj/item/clothing/head/tgmcberet/red2/erp/masterprankster
@@ -63,7 +63,7 @@
 
 
 /datum/outfit/job/erp/boobookisser
-	name = "ERP Boo-boo kisser"
+	name = "ERP 亲亲怪"
 	jobtype = /datum/job/erp/boobookisser
 
 	l_pocket = /obj/item/storage/pouch/medkit/medic
@@ -88,7 +88,7 @@
 
 
 /datum/outfit/job/erp/piethrower
-	name = "ERP Pie thrower"
+	name = "ERP 馅饼发射器"
 	jobtype = /datum/job/erp/piethrower
 
 	belt = /obj/item/storage/belt/grenade

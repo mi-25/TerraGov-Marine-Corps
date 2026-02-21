@@ -2,7 +2,7 @@
 
 /obj/item/tool/wirecutters/clippers
 	name = "plant clippers"
-	desc = "A tool used to take samples from plants."
+	desc = "用于从植物中采集样本的工具。"
 
 /obj/item/tool/analyzer/plant_analyzer
 	name = "plant analyzer"
@@ -43,11 +43,11 @@
 		grown_reagents = H.reagents
 
 	if(!grown_seed)
-		to_chat(user, span_warning("[src] can tell you nothing about [target]."))
+		to_chat(user, span_warning("[src] 无法告诉你关于 [target] 的任何信息。"))
 		return
 
 	var/dat
-	user.visible_message(span_notice("[user] runs the scanner over [target]."))
+	user.visible_message(span_notice("[user]将扫描仪对准[target]进行扫描。"))
 
 	dat += "<h2>General Data</h2>"
 
@@ -167,7 +167,7 @@
 
 /obj/item/reagent_containers/glass/fertilizer
 	name = "fertilizer bottle"
-	desc = "A small glass bottle. Can hold up to 10 units."
+	desc = "一个小玻璃瓶。最多可容纳10单位。"
 	icon = 'icons/obj/items/chemistry.dmi'
 	icon_state = "bottle16"
 	possible_transfer_amounts = null

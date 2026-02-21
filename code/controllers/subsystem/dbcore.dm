@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(dbcore)
-	name = "Database"
+	name = "数据库"
 	flags = SS_BACKGROUND
 	wait = 1 MINUTES
 	init_stage = INITSTAGE_FIRST
@@ -366,7 +366,7 @@ Delayed insert mode was removed in mysql 7 and only works with MyISAM type table
 /datum/db_query/proc/warn_execute(async = TRUE)
 	. = Execute(async)
 	if(!.)
-		to_chat(usr, span_danger("A SQL error occurred during this operation, check the server logs."))
+		to_chat(usr, span_danger("SQL 操作期间发生错误，请检查服务器日志。"))
 
 /datum/db_query/proc/Execute(async = TRUE, log_error = TRUE)
 	Activity("Execute")

@@ -1,6 +1,6 @@
 /obj/structure/bed/stool
-	name = "stool"
-	desc = "Apply butt."
+	name = "凳子"
+	desc = "安装枪托。"
 	icon_state = "stool"
 	anchored = TRUE
 	buckle_flags = NONE
@@ -8,8 +8,8 @@
 
 
 /obj/item/stool
-	name = "stool"
-	desc = "Uh-hoh, bar is heating up."
+	name = "凳子"
+	desc = "呃哦，酒吧要热闹起来了。"
 	icon = 'icons/obj/objects.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/weapons/melee_left.dmi',
@@ -34,7 +34,7 @@
 	if(user)
 		origin.loc = get_turf(user)
 		user.temporarilyRemoveItemFromInventory(src)
-		user.visible_message(span_notice("[user] puts [src] down."), span_notice("You put [src] down."))
+		user.visible_message(span_notice("[user] 放下了 [src]。"), span_notice("You put [src] down."))
 		qdel(src)
 
 /obj/item/stool/attack_self(mob/user as mob)
@@ -43,7 +43,7 @@
 
 /obj/item/stool/attack(mob/M as mob, mob/user as mob)
 	if (prob(25) && istype(M,/mob/living))
-		user.visible_message(span_warning("[user] breaks [src] over [M]'s back!"))
+		user.visible_message(span_warning("[user]将[src]砸在[M]的背上！"))
 		user.temporarilyRemoveItemFromInventory(src)
 		var/obj/item/stack/sheet/metal/m = new/obj/item/stack/sheet/metal
 		m.loc = get_turf(src)

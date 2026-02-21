@@ -33,7 +33,7 @@
 	playsound(loc, SFX_SPARKS, 25, TRUE)
 	if (shock_damage > 10)
 		src.visible_message(
-			span_warning("[src] was shocked by the [source]!"), \
+			span_warning("[src]被[source]电击了！"), \
 			span_danger("You feel a powerful shock course through your body!"), \
 			span_warning("You hear a heavy electrical crack.") \
 		)
@@ -44,7 +44,7 @@
 			Paralyze(8 SECONDS)
 	else
 		src.visible_message(
-			span_warning("[src] was mildly shocked by the [source]."), \
+			span_warning("[src]被[source]轻微电击了一下。"), \
 			span_warning("You feel a mild shock course through your body."), \
 			span_warning("You hear a light zapping.") \
 		)
@@ -63,7 +63,7 @@
 		return
 
 	TIMER_COOLDOWN_START(src, COOLDOWN_PUKE, 40 SECONDS) //5 seconds before the actual action plus 35 before the next one.
-	to_chat(src, "<spawn class='warning'>You feel like you are about to throw up!")
+	to_chat(src, "<spawn class='warning'>你感觉快要吐出来了！")
 	addtimer(CALLBACK(src, PROC_REF(do_vomit)), 5 SECONDS)
 
 
@@ -71,7 +71,7 @@
 	adjust_stagger(3 SECONDS)
 	add_slowdown(3)
 
-	visible_message("<spawn class='warning'>[src] throws up!","<spawn class='warning'>You throw up!", null, 5)
+	visible_message("<spawn class='warning'>[src] 呕吐了！","<spawn class='warning'>You throw up!", null, 5)
 	playsound(loc, 'sound/effects/splat.ogg', 25, TRUE, 7)
 
 	var/turf/location = loc
@@ -90,7 +90,7 @@
 		return
 
 	if(IsAdminSleeping())
-		to_chat(shaker, span_userdanger("This player has been admin slept, do not interfere with them."))
+		to_chat(shaker, span_userdanger("该玩家已被管理员休眠，请勿干扰。"))
 		return
 
 	if(lying_angle || IsSleeping())
@@ -98,7 +98,7 @@
 			AdjustSleeping(-10 SECONDS)
 		if(!IsSleeping())
 			set_resting(FALSE)
-		shaker.visible_message("<span class='notice'>[shaker] shakes [src] trying to get [p_them()] up!",
+		shaker.visible_message("<span class='notice'>[shaker]摇晃着[src]试图让[p_them()]醒过来！</span>",
 			"<span class='notice'>You shake [src] trying to get [p_them()] up!", null, 4)
 
 		AdjustUnconscious(-6 SECONDS)
@@ -117,7 +117,7 @@
 		playsound(loc, 'sound/weapons/thudswoosh.ogg', 25, TRUE, 5)
 		return
 
-	shaker.visible_message(span_notice("[shaker] hugs [src] to make [p_them()] feel better!"),
+	shaker.visible_message(span_notice("[shaker]拥抱了[src]，让[p_them()]感觉好多了！"),
 		span_notice("You hug [src] to make [p_them()] feel better!"), null, 4)
 	playsound(loc, 'sound/weapons/thudswoosh.ogg', 25, TRUE, 5)
 
@@ -188,7 +188,7 @@
 		inertia_dir = get_dir(target, src)
 		step(src, inertia_dir)
 
-	visible_message(span_warning("[src] throws [thrown_thing]."), null, null, 5)
+	visible_message(span_warning("[src] 投掷了 [thrown_thing]。"), null, null, 5)
 
 	playsound(src, 'sound/effects/throw.ogg', 30, 1)
 
@@ -235,10 +235,10 @@
 	set category = "IC"
 
 	if(species.species_flags & ROBOTIC_LIMBS)
-		to_chat(src, span_warning("Your artificial body does not require sleep."))
+		to_chat(src, span_warning("你的合成身体不需要睡眠。"))
 		return
 	if(IsSleeping())
-		to_chat(src, span_warning("You are already sleeping"))
+		to_chat(src, span_warning("你已经睡着了"))
 		return
 	if(tgui_alert(src, "You sure you want to sleep for a while?", "Sleep", list("Yes","No")) == "Yes")
 		SetSleeping(40 SECONDS) //Short nap
@@ -254,7 +254,7 @@
 		return FALSE //can't slip while buckled, if the slip is run only and we're not running or while resting
 
 	stop_pulling()
-	visible_message(span_warning("[src] slipped on \the [slip_source_name]!"), span_warning("You slipped on \the [slip_source_name]!"))
+	visible_message(span_warning("[src]在\the [slip_source_name]上滑倒了！"), span_warning("You slipped on \the [slip_source_name]!"))
 	playsound(src, 'sound/misc/slip.ogg', 25, 1)
 	Stun(stun_time)
 	Paralyze(paralyze_time)

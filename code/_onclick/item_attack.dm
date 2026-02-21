@@ -6,7 +6,7 @@
 	if(tool_behaviour && tool_attack_chain(user, target))
 		return
 	if(user.lying_angle)
-		user.balloon_alert(user, "can't while prone!")
+		user.balloon_alert(user, "无法在匍匐状态下进行！")
 		return
 	// Return TRUE in attackby() to prevent afterattack() effects (when safely moving items for example)
 	var/resolved = target.attackby(src, user, params)
@@ -96,7 +96,7 @@
 
 
 /obj/attacked_by(obj/item/attacking_item, mob/living/user, def_zone)
-	user.visible_message(span_warning("[user] hits [src] with [attacking_item]!"),
+	user.visible_message(span_warning("[user]用[attacking_item]击中了[src]！"),
 		span_warning("You hit [src] with [attacking_item]!"), visible_message_flags = COMBAT_MESSAGE)
 	log_combat(user, src, "attacked", attacking_item)
 	var/power = attacking_item.force + round(attacking_item.force * MELEE_SKILL_DAM_BUFF * user.skills.getRating(SKILL_MELEE_WEAPONS))
@@ -113,18 +113,18 @@
 		return
 
 	if(!CHECK_BITFIELD(interaction_flags, INTERACT_POWERLOADER_PICKUP_ALLOWED) && !CHECK_BITFIELD(interaction_flags, INTERACT_POWERLOADER_PICKUP_ALLOWED_BYPASS_ANCHOR))
-		to_chat(user, span_notice("[attached_clamp.linked_powerloader] cannot pick up [src]!"))
+		to_chat(user, span_notice("[attached_clamp.linked_powerloader] 无法拾取 [src]！"))
 		return
 
 	if(anchored && !CHECK_BITFIELD(interaction_flags, INTERACT_POWERLOADER_PICKUP_ALLOWED_BYPASS_ANCHOR))
-		to_chat(user, span_notice("[src] is bolted to the ground."))
+		to_chat(user, span_notice("[src]被固定在地面上。"))
 		return
 
 	forceMove(attached_clamp.linked_powerloader)
 	attached_clamp.loaded = src
 	playsound(attached_clamp.linked_powerloader, 'sound/machines/hydraulics_2.ogg', 40, 1)
 	attached_clamp.update_icon()
-	user.visible_message(span_notice("[user] grabs [attached_clamp.loaded] with [attached_clamp]."),
+	user.visible_message(span_notice("[user]用[attached_clamp]抓住了[attached_clamp.loaded]。"),
 	span_notice("You grab [attached_clamp.loaded] with [attached_clamp]."))
 
 /mob/living/attacked_by(obj/item/attacking_item, mob/living/user, def_zone)
@@ -243,32 +243,32 @@
 		var/atom/movable/blocky_stuff = i
 		if(!blocky_stuff.density)
 			continue
-		to_chat(user, span_warning("You can't drop [attached_clamp.loaded] here, [blocky_stuff] blocks the way."))
+		to_chat(user, span_warning("你无法在此处卸下[attached_clamp.loaded]，[blocky_stuff]挡住了去路。"))
 		return
 	if(attached_clamp.loaded.bound_height > 32)
 		var/turf/next_turf = get_step(src, NORTH)
 		if(next_turf.density)
-			to_chat(user, span_warning("You can't drop [attached_clamp.loaded] here, something blocks the way."))
+			to_chat(user, span_warning("你无法在此处卸下[attached_clamp.loaded]，有东西挡住了去路。"))
 			return
 		for(var/i in next_turf.contents)
 			var/atom/movable/blocky_stuff = i
 			if(!blocky_stuff.density)
 				continue
-			to_chat(user, span_warning("You can't drop [attached_clamp.loaded] here, [blocky_stuff] blocks the way."))
+			to_chat(user, span_warning("你无法在此处卸下[attached_clamp.loaded]，[blocky_stuff]挡住了去路。"))
 			return
 	if(attached_clamp.loaded.bound_width > 32)
 		var/turf/next_turf = get_step(src, EAST)
 		if(next_turf.density)
-			to_chat(user, span_warning("You can't drop [attached_clamp.loaded] here, something blocks the way."))
+			to_chat(user, span_warning("你无法在此处卸下[attached_clamp.loaded]，有东西挡住了去路。"))
 			return
 		for(var/i in next_turf.contents)
 			var/atom/movable/blocky_stuff = i
 			if(!blocky_stuff.density)
 				continue
-			to_chat(user, span_warning("You can't drop [attached_clamp.loaded] here, [blocky_stuff] blocks the way."))
+			to_chat(user, span_warning("你无法在此处卸下[attached_clamp.loaded]，[blocky_stuff]挡住了去路。"))
 			return
 
-	user.visible_message(span_notice("[user] drops [attached_clamp.loaded] onto [src]."),
+	user.visible_message(span_notice("[user]将[attached_clamp.loaded]丢到[src]上。"),
 	span_notice("You drop [attached_clamp.loaded] onto [src]."))
 	attached_clamp.loaded.forceMove(src)
 	attached_clamp.loaded = null

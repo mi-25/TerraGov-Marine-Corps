@@ -1,6 +1,6 @@
 /obj/structure/lattice
-	desc = "A lightweight support lattice."
-	name = "lattice"
+	desc = "轻质支撑框架。"
+	name = "格栅"
 	icon = 'icons/obj/structures/structures.dmi'
 	icon_state = "latticefull"
 	density = FALSE
@@ -46,7 +46,7 @@
 	if (iswelder(C))
 		var/obj/item/tool/weldingtool/WT = C
 		if(WT.remove_fuel(0, user))
-			to_chat(user, span_notice("Slicing lattice joints ..."))
+			to_chat(user, span_notice("正在切割晶格节点..."))
 		new /obj/item/stack/rods(src.loc)
 		qdel(src)
 
@@ -80,7 +80,7 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/structure/catwalk
-	desc = "You can walk on this, even if you're not a cat."
+	desc = "你可以走在这上面，即使你不是一只猫。"
 	icon = 'icons/obj/smooth_objects/catwalk.dmi'
 	icon_state = "catwalk-icon"
 	base_icon_state = "catwalk"
@@ -111,7 +111,7 @@
 		return
 	if(xeno_attacker.a_intent != INTENT_DISARM)
 		return
-	xeno_attacker.balloon_alert(xeno_attacker, "destroying...")
+	xeno_attacker.balloon_alert(xeno_attacker, "正在摧毁...")
 	if(!do_after(xeno_attacker, 5 SECONDS, NONE, src, BUSY_ICON_BUILD))
 		return
 	playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
@@ -131,7 +131,7 @@
 				qdel(src)
 
 /obj/structure/catwalk/no_smooth
-	name = "catwalk"
+	name = "网格走道"
 	icon_state = "catwalk-0"
 	smoothing_flags = NONE
 	smoothing_groups = null

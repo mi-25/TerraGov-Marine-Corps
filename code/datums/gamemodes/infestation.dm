@@ -69,10 +69,10 @@
 		#ifndef TESTING
 		var/mob/living/silicon/ai/bioscanning_ai = usr
 		if((bioscanning_ai.last_ai_bioscan + COOLDOWN_AI_BIOSCAN) > world.time)
-			to_chat(bioscanning_ai, "Bioscan instruments are still recalibrating from their last use.")
+			to_chat(bioscanning_ai, "生化扫描仪器仍在根据上次使用进行重新校准。")
 			return
 		bioscanning_ai.last_ai_bioscan = world.time
-		to_chat(bioscanning_ai, span_warning("Scanning for hostile lifeforms..."))
+		to_chat(bioscanning_ai, span_warning("正在扫描敌对生命体..."))
 		if(!do_after(usr, AI_SCAN_DELAY, NONE, usr, BUSY_ICON_GENERIC)) //initial windup time until firing begins
 			bioscanning_ai.last_ai_bioscan = 0
 			return
@@ -151,13 +151,13 @@
 
 		switch(GLOB.current_orbit)
 			if(1)
-				to_chat(usr, span_warning("Signal analysis reveals excellent detail about hostile movements and numbers."))
+				to_chat(usr, span_warning("信号分析显示敌方动向与数量细节极佳。"))
 				return
 			if(3)
-				to_chat(usr, span_warning("Minor corruption detected in our bioscan instruments due to ship elevation, some information about hostile activity may be incorrect."))
+				to_chat(usr, span_warning("由于舰船高度变化，我们的生化扫描仪器检测到轻微数据异常，部分敌对活动信息可能不准确。"))
 				return
 			if(5)
-				to_chat(usr, span_warning("Major corruption detected in our bioscan readings due to ship elevation, information heavily corrupted."))
+				to_chat(usr, span_warning("由于舰船高度变化，我们的生化扫描读数检测到严重数据损坏，信息已严重失真。"))
 		return
 
 	if(announce_humans)
@@ -321,7 +321,7 @@
 				xeno_candidate = TRUE
 				break
 	if(!xeno_candidate && !bypass_checks)
-		to_chat(world, "<b>Unable to start [name].</b> No xeno candidate found.")
+		to_chat(world, "<b>无法启动[name]。</b>未找到异形候选者。")
 		return FALSE
 
 /datum/game_mode/infestation/pre_setup()
@@ -343,7 +343,7 @@
 
 
 /datum/game_mode/infestation/announce()
-	to_chat(world, span_round_header("The current map is - [SSmapping.configs[GROUND_MAP].map_name]!"))
+	to_chat(world, span_round_header("当前地图是 - [SSmapping.configs[GROUND_MAP].map_name]！"))
 
 /datum/game_mode/infestation/attempt_to_join_as_larva(client/waiter)
 	var/datum/hive_status/normal/HS = GLOB.hive_datums[XENO_HIVE_NORMAL]

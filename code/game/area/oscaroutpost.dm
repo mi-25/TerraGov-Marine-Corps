@@ -1,16 +1,16 @@
 /area/oscar_outpost
-	name = "Oscar Outpost"
+	name = "奥斯卡前哨站"
 	icon_state = "green"
 	ceiling = CEILING_METAL
 
 /area/oscar_outpost/base
-	name = "Oscar Outpost Staging Area"
+	name = "奥斯卡前哨集结区"
 	icon_state = "north"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 	outside = FALSE
 
 /area/oscar_outpost/outside
-	name = "Unused"
+	name = "未使用"
 	icon_state = "green"
 	ceiling = CEILING_NONE
 
@@ -22,79 +22,79 @@
 	outside = TRUE
 
 /area/oscar_outpost/outside/north
-	name = "Oscar Outpost North"
+	name = "奥斯卡前哨站北区"
 	icon_state = "north"
 
 /area/oscar_outpost/outside/west
-	name = "Oscar Outpost West"
+	name = "奥斯卡前哨站西区"
 	icon_state = "west"
 
 /area/oscar_outpost/outside/east
-	name = "Oscar Outpost East"
+	name = "奥斯卡前哨站东区"
 	icon_state = "east"
 
 /area/oscar_outpost/outside/northeast
-	name = "Oscar Outpost Northeast"
+	name = "奥斯卡前哨站东北区"
 	icon_state = "east"
 
 /area/oscar_outpost/outside/northwest
-	name = "Oscar Outpost Northwest"
+	name = "奥斯卡前哨站西北区"
 	icon_state = "west"
 
 /area/oscar_outpost/outside/south
-	name = "Oscar Outpost South"
+	name = "奥斯卡前哨站南站"
 	icon_state = "south"
 
 /area/oscar_outpost/outside/underground
-	name = "Oscar Outpost Underground"
+	name = "奥斯卡前哨站地下"
 	icon_state = "south"
 	ceiling = CEILING_DEEP_UNDERGROUND
 
 /area/oscar_outpost/outside/rock
-	name = "Enclosed Area"
+	name = "封闭区域"
 	icon_state = "transparent"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	area_flags = CANNOT_NUKE
 
 /area/oscar_outpost/outside/road
-	name = "Oscar Outpost Roadway"
+	name = "奥斯卡前哨站道路"
 	icon_state = "south"
 
 /area/oscar_outpost/village
-	name = "Oscar Outpost Northern Village"
+	name = "奥斯卡前哨站北部村庄"
 	icon_state = "green"
 	ceiling = CEILING_METAL
 	outside = TRUE
 
 /area/oscar_outpost/village/south
-	name = "Oscar Outpost Southern Village"
+	name = "奥斯卡前哨站南部村庄"
 	icon_state = "green"
 	ceiling = CEILING_METAL
 
 /area/oscar_outpost/village/east
-	name = "Oscar Outpost Eastern Village"
+	name = "奥斯卡前哨站东部村庄"
 	icon_state = "green"
 	ceiling = CEILING_METAL
 
 /area/oscar_outpost/village/central
-	name = "Oscar Outpost Eastern Village"
+	name = "奥斯卡前哨站东部村庄"
 	icon_state = "green"
 	ceiling = CEILING_METAL
 
 /area/oscar_outpost/village/fairgrounds
-	name = "Oscar Outpost Fairgrounds"
+	name = "奥斯卡前哨站游乐场"
 	icon_state = "green"
 	ceiling = CEILING_NONE
 	requires_power = FALSE
 
 /area/oscar_outpost/village/abandonedbase
-	name = "Oscar Outpost Base Zeta"
+	name = "奥斯卡前哨基地泽塔"
 	icon_state = "green"
 	ceiling = CEILING_UNDERGROUND_METAL
 	outside = FALSE
 
 /area/oscar_outpost/village/abandonedbase/tadlandingzone
-	name = "Oscar Outpost Base Zeta Landing Zone"
+	name = "奥斯卡前哨基地泽塔着陆区"
 	icon_state = "green"
 	ceiling = CEILING_NONE
 	outside = TRUE

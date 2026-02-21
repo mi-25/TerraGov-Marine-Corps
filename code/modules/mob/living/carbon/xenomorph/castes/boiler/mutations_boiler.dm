@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/staggered_panic
 	name = "Staggered Panic"
-	desc = "If you are staggered while carrying 7/5/3 stored globs, adjacent tiles will be sprayed with stunning acid. This recharges once you reach full health."
+	desc = "当你携带7/5/3枚储存的酸液球时若被击晕，相邻的格子将被喷洒眩晕酸液。此效果在你恢复满生命值时充能一次。"
 	/// For the first structure, the increased amount of stored globs that the owner needs to have in order to gain its effect.
 	var/globs_initial = 9
 	/// For each structure, the increased amount of stored globs that the owner needs to have in order to gain its effect.
@@ -57,7 +57,7 @@
 
 /datum/mutation_upgrade/shell/thick_containment
 	name = "Thick Containment"
-	desc = "Having excess globs no longer causes you to glow, but will instead slow you down by 0.15/0.1/0.05 for each excess glob."
+	desc = "过量酸液球不再使你发光，而是每过量一个酸液球会使你的速度减慢0.15/0.1/0.05。"
 	/// For each structure, the amount of slowdown per excess stored glob.
 	var/slowdown_initial = 0.2
 	/// For each structure, the increased amount of slowdown per excess stored glob.
@@ -87,7 +87,7 @@
 
 /datum/mutation_upgrade/shell/dim_containment
 	name = "Dim Containment"
-	desc = "The threshold for having excess globs is increased by 1/2/3."
+	desc = "拥有过量酸液弹的阈值增加1/2/3。"
 	/// For each structure, the amount to increase the excess glob threshold by.
 	var/glob_per_structure = 1
 
@@ -110,7 +110,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/gaseous_spray
 	name = "Gaseous Spray"
-	desc = "If you have 7/5/3 stored globs, your acid spray also leaves a trail of non-opaque gas of your selected glob type."
+	desc = "若你储存了7/5/3发酸液弹，你的酸液喷射还会留下一道由所选酸液弹类型构成的不透明气体轨迹。"
 	/// For the first structure, the increased amount of stored globs that the owner needs to have in order to gain its effect.
 	var/globs_initial = 9
 	/// For each structure, the increased amount of stored globs that the owner needs to have in order to gain its effect.
@@ -148,7 +148,7 @@
 
 /datum/mutation_upgrade/spur/hip_fire
 	name = "Hip Fire"
-	desc = "Bombard's preparation and firing cast delay is set to 50/40/30% of their original value. You lose Long Range Sight."
+	desc = "轰炸的准备和射击施法延迟被设定为原始值的50/40/30%。你失去了远程视野。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/veil/binoculars
 	)
@@ -203,7 +203,7 @@
 
 /datum/mutation_upgrade/spur/rapid_fire
 	name = "Rapid Fire"
-	desc = "Your normal globs are replaced with fast globs. Fast globs are twice as fast, but the gas is transparent, smaller, and dissipates in two seconds. If a fast glob is used, Bombard's cooldown to 50/40/30% of its original value."
+	desc = "你的普通酸液球被替换为快速酸液球。快速酸液球的速度是原来的两倍，但气体是透明的、范围更小，并在两秒内消散。如果使用快速酸液球，轰炸技能的冷却时间将缩短至原值的50/40/30%。"
 	/// For the first structure, the multiplier to add to Bombard's cooldown duration if the fast glob variants were used.
 	var/multiplier_initial = -0.4
 	/// For each structure, the multiplier to add to Bombard's cooldown duration if the fast glob variants were used.
@@ -256,7 +256,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/acid_trail
 	name = "Acid Trail"
-	desc = "Whenever you move while carrying 7/5/3 stored globs, a short acid splatter is created underneath you."
+	desc = "当你携带7/5/3个储存的酸液球移动时，脚下会产生一小片酸液溅射。"
 	/// For the first structure, the amount of stored globs threshold required to activate this effect.
 	var/globs_initial = 9
 	/// For each structure, the additional amount of stored globs threshold required to activate this effect.
@@ -288,7 +288,7 @@
 
 /datum/mutation_upgrade/veil/chemical_mixing
 	name = "Chemical Mixing"
-	desc = "Bombard now has the option to shoot Ozelomelyn, Hemodile, and Sanguinal. These will consume 6/4/2 stored globs per shot."
+	desc = "轰炸现在可以选择发射奥泽洛梅林、血泊和血凝。这些弹药将分别消耗6/4/2个储存的球体。"
 	/// For the first structure, the amount of stored globs required and will be consumed to shoot these unique globs.
 	var/globs_initial = 8
 	/// For each structure, the additional amount of stored globs required and will be consumed to shoot these unique globs.
@@ -337,7 +337,7 @@
 
 /datum/mutation_upgrade/veil/binoculars
 	name = "Binoculars"
-	desc = "Bombard and Long Range Sight can go 2/4/6 tiles further. The time required to use Long Range Sight is set to 250% of its original value."
+	desc = "轰炸与远程瞄准的射程可额外增加2/4/6格。使用远程瞄准所需的时间设定为原值的250%。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/spur/hip_fire
 	)

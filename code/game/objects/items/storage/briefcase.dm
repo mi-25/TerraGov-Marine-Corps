@@ -1,6 +1,6 @@
 /obj/item/storage/briefcase
-	name = "briefcase"
-	desc = "It's made of AUTHENTIC faux-leather and has a price-tag still attached. Its owner must be a real professional."
+	name = "公文包"
+	desc = "它由**正宗**人造皮革制成，价格标签还挂在上面。它的主人一定是个真正的专业人士。"
 	icon_state = "briefcase"
 	icon = 'icons/obj/items/storage/briefcase.dmi'
 	worn_icon_state = "briefcase"
@@ -12,8 +12,8 @@
 	storage_type = /datum/storage/briefcase
 
 /obj/item/storage/briefcase/standard_magnum
-	name = "R-76 Magnum case"
-	desc = "A well made, expensive looking case, made to fit an R-76 Magnum and its accessories. For the discerning gun owner."
+	name = "R-76 马格南弹壳"
+	desc = "一个做工精良、外观昂贵的枪盒，专为容纳R-76马格南手枪及其配件而设计。献给独具慧眼的枪主。"
 	icon_state = "magnum_case"
 	worn_icon_state = "briefcase"
 	atom_flags = CONDUCT

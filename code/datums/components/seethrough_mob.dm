@@ -120,8 +120,8 @@
 		action.set_toggle(FALSE)
 
 /datum/action/toggle_seethrough
-	name = "Toggle Seethrough"
-	desc = "Allows you to see behind your massive body and click through it."
+	name = "切换透视模式"
+	desc = "允许你透过自己庞大的身躯观察并点击其后方的物体。"
 	action_icon = 'icons/Xeno/actions/general.dmi'
 	action_icon_state = "xenohide"
 	action_type = ACTION_TOGGLE

@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(resinshaping)
-	name = "Resin Shaping"
+	name = "树脂塑形"
 	flags = SS_NO_FIRE
 	/// Counter for quickbuild points, as long as this is above 0 building is instant.
 	var/list/quickbuild_points_by_hive = list()

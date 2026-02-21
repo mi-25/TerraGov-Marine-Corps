@@ -1,6 +1,6 @@
 /obj/structure/grille
-	desc = "A flimsy lattice of metal rods, with screws to secure it to the floor."
-	name = "grille"
+	desc = "一个由金属杆构成的脆弱格栅，配有螺丝可固定在地板上。"
+	name = "格栅"
 	icon = 'icons/obj/structures/structures.dmi'
 	icon_state = "grille0"
 	hit_sound = 'sound/effects/grillehit.ogg'
@@ -63,7 +63,7 @@
 		return
 	playsound(loc, 'sound/effects/grillehit.ogg', 25, 1)
 
-	user.visible_message(span_warning("[user] kicks [src]."), \
+	user.visible_message(span_warning("[user]踢了[src]一脚。"), \
 						span_warning("You kick [src]."), \
 						"You hear twisting metal.")
 
@@ -92,7 +92,7 @@
 
 		else
 			if(x != user.x  && y != user.y) //Only supposed to work for cardinal directions.
-				to_chat(user, span_notice("You can't reach."))
+				to_chat(user, span_notice("你够不着。"))
 				return
 
 			else if(x == user.x)
@@ -109,17 +109,17 @@
 
 		for(var/obj/structure/window/W in loc)
 			if(W.dir == dir_to_set)
-				to_chat(user, span_notice("There is already a window facing this way there."))
+				to_chat(user, span_notice("那里已经有一扇窗户朝向这边了。"))
 				return
 
-		to_chat(user, span_notice("You start placing the window."))
+		to_chat(user, span_notice("你开始安装窗户。"))
 
 		if(!do_after(user, 20, NONE, src, BUSY_ICON_BUILD))
 			return
 
 		for(var/obj/structure/window/W in loc)
 			if(W.dir == dir_to_set)//checking this for a 2nd time to check if a window was made while we were waiting.
-				to_chat(user, span_notice("There is already a window facing this way there."))
+				to_chat(user, span_notice("那里已经有一扇窗户朝向这边了。"))
 				return
 
 		var/wtype = ST.created_window
@@ -127,7 +127,7 @@
 			return
 
 		var/obj/structure/window/WD = new wtype(loc, dir_to_set, 1)
-		to_chat(user, span_notice("You place the [WD] on [src]."))
+		to_chat(user, span_notice("你将[WD]放置在[src]上。"))
 		WD.update_icon()
 
 /obj/structure/grille/fire_act(burn_level)

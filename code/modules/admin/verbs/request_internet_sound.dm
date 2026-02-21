@@ -3,7 +3,7 @@
 	set name = "Request Music (Internet)"
 
 	if (!CONFIG_GET(flag/request_internet_sound))
-		to_chat(usr, span_danger("This server has disabled internet music requests."), confidential = TRUE)
+		to_chat(usr, span_danger("本服务器已禁用互联网音乐点播功能。"), confidential = TRUE)
 		return
 
 	var/request_url = tgui_input_text(usr, "Please Input a URL", "Only certain sites are allowed, such as SoundCloud, and Bandcamp.", "")
@@ -28,12 +28,12 @@
 	log_internet_request("[src.key]/([src.name]): [request_url]")
 	if(usr.client)
 		if(usr.client.prefs.muted & MUTE_INTERNET_REQUEST)
-			to_chat(usr, span_danger("You cannot request music at this time. (muted)."), confidential = TRUE)
+			to_chat(usr, span_danger("当前无法点播音乐。（已静音）。"), confidential = TRUE)
 			return
 		if(src.client.handle_spam_prevention(request_url,MUTE_INTERNET_REQUEST))
 			return
 
-	to_chat(usr, span_info("You requested: \"[request_url]\" to be played."), confidential = TRUE)
+	to_chat(usr, span_info("您请求播放：'[request_url]'。"), confidential = TRUE)
 	request_url = span_adminnotice("<b><font color='purple'>MUSIC REQUEST: </font>[ADMIN_FULLMONTY(src)] [ADMIN_SC(src)]:</b> [span_linkify(request_url)] [ADMIN_PLAY_INTERNET(request_url, credit)]")
 	for(var/client/admin_client in GLOB.admins)
 		if(check_other_rights(admin_client, R_ADMIN, FALSE))

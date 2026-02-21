@@ -1,7 +1,7 @@
 /**********************Planet**************************/
 
 /turf/open/floor/plating/ground //Basic groundmap turf parent
-	name = "ground dirt"
+	name = "地面泥土"
 	icon = 'icons/turf/ground_map.dmi'
 	icon_state = "desert"
 	shoefootstep = FOOTSTEP_DIRT
@@ -19,7 +19,7 @@
 	return
 
 /turf/open/floor/plating/ground/dirt
-	name = "dirt"
+	name = "泥土"
 	icon_state = "desert"
 	shoefootstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
@@ -52,12 +52,12 @@
 	icon_state = "desert_4"
 
 /turf/open/floor/plating/ground/dirt_desert
-	name = "desert"
+	name = "沙漠"
 	icon_state = "desert_alt"
 	icon_variants = 2
 
 /turf/open/floor/plating/ground/dirtgrassborder
-	name = "grass"
+	name = "草"
 	icon_state = "grassdirt_edge"
 	smoothing_groups = list(SMOOTH_GROUP_JUNGLE_FLOOR)
 
@@ -68,7 +68,7 @@
 	icon_state = "grassdirt_corner2"
 
 /turf/open/floor/plating/ground/dirt_alt
-	name = "dirt"
+	name = "泥土"
 	icon = 'icons/turf/dirt.dmi'
 	icon_state = "gyellow"
 
@@ -77,11 +77,11 @@
 	dir = pick(GLOB.alldirs)
 
 /turf/open/floor/plating/ground/dirt2
-	name = "dirt"
+	name = "泥土"
 	icon_state = "dirt"
 
 /turf/open/floor/plating/ground/dirtgrassborder2
-	name = "grass"
+	name = "草"
 	icon_state = "grassdirt2_edge"
 	smoothing_groups = list(SMOOTH_GROUP_JUNGLE_FLOOR)
 
@@ -126,7 +126,7 @@
 /turf/open/floor/plating/ground/dirtgrassborder/autosmooth/buildable
 
 /turf/open/ground/grass
-	name = "grass"
+	name = "草"
 	icon_state = "grass1"
 	shoefootstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
@@ -149,7 +149,7 @@
 	icon_variants = 5
 
 /turf/open/ground/grass/weedable
-	name = "soft grass"
+	name = "柔软的草地"
 
 /turf/open/ground/grass/weedable/patch
 	icon = 'icons/turf/floors.dmi'
@@ -170,7 +170,7 @@
 	minimap_color = MINIMAP_MARS_DIRT
 
 /turf/open/floor/plating/ground/mars/random/cave
-	name = "cave"
+	name = "洞穴"
 	icon_state = "mars_cave"
 	smoothing_groups = list(SMOOTH_GROUP_SAND)
 
@@ -178,16 +178,16 @@
 	color = "#948a7c"
 
 /turf/open/floor/plating/ground/mars/random/cave/rock
-	name = "cave"
+	name = "洞穴"
 	icon_state = "mars_cave_rock"
 
 /turf/open/floor/plating/ground/mars/random/dirt
-	name = "dirt"
+	name = "泥土"
 	icon_state = "mars_dirt"
 	smoothing_groups = list(SMOOTH_GROUP_RED_DIRT, SMOOTH_GROUP_OPEN_FLOOR)
 
 /turf/open/floor/plating/ground/mars/random/sand
-	name = "sand"
+	name = "沙"
 	icon_state = "mars_sand"
 
 /turf/open/floor/plating/ground/mars/random/Initialize(mapload)
@@ -195,12 +195,12 @@
 	dir = pick(GLOB.alldirs)
 
 /turf/open/floor/plating/ground/mars/dirttosand
-	name = "sand"
+	name = "沙"
 	icon_state = "mars_dirt_to_sand"
 	smoothing_groups = list(SMOOTH_GROUP_RED_DIRT, SMOOTH_GROUP_OPEN_FLOOR)
 
 /turf/open/floor/plating/ground/mars/cavetodirt
-	name = "cave"
+	name = "洞穴"
 	icon_state = "mars_cave_to_dirt"
 	smoothing_groups = list(SMOOTH_GROUP_RED_DIRT)
 
@@ -233,7 +233,7 @@
 
 //Ice Floor
 /turf/open/floor/plating/ground/ice
-	name = "ice floor"
+	name = "冰面"
 	icon = 'icons/turf/ice.dmi'
 	icon_state = "ice_floor"
 	shoefootstep = FOOTSTEP_ICE
@@ -251,7 +251,7 @@
 
 // Colony tiles
 /turf/open/floor/plating/ground/concrete
-	name = "concrete"
+	name = "混凝土"
 	icon = 'icons/turf/concrete.dmi'
 	icon_state = "concrete0"
 	mediumxenofootstep = FOOTSTEP_CONCRETE
@@ -271,7 +271,7 @@
 //Desert Map
 
 /turf/open/floor/plating/ground/desertdam //Basic groundmap turf parent
-	name = "desert"
+	name = "沙漠"
 	icon = 'icons/turf/desertdam_map.dmi'
 	icon_state = "desert0"
 	shoefootstep = FOOTSTEP_SAND
@@ -279,7 +279,7 @@
 	mediumxenofootstep = FOOTSTEP_SAND
 
 /turf/open/floor/plating/ground/desertdam/grate //for spanning river
-	name = "grate"
+	name = "格栅"
 	icon = 'icons/turf/catwalks.dmi'
 	icon_state = "catwalk-159"
 	shoefootstep = FOOTSTEP_CATWALK
@@ -291,13 +291,13 @@
 
 //desert floor
 /turf/open/floor/plating/ground/desertdam/desert
-	name = "desert"
+	name = "沙漠"
 	icon_state = "desert"
 	icon_variants = 8
 
 //asphalt road
 /turf/open/floor/plating/ground/desertdam/asphalt
-	name = "asphalt"
+	name = "沥青"
 	icon = 'icons/turf/asphalt.dmi'
 	icon_state = "sunbleached_asphalt"
 	shoefootstep = FOOTSTEP_CONCRETE
@@ -309,47 +309,47 @@
 	return NO_DIRT
 
 /turf/open/floor/plating/ground/desertdam/asphalt/cement
-	name = "concrete"
+	name = "混凝土"
 	icon_state = "cement5"
 
 /turf/open/floor/plating/ground/desertdam/asphalt/cement_sunbleached
-	name = "concrete"
+	name = "混凝土"
 	icon_state = "cement_sunbleached5"
 
 /turf/open/floor/plating/ground/desertdam/asphalt/twoside
-	name = "asphalt"
+	name = "沥青"
 	icon_state = "cement_sunbleached_twoside"
 
 /turf/open/floor/plating/ground/desertdam/asphalt/threeside
-	name = "asphalt"
+	name = "沥青"
 	icon_state = "cement_sunbleached_threeside"
 
 /turf/open/floor/plating/ground/desertdam/asphalt/edge
-	name = "asphalt"
+	name = "沥青"
 	icon_state = "cement_sunbleached_edge"
 
 /turf/open/floor/plating/ground/desertdam/asphalt/open
-	name = "asphalt"
+	name = "沥青"
 	icon_state = "cement_sunbleached_open"
 
 /turf/open/floor/plating/ground/desertdam/asphalt/tile
-	name = "asphalt"
+	name = "沥青"
 	icon_state = "tile"
 
 /turf/open/floor/plating/ground/desertdam/asphalt/edge/regular
-	name = "asphalt"
+	name = "沥青"
 	icon_state = "cement_edge"
 
 /turf/open/floor/plating/ground/desertdam/asphalt/twoside/regular
-	name = "asphalt"
+	name = "沥青"
 	icon_state = "cement_twoside"
 
 /turf/open/floor/plating/ground/desertdam/asphalt/threeside/regular
-	name = "asphalt"
+	name = "沥青"
 	icon_state = "cement_threeside"
 
 /turf/open/floor/plating/ground/desertdam/asphalt/autosmooth
-	name = "concrete"
+	name = "混凝土"
 	icon = 'icons/turf/floors/asphalt-regular.dmi'
 	icon_state = "asphalt-icon"
 	smoothing_flags = SMOOTH_BITMASK
@@ -365,7 +365,7 @@
 
 //CAVE
 /turf/open/floor/plating/ground/desertdam/cave
-	name = "cave"
+	name = "洞穴"
 	icon_state = "outer_cave_floor"
 	shoefootstep = FOOTSTEP_DIRT
 	barefootstep = FOOTSTEP_DIRT
@@ -388,20 +388,20 @@
 
 //inner cave floor
 /turf/open/floor/plating/ground/desertdam/cave/inner_cave_floor
-	name = "cave"
+	name = "洞穴"
 	icon_state = "inner_cave_full"
 	icon_variants = 2
 
 /turf/open/floor/plating/ground/desertdam/cave/inner_cave/corners
-	name = "cave"
+	name = "洞穴"
 	icon_state = "inner_cavecorners"
 
 /turf/open/floor/plating/ground/desertdam/cave/inner_cave/sides
-	name = "cave"
+	name = "洞穴"
 	icon_state = "inner_cavesides"
 
 /turf/open/floor/plating/ground/drought
-	name = "desert"
+	name = "沙漠"
 	icon = 'icons/turf/desert.dmi'
 	icon_state = "desert"
 	mediumxenofootstep = FOOTSTEP_SAND
@@ -413,7 +413,7 @@
 	icon_state = "desert_alt"
 
 /turf/open/floor/plating/ground/drought/cave
-	name = "cave"
+	name = "洞穴"
 	icon = 'icons/turf/cave_drought.dmi'
 	icon_state = "cave"
 	mediumxenofootstep = FOOTSTEP_GRAVEL
@@ -430,8 +430,8 @@
 
 ///These are entirely for decoration purposes, do not make them functional, it will cause salt.
 /turf/open/floor/chasm
-	name = "chasm"
-	desc = "Watch your step."
+	name = "深渊"
+	desc = "注意脚下。"
 	icon = 'icons/turf/floors/chasms.dmi'
 	icon_state = "chasms-0"
 	base_icon_state = "chasms"
@@ -446,7 +446,7 @@
 	base_icon_state = "junglechasm"
 
 /turf/open/floor/plating/rivergrate
-	name = "grate"
+	name = "格栅"
 	icon = 'icons/turf/desertdam_map.dmi'
 	icon_state = "shallow_grate"
 	mediumxenofootstep = FOOTSTEP_CATWALK

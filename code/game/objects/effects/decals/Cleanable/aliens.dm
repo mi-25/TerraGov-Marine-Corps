@@ -2,15 +2,15 @@
 
 //Alien blood effects.
 /obj/effect/decal/cleanable/blood/xeno
-	name = "sizzling blood"
-	desc = "It's yellow and acidic. It looks like... <i>blood?</i>"
+	name = "灼烧之血"
+	desc = "它是黄色的酸性液体。看起来像是... <i>血液？</i>"
 	icon = 'icons/effects/blood.dmi'
 	basecolor = "#dffc00"
 	amount = 0
 
 /obj/effect/decal/cleanable/blood/gibs/xeno
-	name = "steaming gibs"
-	desc = "Gnarly..."
+	name = "冒着热气的碎肉"
+	desc = "真够呛..."
 	icon_state = "xgib1"
 	random_icon_states = list("xgib1", "xgib2", "xgib3", "xgib4", "xgib5", "xgib6")
 	basecolor = "#dffc00"

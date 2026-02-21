@@ -5,8 +5,8 @@
 ///When making new loadouts, remember to also add the typepath to the list under init_civil_war_loadouts() or else it won't show up in the vendor
 
 /datum/outfit/quick/civil_war
-	name = "Civil War base"
-	desc = "Base for redcoat and bluecoat loadouts."
+	name = "内战基地"
+	desc = "红衫军与蓝衫军配置基础。"
 	require_job = FALSE
 
 	shoes = /obj/item/clothing/shoes/marinechief
@@ -24,17 +24,17 @@
 	)
 
 /datum/outfit/quick/civil_war/bluecoat
-	name = "Bluecoat"
+	name = "蓝衣兵"
 	jobtype = "Bluecoat"
-	desc = "Tally Ho! Show those redcoats a piece of your independence!"
+	desc = "冲锋！让那些红衫军见识见识你们的独立精神！"
 
 	w_uniform = /obj/item/clothing/under/marine/striped
 	mask = /obj/item/clothing/mask/bandanna/delta
 
 /datum/outfit/quick/civil_war/redcoat
-	name = "Redcoat"
+	name = "红衫军"
 	jobtype = "Redcoat"
-	desc = "God save the queen! Show those rebels the might of an empire!"
+	desc = "天佑女王！让那些叛军见识帝国的力量！"
 
 	w_uniform = /obj/item/clothing/under/redcoat
 	mask = /obj/item/clothing/mask/bandanna/alpha

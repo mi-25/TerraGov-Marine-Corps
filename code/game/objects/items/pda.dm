@@ -1,6 +1,6 @@
 /obj/item/pda
 	name = "PDA"
-	desc = "An AgyeI-12 PDA, a mixed use mobile device that also includes a neural interface module. Given out like candy by the megacorps to corporate employees, it's the most common and reliable PDA in the market."
+	desc = "一部 AgyeI-12 个人数据助手，一种混合用途的移动设备，同时包含神经接口模块。由大型企业像糖果一样分发给公司雇员，是市场上最常见、最可靠的个人数据助手。"
 	icon = 'icons/obj/items/pda.dmi'
 	icon_state = "pda_white"
 	///Text to say when the pda is interacted with
@@ -28,10 +28,10 @@
 	if(!audio_log)
 		return
 	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_PDA_PLAY))
-		user.balloon_alert(user, "still playing!")
+		user.balloon_alert(user, "还在玩！")
 		return
 
-	balloon_alert_to_viewers("begin log")
+	balloon_alert_to_viewers("开始记录")
 	if(SStts.tts_enabled && !voice)
 		voice = pick(SStts.available_speakers)
 	for(var/i = 1 to length(audio_log))
@@ -55,8 +55,8 @@
 	icon_state = "pda_purple"
 
 /obj/item/pda/large
-	name = "tablet PDA"
-	desc = "An AgyeI-35 TABPDA, a mixed use mobile device that also includes a neural interface module. A much more larger form of the standard PDA for ease of use."
+	name = "平板电脑 PDA"
+	desc = "一部 AgyeI-35 TABPDA，一款混合用途的移动设备，同时包含神经接口模块。这是标准 PDA 的更大尺寸版本，以便于使用。"
 	icon_state = "pda_large_white"
 	screen_overlay = "pda_large_on"
 

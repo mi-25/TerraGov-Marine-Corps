@@ -5,16 +5,16 @@
 	ceiling = CEILING_GLASS
 
 /area/corsat/landing/console
-	name = "\improper LZ1 'Gamma'"
+	name = "\improper LZ1 '伽马'"
 	icon_state = "corsat_telecomms"
 	requires_power = FALSE
 
 /area/corsat/landing/console2
-	name = "\improper LZ2 'Sigma'"
+	name = "\improper LZ2 '西格玛'"
 	icon_state = "corsat_telecomms"
 
 /area/corsat/emergency_access
-	name = "\improper Unknown Area"
+	name = "\improper 未知区域"
 	icon_state = "corsat_hull"
 	ceiling = CEILING_METAL
 	requires_power = FALSE
@@ -22,164 +22,164 @@
 //SIGMA SECTOR
 
 /area/corsat/sigma
-	name = "\improper Sigma Sector"
+	name = "\improper 西格玛扇区"
 	icon_state = "corsat_hull"
 
 /area/corsat/sigma/north
-	name = "\improper Sigma Sector North Hallway"
+	name = "\improper 西格玛区北走廊"
 	icon_state = "sigma_hallway_north"
 
 /area/corsat/sigma/hangar
-	name = "\improper Landing Bay Sigma"
+	name = "\improper 西格玛着陆舱"
 	icon_state = "sigma_hangar"
 
 /area/corsat/sigma/hangar/monorail
-	name = "\improper Sigma Monorail Station"
+	name = "\improper 西格玛单轨车站"
 	icon_state = "monorail"
 
 /area/corsat/sigma/hangar/monorail/control
-	name = "\improper Sigma Monorail Control"
+	name = "\improper 西格玛单轨控制"
 	icon_state = "monorail"
 
 /area/corsat/sigma/hangar/monorail/railcart
-	name = "\improper CORSAT Monorail"
+	name = "\improper CORSAT 单轨铁路"
 	icon_state = "railcart"
 	ceiling = CEILING_METAL
 	requires_power = FALSE
 
 /area/corsat/sigma/hangar/monorail/railcart_transit
-	name = "\improper CORSAT Monorail transit"
+	name = "\improper CORSAT 单轨运输系统"
 	icon_state = "railcart"
 	ceiling = CEILING_METAL
 
 /area/corsat/sigma/hangar/cargo
-	name = "\improper Sigma Hangar Cargo Checkpoint"
+	name = "\improper 西格玛机库货物检查点"
 	icon_state = "sigma_hangar"
 
 /area/corsat/sigma/hangar/checkpoint
-	name = "\improper Sigma Hangar Checkpoint"
+	name = "\improper 西格玛机库检查点"
 	icon_state = "sigma_hangar"
 
 /area/corsat/sigma/hangar/id
-	name = "\improper Sigma Hangar ID Checkpoint"
+	name = "\improper 西格玛机库身份检查点"
 	icon_state = "corsat_id"
 
 /area/corsat/sigma/hangar/arrivals
-	name = "\improper Sigma Arrivals"
+	name = "\improper 西格玛抵达区"
 	icon_state = "sigma_arrivals"
 
 /area/corsat/sigma/hangar/office
-	name = "\improper Sigma Hangar Office"
+	name = "\improper 西格玛机库办公室"
 	icon_state = "sigma_hangar_office"
 
 /area/corsat/sigma/hangar/security
-	name = "\improper Sigma Hangar Security"
+	name = "\improper 西格玛机库安保"
 	icon_state = "sigma_hangar_security"
 
 /area/corsat/sigma/airlock/east
-	name = "\improper Sigma Dome East Airlock"
+	name = "\improper 西格玛穹顶东侧气闸"
 	icon_state = "sigma_airlock_east"
 
 /area/corsat/sigma/airlock/east/id
-	name = "\improper Sigma East ID Checkpoint"
+	name = "\improper 西格玛东部身份检查点"
 	icon_state = "corsat_id"
 
 /area/corsat/sigma/airlock/south
-	name = "\improper Sigma Dome South Airlock"
+	name = "\improper 西格玛穹顶南气闸"
 	icon_state = "sigma_airlock_south"
 
 /area/corsat/sigma/airlock/south/id
-	name = "\improper Sigma South ID Checkpoint"
+	name = "\improper 西格玛南侧身份检查点"
 	icon_state = "corsat_id"
 
 /area/corsat/sigma/airlock/control
-	name = "\improper Sigma Dome Control Module"
+	name = "\improper 西格玛穹顶控制模块"
 	icon_state = "sigma_control"
 
 /area/corsat/sigma/cargo
-	name = "\improper Sigma Cargo"
+	name = "\improper 西格玛货物"
 	icon_state = "sigma_cargo"
 
 /area/corsat/sigma/laundry
-	name = "\improper Sigma Laundry"
+	name = "\improper 西格玛洗衣房"
 	icon_state = "sigma_laundry"
 
 /area/corsat/sigma/lavatory
-	name = "\improper Sigma Lavatory"
+	name = "\improper 西格玛洗手间"
 	icon_state = "sigma_lavatory"
 
 /area/corsat/sigma/cafe
-	name = "\improper Sigma Cafe"
+	name = "\improper 西格玛咖啡馆"
 	icon_state = "sigma_cafe"
 
 /area/corsat/sigma/dorms
-	name = "\improper Sigma Residential Module"
+	name = "\improper 西格玛居住舱"
 	icon_state = "sigma_residential"
 
 /area/corsat/sigma/checkpoint
-	name = "\improper Sigma Security Checkpoint"
+	name = "\improper 西格玛安全检查点"
 	icon_state = "sigma_security_checkpoint"
 
 /area/corsat/sigma/southeast
-	name = "\improper Sigma Sector Southeast Hallways"
+	name = "\improper 西格玛区东南走廊"
 	icon_state = "sigma_hallway_southeast"
 
 /area/corsat/sigma/southeast/generator
-	name = "\improper CORSAT Secondary Generators"
+	name = "\improper CORSAT 备用发电机"
 	icon_state = "secondary_core"
 	ceiling = CEILING_METAL
 
 /area/corsat/sigma/southeast/telecomm
-	name = "\improper CORSAT Telecommunications"
+	name = "\improper CORSAT 通信站"
 	icon_state = "corsat_telecomms"
 	ceiling = CEILING_METAL
 
 /area/corsat/sigma/southeast/datalab
-	name = "\improper Sigma Data Laboratory"
+	name = "\improper 西格玛数据实验室"
 	icon_state = "sigma_data_lab"
 	ceiling = CEILING_METAL
 
 /area/corsat/sigma/southeast/dataoffice
-	name = "\improper Sigma Data Office"
+	name = "\improper 西格玛数据办公室"
 	icon_state = "sigma_data_offices"
 
 /area/corsat/sigma/southeast/datamaint
-	name = "\improper Sigma Data Maintenance"
+	name = "\improper 西格玛数据维护"
 	icon_state = "sigma_data_lab"
 
 /area/corsat/sigma/south
-	name = "\improper Sigma Sector South Hallways"
+	name = "\improper 西格玛区南侧走廊"
 	icon_state = "sigma_hallway_south"
 
 /area/corsat/sigma/south/complex
-	name = "\improper Sigma Research Complex"
+	name = "\improper 西格玛研究综合体"
 	icon_state = "sigma_complex"
 
 /area/corsat/sigma/south/complex/teleporter
-	name = "\improper Sigma Teleporter"
+	name = "\improper 西格玛传送器"
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "shuttle"
 	ceiling = CEILING_METAL
 	requires_power = FALSE
 
 /area/corsat/sigma/south/robotics
-	name = "\improper Sigma Robotics Laboratory"
+	name = "\improper 西格玛机器人实验室"
 	icon_state = "robotics"
 
 /area/corsat/sigma/south/engineering
-	name = "\improper Sigma Engineering"
+	name = "\improper 西格玛工程"
 	icon_state = "sigma_engineering"
 
 /area/corsat/sigma/south/security
-	name = "\improper Sigma Security Hub"
+	name = "\improper 西格玛安全中心"
 	icon_state = "sigma_security"
 
 /area/corsat/sigma/south/offices
-	name = "\improper Sigma Offices"
+	name = "\improper 西格玛办公室"
 	icon_state = "sigma_offices"
 
 /area/corsat/sigma/biodome
-	name = "\improper Biodome Sigma"
+	name = "\improper 西格玛生物穹顶"
 	icon_state = "sigma_biodome"
 	always_unpowered = 1
 	ceiling = CEILING_UNDERGROUND_METAL
@@ -188,266 +188,266 @@
 /area/corsat/sigma/biodome/ice
 
 /area/corsat/sigma/biodome/testgrounds
-	name = "\improper Sigma Biodome Testing Grounds"
+	name = "\improper 西格玛生物穹顶试验场"
 	icon_state = "sigma_testgrounds"
 	requires_power = FALSE
 
 /area/corsat/sigma/biodome/gunrange
-	name = "\improper Sigma Biodome Firing Range"
+	name = "\improper 西格玛生物穹顶射击场"
 	icon_state = "sigma_gunrange"
 	requires_power = FALSE
 
 /area/corsat/sigma/biodome/scrapyard
-	name = "\improper Sigma Biodome Scrapyard"
+	name = "\improper 西格玛生物穹顶废料场"
 	icon_state = "sigma_scrapyard"
 	requires_power = FALSE
 
 //GAMMA SECTOR
 
 /area/corsat/gamma
-	name = "\improper Gamma Sector"
+	name = "\improper 伽马扇区"
 	icon_state = "corsat_hull"
 
 /area/corsat/gamma/hangar
-	name = "\improper Landing Bay Gamma"
+	name = "\improper 伽马着陆舱"
 	icon_state = "gamma_hangar"
 
 /area/corsat/gamma/hangar/monorail
-	name = "\improper Gamma Monorail Station"
+	name = "\improper 伽马单轨车站"
 	icon_state = "monorail"
 
 /area/corsat/gamma/hangar/monorail/control
-	name = "\improper Gamma Monorail Control"
+	name = "\improper 伽马单轨列车控制"
 	icon_state = "monorail"
 
 /area/corsat/gamma/hangar/monorail/railcart
-	name = "\improper CORSAT Railcart"
+	name = "\improper CORSAT 导轨车"
 	icon_state = "railcart"
 	ceiling = CEILING_METAL
 	requires_power = FALSE
 
 /area/corsat/gamma/hangar/cargo
-	name = "\improper Gamma Hangar Cargo Checkpoint"
+	name = "\improper 伽马机库货物检查点"
 	icon_state = "gamma_hangar"
 
 /area/corsat/gamma/hangar/checkpoint
-	name = "\improper Gamma Hangar Checkpoint"
+	name = "\improper 伽马机库检查点"
 	icon_state = "gamma_hangar"
 
 /area/corsat/gamma/hangar/office
-	name = "\improper Gamma Hangar Office"
+	name = "\improper 伽马机库办公室"
 	icon_state = "gamma_hangar_office"
 
 /area/corsat/gamma/hangar/flightcontrol
-	name = "\improper CORSAT Flight Control Center"
+	name = "\improper CORSAT飞行控制中心"
 	icon_state = "flight_center"
 
 /area/corsat/gamma/hangar/security
-	name = "\improper Gamma Hangar Security"
+	name = "\improper 伽马机库安保"
 	icon_state = "gamma_hangar_security"
 
 /area/corsat/gamma/hangar/arrivals
-	name = "\improper Gamma Arrivals"
+	name = "\improper 伽马抵达区"
 	icon_state = "gamma_arrivals"
 
 /area/corsat/gamma/foyer
-	name = "\improper Gamma Foyer"
+	name = "\improper 伽马前厅"
 	icon_state = "gamma_foyer"
 
 /area/corsat/gamma/hallwaymain
-	name = "\improper Gamma Sector West Hallway"
+	name = "\improper 伽马区西侧走廊"
 	icon_state = "gamma_hallway_main"
 
 /area/corsat/gamma/hallwaysouth
-	name = "\improper Gamma Sector South Hallways"
+	name = "\improper 伽马区南侧走廊"
 	icon_state = "gamma_hallway_south"
 
 /area/corsat/gamma/residential
-	name = "\improper Gamma Residential Hallway"
+	name = "\improper 伽马居住区走廊"
 	icon_state = "gamma_hallway_main"
 
 /area/corsat/gamma/residential/west
-	name = "\improper CORSAT Academy"
+	name = "\improper CORSAT学院"
 	icon_state = "gamma_residential_west"
 
 /area/corsat/gamma/residential/east
-	name = "\improper Gamma North Residential"
+	name = "\improper 伽马北区住宅区"
 	icon_state = "gamma_residential_east"
 
 /area/corsat/gamma/residential/maint
-	name = "\improper Gamma Residential Maintenance"
+	name = "\improper 伽马住宅区维护"
 	icon_state = "gamma_residential_maint"
 
 /area/corsat/gamma/residential/researcher
-	name = "\improper Researcher Quarters"
+	name = "\improper 研究员宿舍"
 	icon_state = "researcher_quarters"
 
 /area/corsat/gamma/residential/lounge
-	name = "\improper Researcher Lounge"
+	name = "\improper 研究员休息室"
 	icon_state = "researcher_lounge"
 
 /area/corsat/gamma/residential/lavatory
-	name = "\improper Gamma Lavatory"
+	name = "\improper 伽马洗手间"
 	icon_state = "gamma_lavatory"
 
 /area/corsat/gamma/residential/showers
-	name = "\improper Gamma Showers"
+	name = "\improper 伽马淋浴间"
 	icon_state = "gamma_showers"
 
 /area/corsat/gamma/residential/laundry
-	name = "\improper Gamma Laundry"
+	name = "\improper 伽马洗衣房"
 	icon_state = "gamma_laundry"
 
 /area/corsat/gamma/cargo
-	name = "\improper Gamma Cargo"
+	name = "\improper 伽马货舱"
 	icon_state = "gamma_cargo"
 
 /area/corsat/gamma/cargo/lobby
-	name = "\improper Gamma Cargo Lobby"
+	name = "\improper 伽马货物大厅"
 	icon_state = "gamma_cargo_lobby"
 
 /area/corsat/gamma/cargo/disposal
-	name = "\improper Gamma Disposals"
+	name = "\improper 伽马垃圾处理"
 	icon_state = "gamma_disposals"
 
 /area/corsat/gamma/medbay
-	name = "\improper CORSAT Medbay"
+	name = "\improper CORSAT 医疗站"
 	icon_state = "corsat_medbay"
 
 /area/corsat/gamma/medbay/morgue
-	name = "\improper CORSAT Morgue"
+	name = "\improper CORSAT 停尸房"
 	icon_state = "corsat_morgue"
 
 /area/corsat/gamma/medbay/chemistry
-	name = "\improper CORSAT Chemistry"
+	name = "\improper CORSAT 化学实验室"
 	icon_state = "corsat_chemistry"
 
 /area/corsat/gamma/medbay/surgery
-	name = "\improper CORSAT Surgery"
+	name = "\improper CORSAT 手术室"
 	icon_state = "corsat_surgery"
 
 /area/corsat/gamma/medbay/lobby
-	name = "\improper CORSAT Medbay Lobby"
+	name = "\improper CORSAT 医疗站大厅"
 	icon_state = "medbay_lobby"
 
 /area/corsat/gamma/hydroponics
-	name = "\improper CORSAT Hydroponics"
+	name = "\improper CORSAT 水培室"
 	icon_state = "corsat_hydroponics"
 
 /area/corsat/gamma/canteen
-	name = "\improper CORSAT Canteen"
+	name = "\improper CORSAT 食堂"
 	icon_state = "corsat_canteen"
 
 /area/corsat/gamma/kitchen
-	name = "\improper CORSAT Kitchen"
+	name = "\improper CORSAT 厨房"
 	icon_state = "corsat_kitchen"
 
 /area/corsat/gamma/freezer
-	name = "\improper CORSAT Food Storage"
+	name = "\improper CORSAT 食品储藏室"
 	icon_state = "food_storage"
 
 /area/corsat/gamma/administration
-	name = "\improper CORSAT Administration Center"
+	name = "\improper CORSAT 行政中心"
 	icon_state = "corsat_administration"
 
 /area/corsat/gamma/security
-	name = "\improper CORSAT Security Hub"
+	name = "\improper CORSAT 安全中心"
 	icon_state = "gamma_security"
 
 /area/corsat/gamma/security/cells
-	name = "\improper CORSAT Security Cells"
+	name = "\improper CORSAT 安保牢房"
 	icon_state = "security_cell"
 
 /area/corsat/gamma/security/armory
-	name = "\improper CORSAT Armory"
+	name = "\improper CORSAT 军械库"
 	icon_state = "corsat_armory"
 
 /area/corsat/gamma/rnr
-	name = "\improper CORSAT R&R"
+	name = "\improper CORSAT 休整区"
 	icon_state = "corsat_rnr"
 
 /area/corsat/gamma/rnr/bar
-	name = "\improper CORSAT Bar"
+	name = "\improper CORSAT 酒吧"
 	icon_state = "corsat_bar"
 
 /area/corsat/gamma/rnr/arcade
-	name = "\improper CORSAT Arcade"
+	name = "\improper CORSAT 街机"
 	icon_state = "corsat_arcade"
 
 /area/corsat/gamma/rnr/library
-	name = "\improper CORSAT Library"
+	name = "\improper CORSAT 图书馆"
 	icon_state = "corsat_library"
 
 /area/corsat/gamma/engineering
-	name = "\improper Gamma Engineering"
+	name = "\improper 伽马工程"
 	icon_state = "gamma_engineering"
 
 /area/corsat/gamma/engineering/lobby
-	name = "\improper Gamma Engineering Lobby"
+	name = "\improper 伽马工程大厅"
 	icon_state = "gamma_engineering"
 
 /area/corsat/gamma/engineering/atmos
-	name = "\improper CORSAT Atmospherics"
+	name = "\improper CORSAT大气处理系统"
 	icon_state = "gamma_atmos"
 
 /area/corsat/gamma/engineering/core
-	name = "\improper CORSAT Generator Core"
+	name = "\improper CORSAT 发电机核心"
 	icon_state = "corsat_core"
 
 /area/corsat/gamma/sigmaremote
-	name = "\improper Sigma Remote Complex"
+	name = "\improper 西格玛远程综合体"
 	icon_state = "sigma_complex_remote"
 
 /area/corsat/gamma/sigmaremote/teleporter
-	name = "\improper Sigma Remote Teleporter"
+	name = "\improper 西格玛远程传送器"
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "shuttle"
 	ceiling = CEILING_METAL
 	requires_power = FALSE
 
 /area/corsat/gamma/airlock/north
-	name = "\improper Gamma Dome North Airlock"
+	name = "\improper 伽马穹顶北部气闸"
 	icon_state = "gamma_airlock_north"
 	ceiling = CEILING_GLASS
 
 /area/corsat/gamma/airlock/north/id
-	name = "\improper Gamma North ID Checkpoint"
+	name = "\improper 伽马北区身份检查点"
 	icon_state = "corsat_id"
 
 /area/corsat/gamma/airlock/south
-	name = "\improper Gamma Dome South Airlock"
+	name = "\improper 伽马穹顶南气闸"
 	icon_state = "gamma_airlock_south"
 
 /area/corsat/gamma/airlock/south/id
-	name = "\improper Gamma South ID Checkpoint"
+	name = "\improper 伽马南检查站"
 	icon_state = "corsat_id"
 
 /area/corsat/gamma/airlock/control
-	name = "\improper Gamma Dome Control Module"
+	name = "\improper 伽马穹顶控制模块"
 	icon_state = "gamma_control"
 	ceiling = CEILING_GLASS
 
 /area/corsat/gamma/biodome
-	name = "\improper Biodome Gamma"
+	name = "\improper 伽马生物穹顶"
 	icon_state = "gamma_biodome"
 	temperature = ICE_COLONY_TEMPERATURE
 	ceiling = CEILING_UNDERGROUND_METAL
 	requires_power = FALSE
 
 /area/corsat/gamma/biodome/complex
-	name = "\improper Gamma Research Complex"
+	name = "\improper 伽马研究综合体"
 	icon_state = "gamma_complex"
 	temperature = T20C
 	requires_power = TRUE
 
 /area/corsat/gamma/biodome/virology
-	name = "\improper Gamma Virology Wing"
+	name = "\improper 伽马病毒学翼区"
 	icon_state = "gamma_virology"
 	temperature = T20C
 	requires_power = TRUE
 
 /area/corsat/gamma/biodome/toxins
-	name = "\improper Gamma Toxins Wing"
+	name = "\improper 伽马毒素翼区"
 	icon_state = "gamma_toxin"
 	temperature = T20C
 	requires_power = TRUE
@@ -455,161 +455,161 @@
 //THETA SECTOR
 
 /area/corsat/theta
-	name = "\improper Theta Sector"
+	name = "\improper 西塔扇区"
 	icon_state = "corsat_hull"
 	ceiling = CEILING_GLASS
 
 /area/corsat/theta/biodome
-	name = "\improper Biodome Theta"
+	name = "\improper 生物穹顶西塔"
 	icon_state = "theta_biodome"
 	ceiling = CEILING_UNDERGROUND_METAL
 	requires_power = FALSE
 
 /area/corsat/theta/biodome/complex
-	name = "\improper Theta Research Complex"
+	name = "\improper 西塔研究综合体"
 	icon_state = "theta_complex"
 	requires_power = TRUE
 
 /area/corsat/theta/biodome/hydroeast
-	name = "\improper Theta East Hydroponics Wing"
+	name = "\improper 西塔东侧水培翼区"
 	icon_state = "theta_hydro_east"
 	requires_power = TRUE
 
 /area/corsat/theta/biodome/hydrowest
-	name = "\improper Theta West Hydroponics Wing"
+	name = "\improper 西区水培翼"
 	icon_state = "theta_hydro_west"
 	requires_power = TRUE
 
 /area/corsat/theta/airlock/west
-	name = "\improper Theta Dome West Airlock"
+	name = "\improper 西塞塔穹顶气闸"
 	icon_state = "theta_airlock_west"
 
 /area/corsat/theta/airlock/west/id
-	name = "\improper Theta West ID Checkpoint"
+	name = "\improper 西区Theta身份检查点"
 	icon_state = "corsat_id"
 
 /area/corsat/theta/airlock/east
-	name = "\improper Theta Dome East Airlock"
+	name = "\improper 西塔穹顶东气闸"
 	icon_state = "theta_airlock_east"
 
 /area/corsat/theta/airlock/east/id
-	name = "\improper Theta East ID Checkpoint"
+	name = "\improper 西塔东侧身份检查点"
 	icon_state = "corsat_id"
 
 /area/corsat/theta/airlock/control
-	name = "\improper Theta Dome Control Module"
+	name = "\improper 西塔穹顶控制模块"
 	icon_state = "theta_control"
 
 //OMEGA SECTOR
 
 /area/corsat/omega
-	name = "\improper Sector Omega"
+	name = "\improper 欧米茄扇区"
 	icon_state = "corsat_hull"
 	ceiling = CEILING_METAL
 
 /area/corsat/omega/biodome
-	name = "\improper Biodome Omega"
+	name = "\improper 欧米茄生物穹顶"
 	icon_state = "omega_biodome"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 
 /area/corsat/omega/biodome/one
-	name = "\improper Biodome Omega Alpha"
+	name = "\improper 生物穹顶欧米茄阿尔法"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 
 /area/corsat/omega/biodome/two
-	name = "\improper Biodome Omega Beta"
+	name = "\improper 生物穹顶欧米茄贝塔"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 
 /area/corsat/omega/biodome/three
-	name = "\improper Biodome Omega Charlie"
+	name = "\improper 生物穹顶欧米茄 查理"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 
 /area/corsat/omega/biodome/four
-	name = "\improper Biodome Omega Delta"
+	name = "\improper 生化穹顶欧米伽德尔塔"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 
 /area/corsat/omega/hangar
-	name = "\improper Landing Bay Omega"
+	name = "\improper 欧米茄着陆舱"
 	icon_state = "omega_hangar"
 
 /area/corsat/omega/hangar/office
-	name = "\improper Omega Hangar Office"
+	name = "\improper 欧米茄机库办公室"
 	icon_state = "omega_hangar_office"
 
 /area/corsat/omega/hangar/security
-	name = "\improper Omega Hangar Security"
+	name = "\improper 欧米茄机库安保"
 	icon_state = "omega_hangar_security"
 
 /area/corsat/omega/hallways
-	name = "\improper Omega Sector Hallways"
+	name = "\improper 欧米茄区走廊"
 	icon_state = "omega_hallway"
 
 /area/corsat/omega/complex
-	name = "\improper Omega Research Complex"
+	name = "\improper 欧米茄研究综合体"
 	icon_state = "omega_complex"
 
 /area/corsat/omega/containment
-	name = "\improper Omega Research Containment"
+	name = "\improper 欧米茄研究收容区"
 	icon_state = "omega_containment"
 
 /area/corsat/omega/security
-	name = "\improper Omega Security Hub"
+	name = "\improper 欧米茄安全中心"
 	icon_state = "omega_security"
 
 /area/corsat/omega/checkpoint
-	name = "\improper Omega Access Checkpoint"
+	name = "\improper 欧米茄权限检查点"
 	icon_state = "omega_checkpoint"
 
 /area/corsat/omega/offices
-	name = "\improper Omega Offices"
+	name = "\improper 欧米茄办公室"
 	icon_state = "omega_offices"
 
 /area/corsat/omega/cargo
-	name = "\improper Omega Cargo"
+	name = "\improper 欧米茄货舱"
 	icon_state = "omega_cargo"
 
 /area/corsat/omega/maint
-	name = "\improper Omega Maintenance"
+	name = "\improper 欧米茄维护区"
 	icon_state = "omega_maintenance"
 
 /area/corsat/omega/airlocknorth
-	name = "\improper Omega Dome North Airlock"
+	name = "\improper 欧米茄穹顶北部气闸"
 	icon_state = "omega_airlock"
 
 /area/corsat/omega/airlocknorth/id
-	name = "\improper Omega North ID Checkpoint"
+	name = "\improper 欧米茄北部身份检查站"
 	icon_state = "corsat_id"
 
 /area/corsat/omega/control
-	name = "\improper Omega Dome Control Module"
+	name = "\improper 欧米茄穹顶控制模块"
 	icon_state = "omega_control"
 
 /area/corsat/hangar_storage/research
-	name = "\improper Hangar Storage"
+	name = "\improper 机库储存区"
 	icon_state = "omega_hangar"
 
 /area/corsat/hangar_storage/research/ship
-	name = "\improper Corporate Ship"
+	name = "\improper 企业舰船"
 	icon_state = "railcart"
 	requires_power = FALSE
 
 /area/corsat/dropzone/landingzoneone
-	name = "\improper Hangar Storage"
+	name = "\improper 机库存储区"
 	icon_state = "flight_center"
 	requires_power = FALSE
 
 /area/corsat/dropzone/landingzonetwo
-	name = "\improper Hangar Storage"
+	name = "\improper 机库存储区"
 	icon_state = "flight_center"
 
 /area/corsat/dropzone/landingzonethree
-	name = "\improper Hangar Storage"
+	name = "\improper 机库储物区"
 	icon_state = "flight_center"
 
 //INACCESSIBLE
 
 /area/corsat/inaccessible
-	name = "\improper Unknown Location"
+	name = "\improper 未知地点"
 	icon_state = "corsat_hull"
 	ceiling = CEILING_METAL
 	requires_power = FALSE

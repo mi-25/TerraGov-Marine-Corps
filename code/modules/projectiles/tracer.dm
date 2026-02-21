@@ -1,5 +1,5 @@
 /atom/movable/hitscan_projectile_effect
-	name = "pew"
+	name = "砰"
 	icon = 'icons/obj/items/projectiles.dmi'
 	icon_state = ""
 	layer = ABOVE_MOB_LAYER

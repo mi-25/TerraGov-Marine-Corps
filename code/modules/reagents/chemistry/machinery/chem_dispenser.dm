@@ -1,6 +1,6 @@
 /obj/machinery/chem_dispenser
-	name = "chem dispenser"
-	desc = "Creates and dispenses chemicals."
+	name = "化学分配器"
+	desc = "制造并分发化学品。"
 	density = TRUE
 	anchored = TRUE
 	icon = 'icons/obj/machines/chemical_machines.dmi'
@@ -188,7 +188,7 @@
 		if(user.skills.getRating("medical") < SKILL_MEDICAL_NOVICE)
 			if(user.do_actions)
 				return
-			to_chat(user, span_notice("You start fiddling with \the [src]..."))
+			to_chat(user, span_notice("你开始摆弄\the [src]..."))
 			if(!do_after(user, SKILL_TASK_EASY, TRUE, src, BUSY_ICON_UNSKILLED))
 				return
 
@@ -213,7 +213,7 @@
 					var/actual = min(amount, (cell.charge * powerefficiency)*10, free)
 
 					if(!cell.use(actual / powerefficiency))
-						say("Not enough energy to complete operation!")
+						say("能量不足，无法完成操作！")
 						return
 					R.add_reagent(reagent, actual)
 
@@ -251,7 +251,7 @@
 				var/reagent = GLOB.name2reagent[key]
 				var/dispense_amount = chemicals_to_dispense[key]
 				if(!dispensable_reagents.Find(reagent))
-					to_chat(usr, span_danger("[src] cannot find <b>[key]</b>!"))
+					to_chat(usr, span_danger("[src] 找不到 <b>[key]</b>！"))
 					return
 				if(!recording_recipe)
 					if(!beaker)
@@ -261,7 +261,7 @@
 					var/actual = min(dispense_amount, (cell.charge * powerefficiency)*10, free)
 					if(actual)
 						if(!cell.use(actual / powerefficiency))
-							say("Not enough energy to complete operation!")
+							say("能量不足，无法完成操作！")
 							return
 						R.add_reagent(reagent, actual)
 						work_animation()
@@ -294,13 +294,13 @@
 			if(usr.client.prefs.chem_macros[name] && tgui_alert(usr, "\"[name]\" already exists, do you want to overwrite it?", null, list("Yes", "No")) == "No")
 				return
 			else if(length(usr.client.prefs.chem_macros) >= 10)
-				to_chat(usr, span_danger("You can remember <b>up to 10</b> recipes!"))
+				to_chat(usr, span_danger("你可以记住<b>最多10个</b>配方！"))
 				return
 			if(name && recording_recipe)
 				for(var/reagent in recording_recipe)
 					var/reagent_id = GLOB.name2reagent[reagent]
 					if(!dispensable_reagents.Find(reagent_id))
-						balloon_alert_to_viewers("[src] buzzes")
+						balloon_alert_to_viewers("[src] 发出嗡嗡声")
 						playsound(src, 'sound/machines/buzz-two.ogg', 50, TRUE)
 						return
 				usr.client.prefs.chem_macros[name] = recording_recipe
@@ -332,12 +332,12 @@
 
 	if(isreagentcontainer(I))
 		if(beaker)
-			balloon_alert(user, "Something already loaded")
+			balloon_alert(user, "已装填")
 			return
 
 		for(var/datum/reagent/X in I.reagents.reagent_list)
 			if(X.medbayblacklist)
-				balloon_alert(user, "Harmful substance in beaker")
+				balloon_alert(user, "烧杯中有害物质")
 				return
 
 		if(I.is_open_container())
@@ -345,29 +345,29 @@
 				return
 
 			beaker = I
-			balloon_alert(user, "Sets [I] on the machine")
+			balloon_alert(user, "将 [I] 设置在机器上")
 			update_icon()
 			ui_interact(user)
 			return
 
 		if(istype(I, /obj/item/reagent_containers/glass))
-			balloon_alert(user, "Take the lid off")
+			balloon_alert(user, "取下盖子")
 			return
 
-		balloon_alert(user, "Can't use this")
+		balloon_alert(user, "无法使用这个")
 		return
 
 	if(istype(I, /obj/item/cell))
 		if(!CHECK_BITFIELD(machine_stat, PANEL_OPEN))
-			balloon_alert(user, "Battery panel is closed")
+			balloon_alert(user, "电池面板已关闭")
 			return
 		if(cell)
-			balloon_alert(user, "Already has a power cell")
+			balloon_alert(user, "已装有能量电池")
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
 		cell = I
-		balloon_alert(user, "Inserts")
+		balloon_alert(user, "装填")
 		overlays.Cut()
 		start_processing()
 		update_icon()
@@ -385,7 +385,7 @@
 		return FALSE
 	cell.forceMove(loc)
 	cell = null
-	balloon_alert_to_viewers("pries out battery.")
+	balloon_alert_to_viewers("撬出电池。")
 	stop_processing()
 	overlays.Cut()
 	update_icon()
@@ -414,8 +414,8 @@
 
 /obj/machinery/chem_dispenser/soda
 	icon_state = "soda_dispenser"
-	name = "soda fountain"
-	desc = "A drink fabricating machine, capable of producing many sugary drinks with just one touch."
+	name = "苏打水机"
+	desc = "饮料制作机，只需轻轻一触，就能生产出多种含糖饮料。"
 	req_one_access = list()
 	dispensable_reagents = list(
 		/datum/reagent/consumable/coffee,
@@ -476,9 +476,9 @@
 
 /obj/machinery/chem_dispenser/beer
 	icon_state = "booze_dispenser"
-	name = "booze dispenser"
+	name = "酒水机"
 	req_one_access = list()
-	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
+	desc = "一项技术奇迹，据说能在你点单的瞬间调配出你想要的饮品。"
 	dispensable_reagents = list(
 		/datum/reagent/consumable/ethanol/absinthe,
 		/datum/reagent/consumable/ethanol/ale,

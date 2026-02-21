@@ -40,8 +40,8 @@
 #define BOX_GRENADE_ROWS 2
 
 /obj/item/storage/box
-	name = "box"
-	desc = "It's just an ordinary box."
+	name = "板条箱"
+	desc = "这只是一个普通的箱子。"
 	icon_state = "box"
 	icon = 'icons/obj/items/storage/box.dmi'
 	worn_icon_state = "syringe_kit"
@@ -73,152 +73,152 @@
 	new /obj/item/tank/emergency_oxygen/engi(src)
 
 /obj/item/storage/box/gloves
-	name = "box of latex gloves"
-	desc = "Contains white gloves."
+	name = "乳胶手套盒"
+	desc = "内含白色手套。"
 	icon_state = "latex"
 	spawn_type = /obj/item/clothing/gloves/latex
 	spawn_number = 7
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/box/masks
-	name = "box of sterile masks"
-	desc = "This box contains masks of sterility."
+	name = "无菌口罩盒"
+	desc = "这个箱子里装着无菌口罩。"
 	icon_state = "sterile"
 	spawn_type = /obj/item/clothing/mask/surgical
 	spawn_number = 7
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/box/syringes
-	name = "box of syringes"
-	desc = "A box full of syringes."
+	name = "注射器盒"
+	desc = "装满注射器的箱子。"
 	spawn_type = /obj/item/reagent_containers/syringe
 	spawn_number = 7
 	icon_state = "syringe"
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/box/beakers
-	name = "box of beakers"
+	name = "烧杯盒"
 	icon_state = "beaker"
 	spawn_type = /obj/item/reagent_containers/glass/beaker
 	spawn_number = 7
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/flashbangs
-	name = "box of flashbangs (WARNING)"
-	desc = "<B>WARNING: These devices are extremely dangerous and can cause blindness or deafness in repeated use.</B>"
+	name = "闪光震撼弹箱（警告）"
+	desc = "<B>警告：这些装置极其危险，反复使用可能导致失明或失聪。</B>"
 	icon_state = "flashbang"
 	spawn_type = /obj/item/explosive/grenade/flashbang
 	spawn_number = 7
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/emps
-	name = "box of emp grenades"
-	desc = "A box with 5 emp grenades."
+	name = "一盒电磁脉冲手雷"
+	desc = "装有5枚电磁脉冲手雷的箱子。"
 	icon_state = "flashbang"
 	spawn_type = /obj/item/explosive/grenade/emp
 	spawn_number = 5
 
 /obj/item/storage/box/rxglasses
-	name = "box of prescription glasses"
-	desc = "This box contains nerd glasses."
+	name = "处方眼镜盒"
+	desc = "这个盒子里装着书呆子眼镜。"
 	icon_state = "glasses"
 	spawn_type = /obj/item/clothing/glasses/regular
 	spawn_number = 7
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/drinkingglasses
-	name = "box of drinking glasses"
-	desc = "It has a picture of drinking glasses on it."
+	name = "一箱玻璃杯"
+	desc = "上面印有酒杯的图案。"
 	spawn_type = /obj/item/reagent_containers/cup/glass/drinkingglass
 	spawn_number = 6
 
 /obj/item/storage/box/condimentbottles
-	name = "box of condiment bottles"
-	desc = "It has a large ketchup smear on it."
+	name = "调味品瓶盒"
+	desc = "上面有一大片番茄酱污渍。"
 	spawn_type = /obj/item/reagent_containers/food/condiment
 	spawn_number = 6
 
 /obj/item/storage/box/cups
-	name = "box of paper cups"
-	desc = "It has pictures of paper cups on the front."
+	name = "纸杯盒"
+	desc = "它的正面印有纸杯的图案。"
 	spawn_type = /obj/item/reagent_containers/food/drinks/sillycup
 	spawn_number = 7
 
 /obj/item/storage/box/donkpockets
-	name = "box of donk-pockets"
-	desc = "<B>Instructions:</B> <I>Heat in microwave. Product will cool if not eaten within seven minutes.</I>"
+	name = "一盒顿克口袋饼"
+	desc = "<B>使用说明：</B> <I>放入微波炉加热。若七分钟内未食用，产品将冷却。</I>"
 	icon_state = "donk_kit"
 	spawn_type = /obj/item/reagent_containers/food/snacks/donkpocket
 	spawn_number = 6
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/box/monkeycubes
-	name = "monkey cube box"
-	desc = "Drymate brand monkey cubes. Just add water!"
+	name = "猴子方块盒"
+	desc = "Drymate牌猴子方块。加水即可！"
 	icon = 'icons/obj/items/food/packaged.dmi'
 	icon_state = "monkeycubebox"
 	spawn_type = /obj/item/reagent_containers/food/snacks/monkeycube/wrapped
 	spawn_number = 5
 
 /obj/item/storage/box/monkeycubes/farwacubes
-	name = "farwa cube box"
-	desc = "Drymate brand farwa cubes, shipped from Ahdomai. Just add water!"
+	name = "法瓦方块盒"
+	desc = "德莱美特牌法瓦方块，从阿多米星发货。只需加水！"
 	spawn_type = /obj/item/reagent_containers/food/snacks/monkeycube/wrapped/farwacube
 
 /obj/item/storage/box/monkeycubes/stokcubes
-	name = "stok cube box"
-	desc = "Drymate brand stok cubes, shipped from Moghes. Just add water!"
+	name = "斯托克方块盒"
+	desc = "德莱美特牌浓缩汤块，从莫格斯星运来。只需加水！"
 	spawn_type = /obj/item/reagent_containers/food/snacks/monkeycube/wrapped/stokcube
 
 /obj/item/storage/box/monkeycubes/neaeracubes
-	name = "neaera cube box"
-	desc = "Drymate brand neaera cubes, shipped from Jargon 4. Just add water!"
+	name = "异形方块盒"
+	desc = "Drymate牌尼亚拉方块，从贾贡4号星运来。只需加水！"
 	spawn_type = /obj/item/reagent_containers/food/snacks/monkeycube/wrapped/neaeracube
 
 /obj/item/storage/box/ids
-	name = "box of spare IDs"
-	desc = "Has so many empty IDs."
+	name = "备用身份牌盒"
+	desc = "有这么多空白的身份牌。"
 	icon_state = "id"
 	spawn_type = /obj/item/card/id
 	spawn_number = 7
 
 /obj/item/storage/box/ids/dogtag
-	name = "box of spare Dogtags"
-	desc = "Has so many empty Dogtags."
+	name = "备用狗牌盒"
+	desc = "有这么多空白的狗牌。"
 	icon_state = "id"
 	spawn_type = /obj/item/card/id/dogtag
 	spawn_number = 7
 
 /obj/item/storage/box/handcuffs
-	name = "box of handcuffs"
-	desc = "A box full of handcuffs."
+	name = "手铐盒"
+	desc = "装满手铐的箱子。"
 	icon_state = "handcuff"
 	spawn_type = /obj/item/restraints/handcuffs
 	spawn_number = 7
 
 /obj/item/storage/box/zipcuffs
-	name = "box of zip cuffs"
-	desc = "A box full of zip cuffs."
+	name = "一盒约束带"
+	desc = "装满拉链手铐的箱子。"
 	icon_state = "handcuff"
 	spawn_type = /obj/item/restraints/handcuffs/zip
 	spawn_number = 14
 
 /obj/item/storage/box/mousetraps
-	name = "box of Pest-B-Gon mousetraps"
-	desc = "<B><FONT color='red'>WARNING:</FONT></B> <I>Keep out of reach of children</I>."
+	name = "一盒害虫克星捕鼠器"
+	desc = "<B><FONT color='red'>警告：</FONT></B> <I>请置于儿童接触不到的地方</I>。"
 	icon_state = "mousetraps"
 	spawn_type = /obj/item/assembly/mousetrap
 	spawn_number = 6
 
 /obj/item/storage/box/pillbottles
-	name = "box of pill bottles"
-	desc = "It has pictures of pill bottles on its front."
+	name = "药瓶盒"
+	desc = "它的正面印有药瓶的图案。"
 	spawn_type = /obj/item/storage/pill_bottle
 	spawn_number = 7
 
 /obj/item/storage/box/snappops
-	name = "snap pop box"
-	desc = "Eight wrappers of fun! Ages 8 and up. Not suitable for children."
+	name = "啪嗒盒"
+	desc = "八包欢乐！适合8岁及以上。不适合儿童。"
 	icon = 'icons/obj/items/toy.dmi'
 	icon_state = "spbox"
 	spawn_type = /obj/item/toy/snappop
@@ -229,8 +229,8 @@
 	storage_datum.max_storage_space = 8
 
 /obj/item/storage/box/matches
-	name = "matchbox"
-	desc = "A small box of 'Space-Proof' premium matches."
+	name = "火柴盒"
+	desc = "一小盒'太空专用'高级火柴。"
 	icon = 'icons/obj/items/cigarettes.dmi'
 	icon_state = "matchbox"
 	worn_icon_state = "zippo"
@@ -256,23 +256,23 @@
 		return ..()
 
 /obj/item/storage/box/autoinjectors
-	name = "box of injectors"
-	desc = "Contains autoinjectors."
+	name = "注射器盒"
+	desc = "装有自动注射器。"
 	icon_state = "syringe"
 	spawn_type = /obj/item/reagent_containers/hypospray/autoinjector/tricordrazine
 	spawn_number = 7
 
 /obj/item/storage/box/quickclot
-	name = "box of quick-clot injectors"
-	desc = "Contains quick-clot autoinjectors."
+	name = "快速凝血注射器盒"
+	desc = "内含快速凝血自动注射器。"
 	icon_state = "syringe"
 	spawn_type = /obj/item/reagent_containers/hypospray/autoinjector/quickclot
 	spawn_number = 7
 
 /obj/item/storage/box/lights
-	name = "box of replacement bulbs"
+	name = "灯泡替换盒"
 	icon_state = "light"
-	desc = "This box is shaped on the inside so that only light tubes and bulbs fit."
+	desc = "这个盒子的内部形状设计得只能容纳灯管和灯泡。"
 	worn_icon_state = "syringe_kit"
 	spawn_type = /obj/item/light_bulb/bulb
 	spawn_number = 21
@@ -281,14 +281,14 @@
 /obj/item/storage/box/lights/bulbs // mapping placeholder
 
 /obj/item/storage/box/lights/tubes
-	name = "box of replacement tubes"
+	name = "替换管盒"
 	icon_state = "lighttube"
 	w_class = WEIGHT_CLASS_NORMAL
 	spawn_type = /obj/item/light_bulb/tube/large
 	spawn_number = 21
 
 /obj/item/storage/box/lights/mixed
-	name = "box of replacement lights"
+	name = "替换灯泡盒"
 	icon_state = "lightmixed"
 
 /obj/item/storage/box/lights/mixed/Initialize(mapload, ...)
@@ -304,16 +304,16 @@
 		new /obj/item/light_bulb/bulb(src)
 
 /obj/item/storage/box/trampop
-	name = "box of Tram-pops"
-	desc = "Maybe if you behave the doctor will reward you with one."
+	name = "一盒 Tram-pops"
+	desc = "也许你表现好的话，医生会奖励你一个。"
 	icon_state = "trampop"
 	spawn_type = /obj/item/reagent_containers/food/snacks/lollipop/tramadol
 	spawn_number = 14
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/box/combat_lolipop
-	name = "box of Commed-pops"
-	desc = "A small box of lolipops, has a reagent mix made to heal you up slowly. Recommended to be sucked on, rather than eaten."
+	name = "一盒通讯棒棒糖"
+	desc = "一小盒棒棒糖，内含能缓慢治愈你的混合试剂。建议吮吸而非直接食用。"
 	icon_state = "lolipop_box_generic"
 	spawn_type = /obj/item/reagent_containers/food/snacks/lollipop/combat
 	spawn_number = 10
@@ -324,14 +324,14 @@
 	storage_datum.draw_mode = TRUE
 
 /obj/item/storage/box/combat_lolipop/tricord
-	name = "box of Tricord-pops"
-	desc = "A small box of lolipops, they have tricord laced in for you up slowly. Recommended to be sucked on, rather than eaten."
+	name = "一盒三氯氰胺棒棒糖"
+	desc = "一小盒棒棒糖，里面混有缓慢释放的三效宁。建议含服，而非直接咀嚼。"
 	icon_state = "lolipop_box_tricord"
 	spawn_type = /obj/item/reagent_containers/food/snacks/lollipop/tricord
 
 /obj/item/storage/box/combat_lolipop/tramadol
-	name = "box of Tram-pops"
-	desc = "A small box of lolipops, they have tramadol laced in to help kill the pain, Recommended to be sucked on, rather than eaten."
+	name = "一盒 Tram-pops"
+	desc = "一小盒棒棒糖，内含曲马多成分以帮助缓解疼痛，建议含服而非咀嚼。"
 	icon_state = "lolipop_box_tramadol"
 	spawn_type = /obj/item/reagent_containers/food/snacks/lollipop/tramadol/combat
 
@@ -341,8 +341,8 @@
 
 
 /obj/item/storage/box/explosive_mines
-	name = "\improper M20 mine box"
-	desc = "A secure box holding anti-personel proximity mines."
+	name = "\improper M20地雷箱"
+	desc = "一个装有反人员近程地雷的安全箱。"
 	icon_state = "minebox"
 	w_class = WEIGHT_CLASS_NORMAL
 	spawn_type = /obj/item/explosive/mine
@@ -359,8 +359,8 @@
 		icon_state += "_e"
 
 /obj/item/storage/box/explosive_mines/large
-	name = "\improper M20 mine box"
-	desc = "A large secure box holding anti-personel proximity mines."
+	name = "\improper M20地雷箱"
+	desc = "一个装有反人员近程地雷的大型安全箱。"
 	icon_state = "minebox"
 	spawn_type = /obj/item/explosive/mine
 	spawn_number = 10
@@ -370,19 +370,19 @@
 	storage_datum.max_storage_space = 20
 
 /obj/item/storage/box/explosive_mines/pmc
-	name = "\improper M20P mine box"
+	name = "\improper M20P 地雷箱"
 	spawn_type = /obj/item/explosive/mine/pmc
 
 /obj/item/storage/box/explosive_mines/antitank
-	name = "\improper M92 mine box"
-	desc = "A secure box holding anti-tank proximity mines."
+	name = "\improper M92 地雷箱"
+	desc = "一个装有反坦克近炸地雷的安全箱。"
 	icon_state = "atminebox"
 	spawn_type = /obj/item/explosive/mine/anti_tank
 	spawn_number = 5
 
 /obj/item/storage/box/m94
-	name = "\improper M40 FLDP flare pack"
-	desc = "A packet of seven M40 FLDP Flares. Carried by TGMC marines to light dark areas that cannot be reached with the usual TNR Shoulder Lamp. Can be launched from an underslung grenade launcher."
+	name = "\improper M40 FLDP 照明弹包"
+	desc = "一包七枚M40 FLDP照明弹。由TGMC陆战队员携带，用于照亮普通TNR肩灯无法触及的黑暗区域。可从下挂式榴弹发射器发射。"
 	icon_state = "m40"
 	w_class = WEIGHT_CLASS_SMALL
 	spawn_type = /obj/item/explosive/grenade/flare
@@ -399,28 +399,28 @@
 		icon_state += "_e"
 
 /obj/item/storage/box/m94/cas
-	name = "\improper M50 CFDP signal pack"
-	desc = "A packet of seven M40 CFPD signal Flares. Used to mark locations for fire support. Can be launched from an underslung grenade launcher."
+	name = "\improper M50 CFDP信号包"
+	desc = "一包七枚 M40 CFPD 信号照明弹。用于为火力支援标记位置。可从下挂式榴弹发射器发射。"
 	icon_state = "m50"
 	spawn_type = /obj/item/explosive/grenade/flare/cas
 
 //ITEMS-----------------------------------//
 /obj/item/storage/box/lightstick
-	name = "box of lightsticks"
-	desc = "Contains blue lightsticks."
+	name = "荧光棒盒"
+	desc = "内含蓝色荧光棒。"
 	icon_state = "lightstick"
 	spawn_type = /obj/item/lightstick
 	spawn_number = 7
 
 /obj/item/storage/box/lightstick/red
-	desc = "Contains red lightsticks."
+	desc = "内含红色荧光棒。"
 	icon_state = "lightstick2"
 	spawn_type = /obj/item/lightstick/red
 	spawn_number = 7
 
 /obj/item/storage/box/MRE
-	name = "\improper TGMC MRE"
-	desc = "Meal Ready-to-Eat, meant to be consumed in the field, and has an expiration that is two decades past a marine's average combat life expectancy."
+	name = "\improper TGMC 单兵即食口粮"
+	desc = "即食口粮，专为战场环境设计，其保质期远超陆战队员的平均作战寿命二十年。"
 	icon_state = "mealpack"
 	w_class = WEIGHT_CLASS_SMALL
 	///If our MRE is opened, it gets a new icon
@@ -445,8 +445,8 @@
 		icon_state += "opened"
 
 /obj/item/storage/box/MRE/som
-	name = "\improper SOM MFR"
-	desc = "A Martian Field Ration, guaranteed to have a taste of Mars in every bite."
+	name = "\improper 火星之子 MFR"
+	desc = "一份火星野战口粮，保证每一口都带有火星的味道。"
 	icon_state = "som_mealpack"
 
 /obj/item/storage/box/MRE/som/Initialize(mapload, ...)
@@ -461,8 +461,8 @@
  * All other visuals that do not have a icon_state_mini defined are in var/assoc_overlay
  */
 /obj/item/storage/box/visual
-	name = "generic box"
-	desc = "This box is able to hold a wide variety of supplies."
+	name = "通用板条箱"
+	desc = "这个箱子能够容纳多种多样的补给品。"
 	icon = 'icons/obj/items/storage/storage_boxes.dmi'
 	icon_state = "mag_box"
 	worn_icon_state = "mag_box"
@@ -637,14 +637,14 @@
 
 // --MAG BOXES--
 /obj/item/storage/box/visual/magazine
-	name = "ammunition box"
-	desc = "This box is able to hold a wide variety of supplies, mainly military-grade ammunition."
+	name = "弹药箱"
+	desc = "这个箱子能够容纳多种补给品，主要是军用级弹药。"
 	icon_state = "mag_box"
 	storage_type = /datum/storage/box/visual/magazine
 
 /obj/item/storage/box/visual/magazine/compact
-	name = "compact magazine box"
-	desc = "A magnifically designed box specifically designed to hold a large quantity of ammo."
+	name = "紧凑型弹匣盒"
+	desc = "一个设计精良的箱子，专门用于存放大量弹药。"
 	icon_state = "mag_box_small"
 	overlay_pixel_x = BOX_MAGAZINE_COMPACT_OFFSET_X
 	overlay_pixel_y = BOX_MAGAZINE_COMPACT_OFFSET_Y
@@ -665,8 +665,8 @@
 // -Pistol-
 
 /obj/item/storage/box/visual/magazine/compact/standard_pistol
-	name = "P-14 magazine box"
-	desc = "A box specifically designed to hold a large amount of P-14 magazines."
+	name = "P-14 弹匣盒"
+	desc = "专门设计用于容纳大量P-14弹匣的盒子。"
 	closed_overlay = "mag_box_small_overlay_p14"
 
 /obj/item/storage/box/visual/magazine/compact/standard_pistol/Initialize(mapload, ...)
@@ -680,8 +680,8 @@
 	spawn_type = /obj/item/ammo_magazine/pistol/standard_pistol
 
 /obj/item/storage/box/visual/magazine/compact/standard_heavypistol
-	name = "P-23 magazine box"
-	desc = "A box specifically designed to hold a large amount of P-23 magazines."
+	name = "P-23 弹匣盒"
+	desc = "一个专门设计用于容纳大量P-23弹匣的盒子。"
 	closed_overlay = "mag_box_small_overlay_p23"
 
 /obj/item/storage/box/visual/magazine/compact/standard_heavypistol/Initialize(mapload, ...)
@@ -695,8 +695,8 @@
 	spawn_type = /obj/item/ammo_magazine/pistol/standard_heavypistol
 
 /obj/item/storage/box/visual/magazine/compact/standard_revolver
-	name = "R-44 speedloader box"
-	desc = "A box specifically designed to hold a large amount of R-44 speedloaders."
+	name = "R-44快速装弹器盒"
+	desc = "专为存放大量R-44快速装弹器而设计的盒子。"
 	closed_overlay = "mag_box_small_overlay_r44"
 
 /obj/item/storage/box/visual/magazine/compact/standard_revolver/Initialize(mapload, ...)
@@ -710,8 +710,8 @@
 	spawn_type = /obj/item/ammo_magazine/revolver/standard_revolver
 
 /obj/item/storage/box/visual/magazine/compact/standard_pocketpistol
-	name = "P-17 magazine box"
-	desc = "A box specifically designed to hold a large amount of P-17 magazines."
+	name = "P-17 弹匣盒"
+	desc = "专门设计用于容纳大量P-17弹匣的盒子。"
 	closed_overlay = "mag_box_small_overlay_p17"
 
 /obj/item/storage/box/visual/magazine/compact/standard_pocketpistol/Initialize(mapload, ...)
@@ -725,8 +725,8 @@
 	spawn_type = /obj/item/ammo_magazine/pistol/standard_pocketpistol
 
 /obj/item/storage/box/visual/magazine/compact/vp70
-	name = "88M4 magazine box"
-	desc = "A box specifically designed to hold a large amount of 88M4 magazines."
+	name = "88M4 弹匣盒"
+	desc = "专门设计用于容纳大量88M4弹匣的箱子。"
 	closed_overlay = "mag_box_small_overlay_88m4"
 
 /obj/item/storage/box/visual/magazine/compact/vp70/Initialize(mapload, ...)
@@ -741,8 +741,8 @@
 
 
 /obj/item/storage/box/visual/magazine/compact/derringer
-	name = ".40 rimfire ammo packet box"
-	desc = "A box specifically designed to hold a large amount of .40 rimfire ammo packets."
+	name = ".40 边缘发火弹药包盒"
+	desc = "一个专门设计用于存放大量.40边缘发火弹药包的盒子。"
 	closed_overlay = "mag_box_small_overlay_derringer"
 
 /obj/item/storage/box/visual/magazine/compact/derringer/Initialize(mapload, ...)
@@ -756,8 +756,8 @@
 	spawn_type = /obj/item/ammo_magazine/pistol/derringer
 
 /obj/item/storage/box/visual/magazine/compact/plasma_pistol
-	name = "PP-7 plasma cell box"
-	desc = "A box specifically designed to hold a large amount of PP-7 plasma cells."
+	name = "PP-7 等离子体电池盒"
+	desc = "专门设计用于存放大量PP-7等离子体电池的箱子。"
 	closed_overlay = "mag_box_small_overlay_pp7"
 
 /obj/item/storage/box/visual/magazine/compact/plasma_pistol/Initialize(mapload, ...)
@@ -773,8 +773,8 @@
 // -SMG-
 
 /obj/item/storage/box/visual/magazine/compact/standard_smg
-	name = "SMG-90 magazine box"
-	desc = "A box specifically designed to hold a large amount of SMG-90 magazines."
+	name = "SMG-90 冲锋枪弹匣箱"
+	desc = "专为存放大量SMG-90冲锋枪弹匣设计的箱子。"
 	closed_overlay = "mag_box_small_overlay_smg90"
 
 /obj/item/storage/box/visual/magazine/compact/standard_smg/Initialize(mapload, ...)
@@ -788,8 +788,8 @@
 	spawn_type = /obj/item/ammo_magazine/smg/standard_smg
 
 /obj/item/storage/box/visual/magazine/compact/standard_machinepistol
-	name = "MP-19 magazine box"
-	desc = "A box specifically designed to hold a large amount of MP-19 magazines."
+	name = "MP-19 弹匣箱"
+	desc = "专门设计用于容纳大量MP-19弹匣的盒子。"
 	closed_overlay = "mag_box_small_overlay_mp19"
 
 /obj/item/storage/box/visual/magazine/compact/standard_machinepistol/Initialize(mapload, ...)
@@ -803,8 +803,8 @@
 	spawn_type = /obj/item/ammo_magazine/smg/standard_machinepistol
 
 /obj/item/storage/box/visual/magazine/compact/pepperball
-	name = "Pepperball canister box"
-	desc = "A box specifically designed to hold a large amount of Pepperball canisters."
+	name = "胡椒弹气罐箱"
+	desc = "专门设计用于存放大量胡椒弹罐的箱子。"
 	closed_overlay = "mag_box_small_overlay_pepperball"
 
 /obj/item/storage/box/visual/magazine/compact/pepperball/Initialize(mapload, ...)
@@ -820,8 +820,8 @@
 
 
 /obj/item/storage/box/visual/magazine/compact/standard_heavysmg
-	name = "SMG-45 magazine box"
-	desc = "A box specifically designed to hold a large amount of SMG-45 magazines."
+	name = "SMG-45 冲锋枪弹匣盒"
+	desc = "专门用于存放大量SMG-45冲锋枪弹匣的箱子。"
 	closed_overlay = "mag_box_small_overlay_smg45"
 
 /obj/item/storage/box/visual/magazine/compact/standard_heavysmg/Initialize(mapload, ...)
@@ -835,8 +835,8 @@
 	spawn_type = /obj/item/ammo_magazine/smg/standard_heavysmg
 
 /obj/item/storage/box/visual/magazine/compact/standard_heavysmg/squash
-	name = "SMG-45 squash magazine box"
-	desc = "A box specifically designed to hold a large amount of SMG-45 magazines."
+	name = "SMG-45 压制弹匣箱"
+	desc = "专门设计用于容纳大量SMG-45冲锋枪弹匣的箱子。"
 	closed_overlay = "mag_box_small_overlay_smg45_squash"
 
 /obj/item/storage/box/visual/magazine/compact/standard_heavysmg/squash/full
@@ -846,8 +846,8 @@
 // -Rifle-
 
 /obj/item/storage/box/visual/magazine/compact/standard_assaultrifle
-	name = "AR-12 magazine box"
-	desc = "A box specifically designed to hold a large amount of AR-12 magazines."
+	name = "AR-12 弹匣箱"
+	desc = "专门设计用于容纳大量AR-12弹匣的盒子。"
 	closed_overlay = "mag_box_small_overlay_ar12"
 
 /obj/item/storage/box/visual/magazine/compact/standard_assaultrifle/Initialize(mapload, ...)
@@ -862,8 +862,8 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/standard_assaultrifle
 
 /obj/item/storage/box/visual/magazine/compact/standard_carbine
-	name = "AR-18 magazine box"
-	desc = "A box specifically designed to hold a large amount of AR-18 magazines."
+	name = "AR-18 弹匣箱"
+	desc = "专门设计用于容纳大量AR-18弹匣的盒子。"
 	closed_overlay = "mag_box_small_overlay_ar18"
 
 /obj/item/storage/box/visual/magazine/compact/standard_carbine/Initialize(mapload, ...)
@@ -878,8 +878,8 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/standard_carbine
 
 /obj/item/storage/box/visual/magazine/compact/standard_skirmishrifle
-	name = "AR-21 magazine box"
-	desc = "A box specifically designed to hold a large amount of AR-21 magazines."
+	name = "AR-21 弹匣盒"
+	desc = "专门设计用于容纳大量AR-21弹匣的盒子。"
 	closed_overlay = "mag_box_small_overlay_ar21"
 
 /obj/item/storage/box/visual/magazine/compact/standard_skirmishrifle/Initialize(mapload, ...)
@@ -894,8 +894,8 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/standard_skirmishrifle
 
 /obj/item/storage/box/visual/magazine/compact/ar11
-	name = "AR-11 magazine box"
-	desc = "A box specifically designed to hold a large amount of AR-11 magazines."
+	name = "AR-11 弹匣箱"
+	desc = "专门设计用于容纳大量AR-11弹匣的箱子。"
 	closed_overlay = "mag_box_small_overlay_ar11"
 
 /obj/item/storage/box/visual/magazine/compact/ar11/Initialize(mapload, ...)
@@ -910,8 +910,8 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/tx11
 
 /obj/item/storage/box/visual/magazine/compact/martini
-	name = "Martini Henry ammo packet box"
-	desc = "A box specifically designed to hold a large amount of Martini ammo packets."
+	name = "马蒂尼-亨利弹药包盒"
+	desc = "专为存放大量马提尼弹药包而设计的箱子。"
 	closed_overlay = "mag_box_small_overlay_martini"
 
 /obj/item/storage/box/visual/magazine/compact/martini/Initialize(mapload, ...)
@@ -926,8 +926,8 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/martini
 
 /obj/item/storage/box/visual/magazine/compact/sh15
-	name = "SH-15 magazine box"
-	desc = "A box specifically designed to hold a large amount of SH-15 magazines."
+	name = "SH-15 弹匣箱"
+	desc = "专门设计用于容纳大量SH-15弹匣的盒子。"
 	closed_overlay = "mag_box_small_overlay_sh15"
 
 /obj/item/storage/box/visual/magazine/compact/sh15/Initialize(mapload, ...)
@@ -939,7 +939,7 @@
 	))
 
 /obj/item/storage/box/visual/magazine/compact/sh15/flechette
-	name = "SH-15 flechette magazine box"
+	name = "SH-15 飞镖弹匣盒"
 	closed_overlay = "mag_box_small_overlay_sh15_flechette"
 
 /obj/item/storage/box/visual/magazine/compact/sh15/flechette/full
@@ -947,7 +947,7 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/tx15_flechette
 
 /obj/item/storage/box/visual/magazine/compact/sh15/slug
-	name = "SH-15 slug magazine box"
+	name = "SH-15独头弹弹匣盒"
 	closed_overlay = "mag_box_small_overlay_sh15_slug"
 
 /obj/item/storage/box/visual/magazine/compact/sh15/slug/full
@@ -956,8 +956,8 @@
 
 // sh410
 /obj/item/storage/box/visual/magazine/compact/sh410
-	name = "SH-410 magazine box"
-	desc = "A box specifically designed to hold a large amount of SH-410 magazines."
+	name = "SH-410 弹匣盒"
+	desc = "专门设计用于容纳大量SH-410弹匣的盒子。"
 	closed_overlay = "mag_box_small_overlay_sh410"
 
 /obj/item/storage/box/visual/magazine/compact/sh410/Initialize(mapload, ...)
@@ -970,7 +970,7 @@
 	))
 
 /obj/item/storage/box/visual/magazine/compact/sh410/buckshot
-	name = "SH-410 buckshot magazine box"
+	name = "SH-410 鹿弹弹匣盒"
 	closed_overlay = "mag_box_small_overlay_sh410_buckshot"
 
 /obj/item/storage/box/visual/magazine/compact/sh410/buckshot/full
@@ -978,7 +978,7 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/sh410_buckshot
 
 /obj/item/storage/box/visual/magazine/compact/sh410/sabot
-	name = "SH-410 sabot magazine box"
+	name = "SH-410 脱壳弹弹匣盒"
 	closed_overlay = "mag_box_small_overlay_sh410_sabot"
 
 /obj/item/storage/box/visual/magazine/compact/sh410/sabot/full
@@ -986,7 +986,7 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/sh410_sabot
 
 /obj/item/storage/box/visual/magazine/compact/sh410/tracker
-	name = "SH-410 tracker magazine box"
+	name = "SH-410 追踪器弹匣盒"
 	closed_overlay = "mag_box_small_overlay_sh410_tracker"
 
 /obj/item/storage/box/visual/magazine/compact/sh410/tracker/full
@@ -994,8 +994,8 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/sh410_tracker
 
 /obj/item/storage/box/visual/magazine/compact/sectoid_rifle
-	name = "Suspicious glowing box"
-	desc = "A purple glowing box with a big TOP SECRET label as well as conspiracy talkpoints printed topside. What a load of gibberish!"
+	name = "可疑的发光盒子"
+	desc = "一个散发着紫色光芒的盒子，顶部印着大大的'绝密'标签，还印着各种阴谋论调。真是满口胡言！"
 	closed_overlay = "mag_box_small_overlay_sectoid_rifle"
 	open_overlay = "mag_box_small_overlay_sectoid_rifle_open"
 
@@ -1018,8 +1018,8 @@
 // -Energy-
 
 /obj/item/storage/box/visual/magazine/compact/lasrifle
-	name = "Terra Experimental cell box"
-	desc = "A box specifically designed to hold a large amount of Terra Experimental cells."
+	name = "地球政府实验电池盒"
+	desc = "专为存放大量地球政府实验型电池而设计的箱子。"
 	closed_overlay = "mag_box_small_overlay_te"
 
 /obj/item/storage/box/visual/magazine/compact/lasrifle/Initialize(mapload, ...)
@@ -1036,8 +1036,8 @@
 // -Marksmen-
 
 /obj/item/storage/box/visual/magazine/compact/standard_dmr
-	name = "DMR-37 magazine box"
-	desc = "A box specifically designed to hold a large amount of DMR-37 magazines."
+	name = "DMR-37 弹匣盒"
+	desc = "专为存放大量DMR-37弹匣而设计的箱子。"
 	closed_overlay = "mag_box_small_overlay_dmr37"
 
 /obj/item/storage/box/visual/magazine/compact/standard_dmr/Initialize(mapload, ...)
@@ -1052,8 +1052,8 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/standard_dmr
 
 /obj/item/storage/box/visual/magazine/compact/standard_br
-	name = "BR-64 magazine box"
-	desc = "A box specifically designed to hold a large amount of BR-64 magazines."
+	name = "BR-64 弹匣箱"
+	desc = "专门设计用于容纳大量BR-64弹匣的盒子。"
 	closed_overlay = "mag_box_small_overlay_br64"
 
 /obj/item/storage/box/visual/magazine/compact/standard_br/Initialize(mapload, ...)
@@ -1068,8 +1068,8 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/standard_br
 
 /obj/item/storage/box/visual/magazine/compact/chamberedrifle
-	name = "SR-127 magazine box"
-	desc = "A box specifically designed to hold a large amount of SR-127 magazines."
+	name = "SR-127 弹匣盒"
+	desc = "专门设计用于容纳大量SR-127弹匣的盒子。"
 	closed_overlay = "mag_box_small_overlay_sr127"
 
 /obj/item/storage/box/visual/magazine/compact/chamberedrifle/Initialize(mapload, ...)
@@ -1084,8 +1084,8 @@
 	spawn_type = /obj/item/ammo_magazine/rifle/chamberedrifle
 
 /obj/item/storage/box/visual/magazine/compact/mosin
-	name = "mosin packet box"
-	desc = "A box specifically designed to hold a large amount of mosin packets."
+	name = "莫辛纳甘弹药包"
+	desc = "专为存放大量莫辛弹包而设计的箱子。"
 	closed_overlay = "mag_box_small_overlay_mosin"
 
 /obj/item/storage/box/visual/magazine/compact/mosin/Initialize(mapload, ...)
@@ -1107,8 +1107,8 @@
 // -Machinegun-
 
 /obj/item/storage/box/visual/magazine/compact/standard_lmg
-	name = "MG-42 drum magazine box"
-	desc = "A box specifically designed to hold a large amount of MG-42 drum magazines."
+	name = "MG-42 弹鼓箱"
+	desc = "一个专门设计用于容纳大量MG-42弹鼓的箱子。"
 	closed_overlay = "mag_box_small_overlay_mg42"
 
 /obj/item/storage/box/visual/magazine/compact/standard_lmg/Initialize(mapload, ...)
@@ -1123,8 +1123,8 @@
 	spawn_type = /obj/item/ammo_magazine/standard_lmg
 
 /obj/item/storage/box/visual/magazine/compact/standard_gpmg
-	name = "MG-60 magazine box"
-	desc = "A box specifically designed to hold a large amount of MG-60 box magazines."
+	name = "MG-60 弹匣箱"
+	desc = "专门设计用于容纳大量MG-60弹匣的箱子。"
 	closed_overlay = "mag_box_small_overlay_mg60"
 
 /obj/item/storage/box/visual/magazine/compact/standard_gpmg/Initialize(mapload, ...)
@@ -1139,8 +1139,8 @@
 	spawn_type = /obj/item/ammo_magazine/standard_gpmg
 
 /obj/item/storage/box/visual/magazine/compact/standard_mmg
-	name = "MG-27 magazine box"
-	desc = "A box specifically designed to hold a large amount of MG-27 box magazines."
+	name = "MG-27 弹匣箱"
+	desc = "专门设计用于容纳大量MG-27弹匣的箱子。"
 	closed_overlay = "mag_box_small_overlay_mg27"
 
 /obj/item/storage/box/visual/magazine/compact/standard_mmg/Initialize(mapload, ...)
@@ -1156,8 +1156,8 @@
 
 
 /obj/item/storage/box/visual/magazine/compact/heavymachinegun
-	name = "HMG-08 drum box"
-	desc = "A box specifically designed to hold a large amount of HMG-08 drum."
+	name = "HMG-08 弹鼓箱"
+	desc = "专为容纳大量HMG-08弹鼓而设计的箱子。"
 	closed_overlay = "mag_box_small_overlay_hmg08"
 
 /obj/item/storage/box/visual/magazine/compact/heavymachinegun/Initialize(mapload, ...)
@@ -1173,8 +1173,8 @@
 
 // --GRENADE BOXES--
 /obj/item/storage/box/visual/grenade
-	name = "grenade box"
-	desc = "This box is able to hold a wide variety of grenades."
+	name = "手雷箱"
+	desc = "这个盒子能够容纳多种类型的手雷。"
 	icon_state = "grenade_box"
 	overlay_pixel_x = BOX_GRENADE_OFFSET_X
 	overlay_pixel_y = BOX_GRENADE_OFFSET_Y
@@ -1183,50 +1183,50 @@
 	storage_type = /datum/storage/box/visual/grenade
 
 /obj/item/storage/box/visual/grenade/M15
-	name = "\improper M15 grenade box"
-	desc = "A secure box holding 25 M15 fragmentation grenades."
+	name = "\improper M15手雷箱"
+	desc = "一个装有25枚M15破片手雷的安全箱。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/m15
 	closed_overlay = "grenade_box_overlay_m15"
 
 /obj/item/storage/box/visual/grenade/frag
-	name = "\improper M40 HEDP grenade box"
-	desc = "A secure box holding 25 M40 HEDP grenades. High explosive, don't store near the flamer fuel."
+	name = "\improper M40 HEDP 手雷箱"
+	desc = "一个装有25枚M40 HEDP手雷的安全箱。高爆弹头，请勿存放在喷火器燃料附近。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade
 	closed_overlay = "grenade_box_overlay_hedp"
 
 /obj/item/storage/box/visual/grenade/incendiary
-	name = "\improper M40 HIDP grenade box"
-	desc = "A secure box holding 25 M40 HIDP incendiary grenades. Warning: highly flammable!!."
+	name = "\improper M40 HIDP 手雷箱"
+	desc = "一个装有25枚M40 HIDP燃烧手雷的安全箱。警告：高度易燃！！"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/incendiary
 	closed_overlay = "grenade_box_overlay_hidp"
 
 /obj/item/storage/box/visual/grenade/cloaker
-	name = "\improper M45 Cloaker grenade box"
-	desc = "A secure box holding 25 M45 Cloaker greandes. Warning: causes cancer!!!"
+	name = "\improper M45 隐身手雷箱"
+	desc = "一个装有25枚M45'潜行者'手雷的安全箱。警告：可能导致癌症！！！"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/sticky/cloaker
 	closed_overlay = "grenade_box_overlay_M45_cloak"
 
 /obj/item/storage/box/visual/grenade/trailblazer
-	name = "\improper M45 Trailblazer grenade box"
-	desc = "A secure box holding 25 M45 Trailblazer grenades. Warning: highly flammable!!!"
+	name = "\improper M45 开拓者手雷箱"
+	desc = "一个装有25枚M45开拓者手雷的安全箱。警告：高度易燃！！！"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/sticky/trailblazer
 	closed_overlay = "grenade_box_overlay_M45"
 
 /obj/item/storage/box/visual/grenade/sticky
-	name = "\improper M40 adhesive charge grenade box"
-	desc = "A secure box holding 25 M40 adhesive charge grenades. Highly explosive and sticky."
+	name = "\improper M40粘性炸药手雷箱"
+	desc = "一个装有25枚M40粘性装药手雷的安全箱。爆炸威力巨大且具有粘性。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/sticky
 	closed_overlay = "grenade_box_overlay_sticky"
 
 /obj/item/storage/box/visual/grenade/phosphorus
-	name = "\improper M40 HPDP grenade box"
-	desc = "A secure box holding 15 M40 HPDP white phosphorous grenades. War crimes for the entire platoon!"
+	name = "\improper M40 HPDP 手雷箱"
+	desc = "一个装有15枚M40 HPDP白磷手雷的安全箱。全排都能犯下战争罪！"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/phosphorus
 	closed_overlay = "grenade_box_overlay_phosphorus"
@@ -1237,43 +1237,43 @@
 	storage_datum.max_storage_space = 50
 
 /obj/item/storage/box/visual/grenade/impact
-	name = "\improper M40 IMDP grenade box"
-	desc = "A secure box holding 25 M40 IMDP impact grenades. High explosive, don't store near the flamer fuel."
+	name = "\improper M40 IMDP 手雷箱"
+	desc = "一个装有25枚M40 IMDP冲击手雷的安全箱。高爆型，请勿存放在喷火器燃料附近。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/impact
 	closed_overlay = "grenade_box_overlay_impact"
 
 /obj/item/storage/box/visual/grenade/cloak
-	name = "\improper M40-2 SCDP grenade box"
-	desc = "A secure box holding 25 M40-2 SCDP cloak grenades. Don't blindly shoot into the smoke."
+	name = "\improper M40-2 SCDP 手雷箱"
+	desc = "一个装有25枚M40-2 SCDP隐蔽手雷的安全箱。不要盲目地向烟雾中射击。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/smokebomb/cloak
 	closed_overlay = "grenade_box_overlay_cloak"
 
 /obj/item/storage/box/visual/grenade/smokebomb
-	name = "\improper M40 HSDP grenade box"
-	desc = "A secure box holding 25 M40 HSDP smoke grenades. Don't blindly shoot into the smoke."
+	name = "\improper M40 HSDP 手雷箱"
+	desc = "一个装有25枚M40 HSDP烟雾手雷的安全箱。不要盲目向烟雾中射击。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/smokebomb
 	closed_overlay = "grenade_box_overlay_smokebomb"
 
 /obj/item/storage/box/visual/grenade/drain
-	name = "\improper M40-T grenade box"
-	desc = "A secure box holding 25 M40-T gas grenades. 100% safe to use around masked marines."
+	name = "\improper M40-T手雷箱"
+	desc = "一个装有25枚M40-T毒气手雷的安全箱。在佩戴面罩的陆战队员周围使用100%安全。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/smokebomb/drain
 	closed_overlay = "grenade_box_overlay_drain"
 
 /obj/item/storage/box/visual/grenade/antigas
-	name = "\improper M40-AG grenade box"
-	desc = "A secure box holding 25 M40-AG gas grenades. Quickly clears out hostile smoke."
+	name = "\improper M40-AG 手雷箱"
+	desc = "一个装有25枚M40-AG毒气手雷的安全箱。可快速清除敌方烟雾。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/smokebomb/antigas
 	closed_overlay = "grenade_box_overlay_antigas"
 
 /obj/item/storage/box/visual/grenade/razorburn
-	name = "razorburn grenade box"
-	desc = "A secure box holding 15 razor burn grenades. Used for quick flank coverage."
+	name = "剃刀燃烧手雷箱"
+	desc = "一个装有15枚剃刀燃烧手雷的安全箱。用于快速侧翼覆盖。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/chem_grenade/razorburn_small
 	closed_overlay = "grenade_box_overlay_razorburn"
@@ -1284,8 +1284,8 @@
 	storage_datum.max_storage_space = 50
 
 /obj/item/storage/box/visual/grenade/razorburn_large
-	name = "razorburn canister box"
-	desc = "A secure box holding 10 razorburn canisters. Used for quick flank coverage."
+	name = "剃刀燃烧弹罐箱"
+	desc = "一个装有10个剃刀燃烧弹罐的安全箱。用于快速侧翼覆盖。"
 	spawn_number = 10
 	spawn_type = /obj/item/explosive/grenade/chem_grenade/razorburn_large
 	closed_overlay = "grenade_box_overlay_razorburn_large"
@@ -1295,29 +1295,29 @@
 	storage_datum.storage_slots = 10
 
 /obj/item/storage/box/visual/grenade/teargas
-	name = "\improper M66 teargas grenade box"
-	desc = "A secure box holding 25 M66 tear gas grenades. Used for riot control."
+	name = "\improper M66催泪瓦斯手雷箱"
+	desc = "一个装有25枚M66催泪瓦斯手雷的安全箱。用于防暴控制。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/chem_grenade/teargas
 	closed_overlay = "grenade_box_overlay_teargas"
 
 /obj/item/storage/box/visual/grenade/lasburster
-	name = "\improper M80 lasburster grenade box"
-	desc = "A secure box holding 25 M80 lasburster grenades."
+	name = "\improper M80激光爆破手雷箱"
+	desc = "一个装有25枚M80激光爆破手雷的安全箱。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/bullet/laser
 	closed_overlay = "grenade_box_overlay_grenade_lasburster"
 
 /obj/item/storage/box/visual/grenade/hefa
-	name = "\improper M25 HEFA grenade box"
-	desc = "A secure box holding 25 M25 high explosive fragmentation grenades. Keep very far away from extreme heat and flame."
+	name = "\improper M25 HEFA 手雷箱"
+	desc = "一个装有25枚M25高爆破片手雷的安全箱。请务必远离极端高温和明火。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/bullet/hefa
 	closed_overlay = "grenade_box_overlay_grenade_hefa2"
 
 /obj/item/storage/box/visual/grenade/training
-	name = "\improper M07 training grenade box"
-	desc = "A secure box holding 25 M07 training grenades. Harmless and reusable."
+	name = "\improper M07训练手雷箱"
+	desc = "一个装有25枚M07训练手雷的安全箱。无害且可重复使用。"
 	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/training
 	closed_overlay = "grenade_box_overlay_training"

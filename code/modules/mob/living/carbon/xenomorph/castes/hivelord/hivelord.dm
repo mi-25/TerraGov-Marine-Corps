@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/hivelord
 	caste_base_type = /datum/xeno_caste/hivelord
 	name = "Hivelord"
-	desc = "A huge ass xeno covered in weeds! Oh shit!"
+	desc = "一只巨大的异形，浑身覆盖着菌毯！哦，该死！"
 	icon = 'icons/Xeno/castes/hivelord.dmi'
 	icon_state = "Hivelord Walking"
 	bubble_icon = "alienroyal"

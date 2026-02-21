@@ -1,6 +1,6 @@
 /obj/item/explosive/grenade/spawnergrenade
-	desc = "It is set to detonate in 5 seconds. It will unleash unleash an unspecified anomaly into the vicinity."
-	name = "delivery grenade"
+	desc = "它将在5秒后引爆。将在附近释放一个未指定的异常现象。"
+	name = "投掷手雷"
 	icon_state = "delivery"
 	worn_icon_state = "flashbang"
 	var/banglet = 0
@@ -29,13 +29,13 @@
 
 
 /obj/item/explosive/grenade/spawnergrenade/spesscarp
-	name = "carp delivery grenade"
+	name = "鲤鱼投送手雷"
 	spawner_type = /mob/living/simple_animal/hostile/carp
 	deliveryamt = 5
 
 /obj/item/explosive/grenade/human_spawner
-	desc = "It is set to detonate in 5 seconds. It will unleash unleash an unspecified anomaly into the vicinity."
-	name = "delivery grenade"
+	desc = "它将在5秒后引爆。将在附近释放一个未指定的异常现象。"
+	name = "投掷手雷"
 	icon_state = "delivery"
 	worn_icon_state = "flashbang"
 	///List of jobs that are spawned by this item

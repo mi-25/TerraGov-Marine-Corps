@@ -1,8 +1,8 @@
 /obj/structure/displaycase
-	name = "display case"
+	name = "展示柜"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "glassbox1"
-	desc = "A display case for prized possessions. It taunts you to kick it."
+	desc = "一个展示珍贵物品的陈列柜。它似乎在引诱你去踢它。"
 	density = TRUE
 	anchored = TRUE
 	resistance_flags = UNACIDABLE
@@ -36,12 +36,12 @@
 		return
 
 	if(destroyed && occupied)
-		to_chat(user, span_notice("You deactivate the hover field built into the case."))
+		to_chat(user, span_notice("你关闭了箱子内置的悬浮力场。"))
 		occupied = FALSE
 		update_icon()
 		return
 
-	visible_message(span_warning("[user] kicks the display case."), span_notice("You kick the display case."))
+	visible_message(span_warning("[user]踢了展示柜。"), span_notice("You kick the display case."))
 	take_damage(2, BRUTE, MELEE)
 
 //Quick destroyed case.

@@ -1,6 +1,6 @@
 /obj/machinery/photocopier
-	name = "photocopier"
-	desc = "Used to copy important documents and anatomy studies."
+	name = "复印机"
+	desc = "用于复制重要文件和人体解剖研究。"
 	icon = 'icons/obj/machines/library.dmi'
 	icon_state = "bigscanner"
 	density = TRUE
@@ -118,7 +118,7 @@
 
 /obj/machinery/photocopier/proc/do_insertion(obj/item/O, mob/user)
 	O.forceMove(src)
-	to_chat(user, "<span class ='notice'>You insert [O] into [src].</span>")
+	to_chat(user, "<span class ='notice'>你将[O]插入[src]中。</span>")
 	flick("bigscanner1", src)
 	updateUsrDialog()
 
@@ -129,7 +129,7 @@
 		user.put_in_hands(O)
 	else
 		O.forceMove(drop_location())
-	to_chat(user, span_notice("You take [O] out of [src]."))
+	to_chat(user, span_notice("你将[O]从[src]中取出。"))
 
 
 /obj/machinery/photocopier/attackby(obj/item/I, mob/user, params)
@@ -139,7 +139,7 @@
 
 	if(istype(I, /obj/item/paper))
 		if(!copier_empty())
-			to_chat(user, span_warning("There is already something in [src]!"))
+			to_chat(user, span_warning("[src]里已经有东西了！"))
 			return
 
 		if(!user.temporarilyRemoveItemFromInventory(I))
@@ -150,7 +150,7 @@
 
 	else if(istype(I, /obj/item/photo))
 		if(!copier_empty())
-			to_chat(user, span_warning("There is already something in [src]!"))
+			to_chat(user, span_warning("[src]里已经有东西了！"))
 			return
 
 		if(!user.temporarilyRemoveItemFromInventory(I))
@@ -161,13 +161,13 @@
 
 	else if(istype(I, /obj/item/toner))
 		if(toner > 0)
-			to_chat(user, span_warning("This cartridge is not yet ready for replacement! Use up the rest of the toner."))
+			to_chat(user, span_warning("这个墨盒还没到更换的时候！把剩下的墨粉用完。"))
 
 		if(!user.temporarilyRemoveItemFromInventory(I))
 			return
 		qdel(I)
 		toner = 40
-		to_chat(user, span_notice("You insert [I] into [src]."))
+		to_chat(user, span_notice("你将[I]插入[src]。"))
 		updateUsrDialog()
 
 
@@ -179,7 +179,7 @@
 
 
 /obj/item/toner
-	name = "toner cartridge"
+	name = "墨粉盒"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "tonercartridge"
 	var/charges = 5

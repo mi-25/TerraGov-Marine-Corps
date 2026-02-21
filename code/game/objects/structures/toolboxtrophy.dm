@@ -7,8 +7,8 @@ made it this far. Toolbox platform sprite by AIIA (and other members of the tg c
 We salute you.
 */
 /obj/structure/prop/mainship/toolboxforacause2020
-	name = "\improper \"Toolboxing For A Cause 2020\" third place trophy"
-	desc = "A worn, but still shining gold toolbox dedicated to those who \"may be stupid\", who lead the way to victory for TerraGov, placing third in the tournament.\nA worn inscription says: <i>\"Manley Jyllian, Nick Johnson, and Clark Ulton\"</i>. You feel robust just looking at it."
+	name = "\improper '为公益而工具箱'2020年季军奖杯"
+	desc = "一个破旧但仍闪耀着金光的工具箱，献给那些'或许有些愚蠢'的人，他们为地球政府引领胜利之路，在锦标赛中获得第三名。\n一段磨损的铭文写着：<i>'曼利·吉连、尼克·约翰逊和克拉克·厄尔顿'</i>。光是看着它，你就感到一股坚韧的力量。"
 	icon = 'icons/obj/structures/toolboxtrophy.dmi'
 	icon_state = "toolboxtrophy"
 	density = TRUE

@@ -10,7 +10,7 @@
 	name = "Recycle"
 	action_icon_state = "recycle"
 	action_icon = 'icons/Xeno/actions/drone.dmi'
-	desc = "We deconstruct the body of a fellow fallen xenomorph to avoid marines from harvesting our sisters in arms."
+	desc = "我们分解了倒下的异形同类的尸体，以免陆战队利用我们的战友姐妹。"
 	use_state_flags = ABILITY_USE_STAGGERED //can't use while staggered, defender fortified or crest down
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_RECYCLE,
@@ -25,25 +25,25 @@
 		return FALSE
 	if(!xeno_owner.Adjacent(victim))
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "too far!")
+			xeno_owner.balloon_alert(xeno_owner, "太远了！")
 		return FALSE
 	if(xeno_owner.on_fire)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "not while on fire!")
+			xeno_owner.balloon_alert(xeno_owner, "别在着火的时候！")
 		return FALSE
 	if(!isxeno(target))
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "can't recycle non-xenos!")
+			xeno_owner.balloon_alert(xeno_owner, "无法回收非异形！")
 		return FALSE
 	if(victim.stat != DEAD)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "she isn't dead!")
+			xeno_owner.balloon_alert(xeno_owner, "她还没死！")
 		return FALSE
 
 /datum/action/ability/activable/xeno/recycle/use_ability(atom/target)
 	var/mob/living/carbon/xenomorph/recycled_xeno = target
 	xeno_owner.face_atom(recycled_xeno) //Face towards the target so we don't look silly
-	xeno_owner.visible_message(span_warning("\The [xeno_owner] starts breaking apart \the [recycled_xeno]'s carcass."), \
+	xeno_owner.visible_message(span_warning("\The [xeno_owner] 开始分解 \the [recycled_xeno] 的残骸。"), \
 	span_danger("We slowly deconstruct upon \the [recycled_xeno]'s carcass!"), null, 20)
 	if(!do_after(owner, 7 SECONDS, IGNORE_HELD_ITEM, recycled_xeno, BUSY_ICON_GENERIC, extra_checks = CALLBACK(src, PROC_REF(can_use_ability), target, TRUE, ABILITY_USE_BUSY)))
 		return
@@ -53,7 +53,7 @@
 	recycled_xeno.gib()
 
 	playsound(xeno_owner, 'sound/effects/alien/recycler.ogg', 40)
-	xeno_owner.visible_message(span_xenowarning("\The [xeno_owner] brushes xenomorphs' bits off its claws."), \
+	xeno_owner.visible_message(span_xenowarning("\The [xeno_owner] 将异形的碎屑从它的爪子上拂去。"), \
 	span_danger("We brush xenomorphs' bits off of our claws."), null, 20)
 	return succeed_activate() //dew it
 
@@ -75,7 +75,7 @@
 	name = "Resin Walker"
 	action_icon_state = "toggle_speed"
 	action_icon = 'icons/Xeno/actions/hivelord.dmi'
-	desc = "Move faster on resin."
+	desc = "在树脂上移动更快。"
 	ability_cost = 50
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_RESIN_WALKER,
@@ -114,7 +114,7 @@
 /datum/action/ability/xeno_action/toggle_speed/proc/resinwalk_on(silent = FALSE)
 	speed_activated = TRUE
 	if(!silent)
-		owner.balloon_alert(owner, "resin walk active")
+		owner.balloon_alert(owner, "树脂行走已激活")
 	if(xeno_owner.loc_weeds_type)
 		speed_bonus_active = TRUE
 		xeno_owner.add_movespeed_modifier(type, TRUE, 0, NONE, TRUE, -1.5)
@@ -128,7 +128,7 @@
 
 /datum/action/ability/xeno_action/toggle_speed/proc/resinwalk_off(silent = FALSE)
 	if(!silent)
-		owner.balloon_alert(owner, "resin walk ended")
+		owner.balloon_alert(owner, "树脂行走已结束")
 	if(speed_bonus_active)
 		xeno_owner.remove_movespeed_modifier(type)
 		speed_bonus_active = FALSE
@@ -144,7 +144,7 @@
 /datum/action/ability/xeno_action/toggle_speed/proc/resinwalk_on_moved(datum/source, atom/oldloc, direction, Forced = FALSE)
 	SIGNAL_HANDLER
 	if(!isturf(xeno_owner.loc) || xeno_owner.plasma_stored < 10)
-		owner.balloon_alert(owner, "resin walk ended, no plasma")
+		owner.balloon_alert(owner, "菌毯行走结束，无等离子体")
 		resinwalk_off(TRUE)
 		return
 	if(!xeno_owner.loc_weeds_type && weeding_cost > 0 && xeno_owner.plasma_stored >= weeding_cost)
@@ -204,7 +204,7 @@
 	name = "Place Resin Jelly pod"
 	action_icon_state = "resin_jelly_pod"
 	action_icon = 'icons/Xeno/actions/construction.dmi'
-	desc = "Place down a dispenser that allows xenos to retrieve fireproof jelly."
+	desc = "放置一个允许异形获取防火凝胶的分配器。"
 	ability_cost = 500
 	cooldown_duration = 1 MINUTES
 	keybinding_signals = list(
@@ -217,12 +217,12 @@
 	var/turf/T = get_turf(owner)
 	if(!T || !T.is_weedable() || T.density)
 		if(!silent)
-			T.balloon_alert(owner, "can't place a pod here!")
+			T.balloon_alert(owner, "无法在此处放置舱体！")
 		return FALSE
 
 	if(!xeno_owner.loc_weeds_type)
 		if(!silent)
-			T.balloon_alert(owner, "need weeds!")
+			T.balloon_alert(owner, "需要菌毯！")
 		return FALSE
 
 	if(!T.check_disallow_alien_fortification(owner, silent))
@@ -238,14 +238,14 @@
 
 	playsound(owner, SFX_ALIEN_RESIN_BUILD, 25)
 	var/obj/structure/xeno/resin_jelly_pod/pod = new(T, owner.get_xeno_hivenumber())
-	to_chat(owner, span_xenonotice("We shape some resin into \a [pod]."))
+	to_chat(owner, span_xenonotice("我们将一些树脂塑造成\a [pod]。"))
 	add_cooldown()
 
 /datum/action/ability/xeno_action/create_jelly
 	name = "Create Resin Jelly"
 	action_icon_state = "resin_jelly"
 	action_icon = 'icons/Xeno/actions/construction.dmi'
-	desc = "Create a fireproof jelly."
+	desc = "制造防火凝胶。"
 	ability_cost = 100
 	cooldown_duration = 20 SECONDS
 	keybinding_signals = list(
@@ -259,13 +259,13 @@
 		return
 	if(owner.l_hand || owner.r_hand)
 		if(!silent)
-			owner.balloon_alert(owner, "need both hands to be empty!")
+			owner.balloon_alert(owner, "需要双手都空出来！")
 		return FALSE
 
 /datum/action/ability/xeno_action/create_jelly/action_activate()
 	var/obj/item/resin_jelly/jelly = new(owner.loc)
 	owner.put_in_hands(jelly)
-	to_chat(owner, span_xenonotice("We create a globule of resin from our ovipositor.")) // Ewww...
+	to_chat(owner, span_xenonotice("我们从产卵器中制造出一团树脂。")) // Ewww...
 	add_cooldown()
 	succeed_activate()
 
@@ -276,7 +276,7 @@
 	name = "Healing Infusion"
 	action_icon_state = "healing_infusion"
 	action_icon = 'icons/Xeno/actions/hivelord.dmi'
-	desc = "Psychically infuses a friendly xeno with regenerative energies, greatly improving its natural healing. Doesn't work if the target can't naturally heal."
+	desc = "向一名友方异形灌注心灵再生能量，大幅提升其自然愈合能力。若目标无法自然愈合，则此技能无效。"
 	cooldown_duration = 12.5 SECONDS
 	ability_cost = 200
 	keybinding_signals = list(
@@ -300,13 +300,13 @@
 
 	if(!isxeno(target))
 		if(!silent)
-			target.balloon_alert(owner, "can only heal xenos!")
+			target.balloon_alert(owner, "只能治疗异形！")
 		return FALSE
 	var/mob/living/carbon/xenomorph/patient = target
 
 	if(!CHECK_BITFIELD(use_state_flags|override_flags, ABILITY_IGNORE_DEAD_TARGET) && patient.stat == DEAD)
 		if(!silent)
-			target.balloon_alert(owner, "she's dead!")
+			target.balloon_alert(owner, "她死了！")
 		return FALSE
 
 	if(!check_distance(target, silent))
@@ -314,7 +314,7 @@
 
 	if(HAS_TRAIT(target, TRAIT_HEALING_INFUSION))
 		if(!silent)
-			target.balloon_alert(owner, "already infused!")
+			target.balloon_alert(owner, "已注入！")
 		return FALSE
 
 
@@ -322,12 +322,12 @@
 	var/dist = get_dist(owner, target)
 	if(dist > heal_range)
 		if(!silent)
-			target.balloon_alert(owner, "unreachable!")
-			to_chat(owner, span_warning("Too far for our reach... We need to be [dist - heal_range] steps closer!"))
+			target.balloon_alert(owner, "无法到达！")
+			to_chat(owner, span_warning("距离太远，无法触及……我们需要再靠近 [dist - heal_range] 步！"))
 		return FALSE
 	else if(!line_of_sight(owner, target))
 		if(!silent)
-			target.balloon_alert(owner, "no line of sight!")
+			target.balloon_alert(owner, "无视线！")
 		return FALSE
 	return TRUE
 
@@ -338,7 +338,7 @@
 
 	owner.face_atom(target) //Face the target so we don't look stupid
 
-	owner.visible_message(span_xenodanger("\the [owner] infuses [target] with mysterious energy!"), \
+	owner.visible_message(span_xenodanger("\the [owner] 向 [target] 注入了神秘的能量！"), \
 	span_xenodanger("We empower [target] with our [src]!"))
 
 	playsound(target, 'sound/effects/magic.ogg', 25) //Cool SFX
@@ -346,7 +346,7 @@
 	owner.beam(target, "medbeam", time = 1 SECONDS, maxdistance = 10)
 	new /obj/effect/temp_visual/telekinesis(get_turf(owner))
 	new /obj/effect/temp_visual/telekinesis(get_turf(target))
-	to_chat(target, span_xenodanger("Our wounds begin to knit and heal rapidly as [owner]'s healing energies infuse us.")) //Let the target know.
+	to_chat(target, span_xenodanger("我们的伤口开始迅速愈合，[owner]的治疗能量正注入我们体内。")) //Let the target know.
 
 	var/mob/living/carbon/xenomorph/patient = target
 
@@ -369,7 +369,7 @@
 	name = "Sow"
 	action_icon_state = "place_trap"
 	action_icon = 'icons/Xeno/actions/construction.dmi'
-	desc = "Sow the seeds of an alien plant."
+	desc = "播下外星植物的种子。"
 	ability_cost = 200
 	cooldown_duration = 45 SECONDS
 	use_state_flags = ABILITY_USE_LYING
@@ -382,7 +382,7 @@
 	. = ..()
 	if(!xeno_owner.loc_weeds_type)
 		if(!silent)
-			owner.balloon_alert(owner, "no weeds!")
+			owner.balloon_alert(owner, "没有菌毯！")
 		return FALSE
 
 	var/turf/T = get_turf(owner)
@@ -423,7 +423,7 @@
 	name = "Place Recovery Pylon"
 	action_icon_state = "recovery_pylon"
 	action_icon = 'icons/Xeno/actions/construction.dmi'
-	desc = "Place down a recovery pylon that increases the amount of regeneration power restored."
+	desc = "部署一个恢复信标，增加再生能量的恢复量。"
 	ability_cost = 500
 	cooldown_duration = 1 MINUTES
 	keybinding_signals = list(
@@ -440,11 +440,11 @@
 	var/turf/current_turf = get_turf(owner)
 	if(!current_turf || !current_turf.is_weedable() || current_turf.density)
 		if(!silent)
-			current_turf.balloon_alert(owner, "can't place a pylon here!")
+			current_turf.balloon_alert(owner, "无法在此处放置信标！")
 		return FALSE
 	if(!xeno_owner.loc_weeds_type)
 		if(!silent)
-			current_turf.balloon_alert(owner, "no weeds here!")
+			current_turf.balloon_alert(owner, "这里没有菌毯！")
 		return FALSE
 	if(!current_turf.check_disallow_alien_fortification(owner, silent))
 		return FALSE
@@ -455,16 +455,16 @@
 		if(!HAS_TRAIT(affected_turf, TRAIT_RECOVERY_PYLON_TURF))
 			continue
 		if(!silent)
-			current_turf.balloon_alert(owner, "nearby recovery pylon already!")
+			current_turf.balloon_alert(owner, "附近已有回收信标！")
 		return FALSE
 	if(LAZYLEN(GLOB.hive_datums[xeno_owner.hivenumber].recovery_pylons) >= HIVELORD_RECOVERY_PYLON_SET_LIMIT)
 		if(!silent)
-			current_turf.balloon_alert(owner, "maximum recovery pylons made!")
+			current_turf.balloon_alert(owner, "已部署最大数量的恢复信标！")
 		return FALSE
 
 /datum/action/ability/xeno_action/place_recovery_pylon/action_activate()
 	var/obj/structure/xeno/recovery_pylon/recovery_pylon = new(get_turf(xeno_owner), xeno_owner.get_xeno_hivenumber(), radius, damage_modifier)
-	to_chat(xeno_owner, span_xenonotice("We shape some resin into \a [recovery_pylon]."))
+	to_chat(xeno_owner, span_xenonotice("我们将一些树脂塑造成\a [recovery_pylon]。"))
 	playsound(xeno_owner, SFX_ALIEN_RESIN_BUILD, 25)
 	succeed_activate()
 	add_cooldown()

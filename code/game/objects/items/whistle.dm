@@ -1,6 +1,6 @@
 /obj/item/whistle
-	name = "\improper whistle"
-	desc = "A metal pea-whistle. Can be blown while held, or worn in the mouth"
+	name = "\improper 哨声"
+	desc = "一个金属豌豆哨。可以在手持时吹响，或含在口中使用。"
 	icon_state = "whistle"
 	w_class = WEIGHT_CLASS_TINY
 	atom_flags = CONDUCT
@@ -31,14 +31,14 @@
 
 /obj/item/whistle/proc/whistle_playsound(mob/user as mob)
 	if(TIMER_COOLDOWN_RUNNING(user, COOLDOWN_WHISTLE_BLOW))
-		user.balloon_alert(user, "catch your breath!")
+		user.balloon_alert(user, "喘口气！")
 		return
 
-	user.visible_message(span_warning("[user] blows into [src]!"))
+	user.visible_message(span_warning("[user] 吹响了 [src]！"))
 	playsound(get_turf(src), 'sound/items/whistle.ogg', volume, 1)
 
 	if(TIMER_COOLDOWN_RUNNING(user, COOLDOWN_WHISTLE_WARCRY))
-		to_chat(user, span_notice("You have to wait a while to rally your troops..."))
+		to_chat(user, span_notice("你需要等待一段时间才能集结部队..."))
 	else
 		TIMER_COOLDOWN_START(user, COOLDOWN_WHISTLE_WARCRY, 1 MINUTES)
 		for(var/mob/living/carbon/human/human in get_hearers_in_view(warcryrange, user.loc))
@@ -48,8 +48,8 @@
 	TIMER_COOLDOWN_START(user, COOLDOWN_WHISTLE_BLOW, 3 SECONDS)
 
 /obj/item/hailer
-	name = "hailer"
-	desc = "Used by obese officers to save their breath for running."
+	name = "扩音器"
+	desc = "供肥胖军官使用，为奔跑节省体力。"
 	icon = 'icons/obj/assemblies/new_assemblies.dmi'
 	icon_state = "voice"
 	worn_icon_state = "flashbang"	//looks exactly like a flash (and nothing like a flashbang)

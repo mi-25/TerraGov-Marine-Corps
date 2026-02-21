@@ -1,7 +1,7 @@
 #define PING_BUFFER_TIME 25
 
 SUBSYSTEM_DEF(server_maint)
-	name = "Server Tasks"
+	name = "服务器任务"
 	wait = 6
 	flags = SS_POST_FIRE_TIMING
 	priority = FIRE_PRIORITY_SERVER_MAINT
@@ -94,7 +94,7 @@ SUBSYSTEM_DEF(server_maint)
 			var/cmob = C.mob
 			if(!isnewplayer(cmob))
 				log_access("AFK: [key_name(C)]")
-				to_chat(C, span_userdanger("You have been inactive for more than [DisplayTimeText(afk_period)] and have been disconnected.</span><br><span class='danger'You may reconnect via the button in the file menu or by <b><u><a href='byond://winset?command=.reconnect'>clicking here to reconnect</a></b></u>"))
+				to_chat(C, span_userdanger("你已不活跃超过[DisplayTimeText(afk_period)]，连接已断开。</span><br><span class='danger'>你可以通过文件菜单中的按钮或<b><u><a href='byond://winset?command=.reconnect'>点击此处重新连接</a></b></u>来重新加入游戏。"))
 				QDEL_IN(C, 1) //to ensure they get our message before getting disconnected
 				continue
 

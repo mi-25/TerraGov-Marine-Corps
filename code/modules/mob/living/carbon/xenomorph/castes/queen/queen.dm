@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/queen
 	caste_base_type = /datum/xeno_caste/queen
 	name = "Queen"
-	desc = "A huge, looming alien creature. The biggest and the baddest."
+	desc = "一个巨大、若隐若现的外星生物。最大也最凶残。"
 	icon = 'icons/Xeno/castes/queen.dmi'
 	icon_state = "Queen Walking"
 	health = 300

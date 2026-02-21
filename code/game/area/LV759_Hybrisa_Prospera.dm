@@ -5,14 +5,14 @@
 //lv759 AREAS--------------------------------------//
 
 /area/lv759
-	name = "LV-759 Hybrisa Prospera"
+	name = "LV-759 希布瑞萨·普罗斯佩拉"
 	icon = 'icons/turf/hybrisareas.dmi'
 	icon_state = "hybrisa"
 
 //parent types
 
 /area/lv759/indoors
-	name = "Hybrisa - Indoors"
+	name = "海布里萨 - 室内"
 	icon_state = "cliff_blocked"//because this is a PARENT TYPE and you should not be using it and should also be changing the icon!!!
 	ceiling = CEILING_METAL
 	outside = FALSE
@@ -21,14 +21,14 @@
 	ambience = AMBIENT_LV759_INDOORS
 
 /area/lv759/outdoors
-	name = "Hybrisa - Outdoors"
+	name = "海布里萨 - 户外"
 	icon_state = "cliff_blocked"//because this is a PARENT TYPE and you should not be using it and should also be changing the icon!!!
 	ceiling = CEILING_NONE
 	always_unpowered = TRUE
 	ambience = AMBIENT_LV759_OUTDOORS
 
 /area/lv759/oob
-	name = "Out Of Bounds"
+	name = "越界"
 	icon_state = "oob"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	outside = FALSE
@@ -36,26 +36,26 @@
 
 // Landing Zone 1
 /area/lv759/outdoors/landing_zone_1
-	name = "Nova Medica Hospital Complex - Emergency Response Landing Zone One"
+	name = "新星医疗中心综合医院 - 应急响应一号着陆区"
 	icon_state = "medical_lz1"
 	minimap_color = MINIMAP_AREA_LZ
 	ceiling = CEILING_NONE
 	always_unpowered = FALSE
 
 /area/lv759/indoors/landing_zone_1/flight_control_room
-	name = "Nova Medica Hospital Complex - Emergency Response Landing Zone One - Flight Control Room"
+	name = "新星医疗中心医院综合体 - 应急响应一号着陆区 - 飞行控制室"
 	icon_state = "hybrisa"
 	ceiling = CEILING_METAL
 
 /area/lv759/indoors/landing_zone_1/lz1_console
-	name = "Nova Medica Hospital Complex - Emergency Response Landing Zone One - Dropship Alamo Console"
+	name = "新星医疗中心综合医院 - 应急响应一号着陆区 - 阿拉莫号运输机控制台"
 	icon_state = "hybrisa"
 	requires_power = FALSE
 	ceiling = CEILING_METAL
 
 // Landing Zone 2
 /area/lv759/outdoors/landing_zone_2
-	name = "KMCC Interstellar Freight Hub - Landing Zone Two"
+	name = "KMCC星际货运枢纽 - 二号着陆区"
 	icon_state = "mining_lz2"
 	minimap_color = MINIMAP_AREA_LZ
 	ceiling = CEILING_NONE
@@ -66,49 +66,49 @@
 	minimap_color = MINIMAP_AREA_ESCAPE
 
 /area/lv759/indoors/landing_zone_2/kmcc_hub_flight_control_room
-	name = "KMCC Interstellar Freight Hub - Flight Control Room"
+	name = "KMCC星际货运枢纽 - 飞行控制室"
 
 /area/lv759/indoors/landing_zone_2/kmcc_hub_security
-	name = "KMCC Interstellar Freight Hub - Security Checkpoint Office"
+	name = "KMCC星际货运枢纽 - 安检站办公室"
 	icon_state = "security_checkpoint"
 
 /area/lv759/indoors/landing_zone_2/kmcc_hub_lounge_north
-	name = "KMCC Interstellar Freight Hub - Passenger Departures - Lounge North"
+	name = "KMCC星际货运枢纽 - 旅客出发区 - 北侧休息室"
 
 /area/lv759/indoors/landing_zone_2/kmcc_hub_fuel
-	name = "KMCC Interstellar Freight Hub - Fuel Storage & Maintenance - North"
+	name = "KMCC星际货运枢纽 - 燃料储存与维护区 - 北区"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/lv759/indoors/landing_zone_2/kmcc_hub_lounge_south
-	name = "KMCC Interstellar Freight Hub - Passenger Departures - Lounge South"
+	name = "KMCC星际货运枢纽 - 旅客出发区 - 南侧休息厅"
 
 /area/lv759/indoors/landing_zone_2/kmcc_hub_lounge_hallway
-	name = "KMCC Interstellar Freight Hub - Passenger Departures - Hallway"
+	name = "KMCC星际货运枢纽 - 旅客出发区 - 走廊"
 
 /area/lv759/indoors/landing_zone_2/kmcc_hub_south_office
-	name = "KMCC Interstellar Freight Hub - Passenger Departures - South Office"
+	name = "KMCC星际货运枢纽 - 旅客出发区 - 南侧办公室"
 
 /area/lv759/indoors/landing_zone_2/kmcc_hub_maintenance
-	name = "KMCC Interstellar Freight Hub - Passenger Departures - Maintenance"
+	name = "KMCC星际货运枢纽 - 乘客离港区 - 维护中"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/lv759/indoors/landing_zone_2/kmcc_hub/lz2_console
-	name = "KMCC Interstellar Freight Hub - Dropship Normandy Console"
+	name = "KMCC星际货运枢纽 - 诺曼底号运输机控制台"
 	requires_power = FALSE
 
 /area/lv759/indoors/landing_zone_2/kmcc_hub_cargo
-	name = "KMCC Interstellar Freight Hub - Cargo Processing Center"
+	name = "KMCC星际货运枢纽 - 货物处理中心"
 	icon_state = "mining_cargo"
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/lv759/indoors/landing_zone_2/kmcc_hub_maintenance_north
-	name = "KMCC Interstellar Freight Hub - Cargo Processing Center - Maintenance"
+	name = "KMCC星际货运枢纽 - 货物处理中心 - 维护区"
 	icon_state = "mining"
 	minimap_color = MINIMAP_AREA_ENGI
 
 // Derelict Ship
 /area/lv759/indoors/derelict_ship
-	name = "Derelict Ship"
+	name = "废弃飞船"
 	icon_state = "derelictship"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	minimap_color = MINIMAP_AREA_SEC_CAVE
@@ -116,12 +116,12 @@
 
 // Caves
 /area/lv759/indoors/nt_research_complex_entrance
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - North Main Entrance"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 北主入口"
 	ceiling = CEILING_UNDERGROUND
 	minimap_color = MINIMAP_AREA_CAVES
 
 /area/lv759/indoors/caves
-	name = "LV759 - Caverns"
+	name = "LV759 - 洞穴"
 	icon_state = "caves_west"
 	always_unpowered = TRUE
 	ceiling = CEILING_DEEP_UNDERGROUND
@@ -134,62 +134,62 @@
 	)
 
 /area/lv759/indoors/caves/west_caves
-	name = "Caverns - West"
+	name = "洞穴 - 西侧"
 
 /area/lv759/indoors/caves/west_caves_alarm
-	name = "Caverns - West"
+	name = "洞穴 - 西侧"
 	icon_state = "caves_west"
 
 /area/lv759/indoors/caves/east_caves
-	name = "Caverns - East"
+	name = "洞穴 - 东侧"
 	icon_state = "caves_east"
 
 /area/lv759/indoors/caves/south_caves
-	name = "Caverns - South"
+	name = "洞穴 - 南部"
 	icon_state = "caves_south"
 
 /area/lv759/indoors/caves/south_east_caves
-	name = "Caverns - Southeast"
+	name = "洞穴 - 东南"
 	icon_state = "caves_southeast"
 
 /area/lv759/indoors/caves/south_west_caves
-	name = "Caverns - Southwest"
+	name = "洞穴 - 西南"
 	icon_state = "caves_southwest"
 
 /area/lv759/indoors/caves/south_west_caves_alarm
-	name = "Caverns - Southwest"
+	name = "洞穴 - 西南"
 	icon_state = "caves_southwest"
 
 /area/lv759/indoors/caves/north_west_caves
-	name = "Caverns - Northwest"
+	name = "洞穴 - 西北"
 	icon_state = "caves_northwest"
 	ceiling = CEILING_UNDERGROUND
 	always_unpowered = FALSE
 
 /area/lv759/outdoors/north_west_caves_outdoors
-	name = "Caverns - Northwest"
+	name = "洞穴 - 西北"
 	icon_state = "caves_northwest"
 	ceiling = CEILING_UNDERGROUND
 
 /area/lv759/indoors/caves/north_east_caves
-	name = "Caverns - Northeast"
+	name = "洞穴 - 东北"
 	icon_state = "caves_northeast"
 	ceiling = CEILING_UNDERGROUND
 	always_unpowered = FALSE
 
 /area/lv759/indoors/caves/north_caves
-	name = "Caverns - North"
+	name = "洞穴 - 北部"
 	icon_state = "caves_north"
 	always_unpowered = TRUE
 	ceiling = CEILING_UNDERGROUND
 
 /area/lv759/indoors/caves/central_caves
-	name = "Caverns - Central"
+	name = "洞穴 - 中央"
 	icon_state = "caves_central"
 
 // Caves Central Plateau
 /area/lv759/outdoors/caveplateau
-	name = "Caverns - Plateau"
+	name = "洞穴 - 高原"
 	icon_state = "caves_plateau"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	outside = FALSE
@@ -200,7 +200,7 @@
 
 // Colony Streets
 /area/lv759/outdoors/colony_streets
-	name = "Colony Streets"
+	name = "殖民地街道"
 	icon_state = "colonystreets_north"
 	ceiling = CEILING_NONE
 	always_unpowered = FALSE
@@ -208,36 +208,36 @@
 	minimap_color = MINIMAP_AREA_COLONY
 
 /area/lv759/outdoors/colony_streets/central_streets
-	name = "Central Street - West"
+	name = "中央街道 - 西侧"
 	icon_state = "colonystreets_west"
 
 /area/lv759/outdoors/colony_streets/east_central_street
-	name = "Central Street - East"
+	name = "中央街道 - 东区"
 	icon_state = "colonystreets_east"
 
 /area/lv759/outdoors/colony_streets/south_street
-	name = "Colony Streets - South"
+	name = "殖民地街道 - 南侧"
 	icon_state = "colonystreets_south"
 
 /area/lv759/outdoors/colony_streets/south_east_street
-	name = "Colony Streets - Southeast"
+	name = "殖民地街道 - 东南区"
 	icon_state = "colonystreets_southeast"
 
 /area/lv759/outdoors/colony_streets/south_west_street
-	name = "Colony Streets - Southwest - NT Checkpoint Passthrough"
+	name = "殖民地街道 - 西南区 - 纳米传讯检查站通道"
 	icon_state = "colonystreets_southwest"
 	ceiling = CEILING_UNDERGROUND
 
 /area/lv759/outdoors/colony_streets/north_west_street
-	name = "Colony Streets - Northwest"
+	name = "殖民地街道 - 西北区"
 	icon_state = "colonystreets_northwest"
 
 /area/lv759/outdoors/colony_streets/north_east_street
-	name = "Colony Streets - Northeast"
+	name = "殖民地街道 - 东北区"
 	icon_state = "colonystreets_northeast"
 
 /area/lv759/outdoors/colony_streets/north_street
-	name = "Colony Streets - North"
+	name = "殖民地街道 - 北部"
 	icon_state = "colonystreets_north"
 
 //Spaceport Indoors
@@ -245,130 +245,130 @@
 	minimap_color = MINIMAP_AREA_ESCAPE
 
 /area/lv759/indoors/spaceport/hallway_northeast
-	name = "Nanotrasen Celestia Gateway Space-Port - Hallway - Northeast"
+	name = "纳米传讯天界之门太空港 - 走廊 - 东北"
 	icon_state = "WYSpaceport"
 	minimap_color = MINIMAP_AREA_COLONY
 
 /area/lv759/indoors/spaceport/hallway_north
-	name = "Nanotrasen Celestia Gateway Space-Port - Hallway - North"
+	name = "纳米传讯天界之门太空港 - 走廊 - 北侧"
 	icon_state = "WYSpaceport"
 	minimap_color = MINIMAP_AREA_COLONY
 
 /area/lv759/indoors/spaceport/hallway_northwest
-	name = "Nanotrasen Celestia Gateway Space-Port - Hallway - Northwest"
+	name = "纳米传讯天界之门太空港 - 走廊 - 西北"
 	icon_state = "WYSpaceport"
 	minimap_color = MINIMAP_AREA_COLONY
 
 /area/lv759/indoors/spaceport/hallway_east
-	name = "Nanotrasen Celestia Gateway Space-Port - Hallway - East"
+	name = "纳米传讯天界之门太空港 - 走廊 - 东侧"
 	icon_state = "WYSpaceport"
 	minimap_color = MINIMAP_AREA_COLONY
 
 /area/lv759/indoors/spaceport/heavyequip
-	name = "Nanotrasen Celestia Gateway Space-Port - Heavy Equipment Storage"
+	name = "纳米传讯天界之门太空港 - 重型设备存储区"
 	icon_state = "WYSpaceport"
 
 /area/lv759/indoors/spaceport/engineering
-	name = "Nanotrasen Celestia Gateway Space-Port - Fuel Storage & Processing"
+	name = "纳米传讯天界之门太空港 - 燃料储存与处理"
 	icon_state = "WYSpaceport"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/lv759/indoors/spaceport/janitor
-	name = "Nanotrasen Celestia Gateway Space-Port - Janitorial Storage Room"
+	name = "纳米传讯天界之门太空港 - 清洁工储物间"
 	icon_state = "WYSpaceport"
 	minimap_color = MINIMAP_AREA_COLONY
 
 /area/lv759/indoors/spaceport/maintenance_east
-	name = "Nanotrasen Celestia Gateway Space-Port - Maintenance - East"
+	name = "纳米传讯天界之门太空港 - 维护区 - 东侧"
 	icon_state = "WYSpaceport"
 	minimap_color = MINIMAP_AREA_COLONY
 
 /area/lv759/indoors/spaceport/communications_office
-	name = "Nanotrasen Celestia Gateway Space-Port - Communications & Administration Office"
+	name = "纳米传讯天界之门太空港 - 通讯与行政办公室"
 	icon_state = "WYSpaceportadmin"
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/lv759/indoors/spaceport/flight_control_room
-	name = "Nanotrasen Celestia Gateway Space-Port - Flight Control Room"
+	name = "纳米传讯天界之门太空港 - 飞行控制室"
 	icon_state = "WYSpaceportadmin"
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/lv759/indoors/spaceport/security
-	name = "Nanotrasen Celestia Gateway Space-Port - Security- Observation & Office"
+	name = "纳米传讯天界之门太空港 - 安保 - 观察与办公室"
 	icon_state = "security_checkpoint"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/lv759/indoors/spaceport/security_office
-	name = "Nanotrasen Celestia Gateway Space-Port - Office"
+	name = "纳米传讯天界之门太空港 - 办公室"
 	icon_state = "security_checkpoint"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/lv759/indoors/spaceport/cargo
-	name = "Nanotrasen Celestia Gateway Space-Port - Cargo"
+	name = "纳米传讯天界之门太空港 - 货运区"
 	icon_state = "WYSpaceportcargo"
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/lv759/indoors/spaceport/cargo_maintenance
-	name = "Nanotrasen Celestia Gateway Space-Port - Cargo - Maintenance"
+	name = "纳米传讯天界之门太空港 - 货运区 - 维护通道"
 	icon_state = "WYSpaceportcargo"
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/lv759/indoors/spaceport/baggagehandling
-	name = "Nanotrasen Celestia Gateway Space-Port - Baggage Storage & Handling"
+	name = "纳米传讯天界之门太空港 - 行李寄存与处理处"
 	icon_state = "WYSpaceportbaggage"
 
 /area/lv759/indoors/spaceport/cuppajoes
-	name = "Nanotrasen Celestia Gateway Space-Port - Cuppa Joe's"
+	name = "纳米传讯天界之门太空港 - 乔氏咖啡"
 	icon_state = "cuppajoes"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/lv759/indoors/spaceport/kitchen
-	name = "Nanotrasen Celestia Gateway Space-Port - Kitchen"
+	name = "纳米传讯天界之门太空港 - 厨房"
 	icon_state = "WYSpaceportblue"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/lv759/indoors/spaceport/docking_bay_2
-	name = "Nanotrasen Celestia Gateway Space-Port - Docking Bay: 2 - Refueling and Maintenance"
+	name = "纳米传讯天界之门太空港 - 二号对接舱 - 燃料补给与维护区"
 	icon_state = "WYSpaceportblue"
 
 /area/lv759/indoors/spaceport/docking_bay_1
-	name = "Nanotrasen Celestia Gateway Space-Port - Docking Bay: 1"
+	name = "纳米传讯天界之门太空港 - 1号对接舱"
 	icon_state = "WYSpaceport"
 
 /area/lv759/indoors/spaceport/starglider
-	name = "NT-LWI StarGlider SG-200"
+	name = "纳米传讯-LWI 星滑翔者 SG-200"
 	icon_state = "wydropship"
 	requires_power = FALSE
 
 /area/lv759/indoors/spaceport/horizon_runner
-	name = "NT-LWI Horizon Runner HR-150"
+	name = "纳米传讯-LWI 地平线奔跑者 HR-150"
 	icon_state = "wydropship"
 	requires_power = FALSE
 
 // Garage
 
 /area/lv759/indoors/garage_reception
-	name = "Garage - Reception"
+	name = "机库 - 接待处"
 	icon_state = "garage"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/lv759/indoors/garage_restroom
-	name = "Garage - Restroom"
+	name = "机库 - 洗手间"
 	icon_state = "garage"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/lv759/indoors/garage_workshop
-	name = "Garage - Workshop"
+	name = "机库 - 工坊"
 	icon_state = "garage"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/lv759/indoors/garage_workshop_storage
-	name = "Garage - Workshop - Storage Room"
+	name = "车库 - 工坊 - 储藏室"
 	icon_state = "garage"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/lv759/indoors/garage_managersoffice
-	name = "Garage - Managers Office"
+	name = "车库 - 经理办公室"
 	icon_state = "garage"
 	minimap_color = MINIMAP_AREA_ENGI
 
@@ -378,131 +378,131 @@
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/lv759/indoors/meridian/meridian_foyer
-	name = "Meridian - Foyer"
+	name = "梅里迪安 - 门厅"
 
 /area/lv759/indoors/meridian/meridian_showroom
-	name = "Meridian - Showroom"
+	name = "Meridian - 展示厅"
 
 /area/lv759/indoors/meridian/meridian_office
-	name = "Meridian - Office"
+	name = "子午线 - 办公室"
 
 /area/lv759/indoors/meridian/meridian_managersoffice
-	name = "Meridian - Manager's Office"
+	name = "子午线 - 经理办公室"
 
 /area/lv759/indoors/meridian/meridian_factory
-	name = "Meridian - Factory Floor"
+	name = "子午线 - 工厂车间"
 	icon_state = "meridian_factory"
 
 /area/lv759/indoors/meridian/meridian_restroom
-	name = "Meridian - Restroom"
+	name = "梅里迪安 - 洗手间"
 
 /area/lv759/indoors/meridian/meridian_maintenance_south
-	name = "Meridian - Maintenance South"
+	name = "子午线 - 南维护区"
 
 /area/lv759/indoors/meridian/meridian_maintenance_east
-	name = "Meridian - Factory Floor - Maintenance"
+	name = "子午线 - 工厂车间 - 维护区"
 
 // Apartments (Dorms)
 /area/lv759/indoors/apartment
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/lv759/indoors/apartment/westfoyer
-	name = "Westhaven Apartment Complex - West - Foyer"
+	name = "西港公寓大楼 - 西侧 - 门厅"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/westhallway
-	name = "Westhaven Apartment Complex - West - Hallway"
+	name = "西港公寓大楼 - 西侧 - 走廊"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/westbedrooms
-	name = "Westhaven Apartment Complex - West - Bedrooms"
+	name = "西港公寓大楼 - 西侧 - 卧室"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/westshowers
-	name = "Westhaven Apartment Complex - West - Showers"
+	name = "西港公寓大楼 - 西侧 - 淋浴间"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/westrestroom
-	name = "Westhaven Apartment Complex - West - Restrooms"
+	name = "西港公寓大楼 - 西侧 - 洗手间"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/westentertainment
-	name = "Westhaven Apartment Complex - West - Recreation Hub"
+	name = "西港公寓大楼 - 西区 - 娱乐中心"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/eastentrance
-	name = "Westhaven Apartment Complex - East - Entrance Room"
+	name = "西港公寓大楼 - 东区 - 入口房间"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/eastfoyer
-	name = "Westhaven Apartment Complex - East - Foyer"
+	name = "西港公寓大楼 - 东侧 - 门厅"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/eastrestroomsshower
-	name = "Westhaven Apartment Complex - East - Restrooms & Showers"
+	name = "西港公寓大楼 - 东侧 - 洗手间与淋浴间"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/eastbedrooms
-	name = "Westhaven Apartment Complex - East - Bedrooms"
+	name = "西港公寓大楼 - 东侧 - 卧室区"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/eastbedroomsstorage
-	name = "Westhaven Apartment Complex - East - Bedrooms - Storage Room"
+	name = "西港公寓大楼 - 东侧 - 卧室 - 储藏室"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/northfoyer
-	name = "Westhaven Apartment Complex - North - Foyer"
+	name = "西港公寓大楼 - 北侧 - 门厅"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/northhallway
-	name = "Westhaven Apartment Complex - North - Hallway"
+	name = "西港公寓楼 - 北侧 - 走廊"
 	icon_state = "apartments"
 
 /area/lv759/indoors/apartment/northapartments
-	name = "Westhaven Apartment Complex - North - Luxury Apartments"
+	name = "西港公寓综合体 - 北区 - 豪华公寓"
 	icon_state = "apartments"
 
 // Nanotrasen Offices
 /area/lv759/indoors/nt_office
-	name = "Nanotrasen Offices - Reception Hallway"
+	name = "纳米传讯办公室 - 接待走廊"
 	icon_state = "wyoffice"
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/lv759/indoors/nt_office/hallway
-	name = "Nanotrasen Offices - West Foyer"
+	name = "纳米传讯办公室 - 西侧门厅"
 	icon_state = "wyoffice"
 
 /area/lv759/indoors/nt_office/floor
-	name = "Nanotrasen Offices - Main Office Floor"
+	name = "纳米传讯办公室 - 主办公楼层"
 
 /area/lv759/indoors/nt_office/breakroom
-	name = "Nanotrasen Offices - Breakroom"
+	name = "纳米传讯办公室 - 休息室"
 
 /area/lv759/indoors/nt_office/vip
-	name = "Nanotrasen Offices - Conference Room"
+	name = "纳米传讯办公室 - 会议室"
 
 /area/lv759/indoors/nt_office/pressroom
-	name = "Nanotrasen Offices - Assembly Hall"
+	name = "纳米传讯办公室 - 会议厅"
 
 /area/lv759/indoors/nt_office/supervisor
-	name = "Nanotrasen Offices - Colony Supervisors Office"
+	name = "纳米传讯办公室 - 殖民地主管办公室"
 
 // Bar & Entertainment Complex
 /area/lv759/indoors/bar
-	name = "Bar"
+	name = "酒吧"
 	icon_state = "bar"
 
 /area/lv759/indoors/bar/entertainment
-	name = "Bar - Entertainment Subsection"
+	name = "酒吧 - 娱乐分区"
 
 /area/lv759/indoors/bar/bathroom
-	name = "Bar - Restrooms"
+	name = "酒吧 - 洗手间"
 
 /area/lv759/indoors/bar/maintenance
-	name = "Bar - Maintenance"
+	name = "酒吧 - 维护区"
 
 /area/lv759/indoors/bar/kitchen
-	name = "Bar - Kitchen"
+	name = "酒吧 - 厨房"
 
 //Botany
 
@@ -510,19 +510,19 @@
 	minimap_color = MINIMAP_AREA_LIVING_CAVE
 
 /area/lv759/indoors/botany/botany_greenhouse
-	name = "Botany - Greenhouse"
+	name = "植物学 - 温室"
 	icon_state = "botany"
 
 /area/lv759/indoors/botany/botany_hallway
-	name = "Botany - Hallway"
+	name = "植物学 - 走廊"
 	icon_state = "botany"
 
 /area/lv759/indoors/botany/botany_maintenance
-	name = "Botany - Maintenance"
+	name = "植物学 - 维护"
 	icon_state = "botany"
 
 /area/lv759/indoors/botany/botany_mainroom
-	name = "Botany - Main Room"
+	name = "植物学 - 主室"
 	icon_state = "botany"
 
 // Hosptial
@@ -531,64 +531,64 @@
 	minimap_color = MINIMAP_AREA_MEDBAY
 
 /area/lv759/indoors/hospital/paramedics_garage
-	name = "Nova Medica Hospital Complex - Paramedic's Garage"
+	name = "新星医疗中心综合医院 - 救护车车库"
 
 /area/lv759/indoors/hospital/cryo_room
-	name = "Nova Medica Hospital Complex - Cryo Ward"
+	name = "诺瓦医疗中心综合医院 - 低温治疗区"
 
 /area/lv759/indoors/hospital/emergency_room
-	name = "Nova Medica Hospital Complex - Emergency Room"
+	name = "新星医疗中心 - 急诊室"
 
 /area/lv759/indoors/hospital/reception
-	name = "Nova Medica Hospital Complex - Reception"
+	name = "新星医疗中心 - 接待处"
 
 /area/lv759/indoors/hospital/cmo_office
-	name = "Nova Medica Hospital Complex - Chief Medical Officer's Office"
+	name = "诺瓦医疗中心 - 首席医疗官办公室"
 
 /area/lv759/indoors/hospital/maintenance
-	name = "Nova Medica Hospital Complex - Subspace Communications & Electrical Systems"
+	name = "新星医疗中心 - 子空间通讯与电力系统"
 
 /area/lv759/indoors/hospital/pharmacy
-	name = "Nova Medica Hospital Complex - Pharmacy & Outgoing Foyer"
+	name = "新星医疗中心综合楼 - 药房及出口大厅"
 
 /area/lv759/indoors/hospital/outgoing
-	name = "Nova Medica Hospital Complex - Outgoing Ward"
+	name = "诺瓦医疗中心医院综合体 - 出院病房"
 
 /area/lv759/indoors/hospital/central_hallway
-	name = "Nova Medica Hospital Complex - Central Hallway"
+	name = "诺瓦医疗医院综合体 - 中央走廊"
 
 /area/lv759/indoors/hospital/east_hallway
-	name = "Nova Medica Hospital Complex - East Hallway"
+	name = "新星医疗医院综合体 - 东侧走廊"
 
 /area/lv759/indoors/hospital/medical_storage
-	name = "Nova Medica Hospital Complex - Medical Storage"
+	name = "诺瓦医疗医院综合体 - 医疗储藏室"
 
 /area/lv759/indoors/hospital/operation
-	name = "Nova Medica Hospital Complex - Operation Theatres & Observation"
+	name = "诺瓦医疗中心医院综合体 - 手术室与观察区"
 
 /area/lv759/indoors/hospital/patient_ward
-	name = "Nova Medica Hospital Complex - Patient Ward"
+	name = "新星医疗中心 - 病房区"
 
 /area/lv759/indoors/hospital/virology
-	name = "Nova Medica Hospital Complex - Virology"
+	name = "诺瓦医疗医院综合体 - 病毒学部"
 
 /area/lv759/indoors/hospital/morgue
-	name = "Nova Medica Hospital Complex - Morgue"
+	name = "新星医疗中心综合医院 - 停尸间"
 
 /area/lv759/indoors/hospital/icu
-	name = "Nova Medica Hospital Complex - Intensive Care Ward"
+	name = "诺瓦医疗中心医院综合体 - 重症监护病房"
 
 /area/lv759/indoors/hospital/storage
-	name = "Nova Medica Hospital Complex - Storage Room"
+	name = "诺瓦医疗医院综合体 - 储藏室"
 
 /area/lv759/indoors/hospital/maintenance_north
-	name = "Nova Medica Hospital Complex - Maintenance North"
+	name = "新星医疗中心综合楼 - 北区维护通道"
 
 /area/lv759/indoors/hospital/maintenance_south
-	name = "Nova Medica Hospital Complex - Maintenance South"
+	name = "新星医疗中心综合楼 - 南侧维护区"
 
 /area/lv759/indoors/hospital/janitor
-	name = "Nova Medica Hospital Complex - Janitors Closet"
+	name = "新星医疗中心医院综合楼 - 清洁工储物间"
 
 // Mining
 
@@ -597,37 +597,37 @@
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/lv759/indoors/mining_outpost/north
-	name = "KMCC - Mining Outpost - North"
+	name = "KMCC - 采矿前哨站 - 北部"
 
 /area/lv759/indoors/mining_outpost/north_maint
-	name = "KMCC - Mining Outpost - North - Maintenance"
+	name = "KMCC - 采矿前哨站 - 北部 - 维护区"
 
 /area/lv759/indoors/mining_outpost/northeast
-	name = "KMCC - Mining Outpost - Northeast"
+	name = "KMCC - 采矿前哨站 - 东北部"
 
 /area/lv759/indoors/mining_outpost/south
-	name = "KMCC - Mining Outpost - South"
+	name = "KMCC - 采矿前哨站 - 南侧"
 
 /area/lv759/indoors/mining_outpost/vehicledeployment
-	name = "KMCC - Mining Vehicle Deployment South"
+	name = "KMCC - 采矿车部署 南侧"
 
 /area/lv759/indoors/mining_outpost/processing
-	name = "KMCC - Mining Processing & Storage"
+	name = "KMCC - 采矿处理与储存"
 
 /area/lv759/indoors/mining_outpost/east
-	name = "KMCC - Mining Outpost - East"
+	name = "KMCC - 采矿前哨站 - 东区"
 
 /area/lv759/indoors/mining_outpost/east_dorms
-	name = "KMCC - Mining Outpost - East Dorms"
+	name = "KMCC - 采矿前哨站 - 东部宿舍区"
 
 /area/lv759/indoors/mining_outpost/east_deploymentbay
-	name = "KMCC - Mining Outpost - East - Deployment Bay"
+	name = "KMCC - 采矿前哨站 - 东部 - 部署舱"
 
 /area/lv759/indoors/mining_outpost/east_command
-	name = "KMCC - Mining Outpost - East - Command Center"
+	name = "KMCC - 采矿前哨站 - 东部 - 指挥中心"
 
 /area/lv759/indoors/mining_outpost/cargo_maint
-	name = "KMCC - Mining Outpost - East - Maintenance"
+	name = "KMCC - 采矿前哨站 - 东区 - 维护区"
 
 // Electrical Substations
 /area/lv759/indoors/electical_systems
@@ -635,208 +635,208 @@
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/lv759/indoors/electical_systems/substation1
-	name = "Electrical Systems - Substation One - Control Room"
+	name = "电力系统 - 一号变电站 - 控制室"
 
 /area/lv759/indoors/electical_systems/substation2
-	name = "Electrical Systems - Substation Two"
+	name = "电力系统 - 二号变电站"
 
 /area/lv759/indoors/electical_systems/substation3
-	name = "Electrical Systems - Substation Three"
+	name = "电力系统 - 三号变电站"
 
 // Power-Plant (Engineering)
 /area/lv759/indoors/power_plant
-	name = "Nanotrasen DynaGrid Nexus - Central Hallway"
+	name = "纳米传讯动态网格枢纽 - 中央走廊"
 	icon_state = "power0"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/lv759/indoors/power_plant/south_hallway
-	name = "Nanotrasen DynaGrid Nexus - South Hallway"
+	name = "纳米传讯动力网格枢纽 - 南侧走廊"
 
 /area/lv759/indoors/power_plant/geothermal_generators
-	name = "Nanotrasen DynaGrid Nexus - Geothermal Generators Room"
+	name = "纳米传讯 DynaGrid 枢纽 - 地热发电机室"
 
 /area/lv759/indoors/power_plant/power_storage
-	name = "Nanotrasen DynaGrid Nexus - Power Storage Room"
+	name = "纳米传讯动力网格枢纽 - 能源储存室"
 
 /area/lv759/indoors/power_plant/transformers_north
-	name = "Nanotrasen DynaGrid Nexus - Transformers - North"
+	name = "纳米传讯动力网格枢纽 - 变压器 - 北侧"
 
 /area/lv759/indoors/power_plant/transformers_south
-	name = "Nanotrasen DynaGrid Nexus - Transformers - South"
+	name = "纳米传讯 DynaGrid 枢纽 - 变压器 - 南"
 
 /area/lv759/indoors/power_plant/gas_generators
-	name = "Nanotrasen DynaGrid Nexus - Gas Mixing & Storage "
+	name = "纳米传讯动态网格节点 - 气体混合与储存"
 
 /area/lv759/indoors/power_plant/fusion_generators
-	name = "Nanotrasen DynaGrid Nexus - Control Center"
+	name = "纳米传讯动态网格枢纽 - 控制中心"
 
 /area/lv759/indoors/power_plant/telecomms
 	icon_state = "comms_1"
-	name = "Nanotrasen DynaGrid Nexus - Telecommunications"
+	name = "纳米传讯动态网格枢纽 - 电信系统"
 
 /area/lv759/indoors/power_plant/workers_canteen
-	name = "Nanotrasen DynaGrid Nexus - Worker's Canteen"
+	name = "纳米传讯动力网格枢纽 - 员工餐厅"
 
 /area/lv759/indoors/power_plant/workers_canteen_kitchen
-	name = "Nanotrasen DynaGrid Nexus - Worker's Canteen - Kitchen"
+	name = "纳米传讯动力网格枢纽 - 员工食堂 - 厨房"
 
 /area/lv759/indoors/power_plant/equipment_east
-	name = "Nanotrasen DynaGrid Nexus - Equipment Storage Room - East"
+	name = "纳米传讯动态网格枢纽 - 装备储存室 - 东侧"
 
 /area/lv759/indoors/power_plant/equipment_west
-	name = "Nanotrasen DynaGrid Nexus - Equipment Storage Room - West"
+	name = "纳米传讯动力网格枢纽 - 装备储存室 - 西侧"
 
 // Marshalls
 /area/lv759/indoors/colonial_marshals
-	name = "CMB - Sentinel Outpost"
+	name = "CMB - 哨兵前哨站"
 	icon_state = "security_hub"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/lv759/indoors/colonial_marshals/prisoners_cells
-	name = "CMB - Sentinel Outpost - Maximum Security Ward - Cells"
+	name = "CMB - 哨兵前哨站 - 最高安全病房 - 牢房"
 
 /area/lv759/indoors/colonial_marshals/prisoners_foyer
-	name = "CMB - Sentinel Outpost - Maximum Security Ward - Foyer"
+	name = "CMB - 哨兵前哨站 - 最高安全病房 - 门厅"
 
 /area/lv759/indoors/colonial_marshals/prisoners_recreation_area
-	name = "CMB - Sentinel Outpost - Maximum Security Ward - Recreation Area & Shower Room"
+	name = "CMB - 哨兵前哨站 - 最高安全区 - 娱乐区与淋浴间"
 
 /area/lv759/indoors/colonial_marshals/garage
-	name = "CMB - Sentinel Outpost - Vehicle Deployment & Maintenace"
+	name = "CMB - 哨兵前哨站 - 载具部署与维护"
 
 /area/lv759/indoors/colonial_marshals/armory_foyer
-	name = "CMB - Sentinel Outpost - Armory Foyer"
+	name = "CMB - 哨兵前哨站 - 军械库门厅"
 
 /area/lv759/indoors/colonial_marshals/armory
-	name = "CMB - Sentinel Outpost - Armory"
+	name = "CMB - 哨兵前哨站 - 军械库"
 
 /area/lv759/indoors/colonial_marshals/armory_firingrange
-	name = "CMB - Sentinel Outpost - Firing Range"
+	name = "CMB - 哨兵前哨站 - 射击场"
 
 /area/lv759/indoors/colonial_marshals/armory_evidenceroom
-	name = "CMB - Sentinel Outpost - Evidence Room"
+	name = "CMB - 哨兵前哨站 - 证据室"
 
 /area/lv759/indoors/colonial_marshals/office
-	name = "CMB - Sentinel Outpost - Office"
+	name = "CMB - 哨兵前哨站 - 办公室"
 
 /area/lv759/indoors/colonial_marshals/reception
-	name = "CMB - Sentinel Outpost - Reception Office"
+	name = "CMB - 哨兵前哨站 - 接待处"
 
 /area/lv759/indoors/colonial_marshals/hallway_central
-	name = "CMB - Sentinel Outpost - Central Hallway"
+	name = "CMB - 哨兵前哨站 - 中央走廊"
 
 /area/lv759/indoors/colonial_marshals/hallway_south
-	name = "CMB - Sentinel Outpost - South Hallway"
+	name = "CMB - 哨兵前哨站 - 南走廊"
 
 /area/lv759/indoors/colonial_marshals/hallway_reception
-	name = "CMB - Sentinel Outpost - Reception Hallway"
+	name = "CMB - 哨兵前哨站 - 接待走廊"
 
 /area/lv759/indoors/colonial_marshals/hallway_north
-	name = "CMB - Sentinel Outpost - North Hallway"
+	name = "CMB - 哨兵前哨站 - 北走廊"
 
 /area/lv759/indoors/colonial_marshals/hallway_north_locker
-	name = "CMB - Sentinel Outpost - North Hallway - Locker Room"
+	name = "CMB - 哨兵前哨站 - 北走廊 - 更衣室"
 
 /area/lv759/indoors/colonial_marshals/holding_cells
-	name = "CMB - Sentinel Outpost - Holding Cells"
+	name = "CMB - 哨兵前哨站 - 拘留室"
 
 /area/lv759/indoors/colonial_marshals/head_office
-	name = "CMB - Sentinel Outpost - Forensics Office"
+	name = "CMB - 哨兵前哨站 - 法证办公室"
 
 /area/lv759/indoors/colonial_marshals/north_office
-	name = "CMB - Sentinel Outpost - North Office"
+	name = "CMB - 哨兵前哨站 - 北办公室"
 
 /area/lv759/indoors/colonial_marshals/wardens_office
-	name = "CMB - Sentinel Outpost - Wardens Office"
+	name = "CMB - 哨兵前哨站 - 典狱长办公室"
 
 /area/lv759/indoors/colonial_marshals/interrogation
-	name = "CMB - Sentinel Outpost - Interrogation"
+	name = "CMB - 哨兵前哨站 - 审讯"
 
 /area/lv759/indoors/colonial_marshals/press_room
-	name = "CMB - Sentinel Outpost - Court Room"
+	name = "CMB - 哨兵前哨站 - 法庭"
 
 /area/lv759/indoors/colonial_marshals/changing_room
-	name = "CMB - Sentinel Outpost - Changing Room"
+	name = "CMB - 哨兵前哨站 - 更衣室"
 
 /area/lv759/indoors/colonial_marshals/restroom
-	name = "CMB - Sentinel Outpost - Restroom & Showers"
+	name = "CMB - 哨兵前哨站 - 洗手间与淋浴间"
 
 /area/lv759/indoors/colonial_marshals/south_maintenance
-	name = "CMB - Sentinel Outpost - Maintenance - South"
+	name = "CMB - 哨兵前哨站 - 维护区 - 南侧"
 
 /area/lv759/indoors/colonial_marshals/north_maintenance
-	name = "CMB - Sentinel Outpost - Maintenance - North"
+	name = "CMB - 哨兵前哨站 - 维护区 - 北侧"
 
 /area/lv759/indoors/colonial_marshals/southwest_maintenance
-	name = "CMB - Sentinel Outpost - Maintenance - Southwest"
+	name = "CMB - 哨兵前哨站 - 维护区 - 西南"
 
 
 // Jack's Surplus
 /area/lv759/indoors/jacks_surplus
-	name = "Jack's Military Surplus"
+	name = "杰克军品店"
 	icon_state = "jacks"
 
 //Nanotrasen - Resource Recovery Facility
 /area/lv759/indoors/recycling_plant
-	name = "Nanotrasen - Resource Recovery Facility"
+	name = "纳米传讯 - 资源回收设施"
 	icon_state = "recycling"
 
 /area/lv759/indoors/recycling_plant/garage
-	name = "Nanotrasen - Resource Recovery Facility - Garage"
+	name = "纳米传讯 - 资源回收设施 - 车库"
 /area/lv759/indoors/recycling_plant/synthetic_storage
-	name = "Synthetic Storage"
+	name = "合成人存储室"
 	icon_state = "synthetic"
 
 /area/lv759/indoors/recycling_plant_office
-	name = "Nanotrasen - Resource Recovery Facility - Office"
+	name = "纳米传讯 - 资源回收设施 - 办公室"
 	icon_state = "recycling"
 
 /area/lv759/indoors/recycling_plant_waste_disposal_incinerator
-	name = "Nanotrasen - Resource Recovery Facility - Waste Disposal Incinerating Room"
+	name = "纳米传讯 - 资源回收设施 - 废物处理焚化室"
 	icon_state = "recycling"
 
 // Restrooms
 /area/lv759/indoors/south_public_restroom
-	name = "Public Restroom - South"
+	name = "公共卫生间 - 南侧"
 	icon_state = "restroom"
 
 /area/lv759/indoors/southwest_public_restroom
-	name = "Public Restroom - Southwest"
+	name = "公共卫生间 - 西南"
 	icon_state = "restroom"
 
 //Nightgold Casino
 /area/lv759/indoors/casino
-	name = "Night Gold Casino"
+	name = "夜金赌场"
 	icon_state = "nightgold"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/lv759/indoors/casino/casino_office
-	name = "Night Gold Casino - Managers Office"
+	name = "夜金赌场 - 经理办公室"
 	icon_state = "nightgold"
 
 /area/lv759/indoors/casino/casino_restroom
-	name = "Night Gold Casino - Restroom"
+	name = "夜金赌场 - 洗手间"
 	icon_state = "nightgold"
 
 /area/lv759/indoors/casino/casino_vault
-	name = "Night Gold Casino - Vault"
+	name = "夜金赌场 - 金库"
 	icon_state = "nightgold"
 
 // Pizza
 /area/lv759/indoors/pizzaria
-	name = "Pizza Galaxy - Outpost Zeta"
+	name = "披萨银河 - 泽塔前哨站"
 	icon_state = "pizza"
 	minimap_color = MINIMAP_AREA_CELL_MED
 
 //T-comms
 /area/lv759/indoors/tcomms_northwest
-	name = "Telecommunications Substation - Northwest"
+	name = "通信子站 - 西北区"
 	icon_state = "comms_1"
 	minimap_color = MINIMAP_AREA_ENGI
 
 // NTmart
 /area/lv759/indoors/NTmart
-	name = "NTmart"
+	name = "纳米传讯商店"
 	icon_state = "NTmart"
 	minimap_color = MINIMAP_AREA_CELL_MED
 	ambience = list('sound/effects/urban/indoors/weymart1.ogg',
@@ -846,11 +846,11 @@
 	)
 
 /area/lv759/indoors/NTmart/backrooms
-	name = "NTmart - Backrooms"
+	name = "NTmart - 后室"
 	icon_state = "NTmartbackrooms"
 
 /area/lv759/indoors/NTmart/maintenance
-	name = "NTmart - Maintenance"
+	name = "NTmart - 维护"
 	icon_state = "NTmartbackrooms"
 
 // NT Security Checkpoints
@@ -858,28 +858,28 @@
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/lv759/indoors/nt_security/checkpoint_northeast
-	name = "Nanotrasen Security Checkpoint - North East"
+	name = "纳米传讯安全检查站 - 东北"
 	icon_state = "security_checkpoint_northeast"
 
 /area/lv759/indoors/nt_security/checkpoint_east
-	name = "Nanotrasen Security Checkpoint - East"
+	name = "纳米传讯安全检查站 - 东侧"
 	icon_state = "security_checkpoint_east"
 
 /area/lv759/indoors/nt_security/checkpoint_central
-	name = "Nanotrasen Security Checkpoint - Central"
+	name = "纳米传讯安全检查点 - 中央"
 	icon_state = "security_checkpoint_central"
 
 /area/lv759/indoors/nt_security/checkpoint_west
-	name = "Nanotrasen Security Checkpoint - West"
+	name = "纳米传讯安全检查站 - 西侧"
 	icon_state = "security_checkpoint_west"
 
 /area/lv759/indoors/nt_security/checkpoint_northwest
-	name = "Nanotrasen Security Checkpoint - North West"
+	name = "纳米传讯安全检查站 - 西北"
 	icon_state = "security_checkpoint_northwest"
 
 // Misc
 /area/lv759/indoors/hobosecret
-	name = "Hidden Hobo Haven"
+	name = "隐藏的流浪者庇护所"
 	icon_state = "hobo"
 	ceiling = CEILING_METAL
 	always_unpowered = TRUE
@@ -887,117 +887,117 @@
 // Nanotrasen Advanced Bio-Genomic Research Complex
 
 /area/lv759/indoors/nt_research_complex
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex"
+	name = "纳米传讯 - 高级生化基因组研究综合体"
 	icon_state = "wylab"
 	minimap_color = MINIMAP_AREA_CAVES
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 	ambience = list('sound/effects/urban/indoors/lab_ambience.ogg')
 
 /area/lv759/indoors/nt_research_complex/medical_annex
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Medical Annex Building"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 医疗附属建筑"
 	minimap_color = MINIMAP_AREA_MEDBAY_CAVE
 
 /area/lv759/indoors/nt_research_complex/reception
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Reception & Administration"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 接待与行政"
 
 /area/lv759/indoors/nt_research_complex/cargo
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Requisitions & Cargo"
+	name = "纳米传讯 - 高级生物基因组研究综合体 - 补给与货运"
 	minimap_color = MINIMAP_AREA_REQ_CAVE
 
 /area/lv759/indoors/nt_research_complex/researchanddevelopment
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Technology Research & Development Lab"
+	name = "纳米传讯 - 先进生化基因组研究综合体 - 技术研发实验室"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
 /area/lv759/indoors/nt_research_complex/mainlabs
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Advanced Chemical Testing & Research Lab"
+	name = "纳米传讯 - 高级生物基因组研究综合体 - 高级化学测试与研究实验室"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
 /area/lv759/indoors/nt_research_complex/xenobiology
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Advanced Xenobiology Lab"
+	name = "纳米传讯 - 高级生物基因组研究综合体 - 高级异形生物学实验室"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 	ambience = list('sound/effects/urban/indoors/lab_ambience_2.ogg')
 
 /area/lv759/indoors/nt_research_complex/weaponresearchlab
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Advanced Weapon Research Lab"
+	name = "纳米传讯 - 高级生物基因组研究综合体 - 高级武器研究实验室"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
 /area/lv759/indoors/nt_research_complex/weaponresearchlabtesting
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Advanced Weapon Research Lab - Weapons Testing Range"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 高级武器研究实验室 - 武器测试靶场"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
 /area/lv759/indoors/nt_research_complex/xenoarcheology
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Xenoarcheology Research Lab"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 异形考古学研究实验室"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
 /area/lv759/indoors/nt_research_complex/vehicledeploymentbay
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Vehicle Deployment & Maintenance Bay"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 载具部署与维护舱"
 	minimap_color = MINIMAP_AREA_REQ_CAVE
 
 /area/lv759/indoors/nt_research_complex/janitor
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Janitorial Supplies Storage"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 清洁用品储藏室"
 	minimap_color = MINIMAP_AREA_LIVING_CAVE
 
 /area/lv759/indoors/nt_research_complex/cafeteria
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Cafeteria"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 食堂"
 	minimap_color = MINIMAP_AREA_LIVING_CAVE
 
 /area/lv759/indoors/nt_research_complex/cafeteriakitchen
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Cafeteria - Kitchen"
+	name = "纳米传讯 - 先进生化基因组研究综合体 - 食堂 - 厨房"
 	minimap_color = MINIMAP_AREA_LIVING_CAVE
 
 /area/lv759/indoors/nt_research_complex/dormsfoyer
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Dorms Foyer"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 宿舍前厅"
 	minimap_color = MINIMAP_AREA_LIVING_CAVE
 
 /area/lv759/indoors/nt_research_complex/dormsbedroom
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Dorms"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 宿舍区"
 	minimap_color = MINIMAP_AREA_LIVING_CAVE
 
 /area/lv759/indoors/nt_research_complex/securitycommand
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Security Command Center & Deployment"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 安全指挥中心与部署区"
 	minimap_color = MINIMAP_AREA_SEC_CAVE
 
 /area/lv759/indoors/nt_research_complex/securityarmory
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Armory"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 军械库"
 	minimap_color = MINIMAP_AREA_SEC_CAVE
 
 /area/lv759/indoors/nt_research_complex/hangarbay
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Hangar Bay"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 机库区"
 	minimap_color = MINIMAP_AREA_ESCAPE_CAVE
 	ambience = list('sound/effects/urban/indoors/lab_ambience_hallway.ogg')
 
 /area/lv759/indoors/nt_research_complex/hangarbayshuttle
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Hangar Bay - Nanotrasen PMC ERT Shuttle"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 机库区 - 纳米传讯PMC紧急响应小组穿梭机"
 	minimap_color = MINIMAP_AREA_ESCAPE_CAVE
 	ambience = list('sound/effects/urban/indoors/lab_ambience_hallway.ogg')
 
 /area/lv759/indoors/nt_research_complex/hallwaynorth
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Technology Research & Development Lab"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 技术研发实验室"
 	ambience = list('sound/effects/urban/indoors/lab_ambience_hallway.ogg')
 
 /area/lv759/indoors/nt_research_complex/hallwaynorthexit
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - North Hallway - Personnel Exit East"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 北走廊 - 人员出口东侧"
 	ambience = list('sound/effects/urban/indoors/lab_ambience_hallway.ogg')
 
 /area/lv759/indoors/nt_research_complex/hallwayeast
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Hallway East"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 东侧走廊"
 	ambience = list('sound/effects/urban/indoors/lab_ambience_hallway.ogg')
 
 /area/lv759/indoors/nt_research_complex/hallwaycentral
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Central Hallway"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 中央走廊"
 	ambience = list('sound/effects/urban/indoors/lab_ambience_hallway.ogg')
 
 /area/lv759/indoors/nt_research_complex/hallwaysouthwest
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - South West Hallway"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 西南走廊"
 	ambience = list('sound/effects/urban/indoors/lab_ambience_hallway.ogg')
 
 /area/lv759/indoors/nt_research_complex/hallwaysoutheast
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - South East Hallway"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 东南走廊"
 	ambience = list('sound/effects/urban/indoors/lab_ambience_hallway.ogg')
 
 /area/lv759/indoors/nt_research_complex/southeastexit
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - South East Maintenace & Emergency Exit"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 东南维护与紧急出口"
 
 /area/lv759/indoors/nt_research_complex/changingroom
-	name = "Nanotrasen - Advanced Bio-Genomic Research Complex - Locker Room"
+	name = "纳米传讯 - 高级生化基因组研究综合体 - 更衣室"
 	minimap_color = MINIMAP_AREA_LIVING_CAVE

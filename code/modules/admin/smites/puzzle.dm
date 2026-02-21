@@ -1,15 +1,15 @@
 /// Turns the user into a sliding puzzle
 /datum/smite/puzzle
-	name = "Puzzle"
+	name = "谜题"
 
 /datum/smite/puzzle/effect(client/user, mob/living/target)
 	. = ..()
 	if(!puzzle_imprison(target))
-		to_chat(user, span_warning("Imprisonment failed!"), confidential = TRUE)
+		to_chat(user, span_warning("监禁失败！"), confidential = TRUE)
 
 
 /obj/effect/sliding_puzzle
-	name = "Sliding puzzle generator"
+	name = "滑动拼图生成器"
 	icon = 'icons/obj/items/toy.dmi' //mapping
 	icon_state = "waterballoon-e"
 	invisibility = INVISIBILITY_ABSTRACT
@@ -205,8 +205,8 @@
 		make_solvable()
 
 /obj/structure/puzzle_element
-	name = "mysterious pillar"
-	desc = "puzzling..."
+	name = "神秘支柱"
+	desc = "令人费解..."
 	icon = 'icons/obj/artefacts.dmi'
 	icon_state = "puzzle_pillar"
 	anchored = FALSE
@@ -283,7 +283,7 @@
 
 /obj/effect/sliding_puzzle/prison/Destroy()
 	if(prisoner)
-		to_chat(prisoner,span_userdanger("With the cube broken by force, you can feel your body falling apart."))
+		to_chat(prisoner,span_userdanger("随着立方体被强行打破，你能感觉到自己的身体正在分崩离析。"))
 		prisoner.death()
 		qdel(prisoner)
 	. = ..()
@@ -310,7 +310,7 @@
 	//First grab the prisoner and move them temporarily into the generator so they won't get thrown around.
 	prisoner.notransform = TRUE
 	prisoner.forceMove(cube)
-	to_chat(prisoner,span_userdanger("You're trapped by the prison cube! You will remain trapped until someone solves it."))
+	to_chat(prisoner,span_userdanger("你被困在囚禁魔方里了！在有人解开它之前，你都将被困在其中。"))
 
 	//Clear the area from objects (and cube user)
 	var/list/things_to_throw = list()

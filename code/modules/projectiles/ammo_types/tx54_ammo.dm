@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/tx54
-	name = "20mm airburst grenade"
+	name = "20毫米空爆手雷"
 	icon_state = "20mm_flight"
 	hud_state = "grenade_airburst"
 	hud_state_empty = "grenade_empty"
@@ -56,7 +56,7 @@
 	fire_directionalburst(proj, proj.firer, proj.shot_from, bonus_projectile_quantity, Get_Angle(proj.starting_turf, target_turf), loc_override = det_turf)
 
 /datum/ammo/tx54/incendiary
-	name = "20mm incendiary grenade"
+	name = "20毫米燃烧手雷"
 	hud_state = "grenade_fire"
 	bonus_projectiles_type = /datum/ammo/bullet/tx54_spread/incendiary
 	bullet_color = LIGHT_COLOR_FIRE
@@ -64,7 +64,7 @@
 	projectile_greyscale_colors = COLOR_AMMO_INCENDIARY
 
 /datum/ammo/tx54/smoke
-	name = "20mm tactical smoke grenade"
+	name = "20毫米战术烟雾手雷"
 	hud_state = "grenade_hide"
 	bonus_projectiles_type = /datum/ammo/bullet/tx54_spread/smoke
 	bonus_projectiles_scatter = 24
@@ -73,28 +73,28 @@
 	projectile_greyscale_colors = COLOR_AMMO_TACTICAL_SMOKE
 
 /datum/ammo/tx54/smoke/dense
-	name = "20mm smoke grenade"
+	name = "20毫米烟雾手雷"
 	hud_state = "grenade_smoke"
 	bonus_projectiles_type = /datum/ammo/bullet/tx54_spread/smoke/dense
 	handful_greyscale_colors = COLOR_AMMO_SMOKE
 	projectile_greyscale_colors = COLOR_AMMO_SMOKE
 
 /datum/ammo/tx54/smoke/tangle
-	name = "20mm tanglefoot grenade"
+	name = "20毫米缠足手雷"
 	hud_state = "grenade_drain"
 	bonus_projectiles_type = /datum/ammo/bullet/tx54_spread/smoke/tangle
 	handful_greyscale_colors = COLOR_AMMO_TANGLEFOOT
 	projectile_greyscale_colors = COLOR_AMMO_TANGLEFOOT
 
 /datum/ammo/tx54/smoke/acid
-	name = "20mm acid grenade"
+	name = "20毫米酸液手雷"
 	hud_state = "grenade_acid"
 	bonus_projectiles_type = /datum/ammo/bullet/tx54_spread/smoke/acid
 	handful_greyscale_colors = COLOR_AMMO_ACID
 	projectile_greyscale_colors = COLOR_AMMO_ACID
 
 /datum/ammo/tx54/razor
-	name = "20mm razorburn grenade"
+	name = "20毫米剃刀燃烧手雷"
 	hud_state = "grenade_razor"
 	bonus_projectiles_type = /datum/ammo/bullet/tx54_spread/razor
 	bonus_projectiles_scatter = 50
@@ -103,7 +103,7 @@
 	projectile_greyscale_colors = COLOR_AMMO_RAZORBURN
 
 /datum/ammo/tx54/he
-	name = "20mm HE grenade"
+	name = "20毫米高爆手雷"
 	hud_state = "grenade_he"
 	bonus_projectiles_type = null
 	max_range = 12
@@ -127,7 +127,7 @@
 
 //The secondary projectiles
 /datum/ammo/bullet/tx54_spread
-	name = "Shrapnel"
+	name = "破片"
 	icon_state = "flechette"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOB
 	accuracy_variation = 5
@@ -142,7 +142,7 @@
 	staggerstun(target_mob, proj, max_range = 3, stagger = 0.6 SECONDS, slowdown = 0.3)
 
 /datum/ammo/bullet/tx54_spread/incendiary
-	name = "incendiary flechette"
+	name = "燃烧霰弹"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOB|AMMO_INCENDIARY|AMMO_LEAVE_TURF
 	damage = 15
 	penetration = 10
@@ -160,7 +160,7 @@
 	drop_flame(target_turf)
 
 /datum/ammo/bullet/tx54_spread/smoke
-	name = "chemical bomblet"
+	name = "化学爆炸弹"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOB|AMMO_LEAVE_TURF
 	max_range = 3
 	damage = 5
@@ -197,7 +197,7 @@
 	trail_spread_system = /datum/effect_system/smoke_spread/xeno/acid
 
 /datum/ammo/bullet/tx54_spread/razor
-	name = "chemical bomblet"
+	name = "化学爆炸弹"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOB|AMMO_LEAVE_TURF
 	max_range = 4
 	damage = 5
@@ -230,7 +230,7 @@
 
 
 /datum/ammo/tx54/tank_canister
-	name = "canister"
+	name = "储气罐"
 	icon_state = "canister_shot"
 	damage = 30
 	penetration = 0
@@ -243,7 +243,7 @@
 	bonus_projectile_quantity = 12
 
 /datum/ammo/bullet/tx54_spread/tank_canister
-	name = "canister shot"
+	name = "霰弹"
 	icon_state = "flechette"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOB
 	max_range = 12
@@ -269,7 +269,7 @@
 	reflect(target_turf, proj, 5)
 
 /datum/ammo/tx54/tank_canister/incendiary
-	name = "incendiary canister"
+	name = "燃烧弹罐"
 	icon_state = "canister_shot"
 	hud_state = "grenade_fire"
 	projectile_greyscale_colors = "#5f2702"
@@ -278,7 +278,7 @@
 	bonus_projectile_quantity = 12
 
 /datum/ammo/bullet/tx54_spread/tank_canister/incendiary
-	name = "incendiary canister shot"
+	name = "燃烧弹罐装弹"
 	ammo_behavior_flags = parent_type::ammo_behavior_flags|AMMO_INCENDIARY|AMMO_LEAVE_TURF
 	bullet_color = COLOR_LIGHT_ORANGE
 	damage = 25

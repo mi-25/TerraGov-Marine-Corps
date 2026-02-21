@@ -2,8 +2,8 @@
 
 //Vali Sword
 /obj/item/weapon/sword/harvester
-	name = "\improper HP-S Harvester blade"
-	desc = "TerraGov Marine Corps' experimental High Point-Singularity 'Harvester' blade. An advanced weapon that trades sheer force for the ability to apply a variety of debilitating effects when loaded with certain reagents. Activate after loading to prime a single use of an effect. It also harvests substances from alien lifeforms it strikes when connected to the Vali system."
+	name = "\improper HP-S 收割者刀片"
+	desc = "地球政府殖民地海军陆战队实验型高能点-奇点'收割者'刃。一种先进武器，牺牲纯粹力量以换取装载特定试剂时施加多种削弱效果的能力。装载后激活以准备单次效果使用。当连接至瓦利系统时，它还能从击中的外星生命体中采集物质。"
 	icon = 'icons/obj/items/weapons/vali.dmi'
 	icon_state = "vali_sword"
 	worn_icon_list = list(
@@ -29,8 +29,8 @@
 
 //Vali Knife
 /obj/item/weapon/combat_knife/harvester
-	name = "\improper HP-S Harvester knife"
-	desc = "TerraGov Marine Corps' experimental High Point-Singularity 'Harvester' knife. An advanced version of the HP-S Harvester blade, shrunken down to the size of the standard issue boot knife. It trades the harvester blades size and power for a smaller form, with the side effect of a miniscule chemical storage, yet it still keeps its ability to apply debilitating effects to its targets. Activate after loading to prime a single use of an effect. It also harvests substances from alien lifeforms it strikes when connected to the Vali system."
+	name = "\improper HP-S 收割者匕首"
+	desc = "地球政府殖民地海军陆战队实验型高能点-奇点'收割者'匕首。HP-S收割者刀片的高级版本，缩小至标准配发靴刀尺寸。它以收割者刀片的尺寸和威力为代价换取更小的形态，附带副作用是化学储存容量极小，但仍保留对目标施加虚弱效果的能力。装载后激活以准备单次效果使用。当连接至瓦利系统时，它还能从击中的外星生命体中采集物质。"
 	icon = 'icons/obj/items/weapons/vali.dmi'
 	icon_state = "vali_knife"
 	worn_icon_list = list(
@@ -61,8 +61,8 @@
 
 //Vali Spear
 /obj/item/weapon/twohanded/spear/tactical/harvester
-	name = "\improper HP-S Harvester spear"
-	desc = "TerraGov Marine Corps' experimental High Point-Singularity 'Harvester' spear. An advanced weapon that trades sheer force for the ability to apply a variety of debilitating effects when loaded with certain reagents. Activate after loading to prime a single use of an effect. It also harvests substances from alien lifeforms it strikes when connected to the Vali system."
+	name = "\improper HP-S 收割者长矛"
+	desc = "地球政府殖民地海军陆战队实验型高指向性奇点'收割者'长矛。一种先进武器，牺牲纯粹力量以换取装载特定试剂时施加多种削弱效果的能力。装载后激活以准备单次效果使用。当连接至瓦利系统时，它还能从击中的外星生命体中采集物质。"
 	icon = 'icons/obj/items/weapons/vali.dmi'
 	icon_state = "vali_spear"
 	worn_icon_list = list(
@@ -80,8 +80,8 @@
 
 //Vali Claymore (That thing was too big to be called a sword. Too big, too thick, too heavy, and too rough, it was more like a large hunk of iron.)
 /obj/item/weapon/twohanded/glaive/harvester
-	name = "\improper HP-S Harvester claymore"
-	desc = "TerraGov Marine Corps' experimental High Point-Singularity 'Harvester' blade. An advanced weapon that trades sheer force for the ability to apply a variety of debilitating effects when loaded with certain reagents. Activate after loading to prime a single use of an effect. It also harvests substances from alien lifeforms it strikes when connected to the Vali system. This specific version is enlarged to fit the design of an old world claymore. Simply squeeze the hilt to activate."
+	name = "\improper HP-S 收割者阔剑"
+	desc = "地球政府殖民地海军陆战队实验型高能点-奇点'收割者'刃。一种先进武器，牺牲纯粹力量以换取装载特定试剂时施加多种削弱效果的能力。装载后激活以准备单次效果使用。当连接到瓦利系统时，它还能从击中的外星生命体中采集物质。此特定版本经过放大以适应旧世界阔剑的设计。只需握紧剑柄即可激活。"
 	icon = 'icons/obj/items/weapons/vali.dmi'
 	icon_state = "vali_claymore"
 	worn_icon_list = list(

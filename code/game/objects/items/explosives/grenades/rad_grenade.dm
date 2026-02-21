@@ -1,6 +1,6 @@
 /obj/item/explosive/grenade/rad
-	name = "\improper V-40 rad grenade"
-	desc = "Rad grenades release an extremely potent but short lived burst of radiation, debilitating organic life and frying electronics in a moderate radius. After the initial detonation, the radioactive effects linger for a time. Handle with extreme care."
+	name = "\improper V-40辐射手雷"
+	desc = "辐射手雷会释放出极其强烈但短暂的辐射脉冲，在中等半径范围内削弱有机生命体并烧毁电子设备。在初始爆炸后，放射性效应会持续一段时间。请极其小心地处理。"
 	icon_state = "grenade_rad"
 	worn_icon_state = "grenade_rad"
 	icon_state_mini = "grenade_red"

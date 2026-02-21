@@ -1,6 +1,6 @@
 /obj/item/weapon/twohanded/fireaxe/som
-	name = "boarding axe"
-	desc = "A SOM boarding axe, effective at breaching doors as well as skulls. When wielded it can be used to block as well as attack."
+	name = "登舰斧"
+	desc = "一把火星之子登舰斧，既能破门也能破颅。持握时可用于格挡和攻击。"
 	icon = 'icons/obj/items/weapons/64x64.dmi'
 	icon_state = "som_axe"
 	worn_icon_list = list(
@@ -46,9 +46,9 @@
 
 //Special attack
 /datum/action/ability/activable/weapon_skill/axe_sweep
-	name = "Sweeping blow"
+	name = "横扫打击"
 	action_icon_state = "axe_sweep"
-	desc = "A powerful sweeping blow that hits foes in the direction you are facing. Cannot stun."
+	desc = "一记强力的横扫攻击，能击中你面对方向上的敌人。无法造成眩晕。"
 	ability_cost = 10
 	cooldown_duration = 6 SECONDS
 	keybinding_signals = list(
@@ -70,7 +70,7 @@
 	carbon_owner.face_atom(A)
 	activate_particles(owner.dir)
 	playsound(owner, 'sound/effects/alien/tail_swipe3.ogg', 50, 0, 5)
-	owner.visible_message(span_danger("[owner] Swing their weapon in a deadly arc!"))
+	owner.visible_message(span_danger("[owner] 挥舞着武器划出一道致命的弧线！"))
 
 	var/list/atom/movable/atoms_to_ravage = get_step(owner, owner.dir).contents.Copy()
 	atoms_to_ravage += get_step(owner, turn(owner.dir, -45)).contents

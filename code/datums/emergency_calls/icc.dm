@@ -1,16 +1,16 @@
 // ICC
 /datum/emergency_call/icc
-	name = "Independent Colonial Confederation Squad"
+	name = "独立殖民地联盟小队"
 	base_probability = 26
 	alignement_factor = 0
 
 /datum/emergency_call/icc/print_backstory(mob/living/carbon/human/H)
-	to_chat(H, "<B>You are part of the Independent Colonial Confederation Armed Forces (ICCAF), formed by the ICC, a group of former generation ship colonies which have banded together to form economic and military alliances against their much larger neighbor TerraGov.</b>")
-	to_chat(H, "<B>Even though the ICC has its own standing army independent of its members, most larger members retain their own standing fleet and army, with their own equipment and doctrines, the standard force is known for being consistently underfunded and manned.</b>")
-	to_chat(H, "<B>Due to this a large portion of ship personnel end up serving as adhoc ground personnel, however actual Infantrymen which are better known as 'Guardsmen' are well known for being high quality troops.</b>")
+	to_chat(H, "<B>你是独立殖民地邦联武装力量（ICCAF）的一员，该组织由ICC组建，这是一个由前世代飞船殖民地组成的团体，它们联合起来建立了经济和军事联盟，以对抗其规模大得多的邻国地球政府。</b>")
+	to_chat(H, "<B>尽管星际商业委员会拥有独立于其成员国的常备军，但大多数较大的成员国仍保留着自己的常备舰队和陆军，配备各自的装备和作战条令，而标准部队则因长期资金和人员不足而闻名。</b>")
+	to_chat(H, "<B>因此，舰船人员中有很大一部分最终会作为临时地面人员服役，然而，被称为'卫兵'的真正步兵则以高素质部队而闻名。</b>")
 	to_chat(H, "")
-	to_chat(H, "<B>Today, a TerraGov vessel, [SSmapping.configs[SHIP_MAP].map_name], has sent out a distress signal on the orbit of [SSmapping.configs[GROUND_MAP].map_name]. This is our chance to attack without being intercepted!</b>")
-	to_chat(H, "<B>Eliminate the TerraGov personnel onboard, capture the ship. If there are fellow ICC contingents such as the SoM, then work with them in this goal. Take no prisoners.</B>")
+	to_chat(H, "<B>今天，一艘地球政府飞船，[SSmapping.configs[SHIP_MAP].map_name]，已在[SSmapping.configs[GROUND_MAP].map_name]轨道上发出求救信号。这是我们发动攻击而不被拦截的机会！</b>")
+	to_chat(H, "<B>消灭船上的地球政府人员，夺取舰船。如有火星之子等国际商会特遣队，则在此目标上与他们合作。不留俘虏。</B>")
 
 /datum/emergency_call/icc/create_member(datum/mind/M)
 	. = ..()
@@ -32,13 +32,13 @@
 		leader = H
 		var/datum/job/J = SSjob.GetJobType(/datum/job/icc/leader)
 		H.apply_assigned_role_to_spawn(J)
-		to_chat(H, "<p style='font-size:1.5em'><span class='notice'>You are the ICC Squad Leader assigned to lead this group in responding to the TGMC distress signal sent nearby. Keep your team in one piece, take over this vessel and get the job done!</notice></p>")
+		to_chat(H, "<p style='font-size:1.5em'><span class='notice'>你是被指派带领这支小队响应附近TGMC求救信号的ICC班长。保持你的团队完整，接管这艘船并完成任务！</span></p>")
 		return
 
 	if(medics < max_medics)
 		var/datum/job/J = SSjob.GetJobType(/datum/job/icc/medic)
 		H.apply_assigned_role_to_spawn(J)
-		to_chat(H, "<p style='font-size:1.5em'><span class='notice'>You an ICCN Medic assigned to make sure this group of people don't die while responding to the TGMC distress signal sent nearby. Keep your team in one piece, take over this vessel and get the job done!</notice></p>")
+		to_chat(H, "<p style='font-size:1.5em'><span class='notice'>你是一名ICCN医疗兵，负责确保这群人在响应附近发出的TGMC求救信号时不会死亡。让你的团队保持完整，接管这艘船，完成任务！</span></p>")
 		medics++
 		return
 
@@ -51,4 +51,4 @@
 
 	var/datum/job/J = SSjob.GetJobType(/datum/job/icc/standard)
 	H.apply_assigned_role_to_spawn(J)
-	to_chat(H, "<p style='font-size:1.5em'><span class='notice'>You are a trained member of the ICCN, you have been assigned to this squad directed to investigate the TGMC distress signal sent nearby. Don't let you and your team's guard down!</notice></p>")
+	to_chat(H, "<p style='font-size:1.5em'><span class='notice'>你是一名训练有素的ICCN成员，你被指派到这个小队，任务是调查附近发出的地球政府殖民地海军陆战队求救信号。不要让你和你的团队放松警惕！</notice></p>")

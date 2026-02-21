@@ -7,7 +7,7 @@
 	H.real_name = H.name
 
 /datum/outfit/job/skeleton/basic
-	name = "Skeleton Man"
+	name = "骷髅人"
 	jobtype = /datum/job/skeleton/basic
 
 	id = /obj/item/card/id
@@ -22,7 +22,7 @@
 	l_hand = /obj/item/reagent_containers/food/drinks/milk
 
 /datum/outfit/job/skeleton/leader
-	name = "Skeleton Commander"
+	name = "骷髅指挥官"
 	jobtype = /datum/job/skeleton/leader
 
 	id = /obj/item/card/id

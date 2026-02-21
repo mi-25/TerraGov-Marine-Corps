@@ -6,7 +6,7 @@
 
 /datum/action/ability/xeno_action/empower
 	name = "Empower"
-	desc = "You can be empowered by a primordial drone link."
+	desc = "你可以通过原始形态工蜂链接获得强化。"
 	/// Holds the fade-out timer.
 	var/fade_timer
 	/// The amount of abilities we've chained together.
@@ -82,7 +82,7 @@
 
 /datum/action/ability/xeno_action/toggle_agility/New(Target)
 	. = ..()
-	desc = "Move on all fours and loosen our scales. Increases movement speed by [abs(speed_modifier)], but reduces all soft armor by [armor_modifier]. Automatically disabled after using an ability."
+	desc = "四肢着地移动，放松鳞片。移动速度提升[abs(speed_modifier)]，但所有软质护甲降低[armor_modifier]。使用能力后自动关闭。"
 
 /datum/action/ability/xeno_action/toggle_agility/action_activate()
 	GLOB.round_statistics.warrior_agility_toggles++
@@ -207,10 +207,10 @@
 
 /datum/action/ability/activable/xeno/warrior/lunge/New(Target)
 	. = ..()
-	desc = "Lunge towards a target within [starting_lunge_distance] tiles, putting them in our grasp. Usable on allies and targets directly behind cover."
+	desc = "向 [starting_lunge_distance] 格范围内的目标发起突刺，将其擒入掌控。可用于友军和直接处于掩体后的目标。"
 
 /datum/action/ability/activable/xeno/warrior/lunge/on_cooldown_finish()
-	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] ready")
+	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] 就绪")
 	return ..()
 
 /datum/action/ability/activable/xeno/warrior/lunge/can_use_ability(atom/A, silent = FALSE, override_flags)
@@ -219,16 +219,16 @@
 		return FALSE
 	if(!isliving(A))
 		if(!silent)
-			owner.balloon_alert(owner, "Invalid target")
+			owner.balloon_alert(owner, "无效目标")
 		return FALSE
 	var/mob/living/living_target = A
 	if(living_target.stat == DEAD && !living_target.issamexenohive(owner))
 		if(!silent)
-			owner.balloon_alert(owner, "Dead")
+			owner.balloon_alert(owner, "死亡")
 		return FALSE
 	if(get_dist_euclidean(living_target, owner) > starting_lunge_distance)
 		if(!silent)
-			owner.balloon_alert(owner, "Too far")
+			owner.balloon_alert(owner, "距离过远")
 		return FALSE
 
 /datum/action/ability/activable/xeno/warrior/lunge/use_ability(atom/A)
@@ -274,7 +274,7 @@
 		living_target.resistance_flags |= RESTRAINED_NECKGRAB
 		living_target.drop_all_held_items()
 		living_target.Paralyze(0.1 SECONDS)
-		living_target.balloon_alert(xeno_owner, "Grabbed [living_target]")
+		living_target.balloon_alert(xeno_owner, "抓住了[living_target]")
 
 	xeno_owner.swap_hand()
 	var/datum/action/ability/xeno_action/empower/empower_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/empower]
@@ -321,7 +321,7 @@
 
 /datum/action/ability/activable/xeno/warrior/fling/New(Target)
 	. = ..()
-	desc = "Send a target flying up to [starting_fling_distance] tiles away. Distance reduced for bigger targets. Usable on allies."
+	desc = "将目标甩投至最多 [starting_fling_distance] 格远。对体型较大的目标距离会缩短。可对友方使用。"
 
 /datum/action/ability/activable/xeno/warrior/fling/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
@@ -331,16 +331,16 @@
 		return FALSE
 	if(!isliving(A))
 		if(!silent)
-			owner.balloon_alert(owner, "Invalid target")
+			owner.balloon_alert(owner, "无效目标")
 		return FALSE
 	var/mob/living/living_target = A
 	if(living_target.stat == DEAD && !living_target.issamexenohive(owner))
 		if(!silent)
-			owner.balloon_alert(owner, "Dead")
+			owner.balloon_alert(owner, "死亡")
 		return FALSE
 	if(!living_target.Adjacent(owner))
 		if(!silent)
-			owner.balloon_alert(owner, "Not adjacent")
+			owner.balloon_alert(owner, "未相邻")
 		return FALSE
 
 /datum/action/ability/activable/xeno/warrior/fling/use_ability(atom/A)
@@ -413,7 +413,7 @@
 
 /datum/action/ability/activable/xeno/warrior/grapple_toss/New(Target)
 	. = ..()
-	desc = "Throw a creature under our grasp up to [starting_toss_distance] tiles away. Distance reduced on larger targets. Usable on allies."
+	desc = "将我们掌控下的生物抛掷至最多 [starting_toss_distance] 格远。目标体型越大，抛掷距离越短。可对友方单位使用。"
 
 /datum/action/ability/activable/xeno/warrior/grapple_toss/on_cooldown_finish()
 	var/datum/action/ability/activable/xeno/warrior/fling/fling_action = xeno_owner.actions_by_path[/datum/action/ability/activable/xeno/warrior/fling]
@@ -426,11 +426,11 @@
 		return FALSE
 	if(!owner.pulling)
 		if(!silent)
-			owner.balloon_alert(owner, "Nothing to toss")
+			owner.balloon_alert(owner, "无可投掷")
 		return FALSE
 	if(!owner.Adjacent(owner.pulling))
 		if(!silent)
-			owner.balloon_alert(owner, "Target not adjacent")
+			owner.balloon_alert(owner, "目标不在相邻位置")
 		return FALSE
 
 /datum/action/ability/activable/xeno/warrior/grapple_toss/use_ability(atom/A)
@@ -484,7 +484,7 @@
 	name = "Punch"
 	action_icon_state = "punch"
 	action_icon = 'icons/Xeno/actions/warrior.dmi'
-	desc = "Strike a target, inflicting stamina damage, stagger and slowdown. Deals double damage, stagger and slowdown to grappled targets. Deals quadruple damage to structures and machinery."
+	desc = "攻击目标，造成耐力伤害、踉跄和减速。对被擒抱目标造成双倍伤害、踉跄和减速。对结构和机械造成四倍伤害。"
 	ability_cost = 15
 	cooldown_duration = 10 SECONDS
 	keybinding_signals = list(
@@ -493,7 +493,7 @@
 	target_flags = ABILITY_MOB_TARGET
 
 /datum/action/ability/activable/xeno/warrior/punch/on_cooldown_finish()
-	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] ready")
+	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] 准备就绪")
 	return ..()
 
 /datum/action/ability/activable/xeno/warrior/punch/can_use_ability(atom/A, silent = FALSE, override_flags)
@@ -502,25 +502,25 @@
 		return
 	if(!isliving(A) && !isstructure(A) && !ismachinery(A) && !isvehicle(A))
 		if(!silent)
-			owner.balloon_alert(owner, "Cannot punch")
+			owner.balloon_alert(owner, "无法出拳")
 		return FALSE
 	if(A.resistance_flags & (INDESTRUCTIBLE|CRUSHER_IMMUNE))
 		if(!silent)
-			owner.balloon_alert(owner, "Cannot damage")
+			owner.balloon_alert(owner, "无法造成伤害")
 		return FALSE
 	if(isliving(A))
 		var/mob/living/living_target = A
 		if(living_target.issamexenohive(owner))
 			if(!silent)
-				owner.balloon_alert(owner, "Cannot punch")
+				owner.balloon_alert(owner, "无法出拳")
 			return FALSE
 		if(living_target.stat == DEAD)
 			if(!silent)
-				owner.balloon_alert(owner, "Dead")
+				owner.balloon_alert(owner, "死亡")
 			return FALSE
 	if(!A.Adjacent(owner))
 		if(!silent)
-			owner.balloon_alert(owner, "Not adjacent")
+			owner.balloon_alert(owner, "未相邻")
 		return FALSE
 
 /datum/action/ability/activable/xeno/warrior/punch/use_ability(atom/A)
@@ -695,7 +695,7 @@
 	name = "Flurry"
 	action_icon_state = "flurry"
 	action_icon = 'icons/Xeno/actions/warrior.dmi'
-	desc = "Strike at your target with blinding speed. Dealing less damage but blinding your target."
+	desc = "以迅雷不及掩耳之势攻击你的目标。造成较少伤害但会使目标致盲。"
 	ability_cost = 10
 	cooldown_duration = 7 SECONDS
 	keybinding_signals = list(

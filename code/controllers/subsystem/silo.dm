@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(silo)
-	name = "Silo"
+	name = "菌毯巢"
 	wait = 1 MINUTES
 	priority = FIRE_PRIORITY_SILO
 	can_fire = FALSE

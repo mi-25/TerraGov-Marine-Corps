@@ -1,8 +1,8 @@
 //Not to be confused with /obj/item/reagent_containers/cup/glass/bottle
 
 /obj/item/reagent_containers/cup/bottle
-	name = "bottle"
-	desc = "A small bottle."
+	name = "瓶子"
+	desc = "一个小瓶子。"
 	icon_state = "bottle-1"
 	fill_icon_state = "bottle-1"
 	worn_icon_state = "bottle-1"
@@ -17,147 +17,147 @@
 	update_appearance()
 
 /obj/item/reagent_containers/cup/bottle/toxin
-	name = "toxin bottle"
-	desc = "A small bottle of toxins. Do not drink, it is poisonous."
+	name = "毒素瓶"
+	desc = "一小瓶毒素。请勿饮用，有毒。"
 	list_reagents = list(/datum/reagent/toxin = 30)
 
 /obj/item/reagent_containers/cup/bottle/cyanide
-	name = "cyanide bottle"
-	desc = "A small bottle of cyanide. Bitter almonds?"
+	name = "氰化物瓶"
+	desc = "一小瓶氰化物。苦杏仁味？"
 	list_reagents = list(/datum/reagent/toxin/cyanide = 30)
 
 /obj/item/reagent_containers/cup/bottle/chloralhydrate
-	name = "chloral hydrate bottle"
-	desc = "A small bottle of Choral Hydrate. Mickey's Favorite!"
+	name = "水合氯醛瓶"
+	desc = "一小瓶水合氯醛。米奇的最爱！"
 	icon_state = "bottle20"
 	list_reagents = list(/datum/reagent/toxin/chloralhydrate = 15)
 
 /obj/item/reagent_containers/cup/bottle/mutagen
-	name = "unstable mutagen bottle"
-	desc = "A small bottle of unstable mutagen. Randomly changes the DNA structure of whoever comes in contact."
+	name = "不稳定诱变剂瓶"
+	desc = "一小瓶不稳定的诱变剂。会随机改变接触者的DNA结构。"
 	list_reagents = list(/datum/reagent/toxin/mutagen = 30)
 
 /obj/item/reagent_containers/cup/bottle/synaptizine
-	name = "synaptizine bottle"
-	desc = "A small bottle of synaptizine."
+	name = "突触兴奋剂药瓶"
+	desc = "一小瓶突触素。"
 	list_reagents = list(/datum/reagent/medicine/synaptizine = 30)
 
 /obj/item/reagent_containers/cup/bottle/ammonia
-	name = "ammonia bottle"
-	desc = "A small bottle of ammonia."
+	name = "氨水瓶"
+	desc = "一小瓶氨水。"
 	list_reagents = list(/datum/reagent/ammonia = 30)
 
 /obj/item/reagent_containers/cup/bottle/diethylamine
-	name = "diethylamine bottle"
-	desc = "A small bottle of diethylamine."
+	name = "二乙胺瓶"
+	desc = "一小瓶二乙胺。"
 	list_reagents = list(/datum/reagent/diethylamine = 30)
 
 /obj/item/reagent_containers/cup/bottle/adminordrazine
-	name = "Adminordrazine Bottle"
-	desc = "A small bottle. Contains the liquid essence of the gods."
+	name = "管理神药瓶"
+	desc = "一个小瓶子。装着众神的液体精华。"
 	icon = 'icons/obj/drinks/bottles.dmi'
 	icon_state = "holyflask"
 	list_reagents = list(/datum/reagent/medicine/adminordrazine = 30)
 
 /obj/item/reagent_containers/cup/bottle/capsaicin
-	name = "Capsaicin Bottle"
-	desc = "A small bottle. Contains hot sauce."
+	name = "辣椒素瓶"
+	desc = "一个小瓶子。装着辣酱。"
 	list_reagents = list(/datum/reagent/consumable/capsaicin = 30)
 
 /obj/item/reagent_containers/cup/bottle/frostoil
-	name = "Frost Oil Bottle"
-	desc = "A small bottle. Contains cold sauce."
+	name = "霜油瓶"
+	desc = "一个小瓶子。内含冷酱汁。"
 	list_reagents = list(/datum/reagent/consumable/frostoil = 30)
 
 //Oldstation.dmm chemical storage bottles
 
 /obj/item/reagent_containers/cup/bottle/hydrogen
-	name = "hydrogen bottle"
+	name = "氢气瓶"
 	list_reagents = list(/datum/reagent/hydrogen = 30)
 
 /obj/item/reagent_containers/cup/bottle/lithium
-	name = "lithium bottle"
+	name = "锂瓶"
 	list_reagents = list(/datum/reagent/lithium = 30)
 
 /obj/item/reagent_containers/cup/bottle/carbon
-	name = "carbon bottle"
+	name = "碳素瓶"
 	list_reagents = list(/datum/reagent/carbon = 30)
 
 /obj/item/reagent_containers/cup/bottle/nitrogen
-	name = "nitrogen bottle"
+	name = "氮气瓶"
 	list_reagents = list(/datum/reagent/nitrogen = 30)
 
 /obj/item/reagent_containers/cup/bottle/oxygen
-	name = "oxygen bottle"
+	name = "氧气瓶"
 	list_reagents = list(/datum/reagent/oxygen = 30)
 
 /obj/item/reagent_containers/cup/bottle/fluorine
-	name = "fluorine bottle"
+	name = "氟气瓶"
 	list_reagents = list(/datum/reagent/fluorine = 30)
 
 /obj/item/reagent_containers/cup/bottle/sodium
-	name = "sodium bottle"
+	name = "钠瓶"
 	list_reagents = list(/datum/reagent/sodium = 30)
 
 /obj/item/reagent_containers/cup/bottle/silicon
-	name = "silicon bottle"
+	name = "硅胶瓶"
 	list_reagents = list(/datum/reagent/silicon = 30)
 
 /obj/item/reagent_containers/cup/bottle/phosphorus
-	name = "phosphorus bottle"
+	name = "磷瓶"
 	list_reagents = list(/datum/reagent/phosphorus = 30)
 
 /obj/item/reagent_containers/cup/bottle/sulfur
-	name = "sulfur bottle"
+	name = "硫磺瓶"
 	list_reagents = list(/datum/reagent/sulfur = 30)
 
 /obj/item/reagent_containers/cup/bottle/chlorine
-	name = "chlorine bottle"
+	name = "氯气瓶"
 	list_reagents = list(/datum/reagent/chlorine = 30)
 
 /obj/item/reagent_containers/cup/bottle/potassium
-	name = "potassium bottle"
+	name = "钾瓶"
 	list_reagents = list(/datum/reagent/potassium = 30)
 
 /obj/item/reagent_containers/cup/bottle/iron
-	name = "iron bottle"
+	name = "铁瓶"
 	list_reagents = list(/datum/reagent/iron = 30)
 
 /obj/item/reagent_containers/cup/bottle/copper
-	name = "copper bottle"
+	name = "铜瓶"
 	list_reagents = list(/datum/reagent/copper = 30)
 
 /obj/item/reagent_containers/cup/bottle/mercury
-	name = "mercury bottle"
+	name = "汞瓶"
 	list_reagents = list(/datum/reagent/mercury = 30)
 
 /obj/item/reagent_containers/cup/bottle/water
-	name = "water bottle"
+	name = "水瓶"
 	list_reagents = list(/datum/reagent/water = 30)
 
 /obj/item/reagent_containers/cup/bottle/ethanol
-	name = "ethanol bottle"
+	name = "乙醇瓶"
 	list_reagents = list(/datum/reagent/consumable/ethanol = 30)
 
 /obj/item/reagent_containers/cup/bottle/sugar
-	name = "sugar bottle"
+	name = "糖瓶"
 	list_reagents = list(/datum/reagent/consumable/sugar = 30)
 
 /obj/item/reagent_containers/cup/bottle/sacid
-	name = "sulfuric acid bottle"
+	name = "硫酸瓶"
 	list_reagents = list(/datum/reagent/toxin/acid = 30)
 
 /obj/item/reagent_containers/cup/bottle/welding_fuel
-	name = "welding fuel bottle"
+	name = "焊接燃料瓶"
 	list_reagents = list(/datum/reagent/fuel = 30)
 
 /obj/item/reagent_containers/cup/bottle/silver
-	name = "silver bottle"
+	name = "银瓶"
 	list_reagents = list(/datum/reagent/silver = 30)
 
 /obj/item/reagent_containers/cup/bottle/caramel
-	name = "bottle of caramel"
-	desc = "A bottle containing caramalized sugar, also known as caramel. Do not lick."
+	name = "焦糖瓶"
+	desc = "一瓶装有焦糖化糖的瓶子，也就是焦糖。请勿舔舐。"
 	list_reagents = list(/datum/reagent/consumable/caramel = 30)
 
 /*
@@ -165,8 +165,8 @@
  */
 
 /obj/item/reagent_containers/cup/bottle/syrup_bottle
-	name = "syrup bottle"
-	desc = "A bottle with a syrup pump to dispense the delicious substance directly into your coffee cup."
+	name = "糖浆瓶"
+	desc = "一个带有糖浆泵的瓶子，可将美味的糖浆直接注入您的咖啡杯中。"
 	icon = 'icons/obj/food/containers.dmi'
 	icon_state = "syrup"
 	fill_icon_state = "syrup"
@@ -192,15 +192,15 @@
 
 	if(attacking_item.is_refillable())
 		if(!reagents.total_volume)
-			balloon_alert(user, "bottle empty!")
+			balloon_alert(user, "瓶子空了！")
 			return TRUE
 
 		if(attacking_item.reagents.holder_full())
-			balloon_alert(user, "container full!")
+			balloon_alert(user, "容器已满！")
 			return TRUE
 
 		var/transfer_amount = reagents.trans_to(attacking_item, amount_per_transfer_from_this)
-		balloon_alert(user, "transferred [transfer_amount] unit\s")
+		balloon_alert(user, "已转移 [transfer_amount] 单位")
 		flick("syrup_anim",src)
 
 	attacking_item.update_appearance()
@@ -213,22 +213,22 @@
 	cap_on = !cap_on
 	if(!cap_on)
 		icon_state = "syrup_open"
-		balloon_alert(user, "removed pump cap")
+		balloon_alert(user, "已移除泵盖")
 	else
 		icon_state = "syrup"
-		balloon_alert(user, "put pump cap on")
+		balloon_alert(user, "装上泵盖")
 	update_icon_state()
 
 //types of syrups
 
 /obj/item/reagent_containers/cup/bottle/syrup_bottle/caramel
-	name = "bottle of caramel syrup"
-	desc = "A pump bottle containing caramalized sugar, also known as caramel. Do not lick."
+	name = "焦糖糖浆瓶"
+	desc = "一个装有焦糖化糖浆的挤压瓶，也就是焦糖。请勿舔舐。"
 	list_reagents = list(/datum/reagent/consumable/caramel = 50)
 
 /obj/item/reagent_containers/cup/bottle/syrup_bottle/liqueur
-	name = "bottle of coffee liqueur syrup"
-	desc = "A pump bottle containing mexican coffee-flavoured liqueur syrup. In production since 1936, HONK."
+	name = "咖啡利口酒糖浆瓶"
+	desc = "一瓶泵压式墨西哥咖啡风味利口酒糖浆。自1936年投产，HONK。"
 	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 50)
 
 ///////////////////////////////////////////////Alchohol bottles! -Agouri //////////////////////////
@@ -279,17 +279,17 @@
 	if(affecting == "head" && istype(target, /mob/living/carbon/) && !isxeno(target))
 
 		if(target != user)
-			user.visible_message(span_danger("[target] has been hit over the head with a bottle of [name], by [user]!"))
+			user.visible_message(span_danger("[target] 被 [user] 用一瓶 [name] 砸中了脑袋！"))
 		else
-			user.visible_message(span_danger("[user] has hit [user.p_them()]self with the bottle of [name] on the head!"))
+			user.visible_message(span_danger("[user]用一瓶[name]砸到了[user.p_them()]自己的头！"))
 		if(paralyze_duration >= force) //if they have armor, no stun
 			target.apply_effect(4 SECONDS, EFFECT_PARALYZE)
 
 	else
 		if(target != user)
-			user.visible_message(span_danger("[target] has been attacked with a bottle of [name], by [user]!"))
+			user.visible_message(span_danger("[target] 被 [user] 用一瓶 [name] 攻击了！"))
 		else
-			user.visible_message(span_danger("[user] has attacked [user.p_them()]self with the bottle of [name]!"))
+			user.visible_message(span_danger("[user]用[name]的瓶子攻击了[user.p_them()]自己！"))
 
 	UPDATEHEALTH(target)
 
@@ -298,7 +298,7 @@
 
 	//The reagents in the bottle splash all over the target, thanks for the idea Nodrak
 	if(reagents)
-		visible_message(span_boldnotice("The contents of the [src] splashes all over [target]!"))
+		visible_message(span_boldnotice("[src]的内容溅了[target]一身！"))
 		reagents.reaction(target, TOUCH)
 
 	//Finally, smash the bottle. This kills (del) the bottle.
@@ -310,156 +310,156 @@
 	attack_hand(xeno_attacker)
 
 /obj/item/reagent_containers/food/drinks/bottle/gin
-	name = "\improper Griffeater Gin"
-	desc = "A bottle of high quality gin, produced in the New London Space Station."
+	name = "\improper 格里夫特金酒"
+	desc = "一瓶高品质金酒，产自新伦敦空间站。"
 	icon_state = "ginbottle"
 	center_of_mass = list("x"=16, "y"=4)
 	list_reagents = list(/datum/reagent/consumable/ethanol/gin = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/whiskey
-	name = "\improper Uncle Git's Special Reserve"
-	desc = "A premium single-malt whiskey, gently matured for four years by hillbillies in the backwaters of Alabama."
+	name = "\improper 吉特大叔的特酿珍藏"
+	desc = "一款优质单一麦芽威士忌，在阿拉巴马州偏远地区由乡民精心陈酿四年而成。"
 	icon_state = "whiskeybottle"
 	center_of_mass = list("x"=16, "y"=3)
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/specialwhiskey
-	name = "\improper Nanotrasen 'Space-Aged' 60-Year Old Whiskey"
-	desc = "This exquisite brand of whiskey has been aged in the hull of a colony ship since 2378. It's worth more than what you make in several months- and bold enough to state this fact on the bottle."
+	name = "\improper 纳米传讯'太空陈酿'60年威士忌"
+	desc = "这款上等威士忌自2378年起就在一艘殖民飞船的船体内陈酿。它的价值超过你几个月的薪水——瓶身上就敢如此大胆地宣称。"
 	icon_state = "specialwhiskeybottle"
 	center_of_mass = list("x"=16, "y"=3)
 	list_reagents = list(/datum/reagent/consumable/ethanol/specialwhiskey = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/experimentalliquor
 	name = "\improper NT-06"
-	desc = "A black bottle with nothing but a note and a warning label on it. 'Drink this and you will die,' '600 proof,' and other such discouraging words are written upon it."
+	desc = "一个黑色瓶子，上面除了一张纸条和警告标签外别无他物。写着'喝下此物，你将死亡'、'600度酒精度'以及其他诸如此类的劝阻话语。"
 	icon_state = "experimentalliquorbottle"
 	center_of_mass = list("x"=17, "y"=5)
 	list_reagents = list(/datum/reagent/consumable/ethanol/pwine = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/sake
-	name = "\improper Harakiri traditional styled sake"
-	desc = "Sweet as can be, and burns like fire going down."
+	name = "\improper 传统切腹风格清酒"
+	desc = "甜得恰到好处，入口却如火焰般灼烧。"
 	icon_state = "sakebottle"
 	center_of_mass = list("x"=17, "y"=7)
 	list_reagents = list(/datum/reagent/consumable/ethanol/sake = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/vodka
-	name = "\improper Red Star Vodka"
-	desc = "The bottle reads, 'Ra Ra Red Star Man: Lover of the Finer Things.' Or at least that's what you assume...."
+	name = "\improper 红星伏特加"
+	desc = "瓶子上写着：'啦啦红明星人：精致事物的爱好者。'至少你是这么认为的……"
 	icon_state = "vodkabottle"
 	center_of_mass = list("x"=17, "y"=3)
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/tequila
-	name = "\improper Caccavo Guaranteed Quality Tequila"
-	desc = "Made from premium petroleum distillates, pure thalidomide and other fine quality ingredients!"
+	name = "\improper 卡卡沃保证品质龙舌兰酒"
+	desc = "采用优质石油馏分、纯沙利度胺及其他高品质原料精制而成！"
 	icon_state = "tequilabottle"
 	center_of_mass = list("x"=16, "y"=3)
 	list_reagents = list(/datum/reagent/consumable/ethanol/tequila = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/davenport
-	name = "\improper Davenport Rye Whiskey"
-	desc = "An expensive whiskey with a distinct flavor. The bottle proudly proclaims that it's, 'A True Classic.'"
+	name = "\improper 达文波特黑麦威士忌"
+	desc = "一款价格不菲的威士忌，风味独特。瓶身自豪地宣称其为'真正的经典'。"
 	icon_state = "davenportbottle"
 	center_of_mass = list("x"=16, "y"=3)
 	list_reagents = list(/datum/reagent/consumable/ethanol/davenport = 50)
 
 
 /obj/item/reagent_containers/food/drinks/bottle/bottleofnothing
-	name = "Bottle of Nothing"
-	desc = "A bottle filled with nothing"
+	name = "虚无之瓶"
+	desc = "一个空瓶子"
 	icon_state = "bottleofnothing"
 	center_of_mass = list("x"=17, "y"=5)
 	list_reagents = list(/datum/reagent/consumable/nothing = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/patron
-	name = "Wrapp Artiste Patron"
-	desc = "Silver laced tequila, served in space night clubs across the galaxy."
+	name = "缠绕艺术家赞助人"
+	desc = "银河系各太空夜店供应的银边龙舌兰酒。"
 	icon_state = "patronbottle"
 	center_of_mass = list("x"=16, "y"=6)
 	list_reagents = list(/datum/reagent/consumable/ethanol/patron = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/rum
-	name = "Captain Pete's Cuban Spiced Rum"
-	desc = "Named after the famed Captain 'Cuban' Pete, this rum is about as volatile as his final mission."
+	name = "舰长皮特的古巴风味朗姆酒"
+	desc = "以著名的{{P0}}古巴{{P1}}皮特上尉命名，这款朗姆酒就像他最后的任务一样充满变数。"
 	icon_state = "rumbottle"
 	center_of_mass = list("x"=16, "y"=8)
 	list_reagents = list(/datum/reagent/consumable/ethanol/rum = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/holywater
-	name = "Flask of Holy Water"
-	desc = "A flask of the chaplain's holy water."
+	name = "圣水瓶"
+	desc = "牧师圣水的一小瓶。"
 	icon_state = "holyflask"
 	center_of_mass = list("x"=17, "y"=10)
 	list_reagents = list(/datum/reagent/water/holywater = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/vermouth
-	name = "Goldeneye Vermouth"
-	desc = "Sweet, sweet dryness~"
+	name = "金眼味美思"
+	desc = "甜美，甜美的干爽~"
 	icon_state = "vermouthbottle"
 	center_of_mass = list("x"=17, "y"=3)
 	list_reagents = list(/datum/reagent/consumable/ethanol/vermouth = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/kahlua
-	name = "Robert Robust's Coffee Liqueur"
-	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936, HONK"
+	name = "罗伯特·罗巴斯特咖啡利口酒"
+	desc = "一种广为人知的墨西哥咖啡风味利口酒。自1936年开始生产，HONK"
 	icon_state = "kahluabottle"
 	center_of_mass = list("x"=17, "y"=3)
 	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/goldschlager
-	name = "College Girl Goldschlager"
-	desc = "Because they are the only ones who will drink 100 proof cinnamon schnapps."
+	name = "大学女生金酒"
+	desc = "因为只有他们才会喝100度的肉桂烈酒。"
 	icon_state = "goldschlagerbottle"
 	center_of_mass = list("x"=15, "y"=3)
 	list_reagents = list(/datum/reagent/consumable/ethanol/goldschlager = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/cognac
-	name = "Chateau De Baton Premium Cognac"
-	desc = "A sweet and strongly alchoholic drink, made after numerous distillations and years of maturing. You might as well not scream 'SHITCURITY' this time."
+	name = "夏多巴顿特级干邑"
+	desc = "一种甘甜而烈性十足的饮品，经过多次蒸馏与多年陈酿制成。这次你或许不该再高喊'狗屎安保'了。"
 	icon_state = "cognacbottle"
 	center_of_mass = list("x"=16, "y"=6)
 	list_reagents = list(/datum/reagent/consumable/ethanol/cognac = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/wine
-	name = "Doublebeard Bearded Special Wine"
-	desc = "A faint aura of unease and asspainery surrounds the bottle."
+	name = "双须特酿葡萄酒"
+	desc = "瓶子周围笼罩着一层微弱的不安与蛋疼气息。"
 	icon_state = "winebottle"
 	center_of_mass = list("x"=16, "y"=4)
 	list_reagents = list(/datum/reagent/consumable/ethanol/wine = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe
-	name = "Jailbreaker Verte"
-	desc = "One sip of this and you just know you're gonna have a good time."
+	name = "越狱者脊椎"
+	desc = "喝上一口，你就知道好时光要来了。"
 	icon_state = "absinthebottle"
 	center_of_mass = list("x"=16, "y"=6)
 	list_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/melonliquor
-	name = "Emeraldine Melon Liquor"
-	desc = "A bottle of 46 proof Emeraldine Melon Liquor. Sweet and light."
+	name = "翡翠瓜酒"
+	desc = "一瓶46度的翡翠甜瓜利口酒。口感清甜柔和。"
 	icon_state = "alco-green" //Placeholder.
 	center_of_mass = list("x"=16, "y"=6)
 	list_reagents = list(/datum/reagent/consumable/ethanol/melonliquor = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/bluecuracao
-	name = "Miss Blue Curacao"
-	desc = "A fruity, exceptionally azure drink. Does not allow the imbiber to use the fifth magic."
+	name = "蓝橙酒小姐"
+	desc = "一款果味浓郁、异常湛蓝的饮品。饮用者无法使用第五魔法。"
 	icon_state = "alco-blue" //Placeholder.
 	center_of_mass = list("x"=16, "y"=6)
 	list_reagents = list(/datum/reagent/consumable/ethanol/bluecuracao = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/grenadine
-	name = "Briar Rose Grenadine Syrup"
-	desc = "Sweet and tangy, a bar syrup used to add color or flavor to drinks."
+	name = "荆棘玫瑰石榴糖浆"
+	desc = "酸甜可口，一种用于为饮品增添色泽或风味的吧台糖浆。"
 	icon_state = "grenadine"
 	center_of_mass = list("x"=16, "y"=6)
 	list_reagents = list(/datum/reagent/consumable/grenadine = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/pwine
-	name = "Warlock's Velvet"
-	desc = "What a delightful packaging for a surely high quality wine! The vintage must be amazing!"
+	name = "术士的天鹅绒"
+	desc = "这包装真是精美，里面的葡萄酒品质一定很高！年份肯定非常出色！"
 	icon_state = "pwinebottle"
 	center_of_mass = list("x"=16, "y"=4)
 	list_reagents = list(/datum/reagent/consumable/ethanol/pwine = 100)
@@ -467,8 +467,8 @@
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
-	name = "Orange Juice"
-	desc = "Full of vitamins and deliciousness!"
+	name = "橙汁"
+	desc = "富含维生素，美味可口！"
 	icon_state = "orangejuice"
 	worn_icon_state = "carton"
 	center_of_mass = list("x"=16, "y"=7)
@@ -476,8 +476,8 @@
 	list_reagents = list(/datum/reagent/consumable/orangejuice = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/cream
-	name = "Milk Cream"
-	desc = "It's cream. Made from milk. What else did you think you'd find in there?"
+	name = "牛奶奶油"
+	desc = "这是奶油。用牛奶制成的。你还以为里面会有什么？"
 	icon_state = "cream"
 	worn_icon_state = "carton"
 	center_of_mass = list("x"=16, "y"=8)
@@ -485,8 +485,8 @@
 	list_reagents = list(/datum/reagent/consumable/cream = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/tomatojuice
-	name = "Tomato Juice"
-	desc = "Well, at least it LOOKS like tomato juice. You can't tell with all that redness."
+	name = "番茄汁"
+	desc = "好吧，至少它看起来像番茄汁。在那一大片红色里，你根本分不清。"
 	icon_state = "tomatojuice"
 	worn_icon_state = "carton"
 	center_of_mass = list("x"=16, "y"=8)
@@ -494,8 +494,8 @@
 	list_reagents = list(/datum/reagent/consumable/tomatojuice = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/limejuice
-	name = "Lime Juice"
-	desc = "Sweet-sour goodness."
+	name = "青柠汁"
+	desc = "酸甜可口的美味。"
 	icon_state = "limejuice"
 	worn_icon_state = "carton"
 	center_of_mass = list("x"=16, "y"=8)

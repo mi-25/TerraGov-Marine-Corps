@@ -1,7 +1,7 @@
 // This file contains legacy mapped in objects that should be replaced where possible.
 
 /obj/machinery/computer3
-	name = "computer"
+	name = "电脑"
 	icon = 'icons/obj/machines/computer3.dmi'
 	icon_state = "frame"
 	density = TRUE
@@ -11,8 +11,8 @@
 	icon_state = "frame-eng"
 
 /obj/machinery/computer3/laptop
-	name = "Laptop Computer"
-	desc = "A clamshell portable computer. It is open."
+	name = "笔记本电脑"
+	desc = "一台翻盖便携式电脑。它已打开。"
 
 	icon_state = "laptop"
 
@@ -20,17 +20,17 @@
 	icon_state = "laptop"
 
 /obj/machinery/computer3/server
-	name = "server"
+	name = "服务器"
 	icon = 'icons/obj/machines/computer3.dmi'
 	icon_state = "serverframe"
 
 /obj/machinery/computer3/server/rack
-	name = "server rack"
+	name = "服务器机架"
 	icon_state = "rackframe"
 
 /obj/item/laptop
-	name = "Laptop Computer"
-	desc = "A clamshell portable computer.  It is closed."
+	name = "笔记本电脑"
+	desc = "一台蛤壳式便携计算机。它处于闭合状态。"
 	icon = 'icons/obj/machines/computer3.dmi'
 	icon_state =  "laptop-closed"
 	worn_icon_state =  "laptop-inhand"
@@ -39,8 +39,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/machinery/lapvend
-	name = "Laptop Vendor"
-	desc = "A generic vending machine."
+	name = "笔记本电脑贩售机"
+	desc = "一台通用自动售货机。"
 	icon = 'icons/obj/machines/vending.dmi'
 	icon_state = "robotics"
 	layer = BELOW_OBJ_LAYER
@@ -50,38 +50,38 @@
 /obj/structure/computer3frame
 	density = TRUE
 	anchored = FALSE
-	name = "computer frame"
+	name = "电脑框架"
 	icon = 'icons/obj/stock_parts.dmi'
 	icon_state = "0"
 
 /obj/machinery/computer/atmoscontrol
-	name = "\improper Central Atmospherics Computer"
+	name = "\improper 中央大气计算机"
 	icon_state = "computer"
 	screen_overlay = "computer_generic"
 	density = TRUE
 	anchored = TRUE
 
 /obj/item/computer3_part
-	name = "computer part"
-	desc = "Holy jesus you donnit now"
+	name = "电脑部件"
+	desc = "老天爷啊，这下你可闯祸了"
 	gender = PLURAL
 	icon = 'icons/obj/stock_parts.dmi'
 	icon_state = "hdd1"
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/computer3_part/storage
-	name = "Storage Device"
-	desc = "A device used for storing and retrieving digital information."
+	name = "存储设备"
+	desc = "用于存储和检索数字信息的设备。"
 
 /obj/item/computer3_part/storage/hdd
-	name = "Hard Drive"
+	name = "硬盘"
 	icon_state = "hdd1"
 
 /obj/item/computer3_part/storage/hdd/big
-	name = "Big Hard Drive"
+	name = "大型硬盘"
 	icon_state = "hdd2"
 
 /obj/item/clothing/shoes/centcom
-	name = "dress shoes"
-	desc = "They appear impeccably polished."
+	name = "皮鞋"
+	desc = "它们看起来打磨得无可挑剔。"
 	icon_state = "laceups"

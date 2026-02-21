@@ -1,10 +1,10 @@
 /obj/docking_port/stationary/marine_dropship/cas
-	name = "CAS plane hangar pad"
+	name = "近距空中支援机库停机坪"
 	id = SHUTTLE_CAS_DOCK
 	roundstart_template = /datum/map_template/shuttle/cas
 
 /obj/docking_port/mobile/marine_dropship/casplane
-	name = "Condor Jet"
+	name = "秃鹫喷气机"
 	id = SHUTTLE_CAS_DOCK
 	width = 11
 	height = 12
@@ -62,7 +62,7 @@
 	if((fuel_max*LOW_FUEL_WARNING_THRESHOLD) == fuel_left)
 		chair.occupant?.playsound_local(loc, 'sound/voice/plane_vws/low_fuel.ogg', 70, FALSE)
 	if((fuel_left <= LOW_FUEL_LANDING_THRESHOLD) && (state == PLANE_STATE_FLYING))
-		to_chat(chair.occupant, span_warning("Out of fuel, landing."))
+		to_chat(chair.occupant, span_warning("燃料耗尽，正在着陆。"))
 		chair.occupant?.playsound_local(loc, 'sound/voice/plane_vws/no_fuel.ogg', 70, FALSE)
 		SSshuttle.moveShuttle(id, SHUTTLE_CAS_DOCK, TRUE)
 		currently_returning = TRUE
@@ -130,13 +130,13 @@
 ///Runs checks and creates a new eye/hands over control to the eye
 /obj/docking_port/mobile/marine_dropship/casplane/proc/begin_cas_mission(mob/living/user)
 	if(!fuel_left)
-		to_chat(user, span_warning("No fuel remaining!"))
+		to_chat(user, span_warning("燃料耗尽！"))
 		return
 	if(state != PLANE_STATE_FLYING || is_mainship_level(z))
-		to_chat(user, span_warning("You are not in-flight!"))
+		to_chat(user, span_warning("你不在飞行中！"))
 		return
 	if(currently_returning)
-		to_chat(user, span_warning("You are currently on your return flight!"))
+		to_chat(user, span_warning("你正在返航途中！"))
 		return
 	if(!eyeobj)
 		eyeobj = new()
@@ -144,14 +144,14 @@
 		cas_mini.override_locator(eyeobj)
 
 	if(eyeobj.eye_user)
-		to_chat(user, span_warning("CAS mode is already in-use!"))
+		to_chat(user, span_warning("近距空中支援模式已在使用中！"))
 		return
 
 	SSmonitor.process_human_positions()
 
 	#ifndef TESTING
 	if(SSmonitor.human_on_ground <= 5)
-		to_chat(user, span_warning("The signal from the area of operations is too weak, you cannot route towards the battlefield."))
+		to_chat(user, span_warning("作战区域信号太弱，无法向战场传送。"))
 		return
 	#endif
 
@@ -177,23 +177,23 @@
 		return
 
 	if(state != PLANE_STATE_FLYING || is_mainship_level(z)) //Secondary safety due to input being able to delay time.
-		to_chat(user, span_warning("You are not in-flight!"))
+		to_chat(user, span_warning("你不在飞行中！"))
 		return
 	if(currently_returning)
-		to_chat(user, span_warning("You are currently on your return flight!"))
+		to_chat(user, span_warning("你正在返航途中！"))
 		return
 	if(eyeobj.eye_user)
-		to_chat(user, span_warning("CAS mode is already in-use!"))
+		to_chat(user, span_warning("近距空中支援模式已在使用中！"))
 		return
 
 	SSmonitor.process_human_positions()
 	#ifndef TESTING
 	if(SSmonitor.human_on_ground <= 5)
-		to_chat(user, span_warning("The signal from the area of operations is too weak, you cannot route towards the battlefield."))
+		to_chat(user, span_warning("作战区域信号太弱，无法向战场传送。"))
 		return
 	#endif
 
-	to_chat(user, span_warning("Targets detected, routing to area of operations."))
+	to_chat(user, span_warning("目标已探测到，正在前往作战区域。"))
 	user.playsound_local(chair, 'sound/voice/plane_vws/flightcomputer_hot.ogg', 70, FALSE)
 	give_eye_control(user)
 	eyeobj.setLoc(get_turf(starting_point))
@@ -255,20 +255,20 @@
 	if(!GLOB.cameranet.checkTurfVis(get_turf_pixel(target)))
 		return
 	if(!active_weapon)
-		to_chat(source, span_warning("No active weapon selected!"))
+		to_chat(source, span_warning("未选择活动武器！"))
 		return
 	var/area/A = get_area(target)
 	if(A.ceiling >= CEILING_UNDERGROUND)
-		to_chat(source, span_warning("That target is too deep underground!"))
+		to_chat(source, span_warning("目标位于地下过深！"))
 		return
 	if(A.area_flags & OB_CAS_IMMUNE)
-		to_chat(source, span_warning("Our payload won't reach this target!"))
+		to_chat(source, span_warning("我们的有效载荷无法抵达此目标！"))
 		return
 	if(active_weapon.ammo_equipped?.ammo_count <= 0)
-		to_chat(source, span_warning("No ammo remaining!"))
+		to_chat(source, span_warning("弹药耗尽！"))
 		return
 	if(!COOLDOWN_FINISHED(active_weapon, last_fired))
-		to_chat(source, span_warning("[active_weapon] just fired, wait for it to cool down."))
+		to_chat(source, span_warning("[active_weapon] 刚刚开火，等待其冷却。"))
 		return
 	active_weapon.open_fire(target, attackdir)
 	record_cas_activity(active_weapon)
@@ -310,7 +310,7 @@
 
 		var/obj/effect/overlay/temp/laser_target/cas/lase = locate(href_list["cas_jump"]) in GLOB.active_cas_targets
 		if(!istype(lase))
-			to_chat(user, span_warning("That marker has expired."))
+			to_chat(user, span_warning("那个标记已过期。"))
 			return
 
 		eyeobj.setLoc(get_turf(lase))

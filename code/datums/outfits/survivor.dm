@@ -1,5 +1,5 @@
 /datum/outfit/job/survivor/assistant
-	name = "Assistant Survivor"
+	name = "幸存者助手"
 	jobtype = /datum/job/survivor/assistant
 
 	w_uniform = /obj/item/clothing/under/color/grey
@@ -18,7 +18,7 @@
 	)
 
 /datum/outfit/job/survivor/scientist
-	name = "Scientist Survivor"
+	name = "科学家幸存者"
 	jobtype = /datum/job/survivor/scientist
 
 	w_uniform = /obj/item/clothing/under/rank/scientist
@@ -43,7 +43,7 @@
 
 
 /datum/outfit/job/survivor/doctor
-	name = "Doctor's Assistant Survivor"
+	name = "医生助手幸存者"
 	jobtype = /datum/job/survivor/doctor
 
 	w_uniform = /obj/item/clothing/under/rank/medical/blue
@@ -84,7 +84,7 @@
 	)
 
 /datum/outfit/job/survivor/liaison
-	name = "Liaison Survivor"
+	name = "企业联络官幸存者"
 	jobtype = /datum/job/survivor/liaison
 
 	w_uniform = /obj/item/clothing/under/liaison_suit
@@ -96,7 +96,7 @@
 	l_pocket = /obj/item/tool/crowbar
 
 /datum/outfit/job/survivor/security
-	name = "Security Guard Survivor"
+	name = "安保警卫幸存者"
 	jobtype = /datum/job/survivor/security
 
 	w_uniform = /obj/item/clothing/under/rank/security
@@ -124,7 +124,7 @@
 	)
 
 /datum/outfit/job/survivor/civilian
-	name = "Civilian Survivor"
+	name = "平民幸存者"
 	jobtype = /datum/job/survivor/civilian
 
 	w_uniform = /obj/item/clothing/under/colonist
@@ -141,7 +141,7 @@
 
 
 /datum/outfit/job/survivor/chef
-	name = "Chef Survivor"
+	name = "厨师幸存者"
 	jobtype = /datum/job/survivor/chef
 
 	w_uniform = /obj/item/clothing/under/rank/chef
@@ -168,7 +168,7 @@
 
 
 /datum/outfit/job/survivor/botanist
-	name = "Botanist Survivor"
+	name = "植物学家幸存者"
 	jobtype = /datum/job/survivor/botanist
 
 	w_uniform = /obj/item/clothing/under/rank/hydroponics
@@ -188,7 +188,7 @@
 	)
 
 /datum/outfit/job/survivor/atmos
-	name = "Atmospherics Technician Survivor"
+	name = "大气技术员幸存者"
 	jobtype = /datum/job/survivor/atmos
 
 	w_uniform = /obj/item/clothing/under/rank/atmospheric_technician
@@ -227,7 +227,7 @@
 
 
 /datum/outfit/job/survivor/chaplain
-	name = "Chaplain Survivor"
+	name = "随军牧师幸存者"
 	jobtype = /datum/job/survivor/chaplain
 
 	w_uniform = /obj/item/clothing/under/rank/chaplain
@@ -249,7 +249,7 @@
 	)
 
 /datum/outfit/job/survivor/miner
-	name = "Miner Survivor"
+	name = "矿工幸存者"
 	jobtype = /datum/job/survivor/miner
 
 	w_uniform = /obj/item/clothing/under/rank/miner
@@ -273,7 +273,7 @@
 
 
 /datum/outfit/job/survivor/salesman
-	name = "Salesman Survivor"
+	name = "幸存者推销员"
 	jobtype = /datum/job/survivor/salesman
 
 	w_uniform = /obj/item/clothing/under/lawyer/purpsuit
@@ -294,7 +294,7 @@
 
 
 /datum/outfit/job/survivor/marshal
-	name = "Colonial Marshal Survivor"
+	name = "殖民地治安官幸存者"
 	jobtype = /datum/job/survivor/marshal
 
 	w_uniform = /obj/item/clothing/under/CM_uniform
@@ -316,7 +316,7 @@
 	)
 
 /datum/outfit/job/survivor/bartender
-	name = "Bartender Survivor"
+	name = "酒保幸存者"
 	jobtype = /datum/job/survivor/bartender
 
 	w_uniform = /obj/item/clothing/under/rank/bartender
@@ -343,7 +343,7 @@
 
 
 /datum/outfit/job/survivor/chemist
-	name = "Pharmacy Technician Survivor"
+	name = "药房技术员幸存者"
 	jobtype = /datum/job/survivor/chemist
 
 	w_uniform = /obj/item/clothing/under/rank/chemist
@@ -389,7 +389,7 @@
 	)
 
 /datum/outfit/job/survivor/roboticist
-	name = "Roboticist Survivor"
+	name = "机器人技术员幸存者"
 	jobtype = /datum/job/survivor/roboticist
 
 	w_uniform = /obj/item/clothing/under/rank/roboticist
@@ -419,7 +419,7 @@
 		H.equip_to_slot_or_del(new /obj/item/attachable/buildasentry, SLOT_IN_BACKPACK)
 
 /datum/outfit/job/survivor/rambo
-	name = "Overpowered Survivor"
+	name = "超强幸存者"
 	jobtype = /datum/job/survivor/rambo
 	w_uniform = /obj/item/clothing/under/marine/striped
 	wear_suit = /obj/item/clothing/suit/armor/patrol

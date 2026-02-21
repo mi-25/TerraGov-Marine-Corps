@@ -1,6 +1,6 @@
 /obj/item/assembly/timer
-	name = "timer"
-	desc = "Used to time things. Works well with contraptions which has to count down. Tick tock."
+	name = "计时器"
+	desc = "用于计时。适用于需要倒计时的装置。滴答作响。"
 	icon_state = "timer"
 	attachable = TRUE
 	interaction_flags = INTERACT_REQUIRES_DEXTERITY

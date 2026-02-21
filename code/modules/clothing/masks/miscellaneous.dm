@@ -1,6 +1,6 @@
 /obj/item/clothing/mask/muzzle
-	name = "muzzle"
-	desc = "To stop that awful noise."
+	name = "枪口"
+	desc = "阻止那可怕的噪音。"
 	icon_state = "muzzle"
 	worn_icon_state = "muzzle"
 	inventory_flags = COVERMOUTH
@@ -9,8 +9,8 @@
 	gas_transfer_coefficient = 0.90
 
 /obj/item/clothing/mask/surgical
-	name = "sterile mask"
-	desc = "A sterile mask designed to help prevent the spread of diseases."
+	name = "无菌口罩"
+	desc = "一种无菌口罩，旨在帮助防止疾病传播。"
 	icon_state = "sterile"
 	worn_icon_state = "sterile"
 	w_class = WEIGHT_CLASS_SMALL
@@ -21,15 +21,15 @@
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 25, FIRE = 0, ACID = 0)
 
 /obj/item/clothing/mask/fakemoustache
-	name = "fake moustache"
-	desc = "Warning: moustache is fake."
+	name = "假胡子"
+	desc = "警告：胡子是假的。"
 	icon_state = "fake-moustache"
 	inv_hide_flags = HIDEFACE
 	armor_protection_flags = NONE
 
 /obj/item/clothing/mask/snorkel
-	name = "Snorkel"
-	desc = "For the Swimming Savant."
+	name = "呼吸管"
+	desc = "为游泳大师。"
 	icon_state = "snorkel"
 	inv_hide_flags = HIDEFACE
 	armor_protection_flags = NONE
@@ -37,8 +37,8 @@
 //scarves (fit in in mask slot)
 
 /obj/item/clothing/mask/bluescarf
-	name = "blue neck scarf"
-	desc = "A blue neck scarf."
+	name = "蓝色颈巾"
+	desc = "一条蓝色围巾。"
 	icon_state = "blueneckscarf"
 	worn_icon_state = "blueneckscarf"
 	inventory_flags = COVERMOUTH
@@ -46,8 +46,8 @@
 	gas_transfer_coefficient = 0.90
 
 /obj/item/clothing/mask/redscarf
-	name = "red scarf"
-	desc = "A red and white checkered neck scarf."
+	name = "红围巾"
+	desc = "一条红白格纹的颈巾。"
 	icon_state = "redwhite_scarf"
 	worn_icon_state = "redwhite_scarf"
 	inventory_flags = COVERMOUTH
@@ -55,8 +55,8 @@
 	gas_transfer_coefficient = 0.90
 
 /obj/item/clothing/mask/greenscarf
-	name = "green scarf"
-	desc = "A green neck scarf."
+	name = "绿色围巾"
+	desc = "一条绿色围巾。"
 	icon_state = "green_scarf"
 	worn_icon_state = "green_scarf"
 	inventory_flags = COVERMOUTH
@@ -64,8 +64,8 @@
 	gas_transfer_coefficient = 0.90
 
 /obj/item/clothing/mask/ninjascarf
-	name = "ninja scarf"
-	desc = "A stealthy, dark scarf."
+	name = "忍者面罩"
+	desc = "一条隐秘的黑色围巾。"
 	icon_state = "ninja_scarf"
 	worn_icon_state = "ninja_scarf"
 	inventory_flags = COVERMOUTH
@@ -74,8 +74,8 @@
 	siemens_coefficient = 0
 
 /obj/item/clothing/mask/pig
-	name = "pig mask"
-	desc = "A rubber pig mask."
+	name = "猪头面具"
+	desc = "一个橡胶猪面具。"
 	icon_state = "pig"
 	worn_icon_state = "pig"
 	inventory_flags = COVERMOUTH|COVEREYES
@@ -85,8 +85,8 @@
 	armor_protection_flags = HEAD|FACE|EYES
 
 /obj/item/clothing/mask/horsehead
-	name = "horse head mask"
-	desc = "A mask made of soft vinyl and latex, representing the head of a horse."
+	name = "马头面具"
+	desc = "一个由软质乙烯基和乳胶制成的面具，形似马头。"
 	icon_state = "horsehead"
 	worn_icon_state = "horsehead"
 	inventory_flags = COVERMOUTH|COVEREYES
@@ -98,8 +98,8 @@
 
 
 /obj/item/clothing/mask/balaclava
-	name = "balaclava"
-	desc = "LOADSAMONEY"
+	name = "巴拉克拉瓦头套"
+	desc = "好多钱"
 	icon_state = "balaclava"
 	worn_icon_state = "balaclava"
 	inv_hide_flags = HIDEFACE|HIDEALLHAIR
@@ -107,15 +107,15 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/mask/balaclava/tactical
-	name = "green balaclava"
-	desc = "Designed to both hide identities and keep your face comfy and warm."
+	name = "绿色巴拉克拉瓦头套"
+	desc = "专为隐藏身份并保持面部舒适温暖而设计。"
 	icon_state = "swatclava"
 	worn_icon_state = "balaclava"
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/mask/luchador
-	name = "Luchador Mask"
-	desc = "Worn by robust fighters, flying high to defeat their foes!"
+	name = "摔角手面具"
+	desc = "坚韧战士的着装，翱翔高空，击败敌人！"
 	icon_state = "luchag"
 	worn_icon_state = "luchag"
 	inv_hide_flags = HIDEFACE|HIDEALLHAIR
@@ -127,13 +127,13 @@
 	siemens_coefficient = 3
 
 /obj/item/clothing/mask/luchador/tecnicos
-	name = "Tecnicos Mask"
-	desc = "Worn by robust fighters who uphold justice and fight honorably."
+	name = "技术员面具"
+	desc = "为坚守正义、英勇作战的强悍战士所佩戴。"
 	icon_state = "luchador"
 	worn_icon_state = "luchador"
 
 /obj/item/clothing/mask/luchador/rudos
-	name = "Rudos Mask"
-	desc = "Worn by robust fighters who are willing to do anything to win."
+	name = "鲁多斯面具"
+	desc = "为那些不惜一切代价也要取胜的顽强战士所穿戴。"
 	icon_state = "luchar"
 	worn_icon_state = "luchar"

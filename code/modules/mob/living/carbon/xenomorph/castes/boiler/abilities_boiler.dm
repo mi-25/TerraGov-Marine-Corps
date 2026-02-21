@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	name = "Toggle Long Range Sight"
 	action_icon_state = "toggle_long_range"
 	action_icon = 'icons/Xeno/actions/boiler.dmi'
-	desc = "Extend your sight off into the distance. Must remain stationary to use."
+	desc = "将你的视野延伸至远方。使用时必须保持静止。"
 	ability_cost = 20
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_LONG_RANGE_SIGHT,
@@ -68,10 +68,10 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 /datum/action/ability/xeno_action/toggle_long_range/action_activate()
 	if(xeno_owner.xeno_flags & XENO_ZOOMED)
 		xeno_owner.zoom_out()
-		xeno_owner.visible_message(span_notice("[xeno_owner] stops looking off into the distance."), \
+		xeno_owner.visible_message(span_notice("[xeno_owner]不再眺望远方。"), \
 		span_notice("We stop looking off into the distance."), null, 5)
 	else
-		xeno_owner.visible_message(span_notice("[xeno_owner] starts looking off into the distance."), \
+		xeno_owner.visible_message(span_notice("[xeno_owner] 开始望向远方。"), \
 			span_notice("We start focusing your sight to look off into the distance."), null, 5)
 		if(!do_after(xeno_owner, do_after_length, IGNORE_HELD_ITEM, null, BUSY_ICON_GENERIC) || (xeno_owner.xeno_flags & XENO_ZOOMED))
 			return
@@ -86,7 +86,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	name = "Toggle Bombard Type"
 	action_icon_state = "corrosive_glob"
 	action_icon = 'icons/Xeno/actions/boiler.dmi'
-	desc = "Switches Boiler Bombard type between available glob types."
+	desc = "在可用的球体类型之间切换沸腾者轰炸类型。"
 	use_state_flags = ABILITY_USE_BUSY|ABILITY_USE_LYING
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TOGGLE_BOMB,
@@ -120,7 +120,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 		return FALSE
 	if(!length(selectable_glob_typepaths))
 		if(!silent)
-			to_chat(xeno_owner, span_warning("We don't have any globs to choose!"))
+			to_chat(xeno_owner, span_warning("我们没有可用的掷弹者！"))
 		return FALSE
 
 /datum/action/ability/xeno_action/toggle_bomb/action_activate()
@@ -198,7 +198,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	name = "Create Bomb"
 	action_icon_state = "create_bomb"
 	action_icon = 'icons/Xeno/actions/boiler.dmi'
-	desc = "Creates a Boiler Bombard of the type currently selected."
+	desc = "生成当前所选类型的沸腾者轰炸。"
 	ability_cost = 200
 	use_state_flags = ABILITY_USE_BUSY|ABILITY_USE_LYING
 	keybinding_signals = list(
@@ -225,16 +225,16 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 		return FALSE
 	if(xeno_owner.xeno_flags & XENO_ZOOMED)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "can't while zoomed in!")
+			xeno_owner.balloon_alert(xeno_owner, "无法在缩放时进行！")
 		return FALSE
 	if(!xeno_owner.ammo)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "globule not selected!")
+			xeno_owner.balloon_alert(xeno_owner, "未选择球体！")
 		return FALSE
 	var/current_ammo = xeno_owner.corrosive_ammo + xeno_owner.neurotoxin_ammo
 	if(current_ammo >= xeno_owner.xeno_caste.max_ammo)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "globule storage full!")
+			xeno_owner.balloon_alert(xeno_owner, "球体储存已满！")
 		return FALSE
 
 /datum/action/ability/xeno_action/create_boiler_bomb/action_activate()
@@ -243,24 +243,24 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 		if(/datum/ammo/xeno/boiler_gas/corrosive, /datum/ammo/xeno/boiler_gas/corrosive/lance, /datum/ammo/xeno/boiler_gas/corrosive/fast)
 			unique_glob = FALSE
 			xeno_owner.corrosive_ammo++
-			xeno_owner.balloon_alert(xeno_owner, "corrosive globule prepared")
+			xeno_owner.balloon_alert(xeno_owner, "腐蚀球准备就绪")
 		if(/datum/ammo/xeno/boiler_gas, /datum/ammo/xeno/boiler_gas/lance, /datum/ammo/xeno/boiler_gas/fast)
 			unique_glob = FALSE
 			xeno_owner.neurotoxin_ammo++
-			xeno_owner.balloon_alert(xeno_owner, "neurotoxin globule prepared")
+			xeno_owner.balloon_alert(xeno_owner, "神经毒素球准备就绪")
 	if(unique_glob)
 		if(xeno_owner.corrosive_ammo > xeno_owner.neurotoxin_ammo)
 			xeno_owner.neurotoxin_ammo++
-			xeno_owner.balloon_alert(xeno_owner, "neurotoxin globule prepared")
+			xeno_owner.balloon_alert(xeno_owner, "神经毒素球准备就绪")
 		else
 			xeno_owner.corrosive_ammo++
-			xeno_owner.balloon_alert(xeno_owner, "corrosive globule prepared")
+			xeno_owner.balloon_alert(xeno_owner, "腐蚀球准备就绪")
 	xeno_owner.update_ammo_glow()
 	update_button_icon()
 	succeed_activate()
 
 /datum/action/ability/xeno_action/create_boiler_bomb/update_button_icon()
-	desc = "[initial(desc)] Reduces bombard cooldown by [BOILER_BOMBARD_COOLDOWN_REDUCTION / 10] seconds for each stored. Begins to emit light when surpassing [xeno_owner.glob_luminosity_threshold] globs stored."
+	desc = "[initial(desc)] 每储存一团黏液，轰炸冷却时间减少[BOILER_BOMBARD_COOLDOWN_REDUCTION / 10]秒。当储存量超过[xeno_owner.glob_luminosity_threshold]团时开始发光。"
 
 	button.cut_overlay(visual_references[VREF_MUTABLE_CORROSIVEGLOB_COUNTER])
 	var/mutable_appearance/corrosiveglobnumber = visual_references[VREF_MUTABLE_CORROSIVEGLOB_COUNTER]
@@ -280,7 +280,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	name = "Bombard"
 	action_icon_state = "bombard"
 	action_icon = 'icons/Xeno/actions/boiler.dmi'
-	desc = "Dig yourself into place in order to launch a glob of gas."
+	desc = "挖掘自身位置以发射一团气体。"
 	cooldown_duration = 32 SECONDS
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_BOMBARD,
@@ -304,7 +304,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	return cooldown
 
 /datum/action/ability/activable/xeno/bombard/on_cooldown_finish()
-	to_chat(owner, span_notice("We feel our toxin glands swell. We are able to bombard an area again."))
+	to_chat(owner, span_notice("我们感到毒腺肿胀。我们能够再次轰炸一个区域。"))
 	if(xeno_owner.selected_ability == src)
 		xeno_owner.set_bombard_pointer()
 	return ..()
@@ -312,10 +312,10 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 /datum/action/ability/activable/xeno/bombard/on_selection()
 	var/current_ammo = xeno_owner.corrosive_ammo + xeno_owner.neurotoxin_ammo
 	if(current_ammo <= 0)
-		to_chat(xeno_owner, span_notice("We have nothing prepared to fire."))
+		to_chat(xeno_owner, span_notice("我们没有准备任何火焰武器。"))
 		return FALSE
 
-	xeno_owner.visible_message(span_notice("\The [xeno_owner] begins digging their claws into the ground."), \
+	xeno_owner.visible_message(span_notice("\The [xeno_owner] 开始将爪子插入地面。"), \
 	span_notice("We begin digging ourselves into place."), null, 5)
 	if(!do_after(xeno_owner, prepare_length, FALSE, null, BUSY_ICON_HOSTILE))
 		on_deselection()
@@ -324,7 +324,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 		xeno_owner.reset_bombard_pointer()
 		return FALSE
 
-	xeno_owner.visible_message(span_notice("\The [xeno_owner] digs itself into the ground!"), \
+	xeno_owner.visible_message(span_notice("\The [xeno_owner] 将自己埋入了地下！"), \
 		span_notice("We dig ourselves into place! If we move, we must wait again to fire."), null, 5)
 	xeno_owner.set_bombard_pointer()
 	RegisterSignal(owner, COMSIG_MOB_ATTACK_RANGED, TYPE_PROC_REF(/datum/action/ability/activable/xeno/bombard, on_ranged_attack))
@@ -332,7 +332,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 /datum/action/ability/activable/xeno/bombard/on_deselection()
 	if(xeno_owner?.selected_ability == src)
 		xeno_owner.reset_bombard_pointer()
-		to_chat(xeno_owner, span_notice("We relax our stance."))
+		to_chat(xeno_owner, span_notice("我们放松姿态。"))
 	UnregisterSignal(owner, COMSIG_MOB_ATTACK_RANGED)
 
 /datum/action/ability/activable/xeno/bombard/can_use_ability(atom/A, silent = FALSE, override_flags)
@@ -341,7 +341,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 		return FALSE
 	if(!xeno_owner.ammo)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "globule not selected!")
+			xeno_owner.balloon_alert(xeno_owner, "未选择球体！")
 		return FALSE
 	var/unique_glob = TRUE
 	switch(xeno_owner.ammo.type)
@@ -349,25 +349,25 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 			unique_glob = FALSE
 			if(xeno_owner.corrosive_ammo <= 0)
 				if(!silent)
-					xeno_owner.balloon_alert(xeno_owner, "no corrosive globules!")
+					xeno_owner.balloon_alert(xeno_owner, "没有腐蚀性弹丸！")
 				return FALSE
 		if(/datum/ammo/xeno/boiler_gas, /datum/ammo/xeno/boiler_gas/lance, /datum/ammo/xeno/boiler_gas/fast)
 			unique_glob = FALSE
 			if(xeno_owner.neurotoxin_ammo <= 0)
 				if(!silent)
-					xeno_owner.balloon_alert(xeno_owner, "no neurotoxin globules!")
+					xeno_owner.balloon_alert(xeno_owner, "没有神经毒素球！")
 				return FALSE
 	var/total_globs = xeno_owner.corrosive_ammo + xeno_owner.neurotoxin_ammo
 	if(unique_glob && special_glob_required > total_globs)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "not enough globules!")
+			xeno_owner.balloon_alert(xeno_owner, "等离子体球不足！")
 		return FALSE
 
 	var/turf/T = get_turf(A)
 	var/turf/S = get_turf(owner)
 	if(!isturf(T) || !(T.z in SSmapping.get_connected_levels(S.z)))
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "invalid target!")
+			xeno_owner.balloon_alert(xeno_owner, "无效目标！")
 		return FALSE
 
 /datum/action/ability/activable/xeno/bombard/use_ability(atom/A)
@@ -376,16 +376,16 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	if(!istype(target))
 		return
 
-	to_chat(xeno_owner, span_xenonotice("We begin building up pressure."))
+	to_chat(xeno_owner, span_xenonotice("我们开始增压。"))
 
 	if(!do_after(xeno_owner, fire_length, IGNORE_HELD_ITEM, target, BUSY_ICON_DANGER))
-		to_chat(xeno_owner, span_warning("We decide not to launch."))
+		to_chat(xeno_owner, span_warning("我们决定不发射。"))
 		return fail_activate()
 
 	if(!can_use_ability(target, FALSE, ABILITY_IGNORE_PLASMA))
 		return fail_activate()
 
-	xeno_owner.visible_message(span_xenowarning("\The [xeno_owner] launches a huge glob of gas hurling into the distance!"), \
+	xeno_owner.visible_message(span_xenowarning("\The [xeno_owner] 发射出一大团气体，呼啸着飞向远方！"), \
 	span_xenowarning("We launch a huge glob of gas hurling into the distance!"), null, 5)
 
 	var/atom/movable/projectile/P = new /atom/movable/projectile(xeno_owner.loc)
@@ -459,7 +459,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	name = "Acid Shroud"
 	action_icon_state = "acid_shroud"
 	action_icon = 'icons/Xeno/actions/boiler.dmi'
-	desc = "Create a smokescreen of gas, setting your Bombard on a longer cooldown. Does not require or consume a reserved globule."
+	desc = "制造一片烟雾屏障，但会使你的轰炸技能进入更长的冷却时间。无需消耗预留的弹丸。"
 	ability_cost = 200
 	cooldown_duration = 32 SECONDS // 32 is the default Bombard cooldown.
 	use_state_flags = ABILITY_USE_BUSY|ABILITY_USE_LYING
@@ -497,7 +497,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	name = "Toggle Steam Rush"
 	action_icon_state = "steam_rush"
 	action_icon = 'icons/Xeno/actions/boiler.dmi'
-	desc = "Gain a speed and damage boost while draining plasma. Slashes grant stacks which increase speed and damage. Creates smoke when at max stacks."
+	desc = "获得速度与伤害加成，同时消耗等离子体。斩击可叠加层数，提升速度与伤害。达到最大层数时产生烟雾。"
 	ability_cost = 25
 	cooldown_duration = 15 SECONDS
 	keybinding_signals = list(
@@ -551,7 +551,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	active = TRUE
 
 	xeno_owner.emote("roar")
-	xeno_owner.visible_message(span_danger("[xeno_owner]'s body starts to hiss with steam!"), \
+	xeno_owner.visible_message(span_danger("[xeno_owner]的身体开始嘶嘶作响，冒出蒸汽！"), \
 	span_xenowarning("We feel steam spraying from our body!"))
 
 	xeno_owner.add_movespeed_modifier(MOVESPEED_ID_BOILER_SIZZLER_STEAM_RUSH, TRUE, 0, NONE, TRUE, base_speed_buff)
@@ -579,7 +579,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	carbon_target.apply_damage(steam_damage * stacks, damagetype = BURN, blocked = ACID)
 	xenomorph_spray(get_turf(carbon_target), 5 SECONDS, steam_damage * stacks)
 	playsound(carbon_target, 'sound/voice/alien/hiss2.ogg', 25)
-	to_chat(carbon_target, span_danger("You are burned by the hot steam!")) //I'm just going to operate under the assumption that xvx combat will never be a meaningful thing.
+	to_chat(carbon_target, span_danger("你被滚烫的蒸汽灼伤了！")) //I'm just going to operate under the assumption that xvx combat will never be a meaningful thing.
 
 	switch(stacks)
 		if(0 to 8)
@@ -592,7 +592,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 			particle_holder = new(owner, /particles/sizzler_steam/intense)
 			particle_holder.pixel_y = -8
 			particle_holder.pixel_x = 10
-			xeno_owner.visible_message(span_danger("[xeno_owner]'s body is spewing steam intensely!"), \
+			xeno_owner.visible_message(span_danger("[xeno_owner]的躯体正剧烈地喷发蒸汽！"), \
 			span_xenowarning("Our steam reaches max intensity!"))
 		if(10)
 			var/datum/effect_system/smoke_spread/smoke = new /datum/effect_system/smoke_spread/xeno/acid/light()
@@ -616,7 +616,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	add_cooldown()
 
 /datum/action/ability/xeno_action/steam_rush/on_cooldown_finish()
-	owner.balloon_alert(owner, "steam rush ready")
+	owner.balloon_alert(owner, "蒸汽冲锋准备就绪")
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
@@ -676,7 +676,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	name = "Smokescreen Spit"
 	action_icon_state = "corrosive_glob"
 	action_icon = 'icons/Xeno/actions/boiler.dmi'
-	desc = "Spit a steam smokescreen to cover your advance or retreat. Direct hits stagger and slow."
+	desc = "喷射蒸汽烟雾掩护你的前进或撤退。直接命中会令目标踉跄并减速。"
 	ability_cost = 350
 	cooldown_duration = 75 SECONDS
 	keybinding_signals = list(
@@ -774,7 +774,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 
 /datum/action/ability/activable/xeno/charge/acid_dash/New(Target)
 	. = ..()
-	desc = "Instantly dash for [charge_range] tiles, tackling the first marine in your path. If you manage to tackle someone, gain another cast of the ability."
+	desc = "立即向[charge_range]格冲刺，扑摔路径上的第一名陆战队员。若成功扑摔目标，则获得一次额外的技能使用机会。"
 
 /datum/action/ability/activable/xeno/charge/acid_dash/use_ability(atom/A)
 	if(!A)
@@ -787,7 +787,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	RegisterSignal(xeno_owner, COMSIG_XENOMORPH_LEAP_BUMP, PROC_REF(mob_hit))
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(acid_steps)) //We drop acid on every tile we pass through
 
-	xeno_owner.visible_message(span_danger("[xeno_owner] slides towards \the [A]!"), \
+	xeno_owner.visible_message(span_danger("[xeno_owner] 滑向 \the [A]！"), \
 	span_danger("We dash towards \the [A], spraying acid down our path!") )
 	xeno_owner.emote("roar")
 	xeno_owner.xeno_flags |= XENO_LEAPING //This has to come before throw_at, which checks impact. So we don't do end-charge specials when thrown
@@ -808,8 +808,8 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	var/mob/living/carbon/carbon_victim = living_target
 	carbon_victim.ParalyzeNoChain(stun_duration)
 
-	to_chat(carbon_victim, span_userdanger("The [owner] tackles us, sending us behind them!"))
-	owner.visible_message(span_xenodanger("\The [owner] tackles [carbon_victim], swapping location with them!"), \
+	to_chat(carbon_victim, span_userdanger("[owner] 将我们扑摔到身后！"))
+	owner.visible_message(span_xenodanger("\The [owner] 扑摔 [carbon_victim]，与对方交换了位置！"), \
 		span_xenodanger("We push [carbon_victim] in our acid trail!"), visible_message_flags = COMBAT_MESSAGE)
 
 /datum/action/ability/activable/xeno/charge/acid_dash/charge_complete()
@@ -844,7 +844,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	name = "High-Pressure Spit"
 	action_icon_state = "corrosive_glob_lance"
 	action_icon = 'icons/Xeno/actions/boiler.dmi'
-	desc = "Fire a high pressure glob of acid that knocks back, stuns, and shatters the target."
+	desc = "喷射一团高压酸液，可击退、击晕并粉碎目标。"
 	ability_cost = 75
 	cooldown_duration = 25 SECONDS
 	keybinding_signals = list(
@@ -873,6 +873,6 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	add_cooldown()
 
 /datum/action/ability/activable/xeno/high_pressure_spit/on_cooldown_finish()
-	owner.balloon_alert(owner, "high-pressure spit ready")
+	owner.balloon_alert(owner, "高压喷射准备就绪")
 	owner.playsound_local(owner, 'sound/voice/alien/hiss2.ogg', 25, 0, 1)
 	return ..()

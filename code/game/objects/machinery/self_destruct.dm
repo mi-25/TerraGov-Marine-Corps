@@ -30,7 +30,7 @@
 
 
 /obj/machinery/self_destruct/console
-	name = "self destruct control panel"
+	name = "自毁控制面板"
 	icon_state = "console"
 
 
@@ -45,7 +45,7 @@
 	if(!.)
 		return
 	if(marine_only_activate && !isterragovjob(user?.job))
-		to_chat(user, span_warning("The [src] beeps, \"Marine retinal scan failed!\"."))
+		to_chat(user, span_warning("[src] 发出哔哔声，'陆战队员视网膜扫描失败！'。"))
 		return FALSE
 	return TRUE
 
@@ -79,8 +79,8 @@
 		return
 	switch(action)
 		if("dest_start")
-			to_chat(usr, span_notice("You press a few keys on the panel."))
-			to_chat(usr, span_notice("The system must be booting up the self-destruct sequence now."))
+			to_chat(usr, span_notice("你在面板上按了几个键。"))
+			to_chat(usr, span_notice("系统现在肯定正在启动自毁程序。"))
 			priority_announce("Danger. The emergency destruct system is now activated. The ship will detonate in T-minus 20 minutes. Automatic detonation is unavailable. Manual detonation is required.", title = "Self Destruct System", type = ANNOUNCEMENT_PRIORITY, sound = 'sound/AI/selfdestruct.ogg', color_override = "purple")
 			active_state = SELF_DESTRUCT_MACHINE_ARMED
 			var/obj/machinery/self_destruct/rod/I = SSevacuation.dest_rods[SSevacuation.dest_index]
@@ -101,15 +101,15 @@
 				return
 			var/mob/living/user = usr
 			if(!ismarinecommandjob(user.job))
-				to_chat(usr, span_notice("You don't have the necessary clearance to cancel the emergency destruct system."))
+				to_chat(usr, span_notice("你没有取消紧急自毁系统所需的权限。"))
 				return
 			if(SSevacuation.cancel_self_destruct())
 				SStgui.close_user_uis(usr, src, "main")
 
 
 /obj/machinery/self_destruct/rod
-	name = "self destruct control rod"
-	desc = "It is part of a complicated self-destruct sequence, but relatively simple to operate. Twist to arm or disarm."
+	name = "自毁控制杆"
+	desc = "这是复杂自毁程序的一部分，但操作相对简单。旋转以启动或解除。"
 	icon_state = "rod"
 	layer = BELOW_OBJ_LAYER
 	var/activate_time
@@ -140,14 +140,14 @@
 
 	switch(active_state)
 		if(SELF_DESTRUCT_MACHINE_ACTIVE)
-			to_chat(user, span_notice("You twist and release the control rod, arming it."))
+			to_chat(user, span_notice("你转动并释放了控制棒，将其激活。"))
 			playsound(src, 'sound/machines/switch.ogg', 25, 1)
 			icon_state = "rod_4"
 			active_state = SELF_DESTRUCT_MACHINE_ARMED
 		if(SELF_DESTRUCT_MACHINE_ARMED)
-			to_chat(user, span_notice("You twist and release the control rod, disarming it."))
+			to_chat(user, span_notice("你扭动并释放了控制棒，解除了它的武装。"))
 			playsound(src, 'sound/machines/switch.ogg', 25, 1)
 			icon_state = "rod_3"
 			active_state = SELF_DESTRUCT_MACHINE_ACTIVE
 		else
-			to_chat(user, span_warning("The control rod is not ready."))
+			to_chat(user, span_warning("控制棒尚未就绪。"))

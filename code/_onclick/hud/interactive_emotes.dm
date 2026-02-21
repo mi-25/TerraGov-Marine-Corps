@@ -19,7 +19,7 @@
 	if(LAZYLEN(target.queued_interactions))
 		for(var/atom/movable/screen/interaction/element AS in target.queued_interactions)
 			if(element.initiator == src)
-				balloon_alert(src, "slow your roll!")
+				balloon_alert(src, "慢点！")
 				return
 
 	interaction = new interaction()
@@ -38,8 +38,8 @@
 
 //Mob interactions
 /atom/movable/screen/interaction
-	name = "high five"
-	desc = "You gonna leave them hanging?"
+	name = "击掌"
+	desc = "你就这么晾着他们不管了？"
 	icon = 'icons/mob/screen_alert.dmi'
 	icon_state = "drunk2"	//It looks jolly
 	///Sound filed played when interaction is successful
@@ -142,8 +142,8 @@
 	closeToolTip(usr)
 
 /atom/movable/screen/interaction/fist_bump
-	name = "fist bump"
-	desc = "Bro."
+	name = "碰拳"
+	desc = "兄弟。"
 	interaction_sound = 'sound/weapons/throwtap.ogg'
 
 //Benos turn around and slap with their tail instead of a fist bump
@@ -188,8 +188,8 @@
 	return "[owner] left [initiator] hanging. Not cool!"
 
 /atom/movable/screen/interaction/headbutt
-	name = "head bump"
-	desc = "Touch skulls."
+	name = "头撞"
+	desc = "触摸头骨。"
 	interaction_sound = 'sound/weapons/throwtap.ogg'
 
 /atom/movable/screen/interaction/headbutt/interaction_animation()
@@ -265,7 +265,7 @@
 
 //If anyone wants to add more interactions, here is an easy test item to use, just be sure to edit tgui_input_list() at the top
 /obj/item/interaction_tester
-	name = "interaction tester"
+	name = "交互测试器"
 	icon_state = "coin"
 
 /obj/item/interaction_tester/attack_self(mob/user)

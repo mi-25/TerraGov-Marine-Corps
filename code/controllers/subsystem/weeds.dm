@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(weeds)
-	name = "Weed"
+	name = "菌毯"
 	priority = FIRE_PRIORITY_WEED
 	flags = SS_NO_INIT
 	runlevels = RUNLEVEL_LOBBY|RUNLEVEL_SETUP|RUNLEVEL_GAME|RUNLEVEL_POSTGAME

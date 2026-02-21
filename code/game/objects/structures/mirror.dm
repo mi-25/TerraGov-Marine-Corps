@@ -1,6 +1,6 @@
 /obj/structure/mirror
-	name = "mirror"
-	desc = "Mirror mirror on the wall, who's the most robust of them all?"
+	name = "镜子"
+	desc = "魔镜魔镜告诉我，谁是最强大的那一个？"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "mirror"
 	hit_sound = 'sound/effects/Glasshit.ogg'

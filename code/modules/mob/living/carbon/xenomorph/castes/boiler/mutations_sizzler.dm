@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/gaseous_trail
 	name = "Gaseous Trail"
-	desc = "Acid Dash leaves a trail of opaque gas behind you. The gas lasts for 2/4/6 seconds."
+	desc = "酸液冲刺会在你身后留下一道不透明的气体。气体持续2/4/6秒。"
 	/// For each structure, the duration in deciseconds that the gas from Acid Dash will last.
 	var/duration_per_structure = 2 SECONDS
 
@@ -28,7 +28,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/neurotoxin_swap
 	name = "Neurotoxin Swap"
-	desc = "Smokescreen Spit does stamina damage and emits Neurotoxin instead. Smokescreen Spit's plasma cost is 200/150/100% of its original cost."
+	desc = "烟雾喷射会造成耐力伤害并释放神经毒素。烟雾喷射的等离子体消耗为原始消耗的200/150/100%。"
 	/// For the first structure, the multiplier to add to Smokescreen Spit's ability cost.
 	var/cost_multiplier_initial = 1.5
 	/// For each structure, the multiplier to add to Smokescreen Spit's ability cost.
@@ -73,7 +73,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/fast_acid
 	name = "Fast Acid"
-	desc = "Corrosive Acid is now applied 20/35/50% faster."
+	desc = "腐蚀酸液现在应用速度加快20/35/50%。"
 	/// For the first structure, the percentage to speed up Corrosive Acid by.
 	var/speedup_initial = 0.05
 	/// For each structure, the additional percentage to speed up Corrosive Acid by.

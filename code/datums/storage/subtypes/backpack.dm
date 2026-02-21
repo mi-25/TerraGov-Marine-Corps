@@ -73,4 +73,4 @@
 		return ..()
 
 /datum/storage/backpack/dispenser/attempt_draw_object(mob/living/user)
-	to_chat(user, span_notice("You can't grab anything out of [parent] while it's not deployed."))
+	to_chat(user, span_notice("[parent]未展开时，你无法从中取出任何物品。"))

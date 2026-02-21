@@ -8,8 +8,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump
 	icon_state = "vent_map-2"
 
-	name = "air vent"
-	desc = "Has a valve and pump attached to it."
+	name = "通风口"
+	desc = "装有阀门和泵。"
 
 	use_power = IDLE_POWER_USE
 	can_unwrench = FALSE
@@ -72,7 +72,7 @@
 	if(isplasmacutter(W))
 		var/obj/item/tool/pickaxe/plasmacutter/P = W
 		if(!welded)
-			to_chat(user, span_warning("\The [P] can only cut open welds!"))
+			to_chat(user, span_warning("\The [P] 只能切开焊接点！"))
 			return FALSE
 		if(!(P.start_cut(user, src.name, src, PLASMACUTTER_BASE_COST * PLASMACUTTER_VLOW_MOD)))
 			return FALSE
@@ -87,16 +87,16 @@
 	if(iswelder(I))
 		var/obj/item/tool/weldingtool/WT = I
 		if(WT.remove_fuel(1, user))
-			user.visible_message(span_notice("[user] starts welding [src] with [WT]."), \
+			user.visible_message(span_notice("[user]开始用[WT]焊接[src]。"), \
 			span_notice("You start welding [src] with [WT]."))
 			playsound(loc, 'sound/items/weldingtool_weld.ogg', 25)
 			if(I.use_tool(src, user, 5 SECONDS, 1, 25, null, BUSY_ICON_BUILD)) // todo clean this proc up its so bay-ey :(
 				if(!welded)
-					user.visible_message(span_notice("[user] welds [src] shut."), \
+					user.visible_message(span_notice("[user]将[src]焊接关闭。"), \
 					span_notice("You weld [src] shut."))
 					welded = TRUE
 				else
-					user.visible_message(span_notice("[user] welds [src] open."), \
+					user.visible_message(span_notice("[user] 将 [src] 焊接开了。"), \
 					span_notice("You weld [src] open."))
 					welded = FALSE
 				update_icon()
@@ -104,17 +104,17 @@
 				SET_PLANE_EXPLICIT(pipe_vision_img, ABOVE_HUD_PLANE, src)
 				return TRUE
 			else
-				to_chat(user, span_warning("[WT] needs to be on to start this task."))
+				to_chat(user, span_warning("[WT] 需要开启才能开始此任务。"))
 				return FALSE
 		else
-			to_chat(user, span_warning("You need more welding fuel to complete this task."))
+			to_chat(user, span_warning("你需要更多焊接燃料来完成此任务。"))
 			return TRUE
 	return FALSE
 
 /obj/machinery/atmospherics/components/unary/vent_pump/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational())
-		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
+		to_chat(user, span_warning("你无法拆卸[src]，请先关闭它！"))
 		return FALSE
 
 /obj/machinery/atmospherics/components/unary/vent_pump/examine(mob/user)
@@ -134,7 +134,7 @@
 		return
 	if(!welded || !(do_after(xeno_attacker, 2 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE)))
 		return
-	xeno_attacker.visible_message("[xeno_attacker] furiously claws at [src]!", "We manage to clear away the stuff blocking the vent", "You hear loud scraping noises.")
+	xeno_attacker.visible_message("[xeno_attacker] 疯狂地抓挠着 [src]！", "We manage to clear away the stuff blocking the vent", "You hear loud scraping noises.")
 	welded = FALSE
 	update_icon()
 	pipe_vision_img = image(src, loc, dir = dir)
@@ -154,7 +154,7 @@
 
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume
-	name = "large air vent"
+	name = "大型通风口"
 	power_channel = EQUIP
 
 // mapping

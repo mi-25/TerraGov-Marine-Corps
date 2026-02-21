@@ -744,7 +744,7 @@
 
 /datum/loadout_item/suit_store/main_gun/marine/minigun
 	name = "MG-100"
-	desc = "A six barreled rotary machine gun, The ultimate in man-portable firepower, capable of laying down high velocity armor piercing rounds this thing will no doubt pack a punch."
+	desc = "一门六管旋转机枪，便携式火力的终极体现，能够发射高速穿甲弹，这东西无疑威力巨大。"
 	req_desc = "Requires a powerback for power and ammo."
 	ui_icon = "minigun"
 	item_typepath = LOADOUT_ITEM_TGMC_MINIGUN

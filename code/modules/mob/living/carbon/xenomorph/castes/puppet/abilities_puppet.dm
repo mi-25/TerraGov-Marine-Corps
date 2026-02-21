@@ -1,7 +1,7 @@
 /datum/action/ability/activable/xeno/feed
 	name = "Feed"
 	action_icon_state = "lunge"
-	desc = "Assault an organic, restoring health through the use of the their biomass."
+	desc = "攻击有机体，通过利用其生物质来恢复生命值。"
 	ability_cost = 0
 	cooldown_duration = 35 SECONDS
 	target_flags = ABILITY_MOB_TARGET

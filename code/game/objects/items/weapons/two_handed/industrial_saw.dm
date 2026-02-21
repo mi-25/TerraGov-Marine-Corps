@@ -1,6 +1,6 @@
 /obj/item/weapon/twohanded/industrial_saw
-	name = "concrete saw"
-	desc = "A massive two handed industrial cutting tool. It can cut through pretty much anything."
+	name = "混凝土锯"
+	desc = "一把巨大的双手工业切割工具。几乎可以切割任何东西。"
 	icon_state = "auto_axe_off"
 	worn_icon_state = "auto_axe_off"
 	base_icon_state = "auto_axe"

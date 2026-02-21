@@ -1,6 +1,6 @@
 /datum/language/machine
-	name = "Encoded Audio Language"
-	desc = "An efficient language of encoded tones developed by synthetics and cyborgs."
+	name = "已编码音频语言"
+	desc = "一种由合成人和赛博格开发的高效编码音调语言。"
 	speech_verb = "whistles"
 	ask_verb = "chirps"
 	exclaim_verb = "whistles loudly"

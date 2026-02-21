@@ -1,6 +1,6 @@
 /obj/effect/ai_node/spawner/zombie
-	name = "tunnel"
-	desc = "It reeks of rotten flesh and has stains of old blood and scratches."
+	name = "隧道"
+	desc = "散发着腐肉的恶臭，上面有陈旧的血迹和抓痕。"
 	icon = 'icons/Xeno/Effects.dmi'
 	icon_state = "hole"
 	invisibility = 0

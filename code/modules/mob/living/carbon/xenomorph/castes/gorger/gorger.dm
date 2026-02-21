@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/gorger
 	caste_base_type = /datum/xeno_caste/gorger
 	name = "Gorger"
-	desc = "A large, powerfully muscled xeno with seemingly more vitality than others."
+	desc = "一个体型庞大、肌肉发达的异形，似乎比其他同类拥有更强的生命力。"
 	icon = 'icons/Xeno/castes/gorger.dmi'
 	icon_state = "Gorger Walking"
 	health = 600

@@ -447,6 +447,6 @@
 
 	if(hud_used && client)
 		hud_used.show_hud()
-		to_chat(usr, "<span class ='info'>Switched HUD mode. Press F12 to toggle.</span>")
+		to_chat(usr, "<span class ='info'>已切换HUD模式。按F12切换。</span>")
 	else
-		to_chat(usr, "<span class ='warning'>This mob type does not use a HUD.</span>")
+		to_chat(usr, "<span class ='warning'>此生物类型不使用HUD。</span>")

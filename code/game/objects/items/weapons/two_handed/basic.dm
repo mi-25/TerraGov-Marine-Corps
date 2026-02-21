@@ -1,8 +1,8 @@
 //Basic two handed weapons without complicated extra behavior
 
 /obj/item/weapon/twohanded/fireaxe
-	name = "fire axe"
-	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
+	name = "消防斧"
+	desc = "说真的，这简直是疯子的武器。谁会想到用斧头来对抗火焰？"
 	icon_state = "fireaxe"
 	worn_icon_state = "fireaxe"
 	force = 35
@@ -27,10 +27,10 @@
 	pry_capable = 0
 
 /obj/item/weapon/twohanded/glaive
-	name = "war glaive"
+	name = "战争长戟"
 	icon_state = "glaive"
 	worn_icon_state = "glaive"
-	desc = "A huge, powerful blade on a metallic pole. Mysterious writing is carved into the weapon."
+	desc = "一把巨大而有力的刀刃，安装在金属杆上。武器上刻有神秘的文字。"
 	force = 28
 	equip_slot_flags = ITEM_SLOT_BACK
 	force_activated = 90
@@ -49,14 +49,14 @@
 	return ..()
 
 /obj/item/weapon/twohanded/glaive/damaged
-	name = "war glaive"
-	desc = "A huge, powerful blade on a metallic pole. Mysterious writing is carved into the weapon. This one is ancient and has suffered serious acid damage, making it near-useless."
+	name = "战争长戟"
+	desc = "一把巨大的强力刀刃，安装在金属杆上。武器上刻有神秘的文字。这把武器年代久远，并且遭受了严重的酸液损伤，几乎无法使用。"
 	force = 18
 	force_activated = 28
 
 /obj/item/weapon/twohanded/sledgehammer
-	name = "sledge hammer"
-	desc = "A heavy hammer that's good at smashing rocks, but would probably make a good weapon considering the circumstances."
+	name = "大锤"
+	desc = "一把沉重的锤子，很适合砸石头，但考虑到当前情况，它或许也能当件趁手的武器。"
 	icon_state = "sledgehammer"
 	worn_icon_state = "sledgehammer"
 	force = 35

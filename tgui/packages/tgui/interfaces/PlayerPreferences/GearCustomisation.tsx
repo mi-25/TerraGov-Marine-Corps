@@ -31,8 +31,8 @@ export const GearCustomization = (props) => {
     bySlot[slotMapping[gear.slot]].push(gear);
   }
 
-  const currentPoints = gear.reduce(
-    (total, name) => total + gearsets[name].cost,
+  const currentPoints = (gear ?? []).reduce(
+    (total, name) => total + (gearsets?.[name]?.cost ?? 0),
     0,
   );
 
@@ -65,9 +65,9 @@ export const GearCustomization = (props) => {
                   <Button.Checkbox
                     inline
                     content={'Equipped'}
-                    checked={gear.includes(item.name)}
+                    checked={(gear ?? []).includes(item.name)}
                     onClick={() =>
-                      gear.includes(item.name)
+                      (gear ?? []).includes(item.name)
                         ? act('loadoutremove', { gear: item.name })
                         : act('loadoutadd', { gear: item.name })
                     }
@@ -89,9 +89,9 @@ export const GearCustomization = (props) => {
                   <Button.Checkbox
                     inline
                     content={'Equipped'}
-                    checked={gear.includes(item.name)}
+                    checked={(gear ?? []).includes(item.name)}
                     onClick={() =>
-                      gear.includes(item.name)
+                      (gear ?? []).includes(item.name)
                         ? act('loadoutremove', { gear: item.name })
                         : act('loadoutadd', { gear: item.name })
                     }
@@ -112,9 +112,9 @@ export const GearCustomization = (props) => {
                     <Button.Checkbox
                       inline
                       content={'Equipped'}
-                      checked={gear.includes(item.name)}
+                      checked={(gear ?? []).includes(item.name)}
                       onClick={() =>
-                        gear.includes(item.name)
+                        (gear ?? []).includes(item.name)
                           ? act('loadoutremove', { gear: item.name })
                           : act('loadoutadd', { gear: item.name })
                       }
@@ -138,9 +138,9 @@ export const GearCustomization = (props) => {
                   <Button.Checkbox
                     inline
                     content={'Equipped'}
-                    checked={gear.includes(item.name)}
+                    checked={(gear ?? []).includes(item.name)}
                     onClick={() =>
-                      gear.includes(item.name)
+                      (gear ?? []).includes(item.name)
                         ? act('loadoutremove', { gear: item.name })
                         : act('loadoutadd', { gear: item.name })
                     }
@@ -153,7 +153,7 @@ export const GearCustomization = (props) => {
         <Stack.Item grow>
           <Section title={'Undershirt (select one)'}>
             <LabeledList>
-              {clothing['undershirt'][physique_used]?.map((item, idx) => (
+              {clothing?.['undershirt']?.[physique_used]?.map((item, idx) => (
                 <LabeledList.Item key={item} label={item}>
                   <Button.Checkbox
                     inline
@@ -171,7 +171,7 @@ export const GearCustomization = (props) => {
         <Stack.Item grow>
           <Section title={'Underwear (select one)'}>
             <LabeledList>
-              {clothing['underwear'][physique_used]?.map((item, idx) => (
+              {clothing?.['underwear']?.[physique_used]?.map((item, idx) => (
                 <LabeledList.Item key={item} label={item}>
                   <Button.Checkbox
                     inline
@@ -187,7 +187,7 @@ export const GearCustomization = (props) => {
         <Stack.Item grow>
           <Section title={'Backpack (select one)'}>
             <LabeledList>
-              {clothing['backpack']?.map((item, idx) => (
+              {clothing?.['backpack']?.map((item, idx) => (
                 <LabeledList.Item key={item} label={item}>
                   <Button.Checkbox
                     inline

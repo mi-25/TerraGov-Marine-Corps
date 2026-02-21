@@ -1,5 +1,5 @@
 /datum/fire_support/cruise_missile
-	name = "Cruise missile strike"
+	name = "巡航导弹打击"
 	fire_support_type = FIRESUPPORT_TYPE_CRUISE_MISSILE
 	scatter_range = 1
 	uses = 1
@@ -18,7 +18,7 @@
 	uses = -1
 
 /datum/fire_support/rad_missile
-	name = "Radioactive missile"
+	name = "放射性导弹"
 	fire_support_type = FIRESUPPORT_TYPE_RAD_MISSILE
 	scatter_range = 4
 	impact_quantity = 1

@@ -1,6 +1,6 @@
 /obj/machinery/fuelcell_recycler
-	name = "fuel cell recycler"
-	desc = "A large machine with whirring fans and two cylindrical holes in the top. Used to regenerate fuel cells."
+	name = "燃料电池回收器"
+	desc = "一台大型机器，顶部有两个圆柱形孔洞，风扇嗡嗡作响。用于再生燃料电池。"
 	icon = 'icons/obj/machines/fusion_engine.dmi'
 	icon_state = "recycler"
 	anchored = TRUE
@@ -27,11 +27,11 @@
 				cell_right = I
 				start_processing()
 		else
-			to_chat(user, span_notice("The recycler is full!"))
+			to_chat(user, span_notice("回收器已满！"))
 		update_icon()
 		return
 
-	to_chat(user, span_notice("You can't see how you'd use [I] with [src]..."))
+	to_chat(user, span_notice("你看不出要如何将[I]与[src]一起使用……"))
 
 
 /obj/machinery/fuelcell_recycler/attack_hand(mob/living/user)
@@ -39,7 +39,7 @@
 	if(.)
 		return
 	if(cell_left == null && cell_right == null)
-		to_chat(user, span_notice("The recycler is empty."))
+		to_chat(user, span_notice("回收器是空的。"))
 		return
 
 	if(cell_right == null)

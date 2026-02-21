@@ -17,7 +17,7 @@
 	style_open = "<span class='maptext' style=font-size:20pt;text-align:center valign='top'>"
 
 /datum/action/innate/message_squad
-	name = "Send Order"
+	name = "发送命令"
 	action_icon_state = "screen_order_marine"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_SENDORDER,
@@ -54,7 +54,7 @@
 	text = capitalize(text)
 	var/filter_result = CAN_BYPASS_FILTER(human_owner) ? null : is_ic_filtered(text)
 	if(filter_result)
-		to_chat(human_owner, span_warning("That message contained a word prohibited in IC chat! Consider reviewing the server rules.\n<span replaceRegex='show_filtered_ic_chat'>\"[text]\"</span>"))
+		to_chat(human_owner, span_warning("该消息包含IC聊天中禁止的词语！请查阅服务器规则。\n<span replaceRegex='show_filtered_ic_chat'>'[text]'</span>"))
 		SSblackbox.record_feedback(FEEDBACK_TALLY, "ic_blocked_words", 1, lowertext(config.ic_filter_regex.match))
 		REPORT_CHAT_FILTER_TO_USER(src, filter_result)
 		log_filter("IC", text, filter_result)

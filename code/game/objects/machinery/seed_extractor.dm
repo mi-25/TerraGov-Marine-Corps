@@ -1,6 +1,6 @@
 /obj/machinery/seed_extractor
-	name = "seed extractor"
-	desc = "Extracts and bags seeds from produce."
+	name = "种子提取器"
+	desc = "从农产品中提取并装袋种子。"
 	icon = 'icons/obj/machines/hydroponics.dmi'
 	icon_state = "sextractor"
 	density = TRUE
@@ -25,14 +25,14 @@
 			new_seed_type = GLOB.seed_types[F.plantname]
 
 		if(new_seed_type)
-			to_chat(user, span_notice("You extract some seeds from [I]."))
+			to_chat(user, span_notice("你从[I]中提取出一些种子。"))
 			var/produce = rand(1, 4)
 			for(var/i = 1 to produce)
 				var/obj/item/seeds/seeds = new(get_turf(src), FALSE)
 				seeds.seed_type = new_seed_type.name
 				seeds.update_seed()
 		else
-			to_chat(user, "[I] doesn't seem to have any usable seeds inside it.")
+			to_chat(user, "[I] 内部似乎没有任何可用的种子。")
 
 		qdel(I)
 
@@ -41,5 +41,5 @@
 		var/obj/item/stack/tile/grass/S = I
 		if(!S.use(1))
 			return
-		to_chat(user, span_notice("You extract some seeds from the grass tile."))
+		to_chat(user, span_notice("你从草皮中提取出一些种子。"))
 		new /obj/item/seeds/grassseed(loc)

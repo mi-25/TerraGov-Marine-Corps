@@ -1,5 +1,5 @@
 /obj/machinery/portable_atmospherics/pump
-	name = "portable air pump"
+	name = "便携式气泵"
 	icon_state = "psiphon:0"
 	density = TRUE
 

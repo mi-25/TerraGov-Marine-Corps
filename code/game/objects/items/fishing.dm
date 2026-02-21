@@ -1,5 +1,5 @@
 /obj/item/fishing
-	name = "fishing prop"
+	name = "钓鱼道具"
 	icon = 'icons/obj/items/fishing.dmi'
 	icon_state = "worm"
 	worn_icon_list = list(
@@ -9,61 +9,61 @@
 	force = 0
 
 /obj/item/fishing/reel
-	name = "red reel"
-	desc = "A reel of red fishing wire."
+	name = "红色卷轴"
+	desc = "一卷红色钓鱼线。"
 	icon_state = "reel_red"
 
 /obj/item/fishing/reel/blue
-	name = "blue reel"
-	desc = "A reel of blue fishing wire."
+	name = "蓝色卷轴"
+	desc = "一卷蓝色钓鱼线。"
 	icon_state = "reel_blue"
 
 /obj/item/fishing/reel/white
-	name = "white reel"
-	desc = "A reel of white fishing wire."
+	name = "白色卷轴"
+	desc = "一卷白色钓鱼线。"
 	icon_state = "reel_white"
 
 /obj/item/fishing/reel/green
-	name = "green reel"
-	desc = "A reel of green fishing wire."
+	name = "绿色卷轴"
+	desc = "一卷绿色钓鱼线。"
 	icon_state = "reel_green"
 
 /obj/item/fishing/bait_can
-	name = "bait can"
-	desc = "What could be inside?"
+	name = "诱饵罐"
+	desc = "里面会有什么呢？"
 	icon_state = "bait_can_closed"
 
 /obj/item/fishing/bait_can/open
-	desc = "Full of worms."
+	desc = "满是蠕虫。"
 	icon_state = "bait_can_open"
 
 /obj/item/fishing/bait_can/empty
-	desc = "Its contents have been emptied."
+	desc = "其内容物已被清空。"
 	icon_state = "bait_can_empty"
 
 /obj/item/fishing/hook
-	name = "hook"
-	desc = "It's very sharp and pointy at the end."
+	name = "钩爪"
+	desc = "末端非常锋利尖锐。"
 	icon_state = "hook"
 
 /obj/item/fishing/hook/rescue
-	name = "rescue hook"
-	desc = "Contains double the hooks for more precision."
+	name = "救援钩"
+	desc = "包含双倍钩爪，精度更高。"
 	icon_state = "rescue_hook"
 
 /obj/item/fishing/worm
-	name = "worm"
-	desc = "It's still twitching."
+	name = "蠕虫"
+	desc = "它还在抽搐。"
 	icon_state = "worm"
 
 /obj/item/fishing/lure
-	name = "lure"
-	desc = "It's buyoant and has bait attached."
+	name = "引诱"
+	desc = "它带有浮力，并且附有鱼饵。"
 	icon_state = "lure"
 
 /obj/item/fishing/rod
-	name = "fishing rod"
-	desc = "You can fish with this."
+	name = "鱼竿"
+	desc = "你可以用这个钓鱼。"
 	icon_state = "fishing_rod"
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/equipment/fishing_rod_lefthand.dmi',
@@ -76,46 +76,46 @@
 	w_class = WEIGHT_CLASS_HUGE
 
 /obj/item/fishing/rod/telescopic
-	name = "telescopic fishing rod"
+	name = "伸缩鱼竿"
 	icon_state = "telescopic_fishing_rod"
 
 /obj/item/fishing/fish
-	name = "goldfish"
-	desc = "It tastes funny."
+	name = "金鱼"
+	desc = "尝起来怪怪的。"
 	icon_state = "goldfish"
 	force = 2
 
 /obj/item/fishing/fish/guppy
-	name = "guppyfish"
-	desc = "It tastes weird."
+	name = "孔雀鱼"
+	desc = "味道有点怪。"
 	icon_state = "guppyfish"
 
 /obj/item/fishing/fish/jelly
-	name = "jellyfish"
-	desc = "This one is slightly transparent."
+	name = "水母"
+	desc = "这个有点透明。"
 	icon_state = "jellyfish"
 
 /obj/item/fishing/fish/puffer
-	name = "pufferfish"
-	desc = "It is permanently swollen."
+	name = "河豚"
+	desc = "它永久性地肿胀着。"
 	icon_state = "pufferfish"
 
 /obj/item/fishing/fish/lanternfish
-	name = "lanternfish"
-	desc = "Usually found in the depths of the ocean."
+	name = "灯笼鱼"
+	desc = "通常发现于海洋深处。"
 	icon_state = "lanternfish"
 
 /obj/item/fishing/fish/crab
-	name = "crab"
-	desc = "It appears dead."
+	name = "螃蟹"
+	desc = "它似乎已经死了。"
 	icon_state = "crab"
 
 /obj/item/fishing/fish/starfish
-	name = "starfish"
-	desc = "These ones are found on beaches."
+	name = "海星"
+	desc = "这些是在海滩上发现的。"
 	icon_state = "starfish"
 
 /obj/item/fishing/fish/firefish
-	name = "firefish"
-	desc = "Has an exotic color."
+	name = "火鱼"
+	desc = "具有异域色彩。"
 	icon_state = "firefish"

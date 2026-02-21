@@ -47,7 +47,7 @@
 					qdel(found_atom)
 				CHECK_TICK
 			if(!i)
-				to_chat(usr, "No instances of this type exist")
+				to_chat(usr, "不存在此类型的实例")
 				return
 			log_admin("[key_name(usr)] deleted all instances of type [deleting.type] ([i] instances deleted) ")
 			message_admins(span_notice("[key_name(usr)] deleted all instances of type [deleting.type] ([i] instances deleted) "))
@@ -59,7 +59,7 @@
 					qdel(found_atom)
 				CHECK_TICK
 			if(!i)
-				to_chat(usr, "No instances of this type exist")
+				to_chat(usr, "不存在此类型的实例")
 				return
 			log_admin("[key_name(usr)] deleted all instances of type or subtype of [deleting.type] ([i] instances deleted) ")
 			message_admins(span_notice("[key_name(usr)] deleted all instances of type or subtype of [deleting.type] ([i] instances deleted) "))

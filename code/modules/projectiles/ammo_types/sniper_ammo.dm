@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/bullet/sniper
-	name = "sniper bullet"
+	name = "狙击弹道"
 	icon_state = "bullet_large"
 	hud_state = "sniper"
 	hud_state_empty = "sniper_empty"
@@ -20,7 +20,7 @@
 	sundering = 15
 
 /datum/ammo/bullet/sniper/incendiary
-	name = "incendiary sniper bullet"
+	name = "燃烧弹道狙击弹"
 	hud_state = "sniper_fire"
 	accuracy = 0
 	damage_type = BURN
@@ -32,7 +32,7 @@
 	sundering = 5
 
 /datum/ammo/bullet/sniper/flak
-	name = "flak sniper bullet"
+	name = "破片狙击弹道"
 	hud_state = "sniper_flak"
 	damage = 90
 	penetration = 0
@@ -43,7 +43,7 @@
 	airburst(target_mob, proj)
 
 /datum/ammo/bullet/sniper/svd
-	name = "crude sniper bullet"
+	name = "粗制狙击弹道"
 	handful_icon_state = "crude_sniper"
 	hud_state = "sniper_crude"
 	handful_amount = 5
@@ -52,7 +52,7 @@
 	sundering = 15
 
 /datum/ammo/bullet/sniper/martini
-	name = "crude heavy sniper bullet"
+	name = "重型狙击弹道弹"
 	handful_icon_state = "crude_heavy_sniper"
 	hud_state = "sniper_crude"
 	handful_amount = 5
@@ -71,7 +71,7 @@
 	living_victim.apply_status_effect(STATUS_EFFECT_SHATTER, shatter_duration)
 
 /datum/ammo/bullet/sniper/elite
-	name = "supersonic sniper bullet"
+	name = "超音速狙击弹道"
 	hud_state = "sniper_supersonic"
 	ammo_behavior_flags = AMMO_BALLISTIC
 	accuracy = 20
@@ -80,7 +80,7 @@
 	sundering = 50
 
 /datum/ammo/bullet/sniper/pfc
-	name = "high caliber rifle bullet"
+	name = "大口径步枪弹道"
 	hud_state = "sniper_heavy"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_BETTER_COVER_RNG|AMMO_SNIPER
 	damage = 80
@@ -89,7 +89,7 @@
 	damage_falloff = 0.25
 
 /datum/ammo/bullet/sniper/pfc/flak
-	name = "high caliber flak rifle bullet"
+	name = "大口径高射步枪弹道"
 	hud_state = "sniper_heavy_flak"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_BETTER_COVER_RNG|AMMO_SNIPER
 	damage = 40
@@ -102,7 +102,7 @@
 
 
 /datum/ammo/bullet/sniper/auto
-	name = "low velocity high caliber rifle bullet"
+	name = "低速大口径步枪弹道"
 	hud_state = "sniper_auto"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_BETTER_COVER_RNG|AMMO_SNIPER
 	damage = 50
@@ -111,7 +111,7 @@
 	damage_falloff = 0.25
 
 /datum/ammo/bullet/sniper/clf_heavyrifle
-	name = "high velocity incendiary sniper bullet"
+	name = "高速燃烧狙击弹道"
 	handful_icon_state = "ptrs"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_INCENDIARY|AMMO_BETTER_COVER_RNG|AMMO_SNIPER
 	hud_state = "sniper_fire"

@@ -3,7 +3,7 @@
 	name = "Time stop"
 	action_icon_state = "time_stop"
 	action_icon = 'icons/Xeno/actions/wraith.dmi'
-	desc = "Freezes bullets in their course, and they will start to move again only after a certain time"
+	desc = "冻结弹道轨迹，它们只会在特定时间后重新开始移动"
 	ability_cost = 100
 	cooldown_duration = 1 MINUTES
 	keybinding_signals = list(
@@ -46,7 +46,7 @@
 	name = "Portal"
 	action_icon_state = "portal"
 	action_icon = 'icons/Xeno/actions/wraith.dmi'
-	desc = "Place a portal on your location. You can travel from portal to portal. Left click to create portal one, right click to create portal two"
+	desc = "在当前位置放置传送门。你可以在传送门之间穿梭。左键点击创建传送门一，右键点击创建传送门二。"
 	ability_cost = 50
 	cooldown_duration = 5 SECONDS
 	keybinding_signals = list(
@@ -78,12 +78,12 @@
 /datum/action/ability/xeno_action/portal/can_use_action(silent, override_flags, selecting)
 	if(locate(/obj/effect/wraith_portal) in get_turf(owner))
 		if(!silent)
-			to_chat(owner, span_xenowarning("There is already a portal here!"))
+			to_chat(owner, span_xenowarning("这里已经有一个传送门了！"))
 		return FALSE
 	var/area/area = get_area(owner)
 	if(area.area_flags & MARINE_BASE)
 		if(!silent)
-			to_chat(owner, span_xenowarning("You cannot portal here!"))
+			to_chat(owner, span_xenowarning("无法在此处开启传送门！"))
 		return FALSE
 	return ..()
 
@@ -111,7 +111,7 @@
 /// Link the two portals if possible
 /datum/action/ability/xeno_action/portal/proc/link_portals()
 	if(get_dist(portal_one, portal_two) > range || portal_one.z != portal_two.z)
-		to_chat(owner, span_xenowarning("The other portal is too far away, they cannot link!"))
+		to_chat(owner, span_xenowarning("另一个传送门距离太远，无法建立连接！"))
 		return
 	portal_two.link_portal(portal_one)
 	portal_one.link_portal(portal_two)
@@ -251,7 +251,7 @@
 	name = "Time Shift"
 	action_icon_state = "rewind"
 	action_icon = 'icons/Xeno/actions/wraith.dmi'
-	desc = "Save the location and status of the target. When the time is up, the target location and status are restored, unless the target is dead, unconscious, or changed z-levels."
+	desc = "保存目标的位置和状态。当时间结束时，除非目标已死亡、失去意识或改变了Z层级，否则将恢复目标的位置和状态。"
 	ability_cost = 100
 	cooldown_duration = 30 SECONDS
 	keybinding_signals = list(
@@ -288,27 +288,27 @@
 
 	if(A == owner)
 		if(!silent)
-			owner.balloon_alert(owner, "Cannot rewind self")
+			owner.balloon_alert(owner, "无法倒带自身")
 		return FALSE
 
 	var/distance = get_dist(owner, A)
 	if(distance > range) //Needs to be in range.
 		if(!silent)
-			to_chat(owner, span_xenowarning("Our target is too far away! It must be [distance - range] tiles closer!"))
+			to_chat(owner, span_xenowarning("目标距离太远！必须再靠近[distance - range]格！"))
 		return FALSE
 
 	if(HAS_TRAIT(A, TRAIT_TIME_SHIFTED))
-		to_chat(owner, span_xenowarning("That target is already affected by a time manipulation effect!"))
+		to_chat(owner, span_xenowarning("该目标已受到时间操控效果影响！"))
 		return FALSE
 
 	if(!isliving(A))
-		to_chat(owner, span_xenowarning("We cannot target that!"))
+		to_chat(owner, span_xenowarning("我们无法瞄准那个目标！"))
 		return FALSE
 
 
 	var/mob/living/living_target = A
 	if(living_target.stat != CONSCIOUS)
-		to_chat(owner, span_xenowarning("The target is not in good enough shape!"))
+		to_chat(owner, span_xenowarning("目标状态不佳！"))
 
 /datum/action/ability/activable/xeno/rewind/use_ability(atom/A)
 	targeted = A
@@ -324,7 +324,7 @@
 	RegisterSignal(targeted, COMSIG_MOVABLE_MOVED, PROC_REF(save_move))
 	RegisterSignal(targeted, COMSIG_MOVABLE_Z_CHANGED, PROC_REF(cancel_timeshift))
 	targeted.add_filter("prerewind_blur", 1, radial_blur_filter(0.04))
-	targeted.balloon_alert(targeted, "You feel anchored to the past!")
+	targeted.balloon_alert(targeted, "你感觉被过去所锚定！")
 	ADD_TRAIT(targeted, TRAIT_TIME_SHIFTED, XENO_TRAIT)
 	add_cooldown()
 	succeed_activate()

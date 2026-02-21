@@ -29,24 +29,24 @@
 	dmg_max = BONECHIPS_MAX_DAMAGE //need to use the FixOVein past this point
 
 /datum/surgery_step/brain/bone_chips/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] starts taking bone chips out of [target]'s brain with \the [tool]."), \
+	user.visible_message(span_notice("[user] 开始用 \the [tool] 从 [target] 的大脑中取出骨片。"), \
 	span_notice("You start taking bone chips out of [target]'s brain with \the [tool]."))
-	target.balloon_alert_to_viewers("Clearing bone...")
+	target.balloon_alert_to_viewers("正在清理骨骼...")
 	..()
 
 /datum/surgery_step/brain/bone_chips/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] takes out all the bone chips in [target]'s brain with \the [tool]."),	\
+	user.visible_message(span_notice("[user]用\the [tool]取出了[target]大脑中的所有骨片。"),	\
 	span_notice("You take out all the bone chips in [target]'s brain with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	var/datum/internal_organ/brain/sponge = target.get_organ_slot(ORGAN_SLOT_BRAIN)
 	if(sponge)
 		sponge.damage = 0
 	return ..()
 
 /datum/surgery_step/brain/bone_chips/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_warning("[user]'s hand slips, jabbing \the [tool] in [target]'s brain!"), \
+	user.visible_message(span_warning("[user]的手滑了一下，把 \the [tool] 戳进了[target]的大脑里！"), \
 	span_warning("Your hand slips, jabbing \the [tool] in [target]'s brain!"))
-	target.balloon_alert_to_viewers("Slipped!")
+	target.balloon_alert_to_viewers("滑倒了！")
 	target.apply_damage(30, BRUTE, "head", 0, TRUE, updating_health = TRUE)
 
 
@@ -63,22 +63,22 @@
 
 
 /datum/surgery_step/brain/hematoma/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] starts mending hematoma in [target]'s brain with \the [tool]."), \
+	user.visible_message(span_notice("[user]开始用\the [tool]治疗[target]脑部的血肿。"), \
 	span_notice("You start mending hematoma in [target]'s brain with \the [tool]."))
-	target.balloon_alert_to_viewers("Mending...")
+	target.balloon_alert_to_viewers("愈合中...")
 	..()
 
 /datum/surgery_step/brain/hematoma/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] mends hematoma in [target]'s brain with \the [tool]."),	\
+	user.visible_message(span_notice("[user] 使用 \the [tool] 修复了 [target] 脑部的血肿。"),	\
 	span_notice("You mend hematoma in [target]'s brain with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	var/datum/internal_organ/brain/sponge = target.get_organ_slot(ORGAN_SLOT_BRAIN)
 	if(sponge)
 		sponge.damage = BONECHIPS_MAX_DAMAGE
 	return ..()
 
 /datum/surgery_step/brain/hematoma/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_warning("[user]'s hand slips, bruising [target]'s brain with \the [tool]!"), \
+	user.visible_message(span_warning("[user]的手滑了一下，用\the [tool]挫伤了[target]的大脑！"), \
 	span_warning("Your hand slips, bruising [target]'s brain with \the [tool]!"))
-	target.balloon_alert_to_viewers("Slipped!")
+	target.balloon_alert_to_viewers("滑倒了！")
 	target.apply_damage(20, BRUTE, "head", 0, TRUE, updating_health = TRUE)

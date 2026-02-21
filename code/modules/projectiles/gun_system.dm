@@ -15,8 +15,8 @@
 	friction = generator(GEN_NUM, 0.3, 0.6)
 
 /obj/item/weapon/gun
-	name = "Guns"
-	desc = "Its a gun. It's pretty terrible, though."
+	name = "枪械"
+	desc = "这是一把枪。不过，它相当糟糕。"
 	icon_state = ""
 	worn_icon_state = "gun"
 	item_state_worn = TRUE
@@ -645,7 +645,7 @@
 
 /obj/item/weapon/gun/wield(mob/user)
 	if(CHECK_BITFIELD(gun_features_flags, GUN_DEPLOYED_FIRE_ONLY))
-		to_chat(user, span_notice("[src] cannot be fired by hand and must be deployed."))
+		to_chat(user, span_notice("[src]无法手持发射，必须部署使用。"))
 		return
 
 	. = ..()
@@ -1095,11 +1095,11 @@
 
 	DISABLE_BITFIELD(gun_features_flags, GUN_CAN_POINTBLANK) //If they try to click again, they're going to hit themselves.
 
-	user.visible_message(span_warning("[user] sticks their gun in their mouth, ready to pull the trigger."))
+	user.visible_message(span_warning("[user] 把枪塞进嘴里，准备扣动扳机。"))
 	log_combat(user, null, "is trying to commit suicide")
 
 	if(!do_after(user, 40, NONE, src, BUSY_ICON_DANGER))
-		M.visible_message(span_notice("[user] decided life was worth living."))
+		M.visible_message(span_notice("[user] 决定生命值得活下去。"))
 		ENABLE_BITFIELD(gun_features_flags, GUN_CAN_POINTBLANK)
 		return
 
@@ -1112,7 +1112,7 @@
 
 	projectile_to_fire = get_ammo_object()
 
-	user.visible_message("<span class = 'warning'>[user] pulls the trigger!</span>")
+	user.visible_message("<span class = 'warning'>[user]扣动了扳机！</span>")
 	var/actual_sound = (active_attachable?.fire_sound) ? active_attachable.fire_sound : fire_sound
 	var/sound_volume = (HAS_TRAIT(src, TRAIT_GUN_SILENCED) && !active_attachable) ? 25 : 60
 	playsound(user, actual_sound, sound_volume, 1)
@@ -1126,7 +1126,7 @@
 		user.apply_damage(projectile_to_fire.damage * 3, projectile_to_fire.ammo.damage_type, "head", 0, TRUE)
 		user.apply_damage(200, OXY) //In case someone tried to defib them. Won't work.
 		user.death()
-		to_chat(user, span_userdanger("Your life flashes before you as your spirit is torn from your body!"))
+		to_chat(user, span_userdanger("你的生命在你眼前闪过，灵魂正被从躯体中撕裂！"))
 		user.ghostize(FALSE) //No return.
 		ENABLE_BITFIELD(gun_features_flags, GUN_CAN_POINTBLANK)
 		return
@@ -1136,7 +1136,7 @@
 		return // suicide with a blank?
 
 	if(projectile_to_fire.ammo.damage_type == STAMINA)
-		to_chat(user, span_notice("Ow..."))
+		to_chat(user, span_notice("呃..."))
 		user.apply_damage(200, STAMINA)
 	else
 		user.apply_damage(projectile_to_fire.damage * 2.5, projectile_to_fire.ammo.damage_type, "head", 0, TRUE)
@@ -1282,51 +1282,51 @@
 		if(isammomagazine(new_mag) && CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_HANDFULS))
 			var/obj/item/ammo_magazine/mag = new_mag
 			if(!CHECK_BITFIELD(mag.magazine_flags, MAGAZINE_HANDFUL)) //If the gun uses handfuls, it accepts all handfuls since it uses caliber to check if its allowed.
-				to_chat(user, span_warning("[new_mag] cannot fit into [src]!"))
+				to_chat(user, span_warning("[new_mag] 无法装入 [src]！"))
 				return FALSE
 			if(mag.caliber != caliber)
-				to_chat(user, span_warning("Those handfuls cannot fit into [src]!"))
+				to_chat(user, span_warning("这几把装不进[src]！"))
 				return FALSE
 		else
-			to_chat(user, span_warning("[new_mag] cannot fit into [src]!"))
+			to_chat(user, span_warning("[new_mag] 无法装入 [src]！"))
 			return FALSE
 
 	if(isammomagazine(new_mag) && CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_CLOSED) && !force)
 		if(CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_TOGGLES_OPEN)) //AMMO_RECIEVER_CLOSED without AMMO_RECIEVER_TOGGLES_OPEN means the gun is not allowed to reload. Period.
-			to_chat(user, span_warning("[src] is closed!"))
+			to_chat(user, span_warning("[src]已关闭！"))
 		else
-			to_chat(user, span_warning("You cannot reload [src]!"))
+			to_chat(user, span_warning("你无法为[src]重新装弹！"))
 		return FALSE
 
 	if((length(chamber_items) >= max_chamber_items) && max_chamber_items)
 		if(!CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_ROTATES_CHAMBER))
-			to_chat(user, span_warning("There is no room for [new_mag]!"))
+			to_chat(user, span_warning("没有空间装下[new_mag]！"))
 			return FALSE
 		if(rounds >= max_chamber_items)
-			to_chat(user, span_warning("There is no room for [new_mag]!"))
+			to_chat(user, span_warning("没有空间装下[new_mag]！"))
 			return FALSE
 
 	if(!max_chamber_items && in_chamber)
-		to_chat(user, span_warning("[src]'s chamber is closed"))
+		to_chat(user, span_warning("[src]的枪膛已关闭"))
 		return FALSE
 
 	if(CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_MAGAZINES))
 		if(!get_current_rounds(new_mag) && !force)
-			to_chat(user, span_notice("[new_mag] is empty!"))
+			to_chat(user, span_notice("[new_mag] 已空！"))
 			return FALSE
 		var/magazine_features_flags = get_magazine_features_flags(new_mag)
 		if(magazine_features_flags && CHECK_BITFIELD(magazine_features_flags, MAGAZINE_WORN) && \
 		(!((loc == user) || (master_gun?.loc == user)) || (new_mag.loc != user)))
-			to_chat(user, span_warning("You need to be carrying both [src] and [new_mag] to connect them!"))
+			to_chat(user, span_warning("你需要同时携带[src]和[new_mag]才能连接它们！"))
 			return FALSE
 		var/reload_delay = get_magazine_reload_delay(new_mag)
 		if(reload_delay > 0 && user && !force)
 			reload_delay -= reload_delay * 0.25 * min(user.skills.getRating(gun_skill_category), 2)
-			to_chat(user, span_notice("You begin reloading [src] with [new_mag]."))
+			to_chat(user, span_notice("你开始用[new_mag]为[src]装弹。"))
 			ADD_TRAIT(user, TRAIT_IS_RELOADING, REF(src))
 			if(!do_after(user, reload_delay, NONE, user))
 				REMOVE_TRAIT(user, TRAIT_IS_RELOADING, REF(src))
-				to_chat(user, span_warning("Your reload was interupted!"))
+				to_chat(user, span_warning("你的装弹被打断了！"))
 				return FALSE
 			REMOVE_TRAIT(user, TRAIT_IS_RELOADING, REF(src))
 		if(CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_ROTATES_CHAMBER))
@@ -1350,7 +1350,7 @@
 			cycle(user, FALSE)
 		update_ammo_count()
 		update_icon()
-		to_chat(user, span_notice("You reload [src] with [new_mag]."))
+		to_chat(user, span_notice("你将[src]重新装填上[new_mag]。"))
 		RegisterSignals(new_mag, list(COMSIG_CELL_SELF_RECHARGE, COMSIG_ATOM_EMP_ACT), PROC_REF(update_ammo_count))
 		RegisterSignal(new_mag, COMSIG_ITEM_REMOVED_INVENTORY, PROC_REF(drop_connected_mag))
 		return TRUE
@@ -1368,7 +1368,7 @@
 				playsound(src, hand_reload_sound, 25, 1)
 			else
 				if((length(chamber_items) && !CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_ROTATES_CHAMBER)) || (CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_ROTATES_CHAMBER) && rounds))
-					to_chat(user, span_warning("[src] must be completely empty to use the [mag]!"))
+					to_chat(user, span_warning("[src]必须完全清空才能使用[mag]！"))
 					return FALSE
 				var/rounds_to_fill = mag.current_rounds < max_chamber_items ? mag.current_rounds : max_chamber_items
 				for(var/i = 0, i < rounds_to_fill, i++)
@@ -1438,9 +1438,9 @@
 		return FALSE
 	if(CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_CLOSED))
 		if(CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_TOGGLES_OPEN))
-			to_chat(user, span_warning("You have to open [src] first!"))
+			to_chat(user, span_warning("你得先打开[src]！"))
 		else
-			to_chat(user, span_warning("You cannot unload [src]!"))
+			to_chat(user, span_warning("你无法卸载[src]！"))
 		return
 	if(!length(chamber_items))
 		if(!in_chamber)
@@ -1472,7 +1472,7 @@
 	if(!mag)
 		return
 	playsound(src, unload_sound, 25, 1, 5)
-	user?.visible_message(span_notice("[user] unloads [mag] from [src]."),
+	user?.visible_message(span_notice("[user] 从 [src] 卸下了 [mag]。"),
 	span_notice("You unload [mag] from [src]."), null, 4)
 	if(drop && !(CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_MAGAZINES) && CHECK_BITFIELD(get_magazine_features_flags(mag), MAGAZINE_WORN)))
 		if(user)
@@ -1695,7 +1695,7 @@
 ///Gets your thumb stuck in the gun while reloading
 /obj/item/weapon/gun/rifle/garand/proc/garand_thumb(mob/living/user)
 	var/zone = user.hand ? "l_hand" : "r_hand"
-	to_chat(user, span_userdanger("Your thumb gets caught while reloading [src]!"))
+	to_chat(user, span_userdanger("你的拇指在给[src]装弹时被夹住了！"))
 	user.apply_damage(1, BRUTE, zone)
 	user.emote("scream")
 
@@ -1711,45 +1711,45 @@
 	if(!user || user.incapacitated()  || user.lying_angle || !isturf(user.loc))
 		return
 	if(rounds - rounds_per_shot < 0 && rounds)
-		to_chat(user, span_warning("There's not enough rounds left to fire."))
+		to_chat(user, span_warning("剩余弹药不足以开火。"))
 		return FALSE
 	if(!CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_CLOSED) && CHECK_BITFIELD(reciever_flags, AMMO_RECIEVER_TOGGLES_OPEN))
-		to_chat(user, span_warning("The chamber is open! Close it first."))
+		to_chat(user, span_warning("枪膛已打开！请先关闭。"))
 		return FALSE
 	if(!user.dextrous)
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
+		to_chat(user, span_warning("你没有足够的灵巧度来完成这个动作！"))
 		return FALSE
 	if(!(gun_features_flags & GUN_ALLOW_SYNTHETIC) && !CONFIG_GET(flag/allow_synthetic_gun_use) && issynth(user))
-		to_chat(user, span_warning("Your program does not allow you to use this firearm."))
+		to_chat(user, span_warning("你的程序不允许你使用这把枪械。"))
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_GUN_SAFETY))
-		to_chat(user, span_warning("The safety is on!"))
+		to_chat(user, span_warning("保险已打开！"))
 		return FALSE
 	if(CHECK_BITFIELD(gun_features_flags, GUN_WIELDED_FIRING_ONLY)) //If we're not holding the weapon with both hands when we should.
 		if(!master_gun && !CHECK_BITFIELD(item_flags, WIELDED))
-			to_chat(user, "<span class='warning'>You need a more secure grip to fire this weapon!")
+			to_chat(user, "<span class='warning'>你需要更稳固的握持才能开火！</span>")
 			return FALSE
 		if(master_gun && !CHECK_BITFIELD(master_gun.item_flags, WIELDED))
-			to_chat(user, span_warning("You need a more secure grip to fire [src]!"))
+			to_chat(user, span_warning("你需要更稳固的握持才能发射[src]！"))
 			return FALSE
 	if(LAZYACCESS(user.do_actions, src))
-		to_chat(user, "<span class='warning'>You are doing something else currently.")
+		to_chat(user, "<span class='warning'>你正在做其他事情。")
 		return FALSE
 	if(CHECK_BITFIELD(gun_features_flags, GUN_WIELDED_STABLE_FIRING_ONLY))//If we must wait to finish wielding before shooting.
 		if(!master_gun && !(item_flags & FULLY_WIELDED))
-			to_chat(user, "<span class='warning'>You need a more secure grip to fire this weapon!")
+			to_chat(user, "<span class='warning'>你需要更稳固的握持才能开火！</span>")
 			return FALSE
 		if(master_gun && !(master_gun.item_flags & FULLY_WIELDED))
-			to_chat(user, "<span class='warning'>You need a more secure grip to fire [src]!")
+			to_chat(user, "<span class='warning'>你需要更稳固的握持才能发射[src]！</span>")
 			return FALSE
 	if(CHECK_BITFIELD(gun_features_flags, GUN_DEPLOYED_FIRE_ONLY) && !CHECK_BITFIELD(item_flags, IS_DEPLOYED))
-		to_chat(user, span_notice("You cannot fire [src] while it is not deployed."))
+		to_chat(user, span_notice("你无法在[src]未展开时开火。"))
 		return FALSE
 	if(CHECK_BITFIELD(gun_features_flags, GUN_IS_ATTACHMENT) && !master_gun && CHECK_BITFIELD(gun_features_flags, GUN_ATTACHMENT_FIRE_ONLY))
-		to_chat(user, span_notice("You cannot fire [src] without it attached to a gun!"))
+		to_chat(user, span_notice("不将其安装在枪上，你无法发射[src]！"))
 		return FALSE
 	if(overheat_timer)
-		balloon_alert(user, "overheat")
+		balloon_alert(user, "过热")
 		return FALSE
 	return TRUE
 
@@ -1764,7 +1764,7 @@
 		return FALSE
 
 	if(world.time % 3 && !user?.client?.prefs.mute_self_combat_messages)
-		to_chat(user, span_warning("[src] is not ready to fire again!"))
+		to_chat(user, span_warning("[src] 尚未准备好再次开火！"))
 	return TRUE
 
 ///Plays firing sound when firing
@@ -1917,7 +1917,7 @@
 		lit_flashlight.turn_light(null, FALSE)
 	playsound(loc, SFX_ALIEN_CLAW_METAL, 25, 1)
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	to_chat(xeno_attacker, span_warning("We disable the metal thing's lights.") )
+	to_chat(xeno_attacker, span_warning("我们让那个金属玩意儿熄灯了。") )
 
 /obj/item/weapon/gun/special_stripped_behavior(mob/stripper, mob/owner)
 	var/obj/item/attachable/magnetic_harness/magharn = attachments_by_slot[ATTACHMENT_SLOT_RAIL]

@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(overlays)
-	name = "Overlay"
+	name = "覆盖层"
 	flags = SS_NO_FIRE|SS_NO_INIT
 	var/list/stats
 

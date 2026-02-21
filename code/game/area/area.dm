@@ -1,6 +1,6 @@
 /area
 	level = null
-	name = "Unknown"
+	name = "未知"
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "unknown"
 	layer = AREA_LAYER

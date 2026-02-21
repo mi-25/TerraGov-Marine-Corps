@@ -8,7 +8,7 @@
 	active_power_usage = 2000
 
 /obj/machinery/science/isolator
-	name = "Isolator"
+	name = "隔离者"
 	icon_state = "isolator_off"
 
 /obj/machinery/science/isolator/on
@@ -22,7 +22,7 @@
 
 
 /obj/machinery/science/analyser
-	name = "Analyser"
+	name = "分析仪"
 	icon_state = "analyser"
 
 /obj/machinery/science/analyser/processing
@@ -30,7 +30,7 @@
 
 
 /obj/machinery/science/incubator
-	name = "Incubator"
+	name = "孵化器"
 	icon_state = "incubator"
 
 /obj/machinery/science/incubator/on
@@ -38,7 +38,7 @@
 
 
 /obj/machinery/science/centrifuge
-	name = "Centrifuge"
+	name = "离心机"
 	icon_state = "centrifuge0"
 
 /obj/machinery/science/centrifuge/moving
@@ -52,7 +52,7 @@
 
 
 /obj/machinery/science/isolation_centerfuge
-	name = "Isolation Centerfuge"
+	name = "隔离离心机"
 	icon_state = "isolation_centerfuge_closed_off"
 
 /obj/machinery/science/isolation_centerfuge/open
@@ -72,7 +72,7 @@
 
 
 /obj/machinery/science/pathogenic_incubator
-	name = "Pathogenic Incubator"
+	name = "病原孵化器"
 	icon_state = "pathogenic_incubator_closed_off"
 
 /obj/machinery/science/pathogenic_incubator/open
@@ -86,7 +86,7 @@
 
 
 /obj/machinery/science/pathogenic_Isolator
-	name = "Pathogenic Isolator"
+	name = "病原体分离器"
 	icon_state = "Pathogenic_Isolator_empty_off"
 
 /obj/machinery/science/pathogenic_Isolator/inserted
@@ -99,7 +99,7 @@
 	icon_state = "Pathogenic_Isolator_syringein_on"
 
 /obj/machinery/science/microscope
-	name = "Microscope"
+	name = "显微镜"
 	icon_state = "microscope"
 
 /obj/machinery/science/microscope/slide

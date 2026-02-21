@@ -2,7 +2,7 @@
 * Book
 */
 /obj/item/book
-	name = "book"
+	name = "书籍"
 	icon = 'icons/obj/items/books.dmi'
 	icon_state ="book"
 	throw_speed = 1
@@ -28,15 +28,15 @@
 
 	if(carved)
 		if(!store)
-			visible_message(span_notice("The pages of [title] have been cut out!"))
+			visible_message(span_notice("[title]的书页被撕掉了！"))
 		else
-			visible_message(span_notice("[store] falls out of [title]!"))
+			visible_message(span_notice("[store]从[title]中掉出来了！"))
 			store.forceMove(get_turf(loc))
 			store = null
 		return
 
 	if(isliving(user))
-		user.visible_message("[user] opens \"[title]\".")
+		user.visible_message("[user]打开了'[title]'。")
 
 	var/datum/browser/popup = new(user, "book", "<div align='center'>Owner: [author]</div>", 800, 600)
 	popup.set_content(dat)
@@ -50,7 +50,7 @@
 
 	if(istype(I, /obj/item/tool/pen))
 		if(unique)
-			to_chat(user, "These pages don't seem to take the ink well. Looks like you can't modify it.")
+			to_chat(user, "这些页面似乎不太吃墨。看来你无法修改它。")
 			return
 
 		var/choice = tgui_input_list(user, "What would you like to change?", null, list("Title", "Contents", "Author", "Cancel"))
@@ -58,7 +58,7 @@
 			if("Title")
 				var/newtitle = reject_bad_text(stripped_input(user, "Write a new title:"))
 				if(!newtitle)
-					to_chat(user, "The title is invalid.")
+					to_chat(user, "标题无效。")
 					return
 
 				name = newtitle
@@ -67,7 +67,7 @@
 			if("Contents")
 				var/content = strip_html(input(usr, "Write your book's contents:") as message|null, 8192)
 				if(!content)
-					to_chat(usr, "The content is invalid.")
+					to_chat(usr, "内容无效。")
 					return
 
 				dat += content
@@ -75,47 +75,47 @@
 			if("Author")
 				var/newauthor = stripped_input(user, "Write the author's name:")
 				if(!newauthor)
-					to_chat(user, "The name is invalid.")
+					to_chat(user, "名称无效。")
 					return
 				else
 					author = newauthor
 
 	else if(carved)
 		if(store)
-			to_chat(user, span_notice("There's already something in [title]!"))
+			to_chat(user, span_notice("[title] 里已经有东西了！"))
 			return
 
 		if(I.w_class >= 3)
-			to_chat(user, span_notice("[I] won't fit in [title]."))
+			to_chat(user, span_notice("[I] 装不进 [title]。"))
 			return
 
 		user.drop_held_item()
 		I.forceMove(src)
 		store = I
-		to_chat(user, span_notice("You put [I] in [title]."))
+		to_chat(user, span_notice("你将[I]放入[title]。"))
 
 	else if(istype(I, /obj/item/tool/kitchen/knife) || iswirecutter(I))
 		if(carved)
 			return
 
-		to_chat(user, span_notice("You begin to carve out [title]."))
+		to_chat(user, span_notice("你开始雕刻[title]。"))
 
 		if(!do_after(user, 30, NONE, src))
 			return
 
-		to_chat(user, span_notice("You carve out the pages from [title]! You didn't want to read it anyway."))
+		to_chat(user, span_notice("你从[title]上撕下了书页！反正你也不想读它。"))
 		carved = TRUE
 
 /obj/item/book/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	if(user.zone_selected == "eyes")
-		user.visible_message(span_notice("You open up the book and show it to [M]."), \
+		user.visible_message(span_notice("你翻开书本，展示给[M]看。"), \
 			span_notice("[user] opens up a book and shows it to [M]."))
 		M << browse(HTML_SKELETON_TITLE("Penned by [author].", dat), "window=book")
 
 
 
 /obj/item/book/codebook
-	name = "Ship Code Book"
+	name = "舰船密码本"
 	unique = TRUE
 	dat = ""
 

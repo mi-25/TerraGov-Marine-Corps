@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(blackbox)
-	name = "Blackbox"
+	name = "黑匣子"
 	wait = 10 MINUTES
 	runlevels = RUNLEVEL_GAME
 

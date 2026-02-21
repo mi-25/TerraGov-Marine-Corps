@@ -1,7 +1,7 @@
 //Destroy mission objectives
 
 /obj/structure/campaign_objective/destruction_objective
-	name = "GENERIC CAMPAIGN DESTRUCTION OBJECTIVE"
+	name = "通用战役摧毁目标"
 	soft_armor = list(MELEE = 200, BULLET = 200, LASER = 200, ENERGY = 200, BOMB = 200, BIO = 200, FIRE = 200, ACID = 200) //require c4 normally
 	allow_pass_flags = PASSABLE|PASS_WALKOVER
 	objective_flags = CAMPAIGN_OBJECTIVE_DEL_ON_DISABLE
@@ -63,15 +63,15 @@
 
 //Howitzer
 /obj/effect/landmark/campaign_structure/howitzer_objective
-	name = "howitzer objective"
+	name = "榴弹炮目标"
 	icon = 'icons/obj/machines/deployable/howitzer.dmi'
 	icon_state = "howitzer_deployed"
 	mission_types = list(/datum/campaign_mission/destroy_mission/fire_support_raid)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/howitzer
 
 /obj/structure/campaign_objective/destruction_objective/howitzer
-	name = "\improper TA-100Y howitzer"
-	desc = "A manual, crew-operated and towable howitzer, will rain down 150mm laserguided and accurate shells on any of your foes."
+	name = "\improper TA-100Y榴弹炮"
+	desc = "一门手动操作、可牵引的榴弹炮，能够向任何敌人倾泻150毫米激光制导的精确炮弹。"
 	icon = 'icons/obj/machines/deployable/howitzer.dmi'
 	icon_state = "howitzer_deployed"
 	pixel_x = -16
@@ -79,7 +79,7 @@
 
 //MLRS
 /obj/effect/landmark/campaign_structure/mlrs
-	name = "MLRS objective"
+	name = "MLRS 目标"
 	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
 	icon_state = "mlrs"
 	pixel_y = -15
@@ -87,8 +87,8 @@
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/mlrs
 
 /obj/structure/campaign_objective/destruction_objective/mlrs
-	name = "\improper SOT-A1 MLRS"
-	desc = "A massive multi launch rocket system on a tracked chassis. Can unleash a tremendous amount of firepower in a short amount of time."
+	name = "\improper SOT-A1 多管火箭系统"
+	desc = "一种安装在履带式底盘上的大型多管火箭发射系统。能在短时间内倾泻出巨大的火力。"
 	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
 	icon_state = "mlrs"
 	obj_flags = parent_type::obj_flags|BLOCK_Z_OUT_DOWN|BLOCK_Z_IN_UP
@@ -132,7 +132,7 @@
 	grow = 0.04
 
 /obj/effect/landmark/campaign_structure/tank
-	name = "tank objective"
+	name = "坦克目标"
 	icon_state = "tank"
 	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
 	pixel_y = -15
@@ -140,12 +140,12 @@
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/mlrs/tank
 
 /obj/structure/campaign_objective/destruction_objective/mlrs/tank
-	name = "\improper M34A2 Longstreet Light Tank"
-	desc = "A giant piece of armor with a big gun, good for blowing stuff up."
+	name = "\improper M34A2朗斯特里特轻型坦克"
+	desc = "巨大的装甲块，配备大口径火炮，擅长摧毁一切。"
 	icon_state = "tank"
 
 /obj/effect/landmark/campaign_structure/apc
-	name = "apc objective"
+	name = "APC目标"
 	icon_state = "apc"
 	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
 	pixel_y = -15
@@ -154,8 +154,8 @@
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/mlrs/apc
 
 /obj/structure/campaign_objective/destruction_objective/mlrs/apc
-	name = "\improper M577 armored personnel carrier"
-	desc = "A giant piece of armor for carrying troops in relative safety. Still has a pretty big gun."
+	name = "\improper M577装甲运兵车"
+	desc = "用于相对安全地运送部队的大型装甲载具。仍然配备一门相当大的火炮。"
 	icon_state = "apc"
 	smoke_type = /particles/tank_wreck_smoke/apc
 
@@ -164,13 +164,13 @@
 
 //Supply depot objectives
 /obj/structure/campaign_objective/destruction_objective/supply_objective
-	name = "SUPPLY_OBJECTIVE"
+	name = "补给目标"
 	icon = 'icons/obj/machines/deployable/howitzer.dmi'
 	icon_state = "howitzer_deployed"
 
 //Train
 /obj/effect/landmark/campaign_structure/train
-	name = "locomotive objective"
+	name = "轨道轰炸目标"
 	icon = 'icons/obj/structures/train.dmi'
 	icon_state = "maglev"
 	obj_flags = parent_type::obj_flags|BLOCK_Z_OUT_DOWN|BLOCK_Z_IN_UP
@@ -178,8 +178,8 @@
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/supply_objective/train
 
 /obj/structure/campaign_objective/destruction_objective/supply_objective/train
-	name = "locomotive"
-	desc = "A heavy duty maglev locomotive. Designed for moving large quantities of goods from point A to point B."
+	name = "机车"
+	desc = "重型磁悬浮机车。专为从A点到B点运输大量货物而设计。"
 	icon = 'icons/obj/structures/train.dmi'
 	icon_state = "maglev"
 	obj_flags = parent_type::obj_flags|BLOCK_Z_OUT_DOWN|BLOCK_Z_IN_UP
@@ -187,26 +187,26 @@
 	bound_width = 128
 
 /obj/effect/landmark/campaign_structure/train/carriage
-	name = "carriage objective"
+	name = "炮架目标"
 	icon_state = "carriage_lit"
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/supply_objective/train/carriage_lit
 
 /obj/structure/campaign_objective/destruction_objective/supply_objective/train/carriage_lit
-	name = "rail carriage"
-	desc = "A heavy duty maglev carriage. I wonder what's inside?."
+	name = "导轨托架"
+	desc = "一辆重型磁悬浮运输车。不知道里面装着什么？"
 	icon_state = "carriage_lit"
 
 //Phoron stack
 /obj/effect/landmark/campaign_structure/phoron_stack
-	name = "phoron crates"
+	name = "等离子体板条箱"
 	icon = 'icons/obj/structures/campaign/campaign_64.dmi'
 	icon_state = "phoron_stack"
 	mission_types = list(/datum/campaign_mission/destroy_mission/supply_raid, /datum/campaign_mission/destroy_mission/supply_raid/som)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/supply_objective/phoron_stack
 
 /obj/structure/campaign_objective/destruction_objective/supply_objective/phoron_stack
-	name = "phoron crates"
-	desc = "A stack of crates filled to the brim with valuable phoron."
+	name = "等离子体板条箱"
+	desc = "一堆装满珍贵等离子体的板条箱。"
 	icon = 'icons/obj/structures/campaign/campaign_64.dmi'
 	icon_state = "phoron_stack"
 	bound_height = 32
@@ -214,15 +214,15 @@
 
 //NT base
 /obj/effect/landmark/campaign_structure/nt_pod
-	name = "Mysterious pod"
+	name = "神秘舱体"
 	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
 	icon_state = "alien_pod"
 	mission_types = list(/datum/campaign_mission/destroy_mission/base_rescue)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/nt_pod
 
 /obj/structure/campaign_objective/destruction_objective/nt_pod
-	name = "Mysterious pod"
-	desc = "A large sealed pod, containing something huge and monstrous in its murky center."
+	name = "神秘舱体"
+	desc = "一个巨大的密封舱，其浑浊的中心包裹着某种庞大而骇人的存在。"
 	icon = 'icons/obj/structures/campaign/campaign_big.dmi'
 	icon_state = "alien_pod"
 	bound_height = 64
@@ -235,7 +235,7 @@
 
 //teleporter core
 /obj/effect/landmark/campaign_structure/bluespace_core
-	name = "Bluespace Core objective"
+	name = "超空间核心目标"
 	icon = 'icons/obj/machines/bluespacedrive.dmi'
 	icon_state = "bsd_core"
 	pixel_y = -18
@@ -248,8 +248,8 @@
 #define BLUESPACE_CORE_BROKEN "bluespace_core_broken"
 
 /obj/structure/campaign_objective/destruction_objective/bluespace_core
-	name = "\improper Bluespace Teleportation Displacement Core"
-	desc = "An incredibly sophisticated piece of bluespace technology that is the engine behind any number of quantum entangled bluespace teleporter devices in the system."
+	name = "\improper 超空间传送置换核心"
+	desc = "一种极其复杂的蓝空技术，它是系统中众多量子纠缠蓝空传送装置背后的引擎。"
 	icon = 'icons/obj/machines/bluespacedrive.dmi'
 	icon_state = "bsd_core"
 	bound_height = 64
@@ -302,7 +302,7 @@
 
 //airbase
 /obj/effect/landmark/campaign_structure/harbinger
-	name = "harbinger"
+	name = "先驱者"
 	icon = 'icons/obj/structures/prop/mainship_96.dmi'
 	icon_state = "SOM_fighter"
 	pixel_x = -33
@@ -311,8 +311,8 @@
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/harbinger
 
 /obj/structure/campaign_objective/destruction_objective/harbinger
-	name = "harbinger"
-	desc = "A state of the art harbinger class fighter. The premier fighter for SOM forces in space and atmosphere, bristling with high tech systems and weapons."
+	name = "先驱者"
+	desc = "一款先进的'先驱者'级战斗机。作为火星之子部队在太空与大气层内的主力战机，它配备了众多高科技系统与武器。"
 	icon = 'icons/obj/structures/prop/mainship_96.dmi'
 	icon_state = "SOM_fighter"
 	pixel_x = -33
@@ -324,7 +324,7 @@
 	obj_flags = parent_type::obj_flags|BLOCK_Z_OUT_DOWN|BLOCK_Z_IN_UP
 
 /obj/effect/landmark/campaign_structure/viper
-	name = "\improper Viper"
+	name = "\improper 毒蛇"
 	icon = 'icons/obj/structures/prop/mainship_96.dmi'
 	icon_state = "fighter_loaded"
 	pixel_x = -33
@@ -333,8 +333,8 @@
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/viper
 
 /obj/structure/campaign_objective/destruction_objective/viper
-	name = "\improper Viper"
-	desc = "A viper MK.III fightcraft. Effective in atmosphere and space, the viper has been a reliable and versatile workhorse in the TerraGov navy for decades."
+	name = "\improper 蝰蛇"
+	desc = "一架毒蛇MK.III战斗机。无论是在大气层内还是太空中都表现出色，毒蛇战机几十年来一直是地球政府海军可靠且多用途的主力机型。"
 	icon = 'icons/obj/structures/prop/mainship_96.dmi'
 	icon_state = "fighter_loaded"
 	pixel_x = -33
@@ -346,16 +346,16 @@
 	obj_flags = parent_type::obj_flags|BLOCK_Z_OUT_DOWN|BLOCK_Z_IN_UP
 
 /obj/effect/landmark/campaign_structure/underground_fuel_tank
-	name = "fuel access point"
-	desc = "A fuel access point for the large underground fuel tanks beneath the airstrip. No smoking within 15 meters."
+	name = "燃料接入点"
+	desc = "机场下方大型地下燃料罐的燃料接入点。15米内禁止吸烟。"
 	icon = 'icons/Xeno/Effects.dmi'
 	icon_state = "manhole"
 	mission_types = list(/datum/campaign_mission/destroy_mission/airbase/som)
 	spawn_object = /obj/structure/campaign_objective/destruction_objective/underground_fuel_tank
 
 /obj/structure/campaign_objective/destruction_objective/underground_fuel_tank
-	name = "fuel access point"
-	desc = "A fuel access point for the large underground fuel tanks beneath the airstrip. No smoking within 15 meters."
+	name = "燃料接入点"
+	desc = "机场下方大型地下燃料罐的燃料接入点。15米内禁止吸烟。"
 	icon = 'icons/Xeno/Effects.dmi'
 	icon_state = "manhole"
 	density = FALSE
@@ -371,7 +371,7 @@
 
 
 /obj/effect/explosion_holder
-	name = "explosion holder"
+	name = "爆炸容器"
 
 ///Explodes
 /obj/effect/explosion_holder/proc/detonate()
@@ -401,7 +401,7 @@
 	linked_objective = null
 
 /obj/effect/explosion_holder/campaign_objective/airbase_fuel
-	name = "airbase fueltank explosion holder"
+	name = "空军基地燃料罐爆炸容器"
 
 /obj/effect/explosion_holder/campaign_objective/airbase_fuel/detonate()
 	explosion(src, 7, 8, 9, 12, flame_range = 10)

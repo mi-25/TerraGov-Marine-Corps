@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/tough_rock
 	name = "Tough Rock"
-	desc = "After not moving for 1 second, gain 5/7.5/10 soft armor in all categories."
+	desc = "静止1秒后，获得5/7.5/10点全类别软护甲。"
 	/// For the first structure, the amount of soft armor to increase by.
 	var/armor_increase_initial = 2.5
 	/// For each structure, the amount of additional soft armor to increase by.
@@ -74,7 +74,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/earthquake
 	name = "Earthquake"
-	desc = "Stomp's range is increased by 1 and loses damage 1 tile further. However, it deals 50/60/70% of its original damage and no longer has extra stun duration for stomping ontop of targets."
+	desc = "践踏的射程增加1格，并在1格外失去伤害。然而，它造成原伤害的50/60/70%，并且不再对踩踏目标造成额外的击晕持续时间。"
 	/// For the first structure, the multiplier to add as Stomp's damage.
 	var/modifier_initial = -0.6
 	/// For each structure, the multiplier to add as Stomp's damage.
@@ -125,7 +125,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/friendly_chest
 	name = "Friendly Crest"
-	desc = "Crest Toss's cooldown is set to 65/50/35% of its original cooldown if it was used on allies."
+	desc = "Crest Toss的冷却时间在使用于盟友时，将设定为原始冷却时间的65/50/35%。"
 	/// For the first structure, the multiplier that'll increase Crest Toss's cooldown if it was used on an allied xenomorph.
 	var/multiplier_initial = -0.2
 	/// For each structure, the multiplier that'll increase Crest Toss's cooldown if it was used on an allied xenomorph.

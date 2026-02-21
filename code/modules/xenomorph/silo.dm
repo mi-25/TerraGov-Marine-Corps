@@ -1,9 +1,9 @@
 
 /obj/structure/xeno/silo
-	name = "Resin silo"
+	name = "树脂储存罐"
 	icon = 'icons/Xeno/resin_silo.dmi'
 	icon_state = "weed_silo"
-	desc = "A slimy, oozy resin bed filled with foul-looking egg-like ...things."
+	desc = "一个黏滑、渗液的树脂床，里面填满了看起来恶心的蛋状……东西。"
 	bound_width = 96
 	bound_height = 96
 	bound_x = -32

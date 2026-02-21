@@ -1,5 +1,5 @@
 /obj/machinery/portable_atmospherics
-	name = "portable_atmospherics"
+	name = "便携式大气设备"
 	icon = 'icons/obj/machines/atmos.dmi'
 	use_power = NO_POWER_USE
 	max_integrity = 250
@@ -36,7 +36,7 @@
 	. = ..()
 	if(!holding)
 		return
-	balloon_alert(user, "pried [holding] out")
+	balloon_alert(user, "撬出了[holding]")
 	playsound(src, 'sound/items/crowbar.ogg', 25, 1)
 	holding.forceMove(drop_location())
 	holding = null
@@ -71,7 +71,7 @@
 
 	playsound(src, 'sound/items/ratchet.ogg', 25, TRUE)
 	if(user)
-		balloon_alert(user, "connected to [new_port]")
+		balloon_alert(user, "已连接至[new_port]")
 
 	return TRUE
 
@@ -92,7 +92,7 @@
 
 	playsound(src, 'sound/items/ratchet.ogg', 25, TRUE)
 	if(user)
-		balloon_alert(user, "disconnected")
+		balloon_alert(user, "已断开连接")
 
 	return TRUE
 

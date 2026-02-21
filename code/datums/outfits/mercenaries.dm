@@ -1,5 +1,5 @@
 /datum/outfit/job/mercenaries/heavy
-	name = "Mercenary Heavy"
+	name = "自由佣兵重装兵"
 	jobtype = /datum/job/mercenaries/heavy
 
 	id = /obj/item/card/id/silver
@@ -13,7 +13,7 @@
 	back = /obj/item/storage/backpack/satchel/norm
 
 /datum/outfit/job/mercenaries/miner
-	name = "Mercenary Miner"
+	name = "自由佣兵矿工"
 	jobtype = /datum/job/mercenaries/miner
 
 	id = /obj/item/card/id/silver
@@ -27,7 +27,7 @@
 	back = /obj/item/storage/backpack/satchel/norm
 
 /datum/outfit/job/mercenaries/engineer
-	name = "Mercenary Engineer"
+	name = "自由佣兵工程兵"
 	jobtype = /datum/job/mercenaries/engineer
 
 	id = /obj/item/card/id/silver

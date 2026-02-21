@@ -3,8 +3,8 @@
 	icon = 'icons/obj/atmospherics/pipes/pressure_tank.dmi'
 	icon_state = "generic"
 
-	name = "pressure tank"
-	desc = "A large vessel containing pressurized gas."
+	name = "压力罐"
+	desc = "一个装有加压气体的大型容器。"
 
 	max_integrity = 800
 	density = TRUE
@@ -21,7 +21,7 @@
 
 /obj/machinery/atmospherics/components/unary/tank/air
 	icon_state = "grey"
-	name = "pressure tank (Air)"
+	name = "压力罐（空气）"
 
 /obj/machinery/atmospherics/components/unary/tank/toxins
 	icon_state = "orange"

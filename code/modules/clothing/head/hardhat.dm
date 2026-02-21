@@ -1,6 +1,6 @@
 /obj/item/clothing/head/hardhat
-	name = "hard hat"
-	desc = "A piece of headgear used in dangerous working conditions to protect the head. Comes with a built-in flashlight."
+	name = "安全帽"
+	desc = "一种在危险工作条件下用于保护头部的头戴装备。配有内置手电筒。"
 	icon_state = "hardhat0_yellow"
 	worn_icon_state = "hardhat0_yellow"
 	soft_armor = list(MELEE = 30, BULLET = 5, LASER = 20, ENERGY = 10, BOMB = 20, BIO = 10, FIRE = 10, ACID = 10)
@@ -21,7 +21,7 @@
 
 /obj/item/clothing/head/hardhat/attack_self(mob/user)
 	if(!isturf(user.loc))
-		to_chat(user, "You cannot turn the light on while in [user.loc]")
+		to_chat(user, "你无法在[user.loc]内打开灯。")
 		return
 	turn_light(user, !light_on)
 
@@ -42,7 +42,7 @@
 		return
 	playsound(loc, SFX_ALIEN_CLAW_METAL, 25, 1)
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	to_chat(xeno_attacker, span_warning("We disable the metal thing's lights.") )
+	to_chat(xeno_attacker, span_warning("我们关掉那个金属玩意儿上的灯。") )
 
 /obj/item/clothing/head/hardhat/update_icon_state()
 	. = ..()
@@ -56,7 +56,7 @@
 /obj/item/clothing/head/hardhat/red
 	icon_state = "hardhat0_red"
 	hardhat_color = "red"
-	name = "firefighter helmet"
+	name = "消防头盔"
 	inventory_flags = NOPRESSUREDMAGE|BLOCKSHARPOBJ
 	heat_protection_flags = HEAD
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
@@ -73,6 +73,6 @@
 	hardhat_color = "dblue"
 
 /obj/item/clothing/head/hardhat/rugged
-	name = "rugged hard hat"
-	desc = "A piece of headgear used in dangerous working conditions to protect the head. Comes with a built-in flashlight. Looks rather robust."
+	name = "坚固安全帽"
+	desc = "一种在危险工作条件下用于保护头部的头戴装备。配有内置手电筒。看起来相当坚固。"
 	soft_armor = list(MELEE = 50, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 50, BIO = 40, FIRE = 50, ACID = 50)

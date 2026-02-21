@@ -7,10 +7,10 @@ GLOBAL_VAR_INIT(generators_on_ground, 0)
 GLOBAL_VAR_INIT(corrupted_generators, 0)
 
 /obj/machinery/power/geothermal
-	name = "\improper G-11 geothermal generator"
+	name = "\improper G-11地热发电机"
 	icon = 'icons/turf/geothermal.dmi'
 	icon_state = "weld"
-	desc = "A thermoelectric generator sitting atop a plasma-filled borehole. This one is heavily damaged. Use a blowtorch, then wirecutters, and then a wrench to repair it."
+	desc = "一座位于等离子体填充钻孔顶部的热电发电机。这台发电机严重受损。使用喷灯，然后是钢丝钳，最后是扳手来修复它。"
 	anchored = TRUE
 	density = TRUE
 	resistance_flags = RESIST_ALL | DROPSHIP_IMMUNE
@@ -64,7 +64,7 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 	switch(buildstate)
 		if(GEOTHERMAL_NO_DAMAGE)
 			if(is_on)
-				desc = "A thermoelectric generator sitting atop a borehole dug deep in the planet's surface. It generates energy by boiling the plasma steam that rises from the well.\nIt is old technology and has a large failure rate, and must be repaired frequently.\nIt is currently on, and beeping randomly amid faint hisses of steam."
+				desc = "一个位于行星表面深处钻孔顶部的热电发电机。它通过煮沸从井中升起的等离子体蒸汽来产生能量。\n这是老旧技术，故障率很高，必须经常维修。\n它目前处于开启状态，在微弱的蒸汽嘶嘶声中随机发出哔哔声。"
 				switch(power_gen_percent)
 					if(25)
 						icon_state = "on25"
@@ -76,16 +76,16 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 						icon_state = "on100"
 			else
 				icon_state = "off"
-				desc = "A thermoelectric generator sitting atop a borehole dug deep in the planet's surface. It generates energy by boiling the plasma steam that rises from the well.\nIt is old technology and has a large failure rate, and must be repaired frequently.\nIt is currently turned off and silent."
+				desc = "一个坐落于行星表面深处钻孔上的热电发电机。它通过煮沸从井中升起的等离子体蒸汽来产生能量。\n这是老旧技术，故障率很高，必须经常维修。\n它目前处于关闭状态，寂静无声。"
 		if(GEOTHERMAL_HEAVY_DAMAGE)
 			icon_state = "weld"
-			desc = "A thermoelectric generator sitting atop a plasma-filled borehole. This one is heavily damaged. Use a blowtorch, wirecutters, and then a wrench to repair it."
+			desc = "一座位于等离子体填充钻孔顶部的热电发电机。这台发电机严重受损。使用喷灯、钢丝钳，然后使用扳手来修复它。"
 		if(GEOTHERMAL_MEDIUM_DAMAGE)
 			icon_state = "wire"
-			desc = "A thermoelectric generator sitting atop a plasma-filled borehole. This one is damaged. Use wirecutters and then a wrench to repair it."
+			desc = "一座热电发电机坐落在充满等离子体的钻孔上方。这台发电机已损坏。使用钢丝钳，然后用扳手进行修复。"
 		if(GEOTHERMAL_LIGHT_DAMAGE)
 			icon_state = "wrench"
-			desc = "A thermoelectric generator sitting atop a plasma-filled borehole. This one is lightly damaged. Use a wrench to repair it."
+			desc = "一座热电发电机坐落在充满等离子体的钻孔上方。这台发电机轻微受损。使用扳手进行修复。"
 
 
 /obj/machinery/power/geothermal/update_overlays()
@@ -101,13 +101,13 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 	switch(buildstate)
 		if(GEOTHERMAL_NO_DAMAGE)
 			if(!is_on)
-				desc = "A thermoelectric generator sitting atop a borehole dug deep in the planet's surface. It generates energy by boiling the plasma steam that rises from the well.\nIt is old technology and has a large failure rate, and must be repaired frequently.\nIt is currently turned off and silent."
+				desc = "一个坐落于行星表面深处钻孔上的热电发电机。它通过煮沸从井中升起的等离子体蒸汽来产生能量。\n这是老旧技术，故障率很高，必须经常维修。\n它目前处于关闭状态，寂静无声。"
 		if(GEOTHERMAL_HEAVY_DAMAGE)
-			desc = "A thermoelectric generator sitting atop a plasma-filled borehole. This one is heavily damaged. Use a blowtorch, wirecutters, and then a wrench to repair it."
+			desc = "一座热电发电机，坐落在一个充满等离子体的钻孔之上。这台发电机严重受损。使用喷灯、钢丝钳，然后使用扳手来修复它。"
 		if(GEOTHERMAL_MEDIUM_DAMAGE)
-			desc = "A thermoelectric generator sitting atop a plasma-filled borehole. This one is damaged. Use wirecutters and then a wrench to repair it."
+			desc = "一座热电发电机坐落在充满等离子体的钻孔上方。这台发电机已损坏。使用钢丝钳，然后用扳手进行修复。"
 		if(GEOTHERMAL_LIGHT_DAMAGE)
-			desc = "A thermoelectric generator sitting atop a plasma-filled borehole. This one is lightly damaged. Use a wrench to repair it."
+			desc = "一座位于等离子体填充钻孔上的热电发电机。这台发电机轻微受损。使用扳手进行修复。"
 
 
 
@@ -159,11 +159,11 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 		return FALSE
 	if(rand(1,100) < fail_rate) //Oh snap, we failed! Shut it down!
 		if(rand(0,3) == 0)
-			visible_message("[icon2html(src, viewers(src))] <span class='notice'><b>[src]</b> beeps wildly and a fuse blows! Use wirecutters, then a wrench to repair it.")
+			visible_message("[icon2html(src, viewers(src))] <span class='notice'><b>[src]</b> 疯狂地发出哔哔声，一根保险丝烧断了！使用钢丝钳，然后用扳手来修复它。")
 			buildstate = GEOTHERMAL_MEDIUM_DAMAGE
 			icon_state = "wire"
 		else
-			visible_message("[icon2html(src, viewers(src))] <span class='notice'><b>[src]</b> beeps wildly and sprays random pieces everywhere! Use a wrench to repair it.")
+			visible_message("[icon2html(src, viewers(src))] <span class='notice'><b>[src]</b> 疯狂地发出哔哔声，零件四处飞溅！使用扳手来修理它。")
 			buildstate = GEOTHERMAL_LIGHT_DAMAGE
 			icon_state = "wrench"
 		//Resets the fail_rate incase the xenos have been fucking with it.
@@ -182,11 +182,11 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 		return
 
 	if(CHECK_BITFIELD(xeno_attacker.xeno_caste.can_flags, CASTE_CAN_CORRUPT_GENERATOR) && is_corruptible)
-		to_chat(xeno_attacker, span_notice("You start to corrupt [src]"))
+		to_chat(xeno_attacker, span_notice("你开始腐化[src]"))
 		if(!do_after(xeno_attacker, 10 SECONDS, NONE, src, BUSY_ICON_HOSTILE))
 			return
 		corrupt(xeno_attacker.hivenumber)
-		to_chat(xeno_attacker, span_notice("You have corrupted [src]"))
+		to_chat(xeno_attacker, span_notice("你已损坏[src]"))
 		record_generator_sabotages(xeno_attacker)
 		return
 
@@ -195,7 +195,7 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
 	play_attack_sound(1)
-	xeno_attacker.visible_message(span_danger("\The [xeno_attacker] slashes at \the [src], tearing at it's components!"),
+	xeno_attacker.visible_message(span_danger("\The [xeno_attacker] 斩击着 \the [src]，撕裂了它的组件！"),
 		span_danger("We start slashing at \the [src], tearing at it's components!"))
 	fail_rate += 5 // 5% fail rate every attack
 	record_generator_sabotages(xeno_attacker)
@@ -215,27 +215,27 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 	if(user.incapacitated())
 		return FALSE
 	if(!ishuman(user) && !issilicon(user))
-		to_chat(user, span_warning("You have no idea how to use that."))
+		to_chat(user, span_warning("你不知道怎么使用那个。"))
 		return FALSE
 	if(buildstate == GEOTHERMAL_HEAVY_DAMAGE)
-		to_chat(usr, "<span class='info'>Use a blowtorch, then wirecutters, then a wrench to repair it.")
+		to_chat(usr, "<span class='info'>使用喷灯，然后使用钢丝钳，最后使用扳手来修复它。")
 		return FALSE
 	else if (buildstate == GEOTHERMAL_MEDIUM_DAMAGE)
-		to_chat(usr, "<span class='info'>Use a wirecutters, then wrench to repair it.")
+		to_chat(usr, "<span class='info'>使用钢丝钳，然后用扳手修复它。</span>")
 		return FALSE
 	else if (buildstate == GEOTHERMAL_LIGHT_DAMAGE)
-		to_chat(usr, "<span class='info'>Use a wrench to repair it.")
+		to_chat(usr, "<span class='info'>使用扳手进行维修。</span>")
 		return FALSE
 
 	if(is_on)
-		visible_message("[icon2html(src, viewers(src))] <span class='warning'><b>[src]</b> beeps softly and the humming stops as [usr] shuts off the turbines.")
+		visible_message("[icon2html(src, viewers(src))] <span class='warning'><b>[src]</b> 发出轻柔的哔哔声，随着[usr]关闭涡轮，嗡鸣声停止了。")
 		is_on = FALSE
 		power_gen_percent = 0
 		cur_tick = 0
 		icon_state = "off"
 		stop_processing()
 		return TRUE
-	visible_message("[icon2html(src, viewers(src))] <span class='warning'><b>[src]</b> beeps loudly as [usr] turns on the turbines and the generator begins spinning up.")
+	visible_message("[icon2html(src, viewers(src))] <span class='warning'><b>[src]</b> 在 [usr] 启动涡轮机时发出响亮的哔哔声，发电机开始旋转启动。")
 	icon_state = "on10"
 	is_on = TRUE
 	cur_tick = 0
@@ -246,18 +246,18 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 	var/obj/item/tool/weldingtool/WT = I
 	if(corrupted)
 		if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-			user.visible_message(span_notice("[user] fumbles around figuring out the resin tendrils on [src]."),
+			user.visible_message(span_notice("[user] 笨手笨脚地摸索着[src]上的树脂触须。"),
 			span_notice("You fumble around trying to burn off the resin tendrils."))
-			user.balloon_alert(user, "You fumble around trying to burn off the resin tendrils.")
+			user.balloon_alert(user, "你笨拙地试图烧掉这些树脂触须。")
 			var/fumbling_time = 10 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 			if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED, extra_checks = CALLBACK(WT, TYPE_PROC_REF(/obj/item/tool/weldingtool, isOn))))
 				return
 		if(!WT.remove_fuel(1, user))
-			to_chat(user, span_warning("You need more welding fuel to complete this task."))
+			to_chat(user, span_warning("你需要更多焊接燃料来完成此任务。"))
 			return
-		user.visible_message(span_notice("[user] carefully starts burning [src]'s resin off."),
+		user.visible_message(span_notice("[user] 开始小心地烧掉 [src] 的树脂。"),
 		span_notice("You start carefully burning the resin off."))
-		user.balloon_alert(user, "You start carefully burning the resin off.")
+		user.balloon_alert(user, "你开始小心翼翼地烧掉树脂。")
 
 		if(!I.use_tool(src, user, 20 SECONDS - clamp((user.skills.getRating(SKILL_ENGINEER) - SKILL_ENGINEER_ENGI) * 5, 0, 20), 2, 25, null, BUSY_ICON_BUILD))
 			return FALSE
@@ -271,20 +271,20 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 	if(buildstate != GEOTHERMAL_HEAVY_DAMAGE) //Already repaired!
 		return
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		user.balloon_alert(user, "You fumble around figuring out how the internals work.")
+		user.balloon_alert(user, "你笨手笨脚地摸索着内部供气装置的使用方法。")
 		var/fumbling_time = 10 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED, extra_checks = CALLBACK(WT, TYPE_PROC_REF(/obj/item/tool/weldingtool, isOn))) || buildstate != GEOTHERMAL_HEAVY_DAMAGE || is_on)
 			return
 	if(!WT.remove_fuel(1, user))
-		to_chat(user, span_warning("You need more welding fuel to complete this task."))
+		to_chat(user, span_warning("你需要更多焊接燃料来完成此任务。"))
 		return
 
-	user.balloon_alert(user, "You start welding the internals back together.")
+	user.balloon_alert(user, "你开始将内部结构焊接回原位。")
 	if(!I.use_tool(src, user, 20 SECONDS - clamp((user.skills.getRating(SKILL_ENGINEER) - SKILL_ENGINEER_ENGI) * 5, 0, 20), 2, 25, null, BUSY_ICON_BUILD))
 		return FALSE
 
 	buildstate = GEOTHERMAL_MEDIUM_DAMAGE
-	user.balloon_alert(user, "You weld the internals back together.")
+	user.balloon_alert(user, "你将内部结构重新焊接在一起。")
 	update_icon()
 	record_generator_repairs(user)
 	return TRUE
@@ -294,20 +294,20 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 		return
 
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		user.visible_message(span_notice("[user] fumbles around figuring out [src]'s wiring."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着 [src] 的线路。"),
 		span_notice("You fumble around figuring out [src]'s wiring."))
 		var/fumbling_time = 10 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED) || buildstate != GEOTHERMAL_MEDIUM_DAMAGE || is_on)
 			return
 	playsound(loc, 'sound/items/wirecutter.ogg', 25, 1)
-	user.visible_message(span_notice("[user] starts securing [src]'s wiring."),
+	user.visible_message(span_notice("[user]开始固定[src]的线路。"),
 	span_notice("You start securing [src]'s wiring."))
 	if(!do_after(user, 12 SECONDS - clamp((user.skills.getRating(SKILL_ENGINEER) - SKILL_ENGINEER_ENGI) * 4, 0, 12) SECONDS, NONE, src, BUSY_ICON_BUILD) || buildstate != GEOTHERMAL_MEDIUM_DAMAGE || is_on)
 		return FALSE
 
 	playsound(loc, 'sound/items/wirecutter.ogg', 25, 1)
 	buildstate = GEOTHERMAL_LIGHT_DAMAGE
-	user.visible_message(span_notice("[user] secures [src]'s wiring."),
+	user.visible_message(span_notice("[user] 固定了 [src] 的线路。"),
 	span_notice("You secure [src]'s wiring."))
 	update_icon()
 	record_generator_repairs(user)
@@ -318,20 +318,20 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 		return
 
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		user.visible_message(span_notice("[user] fumbles around figuring out [src]'s tubing and plating."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着 [src] 的管道和护板。"),
 		span_notice("You fumble around figuring out [src]'s tubing and plating."))
 		var/fumbling_time = 10 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED) || buildstate != GEOTHERMAL_LIGHT_DAMAGE || is_on)
 			return
 	playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
-	user.visible_message(span_notice("[user] starts repairing [src]'s tubing and plating."),
+	user.visible_message(span_notice("[user]开始修复[src]的管道和护甲。"),
 	span_notice("You start repairing [src]'s tubing and plating."))
 	if(!do_after(user, 15 SECONDS - clamp((user.skills.getRating(SKILL_ENGINEER) - SKILL_ENGINEER_ENGI) * 5, 0, 15) SECONDS, NONE, src, BUSY_ICON_BUILD) || buildstate != GEOTHERMAL_LIGHT_DAMAGE || is_on)
 		return FALSE
 
 	playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
 	buildstate = GEOTHERMAL_NO_DAMAGE
-	user.visible_message(span_notice("[user] repairs [src]'s tubing and plating."),
+	user.visible_message(span_notice("[user]修复了[src]的管道和护甲。"),
 	span_notice("You repair [src]'s tubing and plating."))
 	update_icon()
 	record_generator_repairs(user)
@@ -351,11 +351,11 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 	start_processing()
 
 /obj/machinery/power/geothermal/bigred //used on big red
-	name = "\improper Reactor Turbine"
+	name = "\improper 反应堆涡轮机"
 	power_generation_max = 1e+6
 
 /obj/machinery/power/geothermal/reinforced
-	name = "\improper Reinforced Reactor Turbine"
+	name = "\improper 强化型反应堆涡轮机"
 
 
 #undef GEOTHERMAL_NO_DAMAGE

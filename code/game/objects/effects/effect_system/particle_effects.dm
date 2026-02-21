@@ -3,13 +3,13 @@
 //the objects used by /datum/effect_system
 
 /obj/effect/particle_effect
-	name = "effect"
+	name = "效果"
 	icon = 'icons/effects/effects.dmi'
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASS_GRILLE|PASS_MOB
 
 /obj/effect/particle_effect/water
-	name = "water"
+	name = "水"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "extinguish"
 	var/life = 15

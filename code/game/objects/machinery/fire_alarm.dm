@@ -2,8 +2,8 @@
 FIRE ALARM
 */
 /obj/machinery/firealarm
-	name = "fire alarm"
-	desc = "<i>\"Pull this in case of emergency\"</i>. Thus, keep pulling it forever."
+	name = "火警警报"
+	desc = "<i>'紧急情况下拉动此物'</i>。所以，请永远不停地拉动它。"
 	icon = 'icons/obj/machines/fire_alarm.dmi'
 	icon_state = "fire0"
 	light_range = 1
@@ -121,11 +121,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/firealarm, (-32))
 			if(ismultitool(I))
 				detecting = !detecting
 				if(detecting)
-					user.visible_message(span_warning("[user] has reconnected [src]'s detecting unit!"), "You have reconnected [src]'s detecting unit.")
+					user.visible_message(span_warning("[user] 已重新连接 [src] 的检测单元！"), "You have reconnected [src]'s detecting unit.")
 				else
-					user.visible_message(span_warning("[user] has disconnected [src]'s detecting unit!"), "You have disconnected [src]'s detecting unit.")
+					user.visible_message(span_warning("[user] 已断开 [src] 的探测单元！"), "You have disconnected [src]'s detecting unit.")
 			else if(iswirecutter(I))
-				user.visible_message(span_warning("[user] has cut the wires inside \the [src]!"), "You have cut the wires inside \the [src].")
+				user.visible_message(span_warning("[user] 切断了 \the [src] 内部的电线！"), "You have cut the wires inside \the [src].")
 				playsound(loc, 'sound/items/wirecutter.ogg', 25, 1)
 				buildstage = 1
 				update_icon()
@@ -133,14 +133,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/firealarm, (-32))
 			if(iscablecoil(I))
 				var/obj/item/stack/cable_coil/C = I
 				if(C.use(5))
-					to_chat(user, span_notice("You wire \the [src]."))
+					to_chat(user, span_notice("你给 \the [src] 接线。"))
 					buildstage = 2
 					return
 				else
-					to_chat(user, span_warning("You need 5 pieces of cable to do wire \the [src]."))
+					to_chat(user, span_warning("你需要5根电缆来给\the [src]接线。"))
 					return
 			else if(iscrowbar(I))
-				to_chat(user, "You pry out the circuit!")
+				to_chat(user, "你把电路板撬出来了！")
 				playsound(loc, 'sound/items/crowbar.ogg', 25, 1)
 				spawn(20)
 					new /obj/item/circuitboard/firealarm(loc)
@@ -149,14 +149,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/firealarm, (-32))
 					update_icon()
 		if(0)
 			if(istype(I, /obj/item/circuitboard/firealarm))
-				to_chat(user, "You insert the circuit!")
+				to_chat(user, "你插入了电路板！")
 				electronics = I
 				qdel(I)
 				buildstage = 1
 				update_icon()
 
 			else if(iswrench(I))
-				to_chat(user, "You remove the fire alarm assembly from the wall!")
+				to_chat(user, "你从墙上拆下了火灾报警器组件！")
 				var/obj/item/frame/fire_alarm/frame = new /obj/item/frame/fire_alarm
 				frame.forceMove(user.loc)
 				playsound(loc, 'sound/items/ratchet.ogg', 25, 1)

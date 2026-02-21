@@ -1,7 +1,7 @@
 #define CRYOMOBS 'icons/obj/cryo_mobs.dmi'
 
 /obj/machinery/atmospherics/components/unary/cryo_cell
-	name = "cryo cell"
+	name = "低温休眠舱"
 	icon = 'icons/obj/machines/cryogenics2.dmi'
 	icon_state = "cell_mapper"
 	density = TRUE
@@ -202,7 +202,7 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/relaymove(mob/user)
 	if(message_cooldown <= world.time)
 		message_cooldown = world.time + 50
-		to_chat(user, span_warning("[src]'s door won't budge!"))
+		to_chat(user, span_warning("[src]的门纹丝不动！"))
 
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/verb/move_eject()
@@ -212,7 +212,7 @@
 	if(usr == occupant) //If the user is inside the tube...
 		if (usr.stat == DEAD) //and he's not dead....
 			return
-		to_chat(usr, span_notice("Auto release sequence activated. You will be released when you have recovered."))
+		to_chat(usr, span_notice("自动释放程序已启动。恢复后您将被释放。"))
 		autoeject = TRUE
 		return
 	if (usr.stat != CONSCIOUS)
@@ -228,15 +228,15 @@
 
 		for(var/datum/reagent/X in I.reagents.reagent_list)
 			if(X.medbayblacklist)
-				to_chat(user, span_warning("The cryo cell's automatic safety features beep softly, they must have detected a harmful substance in the beaker."))
+				to_chat(user, span_warning("低温休眠舱的自动安全功能发出轻柔的哔哔声，一定是检测到了烧杯中的有害物质。"))
 				return
 
 		if(beaker)
-			to_chat(user, span_warning("A beaker is already loaded into the machine."))
+			to_chat(user, span_warning("机器中已装载一个烧杯。"))
 			return
 
 		if(istype(I, /obj/item/reagent_containers/glass/bucket))
-			to_chat(user, span_warning("That's too big to fit!"))
+			to_chat(user, span_warning("那太大了，装不下！"))
 			return
 
 		beaker = I
@@ -250,7 +250,7 @@
 		if(!user.transferItemToLoc(I, src))
 			return
 
-		user.visible_message("[user] adds \a [I] to \the [src]!", "You add \a [I] to \the [src]!")
+		user.visible_message("[user] 将 \a [I] 添加到 \the [src]！", "You add \a [I] to \the [src]!")
 
 	else if(istype(I, /obj/item/healthanalyzer) && occupant) //Allows us to use the analyzer on the occupant without taking him out.
 		var/obj/item/healthanalyzer/J = I
@@ -263,11 +263,11 @@
 	if(isxeno(user))
 		return
 	if(machine_stat & (NOPOWER|BROKEN))
-		to_chat(user, span_notice("\ [src] is non-functional!"))
+		to_chat(user, span_notice("[src] 已失效！"))
 		return
 
 	if(occupant)
-		to_chat(user, span_notice("\ [src] is already occupied!"))
+		to_chat(user, span_notice("[src] 已被占用！"))
 		return
 
 	var/mob/grabbed_mob
@@ -278,18 +278,18 @@
 	else if(istype(grab.grabbed_thing,/obj/structure/closet/bodybag/cryobag))
 		var/obj/structure/closet/bodybag/cryobag/cryobag = grab.grabbed_thing
 		if(!cryobag.bodybag_occupant)
-			to_chat(user, span_warning("The stasis bag is empty!"))
+			to_chat(user, span_warning("停滞袋是空的！"))
 			return
 		grabbed_mob = cryobag.bodybag_occupant
 		cryobag.open()
 		user.start_pulling(grabbed_mob)
 
 	if(!ishuman(grabbed_mob))
-		to_chat(user, span_notice("\ [src] is compatible with humanoid anatomies only!"))
+		to_chat(user, span_notice("\ [src] 仅兼容类人生物解剖结构！"))
 		return
 
 	if(grabbed_mob.abiotic())
-		to_chat(user, span_warning("Subject cannot have abiotic items on."))
+		to_chat(user, span_warning("受试者不能穿戴非生化物品。"))
 		return
 
 	put_mob(grabbed_mob, TRUE)
@@ -298,24 +298,24 @@
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/proc/put_mob(mob/living/carbon/M as mob, put_in = null)
 	if (machine_stat & (NOPOWER|BROKEN))
-		to_chat(usr, span_warning("The cryo cell is not functioning."))
+		to_chat(usr, span_warning("冷冻舱无法运作。"))
 		return
 	if(!ishuman(M))
-		to_chat(usr, span_notice("\ [src] is compatible with humanoid anatomies only!"))
+		to_chat(usr, span_notice("[src] 仅兼容类人生物解剖结构！"))
 		return
 	if (occupant)
-		to_chat(usr, span_danger("The cryo cell is already occupied!"))
+		to_chat(usr, span_danger("冷冻舱已被占用！"))
 		return
 	if (M.abiotic())
-		to_chat(usr, span_warning("Subject may not have abiotic items on."))
+		to_chat(usr, span_warning("受试者不得穿戴非生化物品。"))
 		return
 	if(put_in) //Select an appropriate message
-		visible_message(span_notice("[usr] puts [M] in [src]."), 3)
+		visible_message(span_notice("[usr] 将 [M] 放入 [src]。"), 3)
 	else
-		visible_message(span_notice("[usr] climbs into [src]."), 3)
+		visible_message(span_notice("[usr] 爬进了 [src]。"), 3)
 	M.forceMove(src)
 	if(M.health > -100 && (M.health < 0 || M.IsSleeping()))
-		to_chat(M, span_boldnotice("You feel a cold liquid surround you. Your skin starts to freeze up."))
+		to_chat(M, span_boldnotice("你感到一股冰冷的液体包围了你。你的皮肤开始冻结。"))
 	occupant = M
 	occupant.time_entered_cryo = world.time
 	update_icon()
@@ -405,7 +405,7 @@
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/proc/turn_on()
 	if (machine_stat & (NOPOWER|BROKEN))
-		to_chat(usr, span_warning("The cryo cell is not functioning."))
+		to_chat(usr, span_warning("冷冻舱无法运作。"))
 		return
 	on = TRUE
 	start_processing()
@@ -416,11 +416,11 @@
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(xeno_attacker, span_xenowarning("里面没什么值得注意的东西。"))
 		return
 	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
 		return
-	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
+	visible_message(span_warning("[xeno_attacker] 开始撬开 [src] 的盖子！"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)
 	if(!do_after(xeno_attacker, 2 SECONDS))
 		return

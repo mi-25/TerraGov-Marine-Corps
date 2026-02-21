@@ -60,7 +60,7 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/text/lobby)
 
 /atom/movable/screen/text/lobby/clickable/Click()
 	if(!(atom_flags & INITIALIZED)) //yes this can happen, fuck me
-		to_chat(usr, span_warning("The game is still setting up, please try again later."))
+		to_chat(usr, span_warning("游戏仍在设置中，请稍后再试。"))
 		return
 	var/mob/new_player/player = usr
 	player.playsound_local(player, 'sound/effects/menu_select.ogg', 50)

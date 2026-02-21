@@ -1,6 +1,6 @@
 /obj/item/tank/jetpack
-	name = "Jetpack (Empty)"
-	desc = "A tank of compressed gas for use as propulsion in zero-gravity areas. Use with caution."
+	name = "喷气背包（空）"
+	desc = "一罐压缩气体，用于在零重力区域提供推进力。请谨慎使用。"
 	icon_state = "jetpack"
 	w_class = WEIGHT_CLASS_BULKY
 	worn_icon_list = list(
@@ -12,22 +12,22 @@
 
 
 /obj/item/tank/jetpack/void
-	name = "Void Jetpack (Oxygen)"
-	desc = "It works well in a void."
+	name = "虚空喷气背包（氧气）"
+	desc = "它在真空中运作良好。"
 	icon_state = "jetpack-void"
 	worn_icon_state = "jetpack-void"
 
 
 /obj/item/tank/jetpack/oxygen
-	name = "Jetpack (Oxygen)"
-	desc = "A tank of compressed oxygen for use as propulsion in zero-gravity areas. Use with caution."
+	name = "喷气背包（氧气）"
+	desc = "一罐压缩氧气，用于在零重力区域提供推进力。请谨慎使用。"
 	icon_state = "jetpack"
 	worn_icon_state = "jetpack"
 
 
 /obj/item/tank/jetpack/carbondioxide
-	name = "Jetpack (Carbon Dioxide)"
-	desc = "A tank of compressed carbon dioxide for use as propulsion in zero-gravity areas. Painted black to indicate that it should not be used as a source for internals."
+	name = "喷气背包（二氧化碳）"
+	desc = "一罐压缩二氧化碳，用于零重力区域的推进。涂成黑色以表明不应作为内部呼吸气源使用。"
 	distribute_pressure = 0
 	icon_state = "jetpack-black"
 	worn_icon_state = "jetpack-black"

@@ -3,144 +3,144 @@
 	outside = FALSE
 
 /area/icy_caves/caves
-	name = "Caves"
+	name = "洞穴"
 	icon_state = "away4"
 	ceiling = CEILING_UNDERGROUND
 	minimap_color = MINIMAP_AREA_CAVES
 	always_unpowered = TRUE
 
 /area/icy_caves/caves/northern
-	name = "Northern Caves"
+	name = "北部洞穴"
 	icon_state = "cave"
 	ceiling = CEILING_DEEP_UNDERGROUND
 
 /area/icy_caves/caves/crashed_ship
-	name = "Crashed Ship"
+	name = "坠毁的飞船"
 	icon_state = "red"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	minimap_color = MINIMAP_AREA_SHIP
 	always_unpowered = FALSE
 
 /area/icy_caves/caves/chapel
-	name = "Chapel of Nar'Sie"
+	name = "纳尔西教堂"
 	icon_state = "icy_chapel"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	minimap_color = MINIMAP_AREA_LIVING_CAVE
 	always_unpowered = FALSE
 
 /area/icy_caves/caves/northwestmonorail
-	name = "Northwestern Monorail Station"
+	name = "西北单轨车站"
 	icon_state = "purple"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	always_unpowered = FALSE
 
 /area/icy_caves/caves/northwestmonorail/breakroom
-	name = "Northwestern Monorail Station Break Room"
+	name = "西北单轨车站休息室"
 	minimap_color = MINIMAP_AREA_LIVING_CAVE
 
 /area/icy_caves/caves/northwestmonorail/hallway
-	name = "Northwestern Monorail Station Hallway"
+	name = "西北单轨车站走廊"
 
 /area/icy_caves/caves/northwestmonorail/morgue
-	name = "Northwestern Monorail Station Morgue"
+	name = "西北单轨车站停尸房"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
 /area/icy_caves/caves/northwestmonorail/medbay
-	name = "Northwestern Monorail Station Medbay"
+	name = "西北单轨车站医疗站"
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
 /area/icy_caves/caves/underground_cafeteria
-	name = "Underground Cafeteria"
+	name = "地下食堂"
 	icon_state = "icy_undercaf"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	minimap_color = MINIMAP_AREA_LIVING_CAVE
 	always_unpowered = FALSE
 
 /area/icy_caves/caves/cavesbrig
-	name = "Caves Brig"
+	name = "洞穴禁闭室"
 	icon_state = "icy_cavesbrig"
 	ceiling = CEILING_METAL
 	minimap_color = MINIMAP_AREA_SEC_CAVE
 	always_unpowered = FALSE
 
 /area/icy_caves/caves/weapon_vault
-	name = "Cave Weapons Vault"
+	name = "洞穴武器库"
 	icon_state = "icy_vault"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	minimap_color = MINIMAP_AREA_SEC_CAVE
 	always_unpowered = FALSE
 
 /area/icy_caves/caves/alienstuff
-	name = "Extraterrestrial Organisms and Plant Life Exhibit"
+	name = "外星生物与植物生命展览"
 	icon_state = "icy_alienstuff"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 	always_unpowered = FALSE
 
 /area/icy_caves/caves/south
-	name = "Southern Caves"
+	name = "南部洞穴"
 	icon_state = "cave"
 	ceiling = CEILING_UNDERGROUND
 	always_unpowered = FALSE
 
 /area/icy_caves/caves/east
-	name = "Eastern Caves"
+	name = "东部洞穴"
 	icon_state = "cave"
 	ceiling = CEILING_UNDERGROUND
 	always_unpowered = FALSE
 
 /area/icy_caves/caves/west
-	name = "Western Caves"
+	name = "西部洞穴"
 	icon_state = "cave"
 	ceiling = CEILING_UNDERGROUND
 
 /area/icy_caves/caves/rock
-	name = "Enclosed Area"
+	name = "封闭区域"
 	icon_state = "transparent"
 	area_flags = CANNOT_NUKE
 
 /area/icy_caves/outpost/
-	name = "Outpost"
+	name = "前哨站"
 	icon_state = "Sleep"
 	ceiling = CEILING_METAL
 
 /area/icy_caves/outpost/dorms
-	name = "Dormitories"
+	name = "宿舍区"
 	icon_state = "Sleep"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/icy_caves/outpost/engineering
-	name = "Engineering"
+	name = "工程部"
 	icon_state = "engine_smes"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/icy_caves/outpost/garage
-	name = "Garage"
+	name = "机库"
 	icon_state = "garage"
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/icy_caves/outpost/medbay
-	name = "\improper Medbay"
+	name = "\improper 医疗舱"
 	icon_state = "medbay"
 	minimap_color = MINIMAP_AREA_MEDBAY
 
 /area/icy_caves/outpost/refinery
-	name = "\improper Refinery"
+	name = "\improper 精炼厂"
 	icon_state = "purple"
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/icy_caves/outpost/security
-	name = "\improper Security"
+	name = "\improper 安保"
 	icon_state = "security"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/icy_caves/outpost/research
-	name = "\improper Research Post"
+	name = "\improper 研究哨站"
 	icon_state = "blue"
 	minimap_color = MINIMAP_AREA_RESEARCH
 
 /area/icy_caves/outpost/recreation
-	name = "\improper Recreation"
+	name = "\improper 娱乐室"
 	icon_state = "cafeteria"
 	ceiling = CEILING_GLASS
 
@@ -148,39 +148,39 @@
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/icy_caves/outpost/mining/west
-	name = "\improper Mining West"
+	name = "\improper 西部矿区"
 	icon_state = "blue"
 
 /area/icy_caves/outpost/mining/east
-	name = "\improper Mining East"
+	name = "\improper 东矿区"
 	icon_state = "blue"
 
 /area/icy_caves/outpost/kitchen
-	name = "\improper Kitchen"
+	name = "\improper 厨房"
 	icon_state = "red"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/icy_caves/outpost/office
-	name = "\improper Offices"
+	name = "\improper 办公室"
 	icon_state = "yellow"
 
 /area/icy_caves/outpost/LZ1
-	name = "\improper Landing Zone One"
+	name = "\improper 一号着陆区"
 	icon_state = "green"
 	ceiling = CEILING_NONE
 	minimap_color = MINIMAP_AREA_LZ
 
 /area/icy_caves/outpost/LZ2
-	name = "\improper Landing Zone Two"
+	name = "\improper 着陆区二"
 	icon_state = "blue"
 	ceiling = CEILING_NONE
 	minimap_color = MINIMAP_AREA_LZ
 
 /area/icy_caves/outpost/outside
-	name = "\improper Colony Grounds"
+	name = "\improper 殖民地地面"
 	icon_state = "blue"
 	ceiling = CEILING_NONE
 	outside = TRUE
 
 /area/icy_caves/outpost/outside/center
-	name = "\improper Colony Central Grounds"
+	name = "\improper 殖民地中央广场"

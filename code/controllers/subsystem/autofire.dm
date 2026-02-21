@@ -16,7 +16,7 @@
  * Doesn't support any event scheduled for more than 100 ticks in the future, as it has no secondary queue by design
  */
 SUBSYSTEM_DEF(automatedfire)
-	name = "Autofire"
+	name = "自动开火"
 	flags = SS_TICKER | SS_NO_INIT
 	wait = 1
 	priority = FIRE_PRIORITY_AUTOFIRE
@@ -144,7 +144,7 @@ SUBSYSTEM_DEF(automatedfire)
 #undef BUCKET_POS
 
 /obj/structure/turret_debug
-	name = "debug turret"
+	name = "调试哨戒炮"
 	///What kind of ammo it uses
 	var/datum/ammo/ammo
 	///Its target
@@ -153,15 +153,15 @@ SUBSYSTEM_DEF(automatedfire)
 	var/firerate = 5.5
 
 /obj/structure/turret_debug/fast
-	name = "debug turret fast"
+	name = "调试炮塔快速"
 	firerate = 1
 
 /obj/structure/turret_debug/super_fast
-	name = "debug turret super fast"
+	name = "调试炮塔超快"
 	firerate = 0.5
 
 /obj/structure/turret_debug/slow
-	name = "debug turret slow"
+	name = "调试炮塔减速"
 	firerate = 25
 
 /obj/structure/turret_debug/Initialize(mapload)

@@ -92,7 +92,7 @@ multi_tile
 		for(var/turf/checked_turf in locs)
 			for(var/atom/movable/blocker in checked_turf)
 				if(blocker.density && blocker != src) //something is blocking the door
-					say("Please stand clear of the doors!")
+					say("请勿靠近舱门！")
 					playsound(src, 'sound/machines/buzz-sigh.ogg', 60, vary = FALSE)
 					layer = OPEN_DOOR_LAYER
 					update_icon(ALL, AIRLOCK_OPEN, 1)
@@ -121,7 +121,7 @@ multi_tile
 /obj/machinery/door/airlock/multi_tile/tram/crush()
 	for(var/turf/checked_turf in locs)
 		for(var/mob/living/future_pancake in checked_turf)
-			future_pancake.visible_message(span_warning("[src] beeps angrily and closes on [future_pancake]!"), span_userdanger("[src] beeps angrily and closes on you!"))
+			future_pancake.visible_message(span_warning("[src] 愤怒地发出哔哔声，向 [future_pancake] 逼近！"), span_userdanger("[src] beeps angrily and closes on you!"))
 			SEND_SIGNAL(future_pancake, COMSIG_LIVING_DOORCRUSHED, src)
 			if(ishuman(future_pancake))
 				future_pancake.emote("scream")
@@ -155,7 +155,7 @@ multi_tile
 		return
 
 	playsound(src, 'sound/machines/buzz/buzz-two.ogg', 60, vary = FALSE)
-	say("YOU'RE HOLDING UP THE TRAM, ASSHOLE!")
+	say("你他妈的在耽误电车，混蛋！")
 	close(forced = BYPASS_DOOR_CHECKS)
 */
 /**

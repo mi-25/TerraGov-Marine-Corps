@@ -1,7 +1,7 @@
 
 /datum/action/ability/xeno_action
 	///If you are going to add an explanation for an ability. don't use stats, give a very brief explanation of how to use it.
-	desc = "This ability can not be found in codex."
+	desc = "该能力无法在法典中找到。"
 	action_icon = 'icons/Xeno/actions/general.dmi'
 	///Typecast owner since this is used constantly
 	var/mob/living/carbon/xenomorph/xeno_owner
@@ -32,17 +32,17 @@
 
 	if(!(to_check_flags & ABILITY_USE_FORTIFIED) && xeno_owner.fortify)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "cannot while fortified!")
+			xeno_owner.balloon_alert(xeno_owner, "无法在加固时进行此操作！")
 		return FALSE
 
 	if(!(to_check_flags & ABILITY_USE_CRESTED) && xeno_owner.crest_defense)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "cannot while in crest defense!")
+			xeno_owner.balloon_alert(xeno_owner, "无法在龟缩防御时使用！")
 		return FALSE
 
 	if(!(to_check_flags & ABILITY_IGNORE_PLASMA) && xeno_owner.plasma_stored < ability_cost)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "need [ability_cost - xeno_owner.plasma_stored] more plasma!")
+			xeno_owner.balloon_alert(xeno_owner, "需要[ability_cost - xeno_owner.plasma_stored]点等离子体！")
 		return FALSE
 
 	return TRUE
@@ -78,17 +78,17 @@
 
 	if(!(to_check_flags & ABILITY_USE_FORTIFIED) && xeno_owner.fortify)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "cannot while fortified!")
+			xeno_owner.balloon_alert(xeno_owner, "无法在加固时进行此操作！")
 		return FALSE
 
 	if(!(to_check_flags & ABILITY_USE_CRESTED) && xeno_owner.crest_defense)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "cannot while in crest defense!")
+			xeno_owner.balloon_alert(xeno_owner, "无法在盾牌防御状态下进行！")
 		return FALSE
 
 	if(!(to_check_flags & ABILITY_IGNORE_PLASMA) && xeno_owner.plasma_stored < ability_cost)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "need [ability_cost - xeno_owner.plasma_stored] more plasma!")
+			xeno_owner.balloon_alert(xeno_owner, "需要[ability_cost - xeno_owner.plasma_stored]点等离子体！")
 		return FALSE
 
 	return TRUE

@@ -24,16 +24,16 @@
 	return ..()
 
 /obj/item/mecha_parts/mecha_equipment/armor/anticcw_armor_booster
-	name = "armor booster module (Close Combat Weaponry)"
-	desc = "Boosts exosuit armor against melee attacks"
+	name = "护甲增强模块（近战武器）"
+	desc = "提升外骨骼装甲对近战攻击的防御力"
 	icon_state = "mecha_abooster_ccw"
 	iconstate_name = "melee"
 	protect_name = "Melee Armor"
 	armor_mod = list(MELEE = 15, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0)
 
 /obj/item/mecha_parts/mecha_equipment/armor/antiproj_armor_booster
-	name = "armor booster module (Ranged Weaponry)"
-	desc = "Boosts exosuit armor against ranged attacks. Completely blocks taser shots."
+	name = "护甲增强模块（远程武器）"
+	desc = "提升外骨骼装甲对远程攻击的防御力。完全阻挡电击枪射击。"
 	icon_state = "mecha_abooster_proj"
 	iconstate_name = "range"
 	protect_name = "Ranged Armor"
@@ -44,8 +44,8 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/repair_droid
-	name = "exosuit repair droid"
-	desc = "An automated repair droid for exosuits. Scans for damage and repairs it. Can fix almost all types of external or internal damage."
+	name = "外骨骼维修机器人"
+	desc = "一款用于外骨骼的自动维修机器人。扫描并修复损伤。能够修复几乎所有类型的外部或内部损伤。"
 	icon_state = "repair_droid"
 	energy_drain = 50
 	range = 0
@@ -114,8 +114,8 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/generator
-	name = "plasma engine"
-	desc = "An exosuit module that generates power using solid plasma as fuel. Pollutes the environment."
+	name = "等离子体引擎"
+	desc = "一种使用固态等离子体作为燃料产生动力的外骨骼模块。会污染环境。"
 	icon_state = "tesla"
 	range = MECHA_MELEE
 	equipment_slot = MECHA_POWER

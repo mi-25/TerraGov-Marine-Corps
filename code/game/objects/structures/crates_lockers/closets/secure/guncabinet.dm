@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/guncabinet
-	name = "gun cabinet"
+	name = "枪柜"
 	icon = 'icons/obj/structures/misc.dmi'
 	icon_state = "base"
 	icon_off ="base"
@@ -120,7 +120,7 @@
 	req_access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_BRIDGE)
 
 /obj/structure/closet/secure_closet/guncabinet/riot_control
-	name = "riot control equipment closet"
+	name = "防暴装备柜"
 	req_access = list(ACCESS_MARINE_BRIG)
 	storage_capacity = 55 //lots of stuff to fit in
 
@@ -150,8 +150,8 @@
 	new /obj/item/storage/box/flashbangs(src)
 
 /obj/structure/closet/secure_closet/guncabinet/emergency_combat_gear
-	name = "\improper emergency combat gear"
-	desc = "Kept in cases of extreme emergency. Tends to feature surplus, second rate gear. Not for regular TGMC squad marines."
+	name = "\improper 紧急战斗装备"
+	desc = "仅在极端紧急情况下使用。通常配备过剩的二流装备。不适用于常规地球政府殖民地海军陆战队陆战队员。"
 	req_access = null
 
 /obj/structure/closet/secure_closet/guncabinet/emergency_combat_gear/PopulateContents()

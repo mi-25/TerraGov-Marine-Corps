@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(events)
-	name = "Events"
+	name = "事件"
 	runlevels = RUNLEVEL_GAME
 
 	///list of all datum/round_event_control. Used for selecting events based on weight and occurrences.

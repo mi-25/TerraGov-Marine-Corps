@@ -31,7 +31,7 @@
 
 /turf/open/floor/tram/wrench_act(mob/living/user, obj/item/item)
 	..()
-	to_chat(user, span_notice("You begin removing the plate..."))
+	to_chat(user, span_notice("你开始拆卸护板..."))
 	if(item.use_tool(src, user, 30, volume=80))
 		if(!istype(src, /turf/open/floor/tram))
 			return TRUE
@@ -80,7 +80,7 @@
 
 /turf/open/floor/tram/plate
 	name = "linear induction plate"
-	desc = "The linear induction plate that powers the tram."
+	desc = "为有轨电车供电的线性感应板。"
 	icon = 'icons/turf/tram.dmi'
 	icon_state = "tram_plate"
 	base_icon_state = "tram_plate"
@@ -93,7 +93,7 @@
 	return list("tram_plate-scorched1","tram_plate-scorched2")
 
 /turf/open/floor/tram/plate/energized
-	desc = "The linear induction plate that powers the tram. It is currently energized."
+	desc = "为有轨电车供电的线性感应板。目前处于通电状态。"
 	/// Inbound station
 	var/inbound
 	/// Outbound station
@@ -123,7 +123,7 @@
 		if(attacking_item.use(1))
 			broken = FALSE
 			update_appearance()
-			balloon_alert(user, "plate replaced")
+			balloon_alert(user, "护甲板已更换")
 			return
 	return ..()
 */
@@ -143,18 +143,18 @@
 
 /turf/open/indestructible/tram/plate
 	name = "linear induction plate"
-	desc = "The linear induction plate that powers the tram."
+	desc = "为电车供电的线性感应板。"
 	icon_state = "tram_plate"
 	base_icon_state = "tram_plate"
 	atom_flags = NONE
 
 /turf/open/floor/glass/reinforced/tram
 	name = "tram bridge"
-	desc = "It shakes a bit when you step, but lets you cross between sides quickly!"
+	desc = "你踩上去时会有点摇晃，但能让你快速穿过两侧！"
 
 /obj/structure/thermoplastic
 	name = "tram floor"
-	desc = "A lightweight thermoplastic flooring."
+	desc = "轻质热塑性塑料地板。"
 	icon = 'icons/turf/tram.dmi'
 	icon_state = "tram_dark"
 	base_icon_state = "tram_dark"

@@ -60,7 +60,7 @@
  * While perhaps reagents created by udder component COULD be managed in the mob, it would be somewhat finnicky and I actually like the abstract udders.
  */
 /obj/item/udder
-	name = "udder"
+	name = "乳房"
 	///how much the udder holds
 	var/size = 50
 	///mob that has the udder component
@@ -113,10 +113,10 @@
  */
 /obj/item/udder/proc/milk(obj/item/reagent_containers/glass/milk_holder, mob/user)
 	if(milk_holder.reagents.total_volume >= milk_holder.volume)
-		milk_holder.balloon_alert(user, "container full!")
+		milk_holder.balloon_alert(user, "容器已满！")
 		return
 	var/transfered = reagents.trans_to(milk_holder, rand(5,10))
 	if(transfered)
-		user.visible_message(span_notice("[user] milks [src] using \the [milk_holder]."), span_notice("You milk [src] using \the [milk_holder]."))
+		user.visible_message(span_notice("[user] 使用 \the [milk_holder] 从 [src] 身上挤奶。"), span_notice("You milk [src] using \the [milk_holder]."))
 	else
-		milk_holder.balloon_alert(user, "it's dry!")
+		milk_holder.balloon_alert(user, "没弹药了！")

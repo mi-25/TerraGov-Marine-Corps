@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/energy/volkite
-	name = "thermal energy bolt"
+	name = "热能能量弹"
 	icon_state = "overchargedlaser"
 	hud_state = "laser_heat"
 	hud_state_empty = "battery_empty_flash"

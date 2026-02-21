@@ -1,6 +1,6 @@
 /obj/effect/decal/cleanable/crayon
-	name = "rune"
-	desc = "A rune drawn in crayon."
+	name = "符文"
+	desc = "用蜡笔画出的符文。"
 	icon = 'icons/effects/crayondecal.dmi'
 	anchored = TRUE
 
@@ -8,7 +8,7 @@
 	. = ..()
 
 	name = type
-	desc = "A [type] drawn in crayon."
+	desc = "用蜡笔画的[type]。"
 
 	switch(type)
 		if("rune")

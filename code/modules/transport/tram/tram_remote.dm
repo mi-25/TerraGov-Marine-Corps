@@ -3,7 +3,7 @@
 	icon_state = "signaller"
 	worn_icon_state = "signaler"
 	name = "tram remote"
-	desc = "A remote control that can be linked to a tram. This can only go well."
+	desc = "一个可以连接到轨道车的遥控器。这肯定没问题。"
 	w_class = WEIGHT_CLASS_TINY
 	options = RAPID_MODE
 	///desired tram destination
@@ -29,8 +29,8 @@
 			destination = potential_platform.platform_code
 			break
 
-	balloon_alert(user, "set [selected_platform]")
-	to_chat(user, span_notice("You change the platform ID on [src] to [selected_platform]."))
+	balloon_alert(user, "设置 [selected_platform]")
+	to_chat(user, span_notice("你将[src]的平台ID更改为[selected_platform]。"))
 
 ///set safety bypass
 /obj/item/assembly/control/transport/remote/CtrlClick(mob/user)
@@ -80,7 +80,7 @@
 		return
 
 	if(COOLDOWN_FINISHED(src, tram_remote))
-		balloon_alert(user, "cooldown: [DisplayTimeText(COOLDOWN_TIMELEFT(src, tram_remote), 1)]")
+		balloon_alert(user, "冷却时间：[DisplayTimeText(COOLDOWN_TIMELEFT(src, tram_remote), 1)]")
 		return
 
 	activate(user)
@@ -89,10 +89,10 @@
 ///send our selected commands to the tram
 /obj/item/assembly/control/transport/remote/activate(mob/user)
 	if(!specific_transport_id)
-		balloon_alert(user, "no tram linked!")
+		balloon_alert(user, "无轨道电车连接！")
 		return
 	if(!destination)
-		balloon_alert(user, "no destination!")
+		balloon_alert(user, "没有目的地！")
 		return
 
 	SEND_SIGNAL(src, COMSIG_TRANSPORT_REQUEST, specific_transport_id, destination, options)
@@ -112,8 +112,8 @@
 	specific_transport_id = tgui_input_list(user, "Available transports", "Select a transport", transports_available)
 
 	if(specific_transport_id)
-		balloon_alert(user, "tram linked")
+		balloon_alert(user, "电车已连接")
 	else
-		balloon_alert(user, "link failed!")
+		balloon_alert(user, "连接失败！")
 
 	update_appearance()

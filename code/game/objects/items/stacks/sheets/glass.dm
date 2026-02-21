@@ -16,8 +16,8 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 ))
 
 /obj/item/stack/sheet/glass
-	name = "glass"
-	desc = "Glass is a non-crystalline solid, made out of silicate, the primary constituent of sand. It is valued for its transparency, albeit it is not too resistant to damage."
+	name = "玻璃"
+	desc = "玻璃是一种非晶态固体，由硅酸盐制成，这是沙子的主要成分。它因其透明性而受到重视，尽管抗损伤能力不强。"
 	singular_name = "glass sheet"
 	icon_state = "sheet-glass"
 	worn_icon_state = "sheet-glass"
@@ -71,7 +71,7 @@ GLOBAL_LIST_INIT(glass_radial_images, list(
 	else if(istype(I, /obj/item/stack/rods))
 		var/obj/item/stack/rods/V = I
 		if(V.get_amount() < 1 || get_amount() < 1)
-			to_chat(user, span_warning("You need one rod and one sheet of glass to make reinforced glass."))
+			to_chat(user, span_warning("你需要一根金属棒和一块玻璃板来制造强化玻璃。"))
 			return
 
 		var/obj/item/stack/sheet/glass/RG = new reinforced_type(user.loc)
@@ -90,8 +90,8 @@ GLOBAL_LIST_INIT(glass_radial_images, list(
 * Reinforced glass sheets
 */
 /obj/item/stack/sheet/glass/reinforced
-	name = "reinforced glass"
-	desc = "Reinforced glass is made out of squares of regular silicate glass layered on a metallic rod matrice. This glass is more resistant to direct impacts, even if it may crack."
+	name = "强化玻璃"
+	desc = "强化玻璃由普通硅酸盐玻璃方块层叠在金属棒矩阵上制成。这种玻璃对直接冲击更具抵抗力，即使可能出现裂纹。"
 	singular_name = "reinforced glass sheet"
 	icon_state = "sheet-rglass"
 	worn_icon_state = "sheet-rglass"
@@ -105,8 +105,8 @@ GLOBAL_LIST_INIT(glass_radial_images, list(
 * Phoron Glass sheets
 */
 /obj/item/stack/sheet/glass/phoronglass
-	name = "phoron glass"
-	desc = "Phoron glass is a silicate-phoron alloy turned into a non-crystalline solid. It is transparent just like glass, even if visibly tainted pink, and very resistant to damage and heat."
+	name = "等离子体玻璃"
+	desc = "氚玻璃是一种硅酸盐-氚合金转化而成的非晶态固体。它像玻璃一样透明，即使明显带有粉红色调，并且非常耐损伤和高温。"
 	singular_name = "phoron glass sheet"
 	icon_state = "sheet-phoronglass"
 	merge_type = /obj/item/stack/sheet/glass/phoronglass
@@ -118,8 +118,8 @@ GLOBAL_LIST_INIT(glass_radial_images, list(
 * Reinforced phoron glass sheets
 */
 /obj/item/stack/sheet/glass/phoronrglass
-	name = "reinforced phoron glass"
-	desc = "Reinforced phoron glass is made out of squares of silicate-phoron alloy glass layered on a metallic rod matrice. It is insanely resistant to both physical shock and heat."
+	name = "强化等离子体玻璃"
+	desc = "强化型等离子玻璃由硅酸盐-等离子合金玻璃方块层叠在金属棒矩阵上制成。它对物理冲击和高温都具有极强的抵抗力。"
 	singular_name = "reinforced phoron glass sheet"
 	icon_state = "sheet-phoronrglass"
 	merge_type = /obj/item/stack/sheet/glass/phoronrglass

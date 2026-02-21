@@ -9,8 +9,8 @@
 #define STATE_OTHER 9
 
 /obj/machinery/computer/cryopod
-	name = "hypersleep bay console"
-	desc = "A large console controlling the ship's hypersleep bay. Mainly used for recovery of items from long-term hypersleeping crew."
+	name = "低温休眠舱控制台"
+	desc = "一个控制舰船休眠舱的大型控制台。主要用于从长期休眠的船员处回收物品。"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "cellconsole"
 	screen_overlay = "cellconsole_screen"
@@ -166,11 +166,11 @@
 	else if(href_list["allitems"])
 
 		if(!length(GLOB.cryoed_item_list_gun) && !length(GLOB.cryoed_item_list_ammo) && !length(GLOB.cryoed_item_list_explosive) && !length(GLOB.cryoed_item_list_melee) && !length(GLOB.cryoed_item_list_clothing) && !length(GLOB.cryoed_item_list_food) && !length(GLOB.cryoed_item_list_drugs) && !length(GLOB.cryoed_item_list_containers) && !length(GLOB.cryoed_item_list_other))
-			to_chat(usr, span_warning("There is nothing to recover from storage."))
+			to_chat(usr, span_warning("存储中无可回收物品。"))
 			updateUsrDialog()
 			return
 
-		visible_message(span_notice("[src] beeps happily as it disgorges the desired objects."))
+		visible_message(span_notice("[src] 发出欢快的哔哔声，吐出了所需物品。"))
 
 		var/list/combined_list
 		switch(state)
@@ -212,10 +212,10 @@
 		CRASH("Deleted or erroneous variable ([I]) called for hypersleep inventory retrivial.")
 	if((!I) in (GLOB.cryoed_item_list_gun || GLOB.cryoed_item_list_ammo || GLOB.cryoed_item_list_explosive || GLOB.cryoed_item_list_melee || GLOB.cryoed_item_list_clothing || GLOB.cryoed_item_list_food || GLOB.cryoed_item_list_drugs || GLOB.cryoed_item_list_containers || GLOB.cryoed_item_list_other))
 		if(message)
-			to_chat(user, span_warning("[I] is no longer in storage."))
+			to_chat(user, span_warning("[I] 已不在存储中。"))
 		return
 	if(message)
-		visible_message(span_notice("[src] beeps happily as it disgorges [I]."))
+		visible_message(span_notice("[src] 发出欢快的哔哔声，吐出了[I]。"))
 	I.forceMove(get_turf(src))
 	// For when we have south and north facing sprites.
 	// I.forceMove(get_step(loc, dir))
@@ -232,8 +232,8 @@
 
 //Decorative structures to go alongside cryopods.
 /obj/structure/cryofeed
-	name = "hypersleep chamber feed"
-	desc = "A bewildering tangle of machinery and pipes linking the hypersleep chambers to the hypersleep bay.."
+	name = "低温休眠舱供给"
+	desc = "一片令人困惑的机器与管道网络，将低温休眠舱与低温休眠舱区连接起来。"
 	icon = 'icons/obj/machines/cryogenics.dmi'
 	icon_state = "cryo_rear"
 	layer = LOW_OBJ_LAYER
@@ -256,8 +256,8 @@
 
 //Cryopods themselves.
 /obj/machinery/cryopod
-	name = "hypersleep chamber"
-	desc = "A large automated capsule with LED displays intended to put anyone inside into 'hypersleep', a form of non-cryogenic statis used on most ships, linked to a long-term hypersleep bay on a lower level."
+	name = "低温休眠舱"
+	desc = "一个大型自动化胶囊，带有LED显示屏，旨在将内部人员置于'超睡眠'状态——一种在大多数舰船上使用的非冷冻休眠形式，与下层甲板的长效超睡眠舱相连。"
 	icon = 'icons/obj/machines/cryogenics.dmi'
 	icon_state = "body_scanner"
 	density = TRUE
@@ -388,7 +388,7 @@
 		return
 	var/mob/living/carbon/human/grabbed_mob = grab.grabbed_thing
 	if(!ishuman(grabbed_mob))
-		to_chat(user, span_warning("There is no way [src] will accept [grabbed_mob]!"))
+		to_chat(user, span_warning("[src] 绝不可能接受 [grabbed_mob]！"))
 		return
 
 	if(grabbed_mob.client)
@@ -422,7 +422,7 @@
 		return
 
 	if(!QDELETED(occupant))
-		to_chat(user, span_warning("[src] is occupied."))
+		to_chat(user, span_warning("[src] 已被占用。"))
 		return
 
 	climb_in(target, user)
@@ -441,13 +441,13 @@
 /obj/machinery/cryopod/proc/climb_in(mob/living/carbon/user, mob/helper)
 	if(helper && user != helper)
 		if(user.stat == DEAD)
-			to_chat(helper, span_notice("[user] is dead!"))
+			to_chat(helper, span_notice("[user] 阵亡了！"))
 			return FALSE
 
-		helper.visible_message(span_notice("[helper] starts putting [user] into [src]."),
+		helper.visible_message(span_notice("[helper]开始将[user]放入[src]。"),
 		span_notice("You start putting [user] into [src]."))
 	else
-		user.visible_message(span_notice("[user] starts climbing into [src]."),
+		user.visible_message(span_notice("[user]开始爬进[src]。"),
 		span_notice("You start climbing into [src]."))
 
 	var/mob/initiator = helper ? helper : user
@@ -455,7 +455,7 @@
 		return FALSE
 
 	if(!QDELETED(occupant))
-		to_chat(initiator, span_warning("[src] is occupied."))
+		to_chat(initiator, span_warning("[src] 已被占用。"))
 		return FALSE
 
 	user.forceMove(src)
@@ -479,11 +479,11 @@
 
 /obj/machinery/cryopod/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(xeno_attacker, span_xenowarning("里面没什么值得注意的东西。"))
 		return
 	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
 		return
-	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
+	visible_message(span_warning("[xeno_attacker] 开始撬开 [src] 的盖子！"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)
 	if(!do_after(xeno_attacker, 2 SECONDS))
 		return

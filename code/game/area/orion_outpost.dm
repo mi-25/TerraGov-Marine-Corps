@@ -1,31 +1,31 @@
 //ORIONOUTPOST AREAS//
 /area/orion_outpost
-	name = "Orion Military Outpost"
+	name = "猎户座军事前哨站"
 	icon_state = "dark"
 
 /area/orion_outpost/ground
-	name = "Ground"
+	name = "地面"
 	icon_state = "green"
 	always_unpowered = TRUE
 
 /area/orion_outpost/ground/rock
-	name = "Enclosed Area"
+	name = "封闭区域"
 	icon_state = "transparent"
 	area_flags = CANNOT_NUKE
 
 /area/orion_outpost/surface
-	name = "Surface"
+	name = "地表"
 	icon_state = "red"
 
 /area/orion_outpost/surface/building
-	name = "Orion Outpost Buildings"
+	name = "猎户座前哨站建筑"
 	icon_state = "clear"
 	ceiling = CEILING_METAL
 	outside = FALSE
 	minimap_color = MINIMAP_AREA_COLONY
 
 /area/orion_outpost/ground/underground
-	name = "Orion Outpost Underground"
+	name = "猎户座前哨站地下"
 	icon_state = "cave"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	outside = FALSE
@@ -33,7 +33,7 @@
 
 //LandingZone
 /area/orion_outpost/surface/landing_pad
-	name = "Landing Pad 1"
+	name = "1号着陆坪"
 	icon_state = "landing_pad"
 	area_flags = NO_DROPPOD
 	ceiling = CEILING_METAL
@@ -42,14 +42,14 @@
 	always_unpowered = TRUE
 
 /area/orion_outpost/surface/landing_pad_external
-	name = "Landing Zone 1"
+	name = "着陆区1"
 	icon_state = "landing_pad_ext"
 	ceiling = CEILING_METAL
 	outside = FALSE
 	minimap_color = MINIMAP_AREA_LZ
 
 /area/orion_outpost/surface/landing_pad_2
-	name = "Landing Pad 2"
+	name = "2号着陆坪"
 	icon_state = "landing_pad"
 	area_flags = NO_DROPPOD
 	ceiling = CEILING_METAL
@@ -58,214 +58,214 @@
 	always_unpowered = TRUE
 
 /area/orion_outpost/surface/landing_pad2_external
-	name = "Landing Zone 2"
+	name = "着陆区2"
 	icon_state = "landing_pad_ext"
 	ceiling = CEILING_METAL
 	outside = FALSE
 	minimap_color = MINIMAP_AREA_LZ
 
 /area/orion_outpost/surface/train_yard
-	name = "train yard"
+	name = "列车场"
 	icon_state = "landing_pad_ext"
 	minimap_color = MINIMAP_AREA_LZ
 
 //River
 /area/orion_outpost/ground/river/riverside_north
-	name = "Northern Riverbed"
+	name = "北部河床"
 	icon_state = "bluenew"
 
 /area/orion_outpost/ground/river/riverside_central
-	name = "Central Riverbed"
+	name = "中央河床"
 	icon_state = "bluenew"
 
 /area/orion_outpost/ground/river/riverside_south
-	name = "Southern Riverbed"
+	name = "南部河床"
 	icon_state = "bluenew"
 
 //OutpostGround
 /area/orion_outpost/ground/outpostse
-	name ="Southeast Outpost"
+	name ="东南前哨站"
 	icon_state = "southeast"
 	ambience = list('sound/ambience/jungle_amb1.ogg')
 	minimap_color = MINIMAP_AREA_JUNGLE
 
 /area/orion_outpost/ground/outposts
-	name ="Southern Outpost"
+	name ="南方前哨站"
 	icon_state = "south"
 	ambience = list('sound/ambience/jungle_amb1.ogg')
 	minimap_color = MINIMAP_AREA_JUNGLE
 
 /area/orion_outpost/ground/outpostsw
-	name ="Southwest Outpost"
+	name ="西南前哨站"
 	icon_state = "southwest"
 	ambience = list('sound/ambience/jungle_amb1.ogg')
 	minimap_color = MINIMAP_AREA_JUNGLE
 
 /area/orion_outpost/ground/outpostw
-	name ="Western Outpost"
+	name ="西部前哨站"
 	icon_state = "west"
 	ambience = list('sound/ambience/jungle_amb1.ogg')
 	minimap_color = MINIMAP_AREA_JUNGLE
 
 /area/orion_outpost/ground/outposte
-	name ="Eastern Outpost"
+	name ="东部前哨站"
 	icon_state = "east"
 	ambience = list('sound/ambience/jungle_amb1.ogg')
 	minimap_color = MINIMAP_AREA_JUNGLE
 
 /area/orion_outpost/ground/outpostnw
-	name ="Northwest Outpost"
+	name ="西北前哨站"
 	icon_state = "northwest"
 	ambience = list('sound/ambience/jungle_amb1.ogg')
 	minimap_color = MINIMAP_AREA_JUNGLE
 
 /area/orion_outpost/ground/outpostn
-	name ="Northern Outpost"
+	name ="北部前哨站"
 	icon_state = "north"
 	ambience = list('sound/ambience/jungle_amb1.ogg')
 	minimap_color = MINIMAP_AREA_JUNGLE
 
 /area/orion_outpost/ground/outpostne
-	name ="Northeast Outpost"
+	name ="东北前哨站"
 	icon_state = "northeast"
 	ambience = list('sound/ambience/jungle_amb1.ogg')
 	minimap_color = MINIMAP_AREA_JUNGLE
 
 /area/orion_outpost/ground/outpostcent
-	name ="Central Outpost"
+	name ="中央前哨站"
 	icon_state = "central"
 	ambience = list('sound/ambience/jungle_amb1.ogg')
 	minimap_color = MINIMAP_AREA_JUNGLE
 
 //OutpostCaves
 /area/orion_outpost/ground/underground/cave
-	name = "Underground Caves"
+	name = "地下洞穴"
 	icon_state = "cave"
 
 /area/orion_outpost/ground/underground/caveN
-	name = "Northern Caves"
+	name = "北部洞穴"
 	icon_state = "cave"
 
 /area/orion_outpost/ground/underground/caveN/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/orion_outpost/ground/underground/caveNW
-	name = "Northwestern Caves"
+	name = "西北洞穴"
 	icon_state = "cave"
 
 /area/orion_outpost/ground/underground/caveE
-	name = "Eastern Caves"
+	name = "东部洞穴"
 	icon_state = "cave"
 
 /area/orion_outpost/ground/underground/caveE/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/orion_outpost/ground/underground/caveS
-	name = "Southern Caves"
+	name = "南部洞穴"
 	icon_state = "cave"
 
 /area/orion_outpost/ground/underground/caveS/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/orion_outpost/ground/underground/caveW
-	name = "Western Caves"
+	name = "西部洞穴"
 	icon_state = "cave"
 
 //OutpostBuildings
 /area/orion_outpost/surface/building/canteen
-	name = "Canteen"
+	name = "水壶"
 	icon_state = "yellow"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/orion_outpost/surface/building/barracks
-	name = "Barracks"
+	name = "兵营"
 	icon_state = "crew_quarters"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/orion_outpost/surface/building/prep
-	name = "Preperations"
+	name = "准备"
 	icon_state = "green"
 	minimap_color = MINIMAP_AREA_PREP
 
 /area/orion_outpost/surface/building/command
-	name = "Command"
+	name = "指挥"
 	icon_state = "bluenew"
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/orion_outpost/surface/building/engineering
-	name = "Engineering"
+	name = "工程部"
 	icon_state = "substation"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/orion_outpost/surface/building/cargo
-	name = "Cargo Storage"
+	name = "货物储存区"
 	icon_state = "dark160"
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/orion_outpost/surface/building/nebuilding
-	name = "Northeast Building"
+	name = "东北建筑"
 	icon_state = "dark160"
 
 /area/orion_outpost/surface/building/medbay
-	name = "Medbay"
+	name = "医疗舱"
 	icon_state = "medbay"
 	minimap_color = MINIMAP_AREA_MEDBAY
 
 /area/orion_outpost/surface/building/dorms
-	name = "Dormitory"
+	name = "宿舍"
 	icon_state = "crew_quarters"
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/orion_outpost/surface/building/bunker
-	name = "Bunkers"
+	name = "掩体"
 	always_unpowered = TRUE
 	icon_state = "dark128"
 
 /area/orion_outpost/surface/building/crashedufo
-	name = "Crashed UFO"
+	name = "坠毁的UFO"
 	icon_state = "blueold"
 	always_unpowered = TRUE
 
 /area/orion_outpost/surface/building/tadpolepad
-	name = "Tadpole Landing Pad"
+	name = "蝌蚪号着陆坪"
 	icon_state = "purple"
 
 /area/orion_outpost/surface/building/armory
-	name = "Armory"
+	name = "军械库"
 	icon_state = "armory"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/orion_outpost/surface/building/brig
-	name = "Brig"
+	name = "禁闭室"
 	icon_state = "red"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/orion_outpost/surface/building/monitor
-	name = "Monitoring Station"
+	name = "监控站"
 	icon_state = "red"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/orion_outpost/surface/building/administration
-	name = "Administration"
+	name = "管理"
 	icon_state = "bluenew"
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/orion_outpost/surface/building/atc
-	name = "Traffic Control"
+	name = "交通管制"
 	icon_state = "bluenew"
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/orion_outpost/surface/building/ammodepot
-	name = "Ammo Depot"
+	name = "弹药库"
 	icon_state = "dark"
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/orion_outpost/surface/building/vehicledepot
-	name = "Vehicle Depot"
+	name = "载具仓库"
 	icon_state = "dark160"
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/orion_outpost/surface/building/breakroom
-	name = "Breakroom Building"
+	name = "休息室建筑"
 	icon_state = "dark160"
 	minimap_color = MINIMAP_AREA_LIVING

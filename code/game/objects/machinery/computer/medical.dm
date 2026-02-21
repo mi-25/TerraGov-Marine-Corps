@@ -1,6 +1,6 @@
 /obj/machinery/computer/med_data
-	name = "Medical Records"
-	desc = "This can be used to check medical records."
+	name = "医疗记录"
+	desc = "这可用于查看医疗记录。"
 	icon_state = "computer"
 	screen_overlay = "medcomp"
 	req_one_access = list(ACCESS_MARINE_MEDBAY, ACCESS_NT_CORPORATE)
@@ -24,13 +24,13 @@
 		return
 
 	if(scan)
-		to_chat(usr, "You remove \the [scan] from \the [src].")
+		to_chat(usr, "你将\the [scan]从\the [src]中取出。")
 		scan.forceMove(get_turf(src))
 		if(!usr.get_active_held_item() && istype(usr,/mob/living/carbon/human))
 			usr.put_in_hands(scan)
 		scan = null
 	else
-		to_chat(usr, "There is nothing to remove from the console.")
+		to_chat(usr, "控制台上没有可移除的物品。")
 
 
 /obj/machinery/computer/med_data/attackby(obj/item/I, mob/user, params)
@@ -43,7 +43,7 @@
 			return
 		I.forceMove(src)
 		scan = I
-		to_chat(user, "You insert [I].")
+		to_chat(user, "你将[I]插入。")
 
 
 /obj/machinery/computer/med_data/interact(mob/user)
@@ -482,8 +482,8 @@
 
 
 /obj/machinery/computer/med_data/laptop
-	name = "Medical Laptop"
-	desc = "Cheap Nanotrasen Laptop."
+	name = "医疗笔记本电脑"
+	desc = "廉价的纳米传讯笔记本电脑。"
 	icon_state = "computer_small"
 	screen_overlay = "medlaptop"
 	density = FALSE

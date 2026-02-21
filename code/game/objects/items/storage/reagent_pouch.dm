@@ -1,8 +1,8 @@
 //Reagent Canister pouch. Including the canister inside the pouch, as well as the pouch item.
 
 /obj/item/reagent_containers/glass/reagent_canister // See the Reagent Canister Pouch, this is just the container
-	name = "pressurized reagent container"
-	desc = "A pressurized container. The inner part of a pressurized reagent canister pouch. Too large to fit in anything but the pouch it comes with."
+	name = "加压试剂容器"
+	desc = "一个加压容器。加压试剂罐附包的内胆。体积过大，只能装入其配套的附包中。"
 	icon = 'icons/obj/clothing/pouches.dmi'
 	icon_state = "r_canister"
 	worn_icon_list = list(
@@ -37,14 +37,14 @@
 	return span_notice("[src]'s contents: [dat.Join(" ")]")
 
 /obj/item/reagent_containers/hypospray/autoinjector/r_pouch //Custom empty autoinjector that we will manually fill the contents of
-	name = "custom autoinjector"
-	desc = "An autoinjector loaded with a custom mix. Useful whenever you need the rapid injection"
+	name = "定制自动注射器"
+	desc = "装有定制混合物的自动注射器。在需要快速注射时很有用。"
 	icon_state = "RedGreen"
 	amount_per_transfer_from_this = 30
 	list_reagents = null //This injector gets filled up by the pouch on Initialize()
 
 /obj/item/storage/pouch/pressurized_reagent_pouch //The actual pouch itself and all its function
-	name = "pressurized reagent pouch"
+	name = "加压试剂附包"
 	w_class = WEIGHT_CLASS_BULKY
 	icon_state = "reagent_pouch"
 	desc = "A very large reagent pouch. It is used to refill custom injectors, and can also store one.\
@@ -113,7 +113,7 @@
 ///Attempts to remove the reagent canister from the pouch. Returns FALSE if there is no canister to remove
 /obj/item/storage/pouch/pressurized_reagent_pouch/proc/remove_canister(mob/user)
 	if(!inner)
-		to_chat(user, span_warning("There is no container inside this pouch!"))
+		to_chat(user, span_warning("这个附包里没有容器！"))
 		return FALSE
 	if(!user.put_in_active_hand(inner))
 		user.put_in_hands(inner) //If put_in_active fails, we still pick up or drop the canister
@@ -130,10 +130,10 @@
 		if(!inner)
 			user.temporarilyRemoveItemFromInventory(held_item)
 			inner = held_item
-			to_chat(user, span_notice("You insert [held_item] into [src]!"))
+			to_chat(user, span_notice("你将[held_item]插入[src]！"))
 			update_icon()
 			return
-		to_chat(user, span_warning("There already is a container inside [src]!"))
+		to_chat(user, span_warning("[src] 内已有一个容器！"))
 		return
 
 	return ..()
@@ -146,10 +146,10 @@
 ///Fills the hypo that gets stored in the pouch from the internal storage tank. Returns FALSE if you fail to refill your injector
 /obj/item/storage/pouch/pressurized_reagent_pouch/proc/fill_autoinjector(obj/item/reagent_containers/hypospray/autoinjector, mob/user)
 	if(!inner)
-		user.balloon_alert(user, "no container!")
+		user.balloon_alert(user, "没有容器！")
 		return FALSE
 	if(!inner.reagents.total_volume)
-		user.balloon_alert(user, "no reagent left!")
+		user.balloon_alert(user, "没有剩余试剂！")
 		return FALSE
 	inner.reagents.trans_to(autoinjector, autoinjector.volume)
 	playsound(loc, 'sound/effects/refill.ogg', 25, TRUE, 3)
@@ -188,7 +188,7 @@
 	chemicals_to_fill = null
 
 /obj/item/storage/pouch/pressurized_reagent_pouch/bktt //Pre-filled with equal parts BKTT and a basic auto injector
-	name = "bktt reagent pouch"
+	name = "bktt试剂附包"
 	desc = "A very large reagent pouch. It is used to refill custom injectors, and can also store one.\
 	You can Alt-Click to remove the canister in order to refill it. \
 	This one comes preloaded with BKTT."

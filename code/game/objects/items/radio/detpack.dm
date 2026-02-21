@@ -1,6 +1,6 @@
 /obj/item/detpack
-	name = "detonation pack"
-	desc = "Programmable remotely triggered 'smart' explosive controlled via a signaler, used for demolitions and impromptu booby traps. Can be set to breach or demolition detonation patterns. Unique action to arm. Click on it with a signaler to copy over the signal code."
+	name = "引爆包"
+	desc = "可通过信号器远程编程触发的'智能'炸药，用于爆破和临时陷阱。可设置为破门或爆破引爆模式。需使用特殊操作进行武装。点击信号器将其信号代码复制到炸药上。"
 	gender = PLURAL
 	icon = 'icons/obj/det.dmi'
 	icon_state = "detpack_off"
@@ -87,7 +87,7 @@
 		var/obj/item/assembly/signaler/signaler = I
 		code = signaler.code
 		set_frequency(signaler.frequency)
-		balloon_alert(user, "frequency copied")
+		balloon_alert(user, "频率已复制")
 
 /obj/item/detpack/unique_action(mob/user, special_treatment)
 	. = ..()
@@ -96,16 +96,16 @@
 
 /obj/item/detpack/attack_hand(mob/living/user)
 	if(armed)
-		balloon_alert(user, "disarm it first!")
+		balloon_alert(user, "先解除它的武装！")
 		return
 	if(plant_target)
-		user.visible_message(span_notice("[user] begins unsecuring [src] from [plant_target]."),
+		user.visible_message(span_notice("[user]开始将[src]从[plant_target]上拆下。"),
 		span_notice("You begin unsecuring [src] from [plant_target]."))
 		if(!do_after(user, 3 SECONDS, NONE, src, BUSY_ICON_BUILD))
 			return
 		if(QDELETED(src))
 			return
-		user.visible_message(span_notice("[user] unsecures [src] from [plant_target]."),
+		user.visible_message(span_notice("[user] 将 [src] 从 [plant_target] 上拆下。"),
 		span_notice("You unsecure [src] from [plant_target]."))
 		nullvars()
 		setAnchored(FALSE)
@@ -113,20 +113,20 @@
 
 /obj/item/detpack/multitool_act(mob/living/user, obj/item/I)
 	if(!armed && !on)
-		balloon_alert(user, "inactive!")
+		balloon_alert(user, "未激活！")
 		return
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_METAL)
-		user.visible_message(span_notice("[user] fumbles around figuring out how to use the [src]."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何使用[src]。"),
 		span_notice("You fumble around figuring out how to use [src]."))
 		var/fumbling_time = 3 SECONDS
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 			return
 
 		if(prob((SKILL_ENGINEER_METAL - user.skills.getRating(SKILL_ENGINEER)) * 20))
-			to_chat(user, span_userdanger("After several seconds of your clumsy meddling the [src] buzzes angrily as if offended. You have a <i>very</i> bad feeling about this."))
+			to_chat(user, span_userdanger("经过几秒钟笨拙的摆弄，[src]愤怒地嗡嗡作响，仿佛受到了冒犯。你有一种<i>非常</i>不祥的预感。"))
 			timer = 0 //Oops. Now you fucked up. Immediate detonation.
 
-	user.visible_message(span_notice("[user] begins disarming [src] with [I]."),
+	user.visible_message(span_notice("[user]开始用[I]解除[src]的武装。"),
 	span_notice("You begin disarming [src] with [I]."))
 
 	if(!do_after(user, 3 SECONDS, NONE, src, BUSY_ICON_FRIENDLY))
@@ -134,7 +134,7 @@
 	if(QDELETED(src))
 		return
 
-	balloon_alert_to_viewers("disarmed")
+	balloon_alert_to_viewers("缴械")
 	disarm()
 
 /obj/item/detpack/proc/nullvars()
@@ -265,7 +265,7 @@
 		var/obj/item/assembly/signaler/signaler = target
 		code = signaler.code
 		set_frequency(signaler.frequency)
-		to_chat(user, "You transfer the frequency and code of [signaler] to [src].")
+		to_chat(user, "你将[signaler]的频率和代码传输至[src]。")
 		return
 	if(istype(target, /obj/item) || istype(target, /mob))
 		return FALSE
@@ -286,12 +286,12 @@
 		return FALSE
 
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_METAL)
-		user.visible_message(span_notice("[user] fumbles around figuring out how to use [src]."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何使用[src]。"),
 		span_notice("You fumble around figuring out how to use [src]."))
 		if(!do_after(user, 5 SECONDS, NONE, target, BUSY_ICON_UNSKILLED))
 			return
 
-	user.visible_message(span_warning("[user] is trying to plant [name] on [target]!"),
+	user.visible_message(span_warning("[user]正试图在[target]身上安装[name]！"),
 	span_warning("You are trying to plant [name] on [target]!"))
 
 	if(do_after(user, 3 SECONDS, NONE, target, BUSY_ICON_HOSTILE))
@@ -311,7 +311,7 @@
 
 		notify_ghosts("<b>[user]</b> has planted \a <b>[name]</b> on <b>[target.name]</b> with a <b>[timer]</b> second fuse!", source = user, action = NOTIFY_ORBIT)
 
-		target.balloon_alert_to_viewers("[timer] seconds", vision_distance = COMBAT_MESSAGE_RANGE)
+		target.balloon_alert_to_viewers("[timer]秒", vision_distance = COMBAT_MESSAGE_RANGE)
 
 		plant_target = target
 		if(ismovable(plant_target))

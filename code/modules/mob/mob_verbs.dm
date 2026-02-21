@@ -12,7 +12,7 @@
 	set category = "IC"
 
 	if(is_blind(src))
-		to_chat(src, span_warning("Something is there, but you can't see it!"))
+		to_chat(src, span_warning("有东西在那里，但你看不见它！"))
 		return
 
 	face_atom(examinify)
@@ -66,7 +66,7 @@
 	if(mind)
 		mind.show_memory(src)
 	else
-		to_chat(src, "The game appears to have misplaced your mind datum, so we can't show you your notes.")
+		to_chat(src, "游戏似乎丢失了你的心智数据，因此无法显示你的笔记。")
 
 /mob/verb/add_memory(msg as message)
 	set name = "Add Note"
@@ -80,7 +80,7 @@
 
 		mind.store_memory(msg)
 	else
-		to_chat(src, "You don't have a mind datum for some reason, so you can't add a note to it.")
+		to_chat(src, "由于某些原因，你没有思维数据，因此无法为其添加备注。")
 
 
 /mob/verb/respawn()
@@ -88,10 +88,10 @@
 	set category = "OOC"
 
 	if(!GLOB.respawn_allowed && !check_rights(R_ADMIN, FALSE))
-		to_chat(usr, span_notice("Respawn is disabled."))
+		to_chat(usr, span_notice("重生已禁用。"))
 		return
 	if(stat != DEAD)
-		to_chat(usr, span_boldnotice("You must be dead to use this!"))
+		to_chat(usr, span_boldnotice("你必须死亡才能使用这个！"))
 		return
 
 	if(DEATHTIME_CHECK(usr))
@@ -106,7 +106,7 @@
 			DEATHTIME_MESSAGE(usr)
 			return
 
-	to_chat(usr, span_notice("You can respawn now, enjoy your new life!<br><b>Make sure to play a different character, and please roleplay correctly.</b>"))
+	to_chat(usr, span_notice("你现在可以重新复活了，享受你的新生活吧！<br><b>请务必扮演一个不同的角色，并正确地进行角色扮演。</b>"))
 	GLOB.round_statistics.total_human_respawns++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "total_human_respawns")
 
@@ -136,7 +136,7 @@
 	if(isliving(usr))
 		liver = usr
 		if(liver.health >= liver.get_crit_threshold())
-			to_chat(src, "You can only use this when you're dead or crit.")
+			to_chat(src, "你只能在死亡或濒死状态下使用这个。")
 			return
 
 	if(usr)

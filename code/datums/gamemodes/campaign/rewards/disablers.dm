@@ -1,7 +1,7 @@
 //These are TEMPORARY malus effects, attached to the victim faction. The asset activates at the start of every mission unless the asset is disables is already unavailable.
 /datum/campaign_asset/asset_disabler
 	name = "REWARD_DISABLER"
-	desc = "base type of disabler, you shouldn't see this."
+	desc = "基础型眩晕枪，你不应该看到这个。"
 	detailed_desc = "Why can you see this? Report on github."
 	uses = 2
 	asset_flags = ASSET_IMMEDIATE_EFFECT|ASSET_DEBUFF
@@ -58,7 +58,7 @@
 
 /datum/campaign_asset/asset_disabler/tgmc_cas
 	name = "CAS disabled"
-	desc = "CAS fire support temporarily disabled"
+	desc = "近距空中支援火力支援暂时禁用"
 	detailed_desc = "Hostile actions have resulted in the temporary loss of our access to close air support"
 	ui_icon = "cas_disabled"
 	types_disabled = list(/datum/campaign_asset/fire_support)
@@ -71,7 +71,7 @@
 
 /datum/campaign_asset/asset_disabler/som_cas
 	name = "CAS disabled"
-	desc = "CAS fire support temporarily disabled"
+	desc = "近距空中支援火力支援暂时禁用"
 	detailed_desc = "Hostile actions have resulted in the temporary loss of our access to close air support"
 	ui_icon = "cas_disabled"
 	types_disabled = list(/datum/campaign_asset/fire_support/som_cas)
@@ -84,7 +84,7 @@
 
 /datum/campaign_asset/asset_disabler/tgmc_mortar
 	name = "Mortar support disabled"
-	desc = "Mortar fire support temporarily disabled"
+	desc = "迫击炮火力支援暂时禁用"
 	detailed_desc = "Hostile actions have resulted in the temporary loss of our access to mortar fire support"
 	ui_icon = "mortar_disabled"
 	types_disabled = list(/datum/campaign_asset/fire_support/mortar)
@@ -100,7 +100,7 @@
 
 /datum/campaign_asset/asset_disabler/som_mortar
 	name = "Mortar support disabled"
-	desc = "Mortar fire support temporarily disabled"
+	desc = "迫击炮火力支援暂时禁用"
 	detailed_desc = "Hostile actions have resulted in the temporary loss of our access to mortar fire support"
 	ui_icon = "mortar_disabled"
 	types_disabled = list(/datum/campaign_asset/fire_support/som_mortar)
@@ -111,7 +111,7 @@
 
 /datum/campaign_asset/asset_disabler/drop_pods
 	name = "Drop pods disabled"
-	desc = "Drop pod access temporarily disabled"
+	desc = "空降舱访问权限暂时禁用"
 	detailed_desc = "Hostile actions have resulted in the temporary loss of our access to drop pod deployment"
 	ui_icon = "droppod_disabled"
 	types_disabled = list(/datum/campaign_asset/droppod_enabled)
@@ -119,7 +119,7 @@
 
 /datum/campaign_asset/asset_disabler/teleporter
 	name = "Teleporter disabled"
-	desc = "Teleporter temporarily disabled"
+	desc = "传送器暂时停用"
 	detailed_desc = "Hostile actions have resulted in the temporary loss of our access to teleporter deployment"
 	ui_icon = "tele_disabled"
 	types_disabled = list(/datum/campaign_asset/teleporter_enabled)

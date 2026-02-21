@@ -1,6 +1,6 @@
 /obj/vehicle/sealed/armored/multitile
-	name = "\improper MT - Banteng"
-	desc = "A gigantic wall of metal designed for maximum Xeno destruction. Drag yourself onto it at an entrance to get inside."
+	name = "\improper MT - 班腾"
+	desc = "专为最大限度消灭异形而设计的巨型金属墙。在入口处将自己拖上去即可进入。"
 	icon = 'icons/obj/armored/3x3/tank.dmi'
 	turret_icon = 'icons/obj/armored/3x3/tank_gun.dmi'
 	damage_icon_path = 'icons/obj/armored/3x3/tank_damage.dmi'
@@ -56,7 +56,7 @@
 	. = ..()
 	name = initial(name)
 	if(armored_flags & ARMORED_IS_WRECK)
-		name = "wrecked " + name
+		name = "损毁" + name
 
 /obj/vehicle/sealed/armored/multitile/update_desc(updates)
 	. = ..()
@@ -162,7 +162,7 @@
 
 //THe HvX tank is not balanced at all for HvH
 /obj/vehicle/sealed/armored/multitile/campaign
-	desc = "A gigantic wall of metal designed for maximum SOM destruction. Drag yourself onto it at an entrance to get inside."
+	desc = "专为最大限度摧毁火星之子而设计的巨型金属壁垒。在入口处将自己拖上即可进入。"
 	required_entry_skill = SKILL_LARGE_VEHICLE_DEFAULT
 	max_integrity = 1400
 	soft_armor = list(MELEE = 90, BULLET = 95 , LASER = 95, ENERGY = 95, BOMB = 80, BIO = 100, FIRE = 100, ACID = 75)

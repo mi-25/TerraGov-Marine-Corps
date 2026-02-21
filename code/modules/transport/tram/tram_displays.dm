@@ -1,6 +1,6 @@
 /obj/machinery/transport/destination_sign
 	name = "destination sign"
-	desc = "A display to show you what direction the tram is travelling."
+	desc = "显示有轨电车行驶方向的显示屏。"
 	icon = 'icons/obj/tram/tram_display.dmi'
 	icon_state = "desto_blank"
 	base_icon_state = "desto"

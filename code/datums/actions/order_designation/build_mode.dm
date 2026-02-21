@@ -29,7 +29,7 @@ GLOBAL_LIST_INIT(designator_types, list (
 ///build designation side of use_ability
 /datum/action/ability/activable/build_designator/proc/use_build_ability(atom/target)
 	if(!isturf(target) || !update_hologram(target))
-		owner.balloon_alert(owner, "invalid spot!")
+		owner.balloon_alert(owner, "无效位置！")
 		return FALSE
 	new /obj/effect/build_designator(target, construct_type, owner)
 	return TRUE
@@ -155,8 +155,8 @@ GLOBAL_LIST_INIT(designator_types, list (
 	icon_state = construct_type::icon_state
 	faction = builder.faction
 
-	name = "holo [construct_type::name]"
-	desc = "A holographic representation of a [construct_type::name]. Apply [recipe.req_amount] [material_type::name] to build it."
+	name = "全息[construct_type::name]"
+	desc = "[construct_type::name]的全息投影。应用[recipe.req_amount]单位的[material_type::name]来建造它。"
 	. = ..()
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_HOLO_BUILD_INITIALIZED, src)
 	makeHologram(0.7)

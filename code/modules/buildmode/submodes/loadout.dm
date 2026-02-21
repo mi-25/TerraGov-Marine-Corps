@@ -21,7 +21,7 @@
 		return
 	loadout = SSpersistence.load_loadout(loadout_choice)
 	if(!loadout)
-		to_chat(user, "Error when loading loadout")
+		to_chat(user, "加载装备时出错")
 
 /datum/buildmode_mode/loadout/handle_click(client/user, params, object)
 	var/list/pa = params2list(params)
@@ -41,7 +41,7 @@
 		loadout = create_empty_loadout(loadout_name, dollie.job.title)
 		loadout.save_mob_loadout(dollie, TRUE)
 		SSpersistence.save_loadout(loadout)
-		to_chat(user, span_notice("New loadout copied from [dollie]."))
+		to_chat(user, span_notice("已从[dollie]复制新配装。"))
 		return
 
 	if(shift_click && left_click)
@@ -51,7 +51,7 @@
 	if(left_click)
 		dollie.delete_equipment()
 		if(isnull(loadout))
-			to_chat(user, span_warning("Pick an loadout first."))
+			to_chat(user, span_warning("先选择一个装备配置。"))
 			return
 		loadout.equip_mob(dollie)
 		dollie.job = SSjob.name_occupations[loadout.job]

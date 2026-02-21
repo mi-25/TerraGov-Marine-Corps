@@ -1,5 +1,5 @@
 /obj/machinery/robotic_fabricator
-	name = "Robotic Fabricator"
+	name = "机器人制造机"
 	icon = 'icons/obj/robotics.dmi'
 	icon_state = "fab-idle"
 	density = TRUE

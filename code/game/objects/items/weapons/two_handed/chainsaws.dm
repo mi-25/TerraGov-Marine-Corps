@@ -1,7 +1,7 @@
 /// Chainsword & Chainsaw
 /obj/item/weapon/twohanded/chainsaw
-	name = "chainsaw"
-	desc = "A chainsaw. Good for turning big things into little things."
+	name = "链锯"
+	desc = "一把链锯。适合把大东西变成小东西。"
 	icon = 'icons/obj/items/weapons/misc.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/weapons/melee_left.dmi',
@@ -57,12 +57,12 @@
 	if(!active)
 		force = initial(force)
 		hitsound = initial(hitsound)
-		balloon_alert(user, "the motor is dead!")
+		balloon_alert(user, "引擎熄火了！")
 		update_icon()
 		update_item_state()
 		return
 	if(reagents.get_reagent_amount(/datum/reagent/fuel) < fuel_used)
-		balloon_alert(user, "no fuel!")
+		balloon_alert(user, "没有燃料！")
 		return
 	force += additional_damage
 	playsound(loc, 'sound/weapons/chainsawhit.ogg', 100, 1)
@@ -78,7 +78,7 @@
 	user.changeNext_move(attack_speed) //this is here because attacking object for some reason doesn't respect weapon attack speed
 	if(reagents.get_reagent_amount(/datum/reagent/fuel) < fuel_used && active) //turn off the chainsaw after one last attack when fuel ran out
 		playsound(loc, 'sound/items/weldingtool_off.ogg', 50)
-		to_chat(user, span_warning("\The [src] shuts off, using last bits of fuel!"))
+		to_chat(user, span_warning("\The [src] 熄火了，燃料耗尽！"))
 		active = FALSE
 		toggle_motor(user)
 		return
@@ -135,7 +135,7 @@
 		return
 
 	if(user.do_actions)
-		target_object.balloon_alert(user, "busy!")
+		target_object.balloon_alert(user, "忙！")
 		return TRUE
 
 	if(user.incapacitated() || get_dist(user, target_object) > 1 || user.resting)  // loop attacking an adjacent object while user is not incapacitated nor resting, mostly here for the one handed chainsword
@@ -149,12 +149,12 @@
 	attack_obj(target_object, user)
 
 /obj/item/weapon/twohanded/chainsaw/suicide_act(mob/user)
-	user.visible_message(span_danger("[user] is falling on the [src.name]! It looks like [user.p_theyre()] trying to commit suicide."))
+	user.visible_message(span_danger("[user] 正摔向 [src.name]！看起来 [user.p_theyre()] 想自杀。"))
 	return(BRUTELOSS)
 
 /obj/item/weapon/twohanded/chainsaw/sword
-	name = "chainsword"
-	desc = "Cutting heretic and xenos never been easier"
+	name = "链刃剑"
+	desc = "切割异端和异形从未如此简单"
 	icon_state = "chainsword_off"
 	icon_state_on = "chainsword_on"
 	worn_icon_state = "chainsword"

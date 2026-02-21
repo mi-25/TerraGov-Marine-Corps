@@ -1,6 +1,6 @@
 /obj/item/organ
 	name = "organ"
-	desc = "It looks like it probably just plopped out."
+	desc = "看起来它大概只是刚被投放出来。"
 	icon = 'icons/obj/items/organs.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/items/bodyparts_left.dmi',
@@ -206,7 +206,7 @@
 	if(robotic)
 		return
 
-	to_chat(user, span_notice("You take an experimental bite out of \the [src]."))
+	to_chat(user, span_notice("你从\the [src]上咬下了一小口进行实验。"))
 	var/datum/reagent/blood/B = locate(/datum/reagent/blood) in reagents.reagent_list
 	if(B)
 		var/turf/TU = get_turf(src)

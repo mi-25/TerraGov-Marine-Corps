@@ -1,6 +1,6 @@
 /obj/item/unmanned_vehicle_remote
-	name = "handheld vehicle controller"
-	desc = "Used to control an unmanned vehicle.<br>Tap the vehicle you want to control with the controller to link it."
+	name = "手持载具控制器"
+	desc = "用于控制无人载具。<br>点击您想要控制的载具与控制器进行链接。"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "multitool2"
 	w_class = WEIGHT_CLASS_SMALL
@@ -17,18 +17,18 @@
 	if(vehicle)
 		SEND_SIGNAL(src, COMSIG_REMOTECONTROL_UNLINK)
 		if(vehicle == target)
-			to_chat(user, span_notice("You unlink [target] from [src]."))
+			to_chat(user, span_notice("你已将[target]从[src]断开连接。"))
 			clear_vehicle()
 			return
 		clear_vehicle()
 	vehicle = target
 	if(vehicle.controlled)
-		to_chat(user, "<span class='warning'>Something is already controlling this vehicle</span>")
+		to_chat(user, "<span class='warning'>已有其他单位正在控制此载具</span>")
 		vehicle = null
 		return
 	vehicle.on_link(src)
 	AddComponent(/datum/component/remote_control, target, vehicle.turret_type, vehicle.can_interact)
-	to_chat(user, span_notice("You link [target] to [src]."))
+	to_chat(user, span_notice("你将[target]链接到[src]。"))
 	RegisterSignal(target, COMSIG_QDELETING, PROC_REF(clear_vehicle))
 	return ..()
 

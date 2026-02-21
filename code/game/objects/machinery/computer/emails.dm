@@ -1,6 +1,6 @@
 /obj/machinery/computer/emails
-	name = "Personal Computer"
-	desc = "A personal computer used to view emails"
+	name = "个人电脑"
+	desc = "用于查看电子邮件的个人电脑"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "terminal"
 	screen_overlay = "terminal1"

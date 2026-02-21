@@ -4,7 +4,7 @@ Marine cloning.
 These act as a respawn mechanic growning a body and offering it up to ghosts.
 */
 /obj/machinery/cloning
-	name = "broken cloning machine"
+	name = "损坏的克隆机"
 	density = TRUE
 	opacity = FALSE
 	anchored = TRUE
@@ -19,7 +19,7 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 	if(COOLDOWN_FINISHED(src, relay_cooldown))
 		return
 	COOLDOWN_START(src, relay_cooldown, 2 SECONDS)
-	user.visible_message("You hear something bang on the window of \the [src]", "The door won't budge!")
+	user.visible_message("你听到有什么东西在敲打\the [src]的窗户。", "The door won't budge!")
 	return FALSE
 
 /obj/item/reagent_containers/glass/beaker/biomass
@@ -32,7 +32,7 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
  *The vat then needs to be repaired and refilled with biomass.
  */
 /obj/machinery/computer/cloning_console/vats
-	name = "Clone Vats Console"
+	name = "克隆槽控制台"
 	icon = 'icons/obj/machines/cryogenics.dmi'
 	icon_state = "body_scannerconsole"
 	screen_overlay = "body_scannerconsole_emissive"
@@ -70,19 +70,19 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 		// Try to find the machine nearby
 		linked_machine = locate() in get_step(src, REVERSE_DIR(dir))
 		if(!linked_machine)
-			visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> beeps in error, 'Connection not available'.</span>")
+			visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> 发出错误提示音，'连接不可用'。</span>")
 			return TRUE
 
 		linked_machine.linked_console = src
-		visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> beeps as its boots up and connects to \the [linked_machine].</span>")
+		visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> 在启动并连接到 \the [linked_machine] 时发出哔哔声。</span>")
 		return TRUE
 
 	if(linked_machine.occupant || linked_machine.timerid)
-		visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> beeps in error, 'Already processing clone'.</span>")
+		visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> 发出错误提示音，'克隆程序已在处理中'。</span>")
 		return TRUE
 
 	if(!linked_machine.beaker || linked_machine.beaker.reagents.total_volume < linked_machine.biomass_required)
-		visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> beeps in error, 'Not enough biomass'.</span>")
+		visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> 发出错误提示音，'生物质不足'。</span>")
 		return TRUE
 
 
@@ -90,7 +90,7 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 
 
 /obj/machinery/cloning/vats
-	name = "clone vat"
+	name = "克隆舱"
 	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "cell_0"
 	use_power = IDLE_POWER_USE
@@ -140,7 +140,7 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 	if(!powered())
 		deltimer(timerid)
 		timerid = null
-		visible_message(span_warning("<b>[src]</b> beeps in error, 'Power failure, reverting clone progress due to safety concerns!'."))
+		visible_message(span_warning("<b>[src]</b> 发出错误提示音，'电源故障，出于安全考虑，正在回退克隆进度！'"))
 
 /obj/machinery/cloning/vats/relaymove(mob/user)
 	eject_user()
@@ -153,14 +153,14 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 		return
 
 	if(user.a_intent == INTENT_HARM)
-		user.visible_message(span_notice("[user] bangs on the glass."), span_notice("You bang on the glass."))
+		user.visible_message(span_notice("[user] 敲打着玻璃。"), span_notice("You bang on the glass."))
 		return TRUE
 
 	if(!beaker)
 		return
 
 	if(timerid || occupant) // You need to stop the process or remove the human first.
-		to_chat(user, span_notice("You can't get to the beaker while the machine is growing a clone."))
+		to_chat(user, span_notice("机器正在培育克隆体时，你无法接触到烧杯。"))
 		return
 
 	beaker.forceMove(drop_location())
@@ -179,13 +179,13 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 
 	if(istype(hit_by, /obj/item/reagent_containers/glass/beaker))
 		if(beaker)
-			to_chat(user, span_warning("A beaker is already loaded into the machine."))
+			to_chat(user, span_warning("机器中已装载一个烧杯。"))
 			return
 
 		// Check if the beaker contains anything other than biomass juice
 		for(var/datum/reagent/instance AS in hit_by.reagents.reagent_list)
 			if(!istype(instance, /datum/reagent/medicine/biomass) && !istype(instance, /datum/reagent/medicine/biomass/xeno))
-				to_chat(user, span_warning("\The [src] rejects the beaker due to incompatible contents."))
+				to_chat(user, span_warning("\The [src] 因内容物不兼容而拒绝烧杯。"))
 				return
 
 		beaker = hit_by
@@ -244,7 +244,7 @@ These act as a respawn mechanic growning a body and offering it up to ghosts.
 		finish_growing_human()
 		return
 
-	visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> whirls as it starts to create a new clone.</span>")
+	visible_message("[icon2html(src, viewers(src))] <span><b>[src]</b> 旋转着开始制造一个新的克隆体。</span>")
 	timerid = addtimer(CALLBACK(src, PROC_REF(finish_growing_human)), grow_timer, TIMER_STOPPABLE)
 	update_icon()
 

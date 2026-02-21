@@ -4,8 +4,8 @@
 
 
 /obj/machinery/suit_storage_unit
-	name = "Suit Storage Unit"
-	desc = "An industrial U-Stor-It Storage unit designed to accomodate all kinds of space suits. Its on-board equipment also allows the user to decontaminate the contents through a UV-ray purging cycle. There's a warning label dangling from the control pad, reading \"STRICTLY NO BIOLOGICALS IN THE CONFINES OF THE UNIT\"."
+	name = "装备储存单元"
+	desc = "一个工业级U-Stor-It存储单元，设计用于容纳各类太空服。其内置设备还允许用户通过紫外线净化循环对内部物品进行消毒。控制面板上悬挂着一个警告标签，写着'单元内严禁存放生化物品'。"
 	icon = 'icons/obj/machines/suitstorage.dmi'
 	icon_state = "closed" //order is: [has helmet][has suit][has human][is open][is locked][is UV cycling][is powered][is dirty/broken] [is superUVcycling]
 	anchored = TRUE
@@ -184,7 +184,7 @@
 
 /obj/machinery/suit_storage_unit/proc/toggle_open(mob/user as mob)
 	if(isUV)
-		to_chat(user, "<font color='red'>Unable to open unit.</font>")
+		to_chat(user, "<font color='red'>无法开启单位。</font>")
 		return
 	isopen = !isopen
 	update_icon()
@@ -194,16 +194,16 @@
 	set waitfor = 0
 
 	if(isopen)
-		to_chat(user, "<font color='red'>Unit storage is not closed -- Aborting.</font>")
+		to_chat(user, "<font color='red'>单位储存舱未关闭——中止。</font>")
 		return
 
 	if(isUV)
 		return
 
 	if(!inserted_helmet && !inserted_mask && !inserted_suit) //shit's empty yo
-		to_chat(user, "<font color='red'>Unit storage bays empty. Nothing to disinfect -- Aborting.</font>")
+		to_chat(user, "<font color='red'>单位存储舱为空。无需消毒——中止。</font>")
 		return
-	to_chat(user, span_notice("You start the Unit's cauterisation cycle."))
+	to_chat(user, span_notice("你启动了该装置的烧灼循环。"))
 	isUV = 1
 	update_icon()
 	updateUsrDialog()
@@ -240,49 +240,49 @@
 	if(istype(I, /obj/item/clothing/suit/space))
 		var/obj/item/clothing/suit/space/S = I
 		if(inserted_suit)
-			to_chat(user, span_warning("The unit already contains a suit."))
+			to_chat(user, span_warning("该单位已装有防护服。"))
 			return
 
 		if(!user.transferItemToLoc(S, src))
 			return
 
-		to_chat(user, span_notice("You load the [S.name] into the storage compartment."))
+		to_chat(user, span_notice("你将[S.name]装入存储舱。"))
 		inserted_suit = S
 
 	else if(istype(I,/obj/item/clothing/head/helmet))
 		var/obj/item/clothing/head/helmet/H = I
 		if(inserted_helmet)
-			to_chat(user, span_warning("The unit already contains a helmet."))
+			to_chat(user, span_warning("该单位已装备头盔。"))
 			return
 
 		if(!user.transferItemToLoc(H, src))
 			return
 
-		to_chat(user, span_notice("You load the [H.name] into the storage compartment."))
+		to_chat(user, span_notice("你将[H.name]装入了存储舱。"))
 		inserted_helmet = H
 
 	else if(istype(I, /obj/item/clothing/mask))
 		var/obj/item/clothing/mask/M = I
 		if(inserted_mask)
-			to_chat(user, span_warning("The unit already contains a mask."))
+			to_chat(user, span_warning("该单位已装有面罩。"))
 			return
 
 		if(!user.transferItemToLoc(M, src))
 			return
 
-		to_chat(user, span_notice("You load the [M.name] into the storage compartment."))
+		to_chat(user, span_notice("你将[M.name]装入存储舱。"))
 		inserted_mask = M
 
 	else if(istype(I, /obj/item/tank))
 		var/obj/item/tank/T = I
 		if(inserted_tank)
-			to_chat(user, span_warning("The unit already contains a tank."))
+			to_chat(user, span_warning("该单位已装有气罐。"))
 			return
 
 		if(!user.transferItemToLoc(T, src))
 			return
 
-		to_chat(user, span_notice("You load the [T.name] into the storage compartment."))
+		to_chat(user, span_notice("你将[T.name]装入存储舱。"))
 		inserted_tank = T
 
 	update_icon()

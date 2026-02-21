@@ -29,14 +29,14 @@
 
 /datum/loadout_item/secondary/gun/som/highpower
 	name = "Highpower"
-	desc = "A powerful semi-automatic pistol chambered in the devastating .50 AE caliber rounds. Used for centuries by law enforcement and criminals alike, recently recreated with this new model."
+	desc = "一把强大的半自动手枪，使用威力巨大的.50 AE口径弹药。几个世纪以来一直被执法部门和犯罪分子使用，最近通过这款新型号得以重现。"
 	ui_icon = "highpower"
 	item_typepath = /obj/item/weapon/gun/pistol/highpower/standard
 	loadout_item_flags = NONE
 
 /datum/loadout_item/secondary/gun/som/serpenta
 	name = "VX-12 Serpenta"
-	desc = "The 'serpenta' is a volkite energy pistol typically seen in the hands of SOM officers and some NCOs, and is quite dangerous for it's size."
+	desc = "'蛇形'是一种沃尔基特能量手枪，通常由火星之子军官和一些士官使用，其威力与尺寸相比相当惊人。"
 	ui_icon = "vx12"
 	item_typepath = /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/serpenta
 	jobs_supported = list(SOM_SQUAD_LEADER, SOM_STAFF_OFFICER)
@@ -53,7 +53,7 @@
 
 /datum/loadout_item/secondary/gun/som/sawn_off
 	name = "Sawn-off shotgun"
-	desc = "A double barreled shotgun whose barrel has been artificially shortened to reduce range for further CQC potiential. Extremely powerful at close range, but is very difficult to handle."
+	desc = "一把双管霰弹枪，其枪管经过人工缩短以降低射程，从而提升近战潜力。在近距离威力巨大，但非常难以操控。"
 	ui_icon = "sshotgun"
 	item_typepath = /obj/item/weapon/gun/shotgun/double/sawn
 	jobs_supported = list(SOM_SQUAD_VETERAN)
@@ -109,7 +109,7 @@
 
 /datum/loadout_item/secondary/kit/som_engineer/sentry
 	name = "COPE Sentry"
-	desc = "A powerful sentry gun. Throw like a grenade to deploy."
+	desc = "一门强大的哨戒炮。像手雷一样投掷以部署。"
 	ui_icon = "sentry"
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
@@ -120,7 +120,7 @@
 
 /datum/loadout_item/secondary/kit/som_engineer/large_mines
 	name = "Claymores"
-	desc = "Two large boxes of claymores. Mines are extremely effective for creating deadzones or setting up traps. Great on the defence."
+	desc = "两大箱阔剑地雷。地雷在制造死亡区域或设置陷阱方面极为有效。防守时作用巨大。"
 	ui_icon = "claymore"
 
 /datum/loadout_item/secondary/kit/som_engineer/large_mines/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -130,7 +130,7 @@
 
 /datum/loadout_item/secondary/kit/som_engineer/materials
 	name = "Metal/plasteel"
-	desc = "A full stack of metal and plasteel. For maximum construction."
+	desc = "一整叠金属和塑钢。用于最大规模的建造。"
 	ui_icon = "materials"
 
 /datum/loadout_item/secondary/kit/som_engineer/materials/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -153,7 +153,7 @@
 
 /datum/loadout_item/secondary/kit/som_engineer/detpack
 	name = "Detpacks"
-	desc = "Detpacks, for blowing things up."
+	desc = "炸药包，用于爆破。"
 	ui_icon = "default"
 
 /datum/loadout_item/secondary/kit/som_engineer/detpack/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -170,7 +170,7 @@
 
 /datum/loadout_item/secondary/kit/som_corpsman/advanced
 	name = "Advanced meds"
-	desc = "A variety of advanced medical injectors including Russian Red, rezadone and Re-Grow, allowing for the treatment of cloneloss and missing limbs."
+	desc = "一系列高级医疗注射器，包括俄罗斯红、雷扎酮和再生剂，可用于治疗克隆损伤和肢体缺失。"
 	ui_icon = "medkit"
 	purchase_cost = 30
 

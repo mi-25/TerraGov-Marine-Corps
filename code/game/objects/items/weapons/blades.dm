@@ -1,9 +1,9 @@
 /obj/item/weapon/combat_knife
-	name = "\improper M5 survival knife"
+	name = "\improper M5求生刀"
 	icon_state = "combat_knife"
 	worn_icon_state = "combat_knife"
 	icon = 'icons/obj/items/weapons/knives.dmi'
-	desc = "A standard survival knife of high quality. You can slide this knife into your boots, and can be field-modified to attach to the end of a rifle with cable coil."
+	desc = "一把高品质的标准求生刀。你可以将这把刀滑入靴中，也可用电缆线圈现场改装，将其安装在步枪末端。"
 	atom_flags = CONDUCT
 	sharp = IS_SHARP_ITEM_ACCURATE
 	force = 30
@@ -20,9 +20,9 @@
 		return ..()
 	var/obj/item/stack/cable_coil/CC = I
 	if(!CC.use(5))
-		to_chat(user, span_notice("You don't have enough cable for that."))
+		to_chat(user, span_notice("你没有足够的电缆来做这个。"))
 		return
-	to_chat(user, "You wrap some cable around the bayonet. It can now be attached to a gun.")
+	to_chat(user, "你将一些线缆缠绕在刺刀上。现在它可以安装在枪上了。")
 	if(loc == user)
 		user.temporarilyRemoveItemFromInventory(src)
 	var/obj/item/attachable/bayonet/converted/F = new(src.loc)
@@ -42,28 +42,28 @@
 	return (BRUTELOSS)
 
 /obj/item/weapon/combat_knife/upp
-	name = "\improper Type 30 survival knife"
+	name = "\improper 30式求生刀"
 	icon_state = "upp_knife"
 	worn_icon_state = "knife"
-	desc = "The standard issue survival knife of the UPP forces, the Type 30 is effective, but humble. It is small enough to be non-cumbersome, but lethal none-the-less."
+	desc = "UPP部队的标准制式求生刀，30型虽不起眼但很实用。它小巧不累赘，但依然致命。"
 	force = 20
 	throwforce = 10
 	throw_speed = 2
 	throw_range = 8
 
 /obj/item/weapon/combat_knife/pmc
-	name = "\improper M2X HF-S self defense blade"
+	name = "\improper M2X HF-S 自卫刀"
 	icon_state = "pmc_knife"
 	worn_icon_state = "pmc_knife"
-	desc = "A experemental short blade, utilizing high-frequency techology. A small but dangerous weapon, which can cut through even the heaviest of armors. Many mercenaries keep it close, for desperate situations."
+	desc = "一把实验性短刃，采用高频振动技术。这是一件小巧但危险的武器，能够切割最厚重的装甲。许多佣兵将其贴身携带，以备绝境之需。"
 	penetration = 25
 
 /obj/item/weapon/karambit
-	name = "karambit"
+	name = "爪刀"
 	icon = 'icons/obj/items/weapons/knives.dmi'
 	icon_state = "karambit"
 	worn_icon_state = "karambit"
-	desc = "A small high quality knife with a curved blade, good for slashing and hooking. This one has a mottled red finish."
+	desc = "一把小巧的高品质弯刃刀，适合斩击和钩挂。这把刀带有斑驳的红色涂层。"
 	atom_flags = CONDUCT
 	sharp = IS_SHARP_ITEM_ACCURATE
 	force = 30
@@ -78,18 +78,18 @@
 /obj/item/weapon/karambit/fade
 	icon_state = "karambit_fade"
 	worn_icon_state = "karambit_fade"
-	desc = "A small high quality knife with a curved blade, good for slashing and hooking. This one has been painted by airbrushing transparent paints that fade together over a chrome base coat."
+	desc = "一把小巧的高品质弯刃刀，适合斩击和钩挂。这把刀采用透明漆喷涂在镀铬底漆上，形成渐变效果。"
 
 /obj/item/weapon/karambit/case_hardened
 	icon_state = "karambit_case_hardened"
 	worn_icon_state = "karambit_case_hardened"
-	desc = "A small high quality knife with a curved blade, good for slashing and hooking. This one has been color case-hardened through the application of wood charcoal at high temperatures."
+	desc = "一把小巧的高品质弯刃刀，适合斩击和钩挂。这把刀通过高温木炭处理进行了彩色表面硬化。"
 
 /obj/item/stack/throwing_knife
-	name ="\improper M11 throwing knife"
+	name ="\improper M11飞刀"
 	icon='icons/obj/items/weapons/throwing.dmi'
 	icon_state = "throwing_knife"
-	desc="A military knife designed to be thrown at the enemy. Much quieter than a firearm, but requires a steady hand to be used effectively."
+	desc="专为投掷设计的军用刀具。比枪械安静得多，但需要稳定的手法才能有效使用。"
 	stack_name = "pile"
 	singular_name = "knife"
 	atom_flags = CONDUCT|DIRLOCK
@@ -187,7 +187,7 @@
 		amount--
 		thrown_thing = knife_to_throw
 	playsound(src, 'sound/effects/throw.ogg', 30, 1)
-	visible_message(span_warning("[living_user] expertly throws [thrown_thing]."), null, null, 5)
+	visible_message(span_warning("[living_user] 娴熟地投掷出 [thrown_thing]。"), null, null, 5)
 	update_icon()
 	return AUTOFIRE_CONTINUE
 

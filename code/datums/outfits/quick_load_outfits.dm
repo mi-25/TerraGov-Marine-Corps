@@ -46,12 +46,12 @@
 
 //Base TGMC outfit
 /datum/outfit/quick/tgmc
-	name = "TGMC base"
-	desc = "This is the base typepath for all TGMC quick vendor outfits. You shouldn't see this."
+	name = "地球政府殖民地海军陆战队基地"
+	desc = "这是所有地球政府殖民地海军陆战队快速供应商套装的基类路径。你不应该看到这个。"
 
 //Base TGMC marine outfit
 /datum/outfit/quick/tgmc/marine
-	name = "TGMC Squad Marine"
+	name = "地球政府殖民地海军陆战队陆战队员"
 	jobtype = "Squad Marine"
 
 	ears = /obj/item/radio/headset/mainship/marine
@@ -79,8 +79,8 @@
 	)
 
 /datum/outfit/quick/tgmc/marine/standard_assaultrifle
-	name = "AR-12 rifleman"
-	desc = "The classic line rifleman. Equipped with an AR-12 assault rifle with UGL, heavy armor, and plenty of grenades and ammunition. A solid all-rounder."
+	name = "AR-12步枪手"
+	desc = "经典的步枪手。配备AR-12突击步枪（带下挂榴弹发射器）、重型护甲以及充足的手雷和弹药。可靠的全能型角色。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_assaultrifle/rifleman
 	belt = /obj/item/storage/belt/marine/t12
@@ -101,8 +101,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/standard_laserrifle
-	name = "Laser Rifleman"
-	desc = "For when bullets don't cut the mustard. Laser rifle with miniflamer and heavy armor. Lasers are more effective against SOM armor, but cannot break bones and damage organs."
+	name = "激光步枪手"
+	desc = "当弹道武器力不从心时，激光步枪搭配微型喷火器和重型护甲。激光对火星之子护甲更有效，但无法造成骨折和器官损伤。"
 
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle/rifleman
 	belt = /obj/item/storage/belt/marine/te_cells
@@ -121,8 +121,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/standard_carbine
-	name = "AR-18 Rifleman"
-	desc = "The modern line rifleman. Equipped with an AR-18 carbine with UGL, heavy armor, and plenty of grenades and ammunition. Boasts better mobility and damage output than the AR-12, but suffers with a smaller magazine and worse performance at longer ranges."
+	name = "AR-18步枪手"
+	desc = "现代一线步枪兵。配备带下挂榴弹发射器的AR-18卡宾枪、重型护甲以及充足的手雷和弹药。相比AR-12拥有更好的机动性和伤害输出，但弹匣容量较小，远距离性能较差。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_carbine/standard
 	belt = /obj/item/storage/belt/marine/t18
@@ -143,8 +143,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/combat_rifle
-	name = "AR-11 Rifleman"
-	desc = "The old rifleman. Equipped with an AR-11 combat rifle with heavy armor, and plenty of grenades and ammunition. Has a large capacity with deadly damage output at all ranges, but lacks many attachment options of more modern weapons and somewhat more cumbersome to handle."
+	name = "AR-11 步枪手"
+	desc = "老派步枪兵。装备AR-11战斗步枪与重型护甲，并携带大量手雷和弹药。拥有大容量弹匣和全射程致命火力输出，但相比更现代的武器缺少许多枪械配件选项，且操作略显笨重。"
 
 	suit_store = /obj/item/weapon/gun/rifle/tx11/standard
 	belt = /obj/item/storage/belt/marine/combat_rifle
@@ -164,8 +164,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/standard_battlerifle
-	name = "BR-64 Rifleman"
-	desc = "Heavier firepower for the discerning rifleman. Equipped with an BR-64 battle rifle with UGL, heavy armor, and plenty of grenades and ammunition. Higher damage and penetration, at the cost of a more bulky weapon."
+	name = "BR-64 步枪手"
+	desc = "为挑剔的步枪手提供的更强火力。配备BR-64战斗步枪（带下挂榴弹发射器）、重型护甲以及充足的弹药和手雷。更高的伤害和穿透力，代价是武器更为笨重。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_br/standard
 	belt = /obj/item/storage/belt/marine/standard_battlerifle
@@ -186,8 +186,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/standard_skirmishrifle
-	name = "AR-21 Rifleman"
-	desc = "Better stopping power at the cost of lower rate of fire. Equipped with an AR-21 skirmish rifle with UGL, heavy armor, and plenty of grenades and ammunition. Rewards good aim with its heavy rounds."
+	name = "AR-21 步枪手"
+	desc = "以较低射速为代价换取更强的制止力。配备AR-21突击步枪（带下挂榴弹发射器）、重型护甲以及大量手雷和弹药。其重型弹药对精准射击者给予回报。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_skirmishrifle/standard
 	belt = /obj/item/storage/belt/marine/standard_skirmishrifle
@@ -208,8 +208,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/alf_shocktrooper
-	name = "ALF-51B Shocktrooper"
-	desc = "Shock assault loadout. Equipped with an ALF-51B machinecarbine, heavy armor reinforced with a Mk.II 'Tyr' module, and plenty of grenades and ammunition. Offers excellent damage output and superior protection, however the ALF-51B's cutdown size means it suffers from severe damage falloff. Best used up close."
+	name = "ALF-51B 突击兵"
+	desc = "突击强攻型装备。配备ALF-51B型机枪卡宾枪、由Mk.II'泰尔'模块强化的重型护甲，以及大量手雷和弹药。提供卓越的火力输出和超强防护，但ALF-51B的紧凑尺寸导致其存在严重的伤害衰减问题。最适合近距离作战。"
 
 	head = /obj/item/clothing/head/modular/m10x/tyr
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/heavy/tyr_two
@@ -233,8 +233,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/standard_machinegunner
-	name = "MG-60 Machinegunner"
-	desc = "The old reliable workhorse of the TGMC. Equipped with an MG-60 machinegun with bipod, heavy armor and some basic construction supplies. Good for holding ground and providing firesupport, and the cost of some mobility."
+	name = "MG-60机枪手"
+	desc = "TGMC 可靠的老黄牛。配备 MG-60 机枪、两脚架、重型装甲和一些基本建筑物资。擅长固守阵地和提供火力支援，但牺牲了一些机动性。"
 
 	belt = /obj/item/storage/belt/sparepouch
 	suit_store = /obj/item/weapon/gun/rifle/standard_gpmg/machinegunner
@@ -267,8 +267,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/medium_machinegunner
-	name = "MG-27 Machinegunner"
-	desc = "For when you need the biggest gun you can carry. Equipped with an MG-27 machinegun and miniscope and a MR-25 SMG as a side arm, as well as medium armor and a small amount of construction supplies. Allows for devestating, albeit static firepower."
+	name = "MG-27 机枪手"
+	desc = "当你需要携带最大的枪械时。配备MG-27机枪和微型瞄准镜，以及一把MR-25冲锋枪作为副武器，还有中型护甲和少量建筑物资。提供毁灭性的火力，尽管是静态的。"
 
 	belt = /obj/item/storage/holster/m25
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/shield
@@ -300,8 +300,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/standard_lasermg
-	name = "Laser Machinegunner"
-	desc = "Mess free fire superiority. Laser machinegun with underbarrel grenade launcher and heavy armor. Comparatively light for a machinegun, with variable firemodes makes this weapon a flexible and dangerous weapon. Lasers are more effective against SOM armor, but cannot break bones and damage organs."
+	name = "激光机枪手"
+	desc = "干净利落的火力压制。配备下挂榴弹发射器和重型护甲的激光机枪。作为机枪而言相对轻便，可变射击模式使其成为灵活而危险的武器。激光对火星之子护甲更有效，但无法造成骨折和器官损伤。"
 
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser/patrol
 	belt = /obj/item/storage/belt/marine/te_cells
@@ -319,8 +319,8 @@
 	)
 
 /datum/outfit/quick/tgmc/marine/pyro
-	name = "FL-84 Flamethrower Operator"
-	desc = "For burning enemies, and sometimes friends. Equipped with an FL-84 flamethrower and wide nozzle, SMG-25 secondary weapon, heavy armor upgraded with a 'Surt' fireproof module, and a backtank of fuel. Can burn down large areas extremely quickly both to flush out the enemy and to cover flanks. Is very slow however, ineffective at long range, and can expend all available fuel quickly if used excessively."
+	name = "FL-84 喷火器操作员"
+	desc = "用于焚烧敌人，有时也烧友军。装备有FL-84喷火器和宽口喷嘴、SMG-25副武器、升级了'苏尔特'防火模块的重型护甲，以及一个燃料背罐。能极快地烧毁大片区域，既可逼出敌人，也可掩护侧翼。但行动非常缓慢，远程效果不佳，且若过度使用会迅速耗尽所有可用燃料。"
 
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/heavy/surt
 	mask = /obj/item/clothing/mask/gas/tactical
@@ -341,8 +341,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/standard_shotgun
-	name = "SH-35 Scout"
-	desc = "For getting too close for comfort. Equipped with a SH-35 shotgun with buckshot and flechette rounds, a MP-19 sidearm, a good amount of grenades and light armor with a cutting edge 'svallin' shield module. Provides for excellent mobility and devestating close range firepower, but will falter against sustained firepower."
+	name = "SH-35 侦察型"
+	desc = "为了在近距离交火中占据优势。配备SH-35霰弹枪，可使用鹿弹和箭弹，一把MP-19手枪，大量手雷以及带有尖端'斯瓦林'护盾模块的轻型护甲。提供卓越的机动性和毁灭性的近距离火力，但在持续火力压制下会显得力不从心。"
 
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/light/shield
 	suit_store = /obj/item/weapon/gun/shotgun/pump/t35/standard
@@ -366,8 +366,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/standard_lasercarbine
-	name = "Laser Carbine Scout"
-	desc = "Highly mobile light infantry. Equipped with a laser carbine with UGL and a laser pistol sidearm, plenty of grenades and light armor with a cutting edge 'svallin' shield module. Excellent mobility, but not suited for sustained combat."
+	name = "激光卡宾枪侦察型"
+	desc = "高机动性轻步兵。配备带下挂榴弹发射器的激光卡宾枪和激光手枪副武器，大量手雷以及配备尖端'斯瓦林'护盾模块的轻甲。机动性极佳，但不适合持久作战。"
 
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/light/shield
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/scout
@@ -389,8 +389,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/light_carbine
-	name = "AR-18 Scout"
-	desc = "High damage and high speed. Equipped with an AR-18 carbine with UGL, light armor with a cutting edge 'svallin' shield module, and plenty of grenades and ammunition. Great mobility and damage output, but low magazine capacity and weak armor without the shield active means this loadout is best suited to hit and run tactics."
+	name = "AR-18 侦察型"
+	desc = "高伤害与高机动性。配备AR-18卡宾枪及下挂榴弹发射器、搭载前沿'斯瓦林'护盾模块的轻型护甲，以及充足的手雷和弹药。出色的机动性和火力输出，但弹匣容量小，且护盾未激活时护甲薄弱，意味着此装备配置最适合采用打了就跑的战术。"
 
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/light/shield
 	suit_store = /obj/item/weapon/gun/rifle/standard_carbine/scout
@@ -411,8 +411,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/shield_tank
-	name = "SMG-25 Guardian"
-	desc = "Professional bullet catcher. Equipped with an SMG-25 submachine gun, a TL-172 defensive shield and heavy armor reinforced with a 'Tyr' module. Designed to absorb as much incoming damage as possible to protect your squishier comrades, however your mobility and damage output are notably diminished. Also of note: the excellent thermal mass of the TL-172 means it is unusually effective against the SOM's volkite weaponry."
+	name = "SMG-25 守护者冲锋枪"
+	desc = "专业弹道拦截者。配备SMG-25冲锋枪、TL-172防御盾牌以及搭载'泰尔'模块的重型护甲。设计用于吸收尽可能多的来袭伤害以保护你那些脆弱的战友，但你的机动性和伤害输出会显著降低。另请注意：TL-172卓越的热容量意味着它对火星之子的伏尔克武器具有异常出色的防御效果。"
 
 	head = /obj/item/clothing/head/modular/m10x/tyr
 	glasses = /obj/item/clothing/glasses/welding
@@ -438,8 +438,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/machete
-	name = "Assault Marine"
-	desc = "This doesn't look standard issue... Equipped with a SMG-25 submachine gun, machete and heavy lift jetpack, along with light armor upgraded with a 'svallin' shield module. It's not clear why this is here, nevertheless it has excellent mobility, and would likely be devastating against anyone you manage to actually reach."
+	name = "突击陆战队员"
+	desc = "这看起来不像标准装备……配备了SMG-25冲锋枪、砍刀和重型起重喷气背包，以及搭载了'斯瓦林'护盾模块的轻型护甲。不清楚为何会出现在这里，但它具备出色的机动性，对于任何你能实际接近的目标都可能造成毁灭性打击。"
 
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/light/shield
 	back = /obj/item/jetpack_marine/heavy
@@ -453,8 +453,8 @@
 
 
 /datum/outfit/quick/tgmc/marine/scout
-	name = "BR-8 Scout"
-	desc = "IFF scout. Equipped with a BR-8 with a good amount of grenades and light armor with a cutting edge 'svallin' shield module. Provides for good mobility and powerful IFF damage, but the BR-8 is difficult to bring to bear at close range, and light armor wilts under sustained fire."
+	name = "BR-8 侦察型"
+	desc = "IFF侦察兵。装备有BR-8步枪和大量手雷，以及配备尖端'斯瓦林'护盾模块的轻型护甲。提供良好的机动性和强大的IFF（敌我识别）伤害，但BR-8在近距离难以发挥，且轻型护甲在持续火力下会迅速失效。"
 	quantity = 2
 
 	wear_suit = /obj/item/clothing/suit/modular/xenonauten/light/shield
@@ -477,7 +477,7 @@
 
 //Base TGMC engineer outfit
 /datum/outfit/quick/tgmc/engineer
-	name = "TGMC Squad Engineer"
+	name = "地球政府殖民地海军陆战队工程兵"
 	jobtype = "Squad Engineer"
 
 	ears = /obj/item/radio/headset/mainship/marine
@@ -505,8 +505,8 @@
 	)
 
 /datum/outfit/quick/tgmc/engineer/rrengineer
-	name = "Rocket Specialist"
-	desc = "Bringing the big guns. Equipped with a AR-18 carbine and RL-160 along with the standard engineer kit. Excellent against groups of enemy infantry or light armor, but only has limited ammunition."
+	name = "火箭专家"
+	desc = "带上大家伙。配备AR-18卡宾枪和RL-160火箭发射器，以及标准工程兵装备。对敌方步兵群或轻型装甲效果极佳，但弹药有限。"
 	quantity = 2
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_carbine/engineer
@@ -523,8 +523,8 @@
 
 
 /datum/outfit/quick/tgmc/engineer/sentry
-	name = "Sentry Technician"
-	desc = "Firing more guns than you have hands. Equipped with a AR-12 assault rifle with miniflamer, and two minisentries along with the standard engineer kit. Allows the user to quickly setup strong points and lock areas down, with some sensible placement."
+	name = "哨戒炮技术员"
+	desc = "手持多把武器，火力远超双手所能掌控。配备 AR-12 突击步枪，带微型喷火器，外加两座微型哨戒炮和标准工程兵装备。使用者可通过合理部署，快速建立坚固据点并封锁区域。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_assaultrifle/engineer
 	belt = /obj/item/storage/belt/marine/t12
@@ -545,8 +545,8 @@
 	)
 
 /datum/outfit/quick/tgmc/engineer/demolition
-	name = "Demolition Specialist"
-	desc = "Boom boom, shake the room. Equipped with a SH-15 auto shotgun and UGL and an impressive array of mines, detpacks and grenades, along with the standard engineer kit. Excellent for blasting through any obstacle, and mining areas to restrict enemy movement."
+	name = "爆破专家"
+	desc = "轰隆作响，震撼全场。配备SH-15自动霰弹枪、下挂榴弹发射器，以及令人印象深刻的地雷、炸药包和手雷阵列，外加标准工程兵装备。擅长爆破清除任何障碍，并通过布雷限制敌方行动。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_autoshotgun/engineer
 	back = /obj/item/storage/backpack/marine/tech
@@ -573,7 +573,7 @@
 
 //Base TGMC corpsman outfit
 /datum/outfit/quick/tgmc/corpsman
-	name = "TGMC Squad Corpsman"
+	name = "地球政府殖民地海军陆战队卫生兵"
 	jobtype = "Squad Corpsman"
 
 	belt = /obj/item/storage/belt/lifesaver/quick
@@ -610,8 +610,8 @@
 
 
 /datum/outfit/quick/tgmc/corpsman/standard_medic
-	name = "AR-12 Corpsman"
-	desc = "Keeping everone else in the fight. Armed with an AR-12 assault rifle with underbarrel grenade launcher, an impressive array of tools for healing your team, and a 'Mimir' biological protection module to allow you to continue operating in hazardous environments. With medivacs out of the question, you are the only thing standing between your buddies and an early grave."
+	name = "AR-12 卫生兵"
+	desc = "让战友们持续战斗。装备 AR-12 突击步枪，带下挂榴弹发射器，拥有一系列强大的工具来治疗你的小队，以及'密米尔'生化防护模块，让你能在危险环境中继续行动。医疗后送已无可能，你就是战友们与过早牺牲之间的唯一屏障。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_assaultrifle/medic
 
@@ -631,8 +631,8 @@
 
 
 /datum/outfit/quick/tgmc/corpsman/standard_smg
-	name = "SMG-90 Corpsman"
-	desc = "Keeping everone else in the fight. Armed with an SMG-90 submachine gun to maintain good mobility, an impressive array of tools for healing your team, and a 'Mimir' biological protection module to allow you to continue operating in hazardous environments. With medivacs out of the question, you are the only thing standing between your buddies and an early grave."
+	name = "SMG-90 卫生兵"
+	desc = "让所有人保持战斗状态。装备SMG-90冲锋枪以保持良好机动性，拥有一系列用于治疗队友的出色工具，以及一个'米米尔'生化防护模块，让你能在危险环境中持续作业。既然医疗后送已无可能，你就是你的战友们与过早阵亡之间的唯一屏障。"
 
 	suit_store = /obj/item/weapon/gun/smg/standard_smg/tactical
 
@@ -651,8 +651,8 @@
 
 
 /datum/outfit/quick/tgmc/corpsman/standard_skirmishrifle
-	name = "AR-21 Corpsman"
-	desc = "Keeping everone else in the fight. Armed with an AR-21 skirmish rifle with underbarrel grenade launcher, an impressive array of tools for healing your team, and a 'Mimir' biological protection module to allow you to continue operating in hazardous environments. With medivacs out of the question, you are the only thing standing between your buddies and an early grave."
+	name = "AR-21 卫生兵"
+	desc = "让战友们持续战斗。装备 AR-21 突击步枪，带下挂榴弹发射器，拥有强大的治疗工具套装，以及'密米尔'生化防护模块，让你能在危险环境中继续行动。医疗后送已无可能，你就是战友们与过早阵亡之间的唯一屏障。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_skirmishrifle/standard
 
@@ -671,8 +671,8 @@
 
 
 /datum/outfit/quick/tgmc/corpsman/auto_shotgun
-	name = "SH-15 Corpsman"
-	desc = "Keeping everone else in the fight. Armed with a SH-15 auto shotgun with underbarrel grenade launcher, an impressive array of tools for healing your team, and a 'Mimir' biological protection module to allow you to continue operating in hazardous environments. With medivacs out of the question, you are the only thing standing between your buddies and an early grave."
+	name = "SH-15 卫生兵"
+	desc = "让战友们持续战斗。配备SH-15自动霰弹枪及下挂手雷发射器，拥有强大的团队治疗工具套装，以及'米米尔'生化防护模块，让你能在危险环境中持续作战。医疗后送已无可能，你就是战友们与过早牺牲之间的唯一屏障。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_autoshotgun/engineer
 
@@ -693,8 +693,8 @@
 
 
 /datum/outfit/quick/tgmc/corpsman/laser_medic
-	name = "Laser Rifle Corpsman"
-	desc = "Keeping everone else in the fight. Armed with an laser rifle with miniflamer, an impressive array of tools for healing your team, and a 'Mimir' biological protection module to allow you to continue operating in hazardous environments. With medivacs out of the question, you are the only thing standing between your buddies and an early grave."
+	name = "激光步枪卫生兵"
+	desc = "让战友们保持战斗状态。配备一把带微型喷火器的激光步枪，一套用于治疗团队的强大工具，以及一个'米米尔'生化防护模块，让你能在危险环境中持续作业。既然医疗后送已无可能，你就是战友们与过早阵亡之间的唯一屏障。"
 
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle/medic
 
@@ -711,8 +711,8 @@
 
 
 /datum/outfit/quick/tgmc/corpsman/laser_carbine
-	name = "Laser Carbine Corpsman"
-	desc = "Keeping everone else in the fight. Armed with an laser carbine with underbarrel grenade launcher, an impressive array of tools for healing your team, and a 'Mimir' biological protection module to allow you to continue operating in hazardous environments. With medivacs out of the question, you are the only thing standing between your buddies and an early grave."
+	name = "激光卡宾枪卫生兵"
+	desc = "让战友们持续战斗。配备一把带下挂榴弹发射器的激光卡宾枪，一套用于治疗队友的强力工具，以及一个'米米尔'生化防护模块，让你能在危险环境中继续行动。医疗后送已无可能，你就是战友们与过早阵亡之间的唯一屏障。"
 
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine/scout
 
@@ -731,7 +731,7 @@
 
 //Base TGMC smartgunner outfit
 /datum/outfit/quick/tgmc/smartgunner
-	name = "TGMC Squad Smartgunner"
+	name = "地球政府殖民地海军陆战队智能机枪手"
 	jobtype = "Squad Smartgunner"
 
 	belt = /obj/item/belt_harness/marine
@@ -762,8 +762,8 @@
 
 
 /datum/outfit/quick/tgmc/smartgunner/standard_sg
-	name = "SG29 Smart Machinegunner"
-	desc = "A gun smarter than the average bear, or marine. Equipped with an SG-29 smart machine gun and heavy armor upgraded with a 'Tyr' extra armor mdule, the SG is responsible for providing mobile, accurate firesupport thanks to your IFF ammunition."
+	name = "SG29 智能机枪手"
+	desc = "一把比普通熊或陆战队员更聪明的枪。配备了SG-29智能机枪和装有'泰尔'额外装甲模块的重型装甲，SG凭借其敌我识别弹药负责提供机动、精准的火力支援。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_smartmachinegun/patrol
 
@@ -779,8 +779,8 @@
 
 
 /datum/outfit/quick/tgmc/smartgunner/minigun_sg
-	name = "SG85 Smart Machinegunner"
-	desc = "More bullets than sense. Equipped with an SG-85 smart gatling gun, an MP-19 sidearm, heavy armor upgraded with a 'Tyr' extra armor mdule and a whole lot of bullets. For when you want to unleash a firehose of firepower. Try not to run out of ammo."
+	name = "SG85智能机枪手"
+	desc = "比理智更多的子弹。装备有SG-85智能加特林机枪、MP-19副武器，以及加装了'泰尔'额外装甲模块的重型护甲，还有一大堆子弹。适用于你想倾泻火力洪流的场合。尽量别把弹药打光。"
 
 	belt = /obj/item/storage/belt/sparepouch
 	suit_store = /obj/item/weapon/gun/minigun/smart_minigun/motion_detector
@@ -797,8 +797,8 @@
 	)
 
 /datum/outfit/quick/tgmc/smartgunner/target_rifle
-	name = "SG62 Smart Machinegunner"
-	desc = "Flexibility and precision. Equipped with an SG-62 smart target rifle and heavy armor upgraded with a 'Tyr' extra armor mdule. The integrated spotting rifle comes with a variety of flexible ammo types, which combined with high damage, penetration and IFF, makes for a dangerous support loadout."
+	name = "SG62智能机枪手"
+	desc = "灵活性与精准性。配备SG-62智能目标步枪和搭载'泰尔'附加装甲模块的重型护甲。集成的观测步枪配备多种灵活的弹药类型，结合高伤害、穿透力和敌我识别功能，构成了一个危险的火力支援配置。"
 
 	belt = /obj/item/storage/belt/marine/target_rifle
 	suit_store = /obj/item/weapon/gun/rifle/standard_smarttargetrifle/motion
@@ -818,7 +818,7 @@
 
 //Base TGMC leader outfit
 /datum/outfit/quick/tgmc/leader
-	name = "TGMC Squad Leader"
+	name = "地球政府殖民地海军陆战队班长"
 	jobtype = "Squad Leader"
 
 	ears = /obj/item/radio/headset/mainship/marine
@@ -848,8 +848,8 @@
 
 
 /datum/outfit/quick/tgmc/leader/standard_assaultrifle
-	name = "AR-12 Patrol Leader"
-	desc = "Gives the orders. Equipped with an AR-12 assault rifle with UGL, plenty of grenades, some support kit such as deployable cameras, as well as heavy armor with a 'valkyrie' autodoc module. You can provide excellent support to your squad thanks to your kit and order shouting talents."
+	name = "AR-12 巡逻队长"
+	desc = "下达命令。配备AR-12突击步枪（带下挂榴弹发射器）、大量手雷，以及可部署摄像头等支援装备，还有带'瓦尔基里'自动医疗模块的重型护甲。凭借你的装备和号令天赋，能为你的小队提供出色的支援。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_assaultrifle/rifleman
 	belt = /obj/item/storage/belt/marine/t12
@@ -877,8 +877,8 @@
 	H.equip_to_slot_or_del(new /obj/item/hud_tablet(H, /datum/job/terragov/squad/leader, H.assigned_squad), SLOT_IN_BACKPACK)
 
 /datum/outfit/quick/tgmc/leader/standard_carbine
-	name = "AR-18 Patrol Leader"
-	desc = "Gives the orders. Equipped with an AR-18 carbine with plasma pistol attachment, plenty of grenades, as well as heavy armor with a 'valkyrie' autodoc module. You can provide excellent support to your squad thanks to your kit and order shouting talents, while unleashing excellent damage at medium range."
+	name = "AR-18 巡逻队长"
+	desc = "下达命令。配备带有等离子体手枪配件的AR-18卡宾枪、大量手雷，以及带有'瓦尔基里'自动医疗模块的重型护甲。凭借你的装备和下达命令的才能，你可以为你的小队提供出色的支援，同时在中距离造成可观的伤害。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_carbine/plasma_pistol
 	belt = /obj/item/storage/belt/marine/t18
@@ -903,8 +903,8 @@
 
 
 /datum/outfit/quick/tgmc/leader/combat_rifle
-	name = "AR-11 Patrol Leader"
-	desc = "Gives the orders. Equipped with an AR-11 combat rifle, plenty of grenades, as well as heavy armor with a 'valkyrie' autodoc module. You can provide excellent support to your squad thanks to your kit and order shouting talents, with excellent damage at all ranges."
+	name = "AR-11 巡逻队长"
+	desc = "下达命令。配备AR-11战斗步枪、大量手雷，以及带有'瓦尔基里'自动医疗模块的重型装甲。凭借你的装备和下达命令的才能，你可以在所有距离上提供出色的支援，并对小队提供极佳的支持。"
 
 	suit_store = /obj/item/weapon/gun/rifle/tx11/standard
 	belt = /obj/item/storage/belt/marine/combat_rifle
@@ -932,8 +932,8 @@
 	H.equip_to_slot_or_del(new /obj/item/hud_tablet(H, /datum/job/terragov/squad/leader, H.assigned_squad), SLOT_IN_BACKPACK)
 
 /datum/outfit/quick/tgmc/leader/standard_battlerifle
-	name = "BR-64 Patrol Leader"
-	desc = "Gives the orders. Equipped with an BR-64 battle rifle with UGL, plenty of grenades, as well as heavy armor with a 'valkyrie' autodoc module. The battle rifle offers improved damage and penetration compared to more common rifles, but still retains a grenade launcher that the AR-11 lacks."
+	name = "BR-64巡逻队长"
+	desc = "下达命令。配备有带下挂榴弹发射器的BR-64战斗步枪、大量手雷，以及带有'瓦尔基里'自动医疗模块的重型护甲。与更常见的步枪相比，这款战斗步枪提供了更高的伤害和穿透力，同时保留了AR-11所不具备的榴弹发射器。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_br/standard
 	belt = /obj/item/storage/belt/marine/standard_battlerifle
@@ -957,8 +957,8 @@
 
 
 /datum/outfit/quick/tgmc/leader/auto_shotgun
-	name = "SH-15 Patrol Leader"
-	desc = "Gives the orders. Equipped with an SH-15 auto shotgun, plenty of grenades, as well as heavy armor with a 'valkyrie' autodoc module. You can provide excellent support to your squad thanks to your kit and order shouting talents, with strong damage and control."
+	name = "SH-15 巡逻队长"
+	desc = "下达命令。配备SH-15自动霰弹枪、大量手雷，以及带有'瓦尔基里'自动医疗模块的重型护甲。凭借你的装备和下达命令的才能，你能为你的小队提供出色的支援，兼具强大的伤害和控制能力。"
 
 	suit_store = /obj/item/weapon/gun/rifle/standard_autoshotgun/plasma_pistol
 	belt = /obj/item/storage/belt/marine/auto_shotgun
@@ -983,8 +983,8 @@
 
 
 /datum/outfit/quick/tgmc/leader/standard_laserrifle
-	name = "Laser Rifle Patrol Leader"
-	desc = "Gives the orders. Equipped with a laser rifle with UGL for better armor penetration against SOM, some support kit such as deployable cameras, as well as heavy armor with a 'valkyrie' autodoc module. You can provide excellent support to your squad thanks to your kit and order shouting talents."
+	name = "激光步枪巡逻队长"
+	desc = "下达命令。配备一把带下挂榴弹发射器的激光步枪，以更好地对抗火星之子部队的装甲，还带有可部署摄像头等支援装备，以及一套配备'瓦尔基里'自动医疗模块的重型护甲。凭借你的装备和号令天赋，能为你的小队提供卓越的支援。"
 
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle/rifleman
 	belt = /obj/item/storage/belt/marine/te_cells
@@ -1011,8 +1011,8 @@
 	H.equip_to_slot_or_del(new /obj/item/hud_tablet(H, /datum/job/terragov/squad/leader, H.assigned_squad), SLOT_IN_BACKPACK)
 
 /datum/outfit/quick/tgmc/leader/oicw
-	name = "AR-55 Patrol Leader"
-	desc = "Gives the orders. Equipped with an AR-55 OICW with plenty of grenades for its integrated grenade launcher, some support kit such as deployable cameras, as well as heavy armor with a 'valkyrie' autodoc module. You can provide excellent support to your squad thanks to your kit and order shouting talents."
+	name = "AR-55 巡逻队长"
+	desc = "下达命令。配备AR-55 OICW步枪，其集成式榴弹发射器备有充足手雷，另配有可部署摄像头等支援装备，以及搭载'瓦尔基里'自动医疗模块的重型护甲。凭借你的装备和发号施令的才能，能为你的小队提供卓越支援。"
 	quantity = 2
 
 	suit_store = /obj/item/weapon/gun/rifle/tx55/combat_patrol
@@ -1038,12 +1038,12 @@
 
 //Base SOM outfit
 /datum/outfit/quick/som
-	name = "SOM base"
-	desc = "This is the base typepath for all SOM quick vendor outfits. You shouldn't see this."
+	name = "火星之子基地"
+	desc = "这是所有火星之子快速供应商装备的基础类型路径。你不应该看到这个。"
 
 //Base SOM marine outfit
 /datum/outfit/quick/som/marine
-	name = "SOM Squad Marine"
+	name = "火星之子陆战队员"
 	jobtype = "SOM Squad Standard"
 
 	ears = /obj/item/radio/headset/mainship/som
@@ -1072,8 +1072,8 @@
 
 
 /datum/outfit/quick/som/marine/standard_assaultrifle
-	name = "V-31 Infantryman"
-	desc = "The typical SOM infantryman. Equipped with a V-31 assault rifle with integrated 'micro grenade' rail launcher, medium armor and a good selection of grenades. The rail launcher fires grenades that must arm mid flight, so are ineffective at close ranges, but add significant tactical options at medium range."
+	name = "V-31 步兵"
+	desc = "典型的火星之子步兵。装备有V-31突击步枪，集成'微型手雷'导轨发射器，中型护甲和精选的手雷。导轨发射器发射的手雷需在飞行途中解除保险，因此在近距离效果不佳，但在中距离提供了显著的战术选择。"
 
 	suit_store = /obj/item/weapon/gun/rifle/som/standard
 	belt = /obj/item/storage/belt/marine/som/som_rifle
@@ -1095,8 +1095,8 @@
 
 
 /datum/outfit/quick/som/marine/mpi
-	name = "MPI_KM Infantryman"
-	desc = "A call back to an earlier time. Equipped with an MPI_KM assault rifle, with under barrel grenade launcher and a large supply of grenades. An old weapon that was a common sight during the original Martian rebellion, the MPI's good stopping power, reliability and a healthy dose of nostalgia means it is still seen in use by some among the SOM despite its age."
+	name = "MPI_KM 步兵"
+	desc = "对旧日时光的呼唤。配备MPI_KM突击步枪，带有下挂式榴弹发射器和大量手雷。这款老式武器在最初的火星叛乱期间曾是常见景象，MPI步枪出色的制止力、可靠性以及浓厚的怀旧情怀，意味着尽管年代久远，它仍能在一些火星之子成员中见到使用。"
 
 	suit_store = /obj/item/weapon/gun/rifle/mpi_km/black/grenadier
 	belt = /obj/item/storage/belt/marine/som/mpi_black
@@ -1115,8 +1115,8 @@
 
 
 /datum/outfit/quick/som/marine/light_carbine
-	name = "V-34 Light Infantryman"
-	desc = "Mobile and dangerous. Equipped with a V-34 carbine, light armor with an 'Aegis' shield module and a large supply of grenades. The V-34 is a modern update of an old weapon that was a common sight during the original Martian rebellion. Very reliable and excellent stopping power in a small, lightweight package. Brought into service as a much cheaper alternative to the VX-32."
+	name = "V-34 轻步兵"
+	desc = "机动性强且危险。配备V-34卡宾枪、带有'神盾'护盾模块的轻型护甲以及大量手雷。V-34是一款古老武器的现代化升级版，在最初的火星叛乱期间曾是常见装备。非常可靠，在轻巧紧凑的构型中具备出色的制止力。作为VX-32的廉价替代品投入使用。"
 
 	wear_suit = /obj/item/clothing/suit/modular/som/light/shield
 	suit_store = /obj/item/weapon/gun/rifle/som_carbine/black/standard
@@ -1136,8 +1136,8 @@
 
 
 /datum/outfit/quick/som/marine/scout
-	name = "V-21 Light Infantryman"
-	desc = "Highly mobile scouting configuration. Equipped with a V-21 submachine gun with variable firerate allowing for extreme rates of fire when properly wielded, light armor with an 'Aegis' shield module and a good selection of grenades. Allows for exceptional mobility and blistering firepower, it will falter in extended engagements where low armor and the V-21's high rate of fire can become liabilities."
+	name = "V-21 轻步兵"
+	desc = "高机动侦察配置。配备V-21冲锋枪，其可变射速在正确持握时可实现极高射速；轻型护甲搭载'神盾'护盾模块，并配备精选手雷组合。具备卓越机动性与炽烈火力，但在持久交战中可能力不从心——轻甲防护与V-21的高射速消耗可能成为致命短板。"
 
 	wear_suit = /obj/item/clothing/suit/modular/som/light/shield
 	suit_store = /obj/item/weapon/gun/smg/som/scout
@@ -1158,8 +1158,8 @@
 
 
 /datum/outfit/quick/som/marine/shotgunner
-	name = "V-51 Pointman"
-	desc = "For close encounters. Equipped with a V-51 semi-automatic shotgun, light armor with an 'Aegis' shield module and a large selection of grenades. Allows for good mobility and dangerous CQC firepower."
+	name = "V-51 先锋"
+	desc = "用于近距离遭遇战。配备V-51半自动霰弹枪、带有'神盾'护盾模块的轻型护甲以及大量手雷选择。提供良好的机动性和危险的近战火力。"
 
 	belt = /obj/item/storage/belt/shotgun/som/mixed
 	wear_suit = /obj/item/clothing/suit/modular/som/light/shield
@@ -1180,8 +1180,8 @@
 
 
 /datum/outfit/quick/som/marine/pyro
-	name = "V-62 Flamethrower Operator"
-	desc = "Smells like victory. Equipped with an V-62 incinerator and wide nozzle, V-11 equipped for rapid burst fire, heavy armor upgraded with a 'Hades' fireproof module, and a backtank of fuel. Has better than average range and can quickly burn down large areas. It suffers from significant slowdown, lacks an integrated extinguisher, and undisciplined use can result in rapidly consuming all available fuel."
+	name = "V-62 喷火器操作员"
+	desc = "闻起来像是胜利的味道。装备了V-62焚化器和宽口喷嘴，V-11配备用于快速连发，重型装甲升级了'哈迪斯'防火模块，以及一个燃料背罐。拥有优于平均水平的射程，并能快速焚毁大片区域。它受到显著的减速影响，缺少集成灭火器，且无节制的使用可能导致迅速耗尽所有可用燃料。"
 
 	head = /obj/item/clothing/head/modular/som/hades
 	wear_suit = /obj/item/clothing/suit/modular/som/heavy/pyro
@@ -1203,8 +1203,8 @@
 
 
 /datum/outfit/quick/som/marine/breacher
-	name = "V-21 Breacher"
-	desc = "Heavy armored breaching configuration. Equipped with a V-21 submachine gun with variable firerate allowing for extreme rates of fire when properly wielded, heavy armor, a boarding shield and a good selection of grenades. Offers outstanding protection although damage may be lacking, particular at longer range."
+	name = "V-21 破门者"
+	desc = "重型装甲破门配置。配备V-21冲锋枪，具备可变射速功能，正确持握时可实现极高射速；同时装备重型装甲、登舰盾牌以及精选手雷组合。提供卓越防护能力，但伤害输出可能不足，尤其在远距离作战时更为明显。"
 
 	glasses = /obj/item/clothing/glasses/welding
 	wear_suit = /obj/item/clothing/suit/modular/som/heavy/shield
@@ -1228,8 +1228,8 @@
 
 
 /datum/outfit/quick/som/marine/breacher_melee
-	name = "CQC Breacher"
-	desc = "For when a complete lack of subtlety is required. Equipped with 'Lorica' enhanced heavy armor and armed with a monsterous two handed breaching axe, designed to cut through heavy armor. When properly wielded, it also provides a degree of protection."
+	name = "近战破门手"
+	desc = "当需要彻底摒弃任何隐蔽性时，这就是你的选择。配备'洛里卡'增强型重型护甲，并装备一把用于破开重型护甲的巨型双手破门斧。若使用得当，它还能提供一定程度的防护。"
 
 	head = /obj/item/clothing/head/modular/som/lorica
 	wear_suit = /obj/item/clothing/suit/modular/som/heavy/lorica
@@ -1258,8 +1258,8 @@
 
 
 /datum/outfit/quick/som/marine/machine_gunner
-	name = "V-41 Machinegunner"
-	desc = "Heavy static firesupport. Equipped with a V-41 machine gun, burst fire V-11 sidearm and some basic building supplies. While often ill suited to the SOM's standard doctrine of mobility and aggression, the V-41 is typically seen in defensive positions or second line units where its poor mobility is a minor drawback compared to its sustained firepower."
+	name = "V-41 机枪手"
+	desc = "重型静态火力支援。配备V-41机枪、V-11手枪连发模式及基础建筑物资。虽然通常不符合火星之子强调机动性与进攻性的标准战术原则，但V-41常见于防御阵地或二线部队——在这些场合，其较差的机动性相较于持续火力输出而言只是次要缺陷。"
 
 	suit_store = /obj/item/weapon/gun/rifle/som_mg/standard
 	belt = /obj/item/storage/holster/belt/pistol/m4a3/som
@@ -1291,8 +1291,8 @@
 
 
 /datum/outfit/quick/som/marine/charger
-	name = "Charger Infantryman"
-	desc = "The future infantryman of the SOM. Equipped with a volkite charger, medium armor and a good variety of grenades. Volkite weapons are exceptionally dangerous, especially against poorly armored or tightly grouped opponents. The charger is the SOM's premier close/medium range weapon, with good mobility, and can be used (with some difficulty) one handed when required."
+	name = "冲锋步兵"
+	desc = "火星之子的未来步兵。装备有伏尔克充能枪、中型护甲和多种手雷。伏尔克武器异常危险，尤其对护甲薄弱或密集的敌人。充能枪是火星之子的主要近/中程武器，机动性良好，必要时可（较困难地）单手使用。"
 	quantity = 4
 
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/charger/magharness
@@ -1314,7 +1314,7 @@
 
 //Base SOM engineer outfit
 /datum/outfit/quick/som/engineer
-	name = "SOM Squad Engineer"
+	name = "火星之子工程兵"
 	jobtype = "SOM Squad Engineer"
 
 	ears = /obj/item/radio/headset/mainship/som
@@ -1343,8 +1343,8 @@
 
 
 /datum/outfit/quick/som/engineer/standard_assaultrifle
-	name = "V-31 Engineer"
-	desc = "Battlefield engineer; building up and tearing down. Equipped with a V-31 assault rifle with integrated 'micro grenade' rail launcher, medium armor, a deployable COPE sentry and a selection of explosives. Has a variety of supplies and equipment to build, repair or apply demolitions in the field. A valuable support asset to a well rounded combat force. The rail launcher fires grenades that must arm mid flight, so are ineffective at close ranges, but add significant tactical options at medium range."
+	name = "V-31 工程兵"
+	desc = "战场工程师；负责构筑与摧毁。配备带集成'微型手雷'导轨发射器的V-31突击步枪、中型护甲、可部署的COPE哨戒炮及多种爆炸物。拥有各类用于战场建造、维修或实施爆破的补给装备。是均衡战斗力量中宝贵的支援资产。导轨发射器发射需在飞行途中解除保险的手雷，因此在近距离效果不佳，但为中距离作战提供了显著的战术选择。"
 
 	suit_store = /obj/item/weapon/gun/rifle/som/standard
 	belt = /obj/item/storage/belt/marine/som/som_rifle
@@ -1370,8 +1370,8 @@
 
 
 /datum/outfit/quick/som/engineer/mpi
-	name = "MPI-KM Engineer"
-	desc = "Battlefield engineer; building up and tearing down. Equipped with an MPI_KM assault rifle, medium armor, a deployable COPE sentry and a selection of explosives. Has a variety of supplies and equipment to build, repair or apply demolitions in the field. A valuable support asset to a well rounded combat force. An old weapon that was a common sight during the original Martian rebellion, the MPI's good stopping power, reliability and a healthy dose of nostalgia means it is still seen in use by some among the SOM despite its age."
+	name = "MPI-KM 工程兵"
+	desc = "战场工程师；负责构筑与拆除。配备MPI_KM突击步枪、中型护甲、可部署的COPE哨戒炮以及多种爆炸物。拥有各类用于战场构筑、维修或实施爆破的补给与装备。是均衡战斗力量中宝贵的支援资产。这款旧式武器在最初的火星叛乱期间曾是常见景象，MPI良好的制止力、可靠性以及浓厚的怀旧情怀，意味着尽管年代久远，它仍能在部分火星之子成员中见到使用。"
 
 	suit_store = /obj/item/weapon/gun/rifle/mpi_km/black/magharness
 	belt = /obj/item/storage/belt/marine/som/mpi_black
@@ -1396,8 +1396,8 @@
 
 
 /datum/outfit/quick/som/engineer/standard_carbine
-	name = "V-34 Engineer"
-	desc = "Battlefield engineer; building up and tearing down. Equipped with a V-34 carbine, medium armor, a deployable COPE sentry and a selection of explosives. Has a variety of supplies and equipment to build, repair or apply demolitions in the field. A valuable support asset to a well rounded combat force. The V-34 is a modern update of an old weapon that was a common sight during the original Martian rebellion. Very reliable and excellent stopping power in a small, lightweight package. Brought into service as a much cheaper alternative to the VX-32."
+	name = "V-34 工程兵"
+	desc = "战场工程师；负责构筑与拆除。配备V-34卡宾枪、中型护甲、可部署的COPE哨戒炮及多种爆炸物。拥有各类补给和装备，可在战场上进行建造、维修或实施爆破。是均衡战斗力量中宝贵的支援资产。V-34是一款老式武器的现代化升级版，在最初的火星叛乱期间曾是常见装备。非常可靠，在轻巧紧凑的枪身中具备出色的制止力。作为VX-32更廉价的替代品投入服役。"
 
 	suit_store = /obj/item/weapon/gun/rifle/som_carbine/black/standard
 	belt = /obj/item/storage/belt/marine/som/carbine_black
@@ -1422,8 +1422,8 @@
 
 
 /datum/outfit/quick/som/engineer/standard_smg
-	name = "V-21 Engineer"
-	desc = "Battlefield engineer; building up and tearing down. Equipped with a V-21 submachine gun with variable firerate allowing for extreme rates of fire when properly wielded, medium armor, a deployable COPE sentry and a selection of explosives. Has a variety of supplies and equipment to build, repair or apply demolitions in the field. A valuable support asset to a well rounded combat force. "
+	name = "V-21 工程兵"
+	desc = "战场工程师；负责构筑与拆除。配备V-21冲锋枪，其可变射速在正确持握时可提供极高的火力输出，另有中型护甲、可部署的COPE哨戒炮及多种爆炸物选择。拥有各类补给与装备，可在战场上进行建造、维修或实施爆破作业。是均衡战斗力量中宝贵的支援资产。"
 
 	suit_store = /obj/item/weapon/gun/smg/som/support
 	belt = /obj/item/storage/belt/marine/som/som_smg
@@ -1448,8 +1448,8 @@
 	)
 
 /datum/outfit/quick/som/engineer/standard_shotgun
-	name = "V-51 Engineer"
-	desc = "Battlefield engineer; building up and tearing down. Equipped with a V-51 semi-automatic shotgun, medium armor, a deployable COPE sentry and a selection of explosives. Has a variety of supplies and equipment to build, repair or apply demolitions in the field. A valuable support asset to a well rounded combat force. "
+	name = "V-51 工程兵"
+	desc = "战场工程师；负责构筑与拆除。配备V-51半自动霰弹枪、中型护甲、可部署的COPE哨戒炮及多种爆炸物。拥有各类用于战场建造、维修或实施爆破的补给与装备。是完善战斗力量中宝贵的支援资产。"
 
 	belt = /obj/item/storage/belt/shotgun/som/flechette
 	suit_store = /obj/item/weapon/gun/shotgun/som/support
@@ -1476,7 +1476,7 @@
 
 //Base SOM medic outfit
 /datum/outfit/quick/som/medic
-	name = "SOM Squad Medic"
+	name = "火星之子小队卫生兵"
 	jobtype = "SOM Squad Medic"
 
 	belt = /obj/item/storage/belt/lifesaver/som/quick
@@ -1513,8 +1513,8 @@
 
 
 /datum/outfit/quick/som/medic/standard_assaultrifle
-	name = "V-31 Medic"
-	desc = "Keeping your buddies alive and in the fight. Equipped with a V-31 assault rifle with integrated 'micro grenade' rail launcher, medium armor and a good selection of grenades. Packs a large amount of medical supplies, the squad medic is vital to maintaining combat viability. The rail launcher fires grenades that must arm mid flight, so are ineffective at close ranges, but add significant tactical options at medium range."
+	name = "V-31 卫生兵"
+	desc = "让你的战友们活着并保持战斗力。装备有V-31突击步枪，集成'微型手雷'导轨发射器，中型护甲和精选的手雷。携带大量医疗物资，班卫生兵对维持作战能力至关重要。导轨发射器发射的手雷需要在飞行途中解除保险，因此在近距离效果不佳，但在中距离提供了重要的战术选择。"
 
 	suit_store = /obj/item/weapon/gun/rifle/som/standard
 
@@ -1536,8 +1536,8 @@
 
 
 /datum/outfit/quick/som/medic/mpi
-	name = "MPI_KM Medic"
-	desc = "Keeping your buddies alive and in the fight. Equipped with an MPI_KM assault rifle, medium armor and a good selection of grenades. Packs a large amount of medical supplies, the squad medic is vital to maintaining combat viability. An old weapon that was a common sight during the original Martian rebellion, the MPI's good stopping power, reliability and a healthy dose of nostalgia means it is still seen in use by some among the SOM despite its age."
+	name = "MPI_KM 卫生兵"
+	desc = "让你的战友们活着并保持战斗力。配备MPI_KM突击步枪、中型护甲和多种手雷。携带大量医疗物资，班卫生兵对维持作战能力至关重要。这款老式武器在最初的火星叛乱期间随处可见，MPI良好的制止力、可靠性以及浓厚的怀旧情怀意味着，尽管年代久远，它仍能在一些火星之子成员中看到使用。"
 
 	suit_store = /obj/item/weapon/gun/rifle/mpi_km/black/magharness
 
@@ -1557,8 +1557,8 @@
 
 
 /datum/outfit/quick/som/medic/standard_carbine
-	name = "V-34 Medic"
-	desc = "Keeping your buddies alive and in the fight. Equipped with an V-34 carbine, medium armor for massive firepower and mobility, but poor ammo economy and range. Packs a large amount of medical supplies, the squad medic is vital to maintaining combat viability. The V-34 is a modern update of an old weapon that was a common sight during the original Martian rebellion. Very reliable and excellent stopping power in a small, lightweight package. Brought into service as a much cheaper alternative to the VX-32."
+	name = "V-34 卫生兵"
+	desc = "让你的战友们活着并保持战斗力。装备V-34卡宾枪和中型护甲，拥有强大的火力和机动性，但弹药经济性和射程较差。携带大量医疗物资，班卫生兵对维持部队战斗力至关重要。V-34是一款老式武器的现代化升级版，在最初的火星叛乱期间曾是常见装备。非常可靠，小巧轻便的枪身却拥有出色的停止作用。作为VX-32的廉价替代品而投入使用。"
 
 	suit_store = /obj/item/weapon/gun/rifle/som_carbine/black/standard
 
@@ -1578,8 +1578,8 @@
 
 
 /datum/outfit/quick/som/medic/standard_smg
-	name = "V-21 Medic"
-	desc = "Keeping your buddies alive and in the fight. Equipped with a V-21 submachine gun with variable firerate allowing for extreme rates of fire when properly wielded, medium armor and a good selection of grenades. Packs a large amount of medical supplies, the squad medic is vital to maintaining combat viability."
+	name = "V-21 卫生兵"
+	desc = "让你的战友们活着并保持战斗力。配备V-21冲锋枪，具有可变射速，正确使用时能提供极高的火力输出，中等护甲和精选的手雷。携带大量医疗物资，班卫生兵对维持部队作战能力至关重要。"
 
 	suit_store = /obj/item/weapon/gun/smg/som/support
 
@@ -1599,8 +1599,8 @@
 
 
 /datum/outfit/quick/som/medic/standard_shotgun
-	name = "V-51 Medic"
-	desc = "Keeping your buddies alive and in the fight. Equipped with a V-51 semi-automatic shotgun, medium armor and a good selection of grenades. Packs a large amount of medical supplies, the squad medic is vital to maintaining combat viability."
+	name = "V-51 卫生兵"
+	desc = "让你的战友们活着并保持战斗力。配备V-51半自动霰弹枪、中型护甲和多种手雷选择。携带大量医疗物资，班卫生兵对维持作战能力至关重要。"
 
 	r_pocket = /obj/item/storage/pouch/shotgun/som
 	suit_store = /obj/item/weapon/gun/shotgun/som/support
@@ -1622,7 +1622,7 @@
 
 //Base SOM veteran outfit
 /datum/outfit/quick/som/veteran
-	name = "SOM Squad Veteran"
+	name = "火星之子小队老兵"
 	jobtype = "SOM Squad Veteran"
 
 	ears = /obj/item/radio/headset/mainship/som
@@ -1652,8 +1652,8 @@
 
 
 /datum/outfit/quick/som/veteran/standard_assaultrifle
-	name = "V-31 Veteran Infantryman"
-	desc = "Heavily armed and armored SOM elite. Equipped with a V-31 assault rifle with integrated 'micro grenade' rail launcher, heavy armor, a large variety of grenades as well as AP ammunition. Excellent performance against heavily armored targets, while the plentiful grenade provide greater tactical flexibility."
+	name = "V-31 老兵步兵"
+	desc = "全副武装的火星之子精英。配备V-31突击步枪，集成'微型手雷'导轨发射器，重型护甲，多种手雷以及穿甲弹药。对抗重装甲目标表现出色，同时充足的手雷储备提供了更强的战术灵活性。"
 
 	back = /obj/item/storage/backpack/lightpack/som
 	suit_store = /obj/item/weapon/gun/rifle/som/veteran
@@ -1677,8 +1677,8 @@
 
 
 /datum/outfit/quick/som/veteran/standard_smg
-	name = "V-21 Veteran Infantryman"
-	desc = "Close range high damage, high speed. Equipped with a V-21 submachine gun with variable firerate allowing for extreme rates of fire when properly wielded, heavy armor, a good variety of grenades and AP ammunition. Allows for excellent close to medium range firepower, especially against heavily armored targets, and is surprisingly mobile."
+	name = "V-21 老兵步兵"
+	desc = "近距离高伤害、高速度。配备V-21冲锋枪，具有可变射速，正确使用时能实现极高的射速，重型护甲，多种手雷和穿甲弹药。提供出色的近中程火力，尤其对抗重甲目标，且机动性出人意料。"
 
 	suit_store = /obj/item/weapon/gun/smg/som/veteran
 	belt = /obj/item/storage/belt/marine/som/som_smg_ap
@@ -1699,8 +1699,8 @@
 
 
 /datum/outfit/quick/som/veteran/breacher
-	name = "Charger Veteran Breacher"
-	desc = "Heavy armored breaching configuration. Equipped with a volkite charger configured for better one handed use, heavy armor upgraded with 'Lorica' armor reinforcements, a boarding shield and a good selection of grenades. Premier protection and deadly close range firepower."
+	name = "冲锋老兵破门手"
+	desc = "重型装甲破门配置。配备一把便于单手持用的沃尔凯特充能枪，重型装甲升级了洛里卡装甲强化件，一面登舰盾牌和精选手榴弹。提供顶级防护和致命的近距离火力。"
 
 	head = /obj/item/clothing/head/modular/som/lorica
 	glasses = /obj/item/clothing/glasses/welding
@@ -1724,8 +1724,8 @@
 
 
 /datum/outfit/quick/som/veteran/charger
-	name = "Charger Veteran Infantryman"
-	desc = "Heavily armed and armored SOM elite. Equipped with a volkite charger with motion sensor and gyrostabiliser for better one handed use, heavy armor and a good variety of grenades. Volkite weapons are exceptionally dangerous, especially against poorly armored or tightly grouped opponents. The charger is the SOM's premier close/medium range weapon, with good mobility, and can be used (with some difficulty) one handed."
+	name = "冲锋老兵步兵"
+	desc = "装备精良、装甲厚重的火星之子精英。配备带运动传感器和陀螺稳定器的伏尔克充能枪，便于单手使用，身着重型护甲，并携带多种手雷。伏尔克武器极其危险，尤其对护甲薄弱或密集的敌人。充能枪是火星之子主要的近/中程武器，机动性良好，可（较困难地）单手使用。"
 
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/charger/scout
 	belt = /obj/item/storage/belt/marine/som/volkite
@@ -1745,8 +1745,8 @@
 	)
 
 /datum/outfit/quick/som/veteran/caliver
-	name = "Caliver Veteran Infantryman"
-	desc = "Heavily armed and armored SOM elite. Equipped with a volkite caliver, heavy armor and a good variety of grenades. Volkite weapons are exceptionally dangerous, especially against poorly armored or tightly grouped opponents. The caliver provides deadly firepower at all ranges. Approach with caution."
+	name = "卡利弗老兵步兵"
+	desc = "装备精良、护甲厚重的火星之子精英。配备火山式卡利弗枪、重型护甲和多种手雷。火山武器极其危险，尤其对护甲薄弱或密集的敌人。卡利弗枪在所有射程都能提供致命火力。谨慎接近。"
 
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/caliver/standard
 	belt = /obj/item/storage/belt/marine/som/volkite
@@ -1766,8 +1766,8 @@
 	)
 
 /datum/outfit/quick/som/veteran/caliver_pack
-	name = "Caliver Veteran Rifleman"
-	desc = "Heavily armed and armored SOM elite. Equipped with a volkite caliver with motion sensor, heavy armor, plenty of grenades and a back mounted self charging power supply. Volkite weapons are exceptionally dangerous, especially against poorly armored or tightly grouped opponents. The caliver provides deadly firepower at all ranges, and the power pack allows for sustained period of fire, although over extended periods of time the recharge may struggle to keep up with the demands of the weapon."
+	name = "卡利弗老兵步枪手"
+	desc = "全副武装的火星之子精英。配备带运动传感器的伏尔克卡利弗枪、重型护甲、大量手雷以及一个背部自充能电源。伏尔克武器极其危险，尤其对护甲薄弱或密集的敌人。卡利弗枪在所有射程都提供致命火力，电源包允许持续射击，但长时间使用后，充能可能跟不上武器需求。"
 	quantity = 2
 
 	belt = /obj/item/storage/belt/grenade/som
@@ -1795,8 +1795,8 @@
 
 
 /datum/outfit/quick/som/veteran/mpi
-	name = "MPI_KM Veteran Infantryman"
-	desc = "Heavily armed and armored SOM elite, with a taste for nostalgia. Equipped with an MPI_KM assault rifle, with under barrel grenade launcher and a large supply of grenades. An old weapon that was a common sight during the original Martian rebellion, the MPI's good stopping power, reliability and a healthy dose of nostalgia means it is still seen in use by some among the SOM despite its age."
+	name = "MPI_KM 老兵步兵"
+	desc = "全副武装的火星之子精英，怀有怀旧情怀。配备MPI_KM突击步枪，带有下挂式榴弹发射器和大量手雷。这款旧式武器在最初的火星叛乱期间随处可见，MPI良好的制止力、可靠性以及浓厚的怀旧情结，意味着尽管年代久远，它仍被一些火星之子成员使用。"
 
 	suit_store = /obj/item/weapon/gun/rifle/mpi_km/grenadier
 	belt = /obj/item/storage/belt/marine/som/mpi_plum
@@ -1815,8 +1815,8 @@
 	)
 
 /datum/outfit/quick/som/veteran/carbine
-	name = "V-34 Veteran Infantryman"
-	desc = "Heavily armed and armored SOM elite, with a taste for nostalgia. Equipped with an heirloom V-34 carbine, and a large supply of grenades. An old weapon that saw extensive use during the original Martian rebellion, this one has been preserved and passed down the generations. The V-34 is largely surpassed by the VX-32, however with its high calibre rounds and good rate of fire, it cannot be underestimated."
+	name = "V-34 老兵步兵"
+	desc = "装备精良、装甲厚重的火星之子精英，怀有怀旧情怀。配备一把祖传的V-34卡宾枪和大量手雷。这把老式武器在最初的火星叛乱期间被广泛使用，这一把被保存下来并代代相传。V-34在很大程度上已被VX-32超越，然而凭借其大口径弹药和良好的射速，它不容小觑。"
 
 	suit_store = /obj/item/weapon/gun/rifle/som_carbine/mag_harness
 	belt = /obj/item/storage/belt/marine/som/carbine
@@ -1835,8 +1835,8 @@
 	)
 
 /datum/outfit/quick/som/veteran/culverin
-	name = "Culverin Veteran Machinegunner"
-	desc = "Heavily armored heavy firesupport. Equipped with a volkite culverin and self charging backpack power unit, and a shotgun sidearm. The culverin is the most powerful man portable weapon the SOM have been seen to field. Capabable of laying down a tremendous barrage of firepower for extended periods of time. Although the back-mounted powerpack is self charging, it cannot keep up with the immense power requirements of the gun, so sustained, prolonged use can degrade the weapon's effectiveness greatly."
+	name = "卡尔弗林资深机枪手"
+	desc = "重装重型火力支援单位。装备有福尔基特长管炮和自充电背包动力单元，以及一把霰弹枪副武器。长管炮是火星之子已知部署的最强大人携武器。能够长时间倾泻惊人的火力压制。尽管背载式动力包具备自充电功能，但仍无法满足该武器巨大的能量需求，因此持续长时间使用会大幅降低武器效能。"
 	quantity = 2
 
 	belt = /obj/item/weapon/gun/shotgun/double/sawn
@@ -1851,8 +1851,8 @@
 
 
 /datum/outfit/quick/som/veteran/rocket_man
-	name = "V-71 Rocket Veteran"
-	desc = "War crimes have never been so easy. Equipped with a V-71 RPG and both incendiary and rad warheads, as well as a V-21 submachine gun with radioactive ammunition, heavy armor with a 'Mithridatius' environmental protection system, and rad grenades. Designed to inspire fear in the enemy and cripple them with deadly incendiary and radiological effects, providing excellent anti infantry support."
+	name = "V-71火箭老兵"
+	desc = "战争罪行从未如此简单。配备V-71火箭筒，拥有燃烧弹与辐射弹头，以及一把使用放射性弹药的V-21冲锋枪，重型护甲搭载'米特里达梯'环境防护系统，并携带辐射手雷。旨在激发敌方恐惧，以致命的燃烧与辐射效果使其丧失战斗力，提供卓越的反步兵支援。"
 	quantity = 2
 
 	head = /obj/item/clothing/head/modular/som/bio
@@ -1881,8 +1881,8 @@
 	)
 
 /datum/outfit/quick/som/veteran/blinker
-	name = "Blink Assault Veteran"
-	desc = "Shock melee assault class. Equipped with a blink drive and energy sword, light armor and a backup burstfire V-11. The blink drive allows for short range teleports at some risk to the user, but allows them to effortless close the distance to cut down enemies when used correctly."
+	name = "闪击突击老兵"
+	desc = "近战突击型。配备闪烁驱动器和能量剑，轻装甲和备用V-11点射手枪。闪烁驱动器允许使用者进行短距离传送，但有一定风险，正确使用时能让他们轻松拉近距离消灭敌人。"
 	quantity = 2
 
 	wear_suit = /obj/item/clothing/suit/modular/som/light/shield
@@ -1904,7 +1904,7 @@
 
 //Base SOM leader outfit
 /datum/outfit/quick/som/squad_leader
-	name = "SOM Squad Leader"
+	name = "火星之子班长"
 	jobtype = "SOM Squad Leader"
 
 	ears = /obj/item/radio/headset/mainship/som
@@ -1934,8 +1934,8 @@
 
 
 /datum/outfit/quick/som/squad_leader/standard_assaultrifle
-	name = "V-31 Squad Leader"
-	desc = "Tactical utility. Equipped with a V-31 assault rifle with integrated 'micro grenade' rail launcher, Gorgon heavy armor with 'Valkyrie' autodoctor module, a large variety of grenades as well as AP ammunition. Excellent performance against heavily armored targets, while the plentiful grenade provide greater tactical flexibility."
+	name = "V-31 班长"
+	desc = "战术支援型。配备V-31突击步枪，集成'微型手雷'导轨发射器，装备'瓦尔基里'自动医疗模块的戈耳贡重型护甲，携带多种手雷及穿甲弹药。对重甲目标表现出色，同时充足的手雷储备提供了更强的战术灵活性。"
 
 	back = /obj/item/storage/backpack/lightpack/som
 	suit_store = /obj/item/weapon/gun/rifle/som/veteran
@@ -1959,8 +1959,8 @@
 	)
 
 /datum/outfit/quick/som/squad_leader/standard_smg
-	name = "V-21 Squad Leader"
-	desc = "Close range high damage, high speed. Equipped with a V-21 submachine gun with variable firerate allowing for extreme rates of fire when properly wielded, Gorgon heavy armor with 'Valkyrie' autodoctor module, a good variety of grenades and AP ammunition. Allows for excellent close to medium range firepower, especially against heavily armored targets, and is surprisingly mobile."
+	name = "V-21 班长"
+	desc = "近距离高伤害、高速度。配备V-21冲锋枪，具有可变射速，在正确使用时能实现极高的射速；配备带有'瓦尔基里'自动医疗模块的戈耳工重型护甲、多种手雷和穿甲弹药。提供出色的近中程火力，尤其对抗重甲目标，且机动性出人意料地高。"
 
 	suit_store = /obj/item/weapon/gun/smg/som/veteran
 	belt = /obj/item/storage/belt/marine/som/som_smg_ap
@@ -1982,8 +1982,8 @@
 
 
 /datum/outfit/quick/som/squad_leader/charger
-	name = "Charger Squad Leader"
-	desc = "For the leader that prefers to be up close and personal. Equipped with a volkite charger with motion sensor and gyrostabiliser for better one handed use, Gorgon heavy armor with 'Valkyrie' autodoctor module and a good variety of grenades. Allows for excellent close to medium range firepower, with first rate survivability. Very dangerous."
+	name = "冲锋队班长"
+	desc = "适合偏爱近身作战的指挥官。配备带运动传感器和陀螺稳定器的伏尔凯特充能枪以优化单手持握，搭载瓦尔基里自动医疗模块的戈耳贡重型护甲，以及多种手榴弹。提供卓越的近中程火力，具备一流的生存能力。极度危险。"
 
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/charger/scout
 	belt = /obj/item/storage/belt/marine/som/volkite
@@ -2005,8 +2005,8 @@
 
 
 /datum/outfit/quick/som/squad_leader/caliver
-	name = "Caliver Squad Leader"
-	desc = "Victory through superior firepower. Equipped with a volkite caliver and motion sensor, Gorgon heavy armor with 'Valkyrie' autodoctor module and a good variety of grenades. Allows for excellent damage at all ranges, with first rate survivability. Very dangerous."
+	name = "卡利弗班长"
+	desc = "以优势火力取胜。配备沃尔凯特卡利弗步枪和运动传感器，装备'瓦尔基里'自动医疗模块的戈尔贡重型护甲，以及多种手雷。能在所有距离上造成出色伤害，并具备一流的生存能力。极其危险。"
 
 	suit_store = /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/caliver/tacsensor
 	belt = /obj/item/storage/belt/marine/som/volkite
@@ -2028,8 +2028,8 @@
 
 
 /datum/outfit/quick/som/squad_leader/mpi
-	name = "MPI_KM Squad Leader"
-	desc = "For the leader with a taste for nostalgia. Equipped with an MPI_KM assault rifle, with under barrel grenade launcher, Gorgon heavy armor with 'Valkyrie' autodoctor module and a large supply of grenades. An old weapon that was a common sight during the original Martian rebellion, the MPI's good stopping power, reliability and a healthy dose of nostalgia means it is still seen in use by some among the SOM despite its age."
+	name = "MPI_KM 班长"
+	desc = "为怀旧的领导者准备。配备一把带下挂榴弹发射器的MPI_KM突击步枪、带有'瓦尔基里'自动医疗模块的戈耳贡重型护甲以及大量手雷。MPI是一款在最初的火星叛乱期间常见的旧式武器，其良好的制止力、可靠性以及浓厚的怀旧情怀意味着，尽管年代久远，它仍能在一些火星之子成员中看到使用。"
 
 	suit_store = /obj/item/weapon/gun/rifle/mpi_km/grenadier
 	belt = /obj/item/storage/belt/marine/som/mpi_plum

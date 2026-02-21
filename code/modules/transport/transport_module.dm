@@ -3,8 +3,8 @@
  * This type holds elevators and trams
  */
 /obj/structure/transport/linear
-	name = "linear transport module"
-	desc = "A lightweight lift platform. It moves."
+	name = "线性运输模块"
+	desc = "一个轻型的升降平台。它会移动。"
 	icon = 'icons/obj/smooth_objects/catwalk.dmi'
 	icon_state = "catwalk-0"
 	base_icon_state = "catwalk"
@@ -331,7 +331,7 @@
 				playsound(hit_wall, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 
 			for(var/mob/living/crushed in dest_turf.contents)
-				to_chat(crushed, span_userdanger("You are crushed by [src]!"))
+				to_chat(crushed, span_userdanger("你被 [src] 压碎了！"))
 				if(violent_landing)
 					crushed.gib()
 				else
@@ -380,13 +380,13 @@
 				if(!is_type_in_typecache(victim_structure, transport_controller_datum.ignored_smashthroughs))
 					if((PLANE_TO_TRUE(victim_structure.plane) == FLOOR_PLANE && victim_structure.layer > TRAM_RAIL_LAYER) || (PLANE_TO_TRUE(victim_structure.plane) == GAME_PLANE && victim_structure.layer > LOW_OBJ_LAYER) )
 						if(victim_structure.anchored && initial(victim_structure.anchored) == TRUE)
-							visible_message(span_danger("[src] smashes through [victim_structure]!"))
+							visible_message(span_danger("[src] 撞穿了 [victim_structure]！"))
 							victim_structure.deconstruct(FALSE)
 
 						else
 							if(!throw_target)
 								throw_target = get_edge_target_turf(src, turn(travel_direction, pick(45, -45)))
-							visible_message(span_danger("[src] violently rams [victim_structure] out of the way!"))
+							visible_message(span_danger("[src] 暴力地将 [victim_structure] 撞到一边！"))
 							victim_structure.anchored = FALSE
 							victim_structure.take_damage(rand(20, 25) * collision_lethality)
 							victim_structure.throw_at(throw_target, 200 * collision_lethality, 4 * collision_lethality)
@@ -398,7 +398,7 @@
 					continue
 				if(victim_machine.layer >= LOW_OBJ_LAYER) //avoids stuff that is probably flush with the ground
 					playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
-					visible_message(span_danger("[src] smashes through [victim_machine]!"))
+					visible_message(span_danger("[src] 撞穿了 [victim_machine]！"))
 					qdel(victim_machine)
 
 			for(var/mob/living/victim_living in dest_turf.contents)
@@ -415,7 +415,7 @@
 
 				if(transport_controller_datum.ignored_smashthroughs[victim_living.type])
 					continue
-				to_chat(victim_living, span_userdanger("[src] collides into you!"))
+				to_chat(victim_living, span_userdanger("[src] 撞上了你！"))
 				playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
 				var/damage = 0
 				switch(extra_ouch)
@@ -648,7 +648,7 @@
 
 	add_fingerprint(user)
 	if(!length(possible_directions))
-		balloon_alert(user, "elevator out of service!")
+		balloon_alert(user, "电梯停止服务！")
 		return
 
 	LAZYADD(current_operators, REF(user))
@@ -666,7 +666,7 @@
 		return //nice try
 	if(!isnull(result) && result != "Cancel" && transport_controller_datum.controller_status & CONTROLS_LOCKED)
 		// Only show this message if they actually wanted to move
-		balloon_alert(user, "elevator controls locked!")
+		balloon_alert(user, "电梯控制已锁定！")
 		return
 	switch(result)
 		if("Up")
@@ -738,14 +738,14 @@
  */
 /obj/structure/transport/linear/proc/show_fluff_message(direction, mob/user)
 	if(direction == UP)
-		user.visible_message(span_notice("[user] moves the lift upwards."), span_notice("You move the lift upwards."))
+		user.visible_message(span_notice("[user] 将升降梯向上移动。"), span_notice("You move the lift upwards."))
 
 	if(direction == DOWN)
-		user.visible_message(span_notice("[user] moves the lift downwards."), span_notice("You move the lift downwards."))
+		user.visible_message(span_notice("[user] 将升降梯向下移动。"), span_notice("You move the lift downwards."))
 
 /obj/machinery/door/poddoor/lift
-	name = "elevator door"
-	desc = "Keeps idiots like you from walking into an open elevator shaft."
+	name = "电梯门"
+	desc = "防止像你这样的傻瓜掉进敞开的电梯井里。"
 	icon = 'icons/obj/doors/liftdoor.dmi'
 	opacity = FALSE
 	glass = TRUE
@@ -775,8 +775,8 @@
 	radial_travel = FALSE
 
 /obj/structure/transport/linear/debug
-	name = "transport platform"
-	desc = "A lightweight platform. It moves in any direction, except up and down."
+	name = "运输平台"
+	desc = "一个轻量级平台。它能在任何方向移动，除了上下方向。"
 	color = "#5286b9ff"
 	transport_id = TRANSPORT_TYPE_DEBUG
 	radial_travel = TRUE
@@ -802,7 +802,7 @@
 		return	// nice try
 	if(!isnull(result) && result != "Cancel" && transport_controller_datum.controller_status & CONTROLS_LOCKED)
 		// Only show this message if they actually wanted to move
-		balloon_alert(user, "elevator controls locked!")
+		balloon_alert(user, "电梯控制已锁定！")
 		return
 
 	switch(result)
@@ -836,8 +836,8 @@
 	add_fingerprint(user)
 
 /obj/structure/transport/linear/tram
-	name = "tram subfloor"
-	desc = "The subfloor lattice of the tram. You can build a tram wall frame by using <b>titanium sheets,</b> or place down <b>thermoplastic tram floor tiles.</b>"
+	name = "电车下层地板"
+	desc = "电车的下层格栅。你可以使用<b>钛合金板材</b>来建造电车墙壁框架，或者铺设<b>热塑性电车地板砖。</b>"
 	icon = 'icons/obj/tram/tram_structure.dmi'
 	icon_state = "subfloor"
 	base_icon_state = null

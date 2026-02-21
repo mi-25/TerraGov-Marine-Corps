@@ -1,6 +1,6 @@
 /obj/machinery/factory
-	name = "generic root heater"
-	desc = "You shouldnt be seeing this."
+	name = "通用根加热器"
+	desc = "你不应该看到这个。"
 	icon = 'icons/obj/factory/factory_machines.dmi'
 	icon_state = "heater_inactive"
 	density = TRUE
@@ -37,7 +37,7 @@
 
 /obj/machinery/factory/screwdriver_act(mob/living/user, obj/item/I)
 	setDir(turn(dir, 90))
-	balloon_alert(user, "Facing [dir2text(dir)]")
+	balloon_alert(user, "面向[dir2text(dir)]")
 
 /obj/machinery/factory/Bumped(atom/movable/bumper)
 	. = ..()
@@ -71,54 +71,54 @@
 	held_item = null
 
 /obj/machinery/factory/heater
-	name = "Industrial heater"
-	desc = "An industrial level heater"
+	name = "工业加热器"
+	desc = "工业级加热器"
 
 /obj/machinery/factory/flatter
-	name = "Industrial flatter"
-	desc = "An industrial level flatter"
+	name = "工业压平机"
+	desc = "工业级平板"
 	icon_state = "flatter_inactive"
 	processiconstate = "flatter"
 	process_type = FACTORY_MACHINE_FLATTER
 
 /obj/machinery/factory/cutter
-	name = "Industrial cutter"
-	desc = "An industrial level cutter"
+	name = "工业切割器"
+	desc = "工业级切割器"
 	icon_state = "cutter_inactive"
 	processiconstate = "cutter"
 	process_type = FACTORY_MACHINE_CUTTER
 
 /obj/machinery/factory/former
-	name = "Industrial former"
-	desc = "An industrial level former"
+	name = "工业型"
+	desc = "工业级成型机"
 	icon_state = "former_inactive"
 	processiconstate = "former"
 	process_type = FACTORY_MACHINE_FORMER
 
 /obj/machinery/factory/reconstructor
-	name = "Atomic reconstructor"
-	desc = "An industrial level former"
+	name = "原子重构器"
+	desc = "工业级成型机"
 	icon_state = "reconstructor_inactive"
 	processiconstate = "reconstructor"
 	process_type = FACTORY_MACHINE_CONSTRUCTOR
 
 /obj/machinery/factory/driller
-	name = "Industrial driller"
-	desc = "An industrial level driller"
+	name = "工业钻机"
+	desc = "工业级钻机"
 	icon_state = "driller_inactive"
 	processiconstate = "driller"
 	process_type = FACTORY_MACHINE_DRILLER
 
 /obj/machinery/factory/galvanizer
-	name = "Industrial galvanizer"
-	desc = "An industrial level galvanizer"
+	name = "工业电镀机"
+	desc = "工业级电镀机"
 	icon_state = "galvanizer_inactive"
 	processiconstate = "galvanizer"
 	process_type = FACTORY_MACHINE_GALVANIZER
 
 /obj/machinery/factory/compressor
-	name = "Industrial compressor"
-	desc = "An industrial level compressor"
+	name = "工业压缩机"
+	desc = "工业级压缩机"
 	icon_state = "compressor_inactive"
 	processiconstate = "compressor"
 	process_type = FACTORY_MACHINE_COMPRESSOR

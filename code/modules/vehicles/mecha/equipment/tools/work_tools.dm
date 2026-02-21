@@ -3,8 +3,8 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp
-	name = "hydraulic clamp"
-	desc = "Equipment for engineering exosuits. Lifts objects and loads them into cargo."
+	name = "液压钳"
+	desc = "工程外骨骼装备。可抬起物体并装载至货舱。"
 	icon_state = "mecha_clamp"
 	equip_cooldown = 15
 	energy_drain = 10
@@ -43,9 +43,9 @@
 				if(M.ammo_resupply(box, source, TRUE))
 					return
 		if(have_ammo)
-			to_chat(source, "No further supplies can be provided to [M].")
+			to_chat(source, "无法再向[M]提供补给。")
 		else
-			to_chat(source, "No providable supplies found in cargo hold")
+			to_chat(source, "货舱内未找到可提供的补给")
 		return
 
 	if(isobj(target))
@@ -57,7 +57,7 @@
 			to_chat(source, "[icon2html(src, source)][span_warning("Not enough room in cargo compartment!")]")
 			return
 		playsound(chassis, clampsound, 50, FALSE, -6)
-		chassis.visible_message(span_notice("[chassis] lifts [target] and starts to load it into cargo compartment."))
+		chassis.visible_message(span_notice("[chassis] 抬起 [target] 并开始将其装载到货舱中。"))
 		clamptarget.anchored = TRUE
 		if(!do_after_cooldown(target, source))
 			clamptarget.anchored = initial(clamptarget.anchored)
@@ -79,23 +79,23 @@
 		if(source.a_intent == INTENT_HELP)
 			step_away(M,chassis)
 			if(killer_clamp)
-				target.visible_message(span_danger("[chassis] tosses [target] like a piece of paper!"), \
+				target.visible_message(span_danger("[chassis] 像扔纸片一样把 [target] 甩了出去！"), \
 					span_userdanger("[chassis] tosses you like a piece of paper!"))
 			else
 				to_chat(source, "[icon2html(src, source)][span_notice("You push [target] out of the way.")]")
-				chassis.visible_message(span_notice("[chassis] pushes [target] out of the way."), \
+				chassis.visible_message(span_notice("[chassis] 将 [target] 推到了一边。"), \
 				span_notice("[chassis] pushes you aside."))
 			return ..()
 		else if(LAZYACCESS(modifiers, RIGHT_CLICK) && ishuman(M))//meme clamp here
 			if(!killer_clamp)
-				to_chat(source, span_notice("You longingly wish to tear [M]'s arms off."))
+				to_chat(source, span_notice("你渴望将[M]的双臂撕扯下来。"))
 				return
 			var/mob/living/carbon/human/marine_wit_no_arms = target
 			for(var/datum/limb/appendage AS in marine_wit_no_arms.limbs) //Ma arms fell off :(
 				if(istype(appendage, /datum/limb/chest) || istype(appendage, /datum/limb/groin) || istype(appendage, /datum/limb/head))
 					continue
 				appendage.droplimb()
-			target.visible_message(span_danger("[chassis] rips [target]'s arms and legs off!"), \
+			target.visible_message(span_danger("[chassis] 撕掉了 [target] 的胳膊和腿！"), \
 						span_userdanger("[chassis] rips your arms and legs off!"))
 			log_combat(source, M, "removed both arms and legs with a real clamp,", "[name]", "(INTENT: [source.a_intent]) (DAMTYPE: [uppertext(damtype)])")
 			return ..()
@@ -105,7 +105,7 @@
 			return
 		M.adjustOxyLoss(round(clamp_damage/2))
 		M.updatehealth()
-		target.visible_message(span_danger("[chassis] squeezes [target]!"), \
+		target.visible_message(span_danger("[chassis] 挤压 [target]！"), \
 							span_userdanger("[chassis] squeezes you!"),\
 							span_hear("You hear something crack."))
 		log_combat(source, M, "attacked", "[name]", "(INTENT: [source.a_intent]) (DAMTYPE: [uppertext(damtype)])")
@@ -116,19 +116,19 @@
 
 //This is pretty much just for the death-ripley
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp/kill
-	name = "\improper KILL CLAMP"
-	desc = "They won't know what clamped them! This time for real!"
+	name = "\improper 击杀钳"
+	desc = "他们根本不知道是什么抓住了他们！这次可是动真格的！"
 	killer_clamp = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp/kill/fake//harmless fake for pranks
-	desc = "They won't know what clamped them!"
+	desc = "他们根本不知道是什么抓住了他们！"
 	energy_drain = 0
 	clamp_damage = 0
 	killer_clamp = FALSE
 
 /obj/item/mecha_parts/mecha_equipment/extinguisher
-	name = "exosuit extinguisher"
-	desc = "Equipment for engineering exosuits. A rapid-firing high capacity fire extinguisher."
+	name = "外骨骼灭火器"
+	desc = "工程外骨骼装备。一款速射大容量火焰灭火器。"
 	icon_state = "mecha_exting"
 	equip_cooldown = 5
 	energy_drain = 0
@@ -164,10 +164,10 @@
 	var/turf/in_front = get_step(chassis, chassis.dir)
 	var/obj/structure/reagent_dispensers/watertank/refill_source = locate(/obj/structure/reagent_dispensers/watertank) in in_front
 	if(!refill_source)
-		to_chat(user, span_notice("Refill failed. No compatible tank found."))
+		to_chat(user, span_notice("补充失败。未找到兼容气罐。"))
 		return
 	if(!refill_source.reagents?.total_volume)
-		to_chat(user, span_notice("Refill failed. Source tank empty."))
+		to_chat(user, span_notice("补充失败。源气罐已空。"))
 		return
 
 	refill_source.reagents.trans_to(src, reagents.maximum_volume)

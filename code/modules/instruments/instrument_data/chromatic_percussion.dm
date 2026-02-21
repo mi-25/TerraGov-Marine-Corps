@@ -1,10 +1,10 @@
 /datum/instrument/chromatic
-	name = "Generic chromatic percussion instrument"
+	name = "通用色彩打击乐器"
 	category = "Chromatic percussion"
 	abstract_type = /datum/instrument/chromatic
 
 /datum/instrument/chromatic/vibraphone1
-	name = "Crisis Vibraphone"
+	name = "危机颤音琴"
 	id = "crvibr"
 	real_samples = list(
 		"36"='sound/runtime/instruments/synthesis_samples/chromatic/vibraphone1/c2.ogg',
@@ -14,7 +14,7 @@
 	)
 
 /datum/instrument/chromatic/musicbox1
-	name = "SGM Music Box"
+	name = "SGM 音乐盒"
 	id = "sgmmbox"
 	real_samples = list(
 		"36"='sound/runtime/instruments/synthesis_samples/chromatic/sgmbox/c2.ogg',

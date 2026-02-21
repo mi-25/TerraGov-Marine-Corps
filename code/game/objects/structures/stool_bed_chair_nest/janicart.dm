@@ -2,9 +2,9 @@
 
 ///old style janicart
 /obj/structure/bed/chair/janicart
-	name = "janicart"
+	name = "医疗推车"
 	icon = 'icons/obj/vehicles.dmi'
-	desc = "A brave janitor cyborg gave its life to produce such an amazing combination of speed and utility."
+	desc = "一位勇敢的清洁工机器人牺牲了自己，才造就了如此惊人的速度与实用性结合体。"
 	icon_state = "pussywagon"
 	anchored = FALSE
 	density = TRUE
@@ -35,18 +35,18 @@
 
 	if(istype(I, /obj/item/tool/mop))
 		if(reagents.total_volume <= 1)
-			to_chat(user, span_notice("This [callme] is out of water!"))
+			to_chat(user, span_notice("这个[callme]没水了！"))
 			return
 
 		reagents.trans_to(I, 2)
-		to_chat(user, span_notice("You wet [I] in the [callme]."))
+		to_chat(user, span_notice("你弄湿了[I]的[callme]。"))
 		playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 
 	else if(istype(I, /obj/item/key))
-		to_chat(user, "Hold [I] in one of your hands while you drive this [callme].")
+		to_chat(user, "驾驶这辆[callme]时，请将[I]握在手中。")
 
 	else if(istype(I, /obj/item/storage/bag/trash))
-		to_chat(user, span_notice("You hook the trashbag onto the [callme]."))
+		to_chat(user, span_notice("你将垃圾袋挂在了[callme]上。"))
 		user.drop_held_item()
 		I.forceMove(src)
 		mybag = I
@@ -69,11 +69,11 @@
 	if(istype(user.l_hand, /obj/item/key) || istype(user.r_hand, /obj/item/key))
 		step(src, direction)
 	else
-		to_chat(user, span_notice("You'll need the keys in one of your hands to drive this [callme]."))
+		to_chat(user, span_notice("你需要把钥匙拿在手里才能驾驶这辆[callme]。"))
 
 /obj/item/key
-	name = "key"
-	desc = "A keyring with a small steel key, and a pink fob reading \"Pussy Wagon\"."
+	name = "钥匙"
+	desc = "一把钥匙环，上面挂着一把小钢钥匙和一个粉色吊牌，上面写着'Pussy Wagon'。"
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "keys"
 	w_class = WEIGHT_CLASS_TINY

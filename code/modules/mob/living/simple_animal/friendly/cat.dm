@@ -1,6 +1,6 @@
 /mob/living/simple_animal/cat
-	name = "cat"
-	desc = "Kitty!!"
+	name = "猫"
+	desc = "小猫咪！！"
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "cat"
 	icon_living = "cat"
@@ -21,16 +21,16 @@
 
 
 /mob/living/simple_animal/cat/space
-	name = "space cat"
-	desc = "It's a cat... in space!"
+	name = "太空猫"
+	desc = "这是只猫……在太空中！"
 	icon_state = "spacecat"
 	icon_living = "spacecat"
 	icon_dead = "spacecat_dead"
 
 
 /mob/living/simple_animal/cat/original
-	name = "Batsy"
-	desc = "The product of alien DNA and bored geneticists."
+	name = "蝙蝠侠"
+	desc = "外星DNA与无聊遗传学家的产物。"
 	gender = FEMALE
 	icon_state = "original"
 	icon_living = "original"
@@ -38,8 +38,8 @@
 
 
 /mob/living/simple_animal/cat/kitten
-	name = "kitten"
-	desc = "D'aaawwww."
+	name = "小猫"
+	desc = "哇哦。"
 	icon_state = "kitten"
 	icon_living = "kitten"
 	icon_dead = "kitten_dead"
@@ -50,24 +50,24 @@
 
 
 /mob/living/simple_animal/cat/Runtime
-	name = "Runtime"
+	name = "运行时"
 	desc = "GCAT"
 	gender = FEMALE
 
 
 /mob/living/simple_animal/cat/Jones
-	name = "Jones"
+	name = "琼斯"
 	real_name = "Jones"
-	desc = "Old and grumpy cat."
+	desc = "老而暴躁的猫。"
 	icon_state = "cat2"
 	icon_living = "cat2"
 	icon_dead = "cat2_dead"
 
 
 /mob/living/simple_animal/cat/floppa
-	name = "\improper floppa"
+	name = "\improper 大耳猫"
 	real_name = "floppa"
-	desc = "A caracal with very floppy ears. Its mere presence inspires fear."
+	desc = "一只耳朵非常松软的狞猫。它的存在本身就令人恐惧。"
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "floppa"
 	icon_living = "floppa"
@@ -77,8 +77,8 @@
 
 
 /mob/living/simple_animal/cat/martin
-	name = "Martin"
-	desc = "Requisition's very own caracal. You wonder how much requisition paid to get this dogdang creature on board."
+	name = "马丁"
+	desc = "补给部的专属狞猫。你很好奇补给部花了多少钱才把这该死的生物弄上船。"
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "martin"
 	icon_living = "martin"
@@ -90,8 +90,8 @@
 
 
 /mob/living/simple_animal/cat/martin/martina
-	name = "Martina"
-	desc = "Requisition's 2nd caracal. And this one's female? What the hell is going on? Who's paying for this?"
+	name = "玛蒂娜"
+	desc = "补给的第二只狞猫。这只是母的？到底怎么回事？谁在付钱？"
 	gender = FEMALE
 
 
@@ -141,8 +141,8 @@
 
 
 /obj/item/clothing/head/cat
-	name = "Cat"
-	desc = "Kitty!!"
+	name = "猫"
+	desc = "小猫咪！！"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "cat2"
 	worn_icon_list = list(

@@ -5,8 +5,8 @@
 
 
 /obj/item/frame/camera
-	name = "camera assembly"
-	desc = "The basic construction for cameras."
+	name = "相机组件"
+	desc = "摄像头的基本构造。"
 	icon = 'icons/obj/machines/monitors.dmi'
 	icon_state = "cameracase"
 
@@ -20,10 +20,10 @@
 
 	var/turf/loc = get_turf(user)
 	if(!isfloorturf(loc))
-		loc.balloon_alert(user, "bad spot!")
+		loc.balloon_alert(user, "糟糕的位置！")
 		return
 
-	user.balloon_alert_to_viewers("attaching...")
+	user.balloon_alert_to_viewers("正在安装...")
 	playsound(loc, 'sound/machines/click.ogg', 15, 1)
 	var/constrdir = REVERSE_DIR(user.dir)
 	var/constrloc = user.loc
@@ -33,15 +33,15 @@
 
 	new /obj/structure/camera_assembly(constrloc, constrdir)
 
-	user.visible_message("[user] attaches [src] to the wall.", \
+	user.visible_message("[user]将[src]安装在墙上。", \
 		"You attach [src] to the wall.")
 
 	qdel(src)
 
 
 /obj/structure/camera_assembly
-	name = "camera assembly"
-	desc = "The basic construction for cameras."
+	name = "相机组件"
+	desc = "摄像头的基本构造。"
 	icon = 'icons/obj/machines/monitors.dmi'
 	icon_state = "camera_assembly"
 	max_integrity = 150
@@ -92,7 +92,7 @@
 			if(!weld(I, user))
 				return
 
-			to_chat(user, span_notice("You weld [src] securely into place."))
+			to_chat(user, span_notice("你将[src]牢固地焊接到位。"))
 			anchored = TRUE
 			state = STATE_WELDED
 
@@ -100,10 +100,10 @@
 			if(istype(I, /obj/item/stack/cable_coil))
 				var/obj/item/stack/cable_coil/C = I
 				if(!C.use(2))
-					to_chat(user, span_warning("You need two lengths of cable to wire a camera!"))
+					to_chat(user, span_warning("你需要两段电缆才能连接摄像头！"))
 					return
 
-				to_chat(user, span_notice("You add wires to [src]."))
+				to_chat(user, span_notice("你将电线连接到[src]。"))
 				state = STATE_WIRED
 
 			else if(I.tool_behaviour == TOOL_WELDER)
@@ -111,7 +111,7 @@
 				if(!weld(I, user))
 					return
 
-				to_chat(user, span_notice("You unweld [src] from its place."))
+				to_chat(user, span_notice("你将[src]从其位置解焊下来。"))
 				anchored = TRUE
 				state = STATE_WRENCHED
 
@@ -127,11 +127,11 @@
 	tool.play_tool_sound(src)
 	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: marinemainship, marine, dropship1, dropship2", "Set Network", "marinemainship")
 	if(!input)
-		to_chat(user, span_warning("No network entered."))
+		to_chat(user, span_warning("未输入网络。"))
 		return
 	var/list/tempnetwork = splittext(input, ",")
 	if(!length(tempnetwork))
-		to_chat(user, span_warning("Invalid network entry."))
+		to_chat(user, span_warning("网络入口无效。"))
 		return
 	for(var/i in tempnetwork)
 		tempnetwork -= i
@@ -149,7 +149,7 @@
 
 	new /obj/item/stack/cable_coil(drop_location(), 2)
 	I.play_tool_sound(src)
-	to_chat(user, span_notice("You cut the wires from the circuits."))
+	to_chat(user, span_notice("你切断了电路上的电线。"))
 	state = STATE_WELDED
 	return TRUE
 
@@ -158,7 +158,7 @@
 	if(state != STATE_WRENCHED)
 		return FALSE
 	I.play_tool_sound(src)
-	to_chat(user, span_notice("You detach [src] from its place."))
+	to_chat(user, span_notice("你将[src]从原位拆下。"))
 	new /obj/item/frame/camera(drop_location())
 
 	qdel(src)
@@ -168,7 +168,7 @@
 /obj/structure/camera_assembly/proc/weld(obj/item/tool/weldingtool/W, mob/living/user)
 	if(!W.tool_start_check(user, amount = 3))
 		return FALSE
-	to_chat(user, span_notice("You start to weld [src]..."))
+	to_chat(user, span_notice("你开始焊接[src]..."))
 	if(W.use_tool(src, user, 20, amount = 3, volume = 50))
 		return TRUE
 	return FALSE

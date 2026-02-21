@@ -1,6 +1,6 @@
 
 /datum/tgs_chat_command/tgscheck
-	name = "check"
+	name = "检查"
 	help_text = "Gets the playercount, gamemode, and address of the server"
 
 /datum/tgs_chat_command/tgscheck/Run(datum/tgs_chat_user/sender, params)
@@ -8,14 +8,14 @@
 	return "Round ID: [GLOB.round_id] | Round Time: [gameTimestamp("hh:mm")] | Players: [length(GLOB.clients)] | Ground Map: [length(SSmapping.configs) ? SSmapping.configs[GROUND_MAP].map_name : "Loading..."] | Ship Map: [length(SSmapping.configs) ? SSmapping.configs[SHIP_MAP].map_name : "Loading..."] | Mode: [GLOB.master_mode] | Round Status: [SSticker.HasRoundStarted() ? (SSticker.IsRoundInProgress() ? "Active" : "Finishing") : "Starting"] | Link: [server ? server : "<byond://[world.internet_address]:[world.port]>"]"
 
 /datum/tgs_chat_command/lagcheck
-	name = "lagcheck"
+	name = "延迟检测"
 	help_text = "Checks current time dilation on the server"
 
 /datum/tgs_chat_command/lagcheck/Run(datum/tgs_chat_user/sender, params)
 	return "Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
 
 /datum/tgs_chat_command/gameversion
-	name = "gameversion"
+	name = "游戏版本"
 	help_text = "Gets the version details from the show-server-revision verb, basically"
 
 /datum/tgs_chat_command/gameversion/Run(datum/tgs_chat_user/sender, params)
@@ -42,7 +42,7 @@
 
 // Notify
 /datum/tgs_chat_command/notify
-	name = "notify"
+	name = "通知"
 	help_text = "Pings the invoker when the round ends"
 
 /datum/tgs_chat_command/notify/Run(datum/tgs_chat_user/sender, params)
@@ -59,7 +59,7 @@
 	return new /datum/tgs_message_content("You will now be notified when the server restarts")
 
 /datum/tgs_chat_command/seasonals
-	name = "seasonals"
+	name = "季节性活动"
 	help_text = "Checks current seasonals active in the round."
 
 /datum/tgs_chat_command/seasonals/Run(datum/tgs_chat_user/sender, params)

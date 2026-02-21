@@ -38,7 +38,7 @@
 
 
 /datum/emergency_call/supplies
-	name = "Supply Drop"
+	name = "补给空投"
 	mob_max = 0
 	mob_min = 0
 	base_probability = 0

@@ -1,7 +1,7 @@
 /obj/item/stack/catwalk
-	name = "catwalk mesh"
+	name = "网格步道"
 	singular_name = "catwalk mesh"
-	desc = "Those could work as a pretty decent throwing weapon"
+	desc = "这些可以当作相当不错的投掷武器"
 	icon = 'icons/turf/mainship.dmi'
 	icon_state = "catwalk_tile"
 	w_class = WEIGHT_CLASS_NORMAL

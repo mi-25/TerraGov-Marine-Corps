@@ -1,6 +1,6 @@
 /obj/item/attachable/verticalgrip
-	name = "vertical grip"
-	desc = "A custom-built improved foregrip for better accuracy, moderately faster aimed movement speed, less recoil, and less scatter when wielded especially during burst fire. \nHowever, it also increases weapon size, slightly increases wield delay and makes unwielded fire more cumbersome."
+	name = "垂直握把"
+	desc = "一款定制改进的前握把，可提升精度，适度加快瞄准移动速度，减少后坐力，尤其是在点射时减少散射。\n然而，它也会增加武器尺寸，略微增加举枪延迟，并使非举枪状态下的射击更加笨拙。"
 	icon_state = "verticalgrip"
 	icon = 'icons/obj/items/guns/attachments/underbarrel.dmi'
 	wield_delay_mod = 0.2 SECONDS
@@ -17,8 +17,8 @@
 	aim_mode_movement_mult = -0.2
 
 /obj/item/attachable/angledgrip
-	name = "angled grip"
-	desc = "A custom-built improved foregrip for less recoil, and faster wielding time. \nHowever, it also increases weapon size, and slightly hinders unwielded firing."
+	name = "斜握把"
+	desc = "定制改进型前握把，可减少后坐力，并加快举枪速度。\n但也会增加武器尺寸，并略微妨碍非双手持握射击。"
 	icon_state = "angledgrip"
 	icon = 'icons/obj/items/guns/attachments/underbarrel.dmi'
 	wield_delay_mod = -0.3 SECONDS
@@ -31,8 +31,8 @@
 	scatter_unwielded_mod = 1
 
 /obj/item/attachable/gyro
-	name = "gyroscopic stabilizer"
-	desc = "A set of weights and balances to stabilize the weapon when burst firing or moving, especially while shooting one-handed. Greatly reduces movement penalties to accuracy. Significantly reduces burst scatter, recoil and general scatter. By increasing accuracy while moving, it let you move faster when taking aim."
+	name = "陀螺稳定器"
+	desc = "一套用于在点射或移动时稳定武器的配重平衡系统，尤其适用于单手射击。大幅降低移动对精度的惩罚。显著减少点射散布、后坐力和总体散布。通过提高移动射击精度，让你在瞄准时能更快移动。"
 	icon_state = "gyro"
 	icon = 'icons/obj/items/guns/attachments/underbarrel.dmi'
 	slot = ATTACHMENT_SLOT_UNDER
@@ -45,8 +45,8 @@
 	aim_mode_movement_mult = -0.5
 
 /obj/item/attachable/lasersight
-	name = "laser sight"
-	desc = "A laser sight placed under the barrel. Significantly increases one-handed accuracy and significantly reduces unwielded penalties to accuracy."
+	name = "激光瞄准镜"
+	desc = "枪管下方安装的激光瞄准器。显著提升单手持枪精度，并大幅降低非双手持握时的精度惩罚。"
 	icon_state = "lasersight"
 	icon = 'icons/obj/items/guns/attachments/underbarrel.dmi'
 	slot = ATTACHMENT_SLOT_UNDER
@@ -56,8 +56,8 @@
 	accuracy_unwielded_mod = 0.15
 
 /obj/item/attachable/burstfire_assembly
-	name = "burst fire assembly"
-	desc = "A mechanism re-assembly kit that allows for automatic fire, or more shots per burst if the weapon already has the ability. \nIncreases scatter and decreases accuracy."
+	name = "点射组件"
+	desc = "一种机制重组套件，允许武器进行全自动射击，或者如果武器已具备此能力，则增加每次连发的射弹数量。\n会增加散布并降低精度。"
 	icon_state = "rapidfire"
 	icon = 'icons/obj/items/guns/attachments/underbarrel.dmi'
 	slot = ATTACHMENT_SLOT_UNDER
@@ -66,10 +66,10 @@
 	burst_accuracy_mod = -0.1
 
 /obj/item/attachable/autosniperbarrel
-	name = "auto sniper barrel"
+	name = "自动狙击枪管"
 	icon_state = "t81barrel"
 	icon = 'icons/obj/items/guns/attachments/underbarrel.dmi'
-	desc = "A heavy barrel. CANNOT BE REMOVED."
+	desc = "重型枪管。无法拆卸。"
 	slot = ATTACHMENT_SLOT_UNDER
 	attach_features_flags = NONE
 	pixel_shift_x = 7

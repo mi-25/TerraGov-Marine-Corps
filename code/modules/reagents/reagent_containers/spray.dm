@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/spray
-	name = "spray bottle"
-	desc = "A spray bottle, with an unscrewable top."
+	name = "喷雾瓶"
+	desc = "一个喷雾瓶，瓶盖可拧开。"
 	icon = 'icons/obj/items/spray.dmi'
 	icon_state = "cleaner"
 	worn_icon_list = list(
@@ -31,23 +31,23 @@
 
 	if((A.is_drainable() && !A.is_refillable()) && get_dist(src,A) <= 1)
 		if(!A.reagents.total_volume)
-			to_chat(user, span_warning("[A] is empty."))
+			to_chat(user, span_warning("[A] 是空的。"))
 			return
 
 		if(reagents.holder_full())
-			to_chat(user, span_warning("[src] is full."))
+			to_chat(user, span_warning("[src] 已满。"))
 			return
 
 		var/trans = A.reagents.trans_to(src, A:amount_per_transfer_from_this)
-		to_chat(user, span_notice("You fill \the [src] with [trans] units of the contents of \the [A]."))
+		to_chat(user, span_notice("你将 \the [src] 注入了 [trans] 单位的 \the [A] 内容物。"))
 		return
 
 	if(reagents.total_volume < amount_per_transfer_from_this)
-		to_chat(user, span_notice("[src] is empty!"))
+		to_chat(user, span_notice("[src]是空的！"))
 		return
 
 	if(safety)
-		to_chat(user, "<span class = 'warning'>The safety is on!</span>")
+		to_chat(user, "<span class = 'warning'>保险已打开！</span>")
 		return
 
 	Spray_at(A)
@@ -84,7 +84,7 @@
 		return
 	amount_per_transfer_from_this = next_in_list(amount_per_transfer_from_this, possible_transfer_amounts)
 	spray_size = next_in_list(spray_size, spray_sizes)
-	to_chat(user, span_notice("You adjusted the pressure nozzle. You'll now use [amount_per_transfer_from_this] units per spray."))
+	to_chat(user, span_notice("你调整了压力喷嘴。现在每次喷洒将使用[amount_per_transfer_from_this]单位。"))
 
 /obj/item/reagent_containers/spray/verb/empty()
 
@@ -95,18 +95,18 @@
 	if (tgui_alert(usr, "Are you sure you want to empty that?", "Empty Bottle:", list("Yes", "No")) != "Yes")
 		return
 	if(isturf(usr.loc))
-		to_chat(usr, span_notice("You empty \the [src] onto the floor."))
+		to_chat(usr, span_notice("你将\the [src]倒在地上。"))
 		reagents.reaction(usr.loc)
 		addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, clear_reagents)), 5)
 
 //space cleaner
 /obj/item/reagent_containers/spray/cleaner
-	name = "space cleaner"
-	desc = "BLAM!-brand non-foaming space cleaner!"
+	name = "空间清洁剂"
+	desc = "BLAM!牌无泡太空清洁剂！"
 
 /obj/item/reagent_containers/spray/cleaner/drone
-	name = "space cleaner"
-	desc = "BLAM!-brand non-foaming space cleaner!"
+	name = "空间清洁剂"
+	desc = "BLAM!牌无泡太空清洁剂！"
 	volume = 50
 
 
@@ -116,16 +116,16 @@
 
 
 /obj/item/reagent_containers/spray/surgery
-	name = "sterilizing spray"
-	desc = "Infection and necrosis are a thing of the past!"
+	name = "消毒喷雾"
+	desc = "感染和坏死都已成为历史！"
 	volume = 100
 	list_reagents = list(/datum/reagent/space_cleaner = 50, /datum/reagent/sterilizine = 50)
 
 
 //pepperspray
 /obj/item/reagent_containers/spray/pepper
-	name = "pepperspray"
-	desc = "Manufactured by UhangInc, used to blind and down an opponent quickly."
+	name = "胡椒喷雾"
+	desc = "由宇航公司制造，用于快速致盲并击倒对手。"
 	icon_state = "pepperspray"
 	worn_icon_state = "pepperspray"
 	possible_transfer_amounts = null
@@ -144,8 +144,8 @@
 
 //water flower
 /obj/item/reagent_containers/spray/waterflower
-	name = "water flower"
-	desc = "A seemingly innocent sunflower...with a twist."
+	name = "水花"
+	desc = "一朵看似无辜的向日葵……暗藏玄机。"
 	icon = 'icons/obj/items/harvest.dmi'
 	icon_state = "sunflower"
 	worn_icon_state = "sunflower"
@@ -156,8 +156,8 @@
 
 //chemsprayer
 /obj/item/reagent_containers/spray/chemsprayer
-	name = "chem sprayer"
-	desc = "A utility used to spray large amounts of reagent in a given area."
+	name = "化学喷射器"
+	desc = "一种用于在指定区域喷洒大量试剂的工具。"
 	icon_state = "chemsprayer"
 	worn_icon_state = "chemsprayer"
 	throwforce = 3
@@ -205,8 +205,8 @@
 
 // Plant-B-Gone
 /obj/item/reagent_containers/spray/plantbgone // -- Skie
-	name = "Plant-B-Gone"
-	desc = "Kills those pesky weeds!"
+	name = "植物克星"
+	desc = "清除那些烦人的菌毯！"
 	icon_state = "plantbgone"
 	worn_icon_state = "plantbgone"
 	volume = 100

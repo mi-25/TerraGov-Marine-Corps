@@ -11,8 +11,8 @@ Mines have an invisible "tripwire" atom that explodes when crossed
 Stepping directly on the mine will also blow it up
 */
 /obj/item/explosive/mine
-	name = "\improper M20 Claymore anti-personnel mine"
-	desc = "The M20 Claymore is a directional proximity triggered anti-personnel mine designed by Armat Systems for use by the TerraGov Marine Corps."
+	name = "\improper M20 阔剑反步兵地雷"
+	desc = "M20阔剑是一种由阿玛特系统公司设计、供地球政府殖民地海军陆战队使用的定向近炸反人员地雷。"
 	icon = 'icons/obj/items/mines.dmi'
 	icon_state = "m20"
 	force = 5
@@ -67,20 +67,20 @@ Stepping directly on the mine will also blow it up
 /// attack_self is used to arm the mine
 /obj/item/explosive/mine/attack_self(mob/living/user)
 	if(!user.loc || user.loc.density)
-		to_chat(user, span_warning("You can't plant a mine here."))
+		to_chat(user, span_warning("此处无法部署地雷。"))
 		return
 
 	if(locate(/obj/item/explosive/mine) in get_turf(src))
-		to_chat(user, span_warning("There already is a mine at this position!"))
+		to_chat(user, span_warning("此处已布设地雷！"))
 		return
 
 	if(armed)
 		return
 	if(!do_after(user, 10, NONE, src, BUSY_ICON_HOSTILE))
-		user.visible_message(span_notice("[user] stops deploying [src]."), \
+		user.visible_message(span_notice("[user] 停止部署 [src]。"), \
 	span_notice("You stop deploying \the [src]."))
 		return
-	user.visible_message(span_notice("[user] finishes deploying [src]."), \
+	user.visible_message(span_notice("[user]完成了[src]的部署。"), \
 	span_notice("You finish deploying [src]."))
 	var/obj/item/card/id/id = user.get_idcard()
 	deploy_mine(user, id?.iff_signal)
@@ -120,15 +120,15 @@ Stepping directly on the mine will also blow it up
 	if(!ismultitool(I) || !anchored)
 		return
 
-	user.visible_message(span_notice("[user] starts disarming [src]."), \
+	user.visible_message(span_notice("[user]开始解除[src]的武装。"), \
 	span_notice("You start disarming [src]."))
 
 	if(!do_after(user, 8 SECONDS, NONE, src, BUSY_ICON_FRIENDLY))
-		user.visible_message("<span class='warning'>[user] stops disarming [src].", \
+		user.visible_message("<span class='warning'>[user]停止解除[src]的武装。</span>", \
 		"<span class='warning'>You stop disarming [src].")
 		return
 
-	user.visible_message("<span class='notice'>[user] finishes disarming [src].", \
+	user.visible_message("<span class='notice'>[user] 完成了对 [src] 的解除武装。</span>", \
 	"<span class='notice'>You finish disarming [src].")
 	anchored = FALSE
 	armed = FALSE
@@ -174,7 +174,7 @@ Stepping directly on the mine will also blow it up
 	if(id?.iff_signal & iff_signal)
 		return FALSE
 
-	living_victim.visible_message(span_danger("[icon2html(src, viewers(living_victim))] \The [src] clicks as [victim] moves in front of it."), \
+	living_victim.visible_message(span_danger("[icon2html(src, viewers(living_victim))] \The [src] 在 [victim] 移动到它面前时发出咔哒声。"), \
 	span_danger("[icon2html(src, viewers(living_victim))] \The [src] clicks as you move in front of it."), \
 	span_danger("You hear a click."))
 
@@ -191,7 +191,7 @@ Stepping directly on the mine will also blow it up
 
 	if(xeno_attacker.a_intent == INTENT_HELP)
 		return
-	xeno_attacker.visible_message(span_danger("[xeno_attacker] has slashed [src]!"), \
+	xeno_attacker.visible_message(span_danger("[src] 被 [xeno_attacker] 斩击了！"), \
 	span_danger("We slash [src]!"))
 	playsound(loc, 'sound/weapons/slice.ogg', 25, 1)
 	INVOKE_ASYNC(src, PROC_REF(trigger_explosion))
@@ -207,7 +207,7 @@ Stepping directly on the mine will also blow it up
 
 /// This is a mine_tripwire that is basically used to extend the mine and capture bump movement further infront of the mine
 /obj/effect/mine_tripwire
-	name = "claymore tripwire"
+	name = "阔剑绊线"
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility = INVISIBILITY_MAXIMUM
@@ -247,13 +247,13 @@ Stepping directly on the mine will also blow it up
 
 /// PMC specific mine, with IFF for PMC units
 /obj/item/explosive/mine/pmc
-	name = "\improper M20P Claymore anti-personnel mine"
-	desc = "The M20P Claymore is a directional proximity triggered anti-personnel mine designed by Armat Systems for use by the TerraGov Marine Corps. It has been modified for use by the NT PMC forces."
+	name = "\improper M20P 阔剑反人员地雷"
+	desc = "M20P阔剑是一种定向近炸反人员地雷，由阿玛特系统公司为地球政府殖民地海军陆战队设计。它已被改装供纳米传讯PMC部队使用。"
 	icon_state = "m20p"
 
 /obj/item/explosive/mine/anti_tank
-	name = "\improper M92 Valiant anti-tank mine"
-	desc = "The M92 Valiant is a anti-tank mine designed by Armat Systems for use by the TerraGov Marine Corps against heavy armour, both tanks and mechs."
+	name = "\improper M92 英勇反坦克地雷"
+	desc = "M92 Valiant是一款由Armat Systems设计的反坦克地雷，专为地球政府殖民地海军陆战队用于对抗重型装甲目标，包括坦克和机甲。"
 	icon_state = "m92"
 	target_mode = MINE_VEHICLE_ONLY
 

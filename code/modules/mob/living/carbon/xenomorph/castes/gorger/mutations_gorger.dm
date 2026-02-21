@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/unmoving_link
 	name = "Unmoving Link"
-	desc = "While Psychic Link is active, you gain maximum movement resistance and gain 5/15/25 armor."
+	desc = "当心灵链接激活时，你获得最大移动抗性，并获得5/15/25点护甲。"
 	/// For the first structure, the amount of soft armor that Psychic Link should grant while it is active.
 	var/armor_initial = -5
 	/// For each structure, the amount of soft armor that Psychic Link should grant while it is active.
@@ -62,7 +62,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/necrotic_link
 	name = "Necrotic Link"
-	desc = "Psychic Link no longer forces you to rest. While it is active, Drain is only 20/30/40% effective on corpses."
+	desc = "心灵链接不再强制你休息。激活期间，对尸体的吸取效果只有20/30/40%。"
 	/// For the first structure, the multiplier to add to Drain's corpse healing while Psychic Link is active.
 	var/multiplier_initial = -0.9
 	/// For each structure, the multiplier to add to Drain's corpse healing while Psychic Link is active.
@@ -104,7 +104,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/burst_healing
 	name = "Burst Healing"
-	desc = "Transfusion heals an additional 8/12/16% maximum health. The plasma cost is set to 150/175/200% of its their original value."
+	desc = "输血额外恢复8/12/16%的最大生命值。等离子体消耗量设定为其原始值的150/175/200%。"
 	/// For the first structure, the multiplier to increase Transfusion's plasma cost by.
 	var/multiplier_initial = 0.25
 	/// For each structure, the multiplier to increase Transfusion's plasma cost by.

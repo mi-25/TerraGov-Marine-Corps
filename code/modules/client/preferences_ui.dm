@@ -458,9 +458,9 @@
 				if(!islist(gear))
 					gear = list()
 				gear += choice
-				to_chat(user, span_notice("Added '[choice]' for [C.cost] points ([MAX_GEAR_COST - total_cost] points remaining)."))
+				to_chat(user, span_notice("已添加'[choice]'，消耗 [C.cost] 点（剩余 [MAX_GEAR_COST - total_cost] 点）。"))
 			else
-				to_chat(user, span_warning("Adding '[choice]' will exceed the maximum loadout cost of [MAX_GEAR_COST] points."))
+				to_chat(user, span_warning("添加'[choice]'将超出最大装备配置点数限制 [MAX_GEAR_COST] 点。"))
 
 		if("loadoutremove")
 			gear.Remove(params["gear"])
@@ -764,7 +764,7 @@
 			if(!slot)
 				return
 			quick_equip[editing_slot] = slot_fluff_to_flag(slot)
-			to_chat(src, span_notice("You will now equip/draw from the [slot] slot first."))
+			to_chat(src, span_notice("你现在将优先装备/从[slot]槽位取出物品。"))
 
 		if("equip_slot_equip_position")
 			var/returned_item_list_position = slot_draw_order_pref.Find(slot_fluff_to_flag(params["changing_item"]))

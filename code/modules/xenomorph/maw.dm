@@ -23,7 +23,7 @@
 
 
 /datum/maw_ammo/smoke
-	name = "GENERIC_SMOKEAMMOTYPE"
+	name = "通用烟雾弹类型"
 	cooldown_time = 4 MINUTES
 	///radius of the smoke we deploy
 	var/smokeradius = 5
@@ -91,12 +91,12 @@
 	smoke.start()
 
 /datum/maw_ammo/smoke/neuro
-	name = "neurotoxin maw glob"
+	name = "神经毒素巨口球"
 	radial_icon_state = "smoke_mortar"
 	smoke_type = /datum/effect_system/smoke_spread/xeno/neuro
 
 /datum/maw_ammo/smoke/acid_small
-	name = "tactical acid maw glob"
+	name = "战术酸液喷吐球"
 	cooldown_time = 3 MINUTES
 	radial_icon_state = "acid_smoke_mortar"
 	smoke_type = /datum/effect_system/smoke_spread/xeno/acid
@@ -109,7 +109,7 @@
 		xenomorph_spray(newspray, duration*2, XENO_DEFAULT_ACID_PUDDLE_DAMAGE)
 
 /datum/maw_ammo/hugger
-	name = "ball of huggers"
+	name = "抱脸虫球"
 	radial_icon_state = "hugger_ball"
 	cooldown_time = 10 MINUTES
 	impact_time = 12 SECONDS
@@ -165,7 +165,7 @@
 		paratrooper.go_active()
 
 /datum/maw_ammo/minion
-	name = "ball of minions"
+	name = "仆从之球"
 	radial_icon_state = "minion"
 	cooldown_time = 10 MINUTES
 	impact_time = 12 SECONDS
@@ -236,7 +236,7 @@
 		paratrooper.set_canmove(TRUE)
 
 /datum/maw_ammo/xeno_fire
-	name = "plasma fire fireball"
+	name = "等离子体火焰火球"
 	radial_icon_state = "incendiary_mortar"
 	cooldown_time = 5 MINUTES
 
@@ -267,8 +267,8 @@
 
 
 /obj/structure/xeno/acid_maw
-	name = "acid maw"
-	desc = "A deep hole in the ground. Its walls are coated with resin and you see the occasional vent or fang."
+	name = "酸液颚"
+	desc = "地面上的一个深坑。坑壁覆盖着树脂，你能看到偶尔出现的通风口或尖牙。"
 	icon = 'icons/Xeno/3x3building.dmi'
 	icon_state = "maw"
 	bound_width = 96
@@ -308,16 +308,16 @@
 /obj/structure/xeno/acid_maw/proc/try_fire(mob/living/carbon/xenomorph/xeno_shooter, atom/radical_target, slient, leaders_only = TRUE, requires_adjacency = TRUE)
 	if(xeno_shooter.hivenumber != hivenumber)
 		if(!slient)
-			balloon_alert(xeno_shooter, "wrong hive")
+			balloon_alert(xeno_shooter, "错误蜂巢")
 		return FALSE
 	if(leaders_only && xeno_shooter.tier != XENO_TIER_FOUR && !(xeno_shooter.xeno_flags & XENO_LEADER))
 		if(!slient)
-			balloon_alert(xeno_shooter, "must be leader")
+			balloon_alert(xeno_shooter, "必须是班长")
 		return FALSE
 	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_MAW_GLOB)) // repeat this every time after we have a sleep for quick feedback
 		var/timeleft = S_TIMER_COOLDOWN_TIMELEFT(src, COOLDOWN_MAW_GLOB)
 		if(!slient)
-			balloon_alert(xeno_shooter, "cooldown: [timeleft/10] seconds")
+			balloon_alert(xeno_shooter, "冷却时间：[timeleft/10]秒")
 		return FALSE
 
 	var/selected_type = !requires_adjacency ? show_radial_menu(xeno_shooter, radical_target, maw_options) : show_radial_menu(xeno_shooter, radical_target, maw_options, custom_check = CALLBACK(src, TYPE_PROC_REF(/datum, Adjacent), xeno_shooter))
@@ -327,7 +327,7 @@
 	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_MAW_GLOB))
 		var/timeleft = S_TIMER_COOLDOWN_TIMELEFT(src, COOLDOWN_MAW_GLOB)
 		if(!slient)
-			balloon_alert(xeno_shooter, "cooldown: [timeleft/10] seconds")
+			balloon_alert(xeno_shooter, "冷却时间：[timeleft/10]秒")
 		return FALSE
 
 	var/atom/movable/screen/minimap/map = SSminimaps.fetch_minimap_object(z, MINIMAP_FLAG_XENO)
@@ -338,12 +338,12 @@
 		return FALSE
 	if(requires_adjacency && !Adjacent(xeno_shooter))
 		if(!slient)
-			balloon_alert(xeno_shooter, "moved too far away")
+			balloon_alert(xeno_shooter, "移动距离过远")
 		return FALSE
 	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_MAW_GLOB))
 		var/timeleft = S_TIMER_COOLDOWN_TIMELEFT(src, COOLDOWN_MAW_GLOB)
 		if(!slient)
-			balloon_alert(xeno_shooter, "cooldown: [timeleft/10] seconds")
+			balloon_alert(xeno_shooter, "冷却时间：[timeleft/10]秒")
 		return FALSE
 
 	var/datum/maw_ammo/ammo = new selected_type
@@ -378,8 +378,8 @@
 	addtimer(CALLBACK(user, TYPE_PROC_REF(/mob, reset_perspective)), 1 SECONDS)
 
 /obj/structure/xeno/acid_maw/acid_jaws
-	name = "acid jaws"
-	desc = "A hole in the ground. Its walls are coated with resin and there is some smoke billowing out."
+	name = "酸液颚"
+	desc = "地上的一个洞。洞壁覆盖着树脂，有烟雾从中涌出。"
 	icon = 'icons/Xeno/2x2building.dmi'
 	icon_state = "jaws"
 	bound_width = 32

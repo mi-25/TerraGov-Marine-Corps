@@ -1,6 +1,6 @@
 /// Initializes any assets that need to be loaded ASAP, before the atoms SS initializes.
 SUBSYSTEM_DEF(early_assets)
-	name = "Early Assets"
+	name = "早期资产"
 	dependents = list(
 		/datum/controller/subsystem/mapping,
 		/datum/controller/subsystem/atoms,

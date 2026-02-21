@@ -1,6 +1,6 @@
 /mob/living/carbon/human/gib()
 	visible_message(
-		span_boldwarning("[src] is blown apart!"),
+		span_boldwarning("[src]被炸得四分五裂！"),
 		span_userdanger("You're blown apart!"),
 		span_boldwarning("You hear terrible cracking and squelching."),
 	)

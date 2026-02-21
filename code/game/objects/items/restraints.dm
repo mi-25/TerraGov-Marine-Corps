@@ -20,16 +20,16 @@
 
 /mob/living/carbon/proc/resist_restraints(obj/item/restraints/cuffs)
 	if(do_actions)
-		balloon_alert(src, "busy!")
+		balloon_alert(src, "忙！")
 		return
 
-	visible_message(span_warning("[src] attempts to remove [cuffs]!"),
+	visible_message(span_warning("[src]试图取下[cuffs]！"),
 	span_notice("You attempt to remove [cuffs]... (This will take around [DisplayTimeText(cuffs.breakouttime)] and you need to stand still.)"))
 
 	if(!do_after(src, cuffs.breakouttime, IGNORE_HELD_ITEM, target = src))
 		return FALSE
 
-	visible_message(span_danger("[src] manages to remove [cuffs]!"),
+	visible_message(span_danger("[src]成功挣脱了[cuffs]！"),
 	span_notice("You successfully remove [cuffs]."))
 
 	dropItemToGround(cuffs) //This will call UnEquip() > update_handcuffed() > UnregisterSignal()

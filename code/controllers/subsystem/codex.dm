@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(codex)
-	name = "Codex"
+	name = "法典"
 	flags = SS_NO_FIRE
 	var/list/entries_by_path = list()
 	var/list/entries_by_string = list()

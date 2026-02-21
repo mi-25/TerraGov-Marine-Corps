@@ -1,7 +1,7 @@
 
 /obj/structure/xeno/acid_pool
-	name = "acid pool"
-	desc = "A pool of weak viscous acid that solidifies quickly when removed from the pool. Swimming is not recommended due to the lack of a lifeguard."
+	name = "酸液池"
+	desc = "一滩稀薄的粘稠酸液，离开酸液池后会迅速凝固。由于没有救生员，不建议在此游泳。"
 	icon = 'icons/Xeno/3x3building.dmi'
 	icon_state = "pool"
 	bound_width = 96

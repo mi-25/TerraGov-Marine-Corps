@@ -1,5 +1,5 @@
 /obj/effect/spawner/modularmap
-	name = "Modular map marker"
+	name = "模块化地图标记"
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "random_map"
 	dir = NORTH

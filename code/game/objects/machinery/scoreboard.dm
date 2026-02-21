@@ -1,7 +1,7 @@
 /obj/machinery/scoreboard
 	icon = 'icons/obj/machines/scoreboard.dmi'
 	icon_state = "scoreboard"
-	name = "basketball scoreboard"
+	name = "篮球记分牌"
 	anchored = TRUE
 	density = FALSE
 	use_power = IDLE_POWER_USE
@@ -46,8 +46,8 @@
 	update_display()
 
 /obj/machinery/scoreboard_button
-	name = "scoreboard button"
-	desc = "A remote control button to reset a scoreboard."
+	name = "计分板按钮"
+	desc = "重置记分牌的遥控按钮。"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "launcherbtt"
 	var/id = null

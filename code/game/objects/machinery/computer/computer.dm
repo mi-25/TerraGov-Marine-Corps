@@ -1,5 +1,5 @@
 /obj/machinery/computer
-	name = "computer"
+	name = "电脑"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	density = TRUE
@@ -87,7 +87,7 @@
 
 /obj/machinery/computer/bullet_act(atom/movable/projectile/proj)
 	if(CHECK_BITFIELD(resistance_flags, INDESTRUCTIBLE))
-		visible_message("[proj] ricochets off [src]!")
+		visible_message("[proj]从[src]上弹开了！")
 		return 0
 	else
 		if(prob(round(proj.ammo.damage /2)))
@@ -141,20 +141,20 @@
 	var/obj/item/tool/weldingtool/welder = I
 
 	if(!(machine_stat & DISABLED) && durability == initial(durability))
-		to_chat(user, span_notice("The [src] doesn't need welding!"))
+		to_chat(user, span_notice("[src]不需要焊接！"))
 		return FALSE
 
 	if(!welder.tool_use_check(user, 2))
 		return FALSE
 
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_EXPERT)
-		user.visible_message(span_notice("[user] fumbles around figuring out how to deconstruct [src]."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何拆解 [src]。"),
 		span_notice("You fumble around figuring out how to deconstruct [src]."))
 		var/fumbling_time = 5 SECONDS * (SKILL_ENGINEER_EXPERT - user.skills.getRating(SKILL_ENGINEER))
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 			return
 
-	user.visible_message(span_notice("[user] begins repairing damage to [src]."),
+	user.visible_message(span_notice("[user]开始修复[src]的损伤。"),
 	span_notice("You begin repairing the damage to [src]."))
 	playsound(loc, 'sound/items/welder2.ogg', 25, 1)
 
@@ -162,10 +162,10 @@
 		return
 
 	if(!welder.remove_fuel(2, user))
-		to_chat(user, span_warning("Not enough fuel to finish the task."))
+		to_chat(user, span_warning("燃料不足，无法完成任务。"))
 		return TRUE
 
-	user.visible_message(span_notice("[user] repairs [src]'s damage."),
+	user.visible_message(span_notice("[user] 修复了 [src] 的损伤。"),
 	span_notice("You repair [src]."))
 	machine_stat &= ~DISABLED //Remove the disabled flag
 	durability = initial(durability) //Reset its durability to its initial value
@@ -179,7 +179,7 @@
 
 	if(isscrewdriver(I) && circuit)
 		if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_EXPERT)
-			user.visible_message(span_notice("[user] fumbles around figuring out how to deconstruct [src]."),
+			user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何拆解 [src]。"),
 			span_notice("You fumble around figuring out how to deconstruct [src]."))
 			var/fumbling_time = 50 * ( SKILL_ENGINEER_EXPERT - user.skills.getRating(SKILL_ENGINEER) )
 			if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
@@ -199,12 +199,12 @@
 			C.forceMove(loc)
 
 		if(machine_stat & BROKEN)
-			to_chat(user, span_notice("The broken glass falls out."))
+			to_chat(user, span_notice("碎玻璃掉出来了。"))
 			new /obj/item/shard(loc)
 			A.state = 3
 			A.icon_state = "3"
 		else
-			to_chat(user, span_notice("You disconnect the monitor."))
+			to_chat(user, span_notice("你断开了监视器的连接。"))
 			A.state = 4
 			A.icon_state = "4"
 
@@ -231,19 +231,19 @@
 		return FALSE
 
 	if(resistance_flags & INDESTRUCTIBLE)
-		to_chat(xeno_attacker, span_xenowarning("We're unable to damage this!"))
+		to_chat(xeno_attacker, span_xenowarning("我们无法对它造成伤害！"))
 		return
 
 	if(machine_stat & (BROKEN|DISABLED)) //If we're already broken or disabled, don't bother
-		to_chat(xeno_attacker, span_xenowarning("This peculiar thing is already broken!"))
+		to_chat(xeno_attacker, span_xenowarning("这玩意儿已经坏了！"))
 		return
 
 	if(durability <= 0)
 		set_disabled()
-		to_chat(xeno_attacker, span_xenowarning("We smash the annoying device, disabling it!"))
+		to_chat(xeno_attacker, span_xenowarning("我们砸烂了这烦人的装置，让它彻底失灵！"))
 	else
 		durability--
-		to_chat(xeno_attacker, span_xenowarning("We smash the annoying device!"))
+		to_chat(xeno_attacker, span_xenowarning("我们砸烂这烦人的装置！"))
 
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_DISARM2) //SFxeno_attacker
 	playsound(loc, pick('sound/effects/bang.ogg','sound/effects/metal_crash.ogg','sound/effects/meteorimpact.ogg'), 25, 1) //SFxeno_attacker

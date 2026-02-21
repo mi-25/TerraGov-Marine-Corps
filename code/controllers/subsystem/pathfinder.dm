@@ -1,4 +1,4 @@
 TIMER_SUBSYSTEM_DEF(pathfinder)
-	name = "Pathfinder"
+	name = "寻路者"
 	priority = FIRE_PRIORITY_PATHFINDING
 

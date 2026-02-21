@@ -25,8 +25,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 //Pow! Headshot
 
 /obj/item/weapon/gun/rifle/sniper/antimaterial
-	name = "\improper SR-26 scoped rifle"
-	desc = "The SR-26 is an IFF capable sniper rifle which is mostly used by long range marksmen. It excels in long-range combat situations and support sniping. It has a laser designator installed, and the scope itself has IFF integrated into it. Uses specialized 10x28 caseless rounds made to work with the guns odd IFF-scope system.  \nIt has an integrated Target Marker and a Laser Targeting system.\n\"Peace Through Superior Firepower\"."
+	name = "\improper SR-26 狙击步枪"
+	desc = "SR-26是一款具备敌我识别能力的狙击步枪，主要供远程射手使用。它在远距离作战和支援狙击方面表现出色。该枪装有激光指示器，瞄准镜本身集成了敌我识别功能。使用特制的10x28毫米无壳弹，专为配合该枪独特的敌我识别瞄准镜系统而设计。\n它集成了目标标记器和激光瞄准系统。\n'以优势火力换取和平'。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "t26"
 	worn_icon_state = "t26"
@@ -157,7 +157,7 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 		return
 	if(laser_target && !line_of_sight(user, laser_target, 24))
 		laser_off()
-		to_chat(user, span_danger("You lose sight of your target!"))
+		to_chat(user, span_danger("你失去了目标的踪迹！"))
 		playsound(user,'sound/machines/click.ogg', 25, 1)
 
 /obj/item/weapon/gun/rifle/sniper/antimaterial/zoom(mob/living/user, tileoffset = 11, viewsize = 12) //tileoffset is client view offset in the direction the user is facing. viewsize is how far out this thing zooms. 7 is normal view
@@ -174,7 +174,7 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 
 /obj/item/weapon/gun/rifle/sniper/antimaterial/proc/activate_laser_target(atom/target, mob/living/user)
 	laser_target = target
-	to_chat(user, span_danger("You focus your target marker on [target]!"))
+	to_chat(user, span_danger("你将目标标记对准了[target]！"))
 	targetmarker_primed = FALSE
 	targetmarker_on = TRUE
 	START_PROCESSING(SSobj, src)
@@ -188,12 +188,12 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 /obj/item/weapon/gun/rifle/sniper/antimaterial/proc/laser_on(mob/user)
 	var/obj/item/attachable/scope = LAZYACCESS(attachments_by_slot, ATTACHMENT_SLOT_RAIL)
 	if(!scope.zoom) //Can only use and prime the laser targeter when zoomed.
-		to_chat(user, span_warning("You must be zoomed in to use your target marker!"))
+		to_chat(user, span_warning("你必须放大才能使用目标标记器！"))
 		return TRUE
 	targetmarker_primed = TRUE //We prime the target laser
 	if(user?.client)
 		user.client.click_intercept = src
-		to_chat(user, span_notice("<b>You activate your target marker and take careful aim.</b>"))
+		to_chat(user, span_notice("<b>你激活了目标标记器，仔细瞄准。</b>"))
 		playsound(user,'sound/machines/click.ogg', 25, 1)
 	return TRUE
 
@@ -208,7 +208,7 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	targetmarker_primed = FALSE
 	if(user?.client)
 		user.client.click_intercept = null
-		to_chat(user, span_notice("<b>You deactivate your target marker.</b>"))
+		to_chat(user, span_notice("<b>你已停用目标标记器。</b>"))
 		playsound(user,'sound/machines/click.ogg', 25, 1)
 	return TRUE
 
@@ -216,8 +216,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	autobalance_monitor_value = null
 
 /obj/item/weapon/gun/rifle/sniper/pmc_railgun
-	name = "\improper SRX-42 anti-tank rail rifle"
-	desc = "A high end mag-rail heavy sniper rifle from Nanotrasen chambered in the heaviest ammo available. Trigger discipline is highly recommended."
+	name = "\improper SRX-42 反坦克导轨步枪"
+	desc = "一把来自纳米传讯的高端磁轨重型狙击步枪，使用可用的最重型弹药。强烈建议遵守枪支安全规则。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "m42r"
 	worn_icon_state = "m42r"
@@ -266,8 +266,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 //SVD //Based on the Dragunov sniper rifle.
 
 /obj/item/weapon/gun/rifle/sniper/svd
-	name = "\improper SR-33 Dragunov sniper rifle"
-	desc = "A semiautomatic sniper rifle, famed for it's marksmanship, and is built from the ground up for it. Fires 7.62x54mmR rounds."
+	name = "\improper SR-33 德拉贡诺夫狙击步枪"
+	desc = "一把半自动狙击步枪，以其精准射击而闻名，专为狙击任务打造。发射7.62x54mmR子弹。"
 	icon = 'icons/obj/items/guns/marksman64.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/guns/marksman_left_64.dmi',
@@ -317,8 +317,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 //Based off the XM-8. BR-8 rifle
 
 /obj/item/weapon/gun/rifle/tx8
-	name = "\improper BR-8 scout rifle"
-	desc ="The BR-8 is a light specialized scout rifle, mostly used by light infantry and scouts. It's designed to be useable at all ranges by being very adaptable to different situations due to the ability to use different ammo types. Has IFF.  Takes specialized overpressured 10x28mm rounds."
+	name = "\improper BR-8侦察步枪"
+	desc ="BR-8是一款轻型专用侦察步枪，主要供轻步兵和侦察兵使用。它设计为可在所有射程使用，通过能够使用不同弹药类型来适应不同情况。具有敌我识别功能。使用专用的超压10x28毫米弹药。"
 	icon = 'icons/obj/items/guns/marksman64.dmi'
 	icon_state = "tx8"
 	worn_icon_state = "tx8"
@@ -392,8 +392,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 // MINIGUN
 
 /obj/item/weapon/gun/minigun
-	name = "\improper MG-100 Vindicator minigun"
-	desc = "A six-barreled rotary machine gun, the ultimate in man-portable firepower. Capable of laying down a steady stream high velocity armor piercing rounds. Try not to kill all of your friends with it."
+	name = "\improper MG-100 复仇者 转管机枪"
+	desc = "一门六管旋转机枪，便携式火力的终极体现。能够持续发射高速穿甲弹。尽量别用它把队友全干掉了。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "minigun"
 	worn_icon_state = "minigun"
@@ -445,8 +445,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 
 //A minigun that requires only one hand. Meant for use with vehicles
 /obj/item/weapon/gun/minigun/one_handed
-	name = "\improper Modified MG-100 Vindicator Minigun"
-	desc = "A minigun that's been modified to be used one handed. Intended for use mounted on a vehicle."
+	name = "\improper 改装型 MG-100 复仇者转管机枪"
+	desc = "一把经过改装可单手使用的转管机枪。设计用于车载安装。"
 
 	max_shells = 1000 //codex
 	reload_sound = 'sound/weapons/guns/interact/working_the_bolt.ogg'
@@ -474,8 +474,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 // SG minigun
 
 /obj/item/weapon/gun/minigun/smart_minigun
-	name = "\improper SG-85 smart handheld gatling gun"
-	desc = "A true monster of providing supportive suppresing fire, the SG-85 is the TGMC's IFF-capable minigun for heavy fire support duty. Boasting a higher firerate than any other handheld weapon. It is chambered in 10x26 caseless."
+	name = "\improper SG-85 智能手持加特林机枪"
+	desc = "真正的火力压制怪物，SG-85是TGMC用于重型火力支援任务的敌我识别能力加特林机枪。拥有比任何其他手持武器更高的射速。它使用10x26无壳弹。"
 	icon_state = "minigun_sg"
 	worn_icon_state = "minigun_sg"
 	fire_animation = "minigun_sg_fire"
@@ -505,8 +505,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 //PB-12
 
 /obj/item/weapon/gun/rifle/pepperball
-	name = "\improper PB-12 pepperball gun"
-	desc = "The PB-12 is ostensibly riot control device used by the TGMC in spiffy colors, working through a SAN ball that sends a short acting neutralizing chemical to knock out it's target, or weaken them. Guranteed to work on just about everything. Uses SAN Ball Holders as magazines."
+	name = "\improper PB-12胡椒球枪"
+	desc = "PB-12表面上是地球政府殖民地海军陆战队用于防暴的设备，采用鲜艳配色，通过SAN弹发射短效中和化学物质来击倒或削弱目标。几乎对所有目标都有效。使用SAN弹夹作为弹匣。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "pepperball"
 	worn_icon_state = "pepperball"
@@ -547,13 +547,13 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	placed_overlay_iconstate = "pepper"
 
 /obj/item/weapon/gun/flamer/hydro_cannon/pepperball
-	name = "coaxial watercannon"
-	desc = "For the quenching of unfortunate mistakes."
+	name = "同轴水炮"
+	desc = "用于消除不幸的失误。"
 	icon_state = "hydrocannon_pepper"
 
 /obj/item/weapon/gun/rifle/pepperball/pepperball_mini
-	name = "mini pepperball gun"
-	desc = "An attachable version of the PB-12 pepperball gun. It has a smaller magazine size and has a slower rate of fire."
+	name = "迷你胡椒球枪"
+	desc = "PB-12胡椒球枪的可附加版本。弹匣容量较小，射速较慢。"
 	icon_state = "pepperball_mini"
 	slot = ATTACHMENT_SLOT_UNDER
 	max_shells = 20
@@ -593,8 +593,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 //M5 RPG
 
 /obj/item/weapon/gun/launcher/rocket
-	name = "\improper RL-5 rocket launcher"
-	desc = "The RL-5 is the primary anti-armor used around the galaxy. Used to take out light-tanks and enemy structures, the RL-5 rocket launcher is a dangerous weapon with a variety of combat uses. Uses a variety of 84mm rockets."
+	name = "\improper RL-5火箭发射器"
+	desc = "RL-5是银河系广泛使用的主要反装甲武器。用于摧毁轻型坦克和敌方建筑，RL-5火箭发射器是一种危险的武器，具有多种战斗用途。使用多种84毫米火箭弹。"
 	icon = 'icons/obj/items/guns/special.dmi'
 	icon_state = "m5"
 	worn_icon_state = "m5"
@@ -665,8 +665,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 //RL-152 RPG
 
 /obj/item/weapon/gun/launcher/rocket/sadar
-	name = "\improper RL-152 SADAR rocket launcher"
-	desc = "The RL-152 is the primary anti-armor weapon of the TGMC. Used to take out light-tanks and enemy structures, the RL-152 rocket launcher is a dangerous weapon with a variety of combat uses. Uses a variety of 84mm rockets."
+	name = "\improper RL-152 SADAR 火箭发射器"
+	desc = "RL-152是TGMC的主要反装甲武器。用于摧毁轻型坦克和敌方建筑，RL-152火箭发射器是一种危险的武器，具有多种战斗用途。使用多种84毫米火箭弹。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "sadar"
 	worn_icon_state = "sadar"
@@ -729,8 +729,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 //M5 RPG'S MEAN FUCKING COUSIN
 
 /obj/item/weapon/gun/launcher/rocket/m57a4
-	name = "\improper RL-57A quad thermobaric launcher"
-	desc = "The RL-57A is posssibly the most destructive man-portable weapon ever made. It is a 4-barreled missile launcher capable of burst-firing 4 thermobaric missiles. Enough said."
+	name = "\improper RL-57A 四联热压发射器"
+	desc = "RL-57A可能是迄今为止最具破坏性的单兵武器。这是一款四管导弹发射器，能够连发四枚温压导弹。无需多言。"
 	icon_state = "m57a4"
 	worn_icon_state = "m57a4"
 	max_shells = 4 //codex
@@ -764,8 +764,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	starting_attachment_types = list(/obj/item/attachable/magnetic_harness)
 
 /obj/item/weapon/gun/launcher/rocket/m57a4/t57
-	name = "\improper RL-57 quad thermobaric launcher"
-	desc = "The RL-57 is posssibly the most awful man portable weapon. It is a 4-barreled missile launcher capable of burst-firing 4 thermobaric missiles with nearly no force to the rocket. Enough said."
+	name = "\improper RL-57 四联热压发射器"
+	desc = "RL-57可能是最糟糕的单兵武器。这是一款四管导弹发射器，能够以近乎无后坐力的方式连发四枚温压导弹。无需多言。"
 	icon_state = "t57"
 	worn_icon_state = "t57"
 	default_ammo_type = /obj/item/ammo_magazine/rocket/m57a4
@@ -778,8 +778,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 //RL-160 Recoilless Rifle. Its effectively an RPG codewise.
 
 /obj/item/weapon/gun/launcher/rocket/recoillessrifle
-	name = "\improper RL-160 recoilless rifle"
-	desc = "The RL-160 recoilless rifle is a long range explosive ordanance device used by the TGMC used to fire explosive shells at far distances. Uses a variety of 67mm shells designed for various purposes."
+	name = "\improper RL-160 无后坐力步枪"
+	desc = "RL-160无后坐力步枪是TGMC使用的一种远程爆炸性武器装置，用于在远距离发射爆炸性炮弹。使用多种67毫米炮弹，设计用于不同目的。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "t160"
 	worn_icon_state = "t160"
@@ -824,8 +824,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 //Disposable RPG
 
 /obj/item/weapon/gun/launcher/rocket/oneuse
-	name = "\improper RL-72 disposable rocket launcher"
-	desc = "This is the premier disposable rocket launcher used throughout the galaxy, it cannot be reloaded or unloaded on the field. This one fires an 84mm explosive rocket. Spacebar to shorten or extend it to make it storeable or fireable, respectively."
+	name = "\improper RL-72一次性火箭发射器"
+	desc = "这是全银河系首屈一指的一次性火箭发射器，无法在战场上重新装填或卸载弹药。这款发射器可发射84毫米爆炸火箭弹。按空格键可缩短或延长发射器，分别用于储存或发射状态。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "t72"
 	worn_icon_state = "t72"
@@ -886,14 +886,14 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 			human_user.update_inv_r_hand()
 
 /obj/item/weapon/gun/launcher/rocket/oneuse/anti_tank
-	desc = "This is the premier disposable rocket launcher used throughout the galaxy, it cannot be reloaded or unloaded on the field. This one fires an 84mm AT rocket. Spacebar to shorten or extend it to make it storeable or fireable, respectively."
+	desc = "这是全银河系首屈一指的一次性火箭发射器，无法在战场上重新装填或卸载弹药。此型号发射84毫米反坦克火箭弹。按空格键可缩短或延长发射器，分别用于储存或发射状态。"
 	default_ammo_type = /obj/item/ammo_magazine/rocket/oneuse/anti_tank
 	allowed_ammo_types = list(/obj/item/ammo_magazine/rocket/oneuse/anti_tank)
 
 //SOM RPG
 /obj/item/weapon/gun/launcher/rocket/som
-	name = "\improper V-71 rocket launcher"
-	desc = "The V-71 is a man portable rocket propelled grenade launcher employed by the SOM. It's design has changed little over centuries and is light weight and cheap to manufacture, while capable of firing a wide variety of 84mm rockets to provide excellent tactical flexibility."
+	name = "\improper V-71火箭发射器"
+	desc = "V-71是一种由火星之子使用的便携式火箭推进手雷发射器。其设计几个世纪以来几乎没有变化，重量轻且制造成本低廉，同时能够发射多种84毫米火箭弹，提供出色的战术灵活性。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "rpg"
 	worn_icon_state = "rpg"
@@ -937,8 +937,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 
 //ICC RPG
 /obj/item/weapon/gun/launcher/rocket/icc
-	name = "\improper MP-IRL rocket launcher"
-	desc = "The Man Portable-Infantry Rocket Launcher is a man portable warhead launcher employed by the ICC. Being capable of firing a wide variety of 83m rear-mounted rockets to provide excellent tactical flexibility in a compact package."
+	name = "\improper MP-IRL 火箭发射器"
+	desc = "便携式步兵火箭发射器是ICC使用的一种便携式弹头发射器。能够发射多种83毫米后装式火箭弹，在紧凑的包装中提供了出色的战术灵活性。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "iccrpg"
 	worn_icon_state = "iccrpg"
@@ -974,8 +974,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 
 //VSD RPG
 /obj/item/weapon/gun/launcher/rocket/vsd
-	name = "\improper C153 shoulder launcher"
-	desc = "An Anti-personnel Rocket Launcher made by Crash Core. Used mainly by V.S.D specialists, it can fire three specialized rounds. High Explosive, Incendiary Explosive, and a Chemical Capped High Explosive."
+	name = "\improper C153肩射发射器"
+	desc = "由Crash Core制造的反人员火箭发射器。主要供V.S.D专家使用，可发射三种特种弹药：高爆弹、燃烧弹和化学弹头高爆弹。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "c153"
 	worn_icon_state = "c153"
@@ -1013,8 +1013,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 //RG-220 Railgun
 
 /obj/item/weapon/gun/rifle/railgun
-	name = "\improper RG-220 railgun"
-	desc = "The RG-220 is a specialized heavy duty railgun made to shred through hard armor to allow for follow up attacks. Uses specialized canisters to reload."
+	name = "\improper RG-220 导轨炮"
+	desc = "RG-220是一款专为撕裂重型装甲而设计的重型导轨炮，旨在为后续攻击创造条件。使用专用弹罐进行装填。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "railgun"
 	worn_icon_state = "railgun"
@@ -1060,8 +1060,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 //ML-120 Coilgun
 
 /obj/item/weapon/gun/rifle/icc_coilgun
-	name = "\improper ML-120 coilgun"
-	desc = "The ML-120 coilgun is the most commonly seen coilgun in ICCAF use, firing magnetic projecitles at a incredibly high velocity. It requires some windup but will penetrate walls, your foes, and your friendlies too. So watch out... Uses specialized canisters to reload."
+	name = "\improper ML-120 线圈炮"
+	desc = "ML-120线圈炮是ICCAF部队中最常见的线圈炮，能以极高的速度发射磁性弹丸。它需要一定的预热时间，但能穿透墙壁、你的敌人，还有你的友军。所以小心点……使用专用弹罐进行装填。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "ml120"
 	worn_icon_state = "ml120"
@@ -1100,8 +1100,8 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	movement_acc_penalty_mult = 6
 
 /obj/item/weapon/gun/minigun/vsd_autocannon
-	name = "\improper CC/AT32 Handheld Autocannon"
-	desc = "The CC/AT32, a new handheld Autocannon of the Vyacheslav Security Detail. Firing 20mm rounds and 40mm grenades. Its ammo variety goes from Armor Piercing, Anti-Tank, and Explosives."
+	name = "\improper CC/AT32 手持式自动炮"
+	desc = "CC/AT32，维亚切斯拉夫安保分队的新型手持自动炮。发射20毫米炮弹和40毫米手雷。其弹药种类包括穿甲弹、反坦克弹和爆破弹。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "at32"
 	worn_icon_state = "at32"

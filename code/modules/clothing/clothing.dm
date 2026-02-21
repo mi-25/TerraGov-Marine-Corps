@@ -1,5 +1,5 @@
 /obj/item/clothing
-	name = "clothing"
+	name = "服装"
 
 	// Resets the armor on clothing since by default /objs get 100 bio armor
 	soft_armor = list()
@@ -102,7 +102,7 @@
 ///////////////////////////////////////////////////////////////////////
 // Ears: headsets, earmuffs and tiny objects
 /obj/item/clothing/ears
-	name = "ears"
+	name = "耳朵"
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/clothing/ears_left.dmi',
 		slot_r_hand_str = 'icons/mob/inhands/clothing/ears_right.dmi',
@@ -118,8 +118,8 @@
 
 
 /obj/item/clothing/ears/earmuffs
-	name = "earmuffs"
-	desc = "Protects your hearing from loud noises, and quiet ones as well."
+	name = "耳罩"
+	desc = "保护您的听力免受响亮噪音和细微声响的干扰。"
 	icon_state = "earmuffs"
 	worn_icon_state = "earmuffs"
 	equip_slot_flags = ITEM_SLOT_EARS
@@ -138,7 +138,7 @@
 		slot_l_hand_str = 'icons/mob/inhands/clothing/suits_left.dmi',
 		slot_r_hand_str = 'icons/mob/inhands/clothing/suits_right.dmi',
 	)
-	name = "suit"
+	name = "防护服"
 	armor_protection_flags = CHEST|GROIN|ARMS|LEGS
 	allowed = list(/obj/item/tank/emergency_oxygen)
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0)
@@ -182,7 +182,7 @@
 /////////////////////////////////////////////////////////
 //Gloves
 /obj/item/clothing/gloves
-	name = "gloves"
+	name = "手套"
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/clothing/gloves.dmi'
@@ -226,16 +226,16 @@
 		return
 	if(iswirecutter(I) || istype(I, /obj/item/tool/surgery/scalpel))
 		if(clipped)
-			to_chat(user, span_notice("The [src] have already been clipped!"))
+			to_chat(user, span_notice("[src] 已经被夹住了！"))
 			update_icon()
 			return
 
 		playsound(loc, 'sound/items/wirecutter.ogg', 25, 1)
-		user.visible_message(span_warning("[user] cuts the fingertips off of the [src]."),span_warning("You cut the fingertips off of the [src]."))
+		user.visible_message(span_warning("[user]切掉了[src]的指尖。"),span_warning("You cut the fingertips off of the [src]."))
 
 		clipped = TRUE
-		name = "mangled [name]"
-		desc = "[desc]<br>They have had the fingertips cut off of them."
+		name = "被撕碎的[name]"
+		desc = "[desc]<br>他们的指尖已被切除。"
 
 
 
@@ -243,7 +243,7 @@
 //////////////////////////////////////////////////////////////////
 //Mask
 /obj/item/clothing/mask
-	name = "mask"
+	name = "面罩"
 	icon = 'icons/obj/clothing/masks.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/clothing/masks_left.dmi',
@@ -278,13 +278,13 @@
 ////////////////////////////////////////////////////////////////////////
 //Shoes
 /obj/item/clothing/shoes
-	name = "shoes"
+	name = "鞋子"
 	icon = 'icons/obj/clothing/shoes.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/clothing/shoes_left.dmi',
 		slot_r_hand_str = 'icons/mob/inhands/clothing/shoes_right.dmi',
 	)
-	desc = "Comfortable-looking shoes."
+	desc = "舒适的鞋子。"
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	siemens_coefficient = 0.9
 	armor_protection_flags = FEET

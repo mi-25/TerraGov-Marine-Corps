@@ -1,5 +1,5 @@
 /obj/machinery/door/poddoor/shutters
-	name = "\improper Shutters"
+	name = "\improper 防护板"
 	icon = 'icons/obj/doors/rapid_pdoor.dmi'
 	icon_state = "shutter"
 	power_channel = ENVIRON
@@ -74,7 +74,7 @@
 
 /obj/machinery/door/poddoor/shutters/timed_late
 	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
-	name = "Timed Emergency Shutters"
+	name = "定时紧急防护板"
 	use_power = FALSE
 
 
@@ -90,7 +90,7 @@
 	layer = BLASTDOOR_LAYER
 
 /obj/machinery/door/poddoor/shutters/opened/medbay
-	name = "Medbay Lockdown Shutters"
+	name = "医疗区封锁闸门"
 	id = "Medbay"
 
 /obj/machinery/door/poddoor/shutters/opened/wy
@@ -102,20 +102,20 @@
 	openspeed = 4 //shorter open animation.
 
 /obj/machinery/door/poddoor/shutters/mainship/thunderdome/one
-	name = "Thunderdome Blast Door"
+	name = "雷霆穹顶防爆门"
 	id = "thunderdome1"
 	resistance_flags = RESIST_ALL
 
 
 /obj/machinery/door/poddoor/shutters/mainship/thunderdome/two
-	name = "Thunderdome Blast Door"
+	name = "雷霆穹顶防爆门"
 	id = "thunderdome2"
 	resistance_flags = RESIST_ALL
 
 //transit shutters used by marine dropships
 /obj/machinery/door/poddoor/shutters/transit
-	name = "Transit shutters"
-	desc = "Safety shutters to prevent dangerous depressurization during flight"
+	name = "运输舱门"
+	desc = "安全百叶窗，用于防止飞行期间发生危险减压"
 	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	resistance_flags = RESIST_ALL|DROPSHIP_IMMUNE
 	id = "ghhjmugggggtgggbg" // do not have any button or thing have an ID assigned to this, it is a very bad idea.
@@ -129,7 +129,7 @@
 	icon_state = "shutter0"
 
 /obj/machinery/door/poddoor/shutters/mainship/selfdestruct
-	name = "Self Destruct Lockdown"
+	name = "自毁锁定"
 	id = "sd_lockdown"
 	resistance_flags = RESIST_ALL
 
@@ -145,11 +145,11 @@
 	open()
 
 /obj/machinery/door/poddoor/shutters/mainship/open/hangar
-	name = "\improper Hangar Shutters"
+	name = "\improper 机库舱门"
 	id = "hangar_shutters"
 
 /obj/machinery/door/poddoor/shutters/mainship/open/checkpoint
-	name = "Checkpoint Shutters"
+	name = "检查点闸门"
 
 
 /obj/machinery/door/poddoor/shutters/mainship/open/checkpoint/north
@@ -160,7 +160,7 @@
 	id = "southcheckpoint"
 
 /obj/machinery/door/poddoor/shutters/mainship/open/medical
-	name = "Medbay Lockdown Shutters"
+	name = "医疗区封锁闸门"
 	id = "medbay_lockdown"
 
 /obj/machinery/door/poddoor/shutters/mainship/open/indestructible
@@ -177,7 +177,7 @@
 	resistance_flags = UNACIDABLE|DROPSHIP_IMMUNE
 
 /obj/machinery/door/poddoor/shutters/mainship/pressure
-	name = "pressure shutters"
+	name = "压力闸门"
 	density = FALSE
 	opacity = FALSE
 	resistance_flags = RESIST_ALL|DROPSHIP_IMMUNE
@@ -185,7 +185,7 @@
 	closed_layer = CLOSED_BLASTDOOR_LAYER
 
 /obj/machinery/door/poddoor/shutters/tadpole_cockpit
-	name = "pressure shutters"
+	name = "压力闸门"
 	density = FALSE
 	opacity = FALSE
 	open_layer = CLOSED_BLASTDOOR_LAYER
@@ -193,72 +193,72 @@
 
 //mainship shutters
 /obj/machinery/door/poddoor/shutters/mainship/hangar
-	name = "\improper Hangar Shutters"
+	name = "\improper 机库舱门"
 	id = "hangar_shutters"
 
 /obj/machinery/door/poddoor/shutters/mainship/hangar/fuel
-	name = "\improper Solid Fuel Storage"
+	name = "\improper 固体燃料储存区"
 	id = "solid_fuel"
 
 /obj/machinery/door/poddoor/shutters/mainship/req
-	name = "\improper Requisitions Shutters"
+	name = "\improper 补给舱门关闭"
 
 /obj/machinery/door/poddoor/shutters/mainship/req/ro
-	name = "\improper RO Line"
+	name = "\improper 补给线"
 	id = "ROlobby"
 /obj/machinery/door/poddoor/shutters/mainship/req/ro1
-	name = "\improper RO Line 1"
+	name = "\improper 补给线 1"
 	id = "ROlobby1"
 
 /obj/machinery/door/poddoor/shutters/mainship/req/ro2
-	name = "\improper RO Line 2"
+	name = "\improper 补给线 2"
 	id = "ROlobby2"
 
 /obj/machinery/door/poddoor/shutters/mainship/containment
-	name = "\improper Containment Cell"
+	name = "\improper 收容单元"
 	id = "containmentcell"
 
 /obj/machinery/door/poddoor/shutters/mainship/containment/cell1
-	name = "\improper Containment Cell 1"
+	name = "\improper 收容单元 1"
 	id = "containmentcell_1"
 
 /obj/machinery/door/poddoor/shutters/mainship/containment/cell2
-	name = "\improper Containment Cell 2"
+	name = "\improper 收容单元 2"
 	id = "containmentcell_2"
 
 /obj/machinery/door/poddoor/shutters/mainship/brigarmory
-	name = "\improper Brig Armory Shutters"
+	name = "\improper 禁闭室军械库百叶窗"
 	id = "brig_armory"
 
 /obj/machinery/door/poddoor/shutters/mainship/cic
-	name = "\improper CIC Shutters"
+	name = "\improper 指挥中心防护板"
 
 /obj/machinery/door/poddoor/shutters/mainship/cic/armory
-	name = "\improper Armory Shutters"
+	name = "\improper 军械库百叶窗"
 	id = "cic_armory"
 
 /obj/machinery/door/poddoor/shutters/mainship/engineering/armory
-	name = "\improper Engineering Armory Shutters"
+	name = "\improper 工程军械库闸门"
 	id = "engi_armory"
 
 /obj/machinery/door/poddoor/shutters/mainship/corporate
-	name = "\improper Privacy Shutters"
+	name = "\improper 隐私遮板"
 	id = "cl_shutters"
 
 /obj/machinery/door/poddoor/shutters/mainship/fc_office
-	name = "\improper Privacy Shutters"
+	name = "\improper 隐私遮板"
 	id = "fc_shutters"
 
 /obj/machinery/door/poddoor/shutters/mainship/cell
-	name = "\improper Containment Cell"
+	name = "\improper 收容单元"
 	id = "Containment Cell"
 
 /obj/machinery/door/poddoor/shutters/mainship/cell/cell1
-	name = "\improper Containment Cell 1"
+	name = "\improper 收容单元 1"
 	id = "Containment Cell 1"
 
 /obj/machinery/door/poddoor/shutters/mainship/cell/cell2
-	name = "\improper Containment Cell 2"
+	name = "\improper 收容单元 2"
 	id = "Containment Cell 2"
 
 /// urban shutters
@@ -266,7 +266,7 @@
 	icon = 'icons/obj/structures/prop/urban/urbanshutters.dmi'
 	icon_state = "almayer_pdoor"
 	base_icon_state = "almayer_pdoor"
-	desc = "It's a shutter. You can <B>open</b> it with a <B>crowbar</b>, or with <B>claws</b>"
+	desc = "这是一个百叶窗。你可以用<B>撬棍</B>或<B>爪子</B><B>打开</B>它。"
 	openspeed = 4
 	///how long it takes xenos to open a shutter by hand
 	var/lift_time = 10 SECONDS
@@ -275,15 +275,15 @@
 /obj/machinery/door/poddoor/shutters/urban/attackby(obj/item/attacking_item, mob/user, params)
 	. = ..()
 	if(iscrowbar(attacking_item))
-		user.balloon_alert(user, "lifting [src]...")
+		user.balloon_alert(user, "抬起[src]...")
 		if(!do_after(user, 15 SECONDS, NONE, src, BUSY_ICON_FRIENDLY))
 			return
-		balloon_alert_to_viewers("lifts [src]")
+		balloon_alert_to_viewers("抬起[src]")
 		open()
 
 /obj/machinery/door/poddoor/shutters/urban/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(xeno_attacker.a_intent != INTENT_HELP)
-		xeno_attacker.balloon_alert(xeno_attacker, "lifting [src]...")
+		xeno_attacker.balloon_alert(xeno_attacker, "抬起[src]...")
 		if(!xeno_attacker.mob_size == MOB_SIZE_BIG)
 			if(!do_after(xeno_attacker, lift_time, NONE, src,  BUSY_ICON_HOSTILE))
 				return
@@ -291,7 +291,7 @@
 			if(!do_after(xeno_attacker, 5 SECONDS, NONE, src, BUSY_ICON_HOSTILE))
 				return
 		open()
-		balloon_alert_to_viewers("lifts [src]")
+		balloon_alert_to_viewers("举起[src]")
 
 /obj/machinery/door/poddoor/shutters/urban/open_shutters
 	icon_state = "almayer_pdoor"
@@ -320,12 +320,12 @@
 	layer = BLASTDOOR_LAYER
 
 /obj/machinery/door/poddoor/shutters/urban/white
-	desc = "That looks like it doesn't open easily."
+	desc = "这看起来不太好打开。"
 	icon_state = "w_almayer_pdoor"
 	base_icon_state = "w_almayer_pdoor"
 
 /obj/machinery/door/poddoor/shutters/urban/secure_red_door
-	desc = "That looks like it doesn't open easily."
+	desc = "这看起来不太好打开。"
 	icon_state = "pdoor"
 	base_icon_state = "pdoor"
 

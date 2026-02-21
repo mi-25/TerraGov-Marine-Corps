@@ -3,24 +3,24 @@
 //Base Area
 
 /area/magmoor
-	name = "Lava"
+	name = "岩浆"
 	icon_state = "lava"
 	outside = FALSE
 
 
 /area/magmoor/landing
-	name = "Landing Zone One"
+	name = "一号着陆区"
 	ceiling = CEILING_NONE
 	minimap_color = MINIMAP_AREA_LZ
 
 /area/magmoor/landing/two
-	name = "Landing Zone Two"
+	name = "着陆区二"
 	minimap_color = MINIMAP_AREA_LZ
 
 
 // Volcano
 /area/magmoor/volcano
-	name = "Magmoor Central Fissure"
+	name = "马格莫尔中央裂隙"
 	ceiling = CEILING_DEEP_UNDERGROUND
 	area_flags = NO_DROPPOD
 	always_unpowered = TRUE
@@ -34,194 +34,194 @@
 	always_unpowered = TRUE
 
 /area/magmoor/cave/central
-	name = "Central Caves"
+	name = "中央洞穴"
 	icon_state = "lava_cave_c"
 
 /area/magmoor/cave/central/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/magmoor/cave/north
-	name = "North Caves"
+	name = "北侧洞穴"
 	icon_state = "lava_cave_n"
 
 /area/magmoor/cave/north/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/magmoor/cave/northeast
-	name = "North East Caves"
+	name = "东北洞穴"
 	icon_state = "lava_cave_ne"
 
 /area/magmoor/cave/northeast/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/magmoor/cave/northwest
-	name = "North West Caves"
+	name = "西北洞穴"
 	icon_state = "lava_cave_nw"
 
 /area/magmoor/cave/northwest/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/magmoor/cave/south
-	name = "South Caves"
+	name = "南侧洞穴"
 	icon_state = "lava_cave_s"
 
 /area/magmoor/cave/south/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/magmoor/cave/southeast
-	name = "South East Caves"
+	name = "东南洞穴"
 	icon_state = "lava_cave_se"
 
 /area/magmoor/cave/southeast/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/magmoor/cave/southwest
-	name = "South West Caves"
+	name = "西南洞穴"
 	icon_state = "lava_cave_sw"
 
 /area/magmoor/cave/southwest/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/magmoor/cave/east
-	name = "East Caves"
+	name = "东侧洞穴"
 	icon_state = "lava_cave_e"
 
 /area/magmoor/cave/east/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/magmoor/cave/west
-	name = "West Caves"
+	name = "西侧洞穴"
 	icon_state = "lava_cave_w"
 
 /area/magmoor/cave/west/garbledradio
 	ceiling = CEILING_UNDERGROUND
 
 /area/magmoor/cave/mining/fossil
-	name = "Southwest Fossil Deposits"
+	name = "西南化石沉积区"
 	icon_state = "lava_mining_fossil"
 
 /area/magmoor/cave/rock
-	name = "Enclosed Area"
+	name = "封闭区域"
 	icon_state = "transparent"
 	area_flags = CANNOT_NUKE
 
 //Compound Outside
 /area/magmoor/compound
 	ceiling = CEILING_NONE
-	name = "Central Magmoor Compound"
+	name = "中央岩浆矿场"
 	icon_state = "central"
 	outside = TRUE
 	ambience = list('sound/ambience/ambilava1.ogg', 'sound/ambience/ambilava2.ogg', 'sound/ambience/ambilava3.ogg')
 	always_unpowered = TRUE
 
 /area/magmoor/compound/north
-	name = "North Magmoor Compound"
+	name = "北岩浆地复合体"
 	icon_state = "north"
 
 /area/magmoor/compound/northeast
-	name = "Northeast Magmoor Compound"
+	name = "东北熔岩地复合体"
 	icon_state = "northeast"
 
 /area/magmoor/compound/northwest
-	name = "Northwest Magmoor Compound"
+	name = "西北熔岩坑基地"
 	icon_state = "northwest"
 
 /area/magmoor/compound/south
-	name = "South Magmoor Compound"
+	name = "南岩浆坑基地"
 	icon_state = "south"
 
 /area/magmoor/compound/southeast
-	name = "Southeast Magmoor Compound"
+	name = "东南熔岩坑复合体"
 	icon_state = "southeast"
 
 /area/magmoor/compound/southwest
-	name = "Southwest Magmoor Compound"
+	name = "西南熔岩坑复合体"
 	icon_state = "southwest"
 
 /area/magmoor/compound/east
-	name = "East Magmoor Compound"
+	name = "东熔岩地复合体"
 	icon_state = "east"
 
 /area/magmoor/compound/west
-	name = "West Magmoor Compound"
+	name = "西岩浆区建筑群"
 	icon_state = "west"
 
 //Medical
 
 /area/magmoor/medical
-	name = "Medical Clinic"
+	name = "医疗诊所"
 	icon_state = "lava_med"
 	ceiling = CEILING_METAL
 	minimap_color = MINIMAP_AREA_MEDBAY
 
 /area/magmoor/medical/chemistry
-	name = "Medical Clinic Chemistry"
+	name = "医疗诊所化学室"
 	icon_state = "lava_chem"
 
 /area/magmoor/medical/cmo
-	name = "Chief Medical Office"
+	name = "首席医疗官"
 	icon_state = "lava_cmo"
 
 /area/magmoor/medical/breakroom
-	name = "Medical Break Room"
+	name = "医疗休息室"
 	icon_state = "cafeteria"
 
 /area/magmoor/medical/lobby
-	name = "Medical Lobby"
+	name = "医疗大厅"
 	icon_state = "lava_med"
 
 /area/magmoor/medical/surgery
-	name = "Operating Theatre"
+	name = "手术室"
 	icon_state = "surgery"
 
 /area/magmoor/medical/morgue
-	name = "Medical Morgue"
+	name = "医疗停尸间"
 	icon_state = "morgue"
 
 /area/magmoor/medical/storage
-	name = "Medical Storage"
+	name = "医疗仓库"
 	icon_state = "lava_med"
 
 /area/magmoor/medical/treatment
-	name = "Medical Treatment Center"
+	name = "医疗中心"
 	icon_state = "medbay2"
 
 /area/magmoor/medical/patient
-	name = "Medical Patient Room"
+	name = "医疗病房"
 	icon_state = "medbay3"
 
 
 //Engineer
 
 /area/magmoor/engi
-	name = "Engineering"
+	name = "工程部"
 	icon_state = "lava_engie"
 	ceiling = CEILING_METAL
 	ambience = list('sound/ambience/ambisin1.ogg', 'sound/ambience/ambisin2.ogg', 'sound/ambience/ambisin3.ogg', 'sound/ambience/ambisin4.ogg')
 	minimap_color = MINIMAP_AREA_ENGI
 
 /area/magmoor/engi/atmos
-	name = "Atmospheric Processing"
+	name = "大气处理"
 	icon_state = "lava_atmos"
 
 /area/magmoor/engi/thermal
-	name = "Thermal Reactors"
+	name = "热核反应堆"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 	icon_state = "lava_power"
 	minimap_color = MINIMAP_AREA_ENGI_CAVE
 
 /area/magmoor/engi/power
-	name = "Power Management Centre"
+	name = "电力管理中心"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 	icon_state = "lava_power"
 	minimap_color = MINIMAP_AREA_ENGI_CAVE
 
 /area/magmoor/engi/storage
-	name = "Engineering Lobby & Storage"
+	name = "工程大厅与仓库"
 	icon_state = "lava_engi_storage"
 
 /area/magmoor/engi/garage
-	name = "Engineering Garage"
+	name = "工程车库"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 	icon_state = "lava_eng1"
 	minimap_color = MINIMAP_AREA_ENGI_CAVE
@@ -229,33 +229,33 @@
 //Security
 
 /area/magmoor/security
-	name = "Holding Cells"
+	name = "拘留室"
 	icon_state = "lava_sec_prison"
 	ceiling = CEILING_METAL
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/magmoor/security/storage
-	name = "Security Armory"
+	name = "安全军械库"
 	icon_state = "lava_sec_secure"
 
 /area/magmoor/security/infocenter
-	name = "Security Information Center"
+	name = "安全信息中心"
 	icon_state = "lava_sec"
 
 /area/magmoor/security/nuke
-	name = "Emergency Nuclear Fission Facility"
+	name = "紧急核裂变设施"
 	icon_state = "lava_sec_nuke"
 
 /area/magmoor/security/arrivals/south
-	name = "Southern Arrivals Security Checkpoint"
+	name = "南部抵达安检点"
 	icon_state = "lava_sec"
 
 /area/magmoor/security/arrivals/east
-	name = "Eastern Arrivals Security Checkpoint"
+	name = "东部抵达区安检点"
 	icon_state = "lava_sec"
 
 /area/magmoor/security/lobby
-	name = "Security Lobby"
+	name = "安保大厅"
 	icon_state = "lava_sec"
 
 //Civilian
@@ -265,109 +265,109 @@
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/magmoor/civilian/cook
-	name = "Kitchen"
+	name = "厨房"
 	icon_state = "lava_cook"
 
 /area/magmoor/civilian/bar
-	name = "The Drunk Carp"
+	name = "醉醺醺的鲤鱼"
 
 /area/magmoor/civilian/dorms
-	name = "Dormitories"
+	name = "宿舍区"
 	icon_state = "lava_dorms"
 
 /area/magmoor/civilian/jani
-	name = "Janitorial Office"
+	name = "清洁工办公室"
 	icon_state = "lava_jani"
 
 /area/magmoor/civilian/clean
-	name = "Washrooms"
+	name = "盥洗室"
 	icon_state = "lava_bathrooms"
 
 /area/magmoor/civilian/clean/toilet
-	name = "Bathrooms"
+	name = "卫生间"
 	icon_state = "red"
 
 /area/magmoor/civilian/clean/shower
-	name = "Showers"
+	name = "淋浴间"
 	icon_state = "blue"
 
 /area/magmoor/civilian/chapel
-	name = "Chapel"
+	name = "礼拜堂"
 	icon_state = "lava_chapel"
 	ceiling = CEILING_GLASS
 	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg')
 
 /area/magmoor/civilian/mosque
-	name = "Mosque"
+	name = "清真寺"
 	icon_state = "lava_chapel"
 	ceiling = CEILING_GLASS
 	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg')
 
 /area/magmoor/civilian/pool
-	name = "Bath House"
+	name = "澡堂"
 	icon_state = "lava_civ"
 	ceiling = CEILING_GLASS
 
 /area/magmoor/civilian/basket
-	name = "Basketball Arena"
+	name = "篮球场"
 	icon_state = "lava_civ"
 	ceiling = CEILING_GLASS
 
 /area/magmoor/civilian/gambling
-	name = "Games Lounge"
+	name = "游戏休息室"
 	icon_state = "lava_civ"
 
 /area/magmoor/civilian/cryostasis
-	name = "Cryostasis"
+	name = "低温休眠"
 	icon_state = "lava_civ"
 
 /area/magmoor/civilian/rnr
-	name = "Rest and Recreation"
+	name = "休息与娱乐"
 
 /area/magmoor/civilian/arrival
-	name = "Southern Arrivals Hallway"
+	name = "南部抵达大厅走廊"
 	icon_state = "lava_civ"
 	ceiling = CEILING_GLASS
 	minimap_color = MINIMAP_AREA_COLONY
 
 /area/magmoor/civilian/arrival/east
-	name = "Eastern Arrivals Hallway"
+	name = "东部抵达大厅走廊"
 
 
 // Research
 /area/magmoor/research
-	name = "Research & Archaeology"
+	name = "研究与考古"
 	icon_state = "lava_research"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 	ambience = list('sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg')
 	minimap_color = MINIMAP_AREA_RESEARCH_CAVE
 
 /area/magmoor/research/containment
-	name = "Research Materials & Containment"
+	name = "研究材料与收容"
 	icon_state = "storage"
 
 /area/magmoor/research/researchdirector
-	name = "Research Director's Office"
+	name = "研究主管办公室"
 	icon_state = "blue"
 
 /area/magmoor/research/decontamination
-	name = "Research Decontamination"
+	name = "研究净化室"
 	icon_state = "decontamination"
 
 /area/magmoor/research/serverroom
-	name = "Research Server Room"
+	name = "研究服务器室"
 	icon_state = "party"
 
 /area/magmoor/research/rnd
-	name = "Research & Development"
+	name = "研发部"
 	icon_state = "research"
 
 /area/magmoor/research/rnd/lobby
-	name = "Research & Development Lobby"
+	name = "研发部大厅"
 	icon_state = "purple"
 
 /area/magmoor/research/lab
-	name = "Research Material Study"
+	name = "研究材料分析"
 	icon_state = "lava_research"
 
 //Cargo
@@ -376,43 +376,43 @@
 	minimap_color = MINIMAP_AREA_REQ
 
 /area/magmoor/cargo/processing
-	name = "Cargo Processing East"
+	name = "东区货物处理"
 	icon_state = "lava_civ_cargo"
 
 /area/magmoor/cargo/processing/south
-	name = "Cargo Processing South"
+	name = "货物处理区南侧"
 
 /area/magmoor/cargo/storage
-	name = "Cargo Storage East"
+	name = "东侧货物储存区"
 	icon_state = "storage"
 
 /area/magmoor/cargo/storage/south
-	name = "Cargo Storage South"
+	name = "货物储存区南侧"
 
 /area/magmoor/cargo/storage/secure
-	name = "Cargo Secure Storage East"
+	name = "东侧货物安全储存室"
 	icon_state = "auxstorage"
 
 /area/magmoor/cargo/storage/secure/south
-	name = "Cargo Secure Storage South"
+	name = "货物安全存储区南侧"
 
 /area/magmoor/cargo/freezer
-	name = "Cargo Freezer East"
+	name = "东侧货舱冷冻室"
 	icon_state = "kitchen"
 
 //Hydroponics
 /area/magmoor/hydroponics
-	name = "Hydropnics Lobby & Livestock"
+	name = "水培大厅与牲畜区"
 	icon_state = "lava_civ_garden"
 	ceiling = CEILING_GLASS
 	outside = TRUE
 	minimap_color = MINIMAP_AREA_LIVING
 
 /area/magmoor/hydroponics/north
-	name = "Hydropnics North"
+	name = "水培室北区"
 
 /area/magmoor/hydroponics/south
-	name = "Hydropnics South"
+	name = "水培区南侧"
 
 //Command
 /area/magmoor/command
@@ -420,44 +420,44 @@
 	minimap_color = MINIMAP_AREA_COMMAND
 
 /area/magmoor/command/lobby
-	name = "North Command Lobby"
+	name = "北指挥大厅"
 	icon_state = "blue2"
 
 /area/magmoor/command/lobby/east
-	name = "East Command Lobby"
+	name = "东侧指挥大厅"
 
 /area/magmoor/command/office
-	name = "Command Office"
+	name = "指挥室"
 	icon_state = "law"
 
 /area/magmoor/command/office/main
-	name = "Overseer's Office"
+	name = "监控室"
 	icon_state = "lava_comm"
 
 /area/magmoor/command/conference
-	name = "Command Conference Room"
+	name = "指挥会议室"
 	icon_state = "head_quarters"
 
 /area/magmoor/command/commandroom
-	name = "Command Control Room"
+	name = "指挥控制室"
 	icon_state = "bridge"
 	ambience = list('sound/ambience/signal.ogg')
 
 //Mining
 /area/magmoor/mining/
-	name = "Mining Equipment & Break Room"
+	name = "采矿设备与休息室"
 	icon_state = "lava_mining"
 	ceiling = CEILING_DEEP_UNDERGROUND_METAL
 	minimap_color = MINIMAP_AREA_REQ_CAVE
 
 /area/magmoor/mining/garage
-	name = "Mining Garage & Storage"
+	name = "采矿车库与仓库"
 	icon_state = "storage"
 
 /area/magmoor/mining/refinery
-	name = "Ore Refinery"
+	name = "矿石精炼厂"
 	icon_state = "lava_mining_proc"
 
 /area/magmoor/mining/storage
-	name = "Mineral Storage"
+	name = "矿物储存"
 	icon_state = "storage"

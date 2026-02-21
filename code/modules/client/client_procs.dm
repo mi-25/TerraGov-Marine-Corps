@@ -70,7 +70,7 @@
 			topiclimiter[SECOND_COUNT] = 0
 		topiclimiter[SECOND_COUNT] += 1
 		if (topiclimiter[SECOND_COUNT] > stl)
-			to_chat(src, span_danger("Your previous action was ignored because you've done too many in a second"))
+			to_chat(src, span_danger("你之前的操作被忽略了，因为你在1秒内执行了太多操作。"))
 			return
 
 	if(tgui_Topic(href_list))
@@ -85,7 +85,7 @@
 
 	//byond bug ID:2256651
 	if (asset_cache_job && (asset_cache_job in completed_asset_jobs))
-		to_chat(src, span_danger("An error has been detected in how your client is receiving resources. Attempting to correct.... (If you keep seeing these messages you might want to close byond and reconnect)"))
+		to_chat(src, span_danger("检测到客户端接收资源时出现错误。正在尝试修正……（如果持续看到此消息，建议关闭BYOND并重新连接）"))
 		src << browse("...", "window=asset_cache_browser")
 		return
 	if (href_list["asset_cache_preload_data"])
@@ -256,13 +256,13 @@
 		return
 
 	if(byond_build < 1555)
-		to_chat(src, span_userdanger("Your version of byond might have rendering lag issues, it is recommended you update your version to above Byond version 1555 if you encounter them."))
+		to_chat(src, span_userdanger("您的 BYOND 版本可能存在渲染延迟问题，如果遇到此类问题，建议您将版本更新至 BYOND 1555 以上。"))
 		to_chat(src, span_danger("You can go to <a href=\"https://secure.byond.com/download/build\">BYOND's website</a> to download other versions."))
 
 	if(num2text(byond_build) in GLOB.blacklisted_builds)
 		log_access("Failed login: [key] - blacklisted byond version")
-		to_chat(src, span_userdanger("Your version of byond is blacklisted."))
-		to_chat(src, span_danger("Byond build [byond_build] ([byond_version].[byond_build]) has been blacklisted for the following reason: [GLOB.blacklisted_builds[num2text(byond_build)]]."))
+		to_chat(src, span_userdanger("您的 BYOND 版本已被列入黑名单。"))
+		to_chat(src, span_danger("BYOND 版本 [byond_build] ([byond_version].[byond_build]) 因以下原因已被列入黑名单：[GLOB.blacklisted_builds[num2text(byond_build)]]。"))
 		to_chat(src, span_danger("Please download a new version of byond. If [byond_build] is the latest, you can go to <a href=\"https://secure.byond.com/download/build\">BYOND's website</a> to download other versions."))
 		addtimer(CALLBACK(src, qdel(src), 2 SECONDS))
 		return
@@ -301,10 +301,10 @@
 			msg += "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.<br>"
 			src << browse(HTML_SKELETON(msg), "window=warning_popup")
 		else
-			to_chat(src, span_danger("<b>Your version of byond may be getting out of date:</b>"))
+			to_chat(src, span_danger("<b>您的 BYOND 版本可能已过时：</b>"))
 			to_chat(src, CONFIG_GET(string/client_warn_message))
-			to_chat(src, "Your version: [byond_version].[byond_build]")
-			to_chat(src, "Required version to remove this message: [warn_version].[warn_build] or later")
+			to_chat(src, "你的版本：[byond_version].[byond_build]")
+			to_chat(src, "移除此消息所需版本：[warn_version].[warn_build] 或更高")
 			to_chat(src, "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.")
 
 	var/cached_player_age = set_client_age_from_db(tdata) //we have to cache this because other shit may change it and we need it's current value now down below.
@@ -330,7 +330,7 @@
 	apply_clickcatcher()
 
 	if(prefs.lastchangelog != GLOB.changelog_hash) //bolds the changelog button on the interface so we know there are updates.
-		to_chat(src, span_info("You have unread updates in the changelog."))
+		to_chat(src, span_info("您有未读的更新日志。"))
 		if(CONFIG_GET(flag/aggressive_changelog))
 			changes()
 		else
@@ -504,7 +504,7 @@
 			clicklimiter[SECOND_COUNT] = 0
 		clicklimiter[SECOND_COUNT] += 1+(!!ab)
 		if(clicklimiter[SECOND_COUNT] > scl)
-			to_chat(src, span_danger("Your previous click was ignored because you've done too many in a second"))
+			to_chat(src, span_danger("你之前的点击被忽略了，因为你在一秒内操作了太多次。"))
 			return
 
 	return ..()
@@ -643,7 +643,7 @@
 			var/list/panic_addr = CONFIG_GET(string/panic_server_address)
 			if(panic_addr && !connectiontopic_a["redirect"])
 				var/panic_name = CONFIG_GET(string/panic_server_name)
-				to_chat(src, span_notice("Sending you to [panic_name ? panic_name : panic_addr]."))
+				to_chat(src, span_notice("正在将你送往[panic_name ? panic_name : panic_addr]。"))
 				winset(src, null, "command=.options")
 				src << link("[panic_addr]?redirect=1")
 			qdel(query_client_in_db)
@@ -806,8 +806,8 @@
 		if (oldcid != computer_id && computer_id != lastcid) //IT CHANGED!!!
 			cidcheck -= ckey //so they can try again after removing the cid randomizer.
 
-			to_chat(src, span_userdanger("Connection Error:"))
-			to_chat(src, span_danger("Invalid ComputerID(spoofed). Please remove the ComputerID spoofer from your byond installation and try again."))
+			to_chat(src, span_userdanger("连接错误："))
+			to_chat(src, span_danger("无效的计算机ID（伪造）。请从您的BYOND安装中移除计算机ID伪造器，然后重试。"))
 
 			if (!cidcheck_failedckeys[ckey])
 				message_admins(span_adminnotice("[key_name(src)] has been detected as using a cid randomizer. Connection rejected."))
@@ -941,10 +941,10 @@
 /client/AllowUpload(filename, filelength)
 	if(holder)
 		if(filelength > UPLOAD_LIMIT_ADMIN)
-			to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [UPLOAD_LIMIT_ADMIN/1024]KiB.</font>")
+			to_chat(src, "<font color='red'>错误：AllowUpload()：文件上传过大。上传限制：[UPLOAD_LIMIT_ADMIN/1024]KiB。</font>")
 			return FALSE
 	else if(filelength > UPLOAD_LIMIT)
-		to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [UPLOAD_LIMIT/1024]KiB.</font>")
+		to_chat(src, "<font color='red'>错误：AllowUpload()：文件上传过大。上传限制：[UPLOAD_LIMIT/1024]KiB。</font>")
 		return FALSE
 	return TRUE
 
@@ -983,13 +983,13 @@ GLOBAL_VAR_INIT(automute_on, null)
 
 	if(mute)
 		if(GLOB.automute_on && !check_rights(R_ADMIN, FALSE))
-			to_chat(src, span_danger("You have exceeded the spam filter. An auto-mute was applied."))
+			to_chat(src, span_danger("你已超过垃圾信息过滤阈值。已自动禁言。"))
 			create_message("note", ckey(key), "SYSTEM", "Automuted due to spam. Last message: '[last_message]'", null, null, FALSE, TRUE, null, FALSE, "Minor")
 			mute(src, mute_type, TRUE)
 		return TRUE
 
 	if(warning && GLOB.automute_on && !check_rights(R_ADMIN, FALSE))
-		to_chat(src, span_danger("You are nearing the spam filter limit."))
+		to_chat(src, span_danger("您已接近垃圾信息过滤器限制。"))
 
 /client/vv_edit_var(var_name, var_value)
 	switch(var_name)
@@ -1049,7 +1049,7 @@ GLOBAL_VAR_INIT(automute_on, null)
 /client/proc/check_panel_loaded()
 	if(stat_panel.is_ready())
 		return
-	to_chat(src, span_userdanger("Statpanel failed to load, click <a href='byond://?src=[REF(src)];reload_statbrowser=1'>here</a> to reload the panel "))
+	to_chat(src, span_userdanger("状态面板加载失败，点击<a href='byond://?src=[REF(src)];reload_statbrowser=1'>此处</a>重新加载面板"))
 
 /**
  * Handles incoming messages from the stat-panel TGUI.

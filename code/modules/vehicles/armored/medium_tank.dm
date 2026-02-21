@@ -1,6 +1,6 @@
 /obj/vehicle/sealed/armored/multitile/medium //Its a smaller tank, we had sprites for it so whoo
-	name = "THV - Hades"
-	desc = "A metal behemoth which is designed to cleave through enemy lines. It comes pre installed with a main tank cannon capable of deploying heavy payloads, as well as a minigun which can tear through multiple targets in quick succession."
+	name = "THV - 冥王号"
+	desc = "一台金属巨兽，专为撕裂敌军防线而设计。它预装了主战坦克炮，能够投送重型有效载荷，以及一门可快速连续撕裂多个目标的加特林机枪。"
 	icon = 'icons/obj/armored/2x2/medium_vehicles.dmi'
 	turret_icon = 'icons/obj/armored/2x2/medium_vehicles.dmi'
 	turret_icon_state = "tank_turret"

@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(greyscale)
-	name = "Greyscale"
+	name = "灰度"
 	flags = SS_NO_FIRE
 	init_stage = INITSTAGE_EARLY
 

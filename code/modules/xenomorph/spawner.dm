@@ -1,7 +1,7 @@
 
 /obj/structure/xeno/spawner
-	name = "spawner"
-	desc = "A slimy, oozy resin bed filled with foul-looking egg-like ...things."
+	name = "生成器"
+	desc = "一个黏滑、渗液的树脂床，里面填满了看起来恶心的蛋状……东西。"
 	icon = 'icons/Xeno/3x3building.dmi'
 	icon_state = "spawner"
 	bound_width = 96

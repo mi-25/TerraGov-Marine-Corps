@@ -292,12 +292,12 @@
 
 	if(overflow < 1 || bypass)
 		if(old_overflow)
-			to_chat(owner, span_notice("You don't feel as overwhelmed by all the drugs any more."))
+			to_chat(owner, span_notice("你不再感到被所有药物压得喘不过气。"))
 			old_overflow = FALSE
 		return
 
 	if(!old_overflow)
-		to_chat(owner, span_warning("All the different drugs in you are starting to make you feel off..."))
+		to_chat(owner, span_warning("你体内的各种药物开始让你感到不适..."))
 		old_overflow = TRUE
 
 	owner.set_drugginess(3)

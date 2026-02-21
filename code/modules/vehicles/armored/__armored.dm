@@ -1,6 +1,6 @@
 /obj/vehicle/sealed/armored
-	name = "\improper MT - Shortstreet MK4"
-	desc = "An adorable chunk of metal with an alarming amount of firepower designed to crush, immolate, destroy and maim anything that Nanotrasen wants it to. This model contains advanced Bluespace technology which allows a TARDIS-like amount of room on the inside."
+	name = "\improper MT - 短街MK4"
+	desc = "一个可爱的金属块，配备了惊人的火力，旨在碾碎、焚烧、摧毁和残害任何纳米传讯想要它对付的目标。此型号包含先进的蓝空技术，内部拥有类似塔迪斯般的巨大空间。"
 	icon = 'icons/obj/armored/1x1/tinytank.dmi'
 	icon_state = "tank"
 	pixel_x = -16
@@ -269,9 +269,9 @@
 		pitfall.zFall(src, falling_from_move = TRUE)
 
 /obj/vehicle/sealed/armored/resisted_against(mob/living/user)
-	balloon_alert(user, "exiting...")
+	balloon_alert(user, "正在退出...")
 	if(do_after(user, enter_delay, NONE, src))
-		balloon_alert(user, "exited")
+		balloon_alert(user, "已退出")
 		mob_exit(user, TRUE)
 
 /obj/vehicle/sealed/armored/CanAllowThrough(atom/movable/mover, turf/target)
@@ -285,7 +285,7 @@
 	. = ..()
 	if(HAS_TRAIT(A, TRAIT_STOPS_TANK_COLLISION))
 		if(TIMER_COOLDOWN_FINISHED(src, COOLDOWN_VEHICLE_CRUSHSOUND))
-			visible_message(span_danger("[src] is stopped by [A]!"))
+			visible_message(span_danger("[src]被[A]拦住了！"))
 			playsound(A, 'sound/effects/metal_crash.ogg', 45)
 			TIMER_COOLDOWN_START(src, COOLDOWN_VEHICLE_CRUSHSOUND, 1 SECONDS)
 		return
@@ -296,7 +296,7 @@
 	A.vehicle_collision(src, get_dir(src, A), pilot)
 	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_VEHICLE_CRUSHSOUND))
 		return
-	visible_message(span_danger("[src] rams [A]!"))
+	visible_message(span_danger("[src] 猛撞了 [A]！"))
 	playsound(A, 'sound/effects/metal_crash.ogg', 45)
 	TIMER_COOLDOWN_START(src, COOLDOWN_VEHICLE_CRUSHSOUND, 1 SECONDS)
 
@@ -346,22 +346,22 @@
 	if(!isliving(thing_to_load) && !is_type_in_typecache(thing_to_load.type, easy_load_list))
 		return FALSE
 	if(!interior)
-		user.balloon_alert(user, "no interior")
+		user.balloon_alert(user, "无内部空间")
 		return FALSE
 	if(!interior.door)
-		user.balloon_alert(user, "no door")
+		user.balloon_alert(user, "没有门")
 		return FALSE
 	var/list/enter_locs = enter_locations(user)
 	if(!((user.loc in enter_locs) || (thing_to_load.loc in enter_locs)))
-		user.balloon_alert(user, "not at entrance")
+		user.balloon_alert(user, "不在入口处")
 		return FALSE
 	if(isliving(thing_to_load))
-		user.visible_message(span_notice("[user] starts to stuff [thing_to_load] into \the [src]!"))
+		user.visible_message(span_notice("[user]开始将[thing_to_load]塞进\the [src]！"))
 		return mob_try_enter(thing_to_load, user, TRUE)
 	if(isitem(thing_to_load))
 		user.temporarilyRemoveItemFromInventory(thing_to_load)
 	thing_to_load.forceMove(interior.door.get_enter_location())
-	user.balloon_alert(user, "item thrown inside")
+	user.balloon_alert(user, "物品被扔入")
 	return TRUE
 
 /obj/vehicle/sealed/armored/mob_try_enter(mob/entering_mob, mob/user, loc_override = FALSE)
@@ -373,7 +373,7 @@
 	if(entering_mob.skills.getRating(SKILL_LARGE_VEHICLE) < required_entry_skill)
 		return FALSE
 	if(!loc_override && !(entering_mob.loc in enter_locations(entering_mob)))
-		balloon_alert(entering_mob, "not at entrance")
+		balloon_alert(entering_mob, "不在入口处")
 		return FALSE
 	return ..()
 
@@ -382,7 +382,7 @@
 	if(!.)
 		return
 	if(LAZYLEN(entering_mob.buckled_mobs))
-		balloon_alert(entering_mob, "remove riders first")
+		balloon_alert(entering_mob, "先移除骑手")
 		return FALSE
 
 /obj/vehicle/sealed/armored/add_occupant(mob/M, control_flags)
@@ -487,13 +487,13 @@
 	if(interior?.breech) // handled by gun breech
 		return
 	if(user.skills.getRating(SKILL_LARGE_VEHICLE) < required_entry_skill)
-		balloon_alert(user, "not enough skill")
+		balloon_alert(user, "技能不足")
 		return
 	if(!primary_weapon)
-		balloon_alert(user, "no primary")
+		balloon_alert(user, "无主武器")
 		return
 	if(!length(primary_weapon.ammo_magazine))
-		balloon_alert(user, "magazine empty")
+		balloon_alert(user, "弹匣已空")
 		return
 	var/choice
 	if(length(primary_weapon.ammo_magazine) == 1)
@@ -504,7 +504,7 @@
 		return
 	if(!do_after(user, 1 SECONDS, NONE, src))
 		return
-	balloon_alert(user, "magazine removed")
+	balloon_alert(user, "弹匣已卸下")
 	primary_weapon.ammo_magazine -= choice
 	user.put_in_hands(choice)
 
@@ -513,13 +513,13 @@
 	if(interior?.secondary_breech) // handled by gun breech
 		return
 	if(user.skills.getRating(SKILL_LARGE_VEHICLE) < required_entry_skill)
-		balloon_alert(user, "not enough skill")
+		balloon_alert(user, "技能不足")
 		return
 	if(!secondary_weapon)
-		balloon_alert(user, "no secondary")
+		balloon_alert(user, "无次要武器")
 		return
 	if(!length(secondary_weapon.ammo_magazine))
-		balloon_alert(user, "magazine empty")
+		balloon_alert(user, "弹匣已空")
 		return
 	var/choice
 	if(length(secondary_weapon.ammo_magazine) == 1)
@@ -530,7 +530,7 @@
 		return
 	if(!do_after(user, 1 SECONDS, NONE, src))
 		return
-	balloon_alert(user, "magazine removed")
+	balloon_alert(user, "弹匣已卸下")
 	secondary_weapon.ammo_magazine -= choice
 	user.put_in_hands(choice)
 
@@ -544,10 +544,10 @@
 	if(istype(I, /obj/item/armored_weapon))
 		var/obj/item/armored_weapon/gun = I
 		if(!(gun.type in permitted_weapons))
-			balloon_alert(user, "cannot attach")
+			balloon_alert(user, "无法安装")
 			return
 		if(!(gun.armored_weapon_flags & MODULE_PRIMARY))
-			balloon_alert(user, "not a primary weapon")
+			balloon_alert(user, "非主武器")
 			return
 		if(!do_after(user, 2 SECONDS, NONE, src))
 			return
@@ -556,7 +556,7 @@
 		return
 	if(istype(I, /obj/item/tank_module))
 		if(!(I.type in permitted_mods))
-			balloon_alert(user, "cannot attach")
+			balloon_alert(user, "无法安装")
 			return
 		var/obj/item/tank_module/mod = I
 		mod.on_equip(src, user)
@@ -573,18 +573,18 @@
 		try_easy_load(I, user)
 		return
 	if((length(weapon_to_load.ammo_magazine) >= weapon_to_load.maximum_magazines) && weapon_to_load.ammo)
-		balloon_alert(user, "magazine already full")
+		balloon_alert(user, "弹匣已满")
 		return
 	user.temporarilyRemoveItemFromInventory(I)
 	I.forceMove(weapon_to_load)
 	if(!weapon_to_load.ammo)
 		weapon_to_load.ammo = I
-		balloon_alert(user, "weapon loaded")
+		balloon_alert(user, "武器已装填")
 		for(var/mob/occupant AS in occupants)
 			occupant?.hud_used?.update_ammo_hud(weapon_to_load, list(weapon_to_load.ammo.default_ammo.hud_state, weapon_to_load.ammo.default_ammo.hud_state_empty), weapon_to_load.ammo.current_rounds)
 	else
 		weapon_to_load.ammo_magazine += I
-		balloon_alert(user, "magazines [length(weapon_to_load.ammo_magazine)]/[weapon_to_load.maximum_magazines]")
+		balloon_alert(user, "弹匣 [length(weapon_to_load.ammo_magazine)]/[weapon_to_load.maximum_magazines]")
 
 /obj/vehicle/sealed/armored/MouseDrop_T(atom/movable/dropping, mob/M)
 	// Bypass to parent to handle mobs entering the vehicle.
@@ -600,15 +600,15 @@
 /obj/vehicle/sealed/armored/attackby_alternate(obj/item/I, mob/user, params)
 	. = ..()
 	if(user.skills.getRating(SKILL_LARGE_VEHICLE) < required_entry_skill)
-		balloon_alert(user, "not enough skill")
+		balloon_alert(user, "技能不足")
 		return
 	if(istype(I, /obj/item/armored_weapon))
 		var/obj/item/armored_weapon/gun = I
 		if(!(gun.type in permitted_weapons))
-			balloon_alert(user, "cannot attach")
+			balloon_alert(user, "无法安装")
 			return
 		if(!(gun.armored_weapon_flags & MODULE_SECONDARY))
-			balloon_alert(user, "not a secondary weapon")
+			balloon_alert(user, "不是副武器")
 			return
 		if(!do_after(user, 2 SECONDS, NONE, src))
 			return
@@ -617,13 +617,13 @@
 		return
 	if(isscrewdriver(I))
 		if(!gunner_utility_module)
-			balloon_alert(user, "no gunner utility module")
+			balloon_alert(user, "无枪手功能模块")
 			return
-		balloon_alert(user, "detaching gunner utility")
+		balloon_alert(user, "卸下机枪手装备")
 		if(!do_after(user, 2 SECONDS, NONE, src))
 			return
 		gunner_utility_module.on_unequip(user)
-		balloon_alert(user, "detached")
+		balloon_alert(user, "已分离")
 		return
 
 /obj/vehicle/sealed/armored/welder_act(mob/living/user, obj/item/I)
@@ -632,18 +632,18 @@
 /obj/vehicle/sealed/armored/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(user.skills.getRating(SKILL_LARGE_VEHICLE) < required_entry_skill)
-		balloon_alert(user, "not enough skill")
+		balloon_alert(user, "技能不足")
 		return
 	if(!primary_weapon)
-		balloon_alert(user, "no primary weapon")
+		balloon_alert(user, "未装备主武器")
 		return
-	balloon_alert(user, "detaching primary")
+	balloon_alert(user, "卸下主武器")
 	if(!do_after(user, 2 SECONDS, NONE, src))
 		return
 	var/obj/item/armored_weapon/gun = primary_weapon
 	primary_weapon.detach(loc)
 	user.put_in_hands(gun)
-	balloon_alert(user, "detached")
+	balloon_alert(user, "已分离")
 
 /obj/vehicle/sealed/armored/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -651,32 +651,32 @@
 		prep_wreck(user)
 		return
 	if(user.skills.getRating(SKILL_LARGE_VEHICLE) < required_entry_skill)
-		balloon_alert(user, "not enough skill")
+		balloon_alert(user, "技能不足")
 		return
 	if(!secondary_weapon)
-		balloon_alert(user, "no secondary weapon")
+		balloon_alert(user, "未装备副武器")
 		return
-	balloon_alert(user, "detaching secondary")
+	balloon_alert(user, "卸下副武器")
 	if(!do_after(user, 2 SECONDS, NONE, src))
 		return
 	var/obj/item/armored_weapon/gun = secondary_weapon
 	secondary_weapon.detach(loc)
 	user.put_in_hands(gun)
-	balloon_alert(user, "detached")
+	balloon_alert(user, "已分离")
 
 /obj/vehicle/sealed/armored/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(user.skills.getRating(SKILL_LARGE_VEHICLE) < required_entry_skill)
-		balloon_alert(user, "not enough skill")
+		balloon_alert(user, "技能不足")
 		return
 	if(!driver_utility_module)
-		balloon_alert(user, "no driver utility module")
+		balloon_alert(user, "无驾驶员功能模块")
 		return
-	balloon_alert(user, "detaching driver utility")
+	balloon_alert(user, "卸下驾驶员工具")
 	if(!do_after(user, 2 SECONDS, NONE, src))
 		return
 	driver_utility_module.on_unequip(user)
-	balloon_alert(user, "detached")
+	balloon_alert(user, "已分离")
 
 /obj/vehicle/sealed/armored/plastique_act(mob/living/plastique_user)
 	take_damage(500, BRUTE, BOMB, TRUE, REVERSE_DIR(dir), 50, plastique_user)
@@ -734,7 +734,7 @@
 	if(src == target)
 		return
 	if(!is_equipment_controller(user))
-		balloon_alert(user, "wrong seat for equipment!")
+		balloon_alert(user, "座位不对，无法装备！")
 		return COMSIG_MOB_CLICK_CANCELED
 	if(LAZYACCESS(modifiers, MIDDLE_CLICK))
 		set_safety(user)
@@ -767,8 +767,8 @@
 	SSminimaps.add_marker(src, minimap_flags, image('icons/UI_icons/map_blips_large.dmi', null, minimap_icon_state, MINIMAP_BLIPS_LAYER))
 
 /atom/movable/vis_obj/turret_overlay
-	name = "Tank gun turret"
-	desc = "The shooty bit on a tank."
+	name = "坦克炮塔"
+	desc = "坦克上的射击部件。"
 	icon = 'icons/obj/armored/3x3/tank_gun.dmi' //set by owner
 	icon_state = "turret"
 	layer = ABOVE_ALL_MOB_LAYER
@@ -833,14 +833,14 @@
 	pixel_y = turret_offsets["[new_dir]"][2]
 
 /atom/movable/vis_obj/tank_damage
-	name = "Tank damage overlay"
-	desc = "ow."
+	name = "坦克伤害覆盖层"
+	desc = "哦。"
 	icon = 'icons/obj/armored/3x3/tank_damage.dmi' //set by owner
 	icon_state = "null" // set on demand
 	vis_flags = VIS_INHERIT_DIR|VIS_INHERIT_LAYER|VIS_INHERIT_ID|VIS_INHERIT_PLANE
 
 /atom/movable/vis_obj/tank_gun
-	name = "Tank weapon"
+	name = "坦克武器"
 	vis_flags = VIS_INHERIT_DIR|VIS_INHERIT_LAYER|VIS_INHERIT_ID|VIS_INHERIT_PLANE
 	pixel_x = -70
 	pixel_y = -69

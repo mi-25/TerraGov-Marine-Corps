@@ -149,8 +149,8 @@ ADMIN_VERB_AND_CONTEXT_MENU(subtle_message, R_FUN|R_MENTOR, "Subtle Message", AD
 	else
 		msg = sanitize(msg)
 
-	M.balloon_alert(M, "you hear a voice")
-	to_chat(M, "<b>You hear a voice in your head... [msg]</b>")
+	M.balloon_alert(M, "你听到一个声音")
+	to_chat(M, "<b>你脑海中响起一个声音……[msg]</b>")
 
 	admin_ticket_log(M, "[key_name_admin(user)] used Subtle Message: [sanitize(msg)]")
 	log_admin("SubtleMessage: [key_name(user)] to [key_name(M)]: [msg]")
@@ -189,7 +189,7 @@ ADMIN_VERB(custom_info, R_FUN, "Change Custom Info", "Set a custom info to show 
 	set name = "Custom Info"
 
 	if(!GLOB.custom_info)
-		to_chat(src, span_notice("There currently is no custom information set."))
+		to_chat(src, span_notice("当前未设置自定义信息。"))
 		return
 
 	to_chat(src, assemble_alert(
@@ -232,7 +232,7 @@ GLOBAL_VAR_INIT(web_sound_cooldown, 0)
 		return
 	var/ytdl = CONFIG_GET(string/invoke_youtubedl)
 	if(!ytdl)
-		to_chat(user, span_boldwarning("yt-dlp was not configured, action unavailable"), confidential = TRUE) //Check config.txt for the INVOKE_YOUTUBEDL value
+		to_chat(user, span_boldwarning("yt-dlp 未配置，操作不可用"), confidential = TRUE) //Check config.txt for the INVOKE_YOUTUBEDL value
 		return
 	var/list/music_extra_data = list()
 	var/duration = 0
@@ -245,14 +245,14 @@ GLOBAL_VAR_INIT(web_sound_cooldown, 0)
 		var/stdout = output[SHELLEO_STDOUT]
 		var/stderr = output[SHELLEO_STDERR]
 		if(errorlevel)
-			to_chat(user, span_boldwarning("yt-dlp URL retrieval FAILED:"), confidential = TRUE)
+			to_chat(user, span_boldwarning("yt-dlp URL 检索失败："), confidential = TRUE)
 			to_chat(user, span_warning("[stderr]"), confidential = TRUE)
 			return
 		var/list/data
 		try
 			data = json_decode(stdout)
 		catch(var/exception/e)
-			to_chat(user, span_boldwarning("yt-dlp JSON parsing FAILED:"), confidential = TRUE)
+			to_chat(user, span_boldwarning("yt-dlp JSON 解析失败："), confidential = TRUE)
 			to_chat(user, span_warning("[e]: [stdout]"), confidential = TRUE)
 			return
 		if (data["url"])
@@ -286,12 +286,12 @@ GLOBAL_VAR_INIT(web_sound_cooldown, 0)
 		switch(anon)
 			if("Yes")
 				if(res == "Yes")
-					to_chat(world, span_boldannounce("[user.key] played: [webpage_url]"), confidential = TRUE)
+					to_chat(world, span_boldannounce("[user.key] 播放了：[webpage_url]"), confidential = TRUE)
 				else
-					to_chat(world, span_boldannounce("[user.key] played a sound"), confidential = TRUE)
+					to_chat(world, span_boldannounce("[user.key] 播放了一段声音"), confidential = TRUE)
 			if("No")
 				if(res == "Yes")
-					to_chat(world, span_boldannounce("An admin played: [webpage_url]"), confidential = TRUE)
+					to_chat(world, span_boldannounce("一名管理员播放了：[webpage_url]"), confidential = TRUE)
 			if("Cancel", null)
 				return
 		if(credit)
@@ -308,7 +308,7 @@ GLOBAL_VAR_INIT(web_sound_cooldown, 0)
 		stop_web_sounds = TRUE
 	if(web_sound_url && !findtext(web_sound_url, GLOB.is_http_protocol))
 		tgui_alert(user, "The media provider returned a content URL that isn't using the HTTP or HTTPS protocol. This is a security risk and the sound will not be played.", "Security Risk", list("OK"))
-		to_chat(user, span_boldwarning("BLOCKED: Content URL not using HTTP(S) Protocol!"), confidential = TRUE)
+		to_chat(user, span_boldwarning("已拦截：内容URL未使用HTTP(S)协议！"), confidential = TRUE)
 
 		return
 	if(web_sound_url || stop_web_sounds)
@@ -342,8 +342,8 @@ ADMIN_VERB(play_web_sound, R_SOUND, "Play Internet Sound", "Play a given interne
 	if(length(web_sound_input))
 		web_sound_input = trim(web_sound_input)
 		if(findtext(web_sound_input, ":") && !findtext(web_sound_input, GLOB.is_http_protocol))
-			to_chat(user, span_boldwarning("Non-http(s) URIs are not allowed."), confidential = TRUE)
-			to_chat(user, span_warning("For youtube-dl shortcuts like ytsearch: please use the appropriate full URL from the website."), confidential = TRUE)
+			to_chat(user, span_boldwarning("非 HTTP(S) 协议 URI 不被允许。"), confidential = TRUE)
+			to_chat(user, span_warning("对于 youtube-dl 的快捷方式，例如 ytsearch:，请使用来自该网站的完整 URL。"), confidential = TRUE)
 			return
 		web_sound(user.mob, web_sound_input)
 	else
@@ -380,10 +380,10 @@ ADMIN_VERB(announce, R_FUN, "Admin Announce", "Do an admin announcement to all p
 
 ADMIN_VERB(force_distress, R_FUN, "Distress Beacon", "Call a distress beacon manually.", ADMIN_CATEGORY_FUN)
 	if(!SSticker?.mode)
-		to_chat(user, span_warning("Please wait for the round to begin first."))
+		to_chat(user, span_warning("请等待回合开始。"))
 
 	if(SSticker.mode.waiting_for_candidates)
-		to_chat(user, span_warning("Please wait for the current beacon to be finalized."))
+		to_chat(user, span_warning("请等待当前信标部署完成。"))
 		return
 
 	if(SSticker.mode.picked_call)
@@ -619,7 +619,7 @@ ADMIN_VERB_ONLY_CONTEXT_MENU(offer, R_ADMIN, "Offer Mob", mob/living/L in GLOB.m
 		return
 
 	if(!istype(L))
-		to_chat(user, span_warning("Target is no longer valid."))
+		to_chat(user, span_warning("目标已失效。"))
 		return
 
 	L.offer_mob()
@@ -694,7 +694,7 @@ ADMIN_VERB_AND_CONTEXT_MENU(imaginary_friend, R_FUN|R_MENTOR, "Imaginary Friend"
 	if(!check_rights(R_FUN|R_MENTOR))
 		return
 	if(!istype(friend_owner)) // living only
-		to_chat(usr, span_warning("That creature can not have Imaginary Friends") )
+		to_chat(usr, span_warning("那个生物不能拥有幻想朋友") )
 		return
 	if(seek_confirm && tgui_alert(usr, "Become Imaginary Friend of [friend_owner]?", "Confirm", list("Yes", "No")) != "Yes")
 		return
@@ -732,7 +732,7 @@ ADMIN_VERB(force_dropship, R_FUN, "Force Dropship", "Force a dropship to move", 
 			D = M
 
 	if(!D)
-		to_chat(user, span_warning("Unable to find shuttle"))
+		to_chat(user, span_warning("无法找到穿梭机"))
 		return
 
 	if(D.mode != SHUTTLE_IDLE && tgui_alert(user, "[D.name] is not idle, move anyway?", "Force Dropship", list("Yes", "No")) != "Yes")
@@ -748,7 +748,7 @@ ADMIN_VERB(force_dropship, R_FUN, "Force Dropship", "Force a dropship to move", 
 		valid_docks["[S.name] ([i++])"] = S
 
 	if(!length(valid_docks))
-		to_chat(user, span_warning("No valid destinations found!"))
+		to_chat(user, span_warning("未找到有效目的地！"))
 		return
 
 	var/dock = tgui_input_list(user, "Choose the destination.", "Force Dropship", valid_docks)
@@ -757,7 +757,7 @@ ADMIN_VERB(force_dropship, R_FUN, "Force Dropship", "Force a dropship to move", 
 
 	var/obj/docking_port/stationary/target = valid_docks[dock]
 	if(!target)
-		to_chat(user, span_warning("No valid dock found!"))
+		to_chat(user, span_warning("未找到有效对接点！"))
 		return
 
 	var/instant = FALSE
@@ -834,19 +834,19 @@ ADMIN_VERB(adjust_gravity, R_FUN, "Adjust Gravity", "Adjusts gravity/jump compon
 	var/choice = tgui_input_list(user, "What would you like to set gravity to?", "Gravity adjustment", list("Standard gravity", "Low gravity", "John Woo", "Exceeding orbital velocity"))
 	switch(choice)
 		if("Standard gravity")
-			to_chat(GLOB.mob_living_list, span_userdanger("You feel gravity return to normal."))
+			to_chat(GLOB.mob_living_list, span_userdanger("你感觉重力恢复正常了。"))
 			for(var/mob/living/living_mob AS in GLOB.mob_living_list)
 				living_mob.set_jump_component()
 		if("Low gravity")
-			to_chat(GLOB.mob_living_list, span_userdanger("You feel gravity pull gently at you."))
+			to_chat(GLOB.mob_living_list, span_userdanger("你感到重力在轻轻拉扯着你。"))
 			for(var/mob/living/living_mob AS in GLOB.mob_living_list)
 				living_mob.set_jump_component(duration = 1 SECONDS, cooldown = 1.5 SECONDS, cost = 2, height = 32, jump_pass_flags = PASS_LOW_STRUCTURE|PASS_FIRE|PASS_DEFENSIVE_STRUCTURE|PASS_TANK)
 		if("John Woo")
-			to_chat(GLOB.mob_living_list, span_userdanger("You feel gravity grow weak, and the urge to fly."))
+			to_chat(GLOB.mob_living_list, span_userdanger("你感觉重力变得微弱，内心涌起飞翔的冲动。"))
 			for(var/mob/living/living_mob AS in GLOB.mob_living_list)
 				living_mob.set_jump_component(duration = 1 SECONDS, cooldown = 1.5 SECONDS, cost = 2, height = 48, sound = SFX_JUMP, flags = JUMP_SPIN, jump_pass_flags = HOVERING|PASS_PROJECTILE|PASS_TANK)
 		if("Exceeding orbital velocity")
-			to_chat(GLOB.mob_living_list, span_userdanger("You feel gravity fade to nothing. Will you even come back down?"))
+			to_chat(GLOB.mob_living_list, span_userdanger("你感觉重力逐渐消失。你还能回到地面吗？"))
 			for(var/mob/living/living_mob AS in GLOB.mob_living_list)
 				living_mob.set_jump_component(duration = 4 SECONDS, cooldown = 6 SECONDS, cost = 0, height = 128, sound = SFX_JUMP, flags = JUMP_SPIN, jump_pass_flags = HOVERING|PASS_PROJECTILE|PASS_TANK)
 		else
@@ -881,7 +881,7 @@ ADMIN_VERB(load_lazy_template, R_FUN, "Load/Jump Lazy Template", "Loads a lazy t
 
 	choice = choices[choice]
 	if(!choice)
-		to_chat(user, span_warning("No template with that key found, report this!"))
+		to_chat(user, span_warning("未找到该键的模板，请报告此问题！"))
 		return
 
 	var/already_loaded = LAZYACCESS(SSmapping.loaded_lazy_templates, choice)
@@ -891,13 +891,13 @@ ADMIN_VERB(load_lazy_template, R_FUN, "Load/Jump Lazy Template", "Loads a lazy t
 
 	var/datum/turf_reservation/reservation = SSmapping.lazy_load_template(choice, force = force_load)
 	if(!reservation)
-		to_chat(user, span_boldwarning("Failed to load template!"))
+		to_chat(user, span_boldwarning("加载模板失败！"))
 		return
 
 	if(teleport_to_template == "Yes")
 		if(!isobserver(user.mob))
 			SSadmin_verbs.dynamic_invoke_verb(user, /datum/admin_verb/aghost)
 		user.mob.forceMove(reservation.bottom_left_turfs[1])
-		to_chat(user, span_notice("Template loaded, you have been moved to the bottom left of the reservation."))
+		to_chat(user, span_notice("模板已加载，你已被移至预订区域的左下角。"))
 
 	message_admins("[key_name_admin(user)] has loaded lazy template '[choice]'")

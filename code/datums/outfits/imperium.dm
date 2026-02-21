@@ -1,5 +1,5 @@
 /datum/outfit/job/imperial
-	name = "Imperial Standard"
+	name = "帝国标准语"
 	jobtype = /datum/job/imperial
 
 	id = /obj/item/card/id
@@ -13,7 +13,7 @@
 	H.grant_language(/datum/language/imperial)
 
 /datum/outfit/job/imperial/guardsman
-	name = "Imperial Guardsman"
+	name = "帝国卫队士兵"
 	jobtype = /datum/job/imperial/guardsman
 
 	belt = /obj/item/storage/belt/marine/te_cells
@@ -40,7 +40,7 @@
 
 
 /datum/outfit/job/imperial/guardsman/sergeant
-	name = "Guardsman Sergeant"
+	name = "卫队军士"
 	jobtype = /datum/job/imperial/guardsman/sergeant
 
 	wear_suit = /obj/item/clothing/suit/storage/marine/imperial/sergeant
@@ -49,7 +49,7 @@
 	l_pocket = /obj/item/storage/pouch/field_pouch/full
 
 /datum/outfit/job/imperial/guardsman/medicae
-	name = "Guardsman Medicae"
+	name = "卫队医疗兵"
 	jobtype = /datum/job/imperial/guardsman/medicae
 
 	belt = /obj/item/storage/belt/lifesaver/full
@@ -65,7 +65,7 @@
 	)
 
 /datum/outfit/job/imperial/commissar
-	name = "Imperial Commissar"
+	name = "帝国政委"
 	jobtype = /datum/job/imperial/commissar
 
 	belt = /obj/item/storage/holster/belt/mateba/full //Ideally this can be later replaced with a bolter

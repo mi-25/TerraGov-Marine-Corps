@@ -24,7 +24,7 @@
 	maptext = MAPTEXT_TINY_UNICODE("<div align='center' valign='middle' style='position:relative; top:0px; left:0px'>[text]</div>")
 
 /atom/movable/screen/paper_map_extras/minimap_z_up
-	name = "go up"
+	name = "向上移动"
 	icon = 'icons/mob/screen_ai.dmi'
 	icon_state = "up"
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -43,7 +43,7 @@
 	papermap.change_z_shown(null, ++currentz)
 
 /atom/movable/screen/paper_map_extras/minimap_z_down
-	name = "go down"
+	name = "下去"
 	icon = 'icons/mob/screen_ai.dmi'
 	icon_state = "down"
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -62,8 +62,8 @@
 	papermap.change_z_shown(null, --currentz)
 
 /obj/item/paper_map
-	name = "paper map"
-	desc = "An ancient tool used by primitives to help them navigate."
+	name = "纸质地图"
+	desc = "原始人用来辅助导航的古老工具。"
 	icon = 'icons/obj/items/paper.dmi'
 	icon_state = "map"
 	w_class = WEIGHT_CLASS_SMALL

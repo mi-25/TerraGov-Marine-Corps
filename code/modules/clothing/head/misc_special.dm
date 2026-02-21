@@ -11,8 +11,8 @@
 * Welding helmet
 */
 /obj/item/clothing/head/welding
-	name = "welding helmet"
-	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
+	name = "焊接头盔"
+	desc = "一种头戴式面部护罩，旨在完全保护佩戴者免受太空电弧眼的伤害。"
 	icon_state = "welding"
 	worn_icon_state = "welding"
 	var/up = FALSE
@@ -66,11 +66,11 @@
 	if(up)
 		flip_up()
 		if(user)
-			user.balloon_alert(user, "flips up")
+			user.balloon_alert(user, "掀起")
 	else
 		flip_down()
 		if(user)
-			user.balloon_alert(user, "flips down")
+			user.balloon_alert(user, "翻下")
 
 	user.update_inv_l_hand() //update inhand sprites whenever toggled
 	user.update_inv_r_hand()
@@ -91,8 +91,8 @@
 * Cakehat
 */
 /obj/item/clothing/head/cakehat
-	name = "cake-hat"
-	desc = "It's tasty looking!"
+	name = "蛋糕帽"
+	desc = "看起来真美味！"
 	icon_state = "cake0"
 	inventory_flags = COVEREYES
 	var/onfire = 0
@@ -125,8 +125,8 @@
 * Pumpkin head
 */
 /obj/item/clothing/head/pumpkinhead
-	name = "carved pumpkin"
-	desc = "A jack o' lantern! Believed to ward off evil spirits."
+	name = "雕刻南瓜"
+	desc = "一个南瓜灯！据说能驱赶恶灵。"
 	icon_state = "hardhat0_pumpkin"//Could stand to be renamed
 	worn_icon_state = "hardhat0_pumpkin"
 	inventory_flags = COVEREYES|COVERMOUTH

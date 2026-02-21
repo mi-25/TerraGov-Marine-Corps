@@ -3,7 +3,7 @@
 #define ALCOHOL_EXPONENT 1.6 //The exponent applied to boozepwr to make higher volume alcohol atleast a little bit damaging.
 
 /datum/reagent/consumable/ethanol
-	name = "Ethanol" //Parent class for all alcoholic reagents.
+	name = "Ethanol-乙醇" //Parent class for all alcoholic reagents.
 	description = "A well-known alcohol with a variety of applications."
 	reagent_state = LIQUID
 	nutriment_factor = 0 //So alcohol can fill you up! If they want to.
@@ -57,14 +57,14 @@
 	if(istype(O,/obj/item/paper))
 		var/obj/item/paper/paperaffected = O
 		paperaffected.clearpaper()
-		to_chat(usr, span_warning("The [name] dissolves the ink on the paper."))
+		to_chat(usr, span_warning("[name] 溶解了纸张上的墨水。"))
 	if(istype(O,/obj/item/book))
 		if(volume > 5)
 			var/obj/item/book/affectedbook = O
 			affectedbook.dat = null
-			to_chat(usr, span_warning("The [name] dissolves the ink on the book."))
+			to_chat(usr, span_warning("[name]溶解了书上的墨水。"))
 		else
-			to_chat(usr, span_warning("[O]'s ink is smeared by [name], but doesn't wash away!"))
+			to_chat(usr, span_warning("[O]的墨迹被[name]弄花了，但洗不掉！"))
 
 /datum/reagent/consumable/ethanol/reaction_mob(mob/living/L, method = TOUCH, volume, show_message = TRUE, touch_protection = 0)
 	. = ..()
@@ -72,40 +72,40 @@
 		L.adjust_fire_stacks(round(volume * 0.65))
 
 /datum/reagent/consumable/ethanol/beer
-	name = "Beer"
+	name = "Beer-啤酒"
 	description = "An alcoholic beverage made from malted grains, hops, yeast, and water."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 25
 	taste_description = "mild carbonated malt"
 
 /datum/reagent/consumable/ethanol/nt_beer
-	name = "Aspen Beer"
+	name = "Aspen Beer-阿斯彭啤酒"
 	description = "Pretty good when you get past the fact that it tastes like piss. Canned by the Nanotrasen Corporation."
 	color = "#ffcc66"
 	boozepwr = 5 //Space Europeans hate it
 	taste_description = "dish water"
 
 /datum/reagent/consumable/ethanol/beer/light
-	name = "Light Beer"
+	name = "Light Beer-淡啤"
 	description = "An alcoholic beverage brewed since ancient times on Old Earth. This variety has reduced calorie and alcohol content."
 	boozepwr = 5 //Space Europeans hate it
 	taste_description = "dish water"
 
 /datum/reagent/consumable/ethanol/beer/maltliquor
-	name = "Malt Liquor"
+	name = "Malt Liquor-麦芽酒"
 	description = "An alcoholic beverage brewed since ancient times on Old Earth. This variety is stronger than usual, super cheap, and super terrible."
 	boozepwr = 35
 	taste_description = "sweet corn beer and the hood life"
 
 /datum/reagent/consumable/ethanol/beer/green
-	name = "Green Beer"
+	name = "Green Beer-绿色啤酒"
 	description = "An alcoholic beverage brewed since ancient times on Old Earth. This variety is dyed a festive green."
 	color = "#A8E61D"
 	overdose_threshold = 55 //More than a glass
 	taste_description = "green piss water"
 
 /datum/reagent/consumable/ethanol/kahlua
-	name = "Kahlua"
+	name = "Kahlua-卡鲁瓦"
 	description = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936!"
 	color = "#664300" // rgb: 102, 67, 0
 	taste_description = "spiked latte"
@@ -119,33 +119,33 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/whiskey
-	name = "Whiskey"
+	name = "Whiskey-威士忌"
 	description = "A superb and well-aged single-malt whiskey. Damn."
 	color = "#664300" // rgb: 102, 67,
 	taste_description = "molasses"
 	boozepwr = 75
 
 /datum/reagent/consumable/ethanol/specialwhiskey
-	name = "Special Blend Whiskey"
+	name = "Special Blend Whiskey-特调威士忌"
 	description = "Just when you thought regular station whiskey was good... This silky, amber goodness has to come along and ruin everything."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 80
 	taste_description = "exquisite amber"
 
 /datum/reagent/consumable/ethanol/whiskey/kong
-	name = "Kong"
+	name = "Kong-孔"
 	description = "Makes You Go Ape!&#174;"
 	color = "#332100" // rgb: 51, 33, 0
 	taste_description = "the grip of a giant ape"
 
 /datum/reagent/consumable/ethanol/whiskey/candycorn
-	name = "Candy Corn Liquor"
+	name = "Candy Corn Liquor-玉米糖利口酒"
 	description = "Like they drank in 2D speakeasies."
 	color = "#ccb800" // rgb: 204, 184, 0
 	taste_description = "pancake syrup"
 
 /datum/reagent/consumable/ethanol/thirteenloko
-	name = "Thirteen Loko"
+	name = "Thirteen Loko-十三洛可"
 	description = "A potent mixture of caffeine and alcohol."
 	color = "#102000" // rgb: 16, 32, 0
 	boozepwr = 80
@@ -162,7 +162,7 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/vodka
-	name = "Vodka"
+	name = "Vodka-伏特加"
 	description = "Number one drink AND fueling choice for Russians worldwide."
 	color = "#0064C8" // rgb: 0, 100, 200
 	taste_description = "grain alcohol"
@@ -170,7 +170,7 @@
 	default_container = /obj/item/reagent_containers/cup/glass/bottle/vodka
 
 /datum/reagent/consumable/ethanol/bilk
-	name = "Bilk"
+	name = "Bilk-比尔克"
 	description = "This appears to be beer mixed with milk. Disgusting."
 	color = "#895C4C" // rgb: 137, 92, 76
 	boozepwr = 15
@@ -178,7 +178,7 @@
 	taste_description = "desperation and lactate"
 
 /datum/reagent/consumable/ethanol/threemileisland
-	name = "Three Mile Island Iced Tea"
+	name = "Three Mile Island Iced Tea-三里岛冰茶"
 	description = "Made for a woman, strong enough for a man."
 	color = "#666340" // rgb: 102, 99, 64
 	taste_description = "dryness"
@@ -186,14 +186,14 @@
 	druggy = 50
 
 /datum/reagent/consumable/ethanol/gin
-	name = "Gin"
+	name = "Gin-金酒"
 	description = "It's gin. In space. I say, good sir."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 45
 	taste_description = "an alcoholic christmas tree"
 
 /datum/reagent/consumable/ethanol/rum
-	name = "Rum"
+	name = "Rum-朗姆酒"
 	description = "Yohoho and all that."
 	color = "#c9c07e" // rgb: 201,192,126
 	taste_description = "spiked butterscotch"
@@ -201,21 +201,21 @@
 	default_container = /obj/item/reagent_containers/cup/glass/bottle/rum
 
 /datum/reagent/consumable/ethanol/tequila
-	name = "Tequila"
+	name = "Tequila-龙舌兰"
 	description = "A strong and mildly flavoured, Mexican produced spirit. Feeling thirsty, hombre?"
 	color = "#FFFF91" // rgb: 255, 255, 145
 	boozepwr = 70
 	taste_description = "paint stripper"
 
 /datum/reagent/consumable/ethanol/vermouth
-	name = "Vermouth"
+	name = "Vermouth-味美思"
 	description = "You suddenly feel a craving for a martini..."
 	color = "#91FF91" // rgb: 145, 255, 145
 	taste_description = "dry alcohol"
 	boozepwr = 45
 
 /datum/reagent/consumable/ethanol/wine
-	name = "Wine"
+	name = "Wine-葡萄酒"
 	description = "A premium alcoholic beverage made from distilled grape juice."
 	color = "#7E4043" // rgb: 126, 64, 67
 	boozepwr = 35
@@ -223,35 +223,35 @@
 	default_container = /obj/item/reagent_containers/cup/glass/bottle/wine
 
 /datum/reagent/consumable/ethanol/lizardwine
-	name = "Lizard Wine"
+	name = "Lizard Wine-蜥蜴酒"
 	description = "An alcoholic beverage from Space China, made by infusing lizard tails in ethanol."
 	color = "#7E4043" // rgb: 126, 64, 67
 	boozepwr = 45
 	taste_description = "scaley sweetness"
 
 /datum/reagent/consumable/ethanol/grappa
-	name = "Grappa"
+	name = "Grappa-格拉巴酒"
 	description = "A fine Italian brandy, for when regular wine just isn't alcoholic enough for you."
 	color = "#F8EBF1"
 	boozepwr = 60
 	taste_description = "classy bitter sweetness"
 
 /datum/reagent/consumable/ethanol/amaretto
-	name = "Amaretto"
+	name = "Amaretto-阿玛雷托"
 	description = "A gentle drink that carries a sweet aroma."
 	color = "#E17600"
 	boozepwr = 25
 	taste_description = "fruity and nutty sweetness"
 
 /datum/reagent/consumable/ethanol/cognac
-	name = "Cognac"
+	name = "Cognac-干邑"
 	description = "A sweet and strongly alcoholic drink, made after numerous distillations and years of maturing. Classy as fornication."
 	color = "#AB3C05" // rgb: 171, 60, 5
 	boozepwr = 75
 	taste_description = "smooth and french"
 
 /datum/reagent/consumable/ethanol/absinthe
-	name = "Absinthe"
+	name = "Absinthe-苦艾酒"
 	description = "A powerful alcoholic drink. Rumored to cause hallucinations but does not."
 	color = "#33EE00" // rgb: 51, 238, 0
 	taste_description = "death and licorice"
@@ -263,21 +263,21 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/hooch
-	name = "Hooch"
+	name = "Hooch-私酿酒"
 	description = "Either someone's failure at cocktail making or attempt in alcohol production. In any case, do you really want to drink that?"
 	color = "#664300" // rgb: 102, 67, 0
 	taste_description = "pure resignation"
 	boozepwr = 100
 
 /datum/reagent/consumable/ethanol/ale
-	name = "Ale"
+	name = "Ale-阿尔法"
 	description = "A dark alcoholic beverage made with malted barley and yeast."
 	color = "#976063" // rgb: 151,96,99
 	taste_description = "hearty barley ale"
 	boozepwr = 65
 
 /datum/reagent/consumable/ethanol/pwine
-	name = "Poison Wine"
+	name = "Poison Wine-毒酒"
 	description = "A potent wine with hallucinogenic properties, popular among high personalities and villains."
 	color = "#000000" // rgb: 0, 0, 0 SHOCKER
 	taste_description = "evil velvet"
@@ -336,97 +336,97 @@
 				var/datum/internal_organ/heart/E = H.get_organ_slot(ORGAN_SLOT_HEART)
 				if(istype(E))
 					if(H.species.species_flags ~! NO_PAIN)
-						to_chat(H, span_danger("You clutch for a moment as you feel a scorching pain covering your abdomen!"))
+						to_chat(H, span_danger("你感到腹部一阵灼烧般的剧痛，不由得蜷缩了一下！"))
 						H.Stun(6 SECONDS)
 					E.take_damage(20)
 	return ..()
 
 /datum/reagent/consumable/ethanol/davenport
-	name = "Davenport Rye"
+	name = "Davenport Rye-达文波特黑麦"
 	description = "An expensive alcohol with a distinct flavor"
 	color = "#ffcc66"
 	taste_description = "oil, whiskey, salt, rosemary mixed togheter" // Insert reference here.
 	boozepwr = 50
 
 /datum/reagent/consumable/ethanol/goldschlager
-	name = "Goldschlager"
+	name = "Goldschlager-金箔酒"
 	description = "100 proof cinnamon schnapps, made for alcoholic teen girls on spring break."
 	color = "#FFFF91" // rgb: 255, 255, 145
 	taste_description = "burning cinnamon"
 	boozepwr = 25
 
 /datum/reagent/consumable/ethanol/patron
-	name = "Patron"
+	name = "Patron-赞助者"
 	description = "Tequila with silver in it, a favorite of alcoholic women in the club scene."
 	color = "#585840" // rgb: 88, 88, 64
 	taste_description = "metallic and expensive"
 	boozepwr = 60
 
 /datum/reagent/consumable/ethanol/gintonic
-	name = "Gin and Tonic"
+	name = "Gin and Tonic-金汤力"
 	description = "An all time classic, mild cocktail."
 	color = "#cae7ec" // rgb: 202,231,236
 	taste_description = "mild and tart"
 	boozepwr = 25
 
 /datum/reagent/consumable/ethanol/rum_coke
-	name = "Rum and Coke"
+	name = "Rum and Coke-朗姆可乐"
 	description = "Rum, mixed with cola."
 	taste_description = "cola"
 	boozepwr = 40
 	color = "#3E1B00"
 
 /datum/reagent/consumable/ethanol/cuba_libre
-	name = "Cuba Libre"
+	name = "Cuba Libre-自由古巴"
 	description = "Viva la revolucion! Viva Cuba Libre!"
 	color = "#3E1B00" // rgb: 62, 27, 0
 	taste_description = "a refreshing marriage of citrus and rum"
 	boozepwr = 50
 
 /datum/reagent/consumable/ethanol/whiskey_cola
-	name = "Whiskey Cola"
+	name = "Whiskey Cola-威士忌可乐"
 	description = "Whiskey, mixed with cola. Surprisingly refreshing."
 	color = "#3E1B00" // rgb: 62, 27, 0
 	taste_description = "cola"
 	boozepwr = 70
 
 /datum/reagent/consumable/ethanol/martini
-	name = "Classic Martini"
+	name = "Classic Martini-经典马提尼"
 	description = "Vermouth with Gin. Not quite how 007 enjoyed it, but still delicious."
 	color = "#cddbac" // rgb: 205,219,172
 	taste_description = "dry class"
 	boozepwr = 60
 
 /datum/reagent/consumable/ethanol/vodkamartini
-	name = "Vodka Martini"
+	name = "Vodka Martini-伏特加马提尼"
 	description = "Vodka with Gin. Not quite how 007 enjoyed it, but still delicious."
 	color = "#cddcad" // rgb: 205,220,173
 	taste_description = "shaken, not stirred"
 	boozepwr = 65
 
 /datum/reagent/consumable/ethanol/white_russian
-	name = "White Russian"
+	name = "White Russian-白俄鸡尾酒"
 	description = "That's just, like, your opinion, man..."
 	color = "#A68340" // rgb: 166, 131, 64
 	taste_description = "bitter cream"
 	boozepwr = 50
 
 /datum/reagent/consumable/ethanol/screwdrivercocktail
-	name = "Screwdriver"
+	name = "Screwdriver-螺丝刀"
 	description = "Vodka, mixed with plain ol' orange juice. The result is surprisingly delicious."
 	color = "#A68310" // rgb: 166, 131, 16
 	taste_description = "oranges"
 	boozepwr = 55
 
 /datum/reagent/consumable/ethanol/booger
-	name = "Booger"
+	name = "Booger-鼻涕虫"
 	description = "Ewww..."
 	color = "#8CFF8C" // rgb: 140, 255, 140
 	taste_description = "sweet 'n creamy"
 	boozepwr = 45
 
 /datum/reagent/consumable/ethanol/bloody_mary
-	name = "Bloody Mary"
+	name = "Bloody Mary-血腥玛丽"
 	description = "A strange yet pleasurable mixture made of vodka, tomato and lime juice. Or at least you THINK the red stuff is tomato juice."
 	color = "#bf707c" // rgb: 191,112,124
 	taste_description = "tomatoes with a hint of lime and liquid murder"
@@ -438,21 +438,21 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/brave_bull
-	name = "Brave Bull"
+	name = "Brave Bull-勇敢的蛮牛"
 	description = "It's just as effective as Dutch-Courage!"
 	color = "#a79f98" // rgb: 167,159,152
 	taste_description = "alcoholic bravery"
 	boozepwr = 60
 
 /datum/reagent/consumable/ethanol/tequila_sunrise
-	name = "Tequila Sunrise"
+	name = "Tequila Sunrise-龙舌兰日出"
 	description = "Tequila and orange juice. Much like a Screwdriver, only Mexican~"
 	color = "#FFE48C" // rgb: 255, 228, 140
 	boozepwr = 45
 	taste_description = "oranges with a hint of pomegranate"
 
 /datum/reagent/consumable/ethanol/toxins_special
-	name = "Toxins Special"
+	name = "Toxins Special-毒素专家"
 	description = "This thing is ON FIRE! CALL THE DAMN SHUTTLE!"
 	color = "#8880a8" // rgb: 136,128,168
 	taste_description = "spicy toxins"
@@ -461,7 +461,7 @@
 	adj_temp = 15
 
 /datum/reagent/consumable/ethanol/beepsky_smash
-	name = "Beepsky Smash"
+	name = "Beepsky Smash-比普斯基粉碎"
 	description = "Drink this and prepare for the LAW."
 	color = COLOR_OLIVE // rgb: 128,128,0
 	taste_description = "JUSTICE"
@@ -472,28 +472,28 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/irish_cream
-	name = "Irish Cream"
+	name = "Irish Cream-爱尔兰奶油"
 	description = "Whiskey-imbued cream, what else would you expect from the Irish?"
 	color = "#e3d0b2" // rgb: 227,208,178
 	taste_description = "creamy alcohol"
 	boozepwr = 50
 
 /datum/reagent/consumable/ethanol/manly_dorf
-	name = "The Manly Dorf"
+	name = "The Manly Dorf-硬汉矮人"
 	description = "Beer and Ale, brought together in a delicious mix. Intended for true men only."
 	color = "#815336" // rgb: 129,83,54
 	taste_description = "hair on your chest and your chin"
 	boozepwr = 100 //For the manly only
 
 /datum/reagent/consumable/ethanol/longislandicedtea
-	name = "Long Island Iced Tea"
+	name = "Long Island Iced Tea-长岛冰茶"
 	description = "The liquor cabinet, brought together in a delicious mix. Intended for middle-aged alcoholic women only."
 	color = "#ff6633" // rgb: 255,102,51
 	taste_description = "a mixture of cola and alcohol"
 	boozepwr = 35
 
 /datum/reagent/consumable/ethanol/moonshine
-	name = "Moonshine"
+	name = "Moonshine-私酿酒"
 	description = "You've really hit rock bottom now... your liver packed its bags and left last night."
 	color = "#AAAAAA77" // rgb: 170, 170, 170, 77 (alpha) (like water)
 	taste_description = "bitterness"
@@ -507,35 +507,35 @@
 	boozepwr = 85
 
 /datum/reagent/consumable/ethanol/irishcoffee
-	name = "Irish Coffee"
+	name = "Irish Coffee-爱尔兰咖啡"
 	description = "Coffee, and alcohol. More fun than a Mimosa to drink in the morning."
 	color = "#874010" // rgb: 135,64,16
 	taste_description = "giving up on the day"
 	boozepwr = 35
 
 /datum/reagent/consumable/ethanol/margarita
-	name = "Margarita"
+	name = "Margarita-玛格丽塔"
 	description = "On the rocks with salt on the rim. Arriba~!"
 	color = "#8CFF8C" // rgb: 140, 255, 140
 	taste_description = "dry and salty"
 	boozepwr = 35
 
 /datum/reagent/consumable/ethanol/black_russian
-	name = "Black Russian"
+	name = "Black Russian-黑俄"
 	description = "For the lactose-intolerant. Still as classy as a White Russian."
 	color = "#360000" // rgb: 54, 0, 0
 	taste_description = "bitterness"
 	boozepwr = 70
 
 /datum/reagent/consumable/ethanol/manhattan
-	name = "Manhattan"
+	name = "Manhattan-曼哈顿"
 	description = "The Detective's undercover drink of choice. He never could stomach gin..."
 	color = "#ff3300" // rgb: 255,51,0
 	taste_description = "mild dryness"
 	boozepwr = 30
 
 /datum/reagent/consumable/ethanol/manhattan_proj
-	name = "Manhattan Project"
+	name = "Manhattan Project-曼哈顿计划"
 	description = "A scientist's drink of choice, for pondering ways to blow up the station."
 	color = COLOR_MOSTLY_PURE_RED
 	taste_description = "death, the destroyer of worlds"
@@ -543,14 +543,14 @@
 	druggy = 30
 
 /datum/reagent/consumable/ethanol/whiskeysoda
-	name = "Whiskey Soda"
+	name = "Whiskey Soda-威士忌苏打"
 	description = "For the more refined griffon."
 	color = "#ffcc33" // rgb: 255,204,51
 	taste_description = "soda"
 	boozepwr = 70
 
 /datum/reagent/consumable/ethanol/antifreeze
-	name = "Anti-freeze"
+	name = "Anti-freeze-防冻剂"
 	description = "The ultimate refreshment. Not what it sounds like."
 	color = "#30f0f8" // rgb: 48,240,248
 	taste_description = "Jack Frost's piss"
@@ -559,28 +559,28 @@
 	adj_temp = 20
 
 /datum/reagent/consumable/ethanol/barefoot
-	name = "Barefoot"
+	name = "Barefoot-赤脚"
 	description = "Barefoot and pregnant."
 	color = "#fc5acc" // rgb: 252,90,204
 	taste_description = "creamy berries"
 	boozepwr = 45
 
 /datum/reagent/consumable/ethanol/snowwhite
-	name = "Snow White"
+	name = "Snow White-白雪公主"
 	description = "A cold refreshment."
 	color = COLOR_WHITE // rgb: 255, 255, 255
 	taste_description = "refreshing cold"
 	boozepwr = 35
 
 /datum/reagent/consumable/ethanol/melonliquor
-	name = "Melon Liquor"
+	name = "Melon Liquor-西瓜利口酒"
 	description = "A relatively sweet and fruity 46 proof liquor."
 	color = "#138808" // rgb: 19, 136, 8
 	boozepwr = 60
 	taste_description = "fruity alcohol"
 
 /datum/reagent/consumable/ethanol/bluecuracao
-	name = "Blue Curacao"
+	name = "Blue Curacao-蓝橙利口酒"
 	description = "Exotically blue, fruity drink, distilled from oranges."
 	color = "#0000CD" // rgb: 0, 0, 205
 	boozepwr = 50
@@ -594,49 +594,49 @@
 	boozepwr = 10
 
 /datum/reagent/consumable/ethanol/demonsblood
-	name = "Demons Blood"
+	name = "Demons Blood-恶魔之血"
 	description = "AHHHH!!!!"
 	color = "#820000" // rgb: 130, 0, 0
 	taste_description = "sweet tasting iron"
 	boozepwr = 75
 
 /datum/reagent/consumable/ethanol/devilskiss
-	name = "Devil's Kiss"
+	name = "Devil's Kiss-魔鬼之吻"
 	description = "Creepy time!"
 	color = "#A68310" // rgb: 166, 131, 16
 	taste_description = "bitter iron"
 	boozepwr = 70
 
 /datum/reagent/consumable/ethanol/vodkatonic
-	name = "Vodka and Tonic"
+	name = "Vodka and Tonic-伏特加汤力"
 	description = "For when a gin and tonic isn't Russian enough."
 	color = "#0064C8" // rgb: 0, 100, 200
 	taste_description = "tart bitterness"
 	boozepwr = 70
 
 /datum/reagent/consumable/ethanol/ginfizz
-	name = "Gin Fizz"
+	name = "Gin Fizz-金菲士"
 	description = "Refreshingly lemony, deliciously dry."
 	color = "#ffffcc" // rgb: 255,255,204
 	taste_description = "dry, tart lemons"
 	boozepwr = 45
 
 /datum/reagent/consumable/ethanol/bahama_mama
-	name = "Bahama mama"
+	name = "Bahama mama-巴哈马妈妈"
 	description = "A tropical cocktail with a complex blend of flavors."
 	color = "#FF7F3B" // rgb: 255, 127, 59
 	taste_description = "pineapple, coconut, and a hint of coffee"
 	boozepwr = 35
 
 /datum/reagent/consumable/ethanol/singulo
-	name = "Singulo"
+	name = "Singulo-奇点"
 	description = "A blue-space beverage!"
 	color = "#2E6671" // rgb: 46, 102, 113
 	taste_description = "concentrated matter"
 	boozepwr = 35
 
 /datum/reagent/consumable/ethanol/sbiten
-	name = "Sbiten"
+	name = "Sbiten-斯比特恩"
 	description = "A spicy Vodka! Might be a little hot for the little guys!"
 	color = "#d8d5ae" // rgb: 216,213,174
 	taste_description = "hot and spice"
@@ -645,14 +645,14 @@
 	adj_temp = 50
 
 /datum/reagent/consumable/ethanol/red_mead
-	name = "Red Mead"
+	name = "Red Mead-红蜜酒"
 	description = "The true Viking drink! Even though it has a strange red color."
 	color = "#C73C00" // rgb: 199, 60, 0
 	taste_description = "sweet and salty alcohol"
 	boozepwr = 51
 
 /datum/reagent/consumable/ethanol/mead
-	name = "Mead"
+	name = "Mead-米德"
 	description = "A Viking drink, though a cheap one."
 	color = "#e0c058" // rgb: 224,192,88
 	taste_description = "sweet, sweet alcohol"
@@ -660,7 +660,7 @@
 	nutriment_factor = 0.5
 
 /datum/reagent/consumable/ethanol/iced_beer
-	name = "Iced Beer"
+	name = "Iced Beer-冰镇啤酒"
 	description = "A beer which is so cold the air around it freezes."
 	color = "#664300" // rgb: 102, 67, 0
 	taste_description = "refreshingly cold"
@@ -669,84 +669,84 @@
 	adj_temp = 20
 
 /datum/reagent/consumable/ethanol/grog
-	name = "Grog"
+	name = "Grog-格罗格"
 	description = "Watered-down rum, Nanotrasen approves!"
 	color = "#e0e058" // rgb: 224,224,88
 	taste_description = "a poor excuse for alcohol"
 	boozepwr = 1
 
 /datum/reagent/consumable/ethanol/aloe
-	name = "Aloe"
+	name = "Aloe-芦荟"
 	description = "So very, very, very good."
 	color = "#f8f800" // rgb: 248,248,0
 	taste_description = "sweet 'n creamy"
 	boozepwr = 35
 
 /datum/reagent/consumable/ethanol/andalusia
-	name = "Andalusia"
+	name = "Andalusia-安达卢西亚"
 	description = "A nice, strangely named drink."
 	color = "#c8f860" // rgb: 200,248,96
 	taste_description = "lemons"
 	boozepwr = 40
 
 /datum/reagent/consumable/ethanol/alliescocktail
-	name = "Allies Cocktail"
+	name = "Allies Cocktail-盟友鸡尾酒"
 	description = "A drink made from your allies. Not as sweet as those made from your enemies."
 	color = "#60f8f8" // rgb: 96,248,248
 	taste_description = "bitter yet free"
 	boozepwr = 45
 
 /datum/reagent/consumable/ethanol/acid_spit
-	name = "Acid Spit"
+	name = "Acid Spit-酸液喷射"
 	description = "A drink for the daring, can be deadly if incorrectly prepared!"
 	color = "#365000" // rgb: 54, 80, 0
 	taste_description = "stomach acid"
 	boozepwr = 70
 
 /datum/reagent/consumable/ethanol/amasec
-	name = "Amasec"
+	name = "Amasec-阿玛塞克"
 	description = "Official drink of the NanoTrasen Gun-Club!"
 	color = "#e0e058" // rgb: 224,224,88
 	taste_description = "dark and metallic"
 	boozepwr = 35
 
 /datum/reagent/consumable/ethanol/changelingsting
-	name = "Changeling Sting"
+	name = "Changeling Sting-变种人蛰刺"
 	description = "You take a tiny sip and feel a burning sensation..."
 	color = "#2E6671" // rgb: 46, 102, 113
 	taste_description = "your brain coming out your nose"
 	boozepwr = 50
 
 /datum/reagent/consumable/ethanol/irishcarbomb
-	name = "Irish Car Bomb"
+	name = "Irish Car Bomb-爱尔兰汽车炸弹"
 	description = "Mmm, tastes like the free Irish state."
 	color = "#2E6671" // rgb: 46, 102, 113
 	taste_description = "the spirit of Ireland"
 	boozepwr = 25
 
 /datum/reagent/consumable/ethanol/syndicatebomb
-	name = "Syndicate Bomb"
+	name = "Syndicate Bomb-辛迪加炸弹"
 	description = "Tastes like terrorism!"
 	color = "#2E6671" // rgb: 46, 102, 113
 	taste_description = "purified antagonism"
 	boozepwr = 90
 
 /datum/reagent/consumable/ethanol/hiveminderaser
-	name = "Hivemind Eraser"
+	name = "Hivemind Eraser-蜂巢意志抹除器"
 	description = "A vessel of pure flavor."
 	color = "#FF80FC" // rgb: 255, 128, 252
 	boozepwr = 40
 	taste_description = "psychic links"
 
 /datum/reagent/consumable/ethanol/erikasurprise
-	name = "Erika Surprise"
+	name = "Erika Surprise-艾丽卡惊喜"
 	description = "The surprise is, it's green!"
 	color = "#2E6671" // rgb: 46, 102, 113
 	taste_description = "tartness and bananas"
 	boozepwr = 35
 
 /datum/reagent/consumable/ethanol/driestmartini
-	name = "Driest Martini"
+	name = "Driest Martini-最干马天尼"
 	description = "Only for the experienced. You think you see sand floating in the glass."
 	nutriment_factor = 0.5
 	color = "#2E6671" // rgb: 46, 102, 113
@@ -754,7 +754,7 @@
 	boozepwr = 65
 
 /datum/reagent/consumable/ethanol/bananahonk
-	name = "Banana Honk"
+	name = "Banana Honk-香蕉鸣笛"
 	description = "A drink from Clown Heaven."
 	nutriment_factor = 0.5
 	color = "#FFFF91" // rgb: 255, 255, 140
@@ -762,7 +762,7 @@
 	boozepwr = 60
 
 /datum/reagent/consumable/ethanol/silencer
-	name = "Silencer"
+	name = "Silencer-消音器"
 	description = "A drink from Mime Heaven."
 	nutriment_factor = 1
 	color = "#a8a8a8" // rgb: 168,168,168
@@ -787,21 +787,21 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/drunkenblumpkin
-	name = "Drunken Blumpkin"
+	name = "Drunken Blumpkin-醉醺醺的南瓜"
 	description = "A weird mix of whiskey and blumpkin juice."
 	color = "#1EA0FF" // rgb: 30,160,255
 	boozepwr = 50
 	taste_description = "molasses and a mouthful of pool water"
 
 /datum/reagent/consumable/ethanol/whiskey_sour //Requested since we had whiskey cola and soda but not sour.
-	name = "Whiskey Sour"
+	name = "Whiskey Sour-威士忌酸酒"
 	description = "Lemon juice/whiskey/sugar mixture. Moderate alcohol content."
 	color = rgb(255, 201, 49)
 	boozepwr = 35
 	taste_description = "sour lemons"
 
 /datum/reagent/consumable/ethanol/hcider
-	name = "Hard Cider"
+	name = "Hard Cider-硬苹果酒"
 	description = "Apple juice, for adults."
 	color = "#CD6839"
 	nutriment_factor = 0.5
@@ -809,7 +809,7 @@
 	taste_description = "the season that <i>falls</i> between summer and winter"
 
 /datum/reagent/consumable/ethanol/fetching_fizz //A reference to one of my favorite games of all time. Pulls nearby ores to the imbiber!
-	name = "Fetching Fizz"
+	name = "Fetching Fizz-正在获取 Fizz"
 	description = "Whiskey sour/iron/uranium mixture resulting in a highly magnetic slurry. Mild alcohol content." //Requires no alcohol to make but has alcohol anyway because ~magic~
 	color = rgb(255, 91, 15)
 	boozepwr = 10
@@ -818,7 +818,7 @@
 
 //Another reference. Heals those in critical condition extremely quickly.
 /datum/reagent/consumable/ethanol/hearty_punch
-	name = "Hearty Punch"
+	name = "Hearty Punch-重拳出击"
 	description = "Brave bull/syndicate bomb/absinthe mixture resulting in an energizing beverage. Mild alcohol content."
 	color = rgb(140, 0, 0)
 	boozepwr = 90
@@ -826,14 +826,14 @@
 	taste_description = "bravado in the face of disaster"
 
 /datum/reagent/consumable/ethanol/bacchus_blessing //An EXTREMELY powerful drink. Smashed in seconds, dead in minutes.
-	name = "Bacchus' Blessing"
+	name = "Bacchus' Blessing-巴克斯的祝福"
 	description = "Unidentifiable mixture. Unmeasurably high alcohol content."
 	color = rgb(51, 19, 3) //Sickly brown
 	boozepwr = 300 //I warned you
 	taste_description = "a wall of bricks"
 
 /datum/reagent/consumable/ethanol/atomicbomb
-	name = "Atomic Bomb"
+	name = "Atomic Bomb-原子弹"
 	description = "Nuclear proliferation never tasted so good."
 	color = "#666300" // rgb: 102, 99, 0
 	boozepwr = 0 //custom drunk effect
@@ -854,7 +854,7 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/gargle_blaster
-	name = "Pan-Galactic Gargle Blaster"
+	name = "Pan-Galactic Gargle Blaster-泛银河系含漱爆破剂"
 	description = "Whoah, this stuff looks volatile!"
 	color = "#9cc8b4" // rgb: 156,200,180
 	boozepwr = 0 //custom drunk effect
@@ -889,7 +889,7 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/neurotoxin
-	name = "Neurotoxin"
+	name = "Neurotoxin-神经毒素"
 	description = "A strong neurotoxin that puts the subject into a death-like state."
 	color = "#2E2E61" // rgb: 46, 46, 97
 	boozepwr = 50
@@ -915,7 +915,7 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/hippies_delight
-	name = "Hippie's Delight"
+	name = "Hippie's Delight-嬉皮士的欢愉"
 	description = "You just don't get it maaaan."
 	color = "#b16e8b" // rgb: 177,110,139
 	nutriment_factor = 0
@@ -953,7 +953,7 @@
 	return ..()
 
 /datum/reagent/consumable/ethanol/eggnog
-	name = "Eggnog"
+	name = "Eggnog-蛋奶酒"
 	description = "For enjoying the most wonderful time of the year."
 	color = "#fcfdc6" // rgb: 252, 253, 198
 	nutriment_factor = 1
@@ -961,7 +961,7 @@
 	taste_description = "custard and alcohol"
 
 /datum/reagent/consumable/ethanol/dreadnog
-	name = "Dreadnog"
+	name = "Dreadnog-恐惧诺格"
 	description = "For suffering during a period of joy."
 	color = "#abb862" // rgb: 252, 253, 198
 	nutriment_factor = 1.5 * REAGENTS_METABOLISM
@@ -969,70 +969,70 @@
 	taste_description = "custard and alcohol"
 
 /datum/reagent/consumable/ethanol/narsour
-	name = "Nar'Sour"
+	name = "Nar'Sour-纳尔索尔"
 	description = "Side effects include self-mutilation and hoarding plasteel."
 	color = "#7D1717"
 	boozepwr = 10
 	taste_description = "bloody"
 
 /datum/reagent/consumable/ethanol/triple_sec
-	name = "Triple Sec"
+	name = "Triple Sec-三重蒸馏橙酒"
 	description = "A sweet and vibrant orange liqueur."
 	color = "#ffcc66"
 	boozepwr = 30
 	taste_description = "a warm flowery orange taste which recalls the ocean air and summer wind of the caribbean"
 
 /datum/reagent/consumable/ethanol/creme_de_menthe
-	name = "Creme de Menthe"
+	name = "Creme de Menthe-薄荷甜酒"
 	description = "A minty liqueur excellent for refreshing, cool drinks."
 	color = "#00cc00"
 	boozepwr = 20
 	taste_description = "a minty, cool, and invigorating splash of cold streamwater"
 
 /datum/reagent/consumable/ethanol/creme_de_cacao
-	name = "Creme de Cacao"
+	name = "Creme de Cacao-可可奶油利口酒"
 	description = "A chocolatey liqueur excellent for adding dessert notes to beverages and bribing sororities."
 	color = "#996633"
 	boozepwr = 20
 	taste_description = "a slick and aromatic hint of chocolates swirling in a bite of alcohol"
 
 /datum/reagent/consumable/ethanol/creme_de_coconut
-	name = "Creme de Coconut"
+	name = "Creme de Coconut-椰香奶油"
 	description = "A coconut liqueur for smooth, creamy, tropical drinks."
 	color = "#F7F0D0"
 	boozepwr = 20
 	taste_description = "a sweet milky flavor with notes of toasted sugar"
 
 /datum/reagent/consumable/ethanol/quadruple_sec
-	name = "Quadruple Sec"
+	name = "Quadruple Sec-四倍安全"
 	description = "Kicks just as hard as licking the power cell on a baton, but tastier."
 	color = "#cc0000"
 	boozepwr = 35
 	taste_description = "an invigorating bitter freshness which suffuses your being; no enemy of the station will go unrobusted this day"
 
 /datum/reagent/consumable/ethanol/quintuple_sec
-	name = "Quintuple Sec"
+	name = "Quintuple Sec-五重安保"
 	description = "Law, Order, Alcohol, and Police Brutality distilled into one single elixir of JUSTICE."
 	color = "#ff3300"
 	boozepwr = 55
 	taste_description = "THE LAW"
 
 /datum/reagent/consumable/ethanol/grasshopper
-	name = "Grasshopper"
+	name = "Grasshopper-蚱蜢"
 	description = "A fresh and sweet dessert shooter. Difficult to look manly while drinking this."
 	color = "#00ff00"
 	boozepwr = 25
 	taste_description = "chocolate and mint dancing around your mouth"
 
 /datum/reagent/consumable/ethanol/stinger
-	name = "Stinger"
+	name = "Stinger-毒刺"
 	description = "A snappy way to end the day."
 	color = "#ccff99"
 	boozepwr = 25
 	taste_description = "a slap on the face in the best possible way"
 
 /datum/reagent/consumable/ethanol/bastion_bourbon
-	name = "Bastion Bourbon"
+	name = "Bastion Bourbon-堡垒波本"
 	description = "Soothing hot herbal brew with restorative properties. Hints of citrus and berry flavors."
 	color = COLOR_CYAN
 	boozepwr = 30
@@ -1040,7 +1040,7 @@
 	custom_metabolism = 2 * FOOD_METABOLISM
 
 /datum/reagent/consumable/ethanol/squirt_cider
-	name = "Squirt Cider"
+	name = "Squirt Cider-喷射苹果酒"
 	description = "Fermented squirt extract with a nose of stale bread and ocean water. Whatever a squirt is."
 	color = COLOR_RED
 	boozepwr = 40
@@ -1048,14 +1048,14 @@
 	nutriment_factor = 1
 
 /datum/reagent/consumable/ethanol/fringe_weaver
-	name = "Fringe Weaver"
+	name = "Fringe Weaver-边缘编织者"
 	description = "Bubbly, classy, and undoubtedly strong - a Glitch City classic."
 	color = "#FFEAC4"
 	boozepwr = 90 //classy hooch, essentially, but lower pwr to make up for slightly easier access
 	taste_description = "ethylic alcohol with a hint of sugar"
 
 /datum/reagent/consumable/ethanol/sugar_rush
-	name = "Sugar Rush"
+	name = "Sugar Rush-糖分冲刺"
 	description = "Sweet, light, and fruity - as girly as it gets."
 	color = "#FF226C"
 	boozepwr = 10
@@ -1063,105 +1063,105 @@
 	nutriment_factor = 1
 
 /datum/reagent/consumable/ethanol/crevice_spike
-	name = "Crevice Spike"
+	name = "Crevice Spike-裂隙尖刺"
 	description = "Sour, bitter, and smashingly sobering."
 	color = "#5BD231"
 	boozepwr = -10 //sobers you up - ideally, one would drink to get hit with brute damage now to avoid alcohol problems later
 	taste_description = "a bitter SPIKE with a sour aftertaste"
 
 /datum/reagent/consumable/ethanol/sake
-	name = "Sake"
+	name = "Sake-清酒"
 	description = "A sweet rice wine of questionable legality and extreme potency."
 	color = "#DDDDDD"
 	taste_description = "sweet rice wine"
 	boozepwr = 70
 
 /datum/reagent/consumable/ethanol/peppermint_patty
-	name = "Peppermint Patty"
+	name = "Peppermint Patty-薄荷帕蒂"
 	description = "This lightly alcoholic drink combines the benefits of menthol and cocoa."
 	color = "#45ca7a"
 	taste_description = "mint and chocolate"
 	boozepwr = 25
 
 /datum/reagent/consumable/ethanol/alexander
-	name = "Alexander"
+	name = "Alexander-亚历山大"
 	description = "Named after a Greek hero, this mix is said to embolden a user's shield as if they were in a phalanx."
 	color = "#F5E9D3"
 	boozepwr = 50
 	taste_description = "bitter, creamy cacao"
 
 /datum/reagent/consumable/ethanol/amaretto_alexander
-	name = "Amaretto Alexander"
+	name = "Amaretto Alexander-杏仁亚历山大"
 	description = "A weaker version of the Alexander, what it lacks in strength it makes up for in flavor."
 	color = "#DBD5AE"
 	boozepwr = 35
 	taste_description = "sweet, creamy cacao"
 
 /datum/reagent/consumable/ethanol/sidecar
-	name = "Sidecar"
+	name = "Sidecar-侧挂"
 	description = "The one ride you'll gladly give up the wheel for."
 	color = "#FFC55B"
 	boozepwr = 45
 	taste_description = "delicious freedom"
 
 /datum/reagent/consumable/ethanol/between_the_sheets
-	name = "Between the Sheets"
+	name = "Between the Sheets-床笫之间"
 	description = "A provocatively named classic. Funny enough, doctors recommend drinking it before taking a nap while underneath bedsheets."
 	color = "#F4C35A"
 	boozepwr = 55
 	taste_description = "seduction"
 
 /datum/reagent/consumable/ethanol/kamikaze
-	name = "Kamikaze"
+	name = "Kamikaze-神风特攻队"
 	description = "Divinely windy."
 	color = "#EEF191"
 	boozepwr = 60
 	taste_description = "divine windiness"
 
 /datum/reagent/consumable/ethanol/mojito
-	name = "Mojito"
+	name = "Mojito-莫吉托"
 	description = "A drink that looks as refreshing as it tastes."
 	color = "#DFFAD9"
 	boozepwr = 30
 	taste_description = "refreshing mint"
 
 /datum/reagent/consumable/ethanol/moscow_mule
-	name = "Moscow Mule"
+	name = "Moscow Mule-莫斯科骡子"
 	description = "A chilly drink that reminds you of the Derelict."
 	color = "#EEF1AA"
 	boozepwr = 30
 	taste_description = "refreshing spiciness"
 
 /datum/reagent/consumable/ethanol/fernet
-	name = "Fernet"
+	name = "Fernet-费内特"
 	description = "An incredibly bitter herbal liqueur used as a digestif."
 	color = "#1B2E24" // rgb: 27, 46, 36
 	boozepwr = 80
 	taste_description = "utter bitterness"
 
 /datum/reagent/consumable/ethanol/fernet_cola
-	name = "Fernet Cola"
+	name = "Fernet Cola-费内可乐"
 	description = "A very popular and bittersweet digestif, ideal after a heavy meal. Best served on a sawed-off cola bottle as per tradition."
 	color = "#390600" // rgb: 57, 6,
 	boozepwr = 25
 	taste_description = "sweet relief"
 
 /datum/reagent/consumable/ethanol/fanciulli
-	name = "Fanciulli"
+	name = "Fanciulli-范丘利"
 	description = "What if the Manhattan cocktail ACTUALLY used a bitter herb liquour? Helps you sober up." //also causes a bit of stamina damage to symbolize the afterdrink lazyness
 	color = "#CA933F" // rgb: 202, 147, 63
 	boozepwr = -10
 	taste_description = "a sweet sobering mix"
 
 /datum/reagent/consumable/ethanol/branca_menta
-	name = "Branca Menta"
+	name = "Branca Menta-薄荷白兰地"
 	description = "A refreshing mixture of bitter Fernet with mint creme liquour."
 	color = "#4B5746" // rgb: 75, 87, 70
 	boozepwr = 35
 	taste_description = "a bitter freshness"
 
 /datum/reagent/consumable/ethanol/blank_paper
-	name = "Blank Paper"
+	name = "Blank Paper-空白纸张"
 	description = "A bubbling glass of blank paper. Just looking at it makes you feel fresh."
 	nutriment_factor = 0.5
 	color = "#DCDCDC" // rgb: 220, 220, 220
@@ -1169,7 +1169,7 @@
 	taste_description = "bubbling possibility"
 
 /datum/reagent/consumable/ethanol/fruit_wine
-	name = "Fruit Wine"
+	name = "Fruit Wine-果酒"
 	description = "A wine made from grown plants."
 	color = COLOR_WHITE
 	boozepwr = 35
@@ -1234,7 +1234,7 @@
 	if(named)
 		name += "Wine"
 	else
-		name = "Mixed [names_in_order[1]] Wine"
+		name = "混合[names_in_order[1]]葡萄酒"
 
 	var/alcohol_description
 	switch(boozepwr)
@@ -1273,173 +1273,173 @@
 	taste_description = flavor
 
 /datum/reagent/consumable/ethanol/champagne //How the hell did we not have champagne already!?
-	name = "Champagne"
+	name = "Champagne-香槟"
 	description = "A sparkling wine known for its ability to strike fast and hard."
 	color = "#ffffc1"
 	boozepwr = 40
 	taste_description = "auspicious occasions and bad decisions"
 
 /datum/reagent/consumable/ethanol/wizz_fizz
-	name = "Wizz Fizz"
+	name = "Wizz Fizz-威兹菲兹"
 	description = "A magical potion, fizzy and wild! However the taste, you will find, is quite mild."
 	color = "#4235d0" //Just pretend that the triple-sec was blue curacao.
 	boozepwr = 50
 	taste_description = "friendship! It is magic, after all"
 
 /datum/reagent/consumable/ethanol/bug_spray
-	name = "Bug Spray"
+	name = "Bug Spray-杀虫剂"
 	description = "A harsh, acrid, bitter drink, for those who need something to brace themselves."
 	color = "#33ff33"
 	boozepwr = 50
 	taste_description = "the pain of ten thousand slain mosquitos"
 
 /datum/reagent/consumable/ethanol/applejack
-	name = "Applejack"
+	name = "Applejack-苹果杰克"
 	description = "The perfect beverage for when you feel the need to horse around."
 	color = "#ff6633"
 	boozepwr = 20
 	taste_description = "an honest day's work at the orchard"
 
 /datum/reagent/consumable/ethanol/jack_rose
-	name = "Jack Rose"
+	name = "Jack Rose-杰克·罗斯"
 	description = "A light cocktail perfect for sipping with a slice of pie."
 	color = "#ff6633"
 	boozepwr = 15
 	taste_description = "a sweet and sour slice of apple"
 
 /datum/reagent/consumable/ethanol/turbo
-	name = "Turbo"
+	name = "Turbo-涡轮增压"
 	description = "A turbulent cocktail associated with outlaw hoverbike racing. Not for the faint of heart."
 	color = "#e94c3a"
 	boozepwr = 85
 	taste_description = "the outlaw spirit"
 
 /datum/reagent/consumable/ethanol/old_timer
-	name = "Old Timer"
+	name = "Old Timer-老手"
 	description = "An archaic potation enjoyed by old coots of all ages."
 	color = "#996835"
 	boozepwr = 35
 	taste_description = "simpler times"
 
 /datum/reagent/consumable/ethanol/rubberneck
-	name = "Rubberneck"
+	name = "Rubberneck-看热闹"
 	description = "A quality rubberneck should not contain any gross natural ingredients."
 	color = "#ffe65b"
 	boozepwr = 60
 	taste_description = "artifical fruityness"
 
 /datum/reagent/consumable/ethanol/duplex
-	name = "Duplex"
+	name = "Duplex-双管"
 	description = "An inseparable combination of two fruity drinks."
 	color = "#50e5cf"
 	boozepwr = 25
 	taste_description = "green apples and blue raspberries"
 
 /datum/reagent/consumable/ethanol/trappist
-	name = "Trappist Beer"
+	name = "Trappist Beer-特拉普啤酒"
 	description = "A strong dark ale brewed by space-monks."
 	color = "#390c00"
 	boozepwr = 40
 	taste_description = "dried plums and malt"
 
 /datum/reagent/consumable/ethanol/blazaam
-	name = "Blazaam"
+	name = "Blazaam-布拉扎姆"
 	description = "A strange drink that few people seem to remember existing. Doubles as a Berenstain remover."
 	boozepwr = 70
 	taste_description = "alternate realities"
 
 /datum/reagent/consumable/ethanol/planet_cracker
-	name = "Planet Cracker"
+	name = "Planet Cracker-行星粉碎者"
 	description = "This jubilant drink celebrates humanity's triumph over the alien menace. May be offensive to non-human crewmembers."
 	boozepwr = 50
 	taste_description = "triumph with a hint of bitterness"
 
 /datum/reagent/consumable/ethanol/mauna_loa
-	name = "Mauna Loa"
+	name = "Mauna Loa-莫纳罗亚"
 	description = "Extremely hot; not for the faint of heart!"
 	boozepwr = 40
 	color = "#fe8308" // 254, 131, 8
 	taste_description = "fiery, with an aftertaste of burnt flesh"
 
 /datum/reagent/consumable/ethanol/painkiller
-	name = "Painkiller"
+	name = "Painkiller-止痛药"
 	description = "Dulls your pain. Your emotional pain, that is."
 	boozepwr = 20
 	color = "#EAD677"
 	taste_description = "sugary tartness"
 
 /datum/reagent/consumable/ethanol/pina_colada
-	name = "Pina Colada"
+	name = "Pina Colada-皮娜可乐达"
 	description = "A fresh pineapple drink with coconut rum. Yum."
 	boozepwr = 40
 	color = "#FFF1B2"
 	taste_description = "pineapple, coconut, and a hint of the ocean"
 
 /datum/reagent/consumable/ethanol/pina_olivada
-	name = "Piña Olivada"
+	name = "Piña Olivada-皮尼亚·奥利瓦达"
 	description = "An oddly designed concoction of olive oil and pineapple juice."
 	boozepwr = 20 // the oil coats your gastrointestinal tract, meaning you can't absorb as much alcohol. horrifying
 	color = "#493c00"
 	taste_description = "a horrible emulsion of pineapple and olive oil"
 
 /datum/reagent/consumable/ethanol/pruno // pruno mix is in drink_reagents
-	name = "Pruno"
+	name = "Pruno-私酿酒"
 	color = "#E78108"
 	description = "Fermented prison wine made from fruit, sugar, and despair. Security loves to confiscate this, which is the only kind thing Security has ever done."
 	boozepwr = 85
 	taste_description = "your tastebuds being individually shanked"
 
 /datum/reagent/consumable/ethanol/ginger_amaretto
-	name = "Ginger Amaretto"
+	name = "Ginger Amaretto-姜汁杏仁酒"
 	description = "A delightfully simple cocktail that pleases the senses."
 	boozepwr = 30
 	color = "#EFB42A"
 	taste_description = "sweetness followed by a soft sourness and warmth"
 
 /datum/reagent/consumable/ethanol/godfather
-	name = "Godfather"
+	name = "Godfather-教父"
 	description = "A rough cocktail with illegal connections."
 	boozepwr = 50
 	color = "#E68F00"
 	taste_description = "a delightful softened punch"
 
 /datum/reagent/consumable/ethanol/godmother
-	name = "Godmother"
+	name = "Godmother-神母"
 	description = "A twist on a classic, liked more by mature women."
 	boozepwr = 50
 	color = "#E68F00"
 	taste_description = "sweetness and a zesty twist"
 
 /datum/reagent/consumable/ethanol/kortara
-	name = "Kortara"
+	name = "Kortara-科塔拉"
 	description = "A sweet, milky nut-based drink enjoyed on Tizira. Frequently mixed with fruit juices and cocoa for extra refreshment."
 	boozepwr = 25
 	color = "#EEC39A"
 	taste_description = "sweet nectar"
 
 /datum/reagent/consumable/ethanol/sea_breeze
-	name = "Sea Breeze"
+	name = "Sea Breeze-海风"
 	description = "Light and refreshing with a mint and cocoa hit- like mint choc chip ice cream you can drink!"
 	boozepwr = 15
 	color = "#CFFFE5"
 	taste_description = "mint choc chip"
 
 /datum/reagent/consumable/ethanol/white_tiziran
-	name = "White Tiziran"
+	name = "White Tiziran-白化提兹兰"
 	description = "A mix of vodka and kortara. The Lizard imbibes."
 	boozepwr = 65
 	color = "#A68340"
 	taste_description = "strikes and gutters"
 
 /datum/reagent/consumable/ethanol/drunken_espatier
-	name = "Drunken Espatier"
+	name = "Drunken Espatier-醉醺醺的太空步兵"
 	description = "Look, if you had to get into a shootout in the cold vacuum of space, you'd want to be drunk too."
 	boozepwr = 65
 	color = "#A68340"
 	taste_description = "sorrow"
 
 /datum/reagent/consumable/ethanol/protein_blend
-	name = "Protein Blend"
+	name = "Protein Blend-蛋白质混合剂"
 	description = "A vile blend of protein, pure grain alcohol, korta flour, and blood. Useful for bulking up, if you can keep it down."
 	boozepwr = 65
 	color = "#FF5B69"
@@ -1447,21 +1447,21 @@
 	nutriment_factor = 1.5
 
 /datum/reagent/consumable/ethanol/mushi_kombucha
-	name = "Mushi Kombucha"
+	name = "Mushi Kombucha-穆希康普茶"
 	description = "A popular summer beverage on Tizira, made from sweetened mushroom tea."
 	boozepwr = 10
 	color = "#C46400"
 	taste_description = "sweet 'shrooms"
 
 /datum/reagent/consumable/ethanol/triumphal_arch
-	name = "Triumphal Arch"
+	name = "Triumphal Arch-凯旋门"
 	description = "A drink celebrating the Lizard Empire and its military victories. It's popular at bars on Unification Day."
 	boozepwr = 60
 	color = "#FFD700"
 	taste_description = "victory"
 
 /datum/reagent/consumable/ethanol/the_juice
-	name = "The Juice"
+	name = "The Juice-果汁"
 	description = "Woah man, this like, feels familiar to you dude."
 	color = "#4c14be"
 	boozepwr = 50
@@ -1469,7 +1469,7 @@
 
 //a jacked up absinthe that causes hallucinations to the game master controller basically, used in smuggling objectives
 /datum/reagent/consumable/ethanol/ritual_wine
-	name = "Ritual Wine"
+	name = "Ritual Wine-仪式用酒"
 	description = "The dangerous, potent, alcoholic component of ritual wine."
 	color = rgb(35, 231, 25)
 	boozepwr = 90 //enjoy near death intoxication
@@ -1477,91 +1477,91 @@
 
 //Moth Drinks
 /datum/reagent/consumable/ethanol/curacao
-	name = "Curaçao"
+	name = "Curaçao-库拉索"
 	description = "Made with laraha oranges, for an aromatic finish."
 	boozepwr = 30
 	color = "#1a5fa1"
 	taste_description = "blue orange"
 
 /datum/reagent/consumable/ethanol/navy_rum //IN THE NAVY
-	name = "Navy Rum"
+	name = "Navy Rum-海军朗姆酒"
 	description = "Rum as the finest sailors drink."
 	boozepwr = 90 //the finest sailors are often drunk
 	color = "#d8e8f0"
 	taste_description = "a life on the waves"
 
 /datum/reagent/consumable/ethanol/bitters //why do they call them bitters, anyway? they're more spicy than anything else
-	name = "Andromeda Bitters"
+	name = "Andromeda Bitters-安朵美达苦味酒"
 	description = "A bartender's best friend, often used to lend a delicate spiciness to any drink. Produced in New Trinidad, now and forever."
 	boozepwr = 70
 	color = "#1c0000"
 	taste_description = "spiced alcohol"
 
 /datum/reagent/consumable/ethanol/admiralty //navy rum, vermouth, fernet
-	name = "Admiralty"
+	name = "Admiralty-海军部"
 	description = "A refined, bitter drink made with navy rum, vermouth and fernet."
 	boozepwr = 100
 	color = "#1F0001"
 	taste_description = "haughty arrogance"
 
 /datum/reagent/consumable/ethanol/long_haul //Rum, Curacao, Sugar, dash of bitters, lengthened with soda water
-	name = "Long Haul"
+	name = "Long Haul-长途运输"
 	description = "A favourite amongst freighter pilots, unscrupulous smugglers, and nerf herders."
 	boozepwr = 35
 	color = "#003153"
 	taste_description = "companionship"
 
 /datum/reagent/consumable/ethanol/long_john_silver //navy rum, bitters, lemonade
-	name = "Long John Silver"
+	name = "Long John Silver-朗·约翰·西尔弗"
 	description = "A long drink of navy rum, bitters, and lemonade. Particularly popular aboard the Mothic Fleet as it's light on ration credits and heavy on flavour."
 	boozepwr = 50
 	color = "#c4b35c"
 	taste_description = "rum and spices"
 
 /datum/reagent/consumable/ethanol/tropical_storm //dark rum, pineapple juice, triple citrus, curacao
-	name = "Tropical Storm"
+	name = "Tropical Storm-热带风暴"
 	description = "A taste of the Caribbean in one glass."
 	boozepwr = 40
 	color = "#00bfa3"
 	taste_description = "the tropics"
 
 /datum/reagent/consumable/ethanol/dark_and_stormy //rum and ginger beer- simple and classic
-	name = "Dark and Stormy"
+	name = "Dark and Stormy-黑暗与风暴"
 	description = "A classic drink arriving to thunderous applause." //thank you, thank you, I'll be here forever
 	boozepwr = 50
 	color = "#8c5046"
 	taste_description = "ginger and rum"
 
 /datum/reagent/consumable/ethanol/salt_and_swell //navy rum, tochtause syrup, egg whites, dash of saline-glucose solution
-	name = "Salt and Swell"
+	name = "Salt and Swell-盐与浪"
 	description = "A bracing sour with an interesting salty taste."
 	boozepwr = 60
 	color = "#b4abd0"
 	taste_description = "salt and spice"
 
 /datum/reagent/consumable/ethanol/tiltaellen //yoghurt, salt, vinegar
-	name = "Tiltällen"
+	name = "Tiltällen-倾斜"
 	description = "A lightly fermented yoghurt drink with salt and a light dash of vinegar. Has a distinct sour cheesy flavour."
 	boozepwr = 10
 	color = "#F4EFE2"
 	taste_description = "sour cheesy yoghurt"
 
 /datum/reagent/consumable/ethanol/tich_toch
-	name = "Tich Toch"
+	name = "Tich Toch-提奇·托奇"
 	description = "A mix of Tiltällen, Töchtaüse Syrup, and vodka. It's not exactly to everyones' tastes."
 	boozepwr = 75
 	color = "#b4abd0"
 	taste_description = "spicy sour cheesy yoghurt"
 
 /datum/reagent/consumable/ethanol/helianthus
-	name = "Helianthus"
+	name = "Helianthus-向日葵"
 	description = "A dark yet radiant mixture of absinthe and hallucinogens. The choice of all true artists."
 	boozepwr = 75
 	color = "#fba914"
 	taste_description = "golden memories"
 
 /datum/reagent/consumable/ethanol/plumwine
-	name = "Plum wine"
+	name = "Plum wine-梅子酒"
 	description = "Plums turned into wine."
 	color = "#8a0421"
 	nutriment_factor = 0.5
@@ -1569,35 +1569,35 @@
 	taste_description = "a poet's love and undoing"
 
 /datum/reagent/consumable/ethanol/the_hat
-	name = "The Hat"
+	name = "The Hat-帽子"
 	description = "A fancy drink, usually served in a man's hat."
 	color = "#b90a5c"
 	boozepwr = 80
 	taste_description = "something perfumy"
 
 /datum/reagent/consumable/ethanol/gin_garden
-	name = "Gin Garden"
+	name = "Gin Garden-金酒花园"
 	description = "Excellent cooling alcoholic drink with not so ordinary taste."
 	boozepwr = 20
 	color = "#6cd87a"
 	taste_description = "light gin with sweet ginger and cucumber"
 
 /datum/reagent/consumable/ethanol/wine_voltaic
-	name = "Voltaic Yellow Wine"
+	name = "Voltaic Yellow Wine-伏特黄酒"
 	description = "Electrically charged wine. Recharges ethereals, but also nontoxic."
 	boozepwr = 30
 	color = "#FFAA00"
 	taste_description = "static with a hint of sweetness"
 
 /datum/reagent/consumable/ethanol/telepole
-	name = "Telepole"
+	name = "Telepole-蝌蚪号"
 	description = "A grounding rod in the form of a drink. Recharges ethereals, and gives temporary shock resistance."
 	boozepwr = 50
 	color = "#b300ff"
 	taste_description = "the howling storm"
 
 /datum/reagent/consumable/ethanol/pod_tesla
-	name = "Pod Tesla"
+	name = "Pod Tesla-特斯拉舱"
 	description = "Ride the lightning!  Recharges ethereals, suppresses phobias, and gives strong temporary shock resistance."
 	boozepwr = 80
 	color = "#00fbff"
@@ -1605,28 +1605,28 @@
 
 // Welcome to the Blue Room Bar and Grill, home to Mars' finest cocktails
 /datum/reagent/consumable/ethanol/rice_beer
-	name = "Rice Beer"
+	name = "Rice Beer-米酒"
 	description = "A light, rice-based lagered beer popular on Mars. Considered a hate crime against Bavarians under the Reinheitsgebot Act of 1516."
 	boozepwr = 5
 	color = "#664300"
 	taste_description = "mild carbonated malt"
 
 /datum/reagent/consumable/ethanol/shochu
-	name = "Shochu"
+	name = "Shochu-烧酒"
 	description = "Also known as soju or baijiu, this drink is made from fermented rice, much like sake, but at a generally higher proof making it more similar to a true spirit."
 	boozepwr = 45
 	color = "#DDDDDD"
 	taste_description = "stiff rice wine"
 
 /datum/reagent/consumable/ethanol/yuyake
-	name = "Yūyake"
+	name = "Yūyake-夕焼け"
 	description = "A sweet melon liqueur from Japan. Considered a relic of the 1980s by most, it has some niche use in cocktail making, in part due to its bright red colour."
 	boozepwr = 40
 	color = "#F54040"
 	taste_description = "sweet melon"
 
 /datum/reagent/consumable/ethanol/coconut_rum
-	name = "Coconut Rum"
+	name = "Coconut Rum-椰子朗姆酒"
 	description = "The distilled essence of the beach. Tastes like bleach-blonde hair and suncream."
 	boozepwr = 21
 	color = "#F54040"
@@ -1634,133 +1634,133 @@
 
 // Mixed Martian Drinks
 /datum/reagent/consumable/ethanol/yuyakita
-	name = "Yūyakita"
+	name = "Yūyakita-由谷北"
 	description = "A hell unleashed upon the world by an unnamed patron."
 	boozepwr = 40
 	color = "#F54040"
 	taste_description = "death"
 
 /datum/reagent/consumable/ethanol/saibasan
-	name = "Saibāsan"
+	name = "Saibāsan-赛博森"
 	description = "A drink glorifying Cybersun's enduring business."
 	boozepwr = 20
 	color = "#F54040"
 	taste_description = "betrayal"
 
 /datum/reagent/consumable/ethanol/banzai_ti
-	name = "Banzai-Tī"
+	name = "Banzai-Tī-万岁冲锋队"
 	description = "A variation on the Long Island Iced Tea, made with yuyake for an alternative flavour that's hard to place."
 	boozepwr = 40
 	color = "#F54040"
 	taste_description = "an asian twist on the liquor cabinet"
 
 /datum/reagent/consumable/ethanol/sanraizusoda
-	name = "Sanraizusōda"
+	name = "Sanraizusōda-三垒打"
 	description = "It's a melon cream soda, except with alcohol- what's not to love? Well... possibly the hangovers."
 	boozepwr = 6
 	color = "#F54040"
 	taste_description = "creamy melon soda"
 
 /datum/reagent/consumable/ethanol/kumicho
-	name = "Kumichō"
+	name = "Kumichō-老大"
 	description = "A new take on a classic cocktail, the Kumicho takes the Godfather formula and adds shochu for an Asian twist."
 	boozepwr = 62
 	color = "#F54040"
 	taste_description = "rice and rye"
 
 /datum/reagent/consumable/ethanol/red_planet
-	name = "Red Planet"
+	name = "Red Planet-红色星球"
 	description = "Made in celebration of the Martian Concession, the Red Planet is based on the classic El Presidente, and is as patriotic as it is bright crimson."
 	boozepwr = 45
 	color = "#F54040"
 	taste_description = "the spirit of freedom"
 
 /datum/reagent/consumable/ethanol/amaterasu
-	name = "Amaterasu"
+	name = "Amaterasu-天照"
 	description = "Named for Amaterasu, the Shinto Goddess of the Sun, this cocktail embodies radiance- or something like that, anyway."
 	boozepwr = 54 //1 part bitters is a lot
 	color = "#F54040"
 	taste_description = "sweet nectar of the gods"
 
 /datum/reagent/consumable/ethanol/nekomimosa
-	name = "Nekomimosa"
+	name = "Nekomimosa-猫耳娘"
 	description = "An overly sweet cocktail, made with melon liqueur, melon juice, and champagne (which contains no melon, unfortunately)."
 	boozepwr = 17
 	color = "#FF0C8D"
 	taste_description = "MELON"
 
 /datum/reagent/consumable/ethanol/sentai_quencha //melon soda, triple citrus, shochu, blue curacao
-	name = "Sentai Quencha"
+	name = "Sentai Quencha-战队女王"
 	description = "Based on the galaxy-famous \"Kyūkyoku no Ninja Pawā Sentai\", the Sentai Quencha is a favourite at anime conventions and weeb bars."
 	boozepwr = 28
 	color = "#F54040"
 	taste_description = "ultimate ninja power"
 
 /datum/reagent/consumable/ethanol/bosozoku
-	name = "Bōsōzoku"
+	name = "Bōsōzoku-暴走族"
 	description = "A simple summer drink from Mars, made from a 1:1 mix of rice beer and lemonade."
 	boozepwr = 6
 	color = "#F54040"
 	taste_description = "bittersweet lemon"
 
 /datum/reagent/consumable/ethanol/ersatzche
-	name = "Ersatzche"
+	name = "Ersatzche-代用品"
 	description = "Sweet, bitter, spicy- that's a great combination."
 	boozepwr = 6
 	color = "#F54040"
 	taste_description = "spicy pineapple beer"
 
 /datum/reagent/consumable/ethanol/red_city_am
-	name = "Red City AM"
+	name = "Red City AM-红城AM"
 	description = "A breakfast drink from New Osaka, for when you really need to get drunk at 9:30 in the morning in more socially acceptable manner than drinking bagwine on the bullet train. Not that you should drink this on the bullet train either."
 	boozepwr = 5 //this thing is fucking disgusting and both less tasty and less alcoholic than a bloody mary. it is against god and nature
 	color = "#F54040"
 	taste_description = "breakfast in a glass"
 
 /datum/reagent/consumable/ethanol/kings_ransom
-	name = "King's Ransom"
+	name = "King's Ransom-异形之王的赎金"
 	description = "A stiff, bitter drink with an odd name and odder recipe."
 	boozepwr = 26
 	color = "#F54040"
 	taste_description = "bitter raspberry"
 
 /datum/reagent/consumable/ethanol/four_bit
-	name = "Four Bit"
+	name = "Four Bit-四比特"
 	description = "A drink to power your typing hands."
 	boozepwr = 26
 	color = "#F54040"
 	taste_description = "cyberspace"
 
 /datum/reagent/consumable/ethanol/white_hawaiian //coconut milk, coconut rum, coffee liqueur
-	name = "White Hawaiian"
+	name = "White Hawaiian-白色夏威夷"
 	description = "A take on the classic White Russian, subbing out the classics for some tropical flavours."
 	boozepwr = 16
 	color = "#F54040"
 	taste_description = "COCONUT"
 
 /datum/reagent/consumable/ethanol/maui_sunrise //coconut rum, pineapple juice, yuyake, triple citrus, lemon-lime soda
-	name = "Maui Sunrise"
+	name = "Maui Sunrise-毛伊岛日出"
 	description = "Behind this drink's red facade lurks a sharp, complex flavour."
 	boozepwr = 15
 	color = "#F54040"
 	taste_description = "sunrise over the pacific"
 
 /datum/reagent/consumable/ethanol/imperial_mai_tai //navy rum, rum, lime, triple sec, korta nectar
-	name = "Imperial Mai Tai"
+	name = "Imperial Mai Tai-帝国迈泰"
 	description = "For when orgeat is in short supply, do as the spacers do- make do and mend."
 	boozepwr = 52
 	color = "#F54040"
 	taste_description = "spicy nutty rum"
 
 /datum/reagent/consumable/ethanol/konococo_rumtini //todo: add espresso | coffee, coffee liqueur, coconut rum, sugar
-	name = "Konococo Rumtini"
+	name = "Konococo Rumtini-科诺可可朗姆丁尼"
 	description = "Coconut rum, coffee liqueur, and espresso- an odd combination, to be sure, but a welcomed one."
 	boozepwr = 20
 	color = "#F54040"
 	taste_description = "coconut coffee"
 
 /datum/reagent/consumable/ethanol/blue_hawaiian //pineapple juice, lemon juice, coconut rum, blue curacao
-	name = "Blue Hawaiian"
+	name = "Blue Hawaiian-蓝色夏威夷"
 	description = "Sweet, sharp and coconutty."
 	boozepwr = 30
 	color = "#F54040"

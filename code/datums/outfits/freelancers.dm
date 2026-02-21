@@ -1,6 +1,6 @@
 //What all freelancers have shared in between them
 /datum/outfit/job/freelancer
-	name = "Freelancer"
+	name = "自由佣兵"
 	jobtype = /datum/job/freelancer
 
 	id = /obj/item/card/id/silver
@@ -42,7 +42,7 @@
 
 // PR412 with UGL
 /datum/outfit/job/freelancer/standard/m412
-	name = "Freelancer Standard"
+	name = "自由佣兵标准型"
 	jobtype = /datum/job/freelancer/standard
 
 	belt = /obj/item/storage/belt/marine
@@ -112,7 +112,7 @@
 //===========================MEDIC================================
 
 /datum/outfit/job/freelancer/medic
-	name = "Freelancer Medic"
+	name = "自由佣兵医疗兵"
 	jobtype = /datum/job/freelancer/medic
 
 	head = /obj/item/clothing/head/helmet/marine/freelancer/medic
@@ -188,7 +188,7 @@
 //===========================VETERAN================================
 
 /datum/outfit/job/freelancer/grenadier
-	name = "Freelancer Veteran"
+	name = "自由佣兵老兵"
 	jobtype = /datum/job/freelancer/grenadier
 
 	head = /obj/item/clothing/head/helmet/marine/freelancer/heavy
@@ -301,7 +301,7 @@
 //===========================SPECIALIST================================
 
 /datum/outfit/job/freelancer/specialist
-	name = "Freelancer Specialist"
+	name = "自由佣兵专家"
 	jobtype = /datum/job/freelancer/specialist
 
 	glasses = /obj/item/clothing/glasses/meson
@@ -373,7 +373,7 @@
 //===========================LEADER================================
 
 /datum/outfit/job/freelancer/leader
-	name = "Freelancer Leader"
+	name = "自由佣兵队长"
 	jobtype = /datum/job/freelancer/leader
 
 	head = /obj/item/clothing/head/helmet/marine/freelancer/beret

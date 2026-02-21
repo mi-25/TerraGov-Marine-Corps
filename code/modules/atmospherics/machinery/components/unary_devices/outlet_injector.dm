@@ -1,8 +1,8 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector
 	icon_state = "inje_map-2"
 
-	name = "air injector"
-	desc = "Has a valve and pump attached to it."
+	name = "空气注射器"
+	desc = "装有阀门和泵。"
 
 	use_power = IDLE_POWER_USE
 	can_unwrench = FALSE
@@ -43,7 +43,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational())
-		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
+		to_chat(user, span_warning("你无法拆卸[src]，请先关闭它！"))
 		return FALSE
 
 // mapping
@@ -72,34 +72,34 @@
 	volume_rate = 200
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste
-	name = "atmos waste outlet injector"
+	name = "大气废物排放注入器"
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/engine_waste
-	name = "engine outlet injector"
+	name = "引擎排气口喷射器"
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxin_input
-	name = "plasma tank input injector"
+	name = "等离子体罐输入喷射器"
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/oxygen_input
-	name = "oxygen tank input injector"
+	name = "氧气罐输入注入器"
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrogen_input
-	name = "nitrogen tank input injector"
+	name = "氮气罐输入注入器"
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/mix_input
-	name = "mix tank input injector"
+	name = "混合罐输入注射器"
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/nitrous_input
-	name = "nitrous oxide tank input injector"
+	name = "一氧化二氮罐输入注射器"
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input
-	name = "air mix tank input injector"
+	name = "空气混合罐输入注入器"
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/carbon_input
-	name = "carbon dioxide tank input injector"
+	name = "二氧化碳罐输入注入器"
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/incinerator_input
-	name = "incinerator chamber input injector"
+	name = "焚化室输入注入器"
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/toxins_mixing_input
-	name = "toxins mixing input injector"
+	name = "毒素混合输入注射器"

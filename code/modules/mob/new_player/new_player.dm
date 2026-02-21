@@ -144,7 +144,7 @@
 			if(!SSticker)
 				return
 			if(!GLOB.enter_allowed)
-				to_chat(usr, span_warning("Spawning currently disabled, please observe."))
+				to_chat(usr, span_warning("当前已禁用生成，请观察。"))
 				return
 			var/datum/job/job_datum = locate(href_list["job_selected"])
 			if(!isxenosjob(job_datum) && (SSmonitor.gamestate == SHUTTERS_CLOSED || (SSmonitor.gamestate == GROUNDSIDE && SSmonitor.current_state <= XENOS_LOSING)))
@@ -384,7 +384,7 @@
 
 /mob/new_player/proc/try_to_observe()
 	if(!SSticker || SSticker.current_state == GAME_STATE_STARTUP)
-		to_chat(src, span_warning("The game is still setting up, please try again later."))
+		to_chat(src, span_warning("游戏仍在设置中，请稍后再试。"))
 		return
 	if(tgui_alert(src, "Are you sure you wish to observe?[SSticker.mode?.observe_respawn_message()]", "Observe", list("Yes", "No")) != "Yes")
 		return
@@ -405,13 +405,13 @@
 		if(!T)
 			CRASH("Invalid latejoin spawn location type")
 
-		to_chat(src, span_notice("Now teleporting."))
+		to_chat(src, span_notice("正在传送。"))
 		observer.abstract_move(T)
 	else
 		failed = TRUE
 
 	if(failed)
-		to_chat(src, span_danger("Could not locate an observer spawn point. Use the Teleport verb to jump."))
+		to_chat(src, span_danger("无法定位观察者生成点。请使用传送功能进行跳跃。"))
 
 	GLOB.key_to_time_of_role_death[key] = world.time
 
@@ -437,7 +437,7 @@
 ///Toggles the new players ready state
 /mob/new_player/proc/toggle_ready()
 	if(SSticker?.current_state > GAME_STATE_PREGAME)
-		to_chat(src, span_warning("The round has already started."))
+		to_chat(src, span_warning("本回合已开始。"))
 		return
 	ready = !ready
 	if(ready)
@@ -449,11 +449,11 @@
 ///Attempts to latejoin the player
 /mob/new_player/proc/attempt_late_join(queue_override = FALSE)
 	if(!SSticker?.mode || SSticker.current_state != GAME_STATE_PLAYING)
-		to_chat(src, span_warning("The round is either not ready, or has already finished."))
+		to_chat(src, span_warning("回合尚未准备就绪，或已结束。"))
 		return
 
 	if(SSticker.mode.round_type_flags & MODE_NO_LATEJOIN)
-		to_chat(src, span_warning("Sorry, you cannot late join during [SSticker.mode.name]. You have to start at the beginning of the round. You may observe or try to join as an alien, if possible."))
+		to_chat(src, span_warning("抱歉，您无法在[SSticker.mode.name]期间中途加入。您必须在回合开始时加入。您可以选择旁观，或者如果可能的话，尝试以异形身份加入。"))
 		return
 
 	if(queue_override)
@@ -472,11 +472,11 @@
 
 		var/queue_position = SSticker.queued_players.Find(usr)
 		if(queue_position == 1)
-			to_chat(usr, span_notice("You are next in line to join the game. You will be notified when a slot opens up."))
+			to_chat(usr, span_notice("你已进入游戏排队队列。有空位时会通知你。"))
 		else if(queue_position)
-			to_chat(usr, span_notice("There are [queue_position - 1] players in front of you in the queue to join the game."))
+			to_chat(usr, span_notice("有 [queue_position - 1] 名玩家排在你前面等待加入游戏。"))
 		else
 			SSticker.queued_players += usr
-			to_chat(usr, span_notice("You have been added to the queue to join the game. Your position in queue is [length(SSticker.queued_players)]."))
+			to_chat(usr, span_notice("你已被加入游戏队列。你在队列中的位置是[length(SSticker.queued_players)]。"))
 		return
 	late_choices()

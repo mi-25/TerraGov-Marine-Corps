@@ -1,6 +1,6 @@
 
 /obj/structure/bed/chair/loader_seat
-	name = "loader seat"
+	name = "装载机座位"
 	icon = 'icons/obj/armored/3x3/tank_interior.dmi'
 	icon_state = "vehicle_chair"
 	resistance_flags = RESIST_ALL
@@ -12,7 +12,7 @@
 		. += mutable_appearance(icon, "[icon_state]_occupied", ABOVE_MOB_LAYER)
 
 /obj/structure/bed/chair/loader_seat/som
-	name = "loader seat"
+	name = "装载机座位"
 	icon = 'icons/obj/armored/3x4/som_interior_small_props.dmi'
 	icon_state = "chair"
 	dir = NORTH
@@ -25,7 +25,7 @@
 	return
 
 /obj/structure/bed/chair/vehicle_crew
-	name = "driver seat"
+	name = "驾驶座"
 	icon = 'icons/obj/armored/3x3/tank_interior.dmi'
 	icon_state = "vehicle_chair"
 	resistance_flags = RESIST_ALL
@@ -82,7 +82,7 @@
 	return owner.relaymove(arglist(args))
 
 /obj/structure/bed/chair/vehicle_crew/driver
-	name = "driver seat"
+	name = "驾驶座"
 	buckling_x = 12
 	control_flags = VEHICLE_CONTROL_DRIVE|VEHICLE_CONTROL_SETTINGS
 
@@ -100,14 +100,14 @@
 	buckled_mob.update_sight()
 
 /obj/structure/bed/chair/vehicle_crew/gunner
-	name = "gunner seat"
+	name = "炮手位"
 	control_flags = VEHICLE_CONTROL_MELEE|VEHICLE_CONTROL_EQUIPMENT
 
 /obj/structure/bed/chair/vehicle_crew/gunner/get_vis_range_mod()
 	return (SSticker.mode?.round_type_flags & MODE_HUMAN_ONLY) ? 4 : 1
 
 /obj/structure/bed/chair/vehicle_crew/driver_gunner
-	name = "apc commander seat"
+	name = "APC 指挥官座位"
 	skill_req = SKILL_LARGE_VEHICLE_EXPERIENCED
 	control_flags = VEHICLE_CONTROL_MELEE|VEHICLE_CONTROL_EQUIPMENT|VEHICLE_CONTROL_DRIVE|VEHICLE_CONTROL_SETTINGS
 

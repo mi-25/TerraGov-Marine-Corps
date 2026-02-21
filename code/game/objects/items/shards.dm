@@ -1,12 +1,12 @@
 // Glass shards
 
 /obj/item/shard
-	name = "glass shard"
+	name = "玻璃碎片"
 	icon = 'icons/obj/items/shards.dmi'
 	icon_state = ""
 	sharp = IS_SHARP_ITEM_SIMPLE
 	edge = 1
-	desc = "Could probably be used as ... a throwing weapon?"
+	desc = "或许能用作……投掷武器？"
 	w_class = WEIGHT_CLASS_TINY
 	force = 5
 	throwforce = 8
@@ -73,7 +73,7 @@
 				continue
 
 			G.attackby(NG, user, params)
-			to_chat(user, "You add the newly-formed glass to the stack. It now contains [NG.amount] sheets.")
+			to_chat(user, "你将新成型的玻璃添加到堆叠中。现在共有[NG.amount]张玻璃板。")
 
 		qdel(src)
 
@@ -121,9 +121,9 @@
 // Shrapnel
 
 /obj/item/shard/shrapnel
-	name = "shrapnel"
+	name = "破片"
 	icon_state = "shrapnel"
-	desc = "A bunch of tiny bits of shattered metal."
+	desc = "一堆细小的金属碎片。"
 	source_sheet_type = null
 	embedding = list("embedded_flags" = EMBEDDED_DEL_ON_HOLDER_DEL, "embed_chance" = 0, "embedded_fall_chance" = 0)
 
@@ -137,8 +137,8 @@
 
 
 /obj/item/shard/phoron
-	name = "phoron shard"
-	desc = "A shard of phoron glass. Considerably tougher then normal glass shards. Apparently not tough enough to be a window."
+	name = "等离子体碎片"
+	desc = "一块福隆玻璃碎片。比普通玻璃碎片要坚固得多。但显然还不足以用作窗户。"
 	force = 8
 	throwforce = 15
 	icon_state = "phoron"

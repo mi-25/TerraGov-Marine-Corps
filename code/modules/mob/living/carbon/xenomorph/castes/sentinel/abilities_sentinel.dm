@@ -3,7 +3,7 @@
 // ***************************************
 /datum/action/ability/activable/xeno/xeno_spit/toxic_spit
 	name = "Toxic Spit"
-	desc = "Spit a toxin at your target up to 7 tiles away, inflicting the Intoxicated debuff and dealing damage over time."
+	desc = "向7格内的目标喷射毒素，施加中毒减益并造成持续伤害。"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TOXIC_SPIT,
 	)
@@ -38,7 +38,7 @@
 	name = "Toxic Slash"
 	action_icon_state = "neuroclaws_off"
 	action_icon = 'icons/Xeno/actions/sentinel.dmi'
-	desc = "Imbue your claws with acid for a short duration, inflicting lasting effects on your victims."
+	desc = "将酸液注入你的利爪，短时间内对受害者造成持续效果。"
 	cooldown_duration = 10 SECONDS
 	ability_cost = 100
 	//use_state_flags = ABILITY_USE_BUCKLED
@@ -62,7 +62,7 @@
 	remaining_slashes = SENTINEL_TOXIC_SLASH_COUNT
 	ability_duration = addtimer(CALLBACK(src, PROC_REF(toxic_slash_deactivate), xeno_owner), SENTINEL_TOXIC_SLASH_DURATION, TIMER_STOPPABLE) //Initiate the timer and set the timer ID for reference
 	RegisterSignal(xeno_owner, COMSIG_XENOMORPH_ATTACK_LIVING, PROC_REF(toxic_slash))
-	xeno_owner.balloon_alert(xeno_owner, "Toxic Slash active")
+	xeno_owner.balloon_alert(xeno_owner, "剧毒斩击激活")
 	xeno_owner.playsound_local(xeno_owner, 'sound/voice/alien/drool2.ogg', 25)
 	action_icon_state = "neuroclaws_on"
 	particle_holder = new(owner, /particles/toxic_slash)
@@ -76,7 +76,7 @@
 	SIGNAL_HANDLER
 	var/mob/living/carbon/xeno_target = target
 	if(HAS_TRAIT(xeno_target, TRAIT_INTOXICATION_IMMUNE))
-		xeno_target.balloon_alert(xeno_owner, "Immune to Intoxication")
+		xeno_target.balloon_alert(xeno_owner, "免疫醉酒")
 		return
 	playsound(xeno_target, 'sound/effects/spray3.ogg', 20, TRUE)
 	var/datum/status_effect/stacking/intoxicated/debuff = xeno_target.has_status_effect(STATUS_EFFECT_INTOXICATED)
@@ -97,13 +97,13 @@
 	deltimer(ability_duration) // Delete the timer so we don't have mismatch issues, and so we don't potentially try to deactivate the ability twice
 	ability_duration = null
 	QDEL_NULL(particle_holder)
-	xeno_owner.balloon_alert(xeno_owner, "Toxic Slash over") //Let the user know
+	xeno_owner.balloon_alert(xeno_owner, "剧毒斩击") //Let the user know
 	xeno_owner.playsound_local(xeno_owner, 'sound/voice/hiss5.ogg', 25)
 	action_icon_state = "neuroclaws_off"
 
 /datum/action/ability/xeno_action/toxic_slash/on_cooldown_finish()
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
-	owner.balloon_alert(owner, "Toxic Slash ready")
+	owner.balloon_alert(owner, "剧毒斩击准备就绪")
 	return ..()
 
 /particles/toxic_slash
@@ -132,7 +132,7 @@
 	name = "Drain Sting"
 	action_icon_state = "neuro_sting"
 	action_icon = 'icons/Xeno/actions/sentinel.dmi'
-	desc = "Sting your victim, draining them and gaining benefits if they are Intoxicated."
+	desc = "刺击你的受害者，吸取其生命，若其处于中毒状态，你将获得增益效果。"
 	cooldown_duration = 25 SECONDS
 	ability_cost = 75
 	target_flags = ABILITY_MOB_TARGET
@@ -163,18 +163,18 @@
 		return FALSE
 	if(!ishuman(A))
 		if(!silent)
-			A.balloon_alert(owner, "Cannot sting")
+			A.balloon_alert(owner, "无法刺击")
 		return FALSE
 	var/mob/living/carbon/human/human_target = A
 	if((get_dist(owner, human_target) > targetable_range) || !line_of_sight(owner, human_target))
 		if(!silent)
-			human_target.balloon_alert(owner, "Cannot reach")
+			human_target.balloon_alert(owner, "无法触及")
 		return FALSE
 	if(HAS_TRAIT(human_target, TRAIT_INTOXICATION_IMMUNE))
-		human_target.balloon_alert(owner, "Immune to intoxication")
+		human_target.balloon_alert(owner, "免疫醉酒")
 		return FALSE
 	if(!human_target.has_status_effect(STATUS_EFFECT_INTOXICATED))
-		human_target.balloon_alert(owner, "Not intoxicated")
+		human_target.balloon_alert(owner, "未中毒")
 		return FALSE
 
 /datum/action/ability/activable/xeno/drain_sting/use_ability(atom/A)
@@ -207,7 +207,7 @@
 
 /datum/action/ability/activable/xeno/drain_sting/on_cooldown_finish()
 	playsound(owner.loc, 'sound/voice/alien/drool1.ogg', 50, 1)
-	owner.balloon_alert(owner, "Drain Sting ready")
+	owner.balloon_alert(owner, "吸取毒刺准备就绪")
 	return ..()
 
 /// Returns the potency of Drain Sting which accounts for: base potency, Intoxicated stacks, xeno-chemicals, and range effectiveness.
@@ -236,7 +236,7 @@
 	name = "Toxic grenade"
 	action_icon_state = "gas mine"
 	action_icon = 'icons/Xeno/actions/sentinel.dmi'
-	desc = "Throws a lump of compressed acidic gases, which will inflict damage over time and Intoxicate victims."
+	desc = "投掷一团压缩酸性气体，会造成持续伤害并使受害者中毒。"
 	ability_cost = 200
 	cooldown_duration = 50 SECONDS
 	keybinding_signals = list(
@@ -252,11 +252,11 @@
 	var/obj/item/explosive/grenade/smokebomb/xeno/nade = new nade_type(get_turf(owner))
 	nade.throw_at(A, 5, 1, owner, TRUE)
 	nade.activate(owner)
-	owner.visible_message(span_warning("[owner] vomits up a bulbous lump and throws it at [A]!"), span_warning("We vomit up a bulbous lump and throw it at [A]!"))
+	owner.visible_message(span_warning("[owner]呕出一团球状肿块，扔向[A]！"), span_warning("We vomit up a bulbous lump and throw it at [A]!"))
 
 /obj/item/explosive/grenade/smokebomb/xeno
 	name = "toxic grenade"
-	desc = "A fleshy mass that bounces along the ground. It seems to be heating up."
+	desc = "一团在地面上弹跳的肉块。它似乎在升温。"
 	greyscale_colors = "#42A500"
 	greyscale_config = /datum/greyscale_config/xenogrenade
 	det_time = 15
@@ -276,7 +276,7 @@
 	name = "Neuro grenade"
 	action_icon_state = "gas mine"
 	action_icon = 'icons/Xeno/actions/sentinel.dmi'
-	desc = "Throws a lump of compressed neurotoxin, which explodes into a small gas cloud."
+	desc = "投掷一团压缩神经毒素，爆炸形成小型毒气云。"
 	ability_cost = 200
 	cooldown_duration = 50 SECONDS
 	keybinding_signals = list(
@@ -286,7 +286,7 @@
 
 /obj/item/explosive/grenade/smokebomb/xeno/neuro
 	name = "Neuro grenade"
-	desc = "A fleshy mass that bounces along the ground. It seems to be heating up."
+	desc = "一团在地面上弹跳的肉块。它似乎在升温。"
 	greyscale_colors = "#bfc208"
 	greyscale_config = /datum/greyscale_config/xenogrenade
 	det_time = 15

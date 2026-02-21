@@ -1,5 +1,5 @@
 /obj/effect/ai_node/spawner/xeno
-	name = "Xeno AI spawner"
+	name = "异形AI生成器"
 
 //////Generic xeno spawners
 ////////Tier ones

@@ -1,5 +1,5 @@
 /obj/item/storage/secure
-	name = "secstorage"
+	name = "安全储物区"
 	var/icon_locking = "secureb"
 	var/icon_sparking = "securespark"
 	var/icon_opened = "secure0"
@@ -114,7 +114,7 @@
 //        Secure Briefcase
 // -----------------------------
 /obj/item/storage/secure/briefcase
-	name = "secure briefcase"
+	name = "保密公文箱"
 	icon = 'icons/obj/items/storage/briefcase.dmi'
 	icon_state = "secure"
 	worn_icon_list = list(
@@ -122,7 +122,7 @@
 		slot_r_hand_str = 'icons/mob/inhands/items/containers_right.dmi',
 	)
 	worn_icon_state = "sec-case"
-	desc = "A large briefcase with a digital locking system."
+	desc = "一个带有数字锁定系统的大号公文箱。"
 	force = 8
 	throw_speed = 1
 	throw_range = 4
@@ -134,7 +134,7 @@
 
 /obj/item/storage/secure/briefcase/attack_hand(mob/user)
 	if(loc == user && locked)
-		to_chat(user, span_warning("[src] is locked and cannot be opened!"))
+		to_chat(user, span_warning("[src]已锁定，无法打开！"))
 		return
 
 	if(loc == user && !locked)
@@ -151,7 +151,7 @@
 // -----------------------------
 
 /obj/item/storage/secure/safe
-	name = "secure safe"
+	name = "保险箱已上锁"
 	icon = 'icons/obj/structures/structures.dmi'
 	icon_state = "wallsafe"
 	icon_opened = "wallsafe_0"

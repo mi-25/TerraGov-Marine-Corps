@@ -1,6 +1,6 @@
 /datum/weather/snow_storm
-	name = "snow storm"
-	desc = "Harsh snowstorms roam the topside of this arctic planet, burying any area unfortunate enough to be in its path."
+	name = "暴风雪"
+	desc = "这颗极地行星的地表肆虐着猛烈的暴风雪，任何不幸处于其路径上的区域都会被积雪掩埋。"
 	probability = 90
 
 	telegraph_message = span_warning("Drifting particles of snow begin to dust the surrounding area..")

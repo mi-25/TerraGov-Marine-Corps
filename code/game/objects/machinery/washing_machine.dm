@@ -1,5 +1,5 @@
 /obj/machinery/washing_machine
-	name = "Washing Machine"
+	name = "洗衣机"
 	icon = 'icons/obj/machines/washing_machine.dmi'
 	icon_state = "wm_10"
 	density = TRUE
@@ -31,7 +31,7 @@
 		return
 
 	if( state != 4 )
-		to_chat(usr, "The washing machine cannot run in this state.")
+		to_chat(usr, "洗衣机无法在此状态下运行。")
 		return
 
 	if( locate(/mob,contents) )
@@ -96,42 +96,42 @@
 
 		//YES, it's hardcoded... saves a var/can_be_washed for every single clothing item. | lol. someone with more willpower use a typecache
 		if(istype(I, /obj/item/clothing/suit/space))
-			to_chat(user, "This item does not fit.")
+			to_chat(user, "此物品无法装入。")
 			return
 		if(istype(I, /obj/item/clothing/suit/syndicatefake))
-			to_chat(user, "This item does not fit.")
+			to_chat(user, "此物品无法装入。")
 			return
 		if(istype(I, /obj/item/clothing/suit/cyborg_suit))
-			to_chat(user, "This item does not fit.")
+			to_chat(user, "此物品无法装入。")
 			return
 		if(istype(I, /obj/item/clothing/suit/bomb_suit))
-			to_chat(user, "This item does not fit.")
+			to_chat(user, "此物品无法装入。")
 			return
 		if(istype(I, /obj/item/clothing/suit/armor))
-			to_chat(user, "This item does not fit.")
+			to_chat(user, "此物品无法装入。")
 			return
 		if(istype(I, /obj/item/clothing/suit/armor))
-			to_chat(user, "This item does not fit.")
+			to_chat(user, "此物品无法装入。")
 			return
 		if(istype(I, /obj/item/clothing/mask/gas))
-			to_chat(user, "This item does not fit.")
+			to_chat(user, "此物品无法装入。")
 			return
 		if(istype(I, /obj/item/clothing/mask/cigarette))
-			to_chat(user, "This item does not fit.")
+			to_chat(user, "此物品无法装入。")
 			return
 		if(istype(I, /obj/item/clothing/head/syndicatefake))
-			to_chat(user, "This item does not fit.")
+			to_chat(user, "此物品无法装入。")
 			return
 		if(istype(I, /obj/item/clothing/head/helmet))
-			to_chat(user, "This item does not fit.")
+			to_chat(user, "此物品无法装入。")
 			return
 
 		if(length(contents) >= 5)
-			to_chat(user, span_notice("The washing machine is full."))
+			to_chat(user, span_notice("洗衣机已满。"))
 			return
 
 		if(!(state in list(1, 3)))
-			to_chat(user, span_notice("You can't put the item in right now."))
+			to_chat(user, span_notice("你现在无法放入该物品。"))
 			return
 
 		if(!user.transferItemToLoc(I, src))
@@ -161,7 +161,7 @@
 			crayon = null
 			state = 1
 		if(5)
-			to_chat(user, span_warning("The [src] is busy."))
+			to_chat(user, span_warning("[src] 正忙。"))
 		if(6)
 			state = 7
 		if(7)

@@ -1,6 +1,6 @@
 /obj/machinery/loadout_vendor
-	name = "automated loadout vendor"
-	desc = "An advanced vendor used by the TGMC to rapidly equip their marines"
+	name = "自动配装贩卖机"
+	desc = "地球政府殖民地海军陆战队用于快速装备其陆战队员的先进售货机"
 	icon = 'icons/obj/machines/vending.dmi'
 	icon_state = "specialist"
 	density = TRUE

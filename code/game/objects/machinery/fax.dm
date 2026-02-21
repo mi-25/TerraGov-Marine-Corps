@@ -1,5 +1,5 @@
 /obj/machinery/faxmachine
-	name = "fax machine"
+	name = "传真机"
 	icon = 'icons/obj/machines/library.dmi'
 	icon_state = "fax"
 	anchored = TRUE
@@ -95,18 +95,18 @@
 	if(href_list["send"])
 		if(message)
 			send_fax(usr, src, selected, message.name, message.info, FALSE)
-			to_chat(usr, "Message transmitted successfully.")
+			to_chat(usr, "消息已成功发送。")
 			sendcooldown = TRUE
 			addtimer(VARSET_CALLBACK(src, sendcooldown, FALSE), 2 MINUTES)
 			updateUsrDialog()
 	if(href_list["remove"])
 		if(message)
 			if(!ishuman(usr))
-				to_chat(usr, span_warning("You can't do it."))
+				to_chat(usr, span_warning("你做不到。"))
 			else
 				message.forceMove(usr.loc)
 				usr.put_in_hands(message)
-				to_chat(usr, span_notice("You take the paper out of \the [src]."))
+				to_chat(usr, span_notice("你将纸张从\the [src]中取出。"))
 				message = null
 	if(href_list["scan"])
 		if(idscan)
@@ -150,11 +150,11 @@
 		if(!message)
 			user.transferItemToLoc(I, src)
 			message = I
-			to_chat(user, span_notice("You insert the paper into \the [src]."))
+			to_chat(user, span_notice("你将纸张插入\the [src]。"))
 			flick("faxsend", src)
 			updateUsrDialog()
 		else
-			to_chat(user, span_notice("There is already something in \the [src]."))
+			to_chat(user, span_notice("\the [src] 中已有物品。"))
 
 	else if(istype(I, /obj/item/card/id))
 		var/obj/item/card/id/idcard = I

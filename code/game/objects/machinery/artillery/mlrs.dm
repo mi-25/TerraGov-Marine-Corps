@@ -1,8 +1,8 @@
 
 
 /obj/item/mortar_kit/mlrs
-	name = "\improper TA-40L multiple rocket launcher system"
-	desc = "A manual, crew-operated and towable multiple rocket launcher system piece used by the TerraGov Marine Corps, it is meant to saturate an area with munitions to total up to large amounts of firepower, it thus has high scatter when firing to accomplish such a task. Fires in only bursts of up to 16 rockets, it can hold 32 rockets in total. Uses 60mm Rockets."
+	name = "\improper TA-40L 多管火箭发射器系统"
+	desc = "一门由乘员手动操作、可牵引的多管火箭发射器系统，由地球政府殖民地海军陆战队使用，旨在通过密集的弹药覆盖区域以累积巨大的火力输出，因此射击时具有较高的散布以实现此目的。仅能以最多16发火箭弹的连射模式开火，总共可容纳32发火箭弹。使用60毫米火箭弹。"
 	icon_state = "mlrs"
 	max_integrity = 400
 	item_flags = IS_DEPLOYABLE|TWOHANDED|DEPLOYED_NO_PICKUP|DEPLOY_ON_INITIALIZE
@@ -35,7 +35,7 @@
 //this checks for box of rockets, otherwise will go to normal attackby for mortars
 /obj/machinery/deployable/mortar/mlrs/attackby(obj/item/I, mob/user, params)
 	if(firing)
-		user.balloon_alert(user, "barrel too hot—wait a while!")
+		user.balloon_alert(user, "枪管过热——稍等片刻！")
 		return
 
 	if(!istype(I, /obj/item/storage/box/mlrs_rockets))
@@ -53,23 +53,23 @@
 	while(rocketsloaded < numrockets)
 		//verify it has rockets
 		if(!istype(rocket_box.contents[1], /obj/item/mortal_shell/rocket/mlrs))
-			user.balloon_alert(user, "out of rocket!s")
+			user.balloon_alert(user, "火箭弹耗尽！")
 			return
 		var/obj/item/mortal_shell/mortar_shell = rocket_box.contents[1]
 
 		if(length(chamber_items) >= max_rounds)
-			user.balloon_alert(user, "you can't fit more!")
+			user.balloon_alert(user, "装不下了！")
 			return
 
 		if(!(mortar_shell.type in allowed_shells))
-			user.balloon_alert(user, "this shell doesn't fit!")
+			user.balloon_alert(user, "这个弹壳不匹配！")
 			return
 
 		if(busy)
-			user.balloon_alert(user, "someone else is using this!")
+			user.balloon_alert(user, "其他人正在使用这个！")
 			return
 
-		user.visible_message(span_notice("[user] starts loading \a [mortar_shell.name] into [src]."),
+		user.visible_message(span_notice("[user]开始将\a [mortar_shell.name]装入[src]。"),
 		span_notice("You start loading \a [mortar_shell.name] into [src]."))
 		playsound(loc, reload_sound, 50, 1)
 		busy = TRUE
@@ -79,13 +79,13 @@
 
 		busy = FALSE
 
-		user.visible_message(span_notice("[user] loads \a [mortar_shell.name] into [src]."),
+		user.visible_message(span_notice("[user]将\a [mortar_shell.name]装填入[src]。"),
 		span_notice("You load \a [mortar_shell.name] into [src]."))
 		chamber_items += mortar_shell
 
 		rocket_box.storage_datum.remove_from_storage(mortar_shell,null,user)
 		rocketsloaded++
-	user.balloon_alert(user, "right click to fire")
+	user.balloon_alert(user, "右键开火")
 
 
 /obj/machinery/deployable/mortar/mlrs/AltRightClick(mob/living/user)
@@ -94,7 +94,7 @@
 
 	if(!anchored)
 		anchored = TRUE
-		to_chat(user, span_warning("You have anchored the gun to the ground. It may not be moved."))
+		to_chat(user, span_warning("你已将机枪固定在地面上。它无法被移动。"))
 	else
 		anchored = FALSE
-		to_chat(user, span_warning("You unanchored the gun from the ground. It may be moved."))
+		to_chat(user, span_warning("你已将机枪从地面解锚。现在可以移动它了。"))

@@ -8,7 +8,7 @@
 		return
 
 	if(codex_on_cooldown || !mob.can_use_codex())
-		to_chat(src, span_warning("You cannot perform codex actions currently."))
+		to_chat(src, span_warning("你目前无法执行法典操作。"))
 		return
 
 	if(!searching)
@@ -17,7 +17,7 @@
 			return
 
 	if(codex_on_cooldown || !mob.can_use_codex())
-		to_chat(src, span_warning("You cannot perform codex actions currently."))
+		to_chat(src, span_warning("你目前无法执行法典操作。"))
 		return
 
 	codex_on_cooldown = TRUE
@@ -41,7 +41,7 @@
 			popup.set_content(jointext(codex_data, null))
 			popup.open()
 		else
-			to_chat(src, span_notice("The codex reports <b>no matches</b> for '[searching]'."))
+			to_chat(src, span_notice("法典报告<b>无匹配项</b>对应'[searching]'。"))
 
 /client/verb/list_codex_entries()
 
@@ -53,12 +53,12 @@
 		return
 
 	if(codex_on_cooldown || !mob.can_use_codex())
-		to_chat(src, span_warning("You cannot perform codex actions currently."))
+		to_chat(src, span_warning("你目前无法执行法典操作。"))
 		return
 	codex_on_cooldown = TRUE
 	addtimer(VARSET_CALLBACK(src, codex_on_cooldown, FALSE), 10 SECONDS)
 
-	to_chat(mob, span_notice("The codex forwards you an index file."))
+	to_chat(mob, span_notice("法典向你转发了一份索引文件。"))
 
 	var/datum/browser/popup = new(mob, "codex-index", "Codex Index")
 	var/list/codex_data = list("<h2>Codex Entries</h2>")

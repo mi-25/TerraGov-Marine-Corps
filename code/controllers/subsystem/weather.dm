@@ -5,7 +5,7 @@
 
 //Used for all kinds of weather, ex. lavaland ash storms.
 SUBSYSTEM_DEF(weather)
-	name = "Weather"
+	name = "天气"
 	dependencies = list(
 		/datum/controller/subsystem/mapping,
 	)

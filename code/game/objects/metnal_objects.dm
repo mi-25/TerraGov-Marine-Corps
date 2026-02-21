@@ -1,8 +1,8 @@
 // Metnal Operation instruments
 /obj/item/instrument/jukebox
 	icon = 'icons/obj/metnal_objects.dmi'
-	name = "jukebox"
-	desc = "Wow, this thing is ancient!"
+	name = "点唱机"
+	desc = "哇，这东西可真够古老的！"
 	icon_state = "jukebox"
 	// allowed_instrument_ids = "r3celeste"
 	// var/use_power = IDLE_POWER_USE
@@ -28,8 +28,8 @@
 // knife flute sprite
 /obj/item/instrument/macheteflute
 
-	name = "Lobey's machete"
-	desc = "This custom machete has holes in the handle and on the blade and plays a somber sound. "
+	name = "洛比的砍刀"
+	desc = "这把定制砍刀的刀柄和刀身上都有孔洞，会发出忧郁的声音。"
 	icon = 'icons/obj/metnal_objects.dmi'
 	icon_state = "knife_flute"
 	worn_icon_list = list(
@@ -50,20 +50,20 @@
 
 // rocks
 /obj/structure/rock/large/obsidian
-	name = "rock"
-	desc = "Luminous obsidian shards formed by cooling lava from the volcano."
+	name = "岩石"
+	desc = "由火山熔岩冷却形成的发光黑曜石碎片。"
 	icon = 'icons/obj/metnal_objects.dmi'
 	icon_state = "obsidian_1"
 	density = FALSE
 /obj/structure/rock/small/obsidian
-	name = "rock"
-	desc = "Luminous obsidian shards formed by cooling lava from the volcano."
+	name = "岩石"
+	desc = "由火山熔岩冷却形成的发光黑曜石碎片。"
 	icon = 'icons/obj/metnal_objects.dmi'
 	icon_state = "obsidian_2"
 	density = FALSE
 /obj/structure/rock/medium/obsidian
-	name = "rock"
-	desc = "Luminous obsidian shards formed by cooling lava from the volcano."
+	name = "岩石"
+	desc = "由火山熔岩冷却形成的发光黑曜石碎片。"
 	icon = 'icons/obj/metnal_objects.dmi'
 	icon_state = "obsidian_3"
 	density = FALSE

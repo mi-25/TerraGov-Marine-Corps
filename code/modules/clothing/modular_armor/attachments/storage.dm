@@ -56,76 +56,76 @@
 
 /** General storage */
 /obj/item/armor_module/storage/general
-	name = "general-purpose storage module"
-	desc = "Designed for mounting on the TGMC's modular armor systems. Certainly not as specialised as any other storage modules, but definitely able to hold some larger things, like binoculars, maps, and motion detectors."
+	name = "通用存储模块"
+	desc = "专为安装在TGMC模块化装甲系统上设计。虽然不如其他存储模块那样专业，但绝对能容纳一些较大的物品，比如双筒望远镜、地图和运动探测器。"
 	icon_state = "mod_general_bag"
 	storage_type = /datum/storage/internal/general
 
 /obj/item/armor_module/storage/general/som
-	name = "general-purpose storage module"
-	desc = "Designed for mounting on SOM combat armor. Certainly not as specialised as any other storage modules, but definitely able to hold some larger things, like pistols or magazines."
+	name = "通用存储模块"
+	desc = "专为火星之子战斗护甲设计。虽然不如其他存储模块那样专业，但绝对能容纳一些较大的物品，比如手枪或弹匣。"
 	icon_state = "mod_general_bag_som"
 	worn_icon_state = "mod_general_bag_som_a"
 
 /obj/item/armor_module/storage/ammo_mag
-	name = "magazine storage module"
-	desc = "Designed for mounting on the TGMC's modular armor systems. Holds some magazines. Don’t expect to fit specialist munitions or LMG drums in, but you can get some good mileage."
+	name = "弹匣存储模块"
+	desc = "专为地球政府殖民地海军陆战队的模块化装甲系统设计。可容纳一些弹匣。别指望能装下专家级弹药或轻机枪弹鼓，但它的实用性还是不错的。"
 	icon_state = "mod_mag_bag"
 	storage_type = /datum/storage/internal/ammo_mag
 
 /obj/item/armor_module/storage/satchel
-	name = "IS Pattern Storage module"
-	desc = "Designed for mounting on the MAGNUM mercenaries modular armor. Impedes movement somewhat, but holds about as much as a satchel could."
+	name = "IS型存储模块"
+	desc = "专为安装在MAGNUM佣兵模块化装甲上设计。会略微妨碍行动，但容量与挎包相当。"
 	icon_state = "mod_is_bag"
 	storage_type = /datum/storage/internal/satchel
 	slowdown = 0.2
 
 /obj/item/armor_module/storage/engineering
-	name = "engineering storage module"
-	desc = "Designed for mounting on the TGMC's modular armor systems. Can hold about as much as a tool pouch, and sometimes small spools of things like barbed wire, or an entrenching tool."
+	name = "工程存储模块"
+	desc = "专为地球政府殖民地海军陆战队的模块化装甲系统设计。容量与工具附包相当，有时可容纳小型线轴物品，如铁丝网或工兵铲。"
 	icon_state = "mod_engineer_bag"
 	storage_type = /datum/storage/internal/engineering
 
 /obj/item/armor_module/storage/engineering/som
-	name = "engineering storage module"
-	desc = "Designed for mounting on SOM combat armor. Can hold about as much as a tool pouch, and sometimes small spools of things like barbed wire, or an entrenching tool."
+	name = "工程存储模块"
+	desc = "专为火星之子战斗护甲设计。容量与工具附包相当，有时可容纳小型线轴（如铁丝网）或工兵铲。"
 	icon_state = "mod_engineer_bag_som"
 	worn_icon_state = "mod_engineer_bag_som_a"
 
 /obj/item/armor_module/storage/medical
-	name = "medical storage module"
-	desc = "Designed for mounting on the TGMC's modular armor systems. Can hold a substantial variety of medical supplies and apparatus, but cannot hold as much as a medkit could."
+	name = "医疗存储模块"
+	desc = "专为地球政府殖民地海军陆战队的模块化装甲系统设计。可容纳多种医疗物资和设备，但容量不及医疗包。"
 	icon_state = "mod_medic_bag"
 	storage_type = /datum/storage/internal/medical
 
 /obj/item/armor_module/storage/medical/som
-	name = "medical storage module"
-	desc = "Designed for mounting on SOM combat armor. Can hold a substantial variety of medical supplies and apparatus, but cannot hold as much as a medkit could."
+	name = "医疗存储模块"
+	desc = "专为安装在火星之子战斗护甲上设计。可容纳多种医疗物资和设备，但容量不及医疗包。"
 	icon_state = "mod_medic_bag_som"
 	worn_icon_state = "mod_medic_bag_som_a"
 
 /obj/item/armor_module/storage/injector
-	name = "injector storage module"
-	desc = "Designed for mounting on the TGMC's modular armor systems. Can hold a substantial variety of injectors."
+	name = "注射器存储模块"
+	desc = "专为安装在TGMC模块化装甲系统上设计。可容纳多种注射器。"
 	icon_state = "mod_injector_bag"
 	storage_type = /datum/storage/internal/injector
 
 /obj/item/armor_module/storage/integrated
-	name = "bulk storage module"
-	desc = "Designed for mounting on the TGMC's modular armor systems. Impedes movement somewhat, but holds about as much as a satchel could."
+	name = "大容量存储模块"
+	desc = "专为地球政府殖民地海军陆战队的模块化装甲系统设计。会略微阻碍行动，但容量与一个挎包相当。"
 	icon_state = "mod_is_bag"
 	storage_type = /datum/storage/internal/integrated
 	slowdown = 0.2
 
 /obj/item/armor_module/storage/grenade
-	name = "grenade storage module"
-	desc = "Designed for mounting on the TGMC's modular armor systems. Can hold a respectable amount of grenades."
+	name = "手雷存储模块"
+	desc = "专为安装在TGMC模块化装甲系统上设计。可容纳相当数量的手雷。"
 	icon_state = "mod_grenade_harness"
 	storage_type = /datum/storage/internal/grenade
 
 /obj/item/armor_module/storage/boot
-	name = "boot storage module"
-	desc = "A small set of straps to hold something in your boot."
+	name = "启动存储模块"
+	desc = "一套小型绑带，用于将物品固定在靴子上。"
 	icon_state = ""
 	storage_type = /datum/storage/internal/shoes/boot_knife
 	attach_features_flags = ATTACH_APPLY_ON_MOB
@@ -140,8 +140,8 @@
 	new /obj/item/weapon/combat_knife/pmc(src)
 
 /obj/item/armor_module/storage/helmet
-	name = "helmet storage module"
-	desc = "A small set of bands and straps to allow easy storage of small items."
+	name = "头盔存储模块"
+	desc = "一套小型束带和绑带，便于存放小件物品。"
 	icon_state = ""
 	storage_type = /datum/storage/internal/marinehelmet
 	show_storage = TRUE

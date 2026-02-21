@@ -19,7 +19,7 @@
 
 /datum/campaign_asset/bonus_job/colonial_militia
 	name = "Colonial militia support"
-	desc = "A colonial militia squad to augment our forces"
+	desc = "一支殖民地民兵小队来增援我们的部队"
 	detailed_desc = "A large number of militia job slots are opened at no attrition cost. \
 	A local colonial militia sympathetic to our cause has offered a squad to support our troops. Equipped with lesser arms and armor than our own troops, but fairly numerous."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/militia_reinforcement
@@ -32,7 +32,7 @@
 
 /datum/campaign_asset/bonus_job/freelancer
 	name = "Freelancer team"
-	desc = "A squad of freelance guns for hire to support our forces"
+	desc = "一支自由佣兵小队，受雇支援我方部队"
 	detailed_desc = "A moderate number of freelancer job slots are opened at no attrition cost. \
 	A contract has been bought for a squad of freelancers to augment our forces. With comparable equipment and training, they can help turn the tables when our forces are stretched thin."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/freelancer_reinforcement
@@ -46,7 +46,7 @@
 
 /datum/campaign_asset/bonus_job/icc
 	name = "ICC strike team"
-	desc = "A squad of ICC soldiers to support our forces"
+	desc = "一支ICC士兵小队前来支援我方部队"
 	detailed_desc = "A moderate number of ICC job slots are opened at no attrition cost. \
 	The ICC have authorised a small, local detachment of their troops to aid us in our conflict. They are well armed and armored, and could prove a valuable advantage in a fight."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/icc_reinforcement
@@ -60,7 +60,7 @@
 
 /datum/campaign_asset/bonus_job/pmc
 	name = "PMC security detail"
-	desc = "An elite PMC team to assist in a joint operation"
+	desc = "一支精英PMC小队前来协助联合行动"
 	detailed_desc = "A small number of PMC job slots are opened at no attrition cost. \
 	NanoTrasen have authorised a small team of their PMC contractors to assist us in combat. With superior arms and armor, they a powerful tactical asset."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/pmc_reinforcement
@@ -73,7 +73,7 @@
 
 /datum/campaign_asset/bonus_job/combat_robots
 	name = "Combat robots"
-	desc = "A shipment of combat robots to bolster your forces"
+	desc = "一批战斗机器人已送达，用于增强你的部队"
 	detailed_desc = "A four combat robot job slots are opened at no attrition cost. \
 	Combat robots are tough to kill, being immune to pain and chemicals, and resist both fire and radiation. They suffer from low mobility however."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/robot_reinforcement
@@ -85,7 +85,7 @@
 
 /datum/campaign_asset/bonus_job/vsd
 	name = "V.S.D. PMC squad"
-	desc = "A syndicate squadron to assist the ICC joint operation"
+	desc = "协助ICC联合行动的辛迪加中队"
 	detailed_desc = "A medium amount of Security Detail squadron have been opened at a no attrition cost. \
 	The Syndicate have sent their most trusted PMC squadron to assist in your aid. Complete with a strong arsenal and heavy duty armor."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/vsd_reinforcement

@@ -1,7 +1,7 @@
 /mob/camera/imaginary_friend
-	name = "imaginary friend"
+	name = "幻想朋友"
 	real_name = "imaginary friend"
-	desc = "A wonderful yet fake friend."
+	desc = "一个美好却虚假的朋友。"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	lighting_cutoff = LIGHTING_CUTOFF_HIGH
 	see_invisible = SEE_INVISIBLE_OBSERVER
@@ -147,10 +147,10 @@
 
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
-			to_chat(src, "You cannot send IC messages (muted).")
+			to_chat(src, "你无法发送游戏内消息（已被禁言）。")
 			return
 		if(is_banned_from(ckey, "IC"))
-			to_chat(src, span_warning("You are banned from IC chat."))
+			to_chat(src, span_warning("你被禁止使用角色内聊天。"))
 			return
 
 		if(client.handle_spam_prevention(message, MUTE_IC))
@@ -244,8 +244,8 @@
 	return ..()
 
 /datum/action/innate/imaginary_join
-	name = "Join"
-	desc = "Join your owner, following them from inside their mind."
+	name = "加入"
+	desc = "加入你的主人，从他们的意识深处跟随他们。"
 
 	action_icon_state = "joinmob"
 	background_icon_state = "template2"
@@ -257,8 +257,8 @@
 
 
 /datum/action/innate/imaginary_hide
-	name = "Hide"
-	desc = "Hide yourself from your owner's sight."
+	name = "隐藏"
+	desc = "隐藏自己，避开主人的视线。"
 
 	action_icon_state = "hidemob"
 	background_icon_state = "template2"
@@ -269,8 +269,8 @@
 	var/mob/camera/imaginary_friend/I = owner
 	I.hidden = TRUE
 	I.Show()
-	name = "Show"
-	desc = "Become visible to your owner."
+	name = "显示"
+	desc = "向你的主人显形。"
 	action_icon_state = "unhidemob"
 	update_button_icon()
 
@@ -280,7 +280,7 @@
 	var/mob/camera/imaginary_friend/I = owner
 	I.hidden = FALSE
 	I.Show()
-	name = "Hide"
-	desc = "Hide yourself from your owner's sight."
+	name = "隐藏"
+	desc = "从主人的视线中隐藏自己。"
 	action_icon_state = "hidemob"
 	update_button_icon()

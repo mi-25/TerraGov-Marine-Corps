@@ -1,7 +1,7 @@
 //drones that can be deployed and undeployed
 /obj/item/deployable_vehicle
-	name = "\improper UV-L Iguana"
-	desc = "An Iguana B-type drone, ready to be deployed."
+	name = "\improper UV-L 鬣蜥"
+	desc = "一架鬣蜥B型工蜂，准备部署。"
 	icon = 'icons/obj/unmanned_vehicles.dmi'
 	icon_state = "light_uv_folded"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -24,8 +24,8 @@
 	AddComponent(/datum/component/deployable_item, deployable_item, deploy_time, undeploy_time)
 
 /obj/vehicle/unmanned/deployable
-	name = "UV-L Iguana"
-	desc = "A small remote-controllable vehicle, usually owned by the TGMC and other major armies. This one is configured to be foldable for portability."
+	name = "UV-L 鬣蜥"
+	desc = "一种小型遥控载具，通常由地球政府殖民地海军陆战队及其他主要军队所有。此型号设计为可折叠式，便于携带。"
 	///Whether this item can be deployed or undeployed
 	var/item_flags = IS_DEPLOYABLE
 	///What it deploys into. typecast version of internal_item
@@ -71,15 +71,15 @@
 		current_internal_item?.stored_ammo = current_rounds
 
 /obj/item/deployable_vehicle/tiny
-	name = "\improper UV-T Skink"
-	desc = "A Skink B-type drone, ready to be deployed."
+	name = "\improper UV-T 石龙子"
+	desc = "一只B型工蜂，准备部署。"
 	icon_state = "tiny_uv_folded"
 	max_integrity = 50
 	w_class = WEIGHT_CLASS_SMALL
 	deployable_item = /obj/vehicle/unmanned/deployable/tiny
 
 /obj/vehicle/unmanned/deployable/tiny
-	name = "UV-T Skink"
+	name = "UV-T 石龙子"
 	icon_state = "tiny_uv"
 	layer = BELOW_TABLE_LAYER
 	move_delay = 1.5
@@ -94,8 +94,8 @@
 	allow_explosives = FALSE
 
 /obj/structure/closet/crate/uvt_crate
-	name = "\improper UV-T Skink Crate"
-	desc = "A crate containing a scouting drone and a controller."
+	name = "\improper UV-T 石龙子板条箱"
+	desc = "一个装有侦察工蜂和控制器的板条箱。"
 	icon = 'icons/obj/structures/crates.dmi'
 	icon_state = "closed_weapons"
 	icon_opened = "open_weapons"
@@ -113,15 +113,15 @@
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 30)
 
 /obj/item/deployable_vehicle/tiny/martian
-	name = "Seraphim's Eye Probe"
-	desc = "A ready to deploy probe, with the antennae folded in."
+	name = "塞拉菲姆之眼探测器"
+	desc = "一个准备部署的探测器，天线已折叠收起。"
 	icon_state = "martian_uv_folded"
 	max_integrity = 100
 	deployable_item = /obj/vehicle/unmanned/deployable/tiny/martian
 
 /obj/vehicle/unmanned/deployable/tiny/martian
-	name = "Seraphim's Eye"
-	desc = "A fast martian probe, unarmed but perfect for scouting. Capable of cloaking when not in motion."
+	name = "塞拉芬之眼"
+	desc = "一架快速的火星探测器，未配备武器，但非常适合侦察。静止时可进入隐形状态。"
 	icon_state = "martian_uv"
 	layer = VEHICLE_LAYER
 	allow_pass_flags = HOVERING|PASSABLE|PASS_WALKOVER

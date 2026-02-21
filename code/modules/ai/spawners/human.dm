@@ -27,7 +27,7 @@
 	return mob_list
 
 /obj/effect/ai_node/spawner/human
-	name = "AI human spawner node"
+	name = "AI人类生成节点"
 	use_postspawn = TRUE //Gotta equip those AI you know
 
 /obj/effect/ai_node/spawner/human/deathsquad

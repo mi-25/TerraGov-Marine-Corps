@@ -28,7 +28,7 @@
 	if(user.do_actions)
 		return
 	if(!ishuman(M))
-		M.balloon_alert(user, "that's not a human!")
+		M.balloon_alert(user, "那不是人类！")
 		REMOVE_TRAIT(user, TRAIT_IS_SHRAP_REMOVING, REF(removaltool))
 		return
 	var/mob/living/carbon/human/target = M
@@ -37,19 +37,19 @@
 		REMOVE_TRAIT(user, TRAIT_IS_SHRAP_REMOVING, REF(removaltool))
 		return
 	if(!has_shrapnel(targetlimb))
-		M.balloon_alert(user, "nothing in that limb!")
+		M.balloon_alert(user, "该肢体上没有任何东西！")
 		REMOVE_TRAIT(user, TRAIT_IS_SHRAP_REMOVING, REF(removaltool))
 		return
 	var/skill = user.skills.getRating(SKILL_MEDICAL)
 	if(skill < SKILL_MEDICAL_PRACTICED)
-		user.visible_message(span_notice("[user] fumbles around with the [removaltool]."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摆弄着 [removaltool]。"),
 		span_notice("You fumble around figuring out how to use [removaltool]."))
 		if(!do_after(user, fumble_duration * (SKILL_MEDICAL_PRACTICED - skill), NONE, target, BUSY_ICON_UNSKILLED))
 			REMOVE_TRAIT(user, TRAIT_IS_SHRAP_REMOVING, REF(removaltool))
 			return
-	user.visible_message(span_green("[user] starts searching for shrapnel in [target] with the [removaltool]."), span_green("You start searching for shrapnel in [target] with the [removaltool]."))
+	user.visible_message(span_green("[user]开始用[removaltool]在[target]体内寻找弹片。"), span_green("You start searching for shrapnel in [target] with the [removaltool]."))
 	if(!do_after(user, do_after_time, NONE, target, BUSY_ICON_FRIENDLY, BUSY_ICON_MEDICAL))
-		to_chat(user, span_notice("You stop searching for shrapnel in [target]."))
+		to_chat(user, span_notice("你停止在[target]体内搜寻弹片。"))
 		REMOVE_TRAIT(user, TRAIT_IS_SHRAP_REMOVING, REF(removaltool))
 		return
 	remove_shrapnel(user, target, targetlimb, skill)
@@ -57,11 +57,11 @@
 	for(targetlimb AS in target.limbs)
 		while(has_shrapnel(targetlimb))
 			if(!do_after(user, do_after_time, NONE, target, BUSY_ICON_FRIENDLY, BUSY_ICON_MEDICAL))
-				to_chat(user, span_notice("You stop searching for shrapnel in [target]."))
+				to_chat(user, span_notice("你停止在[target]体内寻找弹片。"))
 				REMOVE_TRAIT(user, TRAIT_IS_SHRAP_REMOVING, REF(removaltool))
 				return
 			remove_shrapnel(user, target, targetlimb, skill)
-	to_chat(user, span_notice("You remove the last of the shrapnel from [target]."))
+	to_chat(user, span_notice("你从[target]身上取出了最后一块弹片。"))
 	REMOVE_TRAIT(user, TRAIT_IS_SHRAP_REMOVING, REF(removaltool))
 
 ///returns TRUE if the argument limb has any shrapnel in it
@@ -81,9 +81,9 @@
 			personal_statistics.shrapnel_removed ++
 			personal_statistics.mission_shrapnel_removed ++
 		if(skill < SKILL_MEDICAL_PRACTICED)
-			user.visible_message(span_alert("[user] violently rips out [embedded] from [target]!"), span_alert("You violently rip out [embedded] from [target]!"))
+			user.visible_message(span_alert("[user] 暴力地从 [target] 身上撕下了 [embedded]！"), span_alert("You violently rip out [embedded] from [target]!"))
 			targetlimb.take_damage_limb(30 * (SKILL_MEDICAL_PRACTICED - skill), 0, FALSE, FALSE)
 		else
-			user.visible_message(span_green("[user] pulls out [embedded] from [target]."), span_green("You pull out [embedded] from [target]."))
+			user.visible_message(span_green("[user]从[target]身上拔出了[embedded]。"), span_green("You pull out [embedded] from [target]."))
 			targetlimb.take_damage_limb(15, 0, FALSE, FALSE)
 		break

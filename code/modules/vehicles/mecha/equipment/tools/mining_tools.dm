@@ -6,8 +6,8 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/drill
-	name = "exosuit drill"
-	desc = "Equipment for engineering and combat exosuits. This is the drill that'll pierce the heavens!"
+	name = "外骨骼钻机"
+	desc = "工程与战斗外骨骼装备。这是能刺穿苍穹的钻头！"
 	icon_state = "mecha_drill"
 	equip_cooldown = 15
 	energy_drain = 10
@@ -38,7 +38,7 @@
 	// You can't drill harder by clicking more.
 	if(!LAZYACCESS(source.do_actions, target) && do_after_cooldown(target, source, DOAFTER_SOURCE_MECHADRILL))
 
-		target.visible_message(span_warning("[chassis] starts to drill [target]."), \
+		target.visible_message(span_warning("[chassis]开始钻探[target]。"), \
 					span_userdanger("[chassis] starts to drill [target]..."), \
 					span_hear("You hear drilling."))
 
@@ -88,7 +88,7 @@
 	return FALSE
 
 /obj/item/mecha_parts/mecha_equipment/drill/proc/drill_mob(mob/living/target, mob/living/user)
-	target.visible_message(span_danger("[chassis] is drilling [target] with [src]!"), \
+	target.visible_message(span_danger("[chassis]正在用[src]钻击[target]！"), \
 						span_userdanger("[chassis] is drilling you with [src]!"))
 	log_combat(user, target, "drilled", "[name]", "INTENT: [user.a_intent ? "On" : "Off"])(DAMTYPE: [uppertext(damtype)])")
 	//drill makes a hole
@@ -98,8 +98,8 @@
 	new /obj/effect/temp_visual/dir_setting/bloodsplatter(target.drop_location(), Get_Angle(chassis, target))
 
 /obj/item/mecha_parts/mecha_equipment/drill/diamonddrill
-	name = "diamond-tipped exosuit drill"
-	desc = "Equipment for engineering and combat exosuits. This is an upgraded version of the drill that'll pierce the heavens!"
+	name = "金刚石钻头外骨骼钻机"
+	desc = "工程与战斗外骨骼装备。这是能刺穿天际的升级版钻头！"
 	icon_state = "mecha_diamond_drill"
 	equip_cooldown = 10
 	drill_delay = 4

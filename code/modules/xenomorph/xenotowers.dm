@@ -1,7 +1,7 @@
 
 /obj/structure/xeno/evotower
-	name = "evolution tower"
-	desc = "A sickly outcrop from the ground. It seems to ooze a strange chemical that shimmers and warps the ground around it."
+	name = "进化塔"
+	desc = "地面上一处病态的突起。它似乎在渗出一种奇特的化学物质，使周围的地面闪烁着微光并扭曲变形。"
 	icon = 'icons/Xeno/2x2building.dmi'
 	icon_state = "evotower"
 	pixel_x = -16
@@ -35,8 +35,8 @@
 			take_damage(100, BRUTE, BOMB)
 
 /obj/structure/xeno/psychictower
-	name = "Psychic Relay"
-	desc = "A sickly outcrop from the ground. It seems to allow for more advanced growth of the Xenomorphs."
+	name = "心灵中继器"
+	desc = "地面上的一处病态突起。它似乎能促进异形更高级的成长。"
 	icon = 'icons/Xeno/2x2building.dmi'
 	icon_state = "maturitytower"
 	pixel_x = -16

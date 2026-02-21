@@ -6,8 +6,8 @@
 //Cradle
 
 /obj/machinery/robotic_cradle
-	name = "robotic cradle"
-	desc = "A highly experimental robotic maintenence machine using a bath of industrial nanomachines to quickly restore any robotic machine inserted."
+	name = "机器人支架"
+	desc = "一种高度实验性的机器人维护装置，利用工业纳米机器浴快速修复任何插入的机器人设备。"
 	icon = 'icons/obj/machines/suit_cycler.dmi'
 	icon_state = "suit_cycler"
 	density = TRUE
@@ -33,7 +33,7 @@
 
 /obj/machinery/robotic_cradle/Destroy()
 	if(occupant)
-		visible_message("\The [src] malfunctions as it is destroyed mid-repair, ejecting [occupant] with unfinished repair wounds and showering them in debris.")
+		visible_message("\The [src]在修复过程中被摧毁而故障，将[occupant]弹出并留下未完成的修复伤口，同时碎片如雨般洒落在他们身上。")
 		occupant.take_limb_damage(rand(30,50),rand(30,50))
 		remove_occupant()
 	if(radio)
@@ -50,7 +50,7 @@
 	. = ..()
 	if(is_operational() || !occupant)
 		return
-	visible_message("[src] engages the safety override, ejecting the occupant.")
+	visible_message("[src] 启动了安全超控程序，弹出了乘员。")
 	perform_eject(CRADLE_NOTICE_NO_POWER)
 
 /obj/machinery/robotic_cradle/process()
@@ -58,7 +58,7 @@
 		return
 
 	if(occupant.stat == DEAD)
-		say("Patient has expired.")
+		say("患者已死亡。")
 		perform_eject(CRADLE_NOTICE_DEATH)
 		return
 
@@ -67,7 +67,7 @@
 
 /obj/machinery/robotic_cradle/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(xeno_attacker, span_xenowarning("里面没什么值得注意的东西。"))
 		return
 	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
 		return
@@ -117,32 +117,32 @@
 	if(operating_mob.incapacitated()||!ishuman(operating_mob)||!ishuman(target_mob))
 		return FALSE
 	if(occupant)
-		to_chat(operating_mob, span_notice("[src] is already occupied!"))
+		to_chat(operating_mob, span_notice("[src] 已被占用！"))
 		return FALSE
 	var/mob/living/carbon/human/patient = target_mob
 	if(!(patient.species.species_flags & ROBOTIC_LIMBS))
-		visible_message(span_warning("[src] buzzes. Subject is biological, cannot repair"))
+		visible_message(span_warning("[src] 发出嗡嗡声。目标是生物体，无法修复"))
 		playsound(src, 'sound/machines/buzz-two.ogg', 50, FALSE)
 		return FALSE
 	if(patient.abiotic())
-		visible_message(span_warning("[src] buzzes. Subject cannot wear abiotic items."))
+		visible_message(span_warning("[src] 发出嗡嗡声。目标无法穿戴非生物物品。"))
 		playsound(src, 'sound/machines/buzz-two.ogg', 50, FALSE)
 		return FALSE
 	if(machine_stat & (NOPOWER|BROKEN))
-		to_chat(operating_mob, span_notice("[src] is non-functional!"))
+		to_chat(operating_mob, span_notice("[src] 已失效！"))
 		return FALSE
 
 	if(operating_mob == patient)
-		patient.visible_message(span_notice("[patient] starts climbing into \the [src]."),
+		patient.visible_message(span_notice("[patient]开始爬进\the [src]。"),
 		span_notice("You start climbing into \the [src]."))
 	else
-		operating_mob.visible_message(span_notice("[operating_mob] starts placing [patient] \the [src]."),
+		operating_mob.visible_message(span_notice("[operating_mob]开始将[patient]放入\the [src]。"),
 		span_notice("You start placing [patient] into \the [src]."))
 
 	if(!do_after(patient, 1 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_GENERIC))
 		return FALSE
 	if(occupant) //In case someone tried climbing in earlier than us, while the cradle was empty
-		to_chat(operating_mob, span_notice("[src] is already occupied!"))
+		to_chat(operating_mob, span_notice("[src] 已被占用！"))
 		return FALSE
 	patient.stop_pulling()
 	patient.forceMove(src)
@@ -163,7 +163,7 @@
 	start_processing()
 	update_icon()
 	repairing = TRUE
-	say("Automatic mode engaged, initialising repair procedure.")
+	say("自动模式已启用，正在启动修复程序。")
 	operation_timer = addtimer(CALLBACK(src, PROC_REF(handle_repair_operation)), 20 SECONDS,TIMER_STOPPABLE)
 
 ///Callback to start repair on someone entering the cradle
@@ -172,10 +172,10 @@
 		if(operation_timer)
 			deltimer(operation_timer)
 		repairing = FALSE
-		visible_message(span_warning("[src] buzzes. Occupant missing, procedures canceled."))
+		visible_message(span_warning("[src] 发出嗡嗡声。乘员缺失，程序已取消。"))
 		playsound(src, 'sound/machines/buzz-two.ogg', 50, FALSE)
 		return
-	say("Repair procedure complete.")
+	say("修复程序完成。")
 	perform_repair()
 
 ///This proc handles the actual repair once the timer is up and ejects the healed robot.
@@ -185,11 +185,11 @@
 	if(QDELETED(occupant) || occupant.stat == DEAD)
 		if(!ishuman(occupant))
 			stack_trace("Non-human occupant made its way into the autodoc: [occupant] | [occupant?.type].")
-		visible_message(span_warning("[src] buzzes."))
+		visible_message(span_warning("[src] 发出嗡嗡声。"))
 		perform_eject(CRADLE_NOTICE_DEATH)
 		return
 	occupant.revive()
-	visible_message("\The [src] clicks and opens up having finished the requested operations.")
+	visible_message("\The [src] 咔哒一声打开，已完成请求的操作。")
 	perform_eject(CRADLE_NOTICE_SUCCESS)
 
 /obj/machinery/robotic_cradle/MouseDrop_T(mob/dropping, mob/user)
@@ -235,7 +235,7 @@
 	else if(istype(grab.grabbed_thing,/obj/structure/closet/bodybag/cryobag))
 		var/obj/structure/closet/bodybag/cryobag/cryobag = grab.grabbed_thing
 		if(!cryobag.bodybag_occupant)
-			to_chat(user, span_warning("The stasis bag is empty!"))
+			to_chat(user, span_warning("停滞袋是空的！"))
 			return
 		grabbed_mob = cryobag.bodybag_occupant
 		cryobag.open()
@@ -265,7 +265,7 @@
 		perform_eject(CRADLE_NOTICE_EARLY_EJECT)
 		return
 	if(isxeno(mob_ejecting))
-		mob_ejecting.visible_message(span_notice("[mob_ejecting] pries the cover of [src]"),
+		mob_ejecting.visible_message(span_notice("[mob_ejecting]撬开了[src]的盖子"),
 		span_notice("You begin to pry at the cover of [src]."))
 		playsound(mob_ejecting,'sound/effects/metal_creaking.ogg', 25, 1)
 		if(!do_after(mob_ejecting, 2 SECONDS, NONE, src, BUSY_ICON_DANGER) || !occupant)
@@ -275,7 +275,7 @@
 	if(!ishuman(mob_ejecting))
 		return
 	if(mob_ejecting == occupant)
-		to_chat(usr, span_warning("There's no way you're getting out while this thing is operating on you!"))
+		to_chat(usr, span_warning("这东西还在你身上运作，你绝对逃不掉的！"))
 		return
 	perform_eject(CRADLE_NOTICE_EARLY_EJECT)
 

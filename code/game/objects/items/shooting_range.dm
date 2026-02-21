@@ -3,28 +3,28 @@
 
 // Targets, the things that actually get shot!
 /obj/item/target
-	name = "shooting target"
-	desc = "A shooting target."
+	name = "射击目标"
+	desc = "一个射击靶。"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "target_h"
 	density = FALSE
 	resistance_flags = INDESTRUCTIBLE
 
 /obj/item/target/default
-	desc = "A shooting target with a distinctly human outline."
+	desc = "一个轮廓明显的人形射击靶。"
 
 /obj/item/target/syndicate
 	icon_state = "target_s"
-	desc = "A shooting target that looks like a hostile agent."
+	desc = "一个看起来像敌对特工的射击靶。"
 
 /obj/item/target/alien
 	icon_state = "target_q"
-	desc = "A shooting target with a threatening silhouette."
+	desc = "一个带有威胁性轮廓的射击靶。"
 
 ///Basically these are for the firing range
 /obj/structure/target_stake
-	name = "target stake"
-	desc = "A thin platform with negatively-magnetized wheels."
+	name = "目标木桩"
+	desc = "一个带有负磁化轮子的薄平台。"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "target_stake"
 	density = TRUE
@@ -41,7 +41,7 @@
 	if(!istype(I, /obj/item/target))
 		return
 	var/obj/item/target/targetcushion = I
-	to_chat(user, "You start fitting the target onto the stake.")
+	to_chat(user, "你开始将目标固定在木桩上。")
 	if(!do_after(user, TARGETTING_DUMMY_USE_DELAY, NONE, src, BUSY_ICON_FRIENDLY))
 		return
 	if(istype(targetcushion, /obj/item/target/default))
@@ -52,13 +52,13 @@
 		new /obj/structure/target_stake/occupied/syndicate(loc)
 	else //default to a regular human target
 		new /obj/structure/target_stake/occupied(loc)
-	to_chat(user, "You slide the target into the stake.")
+	to_chat(user, "你将靶子滑入支架。")
 	qdel(src) //delete original target_stake
 	qdel(I) //delete targetting dummy in users hand
 
 ///These are occupied variations for targetting stakes
 /obj/structure/target_stake/occupied
-	desc = "A thin platform with negatively-magnetized wheels, this one appears to have a target dummy mounted on it."
+	desc = "一个装有负磁化轮子的薄平台，上面似乎安装了一个靶子假人。"
 	icon_state = "target_stake_target_h"
 	///what kind of target to drop when a player removes a dummy from the targetting stake
 	var/cushion_type = "default"
@@ -71,7 +71,7 @@
 	if(usedwelder.remove_fuel(2, user))
 		overlays.Cut()
 		obj_integrity = max_integrity
-		to_chat(usr, "You slice off [src]'s uneven chunks of aluminum and patch the bullet holes, it looks practically new.")
+		to_chat(usr, "你削掉[src]不平整的铝块并修补了弹道孔洞，它看起来几乎全新了。")
 		return
 
 /obj/structure/target_stake/occupied/alien
@@ -83,13 +83,13 @@
 	cushion_type = "syndicate"
 
 /obj/structure/target_stake/occupied/attack_hand(mob/living/user)
-	to_chat(user, "You start removing the target from the stake.")
+	to_chat(user, "你开始将目标从木桩上取下。")
 	if(!do_after(user, TARGETTING_DUMMY_USE_DELAY, NONE, src, BUSY_ICON_FRIENDLY))
 		return
 	///create new target stake to create the illusion of a new one
 	new /obj/structure/target_stake(loc)
 	if(obj_integrity < 2000) //if critically damaged we don't give the user a new target dummy after removal
-		to_chat(user, "As remove the last shreds of the target from the stake, you conclude there's nothing worth salvaging from the mess.")
+		to_chat(user, "将目标从刑架上最后一点残骸清除后，你断定这堆烂摊子里没什么值得回收的东西了。")
 		qdel(src)
 		return
 	///dump new target at the foot of the user
@@ -100,7 +100,7 @@
 			new /obj/item/target/alien(get_turf(user))
 		if("syndicate")
 			new /obj/item/target/syndicate(get_turf(user))
-	to_chat(user, "You take the target out of the stake.")
+	to_chat(user, "你将目标从木桩上取下。")
 	qdel(src)
 
 /obj/structure/target_stake/occupied/examine(mob/user)

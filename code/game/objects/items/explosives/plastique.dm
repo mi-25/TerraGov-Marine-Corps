@@ -1,6 +1,6 @@
 /obj/item/explosive/plastique
-	name = "plastic explosives"
-	desc = "Used to put holes in specific areas without too much extra hole."
+	name = "塑胶炸药"
+	desc = "用于在特定区域开孔，避免造成过多额外孔洞。"
 	gender = PLURAL
 	icon = 'icons/obj/det.dmi'
 	icon_state = "plastic-explosive"
@@ -41,7 +41,7 @@
 	if(!newtime)
 		return
 	timer = newtime
-	to_chat(user, "Timer set for [timer] seconds.")
+	to_chat(user, "计时器设置为[timer]秒。")
 
 /obj/item/explosive/plastique/ex_act(severity)
 	if(QDELETED(src))
@@ -57,7 +57,7 @@
 		return FALSE
 	if(!target.can_plastique(user, src))
 		return FALSE
-	user.visible_message(span_warning("[user] is trying to plant [name] on [target]!"),
+	user.visible_message(span_warning("[user]正试图将[name]植入[target]！"),
 	span_warning("You are trying to plant [name] on [target]!"))
 
 	if(!do_after(user, 2 SECONDS, NONE, target, BUSY_ICON_HOSTILE) || !target.can_plastique(user, src))
@@ -112,7 +112,7 @@
 
 	log_bomber(user, "planted", src, "on [target] with a [timer] second fuse", message_admins = TRUE)
 
-	user.visible_message(span_warning("[user] plants [name] on [target]!"),
+	user.visible_message(span_warning("[user] 将 [name] 安置在 [target] 上！"),
 	span_warning("You plant [name] on [target]! Timer counting down from [timer]."))
 
 	plant_target = target
@@ -148,7 +148,7 @@
 	forceMove(get_turf(user))
 	deltimer(detonation_pending)
 
-	user.visible_message(span_warning("[user] disarmed [src] on [plant_target]!"),
+	user.visible_message(span_warning("[user] 在 [plant_target] 上解除了 [src] 的武装！"),
 	span_warning("You disarmed [src] on [plant_target]!"))
 
 	if(ismob(plant_target))

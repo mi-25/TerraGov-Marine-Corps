@@ -1,6 +1,6 @@
 /obj/machinery/light_construct
-	name = "light fixture frame"
-	desc = "A light fixture under construction."
+	name = "灯架"
+	desc = "一个正在建造中的灯具。"
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "tube-construct-stage1"
 	anchored = TRUE
@@ -36,19 +36,19 @@
 	if(iswrench(I))
 		if(stage == 1)
 			playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
-			to_chat(user, "You begin deconstructing [src].")
+			to_chat(user, "你开始拆除[src]。")
 			if(!do_after(usr, 30, NONE, src, BUSY_ICON_BUILD))
 				return
 			new /obj/item/stack/sheet/metal(get_turf(loc), sheets_refunded)
-			user.visible_message("[user] deconstructs [src].", \
+			user.visible_message("[user] 拆解了 [src]。", \
 				"You deconstruct [src].", "You hear a noise.")
 			playsound(loc, 'sound/items/deconstruct.ogg', 25, 1)
 			qdel(src)
 		else if(stage == 2)
-			to_chat(user, "You have to remove the wires first.")
+			to_chat(user, "你得先把电线拆掉。")
 			return
 		else if(stage == 3)
-			to_chat(user, "You have to unscrew the case first.")
+			to_chat(user, "你得先把外壳拧开。")
 			return
 
 	else if(iswirecutter(I))
@@ -61,7 +61,7 @@
 			if("bulb")
 				icon_state = "bulb-construct-stage1"
 		new /obj/item/stack/cable_coil(get_turf(loc), 1, "red")
-		user.visible_message("[user.name] removes the wiring from [src].", \
+		user.visible_message("[user.name] 从 [src] 上拆除了线路。", \
 			"You remove the wiring from [src].", "You hear a noise.")
 		playsound(loc, 'sound/items/wirecutter.ogg', 25, 1)
 
@@ -80,7 +80,7 @@
 			if("bulb")
 				icon_state = "bulb-construct-stage2"
 		stage = 2
-		user.visible_message("[user] adds wires to [src].", \
+		user.visible_message("[user] 将电线连接到 [src]。", \
 			"You add wires to [src].")
 
 	else if(isscrewdriver(I))
@@ -94,7 +94,7 @@
 				icon_state = "bulb_empty"
 
 		stage = 3
-		user.visible_message("[user] closes [src]'s casing.", \
+		user.visible_message("[user] 合上了 [src] 的机匣。", \
 			"You close [src]'s casing.", "You hear a noise.")
 		playsound(loc, 'sound/items/screwdriver.ogg', 25, 1)
 
@@ -112,8 +112,8 @@
 
 
 /obj/machinery/light_construct/small
-	name = "small light fixture frame"
-	desc = "A small light fixture under construction."
+	name = "小型灯具框架"
+	desc = "一个正在建造的小型照明装置。"
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "bulb-construct-stage1"
 	anchored = TRUE

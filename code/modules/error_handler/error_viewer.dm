@@ -139,7 +139,7 @@ GLOBAL_DATUM_INIT(error_cache, /datum/error_viewer/error_cache, new)
 		name = "\[[time_stamp()]] Uncaught exceptions"
 		return
 
-	name = "<b>\[[time_stamp()]]</b> Runtime in <b>[e.file]</b>, line <b>[e.line]</b>: <b>[html_encode(e.name)]</b>"
+	name = "<b>\[[time_stamp()]]</b> 运行时错误位于 <b>[e.file]</b>，第 <b>[e.line]</b> 行：<b>[html_encode(e.name)]</b>"
 
 
 /datum/error_viewer/error_source/show_to(user, datum/error_viewer/back_to, linear)
@@ -164,15 +164,15 @@ GLOBAL_DATUM_INIT(error_cache, /datum/error_viewer/error_cache, new)
 
 /datum/error_viewer/error_entry/New(exception/e, list/desclines, skip_count)
 	if(!istype(e))
-		name = "<b>\[[time_stamp()]]</b> Uncaught exception: <b>[html_encode(e.name)]</b>"
+		name = "<b>\[[time_stamp()]]</b> 未捕获的异常：<b>[html_encode(e.name)]</b>"
 		return
 
 	if(skip_count)
-		name = "\[[time_stamp()]] Skipped [skip_count] runtimes in [e.file],[e.line]."
+		name = "\[[time_stamp()]] 在 [e.file],[e.line] 跳过了 [skip_count] 个运行时。"
 		is_skip_count = TRUE
 		return
 
-	name = "<b>\[[time_stamp()]]</b> Runtime in <b>[e.file]</b>, line <b>[e.line]</b>: <b>[html_encode(e.name)]</b>"
+	name = "<b>\[[time_stamp()]]</b> 运行时错误位于 <b>[e.file]</b>，第 <b>[e.line]</b> 行：<b>[html_encode(e.name)]</b>"
 	exc = e
 	if(istype(desclines))
 		for (var/line in desclines)

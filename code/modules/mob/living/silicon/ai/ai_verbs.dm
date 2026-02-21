@@ -26,7 +26,7 @@
 			eyeobj.setLoc(get_turf(C))
 			break
 
-	to_chat(src, span_notice("Switched to the \"[uppertext(new_network)]\" camera network."))
+	to_chat(src, span_notice("已切换至'[uppertext(new_network)]'摄像头网络。"))
 
 
 
@@ -55,7 +55,7 @@
 		var/datum/signal/status_signal = new(list("command" = "friendcomputer"))
 		frequency.post_signal(src, status_signal)
 
-	to_chat(src, span_notice("Changed display status to: [emote]"))
+	to_chat(src, span_notice("显示状态已更改为：[emote]"))
 
 
 /mob/living/silicon/ai/verb/change_hologram()
@@ -74,7 +74,7 @@
 				personnel_list["[t.fields["name"]]: [t.fields["rank"]]"] = t.fields["photo_front"]
 
 			if(!length(personnel_list))
-				to_chat(src, span_warning("No suitable records found. Aborting."))
+				to_chat(src, span_warning("未找到合适记录。中止操作。"))
 				return
 
 			hologram = tgui_input_list(src, "Select a crew member:", null,personnel_list)
@@ -124,7 +124,7 @@
 		else
 			return
 
-	to_chat(src, span_notice("Changed hologram to: [hologram]"))
+	to_chat(src, span_notice("全息影像已更改为：[hologram]"))
 
 
 /mob/living/silicon/ai/verb/toggle_sensors()
@@ -145,7 +145,7 @@
 		return
 
 	if(last_announcement + 60 SECONDS > world.time)
-		to_chat(src, span_warning("You must wait before announcing again."))
+		to_chat(src, span_warning("请等待一段时间后再进行广播。"))
 		return
 
 	var/input = stripped_input(usr, "Please write a message to announce to the station crew.", "Announcement")
@@ -206,10 +206,10 @@
 		return
 
 	if(!radio)
-		to_chat(src, span_warning("No internal radio detected."))
+		to_chat(src, span_warning("未检测到内置无线电。"))
 		return
 
-	to_chat(src, span_notice("Accessing internal radio settings."))
+	to_chat(src, span_notice("正在访问内部无线电设置。"))
 	radio.interact(src)
 
 
@@ -249,7 +249,7 @@
 	if(incapacitated())
 		return
 
-	to_chat(src, span_notice("<b>Obey these laws:</b>"))
+	to_chat(src, span_notice("<b>遵守以下法则：</b>"))
 	for(var/i in laws)
 		to_chat(src, span_notice("[i]"))
 
@@ -264,7 +264,7 @@
 	if(tgui_alert(src, "Are you sure you want to announce your laws[radiomod ? " over the [radiomod] channel" : ""]?", "State Laws", list("Yes", "No")) != "Yes")
 		return
 
-	say("[radiomod] Current Active Lawset:")
+	say("[radiomod] 当前生效的法律集：")
 
 	var/delay = 1 SECONDS
 	for(var/i in laws)
@@ -280,7 +280,7 @@
 		return
 
 	if(!radio)
-		to_chat(src, "Radio not detected.")
+		to_chat(src, "未检测到无线电。")
 		return
 
 	var/chan = tgui_input_list(usr, "Select a channel:", "", list("Default", "None") + radio.channels )
@@ -312,7 +312,7 @@
 	if(tgui_alert(src, "Are you sure you want to shutdown your systems? You won't be able to return to your body. You can't change your mind so choose wisely!", "Shutdown systems confirm", list("Yes", "No")) != "Yes")
 		return
 
-	to_chat(src, span_notice("Systems shutting down..."))
+	to_chat(src, span_notice("系统正在关闭..."))
 	icon_state = "ai"
 
 	log_game("[key_name(src)] has ghosted at [AREACOORD(src)].")
@@ -327,11 +327,11 @@
 	set category = "IC"
 
 	if(eyeobj.zMove(UP, z_move_flags = ZMOVE_IGNORE_OBSTACLES|ZMOVE_FEEDBACK))
-		to_chat(src, span_notice("You move upwards."))
+		to_chat(src, span_notice("你向上移动。"))
 
 /mob/living/silicon/ai/down()
 	set name = "Move Down"
 	set category = "IC"
 
 	if(eyeobj.zMove(DOWN, z_move_flags = ZMOVE_IGNORE_OBSTACLES|ZMOVE_FEEDBACK))
-		to_chat(src, span_notice("You move down."))
+		to_chat(src, span_notice("你向下移动。"))

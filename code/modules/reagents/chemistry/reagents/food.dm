@@ -4,7 +4,7 @@
 // 	condiments, additives, and such go.
 
 /datum/reagent/consumable
-	name = "Consumable"
+	name = "Consumable-消耗品"
 	custom_metabolism = FOOD_METABOLISM
 	taste_description = "generic food"
 	taste_multi = 4
@@ -33,7 +33,7 @@
 	return TRUE
 
 /datum/reagent/consumable/nutriment
-	name = "Nutriment"
+	name = "Nutriment-营养剂"
 	description = "All the vitamins, minerals, and carbohydrates the body needs in pure form."
 	nutriment_factor = 7.5
 	color = "#664330" // rgb: 102, 67, 48
@@ -94,7 +94,7 @@
 	return nutriment_factor * effect_str * amount / custom_metabolism
 
 /datum/reagent/consumable/sugar
-	name = "Sugar"
+	name = "Sugar-糖"
 	description = "The organic compound commonly known as table sugar and sometimes called saccharose. This white, odorless, crystalline powder has a pleasing, sweet taste."
 	color = "#FFFFFF" // rgb: 255, 255, 255
 	taste_multi = 1.5 // stop sugar drowning out other flavours
@@ -102,7 +102,7 @@
 	taste_description = "sweetness"
 
 /datum/reagent/consumable/virus_food
-	name = "Virus Food"
+	name = "Virus Food-病毒培养液"
 	description = "A mixture of water, milk, and oxygen. Virus cells can use this mixture to reproduce."
 	reagent_state = LIQUID
 	nutriment_factor = 1
@@ -110,7 +110,7 @@
 	taste_description = "watery milk"
 
 /datum/reagent/consumable/soysauce
-	name = "Soysauce"
+	name = "Soysauce-酱油"
 	description = "A salty sauce made from the soy plant."
 	reagent_state = LIQUID
 	nutriment_factor = 1
@@ -118,7 +118,7 @@
 	taste_description = "umami"
 
 /datum/reagent/consumable/ketchup
-	name = "Ketchup"
+	name = "Ketchup-番茄酱"
 	description = "Ketchup, catsup, whatever. It's tomato paste."
 	reagent_state = LIQUID
 	nutriment_factor = 2.5
@@ -126,7 +126,7 @@
 	taste_description = "ketchup"
 
 /datum/reagent/consumable/capsaicin
-	name = "Capsaicin Oil"
+	name = "Capsaicin Oil-辣椒素油"
 	description = "This is what makes chilis hot."
 	reagent_state = LIQUID
 	color = "#B31008" // rgb: 179, 16, 8
@@ -152,7 +152,7 @@
 	return ..()
 
 /datum/reagent/consumable/capsaicin/condensed
-	name = "Condensed Capsaicin"
+	name = "Condensed Capsaicin-浓缩辣椒素"
 	description = "A chemical agent used for self-defense and in police work."
 	reagent_state = LIQUID
 	color = "#B31008" // rgb: 179, 16, 8
@@ -191,11 +191,11 @@
 			safe_thing = victim.glasses
 	if( eyes_covered && mouth_covered )
 		if(show_message)
-			to_chat(victim, span_danger("Your [safe_thing.name] protects you from the pepperspray!"))
+			to_chat(victim, span_danger("你的[safe_thing.name]保护你免受胡椒喷雾的伤害！"))
 		return
 	else if( mouth_covered )	// Reduced effects if partially protected
 		if(show_message)
-			to_chat(victim, span_danger("Your [safe_thing] protect your face from the pepperspray!"))
+			to_chat(victim, span_danger("你的[safe_thing]保护了你的脸免受胡椒喷雾的伤害！"))
 		victim.blur_eyes(15)
 		victim.blind_eyes(5)
 		victim.Stun(10 SECONDS)
@@ -203,7 +203,7 @@
 		return
 	else if( eyes_covered ) // Mouth cover is better than eye cover, except it's actually the opposite.
 		if(show_message)
-			to_chat(victim, span_danger("Your [safe_thing] protects you from most of the pepperspray!"))
+			to_chat(victim, span_danger("你的[safe_thing]保护你免受大部分胡椒喷雾的伤害！"))
 		if(!(victim.species && (victim.species.species_flags & NO_PAIN)))
 			if(prob(10))
 				victim.Stun(2 SECONDS)
@@ -214,7 +214,7 @@
 			if(prob(10))
 				victim.emote("scream")
 		if(show_message)
-			to_chat(victim, span_danger("You're sprayed directly in the eyes with pepperspray!"))
+			to_chat(victim, span_danger("你的眼睛被防狼喷雾直接喷中了！"))
 		victim.blur_eyes(25)
 		victim.blind_eyes(10)
 		victim.Stun(10 SECONDS)
@@ -222,7 +222,7 @@
 
 
 /datum/reagent/consumable/frostoil
-	name = "Frost Oil"
+	name = "Frost Oil-霜油"
 	description = "A special oil that noticably chills the body. Extracted from Ice Peppers."
 	reagent_state = LIQUID
 	color = "#B31008" // rgb: 139, 166, 233
@@ -238,7 +238,7 @@
 	return ..()
 
 /datum/reagent/consumable/sodiumchloride
-	name = "Table Salt"
+	name = "Table Salt-食盐"
 	description = "A salt made of sodium chloride. Commonly used to season food."
 	color = "#FFFFFF" // rgb: 255,255,255
 	overdose_threshold = REAGENTS_OVERDOSE
@@ -258,20 +258,20 @@
 		L.emote(pick("cry","moan","pain"))
 
 /datum/reagent/consumable/blackpepper
-	name = "Black Pepper"
+	name = "Black Pepper-黑胡椒"
 	description = "A powder ground from peppercorns. *AAAACHOOO*"
 	// no color (ie, black)
 	taste_description = "pepper"
 
 /datum/reagent/consumable/coco
-	name = "Coco Powder"
+	name = "Coco Powder-可可粉"
 	description = "A fatty, bitter paste made from coco beans."
 	nutriment_factor = 2.5
 	color = "#302000" // rgb: 48, 32, 0
 	taste_description = "bitterness"
 
 /datum/reagent/consumable/hot_coco
-	name = "Hot Chocolate"
+	name = "Hot Chocolate-热巧克力"
 	description = "Made with love! And cocoa beans."
 	reagent_state = LIQUID
 	nutriment_factor = 1
@@ -280,7 +280,7 @@
 	adj_temp = 5
 
 /datum/reagent/consumable/psilocybin
-	name = "Psilocybin"
+	name = "Psilocybin-致幻剂"
 	description = "A strong psycotropic derived from certain species of mushroom."
 	color = "#E700E7" // rgb: 231, 0, 231
 	overdose_threshold = REAGENTS_OVERDOSE
@@ -324,14 +324,14 @@
 	L.setDrowsyness(max(L.drowsyness, 30))
 
 /datum/reagent/consumable/sprinkles
-	name = "Sprinkles"
+	name = "Sprinkles-斯普林克尔斯"
 	description = "Multi-colored little bits of sugar, commonly found on donuts. Loved by cops."
 	nutriment_factor = 2.5
 	color = "#FF00FF" // rgb: 255, 0, 255
 	taste_description = "childhood whimsy"
 
 /datum/reagent/consumable/cornoil
-	name = "Corn Oil"
+	name = "Corn Oil-玉米油"
 	description = "An oil derived from various types of corn."
 	reagent_state = LIQUID
 	nutriment_factor = 10
@@ -343,7 +343,7 @@
 		T.wet_floor(FLOOR_WET_WATER)
 
 /datum/reagent/consumable/enzyme
-	name = "Universal Enzyme"
+	name = "Universal Enzyme-通用酶"
 	description = "A universal enzyme used in the preperation of certain chemicals and foods."
 	reagent_state = LIQUID
 	color = "#365E30" // rgb: 54, 94, 48
@@ -358,14 +358,14 @@
 	L.apply_damages(2, BURN)
 
 /datum/reagent/consumable/dry_ramen
-	name = "Dry Ramen"
+	name = "Dry Ramen-干拉面"
 	description = "Space age food, since August 25, 1958. Contains dried noodles, vegetables, and chemicals that boil in contact with water."
 	nutriment_factor = 0.5
 	color = "#302000" // rgb: 48, 32, 0
 	taste_description = "dry and cheap noodles"
 
 /datum/reagent/consumable/hot_ramen
-	name = "Hot Ramen"
+	name = "Hot Ramen-热拉面"
 	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
 	reagent_state = LIQUID
 	nutriment_factor = 2.5
@@ -374,7 +374,7 @@
 	adj_temp = 10
 
 /datum/reagent/consumable/hell_ramen
-	name = "Hell Ramen"
+	name = "Hell Ramen-地狱拉面"
 	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
 	reagent_state = LIQUID
 	nutriment_factor = 2.5
@@ -384,7 +384,7 @@
 	adj_temp = 10
 
 /datum/reagent/consumable/rice
-	name = "Rice"
+	name = "Rice-米饭"
 	description = "Enjoy the great taste of nothing."
 	nutriment_factor = 1
 	color = "#FFFFFF" // rgb: 0, 0, 0
@@ -392,7 +392,7 @@
 
 
 /datum/reagent/consumable/cherryjelly
-	name = "Cherry Jelly"
+	name = "Cherry Jelly-樱桃果冻"
 	description = "Totally the best. Only to be spread on foods with excellent lateral symmetry."
 	reagent_state = LIQUID
 	nutriment_factor = 2.5
@@ -400,14 +400,14 @@
 	taste_description = "cherry"
 
 /datum/reagent/consumable/honey
-	name = "Honey"
+	name = "Honey-蜂蜜"
 	description = "A golden yellow syrup, loaded with sugary sweetness."
 	color = "#FFFF00"
 	nutriment_factor = 7.5
 	taste_description = "sweetness"
 
 /datum/reagent/consumable/larvajelly
-	name = "Larva Jelly"
+	name = "Larva Jelly-幼虫凝胶"
 	description = "The blood and guts of a xenomorph larva blended into a paste. Drinking this is bad for you."
 	reagent_state = LIQUID
 	nutriment_factor = 0
@@ -422,7 +422,7 @@
 	return ..()
 
 /datum/reagent/consumable/larvajellyprepared
-	name = "Prepared Larva Jelly"
+	name = "Prepared Larva Jelly-已准备的幼虫凝胶"
 	description = "A delicious blend of xenomorphic entrails and acid, denatured by exposure to high-frequency radiation. Probably has some uses."
 	reagent_state = LIQUID
 	nutriment_factor = 0.5
@@ -435,7 +435,7 @@
 	return ..()
 
 /datum/reagent/consumable/caramel
-	name = "Caramel"
+	name = "Caramel-焦糖"
 	description = "Who would have guessed that heated sugar could be so delicious?"
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#D98736"
@@ -444,7 +444,7 @@
 	reagent_state = SOLID
 
 /datum/reagent/consumable/vanilla
-	name = "Vanilla Powder"
+	name = "Vanilla Powder-香草粉"
 	description = "A fatty, bitter paste made from vanilla pods."
 	reagent_state = SOLID
 	nutriment_factor = 2.5 * REAGENTS_METABOLISM
@@ -452,20 +452,20 @@
 	taste_description = "vanilla"
 
 /datum/reagent/consumable/salt
-	name = "Table Salt"
+	name = "Table Salt-食盐"
 	description = "A salt made of sodium chloride. Commonly used to season food."
 	reagent_state = SOLID
 	color = "#FFFFFF" // rgb: 255,255,255
 	taste_description = "salt"
 
 /datum/reagent/consumable/nutriment/vitamin
-	name = "Vitamin"
+	name = "Vitamin-维生素"
 	description = "All the best vitamins, minerals, and carbohydrates the body needs in pure form."
 
 	brute_heal = 0.07
 	burn_heal = 0.07
 
 /datum/reagent/consumable/nutriment/protein
-	name = "Protein"
+	name = "Protein-蛋白质"
 	description = "A natural polyamide made up of amino acids. An essential constituent of mosts known forms of life."
 	brute_heal = 0.02 //Rewards the player for eating a balanced diet.

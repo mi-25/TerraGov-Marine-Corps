@@ -1,5 +1,5 @@
 /obj/effect/manifest
-	name = "manifest"
+	name = "清单"
 	icon = 'icons/mob/screen/generic.dmi'
 	icon_state = "x"
 	resistance_flags = UNACIDABLE

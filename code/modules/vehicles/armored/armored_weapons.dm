@@ -1,6 +1,6 @@
 /obj/item/armored_weapon
-	name = "\improper LTB main battle tank cannon"
-	desc = "A TGMC vehicle's main turret cannon. It fires 86mm rocket propelled shells"
+	name = "\improper LTB主战坦克炮"
+	desc = "一门地球政府殖民地海军陆战队载具的主炮塔火炮。它发射86毫米火箭推进炮弹。"
 	icon = 'icons/obj/armored/hardpoint_modules.dmi'
 	icon_state = "ltb_cannon"
 	///owner this is attached to
@@ -99,7 +99,7 @@
 		var/fire_return // todo fix: code expecting return values from async
 		ASYNC
 			fire_return = fire()
-			current_firer.say("On the way!")
+			current_firer.say("正在路上！")
 		if(!fire_return || windup_checked == WEAPON_WINDUP_CHECKING)
 			return
 		reset_fire()
@@ -327,8 +327,8 @@
 	forceMove(moveto)
 
 /obj/item/armored_weapon/secondary_weapon
-	name = "secondary cupola minigun"
-	desc = "A robotically controlled minigun that spews lead."
+	name = "副炮塔机枪"
+	desc = "一门由机器人控制的、喷射铅弹的迷你炮。"
 	icon_state = "cupola"
 	fire_sound = 'sound/weapons/guns/fire/tank_minigun_loop.ogg'
 	interior_fire_sound = null
@@ -344,8 +344,8 @@
 	hud_state_empty = "rifle_empty"
 
 /obj/item/armored_weapon/ltaap
-	name = "\improper LTA-AP chaingun"
-	desc = "A hefty, large caliber chaingun"
+	name = "\improper LTA-AP 链式机枪"
+	desc = "重型大口径链式机枪"
 	icon_state = "ltaap_chaingun"
 	fire_sound = 'sound/weapons/guns/fire/tank_minigun_loop.ogg'
 	interior_fire_sound = null
@@ -360,8 +360,8 @@
 	hud_state_empty = "rifle_empty"
 
 /obj/item/armored_weapon/tank_autocannon
-	name = "\improper Bushwhacker Autocannon"
-	desc = "A Bushwhacker 30mm Autocannon for vehicular use."
+	name = "\improper 伏击者自动炮"
+	desc = "丛林猎手30毫米自动炮，用于车载武器。"
 	icon_state = "tank_autocannon"
 	fire_sound = SFX_AC_FIRE
 	interior_fire_sound = list('sound/vehicles/weapons/tank_autocannon_interior_fire_1.ogg', 'sound/vehicles/weapons/tank_autocannon_interior_fire_2.ogg')
@@ -374,8 +374,8 @@
 	hud_state_empty = "hivelo_empty"
 
 /obj/item/armored_weapon/apc_cannon
-	name = "\improper MKV-7 utility payload launcher"
-	desc = "A double barrelled cannon which can rapidly deploy utility packages to the battlefield."
+	name = "\improper MKV-7 通用载荷发射器"
+	desc = "一门双管火炮，可向战场快速部署实用装备包。"
 	icon_state = "APC uninstalled dualcannon"
 	fire_sound = 'sound/weapons/guns/fire/tank_smokelauncher.ogg'
 	interior_fire_sound = null
@@ -388,8 +388,8 @@
 	hud_state_empty = "grenade_empty"
 
 /obj/item/armored_weapon/secondary_flamer
-	name = "\improper OMR Mk.3 secondary flamer"
-	desc = "A large, vehicle mounted flamer. This one is capable of spraying it's payload due to a less solid mix."
+	name = "\improper OMR Mk.3 副喷火器"
+	desc = "一门大型车载喷火器。由于混合燃料的固态成分较少，它能够喷洒其有效载荷。"
 	icon_state = "sflamer"
 	fire_sound = "gun_flamethrower"
 	interior_fire_sound = null
@@ -405,8 +405,8 @@
 	hud_state_empty = "flame_empty"
 
 /obj/item/armored_weapon/tow
-	name = "\improper TOW-III launcher"
-	desc = "A single-shot, homing, vehicle-mounted TOW-III launcher designed for precision strikes against armored targets. Equipped with IFF."
+	name = "\improper TOW-III 发射器"
+	desc = "单发、自寻的、车载式陶氏III型发射器，专为精确打击装甲目标设计。配备敌我识别系统。"
 	icon_state = "seeker"
 	fire_sound = SFX_RPG_FIRE
 	interior_fire_sound = null
@@ -421,8 +421,8 @@
 	hud_state_empty = "rocket_empty"
 
 /obj/item/armored_weapon/microrocket_pod
-	name = "microrocket pod"
-	desc = "A TGMC secondary vehicle-mounted multiple launch rocket system with a total of 6 homing microrockets. Capable of unleashing its entire payload in rapid succession."
+	name = "微型火箭吊舱"
+	desc = "地球政府殖民地海军陆战队（TGMC）的副武器车载多管火箭发射系统，共搭载6枚制导微型火箭弹。能够快速连续发射全部弹药。"
 	icon_state = "secondary_rocket_multiple"
 	fire_sound = 'sound/weapons/guns/fire/launcher.ogg'
 	interior_fire_sound = null
@@ -439,7 +439,7 @@
 
 /obj/item/armored_weapon/bfg
 	name = "\improper BFG 9500"
-	desc = "A crackling energy weapon, a slightly scaled up model of the classic BFG 9000. Point at people who killed your rabbit."
+	desc = "一把噼啪作响的能量武器，经典BFG 9000的略微放大版。用它对准那些杀了你兔子的人。"
 	icon_state = "bfg"
 	fire_sound = 'sound/weapons/guns/fire/tank_bfg.ogg'
 	interior_fire_sound = 'sound/vehicles/weapons/particle_fire_interior.ogg'

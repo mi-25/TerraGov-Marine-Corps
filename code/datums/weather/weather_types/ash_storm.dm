@@ -1,7 +1,7 @@
 //Ash storms happen frequently on lavaland. They heavily obscure vision, and cause high fire damage to anyone caught outside.
 /datum/weather/ash_storm
-	name = "ash storm"
-	desc = "An intense atmospheric storm lifts ash off of the planet's surface and billows it down across the area, dealing intense fire damage to the unprotected."
+	name = "沙尘暴"
+	desc = "一场强烈的风暴卷起行星表面的灰烬，席卷整个区域，对未受保护者造成严重的火焰伤害。"
 
 	telegraph_message = span_userdanger("An eerie moan rises on the wind. Sheets of burning ash blacken the horizon. Seek shelter.")
 	telegraph_duration = 600
@@ -80,8 +80,8 @@
 
 //Emberfalls are the result of an ash storm passing by close to the playable area of lavaland. They have a 10% chance to trigger in place of an ash storm.
 /datum/weather/ash_storm/emberfall
-	name = "emberfall"
-	desc = "A passing ash storm blankets the area in harmless embers."
+	name = "余烬坠落"
+	desc = "一阵掠过的灰烬风暴将这片区域笼罩在无害的余烬之中。"
 
 	telegraph_duration = 300
 	telegraph_message = span_danger("An eerie moan rises on the wind. Sheets of burning ash blacken the horizon.")

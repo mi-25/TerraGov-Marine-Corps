@@ -8,8 +8,8 @@
 * First Aid Kits
 */
 /obj/item/storage/firstaid
-	name = "first-aid kit"
-	desc = "It's an emergency medical kit for those serious boo-boos."
+	name = "急救包"
+	desc = "这是用于处理严重伤口的紧急医疗包。"
 	icon = 'icons/obj/items/storage/firstaid.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/equipment/medkits_left.dmi',
@@ -53,8 +53,8 @@
 
 
 /obj/item/storage/firstaid/fire
-	name = "fire first-aid kit"
-	desc = "It's an emergency medical kit for when the toxins lab <i>-spontaneously-</i> burns down."
+	name = "火焰急救包"
+	desc = "这是为毒物实验室<i>-意外-</i>起火时准备的紧急医疗包。"
 	icon_state = "firefirstaid"
 	worn_icon_state = "firefirstaid"
 
@@ -83,8 +83,8 @@
 
 
 /obj/item/storage/firstaid/toxin
-	name = "toxin first aid"
-	desc = "Used to treat when you have a high amount of toxins in your body."
+	name = "毒素急救"
+	desc = "用于治疗体内毒素含量过高的情况。"
 	icon_state = "antitoxfirstaid"
 	worn_icon_state = "antitoxfirstaid"
 
@@ -98,8 +98,8 @@
 
 
 /obj/item/storage/firstaid/o2
-	name = "oxygen deprivation first aid"
-	desc = "A box full of oxygen goodies."
+	name = "缺氧急救"
+	desc = "一箱氧气补给品。"
 	icon_state = "o2firstaid"
 	worn_icon_state = "o2firstaid"
 
@@ -114,8 +114,8 @@
 
 
 /obj/item/storage/firstaid/adv
-	name = "advanced first-aid kit"
-	desc = "Contains advanced medical treatments."
+	name = "高级急救包"
+	desc = "装有高级医疗用品。"
 	icon_state = "advfirstaid"
 	worn_icon_state = "advfirstaid"
 
@@ -130,8 +130,8 @@
 
 
 /obj/item/storage/firstaid/rad
-	name = "radiation first-aid kit"
-	desc = "Contains treatment for radiation exposure"
+	name = "辐射急救包"
+	desc = "包含辐射暴露治疗"
 	icon_state = "purplefirstaid"
 	worn_icon_state = "purplefirstaid"
 
@@ -150,8 +150,8 @@
 */
 
 /obj/item/storage/syringe_case
-	name = "syringe case"
-	desc = "It's a medical case for storing syringes and bottles."
+	name = "注射器盒"
+	desc = "这是一个用于存放注射器和药瓶的医疗箱。"
 	icon_state = "syringe_case"
 	icon = 'icons/obj/items/storage/firstaid.dmi'
 	throw_speed = 2
@@ -172,8 +172,8 @@
 	new /obj/item/reagent_containers/glass/bottle/empty(src)
 
 /obj/item/storage/syringe_case/regular
-	name = "basic syringe case"
-	desc = "It's a medical case for storing syringes and bottles. This one contains basic meds."
+	name = "基础注射器盒"
+	desc = "这是一个用于存放注射器和药瓶的医疗箱。里面装有基础药品。"
 
 /obj/item/storage/syringe_case/regular/PopulateContents()
 	new /obj/item/reagent_containers/syringe(src)
@@ -181,8 +181,8 @@
 	new /obj/item/reagent_containers/glass/bottle/tricordrazine(src)
 
 /obj/item/storage/syringe_case/burn
-	name = "burn syringe case"
-	desc = "It's a medical case for storing syringes and bottles. This one contains meds designed to treat burns."
+	name = "燃烧注射器盒"
+	desc = "这是一个用于存放注射器和药瓶的医疗箱。这个箱子装有专门治疗烧伤的药物。"
 
 /obj/item/storage/syringe_case/burn/PopulateContents()
 	new /obj/item/reagent_containers/syringe(src)
@@ -190,8 +190,8 @@
 	new /obj/item/reagent_containers/glass/bottle/oxycodone(src)
 
 /obj/item/storage/syringe_case/tox
-	name = "toxins syringe case"
-	desc = "It's a medical case for storing syringes and bottles. This one contains meds designed to treat toxins."
+	name = "毒素注射器盒"
+	desc = "这是一个用于存放注射器和药瓶的医疗箱。这个箱子装有专门用于治疗毒素的药品。"
 
 /obj/item/storage/syringe_case/tox/PopulateContents()
 	new /obj/item/reagent_containers/syringe(src)
@@ -199,8 +199,8 @@
 	new /obj/item/reagent_containers/glass/bottle/hypervene(src)
 
 /obj/item/storage/syringe_case/oxy
-	name = "oxyloss syringe case"
-	desc = "It's a medical case for storing syringes and bottles. This one contains meds designed to treat oxygen deprivation."
+	name = "缺氧注射器盒"
+	desc = "这是一个用于存放注射器和药瓶的医疗箱。里面装有专门治疗缺氧的药物。"
 
 /obj/item/storage/syringe_case/oxy/PopulateContents()
 	new /obj/item/reagent_containers/syringe(src)
@@ -208,8 +208,8 @@
 	new /obj/item/reagent_containers/glass/bottle/dexalin(src)
 
 /obj/item/storage/syringe_case/meralyne
-	name = "syringe case (meralyne)"
-	desc = "It's a medical case for storing syringes and bottles. This one contains Meralyne."
+	name = "注射器盒（梅拉林）"
+	desc = "这是一个用于存放注射器和药瓶的医疗箱。里面装有梅拉林。"
 
 /obj/item/storage/syringe_case/meralyne/PopulateContents()
 	new /obj/item/reagent_containers/syringe(src)
@@ -217,8 +217,8 @@
 	new /obj/item/reagent_containers/glass/bottle/meralyne(src)
 
 /obj/item/storage/syringe_case/dermaline
-	name = "syringe case (dermaline)"
-	desc = "It's a medical case for storing syringes and bottles. This one contains Dermaline."
+	name = "注射器盒（皮肤宁）"
+	desc = "这是一个用于存放注射器和药瓶的医疗箱。这里面装有皮肤灵。"
 
 /obj/item/storage/syringe_case/dermaline/PopulateContents()
 	new /obj/item/reagent_containers/syringe(src)
@@ -226,8 +226,8 @@
 	new /obj/item/reagent_containers/glass/bottle/dermaline(src)
 
 /obj/item/storage/syringe_case/meraderm
-	name = "syringe case (meraderm)"
-	desc = "It's a medical case for storing syringes and bottles. This one contains Meraderm."
+	name = "注射器盒（美拉得明）"
+	desc = "这是一个用于存放注射器和药瓶的医疗箱。里面装有梅拉得姆。"
 
 /obj/item/storage/syringe_case/meraderm/PopulateContents()
 	new /obj/item/reagent_containers/syringe(src)
@@ -235,8 +235,8 @@
 	new /obj/item/reagent_containers/glass/bottle/meraderm(src)
 
 /obj/item/storage/syringe_case/nanoblood
-	name = "syringe case (nanoblood)"
-	desc = "It's a medical case for storing syringes and bottles. This one contains nanoblood."
+	name = "注射器盒（纳米血液）"
+	desc = "这是一个用于存放注射器和药瓶的医疗箱。这里面装有纳米血液。"
 
 /obj/item/storage/syringe_case/nanoblood/PopulateContents()
 	new /obj/item/reagent_containers/syringe(src)
@@ -244,8 +244,8 @@
 	new /obj/item/reagent_containers/glass/bottle/nanoblood(src)
 
 /obj/item/storage/syringe_case/tricordrazine
-	name = "syringe case (tricordrazine)"
-	desc = "It's a medical case for storing syringes and bottles. This one contains Tricordrazine."
+	name = "注射器盒（三卡多拉嗪）"
+	desc = "这是一个用于存放注射器和药瓶的医疗箱。里面装有特里科德拉嗪。"
 
 /obj/item/storage/syringe_case/tricordrazine/PopulateContents()
 	new /obj/item/reagent_containers/syringe(src)
@@ -259,8 +259,8 @@
 
 
 /obj/item/storage/pill_bottle
-	name = "pill bottle"
-	desc = "It's an airtight container for storing medication."
+	name = "药瓶"
+	desc = "这是一个用于储存药品的密封容器。"
 	icon_state = "pill_canister"
 	icon = 'icons/obj/items/chemistry.dmi'
 	worn_icon_list = list(
@@ -285,7 +285,7 @@
 
 /obj/item/storage/pill_bottle/attack_self(mob/living/user)
 	if(user.get_inactive_held_item())
-		user.balloon_alert(user, "need an empty off-hand!")
+		user.balloon_alert(user, "需要空出副手！")
 		return
 	if(length(contents))
 		var/obj/item/I = contents[1]
@@ -297,7 +297,7 @@
 				C.swap_hand()
 		else
 			user.dropItemToGround(I)
-			to_chat(user, span_notice("You fumble around with \the [src] and drop a pill on the floor."))
+			to_chat(user, span_notice("你笨手笨脚地摆弄着\the [src]，把一颗药丸掉在了地上。"))
 		return
 
 /obj/item/storage/pill_bottle/update_overlays()
@@ -344,8 +344,8 @@
 	update_icon()
 
 /obj/item/storage/pill_bottle/kelotane
-	name = "kelotane pill bottle"
-	desc = "Contains pills that heal burns, but cause slight pain. Take two to heal faster, but have slightly more pain."
+	name = "凯洛坦药片瓶"
+	desc = "内含治疗烧伤的药片，但会引起轻微疼痛。服用两片可加速愈合，但疼痛感会稍强。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/kelotane
 	greyscale_colors = "#CC9900#FFFFFF"
 	description_overlay = "Ke"
@@ -356,16 +356,16 @@
 	storage_datum.storage_flags = BYPASS_VENDOR_CHECK
 
 /obj/item/storage/pill_bottle/dermaline
-	name = "dermaline pill bottle"
-	desc = "Contains pills that heal burns, but cause slight pain. Take two to heal faster, but have slightly more pain."
+	name = "德马林药瓶"
+	desc = "内含可治疗烧伤的药片，但会引起轻微疼痛。服用两片可加速愈合，但疼痛感会稍强。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/dermaline
 	greyscale_config = /datum/greyscale_config/pillbottleround
 	greyscale_colors = "#ffef00#FFFFFF"
 	description_overlay = "De"
 
 /obj/item/storage/pill_bottle/dylovene
-	name = "dylovene pill bottle"
-	desc = "Contains pills that heal toxic damage and purge toxins and neurotoxins of all kinds."
+	name = "地洛芬药瓶"
+	desc = "含有可治疗毒素伤害并清除各类毒素和神经毒素的药片。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/dylovene
 	greyscale_colors = "#669900#ffffff"
 	description_overlay = "Dy"
@@ -376,8 +376,8 @@
 	storage_datum.storage_flags = BYPASS_VENDOR_CHECK
 
 /obj/item/storage/pill_bottle/isotonic
-	name = "isotonic pill bottle"
-	desc = "Contains pills that stimulate the regeneration of lost blood."
+	name = "等渗药丸瓶"
+	desc = "含有促进失血再生的药片。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/isotonic
 	greyscale_colors = "#5c0e0e#ffffff"
 	description_overlay = "Is"
@@ -388,16 +388,16 @@
 	storage_datum.storage_flags = BYPASS_VENDOR_CHECK
 
 /obj/item/storage/pill_bottle/inaprovaline
-	name = "inaprovaline pill bottle"
-	desc = "Contains pills that prevent wounds from getting worse on their own."
+	name = "伊那普洛林药瓶"
+	desc = "内含药片，可防止伤口自行恶化。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/inaprovaline
 	greyscale_config = /datum/greyscale_config/pillbottlebox
 	greyscale_colors = "#9966CC#ffffff"
 	description_overlay = "In"
 
 /obj/item/storage/pill_bottle/tramadol
-	name = "tramadol pill bottle"
-	desc = "Contains pills that numb pain. Take two for a stronger effect at the cost of a toxic effect."
+	name = "曲马多药瓶"
+	desc = "内含镇痛药片。服用两片可获得更强效果，但会产生毒性副作用。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/tramadol
 	greyscale_colors = "#8a8686#ffffff"
 	description_overlay = "Ta"
@@ -408,8 +408,8 @@
 	storage_datum.storage_flags = BYPASS_VENDOR_CHECK
 
 /obj/item/storage/pill_bottle/paracetamol
-	name = "paracetamol pill bottle"
-	desc = "Contains pills that mildly numb pain. Take two for a slightly stronger effect."
+	name = "扑热息痛药瓶"
+	desc = "内含能轻微缓解疼痛的药片。服用两片可获得稍强的效果。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/paracetamol
 	greyscale_config = /datum/greyscale_config/pillbottlebox
 	greyscale_colors = "#f8f4f8#ffffff"
@@ -421,16 +421,16 @@
 	storage_datum.storage_flags = BYPASS_VENDOR_CHECK
 
 /obj/item/storage/pill_bottle/spaceacillin
-	name = "spaceacillin pill bottle"
-	desc = "Contains pills that handle low-level viral and bacterial infections. Effect increases with dosage."
+	name = "太空青霉素药瓶"
+	desc = "内含可处理低级别病毒和细菌感染的药片。效果随剂量增加而增强。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/spaceacillin
 	greyscale_config = /datum/greyscale_config/pillbottlebox
 	greyscale_colors = "#90F7DeF5#ffffff"
 	description_overlay = "Sp"
 
 /obj/item/storage/pill_bottle/bicaridine
-	name = "bicaridine pill bottle"
-	desc = "Contains pills that heal cuts and bruises, but cause slight pain. Take two to heal faster, but have slightly more pain."
+	name = "比卡瑞丁药瓶"
+	desc = "内含可治愈割伤和瘀伤的药物，但会引起轻微疼痛。服用两片可加速愈合，但疼痛感会稍强。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/bicaridine
 	greyscale_colors = "#DA0000#ffffff"
 	description_overlay = "Bi"
@@ -441,8 +441,8 @@
 	storage_datum.storage_flags = BYPASS_VENDOR_CHECK
 
 /obj/item/storage/pill_bottle/meralyne
-	name = "meralyne pill bottle"
-	desc = "Contains pills that heal cuts and bruises, but cause slight pain. Take two to heal faster, but have slightly more pain."
+	name = "梅拉林药瓶"
+	desc = "内含可治愈割伤和瘀伤的药物，但会引起轻微疼痛。服用两片可加速愈合，但疼痛感会稍强。"
 	icon_state = "pill_canistercomplete"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/meralyne
 	greyscale_config = /datum/greyscale_config/pillbottleround
@@ -450,15 +450,15 @@
 	description_overlay = "Me"
 
 /obj/item/storage/pill_bottle/dexalin
-	name = "dexalin pill bottle"
-	desc = "Contains pills that heal oxygen damage. They can suppress bloodloss symptoms as well."
+	name = "地克西林药瓶"
+	desc = "含有治疗缺氧损伤的药片。它们也能抑制失血症状。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/dexalin
 	greyscale_colors = "#5972FD#ffffff"
 	description_overlay = "Dx"
 
 /obj/item/storage/pill_bottle/alkysine
-	name = "alkysine pill bottle"
-	desc = "Contains pills that heal brain and ear damage."
+	name = "阿尔克辛药瓶"
+	desc = "含有治疗脑部和耳部损伤的药片。"
 	icon_state = "pill_canistercomplete"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/alkysine
 	greyscale_config = /datum/greyscale_config/pillbottlebubble
@@ -466,24 +466,24 @@
 	description_overlay = "Al"
 
 /obj/item/storage/pill_bottle/imidazoline
-	name = "imidazoline pill bottle"
-	desc = "Contains pills that heal eye damage."
+	name = "咪唑啉药瓶"
+	desc = "含有治疗眼部损伤的药片。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/imidazoline
 	greyscale_config = /datum/greyscale_config/pillbottlebubble
 	greyscale_colors = "#F7A151#ffffff" //orange like carrots
 	description_overlay = "Im"
 
 /obj/item/storage/pill_bottle/russian_red
-	name = "\improper Russian Red pill bottle"
-	desc = "Contains pills that heal all damage rapidly at the cost of small amounts of unhealable damage."
+	name = "\improper 俄罗斯红药丸瓶"
+	desc = "含有能快速治愈所有损伤的药片，代价是造成少量无法治愈的损伤。"
 	icon_state = "pill_canister"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/russian_red
 	greyscale_colors = "#3d0000#ffffff"
 	description_overlay = "Rr"
 
 /obj/item/storage/pill_bottle/quickclot
-	name = "quick-clot pill bottle"
-	desc = "Contains pills that suppress internal bleeding while waiting for full treatment."
+	name = "快速凝血药瓶"
+	desc = "内含药片，可在等待全面治疗期间抑制内出血。"
 	icon_state = "pill_canistercomplete"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/quickclot
 	greyscale_config = /datum/greyscale_config/pillbottleround
@@ -491,8 +491,8 @@
 	description_overlay = "Qk"
 
 /obj/item/storage/pill_bottle/hypervene
-	name = "hypervene pill bottle"
-	desc = "A purge medication used to treat overdoses and rapidly remove toxins. Causes pain and vomiting."
+	name = "超维宁药瓶"
+	desc = "一种用于治疗药物过量和快速清除毒素的净化药物。会引起疼痛和呕吐。"
 	icon_state = "pill_canister"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/hypervene
 	greyscale_config = /datum/greyscale_config/pillbottlebubble
@@ -500,8 +500,8 @@
 	description_overlay = "Hy"
 
 /obj/item/storage/pill_bottle/tricordrazine
-	name = "tricordrazine pill bottle"
-	desc = "Contains pills capable of minorly healing all main types of damages."
+	name = "三卡德拉辛药瓶"
+	desc = "内含药片，可轻微治愈所有主要类型的损伤。"
 	icon_state = "pill_canistercomplete"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/tricordrazine
 	greyscale_colors = "#f8f8f8#ffffff"
@@ -514,8 +514,8 @@
 	storage_datum.storage_flags = BYPASS_VENDOR_CHECK
 
 /obj/item/storage/pill_bottle/happy
-	name = "happy pill bottle"
-	desc = "Contains highly illegal drugs. When you want to see the rainbow."
+	name = "快乐药丸瓶"
+	desc = "内含高度违禁药物。当你想看到彩虹时。"
 	pill_type_to_fill = /obj/item/reagent_containers/pill/happy
 	greyscale_colors = "#6C52BF#ffffff"
 
@@ -524,8 +524,8 @@
 	storage_datum.max_storage_space = 7
 
 /obj/item/storage/pill_bottle/zoom
-	name = "zoom pill bottle"
-	desc = "Containts highly illegal drugs. Trade heart for speed."
+	name = "缩放药瓶"
+	desc = "内含高度违禁药物。以心脏换取速度。"
 
 	pill_type_to_fill = /obj/item/reagent_containers/pill/zoom
 	greyscale_colors = "#ef3ad4#ffffff"
@@ -540,7 +540,7 @@
 
 	var/obj/item/facepaint/paint = attacking_item
 	if(paint.uses < 1)
-		to_chat(user, span_warning("\the [paint] is out of color!"))
+		to_chat(user, span_warning("\the [paint] 没颜色了！"))
 		return
 	var/bottle_color
 	var/label_color

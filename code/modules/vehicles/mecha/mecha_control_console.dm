@@ -1,6 +1,6 @@
 /obj/machinery/computer/mecha
-	name = "exosuit control console"
-	desc = "Used to remotely locate or lockdown exosuits."
+	name = "外骨骼控制台"
+	desc = "用于远程定位或锁定外骨骼。"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	screen_overlay = "mecha"
@@ -60,7 +60,7 @@
 			var/obj/vehicle/sealed/mecha/M = MT.chassis
 			if(trim(message) && M)
 				to_chat(M.occupants, message)
-				to_chat(usr, span_notice("Message sent."))
+				to_chat(usr, span_notice("消息已发送。"))
 				. = TRUE
 		if("shock")
 			var/obj/item/mecha_parts/mecha_tracking/MT = locate(params["tracker_ref"])
@@ -74,8 +74,8 @@
 				. = TRUE
 
 /obj/item/mecha_parts/mecha_tracking
-	name = "exosuit tracking beacon"
-	desc = "Device used to transmit exosuit data."
+	name = "外骨骼追踪信标"
+	desc = "用于传输外骨骼数据的设备。"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "motion2"
 	w_class = WEIGHT_CLASS_SMALL
@@ -136,12 +136,12 @@
 	recharging = FALSE
 
 /obj/item/mecha_parts/mecha_tracking/ai_control
-	name = "exosuit AI control beacon"
-	desc = "A device used to transmit exosuit data. Also allows active AI units to take control of said exosuit."
+	name = "外骨骼AI控制信标"
+	desc = "用于传输外骨骼数据的设备。也允许活跃的AI单位控制该外骨骼。"
 	ai_beacon = TRUE
 
 /obj/item/storage/box/mechabeacons
-	name = "exosuit tracking beacons"
+	name = "外骨骼追踪信标"
 
 /obj/item/storage/box/mechabeacons/PopulateContents()
 	..()

@@ -1,6 +1,6 @@
 // Please note this is cosmetic only and not buildable by players.
 /obj/machinery/air_alarm
-	name = "air alarm"
+	name = "空气警报"
 	icon = 'icons/obj/machines/air_alarm.dmi'
 	icon_state = "alarm_powered"
 	power_channel = ENVIRON
@@ -24,7 +24,7 @@
 			pixel_x = 32
 
 	var/area/our_area = get_area(src)
-	name = "[our_area.name] Air Alarm"
+	name = "[our_area.name] 空气警报"
 	update_icon()
 
 /obj/machinery/air_alarm/update_icon()
@@ -50,7 +50,7 @@
 
 /obj/machinery/air_alarm/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
-	balloon_alert_to_viewers("[user] starts trying to pry [src] off the wall..")
+	balloon_alert_to_viewers("[user]开始试图将[src]从墙上撬下来..")
 	playsound(loc, 'sound/items/crowbar.ogg', 25, 1)
 	if(!do_after(user, 5 SECONDS, NONE, src))
 		return

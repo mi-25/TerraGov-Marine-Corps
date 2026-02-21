@@ -1,7 +1,7 @@
 ///Deployitem implant, holds a item that can then be placed inhand to do whatever with
 /obj/item/implant/deployitem
-	name = "item implants"
-	desc = "you shouldnt be seeing this"
+	name = "物品植入物"
+	desc = "你不应该看到这个"
 	allowed_limbs = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)
 	///Held item we want to be put in hand when the implant is activated
 	var/obj/item/helditem = /obj/item/healthanalyzer
@@ -40,8 +40,8 @@
 
 
 /obj/item/implant/deployitem/blade
-	name = "mantis blade implant"
-	desc = "A large folding blade capable of being stored within an arm."
+	name = "螳螂刀植入体"
+	desc = "一把可折叠的大型刀刃，能够收纳在手臂内。"
 	icon = 'icons/obj/items/weapons/swords.dmi'
 	icon_state = "armblade"
 	helditem = /obj/item/weapon/sword/mantisblade
@@ -63,8 +63,8 @@
 	playsound(implant_owner.loc, 'sound/weapons/wristblades_off.ogg', 15, TRUE)
 
 /obj/item/weapon/sword/mantisblade
-	name = "mantis arm blade"
-	desc = "A wicked-looking folding blade capable of being concealed within a human's arm."
+	name = "螳螂臂刃"
+	desc = "一把外观邪恶的折叠刀，能够隐藏于人类手臂之中。"
 	icon_state = "armblade"
 	worn_icon_state = "armblade"
 	force = 75

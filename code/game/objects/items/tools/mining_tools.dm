@@ -4,7 +4,7 @@
 /*****************************Pickaxe********************************/
 
 /obj/item/tool/pickaxe
-	name = "pickaxe"
+	name = "镐"
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "pickaxe"
 	atom_flags = CONDUCT
@@ -21,57 +21,57 @@
 	var/excavation_amount = 100
 
 /obj/item/tool/pickaxe/hammer
-	name = "sledgehammer"
+	name = "大锤"
 	icon_state = "sledgehammer"
-	desc = "A mining hammer made of reinforced metal. You feel like smashing your boss in the face with this."
+	desc = "一把由强化金属制成的矿工锤。你感觉可以用它狠狠砸在老板脸上。"
 
 /obj/item/tool/pickaxe/silver
-	name = "silver pickaxe"
+	name = "银制镐"
 	icon_state = "spickaxe"
 	worn_icon_state = "spickaxe"
 	digspeed = 30
-	desc = "This makes no metallurgic sense."
+	desc = "这从冶金学角度讲不通。"
 
 /obj/item/tool/pickaxe/drill
-	name = "mining drill" // Can dig sand as well!
+	name = "采矿钻" // Can dig sand as well!
 	icon_state = "handdrill"
 	worn_icon_state = "drill"
 	digspeed = 30
-	desc = "Yours is the drill that will pierce through the rock walls."
+	desc = "你的钻头将贯穿岩壁。"
 	drill_verb = "drilling"
 
 /obj/item/tool/pickaxe/jackhammer
-	name = "sonic jackhammer"
+	name = "声波破碎锤"
 	icon_state = "jackhammer"
 	worn_icon_state = "jackhammer"
 	digspeed = 20 //faster than drill, but cannot dig
-	desc = "Cracks rocks with sonic blasts, perfect for killing cave lizards."
+	desc = "用音爆震裂岩石，是消灭洞穴蜥蜴的完美选择。"
 	drill_verb = "hammering"
 
 /obj/item/tool/pickaxe/gold
-	name = "golden pickaxe"
+	name = "金镐"
 	icon_state = "gpickaxe"
 	worn_icon_state = "gpickaxe"
 	digspeed = 20
-	desc = "This makes no metallurgic sense."
+	desc = "这从冶金学上讲不通。"
 
 /obj/item/tool/pickaxe/diamond
-	name = "diamond pickaxe"
+	name = "钻石镐"
 	icon_state = "dpickaxe"
 	worn_icon_state = "dpickaxe"
 	digspeed = 10
-	desc = "A pickaxe with a diamond pick head, this is just like minecraft."
+	desc = "一把带有钻石镐头的镐子，这简直就像《我的世界》。"
 
 /obj/item/tool/pickaxe/diamonddrill //When people ask about the badass leader of the mining tools, they are talking about ME!
-	name = "diamond mining drill"
+	name = "钻石采矿钻"
 	icon_state = "diamonddrill"
 	worn_icon_state = "jackhammer"
 	digspeed = 5 //Digs through walls, girders, and can dig up sand
-	desc = "Yours is the drill that will pierce the heavens!"
+	desc = "你的钻头就是突破天际的钻头！"
 	drill_verb = "drilling"
 
 /obj/item/tool/pickaxe/borgdrill
-	name = "cyborg mining drill"
+	name = "合成人采矿钻"
 	icon_state = "diamonddrill"
 	worn_icon_state = "jackhammer"
 	digspeed = 15
@@ -80,8 +80,8 @@
 
 
 /obj/item/tool/pickaxe/plasmacutter
-	name = "plasma cutter"
-	desc = "A self-charging tool that uses superheated plasma to cut through anything with ease. You could use it to slice off limbs! Or, you know, cut apart walls or mine through stone. Eye protection is strongly recommended."
+	name = "等离子体切割器"
+	desc = "一种自充电工具，利用超高温等离子体轻松切割任何物体。你可以用它来切断肢体！或者，你知道的，切开墙壁或凿穿岩石。强烈建议佩戴护目镜。"
 	icon = 'icons/obj/items/tools.dmi'
 	icon_state = "plasma_cutter_off"
 	worn_icon_state = "plasmacutter"
@@ -126,7 +126,7 @@
 		playsound(loc, 'sound/weapons/saberoff.ogg', 15)
 		powered = FALSE
 		if(!silent && user)
-			user.visible_message(span_notice("[user] turns [src] off."),
+			user.visible_message(span_notice("[user]关闭了[src]。"),
 		span_notice("You switch [src] off. <b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b>"))
 		update_plasmacutter()
 		return
@@ -137,7 +137,7 @@
 	playsound(loc, 'sound/weapons/saberon.ogg', 15)
 	powered = TRUE
 	if(!silent && user)
-		user.visible_message(span_notice("[user] turns [src] on."),
+		user.visible_message(span_notice("[user] 启动了 [src]。"),
 		span_notice("You switch [src] on. <b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b>"))
 
 	update_plasmacutter()
@@ -146,12 +146,12 @@
 /obj/item/tool/pickaxe/plasmacutter/proc/fizzle_message(mob/user)
 	playsound(src, 'sound/machines/buzz-two.ogg', 25, 1)
 	if(!cell)
-		balloon_alert(user, "no battery installed!")
+		balloon_alert(user, "未安装电池！")
 	else if(!powered)
-		balloon_alert(user, "turned off!")
+		balloon_alert(user, "已关闭！")
 	else
-		balloon_alert(user, "insufficient charge!")
-		to_chat(user, span_warning("The plasma cutter has inadequate charge remaining! Give the internal battery time to recharge, or attack a living creature! <b>Charge Remaining: [cell.charge]/[cell.maxcharge]</b>"))
+		balloon_alert(user, "电量不足！")
+		to_chat(user, span_warning("等离子切割器剩余电量不足！请等待内部电池充电，或攻击活体生物！<b>剩余电量：[cell.charge]/[cell.maxcharge]</b>"))
 
 /obj/item/tool/pickaxe/plasmacutter/proc/start_cut(mob/user, name = "", atom/source, charge_amount = PLASMACUTTER_BASE_COST, custom_string, no_string, SFX = TRUE)
 	if(!(cell.charge >= charge_amount) || !powered) //Check power
@@ -169,7 +169,7 @@
 		if(custom_string)
 			to_chat(user, span_notice(custom_string))
 		else
-			balloon_alert(user, "cutting apart...")
+			balloon_alert(user, "切割中...")
 	return TRUE
 
 /obj/item/tool/pickaxe/plasmacutter/proc/cut_apart(mob/user, name = "", atom/source, charge_amount = PLASMACUTTER_BASE_COST, custom_string)
@@ -181,7 +181,7 @@
 	spark_system.attach(source)
 	spark_system.start(source)
 	use_charge(user, charge_amount, FALSE)
-	balloon_alert(user, "charge remaining: [cell.charge]/[cell.maxcharge]")
+	balloon_alert(user, "剩余电量：[cell.charge]/[cell.maxcharge]")
 	if(custom_string)
 		to_chat(user, span_notice(custom_string))
 
@@ -204,14 +204,14 @@
 /obj/item/tool/pickaxe/plasmacutter/proc/use_charge(mob/user, amount = PLASMACUTTER_BASE_COST, mention_charge = TRUE)
 	cell.charge -= min(cell.charge, amount)
 	if(mention_charge)
-		balloon_alert(user, "charge remaining: [cell.charge]/[cell.maxcharge]")
+		balloon_alert(user, "剩余电量：[cell.charge]/[cell.maxcharge]")
 	update_plasmacutter()
 
 /obj/item/tool/pickaxe/plasmacutter/proc/calc_delay(mob/user)
 	. = PLASMACUTTER_CUT_DELAY
 	var/skill = user.skills.getRating(SKILL_ENGINEER)
 	if(skill < SKILL_ENGINEER_ENGI) //We don't have proper skills; time to fumble and bumble.
-		user.visible_message(span_notice("[user] fumbles around figuring out how to use [src]."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何使用 [src]。"),
 		span_notice("You fumble around figuring out how to use [src]."))
 		return . *= max(1, 4 - skill) //Takes twice to four times as long depending on your skill.
 	. -= min(PLASMACUTTER_CUT_DELAY, (skill - 3) * 5) //We have proper skills; delay lowered by 0.5 per skill point in excess of a field engineer's.
@@ -225,8 +225,8 @@
 			powered = FALSE
 			if(!silent)
 				playsound(loc, 'sound/weapons/saberoff.ogg', 25)
-				balloon_alert(user, "insufficient charge!")
-				to_chat(user, span_warning("The plasma cutter abruptly shuts down due to a lack of power!"))
+				balloon_alert(user, "电量不足！")
+				to_chat(user, span_warning("等离子切割机因电力不足而突然关闭！"))
 		force = 5
 		damtype = BRUTE
 		heat = 0

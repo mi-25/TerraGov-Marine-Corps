@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/bullet/revolver
-	name = "revolver bullet"
+	name = "左轮手枪弹道"
 	hud_state = "revolver"
 	hud_state_empty = "revolver_empty"
 	handful_amount = 7
@@ -18,7 +18,7 @@
 	staggerstun(target_mob, proj, stagger = 2 SECONDS, slowdown = 0.5, knockback = 1)
 
 /datum/ammo/bullet/revolver/tp44
-	name = "standard revolver bullet"
+	name = "标准左轮手枪弹道弹"
 	damage = 40
 	penetration = 15
 	sundering = 1
@@ -27,7 +27,7 @@
 	staggerstun(target_mob, proj, knockback = 1)
 
 /datum/ammo/bullet/revolver/small
-	name = "small revolver bullet"
+	name = "小型左轮弹道弹"
 	hud_state = "revolver_small"
 	damage = 30
 
@@ -35,7 +35,7 @@
 	staggerstun(target_mob, proj, slowdown = 0.5)
 
 /datum/ammo/bullet/revolver/marksman
-	name = "slimline revolver bullet"
+	name = "细长型左轮弹道弹"
 	hud_state = "revolver_slim"
 	shrapnel_chance = 0
 	damage_falloff = 0
@@ -45,7 +45,7 @@
 	penetration = 10
 
 /datum/ammo/bullet/revolver/judge
-	name = "oversized revolver bullet"
+	name = "大口径左轮弹道"
 	hud_state = "revolver_slim"
 	shrapnel_chance = 0
 	damage_falloff = 0
@@ -55,19 +55,19 @@
 	penetration = 10
 
 /datum/ammo/bullet/revolver/heavy
-	name = "heavy revolver bullet"
+	name = "重型左轮弹道"
 	hud_state = "revolver_heavy"
 	damage = 50
 	penetration = 5
 	accuracy = -10
 
 /datum/ammo/bullet/revolver/heavy/incen
-	name = "incendiary heavy revolver bullet"
+	name = "燃烧重型左轮弹道弹"
 	ammo_behavior_flags = AMMO_INCENDIARY|AMMO_BALLISTIC
 
 
 /datum/ammo/bullet/revolver/t76
-	name = "magnum bullet"
+	name = "马格南弹道"
 	handful_amount = 5
 	damage = 100
 	penetration = 40
@@ -77,7 +77,7 @@
 	staggerstun(target_mob, proj, paralyze = 2 SECONDS, knockback = 1)
 
 /datum/ammo/bullet/revolver/highimpact
-	name = "high-impact revolver bullet"
+	name = "高冲击左轮弹道"
 	hud_state = "revolver_impact"
 	handful_amount = 6
 	damage = 50

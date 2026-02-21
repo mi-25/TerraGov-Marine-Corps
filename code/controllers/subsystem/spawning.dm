@@ -2,7 +2,7 @@
 #define MAXIMUM_DEFAULT_SPAWN 400
 
 SUBSYSTEM_DEF(spawning)
-	name = "Spawning"
+	name = "正在生成"
 	priority = FIRE_PRIORITY_SPAWNING
 	flags = SS_NO_INIT
 	wait = 40

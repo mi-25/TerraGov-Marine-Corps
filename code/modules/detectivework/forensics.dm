@@ -37,7 +37,7 @@
 			suit_fibers += "Material from a pair of [M.gloves.name]."
 
 /datum/data/record/forensic
-	name = "forensic data"
+	name = "法医数据"
 	var/uid
 
 /datum/data/record/forensic/New(atom/A)

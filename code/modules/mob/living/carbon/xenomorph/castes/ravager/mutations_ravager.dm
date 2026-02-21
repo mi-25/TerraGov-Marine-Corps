@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/little_more
 	name = "Little More"
-	desc = "Endure further decreases your critical and death threshold by 30/40/50."
+	desc = "坚忍进一步将你的临界阈值和死亡阈值降低30/40/50点。"
 	/// For the first structure, the amount to increase the death/critical threshold given by Endure while it is active.
 	var/threshold_initial = -20
 	/// For each structure, the amount to increase the death/critical threshold given by Endure while it is active.
@@ -41,7 +41,7 @@
 
 /datum/mutation_upgrade/shell/keep_going
 	name = "Keep Going"
-	desc = "Endure lasts 70/80/90% as long, but duration-increasing slashes is now available during normal Rage."
+	desc = "持续时间缩短至70/80/90%，但普通狂暴状态下现在可延长斩击持续时间。"
 	/// For the first structure, the multiplier to add to Endure's duration.
 	var/multiplier_initial = -0.4
 	/// For each structure, the additional multiplier to add to Endure's duration.
@@ -87,7 +87,7 @@
 
 /datum/mutation_upgrade/shell/inward_focus
 	name = "Inward Focus"
-	desc = "Endure no longer grants stagger immunity nor can be activated while staggered. Endure grants 10/15/20 all soft armor while active."
+	desc = "'坚忍'不再提供踉跄免疫，也无法在踉跄状态下激活。激活时，'坚忍'提供10/15/20点全软护甲。"
 	/// For the first structure, the amount of all soft armor that Endure should give while active.
 	var/armor_initial = 5
 	/// For each structure, the additional amount of all soft armor that Endure should give while active.
@@ -143,7 +143,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/deep_slash
 	name = "Deep Slash"
-	desc = "Ravage now has an additional 10/15/20 armor penetration."
+	desc = "掠夺者现在获得额外的10/15/20点护甲穿透。"
 	/// For the first structure, the amount of armor penetration that all slash attacks caused by Ravage to have.
 	var/ap_initial = 5
 	/// For each structure, the amount of armor penetration that all slash attacks caused by Ravage to have.
@@ -181,7 +181,7 @@
 
 /datum/mutation_upgrade/spur/super_cut
 	name = "Super Cut"
-	desc = "Ravage now slashes in all directions, but has a cast time of 0.6/0.4/0.2 seconds."
+	desc = "掠夺者现在会向所有方向进行斩击，但有0.6/0.4/0.2秒的施放时间。"
 	/// For the first structure, the amount of deciseconds to add to Ravage's cast time.
 	var/time_initial = 0.8 SECONDS
 	/// For each structure, the additional amount of deciseconds to add to Ravage's cast time.
@@ -221,7 +221,7 @@
 
 /datum/mutation_upgrade/spur/onslaught
 	name = "Onslaught"
-	desc = "Eviscerating Charge's cooldown duration is set to 20/15/10% of its original value, but it no longer stuns."
+	desc = "内脏撕裂冲锋的冷却时间缩短至原值的20/15/10%，但不再造成眩晕。"
 	/// For the first structure, the multiplier to add to Eviscerating Charge's cooldown duration.
 	var/multiplier_initial = -0.75
 	/// For each structure, the additional multiplier to add to Eviscerating Charge's cooldown duration.
@@ -264,7 +264,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/recurring_rage
 	name = "Recurring Rage"
-	desc = "Rage will automatically attempt to activate when your health reaches the minimum required threshold. Rage's cooldown duration is set to 60/50/40% of its original value."
+	desc = "当你的生命值降至最低要求阈值时，狂怒将自动尝试激活。狂怒的冷却时间缩短至原始值的60/50/40%。"
 	/// For the first structure, the multiplier of Rage's initial cooldown to add to the ability.
 	var/multiplier_initial = -0.3
 	/// For each structure, the additional multiplier of Rage's initial cooldown to add to the ability.
@@ -317,7 +317,7 @@
 
 /datum/mutation_upgrade/veil/fight_in_flames
 	name = "Fight in Flames"
-	desc = "You lose 70 fire armor. The plasma gain from stepping into fire is now also given for being on fire. This plasma gain is increased by 200/250/300."
+	desc = "你失去了70点火焰护甲。踏入火焰获得的等离子体现在也会在着火时获得。该等离子体获取量增加了200/250/300点。"
 	/// For the first structure, the bonus amount of plasma when they are damaged from being on fire.
 	var/plasma_initial = 150
 	/// For each structure, the additional bonus amount of plasma when they are damaged from being on fire.
@@ -371,7 +371,7 @@
 
 /datum/mutation_upgrade/veil/bloody_endure
 	name = "Bloody Endure"
-	desc = "Endure now costs health to activate, but will consume plasma first. This damage is non-lethal. Endure's cooldown duration is set to 70/60/50% of its original value."
+	desc = "激活坚忍现在会消耗生命值，但会优先消耗等离子体。此伤害为非致命伤害。坚忍的冷却时间调整为原值的70/60/50%。"
 	/// For the first structure, the multiplier of Endure's initial cooldown to add to the ability.
 	var/multiplier_initial = -0.2
 	/// For each structure, the additional multiplier of Endure's initial cooldown to add to the ability.

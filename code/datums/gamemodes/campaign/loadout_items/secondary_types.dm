@@ -17,7 +17,7 @@
 
 /datum/loadout_item/secondary/kit/primary_ammo
 	name = "Extra ammo"
-	desc = "Additional ammo for your primary weapon."
+	desc = "主武器的额外弹药。"
 	ui_icon = "default"
 	jobs_supported = list(
 		SQUAD_MARINE,
@@ -46,7 +46,7 @@
 
 /datum/loadout_item/secondary/kit/emp_nades
 	name = "EMP nades"
-	desc = "Three EMP grenades, excellent against energy weapons and mechs."
+	desc = "三枚电磁脉冲手雷，对能量武器和机甲效果极佳。"
 	ui_icon = "grenade"
 	purchase_cost = 20
 
@@ -58,7 +58,7 @@
 
 /datum/loadout_item/secondary/kit/stun_nades
 	name = "Stun nades"
-	desc = "Three stun grenades, able to stagger, slow, and temporarily blind victims."
+	desc = "三枚眩晕手雷，能够使目标踉跄、减速并暂时致盲。"
 	ui_icon = "stun_nade"
 
 /datum/loadout_item/secondary/kit/stun_nades/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -69,7 +69,7 @@
 
 /datum/loadout_item/secondary/kit/antigas_nades
 	name = "Antigas nades"
-	desc = "Three antigas grenades, able to completely clear gas from an area."
+	desc = "三枚防毒手雷，能够彻底清除区域内的毒气。"
 	ui_icon = "grenade"
 	purchase_cost = 15
 
@@ -81,7 +81,7 @@
 
 /datum/loadout_item/secondary/kit/sandbags
 	name = "Sandbags"
-	desc = "Bags, filled with sand. They catch bullets instead of your face."
+	desc = "沙袋，装满沙子。它们能挡住子弹，而不是你的脸。"
 	ui_icon = "construction"
 
 /datum/loadout_item/secondary/kit/sandbags/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -91,7 +91,7 @@
 
 /datum/loadout_item/secondary/kit/throwing_knives
 	name = "Throwing knives"
-	desc = "Some knives. You throw them at people with guns and hope for the best."
+	desc = "一些飞刀。你朝持枪的人扔过去，然后祈祷好运。"
 	ui_icon = "default"
 
 /datum/loadout_item/secondary/kit/throwing_knives/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -105,7 +105,7 @@
 
 /datum/loadout_item/secondary/kit/plastique
 	name = "C4 pack"
-	desc = "Enough C4 to blow you back in time. Or atleast destroy some objectives."
+	desc = "足以把你炸回过去的C4。或者至少能摧毁一些目标。"
 	ui_icon = "default"
 
 /datum/loadout_item/secondary/kit/plastique/post_equip(mob/living/carbon/human/wearer, datum/outfit/quick/loadout, datum/outfit_holder/holder)
@@ -119,7 +119,7 @@
 
 /datum/loadout_item/secondary/kit/anti_tank
 	name = "Anti-tank"
-	desc = "A disposable AT rocket launcher, and a box of AT mines. Good if you have an armor problem."
+	desc = "一次性反坦克火箭发射器，以及一箱反坦克地雷。如果你有装甲问题，这很管用。"
 	ui_icon = "t72"
 	purchase_cost = 30
 

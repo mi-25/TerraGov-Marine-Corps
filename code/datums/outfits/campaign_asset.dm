@@ -1,5 +1,5 @@
 /datum/outfit/job/som/militia/standard
-	name = "Militia Standard"
+	name = "民兵标准型"
 	jobtype = /datum/job/som/mercenary/militia/standard
 
 	id = /obj/item/card/id/silver
@@ -113,7 +113,7 @@
 
 
 /datum/outfit/job/som/militia/medic
-	name = "Militia Medic"
+	name = "民兵医疗兵"
 	jobtype = /datum/job/som/mercenary/militia/medic
 
 	id = /obj/item/card/id/silver
@@ -187,7 +187,7 @@
 
 
 /datum/outfit/job/som/militia/leader
-	name = "Militia Leader"
+	name = "民兵领袖"
 	jobtype = /datum/job/som/mercenary/militia/leader
 
 	id = /obj/item/card/id/silver
@@ -459,7 +459,7 @@
 	ears = /obj/item/radio/headset/mainship/som
 
 /datum/outfit/job/tgmc/campaign_robot
-	name = "Combat robot"
+	name = "战斗机器人"
 	jobtype = /datum/job/terragov/squad/standard/campaign_robot
 
 	id = /obj/item/card/id/silver

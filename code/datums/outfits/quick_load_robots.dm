@@ -6,8 +6,8 @@
 // There is expected to be a bit of copy-paste throughout the loadouts. This is fine and is done to maintain readability
 
 /datum/outfit/quick/beginner_robot
-	name = "Robot loadout base"
-	desc = "The base loadout for beginners. You shouldn't be able to see this"
+	name = "机器人装备库基础"
+	desc = "新手的标准装备。你不应该看到这个。"
 	jobtype = null //Override this, this is not optional
 
 	//All loadouts get a radio
@@ -39,7 +39,7 @@
 	jobtype = "Squad Marine"
 
 /datum/outfit/quick/beginner_robot/marine/rifleman
-	name = "Rifleman"
+	name = "步枪手"
 	desc = "A typical rifleman for the marines. \
 	Wields the AR-12, a versatile all-rounder assault rifle with a powerful underbarrel grenade launcher attached. \
 	Also carries the strong P-23 sidearm and flares."
@@ -83,7 +83,7 @@
 
 
 /datum/outfit/quick/beginner_robot/marine/machinegunner
-	name = "Machinegunner"
+	name = "机枪手"
 	desc = "The king of suppressive fire. Uses the MG-60, a fully automatic 200 round machine gun with a bipod attached. \
 	Excels at denying large areas to the enemy and eliminating those who refuse to leave."
 
@@ -124,7 +124,7 @@
 	)
 
 /datum/outfit/quick/beginner_robot/marine/marksman
-	name = "Marksman"
+	name = "神射手"
 	desc = "Quality over quantity. Equipped with the DMR-37, an accurate long-range designated marksman rifle with a scope attached. \
 	While subpar in close quarters, the precision of the DMR is unmatched, exceeding at taking out threats from afar."
 
@@ -163,7 +163,7 @@
 
 
 /datum/outfit/quick/beginner_robot/marine/shotgunner
-	name = "Shotgunner"
+	name = "霰弹枪手"
 	desc = "Up close and personal. Wields the SH-39, a semi-automatic shotgun loaded with slugs. \
 	An absolute monster at short to mid range, the shotgun will do heavy damage to any target hit, as well as stunning them briefly, staggering them, and knocking them back."
 
@@ -206,7 +206,7 @@
 
 
 /datum/outfit/quick/beginner_robot/marine/shocktrooper
-	name = "Shocktrooper"
+	name = "突击兵"
 	desc = "The bleeding edge of the corps. \
 	Equipped with the experimental battery-fed laser rifle, featuring four different modes that can be freely swapped between, with an underbarrel flamethrower for area denial and clearing mazes."
 
@@ -248,8 +248,8 @@
 	jobtype = "Squad Engineer"
 
 /datum/outfit/quick/beginner_robot/engineer/builder
-	name = "Engineer Standard"
-	desc = "Born to build. Equipped with a metric ton of metal, you can be certain that a lack of barricades is not a possibility with you around."
+	name = "工程兵标准装备"
+	desc = "天生就是干这个的。装备了海量金属，有你在场，路障短缺绝无可能。"
 
 	w_uniform = /obj/item/clothing/under/marine/robotic/brown_vest
 	wear_suit = /obj/item/clothing/suit/modular/robot/heavy/lightengineer
@@ -302,8 +302,8 @@
 
 
 /datum/outfit/quick/beginner_robot/engineer/burnitall
-	name = "Flamethrower"
-	desc = "For those who truly love to watch the world burn. Equipped with a laser carbine and a flamethrower, you can be certain that none of your enemies will be left un-burnt."
+	name = "喷火器"
+	desc = "献给那些真正热爱看世界燃烧的人。配备激光卡宾枪和火焰喷射器，确保你的敌人无一幸免。"
 
 	w_uniform = /obj/item/clothing/under/marine/robotic/brown_vest
 	wear_suit = /obj/item/clothing/suit/modular/robot/lightengineer
@@ -362,8 +362,8 @@
 
 
 /datum/outfit/quick/beginner_robot/engineer/pcenjoyer
-	name = "Plasma Cutter"
-	desc = "For the open-air enjoyers. Equipped with a plasma cutter, you will be able to cut down all types of walls and obstacles that dare exist within your vicinity."
+	name = "等离子体切割器"
+	desc = "为露天爱好者准备。配备等离子切割器，你将能够切割所有胆敢出现在你附近的各种墙壁和障碍物。"
 
 	w_uniform = /obj/item/clothing/under/marine/robotic/brown_vest
 	wear_suit = /obj/item/clothing/suit/modular/robot/lightengineer
@@ -418,7 +418,7 @@
 	r_hand = /obj/item/medevac_beacon
 
 /datum/outfit/quick/beginner_robot/corpsman/lifesaver
-	name = "Lifesaver"
+	name = "救生员"
 	desc = "Miracle in progress. \
 	Wields the bolt action Leicaster Repeater, and is equipped with a large variety of medicine for keeping the entire corps topped up and in the fight."
 
@@ -469,7 +469,7 @@
 
 
 /datum/outfit/quick/beginner_robot/corpsman/hypobelt
-	name = "Hypobelt"
+	name = "轨道轰炸腰带"
 	desc = "Putting the combat in combat medic. \
 	Wields the pump action SH-35 shotgun, and is equipped with a belt full of hyposprays for rapidly treating patients in bad condition."
 
@@ -520,7 +520,7 @@
 	jobtype = "Squad Smartgunner"
 
 /datum/outfit/quick/beginner_robot/smartgunner/sg29
-	name = "Standard Smartmachinegun"
+	name = "标准智能机枪"
 	desc = "Tactical support fire. \
 	Uses the SG-29, a specialist light machine gun that will shoot through your allies, \
 	equipped with a tactical sensor to detect enemies through smoke, walls, and darkness."
@@ -563,7 +563,7 @@
 
 
 /datum/outfit/quick/beginner_robot/smartgunner/sg85
-	name = "Standard Smartminigun"
+	name = "标准智能机枪"
 	desc = "Lead wall! Wields the SG-85, a specialist minigun that holds one thousand rounds and can shoot through your allies, \
 	equipped with a tactical sensor to detect enemies through smoke, walls, and darkness."
 

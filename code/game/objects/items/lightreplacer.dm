@@ -20,8 +20,8 @@
 
 /obj/item/lightreplacer
 
-	name = "light replacer"
-	desc = "A device to automatically replace lights. Refill with working lightbulbs."
+	name = "照明替换器"
+	desc = "自动更换灯泡的装置。请装入可用的灯泡。"
 
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "lightreplacer0"
@@ -58,34 +58,34 @@
 	if(istype(I, /obj/item/stack/sheet/glass))
 		var/obj/item/stack/sheet/glass/G = I
 		if(uses >= max_uses)
-			to_chat(user, "<span class='warning'>[src] is full.")
+			to_chat(user, "<span class='warning'>[src]已满。</span>")
 			return
 
 		if(!G.use(1))
-			to_chat(user, span_warning("You need one sheet of glass to replace lights."))
+			to_chat(user, span_warning("更换灯管需要一块玻璃板。"))
 			return
 
 		AddUses(5)
-		to_chat(user, span_notice("You insert a piece of glass into \the [src]. You have [uses] lights remaining."))
+		to_chat(user, span_notice("你将一片玻璃插入\the [src]。你还有[uses]个光源剩余。"))
 
 	else if(istype(I, /obj/item/light_bulb))
 		var/obj/item/light_bulb/L = I
 		if(L.status)
-			to_chat(user, "You need a working light.")
+			to_chat(user, "你需要一个能用的灯。")
 			return
 
 		if(uses >= max_uses)
-			to_chat(user, "<span class='warning'>[src] is full.")
+			to_chat(user, "<span class='warning'>[src]已满。</span>")
 			return
 
 		AddUses(1)
-		to_chat(user, "You insert \the [L] into \the [src]. You have [uses] lights remaining.")
+		to_chat(user, "你将\the [L]插入\the [src]。剩余[uses]个光源。")
 		user.drop_held_item()
 		qdel(L)
 
 
 /obj/item/lightreplacer/attack_self(mob/user)
-	to_chat(usr, "It has [uses] lights remaining.")
+	to_chat(usr, "它还有[uses]次照明剩余。")
 
 
 /obj/item/lightreplacer/proc/Use(mob/user)
@@ -109,7 +109,7 @@
 	if(target.status != LIGHT_OK)
 		if(CanUse(U))
 			if(!Use(U)) return
-			to_chat(U, span_notice("You replace the [target.fitting] with the [src]."))
+			to_chat(U, span_notice("你将[target.fitting]替换为[src]。"))
 
 			if(target.status != LIGHT_EMPTY)
 
@@ -141,7 +141,7 @@
 			to_chat(U, failmsg)
 			return
 	else
-		to_chat(U, "There is a working [target.fitting] already inserted.")
+		to_chat(U, "已插入一个可用的[target.fitting]。")
 		return
 
 //Can you use it?

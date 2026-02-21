@@ -1,6 +1,6 @@
 /obj/vehicle/sealed/mecha/combat/marauder
-	desc = "Heavy-duty, combat exosuit, developed after the Durand model. Rarely found among civilian populations."
-	name = "\improper Marauder"
+	desc = "重型战斗外骨骼，基于杜兰德模型开发。在平民中极为罕见。"
+	name = "\improper 掠夺者"
 	icon_state = "marauder"
 	base_icon_state = "marauder"
 	move_delay = 5
@@ -33,7 +33,7 @@
 	)
 
 /datum/action/vehicle/sealed/mecha/mech_smoke
-	name = "Smoke"
+	name = "烟雾"
 	action_icon_state = "mech_smoke"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_SMOKE,
@@ -47,7 +47,7 @@
 		TIMER_COOLDOWN_START(src, COOLDOWN_MECHA_SMOKE, chassis.smoke_cooldown)
 
 /datum/action/vehicle/sealed/mecha/mech_zoom
-	name = "Zoom"
+	name = "缩放"
 	action_icon_state = "mech_zoom_off"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_TOGGLE_ZOOM,
@@ -67,8 +67,8 @@
 	update_button_icon()
 
 /obj/vehicle/sealed/mecha/combat/marauder/seraph
-	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
-	name = "\improper Seraph"
+	desc = "重型指挥型动力外骨骼。这是定制型号，仅供高级军事人员使用。"
+	name = "\improper 炽天使"
 	icon_state = "seraph"
 	base_icon_state = "seraph"
 	move_delay = 3
@@ -89,8 +89,8 @@
 	)
 
 /obj/vehicle/sealed/mecha/combat/marauder/mauler
-	desc = "Heavy-duty, combat exosuit, developed off of the existing Marauder model."
-	name = "\improper Mauler"
+	desc = "重型战斗外骨骼，基于现有'掠夺者'型号开发。"
+	name = "\improper 蛮牛"
 	icon_state = "mauler"
 	base_icon_state = "mauler"
 	wreckage = /obj/structure/mecha_wreckage/mauler

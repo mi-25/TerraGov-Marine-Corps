@@ -1,6 +1,6 @@
 /obj/item/assembly/control
-	name = "blast door controller"
-	desc = "A small electronic device able to control a blast door remotely."
+	name = "防爆门控制器"
+	desc = "一种小型电子设备，能够远程控制防爆门。"
 	icon_state = "control"
 	/// The ID of the blast door electronics to match to the ID of the blast door being used.
 	var/id = null

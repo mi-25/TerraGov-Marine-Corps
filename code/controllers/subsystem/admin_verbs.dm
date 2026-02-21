@@ -1,7 +1,7 @@
 GENERAL_PROTECT_DATUM(/datum/controller/subsystem/admin_verbs)
 
 SUBSYSTEM_DEF(admin_verbs)
-	name = "Admin Verbs"
+	name = "管理员指令"
 	flags = SS_NO_FIRE
 	init_stage = INITSTAGE_EARLY
 	/// A list of all admin verbs indexed by their type.
@@ -107,7 +107,7 @@ SUBSYSTEM_DEF(admin_verbs)
 		CRASH("Attempted to dynamically invoke admin verb '[verb_type]' that doesn't exist.")
 
 	if(!admin.holder.check_for_rights(verb_singleton.permissions))
-		to_chat(admin, span_adminnotice("You lack the permissions to do this."))
+		to_chat(admin, span_adminnotice("你没有权限执行此操作。"))
 		return
 
 	var/old_usr = usr

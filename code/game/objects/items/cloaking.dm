@@ -3,7 +3,7 @@
 //cloaking device
 
 /obj/item/chameleon
-	name = "chameleon-projector"
+	name = "变色龙投影仪"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "shield0"
 	atom_flags = CONDUCT
@@ -49,16 +49,16 @@
 		return
 	if(chameleon_on)
 		if(SEND_SIGNAL(user, COMSIG_MOB_ENABLE_STEALTH) & STEALTH_ALREADY_ACTIVE)
-			to_chat(user, span_warning("You are already cloaked!"))
+			to_chat(user, span_warning("你已经处于隐形状态！"))
 			return
 		RegisterSignal(user, COMSIG_MOB_ENABLE_STEALTH, PROC_REF(on_other_activate))
 		user.alpha = 25
-		to_chat(user, span_notice("You activate the [src]."))
+		to_chat(user, span_notice("你激活了[src]。"))
 		spark_system.start()
 	else
 		UnregisterSignal(user, COMSIG_MOB_ENABLE_STEALTH)
 		user.alpha = initial(user.alpha)
-		to_chat(user, span_notice("You deactivate the [src]."))
+		to_chat(user, span_notice("你关闭了[src]。"))
 		spark_system.start()
 	playsound(get_turf(src), 'sound/effects/pop.ogg', 25, 1, 3)
 	chameleon_on = !chameleon_on

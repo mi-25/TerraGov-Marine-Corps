@@ -125,7 +125,7 @@
 
 
 /datum/game_mode/infestation/crash/announce()
-	to_chat(world, span_round_header("The current map is - [SSmapping.configs[GROUND_MAP].map_name]!"))
+	to_chat(world, span_round_header("当前地图是 - [SSmapping.configs[GROUND_MAP].map_name]！"))
 	priority_announce(
 		message = "Scheduled for landing in T-10 Minutes. Prepare for landing. Known hostiles near LZ. Detonation Protocol Active, planet disposable. Marines disposable.",
 		title = "Good morning, marines.",
@@ -198,7 +198,7 @@
 		addtimer(VARSET_CALLBACK(src, marines_evac, CRASH_EVAC_COMPLETED), 10 SECONDS)
 
 /datum/game_mode/infestation/crash/can_summon_dropship(mob/user)
-	to_chat(src, span_warning("This power doesn't work in this gamemode."))
+	to_chat(src, span_warning("此能力在此游戏模式下无效。"))
 	return FALSE
 
 /// Adds more xeno job slots if needed.

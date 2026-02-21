@@ -1,6 +1,6 @@
 /obj/machinery/door
-	name = "\improper Door"
-	desc = "It opens and closes."
+	name = "\improper 门"
+	desc = "它打开又关上。"
 	icon = 'icons/obj/doors/Doorint.dmi'
 	icon_state = "door1"
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE

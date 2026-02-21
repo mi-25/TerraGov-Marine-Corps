@@ -1,6 +1,6 @@
 /obj/structure/bed/chair/e_chair
-	name = "electric chair"
-	desc = "Looks absolutely SHOCKING!"
+	name = "电椅"
+	desc = "看起来简直糟透了！"
 	icon_state = "echair1"
 	var/last_time = 1
 
@@ -38,8 +38,8 @@
 	for(var/m in buckled_mobs)
 		var/mob/living/buckled_mob = m
 		buckled_mob.adjustFireLoss(85)
-		to_chat(buckled_mob, span_danger("You feel a deep shock course through your body!"))
+		to_chat(buckled_mob, span_danger("你感到一股强烈的电击传遍全身！"))
 		sleep(0.1 SECONDS)
 		buckled_mob.adjustFireLoss(85)
 		buckled_mob.Stun(20 MINUTES)
-	visible_message(span_danger("The electric chair went off!"), span_danger("You hear a deep sharp shock!"))
+	visible_message(span_danger("电椅启动了！"), span_danger("You hear a deep sharp shock!"))

@@ -89,7 +89,7 @@ GLOBAL_LIST_INIT(greyscale_weapons_data, generate_greyscale_weapons_data())
 		))
 
 /obj/machinery/computer/mech_builder
-	name = "mech computer"
+	name = "机甲控制台"
 	screen_overlay = "mech_computer"
 	dir = EAST // determines where the mech will pop out, NOT where the computer faces
 	interaction_flags = INTERACT_OBJ_UI
@@ -483,7 +483,7 @@ GLOBAL_LIST_INIT(greyscale_weapons_data, generate_greyscale_weapons_data())
 	mech.pixel_z = 240
 	animate(mech, time=4 SECONDS, pixel_z=initial(mech.pixel_z), easing=SINE_EASING|EASE_OUT)
 
-	balloon_alert_to_viewers("Beep. Mecha ready for use.")
+	balloon_alert_to_viewers("哔。机甲准备就绪。")
 	playsound(src, 'sound/machines/chime.ogg', 30, 1)
 
 ///updates the current_stats data for the UI

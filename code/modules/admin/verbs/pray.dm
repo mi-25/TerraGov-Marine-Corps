@@ -9,7 +9,7 @@
 	mob.log_talk(msg, LOG_PRAYER)
 
 	if(usr.client.prefs.muted & MUTE_PRAY)
-		to_chat(usr, span_warning("You cannot pray (muted)."))
+		to_chat(usr, span_warning("你无法祈祷（已禁言）。"))
 		return
 
 	if(handle_spam_prevention(msg, MUTE_PRAY))
@@ -37,9 +37,9 @@
 				html = mentor_msg)
 
 	if(liaison)
-		to_chat(usr, "Your corporate overlords at Nanotrasen have received your message.")
+		to_chat(usr, "您在纳米传讯的企业上级已收到您的消息。")
 	else
-		to_chat(usr, "Your prayers have been received by the gods.")
+		to_chat(usr, "你的祈祷已被众神聆听。")
 
 
 /proc/tgmc_message(text, mob/sender)
@@ -47,5 +47,5 @@
 	var/sound/S = sound('sound/effects/sos-morse-code.ogg', channel = CHANNEL_ADMIN)
 	for(var/client/C in GLOB.admins)
 		if(check_other_rights(C, R_ADMIN, FALSE))
-			to_chat(C, span_notice("<b><font color='purple'>TGMC:</font>[ADMIN_FULLMONTY(usr)] (<a href='byond://?src=[REF(C.holder)];[HrefToken(TRUE)];reply=[REF(sender)]'>REPLY</a>): [text]</b>"))
+			to_chat(C, span_notice("<b><font color='purple'>地球政府殖民地海军陆战队:</font>[ADMIN_FULLMONTY(usr)] (<a href='byond://?src=[REF(C.holder)];[HrefToken(TRUE)];reply=[REF(sender)]'>回复</a>): [text]</b>"))
 			SEND_SOUND(C, S)

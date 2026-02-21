@@ -37,8 +37,8 @@ GLOBAL_LIST_EMPTY(active_laser_targets)
 GLOBAL_LIST_EMPTY(active_cas_targets)
 
 /obj/machinery/computer/camera_advanced/overwatch
-	name = "Overwatch Console"
-	desc = "State of the art machinery for giving orders to a squad. <b>Shift click</b> to send order when watching squads."
+	name = "监控控制台"
+	desc = "用于向小队下达命令的尖端设备。<b>Shift点击</b>可在监控小队时发送命令。"
 	density = FALSE
 	icon_state = "overwatch"
 	screen_overlay = "overwatch_screen"
@@ -167,7 +167,7 @@ GLOBAL_LIST_EMPTY(active_cas_targets)
 			if(operator != usr)
 				return
 			if(current_squad)
-				to_chat(operator, span_warning("[icon2html(src, operator)] You are already selecting a squad."))
+				to_chat(operator, span_warning("[icon2html(src, operator)] 您已经在选择小队了。"))
 				return
 			var/datum/squad/selected = tgui_input_list(operator, "Which squad would you like to claim for Overwatch?", null, watchable_squads)
 			if(!selected || operator != usr)
@@ -175,8 +175,8 @@ GLOBAL_LIST_EMPTY(active_cas_targets)
 			selected.overwatch_officer = operator //Link everything together, squad, console, and officer
 			current_squad = selected
 			if(issilicon(operator))
-				to_chat(operator, span_boldnotice("Tactical data for squad '[current_squad]' loaded. All tactical functions initialized."))
-			visible_message(span_boldnotice("Tactical data for squad '[current_squad]' loaded. All tactical functions initialized."))
+				to_chat(operator, span_boldnotice("小队'[current_squad]'战术数据已加载。所有战术功能已初始化。"))
+			visible_message(span_boldnotice("小队'[current_squad]'战术数据已加载。所有战术功能已初始化。"))
 			attack_hand(operator)
 		if("refresh")
 			attack_hand(operator)
@@ -398,8 +398,8 @@ GLOBAL_LIST_EMPTY(active_cas_targets)
 
 //This is an effect to be sure it is properly deleted and it does not interfer with existing lights too much.
 /obj/effect/overwatch_light
-	name = "overwatch beam of light"
-	desc = "You are not supposed to see this. Please report it."
+	name = "监控光束"
+	desc = "你不应该看到这个。请报告它。"
 	icon_state = "" //No sprite
 	invisibility = INVISIBILITY_MAXIMUM
 	resistance_flags = RESIST_ALL
@@ -412,5 +412,5 @@ GLOBAL_LIST_EMPTY(active_cas_targets)
 	. = ..()
 	set_light(light_range, light_power)
 	playsound(src,'sound/mecha/heavylightswitch.ogg', 25, 1, 20)
-	visible_message(span_warning("You see a twinkle in the sky before your surroundings are hit with a beam of light!"))
+	visible_message(span_warning("你看到天空中闪过一道光芒，紧接着周围就被一道光束击中！"))
 	QDEL_IN(src, SPOTLIGHT_DURATION)

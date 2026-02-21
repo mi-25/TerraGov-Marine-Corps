@@ -18,8 +18,8 @@
 
 /*
 /obj/machinery/vending/atmospherics //Commenting this out until someone ponies up some actual working, broken, and unpowered sprites - Quarxink
-	name = "Tank Vendor"
-	desc = "A vendor with a wide variety of masks and gas tanks."
+	name = "坦克贩售机"
+	desc = "贩售各式面具和气罐的自动售货机。"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "dispenser"
 	product_paths = "/obj/item/tank/oxygen;/obj/item/tank/phoron;/obj/item/tank/emergency_oxygen;/obj/item/tank/emergency_oxygen/engi;/obj/item/clothing/mask/breath"
@@ -28,8 +28,8 @@
 */
 
 /obj/machinery/vending/boozeomat
-	name = "\improper Booze-O-Mat"
-	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one."
+	name = "\improper 酒水贩卖机"
+	desc = "一项技术奇迹，据说能在你点单的瞬间调配出你想要的饮品。"
 	icon_state = "boozeomat"        //////////////18 drink entities below, plus the glasses, in case someone wants to edit the number of bottles
 	icon_deny = "boozeomat-deny"
 	icon_vend = "boozeomat-vend"
@@ -81,8 +81,8 @@
 	)
 
 /obj/machinery/vending/coffee
-	name = "\improper Hot Drinks machine"
-	desc = "A vending machine which dispenses hot drinks."
+	name = "\improper 热饮机"
+	desc = "一台出售热饮的自动售货机。"
 	//product_ads = "Have a drink!;Drink up!;It's good for you!;Would you like a hot joe?;I'd kill for some coffee!;The best beans in the galaxy.;Only the finest brew for you.;Mmmm. Nothing like a coffee.;I like coffee, don't you?;Coffee helps you work!;Try some tea.;We hope you like the best!;Try our new chocolate!;Admin conspiracies"
 	icon_state = "coffee"
 	icon_vend = "coffee-vend"
@@ -98,8 +98,8 @@
 	)
 
 /obj/machinery/vending/snack
-	name = "\improper Hot Foods machine"
-	desc = "A vending machine full of ready to cook meals, mhmmmm taste the nutritional goodness!"
+	name = "\improper 热食贩卖机"
+	desc = "一台装满即食烹饪餐的自动售货机，嗯嗯嗯，品尝营养美味！"
 	product_slogans = "Kepler Crisps! Try a snack that's out of this world!;Eat an EAT!;Eat a Nanotrasen brand packaged hamburger.;Eat a Nanotrasen brand packaged hot dog.;Eat a Nanotrasen brand packaged burrito.;"
 	icon_state = "snack"
 	icon_vend = "snack-vend"
@@ -123,8 +123,8 @@
 		wrenchable = FALSE
 
 /obj/machinery/vending/cola
-	name = "\improper Souto Softdrinks"
-	desc = "A softdrink vendor provided by Souto Soda Company, Havana."
+	name = "\improper 苏托软饮"
+	desc = "由哈瓦那 Souto 苏打公司提供的软饮料贩卖机。"
 	icon_state = "Cola_Machine"
 	product_slogans = "Souto Soda: Have a Souto and be taken away to a tropical paradise!;Souto Classic. You can't beat that tangerine goodness!;Souto Cherry. The sweet flavor of a cool winter morning!;Souto Lime. For that sweet and sour flavor that you know and love!;Souto Grape. There's nothing better than a grape soda.;Nanotrasen Fruit Beer. Nothing came from that lawsuit!;Nanotrasen Spring Water. It came from a spring!"
 	icon_deny = "Cola_Machine-deny"
@@ -147,8 +147,8 @@
 		wrenchable = FALSE
 
 /obj/machinery/vending/medical
-	name = "\improper NanotrasenMed Plus"
-	desc = "Medical Pharmaceutical dispenser.  Provided by Nanotrasen Pharmaceuticals Division(TM)."
+	name = "\improper 纳米传讯医疗增强版"
+	desc = "医疗药品分发器。由纳米传讯制药部门(TM)提供。"
 	icon_state = "med"
 	icon_deny = "med-deny"
 	icon_vend = "med-vend"
@@ -325,8 +325,8 @@
 
 //This one's from bay12
 /obj/machinery/vending/phoronresearch
-	name = "\improper Toximate 3000"
-	desc = "All the fine parts you need in one vending machine!"
+	name = "\improper 毒剂3000"
+	desc = "所有精良配件，尽在一台自动售货机中！"
 	icon_vend = "generic-vend"
 	icon_deny = "generic-deny"
 	products = list(
@@ -341,8 +341,8 @@
 	)
 
 /obj/machinery/vending/nanomed
-	name = "\improper NanoMed"
-	desc = "Wall-mounted Medical Equipment dispenser."
+	name = "\improper 纳米医疗"
+	desc = "壁挂式医疗设备分发器。"
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?"
 	icon_state = "wallmed"
 	icon_deny = "wallmed-deny"
@@ -377,8 +377,8 @@
 			pixel_x = 21
 
 /obj/machinery/vending/nanomed/tadpolemed
-	name = "\improper Flight surgeon medical equipment dispenser"
-	desc = "Dedicated for the surgeon with wings, this humble box contains a lot for its size."
+	name = "\improper 飞行军医医疗设备分发器"
+	desc = "专为有翼的外科医生设计，这个朴素的盒子虽小却容量惊人。"
 	layer = ABOVE_OBJ_LAYER
 	products = list(
 		"Autoinjectors" = list(
@@ -418,8 +418,8 @@
 
 
 /obj/machinery/vending/nanoammo
-	name = "\improper NanoAmmo"
-	desc = "Wall-mounted ammunition dispenser.  Can't hold infinite ammo, but it holds more than you need."
+	name = "\improper 纳米弹药"
+	desc = "壁挂式弹药分发器。无法容纳无限弹药，但储量远超你的需求。"
 	product_ads = "Get you some!;More ammo than you'll ever need.;I'm small but my firepower isn't!;I dispense ammo, you dispense pain.;Give 'em hell!"
 	icon_state = "nanoammo"
 	icon_deny = "nanoammo-deny"
@@ -575,7 +575,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 		var/obj/item/storage/box/visual/magazine/ammo_box = I
 		for(var/mag in ammo_box.contents)
 			stock(mag, user, FALSE)
-		user?.balloon_alert(user, "contents organized")
+		user?.balloon_alert(user, "内容已整理")
 		return
 
 	else if(istype(I, /obj/item/shotgunbox))
@@ -587,7 +587,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 					if(!stock(shotgun_shell_box, user, show_feedback = FALSE))
 						break
 					big_shotgun_box.current_rounds -= shotgun_shell_box.max_rounds
-				user?.balloon_alert(user, "shells organized")
+				user?.balloon_alert(user, "弹壳已整理")
 				return
 
 	return ..()
@@ -602,7 +602,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 		var/datum/vending_product/record = product_records[random_product]
 		if(record.amount > 0)
 			record.amount = 0
-			src.visible_message(span_danger("All of the [record.product_name] get lost in the malfunction!"))
+			src.visible_message(span_danger("所有的[record.product_name]都在故障中丢失了！"))
 			break
 		random_product = (random_product % product_records.len) + 1
 
@@ -613,8 +613,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 		return TRUE
 
 /obj/machinery/vending/security
-	name = "\improper SecTech"
-	desc = "A security equipment vendor."
+	name = "\improper 安保技术"
+	desc = "安全装备贩售机。"
 	product_ads = "Crack capitalist skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
 	icon_state = "sec"
 	icon_deny = "sec-deny"
@@ -633,8 +633,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 	)
 
 /obj/machinery/vending/hydronutrients
-	name = "\improper NutriMax"
-	desc = "A plant nutrients vendor."
+	name = "\improper 营养麦克斯"
+	desc = "植物营养剂贩卖机。"
 	//product_slogans = "Aren't you glad you don't have to fertilize the natural way?;Now with 50% less stink!;Plants are people too!"
 	//product_ads = "We like plants!;Don't you want some?;The greenest thumbs ever.;We like big plants.;Soft soil..."
 	icon_state = "nutri"
@@ -653,8 +653,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
 /obj/machinery/vending/hydroseeds
-	name = "\improper MegaSeed Servitor"
-	desc = "When you need seeds fast!"
+	name = "\improper 巨型种子仆从"
+	desc = "急需种子时！"
 	//product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!"
 	//product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!"
 	icon_state = "seeds"
@@ -704,8 +704,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 	)
 
 /obj/machinery/vending/magivend
-	name = "\improper MagiVend"
-	desc = "A magic vending machine."
+	name = "\improper 魔法贩卖机"
+	desc = "一台魔法自动售货机。"
 	icon_state = "MagiVend"
 	//product_slogans = "Sling spells the proper way with MagiVend!;Be your own Houdini! Use MagiVend!"
 	vend_reply = "Have an enchanted evening!"
@@ -720,8 +720,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 	)
 
 /obj/machinery/vending/dinnerware
-	name = "\improper Dinnerware"
-	desc = "A kitchen and restaurant equipment vendor."
+	name = "\improper 餐具"
+	desc = "厨房与餐厅设备供应商。"
 	product_ads = "Mm, food stuffs!;Food and food accessories.;Get your plates!;You like forks?;I like forks.;Woo, utensils.;You don't really need these..."
 	icon_state = "dinnerware"
 	icon_vend = "dinnerware-vend"
@@ -741,7 +741,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 
 /obj/machinery/vending/sovietsoda
 	name = "BODA"
-	desc = "An old sweet water vending machine,how did this end up here?"
+	desc = "一台老旧的甜水自动贩卖机，怎么会出现在这里？"
 	icon_state = "sovietsoda"
 	product_ads = "For Tsar and Country.;Have you fulfilled your nutrition quota today?;Very nice!;We are simple people, for this is all we eat.;If there is a person, there is a problem. If there is no person, then there is no problem."
 	products = list(
@@ -751,8 +751,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 	idle_power_usage = 211
 
 /obj/machinery/vending/engivend
-	name = "\improper Engi-Vend"
-	desc = "Spare engineer vending. What? Did you expect some witty description?"
+	name = "\improper 工程贩售机"
+	desc = "备用工程贩卖机。什么？你以为会有什么俏皮的描述吗？"
 	icon_state = "engivend"
 	icon_vend = "engivend-vend"
 	icon_deny = "engivend-deny"
@@ -788,8 +788,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/vending/nanoammo, (-26))
 
 //This one's from bay12
 /obj/machinery/vending/robotics
-	name = "\improper Robotech Deluxe"
-	desc = "All the tools you need to create your own robot army."
+	name = "\improper 罗博泰克豪华版"
+	desc = "组建你自己的机器人军队所需的一切工具。"
 	icon_state = "robotics"
 	icon_deny = "robotics-deny"
 	icon_vend = "robotics-vend"

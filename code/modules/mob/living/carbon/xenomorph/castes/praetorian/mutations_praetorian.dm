@@ -86,7 +86,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/circular_acid
 	name = "Circular Acid"
-	desc = "Acid Spray now creates acid underneath you and in a circle around you in a radius of 2/3/4 tiles."
+	desc = "酸液喷射现在会在你脚下以及周围2/3/4格半径的圆形区域内生成酸液。"
 	/// For the first structure, the amount to set Spray Acid Circle's range to.
 	var/range_initial = 1
 	/// For each structure, the amount to set Spray Acid Circle's range to.
@@ -139,7 +139,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/wide_pheromones
 	name = "Wide Pheromones"
-	desc = "Your pheromone strength is decreased by 0.5, but its range is increased by 3/6/9 tiles."
+	desc = "你的信息素强度降低了0.5，但其范围增加了3/6/9格。"
 	/// For the first structure, the amount to add to the strength of all pheromones emitting abilities.
 	var/strength_initial = -0.5
 	/// For each structure, the amount to add to the range of all pheromones emitting abilities.

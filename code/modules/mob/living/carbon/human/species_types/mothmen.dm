@@ -19,7 +19,7 @@
 
 /datum/species/moth/handle_fire(mob/living/carbon/human/H)
 	if(H.moth_wings != "Burnt Off" && H.bodytemperature >= 400 && H.fire_stacks > 0)
-		to_chat(H, span_danger("Your precious wings burn to a crisp!"))
+		to_chat(H, span_danger("你宝贵的翅膀烧成焦炭了！"))
 		H.moth_wings = "Burnt Off"
 		H.update_body()
 

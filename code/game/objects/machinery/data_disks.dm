@@ -1,7 +1,7 @@
 //The return of data disks?? Just for transferring between genetics machine/cloning machine.
 //TO-DO: Make the genetics machine accept them.
 /obj/item/disk/data
-	name = "Cloning Data Disk"
+	name = "克隆数据磁盘"
 	icon_state = "datadisk0" //Gosh I hope syndies don't mistake them for the nuke disk.
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/equipment/id_left.dmi',
@@ -28,7 +28,7 @@
 //Health Tracker Implant
 
 /obj/item/implant/health
-	name = "health implant"
+	name = "健康植入体"
 	var/healthstring = ""
 
 /obj/item/implant/health/proc/sensehealth()
@@ -47,7 +47,7 @@
 */
 
 /obj/item/storage/box/disks
-	name = "Diskette Box"
+	name = "磁盘盒"
 	icon_state = "disk_kit"
 	spawn_type = /obj/item/disk/data
 	spawn_number = 7

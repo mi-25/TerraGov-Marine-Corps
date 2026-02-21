@@ -1,7 +1,7 @@
 #define CAPTURE_OBJECTIVE_RECAPTURABLE (1<<0)
 
 /obj/structure/campaign_objective/capture_objective
-	name = "GENERIC CAPTURABLE OBJECTIVE"
+	name = "通用可夺取目标"
 	resistance_flags = RESIST_ALL
 	///Channel time to capture or activate this objective
 	var/activation_time = 10 SECONDS
@@ -55,13 +55,13 @@
 	if(!capture_check(user))
 		return
 	if(user.do_actions)
-		user.balloon_alert(user, "busy!")
+		user.balloon_alert(user, "忙！")
 		return
 	begin_capture(user)
 
 ///Starts the capture process
 /obj/structure/campaign_objective/capture_objective/proc/begin_capture(mob/living/user)
-	user.balloon_alert_to_viewers("activating...")
+	user.balloon_alert_to_viewers("正在激活...")
 	if(!do_after(user, activation_time, NONE, src))
 		return
 	if(!capture_check(user))
@@ -85,17 +85,17 @@
 /obj/structure/campaign_objective/capture_objective/proc/capture_check(mob/living/user)
 	if(capturing_faction)
 		if(capturing_faction == user.faction)
-			user.balloon_alert(user, "already capturing!")
+			user.balloon_alert(user, "已在占领中！")
 			return FALSE
 		else
 			return TRUE //someone else is trying to cap it, whether you already own it or not
 
 	if(owning_faction)
 		if(owning_faction == user.faction)
-			user.balloon_alert(user, "already yours!")
+			user.balloon_alert(user, "已经是你的了！")
 			return FALSE
 		if(!(capture_flags & CAPTURE_OBJECTIVE_RECAPTURABLE))
-			user.balloon_alert(user, "can't recapture!")
+			user.balloon_alert(user, "无法重新捕获！")
 			return FALSE
 	return TRUE
 
@@ -132,7 +132,7 @@
 
 //sensor tower
 /obj/effect/landmark/campaign_structure/sensor_tower
-	name = "sensor tower objective"
+	name = "传感器塔目标"
 	icon = 'icons/obj/structures/sensor.dmi'
 	icon_state = "sensor"
 	mission_types = list(
@@ -145,8 +145,8 @@
 	spawn_object = /obj/structure/campaign_objective/capture_objective/sensor_tower
 
 /obj/structure/campaign_objective/capture_objective/sensor_tower
-	name = "sensor tower"
-	desc = "A tall tower with a sensor array at the top and a control box at the bottom. Used to hack into colony control."
+	name = "传感器塔"
+	desc = "一座高塔，顶部装有传感器阵列，底部设有控制箱。用于入侵殖民地控制系统。"
 	icon = 'icons/obj/structures/sensor.dmi'
 	icon_state = "sensor"
 	obj_flags = BLOCK_Z_OUT_DOWN|BLOCK_Z_IN_UP
@@ -177,15 +177,15 @@
 
 //fulton objectives = they qdel after being captured
 /obj/effect/landmark/campaign_structure/phoron_crate
-	name = "phoron crate objective"
+	name = "等离子体板条箱目标"
 	icon = 'icons/obj/structures/campaign_structures.dmi'
 	icon_state = "orebox_phoron"
 	mission_types = list(/datum/campaign_mission/capture_mission/phoron_capture)
 	spawn_object = /obj/structure/campaign_objective/capture_objective/fultonable
 
 /obj/structure/campaign_objective/capture_objective/fultonable
-	name = "phoron crate"
-	desc = "A crate packed full of valuable phoron, ready to claim."
+	name = "等离子体板条箱"
+	desc = "装满贵重等离子体的板条箱，随时可以领取。"
 	icon_state = "orebox_phoron"
 	activation_time = 3 SECONDS
 	capture_delay = 90 SECONDS
@@ -214,12 +214,12 @@
 	animate(pixel_z = 10, time = 1 SECONDS)
 	animate(pixel_z = SCREEN_PIXEL_SIZE, time = 1 SECONDS)
 
-	user.visible_message(span_notice("[user] finishes attaching the fulton to [src] and activates it."),\
+	user.visible_message(span_notice("[user] 完成了对 [src] 的富尔顿装置安装并启动了它。"),\
 	span_notice("You attach a fulton to [src] and activate it."), null, 5)
 	qdel(src)
 
 /obj/effect/landmark/campaign_structure/asat_system
-	name = "ASAT system"
+	name = "反卫星系统"
 	icon = 'icons/obj/structures/campaign/ASAT.dmi'
 	icon_state = "silo"
 	pixel_x = -26
@@ -228,10 +228,10 @@
 	spawn_object = /obj/structure/campaign_objective/capture_objective/asat_system
 
 /obj/structure/campaign_objective/capture_objective/asat_system
-	name = "\improper T-4000 ASAT system"
+	name = "\improper T-4000 反卫星系统"
 	icon = 'icons/obj/structures/campaign/ASAT.dmi'
 	icon_state = "silo"
-	desc = "A sophisticated surface to space missile system designed for attacking orbiting satellites or spacecraft."
+	desc = "一套用于攻击轨道卫星或航天器的精密地对空导弹系统。"
 	bound_height = 64
 	bound_width = 96
 	bound_x = -32
@@ -245,7 +245,7 @@
 /obj/structure/campaign_objective/capture_objective/asat_system/capture_check(mob/living/user)
 	//This is a 'defend' objective. The defending faction can't actually claim it for themselves, just decap it.
 	if((user.faction == owning_faction) && !capturing_faction)
-		user.balloon_alert(user, "defend this objective!")
+		user.balloon_alert(user, "坚守这个目标！")
 		return FALSE
 	return ..()
 
@@ -259,7 +259,7 @@
 	. = ..()
 	playsound(loc, 'sound/magic/lightningbolt.ogg', 75, 0)
 	new /obj/effect/temp_visual/teleporter_array(loc)
-	visible_message(span_danger("Reality warps around [src] as the missile vanishes in a flash of light!"))
+	visible_message(span_danger("现实在[src]周围扭曲，导弹在一道闪光中消失！"))
 	capture_flags = NONE
 
 /obj/structure/campaign_objective/capture_objective/asat_system/update_icon_state()

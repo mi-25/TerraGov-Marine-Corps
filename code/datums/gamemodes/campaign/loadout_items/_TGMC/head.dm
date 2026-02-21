@@ -33,7 +33,7 @@
 
 /datum/loadout_item/helmet/standard
 	name = "L Helmet"
-	desc = "A standard TDF combat helmet. Apply to head for best results."
+	desc = "标准TDF作战头盔。佩戴于头部以获得最佳效果。"
 	req_desc = "Requires a light armor suit."
 	item_typepath = /obj/item/clothing/head/modular/tdf
 	jobs_supported = list(SQUAD_MARINE)
@@ -45,7 +45,7 @@
 
 /datum/loadout_item/helmet/medium
 	name = "M Helmet"
-	desc = "A standard TDF combat helmet. Apply to head for best results."
+	desc = "标准TDF作战头盔。佩戴于头部以获得最佳效果。"
 	req_desc = "Requires a medium armor suit."
 	item_typepath = /obj/item/clothing/head/modular/tdf/medium
 	jobs_supported = list(SQUAD_MARINE)
@@ -57,7 +57,7 @@
 
 /datum/loadout_item/helmet/heavy
 	name = "H Helmet"
-	desc = "A heavy TDF combat helmet. Apply to head for best results."
+	desc = "一顶沉重的TDF战斗头盔。戴在头上效果最佳。"
 	req_desc = "Requires a heavy armor suit."
 	item_typepath = /obj/item/clothing/head/modular/tdf/heavy
 	jobs_supported = list(SQUAD_MARINE)
@@ -69,21 +69,21 @@
 
 /datum/loadout_item/helmet/leader
 	name = "Leader Helmet"
-	desc = "An upgraded helmet for protecting upgraded brains."
+	desc = "保护升级大脑的升级头盔。"
 	item_typepath = /obj/item/clothing/head/modular/tdf/leader
 	jobs_supported = list(SQUAD_LEADER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/helmet/fcdr
 	name = "FCDR Helmet"
-	desc = "An upgraded helmet for protecting upgraded brains."
+	desc = "保护升级大脑的升级头盔。"
 	item_typepath = /obj/item/clothing/head/modular/tdf/leader/fcdr
 	jobs_supported = list(FIELD_COMMANDER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/helmet/surt
 	name = "Surt helmet"
-	desc = "A standard combat helmet with a Surt fireproof module."
+	desc = "标准战斗头盔，配备苏尔特防火模块。"
 	req_desc = "Requires a suit with a Surt module."
 	item_typepath = /obj/item/clothing/head/modular/tdf/pyro
 	jobs_supported = list(SQUAD_MARINE)
@@ -91,14 +91,14 @@
 
 /datum/loadout_item/helmet/smartgunner
 	name = "SG Helmet"
-	desc = "A standard SG combat helmet. Apply to head for best results."
+	desc = "标准SG战斗头盔。佩戴于头部以获得最佳效果。"
 	item_typepath = /obj/item/clothing/head/modular/tdf/sg
 	jobs_supported = list(SQUAD_SMARTGUNNER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION
 
 /datum/loadout_item/helmet/tyr
 	name = "H Tyr Helmet"
-	desc = "A standard combat helmet with a Tyr extra armor module."
+	desc = "标准战斗头盔，配备泰尔增强装甲模块。"
 	req_desc = "Requires a suit with a Tyr module."
 	ui_icon = "tyr"
 	item_typepath = /obj/item/clothing/head/modular/tdf/heavy/tyr
@@ -136,13 +136,13 @@
 
 /datum/loadout_item/helmet/white_dress
 	name = "Dress Cap"
-	desc = "The dress white cap for your dress uniform. Pride is your shield, because this isn't."
+	desc = "你的礼服白帽。骄傲是你的盾牌，因为这东西不是。"
 	item_typepath = /obj/item/clothing/head/white_dress
 	jobs_supported = list(SQUAD_MARINE, SQUAD_CORPSMAN, SQUAD_ENGINEER, SQUAD_SMARTGUNNER, SQUAD_LEADER, FIELD_COMMANDER, STAFF_OFFICER, CAPTAIN)
 
 /datum/loadout_item/helmet/mimir
 	name = "Mimir helmet"
-	desc = "A standard combat helmet with a Mimir environmental protection module."
+	desc = "标准作战头盔，配备米米尔环境防护模块。"
 	req_desc = "Requires a suit with a Mimir module."
 	item_typepath = /obj/item/clothing/head/modular/tdf/medic
 	jobs_supported = list(SQUAD_CORPSMAN)
@@ -154,7 +154,7 @@
 
 /datum/loadout_item/helmet/engineer
 	name = "Engi Helmet"
-	desc = "A standard combat helmet with a welding module."
+	desc = "标准战斗头盔，配备焊接模块。"
 	item_typepath = /obj/item/clothing/head/modular/tdf/engi/welding
 	jobs_supported = list(SQUAD_ENGINEER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -165,20 +165,20 @@
 
 /datum/loadout_item/helmet/field_commander_beret
 	name = "FC beret"
-	desc = "A beret with the field commander insignia emblazoned on it. It commands loyalty and bravery in all who gaze upon it."
+	desc = "一顶印有战地指挥官徽章的贝雷帽。它能让所有注视它的人心生忠诚与勇气。"
 	item_typepath = /obj/item/clothing/head/tgmcberet/fc
 	jobs_supported = list(FIELD_COMMANDER)
 
 /datum/loadout_item/helmet/staff_officer_cap
 	name = "Officer cap"
-	desc = "A hat usually worn by officers in the TGMC. While it has limited combat functionality, some prefer to wear it instead of the standard issue helmet."
+	desc = "通常由地球政府殖民地海军陆战队军官佩戴的帽子。虽然其战斗功能有限，但有些人更愿意佩戴它，而不是标准配发的头盔。"
 	item_typepath = /obj/item/clothing/head/tgmccap/ro
 	jobs_supported = list(STAFF_OFFICER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/helmet/captain_beret
 	name = "Captain Beret"
-	desc = "A beret worn by ship's captains. You thought it would have been more fancy."
+	desc = "舰长佩戴的贝雷帽。你本以为它会更加华丽。"
 	item_typepath = /obj/item/clothing/head/tgmcberet/tan
 	jobs_supported = list(CAPTAIN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE

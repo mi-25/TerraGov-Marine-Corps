@@ -1,6 +1,6 @@
 /datum/campaign_asset/fire_support
 	name = "CAS mission"
-	desc = "Close Air Support is deployed to support this mission"
+	desc = "近距空中支援已部署以支援本次任务"
 	detailed_desc = "A limited number of Close Air Support attack runs are available via tactical binoculars for this mission. Excellent for disrupting dug in enemy positions."
 	ui_icon = "cas"
 	uses = 1
@@ -35,7 +35,7 @@
 
 /datum/campaign_asset/fire_support/mortar
 	name = "Mortar support"
-	desc = "Mortar teams are activated to provide firesupport for this mission"
+	desc = "迫击炮小组已激活，为本任务提供火力支援"
 	detailed_desc = "Activatable by squad leaders. A limited number of mortar strikes are available via tactical binoculars for this mission. Excellent for disrupting dug in enemy positions."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/tgmc_mortar
 	ui_icon = "mortar"
@@ -51,7 +51,7 @@
 
 /datum/campaign_asset/fire_support/som_mortar
 	name = "Mortar support"
-	desc = "Mortar teams are activated to provide firesupport for this mission"
+	desc = "迫击炮小组已激活，将为本次任务提供火力支援"
 	detailed_desc = "Activatable by squad leaders. A limited number of mortar strikes are available via tactical binoculars for this mission. Excellent for disrupting dug in enemy positions."
 	ui_icon = "mortar"
 	asset_flags = ASSET_ACTIVATED_EFFECT|ASSET_ACTIVE_MISSION_ONLY|ASSET_DISABLE_ON_MISSION_END|ASSET_SL_AVAILABLE

@@ -3,8 +3,8 @@
 * effect/alien
 */
 /obj/alien
-	name = "alien thing"
-	desc = "theres something alien about this"
+	name = "异形生物"
+	desc = "这东西有点异形"
 	icon = 'icons/Xeno/Effects.dmi'
 	hit_sound = SFX_ALIEN_RESIN_BREAK
 	anchored = TRUE
@@ -61,21 +61,21 @@
 * Resin
 */
 /obj/alien/resin
-	name = "resin"
-	desc = "Looks like some kind of slimy growth."
+	name = "树脂"
+	desc = "看起来像是某种黏糊糊的增生体。"
 	icon_state = "Resin1"
 	max_integrity = 200
 	resistance_flags = XENO_DAMAGEABLE|UNACIDABLE
 
 
 /obj/alien/resin/attack_hand(mob/living/user)
-	balloon_alert(user, "need a weapon!")
+	balloon_alert(user, "需要武器！")
 	return TRUE
 
 
 /obj/alien/resin/sticky
 	name = STICKY_RESIN
-	desc = "A layer of disgusting sticky slime."
+	desc = "一层令人作呕的粘稠黏液。"
 	icon_state = "sticky"
 	density = FALSE
 	opacity = FALSE
@@ -146,8 +146,8 @@
 
 // Hivelord Sticky Resin spit uses this.
 /obj/alien/resin/sticky/thin
-	name = "thin sticky resin"
-	desc = "A thin layer of disgusting sticky slime."
+	name = "粘稠的树脂"
+	desc = "一层令人作呕的粘稠黏液。"
 	max_integrity = 6
 	slow_amt = 4
 
@@ -216,10 +216,10 @@
 		qdel(src)
 		return TRUE
 
-	src.balloon_alert(xeno_attacker, "destroying...")
+	src.balloon_alert(xeno_attacker, "正在摧毁...")
 	playsound(src, SFX_ALIEN_RESIN_BREAK, 25)
 	if(do_after(xeno_attacker, 1 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE))
-		src.balloon_alert(xeno_attacker, "destroyed")
+		src.balloon_alert(xeno_attacker, "已摧毁")
 		qdel(src)
 
 /obj/structure/mineral_door/resin/take_damage(damage_amount, damage_type, armor_type, effects, attack_dir, armour_penetration, mob/living/blame_mob)
@@ -286,15 +286,15 @@
 			. = TRUE
 			break
 	if(!.)
-		src.balloon_alert_to_viewers("collapsed")
+		src.balloon_alert_to_viewers("坍塌")
 		qdel(src)
 
 /obj/structure/mineral_door/resin/thick
 	max_integrity = 160
 
 /obj/item/resin_jelly
-	name = "resin jelly"
-	desc = "A foul, viscous resin jelly that doesnt seem to burn easily."
+	name = "树脂凝胶"
+	desc = "一种恶臭、粘稠的树脂胶状物，似乎不易燃烧。"
 	icon = 'icons/Xeno/xeno_materials.dmi'
 	icon_state = "resin_jelly"
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 200, ACID = 0)
@@ -317,7 +317,7 @@
 	if(user.do_actions || !isnull(current_user))
 		return
 	current_user = user
-	user.balloon_alert(user, "applying...")
+	user.balloon_alert(user, "正在应用...")
 	if(!do_after(user, RESIN_SELF_TIME, NONE, user, BUSY_ICON_MEDICAL))
 		current_user = null
 		return
@@ -329,14 +329,14 @@
 	if(!isxeno(user))
 		return TRUE
 	if(!isxeno(M))
-		M.balloon_alert(user, "that's not a xeno!")
+		M.balloon_alert(user, "那不是异形！")
 		return FALSE
 	if(user.do_actions || !isnull(current_user))
 		return FALSE
 	current_user = M
-	M.balloon_alert(user, "applying...")
+	M.balloon_alert(user, "正在应用...")
 	if(M != user)
-		user.balloon_alert(M, "applying jelly...") //Notify recipient to not move.
+		user.balloon_alert(M, "正在涂抹凝胶...") //Notify recipient to not move.
 	if(!do_after(user, (M == user ? RESIN_SELF_TIME : RESIN_OTHER_TIME), NONE, M, BUSY_ICON_MEDICAL))
 		current_user = null
 		return FALSE
@@ -345,7 +345,7 @@
 	return FALSE
 
 /obj/item/resin_jelly/proc/activate_jelly(mob/living/carbon/xenomorph/user)
-	user.visible_message(span_notice("[user]'s chitin begins to gleam with an unseemly glow..."), span_xenonotice("We feel powerful as we are covered in [src]!"))
+	user.visible_message(span_notice("[user]的甲壳开始泛起不祥的光芒……"), span_xenonotice("We feel powerful as we are covered in [src]!"))
 	user.emote("roar")
 	user.apply_status_effect(STATUS_EFFECT_RESIN_JELLY_COATING)
 	SEND_SIGNAL(user, COMSIG_XENOMORPH_RESIN_JELLY_APPLIED)
@@ -379,7 +379,7 @@
 	var/mob/living/carbon/xenomorph/hit_xenomorph = hit_atom
 	if(hit_xenomorph.xeno_caste.caste_flags & CASTE_FIRE_IMMUNE)
 		return
-	hit_xenomorph.visible_message(span_notice("[hit_xenomorph] is splattered with jelly!"))
+	hit_xenomorph.visible_message(span_notice("[hit_xenomorph]被溅了一身胶状物！"))
 	INVOKE_ASYNC(src, PROC_REF(activate_jelly), hit_xenomorph)
 
 /// Possibly explode into sticky resin upon finishing the throw.
@@ -400,8 +400,8 @@
 ///////////////////////
 
 /obj/structure/xeno/acid_mine
-	name = "acid mine"
-	desc = "A weird bulb, filled with acid."
+	name = "酸液地雷"
+	desc = "一个奇怪的球状物，里面充满了酸液。"
 	icon = 'icons/obj/items/mines.dmi'
 	icon_state = "acid_mine"
 	density = FALSE
@@ -446,8 +446,8 @@
 ////////////////
 
 /obj/structure/xeno/acid_mine/gas_mine
-	name = "gas mine"
-	desc = "A weird bulb, overflowing with acid. Small wisps of gas escape every so often."
+	name = "气体地雷"
+	desc = "一个奇怪的球状物，里面装满了酸液。不时有小股气体从中逸出。"
 	icon_state = "gas_mine"
 	acid_damage = 40
 
@@ -462,8 +462,8 @@
 //////////////////
 
 /obj/structure/xeno/acid_mine/incen_mine
-	name = "incendiary mine"
-	desc = "A purple blob that sparks like lightning."
+	name = "燃烧地雷"
+	desc = "一个闪烁着闪电般光芒的紫色光团。"
 	icon_state = "incen_mine"
 
 /obj/structure/xeno/acid_mine/incen_mine/detonate(triggerer)
@@ -475,8 +475,8 @@
 //////////////////
 
 /obj/structure/xeno/acid_mine/resin_mine
-	name = "resin mine"
-	desc = "A translucent purple blob, insides lined with clear ampoules of resin."
+	name = "树脂地雷"
+	desc = "一个半透明的紫色团块，内部排列着装有树脂的透明安瓿瓶。"
 	icon_state = "resin_mine"
 
 /obj/structure/xeno/acid_mine/resin_mine/detonate(triggerer)
@@ -507,8 +507,8 @@
 //////////////////
 
 /obj/structure/xeno/acid_mine/neuro_mine
-	name = "neurotoxin mine"
-	desc = "An oddly colored weed sac, filled with dense orange gas."
+	name = "神经毒素地雷"
+	desc = "一个颜色奇特的菌毯囊，内部充满了浓密的橙色气体。"
 	icon_state = "neuro_mine"
 
 /obj/structure/xeno/acid_mine/neuro_mine/detonate(triggerer)
@@ -519,7 +519,7 @@
 	if(ishuman(triggerer))
 		var/mob/living/carbon/human/victim = triggerer
 		victim.reagents.add_reagent(/datum/reagent/toxin/xeno_neurotoxin, 5)
-		to_chat(victim, span_userdanger("You are pricked by a spike on the mine!"))
+		to_chat(victim, span_userdanger("你被地雷上的尖刺刺伤了！"))
 	qdel(src)
 
 //////////////////////
@@ -527,8 +527,8 @@
 //////////////////////
 
 /obj/structure/xeno/acid_mine/drain_mine
-	name = "drain mine"
-	desc = "A cyan blob that crackles with lifeblood."
+	name = "汲取矿"
+	desc = "一团闪烁着生命之血的青色光斑。"
 	icon_state = "emp_mine"
 
 /obj/structure/xeno/acid_mine/drain_mine/detonate(triggerer)

@@ -2,8 +2,8 @@
 // can have multiple per area
 // can also operate on non-loc area through "otherarea" var
 /obj/machinery/light_switch
-	name = "light switch"
-	desc = "It turns lights on and off. What are you, simple?"
+	name = "电灯开关"
+	desc = "它能开关灯。你是傻子吗？"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "light1"
 	anchored = TRUE
@@ -19,7 +19,7 @@
 		src.area = locate(text2path("/area/[otherarea]"))
 
 	if(!name)
-		name = "light switch ([area.name])"
+		name = "电灯开关（[area.name]）"
 
 	src.on = src.area.lightswitch
 	update_icon()

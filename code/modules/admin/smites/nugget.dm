@@ -1,12 +1,12 @@
 /// Rips off all the limbs of the target
 /datum/smite/nugget
-	name = "Nugget"
+	name = "金块"
 
 /datum/smite/nugget/effect(client/user, mob/living/carbon/human/target)
 	. = ..()
 
 	if (!ishuman(target))
-		to_chat(user, span_warning("This must be used on a human mob."), confidential = TRUE)
+		to_chat(user, span_warning("这必须用于人类单位。"), confidential = TRUE)
 		return
 
 	var/timer = 2 SECONDS

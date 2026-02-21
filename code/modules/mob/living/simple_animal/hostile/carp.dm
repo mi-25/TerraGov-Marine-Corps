@@ -1,8 +1,8 @@
 #define REGENERATION_DELAY 60  // After taking damage, how long it takes for automatic regeneration to begin for megacarps (ty robustin!)
 
 /mob/living/simple_animal/hostile/carp
-	name = "space carp"
-	desc = "A ferocious, fang-bearing creature that resembles a fish."
+	name = "太空鲤鱼"
+	desc = "一种凶猛、长着尖牙、形似鱼类的生物。"
 	icon_state = "carp"
 	icon_living = "carp"
 	icon_dead = "carp_dead"
@@ -27,8 +27,8 @@
 
 /mob/living/simple_animal/hostile/carp/megacarp
 	icon = 'icons/mob/broadMobs.dmi'
-	name = "Mega Space Carp"
-	desc = "A ferocious, fang bearing creature that resembles a shark. This one seems especially ticked off."
+	name = "巨型太空鲤鱼"
+	desc = "一头凶猛、长着利齿、形似鲨鱼的生物。这只看起来格外暴躁。"
 	icon_state = "megacarp"
 	icon_living = "megacarp"
 	icon_dead = "megacarp_dead"
@@ -60,8 +60,8 @@
 
 
 /mob/living/simple_animal/hostile/carp/cayenne
-	name = "Cayenne"
-	desc = "A failed Syndicate experiment in weaponized space carp technology, it now serves as a lovable mascot."
+	name = "卡宴"
+	desc = "一次失败的辛迪加武器化太空鲤鱼实验，如今它成了一个可爱的吉祥物。"
 	gender = FEMALE
 	speak_emote = list("squeaks")
 	AIStatus = AI_OFF

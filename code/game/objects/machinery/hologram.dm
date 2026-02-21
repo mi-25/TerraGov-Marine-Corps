@@ -7,8 +7,8 @@
 #define CAN_HEAR_ALL_FLAGS (CAN_HEAR_MASTERS|CAN_HEAR_ACTIVE_HOLOCALLS|CAN_HEAR_RECORD_MODE)
 
 /obj/machinery/holopad
-	name = "holopad"
-	desc = "It's a floor-mounted device for projecting holographic images."
+	name = "全息面板"
+	desc = "这是一个用于投射全息影像的地面安装设备。"
 	icon_state = "holopad0"
 	layer = MAP_SWITCH(ABOVE_OPEN_TURF_LAYER, LOW_OBJ_LAYER)
 	plane = MAP_SWITCH(FLOOR_PLANE, GAME_PLANE)
@@ -186,7 +186,7 @@
 			for(var/mob/living/silicon/ai/AI AS in GLOB.ai_list)
 				if(!AI.client)
 					continue
-				to_chat(AI, span_info("Your presence is requested at <a href='byond://?src=[REF(AI)];jumptoholopad=[REF(src)]'>\the [area]</a>."))
+				to_chat(AI, span_info("请前往<a href='byond://?src=[REF(AI)];jumptoholopad=[REF(src)]'>\the [area]</a>。"))
 				playsound(AI, 'sound/machines/two_tones_beep.ogg', 30, 1)
 				SEND_GLOBAL_SIGNAL(COMSIG_GLOB_HOLOPAD_AI_CALLED, src)
 		else
@@ -324,7 +324,7 @@
 		move_hologram()
 
 		set_holo(user, Hologram)
-		visible_message(span_notice("A holographic image of [user] flickers to life before your eyes!"))
+		visible_message(span_notice("[user]的全息影像在你眼前闪烁显现！"))
 
 		return Hologram
 	else
@@ -480,7 +480,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 
 
 /obj/effect/overlay/holoray
-	name = "holoray"
+	name = "全息射线"
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "holoray"
 	layer = FLY_LAYER

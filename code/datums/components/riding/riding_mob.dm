@@ -56,7 +56,7 @@
 	if(!kick_us_off)
 		return TRUE
 
-	rider.visible_message("<span class='warning'>[rider] falls off of [living_parent]!</span>", \
+	rider.visible_message("<span class='warning'>[rider]从[living_parent]身上摔下来了！</span>", \
 					"<span class='warning'>You fall off of [living_parent]!</span>")
 	rider.Paralyze(1 SECONDS)
 	rider.Knockdown(4 SECONDS)
@@ -74,7 +74,7 @@
 	if(!keycheck(user))
 		if(ispath(keytype, /obj/item))
 			var/obj/item/key = keytype
-			to_chat(user, "<span class='warning'>You need a [initial(key.name)] to ride [movable_parent]!</span>")
+			to_chat(user, "<span class='warning'>你需要一把[initial(key.name)]才能驾驶[movable_parent]！</span>")
 		return COMPONENT_DRIVER_BLOCK_MOVE
 	last_move_diagonal = ISDIAGONALDIR(direction)
 	var/new_delay = (last_move_diagonal ? DIAG_MOVEMENT_ADDED_DELAY_MULTIPLIER : 1) * vehicle_move_delay
@@ -88,11 +88,11 @@
 		return COMPONENT_RIDDEN_ALLOW_Z_MOVE
 	if(!can_be_driven)
 		if(z_move_flags & ZMOVE_FEEDBACK)
-			to_chat(rider, span_warning("[movable_parent] cannot be driven around. Unbuckle from [movable_parent.p_them()] first."))
+			to_chat(rider, span_warning("[movable_parent]无法被驾驶。请先从[movable_parent.p_them()]上解开。"))
 		return COMPONENT_RIDDEN_STOP_Z_MOVE
 	if(!ride_check(rider, FALSE))
 		if(z_move_flags & ZMOVE_FEEDBACK)
-			to_chat(rider, span_warning("You're unable to ride [movable_parent] right now!"))
+			to_chat(rider, span_warning("你现在无法骑乘[movable_parent]！"))
 		return COMPONENT_RIDDEN_STOP_Z_MOVE
 	return COMPONENT_RIDDEN_ALLOW_Z_MOVE
 
@@ -109,11 +109,11 @@
 	rider.Move(targetm)
 	rider.Knockdown(3 SECONDS)
 	if(gentle)
-		rider.visible_message("<span class='warning'>[rider] is thrown clear of [movable_parent]!</span>", \
+		rider.visible_message("<span class='warning'>[rider]被从[movable_parent]上甩了出去！</span>", \
 		"<span class='warning'>You're thrown clear of [movable_parent]!</span>")
 		rider.throw_at(target, 8, 3, movable_parent)
 	else
-		rider.visible_message("<span class='warning'>[rider] is thrown violently from [movable_parent]!</span>", \
+		rider.visible_message("<span class='warning'>[rider]被从[movable_parent]上猛烈地甩了下来！</span>", \
 		"<span class='warning'>You're thrown violently from [movable_parent]!</span>")
 		rider.throw_at(target, 14, 5, movable_parent)
 
@@ -166,9 +166,9 @@
 		human_parent.unbuckle_mob(rider)
 		rider.Paralyze(1 SECONDS)
 		rider.Knockdown(4 SECONDS)
-		human_parent.visible_message("<span class='danger'>[rider] topples off of [human_parent] as they both fall to the ground!</span>", \
+		human_parent.visible_message("<span class='danger'>[rider]从[human_parent]身上摔落，双双倒地！</span>", \
 					"<span class='warning'>You fall to the ground, bringing [rider] with you!</span>", "<span class='hear'>You hear two consecutive thuds.</span>")
-		to_chat(rider, "<span class='danger'>[human_parent] falls to the ground, bringing you with [human_parent.p_them()]!</span>")
+		to_chat(rider, "<span class='danger'>[human_parent] 摔倒在地，把 [human_parent.p_them()] 也带倒了！</span>")
 
 /datum/component/riding/creature/human/handle_vehicle_layer(dir)
 	var/atom/movable/AM = parent
@@ -202,7 +202,7 @@
 	AM.unbuckle_mob(dismounted_rider)
 	dismounted_rider.Paralyze(1 SECONDS)
 	dismounted_rider.Knockdown(4 SECONDS)
-	dismounted_rider.visible_message("<span class='warning'>[AM] pushes [dismounted_rider] off of [AM.p_them()]!</span>", \
+	dismounted_rider.visible_message("<span class='warning'>[AM]将[dismounted_rider]从[AM.p_them()]身上推了下去！</span>", \
 						"<span class='warning'>[AM] pushes you off of [AM.p_them()]!</span>")
 
 // ***************************************
@@ -278,9 +278,9 @@
 	for(var/mob/living/rider AS in carrying_crusher.buckled_mobs)
 		carrying_crusher.unbuckle_mob(rider)
 		rider.Knockdown(1 SECONDS)
-		carrying_crusher.visible_message("<span class='danger'>[rider] topples off of [carrying_crusher] as they both fall to the ground!</span>", \
+		carrying_crusher.visible_message("<span class='danger'>[rider]从[carrying_crusher]身上摔落，两者都倒在了地上！</span>", \
 					"<span class='warning'>You fall to the ground, bringing [rider] with you!</span>", "<span class='hear'>You hear two consecutive thuds.</span>")
-		to_chat(rider, "<span class='danger'>[carrying_crusher] falls to the ground, bringing you with [carrying_crusher.p_them()]!</span>")
+		to_chat(rider, "<span class='danger'>[carrying_crusher] 摔倒在地，把 [carrying_crusher.p_them()] 也带倒了！</span>")
 
 //Override this to set your vehicle's various pixel offsets
 /datum/component/riding/creature/crusher/get_offsets(pass_index, mob_type) // list(dir = x, y, layer)
@@ -383,6 +383,6 @@
 	for(var/mob/living/rider AS in carrying_runner.buckled_mobs)
 		carrying_runner.unbuckle_mob(rider)
 		rider.Knockdown(1 SECONDS)
-		carrying_runner.visible_message(span_danger("[rider] topples off of [carrying_runner] as they both fall to the ground!"), \
+		carrying_runner.visible_message(span_danger("[rider] 从 [carrying_runner] 身上摔了下来，双双倒地！"), \
 					span_danger("You fall to the ground, bringing [rider] with you!"), span_hear("You hear two consecutive thuds."))
 		to_chat(rider, span_danger("[carrying_runner] falls to the ground, bringing you with [carrying_runner.p_them()]!"))

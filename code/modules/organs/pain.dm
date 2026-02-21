@@ -32,7 +32,7 @@
 				else 					drop_r_hand()
 				i++
 			if(i) msg += ", [pick("fumbling with","struggling with","losing control of")] your [i < 2 ? "hand" : "hands"]"
-			to_chat(H, span_warning("[msg]."))
+			to_chat(H, span_warning("[msg]。"))
 
 	if(burning)
 		switch(amount)

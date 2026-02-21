@@ -1,5 +1,5 @@
 /datum/outfit/job/other/colonist
-	name = "Colonist"
+	name = "殖民者"
 	jobtype = /datum/job/colonist
 
 	id = /obj/item/card/id
@@ -9,7 +9,7 @@
 	r_pocket = /obj/item/radio
 
 /datum/outfit/job/other/pizza
-	name = "Pizza Deliverer"
+	name = "披萨配送员"
 	jobtype = /datum/job/pizza
 
 	id = /obj/item/card/id/silver
@@ -24,7 +24,7 @@
 	r_hand = /obj/item/pizzabox/random
 
 /datum/outfit/job/other/spatial_agent
-	name = "Spatial Agent"
+	name = "空间特工"
 	jobtype = /datum/job/spatial_agent
 
 	id = /obj/item/card/id/silver

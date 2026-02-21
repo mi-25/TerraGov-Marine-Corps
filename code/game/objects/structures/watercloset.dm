@@ -4,8 +4,8 @@
 //todo: toothbrushes, and some sort of "toilet-filthinator" for the hos
 
 /obj/structure/toilet
-	name = "toilet"
-	desc = "The HT-451, a torque rotation-based, waste disposal unit for small matter. This one seems remarkably clean."
+	name = "马桶"
+	desc = "HT-451，一款基于扭矩旋转的小型物质废物处理装置。这个看起来异常干净。"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "toilet00"
 	density = FALSE
@@ -25,13 +25,13 @@
 	if(.)
 		return
 	if(swirlie)
-		user.visible_message(span_danger("[user] slams the toilet seat onto [swirlie.name]'s head!"), span_notice("You slam the toilet seat onto [swirlie.name]'s head!"), "You hear reverberating porcelain.")
+		user.visible_message(span_danger("[user] 把马桶座圈猛地砸在 [swirlie.name] 的头上！"), span_notice("You slam the toilet seat onto [swirlie.name]'s head!"), "You hear reverberating porcelain.")
 		swirlie.apply_damage(8, BRUTE, blocked = MELEE, updating_health = TRUE, attacker = user)
 		return
 
 	if(cistern && !open)
 		if(!length(contents))
-			to_chat(user, span_notice("The cistern is empty."))
+			to_chat(user, span_notice("蓄水池是空的。"))
 			return
 		else
 			var/obj/item/I = pick(contents)
@@ -68,17 +68,17 @@
 
 	else if(cistern && !issilicon(user)) //STOP PUTTING YOUR MODULES IN THE TOILET.
 		if(I.w_class > 3)
-			to_chat(user, span_notice("\The [I] does not fit."))
+			to_chat(user, span_notice("\The [I] 装不进去。"))
 			return
 
 		if(w_items + I.w_class > 5)
-			to_chat(user, span_notice("The cistern is full."))
+			to_chat(user, span_notice("蓄水池已满。"))
 			return
 
 		user.drop_held_item()
 		I.forceMove(src)
 		w_items += I.w_class
-		to_chat(user, "You carefully place \the [I] into the cistern.")
+		to_chat(user, "你小心翼翼地将\the [I]放入水箱。")
 
 /obj/structure/toilet/grab_interact(obj/item/grab/grab, mob/user, base_damage = BASE_OBJ_SLAM_DAMAGE, is_sharp = FALSE)
 	. = ..()
@@ -94,19 +94,19 @@
 	var/mob/living/carbon/grabbed_mob = grab.grabbed_thing
 
 	if(user.grab_state <= GRAB_PASSIVE)
-		to_chat(user, span_notice("You need a tighter grip."))
+		to_chat(user, span_notice("你需要握得更紧些。"))
 		return
 
 	if(!grabbed_mob.loc == get_turf(src))
-		to_chat(user, span_notice("[grabbed_mob] needs to be on the toilet."))
+		to_chat(user, span_notice("[grabbed_mob]需要坐在马桶上。"))
 		return
 
-	user.visible_message(span_danger("[user] starts to give [grabbed_mob] a swirlie!"), span_notice("You start to give [grabbed_mob] a swirlie!"))
+	user.visible_message(span_danger("[user]开始给[grabbed_mob]来个'马桶漩涡'！"), span_notice("You start to give [grabbed_mob] a swirlie!"))
 	swirlie = grabbed_mob
 	if(!do_after(user, 3 SECONDS, NONE, src, BUSY_ICON_HOSTILE))
 		return
 
-	user.visible_message(span_danger("[user] gives [grabbed_mob] a swirlie!"), span_notice("You give [grabbed_mob] a swirlie!"), "You hear a toilet flushing.")
+	user.visible_message(span_danger("[user] 给 [grabbed_mob] 来了个'马桶漩涡'！"), span_notice("You give [grabbed_mob] a swirlie!"), "You hear a toilet flushing.")
 	log_combat(user, grabbed_mob, "given a swirlie")
 	if(!grabbed_mob.internal)
 		grabbed_mob.adjustOxyLoss(5)
@@ -120,16 +120,16 @@
 	icon_state = "toilet2[open][cistern]"
 
 /obj/structure/urinal
-	name = "urinal"
-	desc = "The HU-452, an experimental urinal."
+	name = "小便池"
+	desc = "HU-452，一款实验性小便池。"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "urinal"
 	density = FALSE
 	anchored = TRUE
 
 /obj/machinery/shower
-	name = "shower"
-	desc = "The HS-451. Installed in the 2050s by the Nanotrasen Hygiene Division."
+	name = "淋浴间"
+	desc = "HS-451。由纳米传讯卫生部门于2050年代安装。"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "shower"
 	density = FALSE
@@ -155,7 +155,7 @@
 
 
 /obj/effect/mist
-	name = "mist"
+	name = "迷雾"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "mist"
 	layer = FLY_LAYER
@@ -184,10 +184,10 @@
 		return
 
 	if(I.type == /obj/item/tool/analyzer)
-		to_chat(user, span_notice("The water temperature seems to be [watertemp]."))
+		to_chat(user, span_notice("水温似乎是[watertemp]。"))
 
 	else if(iswrench(I))
-		to_chat(user, span_notice("You begin to adjust the temperature valve with \the [I]."))
+		to_chat(user, span_notice("你开始用\the [I]调节温度阀门。"))
 
 		if(!do_after(user, 5 SECONDS, NONE, src, BUSY_ICON_BUILD))
 			return
@@ -199,7 +199,7 @@
 				watertemp = "boiling"
 			if(WATER_TEMP_BOILING)
 				watertemp = "normal"
-		user.visible_message(span_notice("[user] adjusts the shower with \the [I]."), span_notice("You adjust the shower with \the [I]."))
+		user.visible_message(span_notice("[user]用\the [I]调节了淋浴。"), span_notice("You adjust the shower with \the [I]."))
 
 /obj/machinery/shower/proc/update_mist()
 //this is terribly unreadable, but basically it makes the shower mist up once it's been on for a while
@@ -254,7 +254,7 @@
 		var/mob/living/L = O
 		L.ExtinguishMob()
 		L.fire_stacks = -20 //Douse ourselves with water to avoid fire more easily
-		to_chat(L, span_warning("You've been drenched in water!"))
+		to_chat(L, span_warning("你被水淋湿了！"))
 		L.wash()
 	else
 		O.wash()
@@ -284,18 +284,18 @@
 
 		if(watertemp == WATER_TEMP_FREEZING)
 			C.adjust_bodytemperature(-80, 80)
-			to_chat(C, span_warning("The water is freezing!"))
+			to_chat(C, span_warning("水太冰了！"))
 			return
 		if(watertemp == WATER_TEMP_BOILING)
 			C.adjust_bodytemperature(35, 0, 500)
-			to_chat(C, span_danger("The water is searing!"))
+			to_chat(C, span_danger("水滚烫无比！"))
 			return
 
 
 
 /obj/item/toy/bikehorn/rubberducky
-	name = "rubber ducky"
-	desc = "Rubber ducky you're so fine, you make bathtime lots of fuuun. Rubber ducky I'm awfully fooooond of yooooouuuu~"	//thanks doohl
+	name = "橡皮鸭"
+	desc = "橡皮小鸭你真可爱，洗澡时光因你更愉快。橡皮小鸭我实在太喜欢你了~"	//thanks doohl
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "rubberducky"
 	worn_icon_state = "rubberducky"
@@ -303,10 +303,10 @@
 
 
 /obj/structure/sink
-	name = "sink"
+	name = "水槽"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "sink"
-	desc = "A sink used for washing one's hands and face."
+	desc = "用于洗手和洗脸的水槽。"
 	///is someone currently washing at this sink?
 	var/busy = FALSE
 
@@ -331,22 +331,22 @@
 		return
 
 	if(busy)
-		balloon_alert_to_viewers("someone else is washing!")
+		balloon_alert_to_viewers("别人正在清洗！")
 		return
 
-	balloon_alert_to_viewers("washing hands...")
+	balloon_alert_to_viewers("正在洗手...")
 	playsound(loc, 'sound/effects/sink_long.ogg', 25, 1)
 
 	busy = TRUE
 	if(!do_after(user, 4 SECONDS, NONE, src, BUSY_ICON_GENERIC))
 		busy = FALSE
-		balloon_alert_to_viewers("stops washing")
+		balloon_alert_to_viewers("停止清洗")
 		return
 	busy = FALSE
 
 	user.wash()
 	user:update_inv_gloves()
-	balloon_alert_to_viewers("washes their hands")
+	balloon_alert_to_viewers("清洗双手")
 
 
 /obj/structure/sink/attackby(obj/item/I, mob/user, params)
@@ -355,13 +355,13 @@
 		return
 
 	if(busy)
-		to_chat(user, span_warning("Someone's already washing here."))
+		to_chat(user, span_warning("已经有人在洗了。"))
 		return
 
 	var/obj/item/reagent_containers/RG = I
 	if(istype(RG) && RG.is_open_container() && RG.reagents.total_volume < RG.reagents.maximum_volume)
 		RG.reagents.add_reagent(/datum/reagent/water, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
-		user.visible_message(span_notice("[user] fills \the [RG] using \the [src]."),span_notice("You fill \the [RG] using \the [src]."))
+		user.visible_message(span_notice("[user] 使用 \the [src] 为 \the [RG] 装填。"),span_notice("You fill \the [RG] using \the [src]."))
 		return
 
 	else if(istype(I, /obj/item/weapon/baton))
@@ -381,7 +381,7 @@
 		L.Stun(20 SECONDS)
 		L.set_timed_status_effect(20 SECONDS, /datum/status_effect/speech/stutter)
 		L.Paralyze(20 SECONDS)
-		L.visible_message(span_danger("[L] was stunned by [L.p_their()] wet [I]!"))
+		L.visible_message(span_danger("[L]被[L.p_their()]湿漉漉的[I]击晕了！"))
 
 	if(I.item_flags & ITEM_ABSTRACT)
 		return
@@ -390,7 +390,7 @@
 	if(!isturf(location))
 		return
 
-	to_chat(usr, span_notice("You start washing \the [I]."))
+	to_chat(usr, span_notice("你开始清洗\the [I]。"))
 
 	if(!do_after(user, 3 SECONDS, NONE, src, BUSY_ICON_BUILD))
 		return
@@ -405,15 +405,15 @@
 
 
 /obj/structure/sink/kitchen
-	name = "kitchen sink"
+	name = "厨房水槽"
 	icon_state = "sink2"
 
 /obj/structure/sink/bathroom
-	name = "bathroom sink"
+	name = "洗手池"
 	icon_state = "sink3"
 
 /obj/structure/sink/puddle	//splishy splashy ^_^
-	name = "puddle"
+	name = "水坑"
 	icon_state = "puddle"
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE

@@ -1,5 +1,5 @@
 /datum/fire_support/tele_cope
-	name = "teleport COPE"
+	name = "传送 应对"
 	fire_support_type = FIRESUPPORT_TYPE_TELE_COPE
 	scatter_range = 1
 	cooldown_duration = 10 SECONDS
@@ -22,7 +22,7 @@
 	for(var/mob/living/victim AS in destination_mobs)
 		victim.adjust_stagger(3 SECONDS)
 		victim.add_slowdown(3)
-		to_chat(victim, span_warning("You feel nauseous as reality warps around you!"))
+		to_chat(victim, span_warning("你感到一阵恶心，周围的现实开始扭曲！"))
 
 /datum/fire_support/tele_cope/New()
 	. = ..()

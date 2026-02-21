@@ -277,7 +277,7 @@
 	if(!isliving(base))
 		return FALSE
 
-	name = "Outfit: [base]"
+	name = "装备：[base]"
 	r_hand = base.r_hand
 	l_hand = base.l_hand
 

@@ -1,6 +1,6 @@
 /obj/item/weapon/sword
-	name = "claymore"
-	desc = "What are you standing around staring at this for? Get to killing!"
+	name = "阔剑"
+	desc = "你站在这儿盯着这个看什么？快去杀敌！"
 	icon_state = "claymore"
 	icon = 'icons/obj/items/weapons/swords.dmi'
 	worn_icon_state = "claymore"
@@ -37,14 +37,14 @@
 	special_attack?.remove_action(user)
 
 /obj/item/weapon/sword/suicide_act(mob/user)
-	user.visible_message(span_danger("[user] is falling on [user.p_their()] [name]! It looks like [user.p_theyre()] trying to commit suicide."))
+	user.visible_message(span_danger("[user] 正摔向 [user.p_their()] 的 [name]！看起来 [user.p_theyre()] 想自杀。"))
 	return(BRUTELOSS)
 
 //Special attack
 /datum/action/ability/activable/weapon_skill/sword_lunge
-	name = "Lunging strike"
+	name = "突刺斩击"
 	action_icon_state = "sword_lunge"
-	desc = "A powerful leaping strike. Cannot stun."
+	desc = "一次强力的跳跃攻击。无法击晕。"
 	ability_cost = 8
 	cooldown_duration = 6 SECONDS
 	keybinding_signals = list(
@@ -65,7 +65,7 @@
 	RegisterSignal(carbon_owner, COMSIG_MOVABLE_BUMP, PROC_REF(lunge_impact))
 	RegisterSignal(carbon_owner, COMSIG_MOVABLE_POST_THROW, PROC_REF(charge_complete))
 
-	carbon_owner.visible_message(span_danger("[carbon_owner] charges towards \the [A]!"))
+	carbon_owner.visible_message(span_danger("[carbon_owner] 向 \the [A] 发起冲锋！"))
 	playsound(owner, 'sound/effects/alien/tail_swipe2.ogg', 50, 0, 4)
 	carbon_owner.throw_at(A, lunge_range, 1, carbon_owner)
 	succeed_activate()
@@ -104,22 +104,22 @@
 	shake_camera(human_victim, 2, 1)
 
 /obj/item/weapon/sword/mercsword
-	name = "combat sword"
-	desc = "A dusty sword commonly seen in historical museums. Where you got this is a mystery, for sure. Only a mercenary would be nuts enough to carry one of these. Sharpened to deal massive damage."
+	name = "战斗剑"
+	desc = "一把布满灰尘的剑，常见于历史博物馆。你从哪弄来这玩意儿绝对是个谜。只有雇佣兵才会疯到随身携带这种东西。经过打磨，能造成巨大伤害。"
 	icon_state = "mercsword"
 	worn_icon_state = "machete"
 	force = 39
 
 /obj/item/weapon/sword/captain
-	name = "Ceremonial Sword"
-	desc = "A fancy ceremonial sword passed down from generation to generation. Despite this, it has been very well cared for, and is in top condition."
+	name = "礼仪剑"
+	desc = "一把世代相传的华丽礼仪佩剑。尽管如此，它仍被精心保养，处于最佳状态。"
 	icon_state = "mercsword"
 	worn_icon_state = "machete"
 	force = 55
 
 /obj/item/weapon/sword/machete
-	name = "\improper M2132 machete"
-	desc = "Latest issue of the TGMC Machete. Great for clearing out jungle or brush on outlying colonies. Found commonly in the hands of scouts and trackers, but difficult to carry with the usual kit."
+	name = "\improper M2132砍刀"
+	desc = "最新一期《TGMC砍刀》。非常适合清理偏远殖民地的丛林或灌木。常见于侦察兵和追踪者手中，但难以与常规装备一同携带。"
 	icon_state = "machete"
 	worn_icon_state = "machete"
 	force = 75
@@ -131,14 +131,14 @@
 	AddElement(/datum/element/strappable)
 
 /obj/item/weapon/sword/machete/alt
-	name = "machete"
-	desc = "A nice looking machete. Great for clearing out jungle or brush on outlying colonies. Found commonly in the hands of scouts and trackers, but difficult to carry with the usual kit."
+	name = "砍刀"
+	desc = "一把外观不错的砍刀。非常适合清理偏远殖民地的丛林或灌木。常见于侦察兵和追踪者手中，但通常的装备配置下携带不便。"
 	icon_state = "machete_alt"
 
 //FC's sword.
 /obj/item/weapon/sword/officersword
-	name = "officers sword"
-	desc = "This appears to be a rather old blade that has been well taken care of, it is probably a family heirloom. Oddly despite its probable non-combat purpose it is sharpened and not blunt."
+	name = "军官佩剑"
+	desc = "这似乎是一把相当古老的刀，保养得很好，很可能是一件家族传家宝。奇怪的是，尽管它可能并非用于战斗，但刀刃却被磨得很锋利，并不钝。"
 	icon_state = "officer_sword"
 	worn_icon_state = "officer_sword"
 	force = 75
@@ -151,8 +151,8 @@
 	AddElement(/datum/element/strappable)
 
 /obj/item/weapon/sword/commissar_sword
-	name = "commissars sword"
-	desc = "The pride of an imperial commissar, held high as they charge into battle."
+	name = "政委佩剑"
+	desc = "帝国政委的骄傲，在他们冲锋陷阵时高高举起。"
 	icon_state = "comsword"
 	worn_icon_state = "comsword"
 	force = 80
@@ -160,8 +160,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/weapon/sword/katana
-	name = "katana"
-	desc = "A finely made Japanese sword, with a well sharpened blade. The blade has been filed to a molecular edge, and is extremely deadly. Commonly found in the hands of mercenaries and yakuza."
+	name = "武士刀"
+	desc = "一把做工精良的日本刀，刀身经过精细打磨。刀刃被研磨至分子级锋利度，极具致命性。常见于雇佣兵和极道成员手中。"
 	icon_state = "katana"
 	worn_icon_state = "katana"
 	force = 50
@@ -171,12 +171,12 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/weapon/sword/katana/suicide_act(mob/user)
-	user.visible_message(span_danger("[user] is slitting [user.p_their()] stomach open with the [name]! It looks like [user.p_theyre()] trying to commit seppuku."))
+	user.visible_message(span_danger("[user]正用[name]切开[user.p_their()]的腹部！看起来[user.p_theyre()]想要切腹自尽。"))
 	return(BRUTELOSS)
 
 /obj/item/weapon/sword/katana/samurai
-	name = "tachi"
-	desc = "A genuine replica of an ancient blade. This one is in remarkably good condition. It could do some damage to everyone, including yourself."
+	name = "太刀"
+	desc = "一把真正的古剑复制品。这把保存得异常完好。它能对所有人造成伤害，包括你自己。"
 	icon_state = "katana_red"
 	worn_icon_state = "katana_red"
 	force = 60
@@ -184,8 +184,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/weapon/sword/katana/replica
-	name = "replica katana"
-	desc = "A cheap knock-off commonly found in regular knife stores. Can still do some damage."
+	name = "仿制武士刀"
+	desc = "普通刀具店常见的廉价仿制品。仍能造成一定伤害。"
 	force = 27
 	penetration = 0
 	throwforce = 7

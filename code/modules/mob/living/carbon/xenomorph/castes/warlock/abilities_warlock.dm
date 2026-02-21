@@ -52,7 +52,7 @@
 	name = "Psychic Shield"
 	action_icon_state = "psy_shield"
 	action_icon = 'icons/Xeno/actions/warlock.dmi'
-	desc = "Channel a psychic shield at your current location that can reflect most projectiles, the shield can only hold so much though... Activate again while active to detonate the shield forcibly, producing knockback. Must remain stationary to use."
+	desc = "在你当前位置构筑一道心灵护盾，能够反射大多数投射物，但护盾的承受能力有限……激活状态下再次使用可强制引爆护盾，产生击退效果。使用时必须保持静止。"
 	cooldown_duration = 10 SECONDS
 	ability_cost = 200
 	keybinding_signals = list(
@@ -82,7 +82,7 @@
 	return ..()
 
 /datum/action/ability/activable/xeno/psychic_shield/on_cooldown_finish()
-	owner.balloon_alert(owner, "Shield ready")
+	owner.balloon_alert(owner, "护盾就绪")
 	return ..()
 
 //Overrides parent.
@@ -103,7 +103,7 @@
 			cancel_shield()
 			return
 		if(ability_cost > xeno_owner.plasma_stored)
-			owner.balloon_alert(owner, "need [ability_cost - xeno_owner.plasma_stored] more plasma!")
+			owner.balloon_alert(owner, "需要[ability_cost - xeno_owner.plasma_stored]点等离子体！")
 			return FALSE
 		if(can_use_action(FALSE, ABILITY_USE_BUSY))
 			shield_blast(targetted_atom)
@@ -117,11 +117,11 @@
 	// Blocked by something in front of us.
 	var/turf/target_turf = get_step(owner, owner.dir)
 	if(target_turf.density)
-		owner.balloon_alert(owner, "Obstructed by [target_turf]")
+		owner.balloon_alert(owner, "被 [target_turf] 阻挡")
 		return
 	for(var/atom/movable/affected AS in target_turf)
 		if(affected.density)
-			owner.balloon_alert(owner, "Obstructed by [affected]")
+			owner.balloon_alert(owner, "被 [affected] 阻挡")
 			return
 
 	succeed_activate()
@@ -171,7 +171,7 @@
 	active_shield.reflect_projectiles(targetted_atom)
 
 	if(!silent)
-		owner.visible_message(span_xenowarning("[owner] sends out a huge blast of psychic energy!"), span_xenowarning("We send out a huge blast of psychic energy!"))
+		owner.visible_message(span_xenowarning("[owner] 释放出一股巨大的心灵能量冲击！"), span_xenowarning("We send out a huge blast of psychic energy!"))
 
 	var/turf/lower_left
 	var/turf/upper_right
@@ -327,7 +327,7 @@
 	name = "Psychic Crush"
 	action_icon_state = "psy_crush"
 	action_icon = 'icons/Xeno/actions/warlock.dmi'
-	desc = "Channel an expanding AOE crush effect, activating it again pre-maturely crushes enemies over an area. The longer it is channeled, the larger area it will affect, but will consume more plasma."
+	desc = "引导一个不断扩大的范围性碾压效果，再次提前激活会在区域内碾压敌人。引导时间越长，影响范围越大，但会消耗更多等离子体。"
 	ability_cost = 40
 	cooldown_duration = 12 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY
@@ -373,7 +373,7 @@
 		REMOVE_TRAIT(xeno_owner, TRAIT_IMMOBILE, PSYCHIC_CRUSH_ABILITY_TRAIT)
 		return fail_activate()
 
-	owner.visible_message(span_xenowarning("\The [owner] starts channeling their psychic might!"), span_xenowarning("We start channeling our psychic might!"))
+	owner.visible_message(span_xenowarning("\The [owner] 开始汇聚他们的心灵之力！"), span_xenowarning("We start channeling our psychic might!"))
 	REMOVE_TRAIT(xeno_owner, TRAIT_IMMOBILE, PSYCHIC_CRUSH_ABILITY_TRAIT)
 	owner.add_movespeed_modifier(MOVESPEED_ID_WARLOCK_CHANNELING, TRUE, 0, NONE, TRUE, 0.9)
 
@@ -398,10 +398,10 @@
 ///Checks if the owner is close enough/can see the target
 /datum/action/ability/activable/xeno/psy_crush/proc/check_distance(atom/target, sight_needed)
 	if(get_dist(owner, target) > ability_range)
-		owner.balloon_alert(owner, "Too far!")
+		owner.balloon_alert(owner, "距离太远！")
 		return FALSE
 	if(sight_needed && !line_of_sight(owner, target, 9))
-		owner.balloon_alert(owner, "Out of sight!")
+		owner.balloon_alert(owner, "目标消失！")
 		return FALSE
 	return TRUE
 
@@ -440,7 +440,7 @@
 /datum/action/ability/activable/xeno/psy_crush/proc/crush(turf/target)
 	var/crush_cost = ability_cost * current_iterations
 	if(crush_cost > xeno_owner.plasma_stored)
-		owner.balloon_alert(owner, "[crush_cost - xeno_owner.plasma_stored] more plasma!")
+		owner.balloon_alert(owner, "还需要 [crush_cost - xeno_owner.plasma_stored] 点等离子体！")
 		stop_crush()
 		return
 	if(!check_distance(target))
@@ -522,7 +522,7 @@
 	filters_applied = null
 
 /datum/action/ability/activable/xeno/psy_crush/on_cooldown_finish()
-	owner.balloon_alert(owner, "Crush ready")
+	owner.balloon_alert(owner, "碾压准备就绪")
 	return ..()
 
 /obj/effect/xeno/crush_warning
@@ -565,7 +565,7 @@
 	name = "Psychic Blast"
 	action_icon_state = "psy_blast"
 	action_icon = 'icons/Xeno/actions/warlock.dmi'
-	desc = "Launch a blast of psychic energy that deals light damage and knocks back enemies in its AOE. Must remain stationary for a few seconds to use."
+	desc = "发射一道心灵能量冲击，对范围内的敌人造成轻微伤害并击退。使用时必须保持静止数秒。"
 	cooldown_duration = 6 SECONDS
 	ability_cost = 230
 	keybinding_signals = list(
@@ -606,7 +606,7 @@
 	selectable_ammo_types += /datum/ammo/energy/xeno/psy_blast/psy_lance
 
 /datum/action/ability/activable/xeno/psy_blast/on_cooldown_finish()
-	owner.balloon_alert(owner, "Psy blast ready")
+	owner.balloon_alert(owner, "灵能冲击准备就绪")
 	return ..()
 
 /datum/action/ability/activable/xeno/psy_blast/action_activate()
@@ -624,13 +624,13 @@
 	switch(selected_ammo.type)
 		if(/datum/ammo/energy/xeno/psy_blast)
 			name = "Psychic Blast ([ability_cost])"
-			desc = "Launch a blast of psychic energy that deals light burn damage and staggers in an area. Direct hits deal additional light brute damage."
+			desc = "发射一道心灵能量冲击，对区域内目标造成轻度灼烧伤害并使其踉跄。直接命中还会造成额外的轻度钝击伤害。"
 		if(/datum/ammo/energy/xeno/psy_blast/psy_lance)
 			name = "Psychic Lance ([ability_cost])"
-			desc = "Launch a blast of psychic energy that deals high brute damage with high armor penetration. This can hit multiple mobs and goes through structures."
+			desc = "发射一道心灵能量冲击，造成高额钝击伤害并具有高护甲穿透。可击中多个目标并穿透结构。"
 		if(/datum/ammo/energy/xeno/psy_blast/psy_drain)
 			name = "Psychic Drain ([ability_cost])"
-			desc = "Launch a blast of psychic energy that deals light stamina damage, staggers, and knockbacks in a smaller area. Direct hits deal additional light stamina damage and briefly knockdowns."
+			desc = "发射一道心灵能量冲击波，在小范围内造成轻微耐力伤害、踉跄和击退效果。直接命中会额外造成轻微耐力伤害并短暂击倒目标。"
 	desc += " Must remain stationary for a few seconds to use." // Extra space intentional.
 	owner.balloon_alert(xeno_owner, "[selected_ammo]")
 	update_button_icon()
@@ -645,17 +645,17 @@
 	var/datum/ammo/energy/xeno/selected_ammo = xeno_owner.ammo
 	if(selected_ammo.ability_cost > xeno_owner.plasma_stored)
 		if(!silent)
-			owner.balloon_alert(owner, "[selected_ammo.ability_cost - xeno_owner.plasma_stored] more plasma!")
+			owner.balloon_alert(owner, "还需要 [selected_ammo.ability_cost - xeno_owner.plasma_stored] 点等离子体！")
 		return FALSE
 
 /datum/action/ability/activable/xeno/psy_blast/use_ability(atom/A)
-	owner.balloon_alert(owner, "We channel our psychic power")
+	owner.balloon_alert(owner, "我们引导着心灵力量")
 	generate_particles(A, 7)
 	var/datum/ammo/energy/xeno/ammo_type = xeno_owner.ammo
 	xeno_owner.update_glow(3, 3, ammo_type.glow_color)
 
 	if(!do_after(xeno_owner, 1 SECONDS, IGNORE_TARGET_LOC_CHANGE, A, BUSY_ICON_DANGER) || !can_use_ability(A, FALSE) || !(A in range(get_screen_size(TRUE), owner)))
-		owner.balloon_alert(owner, "Our focus is disrupted")
+		owner.balloon_alert(owner, "我们的注意力被打乱了")
 		end_channel()
 		return fail_activate()
 

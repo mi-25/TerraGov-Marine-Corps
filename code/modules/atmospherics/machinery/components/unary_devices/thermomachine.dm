@@ -2,8 +2,8 @@
 	icon = 'icons/obj/machines/cryogenics.dmi'
 	icon_state = "freezer"
 
-	name = "thermomachine"
-	desc = "Heats or cools gas in connected pipes."
+	name = "温控机"
+	desc = "对连接管道中的气体进行加热或冷却。"
 
 	density = TRUE
 	max_integrity = 300
@@ -50,7 +50,7 @@
 		add_overlay(getpipeimage(icon, "scrub_cap", initialize_directions))
 
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer
-	name = "freezer"
+	name = "冷冻柜"
 	icon_state = "freezer"
 	icon_state_off = "freezer"
 	icon_state_on = "freezer_1"
@@ -68,7 +68,7 @@
 		target_temperature = min_temperature
 
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on/coldroom
-	name = "cold room freezer"
+	name = "冷藏室冷冻柜"
 
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer/on/coldroom/New()
 	. = ..()
@@ -82,7 +82,7 @@
 	min_temperature = max(T0C - (initial(min_temperature) + L * 15), TCMB) //73.15K with T1 stock parts
 
 /obj/machinery/atmospherics/components/unary/thermomachine/heater
-	name = "heater"
+	name = "加热器"
 	icon_state = "heater"
 	icon_state_off = "heater"
 	icon_state_on = "heater_1"

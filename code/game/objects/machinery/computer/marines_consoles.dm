@@ -1,6 +1,6 @@
 /obj/machinery/computer/marine_card
-	name = "Identification Computer"
-	desc = "You can use this to change ID's."
+	name = "身份识别计算机"
+	desc = "你可以用它来更换身份识别卡。"
 	icon_state = "computer_small"
 	screen_overlay = "id"
 	req_access = list(ACCESS_MARINE_LOGISTICS)
@@ -22,7 +22,7 @@
 		var/obj/item/card/id/idcard = I
 		if(ACCESS_MARINE_LOGISTICS in idcard.access)
 			if(scan && modify)
-				to_chat(user, "Both slots are full already. Remove a card first.")
+				to_chat(user, "两个卡槽都已满。请先移除一张卡。")
 				return
 			if(!scan)
 				user.drop_held_item()
@@ -34,7 +34,7 @@
 				modify = idcard
 		else
 			if(modify)
-				to_chat(user, "The modifying slot is full already. Remove a card first.")
+				to_chat(user, "改装槽位已满。请先移除一张卡片。")
 				return
 			user.drop_held_item()
 			idcard.forceMove(src)
@@ -246,7 +246,7 @@
 				if (check_access(scan))
 					authenticated = 1
 			else if ((!( authenticated ) && (issilicon(usr))) && (!modify))
-				to_chat(usr, "You can't modify an ID without an ID inserted to modify. Once one is in the modify slot on the computer, you can log in.")
+				to_chat(usr, "没有插入ID卡，无法修改。将ID卡插入电脑的修改槽后，即可登录。")
 		if ("logout")
 			authenticated = 0
 		if("access")
@@ -275,11 +275,11 @@
 							break
 
 					if(!jobdatum)
-						to_chat(usr, span_warning("No log exists for this job."))
+						to_chat(usr, span_warning("该任务无日志记录。"))
 						return
 
 					if(!modify)
-						to_chat(usr, span_warning("No card to modify!"))
+						to_chat(usr, span_warning("没有可修改的卡！"))
 						return
 
 					modify.access = jobdatum.get_access()
@@ -295,7 +295,7 @@
 					if(temp_name)
 						modify.registered_name = temp_name
 					else
-						src.visible_message(span_notice("[src] buzzes rudely."))
+						src.visible_message(span_notice("[src] 粗鲁地发出嗡嗡声。"))
 		if ("account")
 			if (authenticated)
 				var/t2 = modify
@@ -330,7 +330,7 @@
 	updateUsrDialog()
 
 /obj/machinery/computer/marine_card/centcom
-	name = "CentCom Identification Computer"
+	name = "中央司令部身份识别计算机"
 	circuit = /obj/item/circuitboard/computer/card/centcom
 	req_access = list(ACCESS_NT_CORPORATE)
 
@@ -341,8 +341,8 @@
 //But in the long run it's not really a big deal.
 
 /obj/machinery/computer/squad_changer
-	name = "Squad Distribution Computer"
-	desc = "You can use this to change someone's squad."
+	name = "小队分配计算机"
+	desc = "你可以用这个来更改某人的所属小队。"
 	icon_state = "computer_small"
 	screen_overlay = "guest"
 	req_access = list(ACCESS_MARINE_LOGISTICS)
@@ -359,7 +359,7 @@
 	if(istype(I, /obj/item/card/id))
 		var/obj/item/card/id/idcard = I
 		if(modify)
-			to_chat(user, "Remove the inserted card first.")
+			to_chat(user, "请先取出已插入的卡片。")
 			return
 
 		user.drop_held_item()
@@ -439,18 +439,18 @@
 				for(var/datum/squad/Q in SSjob.squads)
 					if(findtext(modify.assignment, Q.name)) //Found one!
 						modify.access -= Q.access //Remove any access found.
-						to_chat(usr, "Old squad access removed.")
+						to_chat(usr, "旧小队权限已移除。")
 
 				if(selected) //Now we have a proper squad. Change their ID to it.
 					modify.assignment = "[selected.name] [modify.rank]" //Change the assignment - "Alpha Squad Marine"
 					modify.access += selected.access //Add their new squad access (if anything) to their ID.
-					to_chat(usr, "[selected.name] Squad added to card.")
+					to_chat(usr, "[selected.name] 班已加入卡片。")
 				else
-					to_chat(usr, "No squad selected.")
+					to_chat(usr, "未选择小队。")
 				modify.name = "[modify.registered_name]'s ID Card ([modify.assignment])" //Reset our ID name.
 			else
-				to_chat(usr, "You need to insert a card to modify.")
+				to_chat(usr, "需要插入一张卡片进行修改。")
 		else
-			to_chat(usr, "You don't have sufficient access to use this console.")
+			to_chat(usr, "你没有足够的权限使用此控制台。")
 
 	updateUsrDialog()

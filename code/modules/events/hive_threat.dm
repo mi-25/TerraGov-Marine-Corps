@@ -1,6 +1,6 @@
 //A human groundside is identified as a threat to the hive, and the hive is rewarded for draining this target
 /datum/round_event_control/hive_threat
-	name = "Hive threat"
+	name = "蜂巢威胁"
 	typepath = /datum/round_event/hive_threat
 	weight = 10
 	earliest_start = 30 MINUTES

@@ -1,12 +1,12 @@
 /obj/effect/spawner/random/misc/structure
-	name = "Random base misc structure spawner"
+	name = "随机基地杂项结构生成器"
 	icon_state = "random_securecrate"
 	loot = list(
 		/obj/structure/prop/mainship/errorprop,
 	)
 
 /obj/effect/spawner/random/misc/structure/grille
-	name = "grille spawner"
+	name = "格栅生成器"
 	icon_state = "random_grille"
 	spawn_loot_chance = 90
 	loot = list( // 80% chance normal grille, 10% chance of broken, 10% chance of nothing
@@ -15,7 +15,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/wood_barricade //does not support any direction but south, so only use on wood barricades facing south
-	name = "wood barricade spawner"
+	name = "木制路障生成器"
 	icon_state = "random_wood_barricade"
 	spawn_loot_chance = 30
 	loot = list(
@@ -24,7 +24,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/closet
-	name = "closet spawner"
+	name = "储物柜生成器"
 	icon_state = "random_closet"
 	spawn_loot_chance = 80
 	loot = list(
@@ -87,7 +87,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/security_closet
-	name = "security closet spawner"
+	name = "安全储物柜生成器"
 	icon_state = "random_security_closet"
 	spawn_loot_chance = 80
 	loot = list(
@@ -95,7 +95,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/rad_closet
-	name = "radiation closet spawner"
+	name = "辐射储藏室生成器"
 	icon_state = "random_radsuit"
 	spawn_loot_chance = 90
 	loot = list(
@@ -104,7 +104,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/fire_closet
-	name = "radiation closet spawner"
+	name = "辐射储藏室生成器"
 	icon_state = "random_firecloset"
 	spawn_loot_chance = 85
 	loot = list(
@@ -113,7 +113,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/cabinet
-	name = "cabinet or wood spawner"
+	name = "储物柜或木质生成器"
 	icon_state = "random_cabinet"
 	spawn_loot_chance = 95
 	loot = list(
@@ -122,7 +122,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/securecloset
-	name = "secure closet spawner"
+	name = "安全储物柜生成器"
 	icon_state = "random_secure_closet"
 	spawn_loot_chance = 65
 	loot = list(
@@ -157,7 +157,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/emcloset
-	name = "emergency closet spawner"
+	name = "紧急储物柜生成器"
 	icon_state = "random_emcloset"
 	spawn_loot_chance = 95
 	loot = list(
@@ -166,7 +166,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/m42c
-	name = "m42c spawner"
+	name = "m42c 生成器"
 	icon_state = "random_m42c"
 	spawn_loot_chance = 1
 	loot = list(
@@ -178,7 +178,7 @@
 	spawn_loot_chance = 10
 
 /obj/effect/spawner/random/misc/structure/random_piano
-	name = "random piano spawner"
+	name = "随机钢琴生成器"
 	icon_state = "random_piano"
 	loot = list(
 		/obj/structure/device/broken_piano,
@@ -186,7 +186,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/filingcabinet
-	name = "filing cabinet or metal spawner"
+	name = "文件柜或金属生成器"
 	icon_state = "random_filingcabinet"
 	spawn_loot_chance = 50
 	loot = list(
@@ -209,7 +209,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/girder
-	name = "girder spawner"
+	name = "钢梁生成器"
 	icon_state = "random_girder"
 	spawn_loot_chance = 65
 	loot = list(
@@ -230,7 +230,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/table_parts
-	name = "table parts spawner"
+	name = "部件生成器"
 	icon_state = "random_tableparts"
 	spawn_loot_chance = 95
 	loot = list(
@@ -244,7 +244,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/crate
-	name = "crate spawner"
+	name = "板条箱生成器"
 	icon_state = "random_crate"
 	spawn_loot_chance = 75
 	loot = list(
@@ -263,7 +263,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/suit_storage
-	name = "suit storage spawner"
+	name = "护甲存储生成器"
 	icon_state = "random_suit_storage"
 	spawn_loot_chance = 95
 	loot = list(
@@ -272,7 +272,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/showcase
-	name = "robotic showcase spawner"
+	name = "机器人展示生成器"
 	icon_state = "random_showcase"
 	loot = list(
 		/obj/structure/showcase = 30,
@@ -282,7 +282,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/table_or_rack
-	name = "table or rack spawner"
+	name = "桌子或枪架生成器"
 	icon_state = "random_rack_or_table_spawner"
 	loot = list(
 		/obj/effect/spawner/random/misc/structure/table,
@@ -302,14 +302,14 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/table
-	name = "table spawner"
+	name = "生成器"
 	icon_state = "random_table"
 	spawn_loot_chance = 75
 	loot_subtype_path = /obj/structure/table
 	loot = list()
 
 /obj/effect/spawner/random/misc/structure/wooden_table
-	name = "wood table spawner"
+	name = "木桌生成器"
 	icon_state = "random_wood_table"
 	spawn_loot_chance = 95
 	loot = list(
@@ -318,7 +318,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/broken_reinforced_window
-	name = "broken reinforced window spawner"
+	name = "破损的强化窗户生成器"
 	icon_state = "random_col_rwindow"
 	spawn_loot_chance = 60
 	loot = list(
@@ -327,7 +327,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/broken_reinforced_window/colonyspawn
-	name = "broken reinforced window spawner"
+	name = "破损的强化窗户生成器"
 	icon_state = "random_col_rwindow"
 	spawn_loot_chance = 100
 	loot = list(
@@ -336,7 +336,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/broken_window
-	name = "broken window spawner"
+	name = "破损窗户生成器"
 	icon_state = "random_col_window"
 	spawn_loot_chance = 50
 	loot = list(
@@ -345,7 +345,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/broken_prison_window
-	name = "broken prison window spawner"
+	name = "破损监狱窗户生成器"
 	icon_state = "random_prison_window"
 	spawn_loot_chance = 100
 	loot = list(
@@ -362,7 +362,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/barrel
-	name = "barrel spawner"
+	name = "枪管生成器"
 	icon_state = "random_barrel"
 	loot = list(
 		/obj/structure/largecrate/random/barrel/blue = 20,
@@ -375,7 +375,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/curtain
-	name = "curtain spawner"
+	name = "幕布生成器"
 	icon_state = "random_curtain"
 	spawn_with_original_direction = TRUE
 	loot = list(
@@ -384,7 +384,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/curtain/medical
-	name = "medical curtain spawner"
+	name = "医疗隔帘生成器"
 	icon_state = "random_med_curtain"
 	spawn_with_original_direction = TRUE
 	loot = list(
@@ -393,7 +393,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/chair_or_metal
-	name = "chair or metal spawner"
+	name = "椅子或金属生成器"
 	icon_state = "random_chair"
 	spawn_loot_chance = 95
 	loot = list(
@@ -402,7 +402,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/chair_or_metal/north
-	name = "chair or metal spawner"
+	name = "椅子或金属生成器"
 	icon_state = "random_chair_north"
 	spawn_loot_chance = 95
 	spawn_with_original_direction = TRUE
@@ -412,7 +412,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/chair_or_metal/west
-	name = "chair or metal spawner"
+	name = "椅子或金属生成器"
 	icon_state = "random_chair_west"
 	spawn_loot_chance = 95
 	spawn_with_original_direction = TRUE
@@ -422,7 +422,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/chair_or_metal/east
-	name = "chair or metal spawner"
+	name = "椅子或金属生成器"
 	icon_state = "random_chair_east"
 	spawn_loot_chance = 95
 	spawn_with_original_direction = TRUE
@@ -432,7 +432,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/office_chair_or_metal
-	name = "office chair or metal spawner"
+	name = "办公椅或金属生成器"
 	icon_state = "random_office_chair"
 	spawn_loot_chance = 95
 	loot = list(
@@ -441,7 +441,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/office_chair_or_metal/dark
-	name = "office chair or metal spawner"
+	name = "办公椅或金属生成器"
 	icon_state = "random_office_chair"
 	spawn_loot_chance = 95
 	loot = list(
@@ -450,7 +450,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/office_chair_or_metal/east
-	name = "office chair or metal spawner"
+	name = "办公椅或金属生成器"
 	icon_state = "random_office_chair_east"
 	spawn_with_original_direction = TRUE
 	spawn_loot_chance = 95
@@ -460,7 +460,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/office_chair_or_metal/dark/east
-	name = "office chair or metal spawner"
+	name = "办公椅或金属生成器"
 	icon_state = "random_office_chair_east"
 	spawn_with_original_direction = TRUE
 	spawn_loot_chance = 95
@@ -470,7 +470,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/office_chair_or_metal/west
-	name = "office chair or metal spawner"
+	name = "办公椅或金属生成器"
 	icon_state = "random_office_chair_west"
 	spawn_with_original_direction = TRUE
 	spawn_loot_chance = 95
@@ -480,7 +480,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/office_chair_or_metal/dark/west
-	name = "office chair or metal spawner"
+	name = "办公椅或金属生成器"
 	icon_state = "random_office_chair_west"
 	spawn_with_original_direction = TRUE
 	spawn_loot_chance = 95
@@ -490,7 +490,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/office_chair_or_metal/north
-	name = "office chair or metal spawner"
+	name = "办公椅或金属生成器"
 	icon_state = "random_office_chair_north"
 	spawn_with_original_direction = TRUE
 	spawn_loot_chance = 95
@@ -500,7 +500,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/office_chair_or_metal/dark/north
-	name = "office chair or metal spawner"
+	name = "办公椅或金属生成器"
 	icon_state = "random_office_chair_north"
 	spawn_with_original_direction = TRUE
 	spawn_loot_chance = 95
@@ -510,7 +510,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/stool
-	name = "stool spawner"
+	name = "工具生成器"
 	icon_state = "random_stool"
 	spawn_loot_chance = 95
 	loot = list(
@@ -518,7 +518,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/flavorvending
-	name = "vending spawner"
+	name = "贩卖机生成器"
 	icon_state = "random_vending"
 	spawn_loot_chance = 95
 	loot = list(
@@ -598,7 +598,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/supplycrate
-	name = "supply crate spawner"
+	name = "补给板条箱生成器"
 	icon_state = "random_supplycrate"
 	spawn_loot_chance = 90
 	loot = list(
@@ -613,7 +613,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/supplycrate/secureweighted
-	name = "secure crate spawner"
+	name = "安全板条箱生成器"
 	icon_state = "random_securecrate"
 	spawn_loot_chance = 90
 	loot = list(
@@ -622,7 +622,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/supplycrate/secure_supplies
-	name = "secure supplies spawner"
+	name = "补给生成器"
 	icon_state = "random_securecrate"
 	loot = list(
 		/obj/structure/largecrate/supply/supplies/mre = 55,
@@ -634,7 +634,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/broken_ship_window
-	name = "broken ship window spawner"
+	name = "破损舰船舷窗生成器"
 	icon_state = "random_ship_window"
 	spawn_loot_chance = 80
 	loot = list(
@@ -675,11 +675,11 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large
-	name = "base large structure spawner"
+	name = "大型结构生成器"
 	icon_state = null
 
 /obj/effect/spawner/random/misc/structure/large/car
-	name = "random car spawner"
+	name = "随机车辆生成器"
 	icon_state = "carone"
 	icon = 'icons/effects/random/64x64.dmi'
 	spawn_with_original_direction = TRUE
@@ -702,7 +702,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/carone
-	name = "random car spawner damage one"
+	name = "随机车辆生成器损坏一"
 	icon_state = "carone"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/red/damageone,
@@ -722,7 +722,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/cartwo
-	name = "random car spawner damage two"
+	name = "随机车辆生成器损坏二"
 	icon_state = "cartwo"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/red/damagetwo,
@@ -742,7 +742,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/carthree
-	name = "random car spawner damage three"
+	name = "随机车辆生成器损坏三"
 	icon_state = "carthree"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/red/damagethree,
@@ -762,7 +762,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/carfour
-	name = "random car spawner damage four"
+	name = "随机车辆生成器损坏四"
 	icon_state = "carfour"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/red/damagefour,
@@ -782,7 +782,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/carfive
-	name = "random car spawner damage five"
+	name = "随机车辆生成器损坏五"
 	icon_state = "carfive"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/red/damagefive,
@@ -802,7 +802,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/red
-	name = "random car spawner red"
+	name = "随机车辆生成器 红色"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/red = 75,
 		/obj/structure/prop/urban/vehicles/meridian/red/damageone = 35,
@@ -813,7 +813,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/blue
-	name = "random car spawner blue"
+	name = "随机车辆生成器 蓝色"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/blue = 75,
 		/obj/structure/prop/urban/vehicles/meridian/blue/damageone = 35,
@@ -824,7 +824,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/green
-	name = "random car spawner green"
+	name = "随机车辆生成器 绿色"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/green = 75,
 		/obj/structure/prop/urban/vehicles/meridian/green/damageone = 35,
@@ -835,7 +835,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/black
-	name = "random car spawner black"
+	name = "随机车辆生成器 黑色"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/black = 75,
 		/obj/structure/prop/urban/vehicles/meridian/black/damageone = 35,
@@ -846,7 +846,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/brown
-	name = "random car spawner brown"
+	name = "随机车辆生成器 棕色"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/brown = 75,
 		/obj/structure/prop/urban/vehicles/meridian/brown/damageone = 35,
@@ -857,7 +857,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/cop
-	name = "random car spawner cop"
+	name = "随机车辆生成器警察"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/cop = 75,
 		/obj/structure/prop/urban/vehicles/meridian/cop/damageone = 35,
@@ -868,7 +868,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/desat_blue
-	name = "random car spawner desat blue"
+	name = "随机车辆生成器 饱和度降低 蓝色"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/desat_blue = 75,
 		/obj/structure/prop/urban/vehicles/meridian/desat_blue/damageone = 35,
@@ -879,7 +879,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/light_blue
-	name = "random car spawner light blue"
+	name = "随机车辆生成器 浅蓝色"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/light_blue = 75,
 		/obj/structure/prop/urban/vehicles/meridian/light_blue/damageone = 35,
@@ -890,7 +890,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/pink
-	name = "random car spawner pink"
+	name = "随机车辆生成器 粉色"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/pink = 75,
 		/obj/structure/prop/urban/vehicles/meridian/pink/damageone = 35,
@@ -901,7 +901,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/purple
-	name = "random car spawner purple"
+	name = "随机车辆生成器 紫色"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/purple = 75,
 		/obj/structure/prop/urban/vehicles/meridian/purple/damageone = 35,
@@ -912,7 +912,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/turquoise
-	name = "random car spawner turquoise"
+	name = "随机载具生成器 蓝绿色"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/turquoise = 75,
 		/obj/structure/prop/urban/vehicles/meridian/turquoise/damageone = 35,
@@ -923,7 +923,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/orange
-	name = "random car spawner orange"
+	name = "随机车辆生成器 橙色"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/orange = 75,
 		/obj/structure/prop/urban/vehicles/meridian/orange/damageone = 35,
@@ -934,7 +934,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/generic
-	name = "random car spawner generic"
+	name = "随机车辆生成器通用"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/generic = 75,
 		/obj/structure/prop/urban/vehicles/meridian/generic/damageone = 35,
@@ -945,7 +945,7 @@
 	)
 
 /obj/effect/spawner/random/misc/structure/large/car/taxi
-	name = "random car spawner taxi"
+	name = "随机车辆生成器 出租车"
 	loot = list(
 		/obj/structure/prop/urban/vehicles/meridian/taxi = 75,
 		/obj/structure/prop/urban/vehicles/meridian/taxi/damageone = 35,

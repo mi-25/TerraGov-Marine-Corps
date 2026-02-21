@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(strings)
-	name = "Strings"
+	name = "字符串"
 	flags = SS_NO_FIRE|SS_NO_INIT
 
 	var/list/list/externally_loaded_lists = list()

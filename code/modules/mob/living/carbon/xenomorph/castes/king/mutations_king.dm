@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/stone_armor
 	name = "Stone Armor"
-	desc = "Allies that are in range of Petrify are granted 5/10/15 armor for the duration of it."
+	desc = "处于石化范围内的友军在此期间获得5/10/15点护甲。"
 	/// For each structure, the amount of armor to grant to viewing xenomorphs during Petrify.
 	var/armor_per_structure = 5
 
@@ -28,7 +28,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/minion_king
 	name = "Minion King"
-	desc = "Psychic Summon only affects minions. Once Psychic Summon is completed, the summoned gain a 0/10/20% melee damage increase for 30 seconds."
+	desc = "心灵召唤仅影响仆从。一旦心灵召唤完成，被召唤的仆从将在30秒内获得0/10/20%的近战伤害加成。"
 	/// For the first structure, the flat amount to increase the melee damage multiplier that Psychic Summon gives to the summoned.
 	var/amount_initial = -0.1
 	/// For each structure, the flat amount to increase the melee damage multiplier that Psychic Summon gives to the summoned.
@@ -71,7 +71,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/widefall
 	name = "Widefall"
-	desc = "Nightfall's range is increased by 1/2/3 tiles and its cooldown is increased by 10 seconds."
+	desc = "夜袭的射程增加1/2/3格，冷却时间增加10秒。"
 	/// For the first structure, the amount of deciseconds to increase Nightfall's cooldown by.
 	var/cooldown_initial = 10 SECONDS
 	/// For each structure, the amount to increase Nightfall's range by.
@@ -109,7 +109,7 @@
 
 /datum/mutation_upgrade/veil/flarefall
 	name = "Flarefall"
-	desc = "Nightfall's range is decreased by 6/5/4 tiles. Nightfall will cause flares in its affected radius to lose 65/80/95% of their remaining duration."
+	desc = "夜幕降临的射程减少6/5/4格。夜幕降临会导致其影响范围内的照明弹损失65/80/95%的剩余持续时间。"
 	/// For the first structure, the amount to increase Nightfall's range by.
 	var/range_initial = -7
 	/// For each structure, the amount to increase Nightfall's range by.

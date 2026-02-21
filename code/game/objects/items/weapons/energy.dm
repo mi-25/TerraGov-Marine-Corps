@@ -8,8 +8,8 @@
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/weapon/energy/axe
-	name = "energy axe"
-	desc = "An energised battle axe."
+	name = "能量斧"
+	desc = "一把充能战斧。"
 	icon_state = "axe0"
 	force = 40
 	force_activated = 150
@@ -23,27 +23,27 @@
 	edge = 1
 
 /obj/item/weapon/energy/axe/suicide_act(mob/user)
-	user.visible_message(span_danger("[user] swings the [name] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide."))
+	user.visible_message(span_danger("[user]将[name]挥向[user.p_their()]的头部！看起来[user.p_theyre()]试图自杀。"))
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/weapon/energy/axe/attack_self(mob/user)
 	active = !active
 	if(active)
-		to_chat(user, span_notice("The axe is now energised."))
+		to_chat(user, span_notice("斧头现在已充能。"))
 		force = force_activated
 		icon_state = "axe1"
 		w_class = WEIGHT_CLASS_HUGE
 		heat = 3500
 	else
-		to_chat(user, span_notice("The axe can now be concealed."))
+		to_chat(user, span_notice("这把斧头现在可以隐藏了。"))
 		force = initial(force)
 		icon_state = "axe0"
 		w_class = WEIGHT_CLASS_HUGE
 		heat = 0
 
 /obj/item/weapon/energy/sword
-	name = "energy sword"
-	desc = "May the force be within you."
+	name = "能量剑"
+	desc = "愿原力与你同在。"
 	icon_state = "sword"
 	force = 10
 	force_activated = 40
@@ -117,8 +117,8 @@
 		special_attack?.remove_action(user)
 
 /obj/item/weapon/energy/sword/pirate
-	name = "energy cutlass"
-	desc = "Arrrr matey."
+	name = "能量弯刀"
+	desc = "哟嚯，伙计。"
 	icon_state = "cutlass"
 	sword_color = "on"
 
@@ -137,7 +137,7 @@
 
 /obj/item/weapon/energy/sword/som
 	icon_state = "som_sword"
-	desc = "A SOM energy sword. Designed to cut through armored plate."
+	desc = "一把火星之子能量剑。专为切割装甲板设计。"
 	force_activated = 50
 	sword_color = "on"
 
@@ -155,8 +155,8 @@
 
 
 /obj/item/weapon/twohanded/dualsaber
-	name = "double-bladed energy sword"
-	desc = "Handle with care."
+	name = "双刃能量剑"
+	desc = "小心轻放。"
 	icon = 'icons/obj/items/weapons/energy.dmi'
 	icon_state = "dualsaber"
 	worn_icon_state = "dualsaber"

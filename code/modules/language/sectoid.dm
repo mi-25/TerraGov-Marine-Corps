@@ -1,6 +1,6 @@
 /datum/language/sectoid
-	name = "Psi-Speak"
-	desc = "A language consisting of psionic emissions created from thought, it sounds like garbled nonsense to those who are not trained to mentally decrypt it."
+	name = "灵语"
+	desc = "一种由思维产生的灵能发射构成的语言，对于未经训练、无法在精神层面解密的人来说，听起来就像是混乱的胡言乱语。"
 	speech_verb = "emits"
 	ask_verb = "questions"
 	exclaim_verb = "shrieks"

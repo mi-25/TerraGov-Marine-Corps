@@ -1,5 +1,5 @@
 /obj/effect/turf_decal/tile/transparent
-	name = "tile decal"
+	name = "瓦片贴花"
 	icon = 'icons/turf/decals.dmi'
 	icon_state = "tile_corner"
 	alpha = 110
@@ -7,546 +7,546 @@
 /// Blue tiles
 
 /obj/effect/turf_decal/tile/transparent/blue
-	name = "blue corner"
+	name = "蓝色角落"
 	color = "#52B4E9"
 
 /obj/effect/turf_decal/tile/transparent/blue/opposingcorners //Two corners on opposite ends of each other (i.e. Top Right to Bottom Left). Allows for faster mapping and less complicated turf decal storage.
 	icon_state = "tile_opposing_corners"
-	name = "opposing blue corners"
+	name = "对角的蓝色角落"
 
 /obj/effect/turf_decal/tile/transparent/blue/half
 	icon_state = "tile_half"
-	name = "blue half"
+	name = "蓝色半场"
 
 /obj/effect/turf_decal/tile/transparent/blue/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted blue half"
+	name = "对比蓝色半"
 
 /obj/effect/turf_decal/tile/transparent/blue/anticorner
 	icon_state = "tile_anticorner"
-	name = "blue anticorner"
+	name = "蓝色反角"
 
 /obj/effect/turf_decal/tile/transparent/blue/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted blue anticorner"
+	name = "对比蓝色反角"
 
 /obj/effect/turf_decal/tile/transparent/blue/fourcorners //The reason why we have four corners is to replace the trend of having all four corners on a tile be taken up by four individual corners, while still allowing the visual contrast between the decal and the floor tile.
 	icon_state = "tile_fourcorners"
-	name = "blue fourcorners"
+	name = "蓝色四角"
 
 /obj/effect/turf_decal/tile/transparent/blue/full
 	icon_state = "tile_full"
-	name = "blue full"
+	name = "蓝色已满"
 
 /obj/effect/turf_decal/tile/transparent/blue/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "blue diagonal centre"
+	name = "蓝色对角线中心"
 
 /obj/effect/turf_decal/tile/transparent/blue/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "blue diagonal edge"
+	name = "蓝色对角边缘"
 
 /// Dark blue tiles
 
 /obj/effect/turf_decal/tile/transparent/dark_blue
-	name = "dark blue corner"
+	name = "深蓝色角落"
 	color = "#486091"
 
 /obj/effect/turf_decal/tile/transparent/dark_blue/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing dark blue corners"
+	name = "对立的深蓝色角落"
 
 /obj/effect/turf_decal/tile/transparent/dark_blue/half
 	icon_state = "tile_half"
-	name = "dark blue half"
+	name = "深蓝色半"
 
 /obj/effect/turf_decal/tile/transparent/dark_blue/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted dark blue half"
+	name = "对比深蓝色半"
 
 /obj/effect/turf_decal/tile/transparent/dark_blue/anticorner
 	icon_state = "tile_anticorner"
-	name = "dark blue anticorner"
+	name = "深蓝色反角"
 
 /obj/effect/turf_decal/tile/transparent/dark_blue/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted dark blue anticorner"
+	name = "对比深蓝色反角"
 
 /obj/effect/turf_decal/tile/transparent/dark_blue/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "dark blue fourcorners"
+	name = "深蓝色四角纹"
 
 /obj/effect/turf_decal/tile/transparent/dark_blue/full
 	icon_state = "tile_full"
-	name = "dark blue full"
+	name = "深蓝色全套"
 
 /obj/effect/turf_decal/tile/transparent/dark_blue/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "dark blue diagonal centre"
+	name = "深蓝色对角中心"
 
 /obj/effect/turf_decal/tile/transparent/dark_blue/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "dark blue diagonal edge"
+	name = "深蓝色斜边"
 
 /// Green tiles
 
 /obj/effect/turf_decal/tile/transparent/green
-	name = "green corner"
+	name = "绿色角落"
 	color = "#9FED58"
 
 /obj/effect/turf_decal/tile/transparent/green/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing green corners"
+	name = "对角的绿色角落"
 
 /obj/effect/turf_decal/tile/transparent/green/half
 	icon_state = "tile_half"
-	name = "green half"
+	name = "绿色半"
 
 /obj/effect/turf_decal/tile/transparent/green/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted green half"
+	name = "对比绿色半"
 
 /obj/effect/turf_decal/tile/transparent/green/anticorner
 	icon_state = "tile_anticorner"
-	name = "green anticorner"
+	name = "绿色反角"
 
 /obj/effect/turf_decal/tile/transparent/green/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted green anticorner"
+	name = "对比绿色反角"
 
 /obj/effect/turf_decal/tile/transparent/green/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "green fourcorners"
+	name = "绿色四角"
 
 /obj/effect/turf_decal/tile/transparent/green/full
 	icon_state = "tile_full"
-	name = "green full"
+	name = "绿色满员"
 
 /obj/effect/turf_decal/tile/transparent/green/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "green diagonal centre"
+	name = "绿色对角线中心"
 
 /obj/effect/turf_decal/tile/transparent/green/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "green diagonal edge"
+	name = "绿色对角边缘"
 
 /// Dark green tiles
 
 /obj/effect/turf_decal/tile/transparent/dark_green
-	name = "dark green corner"
+	name = "深绿色角落"
 	color = "#439C1E"
 
 /obj/effect/turf_decal/tile/transparent/dark_green/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing dark green corners"
+	name = "相对的深绿色角落"
 
 /obj/effect/turf_decal/tile/transparent/dark_green/half
 	icon_state = "tile_half"
-	name = "dark green half"
+	name = "深绿色半"
 
 /obj/effect/turf_decal/tile/transparent/dark_green/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted dark green half"
+	name = "对比鲜明的深绿色半"
 
 /obj/effect/turf_decal/tile/transparent/dark_green/anticorner
 	icon_state = "tile_anticorner"
-	name = "dark green anticorner"
+	name = "深绿色反角"
 
 /obj/effect/turf_decal/tile/transparent/dark_green/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted dark green anticorner"
+	name = "对比深绿色反角"
 
 /obj/effect/turf_decal/tile/transparent/dark_green/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "dark green fourcorners"
+	name = "深绿色四角纹"
 
 /obj/effect/turf_decal/tile/transparent/dark_green/full
 	icon_state = "tile_full"
-	name = "dark green full"
+	name = "深绿色 满"
 
 /obj/effect/turf_decal/tile/transparent/dark_green/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "dark green diagonal centre"
+	name = "深绿色对角中心"
 
 /obj/effect/turf_decal/tile/transparent/dark_green/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "dark green diagonal edge"
+	name = "深绿色斜边"
 
 /// Yellow tiles
 
 /obj/effect/turf_decal/tile/transparent/yellow
-	name = "yellow corner"
+	name = "黄色角落"
 	color = "#EFB341"
 
 /obj/effect/turf_decal/tile/transparent/yellow/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing yellow corners"
+	name = "对角的黄色角落"
 
 /obj/effect/turf_decal/tile/transparent/yellow/half
 	icon_state = "tile_half"
-	name = "yellow half"
+	name = "黄色半"
 
 /obj/effect/turf_decal/tile/transparent/yellow/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted yellow half"
+	name = "对比鲜明的黄色半"
 
 /obj/effect/turf_decal/tile/transparent/yellow/anticorner
 	icon_state = "tile_anticorner"
-	name = "yellow anticorner"
+	name = "黄色反角"
 
 /obj/effect/turf_decal/tile/transparent/yellow/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted yellow anticorner"
+	name = "对比黄色反角"
 
 /obj/effect/turf_decal/tile/transparent/yellow/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "yellow fourcorners"
+	name = "黄色四角"
 
 /obj/effect/turf_decal/tile/transparent/yellow/full
 	icon_state = "tile_full"
-	name = "yellow full"
+	name = "黄色满员"
 
 /obj/effect/turf_decal/tile/transparent/yellow/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "yellow diagonal centre"
+	name = "黄色对角线中心"
 
 /obj/effect/turf_decal/tile/transparent/yellow/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "yellow diagonal edge"
+	name = "黄色对角边缘"
 
 /// Red tiles
 
 /obj/effect/turf_decal/tile/transparent/red
-	name = "red corner"
+	name = "红色角落"
 	color = "#DE3A3A"
 
 /obj/effect/turf_decal/tile/transparent/red/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing red corners"
+	name = "对角红区"
 
 /obj/effect/turf_decal/tile/transparent/red/half
 	icon_state = "tile_half"
-	name = "red half"
+	name = "红色半"
 
 /obj/effect/turf_decal/tile/transparent/red/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted red half"
+	name = "对比红色半"
 
 /obj/effect/turf_decal/tile/transparent/red/anticorner
 	icon_state = "tile_anticorner"
-	name = "red anticorner"
+	name = "红色反拐角"
 
 /obj/effect/turf_decal/tile/transparent/red/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted red anticorner"
+	name = "对比红色反角"
 
 /obj/effect/turf_decal/tile/transparent/red/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "red fourcorners"
+	name = "红色四角区"
 
 /obj/effect/turf_decal/tile/transparent/red/full
 	icon_state = "tile_full"
-	name = "red full"
+	name = "红色已满"
 
 /obj/effect/turf_decal/tile/transparent/red/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "red diagonal centre"
+	name = "红色对角线中心"
 
 /obj/effect/turf_decal/tile/transparent/red/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "red diagonal edge"
+	name = "红色对角边缘"
 
 /// Dark red tiles
 
 /obj/effect/turf_decal/tile/transparent/dark_red
-	name = "dark red corner"
+	name = "暗红角落"
 	color = "#B11111"
 
 /obj/effect/turf_decal/tile/transparent/dark_red/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing dark_red corners"
+	name = "对立的暗红色角落"
 
 /obj/effect/turf_decal/tile/transparent/dark_red/half
 	icon_state = "tile_half"
-	name = "dark red half"
+	name = "深红半"
 
 /obj/effect/turf_decal/tile/transparent/dark_red/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted dark red half"
+	name = "对比鲜明的深红色半"
 
 /obj/effect/turf_decal/tile/transparent/dark_red/anticorner
 	icon_state = "tile_anticorner"
-	name = "dark red anticorner"
+	name = "深红色反角"
 
 /obj/effect/turf_decal/tile/transparent/dark_red/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted dark red anticorner"
+	name = "对比鲜明的深红色反角"
 
 /obj/effect/turf_decal/tile/transparent/dark_red/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "dark red fourcorners"
+	name = "深红四角"
 
 /obj/effect/turf_decal/tile/transparent/dark_red/full
 	icon_state = "tile_full"
-	name = "dark red full"
+	name = "深红色满"
 
 /obj/effect/turf_decal/tile/transparent/dark_red/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "dark red diagonal centre"
+	name = "深红色对角中心"
 
 /obj/effect/turf_decal/tile/transparent/dark_red/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "dark red diagonal edge"
+	name = "深红色对角边缘"
 
 /// Bar tiles
 
 /obj/effect/turf_decal/tile/transparent/bar
-	name = "bar corner"
+	name = "吧台角落"
 	color = "#791500"
 	alpha = 130
 
 /obj/effect/turf_decal/tile/transparent/bar/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing bar corners"
+	name = "对角吧台角"
 
 /obj/effect/turf_decal/tile/transparent/bar/half
 	icon_state = "tile_half"
-	name = "bar half"
+	name = "半条"
 
 /obj/effect/turf_decal/tile/transparent/bar/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted bar half"
+	name = "对比色条一半"
 
 /obj/effect/turf_decal/tile/transparent/bar/anticorner
 	icon_state = "tile_anticorner"
-	name = "bar anticorner"
+	name = "吧台防撞角"
 
 /obj/effect/turf_decal/tile/transparent/bar/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted bar anticorner"
+	name = "对比色条反角"
 
 /obj/effect/turf_decal/tile/transparent/bar/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "bar fourcorners"
+	name = "四角酒吧"
 
 /obj/effect/turf_decal/tile/transparent/bar/full
 	icon_state = "tile_full"
-	name = "bar full"
+	name = "血条已满"
 
 /obj/effect/turf_decal/tile/transparent/bar/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "bar diagonal centre"
+	name = "斜对角中心"
 
 /obj/effect/turf_decal/tile/transparent/bar/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "bar diagonal edge"
+	name = "斜角边缘"
 
 /// Purple tiles
 
 /obj/effect/turf_decal/tile/transparent/purple
-	name = "purple corner"
+	name = "紫色角落"
 	color = "#D381C9"
 
 /obj/effect/turf_decal/tile/transparent/purple/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing purple corners"
+	name = "对角的紫色角落"
 
 /obj/effect/turf_decal/tile/transparent/purple/half
 	icon_state = "tile_half"
-	name = "purple half"
+	name = "紫色半"
 
 /obj/effect/turf_decal/tile/transparent/purple/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted purple half"
+	name = "对比紫色半"
 
 /obj/effect/turf_decal/tile/transparent/purple/anticorner
 	icon_state = "tile_anticorner"
-	name = "purple anticorner"
+	name = "紫色反角"
 
 /obj/effect/turf_decal/tile/transparent/purple/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted purple anticorner"
+	name = "对比紫色反角"
 
 /obj/effect/turf_decal/tile/transparent/purple/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "purple fourcorners"
+	name = "紫色四角"
 
 /obj/effect/turf_decal/tile/transparent/purple/full
 	icon_state = "tile_full"
-	name = "purple full"
+	name = "紫色 满"
 
 /obj/effect/turf_decal/tile/transparent/purple/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "purple diagonal centre"
+	name = "紫色对角线中心"
 
 /obj/effect/turf_decal/tile/transparent/purple/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "bar diagonal edge"
+	name = "斜角边缘"
 
 /// Brown tiles
 
 /obj/effect/turf_decal/tile/transparent/brown
-	name = "brown corner"
+	name = "棕色转角"
 	color = "#A46106"
 
 /obj/effect/turf_decal/tile/transparent/brown/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing brown corners"
+	name = "对角的棕色角落"
 
 /obj/effect/turf_decal/tile/transparent/brown/half
 	icon_state = "tile_half"
-	name = "brown half"
+	name = "棕色半指"
 
 /obj/effect/turf_decal/tile/transparent/brown/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted brown half"
+	name = "对比棕色半"
 
 /obj/effect/turf_decal/tile/transparent/brown/anticorner
 	icon_state = "tile_anticorner"
-	name = "brown anticorner"
+	name = "棕色反角"
 /obj/effect/turf_decal/tile/transparent/brown/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted brown anticorner"
+	name = "对比棕色反角"
 
 /obj/effect/turf_decal/tile/transparent/brown/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "brown fourcorners"
+	name = "棕色四角"
 
 /obj/effect/turf_decal/tile/transparent/brown/full
 	icon_state = "tile_full"
-	name = "brown full"
+	name = "棕色 满"
 
 /obj/effect/turf_decal/tile/transparent/brown/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "brown diagonal centre"
+	name = "棕色对角中心"
 
 /obj/effect/turf_decal/tile/transparent/brown/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "brown diagonal edge"
+	name = "棕色对角边缘"
 
 /// Neutral tiles
 
 /obj/effect/turf_decal/tile/transparent/neutral
-	name = "neutral corner"
+	name = "中立角落"
 	color = "#D4D4D4"
 	alpha = 50
 
 /obj/effect/turf_decal/tile/transparent/neutral/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing neutral corners"
+	name = "对角中立角落"
 
 /obj/effect/turf_decal/tile/transparent/neutral/half
 	icon_state = "tile_half"
-	name = "neutral half"
+	name = "中立半"
 
 /obj/effect/turf_decal/tile/transparent/neutral/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted neutral half"
+	name = "中性半对比"
 
 /obj/effect/turf_decal/tile/transparent/neutral/anticorner
 	icon_state = "tile_anticorner"
-	name = "neutral anticorner"
+	name = "中立反角"
 
 /obj/effect/turf_decal/tile/transparent/neutral/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted neutral anticorner"
+	name = "对比中性反角"
 
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "neutral fourcorners"
+	name = "中立四角区"
 
 /obj/effect/turf_decal/tile/transparent/neutral/full
 	icon_state = "tile_full"
-	name = "neutral full"
+	name = "中立 完整"
 
 /obj/effect/turf_decal/tile/transparent/neutral/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "neutral diagonal centre"
+	name = "中立对角线中心"
 
 /obj/effect/turf_decal/tile/transparent/neutral/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "neutral diagonal edge"
+	name = "中立对角线边缘"
 
 /// Dark tiles
 
 /obj/effect/turf_decal/tile/transparent/dark
-	name = "dark corner"
+	name = "阴暗角落"
 	color = "#0e0f0f"
 
 /obj/effect/turf_decal/tile/transparent/dark/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing dark corners"
+	name = "阴暗角落的对峙"
 
 /obj/effect/turf_decal/tile/transparent/dark/half
 	icon_state = "tile_half"
-	name = "dark half"
+	name = "暗影半身"
 
 /obj/effect/turf_decal/tile/transparent/dark/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted dark half"
+	name = "对比鲜明的暗色半身"
 
 /obj/effect/turf_decal/tile/transparent/dark/anticorner
 	icon_state = "tile_anticorner"
-	name = "dark anticorner"
+	name = "暗色反角"
 
 /obj/effect/turf_decal/tile/transparent/dark/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted dark anticorner"
+	name = "对比深色反角"
 
 /obj/effect/turf_decal/tile/transparent/dark/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "dark fourcorners"
+	name = "黑暗四角"
 
 /obj/effect/turf_decal/tile/transparent/dark/full
 	icon_state = "tile_full"
-	name = "dark full"
+	name = "暗黑"
 
 /obj/effect/turf_decal/tile/transparent/dark/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "dark diagonal centre"
+	name = "暗色对角中心"
 
 /obj/effect/turf_decal/tile/transparent/dark/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "dark diagonal edge"
+	name = "暗色对角边缘"
 
 /// Random tiles
 
 /obj/effect/turf_decal/tile/transparent/random // so many colors
-	name = "colorful corner"
+	name = "多彩角落"
 	color = "#E300FF" //bright pink as default for mapping
 
 /obj/effect/turf_decal/tile/transparent/random/opposingcorners
 	icon_state = "tile_opposing_corners"
-	name = "opposing colorful corners"
+	name = "对峙的彩色角落"
 
 /obj/effect/turf_decal/tile/transparent/random/half
 	icon_state = "tile_half"
-	name = "colorful half"
+	name = "彩色半"
 
 /obj/effect/turf_decal/tile/transparent/random/half/contrasted
 	icon_state = "tile_half_contrasted"
-	name = "contrasted colorful half"
+	name = "对比鲜明的彩色半身"
 
 /obj/effect/turf_decal/tile/transparent/random/anticorner
 	icon_state = "tile_anticorner"
-	name = "colorful anticorner"
+	name = "彩色防撞角"
 
 /obj/effect/turf_decal/tile/transparent/random/anticorner/contrasted
 	icon_state = "tile_anticorner_contrasted"
-	name = "contrasted colorful anticorner"
+	name = "对比鲜明的彩色防撞角"
 
 /obj/effect/turf_decal/tile/transparent/random/fourcorners
 	icon_state = "tile_fourcorners"
-	name = "colorful fourcorners"
+	name = "彩色四角"
 
 /obj/effect/turf_decal/tile/transparent/random/full
 	icon_state = "tile_full"
-	name = "colorful full"
+	name = "彩色全息"
 
 /obj/effect/turf_decal/tile/transparent/random/diagonal_centre
 	icon_state = "diagonal_centre"
-	name = "colorful diagonal centre"
+	name = "彩色对角中心"
 
 /obj/effect/turf_decal/tile/transparent/random/diagonal_edge
 	icon_state = "diagonal_edge"
-	name = "colorful diagonal edge"
+	name = "彩色对角边缘"

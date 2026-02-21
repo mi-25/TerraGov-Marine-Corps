@@ -1,6 +1,6 @@
 /obj/item/phone
-	name = "red phone"
-	desc = "Should anything ever go wrong..."
+	name = "红色电话"
+	desc = "如果出了什么差错..."
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "red_phone"
 	force = 3
@@ -12,8 +12,8 @@
 	hitsound = 'sound/weapons/ring.ogg'
 
 /obj/item/clock
-	name = "digital clock"
-	desc = "A battery powered clock, able to keep time within about 5 seconds... it was never that accurate."
+	name = "数字时钟"
+	desc = "一个电池驱动的时钟，能保持时间误差在5秒左右……它从来就没那么准过。"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "digital_clock"
 	force = 3
@@ -27,8 +27,8 @@
 	. += "The [src] reads: [GLOB.current_date_string] - [stationTimestamp()]"
 
 /obj/item/bananapeel
-	name = "banana peel"
-	desc = "A peel from a banana."
+	name = "香蕉皮"
+	desc = "一根香蕉的果皮。"
 	icon = 'icons/obj/items/harvest.dmi'
 	icon_state = "banana_peel"
 	worn_icon_state = "banana_peel"
@@ -41,8 +41,8 @@
 	AddComponent(/datum/component/slippery, 0.4 SECONDS, 0.2 SECONDS)
 
 /obj/item/gift
-	name = "gift"
-	desc = "A wrapped item."
+	name = "礼物"
+	desc = "一个包装好的物品。"
 	icon = 'icons/obj/items/items.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/items/containers_left.dmi',
@@ -55,8 +55,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/staff
-	name = "wizards staff"
-	desc = "Apparently a staff used by the wizard."
+	name = "巫师法杖"
+	desc = "似乎是巫师使用的一根法杖。"
 	icon = 'icons/obj/wizard.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/items/toys_left.dmi',
@@ -71,29 +71,29 @@
 	attack_verb = list("bludgeons", "whacks", "disciplines")
 
 /obj/item/staff/broom
-	name = "broom"
-	desc = "Used for sweeping, and flying into the night while cackling. Black cat not included."
+	name = "扫帚"
+	desc = "用于清扫，以及在夜晚狂笑着飞行。黑猫不包含在内。"
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "broom"
 
 /obj/item/skub
-	desc = "It's skub."
-	name = "skub"
+	desc = "这是斯库布。"
+	name = "斯库布"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "skub"
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("skubs")
 
 /obj/item/ectoplasm
-	name = "ectoplasm"
-	desc = "spooky"
+	name = "灵质"
+	desc = "诡异"
 	gender = PLURAL
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "ectoplasm"
 
 /obj/item/minerupgrade
-	name = "miner upgrade"
-	desc = "Subtype item, should not exist."
+	name = "矿工升级"
+	desc = "子类型物品，不应存在。"
 	icon = 'icons/obj/mining_drill.dmi'
 	icon_state = "mining_drill_reinforceddisplay"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -101,40 +101,40 @@
 	var/uptype
 
 /obj/item/minerupgrade/reinforcement
-	name = "reinforced components box"
-	desc = "A very folded box of reinforced components, meant to replace weak components used in normal mining wells."
+	name = "强化部件箱"
+	desc = "一个高度折叠的强化组件箱，用于替换普通采矿井中使用的脆弱组件。"
 	icon_state = "mining_drill_reinforceddisplay"
 	uptype = "reinforced components"
 
 /obj/item/minerupgrade/overclock
-	name = "high-efficiency drill"
-	desc = "A box with a few pumps and a big drill, meant to replace the standard drill used in normal mining wells for faster extraction."
+	name = "高效钻头"
+	desc = "一个装有几个泵和一把大型钻头的箱子，用于替换普通矿井中的标准钻头以实现更快开采。"
 	icon_state = "mining_drill_overclockeddisplay"
 	uptype = "high-efficiency drill"
 
 /obj/item/minerupgrade/automatic
-	name = "mining computer"
-	desc = "A small computer that can automate mining wells, reducing the need for oversight."
+	name = "采矿电脑"
+	desc = "一台小型计算机，可自动化管理采矿井，减少人工监督需求。"
 	icon_state = "mining_drill_automaticdisplay"
 	uptype = "mining computer"
 
 /obj/item/ai_target_beacon
-	name = "AI linked remote targeter"
-	desc = "A small set of servos and gears, coupled to a battery, antenna and circuitry. Attach it to a mortar to allow a shipborne AI to remotely target it."
+	name = "AI已链接远程目标指示器"
+	desc = "一套小型伺服电机和齿轮组，与电池、天线和电路板相连。将其安装到迫击炮上，可让舰载AI远程瞄准。"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "modkit"
 
 /obj/item/rosary
-	name = "Rosary"
-	desc = "A small hematite-beaded silver rosary"
+	name = "念珠"
+	desc = "一串小型的赤铁矿珠银制念珠"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "rosary"
 	worn_icon_state = "rosary"
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/album
-	name = "\improper photo album"
-	desc = "An album book full of someone's important memories."
+	name = "\improper 相册"
+	desc = "一本装满某人重要回忆的相册。"
 	icon = 'icons/obj/items/paper.dmi'
 	icon_state = "album"
 	w_class = WEIGHT_CLASS_SMALL

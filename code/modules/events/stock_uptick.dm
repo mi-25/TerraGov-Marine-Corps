@@ -1,5 +1,5 @@
 /datum/round_event_control/stock_uptick
-	name = "Supply point increase"
+	name = "补给点数增加"
 	typepath = /datum/round_event/stock_uptick
 	weight = 15
 	earliest_start = 30 MINUTES

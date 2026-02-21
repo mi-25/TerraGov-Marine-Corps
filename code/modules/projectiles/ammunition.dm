@@ -1,6 +1,6 @@
 /obj/item/ammo_magazine
-	name = "generic ammo"
-	desc = "A box of ammo."
+	name = "通用弹药"
+	desc = "一箱弹药。"
 	icon = 'icons/obj/items/ammo/handful.dmi'
 	worn_icon_state = "ammo_mag" //PLACEHOLDER. This ensures the mag doesn't use the icon state instead.
 	worn_icon_list = list(
@@ -79,7 +79,7 @@
 	if(user.get_inactive_held_item() != src || !CHECK_BITFIELD(magazine_flags, MAGAZINE_REFILLABLE))
 		return ..()
 	if(current_rounds <= 0)
-		to_chat(user, span_notice("[src] is empty. There is nothing to grab."))
+		to_chat(user, span_notice("[src]是空的。没有东西可抓取。"))
 		return
 	create_handful(user)
 
@@ -100,12 +100,12 @@
 		return
 
 	if(src != user.get_inactive_held_item() && !CHECK_BITFIELD(magazine_flags, MAGAZINE_HANDFUL)) //It has to be held.
-		to_chat(user, span_notice("Try holding [src] before you attempt to restock it."))
+		to_chat(user, span_notice("在尝试重新装填之前，请先握住[src]。"))
 		return
 
 	var/obj/item/ammo_magazine/mag = I
 	if(default_ammo != mag.default_ammo)
-		to_chat(user, span_notice("Those aren't the same rounds. Better not mix them up."))
+		to_chat(user, span_notice("这些不是同一种弹药。最好别搞混了。"))
 		return
 
 	var/amount_to_transfer = mag.current_rounds
@@ -135,24 +135,24 @@
 //Generic proc to transfer ammo between ammo mags. Can work for anything, mags, handfuls, etc.
 /obj/item/ammo_magazine/proc/transfer_ammo(obj/item/ammo_magazine/source, mob/user, transfer_amount = 1)
 	if(current_rounds >= max_rounds) //Does the mag actually need reloading?
-		to_chat(user, span_notice("[src] is already full."))
+		to_chat(user, span_notice("[src] 已经满了。"))
 		return
 
 	if(source.caliber != caliber) //Are they the same caliber?
-		to_chat(user, span_notice("The rounds don't match up. Better not mix them up."))
+		to_chat(user, span_notice("弹种不匹配。最好别搞混了。"))
 		return
 
 	if(!source.current_rounds)
-		to_chat(user, span_warning("\The [source] is empty."))
+		to_chat(user, span_warning("\The [source] 是空的。"))
 		return
 
 	//if the source has a fill_delay, delay the reload by this amount
 	if(source.fill_delay)
-		to_chat(user, span_notice("You start refilling [src] with [source]."))
+		to_chat(user, span_notice("你开始用[source]补充[src]。"))
 		if(!do_after(user, source.fill_delay, NONE, src, BUSY_ICON_GENERIC))
 			return
 
-	to_chat(user, span_notice("You refill [src] with [source]."))
+	to_chat(user, span_notice("你给[src]补充了[source]。"))
 
 	var/amount_difference = clamp(min(transfer_amount, max_rounds - current_rounds), 0, source.current_rounds)
 	source.current_rounds -= amount_difference
@@ -177,7 +177,7 @@
 
 	if(user)
 		user.put_in_hands(new_handful)
-		to_chat(user, span_notice("You grab <b>[rounds]</b> round\s from [src]."))
+		to_chat(user, span_notice("你从[src]中取出<b>[rounds]</b>发子弹。"))
 		update_icon() //Update the other one.
 		if(current_rounds <= 0 && CHECK_BITFIELD(magazine_flags, MAGAZINE_HANDFUL))
 			user.temporarilyRemoveItemFromInventory(src)
@@ -234,8 +234,8 @@
 	update_icon()
 
 /obj/item/ammo_magazine/handful
-	name = "generic handful of bullets or shells"
-	desc = "A handful of rounds to reload on the go."
+	name = "一把子弹或弹壳"
+	desc = "少量弹药，便于行进中装填。"
 	equip_slot_flags = null // It only fits into pockets and such.
 	w_class = WEIGHT_CLASS_SMALL
 	current_rounds = 1 // So it doesn't get autofilled for no reason.
@@ -246,7 +246,7 @@
 	icon_state_mini = "bullets"
 
 /obj/item/ammo_magazine/handful/repeater
-	name = "handful of heavy impact rifle bullet (.45-70 Government)"
+	name = "一把重型冲击步枪子弹 (.45-70 政府型)"
 	icon_state = "bullet"
 	current_rounds = 8
 	max_rounds = 8
@@ -254,42 +254,42 @@
 	caliber = CALIBER_4570
 
 /obj/item/ammo_magazine/handful/slug
-	name = "handful of shotgun slug (12 gauge)"
+	name = "一把霰弹枪独头弹（12号口径）"
 	icon_state = "shotgun_slug"
 	current_rounds = 5
 	default_ammo = /datum/ammo/bullet/shotgun/slug
 	caliber = CALIBER_12G
 
 /obj/item/ammo_magazine/handful/buckshot
-	name = "handful of shotgun buckshot shells (12g)"
+	name = "一把霰弹枪鹿弹（12号口径）"
 	icon_state = "shotgun_buckshot"
 	current_rounds = 5
 	default_ammo = /datum/ammo/bullet/shotgun/buckshot
 	caliber = CALIBER_12G
 
 /obj/item/ammo_magazine/handful/flechette
-	name = "handful of shotgun flechette shells (12g)"
+	name = "一把霰弹枪箭弹（12号口径）"
 	icon_state = "shotgun_flechette"
 	current_rounds = 5
 	default_ammo = /datum/ammo/bullet/shotgun/flechette
 	caliber = CALIBER_12G
 
 /obj/item/ammo_magazine/handful/incendiary
-	name = "handful of shotgun incendiary shells (12g)"
+	name = "一把霰弹枪燃烧弹（12号口径）"
 	icon_state = "incendiary_slug"
 	current_rounds = 5
 	default_ammo = /datum/ammo/bullet/shotgun/incendiary
 	caliber = CALIBER_12G
 
 /obj/item/ammo_magazine/handful/heavy_buckshot
-	name = "handful of shotgun buckshot shells (6g)"
+	name = "一把霰弹枪鹿弹（6克）"
 	icon_state = "heavy_shotgun_buckshot"
 	current_rounds = 5
 	default_ammo = /datum/ammo/bullet/shotgun/heavy_buckshot
 	caliber = CALIBER_6G
 
 /obj/item/ammo_magazine/handful/barrikada
-	name = "handful of shotgun 'Barrikada' shells (6g)"
+	name = "一把'巴里卡达'霰弹枪弹（6克）"
 	icon_state = "heavy_shotgun_barrikada"
 	current_rounds = 5
 	default_ammo = /datum/ammo/bullet/shotgun/barrikada_slug
@@ -297,14 +297,14 @@
 
 
 /obj/item/ammo_magazine/handful/martini
-	name = "The handful of crude heavy sniper bullet (.557/440)"
+	name = "少量粗制重型狙击弹（.557/440）"
 	icon_state = "crude_heavy_sniper"
 	current_rounds = 5
 	default_ammo = /datum/ammo/bullet/sniper/martini
 	caliber = CALIBER_557
 
 /obj/item/ammo_magazine/handful/micro_grenade
-	name = "handful of airburst micro grenades (10g)"
+	name = "一把空爆微型手雷（10克）"
 	icon_state = "micro_grenade_airburst"
 	icon_state_mini = "40mm_cyan"
 	current_rounds = 3
@@ -313,19 +313,19 @@
 	caliber = CALIBER_10G_RAIL
 
 /obj/item/ammo_magazine/handful/micro_grenade/dragonbreath
-	name = "handful of dragon's breath micro grenades (10g)"
+	name = "一把龙息微型手雷（10克）"
 	icon_state = "micro_grenade_incendiary"
 	icon_state_mini = "40mm_orange"
 	default_ammo = /datum/ammo/bullet/micro_rail/dragonbreath
 
 /obj/item/ammo_magazine/handful/micro_grenade/cluster
-	name = "handful of clustermunition micro grenades (10g)"
+	name = "一把集束弹药微型手雷（10克）"
 	icon_state = "micro_grenade_cluster"
 	icon_state_mini = "40mm_red"
 	default_ammo = /datum/ammo/bullet/micro_rail/cluster
 
 /obj/item/ammo_magazine/handful/micro_grenade/smoke_burst
-	name = "handful of smoke burst micro grenades (10g)"
+	name = "一把烟雾微型手雷（10克）"
 	icon_state = "micro_grenade_smoke"
 	icon_state_mini = "40mm_blue"
 	default_ammo = /datum/ammo/bullet/micro_rail/smoke_burst
@@ -344,8 +344,8 @@ items, so they do not intersect. This is far more efficient than using Blend() o
 Turn() or Shift() as there is virtually no overhead. ~N
 */
 /obj/item/ammo_casing
-	name = "spent casing"
-	desc = "Empty and useless now."
+	name = "弹壳"
+	desc = "空无一物，毫无用处。"
 	icon = 'icons/obj/items/casings.dmi'
 	icon_state = "casing_"
 	throwforce = 1
@@ -405,19 +405,19 @@ Turn() or Shift() as there is virtually no overhead. ~N
 /obj/item/ammo_casing/bullet
 
 /obj/item/ammo_casing/cartridge
-	name = "spent cartridge"
+	name = "空弹壳"
 	icon_state = "cartridge"
 
 /obj/item/ammo_casing/shell
-	name = "spent shell"
+	name = "空弹壳"
 	initial_icon_state = "shell_"
 	icon_state = "shell"
 
 //Big ammo boxes
 
 /obj/item/big_ammo_box
-	name = "big ammo box (10x24mm)"
-	desc = "A large ammo box. It comes with a leather strap."
+	name = "大型弹药箱（10x24毫米）"
+	desc = "一个大型弹药箱。配有皮质背带。"
 	w_class = WEIGHT_CLASS_HUGE
 	icon = 'icons/obj/items/ammo/box.dmi'
 	icon_state = "big"
@@ -451,17 +451,17 @@ Turn() or Shift() as there is virtually no overhead. ~N
 	if(istype(I, /obj/item/ammo_magazine))
 		var/obj/item/ammo_magazine/AM = I
 		if(!isturf(loc))
-			to_chat(user, span_warning("[src] must be on the ground to be used."))
+			to_chat(user, span_warning("[src]必须在地面上才能使用。"))
 			return
 		if(AM.magazine_flags & MAGAZINE_REFILLABLE)
 			if(default_ammo != AM.default_ammo)
-				to_chat(user, span_warning("Those aren't the same rounds. Better not mix them up."))
+				to_chat(user, span_warning("这些不是同一种弹药。最好别搞混了。"))
 				return
 			if(caliber != AM.caliber)
-				to_chat(user, span_warning("The rounds don't match up. Better not mix them up."))
+				to_chat(user, span_warning("弹匣型号不匹配。最好别搞混了。"))
 				return
 			if(AM.current_rounds == AM.max_rounds)
-				to_chat(user, span_warning("[AM] is already full."))
+				to_chat(user, span_warning("[AM] 已满。"))
 				return
 
 			if(!do_after(user, 15, NONE, src, BUSY_ICON_GENERIC))
@@ -474,22 +474,22 @@ Turn() or Shift() as there is virtually no overhead. ~N
 			AM.update_icon()
 			update_icon()
 			if(AM.current_rounds == AM.max_rounds)
-				to_chat(user, span_notice("You refill [AM]."))
+				to_chat(user, span_notice("你给[AM]重新装填了弹药。"))
 			else
-				to_chat(user, span_notice("You put [S] rounds in [AM]."))
+				to_chat(user, span_notice("你将[S]发子弹装入了[AM]。"))
 		else if(AM.magazine_flags & MAGAZINE_HANDFUL)
 			if(caliber != AM.caliber)
-				to_chat(user, span_warning("The rounds don't match up. Better not mix them up."))
+				to_chat(user, span_warning("弹匣型号不匹配。最好别搞混了。"))
 				return
 			if(bullet_amount == max_bullet_amount)
-				to_chat(user, span_warning("[src] is full!"))
+				to_chat(user, span_warning("[src] 已满！"))
 				return
 			playsound(loc, 'sound/weapons/guns/interact/revolver_load.ogg', 25, 1)
 			var/S = min(AM.current_rounds, max_bullet_amount - bullet_amount)
 			AM.current_rounds -= S
 			bullet_amount += S
 			AM.update_icon()
-			to_chat(user, span_notice("You put [S] rounds in [src]."))
+			to_chat(user, span_notice("你将[S]发子弹装入了[src]。"))
 			if(AM.current_rounds <= 0)
 				user.temporarilyRemoveItemFromInventory(AM)
 				qdel(AM)
@@ -503,8 +503,8 @@ Turn() or Shift() as there is virtually no overhead. ~N
 
 //Deployable shotgun ammo box
 /obj/item/shotgunbox
-	name = "Slug Ammo Box"
-	desc = "A large, deployable ammo box."
+	name = "独头弹弹药箱"
+	desc = "一个大型、可部署的弹药箱。"
 	icon = 'icons/obj/items/ammo/box.dmi'
 	icon_state = "slug"
 	worn_icon_state = "ammoboxslug"
@@ -561,7 +561,7 @@ Turn() or Shift() as there is virtually no overhead. ~N
 		return
 
 	if(current_rounds < 1)
-		to_chat(user, span_warning("The [src] is empty."))
+		to_chat(user, span_warning("[src]是空的。"))
 		return
 
 	var/obj/item/ammo_magazine/handful/H = new
@@ -571,7 +571,7 @@ Turn() or Shift() as there is virtually no overhead. ~N
 	current_rounds -= rounds
 
 	user.put_in_hands(H)
-	to_chat(user, span_notice("You grab <b>[rounds]</b> round\s from [src]."))
+	to_chat(user, span_notice("你从[src]中取出了<b>[rounds]</b>发子弹。"))
 	update_icon()
 
 /obj/item/shotgunbox/attackby(obj/item/I, mob/user, params)
@@ -585,15 +585,15 @@ Turn() or Shift() as there is virtually no overhead. ~N
 	var/obj/item/ammo_magazine/handful/H = I
 
 	if(!deployed)
-		to_chat(user, span_warning("[src] must be deployed on the ground to be refilled."))
+		to_chat(user, span_warning("[src]必须部署在地面上才能补充弹药。"))
 		return
 
 	if(H.default_ammo != ammo_type)
-		to_chat(user, span_warning("That's not the right kind of ammo."))
+		to_chat(user, span_warning("这不是正确的弹药类型。"))
 		return
 
 	if(current_rounds == max_rounds)
-		to_chat(user, span_warning("The [src] is already full."))
+		to_chat(user, span_warning("[src] 已经满了。"))
 		return
 
 	current_rounds = min(current_rounds + H.current_rounds, max_rounds)
@@ -601,7 +601,7 @@ Turn() or Shift() as there is virtually no overhead. ~N
 	update_icon()
 
 /obj/item/big_ammo_box/ap
-	name = "big ammo box (10x24mm AP)"
+	name = "大型弹药箱（10x24毫米穿甲弹）"
 	icon_state = "big_ap"
 	base_icon_state = "big_ap"
 	default_ammo = /datum/ammo/bullet/rifle/ap
@@ -609,7 +609,7 @@ Turn() or Shift() as there is virtually no overhead. ~N
 	max_bullet_amount = 400
 
 /obj/item/big_ammo_box/smg
-	name = "big ammo box (10x20mm)"
+	name = "大型弹药箱（10x20毫米）"
 	icon_state = "big_m25"
 	base_icon_state = "big_m25"
 	default_ammo = /datum/ammo/bullet/smg
@@ -618,21 +618,21 @@ Turn() or Shift() as there is virtually no overhead. ~N
 	caliber = CALIBER_10X20_CASELESS
 
 /obj/item/shotgunbox/buckshot
-	name = "Buckshot Ammo Box"
+	name = "鹿弹弹药箱"
 	icon_state = "buckshot"
 	worn_icon_state = "ammoboxbuckshot"
 	base_icon_state = "buckshot"
 	ammo_type = /datum/ammo/bullet/shotgun/buckshot
 
 /obj/item/shotgunbox/flechette
-	name = "Flechette Ammo Box"
+	name = "钢镖弹药箱"
 	icon_state = "flechette"
 	worn_icon_state = "ammoboxflechette"
 	base_icon_state = "flechette"
 	ammo_type = /datum/ammo/bullet/shotgun/flechette
 
 /obj/item/shotgunbox/clf_heavyrifle
-	name = "big ammo box (14.5mm API)"
+	name = "大型弹药箱（14.5毫米穿甲燃烧弹）"
 	caliber = CALIBER_14X5
 	icon_state = "145"
 	worn_icon_state = "ammobox_145"
@@ -640,21 +640,21 @@ Turn() or Shift() as there is virtually no overhead. ~N
 	ammo_type = /datum/ammo/bullet/sniper/clf_heavyrifle
 
 /obj/item/shotgunbox/tracker
-	name = "Tracking Ammo Box"
+	name = "追踪弹药箱"
 	icon_state = "tracking"
 	worn_icon_state = "ammoboxtracking"
 	base_icon_state = "tracking"
 	ammo_type = /datum/ammo/bullet/shotgun/tracker
 
 /obj/item/shotgunbox/blank
-	name = "blank ammo box"
+	name = "空弹药箱"
 	icon_state = "blank"
 	worn_icon_state = "ammoboxblank"
 	base_icon_state = "blank"
 	ammo_type = /datum/ammo/bullet/shotgun/blank
 
 /obj/item/big_ammo_box/mg
-	name = "big ammo box (10x26mm)"
+	name = "大型弹药箱（10x26毫米）"
 	default_ammo = /datum/ammo/bullet/rifle/machinegun
 	caliber = CALIBER_10x26_CASELESS
 	bullet_amount = 3200 //a backpack holds 8 MG-60 box mags, which is 1600 rounds

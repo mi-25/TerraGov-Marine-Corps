@@ -34,7 +34,7 @@
 	var/hivenumber = XENO_HIVE_NORMAL
 
 /datum/ammo/xeno/toxin
-	name = "neurotoxic spit"
+	name = "神经毒素唾液"
 	ammo_behavior_flags = AMMO_XENO|AMMO_TARGET_TURF|AMMO_SKIPS_ALIENS
 	spit_cost = 55
 	added_spit_delay = 0
@@ -116,7 +116,7 @@
 
 
 /datum/ammo/xeno/toxin/heavy //Praetorian
-	name = "neurotoxic splash"
+	name = "神经毒素溅射"
 	added_spit_delay = 0
 	spit_cost = 100
 	damage = 40
@@ -125,7 +125,7 @@
 
 
 /datum/ammo/xeno/sticky
-	name = "sticky resin spit"
+	name = "粘性树脂吐息"
 	icon_state = "sticky"
 	ping = null
 	ammo_behavior_flags = AMMO_SKIPS_ALIENS|AMMO_TARGET_TURF|AMMO_XENO
@@ -178,7 +178,7 @@
 	max_range = 9
 
 /datum/ammo/xeno/sticky/globe
-	name = "sticky resin globe"
+	name = "粘性树脂球"
 	icon_state = "sticky_globe"
 	damage = 40
 	max_range = 7
@@ -215,7 +215,7 @@
 	fire_directionalburst(proj, proj.firer, proj.shot_from, bonus_projectile_quantity, Get_Angle(proj.starting_turf, target_turf), loc_override = det_turf)
 
 /datum/ammo/xeno/acid
-	name = "acid spit"
+	name = "酸液喷射"
 	icon_state = "xeno_acid"
 	sound_hit = SFX_ACID_HIT
 	sound_bounce = SFX_ACID_BOUNCE
@@ -241,12 +241,12 @@
 	xenomorph_spray(T, puddle_duration, puddle_acid_damage)
 
 /datum/ammo/xeno/acid/medium
-	name = "acid spatter"
+	name = "酸液飞溅"
 	damage = 35
 	ammo_behavior_flags = AMMO_XENO
 
 /datum/ammo/xeno/acid/auto
-	name = "light acid spatter"
+	name = "轻微的酸液溅射"
 	damage = 12
 	damage_falloff = 0.2
 	spit_cost = 20
@@ -265,19 +265,19 @@
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf)
 
 /datum/ammo/xeno/acid/passthrough
-	name = "acid spittle"
+	name = "酸液唾沫"
 	damage = 20
 	ammo_behavior_flags = AMMO_XENO|AMMO_SKIPS_ALIENS
 
 /datum/ammo/xeno/acid/heavy
-	name = "acid splash"
+	name = "酸液飞溅"
 	added_spit_delay = 2
 	spit_cost = 70
 	damage = 40
 
 /datum/ammo/xeno/acid/heavy/turret
 	damage = 20
-	name = "acid turret splash"
+	name = "酸液炮塔溅射"
 	shell_speed = 2
 	max_range = 9
 
@@ -307,7 +307,7 @@
 
 ///For the Sizzler Boiler's Spit
 /datum/ammo/xeno/acid/smokescreen
-	name = "acid steam glob"
+	name = "酸液蒸汽球"
 	icon_state = "neurotoxin"
 	added_spit_delay = 1 SECONDS
 	spit_cost = 50
@@ -353,7 +353,7 @@
 
 ///Extra projectiles made by /datum/ammo/xeno/acid/smokescreen
 /datum/ammo/xeno/acid/smokescreen_bomblet
-	name = "acid steam spatter"
+	name = "酸液蒸汽溅射"
 	icon_state = "neurotoxin"
 	ammo_behavior_flags = AMMO_XENO|AMMO_SKIPS_ALIENS|AMMO_PASS_THROUGH_MOB|AMMO_LEAVE_TURF
 	max_range = 5
@@ -405,7 +405,7 @@
 
 ///For the Sizzler Boiler's primo
 /datum/ammo/xeno/acid/heavy/high_pressure_spit
-	name = "pressurized steam glob"
+	name = "加压蒸汽球"
 	icon_state = "boiler_corrosive"
 	damage = 50
 	ammo_behavior_flags = AMMO_XENO|AMMO_SKIPS_ALIENS
@@ -433,7 +433,7 @@
 #define XADAR_VEHICLE_DAMAGE 117 /// 1.3 * 90
 
 /datum/ammo/rocket/he/xadar
-	name = "Acid Rocket"
+	name = "酸液火箭"
 	icon_state = "xadar"
 	damage = 30
 	penetration = 10

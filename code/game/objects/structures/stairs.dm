@@ -7,7 +7,7 @@
 // multiple stair objects can be chained together; the Z level transition will happen on the final stair object in the chain
 
 /obj/structure/stairs/multiz
-	name = "stairs"
+	name = "楼梯"
 	anchored = TRUE
 	move_resist = INFINITY
 	layer = ABOVE_WEEDS_LAYER

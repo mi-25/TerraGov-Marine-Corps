@@ -43,7 +43,7 @@
 /* A special mime crayon */
 /obj/item/toy/crayon/mime
 	icon_state = "crayonmime"
-	desc = "A very sad-looking crayon."
+	desc = "一支看起来非常悲伤的蜡笔。"
 	colour = "#FFFFFF"
 	shadeColour = "#000000"
 	colourName = "mime"
@@ -53,11 +53,11 @@
 	if(colour != "#FFFFFF" && shadeColour != "#000000")
 		colour = "#FFFFFF"
 		shadeColour = "#000000"
-		to_chat(user, "You will now draw in white and black with this crayon.")
+		to_chat(user, "你现在要用这支蜡笔画黑白画了。")
 	else
 		colour = "#000000"
 		shadeColour = "#FFFFFF"
-		to_chat(user, "You will now draw in black and white with this crayon.")
+		to_chat(user, "你现在要用这支蜡笔画黑白画了。")
 
 
 /* A special rainbow crayon */
@@ -87,21 +87,21 @@
 	if(drawtype == "letter")
 		drawtype = tgui_input_list(user, "Choose the letter.", "Crayon scribbles", list("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"))
 
-	user.visible_message(span_notice("[user] starts drawing something on \the [target.name]."))
+	user.visible_message(span_notice("[user]开始在\the [target.name]上绘制着什么。"))
 	if(!instant && !do_after(user, 5 SECONDS, NONE, target, BUSY_ICON_GENERIC))
 		return
 
 	new /obj/effect/decal/cleanable/crayon(target, colour, shadeColour, drawtype)
 	uses--
 	if(uses <= 0)
-		to_chat(user, span_notice("\The [src] breaks apart in your hand."))
+		to_chat(user, span_notice("\The [src] 在你手中碎裂。"))
 		qdel(src)
 
 /obj/item/toy/crayon/attack(mob/living/M, mob/living/user)
 	if(M != user)
 		return ..()
 
-	user.visible_message(span_notice("[user] takes a bite of \the [src] and swallows it."))
+	user.visible_message(span_notice("[user]咬了一口\the [src]并吞了下去。"))
 	playsound(M.loc,'sound/items/eatfood.ogg', 15, 1)
 	uses -= 5
 	if(uses <= 0)

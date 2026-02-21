@@ -1,7 +1,7 @@
 //turns it on
 /datum/campaign_asset/teleporter_enabled
 	name = "Enable Teleporter Array"
-	desc = "Enables the use of the Teleporter Array for the current or next mission"
+	desc = "启用传送阵列，用于当前或下一次任务。"
 	detailed_desc = "Established a link between our Teleporter Array and its master Bluespace drive, allowing its operation during the current or next mission."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_scientist
 	ui_icon = "tele_active"
@@ -21,7 +21,7 @@
 	var/datum/game_mode/hvh/campaign/mode = SSticker.mode
 	var/datum/campaign_mission/current_mission = mode.current_mission
 	if(!current_mission.mission_z_level)
-		to_chat(faction.faction_leader, span_warning("New battlefield co-ordinates loading. Please try again in a moment."))
+		to_chat(faction.faction_leader, span_warning("正在加载新战场坐标。请稍后再试。"))
 		return TRUE
 	if(linked_teleporter)
 		return FALSE
@@ -29,7 +29,7 @@
 		if(teleporter.faction != faction.faction)
 			continue
 		if(teleporter.teleporter_status == TELEPORTER_ARRAY_INOPERABLE)
-			to_chat(faction.faction_leader, span_warning("The Teleporter Array has been permanently disabled due to the destruction of the linked Bluespace drive."))
+			to_chat(faction.faction_leader, span_warning("传送阵列因连接的蓝空驱动器被摧毁而永久停用。"))
 			return TRUE
 		linked_teleporter = teleporter
 		return FALSE
@@ -38,12 +38,12 @@
 /datum/campaign_asset/teleporter_enabled/activated_effect()
 	linked_teleporter.enable_teleporter()
 	linked_teleporter.charges += 1
-	to_chat(faction.faction_leader, span_warning("Teleporter Array powered up. Link to Bluespace drive confirmed. Ready for teleportation."))
+	to_chat(faction.faction_leader, span_warning("传送阵列已启动。与蓝空驱动器连接已确认。准备传送。"))
 
 //adds more charges
 /datum/campaign_asset/teleporter_charges
 	name = "Teleporter Array charges"
-	desc = "+3 charges of the Teleporter Array"
+	desc = "传送器阵列充能+3"
 	detailed_desc = "Central command have allocated the battalion with three additional uses of the Teleporter Array. Its extremely costly to run and demand is high across the conflict zone, so make them count."
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_scientist
 	ui_icon = "tele_uses"
@@ -55,13 +55,13 @@
 		if(teleporter.faction != faction.faction)
 			continue
 		teleporter.charges += 1
-		to_chat(faction.faction_leader, span_warning("An additional activation of the Teleporter Array is now ready for use."))
+		to_chat(faction.faction_leader, span_warning("传送器阵列已准备就绪，可再次启动。"))
 		return
 
 //Turns it off for good
 /datum/campaign_asset/teleporter_disabled
 	name = "Teleporter Array disabled"
-	desc = "Teleporter Array has been permenantly disabled"
+	desc = "传送阵列已被永久禁用"
 	detailed_desc = "The Bluespace drive powering all Teleporter Arrays in the conflict zone has been destroyed, rending all Teleporter Arrays inoperable. You'll have to deploy the old fashion way from here on out."
 	asset_flags = ASSET_IMMEDIATE_EFFECT|ASSET_DEBUFF
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_scientist
@@ -72,5 +72,5 @@
 		if(teleporter.faction != faction.faction)
 			continue
 		teleporter.teleporter_status = TELEPORTER_ARRAY_INOPERABLE
-		to_chat(faction.faction_leader, span_warning("Error: The Teleporter Array has been rendered permanently inoperable."))
+		to_chat(faction.faction_leader, span_warning("错误：传送阵列已永久失效。"))
 		return

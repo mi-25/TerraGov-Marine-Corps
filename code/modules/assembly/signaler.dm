@@ -1,6 +1,6 @@
 /obj/item/assembly/signaler
-	name = "remote signaling device"
-	desc = "Used to remotely activate devices. Allows for syncing when using a secure signaler on another. Unique action to activate, use to open the menu."
+	name = "远程信号装置"
+	desc = "用于远程激活设备。当在另一设备上使用安全信号器时允许同步。使用独特操作激活，点击打开菜单。"
 	icon_state = "signaller"
 	worn_icon_state = "signaler"
 	wires = WIRE_RECEIVE | WIRE_PULSE | WIRE_RADIO_PULSE | WIRE_RADIO_RECEIVE
@@ -96,7 +96,7 @@ Code:
 
 /obj/item/assembly/signaler/proc/try_send_signal()
 	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_SIGNALLER_SEND))
-		balloon_alert(usr, "Recharging")
+		balloon_alert(usr, "正在充能")
 		return
 	TIMER_COOLDOWN_START(src, COOLDOWN_SIGNALLER_SEND, 1 SECONDS)
 	signal()
@@ -110,7 +110,7 @@ Code:
 		if(secured && signaler2.secured)
 			code = signaler2.code
 			set_frequency(signaler2.frequency)
-			to_chat(user, "You transfer the frequency and code of \the [signaler2.name] to \the [name]")
+			to_chat(user, "你将 \the [signaler2.name] 的频率和代码传输到 \the [name]")
 
 /obj/item/assembly/signaler/proc/signal()
 	if(!radio_connection)

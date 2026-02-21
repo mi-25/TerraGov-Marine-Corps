@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/no_end
 	name = "No End"
-	desc = "Endure can be used in critical. It now costs 150/125/100% of its original plasma cost."
+	desc = "忍耐可在危急时使用。现在消耗原始等离子体成本的150/125/100%。"
 	/// For the first structure, the multiplier to add as Endure's initial ability cost to add to it.
 	var/multiplier_initial = 0.75
 	/// For each structure, the multiplier to add as Endure's initial ability cost to add to it.
@@ -46,7 +46,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/early_rage
 	name = "Early Rage"
-	desc = "Rage can be activated at 55/60/65% maximum health. For the purposes of calculating rage power, your current health is assumed to reduced by 5/10/15% of your maximum health. This cannot go beyond the amount required for Super Rage."
+	desc = "狂怒可在生命值降至最大值的55/60/65%时激活。为计算狂怒强度，你的当前生命值将被视为额外减少了最大值的5/10/15%。此效果不会超过触发超级狂怒所需的阈值。"
 	/// For each structure, the percentage of maximum health to add to Rage's activation threshold and to its rage power calculation.
 	var/percentage_per_structure = 0.05
 
@@ -72,7 +72,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/safety_trap
 	name = "Safety Trap"
-	desc = "Endure further decreases your critical and death threshold by 50/75/100. If Endure ends while your health is under the default death threshold, you die instead."
+	desc = "坚忍会进一步降低你的临界和死亡阈值50/75/100点。如果坚忍结束时你的生命值低于默认死亡阈值，你将直接死亡。"
 	/// For the first structure, the amount to increase the death/critical threshold given by Endure while it is active.
 	var/threshold_initial = -25
 	/// For each structure, the amount to increase the death/critical threshold given by Endure while it is active.

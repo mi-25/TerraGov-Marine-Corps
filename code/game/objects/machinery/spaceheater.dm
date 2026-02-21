@@ -3,8 +3,8 @@
 	density = TRUE
 	icon = 'icons/obj/machines/atmos.dmi'
 	icon_state = "sheater"
-	name = "space heater"
-	desc = "Made by Space Amish using traditional space techniques, this heater is guaranteed not to set the station on fire."
+	name = "空间加热器"
+	desc = "由太空阿米什人采用传统太空工艺制造，这款加热器保证不会让空间站着火。"
 	obj_flags = CAN_BE_HIT
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASSABLE|PASS_WALKOVER
 	/// The cell inside the heater, used for making it work
@@ -60,15 +60,15 @@
 /obj/machinery/space_heater/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(on)
-		balloon_alert(user, "turn it off first!")
+		balloon_alert(user, "先把它关掉！")
 		return
 	if(!open)
-		balloon_alert(user, "the hatch is closed!")
+		balloon_alert(user, "舱门已关闭！")
 		return
 	if(!cell)
-		balloon_alert(user, "there isn't a cell to pry out!")
+		balloon_alert(user, "没有电池可以撬出来！")
 		return
-	balloon_alert(user, "cell pried out")
+	balloon_alert(user, "电池被撬出")
 	cell.forceMove(user.drop_location())
 	cell = null
 
@@ -79,11 +79,11 @@
 	if(!istype(I, /obj/item/cell))
 		return
 	if(!open)
-		balloon_alert(user, "open the hatch!")
+		balloon_alert(user, "打开舱门！")
 		return
 
 	if(cell)
-		balloon_alert(user, "it already has a cell!")
+		balloon_alert(user, "它已经装有电池了！")
 		return
 
 	var/obj/item/cell/user_cell = I
@@ -95,7 +95,7 @@
 
 	cell = user_cell
 
-	balloon_alert_to_viewers("cell inserted")
+	balloon_alert_to_viewers("电池已插入")
 
 /obj/machinery/space_heater/attack_hand(mob/living/user)
 	. = ..()
@@ -114,7 +114,7 @@
 
 /obj/machinery/space_heater/process()
 	if(!on || !cell || !cell.charge)
-		balloon_alert_to_viewers("shuts off")
+		balloon_alert_to_viewers("关闭")
 		update_icon()
 		stop_processing()
 		return
@@ -126,8 +126,8 @@
 	cell.use(50*GLOB.CELLRATE)
 
 /obj/machinery/space_heater/radiator
-	name = "radiator"
-	desc = "It's a radiator. It heats the room through convection with hot water. This one has a red handle."
+	name = "散热器"
+	desc = "这是一个散热器。它通过热水对流来加热房间。这个散热器有一个红色的把手。"
 	icon_state = "radiator"
 	density = FALSE
 

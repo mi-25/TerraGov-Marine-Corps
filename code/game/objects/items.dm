@@ -1,5 +1,5 @@
 /obj/item
-	name = "item"
+	name = "物品"
 	icon = 'icons/obj/items/items.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
@@ -301,7 +301,7 @@
 	if(!istype(user))
 		return
 	if(anchored)
-		to_chat(user, "[src] is anchored to the ground.")
+		to_chat(user, "[src] 被固定在地面上。")
 		return
 
 	set_throwing(FALSE)
@@ -363,11 +363,11 @@
 			success = TRUE
 			S.storage_datum.handle_item_insertion(IM, TRUE, user)	//The 1 stops the "You put the [src] into [S]" insertion message from being displayed.
 		if(success && !failure)
-			to_chat(user, span_notice("You put everything in [S]."))
+			to_chat(user, span_notice("你把所有东西都放进了[S]。"))
 		else if(success)
-			to_chat(user, span_notice("You put some things in [S]."))
+			to_chat(user, span_notice("你将一些东西放入了[S]。"))
 		else
-			to_chat(user, span_notice("You fail to pick anything up with [S]."))
+			to_chat(user, span_notice("你用[S]没能捡起任何东西。"))
 
 	else if(S.storage_datum.can_be_inserted(src, user))
 		S.storage_datum.handle_item_insertion(src, FALSE, user)
@@ -538,7 +538,7 @@
 
 	if(HAS_TRAIT(src, TRAIT_NODROP) && slot != SLOT_L_HAND && slot != SLOT_R_HAND && !override_nodrop) //No drops can only be equipped to a hand slot
 		if(slot == SLOT_L_HAND || slot == SLOT_R_HAND)
-			to_chat(user, span_notice("[src] is stuck to your hand!"))
+			to_chat(user, span_notice("[src] 粘在你手上了！"))
 		return FALSE
 
 	if(!ishuman(user))
@@ -564,7 +564,7 @@
 			return FALSE
 
 	if(issynth(H) && CHECK_BITFIELD(item_flags, SYNTH_RESTRICTED) && !CONFIG_GET(flag/allow_synthetic_gun_use))
-		to_chat(H, span_warning("Your programming prevents you from wearing this."))
+		to_chat(H, span_warning("你的程序设定禁止你穿戴此物品。"))
 		return FALSE
 
 	var/obj/item/selected_slot //the item in the specific slot we're trying to insert into
@@ -634,7 +634,7 @@
 				return FALSE
 			if(!H.w_uniform && (SLOT_W_UNIFORM in mob_equip))
 				if(warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can attach this [name]."))
+					to_chat(H, span_warning("你需要先穿上连体服才能安装这个[name]。"))
 				return FALSE
 			equip_to_slot = TRUE
 		if(SLOT_BELT)
@@ -642,7 +642,7 @@
 				return FALSE
 			if(!H.w_uniform && (SLOT_W_UNIFORM in mob_equip))
 				if(warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can attach this [name]."))
+					to_chat(H, span_warning("你需要先穿上连体服才能安装这个[name]。"))
 				return FALSE
 			equip_to_slot = TRUE
 		if(SLOT_L_STORE)
@@ -650,7 +650,7 @@
 				return FALSE
 			if(!H.w_uniform && (SLOT_W_UNIFORM in mob_equip))
 				if(warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can attach this [name]."))
+					to_chat(H, span_warning("你需要先穿上连体服才能安装这个[name]。"))
 				return FALSE
 			if(w_class <= 2) //smaller or tiny items can all go in pocket slots, larger items require the flag to fit
 				return TRUE
@@ -660,7 +660,7 @@
 				return FALSE
 			if(!H.w_uniform && (SLOT_W_UNIFORM in mob_equip))
 				if(warning)
-					to_chat(H, span_warning("You need a jumpsuit before you can attach this [name]."))
+					to_chat(H, span_warning("你需要先穿上连体服才能安装这个[name]。"))
 				return FALSE
 			if(w_class <= 2)
 				return TRUE
@@ -670,7 +670,7 @@
 				return FALSE
 			if(!H.wear_suit && (SLOT_WEAR_SUIT in mob_equip))
 				if(warning)
-					to_chat(H, span_warning("You need a suit before you can attach this [name]."))
+					to_chat(H, span_warning("你需要先穿上防护服才能安装这个[name]。"))
 				return FALSE
 			if(is_type_in_list(src, H.wear_suit.allowed))
 				return TRUE
@@ -744,7 +744,7 @@
 /// Checks whether the item can be unequipped from owner by stripper. Generates a message on failure and returns TRUE/FALSE
 /obj/item/proc/canStrip(mob/stripper, mob/owner)
 	if(HAS_TRAIT(src, TRAIT_NODROP))
-		stripper.balloon_alert(stripper, "it's stuck!")
+		stripper.balloon_alert(stripper, "卡住了！")
 		return FALSE
 	return TRUE
 
@@ -911,7 +911,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	if(zoom) //If we are zoomed out, reset that parameter.
 		if(TIMER_COOLDOWN_FINISHED(user, COOLDOWN_ZOOM)) //If we are spamming the zoom, cut it out
-			user.visible_message(span_notice("[user] looks up from [zoom_device]."),
+			user.visible_message(span_notice("[user]从[zoom_device]上抬起头来。"),
 			span_notice("You look up from [zoom_device]."))
 
 		zoom = FALSE
@@ -930,20 +930,20 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		return
 
 	if(is_blind(user))
-		to_chat(user, span_warning("You are too blind to see anything."))
+		to_chat(user, span_warning("你什么都看不见，眼前一片漆黑。"))
 		return
 
 	if(!user.dextrous)
-		to_chat(user, span_warning("You do not have the dexterity to use \the [zoom_device]."))
+		to_chat(user, span_warning("你没有足够的灵巧度来使用\the [zoom_device]。"))
 		return
 
 	if(user.tinttotal >= TINT_5)
-		to_chat(user, span_warning("Your vision is too obscured for you to look through \the [zoom_device]."))
+		to_chat(user, span_warning("你的视野过于模糊，无法透过\the [zoom_device]观察。"))
 		return
 
 	TIMER_COOLDOWN_START(user, COOLDOWN_ZOOM, 2 SECONDS)
 	if(SEND_SIGNAL(user, COMSIG_ITEM_ZOOM) &  COMSIG_ITEM_ALREADY_ZOOMED)
-		to_chat(user, span_warning("You are already looking through another zoom device.."))
+		to_chat(user, span_warning("你已经在使用另一个放大设备了。"))
 		return
 
 	if(user.client)
@@ -951,7 +951,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		change_zoom_offset(user, zoom_offset = tileoffset)
 
 	if(TIMER_COOLDOWN_FINISHED(user, COOLDOWN_ZOOM))
-		user.visible_message(span_notice("[user] peers through \the [zoom_device]."),
+		user.visible_message(span_notice("[user]透过\the [zoom_device]观察。"),
 		span_notice("You peer through \the [zoom_device]."))
 	zoom = TRUE
 	RegisterSignal(user, COMSIG_ITEM_ZOOM, PROC_REF(zoom_check_return))
@@ -1024,19 +1024,19 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 			E.take_damage(rand(12, 16), TRUE)
 	if(safety<2)
 		if(E.damage >= E.min_broken_damage)
-			to_chat(H, span_danger("You can't see anything!"))
+			to_chat(H, span_danger("你什么都看不见！"))
 			H.blind_eyes(1)
 		else if (E.damage >= E.min_bruised_damage)
-			to_chat(H, span_warning("Your eyes are really starting to hurt. This can't be good for you!"))
+			to_chat(H, span_warning("你的眼睛开始疼得厉害。这对你肯定没好处！"))
 			H.blind_eyes(5)
 		else
 			switch(safety)
 				if(1)
-					to_chat(user, span_warning("Your eyes sting a little."))
+					to_chat(user, span_warning("你的眼睛有点刺痛。"))
 				if(0)
-					to_chat(user, span_warning("Your eyes burn."))
+					to_chat(user, span_warning("你的眼睛在灼烧。"))
 				if(-1)
-					to_chat(user, span_danger("Your eyes itch and burn severely."))
+					to_chat(user, span_danger("你的眼睛剧烈发痒灼痛。"))
 
 
 
@@ -1055,10 +1055,10 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 /obj/item/proc/extinguish(atom/target, mob/user)
 	if (reagents.total_volume < 1)
-		to_chat(user, span_warning("\The [src]'s water reserves are empty."))
+		to_chat(user, span_warning("\The [src]的水储备已空。"))
 		return
 
-	user.visible_message(span_danger("[user] sprays water from [src]!"), \
+	user.visible_message(span_danger("[user] 从 [src] 喷出水来！"), \
 	span_warning("You spray water from [src]."))
 
 	playsound(user.loc, 'sound/effects/extinguish.ogg', 52, 1, 7)
@@ -1364,9 +1364,9 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 					double.throw_catch_trick(user)
 				throw_catch_trick(user)
 	else if(prob(10))
-		to_chat(user, span_warning("You fumble with [src] like an idiot... Uncool."))
+		to_chat(user, span_warning("你笨手笨脚地摆弄着 [src]，像个白痴一样……真逊。"))
 	else
-		user.visible_message(span_info("<b>[user]</b> fumbles with [src] like a huge idiot!"))
+		user.visible_message(span_info("<b>[user]</b> 像个大傻瓜一样笨手笨脚地摆弄着 [src]！"))
 
 	TIMER_COOLDOWN_START(user, COOLDOWN_ITEM_TRICK, 6)
 
@@ -1377,10 +1377,10 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	set waitfor = 0
 	playsound(user, 'sound/effects/spin.ogg', 25, 1)
 	if(double)
-		user.visible_message("[user] deftly flicks and spins [src] and [double]!",span_notice("You flick and spin [src] and [double]!"))
+		user.visible_message("[user] 灵巧地翻转并旋转着 [src] 和 [double]！",span_notice("You flick and spin [src] and [double]!"))
 		animation_wrist_flick(double, 1)
 	else
-		user.visible_message("[user] deftly flicks and spins [src]!",span_notice("You flick and spin [src]!"))
+		user.visible_message("[user] 灵巧地拨动并旋转着 [src]！",span_notice("You flick and spin [src]!"))
 	animation_wrist_flick(src, direction)
 	sleep(0.3 SECONDS)
 	if(loc && user) playsound(user, 'sound/effects/thud.ogg', 25, 1)
@@ -1388,7 +1388,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 ///The fancy trick. Woah.
 /obj/item/proc/throw_catch_trick(mob/living/carbon/human/user)
 	set waitfor = 0
-	user.visible_message("[user] deftly flicks [src] and tosses it into the air!",span_notice("You flick and toss [src] into the air!"))
+	user.visible_message("[user] 灵巧地一弹[src]，将它抛向空中！",span_notice("You flick and toss [src] into the air!"))
 	var/img_layer = MOB_LAYER+0.1
 	var/image/trick = image(icon,user,icon_state,img_layer)
 	switch(pick(1,2))
@@ -1409,9 +1409,9 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		return
 
 	if(user.get_inactive_held_item())
-		user.visible_message("[user] catches [src] with the same hand!",span_notice("You catch [src] as it spins in to your hand!"))
+		user.visible_message("[user]用同一只手接住了[src]！",span_notice("You catch [src] as it spins in to your hand!"))
 		return
-	user.visible_message("[user] catches [src] with his other hand!",span_notice("You snatch [src] with your other hand! Awesome!"))
+	user.visible_message("[user]用另一只手接住了[src]！",span_notice("You snatch [src] with your other hand! Awesome!"))
 	user.temporarilyRemoveItemFromInventory(src)
 	user.put_in_inactive_hand(src)
 	user.swap_hand()
@@ -1446,7 +1446,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/color_item(obj/item/facepaint/paint, mob/user)
 
 	if(paint.uses < 1)
-		balloon_alert(user, "it's dry!")
+		balloon_alert(user, "没弹药了！")
 		return
 
 	var/list/selection_list = list()
@@ -1539,9 +1539,9 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/proc/refill(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 	if(!(item_flags & CAN_REFILL))
-		user.balloon_alert(user, "can't be refilled!")
+		user.balloon_alert(user, "无法重新装填！")
 		return FALSE
-	user.balloon_alert(user, "refilled") //If all checks passed, it's safe to throw the balloon alert
+	user.balloon_alert(user, "已补充") //If all checks passed, it's safe to throw the balloon alert
 	return TRUE
 
 /// Returns the strip delay of the item.

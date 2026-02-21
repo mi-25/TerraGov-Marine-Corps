@@ -1,6 +1,6 @@
 /obj/machinery/computer/secure_data
-	name = "Security Records"
-	desc = "Used to view and edit personnel's security records"
+	name = "安全记录"
+	desc = "用于查看和编辑人员的安全记录"
 	icon_state = "computer_small"
 	screen_overlay = "security"
 	broken_icon = "computer_small_red_broken"
@@ -31,13 +31,13 @@
 		return
 
 	if(scan)
-		to_chat(usr, "You remove \the [scan] from \the [src].")
+		to_chat(usr, "你将\the [scan]从\the [src]中取出。")
 		scan.loc = get_turf(src)
 		if(!usr.get_active_held_item() && istype(usr,/mob/living/carbon/human))
 			usr.put_in_hands(scan)
 		scan = null
 	else
-		to_chat(usr, "There is nothing to remove from the console.")
+		to_chat(usr, "控制台上没有可移除的物品。")
 
 /obj/machinery/computer/secure_data/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -49,7 +49,7 @@
 			return
 		I.forceMove(src)
 		scan = I
-		to_chat(user, "You insert [I].")
+		to_chat(user, "你将[I]插入。")
 
 
 /obj/machinery/computer/secure_data/interact(mob/user)

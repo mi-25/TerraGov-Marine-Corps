@@ -2,8 +2,8 @@
 // *********** Modular Style Line
 // ***************************************
 /obj/item/clothing/suit/modular/style
-	name = "\improper Drip"
-	desc = "They got that drip, doe."
+	name = "\improper 滴注"
+	desc = "他们这身行头，还挺潮。"
 	item_map_variant_flags = NONE
 	allowed_uniform_type = /obj/item/clothing/under
 	icon = 'icons/obj/clothing/suits/marine_suits.dmi'
@@ -54,8 +54,8 @@
 	. += jointext(codex_info, "<br>")
 
 /obj/item/clothing/suit/modular/style/leather_jacket
-	name = "\improper leather jacket"
-	desc = "A fashionable jacket. Get them with style."
+	name = "\improper 皮夹克"
+	desc = "一件时尚夹克。穿出你的风格。"
 	icon_state = "leather_jacket"
 	worn_icon_state = "leather_jacket_worn"
 	icon_state_variants = list(
@@ -69,8 +69,8 @@
 	colorable_allowed = ICON_STATE_VARIANTS_ALLOWED|PRESET_COLORS_ALLOWED
 
 /obj/item/clothing/suit/modular/style/duster
-	name = "\improper duster"
-	desc = "A light, loose-fitting colorable long coat, for those that want to have more style."
+	name = "\improper 风衣"
+	desc = "一件轻便、宽松的可染色长外套，适合那些想要更多风格的人。"
 	icon_state = "duster"
 	worn_icon_state = "duster_worn"
 	greyscale_colors = ARMOR_PALETTE_BLACK
@@ -81,8 +81,8 @@
 // ***************************************
 //  Modular hats
 /obj/item/clothing/head/modular/style
-	name = "\improper Nice Hat"
-	desc = "Nice hat bro. How did you find this?"
+	name = "\improper 好帽子"
+	desc = "好帽子啊兄弟。你从哪找到的？"
 	item_map_variant_flags = ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT|ITEM_DESERT_VARIANT
 	attachments_allowed = list(
 		/obj/item/armor_module/armor/badge,
@@ -113,8 +113,8 @@
 
 //marine hats
 /obj/item/clothing/head/modular/style/beret
-	name = "TGMC beret"
-	desc = "A hat used by the TGMC, typically considered the most iconic military headgear. Often reserved for higher ranking officers, they occasionally they find their way down the ranks into the hands of squad-leaders and decorated grunts."
+	name = "地球政府殖民地海军陆战队贝雷帽"
+	desc = "TGMC使用的一种军帽，通常被认为是最具标志性的军用头饰。通常为高级军官保留，但偶尔也会流传到下级，落入班长和受勋士兵手中。"
 	icon_state = "beret_inhand"
 	worn_icon_state = "beret"
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/stylehat_badge)
@@ -122,38 +122,38 @@
 
 
 /obj/item/clothing/head/modular/style/classic_beret
-	name = "TGMC beret (classic)"
-	desc = "A hat used by the TGMC, typically considered the most iconic military headgear. Often reserved for higher ranking officers, they occasionally they find their way down the ranks into the hands of squad-leaders and decorated grunts. This one is in a classic style."
+	name = "地球政府殖民地海军陆战队贝雷帽（经典款）"
+	desc = "TGMC使用的一种军帽，通常被认为是最具标志性的军用头饰。通常为高级军官保留，但偶尔也会流传到下级，落入班长和受勋士兵手中。这款是经典款式。"
 	icon_state = "classic_beret_inhand"
 	worn_icon_state = "classic_beret"
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/stylehat_badge/classic)
 	inv_hide_flags = HIDE_EXCESS_HAIR
 
 /obj/item/clothing/head/modular/style/boonie
-	name = "TGMC boonie"
-	desc = "A boonie hat used by the TGMC, purpose made for operations in enviroments with a lot of sun, or dense vegetation."
+	name = "地球政府殖民地海军陆战队丛林帽"
+	desc = "TGMC使用的丛林帽，专为阳光强烈或植被茂密环境下的行动而设计。"
 	icon_state = "boonie_inhand"
 	worn_icon_state = "boonie"
 	inv_hide_flags = HIDE_EXCESS_HAIR
 
 /obj/item/clothing/head/modular/style/cap
-	name = "TGMC cap"
-	desc = "A common patrol cap used by the TGMC, stylish and comes in many colors. Mostly useful to keep the sun and officers away."
+	name = "地球政府殖民地海军陆战队舰长"
+	desc = "地球政府殖民地海军陆战队常用的巡逻帽，款式时尚且颜色多样。主要用来遮挡阳光和避开军官。"
 	icon_state = "cap_inhand"
 	worn_icon_state = "cap"
 	inv_hide_flags = HIDE_EXCESS_HAIR
 
 
 /obj/item/clothing/head/modular/style/slouchhat
-	name = "TGMC slouch hat"
-	desc = "A slouch hat, makes you feel down under, doesn't it? Has 'PROPERTY OF THE TGMC' markings under the hat."
+	name = "地球政府殖民地海军陆战队软帽"
+	desc = "一顶软塌帽，让你感觉身处澳洲内陆，不是吗？帽子内侧印有'地球政府殖民地海军陆战队财产'的标记。"
 	icon_state = "slouch_inhand"
 	worn_icon_state = "slouch"
 	inv_hide_flags = HIDE_EXCESS_HAIR
 
 /obj/item/clothing/head/modular/style/ushanka
-	name = "TGMC ushanka"
-	desc = "A comfortable ushanka used by the TGMC. Will keep you warm in even the most harshest artic enviroments."
+	name = "TGMC 乌沙帽"
+	desc = "地球政府殖民地海军陆战队使用的舒适乌沙帽。即使在最严酷的北极环境中也能让你保持温暖。"
 	icon_state = "ushanka_inhand"
 	worn_icon_state = "ushanka"
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/stylehat_badge/ushanka)
@@ -161,38 +161,38 @@
 
 
 /obj/item/clothing/head/modular/style/campaignhat
-	name = "TGMC campaign hat"
-	desc = "A campaign hat, you can feel the menacing aura that this hat erodes just by looking at it."
+	name = "地球政府殖民地海军陆战队战役帽"
+	desc = "一顶军帽，光是看着它就能感受到这顶帽子散发出的威胁气息。"
 	icon_state = "campaign_inhand"
 	worn_icon_state = "campaign"
 	inv_hide_flags = HIDE_EXCESS_HAIR
 
 
 /obj/item/clothing/head/modular/style/beanie
-	name = "TGMC beanie"
-	desc = "A beanie, just looking at it makes you feel like an 'Oussama', or in better terms- A modern phenomenon of people suddenly needing to bench once they put on a beanie."
+	name = "地球政府殖民地海军陆战队针织帽"
+	desc = "一顶毛线帽，光是看着它就会让你感觉自己像个'乌萨马'，或者用更好的说法——一种现代现象，人们一旦戴上毛线帽就突然需要去卧推。"
 	icon_state = "beanie_inhand"
 	worn_icon_state = "beanie"
 	inv_hide_flags = HIDE_EXCESS_HAIR
 
 /obj/item/clothing/head/modular/style/headband
-	name = "TGMC headband"
-	desc = "A headband. Will keep the sweat off your eyes and also keep you looking cool."
+	name = "地球政府殖民地海军陆战队头带"
+	desc = "一条头带。既能防止汗水流入眼睛，也能让你看起来更酷。"
 	icon_state = "headband_inhand"
 	worn_icon_state = "headband"
 
 
 /obj/item/clothing/head/modular/style/bandana
-	name = "TGMC bandana"
-	desc = "A bandana that goes on your head. Has TGMC markings on the back tie, and it seems that the knot will never come undone somehow."
+	name = "地球政府殖民地海军陆战队头巾"
+	desc = "一条戴在头上的头巾。后系带上印有TGMC标记，而且那个结似乎永远不会松开。"
 	icon_state = "headbandana_inhand"
 	worn_icon_state = "headbandana"
 	inv_hide_flags = HIDE_EXCESS_HAIR
 
 // style masks
 /obj/item/clothing/mask/gas/modular/skimask
-	name = "ski mask"
-	desc = "A stylish skimask, can be recolored. Makes you feel like an operator just looking at it."
+	name = "滑雪面罩"
+	desc = "一款时尚的滑雪面罩，可重新染色。光是看着它就能让你感觉自己像个特工。"
 	icon_state = "ski_inhand"
 	worn_icon_state = "ski"
 	inv_hide_flags = HIDEALLHAIR|HIDEEARS
@@ -201,8 +201,8 @@
 
 
 /obj/item/clothing/mask/gas/modular/coofmask
-	name = "combat face cloth covering"
-	desc = "The CFCC is a prime and readied, yet stylish facemask ready to... cover your face."
+	name = "战斗面罩"
+	desc = "CFCC是一款优质、准备就绪且时尚的面罩，随时准备……遮住你的脸。"
 	icon_state = "coof_inhand"
 	worn_icon_state = "coof"
 	item_map_variant_flags = ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT|ITEM_DESERT_VARIANT

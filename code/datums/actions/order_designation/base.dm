@@ -9,8 +9,8 @@ GLOBAL_LIST_INIT(designator_mode_image_list, list(
 ))
 
 /datum/action/ability/activable/build_designator
-	name = "Interact Designator"
-	desc = "Order your underlings around."
+	name = "交互指示器"
+	desc = "指挥你的下属。"
 	action_icon_state = "interact_designator"
 	action_icon = 'icons/mob/actions.dmi'
 	use_state_flags = ABILITY_TARGET_SELF
@@ -111,12 +111,12 @@ GLOBAL_LIST_INIT(designator_mode_image_list, list(
 			target_flags = ABILITY_TURF_TARGET
 			use_state_flags = NONE
 			action_icon_state = "build_designator"
-			name = "Construction Designator"
-			desc = "Place a designator for construction."
+			name = "建造指示器"
+			desc = "放置一个建造指示器。"
 		if(INTERACT_DESIGNATOR_MODE)
 			target_flags = NONE
 			use_state_flags = ABILITY_TARGET_SELF
 			action_icon_state = "interact_designator"
-			name = "Interact Designator"
-			desc = "Order your underlings around."
+			name = "交互指示器"
+			desc = "指挥你的下属。"
 	update_button_icon()

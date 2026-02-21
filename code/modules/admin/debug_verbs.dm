@@ -196,7 +196,7 @@ ADMIN_VERB(debug_controller, R_DEBUG, "Debug Controller", "Debug the various per
 
 ADMIN_VERB(reestablish_db_connection, R_DEBUG, "Reestablish DB Connection", "Attempts to (re)establish the DB Connection", ADMIN_CATEGORY_SERVER)
 	if(!CONFIG_GET(flag/sql_enabled))
-		to_chat(usr, span_adminnotice("The Database is not enabled!"))
+		to_chat(usr, span_adminnotice("数据库未启用！"))
 		return
 
 	if(SSdbcore.IsConnected(TRUE))
@@ -485,10 +485,10 @@ ADMIN_VERB(display_sendmaps, R_DEBUG, "Send Maps Profile", "View the profile.", 
 
 ADMIN_VERB(allow_browser_inspect, R_DEBUG, "Allow Browser Inspect", "Allow browser debugging via inspect", ADMIN_CATEGORY_DEBUG)
 	if(user.byond_version < 516)
-		to_chat(user, span_warning("You can only use this on 516!"))
+		to_chat(user, span_warning("你只能对516使用这个！"))
 		return
 
-	to_chat(user, span_notice("You can now right click to use inspect on browsers."))
+	to_chat(user, span_notice("你现在可以右键点击浏览器使用检查功能。"))
 	winset(user, null, list("browser-options" = "+devtools"))
 
 #ifdef TESTING

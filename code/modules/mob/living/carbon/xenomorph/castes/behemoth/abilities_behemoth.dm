@@ -82,7 +82,7 @@
 
 /datum/action/ability/xeno_action/ready_charge/behemoth_roll
 	name = "Roll"
-	desc = "Toggles Rolling on or off. This can be used to displace talls but won't deal any damage."
+	desc = "切换滚动开关。可用于推开高个子单位，但不会造成任何伤害。"
 	charge_type = CHARGE_BEHEMOTH
 	speed_per_step = 0.35
 	steps_for_charge = 4
@@ -230,7 +230,7 @@
 	name = "Landslide"
 	action_icon_state = "landslide"
 	action_icon = 'icons/Xeno/actions/behemoth.dmi'
-	desc = "Rush forward in the selected direction, damaging enemies caught in a wide path."
+	desc = "向选定方向猛冲，对宽阔路径上的敌人造成伤害。"
 	ability_cost = 3 // This is deducted per step taken during the ability.
 	cooldown_duration = 20 SECONDS
 	target_flags = ABILITY_TURF_TARGET
@@ -281,7 +281,7 @@
 
 /datum/action/ability/activable/xeno/landslide/on_cooldown_finish()
 	if(ability_active)
-		owner.balloon_alert(owner, "use [lowertext(initial(name))] again to cancel")
+		owner.balloon_alert(owner, "再次使用 [lowertext(initial(name))] 以取消")
 		return ..()
 	current_charges = clamp(current_charges+1, 0, maximum_charges)
 	owner.balloon_alert(owner, "[lowertext(initial(name))] ready[current_charges > 1 ? " ([current_charges]/[maximum_charges])" : ""]")
@@ -300,7 +300,7 @@
 	var/turf/owner_turf = get_turf(owner)
 	var/direction = get_cardinal_dir(owner, target)
 	if(LinkBlocked(owner_turf, get_step(owner, direction)) || owner_turf == get_turf(target))
-		owner.balloon_alert(owner, "no space!")
+		owner.balloon_alert(owner, "没有空间！")
 		return
 	var/datum/action/ability/xeno_action/ready_charge/behemoth_roll/behemoth_roll_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/ready_charge/behemoth_roll]
 	if(behemoth_roll_action?.charge_ability_on)
@@ -479,9 +479,9 @@
 	add_cooldown()
 	switch(reason)
 		if(LANDSLIDE_ENDED_CANCELLED) // The user manually cancelled the ability at some point during its use.
-			xeno_owner.balloon_alert(xeno_owner, "cancelled!")
+			xeno_owner.balloon_alert(xeno_owner, "已取消！")
 		if(LANDSLIDE_ENDED_NO_PLASMA) // During the charge, the user did not have enough plasma to maintain the ability.
-			xeno_owner.balloon_alert(xeno_owner, "insufficient plasma!")
+			xeno_owner.balloon_alert(xeno_owner, "等离子体不足！")
 
 /**
  * Applies several effects to a living target.
@@ -578,7 +578,7 @@
 	name = "Earth Riser"
 	action_icon_state = "earth_riser"
 	action_icon = 'icons/Xeno/actions/behemoth.dmi'
-	desc = "Raise a pillar of earth at the selected location. This solid structure can be used for defense, and it interacts with other abilities for offensive usage. The pillar can be launched by click-dragging it in a direction. Alternate use destroys active pillars, starting with the oldest one."
+	desc = "在选定位置升起一根土柱。这种坚固结构可用于防御，并能与其他能力互动实现进攻用途。通过点击拖拽可将土柱朝指定方向发射。交替使用会摧毁已激活的土柱，从最早创建的柱子开始。"
 	ability_cost = 20
 	cooldown_duration = 10 SECONDS
 	keybinding_signals = list(
@@ -620,7 +620,7 @@
 
 /datum/action/ability/activable/xeno/earth_riser/alternate_action_activate()
 	if(!length(active_pillars))
-		xeno_owner.balloon_alert(xeno_owner, "no active pillars!")
+		xeno_owner.balloon_alert(xeno_owner, "没有活跃的支柱！")
 		return
 	add_cooldown(1.5 SECONDS)
 	var/obj/structure/earth_pillar/oldest_pillar = popleft(active_pillars)
@@ -630,13 +630,13 @@
 /datum/action/ability/activable/xeno/earth_riser/use_ability(atom/target)
 	. = ..()
 	if(maximum_pillars && length(active_pillars) >= maximum_pillars)
-		owner.balloon_alert(owner, "too many pillars!")
+		owner.balloon_alert(owner, "柱子太多了！")
 		return
 	var/turf/owner_turf = get_turf(owner)
 	var/turf/target_turf = get_turf(target)
 	var/datum/action/ability/xeno_action/primal_wrath/primal_wrath_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/primal_wrath]
 	if(!line_of_sight(owner, target, primal_wrath_action?.ability_active? EARTH_RISER_ENHANCED_RANGE : EARTH_RISER_RANGE))
-		owner.balloon_alert(owner, "out of range!")
+		owner.balloon_alert(owner, "超出射程！")
 		return
 	var/datum/action/ability/xeno_action/ready_charge/behemoth_roll/behemoth_roll_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/ready_charge/behemoth_roll]
 	if(behemoth_roll_action?.charge_ability_on)
@@ -774,10 +774,10 @@
 
 /datum/action/ability/xeno_action/seismic_fracture/New(Target)
 	. = ..()
-	desc = "Blast the earth around you, inflicting heavy damage within [SEISMIC_FRACTURE_ATTACK_RADIUS] tiles. Earth Pillars will repeat this ability around them if hit by it."
+	desc = "轰击你周围的地面，对[SEISMIC_FRACTURE_ATTACK_RADIUS]格范围内的目标造成重创。被此能力击中的地刺柱会在其周围重复此能力。"
 
 /datum/action/ability/xeno_action/seismic_fracture/on_cooldown_finish()
-	owner.balloon_alert(owner, "[initial(name)] ready")
+	owner.balloon_alert(owner, "[initial(name)] 就绪")
 	return ..()
 
 /datum/action/ability/xeno_action/seismic_fracture/action_activate()
@@ -806,7 +806,7 @@
 		return
 	var/list/turf/turfs_to_attack = filled_turfs(target_turf, SEISMIC_FRACTURE_ATTACK_RADIUS, include_edge = FALSE, pass_flags_checked = PASS_GLASS|PASS_PROJECTILE)
 	if(!length(turfs_to_attack))
-		owner.balloon_alert(owner, "unable to use here!")
+		owner.balloon_alert(owner, "无法在此处使用！")
 		return
 	add_cooldown()
 	succeed_activate()
@@ -911,7 +911,7 @@
 	name = "Primal Wrath"
 	action_icon_state = "primal_wrath"
 	action_icon = 'icons/Xeno/actions/behemoth.dmi'
-	desc = "Unleash your wrath. Enhances your abilities, changing their functionality and allowing them to apply a damage over time debuff."
+	desc = "释放你的怒火。强化你的能力，改变其功能并使其能够施加持续伤害减益效果。"
 	cooldown_duration = 1 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY|ABILITY_IGNORE_SELECTED_ABILITY
 	keybinding_signals = list(
@@ -968,7 +968,7 @@
 		if(ability_active || currently_roaring)
 			return
 		if(xeno_owner.wrath_stored < xeno_owner.xeno_caste.wrath_max - (xeno_owner.xeno_caste.wrath_max * 0.2))
-			xeno_owner.balloon_alert(xeno_owner, "not enough wrath!")
+			xeno_owner.balloon_alert(xeno_owner, "怒气不足！")
 			return
 	else if(xeno_owner.hivenumber == XENO_HIVE_FALLEN && ability_active)
 		toggle_buff(FALSE)
@@ -1084,7 +1084,7 @@
 			earth_riser_pillars_changed = 0
 			earth_riser_action.cooldown_duration -= earth_riser_cooldown_changed
 			earth_riser_cooldown_changed = 0
-		owner.balloon_alert(owner, "primal wrath ended")
+		owner.balloon_alert(owner, "原始怒火已结束")
 		UnregisterSignal(xeno_owner, COMSIG_ABILITY_SUCCEED_ACTIVATE)
 		return
 	set_toggle(TRUE)
@@ -1260,7 +1260,7 @@
 			xeno_attacker.do_attack_animation(src)
 			do_jitter_animation(jitter_loops = 1)
 			playsound(src, SFX_BEHEMOTH_EARTH_PILLAR_HIT, 40)
-			xeno_attacker.balloon_alert(xeno_attacker, "attack [attacks_to_destroy] more time\s to destroy")
+			xeno_attacker.balloon_alert(xeno_attacker, "攻击 [attacks_to_destroy] 次以摧毁")
 			new /obj/effect/temp_visual/behemoth/landslide/hit(current_turf)
 			return TRUE
 		if(INTENT_HELP)
@@ -1268,7 +1268,7 @@
 				xeno_attacker.do_attack_animation(src)
 				do_jitter_animation(jitter_loops = 1)
 				playsound(src, 'sound/effects/alien/behemoth/earth_pillar_eating.ogg', 30, TRUE)
-				xeno_attacker.visible_message(span_xenowarning("\The [xeno_attacker] eats away at the [src.name]!"), \
+				xeno_attacker.visible_message(span_xenowarning("\The [xeno_attacker] 正在啃噬 [src.name]！"), \
 				span_xenonotice(pick(
 					"We eat away at the stone. It tastes good, as expected of our primary diet.",
 					"Mmmmm... Delicious rock. A fitting meal for the hardiest of creatures.",

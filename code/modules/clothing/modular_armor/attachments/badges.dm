@@ -1,6 +1,6 @@
 /obj/item/armor_module/armor/badge
-	name = "\improper 7E chameleon badge"
-	desc = "The 7E chameleon badge uses brand new and revolutionary technology to make your gear look even cooler. It is capable of changing into a variety of different shapes (Alt-Click), changing colors (Attack with Green Facepaint), and attaching to nearly all clothing, helmets, berets, and or armor!"
+	name = "\improper 7E变色龙徽章"
+	desc = "7E变色龙徽章采用全新革命性技术，让你的装备看起来更酷炫。它能变换成多种不同形态（Alt+点击）、改变颜色（用绿色伪装油彩攻击），并几乎能附着在所有服装、头盔、贝雷帽和/或护甲上！"
 	greyscale_config = /datum/greyscale_config/badge/shield
 	icon_state = "in_hand"
 	slot = ATTACHMENT_SLOT_BADGE
@@ -52,7 +52,7 @@
 	if((current_style == "Left Helmet" || current_style == "Right Helmet") && !(istype(attaching_to, /obj/item/clothing/head)))
 		allowed = FALSE
 	if(!allowed)
-		to_chat(user, span_warning("The currently selected style, ([current_style]), is not compatable with [attaching_to]."))
+		to_chat(user, span_warning("当前选定的样式（[current_style]）与 [attaching_to] 不兼容。"))
 	return allowed
 
 /obj/item/armor_module/armor/badge/on_attach(obj/item/attaching_to, mob/user)
@@ -85,7 +85,7 @@
 
 
 /obj/item/armor_module/armor/stylehat_badge
-	name = "Beret Badge"
+	name = "贝雷帽徽章"
 	icon_state = "beret_badge"
 	greyscale_config = /datum/greyscale_config/style_hat/badge
 	slot = ATTACHMENT_SLOT_CAPE_HIGHLIGHT
@@ -96,15 +96,15 @@
 	colorable_allowed = COLOR_WHEEL_ALLOWED
 
 /obj/item/armor_module/armor/stylehat_badge/classic
-	name = "Classic Beret Badge"
+	name = "经典贝雷帽徽章"
 	icon_state = "classic_beret_badge"
 
 /obj/item/armor_module/armor/stylehat_badge/ushanka
-	name = "Ushanka Badge"
+	name = "乌沙帽徽章"
 	icon_state = "ushanka_badge"
 
 /obj/item/armor_module/armor/visor_glyph
-	name = "Visor Glyph"
+	name = "护目镜符号"
 	icon_state = "skull"
 	greyscale_config = /datum/greyscale_config/visors/glyphs
 	slot = ATTACHMENT_SLOT_CAPE_HIGHLIGHT

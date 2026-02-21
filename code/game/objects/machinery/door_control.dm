@@ -2,8 +2,8 @@
 #define CONTROL_NORMAL_DOORS 1
 
 /obj/machinery/door_control
-	name = "remote door-control"
-	desc = "It controls doors, remotely."
+	name = "远程门控"
+	desc = "它能远程控制门。"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "doorctrl0"
 	power_channel = ENVIRON
@@ -26,14 +26,14 @@
 	resistance_flags = RESIST_ALL
 
 /obj/machinery/door_control/ai
-	name = "AI Lockdown"
+	name = "AI锁定"
 
 /obj/machinery/door_control/ai/exterior
-	name = "AI Exterior Lockdown"
+	name = "AI外部封锁"
 	id = "ailockdownexterior"
 
 /obj/machinery/door_control/ai/interior
-	name = "AI Interior Lockdown"
+	name = "AI内部封锁"
 	id = "ailockdowninterior"
 
 /obj/machinery/door_control/Initialize(mapload, ndir = 0)
@@ -97,11 +97,11 @@
 	if(istype(user,/mob/living/carbon/xenomorph))
 		return
 	if(machine_stat & (NOPOWER|BROKEN))
-		to_chat(user, span_warning("[src] doesn't seem to be working."))
+		to_chat(user, span_warning("[src]似乎无法运作。"))
 		return
 
 	if(!allowed(user))
-		to_chat(user, span_warning("Access Denied"))
+		to_chat(user, span_warning("访问被拒绝"))
 		if(directional)
 			flick("doorctrl-denied",src)
 		if(!directional) //nondirectional door controls use the old door denied sprites
@@ -182,12 +182,12 @@
 
 //mainship door controls
 /obj/machinery/door_control/mainship/ammo
-	name = "Ammunition Storage"
+	name = "弹药储存"
 	id = "ammo2"
 	req_one_access = list(ACCESS_MARINE_BRIG, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_LEADER, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP)
 
 /obj/machinery/door_control/mainship/droppod
-	name = "Droppod bay"
+	name = "空降舱舱室"
 	id = "droppod"
 	req_one_access = list(ACCESS_MARINE_BRIG, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_LEADER, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP)
 
@@ -198,29 +198,29 @@
 	req_access = list(ACCESS_MARINE_MEDBAY)
 
 /obj/machinery/door_control/mainship/fuel
-	name = "Solid Fuel Storage"
+	name = "固体燃料储存"
 	id = "solid_fuel"
 
 /obj/machinery/door_control/mainship/hangar
-	name = "Hangar Shutters"
+	name = "机库舱门"
 	id = "hangar_shutters"
 
 /obj/machinery/door_control/mainship/research
-	name = "Medical Research Wing"
+	name = "医疗研究翼"
 	id = "researchdoorext"
 	req_access = list(ACCESS_MARINE_RESEARCH)
 
 /obj/machinery/door_control/mainship/research/lockdown
-	name = "Research Lockdown"
+	name = "研究封锁"
 	id = "researchlockdownext"
 
 /obj/machinery/door_control/mainship/brigarmory
-	name = "Brig Armory"
+	name = "禁闭室军械库"
 	id = "brig_armory"
 	req_access = list(ACCESS_MARINE_BRIG)
 
 /obj/machinery/door_control/mainship/checkpoint
-	name = "Checkpoint Shutters"
+	name = "检查点闸门"
 	req_one_access = list(ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_BRIG, ACCESS_MARINE_LEADER, ACCESS_MARINE_BRIDGE)
 
 /obj/machinery/door_control/mainship/checkpoint/north
@@ -230,64 +230,64 @@
 	id = "southcheckpoint"
 
 /obj/machinery/door_control/mainship/cic
-	name = "CIC Lockdown"
+	name = "指挥中心封锁"
 	id = "cic_lockdown"
 	req_one_access = list(ACCESS_MARINE_BRIDGE)
 
 /obj/machinery/door_control/mainship/cic/armory
-	name = "Armory Lockdown"
+	name = "军械库封锁"
 	id = "cic_armory"
 
 /obj/machinery/door_control/mainship/cic/hangar
-	name = "Hangar Lockdown"
+	name = "机库封锁"
 	id = "hangar_lockdown"
 
 /obj/machinery/door_control/mainship/mech
-	name = "\improper Mech Shutters"
+	name = "\improper 机甲舱门"
 	id = "mech_shutters"
 	req_one_access = list(ACCESS_MARINE_MECH)
 
 /obj/machinery/door_control/mainship/vehicle
-	name = "\improper Vehicle Bay Shutters"
+	name = "\improper 载具舱门"
 	id = "vehicle_shutters"
 	req_one_access = list(ACCESS_MARINE_ARMORED, ACCESS_MARINE_MECH, ACCESS_MARINE_ARMORED)
 
 /obj/machinery/door_control/mainship/tcomms
-	name = "Telecommunications Entrance"
+	name = "通信室入口"
 	id = "tcomms"
 	req_one_access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_BRIDGE)
 
 /obj/machinery/door_control/mainship/engineering/armory
-	name = "Engineering Armory Lockdown"
+	name = "工程军械库封锁"
 	id = "engi_armory"
 	req_one_access = list(ACCESS_MARINE_ENGINEERING, ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_BRIDGE)
 
 
 /obj/machinery/door_control/mainship/corporate
-	name = "Privacy Shutters"
+	name = "隐私护窗"
 	id = "cl_shutters"
 	req_access = list(ACCESS_NT_CORPORATE)
 
 /obj/machinery/door_control/mainship/fc_shutters
-	name = "Privacy Shutters"
+	name = "隐私护窗"
 	id = "fc_shutters"
 	req_access = list(ACCESS_MARINE_BRIDGE)
 
 /obj/machinery/door_control/mainship/req
-	name = "RO Line Shutters"
+	name = "RO 线路防护门"
 	id = "ROlobby"
 	req_one_access = list(ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
 
 /obj/machinery/door_control/mainship/req/ro1
-	name = "RO Line 1 Shutters"
+	name = "1号气闸防护门关闭"
 	id = "ROlobby1"
 
 /obj/machinery/door_control/mainship/req/ro2
-	name = "RO Line 2 Shutters"
+	name = "二号轨道炮线路护盾关闭"
 	id = "ROlobby2"
 
 /obj/machinery/door_control/directional
-	name = "autodirection door control"
+	name = "自动定向门控制"
 
 /obj/machinery/door_control/directional/unmeltable
 	resistance_flags = RESIST_ALL
@@ -306,36 +306,36 @@
 		icon_state = "olddoorctrl0"
 
 /obj/machinery/door_control/old/req
-	name = "RO Line Shutters"
+	name = "RO 线路防护门"
 	id = "ROlobby"
 	req_one_access = list(ACCESS_MARINE_CARGO, ACCESS_MARINE_LOGISTICS)
 
 /obj/machinery/door_control/old/valhalla
-	name = "RO Line Shutters"
+	name = "RO 线路防护门"
 	id = "valhalla"
 
 /obj/machinery/door_control/old/cic
-	name = "CIC Lockdown"
+	name = "指挥中心封锁"
 	id = "cic_lockdown"
 	req_one_access = list(ACCESS_MARINE_BRIDGE)
 
 /obj/machinery/door_control/old/cic/hangar
-	name = "Hangar Lockdown"
+	name = "机库封锁"
 	id = "hangar_lockdown"
 
 /obj/machinery/door_control/old/cic/hangar_shutters
 	id = "hangar_shutters"
-	name = "Hangar Shutters"
+	name = "机库闸门"
 
 /obj/machinery/door_control/old/cic/armory
-	name = "Armory Lockdown"
+	name = "军械库封锁"
 	id = "cic_armory"
 
 /obj/machinery/door_control/old/medbay
 	req_access = list(ACCESS_MARINE_MEDBAY)
 
 /obj/machinery/door_control/old/checkpoint
-	name = "Checkpoint Shutters"
+	name = "检查点闸门"
 	req_one_access = list(ACCESS_MARINE_LOGISTICS, ACCESS_MARINE_BRIG, ACCESS_MARINE_LEADER, ACCESS_MARINE_BRIDGE)
 
 /obj/machinery/door_control/old/checkpoint/north

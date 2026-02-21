@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/bullet/smg
-	name = "submachinegun bullet"
+	name = "冲锋枪弹道"
 	hud_state = "smg"
 	hud_state_empty = "smg_empty"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -17,18 +17,18 @@
 	penetration = 5
 
 /datum/ammo/bullet/smg/ap
-	name = "armor-piercing submachinegun bullet"
+	name = "穿甲冲锋枪弹道"
 	hud_state = "smg_ap"
 	damage = 15
 	penetration = 30
 	sundering = 3
 
 /datum/ammo/bullet/smg/ap/hv
-	name = "high velocity armor-piercing submachinegun bullet"
+	name = "高速穿甲冲锋枪弹道"
 	shell_speed = 4
 
 /datum/ammo/bullet/smg/hollow
-	name = "hollow-point submachinegun bullet"
+	name = "空尖冲锋枪弹道"
 	hud_state = "pistol_squash"
 	ammo_behavior_flags = AMMO_BALLISTIC
 	damage = 35
@@ -37,7 +37,7 @@
 	shrapnel_chance = 45
 
 /datum/ammo/bullet/smg/squash
-	name = "squash-head submachinegun bullet"
+	name = "碎头冲锋枪弹道"
 	hud_state = "pistol_squash"
 	ammo_behavior_flags = AMMO_BALLISTIC
 	damage = 15
@@ -59,14 +59,14 @@
 
 
 /datum/ammo/bullet/smg/incendiary
-	name = "incendiary submachinegun bullet"
+	name = "燃烧冲锋枪弹道"
 	hud_state = "smg_fire"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_INCENDIARY
 	damage = 18
 	penetration = 0
 
 /datum/ammo/bullet/smg/rad
-	name = "radioactive submachinegun bullet"
+	name = "放射性冲锋枪弹道"
 	hud_state = "smg_rad"
 	damage = 15
 	penetration = 15
@@ -81,13 +81,13 @@
 	living_victim.apply_radiation(2, 2)
 
 /datum/ammo/bullet/smg/heavy
-	name = "heavy submachinegun bullet"
+	name = "重型冲锋枪弹道"
 	damage = 27.5
 	penetration = 10
 	sundering = 1
 
 /datum/ammo/bullet/smg/val
-	name = "heavy submachinegun bullet"
+	name = "重型冲锋枪弹道"
 	damage = 30
 	penetration = 27.5
 	sundering = 2

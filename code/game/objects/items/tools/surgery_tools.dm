@@ -8,31 +8,31 @@
 	attack_speed = 11 //Used to be 4 which made them attack insanely fast.
 
 /obj/item/tool/surgery/retractor
-	name = "retractor"
-	desc = "Retracts stuff."
+	name = "牵开器"
+	desc = "收回物品。"
 	icon_state = "retractor"
 	atom_flags = CONDUCT
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/tool/surgery/hemostat
-	name = "hemostat"
-	desc = "You think you have seen this before."
+	name = "止血钳"
+	desc = "你觉得你以前见过这个。"
 	icon_state = "hemostat"
 	atom_flags = CONDUCT
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("attacks", "pinches")
 
 /obj/item/tool/surgery/cautery
-	name = "cautery"
-	desc = "This stops bleeding."
+	name = "烧灼器"
+	desc = "这能止血。"
 	icon_state = "cautery"
 	atom_flags = CONDUCT
 	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("burns")
 
 /obj/item/tool/surgery/surgicaldrill
-	name = "surgical drill"
-	desc = "You can drill using this item. You dig?"
+	name = "手术钻"
+	desc = "你可以用这个物品进行钻探。明白了吗？"
 	icon_state = "drill"
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	atom_flags = CONDUCT
@@ -45,8 +45,8 @@
 	return (BRUTELOSS)
 
 /obj/item/tool/surgery/scalpel
-	name = "scalpel"
-	desc = "Cut, cut, and once more cut."
+	name = "手术刀"
+	desc = "切，切，再切。"
 	icon_state = "scalpel"
 	atom_flags = CONDUCT
 	force = 20
@@ -68,15 +68,15 @@
 * Researchable Scalpels
 */
 /obj/item/tool/surgery/scalpel/laser3
-	name = "laser scalpel"
-	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field.  This one looks to be the pinnacle of precision energy cutlery!"
+	name = "激光手术刀"
+	desc = "一把配备了定向激光的手术刀，用于更精确的切割，同时防止血液进入手术区域。这看起来是精密能量切割器具的巅峰之作！"
 	icon_state = "scalpel_laser3_on"
 	damtype = BURN
 	force = 15
 
 /obj/item/tool/surgery/scalpel/manager
-	name = "incision management system"
-	desc = "A true extension of the surgeon's body, this marvel instantly and completely prepares an incision allowing for the immediate commencement of therapeutic steps."
+	name = "切口管理系统"
+	desc = "外科医生身体的真正延伸，这一奇迹能瞬间并彻底准备好切口，以便立即开始治疗步骤。"
 	icon_state = "scalpel_manager_on"
 	force = 7.5
 
@@ -84,8 +84,8 @@
 * Circular Saw
 */
 /obj/item/tool/surgery/circular_saw
-	name = "circular saw"
-	desc = "For heavy duty cutting."
+	name = "圆锯"
+	desc = "重型切割专用。"
 	icon_state = "saw"
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	atom_flags = CONDUCT
@@ -100,14 +100,14 @@
 
 //misc, formerly from code/defines/weapons.dm
 /obj/item/tool/surgery/bonegel
-	name = "bone gel"
+	name = "骨胶"
 	icon_state = "bone-gel"
 	force = 0
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 1
 
 /obj/item/tool/surgery/FixOVein
-	name = "FixOVein"
+	name = "静脉修复器"
 	icon_state = "fixovein"
 	force = 0
 	throwforce = 1
@@ -115,7 +115,7 @@
 	var/usage_amount = 10
 
 /obj/item/tool/surgery/bonesetter
-	name = "bone setter"
+	name = "骨骼固定器"
 	icon_state = "bonesetter"
 	force = 8
 	throwforce = 9
@@ -125,7 +125,7 @@
 	attack_verb = list("attacks", "hits", "bludgeons")
 
 /obj/item/tool/surgery/suture
-	name = "surgical suture"
+	name = "手术缝合线"
 	icon_state = "suture"
 	force = 3
 	throwforce = 0
@@ -133,7 +133,7 @@
 	attack_verb = list("needles", "sews", "stabs")
 
 /obj/item/tool/surgery/surgical_membrane
-	name = "surgical membrane"
+	name = "手术膜"
 	icon_state = "surgical_membrane"
 	force = 0
 	throwforce = 0

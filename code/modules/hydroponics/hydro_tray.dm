@@ -326,7 +326,7 @@
 		return
 
 	if(closed_system)
-		to_chat(user, "You can't harvest from the plant while the lid is shut.")
+		to_chat(user, "盖子关着的时候无法从植物上收获。")
 		return
 
 	seed.harvest(user,yield_mod)
@@ -352,7 +352,7 @@
 		return
 
 	if(closed_system)
-		to_chat(user, "You can't remove the dead plant while the lid is shut.")
+		to_chat(user, "盖子关着时无法移除死去的植物。")
 		return
 
 	seed = null
@@ -362,7 +362,7 @@
 	yield_mod = 0
 	mutation_mod = 0
 
-	to_chat(user, "You remove the dead plant from the [src].")
+	to_chat(user, "你将死去的植物从[src]中移除。")
 	check_level_sanity()
 	update_icon()
 
@@ -442,7 +442,7 @@
 	pestlevel = 0
 	sampled = 0
 	update_icon()
-	visible_message(span_notice("[src] has been overtaken by [seed.display_name]."))
+	visible_message(span_notice("[src]已被[seed.display_name]占据。"))
 
 
 /obj/machinery/hydroponics/proc/mutate(severity)
@@ -494,7 +494,7 @@
 	weedlevel = 0
 
 	update_icon()
-	visible_message(span_warning("The <span class='notice'> [previous_plant] <span class='warning'> has suddenly mutated into <span class='notice'> [seed.display_name]!"))
+	visible_message(span_warning("<span class='notice'> [previous_plant] <span class='warning'> 突然变异成了 <span class='notice'> [seed.display_name]！"))
 
 
 /obj/machinery/hydroponics/attackby(obj/item/I, mob/user, params)
@@ -507,15 +507,15 @@
 
 	else if(iswirecutter(I) || istype(I, /obj/item/tool/surgery/scalpel))
 		if(!seed)
-			to_chat(user, "There is nothing to take a sample from in \the [src].")
+			to_chat(user, "\the [src] 中没有任何可供取样的东西。")
 			return
 
 		if(sampled)
-			to_chat(user, "You have already sampled from this plant.")
+			to_chat(user, "你已经采集过这株植物了。")
 			return
 
 		if(dead)
-			to_chat(user, "The plant is dead.")
+			to_chat(user, "这株植物死了。")
 			return
 
 		// Create a sample.
@@ -535,30 +535,30 @@
 		if(S.mode == 1)
 			if(seed)
 				return FALSE
-			to_chat(user, "There's no plant to inject.")
+			to_chat(user, "没有可供注射的植物。")
 			return TRUE
 		else
 			if(seed)
-				to_chat(user, "You can't get any extract out of this plant.")
+				to_chat(user, "你无法从这株植物中提取任何物质。")
 			else
-				to_chat(user, "There's nothing to draw something from.")
+				to_chat(user, "没有可供汲取的东西。")
 			return TRUE
 
 	else if(istype(I, /obj/item/seeds))
 		var/obj/item/seeds/S = I
 
 		if(seed)
-			to_chat(user, span_warning("\The [src] already has seeds in it!"))
+			to_chat(user, span_warning("\The [src] 已经装有种子了！"))
 			return
 
 		user.drop_held_item()
 
 		if(!S.seed)
-			to_chat(user, "The packet seems to be empty. You throw it away.")
+			to_chat(user, "包裹似乎是空的。你把它扔掉了。")
 			qdel(I)
 			return
 
-		to_chat(user, "You plant the [S.seed.seed_name] [S.seed.seed_noun].")
+		to_chat(user, "你种下了[S.seed.seed_name] [S.seed.seed_noun]。")
 
 		if(S.seed.spread == 1)
 			message_admins("[key_name(user)] has planted a creeper packet.")
@@ -585,10 +585,10 @@
 
 	else if(istype(I, /obj/item/tool/minihoe))  // The minihoe
 		if(weedlevel <= 0)
-			to_chat(user, span_warning("This plot is completely devoid of weeds. It doesn't need uprooting."))
+			to_chat(user, span_warning("这片地块完全没有菌毯。不需要清除。"))
 			return
 
-		user.visible_message(span_warning("[user] starts uprooting the weeds."), span_warning("You remove the weeds from the [src]."))
+		user.visible_message(span_warning("[user]开始拔除菌毯。"), span_warning("You remove the weeds from the [src]."))
 		weedlevel = 0
 		update_icon()
 
@@ -607,7 +607,7 @@
 		toxins += spray.toxicity
 		pestlevel -= spray.pest_kill_str
 		weedlevel -= spray.weed_kill_str
-		to_chat(user, "You spray [src] with [I].")
+		to_chat(user, "你用[I]喷洒[src]。")
 		playsound(loc, 'sound/effects/spray3.ogg', 25, 1, 3)
 		qdel(I)
 
@@ -636,9 +636,9 @@
 			if(health <= (seed.endurance / 2))
 				to_chat(usr, "The plant looks [span_warning("unhealthy.")]")
 		else
-			to_chat(usr, "[src] is empty.")
-		to_chat(usr, "Water: [round(waterlevel,0.1)]/100")
-		to_chat(usr, "Nutrient: [round(nutrilevel,0.1)]/10")
+			to_chat(usr, "[src]是空的。")
+		to_chat(usr, "水量：[round(waterlevel,0.1)]/100")
+		to_chat(usr, "营养值：[round(nutrilevel,0.1)]/10")
 		if(weedlevel >= 5)
 			to_chat(usr, "[src] is [span_warning("filled with weeds!")]")
 		if(pestlevel >= 5)
@@ -671,7 +671,7 @@
 		return
 
 	if(istype(I, /obj/item/tool/shovel))
-		to_chat(user, "You clear up [src]!")
+		to_chat(user, "你清理了[src]！")
 		qdel(src)
 
 /obj/machinery/hydroponics/soil/Initialize(mapload)

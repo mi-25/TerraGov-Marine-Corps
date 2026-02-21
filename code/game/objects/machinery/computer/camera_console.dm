@@ -1,6 +1,6 @@
 /obj/machinery/computer/security
-	name = "security camera console"
-	desc = "Used to access the various cameras on the station."
+	name = "安全摄像头控制台"
+	desc = "用于访问空间站上的各种摄像头。"
 	icon_state = "computer_small"
 	screen_overlay = "cameras"
 	broken_icon = "computer_small_red_broken"
@@ -149,8 +149,8 @@
 	return valid_cams
 
 /obj/machinery/computer/security/telescreen
-	name = "Telescreen"
-	desc = "Used for watching an empty arena."
+	name = "电讯屏"
+	desc = "用于观看空竞技场。"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "telescreen"
 	screen_overlay = null
@@ -165,22 +165,22 @@
 		icon_state += "b"
 
 /obj/machinery/computer/security/telescreen/entertainment
-	name = "entertainment monitor"
-	desc = "Damn, why do they never have anything interesting on these things?"
+	name = "娱乐监视器"
+	desc = "该死，为什么这些东西上从来没什么有意思的？"
 	icon = 'icons/obj/status_display.dmi'
 	icon_state = "entertainment"
 	circuit = null
 
 /obj/machinery/computer/security/wooden_tv
-	name = "Security Cameras"
-	desc = "An old TV hooked into the stations camera network."
+	name = "安全摄像头"
+	desc = "一台连接着站点摄像头网络的老旧电视。"
 	icon_state = "security_det"
 	screen_overlay = "security_det_screen"
 	circuit = null
 
 /obj/machinery/computer/security/mining
-	name = "Outpost Cameras"
-	desc = "Used to access the various cameras on the outpost."
+	name = "前哨站摄像头"
+	desc = "用于访问前哨站上的各种摄像头。"
 	icon_state = "computer"
 	screen_overlay = "miningcameras"
 	broken_icon = "computer_blue_broken"
@@ -188,8 +188,8 @@
 	circuit = /obj/item/circuitboard/computer/security/mining
 
 /obj/machinery/computer/security/engineering
-	name = "Engineering Cameras"
-	desc = "Used to monitor fires and breaches."
+	name = "工程部摄像头"
+	desc = "用于监控火灾和破口。"
 	icon_state = "computer"
 	screen_overlay = "engineeringcameras"
 	broken_icon = "computer_blue_broken"
@@ -197,15 +197,15 @@
 	circuit = /obj/item/circuitboard/computer/security/engineering
 
 /obj/machinery/computer/security/nuclear
-	name = "Mission Monitor"
-	desc = "Used to access the built-in cameras in helmets."
+	name = "任务监控器"
+	desc = "用于访问头盔内置摄像头。"
 	icon_state = "computer"
 	screen_overlay = "syndicam"
 	network = list("NUKE")
 	circuit = null
 
 /obj/machinery/computer/security/marinemainship
-	name = "Ship Security Cameras"
+	name = "舰船监控摄像头"
 	density = FALSE
 	icon_state = "computer_small"
 	screen_overlay = "security_cam"
@@ -224,8 +224,8 @@
 	network = list(SOM_CAMERA_NETWORK)
 
 /obj/machinery/computer/security/dropship
-	name = "abstract dropship camera computer"
-	desc = "A computer to monitor cameras linked to the dropship."
+	name = "抽象化运输机摄像头计算机"
+	desc = "连接至运输机的摄像头监控电脑。"
 	density = TRUE
 	icon_state = "dropship_console_left"
 	screen_overlay = "dropship_console_left_emissive"
@@ -233,14 +233,14 @@
 	resistance_flags = RESIST_ALL
 
 /obj/machinery/computer/security/dropship/one
-	name = "\improper 'Alamo' camera controls"
+	name = "\improper '阿拉莫号' 摄像头控制"
 	network = list("dropship1")
 	opacity = FALSE
 
 /obj/machinery/computer/security/dropship/two
-	name = "\improper 'Normandy' camera controls"
+	name = "\improper '诺曼底'号摄像头控制"
 	network = list("dropship2")
 
 /obj/machinery/computer/security/dropship/three
-	name = "\improper 'Triump' camera controls"
+	name = "\improper 'Triump' 摄像头控制"
 	network = list("dropship3")

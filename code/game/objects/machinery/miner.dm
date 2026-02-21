@@ -16,8 +16,8 @@
 #define PLATINUM_DROPSHIP_BONUS_AMOUNT 30
 ///Resource generator that produces a certain material that can be repaired by marines and attacked by xenos, Intended as an objective for marines to play towards to get more req gear
 /obj/machinery/miner
-	name = "\improper Nanotrasen phoron mining well"
-	desc = "Top-of-the-line Nanotrasen research drill with it's own export module, used to extract phoron in vast quantities. Selling the phoron mined by these would net a nice profit..."
+	name = "\improper 纳米传讯等离子体开采井"
+	desc = "顶级纳米传讯研究钻机，配备独立出口模块，用于大规模提取等离子体。出售这些钻机开采的等离子体将带来可观利润……"
 	icon = 'icons/obj/mining_drill.dmi'
 	density = TRUE
 	icon_state = "mining_drill_active"
@@ -54,8 +54,8 @@
 	return //Marker will be set by itself once processing pauses when it detects this miner is broke.
 
 /obj/machinery/miner/damaged/platinum
-	name = "\improper Nanotrasen platinum mining well"
-	desc = "A Nanotrasen platinum drill with an internal export module. Produces even more valuable materials than it's phoron counterpart"
+	name = "\improper 纳米传讯铂金矿井"
+	desc = "一台带有内部出口模块的纳米传讯铂金钻机。能产出比其等离子体版本更有价值的材料。"
 	mineral_value = PLATINUM_CRATE_SELL_AMOUNT
 	dropship_bonus = PLATINUM_DROPSHIP_BONUS_AMOUNT
 /obj/machinery/miner/Initialize(mapload)
@@ -91,16 +91,16 @@
 /// Called whenever someone attacks the miner with a object which is considered a upgrade.The object needs to have a uptype var.
 /obj/machinery/miner/proc/attempt_upgrade(obj/item/minerupgrade/upgrade, mob/user, params)
 	if(miner_upgrade_type)
-		to_chat(user, span_info("The [src]'s module sockets are already occupied by the [miner_upgrade_type]."))
+		to_chat(user, span_info("[src]的模块插槽已被[miner_upgrade_type]占用。"))
 		return FALSE
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		user.visible_message(span_notice("[user] fumbles around figuring out how to install the module on [src]."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何在 [src] 上安装这个模块。"),
 		span_notice("You fumble around figuring out how to install the module on [src]."))
 		var/fumbling_time = 15 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 			return FALSE
-	user.visible_message(span_notice("[user] begins attaching a module to [src]'s sockets."))
-	to_chat(user, span_info("You begin installing the [upgrade] on the miner."))
+	user.visible_message(span_notice("[user]开始将一个模块安装到[src]的插槽上。"))
+	to_chat(user, span_info("你开始为矿机安装[upgrade]。"))
 	if(!do_after(user, 15 SECONDS, NONE, src, BUSY_ICON_BUILD))
 		return FALSE
 	switch(upgrade.uptype)
@@ -116,11 +116,11 @@
 				GLOB.round_statistics.points_from_mining += mineral_value * stored_mineral
 				do_sparks(5, TRUE, src)
 				playsound(loc,'sound/effects/phasein.ogg', 50, FALSE)
-				say("Ore shipment has been sold for [mineral_value * stored_mineral] points.")
+				say("矿石货物已售出，获得[mineral_value * stored_mineral]点。")
 				stored_mineral = 0
 				start_processing()
 	miner_upgrade_type = upgrade.uptype
-	user.visible_message(span_notice("[user] attaches the [miner_upgrade_type] to the [src]!"))
+	user.visible_message(span_notice("[user]将[miner_upgrade_type]安装到了[src]上！"))
 	qdel(upgrade)
 	playsound(loc,'sound/items/screwdriver.ogg', 25, TRUE)
 	update_icon()
@@ -132,7 +132,7 @@
 	if(istype(I, /obj/item/minerupgrade))
 		var/obj/item/minerupgrade/upgrade = I
 		if(!(miner_status == MINER_RUNNING))
-			to_chat(user, span_info("[src]'s module sockets seem bolted down."))
+			to_chat(user, span_info("[src]的模块插槽似乎被螺栓固定住了。"))
 			return FALSE
 		attempt_upgrade(upgrade,user)
 
@@ -141,13 +141,13 @@
 	var/obj/item/tool/weldingtool/weldingtool = I
 	if((miner_status == MINER_RUNNING) && miner_upgrade_type)
 		if(!weldingtool.remove_fuel(2,user))
-			to_chat(user, span_info("You need more welding fuel to complete this task!"))
+			to_chat(user, span_info("你需要更多焊接燃料来完成这个任务！"))
 			return FALSE
-		to_chat(user, span_info("You begin uninstalling the [miner_upgrade_type] from the miner!"))
-		user.visible_message(span_notice("[user] begins dismantling the [miner_upgrade_type] from the miner."))
+		to_chat(user, span_info("你开始从矿机中卸载[miner_upgrade_type]！"))
+		user.visible_message(span_notice("[user]开始从矿物处理器上拆卸[miner_upgrade_type]。"))
 		if(!do_after(user, 30 SECONDS, NONE, src, BUSY_ICON_BUILD))
 			return FALSE
-		user.visible_message(span_notice("[user] dismantles the [miner_upgrade_type] from the miner!"))
+		user.visible_message(span_notice("[user] 从矿物处理器上拆除了 [miner_upgrade_type]！"))
 		var/obj/item/upgrade
 		switch(miner_upgrade_type)
 			if(MINER_RESISTANT)
@@ -169,15 +169,15 @@
 	if(miner_status != MINER_DESTROYED)
 		return
 	if(!weldingtool.remove_fuel(1, user))
-		to_chat(user, span_warning("You need more welding fuel to complete this task."))
+		to_chat(user, span_warning("你需要更多焊接燃料来完成此任务。"))
 		return FALSE
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		user.visible_message(span_notice("[user] fumbles around figuring out [src]'s internals."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着 [src] 的内部结构。"),
 		span_notice("You fumble around figuring out [src]'s internals."))
 		var/fumbling_time = 10 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED, extra_checks = CALLBACK(weldingtool, TYPE_PROC_REF(/obj/item/tool/weldingtool, isOn))))
 			return FALSE
-	user.visible_message(span_notice("[user] starts welding [src]'s internal damage."),
+	user.visible_message(span_notice("[user]开始焊接[src]的内部损伤。"),
 	span_notice("You start welding [src]'s internal damage."))
 	if(!I.use_tool(src, user, 20 SECONDS, 2, 25, null, BUSY_ICON_BUILD))
 		return
@@ -185,7 +185,7 @@
 		return FALSE
 	miner_integrity = 0.33 * max_miner_integrity
 	set_miner_status()
-	user.visible_message(span_notice("[user] welds [src]'s internal damage."),
+	user.visible_message(span_notice("[user] 焊接了 [src] 的内部损伤。"),
 	span_notice("You weld [src]'s internal damage."))
 	record_miner_repair(user)
 	return TRUE
@@ -194,13 +194,13 @@
 	if(miner_status != MINER_MEDIUM_DAMAGE)
 		return
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		user.visible_message(span_notice("[user] fumbles around figuring out [src]'s wiring."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着 [src] 的线路。"),
 		span_notice("You fumble around figuring out [src]'s wiring."))
 		var/fumbling_time = 10 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 			return FALSE
 	playsound(loc, 'sound/items/wirecutter.ogg', 25, TRUE)
-	user.visible_message(span_notice("[user] starts securing [src]'s wiring."),
+	user.visible_message(span_notice("[user]开始固定[src]的线路。"),
 	span_notice("You start securing [src]'s wiring."))
 	if(!do_after(user, 120, NONE, src, BUSY_ICON_BUILD))
 		return FALSE
@@ -209,7 +209,7 @@
 	playsound(loc, 'sound/items/wirecutter.ogg', 25, TRUE)
 	miner_integrity = 0.66 * max_miner_integrity
 	set_miner_status()
-	user.visible_message(span_notice("[user] secures [src]'s wiring."),
+	user.visible_message(span_notice("[user] 固定了 [src] 的线路。"),
 	span_notice("You secure [src]'s wiring."))
 	record_miner_repair(user)
 	return TRUE
@@ -218,13 +218,13 @@
 	if(miner_status != MINER_SMALL_DAMAGE)
 		return
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		user.visible_message(span_notice("[user] fumbles around figuring out [src]'s tubing and plating."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着 [src] 的管道和护板。"),
 		span_notice("You fumble around figuring out [src]'s tubing and plating."))
 		var/fumbling_time = 10 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 			return FALSE
 	playsound(loc, 'sound/items/ratchet.ogg', 25, TRUE)
-	user.visible_message(span_notice("[user] starts repairing [src]'s tubing and plating."),
+	user.visible_message(span_notice("[user]开始修复[src]的管道和护甲。"),
 	span_notice("You start repairing [src]'s tubing and plating."))
 	if(!do_after(user, 150, NONE, src, BUSY_ICON_BUILD))
 		return FALSE
@@ -233,7 +233,7 @@
 	playsound(loc, 'sound/items/ratchet.ogg', 25, TRUE)
 	miner_integrity = max_miner_integrity
 	set_miner_status()
-	user.visible_message(span_notice("[user] repairs [src]'s tubing and plating."),
+	user.visible_message(span_notice("[user]修复了[src]的管道和护甲。"),
 	span_notice("You repair [src]'s tubing and plating."))
 	start_processing()
 	faction = user.faction
@@ -261,13 +261,13 @@
 
 /obj/machinery/miner/attack_hand(mob/living/user)
 	if(miner_status != MINER_RUNNING)
-		to_chat(user, span_warning("[src] is damaged!"))
+		to_chat(user, span_warning("[src]受损了！"))
 		return
 	if(miner_upgrade_type == MINER_AUTOMATED)
-		to_chat(user, span_warning("[src] is automated!"))
+		to_chat(user, span_warning("[src] 已自动化！"))
 		return
 	if(!stored_mineral)
-		to_chat(user, span_warning("[src] is not ready to produce a shipment yet!"))
+		to_chat(user, span_warning("[src] 尚未准备好生成货运！"))
 		return
 
 	SSpoints.supply_points[faction] += mineral_value * stored_mineral
@@ -275,7 +275,7 @@
 	GLOB.round_statistics.points_from_mining += mineral_value * stored_mineral
 	do_sparks(5, TRUE, src)
 	playsound(loc,'sound/effects/phasein.ogg', 50, FALSE)
-	say("Ore shipment has been sold for [mineral_value * stored_mineral] points.")
+	say("矿石货物已售出，获得[mineral_value * stored_mineral]点。")
 	stored_mineral = 0
 	start_processing()
 
@@ -296,7 +296,7 @@
 				GLOB.round_statistics.points_from_mining += mineral_value
 				do_sparks(5, TRUE, src)
 				playsound(loc,'sound/effects/phasein.ogg', 50, FALSE)
-				say("Ore shipment has been sold for [mineral_value] points.")
+				say("矿石货物已售出，获得[mineral_value]点。")
 				add_tick = 0
 				return
 			playsound(loc,'sound/machines/buzz-two.ogg', 35, FALSE)
@@ -304,7 +304,7 @@
 			return
 		stored_mineral += 1
 		add_tick = 0
-		say("[stored_mineral] Ore shipment\s is ready to be exported.")
+		say("[stored_mineral] 矿石货物已准备就绪，可以出口。")
 		playsound(loc,'sound/machines/ping.ogg', 20, FALSE)
 	if(stored_mineral >= 8)	//Stores 8 boxes worth of minerals
 		stop_processing()
@@ -315,16 +315,16 @@
 	if(xeno_attacker.status_flags & INCORPOREAL) //Incorporeal xenos cannot attack physically.
 		return
 	if(miner_upgrade_type == MINER_RESISTANT && !HAS_TRAIT(xeno_attacker, TRAIT_CAN_DISABLE_MINER))
-		xeno_attacker.visible_message(span_notice("[xeno_attacker]'s claws bounce off of [src]'s reinforced plating."),
+		xeno_attacker.visible_message(span_notice("[xeno_attacker]的爪子从[src]的强化装甲上弹开了。"),
 		span_notice("We can't slash through [src]'s reinforced plating!"))
 		return
 	while(miner_status != MINER_DESTROYED)
 		if(xeno_attacker.do_actions)
-			return balloon_alert(xeno_attacker, "busy!")
+			return balloon_alert(xeno_attacker, "忙！")
 		if(!do_after(xeno_attacker, 1.5 SECONDS, NONE, src, BUSY_ICON_DANGER, BUSY_ICON_HOSTILE))
 			return
 		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-		xeno_attacker.visible_message(span_danger("[xeno_attacker] slashes \the [src]!"), \
+		xeno_attacker.visible_message(span_danger("[xeno_attacker] 对 \the [src] 发动斩击！"), \
 		span_danger("We slash \the [src]!"), null, 5)
 		playsound(loc, SFX_ALIEN_CLAW_METAL, 25, TRUE)
 		miner_integrity -= 25

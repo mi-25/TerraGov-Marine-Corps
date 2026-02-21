@@ -144,7 +144,7 @@ export const JobPreferences = (props) => {
               </Flex.Item>
               <Flex.Item>
                 <h4>Preferred Squad</h4>
-                {Object.values(squads).map((squad) => (
+                {Object.values(squads ?? {}).map((squad) => (
                   <Button.Checkbox
                     key={squad}
                     inline
@@ -156,7 +156,7 @@ export const JobPreferences = (props) => {
               </Flex.Item>
               <Flex.Item>
                 <h4>Preferred Squad - SOM</h4>
-                {Object.values(squads_som).map((squad_som) => (
+                {Object.values(squads_som ?? {}).map((squad_som) => (
                   <Button.Checkbox
                     key={squad_som}
                     inline
@@ -168,7 +168,7 @@ export const JobPreferences = (props) => {
               </Flex.Item>
               <Flex.Item>
                 <h4>Occupational choices</h4>
-                {Object.keys(special_occupations).map((special, idx) => (
+                {Object.keys(special_occupations ?? {}).map((special, idx) => (
                   <>
                     <Button.Checkbox
                       key={special_occupations[special]}
@@ -204,8 +204,12 @@ const JobPreference = (props) => {
   const { act, data } = useBackend<JobPreferenceData>();
   const { jobs, job_preferences } = data;
   const { job, setShownDescription } = props;
-  const jobData = jobs[job];
-  const preference = job_preferences[job];
+  const jobData = jobs?.[job];
+  const preference = job_preferences?.[job];
+
+  if (!jobData) {
+    return null;
+  }
 
   if (jobData.banned) {
     return (

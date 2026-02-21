@@ -1,6 +1,6 @@
 /obj/machinery/computer/code_generator
-	name = "Generic generator"
-	desc = "A secure terminal used to do generic things. You shouldn't see this."
+	name = "通用发电机"
+	desc = "一个用于执行常规操作的安全终端。你不应该看到这个。"
 	icon_state = "computer"
 	interaction_flags = INTERACT_MACHINE_TGUI
 	resistance_flags = RESIST_ALL|DROPSHIP_IMMUNE
@@ -50,7 +50,7 @@
 	deltimer(current_timer)
 	current_timer = null
 	update_minimap_icon()
-	visible_message("<b>[src]</b> shuts down as it loses power. Any running programs will now exit")
+	visible_message("<b>[src]</b> 因电力耗尽而关闭。所有正在运行的程序现在都将退出。")
 
 /obj/machinery/computer/code_generator/attackby(obj/item/I, mob/living/user, params)
 	return attack_hand(user)
@@ -98,7 +98,7 @@
 	switch(action)
 		if("run_program")
 			if(busy || current_timer)
-				to_chat(usr, span_warning("A program is already running."))
+				to_chat(usr, span_warning("程序已在运行。"))
 				return
 
 			if(completed_segments == total_segments) //If we're done, there's no need to run a segment again
@@ -114,7 +114,7 @@
 /obj/machinery/computer/code_generator/proc/start_segment(mob/user)
 	busy = TRUE
 
-	user.visible_message(span_notice("[user] begins typing away at the [src]'s keyboard..."),
+	user.visible_message(span_notice("[user]开始在[src]的键盘上敲击起来..."),
 	span_notice("You begin typing away at the [src]'s keyboard..."))
 	if(!do_after(user, start_time, NONE, src, BUSY_ICON_GENERIC, null, null, CALLBACK(src, TYPE_PROC_REF(/datum, process))))
 		busy = FALSE

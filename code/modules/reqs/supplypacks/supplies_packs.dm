@@ -6,12 +6,12 @@ SUPPLIES
 	containertype = /obj/structure/closet/crate/supply
 
 /datum/supply_packs/supplies/crayons
-	name = "PFC Jim Special Crayon Pack"
+	name = "列兵吉姆特制蜡笔包"
 	contains = list(/obj/item/storage/fancy/crayons)
 	cost = 40
 
 /datum/supply_packs/supplies/janitor
-	name = "Assorted janitorial supplies"
+	name = "各类清洁用品"
 	contains = list(
 		/obj/item/reagent_containers/glass/bucket,
 		/obj/item/reagent_containers/glass/bucket,
@@ -32,37 +32,37 @@ SUPPLIES
 	cost = 50
 
 /datum/supply_packs/supplies/carpplush
-	name = "Carp plushie"
+	name = "鲤鱼玩偶"
 	contains = list(/obj/item/toy/plush/carp)
 	cost = 10
 
 /datum/supply_packs/supplies/lizplush
-	name = "Lizard plushie"
+	name = "蜥蜴玩偶"
 	contains = list(/obj/item/toy/plush/lizard)
 	cost = 10
 
 /datum/supply_packs/supplies/slimeplush
-	name = "Slime plushie"
+	name = "史莱姆玩偶"
 	contains = list(/obj/item/toy/plush/slime)
 	cost = 10
 
 /datum/supply_packs/supplies/mothplush
-	name = "Moth plushie"
+	name = "飞蛾玩偶"
 	contains = list(/obj/item/toy/plush/moth)
 	cost = 10
 
 /datum/supply_packs/supplies/rounyplush
-	name = "Rouny plushie"
+	name = "鲁尼毛绒玩具"
 	contains = list(/obj/item/toy/plush/rouny)
 	cost = 10
 
 /datum/supply_packs/supplies/queenplushie
-	name = "Royal queen plushie"
+	name = "皇家异形女王玩偶"
 	contains = list(/obj/item/toy/plush/royalqueen)
 	cost = 10
 
 /datum/supply_packs/supplies/games
-	name = "Games crate"
+	name = "游戏板条箱"
 	contains = list(
 		/obj/item/toy/beach_ball/basketball,
 		/obj/item/toy/bikehorn,
@@ -80,7 +80,7 @@ SUPPLIES
 	cost = 80
 
 /datum/supply_packs/supplies/games
-	name = "Therapy doll crate"
+	name = "治疗玩偶板条箱"
 	contains = list(
 		/obj/item/toy/plush/therapy_red,
 		/obj/item/toy/plush/therapy_orange,
@@ -92,31 +92,31 @@ SUPPLIES
 	cost = 40
 
 /datum/supply_packs/supplies/dollarten
-	name = "10 dollars"
+	name = "10美元"
 	contains = list(/obj/item/spacecash/c10)
 	cost = 1
 
 /datum/supply_packs/supplies/dollartwenty
-	name = "20 dollars"
+	name = "20美元"
 	contains = list(/obj/item/spacecash/c20)
 	cost = 2
 
 /datum/supply_packs/supplies/dollarfifty
-	name = "50 dollars"
+	name = "50美元"
 	contains = list(/obj/item/spacecash/c50)
 	cost = 5
 
 /datum/supply_packs/supplies/dollarhundred
-	name = "100 dollars"
+	name = "100美元"
 	contains = list(/obj/item/spacecash/c100)
 	cost = 10
 
 /datum/supply_packs/supplies/dollartwohundred
-	name = "200 dollars"
+	name = "200美元"
 	contains = list(/obj/item/spacecash/c200)
 	cost = 20
 
 /datum/supply_packs/supplies/dollarfivehundred
-	name = "500 dollars"
+	name = "500美元"
 	contains = list(/obj/item/spacecash/c500)
 	cost = 50

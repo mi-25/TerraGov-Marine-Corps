@@ -1,6 +1,6 @@
 /mob/living/simple_animal/crab
-	name = "crab"
-	desc = "Free crabs!"
+	name = "螃蟹"
+	desc = "免费螃蟹！"
 	icon_state = "crab"
 	icon_living = "crab"
 	icon_dead = "crab_dead"
@@ -17,9 +17,9 @@
 
 
 /mob/living/simple_animal/crab/Coffee
-	name = "Coffee"
+	name = "咖啡"
 	real_name = "Coffee"
-	desc = "It's Coffee, the other pet!"
+	desc = "是咖啡，另一只宠物！"
 	gender = FEMALE
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
@@ -27,9 +27,9 @@
 
 
 /mob/living/simple_animal/crab/evil
-	name = "Evil Crab"
+	name = "邪恶螃蟹"
 	real_name = "Evil Crab"
-	desc = "Unnerving, isn't it? It has to be planning something nefarious..."
+	desc = "令人不安，对吧？它肯定在策划什么邪恶的勾当……"
 	icon_state = "evilcrab"
 	icon_living = "evilcrab"
 	icon_dead = "evilcrab_dead"
@@ -39,8 +39,8 @@
 
 
 /mob/living/simple_animal/crab/kreb
-	name = "Kreb"
-	desc = "This is a real crab. The other crabs are simply gubbucks in disguise!"
+	name = "克雷布"
+	desc = "这是一只真正的螃蟹。其他螃蟹都只是伪装成嘎巴克的！"
 	real_name = "Kreb"
 	icon_state = "kreb"
 	icon_living = "kreb"
@@ -51,7 +51,7 @@
 
 
 /mob/living/simple_animal/crab/evil/kreb
-	name = "Evil Kreb"
+	name = "邪恶克雷布"
 	real_name = "Evil Kreb"
 	icon_state = "evilkreb"
 	icon_living = "evilkreb"

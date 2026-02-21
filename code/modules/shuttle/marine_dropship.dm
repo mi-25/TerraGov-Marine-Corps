@@ -33,10 +33,10 @@
 		if(!is_mainship_level(M.z))
 			continue
 		if(M.buckled)
-			to_chat(M, span_warning("You are jolted against [M.buckled]!"))
+			to_chat(M, span_warning("你被猛地撞向[M.buckled]！"))
 			shake_camera(M, 3, 1)
 		else
-			to_chat(M, span_warning("The floor jolts under your feet!"))
+			to_chat(M, span_warning("脚下地板剧烈震动！"))
 			shake_camera(M, 10, 1)
 			M.Paralyze(6 SECONDS)
 		CHECK_TICK
@@ -287,25 +287,25 @@
 	switch(mode)
 		if(SHUTTLE_RECHARGING)
 			if(user)
-				to_chat(user, span_warning("The [src] is recharging."))
+				to_chat(user, span_warning("[src]正在重新充能。"))
 			return FALSE
 		if(SHUTTLE_CALL)
 			if(user)
-				to_chat(user, span_warning("The [src] is in flight."))
+				to_chat(user, span_warning("[src]正在飞行中。"))
 			return FALSE
 		if(SHUTTLE_IGNITING)
 			if(user)
-				to_chat(user, span_warning("The [src] is about to take off."))
+				to_chat(user, span_warning("[src]即将起飞。"))
 			return FALSE
 		if(SHUTTLE_PREARRIVAL)
 			if(user)
-				to_chat(user, span_warning("The [src] is about to land."))
+				to_chat(user, span_warning("[src]即将着陆。"))
 			return FALSE
 
 	#ifndef TESTING
 	if(!(shuttle_flags & GAMEMODE_IMMUNE) && world.time < SSticker.round_start_time + SSticker.mode.deploy_time_lock)
 		if(user)
-			to_chat(user, span_warning("It's too early to use the takeoff alarm right now."))
+			to_chat(user, span_warning("现在使用起飞警报还为时过早。"))
 		return FALSE
 	#endif
 
@@ -456,7 +456,7 @@
 
 /obj/docking_port/mobile/marine_dropship/can_move_topic(mob/user)
 	if(hijack_state != HIJACK_STATE_NORMAL)
-		to_chat(user, span_warning("Control integrity compromised!"))
+		to_chat(user, span_warning("控制完整性受损！"))
 		return FALSE
 	return ..()
 
@@ -467,10 +467,10 @@
 	set desc = "Call down the dropship to the closest LZ or unlock the doors"
 
 	if(!SSticker?.mode)
-		to_chat(src, span_warning("This power doesn't work in this gamemode."))
+		to_chat(src, span_warning("此能力在此游戏模式下无效。"))
 
 	if(!(hive.hive_flags & HIVE_CAN_HIJACK))
-		to_chat(src, span_warning("Our hive lacks the psychic prowess to hijack the bird."))
+		to_chat(src, span_warning("我们的蜂巢缺乏劫持那艘飞船所需的心灵力量。"))
 		return
 
 	var/datum/game_mode/D = SSticker.mode
@@ -478,9 +478,9 @@
 	if(!D.can_summon_dropship(src))
 		return
 
-	to_chat(src, span_warning("You begin calling down the shuttle."))
+	to_chat(src, span_warning("你开始呼叫运输船。"))
 	if(!do_after(src, 80, IGNORE_HELD_ITEM, null, BUSY_ICON_DANGER, BUSY_ICON_DANGER))
-		to_chat(src, span_warning("You stop."))
+		to_chat(src, span_warning("你停下了。"))
 		return
 
 	if(!D.can_summon_dropship(src))
@@ -490,7 +490,7 @@
 
 	var/obj/docking_port/stationary/port = D.summon_dropship(src)
 	if(!port)
-		to_chat(src, span_warning("Something went wrong."))
+		to_chat(src, span_warning("出了点问题。"))
 		return
 	message_admins("[ADMIN_TPMONTY(src)] has summoned the dropship")
 	log_admin("[key_name(src)] has summoned the dropship")
@@ -505,10 +505,10 @@
 		user.balloon_alert(user, span_warning("Busy"))
 		return FALSE
 	if(SSticker.round_start_time + SHUTTLE_HIJACK_LOCK > world.time)
-		to_chat(user, span_warning("It's too early to call it. We must wait [DisplayTimeText(SSticker.round_start_time + SHUTTLE_HIJACK_LOCK - world.time, 1)]."))
+		to_chat(user, span_warning("现在下结论还为时过早。我们必须等待[DisplayTimeText(SSticker.round_start_time + SHUTTLE_HIJACK_LOCK - world.time, 1)]。"))
 		return FALSE
 	if(!is_ground_level(user.z))
-		to_chat(user, span_warning("We can't call the bird from here!"))
+		to_chat(user, span_warning("我们无法从这里呼叫运输机！"))
 		return FALSE
 	var/obj/docking_port/mobile/marine_dropship/D
 	for(var/k in SSshuttle.dropships)
@@ -533,33 +533,33 @@
 			locked_sides++
 			break
 		if(!locked_sides)
-			to_chat(user, span_warning("The bird is already on the ground, open and vulnerable."))
+			to_chat(user, span_warning("目标已暴露在地面，门户大开。"))
 			return FALSE
 		if(locked_sides < 3 && !isdropshiparea(get_area(user)))
-			to_chat(user, span_warning("At least one side is still unlocked!"))
+			to_chat(user, span_warning("至少有一侧尚未锁定！"))
 			return FALSE
-		to_chat(user, span_xenodanger("We crack open the metal bird's shell."))
+		to_chat(user, span_xenodanger("我们撬开了这只金属鸟的壳。"))
 		if(D.hijack_state != HIJACK_STATE_NORMAL)
 			return FALSE
-		to_chat(user, span_warning("We begin overriding the shuttle lockdown. This will take a while..."))
+		to_chat(user, span_warning("正在解除穿梭机锁定。这需要一些时间..."))
 		if(!do_after(user, 30 SECONDS, IGNORE_HELD_ITEM, null, BUSY_ICON_DANGER, BUSY_ICON_DANGER))
-			to_chat(user, span_warning("We cease overriding the shuttle lockdown."))
+			to_chat(user, span_warning("我们停止覆盖穿梭机锁定。"))
 			return FALSE
 		if(!is_ground_level(D.z))
-			to_chat(user, span_warning("The bird has left meanwhile, try again."))
+			to_chat(user, span_warning("那只鸟已经飞走了，再试一次。"))
 			return FALSE
 		D.unlock_all()
 		if(D.mode != SHUTTLE_IGNITING)
 			D.set_hijack_state(HIJACK_STATE_UNLOCKED)
 			D.do_start_hijack_timer(GROUND_LOCKDOWN_TIME)
-			to_chat(user, span_warning("We were unable to prevent the bird from flying as it is already taking off."))
+			to_chat(user, span_warning("我们无法阻止鸟儿飞翔，因为它已经起飞了。"))
 		D.silicon_lock_airlocks(TRUE)
-		to_chat(user, span_warning("We have overriden the shuttle lockdown!"))
+		to_chat(user, span_warning("我们已解除穿梭机封锁！"))
 		playsound(user, SFX_ALIEN_ROAR, 50)
 		priority_announce("Alamo lockdown protocol compromised. Interference preventing remote control.", "Dropship Lock Alert", type = ANNOUNCEMENT_PRIORITY, color_override = "red")
 		return FALSE
 	if(D.mode != SHUTTLE_IDLE && D.mode != SHUTTLE_RECHARGING)
-		to_chat(user, span_warning("The bird's mind is currently active. We need to wait until it's more vulnerable..."))
+		to_chat(user, span_warning("这只鸟的意识目前处于活跃状态。我们需要等到它更脆弱的时候..."))
 		return FALSE
 	var/humans_on_ground = 0
 	for(var/i in SSmapping.levels_by_trait(ZTRAIT_GROUND))
@@ -571,7 +571,7 @@
 				continue
 			humans_on_ground++
 	if(length(GLOB.alive_human_list) && ((humans_on_ground / length(GLOB.alive_human_list)) > ALIVE_HUMANS_FOR_CALLDOWN))
-		to_chat(user, span_warning("There's too many tallhosts still on the ground. They interfere with our psychic field. We must dispatch them before we are able to do this."))
+		to_chat(user, span_warning("地面上还有太多高个子宿主。他们干扰了我们的灵能场。我们必须先清除他们才能进行此事。"))
 		return FALSE
 	return TRUE
 
@@ -619,16 +619,16 @@
 	if(!(xeno_attacker.xeno_caste.caste_flags & CASTE_IS_INTELLIGENT) && (infestation_mode.round_stage != INFESTATION_MARINE_CRASHING))
 		return
 	if(xeno_attacker.hive.living_xeno_ruler != xeno_attacker) //If we aren't the actual hive leader, prevent us from controling alamo
-		to_chat(xeno_attacker, span_xenowarning("We must be the hive leader!"))
+		to_chat(xeno_attacker, span_xenowarning("我们必须成为蜂巢的领袖！"))
 		return
 	#ifndef TESTING
 	if(SSticker.round_start_time + SHUTTLE_HIJACK_LOCK > world.time)
-		to_chat(xeno_attacker, span_xenowarning("It's too early to do this!"))
+		to_chat(xeno_attacker, span_xenowarning("现在做这个还太早了！"))
 		return
 	#endif
 	var/obj/docking_port/mobile/marine_dropship/shuttle = SSshuttle.getShuttle(shuttleId)
 	if(shuttle.hijack_state != HIJACK_STATE_CALLED_DOWN && shuttle.hijack_state != HIJACK_STATE_CRASHING) //Process of corrupting the controls
-		to_chat(xeno_attacker, span_xenowarning("We corrupt the bird's controls, unlocking the doors and preventing it from flying."))
+		to_chat(xeno_attacker, span_xenowarning("我们破坏了鸟的控制系统，解锁了舱门并阻止其飞行。"))
 		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_DROPSHIP_CONTROLS_CORRUPTED, src)
 		shuttle.set_idle()
 		shuttle.set_hijack_state(HIJACK_STATE_CALLED_DOWN)
@@ -781,17 +781,17 @@
 			if(!istype(infestation_mode) || infestation_mode.round_stage == INFESTATION_MARINE_CRASHING)
 				return
 			if(!(infestation_mode.round_type_flags & MODE_HIJACK_POSSIBLE))
-				to_chat(usr, span_warning("Hijacking is not possible."))
+				to_chat(usr, span_warning("劫持不可行。"))
 				return
 			var/mob/living/carbon/xenomorph/xeno = usr
 			if(!(xeno.hive.hive_flags & HIVE_CAN_HIJACK))
-				to_chat(xeno, span_warning("Our hive lacks the psychic prowess to hijack the bird."))
+				to_chat(xeno, span_warning("我们的蜂巢缺乏劫持那只鸟所需的心灵力量。"))
 				return
 			if(shuttle.mode == SHUTTLE_RECHARGING)
-				to_chat(xeno, span_xenowarning("The bird is still cooling down."))
+				to_chat(xeno, span_xenowarning("这只鸟还在冷却中。"))
 				return
 			if(shuttle.mode != SHUTTLE_IDLE)
-				to_chat(xeno, span_xenowarning("We can't do that right now."))
+				to_chat(xeno, span_xenowarning("我们现在无法执行此操作。"))
 				return
 			var/confirm = tgui_alert(usr, "Would you like to hijack the metal bird?", "Hijack the bird?", list("Yes", "No"))
 			if(confirm != "Yes")
@@ -800,7 +800,7 @@
 			if(!CT)
 				return
 			if(SSmonitor.gamestate == SHIPSIDE)
-				to_chat(xeno, span_xenowarning("The shuttle is already at the ship!"))
+				to_chat(xeno, span_xenowarning("穿梭机已经抵达舰船！"))
 				return
 
 			shuttle.stop_takeoff_alarm(announce = FALSE)
@@ -815,14 +815,14 @@
 				return
 			var/groundside_humans = length(GLOB.humans_by_zlevel["[z]"])
 			if(groundside_humans > 5)
-				to_chat(usr, span_xenowarning("There is still prey left to hunt!"))
+				to_chat(usr, span_xenowarning("还有猎物等着我们去猎杀！"))
 				return
 			var/confirm = tgui_alert(usr, "Would you like to capture the metal bird?\n THIS WILL END THE ROUND", "Capture the ship?", list( "Yes", "No"))
 			if(confirm != "Yes")
 				return
 			groundside_humans = length(GLOB.humans_by_zlevel["[z]"])
 			if(groundside_humans > 5)
-				to_chat(usr, span_xenowarning("There is still prey left to hunt!"))
+				to_chat(usr, span_xenowarning("还有猎物等着我们去猎杀！"))
 				return
 
 			priority_announce("The Alamo has been captured! Losing their main mean of accessing the ground, the marines have no choice but to retreat.", title = "Alamo Captured", color_override = "orange")
@@ -846,24 +846,24 @@
 		message = "Unscheduled dropship departure detected from operational area. Hijack likely.",
 		sound = 'sound/AI/hijack.ogg',
 		color_override = "red")
-	to_chat(user, span_userdanger("A loud alarm erupts from [src]! The fleshy hosts must know that you can access it!"))
+	to_chat(user, span_userdanger("[src]发出刺耳的警报！这些血肉宿主一定知道你能够访问它！"))
 	user.hive.on_shuttle_hijack(crashing_dropship)
 	playsound(src, 'sound/misc/queen_alarm.ogg')
 	crashing_dropship.silicon_lock_airlocks(TRUE)
 	SSevacuation.scuttle_flags &= ~FLAGS_SDEVAC_TIMELOCK
 	switch(SSshuttle.moveShuttleToDock(shuttleId, crash_target, TRUE))
 		if(0)
-			visible_message("Shuttle departing. Please stand away from the doors.")
+			visible_message("穿梭机即将离港。请远离舱门。")
 		if(1)
-			to_chat(user, span_warning("Invalid shuttle requested. This shouldn't happen, please report it."))
+			to_chat(user, span_warning("请求的穿梭机无效。这不应该发生，请报告此问题。"))
 			CRASH("moveShuttleToDock() returned 1.")
 		else
-			to_chat(user, span_warning("ERROR. This shouldn't happen, please report it."))
+			to_chat(user, span_warning("错误。这不应该发生，请报告此问题。"))
 			CRASH("moveShuttleToDock() returned a non-zero-nor-one value.")
 
 /obj/machinery/computer/shuttle/marine_dropship/one
 	name = "\improper 'Alamo' flight controls"
-	desc = "The flight controls for the 'Alamo' Dropship. Named after the Alamo Mission, stage of the Battle of the Alamo in the United States' state of Texas in the Spring of 1836. The defenders held to the last, encouraging other Texians to rally to the flag."
+	desc = "'阿拉莫号'运输机的飞行控制系统。以阿拉莫传教站命名，该地是1836年春季美国德克萨斯州阿拉莫战役的战场。防御者坚守至最后一刻，激励了其他德克萨斯人集结到旗帜下。"
 	possible_destinations = "lz1;lz2;alamo"
 
 /obj/machinery/computer/shuttle/marine_dropship/one/Initialize(mapload)
@@ -874,7 +874,7 @@
 
 /obj/machinery/computer/shuttle/marine_dropship/two
 	name = "\improper 'Normandy' flight controls"
-	desc = "The flight controls for the 'Normandy' Dropship. Named after a department in France, noteworthy for the famous naval invasion of Normandy on the 6th of June 1944, a bloody but decisive victory in World War II and the campaign for the Liberation of France."
+	desc = "'诺曼底'号空降艇的飞行控制系统。以法国的一个省份命名，因1944年6月6日著名的诺曼底登陆战而闻名，那是第二次世界大战中一场血腥但决定性的胜利，也是法国解放战役的关键一役。"
 	icon_state = "dropship_console2"
 	screen_overlay = "dropship_console2_emissive"
 	possible_destinations = "lz1;lz2;alamo;normandy"
@@ -937,11 +937,11 @@
 	if(isxeno(user))
 		return
 	if(!is_operational())
-		to_chat(user, span_warning("[src] doesn't seem to be working."))
+		to_chat(user, span_warning("[src]似乎无法运作。"))
 		return
 
 	if(!allowed(user))
-		to_chat(user, span_warning("Access Denied"))
+		to_chat(user, span_warning("访问被拒绝"))
 		flick("doorctrl-denied",src)
 		return
 
@@ -1152,7 +1152,7 @@
 	opacity = FALSE
 
 /obj/structure/dropship_piece/tadpole/cockpit
-	desc = "The nose part of the tadpole, able to be destroyed."
+	desc = "蝌蚪号的头部部件，可被摧毁。"
 	max_integrity = 600
 	resistance_flags = XENO_DAMAGEABLE | DROPSHIP_IMMUNE
 	opacity = FALSE
@@ -1475,7 +1475,7 @@
 	var/obj/docking_port/mobile/shuttle = SSshuttle.getShuttle(shuttleId)
 	#ifndef TESTING
 	if(!(shuttle.shuttle_flags & GAMEMODE_IMMUNE) && world.time < SSticker.round_start_time + SSticker.mode.deploy_time_lock)
-		to_chat(usr, span_warning("The engines are still refueling."))
+		to_chat(usr, span_warning("引擎仍在补充燃料。"))
 		return TRUE
 	#endif
 	if(!shuttle.can_move_topic(usr))
@@ -1495,19 +1495,19 @@
 	switch(SSshuttle.moveShuttle(shuttleId, params["destination"], 1))
 		if(0)
 			if(previous_status != SHUTTLE_IDLE)
-				visible_message(span_notice("Destination updated, recalculating route."))
+				visible_message(span_notice("目的地已更新，正在重新计算路线。"))
 			else
-				visible_message(span_notice("Shuttle departing. Please stand away from the doors."))
+				visible_message(span_notice("穿梭机即将离港。请远离舱门。"))
 				for(var/mob/living/silicon/ai/AI AS in GLOB.ai_list)
 					if(!AI.client)
 						continue
-					to_chat(AI, span_info("[src] was commanded remotely to take off."))
+					to_chat(AI, span_info("[src]被远程指令起飞。"))
 			return TRUE
 		if(1)
-			to_chat(usr, span_warning("Invalid shuttle requested."))
+			to_chat(usr, span_warning("请求的穿梭机无效。"))
 			return TRUE
 		else
-			to_chat(usr, span_notice("Unable to comply."))
+			to_chat(usr, span_notice("无法执行。"))
 			return TRUE
 
 /obj/machinery/computer/shuttle/shuttle_control/ui_data(mob/user)
@@ -1586,15 +1586,15 @@
 
 	shuttleId = newId
 	name = "\improper '[shuttleName]' dropship console"
-	desc = "The remote controls for the '[shuttleName]' Dropship."
-	say("Relinked Dropship Control Console to: '[shuttleName]'")
+	desc = "'[shuttleName]'运输艇的远程控制器。"
+	say("已重新链接空降舱控制台至：'[shuttleName]'")
 	return TRUE //Did relink
 
 
 
 /obj/machinery/computer/shuttle/shuttle_control/dropship
 	name = "\improper 'Alamo' dropship console"
-	desc = "The remote controls for the 'Alamo' Dropship. Named after the Alamo Mission, stage of the Battle of the Alamo in the United States' state of Texas in the Spring of 1836. The defenders held to the last, encouraging other Texans to rally to the flag."
+	desc = "'阿拉莫号'运输艇的远程控制器。以阿拉莫传教站命名，该地是1836年春季美国德克萨斯州阿拉莫战役的战场。防御者们坚守至最后一刻，激励了其他德克萨斯人集结到旗帜之下。"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer_small"
 	screen_overlay = "shuttle"
@@ -1607,13 +1607,13 @@
 
 /obj/machinery/computer/shuttle/shuttle_control/dropship/two
 	name = "\improper 'Normandy' dropship console"
-	desc = "The remote controls for the 'Normandy' Dropship. Named after a department in France, noteworthy for the famous naval invasion of Normandy on the 6th of June 1944, a bloody but decisive victory in World War II and the campaign for the Liberation of France."
+	desc = "{{P0}}号{{P1}}空降艇的遥控器。以法国诺曼底省命名，该地因1944年6月6日著名的诺曼底登陆战而闻名——这场二战中血腥但决定性的胜利，标志着法国解放战役的转折点。"
 	shuttleId = SHUTTLE_NORMANDY
 	possible_destinations = "lz1;lz2;alamo;normandy"
 
 /obj/machinery/computer/shuttle/shuttle_control/canterbury
 	name = "\improper 'Canterbury' shuttle console"
-	desc = "The remote controls for the 'Canterbury' shuttle."
+	desc = "'坎特伯雷'号穿梭机的远程控制器。"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer_small"
 	screen_overlay = "shuttle"
@@ -1623,7 +1623,7 @@
 
 /obj/machinery/computer/shuttle/shuttle_control/canterbury/ui_interact(mob/user)
 	if(!allowed(user))
-		to_chat(user, span_warning("Access Denied!"))
+		to_chat(user, span_warning("访问被拒绝！"))
 		return
 	var/obj/docking_port/mobile/M = SSshuttle.getShuttle(shuttleId)
 	var/dat = "Status: [M ? M.getStatusText() : "*Missing*"]<br><br>"
@@ -1643,10 +1643,10 @@
 	if(isxeno(usr))
 		return TRUE
 	if(!allowed(usr))
-		to_chat(usr, span_danger("Access denied."))
+		to_chat(usr, span_danger("访问被拒绝。"))
 		return TRUE
 	if(!href_list["move"] || !iscrashgamemode(SSticker.mode))
-		to_chat(usr, span_warning("[src] is unresponsive."))
+		to_chat(usr, span_warning("[src] 没有反应。"))
 		return FALSE
 
 	if(!length(GLOB.active_nuke_list) && tgui_alert(usr, "Are you sure you want to launch the shuttle? Without sufficiently dealing with the threat, you will be in direct violation of your orders!", "Are you sure?", list("Yes", "Cancel")) != "Yes")
@@ -1658,13 +1658,13 @@
 	var/obj/docking_port/mobile/M = SSshuttle.getShuttle(shuttleId)
 	#ifndef TESTING
 	if(!(M.shuttle_flags & GAMEMODE_IMMUNE) && world.time < SSticker.round_start_time + SSticker.mode.deploy_time_lock)
-		to_chat(usr, span_warning("The engines are still refueling."))
+		to_chat(usr, span_warning("引擎仍在补充燃料。"))
 		return TRUE
 	#endif
 	if(!M.can_move_topic(usr))
 		return TRUE
 
-	visible_message(span_notice("Shuttle departing. Please stand away from the doors."))
+	visible_message(span_notice("穿梭机即将离港。请远离舱门。"))
 	M.destination = null
 	M.mode = SHUTTLE_IGNITING
 	M.setTimer(M.ignitionTime)

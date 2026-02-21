@@ -1,7 +1,7 @@
 //shitcode and broken
 /obj/vehicle/train/cargo/engine
-	name = "cargo train tug"
-	desc = "A ridable electric car designed for pulling cargo trolleys."
+	name = "货运列车牵引车"
+	desc = "一款可骑乘的电动小车，专为牵引货物拖车而设计。"
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "cargo_engine"
 	var/on = FALSE
@@ -20,14 +20,14 @@
 	var/open = FALSE
 
 /obj/item/key/cargo_train
-	name = "key"
-	desc = "A keyring with a small steel key, and a yellow fob reading \"Choo Choo!\"."
+	name = "钥匙"
+	desc = "一把钥匙环，上面挂着一把小钢钥匙和一个黄色钥匙扣，上面写着'Choo Choo!'。"
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "train_keys"
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/vehicle/train/cargo/trolley
-	name = "cargo train trolley"
+	name = "货运列车手推车"
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "cargo_trailer"
 	anchored = FALSE
@@ -133,20 +133,20 @@
 		return
 
 	if(on)
-		to_chat(usr, "The engine is already running.")
+		to_chat(usr, "引擎已在运行。")
 		return
 
 	turn_on()
 	if (on)
-		to_chat(usr, "You start [src]'s engine.")
+		to_chat(usr, "你启动了[src]的引擎。")
 	else
 		if (cell)
 			if(cell.charge < charge_use)
-				to_chat(usr, "[src] is out of power.")
+				to_chat(usr, "[src] 电量耗尽。")
 			else
-				to_chat(usr, "[src]'s engine won't start.")
+				to_chat(usr, "[src]的引擎无法启动。")
 		else
-			to_chat(usr, "[src]'s engine won't start.")
+			to_chat(usr, "[src]的引擎无法启动。")
 
 /obj/vehicle/train/cargo/engine/verb/stop_engine()
 	set name = "Stop engine"
@@ -157,12 +157,12 @@
 		return
 
 	if(!on)
-		to_chat(usr, "The engine is already stopped.")
+		to_chat(usr, "引擎已经停止运转。")
 		return
 
 	turn_off()
 	if (!on)
-		to_chat(usr, "You stop [src]'s engine.")
+		to_chat(usr, "你关闭了[src]的引擎。")
 
 /obj/vehicle/train/cargo/engine/verb/remove_key()
 	set name = "Remove key"

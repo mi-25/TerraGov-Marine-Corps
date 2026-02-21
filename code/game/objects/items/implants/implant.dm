@@ -1,5 +1,5 @@
 /obj/item/implant
-	name = "implant"
+	name = "植入物"
 	icon = 'icons/obj/items/implants.dmi'
 	icon_state = "implant"
 	embedding = list("embedded_flags" = EMBEDDED_DEL_ON_HOLDER_DEL, "embed_process_chance" = 0, "embed_chance" = 0, "embedded_fall_chance" = 0)
@@ -68,7 +68,7 @@
 	if(!ishuman(target))
 		return FALSE
 	if(!(user.zone_selected in allowed_limbs))
-		to_chat(user, span_warning("You cannot implant this into that limb!"))
+		to_chat(user, span_warning("你无法将植入体植入该肢体！"))
 		return FALSE
 	if((implant_flags & DUPLICATE_IMPLANT_ALLOWED))
 		return
@@ -86,11 +86,11 @@
 		CRASH("[src] implanted into [target] [user ? "by [user]" : ""] but had no limb, despite being set to implant in [limb_targeting].")
 	for(var/obj/item/implant/embedded in affected.implants)
 		if((implant_flags & HIGHLANDER_IMPLANT) || (embedded.implant_flags & HIGHLANDER_IMPLANT))
-			to_chat(user, span_warning("Cannot fit the [name] due to the [embedded.name] already there!"))
+			to_chat(user, span_warning("无法安装[name]，因为[embedded.name]已经在那里了！"))
 			return FALSE
 		if(!(embedded.type == type) || (implant_flags & DUPLICATE_IMPLANT_ALLOWED))
 			continue
-		to_chat(user, span_warning("There is already another [name] in this limb!"))
+		to_chat(user, span_warning("这个肢体上已经有另一个[name]了！"))
 		return FALSE
 	if(!embed_into(target, limb_targeting, TRUE))
 		return FALSE
@@ -128,10 +128,10 @@
 	to_chat(implant_owner, span_warning("You feel something melting inside [part ? "your [part.display_name]" : "you"]!"))
 	part.take_damage_limb(0, 15)
 
-	name = "melted implant"
-	desc = "Charred circuit in melted plastic case. Wonder what that used to be..."
+	name = "熔化的植入物"
+	desc = "烧焦的电路，装在熔化的塑料外壳里。不知道这以前是什么东西……"
 	icon_state = "implant_melted"
 	malfunction = MALFUNCTION_PERMANENT
 
 /datum/action/item_action/implant
-	desc = "Activates a currently implanted implant"
+	desc = "激活当前植入的植入体"

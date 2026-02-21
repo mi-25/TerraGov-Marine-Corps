@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/hardened_travel
 	name = "Hardened Travel"
-	desc = "Resin Walk increases all soft armor by 10/15/20, but prevents you from regenerating plasma."
+	desc = "树脂行走使所有软质护甲增加10/15/20点，但会阻止你再生等离子体。"
 	/// For the first structure, the amount of armor that Resin Walk should be granting.
 	var/armor_initial = 5
 	/// For each structure, the amount of armor that Resin Walk should be granting.
@@ -43,7 +43,7 @@
 
 /datum/mutation_upgrade/shell/costly_travel
 	name = "Costly Travel"
-	desc = "Resin Walk creates temporary weeds as you move. Each created weed consumes 75/50/25 plasma."
+	desc = "树脂行走会在你移动时生成临时菌毯。每生成一块菌毯消耗 75/50/25 等离子体。"
 	/// For the first structure, the amount of plasma to consume if a weed is created through Resin Walk.
 	var/plasma_initial = 100
 	/// For each structure, the additional amount of plasma to consume if a weed is created through Resin Walk.
@@ -81,7 +81,7 @@
 
 /datum/mutation_upgrade/shell/rejuvenating_build
 	name = "Rejuvenating Build"
-	desc = "You heal 1/2/3% of your maximum health whenever you successfully use Secrete Resin."
+	desc = "你成功使用分泌树脂时，会恢复最大生命值的1/2/3%。"
 	/// For each structure, the percentage of maximum health that will be healed when a structure is built via Secrete Resin.
 	var/percentage_per_structure = 0.01
 
@@ -106,7 +106,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/combustive_jelly
 	name = "Combustive Jelly"
-	desc = "You lose the ability, Place Resin Jelly Pod. Resin jelly you throw no longer grants fire immunity, but creates thin sticky resin in a 3x3 where it lands for 15 seconds. Direct impacts on humans stagger for 2/4/6 seconds."
+	desc = "你失去了能力：放置树脂胶质荚。你投掷的树脂胶质不再提供火焰免疫，而是在其落点处生成一片3x3范围的稀薄粘性树脂，持续15秒。直接命中人类会使其踉跄2/4/6秒。"
 	/// For each structure, the additional amount of deciseconds that thrown Resin Jelly will stagger for if it impacts a human.
 	var/duration_per_structure = 2 SECONDS
 
@@ -154,7 +154,7 @@
 
 /datum/mutation_upgrade/spur/resin_splash
 	name = "Resin Splash"
-	desc = "Whenever you slash a human, 600/400/200 plasma is consumed to throw a sticky resin grenade at them. This can occur every 8 seconds."
+	desc = "每当你对一名人类进行斩击时，会消耗600/400/200等离子体向其投掷一枚粘性树脂手雷。此效果每8秒可触发一次。"
 	/// For the first structure, the amount of plasma to consume to attach a thin sticky resin grenade to the attacked human.
 	var/plasma_initial = 800
 	/// For each structure, the additional amount of plasma to consume to attach a thin sticky resin grenade to the attacked human.
@@ -194,7 +194,7 @@
 
 /datum/mutation_upgrade/spur/hostile_pylon
 	name = "Hostile Pylon"
-	desc = "Recovery Pylon's aura is replaced with one that increases melee damage modifier by 10/20/30%. The aura's radius is increased by 3."
+	desc = "恢复信标的光环效果替换为提升近战伤害修正10/20/30%。光环半径增加3格。"
 	/// For each structure, the additional amount that Recovery Pylon will add as a damage modifier.
 	var/modifier_per_structure = 0.1
 
@@ -234,7 +234,7 @@
 
 /datum/mutation_upgrade/veil/protective_light
 	name = "Protective Light"
-	desc = "Healing Infusion now also applies the effects of resin jelly for 15 seconds. The plasma cost is now 2x/1.75x/1.5x of the original cost."
+	desc = "治疗灌注现在还会施加树脂凝胶效果，持续15秒。等离子体消耗现在为原始消耗的2倍/1.75倍/1.5倍。"
 	/// For the first structure, the multiplier that will added to the ability cost of Healing Infusion.
 	var/multiplier_initial = 1.25
 	/// For each structure, the multiplier that will added to the ability cost of Healing Infusion.
@@ -276,7 +276,7 @@
 
 /datum/mutation_upgrade/veil/forward_light
 	name = "Forward Light"
-	desc = "Healing Infusion only lasts 50/60/70% as long, but grants innate healing which allows healing off of weeds."
+	desc = "治疗灌注持续时间仅为50/60/70%，但赋予内在治疗能力，允许在菌毯上恢复生命值。"
 	/// For the first structure, the multiplier that will added to the Healing Infusion's duration and amount of healing tick.
 	var/multiplier_initial = -0.6
 	/// For each structure, the additional multiplier that will added to the Healing Infusion's duration and amount of healing tick.
@@ -316,7 +316,7 @@
 
 /datum/mutation_upgrade/veil/weed_specialist
 	name = "Weed Specialist"
-	desc = "Plant Weeds now costs 80/65/50% of its initial value, but loses the option to select basic weeds."
+	desc = "现在种植菌毯消耗其初始值的80%/65%/50%，但失去了选择基础菌毯的选项。"
 	/// For the first structure, the multiplier that will added to the Plant Weeds's ability cost.
 	var/multiplier_initial = -0.05
 	/// For each structure, the additional multiplier that will added to the Plant Weeds's ability cost.

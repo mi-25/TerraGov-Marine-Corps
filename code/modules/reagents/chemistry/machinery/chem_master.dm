@@ -1,6 +1,6 @@
 /obj/machinery/chem_master
-	name = "ChemMaster 3000"
-	desc = "Used to separate chemicals and distribute them in a variety of forms."
+	name = "化学大师3000"
+	desc = "用于分离化学品并以多种形式进行分配。"
 	icon = 'icons/obj/machines/chemical_machines.dmi'
 	icon_state = "mixer0"
 	density = TRUE
@@ -70,28 +70,28 @@
 	if(istype(I,/obj/item/reagent_containers) && I.is_open_container())
 		for(var/datum/reagent/X in I.reagents.reagent_list)
 			if(X.medbayblacklist)
-				balloon_alert(user, "Harmful substance detected")
+				balloon_alert(user, "检测到有害物质")
 				return
 		if(beaker)
-			balloon_alert(user, "Beaker already loaded")
+			balloon_alert(user, "烧杯已装载")
 			return
 		user.transferItemToLoc(I, src)
 		beaker = I
-		balloon_alert(user, "Adds beaker")
+		balloon_alert(user, "添加烧杯")
 		updateUsrDialog()
 		icon_state = "mixer1"
 
 	else if(istype(I,/obj/item/reagent_containers/glass))
-		balloon_alert(user, "Take off the lid first.")
+		balloon_alert(user, "先取下盖子。")
 
 	else if(istype(I, /obj/item/storage/pill_bottle))
 		if(loaded_pill_bottle)
-			balloon_alert(user, "Pill bottle already loaded")
+			balloon_alert(user, "药瓶已装填")
 			return
 
 		loaded_pill_bottle = I
 		user.transferItemToLoc(I, src)
-		balloon_alert(user, "Adds pill bottle into dispenser")
+		balloon_alert(user, "将药瓶放入分发器")
 		updateUsrDialog()
 
 /obj/machinery/chem_master/proc/transfer_chemicals(obj/dest, obj/source, amount, reagent_id)
@@ -205,7 +205,7 @@
 		else if (href_list["createpillbottle"])
 			if(!condi)
 				if(loaded_pill_bottle)
-					balloon_alert(user, "Pill bottle already loaded")
+					balloon_alert(user, "药瓶已装填")
 					return
 				var/bottle_label = reject_bad_text(tgui_input_text(user, "Label:", "Enter desired bottle label", encode = FALSE))
 				var/obj/item/storage/pill_bottle/I = new/obj/item/storage/pill_bottle
@@ -213,7 +213,7 @@
 				if(bottle_label)
 					I.name = "[bottle_label] pill bottle"
 				loaded_pill_bottle = I
-				balloon_alert(user, "The chemmaster dispenses a pill bottle into its slot")
+				balloon_alert(user, "化学大师将一瓶药片分发到其插槽中")
 				updateUsrDialog()
 
 		else if (href_list["createpill"] || href_list["createpill_multiple"])
@@ -348,7 +348,7 @@
 	if(ishuman(user) && user.skills.getRating("medical") < SKILL_MEDICAL_NOVICE)
 		if(user.do_actions)
 			return
-		to_chat(user, span_notice("You start fiddling with \the [src]..."))
+		to_chat(user, span_notice("你开始摆弄\the [src]..."))
 		if(!do_after(user, SKILL_TASK_EASY, TRUE, src, BUSY_ICON_UNSKILLED))
 			return
 
@@ -424,7 +424,7 @@
 		icon_state = (beaker?"[base_state]1":"[base_state]0")
 
 /obj/machinery/chem_master/condimaster
-	name = "CondiMaster 3000"
+	name = "康迪大师3000"
 	condi = TRUE
 
 /obj/machinery/chem_master/nopower

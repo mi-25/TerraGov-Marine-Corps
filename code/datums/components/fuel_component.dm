@@ -84,13 +84,13 @@
 ///Checks if src can be refueled by a container
 /obj/proc/can_refuel(atom/refueler, fuel_type, mob/user)
 	if(!refueler.reagents.total_volume)
-		user?.balloon_alert(user, "no fuel!")
+		user?.balloon_alert(user, "没有燃料！")
 		return
 	if(fuel_type != get_fueltype())
-		user?.balloon_alert(user, "wrong fuel")
+		user?.balloon_alert(user, "燃料错误")
 		return FALSE
 	if(reagents.total_volume == reagents.maximum_volume)
-		user?.balloon_alert(user, "full")
+		user?.balloon_alert(user, "已满")
 		return FALSE
 	return TRUE
 
@@ -98,4 +98,4 @@
 /obj/proc/do_refuel(atom/refueler, fuel_type, mob/user)
 	refueler.reagents.trans_to(src, reagents.maximum_volume)
 	playsound(loc, 'sound/effects/refill.ogg', 25, 1, 3)
-	user?.balloon_alert(user, "refilled")
+	user?.balloon_alert(user, "已补充")

@@ -9,7 +9,7 @@
 	name = "Eviscerating Charge"
 	action_icon_state = "pounce"
 	action_icon = 'icons/Xeno/actions/runner.dmi'
-	desc = "Charge up to 4 tiles and viciously attack your target."
+	desc = "蓄力冲刺最多4格，对目标发动凶猛的攻击。"
 	cooldown_duration = 20 SECONDS
 	ability_cost = 500 //Can't ignore pain/Charge and ravage in the same timeframe, but you can combo one of them.
 	keybinding_signals = list(
@@ -27,7 +27,7 @@
 	RegisterSignal(xeno_owner, COMSIG_MOVABLE_POST_THROW, PROC_REF(charge_complete))
 	RegisterSignal(xeno_owner, COMSIG_XENOMORPH_LEAP_BUMP, PROC_REF(mob_hit))
 
-	xeno_owner.visible_message(span_danger("[xeno_owner] charges towards \the [A]!"), \
+	xeno_owner.visible_message(span_danger("[xeno_owner] 向 \the [A] 冲锋！"), \
 	span_danger("We charge towards \the [A]!") )
 	xeno_owner.emote("roar")
 	xeno_owner.xeno_flags |= XENO_LEAPING //This has to come before throw_at, which checks impact. So we don't do end-charge specials when thrown
@@ -45,7 +45,7 @@
 
 
 /datum/action/ability/activable/xeno/charge/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("Our exoskeleton quivers as we get ready to use [name] again."))
+	to_chat(owner, span_xenodanger("我们的外骨骼在准备再次使用[name]时微微颤动。"))
 	playsound(owner, 'sound/effects/alien/new_larva.ogg', 50, 0, 1)
 	return ..()
 
@@ -68,7 +68,7 @@
 	SIGNAL_HANDLER
 	if(istype(target, /obj/structure/table))
 		var/obj/structure/S = target
-		owner.visible_message(span_danger("[owner] plows straight through [S]!"), null, null, 5)
+		owner.visible_message(span_danger("[owner] 径直冲过了 [S]！"), null, null, 5)
 		S.deconstruct(FALSE) //We want to continue moving, so we do not reset throwing.
 		return //stay registered
 
@@ -109,7 +109,7 @@
 	name = "Ravage"
 	action_icon_state = "ravage"
 	action_icon = 'icons/Xeno/actions/ravager.dmi'
-	desc = "Attacks and knockbacks enemies in the direction your facing."
+	desc = "朝你面对的方向攻击并击退敌人。"
 	ability_cost = 200
 	cooldown_duration = 6 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY | ABILITY_IGNORE_SELECTED_ABILITY
@@ -125,7 +125,7 @@
 	var/aoe = FALSE
 
 /datum/action/ability/activable/xeno/ravage/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("We gather enough strength to Ravage again."))
+	to_chat(owner, span_xenodanger("我们积蓄了足够的力量，可以再次发动掠夺。"))
 	playsound(owner, 'sound/effects/alien/new_larva.ogg', 50, 0, 1)
 	return ..()
 
@@ -143,7 +143,7 @@
 		return
 
 	xeno_owner.emote("roar")
-	xeno_owner.visible_message(span_danger("\The [xeno_owner] thrashes about in a murderous frenzy!"), \
+	xeno_owner.visible_message(span_danger("\The [xeno_owner] 在嗜血的狂暴中猛烈挣扎！"), \
 	span_xenowarning("We thrash about in a murderous frenzy!"))
 
 	var/range = 2 // 1 = turf underneath only.
@@ -295,7 +295,7 @@
 	name = "Endure"
 	action_icon_state = "ignore_pain"
 	action_icon = 'icons/Xeno/actions/ravager.dmi'
-	desc = "For the next few moments you will not go into crit and become resistant to explosives and immune to stagger and slowdown, but you still die if you take damage exceeding your crit health."
+	desc = "在接下来的几秒内，你将不会进入濒死状态，并对爆炸伤害产生抗性，同时免疫击退和减速效果，但若受到的伤害超过你的濒死生命值，你仍会死亡。"
 	ability_cost = 200
 	cooldown_duration = 60 SECONDS
 	keybinding_signals = list(
@@ -324,13 +324,13 @@
 	var/datum/armor/attached_armor
 
 /datum/action/ability/xeno_action/endure/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("We feel able to imbue ourselves with plasma to Endure once again!"))
+	to_chat(owner, span_xenodanger("我们感觉能够再次用等离子体灌注自身以进入坚毅状态！"))
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
 /datum/action/ability/xeno_action/endure/action_activate()
 	xeno_owner.emote("roar")
-	xeno_owner.visible_message(span_danger("[xeno_owner]'s skin begins to glow!"), \
+	xeno_owner.visible_message(span_danger("[xeno_owner]的皮肤开始发光！"), \
 	span_xenowarning("We feel the plasma coursing through our veins!"))
 
 	xeno_owner.endure = TRUE
@@ -368,7 +368,7 @@
 /datum/action/ability/xeno_action/endure/proc/endure_warning()
 	if(QDELETED(owner))
 		return
-	to_chat(owner,span_userdanger("We feel the plasma draining from our veins... [initial(name)] will last for only [timeleft(endure_timer) * 0.1] more seconds!"))
+	to_chat(owner,span_userdanger("我们感到等离子体正从血管中流失……[initial(name)]只能再坚持[timeleft(endure_timer) * 0.1]秒了！"))
 	owner.playsound_local(owner, 'sound/voice/hiss4.ogg', 50, 0, 1)
 
 ///Turns off the Endure buff
@@ -399,7 +399,7 @@
 	if(xeno_owner.health >= xeno_owner.get_crit_threshold())
 		return
 	if(death_beyond_threshold && xeno_owner.health < xeno_owner.get_death_threshold())
-		to_chat(xeno_owner, span_userdanger("The last of the plasma drains from our body... and so does our life..."))
+		to_chat(xeno_owner, span_userdanger("最后一点等离子体从我们体内流失……我们的生命也随之消逝……"))
 		xeno_owner.updatehealth() // Die.
 		return
 	var/total_damage = xeno_owner.getFireLoss() + xeno_owner.getBruteLoss()
@@ -407,13 +407,13 @@
 	var/brute_percentile_damage = xeno_owner.getBruteLoss() / total_damage
 	xeno_owner.setBruteLoss((xeno_owner.xeno_caste.max_health - xeno_owner.get_crit_threshold() - 1) * brute_percentile_damage)
 	xeno_owner.setFireLoss((xeno_owner.xeno_caste.max_health - xeno_owner.get_crit_threshold() - 1) * burn_percentile_damage)
-	to_chat(xeno_owner, span_userdanger("The last of the plasma drains from our body... We can no longer endure beyond our normal limits!"))
+	to_chat(xeno_owner, span_userdanger("最后一点等离子体从我们体内流失……我们再也无法超越正常极限了！"))
 
 ///Warns us when our health is critically low and tells us exactly how much more punishment we can take
 /datum/action/ability/xeno_action/endure/proc/damage_taken(mob/living/carbon/xenomorph/xeno_owner, damage_taken)
 	SIGNAL_HANDLER
 	if(xeno_owner.health < 0)
-		to_chat(xeno_owner, "<span class='xenouserdanger' style='color: red;'>We are critically wounded! We can only withstand [-(endure_threshold + endure_threshold_bonus - xeno_owner.health)] more damage before we perish!</span>")
+		to_chat(xeno_owner, "<span class='xenouserdanger' style='color: red;'>我们伤势严重！我们最多只能再承受[-(endure_threshold + endure_threshold_bonus - xeno_owner.health)]点伤害就会死亡！</span>")
 		xeno_owner.overlay_fullscreen("endure", /atom/movable/screen/fullscreen/animated/bloodlust)
 	else
 		xeno_owner.clear_fullscreen("endure", 0.7 SECONDS)
@@ -441,7 +441,7 @@
 	name = "Rage"
 	action_icon_state = "rage"
 	action_icon = 'icons/Xeno/actions/ravager.dmi'
-	desc = "Use while at 50% health or lower to gain extra slash damage, resistances and speed in proportion to your missing hit points. This bonus is increased and you regain plasma while your HP is negative."
+	desc = "生命值低于或等于50%时使用，根据损失的生命值获得额外斩击伤害、抗性和速度。当生命值为负时，此加成会提升并恢复等离子体。"
 	ability_cost = 0 //We're limited by cooldowns, not plasma
 	cooldown_duration = 60 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY | ABILITY_IGNORE_SELECTED_ABILITY
@@ -463,7 +463,7 @@
 	var/extends_via_normal_rage = FALSE
 
 /datum/action/ability/xeno_action/rage/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("We are able to enter our rage once again."))
+	to_chat(owner, span_xenodanger("我们能够再次进入狂暴状态。"))
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
@@ -474,7 +474,7 @@
 
 	if(xeno_owner.health > xeno_owner.maxHealth * minimum_health_rage_threshold) //Need to be at 50% of max hp or lower to rage
 		if(!silent)
-			to_chat(xeno_owner, span_xenodanger("Our health isn't low enough to rage! We must take [xeno_owner.health - (xeno_owner.maxHealth * RAVAGER_RAGE_MIN_HEALTH_THRESHOLD)] more damage!"))
+			to_chat(xeno_owner, span_xenodanger("我们的生命值还不够低，无法进入狂暴状态！我们必须再承受 [xeno_owner.health - (xeno_owner.maxHealth * RAVAGER_RAGE_MIN_HEALTH_THRESHOLD)] 点伤害！"))
 		return FALSE
 
 
@@ -482,7 +482,7 @@
 	rage_power = min(0.5, (1 - ((xeno_owner.health - (xeno_owner.maxHealth * rage_power_calculation_bonus)) / xeno_owner.maxHealth)) * RAVAGER_RAGE_POWER_MULTIPLIER) // Calculate the power of our rage; scales with difference between current and max HP.
 	var/rage_power_radius = CEILING(rage_power * 7, 1) //Define radius of the SFX
 
-	xeno_owner.visible_message(span_danger("\The [xeno_owner] becomes frenzied, bellowing with a shuddering roar!"), \
+	xeno_owner.visible_message(span_danger("\The [xeno_owner] 变得狂暴起来，发出一声令人战栗的咆哮！"), \
 	span_userdanger("We bellow as our fury overtakes us! RIP AND TEAR!"))
 	xeno_owner.do_jitter_animation(1000)
 
@@ -559,7 +559,7 @@
 /datum/action/ability/xeno_action/rage/proc/rage_warning(bonus_duration = 0)
 	if(QDELETED(owner))
 		return
-	to_chat(owner,span_userdanger("Our rage begins to subside... [initial(name)] will only last for only [(RAVAGER_RAGE_DURATION + bonus_duration) * (1-RAVAGER_RAGE_WARNING) * 0.1] more seconds!"))
+	to_chat(owner,span_userdanger("我们的怒火开始消退……[initial(name)]只能再持续[(RAVAGER_RAGE_DURATION + bonus_duration) * (1-RAVAGER_RAGE_WARNING) * 0.1]秒了！"))
 	owner.playsound_local(owner, 'sound/voice/hiss4.ogg', 50, 0, 1)
 
 ///Warns the user when his rage is about to end.
@@ -597,7 +597,7 @@
 		return
 	xeno_owner.do_jitter_animation(1000)
 	xeno_owner.remove_filter("ravager_rage_outline")
-	xeno_owner.visible_message(span_warning("[xeno_owner] seems to calm down."), \
+	xeno_owner.visible_message(span_warning("[xeno_owner] 似乎平静下来了。"), \
 	span_userdanger("Our rage subsides and its power leaves our body, leaving us exhausted."))
 
 	xeno_owner.xeno_melee_damage_modifier = initial(xeno_owner.xeno_melee_damage_modifier) //Reset rage melee damage bonus
@@ -636,7 +636,7 @@
 	name = "Toggle vampirism"
 	action_icon_state = "neuroclaws_off"
 	action_icon = 'icons/Xeno/actions/sentinel.dmi'
-	desc = "Toggle on to enable boosting on "
+	desc = "开启以启用助推"
 	ability_cost = 0 //We're limited by nothing, rip and tear
 	cooldown_duration = 1 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY | ABILITY_IGNORE_SELECTED_ABILITY
@@ -701,7 +701,7 @@
 
 /datum/action/ability/xeno_action/bloodthirst
 	name = "Bloodthirst"
-	desc = "Passive ability for generating bloodthirst"
+	desc = "生成嗜血状态的被动能力"
 	hidden = TRUE
 	///tick time of last time we attacked a human
 	var/last_fight_time
@@ -751,7 +751,7 @@
 		return
 	if(!disintegrating)
 		hit_zero_time = world.time
-		owner.balloon_alert(owner, "disintegrating...")
+		owner.balloon_alert(owner, "正在分解...")
 		xeno.playsound_local(xeno, 'sound/voice/hiss5.ogg', 50)
 		disintegrating = TRUE
 		return
@@ -767,7 +767,7 @@
 
 /datum/action/ability/xeno_action/deathmark
 	name = "Deathmark"
-	desc = "Mark yourself for death, filling your bloodthirst, but failing to deal enough damage to living creatures while it is active instantly kills you."
+	desc = "标记自己为死亡目标，满足你的嗜血渴望，但若在激活期间未能对活体生物造成足够伤害，你将立即死亡。"
 	action_icon = 'icons/Xeno/actions/ravager.dmi'
 	action_icon_state = "deathmark"
 	cooldown_duration = DEATHMARK_DURATION*3
@@ -808,11 +808,11 @@
 	UnregisterSignal(owner, COMSIG_XENOMORPH_ATTACK_LIVING)
 	xeno.remove_movespeed_modifier(MOVESPEED_ID_RAVAGER_DEATHMARK)
 	if(damage_dealt < DEATHMARK_DAMAGE_OR_DIE)
-		to_chat(owner, span_userdanger("THE QUEEN MOTHER IS DISPLEASED WITH YOUR PERFORMANCE ([damage_dealt]/[DEATHMARK_DAMAGE_OR_DIE]). DEATH COMES TO TAKE ITS DUE."))
+		to_chat(owner, span_userdanger("异形女王对您的表现感到不满（[damage_dealt]/[DEATHMARK_DAMAGE_OR_DIE]）。死亡将至，收取其应得之物。"))
 		xeno.take_overall_damage(999)
 		var/turf/balloonloc = get_turf(xeno)
-		balloonloc.balloon_alert_to_viewers("JUDGEMENT")
+		balloonloc.balloon_alert_to_viewers("审判")
 		return
 	xeno.playsound_local(xeno, 'sound/voice/hiss5.ogg', 50)
-	to_chat(owner, span_userdanger("THE QUEEN MOTHER IS PLEASED WITH YOUR PERFORMANCE ([damage_dealt]/[DEATHMARK_DAMAGE_OR_DIE])."))
-	owner.balloon_alert(owner, "deathmark expired")
+	to_chat(owner, span_userdanger("异形女王对您的表现感到满意（[damage_dealt]/[DEATHMARK_DAMAGE_OR_DIE]）。"))
+	owner.balloon_alert(owner, "死亡标记已失效")

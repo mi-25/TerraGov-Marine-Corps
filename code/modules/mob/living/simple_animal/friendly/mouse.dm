@@ -1,6 +1,6 @@
 /mob/living/simple_animal/mouse
-	name = "mouse"
-	desc = "It's a nasty, ugly, evil, disease-ridden rodent."
+	name = "鼠标"
+	desc = "这是一只肮脏、丑陋、邪恶、疾病缠身的啮齿动物。"
 	icon_state = "mouse_gray"
 	icon_living = "mouse_gray"
 	icon_dead = "mouse_gray_dead"
@@ -42,7 +42,7 @@
 	SIGNAL_HANDLER
 	if(ishuman(AM) && stat == CONSCIOUS)
 		var/mob/living/carbon/human/H = AM
-		to_chat(H, span_notice("[icon2html(src, H)] Squeak!"))
+		to_chat(H, span_notice("[icon2html(src, H)] 吱吱！"))
 
 
 /mob/living/simple_animal/mouse/handle_automated_action()
@@ -52,13 +52,13 @@
 			var/obj/structure/cable/C = locate() in F
 			if(C && prob(15))
 				if(C.avail())
-					visible_message(span_warning("[src] chews through the [C]. It's toast!"))
+					visible_message(span_warning("[src] 嚼穿了 [C]。它完蛋了！"))
 					playsound(src, 'sound/effects/sparks2.ogg', 100, 1)
 					C.deconstruct()
 					death()
 				else
 					C.deconstruct()
-					visible_message(span_warning("[src] chews through the [C]."))
+					visible_message(span_warning("[src] 啃穿了 [C]。"))
 
 
 /mob/living/simple_animal/mouse/white
@@ -77,8 +77,8 @@
 
 
 /mob/living/simple_animal/mouse/brown/Tom
-	name = "Tom"
-	desc = "Jerry the cat is not amused."
+	name = "汤姆"
+	desc = "杰瑞猫对此并不感到有趣。"
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "splats"

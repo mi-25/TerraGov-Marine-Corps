@@ -168,5 +168,5 @@ GLOBAL_VAR_INIT(focused_tests, focused_tests())
 	SSticker.Reboot()
 
 /datum/map_template/unit_tests
-	name = "Unit Tests Zone"
+	name = "单位测试区域"
 	mappath = "_maps/templates/unit_tests.dmm"

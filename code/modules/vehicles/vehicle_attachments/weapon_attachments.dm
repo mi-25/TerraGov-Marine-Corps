@@ -32,7 +32,7 @@
 		on_weapon_equipped(null, user)
 		return FALSE
 	if(!user.put_in_active_hand(mounted_gun) && !user.put_in_inactive_hand(mounted_gun))
-		to_chat(user, span_warning("Could not equip weapon! Click [parent] with a free hand to equip."))
+		to_chat(user, span_warning("无法装备武器！用空手点击[parent]来装备。"))
 		return FALSE
 	RegisterSignal(mounted_gun, COMSIG_MOVABLE_MOVED, PROC_REF(on_weapon_moved))
 	RegisterSignal(mounted_gun, COMSIG_ITEM_EQUIPPED, PROC_REF(on_weapon_equipped))
@@ -58,8 +58,8 @@
 
 
 /obj/item/vehicle_module/mounted_gun/volkite
-	name = "mounted Demi-Culverin"
-	desc = "A paired set of volkite weapons mounted into light vehicles such as SOM hover bikes. While they lack the raw power of some other volkite weapons, they make up for this through sheer volume of fire and integrate recharging power source."
+	name = "架设式半长炮"
+	desc = "一套安装在轻型载具（如火星之子悬浮摩托）上的成对沃尔凯特武器。虽然它们缺乏其他一些沃尔凯特武器的原始威力，但通过极高的射速和集成的可充电能源弥补了这一不足。"
 	icon = 'icons/obj/vehicles/hover_bike.dmi'
 	icon_state = "bike_volkite"
 	should_use_obj_appeareance = FALSE
@@ -67,8 +67,8 @@
 
 ///bike volkite
 /obj/item/weapon/gun/energy/lasgun/lasrifle/volkite/demi_culverin
-	name = "\improper VX-42b Demi-Culverin"
-	desc = "A paired set of volkite weapons mounted into light vehicles such as SOM hover bikes. While they lack the raw power of some other volkite weapons, they make up for this through sheer volume of fire and integrate recharging power source."
+	name = "\improper VX-42b 半长炮"
+	desc = "一套安装在轻型载具（如火星之子悬浮摩托）上的成对沃尔凯特武器。虽然它们缺乏其他一些沃尔凯特武器的原始威力，但通过极高的射速和集成的可充电能源弥补了这一不足。"
 	icon = 'icons/obj/vehicles/vehicle_weapons.dmi'
 	icon_state = "bike_volkite"
 	worn_icon_state = null
@@ -91,16 +91,16 @@
 	movement_acc_penalty_mult = 3
 
 /obj/item/vehicle_module/mounted_gun/minigun
-	name = "dual V-44 light gatling guns"
-	desc = "A pair of triple barreled 'light' gatling guns designed to be mounted in light vehicles such as SOM hover bikes. A smaller calibre round is used for optimal internal magazine capacity, but makes up for this with a ferocious rate of fire."
+	name = "双联 V-44 轻型加特林机枪"
+	desc = "一套为轻型载具（如火星之子悬浮摩托）设计的三管'轻型'加特林机枪。采用较小口径弹药以优化内置弹匣容量，但以凶猛的射速弥补了这一不足。"
 	icon = 'icons/obj/vehicles/hover_bike.dmi'
 	icon_state = "bike_minigun"
 	should_use_obj_appeareance = FALSE
 	mounted_gun = /obj/item/weapon/gun/bike_minigun
 
 /obj/item/weapon/gun/bike_minigun
-	name = "dual V-44 light gatling guns"
-	desc = "A pair of triple barreled 'light' gatling guns designed to be mounted in light vehicles such as SOM hover bikes. A smaller calibre round is used for optimal internal magazine capacity, but makes up for this with a ferocious rate of fire."
+	name = "双联 V-44 轻型加特林机炮"
+	desc = "一对三联装'轻型'加特林机枪，专为安装在火星之子悬浮摩托等轻型载具上而设计。采用较小口径弹药以优化内置弹匣容量，但以惊人的射速弥补了这一不足。"
 	icon = 'icons/obj/vehicles/vehicle_weapons.dmi'
 	icon_state = "bike_minigun"
 	worn_icon_state = null
@@ -133,16 +133,16 @@
 
 //
 /obj/item/vehicle_module/mounted_gun/autocannon
-	name = "dual V-44 light gatling guns"
-	desc = "A pair of triple barreled 'light' gatling guns designed to be mounted in light vehicles such as the SOM hover bikes. A smaller calibre round is used for optimal internal magazine capacity, but makes up for this with a ferocious rate of fire."
+	name = "双联 V-44 轻型加特林机炮"
+	desc = "专为轻型载具（如SOM悬浮摩托）设计的三管轻型加特林机枪。采用小口径弹药以优化内置弹匣容量，但以惊人的射速弥补了威力不足。"
 	icon = 'icons/obj/vehicles/big_bike.dmi'
 	icon_state = "bike_autocannon"
 	should_use_obj_appeareance = FALSE
 	mounted_gun = /obj/item/weapon/gun/bike_autocannon
 
 /obj/item/weapon/gun/bike_autocannon
-	name = "dual AC-32 light autocannons"
-	desc = "A pair of 20mm autocannons, designed to be mounted on light vehicles such as the heavy motorbike. It packs a heavy punch, providing formidable firepower and a large internal magazine."
+	name = "双联AC-32轻型自动炮"
+	desc = "一对20毫米自动炮，设计用于安装在重型摩托车等轻型载具上。它威力强大，提供可观的杀伤力和大容量内置弹匣。"
 	icon = 'icons/obj/vehicles/vehicle_weapons.dmi'
 	icon_state = "bike_autocannon"
 	worn_icon_state = null

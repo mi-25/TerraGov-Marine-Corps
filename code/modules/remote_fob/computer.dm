@@ -1,7 +1,7 @@
 /////////////////////////////// the camera computer
 /obj/machinery/computer/camera_advanced/remote_fob
-	name = "FOB Construction Drone Control"
-	desc = "A computer console equipped with camera screen and controls for a planetside deployed construction drone. Materials or equipment vouchers can be added simply by inserting them into the computer."
+	name = "前线作战基地建造工蜂控制"
+	desc = "配备摄像头屏幕和控制面板的计算机控制台，用于操控部署在地表的建筑无人机。只需将材料或设备凭证插入计算机即可添加。"
 	icon = 'icons/obj/machines/fob.dmi'
 	icon_state = "fob"
 	screen_overlay = "fob_emissive"
@@ -87,22 +87,22 @@
 	if(machine_stat & (NOPOWER|BROKEN))
 		return
 	if(!allowed(user))
-		to_chat(user, span_warning("Access Denied!"))
+		to_chat(user, span_warning("访问被拒绝！"))
 		return
 	if(!drone_creation_allowed)
-		to_chat(user, span_notice("Communication with the drone impossible due to fuel-residue in deployment zone atmosphere."))
+		to_chat(user, span_notice("与工蜂的通信因部署区域大气中的燃料残留而无法进行。"))
 		return
 	spawn_spot = FALSE
 	switch(tgui_alert(user, "Summon Drone in:", "FOB Construction Drone Control", list("LZ1","LZ2", "Cancel")))
 		if("LZ1")
 			spawn_spot = locate(/obj/docking_port/stationary/marine_dropship/lz1) in SSshuttle.stationary
 			if(!spawn_spot)
-				to_chat(user, span_warning("No valid location for drone deployment found."))
+				to_chat(user, span_warning("未找到有效的工蜂部署位置。"))
 				return
 		if("LZ2")
 			spawn_spot = locate(/obj/docking_port/stationary/marine_dropship/lz2) in SSshuttle.stationary
 			if(!spawn_spot)
-				to_chat(user, span_warning("No valid location for drone deployment found."))
+				to_chat(user, span_warning("未找到有效的工蜂部署位置。"))
 				return
 		else
 			return
@@ -121,14 +121,14 @@
 			var/useamount = attacking_stack.amount
 			metal_remaining += useamount
 			attacking_stack.use(useamount)
-			to_chat(user, span_notice("Inserted [useamount] metal sheets."))
+			to_chat(user, span_notice("已插入[useamount]块金属板。"))
 			flick("fob_insert", src)
 			return
 		if(istype(attacking_stack, /obj/item/stack/sheet/plasteel))
 			var/useamount = attacking_stack.amount
 			plasteel_remaining += useamount
 			attacking_stack.use(useamount)
-			to_chat(user, span_notice("Inserted [useamount] plasteel sheets."))
+			to_chat(user, span_notice("已插入 [useamount] 张塑钢板。"))
 			flick("fob_insert", src)
 			return
 	return ..()
@@ -177,7 +177,7 @@
 
 /obj/machinery/computer/camera_advanced/remote_fob/check_eye(mob/living/user)
 	if(!drone_creation_allowed)
-		to_chat(user, span_notice("Communication with the drone has been disrupted."))
+		to_chat(user, span_notice("与工蜂的通信已中断。"))
 		user.unset_interaction()
 		return
 	return ..()

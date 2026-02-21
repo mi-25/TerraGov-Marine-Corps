@@ -126,25 +126,25 @@
 		if(!do_after(user, max(SKILL_TASK_AVERAGE - (1 SECONDS * user.skills.getRating(SKILL_MEDICAL)), 0), NONE, patient_candidate, BUSY_ICON_UNSKILLED))
 			return
 	if(!ishuman(patient_candidate))
-		user.balloon_alert(user, "cannot scan!")
+		user.balloon_alert(user, "无法扫描！")
 		return
 	if(isxeno(patient_candidate) || patient_candidate.species.species_flags & NO_SCAN)
-		user.balloon_alert(user, "unknown error!")
+		user.balloon_alert(user, "未知错误！")
 		return
 	if(patient)
 		UnregisterSignal(patient, COMSIG_QDELETING)
 	patient = patient_candidate
 	if(show_patient)
 		if(!COOLDOWN_FINISHED(src, show_scan_cooldown))
-			user.balloon_alert(user, "wait [DisplayTimeText(COOLDOWN_TIMELEFT(src, show_scan_cooldown))]!")
+			user.balloon_alert(user, "等待 [DisplayTimeText(COOLDOWN_TIMELEFT(src, show_scan_cooldown))]！")
 			return
 		if(patient_candidate.faction != user.faction)
-			user.balloon_alert(user, "incompatible factions!")
+			user.balloon_alert(user, "阵营不兼容！")
 			return
 		if(!patient_candidate.client?.prefs?.allow_being_shown_health_scan)
-			user.balloon_alert(user, "can't show healthscan!")
+			user.balloon_alert(user, "无法显示健康扫描！")
 			return
-		user.balloon_alert_to_viewers("showed healthscan", vision_distance = 4)
+		user.balloon_alert_to_viewers("显示健康扫描", vision_distance = 4)
 		ui_interact(patient_candidate)
 		COOLDOWN_START(src, show_scan_cooldown, 3 SECONDS)
 	else

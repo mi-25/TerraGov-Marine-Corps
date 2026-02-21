@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/flame_cloak
 	name = "Flame Cloak"
-	desc = "If you are ontop of fire, you gain 5/10/15 armor in all categories."
+	desc = "如果你站在火焰上，所有伤害类别获得5/10/15点护甲。"
 	/// For each structure, the armor that is given for being ontop of any fire.
 	var/armor_per_structure = 5
 	/// The attached armor that been given, if any.
@@ -99,7 +99,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/only_fire
 	name = "Only Fire"
-	desc = "Fire Charge deals no damage, does not consume melting fire stacks, and now pierces humans. Humans who are hit get 2/4/6 melting fire stacks."
+	desc = "火焰冲锋不造成伤害，不消耗熔化火焰层数，现在可穿透人类。被击中的人类获得2/4/6层熔化火焰。"
 	/// For each structure, the additional melting fire stacks to apply.
 	var/stacks_per_structure = 2
 
@@ -145,7 +145,7 @@
 
 /datum/mutation_upgrade/veil/burnt_wounds
 	name = "Burnt Wounds"
-	desc = "Melting fire stacks you inflict causes 15/25/35% healing reduction against brute and burn."
+	desc = "你施加的熔化火焰层数会造成15/25/35%的钝击和火焰伤害治疗减免。"
 	/// For the first structure, the percentage in which those inflicted with Melting Fire stacks will have their brute/burn healing reduced by.
 	var/percentage_initial = 0.05
 	/// For each structure, the percentage in which those inflicted with Melting Fire stacks will have their brute/burn healing reduced by.

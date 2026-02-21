@@ -1,6 +1,6 @@
 //the base loadout for all clf standards
 /datum/outfit/job/clf/standard
-	name = "CLF Standard"
+	name = "殖民地解放阵线标准型"
 	jobtype = /datum/job/clf/standard
 
 	id = /obj/item/card/id/silver
@@ -123,7 +123,7 @@
 
 //the base loadout for all clf medics
 /datum/outfit/job/clf/medic
-	name = "CLF Medic"
+	name = "殖民地解放阵线卫生兵"
 	jobtype = /datum/job/clf/medic
 
 	id = /obj/item/card/id/silver
@@ -199,7 +199,7 @@
 
 //The base loadout for all CLF Specialists
 /datum/outfit/job/clf/specialist
-	name = "CLF Specialist"
+	name = "殖民地解放阵线专家"
 	jobtype = /datum/job/clf/specialist
 
 	id = /obj/item/card/id/silver
@@ -275,7 +275,7 @@
 
 //the base loadout for all clf leaders
 /datum/outfit/job/clf/leader
-	name = "CLF Leader"
+	name = "殖民地解放阵线领袖"
 	jobtype = /datum/job/clf/leader
 
 	id = /obj/item/card/id/silver

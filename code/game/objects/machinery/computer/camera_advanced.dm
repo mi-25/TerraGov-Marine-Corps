@@ -1,6 +1,6 @@
 /obj/machinery/computer/camera_advanced
-	name = "advanced camera console"
-	desc = "Used to access the various cameras on the ship."
+	name = "高级摄像头控制台"
+	desc = "用于访问舰船上的各种摄像头。"
 	icon_state = "computer_small"
 	screen_overlay = "cameras"
 	broken_icon = "computer_small_red_broken"
@@ -132,7 +132,7 @@
 
 /obj/machinery/computer/camera_advanced/proc/open_prompt(mob/user, turf/premade_camera_location)
 	if(current_user)
-		to_chat(user, "The console is already in use!")
+		to_chat(user, "控制台已被占用！")
 		return
 
 	var/mob/living/L = user
@@ -194,12 +194,12 @@
 		return
 
 	if(!target.can_track(current_user))
-		to_chat(current_user, span_warning("Target is not near any active cameras."))
+		to_chat(current_user, span_warning("目标不在任何活动摄像头附近。"))
 		tracking_target = null
 		return
 
 	tracking_target = target
-	to_chat(current_user, span_notice("Now tracking [target.get_visible_name()] on camera."))
+	to_chat(current_user, span_notice("正在通过摄像头追踪[target.get_visible_name()]。"))
 	start_processing()
 
 
@@ -211,11 +211,11 @@
 
 	if(!tracking_target.can_track(current_user))
 		if(!cameraticks)
-			to_chat(current_user, span_warning("Target is not near any active cameras. Attempting to reacquire..."))
+			to_chat(current_user, span_warning("目标不在任何活动摄像头附近。正在尝试重新获取..."))
 		cameraticks++
 		if(cameraticks > 9)
 			tracking_target = null
-			to_chat(current_user, span_warning("Unable to reacquire, cancelling track..."))
+			to_chat(current_user, span_warning("无法重新锁定，取消追踪..."))
 			return PROCESS_KILL
 	else
 		cameraticks = 0
@@ -224,7 +224,7 @@
 
 
 /mob/camera/aiEye/remote
-	name = "Inactive Camera Eye"
+	name = "非活动摄像头视野"
 	/// The delay applied after moving to a tile.
 	var/move_delay = 0.1 SECONDS
 	/// Internal variable used to keep track of the amount of tiles we have moved in the same direction
@@ -370,7 +370,7 @@
 		holder.overlays += image('icons/mob/hud/aura.dmi', src, "[aura_type]_aura")
 
 /datum/action/innate/camera_off
-	name = "End Camera View"
+	name = "结束监控视角"
 	background_icon_state = "template2"
 	action_icon_state = "camera_off"
 
@@ -385,7 +385,7 @@
 
 
 /datum/action/innate/camera_jump
-	name = "Jump To Camera"
+	name = "跳转至摄像头"
 	background_icon_state = "template2"
 	action_icon_state = "camera_jump"
 	var/datum/cameranet/parent_cameranet

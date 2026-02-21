@@ -12,8 +12,8 @@
 * DATA CARDS - Used for the teleporter
 */
 /obj/item/card
-	name = "card"
-	desc = "Does card things."
+	name = "卡牌"
+	desc = "处理卡片事务。"
 	icon = 'icons/obj/items/card.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/equipment/id_left.dmi',
@@ -27,8 +27,8 @@
 	var/list/files = list(  )
 
 /obj/item/card/data
-	name = "data disk"
-	desc = "A disk of data."
+	name = "数据盘"
+	desc = "一张数据磁盘。"
 	icon_state = "data"
 	var/function = "storage"
 	var/data = "null"
@@ -40,16 +40,16 @@
 	set src in usr
 
 	if (t)
-		name = "data disk- '[t]'"
+		name = "数据磁盘 - '[t]'"
 	else
-		name = "data disk"
+		name = "数据盘"
 
 /obj/item/card/data/clown
-	name = "\proper the coordinates to clown planet"
+	name = "\proper 小丑星球的坐标"
 	icon_state = "data"
 	layer = OBJ_LAYER
 	level = 2
-	desc = "This card contains coordinates to the fabled Clown Planet. Handle with care."
+	desc = "这张卡片上记载着传说中的小丑星球的坐标。请小心保管。"
 	function = "teleporter"
 	data = "Clown Land"
 
@@ -58,21 +58,21 @@
 */
 
 /obj/item/card/emag_broken
-	desc = "It's a card with a magnetic strip attached to some circuitry. It looks too busted to be used for anything but salvage."
-	name = "broken cryptographic sequencer"
+	desc = "这是一张带有磁条的卡片，连接着一些电路。它看起来损坏得太严重，除了拆解回收外别无他用。"
+	name = "损坏的密码破译器"
 	icon_state = "emag"
 
 
 /obj/item/card/emag
-	desc = "It's a card with a magnetic strip attached to some circuitry."
-	name = "cryptographic sequencer"
+	desc = "这是一张带有磁条并连接着一些电路板的卡片。"
+	name = "密码破译器"
 	icon_state = "emag"
 	item_flags = NOBLUDGEON
 
 
 /obj/item/card/id
-	name = "identification card"
-	desc = "A card used to provide ID and determine access to a large array of machinery."
+	name = "身份识别卡"
+	desc = "用于提供身份识别并确定对大量机械访问权限的卡片。"
 	icon_state = "id"
 	var/access = list()
 	var/registered_name = "Unknown" // The name registered_name on the card
@@ -113,7 +113,7 @@
 	return ..()
 
 /obj/item/card/id/attack_self(mob/user as mob)
-	user.visible_message("[user] shows you: [icon2html(src, viewers(user))] [name]: assignment: [assignment]")
+	user.visible_message("[user]向你展示：[icon2html(src, viewers(user))] [name]：职务：[assignment]")
 
 
 /obj/item/card/id/proc/update_label(newname, newjob)
@@ -132,24 +132,24 @@
 	set category = "IC.Object"
 	set src in usr
 
-	to_chat(usr, "[icon2html(src, usr)] [name]: The current assignment on the card is [assignment].")
-	to_chat(usr, "The blood type on the card is [blood_type].")
+	to_chat(usr, "[icon2html(src, usr)] [name]：当前卡片上的分配职务是[assignment]。")
+	to_chat(usr, "卡片上的血型是[blood_type]。")
 
 
 /obj/item/card/id/silver
-	name = "identification card"
-	desc = "A silver card which shows honour and dedication."
+	name = "身份识别卡"
+	desc = "一张彰显荣誉与奉献的银色卡片。"
 	icon_state = "silver"
 	worn_icon_state = "silver_id"
 
 /obj/item/card/id/gold
-	name = "identification card"
-	desc = "A golden card which shows power and might."
+	name = "身份识别卡"
+	desc = "一张彰显权力与威严的金色卡片。"
 	icon_state = "gold"
 	worn_icon_state = "gold_id"
 
 /obj/item/card/id/syndicate
-	name = "agent card"
+	name = "特工卡"
 	access = list(ACCESS_ILLEGAL_PIRATE)
 	var/registered_user=null
 
@@ -161,7 +161,7 @@
 	else
 		registered_name = "Agent Card"
 	assignment = "Agent"
-	name = "[registered_name]'s ID Card ([assignment])"
+	name = "[registered_name]的身份证（[assignment]）"
 
 
 /obj/item/card/id/syndicate/attack_self(mob/user as mob)
@@ -180,7 +180,7 @@
 			return
 		src.assignment = newjob
 		src.name = "[src.registered_name]'s ID Card ([src.assignment])"
-		to_chat(user, span_notice("You successfully forge the ID card."))
+		to_chat(user, span_notice("你成功伪造了这张ID卡。"))
 		registered_user = user
 	else if(!registered_user || registered_user == user)
 
@@ -200,7 +200,7 @@
 					return
 				src.assignment = newjob
 				src.name = "[src.registered_name]'s ID Card ([src.assignment])"
-				to_chat(user, span_notice("You successfully forge the ID card."))
+				to_chat(user, span_notice("你成功伪造了这张ID卡。"))
 				return
 			if("Show")
 				..()
@@ -210,16 +210,16 @@
 
 
 /obj/item/card/id/syndicate_command
-	name = "syndicate ID card"
-	desc = "An ID straight from the Syndicate."
+	name = "辛迪加身份卡"
+	desc = "一份来自辛迪加的ID卡。"
 	registered_name = "Syndicate"
 	assignment = "Syndicate Overlord"
 	access = list(ACCESS_ILLEGAL_PIRATE)
 
 
 /obj/item/card/id/captains_spare
-	name = "captain's spare ID"
-	desc = "The spare ID of the High Lord himself."
+	name = "舰长的备用ID"
+	desc = "高等领主本人的备用身份卡。"
 	icon_state = "gold"
 	worn_icon_state = "gold_id"
 	registered_name = CAPTAIN
@@ -243,8 +243,8 @@
 
 
 /obj/item/card/id/dogtag
-	name = "dog tag"
-	desc = "A marine dog tag."
+	name = "狗牌"
+	desc = "陆战队员的狗牌。"
 	icon_state = "dogtag"
 	worn_icon_state = "dogtag"
 	iff_signal = TGMC_LOYALIST_IFF
@@ -262,16 +262,16 @@
 	if(!.)
 		return
 	if(dogtag_taken)
-		stripper.balloon_alert(stripper, "info tag already taken!")
+		stripper.balloon_alert(stripper, "信息标签已被占用！")
 		return FALSE
 	if(owner.stat != DEAD)
-		stripper.balloon_alert(stripper, "[owner.p_they()] [p_are()]n't dead yet!")
+		stripper.balloon_alert(stripper, "[owner.p_they()] [p_are()]还没死呢！")
 		return FALSE
 
 /obj/item/card/id/dogtag/special_stripped_behavior(mob/stripper, mob/owner)
 	if(dogtag_taken)
 		return
-	to_chat(stripper, span_notice("You take [owner]'s information tag, leaving the ID tag."))
+	to_chat(stripper, span_notice("你取下[owner]的信息标签，留下了身份识别标签。"))
 	dogtag_taken = TRUE
 	update_icon()
 	var/obj/item/dogtag/info_tag = new()
@@ -316,8 +316,8 @@
 	)
 
 /obj/item/card/id/dogtag/som
-	name = "\improper Sons of Mars dogtag"
-	desc = "Used by the Sons of Mars."
+	name = "\improper 火星之子狗牌"
+	desc = "火星之子使用。"
 	icon_state = "dogtag_som"
 	worn_icon_state = "dogtag_som"
 	iff_signal = SOM_IFF
@@ -330,8 +330,8 @@
 
 
 /obj/item/dogtag
-	name = "information dog tag"
-	desc = "A fallen marine's information dog tag."
+	name = "信息识别牌"
+	desc = "一名阵亡陆战队员的信息身份牌。"
 	icon_state = "dogtag_taken"
 	icon = 'icons/obj/items/card.dmi'
 	w_class = WEIGHT_CLASS_TINY
@@ -345,8 +345,8 @@
 
 	if(istype(I, /obj/item/dogtag))
 		var/obj/item/dogtag/D = I
-		to_chat(user, span_notice("You join the two tags together."))
-		name = "information dog tags"
+		to_chat(user, span_notice("你将两个标签连接在一起。"))
+		name = "信息识别牌"
 		if(D.fallen_names)
 			fallen_names += D.fallen_names
 		if(D.fallen_assignments)
@@ -358,7 +358,7 @@
 	. = ..()
 	if(ishuman(user) && fallen_names && length(fallen_names))
 		if(length(fallen_names) == 1)
-			to_chat(user, span_notice("It reads: \"[fallen_names[1]] - [fallen_assignments[1]]\"."))
+			to_chat(user, span_notice("上面写着：[fallen_names[1]] - [fallen_assignments[1]]。"))
 		else
 			var/msg = "<span class='notice'> It reads: "
 			for(var/x = 1 to length(fallen_names))

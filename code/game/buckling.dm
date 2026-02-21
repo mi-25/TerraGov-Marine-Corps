@@ -24,9 +24,9 @@
 	if(!(buckling_mob.buckle_flags & CAN_BE_BUCKLED) && !force)
 		if(!silent)
 			if(buckling_mob == usr)
-				balloon_alert_to_viewers("can't buckle")
+				balloon_alert_to_viewers("无法固定")
 			else
-				balloon_alert_to_viewers("can't buckle [buckling_mob] to [src]")
+				balloon_alert_to_viewers("无法将[buckling_mob]固定到[src]")
 		return FALSE
 
 	// This signal will check if the mob is mounting this atom to ride it. There are 3 possibilities for how this goes
@@ -137,11 +137,11 @@
 		return FALSE
 	if(!silent)
 		if(buckling_mob == user)
-			buckling_mob.visible_message(span_notice("[buckling_mob] buckles [buckling_mob.p_them()]self to [src]."),
+			buckling_mob.visible_message(span_notice("[buckling_mob] 将[buckling_mob.p_them()]自己扣在[src]上。"),
 				span_notice("You buckle yourself to [src]."),
 				span_hear("You hear metal clanking."))
 		else
-			buckling_mob.visible_message(span_warning("[user] buckles [buckling_mob] to [src]!"),
+			buckling_mob.visible_message(span_warning("[user] 将 [buckling_mob] 固定在 [src] 上！"),
 				span_warning("[user] buckles you to [src]!"),
 				span_hear("You hear metal clanking."))
 	return TRUE
@@ -154,13 +154,13 @@
 	if(!silent)
 		if(buckled_mob == user)
 			buckled_mob.visible_message(
-				span_notice("[buckled_mob] unbuckles [buckled_mob.p_them()]self from [src]."),
+				span_notice("[buckled_mob] 从 [src] 上解开了 [buckled_mob.p_them()] 自己。"),
 				span_notice("You unbuckle yourself from [src]."),
 				span_notice("You hear metal clanking"))
 		else
 			var/by_user = user ? "by [user]" : ""
 			buckled_mob.visible_message(
-				span_notice("[buckled_mob] was unbuckled [by_user]!"),
+				span_notice("[buckled_mob] 被 [by_user] 解开了！"),
 				span_notice("You were unbuckled from [src] [by_user]]."),
 				span_notice("You hear metal clanking."))
 	add_fingerprint(user, "unbuckle")

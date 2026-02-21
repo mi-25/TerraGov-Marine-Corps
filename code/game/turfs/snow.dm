@@ -4,7 +4,7 @@
 //FLOORS-----------------------------------//
 //Snow Floor
 /turf/open/floor/plating/ground/snow
-	name = "snow layer"
+	name = "雪层"
 	icon = 'icons/turf/snow2.dmi'
 	icon_state = "snow_0_1"
 	hull_floor = TRUE
@@ -45,20 +45,20 @@
 
 	if(M.a_intent == INTENT_GRAB)
 		if(!slayer)
-			to_chat(M, span_warning("There is nothing to clear out!"))
+			to_chat(M, span_warning("没有东西需要清理！"))
 			return FALSE
 
-		M.visible_message(span_notice("\The [M] starts clearing out \the [src]."), \
+		M.visible_message(span_notice("\The [M] 开始清理 \the [src]。"), \
 		span_notice("We start clearing out \the [src]."), null, 5)
 		playsound(M.loc, 'sound/weapons/alien_claw_swipe.ogg', 25, 1)
 		if(!do_after(M, 0.5 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_BUILD))
 			return FALSE
 
 		if(!slayer)
-			to_chat(M, span_warning("There is nothing to clear out!"))
+			to_chat(M, span_warning("没有东西需要清理！"))
 			return
 
-		M.visible_message(span_notice("\The [M] clears out \the [src]."), \
+		M.visible_message(span_notice("\The [M] 清空了 \the [src]。"), \
 		span_notice("We clear out \the [src]."), null, 5)
 		slayer = 0
 		update_appearance()
@@ -73,14 +73,14 @@
 	if(istype(I, /obj/item/lightstick))
 		var/obj/item/lightstick/L = I
 		if(locate(/obj/item/lightstick) in get_turf(src))
-			to_chat(user, "There's already a [L.name] at this position!")
+			to_chat(user, "这个位置已经有一个[L.name]了！")
 			return
 
-		to_chat(user, "Now planting \the [L].")
+		to_chat(user, "正在部署 \the [L]。")
 		if(!do_after(user, 2 SECONDS, NONE, src, BUSY_ICON_BUILD))
 			return
 
-		user.visible_message(span_notice("[user.name] planted \the [L] into [src]."))
+		user.visible_message(span_notice("[user.name]将\the [L]植入[src]。"))
 		L.anchored = TRUE
 		L.icon_state = "lightstick_[L.s_color][L.anchored]"
 		user.drop_held_item()
@@ -106,13 +106,13 @@
 	. = ..()
 	switch(slayer)
 		if(0)
-			name = "dirt floor"
+			name = "泥土地面"
 		if(1)
-			name = "shallow [initial(name)]"
+			name = "浅层[initial(name)]"
 		if(2)
-			name = "deep [initial(name)]"
+			name = "深层[initial(name)]"
 		if(3)
-			name = "very deep [initial(name)]"
+			name = "非常深沉的[initial(name)]"
 
 /turf/open/floor/plating/ground/snow/update_overlays()
 	. = ..()

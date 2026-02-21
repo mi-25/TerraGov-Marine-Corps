@@ -1,6 +1,6 @@
 /obj/structure/cargo_container
-	name = "Cargo Container"
-	desc = "A huge industrial shipping container."
+	name = "货物集装箱"
+	desc = "一个巨大的工业运输集装箱。"
 	icon = 'icons/obj/structures/contain.dmi'
 	icon_state = "blue"
 	bound_width = 32
@@ -23,12 +23,12 @@
 		var/mob/living/carbon/human/H = user
 		if(H.species.can_shred(H))
 
-			user.visible_message(span_warning("[user] smashes [src] to no avail."), \
+			user.visible_message(span_warning("[user]猛砸[src]，但毫无效果。"), \
 					span_warning("You beat against [src] to no effect"), \
 					"You hear twisting metal.")
 
 	if(!damage_dealt)
-		user.visible_message(span_warning("[user] beats against the [src] to no avail."), \
+		user.visible_message(span_warning("[user]徒劳地敲打着[src]。"), \
 						span_warning("[user] beats against the [src]."), \
 						"You hear twisting metal.")
 
@@ -58,8 +58,8 @@
 	bound_height = 32
 
 /obj/structure/cargo_container/horizontal
-	name = "Cargo Container"
-	desc = "A huge industrial shipping container,"
+	name = "货物集装箱"
+	desc = "一个巨大的工业货运集装箱，"
 	icon = 'icons/obj/structures/containHorizont.dmi'
 	icon_state = "blue"
 	bound_width = 64

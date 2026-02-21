@@ -1,6 +1,6 @@
 /obj/item/gift
-	name = "gift"
-	desc = "Presents!"
+	name = "礼物"
+	desc = "礼物！"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "gift1"
 	worn_icon_state = "gift1"
@@ -64,8 +64,8 @@
 
 
 /obj/item/gift/marine
-	name = "Present"
-	desc = "One, standard issue TGMC Present"
+	name = "就绪"
+	desc = "一，标准配发的地球政府殖民地海军陆战队礼物"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "gift1"
 	worn_icon_state = "gift1"
@@ -136,7 +136,7 @@
 /obj/item/weapon/gun/launcher/rocket/m57a4/xmas/able_to_fire(mob/living/user)
 	var/turf/current_turf = get_turf(user)
 	if(is_mainship_level(current_turf.z))
-		balloon_alert(user, "can't fire that here!")
+		balloon_alert(user, "不能在这里开火！")
 		return FALSE
 	return TRUE
 
@@ -152,7 +152,7 @@
 /obj/effect/spresent/relaymove(mob/user)
 	if(user.stat != CONSCIOUS)
 		return
-	to_chat(user, span_notice("You can't move."))
+	to_chat(user, span_notice("你无法移动。"))
 
 
 /obj/effect/spresent/attackby(obj/item/I, mob/user, params)
@@ -161,10 +161,10 @@
 		return
 
 	if(!iswirecutter(I))
-		to_chat(user, span_notice("You need wirecutters for that."))
+		to_chat(user, span_notice("你需要用钢丝钳才能做到。"))
 		return
 
-	to_chat(user, span_notice("You cut open the present."))
+	to_chat(user, span_notice("你拆开了礼物。"))
 
 	for(var/mob/M in src) //Should only be one but whatever.
 		M.forceMove(loc)
@@ -176,8 +176,8 @@
 
 
 /obj/item/wrapping_paper
-	name = "wrapping paper"
-	desc = "You can use this to wrap items in."
+	name = "包装纸"
+	desc = "你可以用它来包裹物品。"
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "wrap_paper"
 	var/amount = 20
@@ -191,20 +191,20 @@
 	var/a_used = 2 ** (w_class - 1)
 
 	if(!(locate(/obj/structure/table) in loc))
-		to_chat(user, span_notice("You must put the paper on a table!"))
+		to_chat(user, span_notice("你必须把纸放在桌子上！"))
 		return
 
 	if(I.w_class >= WEIGHT_CLASS_BULKY)
-		to_chat(user, span_notice("The object is far too large!"))
+		to_chat(user, span_notice("目标体积过大！"))
 		return
 
 
 	if(!iswirecutter(user.l_hand) && !iswirecutter(user.r_hand))
-		to_chat(user, span_notice("You need scissors!"))
+		to_chat(user, span_notice("你需要剪刀！"))
 		return
 
 	if(amount < a_used)
-		to_chat(user, span_notice("You need more paper!"))
+		to_chat(user, span_notice("你需要更多纸张！"))
 		return
 
 	if(istype(I, /obj/item/smallDelivery) || istype(I, /obj/item/gift)) //No gift wrapping gifts!
@@ -238,11 +238,11 @@
 	var/mob/living/carbon/human/H = target
 
 	if(!istype(H.wear_suit, /obj/item/clothing/suit/straight_jacket) && H.stat == CONSCIOUS)
-		to_chat(user, "They are moving around too much. A straightjacket would help.")
+		to_chat(user, "他们动得太厉害了。约束衣会很有帮助。")
 		return
 
 	if(amount <= 2)
-		to_chat(user, span_notice("You need more paper."))
+		to_chat(user, span_notice("你需要更多纸张。"))
 		return
 
 	var/obj/effect/spresent/present = new(H.loc)

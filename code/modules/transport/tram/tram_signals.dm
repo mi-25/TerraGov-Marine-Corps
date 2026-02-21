@@ -1,7 +1,7 @@
 /// Pedestrian crossing signal for tram
 /obj/machinery/transport/crossing_signal
 	name = "crossing signal"
-	desc = "Indicates to pedestrians if it's safe to cross the tracks. Connects to sensors down the track."
+	desc = "向行人指示横穿轨道是否安全。与轨道沿线的传感器相连。"
 	icon = 'icons/obj/tram/crossing_signal.dmi'
 	icon_state = "crossing-inbound"
 	base_icon_state = "crossing-inbound"
@@ -67,7 +67,7 @@
 
 /obj/machinery/static_signal
 	name = "crossing signal"
-	desc = "Indicates to pedestrians if it's safe to cross the tracks."
+	desc = "向行人指示横穿轨道是否安全。"
 	icon = 'icons/obj/tram/crossing_signal.dmi'
 	icon_state = "crossing-inbound"
 	layer = TRAM_SIGNAL_LAYER
@@ -152,7 +152,7 @@
 
 	tool.play_tool_sound(src, 50)
 	setDir(turn(dir,-90))
-	balloon_alert(user, "rotated")
+	balloon_alert(user, "已旋转")
 	find_uplink()
 	return CLICK_ACTION_SUCCESS
 
@@ -166,7 +166,7 @@
 			if(OUTBOUND)
 				sign_dir = INBOUND
 
-		to_chat(user, span_notice("You flip directions on [src]."))
+		to_chat(user, span_notice("你将[src]的方向翻转了。"))
 		update_appearance()
 
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
@@ -450,7 +450,7 @@
 	name = "guideway sensor"
 	icon = 'icons/obj/tram/tram_sensor.dmi'
 	icon_state = "sensor-base"
-	desc = "Uses an infrared beam to detect passing trams. Works when paired with a sensor on the other side of the track."
+	desc = "使用红外光束检测经过的电车。与轨道另一侧的传感器配对时生效。"
 	layer = TRAM_RAIL_LAYER
 	plane = FLOOR_PLANE
 	use_power = NO_POWER_USE

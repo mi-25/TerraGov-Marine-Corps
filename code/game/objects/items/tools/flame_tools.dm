@@ -21,8 +21,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 
 /obj/item/tool/candle
-	name = "red candle"
-	desc = "a candle"
+	name = "红色蜡烛"
+	desc = "一根蜡烛"
 	icon = 'icons/obj/items/candle.dmi'
 	icon_state = "candle1"
 	worn_icon_state = "candle1"
@@ -92,8 +92,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 //MATCHES//
 ///////////
 /obj/item/tool/match
-	name = "match"
-	desc = "A simple match stick, used for lighting fine smokables."
+	name = "匹配"
+	desc = "一根简易火柴，用于点燃精致的烟具。"
 	icon = 'icons/obj/items/cigarettes.dmi'
 	icon_state = "match_unlit"
 	worn_icon_list = list(
@@ -145,8 +145,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_state = "match_burnt"
 	worn_icon_state = "cigoff"
 	set_light_on(FALSE)
-	name = "burnt match"
-	desc = "A match. This one has seen better days."
+	name = "烧焦的火柴"
+	desc = "一根火柴。这根火柴已经有些年头了。"
 	STOP_PROCESSING(SSobj, src)
 
 
@@ -154,8 +154,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 //FINE SMOKABLES//
 //////////////////
 /obj/item/clothing/mask/cigarette
-	name = "cigarette"
-	desc = "A roll of tobacco and nicotine."
+	name = "香烟"
+	desc = "一卷烟草和尼古丁。"
 	icon_state = "cigoff"
 	throw_speed = 0.5
 	worn_icon_state = "cigoff"
@@ -240,7 +240,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			if(L.rounds)
 				light(span_notice("[user] deftly lights [user.p_their()] [src] with the [L]'s low power setting."))
 			else
-				to_chat(user, span_warning("You try to light your [src] with the [L] but your power cell has no charge!"))
+				to_chat(user, span_warning("你试图用[L]点燃你的[src]，但你的能量电池没电了！"))
 		else if(istype(LAZYACCESS(G.attachments_by_slot, ATTACHMENT_SLOT_UNDER), /obj/item/weapon/gun/flamer))
 			light(span_notice("[user] lights [user.p_their()] [src] with the underbarrel [LAZYACCESS(G.attachments_by_slot, ATTACHMENT_SLOT_UNDER)]."))
 
@@ -266,12 +266,12 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		return
 	if(istype(glass))	//you can dip cigarettes into beakers
 		if(glass.reagents.trans_to(src, chem_volume))	//if reagents were transfered, show the message
-			to_chat(user, span_notice("You dip \the [src] into \the [glass]."))
+			to_chat(user, span_notice("你将\the [src]浸入\the [glass]。"))
 		else			//if not, either the beaker was empty, or the cigarette was full
 			if(!glass.reagents.total_volume)
-				to_chat(user, span_notice("[glass] is empty."))
+				to_chat(user, span_notice("[glass] 是空的。"))
 			else
-				to_chat(user, span_notice("[src] is full."))
+				to_chat(user, span_notice("[src] 已满。"))
 
 /obj/item/clothing/mask/cigarette/proc/light(flavor_text = null)
 	if(lit)
@@ -279,7 +279,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 	lit = TRUE
 	heat = 1000
-	name = "lit [name]"
+	name = "点燃 [name]"
 	attack_verb = list("burns", "singes")
 	damtype = BURN
 	if(reagents.get_reagent_amount(/datum/reagent/toxin/phoron)) // the phoron explodes when exposed to fire
@@ -321,7 +321,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	smoketime--
 	if(smoketime < 0)
 		if(ismob(loc))
-			to_chat(M, span_notice("Your [name] goes out."))
+			to_chat(M, span_notice("你的[name]熄灭了。"))
 			playsound(src, 'sound/items/cig_snuff.ogg', 15, 1)
 		die()
 		return
@@ -344,7 +344,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/attack_self(mob/user)
 	if(lit)
-		user.visible_message(span_notice("[user] calmly drops and treads on the lit [src], putting it out instantly."))
+		user.visible_message(span_notice("[user]冷静地丢下并踩灭了点燃的[src]，瞬间将其熄灭。"))
 		playsound(src, 'sound/items/cig_snuff.ogg', 15, 1)
 		die()
 	return ..()
@@ -388,8 +388,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	qdel(src)
 
 /obj/item/clothing/mask/cigarette/antitox
-	name = "Neurokiller cigarette"
-	desc = "A new type of cigarette, made to fend off toxic gasses, might still tire you."
+	name = "神经杀手香烟"
+	desc = "一种新型香烟，旨在抵御有毒气体，但仍可能让你感到疲惫。"
 	icon_state = "anticigoff"
 	worn_icon_state = "anticigoff"
 	icon_on = "anticigon"
@@ -399,8 +399,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	list_reagents = list(/datum/reagent/medicine/ryetalyn = 30, /datum/reagent/water = 30)  //some water so it purges the rye too
 
 /obj/item/clothing/mask/cigarette/emergency
-	name = "Red Comrade"
-	desc = "A bright red cigarette with what appears to be russian branding on it. The words \"RUSSIAN RED\", however are unmistakable."
+	name = "红色同志"
+	desc = "一支鲜红色的香烟，上面似乎印着俄文品牌标识。但'RUSSIAN RED'这几个字却清晰可辨。"
 	icon_state = "rrcigoff"
 	worn_icon_state = "rrcigoff"
 	icon_on = "rrcigon"
@@ -409,8 +409,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	list_reagents = list(/datum/reagent/medicine/russian_red = 10)  //same ammount as a pill
 
 /obj/item/clothing/mask/cigarette/bica
-	name = "strawberry flavored cigarette"
-	desc = "Red tipped. Has got a single word stamped on the side: \"(BICARIDINE)\"."
+	name = "草莓味香烟"
+	desc = "红色尖端。侧面印有一个单词：'(BICARIDINE)'。"
 	icon_state = "bicacigoff"
 	worn_icon_state = "bicacigoff"
 	icon_on = "bicacigon"
@@ -419,8 +419,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	list_reagents = list(/datum/reagent/medicine/bicaridine = 15)
 
 /obj/item/clothing/mask/cigarette/kelo
-	name = "lemon flavored cigarette"
-	desc = "Yellow tipped. has got a single word stamped on the side: \"(KELOTANE)\"."
+	name = "柠檬味香烟"
+	desc = "黄色尖端。侧面印有一个单词：'（KELOTANE）'。"
 	icon_state = "kelocigoff"
 	worn_icon_state = "kelocigoff"
 	icon_on = "kelocigon"
@@ -429,8 +429,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	list_reagents = list(/datum/reagent/medicine/kelotane = 15)
 
 /obj/item/clothing/mask/cigarette/tram
-	name = "poppy flavored cigarette"
-	desc = "TerraGov opioid alternative, diluted in water to skirt the 2112 Opioid Control act."
+	name = "罂粟味香烟"
+	desc = "地球政府阿片类药物替代品，用水稀释以规避2112年《阿片类药物管制法案》。"
 	icon_state = "tramcigoff"
 	worn_icon_state = "tramcigoff"
 	icon_on = "tramcigon"
@@ -443,8 +443,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 // CIGARS //
 ////////////
 /obj/item/clothing/mask/cigarette/cigar
-	name = "premium cigar"
-	desc = "A brown roll of tobacco and... well, you're not quite sure. This thing's huge!"
+	name = "高级雪茄"
+	desc = "一卷棕色的烟草……嗯，你不太确定。这东西可真大！"
 	icon_state = "cigaroff"
 	icon_on = "cigaron"
 	icon_off = "cigaroff"
@@ -457,15 +457,15 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	emissive_state = "cigaron_emissive"
 
 /obj/item/clothing/mask/cigarette/cigar/cohiba
-	name = "\improper Cohiba Robusto cigar"
-	desc = "There's little more you could want from a cigar."
+	name = "\improper Cohiba Robusto 雪茄"
+	desc = "这支雪茄已经无可挑剔了。"
 	smoketime = 2000
 	chem_volume = 80
 	list_reagents = list(/datum/reagent/nicotine = 15)
 
 /obj/item/clothing/mask/cigarette/cigar/havana
-	name = "premium Havanian cigar"
-	desc = "A cigar fit for only the best of the best."
+	name = "高级哈瓦那雪茄"
+	desc = "只有最顶尖的精英才配享用的雪茄。"
 	smoketime = 7200
 	chem_volume = 50
 	list_reagents = list(/datum/reagent/nicotine = 20)
@@ -474,8 +474,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 //SMOKING PIPES//
 /////////////////
 /obj/item/clothing/mask/cigarette/pipe
-	name = "smoking pipe"
-	desc = "A pipe, for smoking. Probably made of meershaum or something."
+	name = "烟斗"
+	desc = "烟斗，用于吸烟。可能是海泡石之类的材质制成的。"
 	icon_state = "pipeoff"
 	worn_icon_state = "pipeoff"
 	icon_on = "pipeon"  //Note - these are in masks.dmi
@@ -489,7 +489,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		new /obj/effect/decal/cleanable/ash(location)
 		if(ismob(loc))
 			var/mob/living/M = loc
-			to_chat(M, span_notice("Your [name] goes out, and you empty the ash."))
+			to_chat(M, span_notice("你的[name]熄灭了，你倒掉了烟灰。"))
 			heat = 0
 			lit = FALSE
 			icon_state = icon_off
@@ -500,7 +500,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/pipe/attack_self(mob/user as mob) //Refills the pipe. Can be changed to an attackby later, if loose tobacco is added to vendors or something.
 	if(lit)
-		user.visible_message(span_notice("[user] puts out [src]."))
+		user.visible_message(span_notice("[user] 熄灭了 [src]。"))
 		heat = 0
 		lit = FALSE
 		icon_state = icon_off
@@ -508,29 +508,29 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		STOP_PROCESSING(SSobj, src)
 		return
 	if(smoketime <= 0)
-		to_chat(user, span_notice("You refill the pipe with tobacco."))
+		to_chat(user, span_notice("你给烟斗重新装满了烟草。"))
 		smoketime = initial(smoketime)
 
 
 /obj/item/clothing/mask/cigarette/pipe/cobpipe
-	name = "corn cob pipe"
-	desc = "A nicotine delivery system popularized by folksy backwoodsmen, kept popular in the modern age and beyond by space hipsters."
+	name = "玉米芯烟斗"
+	desc = "一种由乡野村民推广开来的尼古丁输送系统，在太空潮人群体中延续至今并保持流行。"
 	icon_state = "cobpipeoff"
 	worn_icon_state = "cobpipeoff"
 	icon_on = "cobpipeon"  //Note - these are in masks.dmi
 	icon_off = "cobpipeoff"
 
 /obj/item/clothing/mask/cigarette/pipe/cobpipe/curved
-	name = "curved corn cob pipe"
-	desc = "Usually seen smoked by generals, or mindless bloodlusted commandos... but with style!"
+	name = "弯曲的玉米芯烟斗"
+	desc = "通常是将军们抽的，或者那些嗜血成性的突击队员……但这款更有格调！"
 	icon_state = "curvedcoboff"
 	worn_icon_state = "curvedcoboff"
 	icon_on = "curvedcobon"  //Note - these are in masks.dmi
 	icon_off = "curvedcoboff"
 
 /obj/item/clothing/mask/cigarette/pipe/bonepipe
-	name = "Europan bone pipe"
-	desc = "A smoking pipe made out of the bones of the Europan bone whale."
+	name = "欧罗巴骨管"
+	desc = "用欧罗巴骨鲸的骨头制成的烟斗。"
 	icon_state = "bonepipeoff"
 	worn_icon_state = "bonepipeoff"
 	icon_on = "bonepipeon"  //Note - these are in masks.dmi
@@ -540,8 +540,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 //ZIPPO//
 /////////
 /obj/item/tool/lighter
-	name = "cheap lighter"
-	desc = "A cheap-as-free lighter."
+	name = "廉价打火机"
+	desc = "一个便宜到近乎免费的打火机。"
 	icon = 'icons/obj/items/cigarettes.dmi'
 	icon_state = "lighter-g"
 	worn_icon_list = list(
@@ -563,8 +563,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	attack_verb = list("burns", "singes")
 
 /obj/item/tool/lighter/zippo
-	name = "\improper Zippo lighter"
-	desc = "The zippo."
+	name = "\improper 芝宝打火机"
+	desc = "打火机。"
 	icon_state = "zippo"
 	worn_icon_state = "zippo"
 	icon_on = "zippoon"
@@ -584,18 +584,18 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			icon_state = icon_on
 			worn_icon_state = icon_on
 			if(istype(src, /obj/item/tool/lighter/zippo) )
-				user.visible_message(span_rose("Without even breaking stride, [user] flips open and lights [src] in one smooth movement."))
+				user.visible_message(span_rose("[user] 甚至没有停下脚步，以一个流畅的动作翻开并点燃了[src]。"))
 				playsound(loc, 'sound/items/zippo_on.ogg', 15, 1)
 			else
 				if(prob(95))
-					user.visible_message(span_notice("After a few attempts, [user] manages to light the [src]."))
+					user.visible_message(span_notice("尝试了几次后，[user]成功点燃了[src]。"))
 				else
-					to_chat(user, span_warning("You burn yourself while lighting the lighter."))
+					to_chat(user, span_warning("你在点燃打火机时烧到了自己。"))
 					if (user.l_hand == src)
 						user.apply_damage(2,BURN,"l_hand")
 					else
 						user.apply_damage(2,BURN,"r_hand")
-					user.visible_message(span_notice("After a few attempts, [user] manages to light the [src],  however [user.p_they()] burn [user.p_their()] finger in the process."))
+					user.visible_message(span_notice("尝试了几次后，[user] 终于点燃了 [src]，但 [user.p_they()] 在这个过程中烫伤了 [user.p_their()] 的手指。"))
 				playsound(loc, 'sound/items/lighter_on.ogg', 15, 1)
 			set_light_on(TRUE)
 		else
@@ -610,10 +610,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		worn_icon_state = icon_off
 		if(!silent)
 			if(istype(src, /obj/item/tool/lighter/zippo) )
-				bearer.visible_message("<span class='rose'>You hear a quiet click, as [bearer] shuts off [src] without even looking at what they're doing.")
+				bearer.visible_message("<span class='rose'>你听到一声轻微的咔哒声，[bearer]甚至没看自己在做什么就关掉了[src]。</span>")
 				playsound(loc, 'sound/items/zippo_off.ogg', 15, 1)
 			else
-				bearer.visible_message("<span class='notice'>[bearer] quietly shuts off the [src].")
+				bearer.visible_message("<span class='notice'>[bearer] 悄悄关闭了 [src]。</span>")
 				playsound(loc, 'sound/items/lighter_off.ogg', 15, 1)
 		set_light_on(FALSE)
 		return TRUE

@@ -85,8 +85,8 @@
 			take_limb_damage(10)
 	flash_act(1, TRUE, type = /atom/movable/screen/fullscreen/flash/noise)
 
-	to_chat(src, span_danger("*BZZZT*"))
-	to_chat(src, span_warning("Warning: Electromagnetic pulse detected."))
+	to_chat(src, span_danger("*哔哔*"))
+	to_chat(src, span_warning("警告：检测到电磁脉冲。"))
 
 /mob/living/silicon/apply_effect(effect = 0, effect_type = EFFECT_STUN, updating_health = FALSE)
 	return FALSE
@@ -119,7 +119,7 @@
 //can't inject synths
 /mob/living/silicon/can_inject(mob/user, error_msg, target_zone, penetrate_thick = FALSE)
 	if(user && error_msg)
-		to_chat(user, span_alert("The armoured plating is too tough."))
+		to_chat(user, span_alert("装甲板太坚固了。"))
 	return FALSE
 
 
@@ -150,11 +150,11 @@
 	if(HUD_toggled[HUD_nbr])
 		HUD_toggled[HUD_nbr] = 0
 		H.remove_hud_from(src)
-		to_chat(src, span_boldnotice("[hud_choice] Disabled"))
+		to_chat(src, span_boldnotice("[hud_choice] 已禁用"))
 	else
 		HUD_toggled[HUD_nbr] = 1
 		H.add_hud_to(src)
-		to_chat(src, span_boldnotice("[hud_choice] Enabled"))
+		to_chat(src, span_boldnotice("[hud_choice] 已启用"))
 
 
 /mob/living/silicon/ex_act(severity)
@@ -198,7 +198,7 @@
 		. = TRUE
 	switch(user.a_intent)
 		if(INTENT_HELP)
-			user.visible_message("[user] pets [src].", span_notice("You pet [src]."))
+			user.visible_message("[user] 抚摸 [src]。", span_notice("You pet [src]."))
 
 		if(INTENT_GRAB)
 			user.start_pulling(src)
@@ -206,5 +206,5 @@
 		else
 			user.do_attack_animation(src, ATTACK_EFFECT_KICK)
 			playsound(loc, 'sound/effects/bang.ogg', 10, 1)
-			visible_message(span_danger("[user] punches [src], but doesn't leave a dent."), \
+			visible_message(span_danger("[user] 击打了 [src]，但连个凹痕都没留下。"), \
 				span_warning("[user] punches [src], but doesn't leave a dent."))

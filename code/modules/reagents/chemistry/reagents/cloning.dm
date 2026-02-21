@@ -1,5 +1,5 @@
 /datum/reagent/medicine/clone
-	name = "Clone" // 3 random characters
+	name = "Clone-克隆" // 3 random characters
 	var/for_blood_type = null
 /datum/reagent/medicine/clone/New()
 	name = "[initial(name)] [ascii2text(rand(65, 87))][ascii2text(rand(65, 87))][ascii2text(rand(65, 87))]" // 3 random characters
@@ -17,7 +17,7 @@
 	for_blood_type = "O"
 
 /datum/reagent/medicine/biomass
-	name = "Biomass"
+	name = "Biomass-生物质"
 
 /datum/reagent/medicine/biomass/xeno
-	name = "Converted Biomass"
+	name = "Converted Biomass-已转化的生物质"

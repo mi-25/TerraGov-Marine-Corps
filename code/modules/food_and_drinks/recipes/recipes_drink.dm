@@ -4,7 +4,7 @@
 ///////////////// Booze & Bottles ///////////////////
 
 /datum/crafting_recipe/moonshinejug
-	name = "Moonshine Jug"
+	name = "月光酒壶"
 	time = 30
 	reqs = list(
 		/obj/item/reagent_containers/cup/glass/bottle = 1,
@@ -14,7 +14,7 @@
 	category = CAT_DRINK
 
 /datum/crafting_recipe/blazaambottle
-	name = "Blazaam Bottle"
+	name = "布拉扎姆酒瓶"
 	time = 20
 	reqs = list(
 		/obj/item/reagent_containers/cup/glass/bottle = 1,
@@ -24,7 +24,7 @@
 	category = CAT_DRINK
 
 /datum/crafting_recipe/champagnebottle
-	name = "Champagne Bottle"
+	name = "香槟酒瓶"
 	time = 30
 	reqs = list(
 		/obj/item/reagent_containers/cup/glass/bottle = 1,
@@ -34,7 +34,7 @@
 	category = CAT_DRINK
 
 /datum/crafting_recipe/trappistbottle
-	name = "Trappist Bottle"
+	name = "特拉普瓶"
 	time = 15
 	reqs = list(
 		/obj/item/reagent_containers/cup/glass/bottle/small = 1,
@@ -44,7 +44,7 @@
 	category = CAT_DRINK
 
 /datum/crafting_recipe/goldschlagerbottle
-	name = "Goldschlager Bottle"
+	name = "金箔酒瓶"
 	time = 30
 	reqs = list(
 		/obj/item/reagent_containers/cup/glass/bottle = 1,
@@ -54,7 +54,7 @@
 	category = CAT_DRINK
 
 /datum/crafting_recipe/patronbottle
-	name = "Patron Bottle"
+	name = "赞助者瓶"
 	time = 30
 	reqs = list(
 		/obj/item/reagent_containers/cup/glass/bottle = 1,
@@ -66,7 +66,7 @@
 ////////////////////// Non-alcoholic recipes ///////////////////
 
 /datum/crafting_recipe/holybottle
-	name = "Holy Water Flask"
+	name = "圣水瓶"
 	time = 30
 	reqs = list(
 		/obj/item/reagent_containers/cup/glass/bottle = 1,
@@ -78,7 +78,7 @@
 //flask of unholy water is a beaker for some reason, I will try making it a bottle and add it here once the antag freeze is over. t. kryson
 
 /datum/crafting_recipe/nothingbottle
-	name = "Nothing Bottle"
+	name = "空瓶"
 	time = 30
 	reqs = list(
 		/obj/item/reagent_containers/cup/glass/bottle = 1,
@@ -88,7 +88,7 @@
 	category = CAT_DRINK
 
 /datum/crafting_recipe/smallcarton
-	name = "Small Carton"
+	name = "小型弹药箱"
 	result = /obj/item/reagent_containers/cup/glass/bottle/juice/smallcarton
 	time = 10
 	reqs = list(/obj/item/stack/sheet/cardboard = 1)

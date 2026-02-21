@@ -28,7 +28,7 @@
 
 /datum/action/ability/xeno_action/stealth/New(Target)
 	. = ..()
-	desc = "Become harder to see, even harder to see when stalking, and almost invisible if you stand still. While invisible you sneak attack for a [sneak_attack_stun_duration / (1 SECONDS)] second stun. Uses plasma to move and lowers plasma gain."
+	desc = "更难被发现，潜行时更难被察觉，静止不动时几乎隐形。隐形状态下进行偷袭可造成[sneak_attack_stun_duration / (1 SECONDS)]秒眩晕。移动时消耗等离子体并降低等离子体获取。"
 
 /datum/action/ability/xeno_action/stealth/remove_action(mob/living/L)
 	if(stealth)
@@ -40,12 +40,12 @@
 	if(!.)
 		return FALSE
 	if(xeno_owner.on_fire)
-		to_chat(xeno_owner, "<span class='warning'>We're too busy being on fire to enter Stealth!</span>")
+		to_chat(xeno_owner, "<span class='warning'>我们正忙着着火，无法进入潜行状态！</span>")
 		return FALSE
 	return TRUE
 
 /datum/action/ability/xeno_action/stealth/on_cooldown_finish()
-	to_chat(owner, "<span class='xenodanger'><b>We're ready to use Stealth again.</b></span>")
+	to_chat(owner, "<span class='xenodanger'><b>我们准备好再次使用潜行了。</b></span>")
 	playsound(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
@@ -54,10 +54,10 @@
 		cancel_stealth()
 		return TRUE
 	if(HAS_TRAIT_FROM(owner, TRAIT_TURRET_HIDDEN, STEALTH_TRAIT))   // stops stealth and disguise from stacking
-		owner.balloon_alert(owner, "already in a form of stealth!")
+		owner.balloon_alert(owner, "已处于潜行状态！")
 		return
 	succeed_activate()
-	to_chat(owner, "<span class='xenodanger'>We vanish into the shadows...</span>")
+	to_chat(owner, "<span class='xenodanger'>我们隐入阴影之中...</span>")
 	last_stealth = world.time
 	stealth = TRUE
 	GLOB.round_statistics.hunter_cloaks++
@@ -100,7 +100,7 @@
 /datum/action/ability/xeno_action/stealth/proc/cancel_stealth() //This happens if we take damage, attack, pounce, toggle stealth off, and do other such exciting stealth breaking activities.
 	SIGNAL_HANDLER
 	add_cooldown()
-	to_chat(owner, "<span class='xenodanger'>We emerge from the shadows.</span>")
+	to_chat(owner, "<span class='xenodanger'>我们从阴影中现身。</span>")
 
 	UnregisterSignal(owner, list(
 		COMSIG_MOVABLE_MOVED,
@@ -137,7 +137,7 @@
 	if(!stealth || can_sneak_attack)
 		return
 	can_sneak_attack = TRUE
-	to_chat(owner, span_xenodanger("We're ready to use Sneak Attack while stealthed."))
+	to_chat(owner, span_xenodanger("我们已准备好，可在潜行状态下使用偷袭。"))
 	playsound(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 
 ///Handles moving while in stealth
@@ -152,7 +152,7 @@
 		xeno_owner.set_alpha_source(ALPHA_SOURCE_HUNTER_STEALTH, HUNTER_STEALTH_RUN_ALPHA)
 	//If we have 0 plasma after expending stealth's upkeep plasma, end stealth.
 	if(!xeno_owner.plasma_stored)
-		to_chat(xeno_owner, span_xenodanger("We lack sufficient plasma to remain camouflaged."))
+		to_chat(xeno_owner, span_xenodanger("我们缺乏足够的等离子体来维持伪装状态。"))
 		cancel_stealth()
 
 ///Updates or cancels stealth
@@ -165,7 +165,7 @@
 	if(owner.last_move_intent < world.time - HUNTER_STEALTH_STEALTH_DELAY)
 		xeno_owner.set_alpha_source(ALPHA_SOURCE_HUNTER_STEALTH, HUNTER_STEALTH_STILL_ALPHA)
 	if(!xeno_owner.plasma_stored)
-		to_chat(xeno_owner, span_xenodanger("We lack sufficient plasma to remain camouflaged."))
+		to_chat(xeno_owner, span_xenodanger("我们缺乏足够的等离子体来维持伪装状态。"))
 		cancel_stealth()
 
 /// Callback listening for a xeno using the pounce ability
@@ -187,7 +187,7 @@
 	if(can_sneak_attack)
 		M.adjust_stagger(3 SECONDS)
 		M.add_slowdown(1)
-		to_chat(owner, span_xenodanger("Pouncing from the shadows, we stagger our victim."))
+		to_chat(owner, span_xenodanger("从阴影中猛扑而出，我们让目标踉跄不稳。"))
 
 ///Special sneak attack when stealthed
 /datum/action/ability/xeno_action/stealth/proc/sneak_attack_slash(datum/source, mob/living/target, damage, list/damage_mod, list/armor_mod)
@@ -209,7 +209,7 @@
 	if(bonus_stealth_damage_multiplier)
 		damage_mod += xeno_owner.xeno_caste.melee_damage * xeno_owner.xeno_melee_damage_modifier * bonus_stealth_damage_multiplier
 
-	owner.visible_message(span_danger("\The [owner] strikes [target] with [flavour] precision!"), \
+	owner.visible_message(span_danger("\The [owner]以[flavour]的精准度击中了[target]！"), \
 	span_danger("We strike [target] with [flavour] precision!"))
 	target.adjust_stagger(staggerslow_stacks SECONDS)
 	target.add_slowdown(staggerslow_stacks)
@@ -249,7 +249,7 @@
 	name = "Disguise"
 	action_icon_state = "xenohide"
 	action_icon = 'icons/Xeno/actions/general.dmi'
-	desc = "Disguise yourself as a mob or an object. Uses plasma to move. Select your disguise with Hunter's Mark."
+	desc = "伪装成生物或物体。消耗等离子体移动。使用猎手标记选择伪装。"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_TOGGLE_DISGUISE,
 	)
@@ -261,13 +261,13 @@
 	var/mob/living/carbon/xenomorph/xenoowner = owner
 	var/datum/action/ability/activable/xeno/hunter_mark/mark = xenoowner.actions_by_path[/datum/action/ability/activable/xeno/hunter_mark]
 	if(HAS_TRAIT_FROM(owner, TRAIT_TURRET_HIDDEN, STEALTH_TRAIT))   // stops stealth and disguise from stacking
-		owner.balloon_alert(owner, "already in a form of stealth!")
+		owner.balloon_alert(owner, "已处于潜行状态！")
 		return
 	if(!mark.marked_target)
-		to_chat(owner, span_warning("We have no target to disguise into!"))
+		to_chat(owner, span_warning("我们没有可伪装的目标！"))
 		return
 	if(ishuman(mark.marked_target))
-		to_chat(owner, "You cannot turn into a human!")
+		to_chat(owner, "你无法变成人类！")
 		return
 	var/image/disguised_icon = image(icon = mark.marked_target.icon, icon_state = mark.marked_target.icon_state, loc = owner)
 	disguised_icon.override = TRUE
@@ -285,7 +285,7 @@
 
 /datum/action/ability/xeno_action/stealth/disguise/handle_stealth()
 	if(!xeno_owner.plasma_stored)
-		to_chat(xeno_owner, span_xenodanger("We lack sufficient plasma to remain camouflaged."))
+		to_chat(xeno_owner, span_xenodanger("我们缺乏足够的等离子体来维持伪装状态。"))
 		cancel_stealth()
 
 // ***************************************
@@ -320,10 +320,10 @@
 
 /datum/action/ability/activable/xeno/pounce/New(Target)
 	. = ..()
-	desc = "Leap at your target up to [HUNTER_POUNCE_RANGE] tiles away, stunning them for [XENO_POUNCE_STUN_DURATION / (1 SECONDS)] seconds."
+	desc = "向最远 [HUNTER_POUNCE_RANGE] 格外的目标猛扑，使其眩晕 [XENO_POUNCE_STUN_DURATION / (1 SECONDS)] 秒。"
 
 /datum/action/ability/activable/xeno/pounce/on_cooldown_finish()
-	owner.balloon_alert(owner, "pounce ready")
+	owner.balloon_alert(owner, "猛扑就绪")
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
@@ -410,7 +410,7 @@
 	name = "Hunter's Mark"
 	action_icon_state = "hunter_mark"
 	action_icon = 'icons/Xeno/actions/hunter.dmi'
-	desc = "Psychically mark a creature you have line of sight to, allowing you to sense its direction, distance and location with Psychic Trace."
+	desc = "对视线内的生物进行心灵标记，使你能够通过心灵追踪感知其方向、距离和位置。"
 	ability_cost = 25
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_HUNTER_MARK,
@@ -426,29 +426,29 @@
 
 	if(!isliving(A) && (xeno_owner.xeno_caste.upgrade != XENO_UPGRADE_PRIMO) || !ismovable(A))
 		if(!silent)
-			to_chat(xeno_owner, span_xenowarning("We cannot psychically mark this target!"))
+			to_chat(xeno_owner, span_xenowarning("我们无法用灵能标记这个目标！"))
 		return FALSE
 
 	if(A == marked_target)
 		if(!silent)
-			to_chat(xeno_owner, span_xenowarning("This is already our target!"))
+			to_chat(xeno_owner, span_xenowarning("这已经是我们的目标了！"))
 		return FALSE
 
 	if(A == xeno_owner)
 		if(!silent)
-			to_chat(xeno_owner, span_xenowarning("Why would we target ourselves?"))
+			to_chat(xeno_owner, span_xenowarning("我们为什么要攻击自己人？"))
 		return FALSE
 
 	if(!line_of_sight(xeno_owner, A)) //Need line of sight.
 		if(!silent)
-			to_chat(xeno_owner, span_xenowarning("We require line of sight to mark them!"))
+			to_chat(xeno_owner, span_xenowarning("我们需要视线才能标记他们！"))
 		return FALSE
 
 	return TRUE
 
 
 /datum/action/ability/activable/xeno/hunter_mark/on_cooldown_finish()
-	to_chat(owner, span_xenowarning("<b>We are able to impose our psychic mark again.</b>"))
+	to_chat(owner, span_xenowarning("<b>我们能够再次施加我们的心灵印记。</b>"))
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	return ..()
 
@@ -457,7 +457,7 @@
 	xeno_owner.face_atom(A) //Face towards the target so we don't look silly
 
 	if(!line_of_sight(xeno_owner, A)) //Need line of sight.
-		to_chat(xeno_owner, span_xenowarning("We lost line of sight to the target!"))
+		to_chat(xeno_owner, span_xenowarning("我们失去了对目标的视线！"))
 		return fail_activate()
 
 	if(marked_target)
@@ -467,7 +467,7 @@
 
 	RegisterSignal(marked_target, COMSIG_QDELETING, PROC_REF(unset_target)) //For var clean up
 
-	to_chat(xeno_owner, span_xenodanger("We psychically mark [A] as our quarry."))
+	to_chat(xeno_owner, span_xenodanger("我们已用灵能标记[A]为我们的猎物。"))
 	xeno_owner.playsound_local(xeno_owner, 'sound/effects/ghost.ogg', 25, 0, 1)
 
 	succeed_activate()
@@ -489,7 +489,7 @@
 	name = "Psychic Trace"
 	action_icon_state = "toggle_queen_zoom"
 	action_icon = 'icons/Xeno/actions/queen.dmi'
-	desc = "Psychically ping the creature you marked, letting you know its direction, distance and location, and general condition."
+	desc = "对你标记的生物进行心灵感应，让你知道它的方向、距离和位置，以及大致状况。"
 	ability_cost = 1 //Token amount
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PSYCHIC_TRACE,
@@ -502,12 +502,12 @@
 
 	if(!mark.marked_target)
 		if(!silent)
-			to_chat(owner, span_xenowarning("We have no target we can trace!"))
+			to_chat(owner, span_xenowarning("我们无法追踪到任何目标！"))
 		return FALSE
 
 	if(mark.marked_target.z != owner.z)
 		if(!silent)
-			to_chat(owner, span_xenowarning("Our target is too far away, and is beyond our senses!"))
+			to_chat(owner, span_xenowarning("目标距离过远，超出感知范围！"))
 		return FALSE
 
 
@@ -580,7 +580,7 @@
 
 /datum/action/ability/xeno_action/mirage/New(Target)
 	. = ..()
-	desc = "Create [illusion_count] mirror images of ourselves. Reactivate to swap with an illusion."
+	desc = "制造[illusion_count]个自身的镜像幻影。再次激活可与幻影交换位置。"
 
 /datum/action/ability/xeno_action/mirage/remove_action()
 	clean_illusions(FALSE) // No need to manually delete the illusions as the illusions will delete themselves once their life time expires.
@@ -591,11 +591,11 @@
 	if(timer_id)
 		if(swap_used)
 			if(!silent)
-				xeno_owner.balloon_alert(xeno_owner, "Already swapped!")
+				xeno_owner.balloon_alert(xeno_owner, "已切换！")
 			return FALSE
 		if(!length(illusions) && !prioritized_illusion)
 			if(!silent)
-				xeno_owner.balloon_alert(xeno_owner, "No illusions to swap with!")
+				xeno_owner.balloon_alert(xeno_owner, "没有可供交换的幻象！")
 			return FALSE
 
 /datum/action/ability/xeno_action/mirage/action_activate()
@@ -659,7 +659,7 @@
 	name = "Silence"
 	action_icon_state = "silence"
 	action_icon = 'icons/Xeno/actions/hunter.dmi'
-	desc = "Impairs the ability of hostile living creatures we can see in a 5x5 area. Targets will be unable to speak and hear for 10 seconds, or 15 seconds if they're your Hunter Mark target."
+	desc = "削弱我们可见的5x5区域内敌对生物的能力。目标将无法说话和听见，持续10秒；若目标为你的猎手标记目标，则持续15秒。"
 	ability_cost = 50
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_SILENCE,
@@ -675,12 +675,12 @@
 	var/distance = get_dist(xeno_owner, A)
 	if(distance > HUNTER_SILENCE_RANGE)
 		if(!silent)
-			to_chat(xeno_owner, span_xenodanger("The target location is too far! We must be [distance - HUNTER_SILENCE_RANGE] tiles closer!"))
+			to_chat(xeno_owner, span_xenodanger("目标位置太远了！我们必须再靠近[distance - HUNTER_SILENCE_RANGE]格！"))
 		return FALSE
 
 	if(!line_of_sight(xeno_owner, A)) //Need line of sight.
 		if(!silent)
-			to_chat(xeno_owner, span_xenowarning("We require line of sight to the target location!") )
+			to_chat(xeno_owner, span_xenowarning("我们需要目标位置的视线！") )
 		return FALSE
 
 	return TRUE
@@ -706,7 +706,7 @@
 		var/datum/action/ability/activable/xeno/hunter_mark/mark_action = xeno_owner.actions_by_path[/datum/action/ability/activable/xeno/hunter_mark]
 		if(mark_action?.marked_target == target) //Double debuff stacks for the marked target
 			silence_multiplier = hunter_mark_multiplier
-		to_chat(target, span_danger("Your mind convulses at the touch of something ominous as the world seems to blur, your voice dies in your throat, and everything falls silent!") ) //Notify privately
+		to_chat(target, span_danger("你的意识因某种不祥之物的触碰而剧烈震颤，世界仿佛变得模糊，你的声音在喉间消逝，万物陷入死寂！") ) //Notify privately
 		target.playsound_local(target, 'sound/effects/ghost.ogg', 25, 0, 1)
 		target.adjust_stagger(HUNTER_SILENCE_STAGGER_DURATION * silence_multiplier)
 		target.adjust_blurriness(HUNTER_SILENCE_SENSORY_STACKS * silence_multiplier)
@@ -715,7 +715,7 @@
 		victim_count++
 
 	if(!victim_count)
-		to_chat(xeno_owner, span_xenodanger("We were unable to violate the minds of any victims."))
+		to_chat(xeno_owner, span_xenodanger("我们未能侵入任何受害者的意识。"))
 		add_cooldown(HUNTER_SILENCE_WHIFF_COOLDOWN) //We cooldown to prevent spam, but only for a short duration
 		return fail_activate()
 
@@ -728,7 +728,7 @@
 	SSblackbox.record_feedback("tally", "round_statistics", victim_count, "hunter_silence_targets") //Statistics
 
 /datum/action/ability/activable/xeno/silence/on_cooldown_finish()
-	to_chat(owner, span_xenowarning("<b>We refocus our psionic energies, allowing us to impose silence again.</b>") )
+	to_chat(owner, span_xenowarning("<b>我们重新凝聚灵能，得以再次施加静默。</b>") )
 	owner.playsound_local(owner, 'sound/effects/alien/new_larva.ogg', 25, 0, 1)
 	cooldown_duration = initial(cooldown_duration) //Reset the cooldown timer to its initial state in the event of a whiffed Silence.
 	return ..()

@@ -4,9 +4,9 @@
 // using this solves the problem of having the APC in a wall yet also inside an area
 
 /obj/machinery/power/terminal
-	name = "terminal"
+	name = "终端"
 	icon_state = "term"
-	desc = "It's an underfloor wiring terminal for power equipment."
+	desc = "这是用于电力设备的暗线接线端子。"
 	level = 1
 	anchored = TRUE
 	layer = WIRE_TERMINAL_LAYER
@@ -46,13 +46,13 @@
 /obj/machinery/power/terminal/deconstruct(mob/living/user)
 	var/turf/T = get_turf(src)
 	if(T.intact_tile)
-		to_chat(user, span_warning("You must first expose the power terminal!"))
+		to_chat(user, span_warning("你必须先暴露电源终端！"))
 		return FALSE
 
 	if(master && !master.can_terminal_dismantle())
 		return FALSE
 
-	user.visible_message(span_notice("[user] starts removing [master]'s wiring and terminal."),
+	user.visible_message(span_notice("[user]开始拆除[master]的线路和终端。"),
 		span_notice("You start removing [master]'s wiring and terminal."))
 
 	playsound(loc, 'sound/items/deconstruct.ogg', 50, 1)
@@ -69,7 +69,7 @@
 		return FALSE
 
 	new /obj/item/stack/cable_coil(get_turf(src), 10)
-	user.visible_message(span_notice("[user] removes [src]'s wiring and terminal."),
+	user.visible_message(span_notice("[user] 拆除了 [src] 的线路和终端。"),
 			span_notice("You remove [src]'s wiring and terminal."))
 
 	. = TRUE

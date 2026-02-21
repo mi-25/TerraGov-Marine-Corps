@@ -1,6 +1,6 @@
 /obj/machinery/recycler
-	name = "recycler"
-	desc = "A large crushing machine used to recycle trash."
+	name = "回收器"
+	desc = "一台大型粉碎机，用于回收垃圾。"
 	icon = 'icons/obj/recycling.dmi'
 	icon_state = "grinder-o1"
 	layer = ABOVE_MOB_LAYER

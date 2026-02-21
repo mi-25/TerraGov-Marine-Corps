@@ -186,9 +186,9 @@
 
 	var/turf/T = get_turf(src)
 	if (level==1 && isturf(T) && T.intact_tile)
-		to_chat(user, span_warning("You must remove the plating first!"))
+		to_chat(user, span_warning("你必须先移除护板！"))
 		return TRUE
-	to_chat(user, span_notice("You begin to unfasten \the [src]..."))
+	to_chat(user, span_notice("你开始解开\the [src]..."))
 
 	if(!do_after(user, 2 SECONDS, NONE, src, BUSY_ICON_BUILD))
 		return TRUE
@@ -250,7 +250,7 @@
 
 /obj/machinery/atmospherics/proc/climb_out(mob/living/user, turf/T)
 	if(T.density)
-		to_chat(user, span_notice("You cannot climb out, the exit is blocked!"))
+		to_chat(user, span_notice("你无法爬出，出口被堵住了！"))
 		return
 	if(TIMER_COOLDOWN_RUNNING(user, COOLDOWN_VENTCRAWL))
 		return FALSE
@@ -262,13 +262,13 @@
 		vent_crawl_exit_time = X.xeno_caste.vent_exit_speed
 	TIMER_COOLDOWN_START(user, COOLDOWN_VENTCRAWL, vent_crawl_exit_time)
 	if(!silent_crawl) //Xenos with silent crawl can silently enter/exit/move through vents.
-		visible_message(span_warning("You hear something squeezing through the ducts."))
-	to_chat(user, span_notice("You begin to climb out of [src]"))
+		visible_message(span_warning("你听到有什么东西在管道里穿行。"))
+	to_chat(user, span_notice("你开始从[src]爬出来"))
 	if(!do_after(user, vent_crawl_exit_time, IGNORE_HELD_ITEM, src))
 		return FALSE
 	user.remove_ventcrawl()
 	user.forceMove(T)
-	user.visible_message(span_warning("[user] climbs out of [src].</span>"), \
+	user.visible_message(span_warning("[user] 从 [src] 中爬出。</span>"), \
 	span_notice("You climb out of [src].</span>"))
 	log_game("[user] Crawled out of the [src] at [AREACOORD(src)]")
 	if(!silent_crawl)

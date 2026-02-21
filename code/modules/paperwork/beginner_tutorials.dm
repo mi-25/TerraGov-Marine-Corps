@@ -1,7 +1,7 @@
 //Each beginner loadout in quick_load_beginners.dm has a instruction pamphlet.
 
 /obj/item/paper/tutorial/beginner_rifleman
-	name = "Rifleman Tutorial"
+	name = "步枪兵教程"
 	info = {"As a rifleman, you are suited for virtually all theatres of combat. \
 	Your AR-12 assault rifle is accurate and effective at all ranges, and its powerful underbarrel grenade launcher poses even further danger to mid-range threats. \
 	Inside your satchel is an MRE to eat, as well as gauze and ointment for brute (slashes) and burn (acid) wounds respectively, \
@@ -50,7 +50,7 @@
 	Try keeping the distance from ferocious melee enemies, while getting too close for comfort with squishier ranged ones."}
 
 /obj/item/paper/tutorial/beginner_machinegunner
-	name = "Machinegunner Tutorial"
+	name = "机枪手教程"
 	info = {"As a machinegunner, you are the backbone of a marine force. While you possess heavy armor reinforced with \
 	Tyr-pattern plating (strengthening its defense even further against melee attacks), your slow move speed and the unwieldy nature of your MG-60 machinegun \
 	means you should not be spearheading any pushes. With your bipod, you are very apt at holding a flank or the frontline, \
@@ -106,7 +106,7 @@
 	The more bullets you shoot, the better a marine you are. It's actually that simple."}
 
 /obj/item/paper/tutorial/beginner_marksman
-	name = "Marksman Tutorial"
+	name = "神射手教程"
 	info = {"As a marksman, you are a master of precision and range, and should utilize both of these advantages as much as possible. \
 	Your DMR-37 is incredibly accurate at long ranges and packs a devastating punch. Due to your ability to engage at long range - and conversely, \
 	your inability to engage properly at short range - you should be staying as far from conflict as possible while still remaining in your rifle's effective range. \
@@ -152,7 +152,7 @@
 	Use your strengths in overwatching the battlefield to assist in securing valuable kills. "}
 
 /obj/item/paper/tutorial/beginner_shotgunner
-	name = "Shotgunner Tutorial"
+	name = "霰弹枪手教程"
 	info = {"As a shotgunner, you are the spearhead of the marine force. \
 	Your semiautomatic SH-39 fires slugs that will devastate any target at short to medium range, dealing heavy damage as well as leaving them stunned and staggered. \
 	Your role is to be at the front of any marine push, side by side with your fellow marines as you charge into danger. Your shotgun shell rig on your belt, \
@@ -206,7 +206,7 @@
 	into a false sense of safety, potentially scoring you a kill."}
 
 /obj/item/paper/tutorial/beginner_shocktrooper
-	name = "Shocktrooper Tutorial"
+	name = "突击兵教程"
 	info = {"As a shock trooper, you are a versatile yet powerful frontliner, and aim to change up tactics often to gain the advantage. \
 	You use the multimodal laser rifle, an experimental battery-powered weapon with an underbarrel flamethrower. \
 	Your belt contains spare energy cells for your laser rifle. Your right pocket contain a powerpack to recharge energy cells. \
@@ -253,7 +253,7 @@
 	Use this with stronger windows, such as ballistic glass, to attack the enemy without them being able to attack you back."}
 
 /obj/item/paper/tutorial/beginner_hazmat
-	name = "Hazmat Tutorial"
+	name = "危险品处理教程"
 	info = {"As a HAZMAT, you excel in situations too dangerous for other marines. Your Mimir type armor grants you complete immunity to toxic gas, \
 	from acid to neurotoxin. It also provides an increased resistance against acid in general, for dealing with ranged xenomorphs. \
 	Your AR-11 is somewhat unwieldy and inaccurate, but packs both potent bursts and an impressive 70-round magazine. \
@@ -303,7 +303,7 @@
 	(as long as there aren't friendlies in the way!)"}
 
 /obj/item/paper/tutorial/beginner_cqc
-	name = "CQC Tutorial"
+	name = "近战格斗教程"
 	info = {"As a CQC marine, you are incredibly mobile, and should be using and abusing your speed to dart in and out of danger. \
 	You are effective both spearheading the assault and pushing into flanks. \
 	Your AR-18 carbine isn't the most dangerous rifle, nor does it have a particularly high magazine size, but it's incredibly lightweight \
@@ -350,7 +350,7 @@
 	While your rifle runs out of ammo quickly, its rapid-fire four-round bursts deal impressive damage. Combined with your speed, you are the master of ambushing."}
 
 /obj/item/paper/tutorial/beginner_chad
-	name = "Grenadier Tutorial"
+	name = "掷弹兵教程"
 	info = {"As a grenadier, you are the master of area denial. Your six-chamber GL-70 grenade launcher boasts unparalleled room-clearing potential, \
 	and impressive lethality - just take care to avoid harming your fellow marines. \
 	Your belt, backpack, both pockets, and body armor are all filled with HEDP grenades to reload your grenade launcher with. \
@@ -384,7 +384,7 @@
 	As a grenadier, you hold the power to clear rooms and control territory like no other. Victory is just a well-placed grenade away."}
 
 /obj/item/paper/tutorial/builder
-	name = "Builder Tutorial"
+	name = "建造者教程"
 	info = {"The Builder loadout is designed around you establishing defenses, barricades made from metal, plasteel or sandbags. \
 	You are the frontline - without you marines will be exposed to attacks from any and all directions. \
 	Your backpack contains some materials, a box of flares, and extra drums for your gun.
@@ -431,7 +431,7 @@
 	Through your building expertise, marines can hold various critical locations, ensuring steady progress towards mission completion."}
 
 /obj/item/paper/tutorial/flamer
-	name = "Flamer Tutorial"
+	name = "喷火器教程"
 	info = {"As a Flamethrower specialist, your job is to burn, burn some more and BURN again. \
 	You are equipped with a flamethrower bag that refills your flamethrower every time you insert it back into the bag, \
 	and also have a laser carbine for more practical and pragmatic self-defense. Also comes with a large box of claymore anti-personnel mines, \
@@ -479,7 +479,7 @@
 	fellow marines."}
 
 /obj/item/paper/tutorial/plasmacutter
-	name = "Plasma Cutter Tutorial"
+	name = "等离子体切割器教程"
 	info = {"Tired of watching marines endlessly pour into a maze or terribly held choke point? This is the class for you then! \
 	With your plasma cutter, you will be able to easily delete resin walls from existence, and carve through metal, reinforced, or even solid rock walls! \
 	With this kit you'll be able to widen choke points and eradicate mazes with ease. \
@@ -518,7 +518,7 @@
 	Your ability to treat terrain as a sandbox has infinite potential for assisting your allies."}
 
 /obj/item/paper/tutorial/point_sentry
-	name = "Sentry Pointman Tutorial"
+	name = "哨戒炮先锋教程"
 	info = {"The Sentry Pointman loadout is perfectly equipped for securing a safe area and keeping xenos at bay. \
 	You are the guard of the backline - your medics and injured marines will be much safer with a sentry guarding them. \
 	Your backpack contains a few boxes of flares, two spare drums for your sentry, and the point defense sentry. \
@@ -576,7 +576,7 @@
 	Through your point defense, marines can keep their most vulnerable members alive and work to win the mission."}
 
 /obj/item/paper/tutorial/mortar
-	name = "Mortar Engineer Tutorial"
+	name = "迫击炮工程兵教程"
 	info = {"The mortar firesupport loadout is equipped to fortify an area and keep xenos at bay. \
 	You are both sword and shield - your High Explosive and Incendiary shells can be used to threaten xenomorph escape routes, and where they heal. \
 	Your tanglefoot shells will create a gas that drains xenomorph plasma, preventing them from using abilities and keeping them away while your allies safely push. \
@@ -632,7 +632,7 @@
 	Through your fire support, marines can keep the push moving and safely enter into dangerous areas."}
 
 /obj/item/paper/tutorial/lifesaver
-	name = "Lifesaver Tutorial"
+	name = "救生员教程"
 	info = {"As the lifesaver, you are a MEDIC first and foremost. You should be prioritizing healing marines over trying to fight xenomorphs yourself. \
 	Your belt contains many pill bottles - examine them to find out what they do with shift+click, and draw from them with right-click. \
 	Your belt also contains splints, which are used on fractured bones, and a medical analyzer, which will tell you exactly what's wrong with a person. \
@@ -683,7 +683,7 @@
 	You can use Meralyne and Dermaline at the same time as Bicaridine and kelotane, for an accelerated healing rate. Keep the Corps well and the rest will follow."}
 
 /obj/item/paper/tutorial/hypobelt
-	name = "Hypobelt Tutorial"
+	name = "腰带教程"
 	info = {"As the hypobelt medic, you are the master of rapid healing. \
 	Your belt is full of hyposprays which instantly apply a dose of medicine when you click a marine with them. \
 	Examine them with shift+click to read their labels to find out what they do. \
@@ -733,7 +733,7 @@
 	Remember your primary goal is to keep the force healthy and allow them to continue with progressing the operation."}
 
 /obj/item/paper/tutorial/smartmachinegunner
-	name = "Smartmachinegunner Tutorial"
+	name = "智能机枪手教程"
 	info = {"As the smartmachinegunner, you are the very backbone of your squad, and should be behind another marine or three at all times. \
 	Your SG-29 is capable of firing directly through your teammates without risk of harm, so staying safe and behind your allies is essential \
 	to gaining full value out of it. Your backpack and body armor contain both fire extinguisher and spare ammo, with your backpack also containing \
@@ -798,7 +798,7 @@
 	You are the most mobile among smartgunners - use this to your advantage. You are the best at providing cover fire for a mobile squad."}
 
 /obj/item/paper/tutorial/smartminigunner
-	name = "Smartminigunner Tutorial"
+	name = "智能机枪手教程"
 	info = {"As the smartminigunner, you are the very embodiment of BRRT. With your huge SG-85 smart minigun, \
 	you can fire ten rounds per second for one hundred straight seconds, providing powerful covering fire for other marines. \
 	No enemy wants to get stuck in your line of fire. Instead of a backpack you carry a back mounted powerpack that feeds and powers your SG-85. \

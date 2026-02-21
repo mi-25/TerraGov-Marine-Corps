@@ -5,30 +5,30 @@
 	H.regenerate_icons()
 
 /datum/outfit/job/som/squad/standard
-	name = "SOM Standard"
+	name = "火星之子标准型"
 	jobtype = /datum/job/som/squad/standard
 
 	id = /obj/item/card/id/dogtag/som
 
 /datum/outfit/job/som/squad/engineer
-	name = "SOM Engineer"
+	name = "火星之子工程兵"
 	jobtype = /datum/job/som/squad/engineer
 
 	id = /obj/item/card/id/dogtag/som
 
 /datum/outfit/job/som/squad/medic
-	name = "SOM Medic"
+	name = "火星之子医疗兵"
 	jobtype = /datum/job/som/squad/medic
 
 	id = /obj/item/card/id/dogtag/som
 
 /datum/outfit/job/som/squad/veteran
-	name = "SOM Veteran"
+	name = "火星之子老兵"
 	jobtype = /datum/job/som/squad/veteran
 	id = /obj/item/card/id/dogtag/som
 
 /datum/outfit/job/som/squad/leader
-	name = "SOM Leader"
+	name = "火星之子领袖"
 	jobtype = /datum/job/som/squad/leader
 
 	id = /obj/item/card/id/dogtag/som

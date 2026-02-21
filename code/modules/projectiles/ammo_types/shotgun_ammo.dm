@@ -11,7 +11,7 @@
 
 
 /datum/ammo/bullet/shotgun/slug
-	name = "shotgun slug"
+	name = "霰弹枪独头弹"
 	handful_icon_state = "shotgun_slug"
 	hud_state = "shotgun_slug"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -26,7 +26,7 @@
 
 
 /datum/ammo/bullet/shotgun/beanbag
-	name = "beanbag slug"
+	name = "豆袋弹"
 	handful_icon_state = "beanbag_slug"
 	icon_state = "beanbag"
 	hud_state = "shotgun_beanbag"
@@ -40,7 +40,7 @@
 	staggerstun(target_mob, proj, paralyze = 2 SECONDS, stagger = 4 SECONDS, knockback = 1, slowdown = 2, hard_size_threshold = 1)
 
 /datum/ammo/bullet/shotgun/incendiary
-	name = "incendiary slug"
+	name = "燃烧霰弹"
 	handful_icon_state = "incendiary_slug"
 	hud_state = "shotgun_fire"
 	damage_type = BRUTE
@@ -55,7 +55,7 @@
 	staggerstun(target_mob, proj, knockback = 2, slowdown = 1)
 
 /datum/ammo/bullet/shotgun/flechette
-	name = "shotgun flechette shell"
+	name = "霰弹枪箭弹"
 	handful_icon_state = "shotgun_flechette"
 	icon_state = "flechette"
 	hud_state = "shotgun_flechette"
@@ -71,12 +71,12 @@
 	sundering = 7
 
 /datum/ammo/bullet/shotgun/flechette/flechette_spread
-	name = "additional flechette"
+	name = "额外霰弹"
 	damage = 40
 	sundering = 5
 
 /datum/ammo/bullet/shotgun/buckshot
-	name = "shotgun buckshot shell"
+	name = "霰弹枪鹿弹"
 	handful_icon_state = "shotgun_buckshot"
 	icon_state = "buckshot"
 	hud_state = "shotgun_buckshot"
@@ -93,7 +93,7 @@
 	staggerstun(target_mob, proj, paralyze = 2 SECONDS, stagger = 2 SECONDS, knockback = 2, slowdown = 0.5, max_range = 3)
 
 /datum/ammo/bullet/hefa_buckshot
-	name = "hefa fragment"
+	name = "hefa 碎片"
 	handful_icon_state = "shotgun_buckshot"
 	icon_state = "buckshot"
 	hud_state = "shotgun_buckshot"
@@ -108,7 +108,7 @@
 	staggerstun(target_mob, proj, knockback = 2, max_range = 4)
 
 /datum/ammo/bullet/shotgun/spread
-	name = "additional buckshot"
+	name = "额外鹿弹"
 	icon_state = "buckshot"
 	accuracy_variation = 9
 	accurate_range = 3
@@ -117,7 +117,7 @@
 	damage_falloff = 4
 
 /datum/ammo/bullet/shotgun/frag
-	name = "shotgun explosive shell"
+	name = "霰弹枪高爆弹"
 	handful_icon_state = "shotgun_tracker"
 	hud_state = "shotgun_tracker"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -146,11 +146,11 @@
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf)
 
 /datum/ammo/bullet/shotgun/frag/frag_spread
-	name = "additional frag shell"
+	name = "额外破片弹"
 	damage = 5
 
 /datum/ammo/bullet/shotgun/sx16_buckshot
-	name = "shotgun buckshot shell" //16 gauge is between 12 and 410 bore.
+	name = "霰弹枪鹿弹" //16 gauge is between 12 and 410 bore.
 	handful_icon_state = "shotgun_buckshot"
 	icon_state = "buckshot"
 	hud_state = "shotgun_buckshot"
@@ -163,10 +163,10 @@
 	damage_falloff = 4
 
 /datum/ammo/bullet/shotgun/sx16_buckshot/spread
-	name = "additional buckshot"
+	name = "额外鹿弹"
 
 /datum/ammo/bullet/shotgun/heavy_buckshot
-	name = "heavy buckshot shell"
+	name = "重型鹿弹"
 	handful_icon_state = "heavy_shotgun_buckshot"
 	icon_state = "buckshot"
 	hud_state = "shotgun_buckshot"
@@ -183,7 +183,7 @@
 	staggerstun(target_mob, proj, paralyze = 2 SECONDS, stagger = 2 SECONDS, knockback = 2, slowdown = 0.5, max_range = 3)
 
 /datum/ammo/bullet/shotgun/barrikada_slug
-	name = "heavy metal slug"
+	name = "重金属弹头"
 	handful_icon_state = "heavy_shotgun_barrikada"
 	hud_state = "shotgun_slug"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -197,7 +197,7 @@
 	staggerstun(target_mob, proj, slowdown = 2, stagger = 3 SECONDS, knockback = 2)
 
 /datum/ammo/bullet/shotgun/heavy_spread
-	name = "additional buckshot"
+	name = "额外鹿弹"
 	icon_state = "buckshot"
 	accuracy_variation = 9
 	accurate_range = 3
@@ -206,7 +206,7 @@
 	damage_falloff = 4
 
 /datum/ammo/bullet/shotgun/sx16_flechette
-	name = "shotgun flechette shell"
+	name = "霰弹枪箭弹"
 	handful_icon_state = "shotgun_flechette"
 	icon_state = "flechette"
 	hud_state = "shotgun_flechette"
@@ -220,10 +220,10 @@
 	penetration = 15
 
 /datum/ammo/bullet/shotgun/sx16_flechette/spread
-	name = "additional flechette"
+	name = "额外霰弹"
 
 /datum/ammo/bullet/shotgun/sx16_slug
-	name = "shotgun slug"
+	name = "霰弹枪独头弹"
 	handful_icon_state = "shotgun_slug"
 	hud_state = "shotgun_slug"
 	shell_speed = 3
@@ -235,7 +235,7 @@
 	staggerstun(target_mob, proj, slowdown = 1, knockback = 1)
 
 /datum/ammo/bullet/shotgun/tx15_flechette
-	name = "shotgun flechette shell"
+	name = "霰弹枪箭弹"
 	handful_icon_state = "shotgun_flechette"
 	icon_state = "flechette"
 	hud_state = "shotgun_flechette"
@@ -250,10 +250,10 @@
 	sundering = 1.5
 
 /datum/ammo/bullet/shotgun/tx15_flechette/spread
-	name = "additional flechette"
+	name = "额外霰弹"
 
 /datum/ammo/bullet/shotgun/tx15_slug
-	name = "shotgun slug"
+	name = "霰弹枪独头弹"
 	handful_icon_state = "shotgun_slug"
 	hud_state = "shotgun_slug"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -267,7 +267,7 @@
 	staggerstun(target_mob, proj, slowdown = 2, knockback = 1)
 
 /datum/ammo/bullet/shotgun/mbx900_buckshot
-	name = "light shotgun buckshot shell" // If .410 is the smallest shotgun shell, then...
+	name = "轻型霰弹枪鹿弹" // If .410 is the smallest shotgun shell, then...
 	handful_icon_state = "light_shotgun_buckshot"
 	icon_state = "buckshot"
 	hud_state = "shotgun_buckshot"
@@ -280,11 +280,11 @@
 	damage_falloff = 1
 
 /datum/ammo/bullet/shotgun/mbx900_buckshot/spread
-	name = "additional buckshot"
+	name = "额外鹿弹"
 	damage = 40
 
 /datum/ammo/bullet/shotgun/mbx900_sabot
-	name = "light shotgun sabot shell"
+	name = "轻型霰弹枪脱壳弹"
 	handful_icon_state = "light_shotgun_sabot"
 	icon_state = "shotgun_slug"
 	hud_state = "shotgun_sabot"
@@ -296,7 +296,7 @@
 	sundering = 3
 
 /datum/ammo/bullet/shotgun/mbx900_tracker
-	name = "light shotgun tracker round"
+	name = "轻型霰弹枪追踪弹"
 	handful_icon_state = "light_shotgun_tracker"
 	icon_state = "shotgun_slug"
 	hud_state = "shotgun_tracker"
@@ -309,7 +309,7 @@
 	target_mob.AddComponent(/datum/component/dripping, DRIP_ON_TIME, 60 SECONDS, 3 SECONDS)
 
 /datum/ammo/bullet/shotgun/tracker
-	name = "shotgun tracker shell"
+	name = "霰弹枪追踪弹"
 	handful_icon_state = "shotgun_tracker"
 	icon_state = "shotgun_slug"
 	hud_state = "shotgun_tracker"
@@ -323,7 +323,7 @@
 
 //I INSERT THE SHELLS IN AN UNKNOWN ORDER
 /datum/ammo/bullet/shotgun/blank
-	name = "shotgun blank shell"
+	name = "霰弹枪空包弹"
 	handful_icon_state = "shotgun_blank"
 	icon_state = "shotgun_blank"
 	hud_state = "shotgun_buckshot" // don't fix this: this is so you can do buckshot roulette
@@ -334,7 +334,7 @@
 //Breaching shell!!
 
 /datum/ammo/bullet/shotgun/breaching
-	name = "shotgun breaching slug"
+	name = "霰弹枪破门弹"
 	handful_icon_state = "shotgun_slug"
 	hud_state = "shotgun_slug"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -362,7 +362,7 @@
 
 
 /datum/ammo/bullet/shotgun/sh410_ricochet
-	name = "light autoshotgun ricochet shell"
+	name = "轻型自动霰弹枪跳弹弹壳"
 	handful_icon_state = "light_shotgun_ricochet"
 	icon_state = "bullet_large_red"
 	hud_state = "shotgun_ricochet"
@@ -384,7 +384,7 @@
 	bonus_projectiles_type = /datum/ammo/bullet/shotgun/sh410_ricochet/one
 
 /datum/ammo/bullet/shotgun/sh410_gas
-	name = "light autoshotgun gas shell"
+	name = "轻型自动霰弹枪气体弹"
 	handful_icon_state = "light_shotgun_gas"
 	icon_state = "bullet_large_green"
 	hud_state = "shotgun_flechette"
@@ -413,7 +413,7 @@
 	trail_spread_system.start()
 
 /datum/ammo/bullet/shotgun/sh410_buckshot
-	name = "light autoshotgun magnum buckshot shell"
+	name = "轻型自动霰弹枪马格努姆鹿弹弹壳"
 	handful_icon_state = "light_shotgun_buckshot"
 	icon_state = "buckshot"
 	hud_state = "shotgun_buckshot"
@@ -426,11 +426,11 @@
 	damage_falloff = 0.5
 
 /datum/ammo/bullet/shotgun/sh410_buckshot/spread
-	name = "additional buckshot"
+	name = "额外鹿弹"
 	damage = 20
 
 /datum/ammo/bullet/shotgun/sh410_sabot
-	name = "light autoshotgun sabot shell"
+	name = "轻型自动霰弹枪脱壳弹"
 	handful_icon_state = "light_shotgun_sabot"
 	icon_state = "bullet_large"
 	hud_state = "shotgun_sabot"

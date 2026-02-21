@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/unstoppable
 	name = "Unstoppable"
-	desc = "Charging will grant you complete stagger immunity if you reach the maximum number of steps minus 1/2/3."
+	desc = "冲锋达到最大步数减1/2/3时，将赋予你完全的抗踉跄能力。"
 	/// For each structure, the amount of steps below the maximum that needs to be reached in order to gain stagger immunity.
 	var/step_per_structure = 1
 
@@ -28,7 +28,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/speed_demon
 	name = "Speed Demon"
-	desc = "Charging costs twice as much plasma. The speed multiplier per step is increased by 0.02/0.04/0.06."
+	desc = "充能消耗的等离子体翻倍。每步的速度倍率增加0.02/0.04/0.06。"
 	/// For each structure, the additional increase of the speed per step.
 	var/speed_per_structure = 0.02
 
@@ -68,7 +68,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/railgun
 	name = "Railgun"
-	desc = "Charge's maximum steps is increased by 4/8/12."
+	desc = "冲锋的最大步数增加4/8/12。"
 	/// For each structure, the amount of additional steps required to reach maximum charge.
 	var/steps_per_structure = 4
 

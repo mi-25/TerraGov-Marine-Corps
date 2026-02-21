@@ -1,5 +1,5 @@
 /datum/fire_support/droppod
-	name = "Sentry drop pod"
+	name = "哨戒炮空投舱"
 	fire_support_type = FIRESUPPORT_TYPE_SENTRY_POD
 	scatter_range = 1
 	uses = -1
@@ -45,7 +45,7 @@
 	disable(TRUE)
 
 /datum/fire_support/droppod/supply
-	name = "Supply drop pod"
+	name = "补给空投舱"
 	fire_support_type = FIRESUPPORT_TYPE_SUPPLY_POD
 	icon_state = "supply_pod"
 	initiate_chat_message = "TARGET ACQUIRED SUPPLY POD LAUNCHING."

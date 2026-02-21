@@ -6,8 +6,8 @@
 #define ASSEMBLY_BEEP_VOLUME 5
 
 /obj/item/assembly
-	name = "assembly"
-	desc = "A small electronic device that should never exist."
+	name = "装配"
+	desc = "一个本不该存在的小型电子设备。"
 	icon = 'icons/obj/assemblies/new_assemblies.dmi'
 	icon_state = ""
 	worn_icon_list = list(
@@ -53,7 +53,7 @@
 
 /obj/item/assembly/proc/is_secured(mob/user)
 	if(!secured)
-		to_chat(user, span_warning("The [name] is unsecured!"))
+		to_chat(user, span_warning("[name]未固定！"))
 		return FALSE
 	return TRUE
 
@@ -102,18 +102,18 @@
 		if(!A.secured && !secured)
 			holder = new /obj/item/assembly_holder(get_turf(src))
 			holder.assemble(src, A, user)
-			to_chat(user, span_notice("You attach and secure \the [A] to \the [src]!"))
+			to_chat(user, span_notice("你将\the [A]安装并固定在\the [src]上！"))
 		else
-			to_chat(user, span_warning("Both devices must be in attachable mode to be attached together."))
+			to_chat(user, span_warning("两个设备都必须处于可连接模式才能连接在一起。"))
 
 
 /obj/item/assembly/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
 		return TRUE
 	if(toggle_secure())
-		to_chat(user, span_notice("\The [src] is ready!"))
+		to_chat(user, span_notice("\The [src] 已准备就绪！"))
 	else
-		to_chat(user, span_notice("\The [src] can now be attached!"))
+		to_chat(user, span_notice("\The [src] 现在可以安装了！"))
 	return TRUE
 
 

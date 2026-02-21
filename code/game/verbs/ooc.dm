@@ -11,7 +11,7 @@
 	if(!mob)
 		return
 	if(IsGuestKey(key))
-		to_chat(src, "Guests may not use OOC.")
+		to_chat(src, "访客不得使用OOC频道。")
 		return
 
 	msg = copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN)
@@ -24,29 +24,29 @@
 	msg = emoji_parse(msg)
 
 	if(!(prefs.toggles_chat & CHAT_OOC))
-		to_chat(src, span_warning("You have OOC muted."))
+		to_chat(src, span_warning("你已被禁言。"))
 		return
 
 	if(!check_rights(R_ADMIN, FALSE))
 		if(!GLOB.ooc_allowed)
-			to_chat(src, span_warning("OOC is globally muted"))
+			to_chat(src, span_warning("OOC 已全局静音"))
 			return
 		if(!GLOB.dooc_allowed && (mob.stat == DEAD))
-			to_chat(usr, span_warning("OOC for dead mobs has been turned off."))
+			to_chat(usr, span_warning("已为死亡玩家关闭OOC聊天。"))
 			return
 		if(prefs.muted & MUTE_OOC)
-			to_chat(src, span_warning("You cannot use OOC (muted)."))
+			to_chat(src, span_warning("你无法使用OOC（已禁言）。"))
 			return
 		if(handle_spam_prevention(msg, MUTE_OOC))
 			return
 		if(findtext(msg, "byond://"))
-			to_chat(src, span_danger("Advertising other servers is not allowed."))
+			to_chat(src, span_danger("禁止宣传其他服务器。"))
 			log_admin_private("[key_name(usr)] has attempted to advertise in OOC: [msg]")
 			message_admins("[ADMIN_TPMONTY(usr)] has attempted to advertise in OOC: [msg]")
 			return
 
 	if(is_banned_from(ckey, "OOC"))
-		to_chat(src, span_warning("You have been banned from OOC."))
+		to_chat(src, span_warning("你已被禁止使用OOC频道。"))
 		return
 
 	var/list/filter_result = is_ooc_filtered(msg)
@@ -148,13 +148,13 @@
 	if(!mob)
 		return
 	if(IsGuestKey(key))
-		to_chat(src, "Guests may not use XOOC.")
+		to_chat(src, "访客不得使用XOOC。")
 		return
 	if(mob.stat == DEAD && !admin)
-		to_chat(src, span_warning("You must be alive to use XOOC."))
+		to_chat(src, span_warning("你必须活着才能使用XOOC。"))
 		return
 	if(!(mob in GLOB.xeno_mob_list) && !admin)
-		to_chat(src, span_warning("You must be a xeno to use XOOC."))
+		to_chat(src, span_warning("你必须是一名异形才能使用异形OOC。"))
 		return
 
 	msg = copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN)
@@ -167,20 +167,20 @@
 	msg = emoji_parse(msg)
 
 	if(!(prefs.toggles_chat & CHAT_OOC))
-		to_chat(src, span_warning("You have OOC muted."))
+		to_chat(src, span_warning("你已被禁言。"))
 		return
 
 	if(!check_rights(R_ADMIN, FALSE))
 		if(!GLOB.ooc_allowed)
-			to_chat(src, span_warning("OOC is globally muted"))
+			to_chat(src, span_warning("OOC 已全局静音"))
 			return
 		if(prefs.muted & MUTE_OOC)
-			to_chat(src, span_warning("You cannot use OOC (muted)."))
+			to_chat(src, span_warning("你无法使用OOC（已禁言）。"))
 			return
 		if(handle_spam_prevention(msg, MUTE_OOC))
 			return
 		if(findtext(msg, "byond://"))
-			to_chat(src, span_danger("Advertising other servers is not allowed."))
+			to_chat(src, span_danger("禁止宣传其他服务器。"))
 			log_admin_private("[key_name(usr)] has attempted to advertise in OOC: [msg]")
 			message_admins("[ADMIN_TPMONTY(usr)] has attempted to advertise in OOC: [msg]")
 			return
@@ -202,7 +202,7 @@
 		log_admin_private("[key_name(usr)] has passed the soft filter for \"[soft_filter_result[CHAT_FILTER_INDEX_WORD]]\" they may be using a disallowed term. Message: \"[msg]\"")
 
 	if(is_banned_from(ckey, "OOC"))
-		to_chat(src, span_warning("You have been banned from OOC."))
+		to_chat(src, span_warning("你已被禁止使用OOC频道。"))
 		return
 
 	mob.log_talk(msg, LOG_XOOC)
@@ -254,13 +254,13 @@
 	if(!mob)
 		return
 	if(IsGuestKey(key))
-		to_chat(src, "Guests may not use MOOC.")
+		to_chat(src, "访客不得使用MOOC。")
 		return
 	if(mob.stat == DEAD && !admin)
-		to_chat(src, span_warning("You must be alive to use MOOC."))
+		to_chat(src, span_warning("你必须活着才能使用 MOOC。"))
 		return
 	if(!((mob in GLOB.human_mob_list) || (mob in GLOB.ai_list)) && !admin)
-		to_chat(src, span_warning("You must be a human to use MOOC."))
+		to_chat(src, span_warning("你必须是人类才能使用 MOOC。"))
 		return
 
 	msg = copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN)
@@ -273,26 +273,26 @@
 	msg = emoji_parse(msg)
 
 	if(!(prefs.toggles_chat & CHAT_OOC))
-		to_chat(src, span_warning("You have OOC muted."))
+		to_chat(src, span_warning("你已被禁言。"))
 		return
 
 	if(!check_rights(R_ADMIN, FALSE))
 		if(!GLOB.ooc_allowed)
-			to_chat(src, span_warning("OOC is globally muted"))
+			to_chat(src, span_warning("OOC 已全局静音"))
 			return
 		if(prefs.muted & MUTE_OOC)
-			to_chat(src, span_warning("You cannot use OOC (muted)."))
+			to_chat(src, span_warning("你无法使用OOC（已禁言）。"))
 			return
 		if(handle_spam_prevention(msg, MUTE_OOC))
 			return
 		if(findtext(msg, "byond://"))
-			to_chat(src, span_danger("Advertising other servers is not allowed."))
+			to_chat(src, span_danger("禁止宣传其他服务器。"))
 			log_admin_private("[key_name(usr)] has attempted to advertise in OOC: [msg]")
 			message_admins("[ADMIN_TPMONTY(usr)] has attempted to advertise in OOC: [msg]")
 			return
 
 	if(is_banned_from(ckey, "OOC"))
-		to_chat(src, span_warning("You have been banned from OOC."))
+		to_chat(src, span_warning("你已被禁止使用OOC频道。"))
 		return
 
 	var/list/filter_result = is_ooc_filtered(msg)
@@ -362,11 +362,11 @@
 		return
 
 	if(mob.stat == DEAD && !admin)
-		to_chat(src, span_warning("You must be alive to use LOOC."))
+		to_chat(src, span_warning("你必须活着才能使用本地OOC。"))
 		return
 
 	if(IsGuestKey(key))
-		to_chat(src, "Guests may not use LOOC.")
+		to_chat(src, "访客不得使用本地OOC。")
 		return
 
 	msg = copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN)
@@ -375,20 +375,20 @@
 		return
 
 	if(!(prefs.toggles_chat & CHAT_LOOC))
-		to_chat(src, span_warning("You have LOOC muted."))
+		to_chat(src, span_warning("你已屏蔽LOOC。"))
 		return
 
 	if(!admin)
 		if(!CONFIG_GET(flag/looc_enabled))
-			to_chat(src, span_warning("LOOC is globally muted"))
+			to_chat(src, span_warning("LOOC 已全局静音"))
 			return
 		if(prefs.muted & MUTE_LOOC)
-			to_chat(src, span_warning("You cannot use LOOC (muted)."))
+			to_chat(src, span_warning("你无法使用LOOC（已禁言）。"))
 			return
 		if(handle_spam_prevention(msg, MUTE_LOOC))
 			return
 		if(findtext(msg, "byond://"))
-			to_chat(src, "<B>Advertising other servers is not allowed.</B>")
+			to_chat(src, "<B>禁止宣传其他服务器。</B>")
 			log_admin_private("[key_name(usr)] has attempted to advertise in LOOC: [msg]")
 			message_admins("[ADMIN_TPMONTY(usr)] has attempted to advertise in LOOC: [msg]")
 			return
@@ -410,7 +410,7 @@
 		log_admin_private("[key_name(usr)] has passed the soft filter for \"[soft_filter_result[CHAT_FILTER_INDEX_WORD]]\" they may be using a disallowed term. Message: \"[msg]\"")
 
 	if(is_banned_from(ckey, "LOOC"))
-		to_chat(src, span_warning("You have been banned from LOOC."))
+		to_chat(src, span_warning("你已被禁止使用LOOC。"))
 		return
 
 	mob.log_talk(msg, LOG_LOOC)
@@ -451,7 +451,7 @@
 	if(GLOB.motd)
 		to_chat(src, span_motd("[GLOB.motd]"))
 	else
-		to_chat(src, span_warning("The motd is not set in the server configuration."))
+		to_chat(src, span_warning("服务器配置中未设置 MOTD。"))
 
 
 /client/verb/stop_sounds()
@@ -469,7 +469,7 @@
 	set desc = "View the amount of playtime for roles the server has tracked."
 
 	if(!CONFIG_GET(flag/use_exp_tracking))
-		to_chat(usr, span_notice("Sorry, tracking is currently disabled."))
+		to_chat(usr, span_notice("抱歉，追踪功能当前已禁用。"))
 		return
 
 	var/list/body = list()
@@ -485,7 +485,7 @@
 	set name = "View Admin Remarks"
 
 	if(!CONFIG_GET(flag/see_own_notes))
-		to_chat(usr, span_notice("Sorry, that function is not enabled on this server."))
+		to_chat(usr, span_notice("抱歉，此功能在本服务器上未启用。"))
 		return
 
 	browse_messages(null, ckey, null, TRUE)
@@ -612,7 +612,7 @@
 /client/verb/display_ping(time as num)
 	set instant = TRUE
 	set name = ".display_ping"
-	to_chat(src, span_notice("Round trip ping took [round(pingfromtime(time), 1)]ms"))
+	to_chat(src, span_notice("往返延迟耗时 [round(pingfromtime(time), 1)] 毫秒"))
 
 
 /client/verb/ping()
@@ -655,7 +655,7 @@
 			players[displayed_key] = displayed_key
 
 	if(!length(players))
-		to_chat(src, span_infoplain("There are no other players you can ignore!"))
+		to_chat(src, span_infoplain("没有其他玩家可供忽略！"))
 		return
 
 	players = sort_list(players)
@@ -668,13 +668,13 @@
 	selection = players[selection]
 
 	if(selection in prefs.ignoring)
-		to_chat(src, span_infoplain("You are already ignoring [selection]!"))
+		to_chat(src, span_infoplain("你已经忽略[selection]了！"))
 		return
 
 	prefs.ignoring.Add(selection)
 	prefs.save_preferences()
 
-	to_chat(src, span_info("You are now ignoring [selection] on the OOC channel."))
+	to_chat(src, span_info("你已在OOC频道屏蔽[selection]。"))
 
 /client/verb/select_unignore()
 	set name = "Unignore"
@@ -682,7 +682,7 @@
 	set desc = "Stop ignoring a player's messages on the OOC channel"
 
 	if(!length(prefs.ignoring))
-		to_chat(src, span_infoplain("You haven't ignored any players!"))
+		to_chat(src, span_infoplain("你还没有忽略任何玩家！"))
 		return
 
 	var/selection = tgui_input_list(src, "Select a player", "Unignore", prefs.ignoring)
@@ -691,13 +691,13 @@
 		return
 
 	if(!(selection in prefs.ignoring))
-		to_chat(src, span_infoplain("You are not ignoring [selection]!"))
+		to_chat(src, span_infoplain("你没有忽略[selection]！"))
 		return
 
 	prefs.ignoring.Remove(selection)
 	prefs.save_preferences()
 
-	to_chat(src, span_info("You are no longer ignoring [selection] on the OOC channel."))
+	to_chat(src, span_info("你不再在 OOC 频道屏蔽 [selection]。"))
 
 /client/verb/linkforumaccount()
 	set category = "OOC"
@@ -706,22 +706,22 @@
 
 	var/uri = CONFIG_GET(string/forum_link_uri)
 	if(!uri)
-		to_chat(src, span_warning("This feature is disabled."))
+		to_chat(src, span_warning("此功能已禁用。"))
 		return
 
 	if (!SSdbcore.Connect())
-		to_chat(src, span_danger("No connection to the database."))
+		to_chat(src, span_danger("无法连接到数据库。"))
 		return
 
 	if  (IsGuestKey(ckey))
-		to_chat(src, span_danger("Guests can not link accounts."))
+		to_chat(src, span_danger("访客无法关联账户。"))
 		return
 
 	var/token = generate_account_link_token()
 
 	var/datum/db_query/query_set_token = SSdbcore.NewQuery("INSERT INTO phpbb.tg_byond_oauth_tokens (`token`, `key`) VALUES (:token, :key)", list("token" = token, "key" = key))
 	if(!query_set_token.Execute())
-		to_chat(src, span_danger("Failed to insert account link token into database, please try again later."))
+		to_chat(src, span_danger("未能将账户链接令牌插入数据库，请稍后再试。"))
 		qdel(query_set_token)
 		return
 
@@ -743,12 +743,12 @@
 	var/datum/db_query/query_get_token = SSdbcore.NewQuery("SELECT [random_string()], [random_string()]", list(random_string_args(entropychain), random_string_args(entropychain)))
 
 	if(!query_get_token.Execute())
-		to_chat(src, span_danger("Failed to get random string token from database. (Error #1)"))
+		to_chat(src, span_danger("无法从数据库获取随机字符串令牌。（错误 #1）"))
 		qdel(query_get_token)
 		return
 
 	if(!query_get_token.NextRow())
-		to_chat(src, span_danger("Could not locate your token in the database. (Error #2)"))
+		to_chat(src, span_danger("无法在数据库中定位到您的令牌。（错误 #2）"))
 		qdel(query_get_token)
 		return
 

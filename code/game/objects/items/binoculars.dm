@@ -1,6 +1,6 @@
 /obj/item/binoculars
-	name = "binoculars"
-	desc = "A pair of binoculars."
+	name = "望远镜"
+	desc = "一副双筒望远镜。"
 	icon = 'icons/obj/items/binoculars.dmi'
 	icon_state = "binoculars"
 	worn_icon_list = list(
@@ -18,10 +18,10 @@
 
 /obj/item/binoculars/attack_self(mob/user)
 	if(user.interactee && istype(user.interactee, /obj/machinery/deployable))
-		to_chat(user, span_warning("You can't use this right now!"))
+		to_chat(user, span_warning("你现在无法使用这个！"))
 		return
 	if(!zoom && !(user.client.eye == user) && !(user.client.eye == user.loc))
-		to_chat(user, span_warning("You're looking through something else right now."))
+		to_chat(user, span_warning("你正在查看其他东西。"))
 		return
 	zoom(user)
 
@@ -31,8 +31,8 @@
 #define MODE_RANGE_FINDER 3
 
 /obj/item/binoculars/tactical
-	name = "pair of tactical binoculars"
-	desc = "A pair of binoculars, with a laser targeting function. Unique action to toggle mode. Alt+Click to change selected linked artillery. Ctrl+Click when using to target something. Shift+Click to get coordinates. Ctrl+Shift+Click to fire OB when lasing in OB mode"
+	name = "一副战术望远镜"
+	desc = "一副具备激光瞄准功能的双筒望远镜。独特动作可切换模式。Alt+点击以更改选定的已链接火炮。使用时Ctrl+点击以瞄准目标。Shift+点击以获取坐标。在轨道轰炸模式下进行激光指示时，Ctrl+Shift+点击以发射轨道轰炸。"
 	icon_state = "range_finders"
 	var/laser_cooldown = 0
 	var/cooldown_duration = 200 //20 seconds
@@ -149,11 +149,11 @@
 	if(!length(linked_mortars))
 		return
 	if(length(linked_mortars) == 1)
-		to_chat(user, span_notice("There is only one linked piece, you can't switch to another."))
+		to_chat(user, span_notice("只有一个连接部件，无法切换到另一个。"))
 	selected_mortar += 1
 	check_mortar_index()
 	var/obj/mortar = linked_mortars[selected_mortar]
-	to_chat(user, span_notice("NOW SENDING COORDINATES TO [linked_mortars[selected_mortar].name] AT: LONGITUDE [mortar.x]. LATITUDE [mortar.y]."))
+	to_chat(user, span_notice("正在向[linked_mortars[selected_mortar].name]发送坐标：经度[mortar.x]，纬度[mortar.y]。"))
 
 /obj/item/binoculars/tactical/verb/toggle_mode(mob/user)
 	set category = "IC.Object"
@@ -161,48 +161,48 @@
 	if(!user && isliving(loc))
 		user = loc
 	if (laser)
-		to_chat(user, "<span class='warning'>You can't switch mode while targeting")
+		to_chat(user, "<span class='warning'>瞄准时无法切换模式</span>")
 		return
 	if(!changable)
-		to_chat(user, "These binoculars only have one mode.")
+		to_chat(user, "这副望远镜只有一种模式。")
 		return
 	mode += 1
 	if(mode > MODE_RANGE_FINDER)
 		mode = MODE_CAS
 	switch(mode)
 		if(MODE_CAS)
-			to_chat(user, span_notice("You switch [src] to CAS marking mode."))
+			to_chat(user, span_notice("你已将[src]切换至近距空中支援标记模式。"))
 		if(MODE_RAILGUN)
-			to_chat(user, span_notice("You switch [src] to railgun targeting mode."))
+			to_chat(user, span_notice("你将[src]切换至导轨炮瞄准模式。"))
 		if(MODE_ORBITAL)
-			to_chat(user, span_notice("You switch [src] to orbital bombardment targeting mode."))
+			to_chat(user, span_notice("你已将[src]切换至轨道轰炸瞄准模式。"))
 		if(MODE_RANGE_FINDER)
-			to_chat(user, span_notice("You switch [src] to range finding mode."))
+			to_chat(user, span_notice("你将[src]切换至测距模式。"))
 	update_icon()
 	playsound(user, 'sound/items/binoculars.ogg', 15, 1)
 
 /obj/item/binoculars/tactical/proc/acquire_coordinates(atom/A, mob/living/carbon/human/user)
 	var/turf/TU = get_turf(A)
 	targetturf = TU
-	to_chat(user, span_notice("COORDINATES: LONGITUDE [targetturf.x]. LATITUDE [targetturf.y]."))
+	to_chat(user, span_notice("坐标：经度 [targetturf.x]。纬度 [targetturf.y]。"))
 	playsound(src, 'sound/effects/binoctarget.ogg', 35)
 
 /obj/item/binoculars/tactical/proc/acquire_target(atom/A, mob/living/carbon/human/user)
 	set waitfor = 0
 
 	if(laser)
-		to_chat(user, span_warning("You're already targeting something."))
+		to_chat(user, span_warning("你已经锁定目标了。"))
 		return
 
 	if(world.time < laser_cooldown)
-		to_chat(user, span_warning("[src]'s laser battery is recharging."))
+		to_chat(user, span_warning("[src]的激光电池正在充能。"))
 		return
 
 	var/turf/TU = get_turf(A)
 	var/distance = get_dist(TU, get_turf(user))
 	var/zoom_screen_size = zoom_tile_offset + zoom_viewsize + 3
 	if(!(TU.z in SSmapping.get_connected_levels(get_turf(user))) || distance == -1 || (distance > zoom_screen_size))
-		to_chat(user, span_warning("You can't focus properly through \the [src] while looking through something else."))
+		to_chat(user, span_warning("你无法在透过其他东西观察时，通过\the [src]进行有效聚焦。"))
 		return
 
 
@@ -220,21 +220,21 @@
 	if(is_ground_level(TU.z) && (targ_area.ceiling <= CEILING_OBSTRUCTED))
 		is_outside = TRUE
 	if(!is_outside)
-		to_chat(user, span_warning("DEPTH WARNING: Target too deep for ordnance."))
+		to_chat(user, span_warning("深度警告：目标过深，无法使用弹药。"))
 		return
 	if(user.do_actions)
 		return
 	playsound(src, 'sound/effects/nightvision.ogg', 35)
 	if(mode != MODE_RANGE_FINDER)
-		to_chat(user, span_notice("INITIATING LASER TARGETING. Stand still."))
+		to_chat(user, span_notice("正在启动激光瞄准。请保持静止。"))
 		if(!do_after(user, max(1.5 SECONDS, target_acquisition_delay - (2.5 SECONDS * user.skills.getRating(SKILL_LEADERSHIP))), NONE, TU, BUSY_ICON_GENERIC) || world.time < laser_cooldown || laser)
 			return
 	if(targ_area.area_flags & OB_CAS_IMMUNE)
-		to_chat(user, span_warning("Our payload won't reach this target!"))
+		to_chat(user, span_warning("我们的有效载荷无法抵达此目标！"))
 		return
 	switch(mode)
 		if(MODE_CAS)
-			to_chat(user, span_notice("TARGET ACQUIRED. LASER TARGETING IS ONLINE. DON'T MOVE."))
+			to_chat(user, span_notice("目标已锁定。激光瞄准已上线。请勿移动。"))
 			log_game("[key_name(user)] has begun lasing a CAS mission at [AREACOORD(TU)].")
 			var/obj/effect/overlay/temp/laser_target/cas/CS = new (TU, 0, laz_name, S)
 			laser = CS
@@ -245,11 +245,11 @@
 					break
 		if(MODE_RANGE_FINDER)
 			if(!length(linked_mortars))
-				to_chat(user, span_notice("No linked artillery found."))
+				to_chat(user, span_notice("未找到已连接的炮台。"))
 				return
 			check_mortar_index() // incase varedit screws something up
 			targetturf = TU
-			to_chat(user, span_notice("COORDINATES TARGETED BY ARTILLERY [selected_mortar]: LONGITUDE [targetturf.x]. LATITUDE [targetturf.y]."))
+			to_chat(user, span_notice("迫击炮 [selected_mortar] 已锁定目标坐标：经度 [targetturf.x]，纬度 [targetturf.y]。"))
 			log_game("[key_name(user)] has lased a mortar mission at [AREACOORD(TU)].")
 			playsound(src, 'sound/effects/binoctarget.ogg', 35)
 			var/obj/machinery/deployable/mortar/mortar = linked_mortars[selected_mortar]
@@ -257,9 +257,9 @@
 			return
 		if(MODE_RAILGUN)
 			if(SSticker?.mode?.round_type_flags & MODE_DISALLOW_RAILGUN)
-				to_chat(user, span_notice("ERROR. NO LINKED RAILGUN DETECTED. UNABLE TO FIRE."))
+				to_chat(user, span_notice("错误。未检测到链接的导轨炮。无法开火。"))
 				return
-			to_chat(user, span_notice("ACQUIRING TARGET. RAILGUN TRIANGULATING. DON'T MOVE."))
+			to_chat(user, span_notice("正在获取目标。磁轨炮三角定位中。请勿移动。"))
 			if((GLOB.rail_gun?.last_firing + COOLDOWN_RAILGUN_FIRE) > world.time)
 				to_chat(user, "[icon2html(src, user)] [span_warning("The Rail Gun hasn't cooled down yet!")]")
 			else if(!targ_area)
@@ -271,7 +271,7 @@
 				if(!do_after(user, 2 SECONDS, NONE, user, BUSY_ICON_GENERIC))
 					QDEL_NULL(laser)
 					return
-				to_chat(user, span_notice("TARGET ACQUIRED. RAILGUN IS FIRING. DON'T MOVE."))
+				to_chat(user, span_notice("目标已锁定。导轨炮正在开火。不要移动。"))
 				log_game("[key_name(user)] has lased a railgun mission at [AREACOORD(TU)].")
 				while(laser)
 					GLOB.rail_gun?.fire_rail_gun(TU,user)
@@ -279,7 +279,7 @@
 						QDEL_NULL(laser)
 						break
 		if(MODE_ORBITAL)
-			to_chat(user, span_notice("ACQUIRING TARGET. ORBITAL CANNON TRIANGULATING. DON'T MOVE."))
+			to_chat(user, span_notice("正在获取目标。轨道炮三角定位中。请勿移动。"))
 			log_game("[key_name(user)] has begun to laze an Orbital Bombardment mission at [AREACOORD(TU)].")
 			if(!targ_area)
 				to_chat(user, "[icon2html(src, user)] [span_warning("No target detected!")]")
@@ -290,7 +290,7 @@
 				if(!do_after(user, 15 SECONDS, NONE, user, BUSY_ICON_GENERIC))
 					QDEL_NULL(laser)
 					return
-				to_chat(user, span_notice("TARGET ACQUIRED. ORBITAL CANNON IS READY TO FIRE."))
+				to_chat(user, span_notice("目标已锁定。轨道炮准备开火。"))
 				// Wait for that ALT click to fire
 				current_turf = TU
 				ob_fired = FALSE // Reset the fired state
@@ -312,9 +312,9 @@
 	GLOB.orbital_cannon?.fire_ob_cannon(target, user)
 	var/warhead_type = GLOB.orbital_cannon.tray.warhead.name
 	for(var/mob/living/silicon/ai/AI AS in GLOB.ai_list)
-		to_chat(AI, span_warning("NOTICE - Orbital bombardment triggered by ground operator. Warhead type: [warhead_type]. Target: [AREACOORD_NO_Z(current_turf)]"))
+		to_chat(AI, span_warning("注意 - 地面操作员已触发轨道轰炸。弹头类型：[warhead_type]。目标：[AREACOORD_NO_Z(current_turf)]"))
 		playsound(AI,'sound/machines/triple_beep.ogg', 25, 1, 20)
-	to_chat(user, span_notice("FIRING REQUEST RECIEVED. CLEAR TARGET AREA"))
+	to_chat(user, span_notice("收到开火请求。清空目标区域。"))
 	log_attack("[key_name(user)] fired a [warhead_type] in [AREACOORD(current_turf)].")
 	message_admins("[ADMIN_TPMONTY(user)] fired a [warhead_type] in [ADMIN_VERBOSEJMP(current_turf)].")
 	QDEL_NULL(laser)
@@ -334,20 +334,20 @@
 ///Proc called when linked_mortar is deleted.
 /obj/item/binoculars/tactical/proc/clean_refs(datum/source)
 	SIGNAL_HANDLER
-	say("NOTICE: Connection lost with linked artillery.")
+	say("注意：与链接火炮的连接已断开。")
 	linked_mortars -= source
 	check_mortar_index()
 
 /obj/item/binoculars/tactical/scout
-	name = "scout tactical binoculars"
-	desc = "A modified version of tactical binoculars with an advanced laser targeting function. Ctrl+Click to target something."
+	name = "侦察战术望远镜"
+	desc = "战术望远镜的改进型号，具备先进的激光瞄准功能。Ctrl+点击以锁定目标。"
 	cooldown_duration = 80
 	target_acquisition_delay = 30
 
 //For events
 /obj/item/binoculars/tactical/range
-	name = "range-finder"
-	desc = "A pair of binoculars designed to find coordinates, and aim linked artillery pieces. Shift+Click or Ctrl+Click to get coordinates while using them. Alt+Click to change selected linked artillery"
+	name = "测距仪"
+	desc = "一副用于定位坐标并瞄准联动火炮的双筒望远镜。使用时按Shift+点击或Ctrl+点击获取坐标。按Alt+点击更改选定的联动火炮。"
 	changable = 0
 	mode = MODE_RANGE_FINDER
 

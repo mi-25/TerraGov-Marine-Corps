@@ -1,6 +1,6 @@
 /obj/machinery/computer/skills
-	name = "Employment Records"
-	desc = "Used to view personnel's employment records"
+	name = "雇佣记录"
+	desc = "用于查看人员的雇佣记录"
 	icon_state = "computer_small"
 	screen_overlay = "medlaptop"
 	req_one_access = list(ACCESS_MARINE_BRIDGE)
@@ -31,7 +31,7 @@
 			return
 		I.forceMove(src)
 		scan = I
-		to_chat(user, "You insert [I].")
+		to_chat(user, "你将[I]插入。")
 
 
 /obj/machinery/computer/skills/interact(mob/user)

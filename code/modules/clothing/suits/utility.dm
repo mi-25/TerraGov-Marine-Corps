@@ -10,8 +10,8 @@
 */
 
 /obj/item/clothing/suit/fire
-	name = "firesuit"
-	desc = "A suit that protects against fire and heat."
+	name = "防火服"
+	desc = "一套能防护火焰和高温的防护服。"
 	icon_state = "firesuit"
 	worn_icon_state = "firesuit"
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 90, ACID = 0)
@@ -29,8 +29,8 @@
 	cold_protection_flags = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 
 /obj/item/clothing/suit/fire/heavy
-	name = "firesuit"
-	desc = "A suit that protects against extreme fire and heat."
+	name = "防火服"
+	desc = "一套能抵御极端火焰和高温的防护服。"
 	icon_state = "atmos_firesuit"
 	worn_icon_state = "atmos_firesuit"
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 120, ACID = 0)
@@ -41,8 +41,8 @@
 * Bomb protection
 */
 /obj/item/clothing/head/bomb_hood
-	name = "bomb hood"
-	desc = "Use in case of bomb."
+	name = "爆炸风帽"
+	desc = "用于爆炸情况。"
 	icon_state = "bombsuit"
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 100, BIO = 0, FIRE = 0, ACID = 0)
 	inventory_flags = COVEREYES|COVERMOUTH
@@ -52,8 +52,8 @@
 
 
 /obj/item/clothing/suit/bomb_suit
-	name = "bomb suit"
-	desc = "A suit designed for safety when handling explosives."
+	name = "防爆服"
+	desc = "专为处理爆炸物时安全设计的防护服。"
 	icon_state = "bombsuit"
 	worn_icon_state = "bombsuit"
 	w_class = WEIGHT_CLASS_BULKY//bulky item
@@ -81,9 +81,9 @@
 * Radiation protection
 */
 /obj/item/clothing/head/radiation
-	name = "Radiation Hood"
+	name = "辐射防护兜帽"
 	icon_state = "rad"
-	desc = "A hood with radiation protective properties. Label: Made with lead, do not eat insulation"
+	desc = "具有辐射防护性能的头罩。标签：含铅材质，请勿食用绝缘层"
 	inventory_flags = COVEREYES|COVERMOUTH
 	inv_hide_flags = HIDEFACE|HIDEMASK|HIDEEARS|HIDEALLHAIR
 	armor_protection_flags = HEAD|FACE|EYES
@@ -91,8 +91,8 @@
 
 
 /obj/item/clothing/suit/radiation
-	name = "Radiation suit"
-	desc = "A suit that protects against radiation. Label: Made with lead, do not eat insulation."
+	name = "防辐射服"
+	desc = "一套能防护辐射的防护服。标签：含铅绝缘材料，请勿食用。"
 	icon_state = "rad"
 	worn_icon_state = "rad_suit"
 	w_class = WEIGHT_CLASS_BULKY//bulky item

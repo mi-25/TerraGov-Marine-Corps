@@ -1,5 +1,5 @@
 /obj/item/weapon/shield
-	name = "shield"
+	name = "护盾"
 	icon = 'icons/obj/items/weapons/shield.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/equipment/shields_left.dmi',
@@ -38,8 +38,8 @@
 	AddComponent(/datum/component/stun_mitigation)
 
 /obj/item/weapon/shield/riot
-	name = "riot shield"
-	desc = "A shield adept at blocking blunt objects from connecting with the torso of the shield wielder."
+	name = "防暴盾"
+	desc = "一面擅长阻挡钝器击中持盾者躯干的盾牌。"
 	icon_state = "riot"
 	max_integrity = 200
 	item_flags = IMPEDE_JETPACK
@@ -85,10 +85,10 @@
 			return
 
 		if(metal_sheets.get_amount() < 1)
-			to_chat(user, span_warning("You need one metal sheet to restore the structural integrity of [src]."))
+			to_chat(user, span_warning("需要一块金属板来恢复[src]的结构完整性。"))
 			return
 
-		visible_message(span_notice("[user] begins to restore the structural integrity of [src]."))
+		visible_message(span_notice("[user]开始恢复[src]的结构完整性。"))
 
 		if(!do_after(user, 2 SECONDS, NONE, src, BUSY_ICON_FRIENDLY) || obj_integrity >= max_integrity)
 			return
@@ -97,10 +97,10 @@
 			return
 
 		repair_damage(max_integrity * 0.2, user)
-		visible_message(span_notice("[user] restores the structural integrity of [src]."))
+		visible_message(span_notice("[user] 恢复了 [src] 的结构完整性。"))
 
 	else if(istype(I, /obj/item/weapon) && world.time >= cooldown)
-		user.visible_message(span_warning("[user] bashes [src] with [I]!"))
+		user.visible_message(span_warning("[user]用[I]猛击[src]！"))
 		playsound(user.loc, 'sound/effects/shieldbash.ogg', 25, 1)
 		cooldown = world.time + 2.5 SECONDS
 
@@ -108,12 +108,12 @@
 /obj/item/weapon/shield/riot/welder_act(mob/living/user, obj/item/I)
 	. = welder_repair_act(user, I, max_integrity * 0.15, 4 SECONDS, integrity_failure / max_integrity, SKILL_ENGINEER_METAL)
 	if(. == BELOW_INTEGRITY_THRESHOLD)
-		balloon_alert(user, "too damaged—metal sheets needed!")
+		balloon_alert(user, "损坏过重——需要金属板！")
 
 
 /obj/item/weapon/shield/riot/marine
-	name = "\improper TL-172 defensive shield"
-	desc = "A heavy shield adept at blocking blunt or sharp objects from connecting with the shield wielder. Looks very robust. Alt click to tighten the strap."
+	name = "\improper TL-172 防御护盾"
+	desc = "一面重型盾牌，擅长阻挡钝器或锐器击中持盾者。看起来非常坚固。Alt+点击以收紧背带。"
 	icon_state = "marine_shield"
 	equip_slot_flags = ITEM_SLOT_BACK
 	max_integrity = 400
@@ -147,15 +147,15 @@
 	icon_state = "riot_metal"
 
 /obj/item/weapon/shield/riot/marine/som
-	name = "\improper S-144 boarding shield"
-	desc = "A robust, heavy shield designed to be shot instead of the person holding it. Commonly employed by the SOM during boarding actions and other close quarter combat scenarios. This one has a SOM flag emblazoned on the front. Alt click to tighten the strap."
+	name = "\improper S-144登舰盾"
+	desc = "一种坚固的重型盾牌，设计用于代替持盾者承受射击。通常在火星之子的登舰行动和其他近距离战斗场景中使用。这面盾牌正面印有火星之子的旗帜。Alt+点击以收紧背带。"
 	icon_state = "som_shield"
 	soft_armor = list(MELEE = 35, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 30, BIO = 50, FIRE = 0, ACID = 15)
 
 //A shield that can be deployed as a barricade
 /obj/item/weapon/shield/riot/marine/deployable
-	name = "\improper TL-182 deployable shield"
-	desc = "A compact shield adept at blocking blunt or sharp objects from connecting with the shield wielder. Can be deployed as a barricade."
+	name = "\improper TL-182 可部署护盾"
+	desc = "一种紧凑型护盾，擅长阻挡钝器或锐器击中持盾者。可部署为路障。"
 	icon_state = "folding_shield"
 	equip_slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_NORMAL
@@ -182,8 +182,8 @@
 	AddComponent(/datum/component/shield, SHIELD_PARENT_INTEGRITY, list(MELEE = 40, BULLET = 35, LASER = 35, ENERGY = 35, BOMB = 40, BIO = 15, FIRE = 30, ACID = 35))
 
 /obj/item/weapon/shield/energy
-	name = "energy combat shield"
-	desc = "A shield capable of stopping most projectile and melee attacks. It can be retracted, expanded, and stored anywhere."
+	name = "能量战斗盾牌"
+	desc = "一面能够阻挡大多数弹道和近战攻击的护盾。它可以收折、展开，并随处存放。"
 	icon_state = "eshield0" // eshield1 for expanded
 	atom_flags = CONDUCT|NOBLOODY
 	force = 3
@@ -208,19 +208,19 @@
 		force = on_force
 		w_class = WEIGHT_CLASS_BULKY
 		playsound(user, 'sound/weapons/saberon.ogg', 25, TRUE)
-		to_chat(user, span_notice("[src] is now active."))
+		to_chat(user, span_notice("[src]现已激活。"))
 	else
 		force = initial(force)
 		w_class = WEIGHT_CLASS_SMALL
 		playsound(user, 'sound/weapons/saberoff.ogg', 25, TRUE)
-		to_chat(user, span_notice("[src] can now be concealed."))
+		to_chat(user, span_notice("[src]现在可以被隐藏了。"))
 	add_fingerprint(user, "turned [active ? "on" : "off"]")
 
 //Special attack
 /datum/action/ability/activable/weapon_skill/shield_bash
-	name = "Shield bash"
+	name = "盾牌猛击"
 	action_icon_state = "shield_bash"
-	desc = "A powerful blow that hits foes in the direction you are facing. Causes knockback and stagger."
+	desc = "一记强力打击，击退并击晕面前方向的敌人。"
 	ability_cost = 5
 	cooldown_duration = 6 SECONDS
 	use_state_flags = ABILITY_USE_STAGGERED
@@ -246,7 +246,7 @@
 	add_cooldown()
 	var/mob/living/carbon/carbon_owner = owner
 	carbon_owner.face_atom(A)
-	carbon_owner.visible_message(span_danger("[carbon_owner] slams their shield forwards!"))
+	carbon_owner.visible_message(span_danger("[carbon_owner] 将盾牌猛地向前砸去！"))
 	playsound(carbon_owner, 'sound/effects/alien/tail_swipe2.ogg', 30, 1)
 	var/hit_something = FALSE
 	for(var/mob/living/victim in get_step(carbon_owner, angle_to_dir(Get_Angle(carbon_owner, A))))

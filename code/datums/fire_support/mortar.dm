@@ -1,5 +1,5 @@
 /datum/fire_support/mortar
-	name = "Mortar barrage"
+	name = "迫击炮齐射"
 	fire_support_type = FIRESUPPORT_TYPE_HE_MORTAR
 	scatter_range = 8
 	impact_quantity = 5
@@ -23,7 +23,7 @@
 	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/som_mortar
 
 /datum/fire_support/mortar/incendiary
-	name = "Incendiary mortar barrage"
+	name = "燃烧迫击炮齐射"
 	fire_support_type = FIRESUPPORT_TYPE_INCENDIARY_MORTAR
 	uses = 3
 	icon_state = "incendiary_mortar"
@@ -40,7 +40,7 @@
 	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/som_mortar
 
 /datum/fire_support/mortar/smoke
-	name = "Smoke mortar barrage"
+	name = "烟雾迫击炮齐射"
 	fire_support_type = FIRESUPPORT_TYPE_SMOKE_MORTAR
 	impact_quantity = 3
 	uses = 2
@@ -67,7 +67,7 @@
 	portrait_type = /atom/movable/screen/text/screen_text/picture/potrait/som_mortar
 
 /datum/fire_support/mortar/smoke/acid
-	name = "Acid smoke mortar barrage"
+	name = "酸液烟雾迫击炮齐射"
 	fire_support_type = FIRESUPPORT_TYPE_ACID_SMOKE_MORTAR
 	uses = 2
 	icon_state = "acid_smoke_mortar"
@@ -77,7 +77,7 @@
 	smokeradius = 5
 
 /datum/fire_support/mortar/smoke/satrapine
-	name = "Satrapine mortar barrage"
+	name = "萨特拉平迫击炮齐射"
 	fire_support_type = FIRESUPPORT_TYPE_SATRAPINE_SMOKE_MORTAR
 	uses = 2
 	icon_state = "satrapine_mortar"

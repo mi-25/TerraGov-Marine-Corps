@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/rocky_layers
 	name = "Rocky Layers"
-	desc = "When your health is 50% or lower, gain 15/20/25 hard armor."
+	desc = "当你的生命值低于50%时，获得15/20/25点硬护甲。"
 	/// For the first structure, the amount of hard armor that will be granted.
 	var/armor_initial = 10
 	/// For each structure, the amount of hard armor that will be granted.
@@ -67,7 +67,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/refined_palate
 	name = "Refined Palate"
-	desc = "Your slashes deal an additional 0.5/1/1.5x damage to barricades."
+	desc = "你的斩击对路障造成额外0.5/1/1.5倍伤害。"
 	/// For each structure, the multiplier to add as a second instance of damage to barricades.
 	var/multiplier_per_structure = 0.5
 
@@ -101,7 +101,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/avalanche
 	name = "Avalanche"
-	desc = "Earth Riser can have 1/2/3 more pillars active at a time, but its cooldown duration is doubled."
+	desc = "大地崛起者可以同时激活1/2/3根额外的石柱，但其冷却时间加倍。"
 	/// For each structure, the amount that Earth Riser's maximum pillars should be increased by.
 	var/amount_per_structure = 1
 

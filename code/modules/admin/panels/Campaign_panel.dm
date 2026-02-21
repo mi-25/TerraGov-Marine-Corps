@@ -2,7 +2,7 @@ GLOBAL_DATUM(campaign_admin_panel, /datum/campaign_admin_panel)
 
 ADMIN_VERB(open_campaign_panel, R_ADMIN, "Campaign Panel", "Opens the campaign panel UI.", ADMIN_CATEGORY_FUN)
 	if(!iscampaigngamemode(SSticker.mode))
-		to_chat(user, span_notice("The campaign panel can only be used during campaign."))
+		to_chat(user, span_notice("战役面板只能在战役期间使用。"))
 		return
 
 	if(!GLOB.campaign_admin_panel)
@@ -118,7 +118,7 @@ ADMIN_VERB(open_campaign_panel, R_ADMIN, "Campaign Panel", "Opens the campaign p
 			return TRUE
 		if("mission_start_timer")
 			if(current_mode.current_mission.mission_state != MISSION_STATE_LOADED)
-				to_chat(user, "Mission is not in pregame.")
+				to_chat(user, "任务尚未进入准备阶段。")
 				return FALSE
 			if(current_mode.current_mission.start_timer)
 				deltimer(current_mode.current_mission.start_timer)
@@ -135,7 +135,7 @@ ADMIN_VERB(open_campaign_panel, R_ADMIN, "Campaign Panel", "Opens the campaign p
 			return TRUE
 		if("mission_timer")
 			if(current_mode.current_mission.mission_state != MISSION_STATE_ACTIVE)
-				to_chat(user, "Mission is not active.")
+				to_chat(user, "任务未激活。")
 				return FALSE
 			if(current_mode.current_mission.game_timer)
 				current_mode.current_mission.pause_mission_timer()

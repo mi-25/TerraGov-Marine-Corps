@@ -10,7 +10,7 @@ ADMIN_VERB(hide_verbs, R_NONE, "Adminverbs - Hide All", "Hide most of your admin
 	user.remove_admin_verbs()
 	add_verb(user, /client/proc/show_verbs)
 
-	to_chat(user, span_interface("Almost all of your adminverbs have been hidden."))
+	to_chat(user, span_interface("你的大部分管理员指令已被隐藏。"))
 
 ADMIN_VERB(aghost, R_ADMIN|R_MENTOR, "Aghost", "Allows you to ghost and re-enter body at will.", ADMIN_CATEGORY_MAIN)
 
@@ -78,7 +78,7 @@ ADMIN_VERB_AND_CONTEXT_MENU(give_mob, R_ADMIN, "Give Mob", ADMIN_VERB_NO_DESCRIP
 			mob_received.ghostize()
 
 	if(!istype(given_living))
-		to_chat(user, span_warning("Target is no longer valid."))
+		to_chat(user, span_warning("目标已失效。"))
 		return
 
 	log_admin("[key_name(user)] gave [key_name(given_living)] to [key_name(mob_received)].")
@@ -91,7 +91,7 @@ ADMIN_VERB_AND_CONTEXT_MENU(rejuvenate, R_ADMIN, "Rejuvenate", ADMIN_VERB_NO_DES
 		return
 
 	if(!istype(L))
-		to_chat(user, span_warning("Target is no longer valid."))
+		to_chat(user, span_warning("目标已失效。"))
 		return
 
 	L.revive(TRUE)
@@ -103,7 +103,7 @@ ADMIN_VERB_AND_CONTEXT_MENU(toggle_sleep, R_ADMIN, "Toggle Sleeping", ADMIN_VERB
 	if(L.IsAdminSleeping())
 		L.ToggleAdminSleep()
 	else if(!istype(L))
-		to_chat(user, span_warning("Target is no longer valid."))
+		to_chat(user, span_warning("目标已失效。"))
 		return
 	else
 		L.ToggleAdminSleep()
@@ -170,11 +170,11 @@ ADMIN_VERB(logs_folder, R_LOG, "Get Server Logs Folder", "Please use responsibly
 	var/files = flist(folder)
 	for(var/next in files)
 		if(copytext(next, -1, 0) == "/")
-			to_chat(usr, "Going deeper: [folder][next]")
+			to_chat(usr, "深入探索：[folder][next]")
 			usr.client.holder.recursive_download(folder + next)
 		else
 			log_admin("[key_name(usr)] accessed file: [folder][next].")
-			to_chat(usr, "Downloading: [folder][next]")
+			to_chat(usr, "正在下载：[folder][next]")
 			var/fil = replacetext("[folder][next]", "/", "_")
 			usr << ftp(file(folder + next), fil)
 
@@ -417,11 +417,11 @@ ADMIN_VERB(dsay, R_ADMIN, "dsay", "Speak as an admin in deadchat.", ADMIN_CATEGO
 		return
 
 	if(is_mentor(src) && user.mob.stat != DEAD)
-		to_chat(src, span_warning("You must be an observer to use dsay."))
+		to_chat(src, span_warning("你必须处于观察者状态才能使用死亡频道发言。"))
 		return
 
 	if(!(user.prefs.toggles_chat & CHAT_DEAD))
-		to_chat(src, span_warning("You have deadchat muted."))
+		to_chat(src, span_warning("你已屏蔽死亡聊天。"))
 		return
 
 	if(user.handle_spam_prevention(msg, MUTE_DEADCHAT))
@@ -619,7 +619,7 @@ ADMIN_VERB(private_message_panel, R_ADMIN|R_MENTOR, "Private Message", "Private 
 
 	if(!C)
 		if(holder)
-			to_chat(src, span_warning("Error: Client not found."))
+			to_chat(src, span_warning("错误：客户端未找到。"))
 		return
 
 	var/datum/admin_help/AH = C.current_ticket
@@ -636,7 +636,7 @@ ADMIN_VERB(private_message_panel, R_ADMIN|R_MENTOR, "Private Message", "Private 
 			message_admins("[key_name_admin(src)] has marked and started replying to [key_name_admin(C, FALSE, FALSE)]'s ticket.")
 
 	else if(AH && AH.marked != usr.client.key)
-		to_chat(usr, span_warning("This ticket has already been marked by [AH.marked], click the mark button to replace them."))
+		to_chat(usr, span_warning("此工单已被[AH.marked]标记，点击标记按钮以替换他们。"))
 		return
 	var/msg = input("Message:", "Private message to [key_name(C, FALSE, FALSE)]") as message|null
 	if(!msg)
@@ -1070,7 +1070,7 @@ ADMIN_VERB(job_slots, R_ADMIN, "Job Slots", "Open Job slot management panel", AD
 
 ADMIN_VERB(mcdb, R_BAN, "Open MCDB", "Opens the MCDB in your browser", ADMIN_CATEGORY_MAIN)
 	if(!CONFIG_GET(string/dburl))
-		to_chat(user, span_warning("Database URL not set."))
+		to_chat(user, span_warning("数据库URL未设置。"))
 		return
 
 	if(alert("This will open the MCDB in your browser. Are you sure?", "MCDB", "Yes", "No") != "Yes")
@@ -1155,10 +1155,10 @@ ADMIN_VERB(mass_replace, R_SPAWN, "Mass replace atom", "Mass replace an atom", A
 
 	if(current_caller && current_caller != ckey)
 		if(!GLOB.AdminProcCallSpamPrevention[ckey])
-			to_chat(usr, span_adminnotice("Another set of admin called procs are still running, your proc will be run after theirs finish."))
+			to_chat(usr, span_adminnotice("另一组管理员调用的进程仍在运行，你的进程将在它们完成后执行。"))
 			GLOB.AdminProcCallSpamPrevention[ckey] = TRUE
 			UNTIL(!GLOB.AdminProcCaller)
-			to_chat(usr, span_adminnotice("Running your proc"))
+			to_chat(usr, span_adminnotice("正在运行你的进程"))
 			GLOB.AdminProcCallSpamPrevention -= ckey
 		else
 			UNTIL(!GLOB.AdminProcCaller)
@@ -1200,10 +1200,10 @@ ADMIN_VERB_AND_CONTEXT_MENU(admin_smite, R_ADMIN|R_FUN, "Smite", "Smite a player
 ADMIN_VERB_AND_CONTEXT_MENU(show_traitor_panel, R_ADMIN, "Show Objective Panel", "Show a mobs objective panel.", ADMIN_CATEGORY_FUN, mob/target_mob in GLOB.mob_list)
 	var/datum/mind/target_mind = target_mob.mind
 	if(!target_mind)
-		to_chat(user, "This mob has no mind!", confidential = TRUE)
+		to_chat(user, "这个生物没有心智！", confidential = TRUE)
 		return
 	if(!istype(target_mob) && !istype(target_mind))
-		to_chat(user, "This can only be used on instances of type /mob and /mind", confidential = TRUE)
+		to_chat(user, "这只能用于 /mob 和 /mind 类型的实例。", confidential = TRUE)
 		return
 	target_mind.traitor_panel()
 

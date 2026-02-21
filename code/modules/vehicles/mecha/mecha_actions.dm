@@ -16,7 +16,7 @@
 	return ..()
 
 /datum/action/vehicle/sealed/mecha/mech_eject
-	name = "Eject From Mech"
+	name = "脱离机甲"
 	action_icon_state = "mech_eject"
 
 /datum/action/vehicle/sealed/mecha/mech_eject/action_activate(trigger_flags)
@@ -27,7 +27,7 @@
 	chassis.resisted_against(owner)
 
 /datum/action/vehicle/sealed/mecha/mech_toggle_internals
-	name = "Toggle Internal Airtank Usage"
+	name = "切换内部气罐使用"
 	action_icon_state = "mech_internals_off"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_TOGGLE_INTERNALS,
@@ -39,7 +39,7 @@
 
 	if(!chassis.internal_tank) //Just in case.
 		chassis.use_internal_tank = FALSE
-		chassis.balloon_alert(owner, "no tank available!")
+		chassis.balloon_alert(owner, "没有可用的坦克！")
 		chassis.log_message("Switch to internal tank failed. No tank available.", LOG_MECHA)
 		return
 
@@ -50,7 +50,7 @@
 	update_button_icon()
 
 /datum/action/vehicle/sealed/mecha/mech_toggle_lights
-	name = "Toggle Lights"
+	name = "切换灯光"
 	action_icon_state = "mech_lights_off"
 
 /datum/action/vehicle/sealed/mecha/mech_toggle_lights/action_activate(trigger_flags)
@@ -58,7 +58,7 @@
 		return
 
 	if(!(chassis.mecha_flags & HAS_HEADLIGHTS))
-		chassis.balloon_alert(owner, "the mech lights are broken!")
+		chassis.balloon_alert(owner, "机甲照明系统故障！")
 		return
 	chassis.mecha_flags ^= LIGHTS_ON
 	if(chassis.mecha_flags & LIGHTS_ON)
@@ -72,7 +72,7 @@
 	update_button_icon()
 
 /datum/action/vehicle/sealed/mecha/mech_view_stats
-	name = "View Stats"
+	name = "查看状态"
 	action_icon_state = "mech_view_stats"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_VIEW_STATS,
@@ -84,7 +84,7 @@
 	chassis.ui_interact(owner)
 
 /datum/action/vehicle/sealed/mecha/strafe
-	name = "Toggle Strafing. Disabled when Alt is held."
+	name = "切换扫射模式。按住Alt键时禁用。"
 	action_icon_state = "strafe"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_TOGGLE_STRAFE,
@@ -99,7 +99,7 @@
 	if(!(user in occupants))
 		return
 	if(!(user in return_controllers_with_flag(VEHICLE_CONTROL_DRIVE)))
-		to_chat(user, span_warning("You're in the wrong seat to control movement."))
+		to_chat(user, span_warning("你坐错位置了，无法控制移动。"))
 		return
 
 	toggle_strafe()
@@ -107,7 +107,7 @@
 /obj/vehicle/sealed/mecha/proc/toggle_strafe()
 	if(!(mecha_flags & CANSTRAFE))
 		for(var/occupant in occupants)
-			balloon_alert(occupant, "No strafing mode")
+			balloon_alert(occupant, "禁止侧移模式")
 		return
 
 	strafe = !strafe
@@ -118,7 +118,7 @@
 
 ///swap seats, for two person mecha
 /datum/action/vehicle/sealed/mecha/swap_seat
-	name = "Switch Seats"
+	name = "切换座位"
 	action_icon_state = "mech_seat_swap"
 
 /datum/action/vehicle/sealed/mecha/swap_seat/action_activate(trigger_flags)
@@ -126,28 +126,28 @@
 		return
 
 	if(length(chassis.occupants) == chassis.max_occupants)
-		chassis.balloon_alert(owner, "other seat occupied!")
+		chassis.balloon_alert(owner, "其他座位已被占用！")
 		return
 	var/list/drivers = chassis.return_drivers()
-	chassis.balloon_alert(owner, "moving to other seat...")
+	chassis.balloon_alert(owner, "正在移动到其他座位...")
 	chassis.is_currently_ejecting = TRUE
 	if(!do_after(owner, chassis.exit_delay, target = chassis))
-		chassis.balloon_alert(owner, "interrupted!")
+		chassis.balloon_alert(owner, "中断！")
 		chassis.is_currently_ejecting = FALSE
 		return
 	chassis.is_currently_ejecting = FALSE
 	if(owner in drivers)
-		chassis.balloon_alert(owner, "controlling gunner seat")
+		chassis.balloon_alert(owner, "控制机枪手座位")
 		chassis.remove_control_flags(owner, VEHICLE_CONTROL_DRIVE|VEHICLE_CONTROL_SETTINGS)
 		chassis.add_control_flags(owner, VEHICLE_CONTROL_MELEE|VEHICLE_CONTROL_EQUIPMENT)
 	else
-		chassis.balloon_alert(owner, "controlling pilot seat")
+		chassis.balloon_alert(owner, "控制飞行员座椅")
 		chassis.remove_control_flags(owner, VEHICLE_CONTROL_MELEE|VEHICLE_CONTROL_EQUIPMENT)
 		chassis.add_control_flags(owner, VEHICLE_CONTROL_DRIVE|VEHICLE_CONTROL_SETTINGS)
 	chassis.update_appearance()
 
 /datum/action/vehicle/sealed/mecha/reload
-	name = "Reload equipped weapons"
+	name = "重新装填已装备的武器"
 	action_icon_state = "reload"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_RELOAD,
@@ -163,7 +163,7 @@
 		INVOKE_ASYNC(chassis.equip_by_category[i], TYPE_PROC_REF(/obj/item/mecha_parts/mecha_equipment, attempt_rearm), owner)
 
 /datum/action/vehicle/sealed/mecha/repairpack
-	name = "Use Repairpack"
+	name = "使用维修包"
 	action_icon_state = "repair"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_REPAIRPACK,
@@ -173,7 +173,7 @@
 	if(!can_repair())
 		return
 
-	chassis.balloon_alert(owner, "Repairing...")
+	chassis.balloon_alert(owner, "修复中...")
 	chassis.canmove = FALSE
 	chassis.equipment_disabled = TRUE
 	chassis.set_mouse_pointer()
@@ -200,13 +200,13 @@
 	if(!owner || !chassis || !(owner in chassis.occupants))
 		return FALSE
 	if(!chassis.stored_repairpacks)
-		chassis.balloon_alert(owner, "No repairpacks")
+		chassis.balloon_alert(owner, "没有维修包")
 		return FALSE
 	return TRUE
 
 
 /datum/action/vehicle/sealed/mecha/swap_controlled_weapons
-	name = "Swap Weapon set"
+	name = "切换武器配置"
 	action_icon_state = "weapon_swap"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_SWAPWEAPONS,
@@ -217,7 +217,7 @@
 	greyscale.swap_weapons()
 
 /datum/action/vehicle/sealed/mecha/assault_armor
-	name = "Assault Armor"
+	name = "突击护甲"
 	action_icon_state = "assaultarmor"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_ASSAULT_ARMOR,
@@ -239,11 +239,11 @@
 		return
 	if(TIMER_COOLDOWN_RUNNING(chassis, COOLDOWN_MECHA_ASSAULT_ARMOR))
 		var/time = S_TIMER_COOLDOWN_TIMELEFT(chassis, COOLDOWN_MECHA_ASSAULT_ARMOR)/10
-		chassis.balloon_alert(owner, "[time] seconds")
+		chassis.balloon_alert(owner, "[time]秒")
 		return
 	S_TIMER_COOLDOWN_START(chassis, COOLDOWN_MECHA_ASSAULT_ARMOR, 2 MINUTES)
 	if(!chassis.use_power(power_cost))
-		chassis.balloon_alert(owner, "No power")
+		chassis.balloon_alert(owner, "无电力")
 		return
 	var/added_movetime = chassis.move_delay
 	chassis.move_delay += added_movetime
@@ -266,7 +266,7 @@
 	playsound(chassis, 'sound/weapons/burst_phaser2.ogg', GUN_FIRE_SOUND_VOLUME, TRUE)
 
 /datum/action/vehicle/sealed/mecha/cloak
-	name = "Cloak"
+	name = "隐身"
 	action_icon_state = "cloak_off"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_CLOAK,
@@ -286,7 +286,7 @@
 		stop_cloaking()
 		return
 	if(TIMER_COOLDOWN_RUNNING(chassis, COOLDOWN_MECHA_EQUIPMENT(type)))
-		chassis.balloon_alert(owner, "Cooldown")
+		chassis.balloon_alert(owner, "冷却时间")
 		return
 	TIMER_COOLDOWN_START(chassis, COOLDOWN_MECHA_EQUIPMENT(type), 1 SECONDS) // anti sound spammers
 	cloaked = TRUE
@@ -324,7 +324,7 @@
 		TIMER_COOLDOWN_START(chassis, COOLDOWN_MECHA_EQUIPMENT(gun.cooldown_key), min(gun.equip_cooldown/2, 1 SECONDS))
 
 /datum/action/vehicle/sealed/mecha/overboost
-	name = "Overboost"
+	name = "过载"
 	action_icon_state = "overboost_off"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_OVERBOOST,
@@ -339,10 +339,10 @@
 /datum/action/vehicle/sealed/mecha/overboost/action_activate(trigger_flags)
 	. = ..()
 	if(TIMER_COOLDOWN_RUNNING(chassis, COOLDOWN_MECHA_EQUIPMENT(type)))
-		chassis.balloon_alert(owner, "Cooldown")
+		chassis.balloon_alert(owner, "冷却时间")
 		return
 	if(!chassis.has_charge(100))
-		chassis.balloon_alert(owner, "No charge")
+		chassis.balloon_alert(owner, "未充能")
 		return
 	action_icon_state = "overboost_on"
 	update_button_icon()
@@ -389,7 +389,7 @@
 		greyscale.remove_sparks()
 
 /datum/action/vehicle/sealed/mecha/pulsearmor
-	name = "Pulse Armor"
+	name = "脉冲护甲"
 	action_icon_state = "pulsearmor"
 	delay
 	keybinding_signals = list(
@@ -411,11 +411,11 @@
 	if(!.)
 		return
 	if(block_remaining)
-		chassis.balloon_alert(owner, "already active")
+		chassis.balloon_alert(owner, "已激活")
 		return
 	if(TIMER_COOLDOWN_RUNNING(chassis, COOLDOWN_MECHA_EQUIPMENT(type)))
 		var/time = S_TIMER_COOLDOWN_TIMELEFT(chassis, COOLDOWN_MECHA_EQUIPMENT(type))/10
-		chassis.balloon_alert(owner, "[time] seconds")
+		chassis.balloon_alert(owner, "[time]秒")
 	S_TIMER_COOLDOWN_START(chassis, COOLDOWN_MECHA_EQUIPMENT(type), 90 SECONDS)
 	block_remaining = block_max
 	playsound(chassis, 'sound/items/eshield_recharge.ogg', 40)

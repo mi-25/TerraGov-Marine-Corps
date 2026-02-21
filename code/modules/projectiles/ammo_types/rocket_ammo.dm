@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/rocket
-	name = "high explosive rocket"
+	name = "高爆火箭"
 	icon_state = "missile"
 	hud_state = "rocket_he"
 	hud_state_empty = "rocket_empty"
@@ -42,7 +42,7 @@
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf)
 
 /datum/ammo/rocket/he
-	name = "high explosive rocket"
+	name = "高爆火箭"
 	icon_state = "rocket_he"
 	hud_state = "rocket_he"
 	accurate_range = 20
@@ -59,7 +59,7 @@
 	explosion(T, 0, 7, 0, 0, 2, throw_range = 4, explosion_cause=src)
 
 /datum/ammo/rocket/ap
-	name = "kinetic penetrator"
+	name = "动能穿甲弹"
 	icon_state = "rocket_ap"
 	hud_state = "rocket_ap"
 	damage = 340
@@ -71,7 +71,7 @@
 	explosion(T, flash_range = 1, explosion_cause=src)
 
 /datum/ammo/rocket/ltb
-	name = "cannon round"
+	name = "炮弹"
 	icon_state = "ltb"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG
 	accurate_range = 15
@@ -98,7 +98,7 @@
 	explosion(target_turf, 1, 4, 6, 0, 3, explosion_cause=src)
 
 /datum/ammo/rocket/heavy_isg
-	name = "8.8cm round"
+	name = "8.8厘米炮弹"
 	icon_state = "heavyrr"
 	hud_state = "bigshell_he"
 	hud_state_empty = "shell_empty"
@@ -118,7 +118,7 @@
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG
 
 /datum/ammo/bullet/heavy_isg_apfds
-	name = "8.8cm APFDS round"
+	name = "8.8厘米穿甲尾翼稳定脱壳弹"
 	icon_state = "apfds"
 	hud_state = "bigshell_apfds"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_TURF|AMMO_PASS_THROUGH_MOVABLE
@@ -140,7 +140,7 @@
 	proj.proj_max_range -= 5
 
 /datum/ammo/rocket/wp
-	name = "white phosphorous rocket"
+	name = "白磷火箭弹"
 	icon_state = "rocket_wp"
 	hud_state = "rocket_fire"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG|AMMO_INCENDIARY|AMMO_TARGET_TURF
@@ -162,7 +162,7 @@
 	flame_radius(effect_radius, T, 27, 27, 27, 17)
 
 /datum/ammo/rocket/wp/quad
-	name = "thermobaric rocket"
+	name = "温压火箭"
 	hud_state = "rocket_thermobaric"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG
 	damage = 40
@@ -181,19 +181,19 @@
 	smoke_system.set_up(effect_radius, T)
 	smoke_system.start()
 	smoke_system = null
-	T.visible_message(span_danger("The rocket explodes into white gas!") )
+	T.visible_message(span_danger("火箭爆炸成白色气体！") )
 	playsound(T, 'sound/weapons/guns/fire/flamethrower2.ogg', 50, 1, 4)
 	flame_radius(effect_radius, T, 27, 27, 27, 17)
 
 /datum/ammo/rocket/wp/quad/som
-	name = "white phosphorous RPG"
+	name = "白磷火箭弹"
 	hud_state = "rpg_fire"
 	icon_state = "rpg_incendiary"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG
 	effect_radius = 5
 
 /datum/ammo/rocket/wp/quad/ds
-	name = "super thermobaric rocket"
+	name = "超级温压火箭"
 	hud_state = "rocket_thermobaric"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG
 	damage = 200
@@ -207,7 +207,7 @@
 	effect_radius = 5
 
 /datum/ammo/rocket/recoilless
-	name = "high explosive shell"
+	name = "高爆弹"
 	icon_state = "recoilless_rifle_he"
 	hud_state = "shell_he"
 	hud_state_empty = "shell_empty"
@@ -225,7 +225,7 @@
 	explosion(T, 0, 3, 4, 0, 2, explosion_cause=src)
 
 /datum/ammo/rocket/recoilless/heat
-	name = "HEAT shell"
+	name = "破甲弹"
 	icon_state = "recoilless_rifle_heat"
 	hud_state = "shell_heat"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG
@@ -237,7 +237,7 @@
 	explosion(T, flash_range = 1, explosion_cause=src)
 
 /datum/ammo/rocket/recoilless/heat/mech //for anti mech use in HvH
-	name = "HEAM shell"
+	name = "HEAM弹"
 	accuracy = -10 //Not designed for anti human use
 	scatter = 16
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG|AMMO_UNWIELDY
@@ -251,7 +251,7 @@
 	explosion(T, 0, 1, 0, 0, 1, explosion_cause=src)
 
 /datum/ammo/rocket/recoilless/light
-	name = "light explosive shell"
+	name = "轻型高爆弹"
 	icon_state = "recoilless_rifle_le"
 	hud_state = "shell_le"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG //We want this to specifically go farther than onscreen range.
@@ -265,7 +265,7 @@
 	explosion(T, 0, 1, 8, 0, 1, explosion_cause=src)
 
 /datum/ammo/rocket/recoilless/chemical
-	name = "low velocity chemical shell"
+	name = "低速化学弹"
 	icon_state = "recoilless_rifle_smoke"
 	hud_state = "shell_le"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG
@@ -287,25 +287,25 @@
 	explosion(T, flash_range = 1, explosion_cause=src)
 
 /datum/ammo/rocket/recoilless/chemical/cloak
-	name = "low velocity chemical shell"
+	name = "低速化学弹"
 	icon_state = "recoilless_rifle_cloak"
 	hud_state = "shell_cloak"
 	smoketype = /datum/effect_system/smoke_spread/tactical
 
 /datum/ammo/rocket/recoilless/chemical/plasmaloss
-	name = "low velocity chemical shell"
+	name = "低速化学弹"
 	icon_state = "recoilless_rifle_tanglefoot"
 	hud_state = "shell_tanglefoot"
 	smoketype = /datum/effect_system/smoke_spread/plasmaloss
 
 /datum/ammo/rocket/recoilless/chemical/harmgas/vsd
-	name = "high velocity chemical shell"
+	name = "高速化学弹"
 	icon_state = "rpg_rad"
 	hud_state = "rpg_rad"
 	smoketype = /datum/effect_system/smoke_spread/vyacheslav
 
 /datum/ammo/rocket/recoilless/low_impact
-	name = "low impact explosive shell"
+	name = "低冲击力爆破弹"
 	icon_state = "recoilless_rifle_le"
 	hud_state = "shell_le"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG //We want this to specifically go farther than onscreen range.
@@ -319,14 +319,14 @@
 	explosion(T, 0, 1, 8, 0, 2, explosion_cause=src)
 
 /datum/ammo/rocket/oneuse
-	name = "explosive rocket"
+	name = "高爆火箭"
 	damage = 100
 	penetration = 50
 	sundering = 25
 	max_range = 30
 
 /datum/ammo/rocket/som
-	name = "high explosive RPG"
+	name = "高爆火箭弹"
 	icon_state = "rpg_he"
 	hud_state = "rpg_he"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG
@@ -340,7 +340,7 @@
 	explosion(T, 0, 3, 6, 0, 2, explosion_cause=src)
 
 /datum/ammo/rocket/som/light
-	name = "low impact RPG"
+	name = "低冲击力火箭弹"
 	icon_state = "rpg_le"
 	hud_state = "rpg_le"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG
@@ -352,7 +352,7 @@
 	explosion(T, 0, 2, 7, 0, 2, explosion_cause=src)
 
 /datum/ammo/rocket/som/thermobaric
-	name = "thermobaric RPG"
+	name = "温压火箭弹"
 	icon_state = "rpg_thermobaric"
 	hud_state = "rpg_thermobaric"
 	damage = 30
@@ -361,7 +361,7 @@
 	explosion(T, 0, 4, 5, 0, 4, 4, explosion_cause=src)
 
 /datum/ammo/rocket/som/heat //Anti tank, or mech
-	name = "HEAT RPG"
+	name = "破甲火箭弹"
 	icon_state = "rpg_heat"
 	hud_state = "rpg_heat"
 	damage = 200
@@ -380,7 +380,7 @@
 	explosion(T, 0, 1, 0, 0, 1, explosion_cause=src)
 
 /datum/ammo/rocket/som/rad
-	name = "irrad RPG"
+	name = "辐射火箭弹"
 	icon_state = "rpg_rad"
 	hud_state = "rpg_rad"
 	damage = 50
@@ -415,7 +415,7 @@
 	explosion(T, weak_impact_range = 4, explosion_cause=src)
 
 /datum/ammo/rocket/atgun_shell
-	name = "high explosive ballistic cap shell"
+	name = "高爆弹道被帽弹"
 	icon_state = "atgun"
 	hud_state = "shell_heat"
 	hud_state_empty = "shell_empty"
@@ -434,7 +434,7 @@
 	proj.proj_max_range -= 10
 
 /datum/ammo/rocket/atgun_shell/apcr
-	name = "tungsten penetrator"
+	name = "钨芯穿甲弹"
 	hud_state = "shell_apcr"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_TURF|AMMO_PASS_THROUGH_MOVABLE
 	shell_speed = 4
@@ -459,7 +459,7 @@
 	proj.proj_max_range -= 5
 
 /datum/ammo/rocket/atgun_shell/he
-	name = "low velocity high explosive shell"
+	name = "低速高爆弹"
 	hud_state = "shell_he"
 	ammo_behavior_flags = AMMO_TARGET_TURF|AMMO_BETTER_COVER_RNG
 	damage = 50
@@ -473,7 +473,7 @@
 	drop_nade(target_turf.density ? get_step(target_turf, proj) : target_turf)
 
 /datum/ammo/rocket/atgun_shell/beehive
-	name = "beehive shell"
+	name = "蜂巢弹"
 	hud_state = "shell_le"
 	ammo_behavior_flags = AMMO_TARGET_TURF|AMMO_BETTER_COVER_RNG
 	shell_speed = 3
@@ -510,14 +510,14 @@
 	fire_directionalburst(proj, proj.firer, proj.shot_from, bonus_projectile_quantity, Get_Angle(proj.starting_turf, target_turf), loc_override = det_turf)
 
 /datum/ammo/rocket/atgun_shell/beehive/incend
-	name = "napalm shell"
+	name = "凝固汽油弹"
 	hud_state = "shell_heat"
 	ammo_behavior_flags = AMMO_TARGET_TURF|AMMO_BETTER_COVER_RNG
 	shell_speed = 3
 	bonus_projectiles_type = /datum/ammo/bullet/atgun_spread/incendiary
 
 /datum/ammo/bullet/tank_apfds
-	name = "8.8cm APFDS round"
+	name = "8.8厘米穿甲尾翼稳定脱壳弹"
 	icon_state = "apfds"
 	hud_state = "bigshell_apfds"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_BETTER_COVER_RNG|AMMO_PASS_THROUGH_TURF|AMMO_PASS_THROUGH_MOVABLE
@@ -548,7 +548,7 @@
 	proj.damage *= 2.2
 
 /datum/ammo/rocket/homing
-	name = "homing HE rocket"
+	name = "制导高爆火箭弹"
 	damage = 0
 	penetration = 0
 	max_range = 20
@@ -576,7 +576,7 @@
 	animate(proj, transform = rotate, time = SSprojectiles.wait)
 
 /datum/ammo/rocket/homing/microrocket /// this is basically a tgmc version of the above
-	name = "homing HE microrocket"
+	name = "制导高爆微型火箭"
 	shell_speed = 0.3
 	damage = 75
 	penetration = 40
@@ -587,7 +587,7 @@
 	explosion(T, 0, 0, 0, 4, 1, explosion_cause=src)
 
 /datum/ammo/rocket/homing/microrocket/mech
-	name = "homing mech HE microrocket"
+	name = "自导机甲高爆微型火箭"
 	shell_speed = 0.4
 	damage = 5
 	penetration = 20
@@ -598,7 +598,7 @@
 	explosion(T, 0, 0, 0, 2, 1, explosion_cause=src)
 
 /datum/ammo/rocket/homing/tow
-	name = "TOW-III missile"
+	name = "TOW-III导弹"
 	icon_state = "rocket_he"
 	ammo_behavior_flags = AMMO_TARGET_TURF|AMMO_SNIPER|AMMO_SPECIAL_PROCESS|AMMO_IFF
 	shell_speed = 0.3
@@ -612,7 +612,7 @@
 	explosion(T, 0, 0, 4, 0, 2, explosion_cause=src)
 
 /datum/ammo/rocket/coilgun
-	name = "kinetic penetrator"
+	name = "动能穿甲弹"
 	icon_state = "tank_coilgun"
 	hud_state = "rocket_ap"
 	hud_state_empty = "rocket_empty"
@@ -665,7 +665,7 @@
 	staggerstun(target_mob, proj, max_range, knockback = 1, hard_size_threshold = 3)
 
 /datum/ammo/rocket/icc_lowvel_heat
-	name = "Low Velocity HEAT shell"
+	name = "低速破甲弹"
 	icon_state = "recoilless_rifle_heat"
 	hud_state = "shell_heat"
 	ammo_behavior_flags = AMMO_BETTER_COVER_RNG
@@ -678,7 +678,7 @@
 	explosion(T, flash_range = 1, explosion_cause=src)
 
 /datum/ammo/rocket/icc_lowvel_high_explosive
-	name = "Low Velocity HE shell"
+	name = "低速高爆弹"
 	damage = 50
 	penetration = 100
 	sundering = 10

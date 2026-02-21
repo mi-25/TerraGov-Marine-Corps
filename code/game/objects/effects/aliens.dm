@@ -3,14 +3,14 @@
 //Ideally we'll consolidate all the "effect" objects here
 //Also need to change the icons
 /obj/effect/xenomorph
-	name = "alien thing"
-	desc = "You shouldn't be seeing this."
+	name = "异形生物"
+	desc = "你不应该看到这个。"
 	icon = 'icons/Xeno/Effects.dmi'
 	layer = FLY_LAYER
 
 /obj/effect/xenomorph/spray
-	name = "splatter"
-	desc = "It burns! It burns like hygiene!"
+	name = "溅射"
+	desc = "它在燃烧！烧得像消毒一样！"
 	icon_state = "acid2"
 	density = FALSE
 	opacity = FALSE
@@ -79,9 +79,9 @@
 	TIMER_COOLDOWN_START(src, COOLDOWN_ACID, 1 SECONDS)
 	if(HAS_TRAIT(src, TRAIT_FLOORED))
 		INVOKE_ASYNC(src, PROC_REF(take_overall_damage), acid_damage, BURN, ACID, FALSE, FALSE, TRUE, 0, 3)
-		to_chat(src, span_danger("You are scalded by the burning acid!"))
+		to_chat(src, span_danger("你被灼热的酸液烫伤了！"))
 		return
-	to_chat(src, span_danger("Your feet scald and burn! Argh!"))
+	to_chat(src, span_danger("你的双脚被烫得发疼！啊！"))
 	if(!(species.species_flags & NO_PAIN))
 		INVOKE_ASYNC(src, PROC_REF(emote), "pain")
 
@@ -117,8 +117,8 @@
 
 //Medium-strength acid // todo please god make me into an overlay and component already...
 /obj/effect/xenomorph/acid
-	name = "acid"
-	desc = "Burbling corrosive stuff. I wouldn't want to touch it."
+	name = "酸液"
+	desc = "冒着腐蚀性气泡的东西。我可不想碰它。"
 	icon_state = "acid_normal"
 	density = FALSE
 	opacity = FALSE
@@ -184,13 +184,13 @@
 		return
 	switch(strength_t - ticks)
 		if(0 to 1)
-			visible_message(span_xenowarning("\The [acid_t] begins to crumble under the acid!"))
+			visible_message(span_xenowarning("\The [acid_t] 在酸液的作用下开始碎裂！"))
 		if(2)
-			visible_message(span_xenowarning("\The [acid_t] is struggling to withstand the acid!"))
+			visible_message(span_xenowarning("\The [acid_t] 正在艰难抵抗酸液的侵蚀！"))
 		if(4)
-			visible_message(span_xenowarning("\The [acid_t]\s structure is being melted by the acid!"))
+			visible_message(span_xenowarning("\The [acid_t]的结构正在被酸液熔化！"))
 		if(6)
-			visible_message(span_xenowarning("\The [acid_t] is barely holding up against the acid!"))
+			visible_message(span_xenowarning("\The [acid_t] 在酸液的侵蚀下快要撑不住了！"))
 
 ///cleans up if the target is destroyed
 /obj/effect/xenomorph/acid/proc/on_target_del(atom/source)
@@ -217,7 +217,7 @@
 
 ///Sig handler to show this acid is attached to something
 /obj/effect/xenomorph/acid/proc/on_pickup(obj/item/item, mob/living/carbon/human/human_user)
-	human_user.visible_message(span_danger("Corrosive substances seethe all over [human_user] as [human_user.p_they()] retrieves the acid-soaked [item]!"),
+	human_user.visible_message(span_danger("腐蚀性物质在[human_user]身上翻腾，因为[human_user.p_they()]取出了浸满酸液的[item]！"),
 	span_danger("Corrosive substances burn and seethe all over you upon retrieving the acid-soaked [item]!"))
 	playsound(human_user, SFX_ACID_HIT, 25)
 	human_user.emote("pain")
@@ -235,20 +235,20 @@
 	qdel(src)
 
 /obj/effect/xenomorph/acid/weak
-	name = "weak acid"
+	name = "弱酸"
 	acid_strength = WEAK_ACID_STRENGTH
 	acid_damage = 75
 	icon_state = "acid_weak"
 
 /obj/effect/xenomorph/acid/strong
-	name = "strong acid"
+	name = "强酸"
 	acid_strength = STRONG_ACID_STRENGTH
 	acid_damage = 175
 	icon_state = "acid_strong"
 
 /obj/effect/xenomorph/warp_shadow
-	name = "warp shadow"
-	desc = "A strange rift in space and time. You probably shouldn't touch this."
+	name = "扭曲阴影"
+	desc = "时空中的一道奇异裂隙。你或许不该触碰它。"
 	icon = 'icons/Xeno/castes/wraith.dmi'
 	icon_state = "Wraith Walking"
 	color = COLOR_BLACK

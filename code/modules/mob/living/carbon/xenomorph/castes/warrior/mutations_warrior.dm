@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/zoomies
 	name = "Zoomies"
-	desc = "Agility gives an additional 0.3/0.6/0.9 more speed, but decreases your armor by an additional 10/20/30."
+	desc = "敏捷额外提供0.3/0.6/0.9点速度，但会额外降低10/20/30点护甲。"
 	/// For each structure, the amount to modify the speed by.
 	var/speed_per_structure = -0.3
 	/// For each structure, the amount to increase the armor by.
@@ -41,7 +41,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/enhanced_strength
 	name = "Enhanced Strength"
-	desc = "Lunge can be activated from 1/2/3 additional tiles away. Fling and Grapple Toss can now sends your target 1/2/3 tiles further."
+	desc = "突刺可以从额外1/2/3格的距离激活。甩投和擒抱投掷现在能将目标击退1/2/3格。"
 	/// For each structure, the amount to increase the range by.
 	var/range_per_structure = 1
 
@@ -74,7 +74,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/friendly_toss
 	name = "Friendly Toss"
-	desc = "Fling and Grapple Toss's cooldown is set to 40/25/10% of its original cooldown if it was used on allies."
+	desc = "甩投和擒抱投掷的冷却时间若用于盟友，则设定为原始冷却时间的40/25/10%。"
 	/// For the first structure, the amount to increase both abilities' cooldown multiplier if it was used on an allied xenomorph.
 	var/cooldown_initial = -0.45
 	/// For each structure, the amount to reduce increase abilities' cooldown multiplier if it was used on an allied xenomorph.

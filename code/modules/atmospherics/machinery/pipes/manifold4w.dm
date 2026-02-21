@@ -4,8 +4,8 @@
 	icon = 'icons/obj/atmospherics/pipes/manifold.dmi'
 	icon_state = "manifold4w-2"
 
-	name = "4-way pipe manifold"
-	desc = "A manifold composed of regular pipes."
+	name = "四通管道歧管"
+	desc = "由标准管道组成的歧管。"
 
 	initialize_directions = NORTH|SOUTH|EAST|WEST
 

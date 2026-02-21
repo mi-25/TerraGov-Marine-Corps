@@ -51,8 +51,8 @@
  * Cooldown for gear is on the mech because exploits
  */
 /obj/vehicle/sealed/mecha
-	name = "mecha"
-	desc = "Exosuit"
+	name = "机甲"
+	desc = "外骨骼"
 	icon = 'icons/mecha/mecha.dmi'
 	move_force = MOVE_FORCE_VERY_STRONG
 	move_resist = MOVE_FORCE_EXCEPTIONALLY_STRONG
@@ -390,7 +390,7 @@
 		return
 	log_combat(src, crushed, "stomped on", addition = "(DAMTYPE: [uppertext(BRUTE)])")
 	crushed.visible_message(
-		span_danger("[src] crushes [crushed]!"),
+		span_danger("[src] 碾碎了 [crushed]！"),
 		span_userdanger("[src] steps on you!"),
 	)
 	crushed.emote(pick("scream", "pain"))
@@ -462,7 +462,7 @@
 	update_appearance(UPDATE_OVERLAYS)
 	for(var/mob/mob_occupant AS in occupants)
 		SEND_SOUND(mob_occupant, sound('sound/items/timer.ogg', volume=50))
-		to_chat(mob_occupant, span_notice("Equipment control unit has been rebooted successfully."))
+		to_chat(mob_occupant, span_notice("装备控制单元已成功重启。"))
 	set_mouse_pointer()
 
 ///Updates the values given by scanning module and capacitor tier, called when a part is removed or inserted.
@@ -518,7 +518,7 @@
 
 	for(var/mob/living/occupant AS in occupants)
 		if(!enclosed && occupant?.incapacitated()) //no sides mean it's easy to just sorta fall out if you're incapacitated.
-			visible_message(span_warning("[occupant] tumbles out of the cockpit!"))
+			visible_message(span_warning("[occupant]从驾驶舱里滚了出来！"))
 			mob_exit(occupant) //bye bye
 			continue
 		if(cell)
@@ -590,12 +590,12 @@
 	if(completely_disabled || is_currently_ejecting || (mecha_flags & CANNOT_INTERACT))
 		return
 	if(phasing)
-		balloon_alert(user, "not while [phasing]!")
+		balloon_alert(user, "现在不行，[phasing]！")
 		return
 	if(user.incapacitated(TRUE))
 		return
 	if(construction_state)
-		balloon_alert(user, "end maintenance first!")
+		balloon_alert(user, "先完成维护！")
 		return
 	if(!get_charge())
 		return
@@ -608,7 +608,7 @@
 		target = pick(view(3,target))
 	var/mob/living/livinguser = user
 	if(!is_equipment_controller(user))
-		balloon_alert(user, "wrong seat for equipment!")
+		balloon_alert(user, "装备放错座位了！")
 		return
 	var/obj/item/mecha_parts/mecha_equipment/selected
 	if(modifiers[BUTTON] == RIGHT_CLICK)
@@ -628,7 +628,7 @@
 		INVOKE_ASYNC(selected, TYPE_PROC_REF(/obj/item/mecha_parts/mecha_equipment, action), user, target, modifiers)
 		return
 	if(!(livinguser in return_controllers_with_flag(VEHICLE_CONTROL_MELEE)))
-		to_chat(livinguser, span_warning("You're in the wrong seat to interact with your hands."))
+		to_chat(livinguser, span_warning("你坐的位置不对，无法用手操作。"))
 		return
 	var/on_cooldown = TIMER_COOLDOWN_RUNNING(src, COOLDOWN_MECHA_MELEE_ATTACK)
 	var/adjacent = Adjacent(target)

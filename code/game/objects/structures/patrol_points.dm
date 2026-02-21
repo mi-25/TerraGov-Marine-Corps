@@ -1,6 +1,6 @@
 /obj/structure/patrol_point
-	name = "Patrol start point"
-	desc = "A one way ticket to the combat zone. Shift click to deploy when inside a mech."
+	name = "巡逻起始点"
+	desc = "前往战区的单程票。在机甲内时，按住Shift键点击以部署。"
 	icon = 'icons/effects/campaign_effects.dmi'
 	icon_state = "patrol_point_1"
 	anchored = TRUE
@@ -56,10 +56,10 @@
 		if(!linked_point)
 			//Link your stuff bro. There may be a better way to do this, but the way modular map insert works, linking does not properly happen during initialisation
 			if(user)
-				to_chat(user, span_warning("This doesn't seem to go anywhere."))
+				to_chat(user, span_warning("这似乎不通向任何地方。"))
 			return
 
-	thing_to_move.visible_message(span_notice("[thing_to_move] goes through the [src]."), user ? span_notice("You go through the [src].") : null)
+	thing_to_move.visible_message(span_notice("[thing_to_move]穿过了[src]。"), user ? span_notice("You go through the [src].") : null)
 	linked_point.do_deployment(thing_to_move, user)
 
 /obj/structure/patrol_point/attack_ghost(mob/dead/observer/user)
@@ -69,7 +69,7 @@
 	if(!linked_point)
 		create_link()
 		if(!linked_point)
-			to_chat(user, span_warning("This doesn't seem to go anywhere."))
+			to_chat(user, span_warning("这似乎不通向任何地方。"))
 			return
 	user.forceMove(linked_point.loc)
 
@@ -88,8 +88,8 @@
 	icon_state = "patrol_point_2"
 
 /obj/structure/patrol_point/tank
-	name = "vehicle deploy point"
-	desc = "A one way ticket to the combat zone for vehicles of all sizes."
+	name = "载具部署点"
+	desc = "通往战区的单程票，适用于各种尺寸的载具。"
 
 /obj/structure/patrol_point/tank/Initialize(mapload)
 	. = ..()

@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(modularmapping)
-	name = "Modular Mapping"
+	name = "模块化地图"
 	dependencies = list(
 		/datum/controller/subsystem/atoms,
 		/datum/controller/subsystem/mapping,

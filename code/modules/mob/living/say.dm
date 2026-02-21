@@ -92,8 +92,8 @@ GLOBAL_LIST_INIT(department_radio_keys_som, list(
 
 	if(filter_result)
 		//The filter warning message shows the sanitized message though.
-		to_chat(src, span_warning("That message contained a word prohibited in IC chat! Consider reviewing the server rules."))
-		to_chat(src, span_warning("\"[message]\""))
+		to_chat(src, span_warning("该消息包含IC聊天中禁止使用的词语！请查阅服务器规则。"))
+		to_chat(src, span_warning("'[message]'"))
 		REPORT_CHAT_FILTER_TO_USER(src, filter_result)
 		log_filter("IC", message, filter_result)
 		SSblackbox.record_feedback("tally", "ic_blocked_words", 1, lowertext(config.ic_filter_regex.match))
@@ -149,7 +149,7 @@ GLOBAL_LIST_INIT(department_radio_keys_som, list(
 		return
 
 	if(!can_speak_vocal(message))
-		to_chat(src, span_warning("You find yourself unable to speak!"))
+		to_chat(src, span_warning("你发现自己说不出话！"))
 		return
 
 	var/message_range = 7
@@ -432,10 +432,10 @@ GLOBAL_LIST_INIT(department_radio_keys_som, list(
 /mob/living/proc/can_speak_basic(message, ignore_spam = FALSE) //Check BEFORE handling of xeno and ling channels
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
-			to_chat(src, span_danger("You cannot speak in IC (muted)."))
+			to_chat(src, span_danger("你无法在游戏内发言（已禁言）。"))
 			return FALSE
 		if(is_banned_from(ckey, "IC"))
-			to_chat(src, span_warning("You are banned from IC chat."))
+			to_chat(src, span_warning("你被禁止使用角色内聊天。"))
 			return
 		if(!ignore_spam && client.handle_spam_prevention(message, MUTE_IC))
 			return FALSE

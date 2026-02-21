@@ -64,7 +64,7 @@
 		return
 
 	if(length(user.do_actions))
-		user.balloon_alert(user, "busy!")
+		user.balloon_alert(user, "忙！")
 		return
 
 	INVOKE_ASYNC(src, PROC_REF(toggle_activation), source, user)
@@ -75,7 +75,7 @@
 		return
 
 	if(length(user.do_actions))
-		user.balloon_alert(user, "busy!")
+		user.balloon_alert(user, "忙！")
 		return
 
 	INVOKE_ASYNC(src, PROC_REF(deactivate), source, user)
@@ -85,26 +85,26 @@
 	var/turf/location = get_turf(source)
 	var/area/A = get_area(location)
 	if(A && istype(A) && A.ceiling >= CEILING_DEEP_UNDERGROUND)
-		to_chat(user, span_warning("This won't work if you're standing deep underground."))
+		to_chat(user, span_warning("如果站在地下深处，这不会起作用。"))
 		active = FALSE
 		return FALSE
 
 	if(istype(A, /area/shuttle/dropship))
-		to_chat(user, span_warning("You have to be outside the dropship to use this or it won't transmit."))
+		to_chat(user, span_warning("你必须身处运输机外部才能使用此功能，否则无法传输。"))
 		active = FALSE
 		return FALSE
 
 	if(length(user.do_actions))
-		user.balloon_alert(user, "busy!")
+		user.balloon_alert(user, "忙！")
 		active = FALSE
 		return
 
 	if(anchor && anchor_time)
 		var/delay = max(1.5 SECONDS, anchor_time - 2 SECONDS * user.skills.getRating(SKILL_LEADERSHIP))
-		user.visible_message(span_notice("[user] starts setting up [source] on the ground."),
+		user.visible_message(span_notice("[user]开始在地面上设置[source]。"),
 		span_notice("You start setting up [source] on the ground and inputting all the data it needs."))
 		if(!do_after(user, delay, NONE, source))
-			user.balloon_alert(user, "keep still!")
+			user.balloon_alert(user, "别动！")
 			active = FALSE
 			return
 
@@ -124,7 +124,7 @@
 
 	message_admins("[ADMIN_TPMONTY(user)] set up a supply beacon.") //do something with this
 	playsound(source, 'sound/machines/twobeep.ogg', 15, 1)
-	user.visible_message(span_notice("[user] activates [source]'s signal."))
+	user.visible_message(span_notice("[user]激活了[source]的信号。"))
 	user.show_message(span_notice("The [source] beeps and states, \"Your current coordinates were registered by the supply console. LONGITUDE [location.x]. LATITUDE [location.y]. Area ID: [get_area(source)]\""), EMOTE_TYPE_AUDIBLE, span_notice("The [source] vibrates but you can not hear it!"))
 	beacon_datum = new /datum/supply_beacon("[user.name] + [A]", source, user.faction)
 	RegisterSignal(beacon_datum, COMSIG_QDELETING, PROC_REF(clean_beacon_datum))
@@ -134,16 +134,16 @@
 ///Deactivates the beacon
 /datum/component/beacon/proc/deactivate(atom/movable/source, mob/user)
 	if(length(user?.do_actions))
-		user.balloon_alert(user, "busy!")
+		user.balloon_alert(user, "忙！")
 		active = TRUE
 		return
 	if(source.anchored)
 		if(user)
 			var/delay = max(1 SECONDS, anchor_time * 0.5 - 2 SECONDS * user.skills.getRating(SKILL_LEADERSHIP)) //Half as long as setting it up.
-			user.visible_message(span_notice("[user] starts removing [source] from the ground."),
+			user.visible_message(span_notice("[user]开始将[source]从地面上移除。"),
 			span_notice("You start removing [source] from the ground, deactivating it."))
 			if(!do_after(user, delay, NONE, source, BUSY_ICON_GENERIC))
-				user.balloon_alert(user, "keep still!")
+				user.balloon_alert(user, "别动！")
 				active = TRUE
 				return
 			user.put_in_active_hand(source)
@@ -153,7 +153,7 @@
 		source.set_light(0)
 		SSminimaps.remove_marker(source)
 
-	source.visible_message(span_warning("[source] stops emitting a signal."))
+	source.visible_message(span_warning("[source] 停止发出信号。"))
 	QDEL_NULL(beacon_cam)
 	QDEL_NULL(beacon_datum)
 	activator = null

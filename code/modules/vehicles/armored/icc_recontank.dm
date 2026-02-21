@@ -1,6 +1,6 @@
 /obj/vehicle/sealed/armored/multitile/icc_lvrt
-	name = "\improper LVRT 'Fallow' Recce Vehicle"
-	desc = "The Light Vehicle, Recce, Tracked 'Fallow' is an ICC reconnaissance vehicle built to go fast in order to scout out and poke at enemy positions. Accepts either a low velocity tank cannon or a SARDEN as armament."
+	name = "\improper LVRT '休耕'侦察车"
+	desc = "轻型侦察履带车'休耕'是一款ICC侦察车辆，专为高速机动设计，用于侦察和袭扰敌方阵地。可选择配备低速坦克炮或SARDEN作为武器。"
 	icon = 'icons/obj/armored/2x2/icc_lvrt.dmi'
 	icon_state = "icc_lvrt"
 	turret_icon = 'icons/obj/armored/2x2/icc_lvrt_gun.dmi'

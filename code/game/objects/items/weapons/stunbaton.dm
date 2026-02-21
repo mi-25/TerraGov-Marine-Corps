@@ -1,6 +1,6 @@
 /obj/item/weapon/baton
-	name = "stunbaton"
-	desc = "A stun baton for incapacitating people with."
+	name = "电击警棍"
+	desc = "用于使人丧失行动能力的电击警棍。"
 	icon_state = "stunbaton"
 	worn_icon_state = "baton"
 	icon = 'icons/obj/items/weapons/batons.dmi'
@@ -20,7 +20,7 @@
 	var/has_user_lock = TRUE //whether the baton prevents people without correct access from using it.
 
 /obj/item/weapon/baton/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] is putting the live [name] in [user.p_their()] mouth! It looks like [user.p_theyre()] trying to commit suicide."))
+	user.visible_message(span_suicide("[user] 正要把活的 [name] 放进 [user.p_their()] 嘴里！看起来 [user.p_theyre()] 想要自杀。"))
 	return (FIRELOSS)
 
 /obj/item/weapon/baton/Initialize(mapload)
@@ -71,9 +71,9 @@
 	if(istype(H))
 		var/obj/item/card/id/I = H.wear_id
 		if(!istype(I) || !check_access(I))
-			H.visible_message(span_notice("[src] beeeps as [H] picks it up"), span_danger("WARNING: Unauthorized user detected. Denying access..."))
+			H.visible_message(span_notice("[src] 在 [H] 拿起它时发出哔哔声"), span_danger("WARNING: Unauthorized user detected. Denying access..."))
 			H.Paralyze(40 SECONDS)
-			H.visible_message(span_warning("[src] beeps and sends a shock through [H]'s body!"))
+			H.visible_message(span_warning("[src] 发出哔哔声，并向[H]的身体发送了一道电击！"))
 			deductcharge(hitcost)
 			return FALSE
 	return TRUE
@@ -88,7 +88,7 @@
 
 	if(istype(I, /obj/item/cell))
 		if(bcell)
-			to_chat(user, span_notice("[src] already has a cell."))
+			to_chat(user, span_notice("[src] 已装有电池。"))
 			return
 
 		if(!user.drop_held_item())
@@ -96,7 +96,7 @@
 
 		I.forceMove(src)
 		bcell = I
-		to_chat(user, span_notice("You install a cell in [src]."))
+		to_chat(user, span_notice("你将一个电池安装到[src]中。"))
 
 	else if(isscrewdriver(I))
 		if(!bcell)
@@ -105,14 +105,14 @@
 		bcell.forceMove(get_turf(src))
 		bcell.update_icon()
 		bcell = null
-		to_chat(user, span_notice("You remove the cell from the [src]."))
+		to_chat(user, span_notice("你从[src]中取出了电池。"))
 		status = 0
 
 	update_icon()
 
 /obj/item/weapon/baton/attack_self(mob/user)
 	if(has_user_lock && user.skills.getRating(SKILL_POLICE) < SKILL_POLICE_MP)
-		to_chat(user, span_warning("You don't seem to know how to use [src]..."))
+		to_chat(user, span_warning("你似乎不知道如何使用[src]..."))
 		return
 	if(bcell?.charge > hitcost)
 		status = !status
@@ -122,16 +122,16 @@
 	else
 		status = 0
 		if(!bcell)
-			to_chat(user, span_warning("[src] does not have a power source!"))
+			to_chat(user, span_warning("[src]没有电源！"))
 		else
-			to_chat(user, span_warning("[src] is out of charge."))
+			to_chat(user, span_warning("[src]电量已耗尽。"))
 
 /obj/item/weapon/baton/attack(mob/M, mob/user)
 	if(M.status_flags & INCORPOREAL || user.status_flags & INCORPOREAL) //Incorporeal beings cannot attack or be attacked
 		return
 
 	if(has_user_lock && user.skills.getRating(SKILL_POLICE) < SKILL_POLICE_MP)
-		to_chat(user, span_warning("You don't seem to know how to use [src]..."))
+		to_chat(user, span_warning("你似乎不知道如何使用[src]..."))
 		return
 
 	var/stamloss_applied = agonyforce
@@ -153,23 +153,23 @@
 				target_zone = get_zone_with_miss_chance(user.zone_selected, L)
 
 			if(!target_zone)
-				L.visible_message(span_danger("[user] misses [L] with \the [src]!"))
+				L.visible_message(span_danger("[user] 用 \the [src] 没打中 [L]！"))
 				return 0
 
 			var/mob/living/carbon/human/H = L
 			var/datum/limb/affecting = H.get_limb(target_zone)
 			if (affecting)
 				if(!status)
-					L.visible_message(span_warning("[L] has been prodded in the [affecting.display_name] with [src] by [user]. Luckily it was off."))
+					L.visible_message(span_warning("[L] 在 [affecting.display_name] 处被 [user] 用 [src] 戳了一下。幸好它是关着的。"))
 					return 1
 				else
-					H.visible_message(span_danger("[L] has been prodded in the [affecting.display_name] with [src] by [user]!"))
+					H.visible_message(span_danger("[L] 的 [affecting.display_name] 被 [user] 用 [src] 捅了一下！"))
 		else
 			if(!status)
-				L.visible_message(span_warning("[L] has been prodded with [src] by [user]. Luckily it was off."))
+				L.visible_message(span_warning("[L] 被 [user] 用 [src] 捅了一下。幸好它没开。"))
 				return 1
 			else
-				L.visible_message(span_danger("[L] has been prodded with [src] by [user]!"))
+				L.visible_message(span_danger("[L] 被 [user] 用 [src] 捅了一下！"))
 
 	//stun effects
 	if(!HAS_TRAIT(L, TRAIT_BATONIMMUNE))
@@ -190,8 +190,8 @@
 
 //Makeshift stun baton. Replacement for stun gloves.
 /obj/item/weapon/baton/cattleprod
-	name = "stunprod"
-	desc = "An improvised stun baton."
+	name = "电击棒"
+	desc = "一把简易电击警棍。"
 	icon_state = "stunprod_nocell"
 	worn_icon_state = "prod"
 	force = 3
@@ -204,8 +204,8 @@
 	has_user_lock = FALSE
 
 /obj/item/weapon/stunprod
-	name = "electrified prodder"
-	desc = "A specialised prod designed for incapacitating xenomorphic lifeforms with."
+	name = "电击刺棒"
+	desc = "专为击晕异形生命体而设计的特制电击棒。"
 	icon_state = "stunbaton"
 	worn_icon_state = "baton"
 	equip_slot_flags = ITEM_SLOT_BELT
@@ -216,7 +216,7 @@
 	var/status = 0
 
 /obj/item/weapon/stunprod/suicide_act(mob/user)
-	user.visible_message(span_danger("[user] is putting the live [src] in [user.p_their()] mouth! It looks like [p_theyre()] trying to commit suicide."))
+	user.visible_message(span_danger("[user]正把活着的[src]塞进[user.p_their()]嘴里！看起来[p_theyre()]想自杀。"))
 	return FIRELOSS
 
 /obj/item/weapon/stunprod/update_icon_state()
@@ -234,21 +234,21 @@
 		update_icon()
 	else
 		status = 0
-		to_chat(user, span_warning("\The [src] is out of charge."))
+		to_chat(user, span_warning("\The [src] 电量已耗尽。"))
 
 /obj/item/weapon/stunprod/attack(mob/M, mob/user)
 	if(user.a_intent == INTENT_HARM)
 		return
 
 	else if(!status)
-		M.visible_message(span_warning("[M] has been poked with [src] whilst it's turned off by [user]."))
+		M.visible_message(span_warning("[M]被[user]用已关闭的[src]戳了一下。"))
 		return
 
 	if(status && isliving(M))
 		var/mob/living/L = M
 		L.Paralyze(12 SECONDS)
 		charges -= 2
-		L.visible_message(span_danger("[L] has been prodded with the [src] by [user]!"))
+		L.visible_message(span_danger("[L] 被 [user] 用 [src] 捅了一下！"))
 
 		log_combat(user, L, "stunned", src)
 
@@ -268,8 +268,8 @@
 		update_icon()
 /obj/item/weapon/stunprod/improved
 	charges = 30
-	name = "improved electrified prodder"
-	desc = "A specialised prod designed for incapacitating xenomorphic lifeforms with. This one seems to be much more effective than its predecessor."
+	name = "改进型电击棒"
+	desc = "专为击晕异形生物设计的特殊电击棒。这一款似乎比前代更加有效。"
 	color = "#FF6666"
 
 /obj/item/weapon/stunprod/improved/attack(mob/M, mob/user)

@@ -1,5 +1,5 @@
 /obj/effect/decal/cleanable/liquid_fuel
-	name = "fuel puddle"
+	name = "燃料池"
 	//Liquid fuel is used for things that used to rely on volatile fuels or phoron being contained to a couple tiles.
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "fuel"
@@ -92,7 +92,7 @@
 
 /obj/effect/decal/cleanable/liquid_fuel/proc/ignite_fuel(igniter)
 	if(igniter)
-		visible_message(span_warning("[igniter] ignites the spilled fuel!"))
+		visible_message(span_warning("[igniter] 点燃了溢出的燃料！"))
 	var/turf/S = get_turf(src)
 	S.ignite(fire_lvl, burn_lvl, f_color)
 	for(var/D in CARDINAL_DIRS)

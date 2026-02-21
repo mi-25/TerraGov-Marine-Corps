@@ -200,7 +200,7 @@
 	SIGNAL_HANDLER
 
 	travel_remaining = 0
-	bumped_atom.visible_message(span_userdanger("\The [bumped_atom] crashes into the field violently!"))
+	bumped_atom.visible_message(span_userdanger("\The [bumped_atom] 猛烈地撞入场中！"))
 	for(var/obj/structure/transport/linear/tram/transport_module as anything in transport_modules)
 		transport_module.set_travelling(FALSE)
 		for(var/explosive_target in transport_module.transport_contents)
@@ -257,7 +257,7 @@
 	if(controller_status & EMERGENCY_STOP)
 		set_status_code(EMERGENCY_STOP, FALSE)
 		playsound(paired_cabinet, 'sound/machines/synth/synth_yes.ogg', 40, vary = FALSE)
-		paired_cabinet.say("Controller reset.")
+		paired_cabinet.say("控制器已重置。")
 
 	SEND_SIGNAL(src, COMSIG_TRAM_TRAVEL, idle_platform, destination_platform)
 
@@ -349,7 +349,7 @@
 	if((controller_status & SYSTEM_FAULT) && (nav_beacon.loc == destination_platform.loc)) //position matches between controller and tram, we're back on track
 		set_status_code(SYSTEM_FAULT, FALSE)
 		playsound(paired_cabinet, 'sound/machines/synth/synth_yes.ogg', 40, vary = FALSE)
-		paired_cabinet.say("Controller reset.")
+		paired_cabinet.say("控制器已重置。")
 		log_transport("TC: [specific_transport_id] position data successfully reset.")
 		speed_limiter = initial(speed_limiter)
 	idle_platform = destination_platform
@@ -369,7 +369,7 @@
 	if(controller_status & SYSTEM_FAULT)
 		set_status_code(SYSTEM_FAULT, FALSE)
 		playsound(paired_cabinet, 'sound/machines/synth/synth_yes.ogg', 40, vary = FALSE)
-		paired_cabinet.say("Controller reset.")
+		paired_cabinet.say("控制器已重置。")
 		log_transport("TC: [specific_transport_id] position data successfully reset. ")
 		speed_limiter = initial(speed_limiter)
 	if(malf_active == TRANSPORT_LOCAL_FAULT)
@@ -378,7 +378,7 @@
 		malf_active = TRANSPORT_SYSTEM_NORMAL
 		throw_chance = initial(throw_chance)
 		playsound(paired_cabinet, 'sound/machines/buzz-sigh.ogg', 60, vary = FALSE)
-		paired_cabinet.say("Controller error. Please contact your engineering department.")
+		paired_cabinet.say("控制器错误。请联系您的工程部门。")
 	idle_platform = destination_platform
 	tram_registration.distance_travelled += (travel_trip_length - travel_remaining)
 	travel_trip_length = 0
@@ -396,7 +396,7 @@
 	if(controller_status & SYSTEM_FAULT)
 		if(!isnull(paired_cabinet))
 			playsound(paired_cabinet, 'sound/machines/buzz-sigh.ogg', 60, vary = FALSE)
-			paired_cabinet.say("Controller error. Please contact your engineering department.")
+			paired_cabinet.say("控制器错误。请联系您的工程部门。")
 		log_transport("TC: [specific_transport_id] Transport Controller failed!")
 
 	if(travel_remaining)
@@ -425,7 +425,7 @@
 			set_status_code(SYSTEM_FAULT, FALSE)
 			set_status_code(EMERGENCY_STOP, FALSE)
 			playsound(paired_cabinet, 'sound/machines/synth/synth_yes.ogg', 40, vary = FALSE)
-			paired_cabinet.say("Controller reset.")
+			paired_cabinet.say("控制器已重置。")
 			log_transport("TC: [specific_transport_id] Transport Controller reset was requested, but the tram nav data seems correct. Info: nav_pos ([nav_beacon.x], [nav_beacon.y], [nav_beacon.z]) idle_pos ([idle_platform.x], [idle_platform.y], [idle_platform.z]).")
 			return
 
@@ -440,7 +440,7 @@
 
 	if(!reset_beacon)
 		playsound(paired_cabinet, 'sound/machines/buzz-sigh.ogg', 60, vary = FALSE)
-		paired_cabinet.say("Controller reset failed. Contact manufacturer.") // If you screwed up the tram this bad, I don't even
+		paired_cabinet.say("控制器重置失败。请联系制造商。") // If you screwed up the tram this bad, I don't even
 		log_transport("TC: [specific_transport_id] non-recoverable error! Tram is at ([nav_beacon.x], [nav_beacon.y], [nav_beacon.z] [tram_velocity_sign ? "OUTBOUND" : "INBOUND"]) and can't find a reset beacon.")
 		message_admins("Tram ID [specific_transport_id] is in a non-recoverable error state at [ADMIN_JMP(nav_beacon)]. If it's causing problems, delete the controller datum from the 'Reset Tram' proc in the Debug tab.")
 		return
@@ -451,7 +451,7 @@
 	destination_platform = reset_beacon
 	speed_limiter = 1.5
 	playsound(paired_cabinet, 'sound/machines/ping.ogg', 40, vary = FALSE)
-	paired_cabinet.say("Peforming controller reset... Navigating to reset point.")
+	paired_cabinet.say("正在执行控制器重置... 导航至重置点。")
 	log_transport("TC: [specific_transport_id] trip calculation: src: [nav_beacon.x], [nav_beacon.y], [nav_beacon.z] dst: [destination_platform] [destination_platform.x], [destination_platform.y], [destination_platform.z] = Dir [travel_direction] Dist [travel_remaining].")
 	cycle_doors(CYCLE_CLOSED)
 	set_active(TRUE)
@@ -461,7 +461,7 @@
 
 /datum/transport_controller/linear/tram/proc/estop()
 	playsound(paired_cabinet, 'sound/machines/buzz-sigh.ogg', 60, vary = FALSE)
-	paired_cabinet.say("Emergency stop activated!")
+	paired_cabinet.say("紧急制动已激活！")
 	set_status_code(EMERGENCY_STOP, TRUE)
 	log_transport("TC: [specific_transport_id] requested emergency stop.")
 
@@ -751,7 +751,7 @@
  */
 /obj/machinery/transport/tram_controller
 	name = "tram controller"
-	desc = "Makes the tram go, or something. Holds the tram's electronics, controls, and maintenance panel. A sticker above the card reader says 'Engineering access only.'"
+	desc = "让电车开动，或者类似的功能。装有电车的电子设备、控制器和维护面板。读卡器上方贴着一张标签，写着'仅限工程部使用'。"
 	icon = 'icons/obj/tram/tram_controllers.dmi'
 	icon_state = "tram-controller"
 	base_icon_state = "tram"
@@ -833,7 +833,7 @@
 	if(cover_locked)
 		var/obj/item/card/id/id_card = user.get_idcard(TRUE)
 		if(isnull(id_card))
-			balloon_alert(user, "access denied!")
+			balloon_alert(user, "访问被拒绝！")
 			return
 
 		try_toggle_lock(user, id_card)
@@ -849,7 +849,7 @@
 	if(!cover_open)
 		var/obj/item/card/id/id_card = user.get_idcard(TRUE)
 		if(isnull(id_card))
-			balloon_alert(user, "access denied!")
+			balloon_alert(user, "访问被拒绝！")
 			return TRUE
 
 		try_toggle_lock(user, id_card)
@@ -876,7 +876,7 @@
 		update_appearance()
 		return TRUE
 
-	balloon_alert(user, "access denied!")
+	balloon_alert(user, "访问被拒绝！")
 	return FALSE
 /*
 /obj/machinery/transport/tram_controller/wrench_act_secondary(mob/living/user, obj/item/tool)
@@ -885,12 +885,12 @@
 		return
 
 	if(machine_stat & PANEL_OPEN && cover_open)
-		balloon_alert(user, "unsecuring...")
+		balloon_alert(user, "正在解除固定...")
 		tool.play_tool_sound(src)
 		if(!tool.use_tool(src, user, 6 SECONDS))
 			return
 		playsound(loc, 'sound/items/deconstruct.ogg', 50, vary = TRUE)
-		balloon_alert(user, "unsecured")
+		balloon_alert(user, "未固定")
 		deconstruct(TRUE)
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
@@ -1053,7 +1053,7 @@
 		return
 
 	if(machine_stat & NOPOWER)
-		visible_message(span_warning("The button doesn't appear to do anything, the [src]'s power failure status is flashing!"), vision_distance = COMBAT_MESSAGE_RANGE)
+		visible_message(span_warning("按钮似乎没有反应，[src]的电源故障状态正在闪烁！"), vision_distance = COMBAT_MESSAGE_RANGE)
 		return
 
 	switch(action)
@@ -1095,7 +1095,7 @@
 /// Controller that sits in the telecoms room
 /obj/machinery/transport/tram_controller/tcomms
 	name = "tram central controller"
-	desc = "This semiconductor is half of the brains controlling the tram and its auxiliary equipment."
+	desc = "这块半导体是控制电车及其辅助设备的大脑的一半。"
 	icon_state = "home-controller"
 	base_icon_state = "home"
 	density = TRUE

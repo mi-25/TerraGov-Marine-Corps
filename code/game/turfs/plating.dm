@@ -1,5 +1,5 @@
 /turf/open/floor/plating
-	name = "plating"
+	name = "甲板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "plating"
 	floor_tile = null
@@ -29,10 +29,10 @@
 	if(!broken && !burnt)
 		return
 	if(!(welder.use(1)))
-		to_chat(user, span_warning("You need more welding fuel to complete this task."))
+		to_chat(user, span_warning("你需要更多焊接燃料来完成此任务。"))
 		return
 
-	to_chat(user, span_warning("You fix some dents on the broken plating."))
+	to_chat(user, span_warning("你修复了破损护板上的一些凹痕。"))
 	playsound(src, 'sound/items/welder.ogg', 25, 1)
 	burnt = FALSE
 	broken = FALSE
@@ -46,23 +46,23 @@
 
 /turf/open/floor/plating/airless
 	icon_state = "plating"
-	name = "airless plating"
+	name = "真空甲板"
 
 /turf/open/floor/plating/fake_space //todo: kill mappers that use dodgy fake tiles that are basically just varedits
 	icon = 'icons/turf/space.dmi'
-	name = "\proper shielded space"
+	name = "\proper 屏蔽空间"
 	icon_state = "0"
 	plane = PLANE_SPACE
 	hull_floor = TRUE
 
 /turf/open/floor/plating/icefloor
 	icon_state = "plating"
-	name = "ice colony plating"
+	name = "冰原殖民地覆板"
 
 
 /turf/open/floor/plating/icefloor/Initialize(mapload)
 	. = ..()
-	name = "plating"
+	name = "甲板"
 
 
 /turf/open/floor/plating/icefloor/warnplate
@@ -75,8 +75,8 @@
 	icon = 'icons/turf/mainship.dmi'
 	icon_state = "plating_catwalk"
 	var/base_state = "plating" //Post mapping
-	name = "catwalk"
-	desc = "Cats really don't like these things."
+	name = "网格走道"
+	desc = "猫真的很不喜欢这些东西。"
 	var/covered = TRUE
 	shoefootstep = FOOTSTEP_CATWALK
 	barefootstep = FOOTSTEP_CATWALK
@@ -122,7 +122,7 @@
 	icon = 'icons/turf/prison.dmi'
 
 /turf/open/floor/plating/ironsand
-	name = "Iron Sand"
+	name = "铁砂"
 /turf/open/floor/plating/plating_catwalk/prison/alt
 	icon_state = "plating_catwalk_alt"
 

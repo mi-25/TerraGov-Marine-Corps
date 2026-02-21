@@ -1,6 +1,6 @@
 /obj/item/moneybag
 	icon = 'icons/obj/items/storage/bag.dmi'
-	name = "Money bag"
+	name = "钱袋"
 	icon_state = "moneybag"
 	force = 10
 	throwforce = 2
@@ -57,7 +57,7 @@
 
 	if(istype(I, /obj/item/coin))
 		var/obj/item/coin/C = I
-		to_chat(user, span_notice("You add the [C] into the bag."))
+		to_chat(user, span_notice("你将[C]放入袋中。"))
 		user.drop_held_item()
 		C.forceMove(src)
 
@@ -65,7 +65,7 @@
 		var/obj/item/moneybag/C = I
 		for(var/obj/O in C.contents)
 			O.forceMove(src)
-		to_chat(user, span_notice("You empty the [C] into the bag."))
+		to_chat(user, span_notice("你将[C]倒入了袋中。"))
 
 /obj/item/moneybag/Topic(href, href_list)
 	. = ..()

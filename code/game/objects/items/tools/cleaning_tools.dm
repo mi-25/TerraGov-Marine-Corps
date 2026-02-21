@@ -1,6 +1,6 @@
 /obj/item/tool/mop
-	desc = "The world of janitalia wouldn't be complete without a mop."
-	name = "mop"
+	desc = "没有拖把的清洁世界是不完整的。"
+	name = "拖把"
 	icon = 'icons/obj/janitor.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/items/janitor_left.dmi',
@@ -35,20 +35,20 @@
 	if(!proximity) return
 	if(istype(A, /turf) || istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay) || istype(A, /obj/effect/decal/cleanable/rune))
 		if(reagents.total_volume < 1)
-			balloon_alert(user, "mop is dry!")
+			balloon_alert(user, "拖把是干的！")
 			return
 
 		var/turf/T = get_turf(A)
-		user.visible_message(span_warning("[user] begins to clean \the [T]."))
+		user.visible_message(span_warning("[user]开始清理\the [T]。"))
 
 		if(do_after(user, 40, NONE, T, BUSY_ICON_GENERIC))
 			T.clean(src)
-			balloon_alert(user, "finished")
+			balloon_alert(user, "完成")
 
 
 /obj/item/tool/wet_sign
-	name = "wet floor sign"
-	desc = "Caution! Wet Floor!"
+	name = "小心地滑标志"
+	desc = "小心！地面湿滑！"
 	icon_state = "caution"
 	icon = 'icons/obj/janitor.dmi'
 	worn_icon_list = list(
@@ -63,8 +63,8 @@
 	attack_verb = list("warns", "cautions", "smashes")
 
 /obj/item/clothing/head/warning_cone
-	name = "warning cone"
-	desc = "This cone is trying to warn you of something!"
+	name = "警告锥"
+	desc = "这个锥桶在试图警告你什么！"
 	icon_state = "cone"
 	icon = 'icons/obj/janitor.dmi'
 	worn_icon_list = list(slot_head_str = 'icons/mob/clothing/headwear/head_0.dmi')
@@ -78,8 +78,8 @@
 
 
 /obj/item/tool/soap
-	name = "soap"
-	desc = "A cheap bar of soap. Doesn't smell."
+	name = "肥皂"
+	desc = "一块廉价的肥皂。没有气味。"
 	gender = PLURAL
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "soap"
@@ -98,25 +98,25 @@
 	//I couldn't feasibly  fix the overlay bugs caused by cleaning items we are wearing.
 	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
 	if(user.client && (target in user.client.screen))
-		balloon_alert(user, "take that off first!")
+		balloon_alert(user, "先把它脱下来！")
 	else if(isturf(target))
-		balloon_alert(user, "scrubbed")
+		balloon_alert(user, "已清除")
 		var/turf/target_turf = target
 		target_turf.wash()
 	else if(istype(target,/obj/effect/decal/cleanable))
-		balloon_alert(user, "scrubbed")
+		balloon_alert(user, "已清除")
 		qdel(target)
 	else
-		balloon_alert(user, "cleaned")
+		balloon_alert(user, "已清理")
 		target.wash()
 
 /obj/item/tool/soap/attack(mob/target, mob/user)
 	if(target && user && ishuman(target) && ishuman(user) && !target.stat && !user.stat && user.zone_selected == "mouth" )
-		balloon_alert_to_viewers("washes mouth out with soap")
+		balloon_alert_to_viewers("用肥皂漱口")
 		return
 
 /obj/item/tool/soap/nanotrasen
-	desc = "A Nanotrasen brand bar of soap. Smells of phoron."
+	desc = "一块纳米传讯品牌的肥皂。散发着等离子体的气味。"
 	icon_state = "soapnt"
 
 /obj/item/tool/soap/deluxe
@@ -127,5 +127,5 @@
 	desc = "A deluxe Waffle Co. brand bar of soap. Smells of [pick("lavender", "vanilla", "strawberry", "chocolate" ,"space")]."
 
 /obj/item/tool/soap/syndie
-	desc = "An untrustworthy bar of soap. Smells of fear."
+	desc = "一块不可靠的肥皂。散发着恐惧的气味。"
 	icon_state = "soapsyndie"

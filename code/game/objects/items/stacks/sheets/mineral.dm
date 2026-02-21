@@ -27,8 +27,8 @@ Mineral Sheets
 	pixel_y = rand(-2, 2)
 
 /obj/item/stack/sheet/mineral/iron
-	name = "iron"
-	desc = "Iron is the most basic building material in space, a metal solid at room temperature, easy to shape and available in immense quantities."
+	name = "铁"
+	desc = "铁是太空中最基本的建筑材料，一种在室温下呈固态的金属，易于塑形且储量巨大。"
 	singular_name = "iron sheet"
 	icon_state = "sheet-silver"
 	sheettype = "iron"
@@ -46,8 +46,8 @@ GLOBAL_LIST_INIT(iron_recipes, list ( \
 		. += GLOB.iron_recipes[item]
 
 /obj/item/stack/sheet/mineral/sandstone
-	name = "sandstone brick"
-	desc = "Sandstone is a combination of sand and stone. A common building material for primitive civilisations, can still make a good enough wall"
+	name = "砂岩砖"
+	desc = "砂岩是沙子和石头的混合物。原始文明的常见建筑材料，仍能构成足够坚固的墙壁。"
 	singular_name = "sandstone brick"
 	icon_state = "sheet-sandstone"
 	throw_speed = 4
@@ -65,8 +65,8 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 		. += GLOB.sandstone_recipes[item]
 
 /obj/item/stack/sheet/mineral/diamond
-	name = "diamond"
-	desc = "Diamond is a specific arrangement of carbon created under extreme pressure and heat. Valued for its look and properties, despite artificial manufacturing possibilities."
+	name = "钻石"
+	desc = "钻石是碳在极端压力和高温下形成的特定排列结构。因其外观和特性而备受珍视，尽管已有人工制造的可能性。"
 	singular_name = "diamond gem"
 	icon_state = "sheet-diamond"
 	perunit = 3750
@@ -82,8 +82,8 @@ GLOBAL_LIST_INIT(diamond_recipes, list ( \
 		. += GLOB.diamond_recipes[item]
 
 /obj/item/stack/sheet/mineral/uranium
-	name = "uranium"
-	desc = "Uranium is a radioactive metal of the actinide series. Valued as reactor fuel for fission-type generators, and as a primer for fusion bombs."
+	name = "铀"
+	desc = "铀是一种锕系放射性金属。作为裂变型反应堆的燃料以及聚变炸弹的起爆剂，具有重要价值。"
 	singular_name = "uranium rod"
 	icon_state = "sheet-uranium"
 	perunit = 2000
@@ -99,8 +99,8 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 		. += GLOB.uranium_recipes[item]
 
 /obj/item/stack/sheet/mineral/phoron
-	name = "solid phoron"
-	desc = "Phoron is an extremely rare mineral with exotic properties, often used in cutting-edge research. Just getting it into a stable, solid form is already hard enough."
+	name = "固态等离子体"
+	desc = "等离子体是一种极其稀有的矿物，具有奇特的性质，常用于尖端研究。光是将其稳定成固态形式就已经足够困难了。"
 	singular_name = "phoron ingot"
 	icon_state = "sheet-phoron"
 	perunit = 2000
@@ -123,8 +123,8 @@ GLOBAL_LIST_INIT(phoron_recipes, list ( \
 	amount = 30
 
 /obj/item/stack/sheet/mineral/plastic
-	name = "Plastic"
-	desc = "Plastic is a synthetic polymer, manufactured from organic and inorganic components into a malleable and light fabric. It can be used for a wide range of objects."
+	name = "塑料"
+	desc = "塑料是一种合成聚合物，由有机和无机成分制成，形成可塑且轻质的材料。它可用于制造多种物品。"
 	singular_name = "plastic sheet"
 	icon_state = "sheet-plastic"
 	perunit = 2000
@@ -144,15 +144,15 @@ GLOBAL_LIST_INIT(plastic_recipes, list ( \
 		. += GLOB.plastic_recipes[item]
 
 /obj/item/stack/sheet/mineral/plastic/cyborg
-	name = "plastic sheets"
-	desc = "Plastic is a synthetic polymer, manufactured from organic and inorganic components into a malleable and light fabric. It can be used for a wide range of objects."
+	name = "塑料板"
+	desc = "塑料是一种合成聚合物，由有机和无机成分制成，形成可塑且轻质的材料。它可用于制造多种物品。"
 	singular_name = "plastic sheet"
 	icon_state = "sheet-plastic"
 	perunit = 2000
 
 /obj/item/stack/sheet/mineral/gold
-	name = "gold"
-	desc = "Gold is a transition metal. A relatively rare metal, known for its color, shine, chemical and electrical properties, it is sought after for both cosmetic, engineering and scientific uses."
+	name = "黄金"
+	desc = "金是一种过渡金属。作为一种相对稀有的金属，以其颜色、光泽、化学和电学特性而闻名，在装饰、工程和科学领域都有广泛需求。"
 	singular_name = "gold ingot"
 	icon_state = "sheet-gold"
 	perunit = 2000
@@ -169,8 +169,8 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 		. += GLOB.gold_recipes[item]
 
 /obj/item/stack/sheet/mineral/silver
-	name = "silver"
-	desc = "Silver is a transition metal. It is known for its namesake silver, gray color. It is used both for cosmetics as a cheaper alternative to gold, or for engineering."
+	name = "银"
+	desc = "银是一种过渡金属，以其标志性的银灰色而闻名。它既可作为黄金的廉价替代品用于化妆品，也可用于工程领域。"
 	singular_name = "silver ingot"
 	icon_state = "sheet-silver"
 	perunit = 2000
@@ -189,8 +189,8 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 
 //Valuable resource, cargo can sell it.
 /obj/item/stack/sheet/mineral/platinum
-	name = "platinum"
-	desc = "Platinum is a transition metal. Relatively rare and pretty, it is used for its cosmetic value and chemical properties as a catalytic agent. It is also used in electrodes."
+	name = "铂金"
+	desc = "铂是一种过渡金属。相对稀有且美观，因其装饰价值和作为催化剂的化学性质而被使用。它也用于电极制造。"
 	singular_name = "platinum ingot"
 	icon_state = "sheet-platinum"
 	sheettype = "platinum"
@@ -200,8 +200,8 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 
 //Extremely valuable to Research.
 /obj/item/stack/sheet/mineral/mhydrogen
-	name = "metallic hydrogen"
-	desc = "Metallic hydrogen is regular hydrogen in a near-solid state, turned into an ingot under immense pressures. The exact procedure to create and stabilize such ingots is still a trade secret."
+	name = "金属氢"
+	desc = "金属氢是普通氢在接近固态的状态下，在巨大压力下形成的锭块。制造和稳定这种锭块的确切程序仍是商业机密。"
 	singular_name = "hydrogen ingot"
 	icon_state = "sheet-mythril"
 	sheettype = "mhydrogen"
@@ -210,8 +210,8 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 
 //Fuel for MRSPACMAN generator.
 /obj/item/stack/sheet/mineral/tritium
-	name = "tritium"
-	desc = "Tritium is an isotope of hydrogen, H-3, turned into an ingot under immense pressures. The exact procedure to create and stabilize such ingots is still a trade secret."
+	name = "氚"
+	desc = "氚是氢的同位素，H-3，在巨大压力下形成的锭块。制造和稳定这种锭块的确切程序仍然是商业机密。"
 	singular_name = "tritium ingot"
 	icon_state = "sheet-silver"
 	sheettype = "tritium"
@@ -220,8 +220,8 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 
 
 /obj/item/stack/sheet/mineral/osmium
-	name = "osmium"
-	desc = "Osmium is a transition metal. The densest naturally-occuring element known to man, it is obviously known for its extreme hardness and durability and used as such."
+	name = "锇"
+	desc = "锇是一种过渡金属。作为人类已知密度最大的天然元素，它显然以其极高的硬度和耐久性而闻名，并因此被使用。"
 	singular_name = "osmium ingot"
 	icon_state = "sheet-silver"
 	sheettype = "osmium"

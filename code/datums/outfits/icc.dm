@@ -1,5 +1,5 @@
 /datum/outfit/job/icc
-	name = "ICC Standard"
+	name = "ICC 标准"
 	jobtype = /datum/job/icc
 
 	id = /obj/item/card/id/silver
@@ -19,7 +19,7 @@
 
 // Basic standard equipment
 /datum/outfit/job/icc/standard
-	name = "ICC Standard"
+	name = "星际商会标准"
 	jobtype = /datum/job/icc
 
 	id = /obj/item/card/id/silver
@@ -84,7 +84,7 @@
 	)
 
 /datum/outfit/job/icc/guard
-	name = "ICC Guard"
+	name = "ICC警卫"
 	jobtype = /datum/job/icc/guard
 
 	shoes = /obj/item/clothing/shoes/marine/icc/guard/knife
@@ -174,7 +174,7 @@
 	backpack_contents = null
 
 /datum/outfit/job/icc/medic
-	name = "ICC Medic"
+	name = "ICC 医疗兵"
 	jobtype = /datum/job/icc/medic
 
 	id = /obj/item/card/id/silver
@@ -239,7 +239,7 @@
 
 
 /datum/outfit/job/icc/leader
-	name = "ICC Leader"
+	name = "ICC 领袖"
 	jobtype = /datum/job/icc/leader
 
 	shoes = /obj/item/clothing/shoes/marine/icc/knife
@@ -283,7 +283,7 @@
 	)
 
 /datum/outfit/job/icc/leader
-	name = "ICC Leader"
+	name = "ICC 领袖"
 	jobtype = /datum/job/icc/leader
 
 	shoes = /obj/item/clothing/shoes/marine/icc/knife

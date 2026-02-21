@@ -1,7 +1,7 @@
 //Carrier trap
 /obj/structure/xeno/trap
-	desc = "It looks like a hiding hole."
-	name = "resin hole"
+	desc = "看起来像个藏身洞。"
+	name = "树脂孔洞"
 	icon = 'icons/Xeno/Effects.dmi'
 	icon_state = "trap"
 	density = FALSE
@@ -114,7 +114,7 @@
 	playsound(src, SFX_ALIEN_RESIN_BREAK, 25)
 	if(iscarbon(AM))
 		var/mob/living/carbon/crosser = AM
-		crosser.visible_message(span_warning("[crosser] trips on [src]!"), span_danger("You trip on [src]!"))
+		crosser.visible_message(span_warning("[crosser] 被 [src] 绊倒了！"), span_danger("You trip on [src]!"))
 		crosser.ParalyzeNoChain(4 SECONDS / max(1, length(huggers))) // Don't want to divide by 0.
 	switch(trap_type)
 		if(TRAP_HUGGER)
@@ -165,7 +165,7 @@
 		if(!(xeno_attacker.xeno_caste.can_flags & CASTE_CAN_HOLD_FACEHUGGERS))
 			return
 		if(!length(huggers))
-			balloon_alert(xeno_attacker, "It is empty")
+			balloon_alert(xeno_attacker, "它是空的")
 			return
 		var/obj/item/clothing/mask/facehugger/first_hugger = huggers[1]
 		xeno_attacker.put_in_active_hand(first_hugger)
@@ -173,7 +173,7 @@
 		huggers -= first_hugger
 		if(!length(huggers))
 			set_trap_type(null)
-		balloon_alert(xeno_attacker, "Removed facehugger")
+		balloon_alert(xeno_attacker, "已移除抱脸虫")
 		return
 	var/datum/action/ability/activable/xeno/corrosive_acid/acid_action = locate(/datum/action/ability/activable/xeno/corrosive_acid) in xeno_attacker.actions
 	if(istype(xeno_attacker.ammo, /datum/ammo/xeno/boiler_gas))
@@ -193,7 +193,7 @@
 	else
 		return // nothing happened!
 	playsound(xeno_attacker.loc, 'sound/effects/refill.ogg', 25, 1)
-	balloon_alert(xeno_attacker, "Filled with [trap_type]")
+	balloon_alert(xeno_attacker, "装满了[trap_type]")
 
 /obj/structure/xeno/trap/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -204,18 +204,18 @@
 		return
 	var/obj/item/clothing/mask/facehugger/hugger = I
 	if(hugger.stat == DEAD)
-		balloon_alert(user, "Cannot insert dead facehugger")
+		balloon_alert(user, "无法插入死亡的抱脸虫")
 		return
 	if(trap_type)
 		if(trap_type != TRAP_HUGGER)
-			balloon_alert(user, "Already occupied")
+			balloon_alert(user, "已被占用")
 			return
 		if(length(huggers) >= hugger_limit)
-			balloon_alert(user, "Already full")
+			balloon_alert(user, "已满")
 			return
 
 	user.transferItemToLoc(hugger, src)
 	hugger.go_idle(TRUE)
 	huggers += hugger
 	set_trap_type(TRAP_HUGGER)
-	balloon_alert(user, "Inserted facehugger")
+	balloon_alert(user, "已插入抱脸虫")

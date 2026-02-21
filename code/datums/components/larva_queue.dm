@@ -104,7 +104,7 @@
 
 /// Action for joining the larva queue
 /datum/action/join_larva_queue
-	name = "Join Larva Queue"
+	name = "加入幼虫队列"
 	action_icon_state = "larva_queue"
 	action_type = ACTION_TOGGLE
 

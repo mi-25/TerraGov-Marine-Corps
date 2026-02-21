@@ -2,17 +2,17 @@
 
 /// Drains targets blood
 /datum/smite/bloodless
-	name = "Bloodloss"
+	name = "失血"
 
 /datum/smite/bloodless/effect(client/user, mob/living/target)
 	. = ..()
 
 	if (!ishuman(target))
-		to_chat(user, span_warning("Xenomorph blood is protected by the Queen Mother you silly goose. Aborting."), confidential = TRUE)
+		to_chat(user, span_warning("异形血液受到异形女王的保护，你这傻家伙。中止。"), confidential = TRUE)
 		return
 
 	var/bloodlossamount = tgui_input_list(usr, "How much blood should [target] lose?", "Bloodloss amount", list("A little", "A lot", "So fucking much", "FUCK THIS DUDE"))
-	to_chat(target, span_userdanger("You feel your skin growing pale as your blood drains away..."), confidential = TRUE)
+	to_chat(target, span_userdanger("你感觉皮肤逐渐苍白，血液正在流失……"), confidential = TRUE)
 
 	switch (bloodlossamount)
 		if("A little")

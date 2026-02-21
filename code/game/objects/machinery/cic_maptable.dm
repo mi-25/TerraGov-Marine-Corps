@@ -25,7 +25,7 @@
 	maptext = MAPTEXT_TINY_UNICODE("<div align='center' valign='middle' style='position:relative; top:0px; left:0px'>[text]</div>")
 
 /atom/movable/screen/maptable_extras/minimap_z_up
-	name = "go up"
+	name = "向上移动"
 	icon = 'icons/mob/screen_ai.dmi'
 	icon_state = "up"
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -45,7 +45,7 @@
 
 
 /atom/movable/screen/maptable_extras/minimap_z_down
-	name = "go down"
+	name = "下去"
 	icon = 'icons/mob/screen_ai.dmi'
 	icon_state = "down"
 	mouse_over_pointer = MOUSE_HAND_POINTER
@@ -65,8 +65,8 @@
 
 
 /obj/machinery/cic_maptable
-	name = "map table"
-	desc = "A table that displays a map of the current target location"
+	name = "地图桌"
+	desc = "显示当前目标位置地图的表格"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "maptable"
 	interaction_flags = INTERACT_MACHINE_DEFAULT
@@ -186,8 +186,8 @@
 		user.unset_interaction()
 
 /obj/machinery/cic_maptable/droppod_maptable
-	name = "Athena tactical map console"
-	desc = "A map that display the planetside AO, specialized in revealing potential areas to drop pod. This is especially useful to see where the frontlines and marines are at so that anyone droppodding can decide where to land. Pray that your land nav skills are robust to not get lost!"
+	name = "雅典娜战术地图控制台"
+	desc = "一张显示行星表面行动区域的地图，专门用于揭示可能的空降舱投放区域。这对于观察前线位置和陆战队部署尤为有用，让任何准备空降的人员都能决定着陆地点。祈祷你的陆地导航技能足够扎实，不会迷路吧！"
 	icon_state = "droppodtable"
 	screen_overlay = "droppodtable_emissive"
 
@@ -202,7 +202,7 @@
 
 //Exactly the same but you can draw on the map
 /obj/machinery/cic_maptable/drawable
-	desc = "A table that displays a map of the current target location that also allows drawing onto it"
+	desc = "一张显示当前目标位置地图并允许在上面绘制的桌子"
 	/// List of references to the tools we will be using to shape what the map looks like
 	var/list/atom/movable/screen/drawing_tools = list(
 		/atom/movable/screen/minimap_tool/draw_tool/red,
@@ -246,7 +246,7 @@
 	if(user.skills.getRating(SKILL_LEADERSHIP) < SKILL_LEAD_EXPERT)
 		return
 	if(is_banned_from(user.client.ckey, GLOB.roles_allowed_minimap_draw))
-		to_chat(user, span_boldwarning("You have been banned from a command role. You may not use access draw functions until the ban has been lifted."))
+		to_chat(user, span_boldwarning("你已被禁止担任指挥职务。在禁令解除前，你无法使用权限提取功能。"))
 		return
 	user.client.screen += drawing_tools
 

@@ -34,7 +34,7 @@ All ShuttleMove procs go here
 				if(M.pulledby)
 					M.pulledby.stop_pulling()
 				M.stop_pulling()
-				M.visible_message(span_warning("[shuttle] slams into [M]!"))
+				M.visible_message(span_warning("[shuttle] 猛撞在 [M] 上！"))
 				M.gib()
 			continue
 		if(ismovable(thing))

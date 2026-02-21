@@ -27,20 +27,20 @@
 
 /datum/loadout_item/back/marine_satchel
 	name = "Satchel"
-	desc = "A heavy-duty satchel carried by some TGMC soldiers and support personnel. Carries less than a backpack, but items can be drawn instantly."
+	desc = "某些TGMC士兵和支援人员使用的重型挎包。容量小于背包，但物品可以瞬间取出。"
 	item_typepath = /obj/item/storage/backpack/marine/satchel
 	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER, STAFF_OFFICER, CAPTAIN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/back/marine_backpack
 	name = "Backpack"
-	desc = "The standard-issue pack of the TGMC forces. Designed to slug gear into the battlefield. Carries more than a satchel but has a draw delay."
+	desc = "地球政府殖民地海军陆战队标准配发背包。专为向战场输送装备而设计。比挎包容量更大，但取物有延迟。"
 	item_typepath = /obj/item/storage/backpack/marine
 	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER)
 
 /datum/loadout_item/back/combat_pack
 	name = "Combat pack"
-	desc = "A small lightweight pack for expeditions and short-range operations. Has the storage capacity of a backpack but no draw delay."
+	desc = "一款用于远征和短程行动的小型轻便背包。拥有背包的存储容量，且无取物延迟。"
 	purchase_cost = 25
 	item_typepath = /obj/item/storage/backpack/lightpack
 	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER)
@@ -52,7 +52,7 @@
 
 /datum/loadout_item/back/flamer_tank
 	name = "Flame tank"
-	desc = "A specialized fuel tank for use with the FL-84 flamethrower and FL-240 incinerator unit."
+	desc = "专为FL-84喷火器和FL-240焚化装置设计的特种燃料罐。"
 	req_desc = "Requires a FL-84 flamethrower."
 	item_typepath = /obj/item/ammo_magazine/flamer_tank/backtank
 	jobs_supported = list(SQUAD_MARINE)
@@ -60,7 +60,7 @@
 
 /datum/loadout_item/back/flamer_tank/x_fuel
 	name = "X-fuel tank"
-	desc = "A specialized fuel tank of ultra thick napthal type X, known for its extreme heat and slow burn rate, as well as its distinct blue flames. For use with the FL-84 flamethrower and FL-240 incinerator unit."
+	desc = "一种特制的超稠密萘X型燃料罐，以其极高的温度和缓慢的燃烧速率，以及独特的蓝色火焰而闻名。供FL-84喷火器和FL-240焚化装置使用。"
 	item_typepath = /obj/item/ammo_magazine/flamer_tank/backtank/X
 	purchase_cost = 50
 	unlock_cost = 200
@@ -112,7 +112,7 @@
 
 /datum/loadout_item/back/machete
 	name = "Machete"
-	desc = "A large leather scabbard carrying a M2132 machete. It can be strapped to the back, waist or armor. Extremely dangerous against human opponents - if you can get close enough."
+	desc = "一个大型皮质刀鞘，内装M2132砍刀。可固定在背部、腰部或护甲上。对人类目标极为致命——前提是你能近身。"
 	ui_icon = "machete"
 	item_typepath = /obj/item/storage/holster/blade/machete/full
 	jobs_supported = list(SQUAD_MARINE, SQUAD_LEADER)
@@ -120,7 +120,7 @@
 
 /datum/loadout_item/back/minigun_powerpack
 	name = "MG-100 powerpack"
-	desc = "A heavy reinforced backpack with support equipment, power cells, and spare rounds for the MG-100 Minigun System. You don't get any spare, so make it count."
+	desc = "一个重型加固背包，装有支援设备、能量电池和MG-100加特林系统的备用弹药。你没有多余的，所以要省着用。"
 	req_desc = "Requires an MG-100."
 	item_typepath = /obj/item/ammo_magazine/minigun_powerpack
 	jobs_supported = list(SQUAD_MARINE)
@@ -130,13 +130,13 @@
 //corpsman
 /datum/loadout_item/back/corpsman_satchel
 	name = "Medical satchel"
-	desc = "A heavy-duty satchel carried by some TGMC corpsmen. You can recharge defibrillators by plugging them in. Carries less than a backpack, but items can be drawn instantly."
+	desc = "部分TGMC卫生兵携带的重型挎包。可通过插入方式为除颤器充电。容量小于背包，但物品可即时取用。"
 	item_typepath = /obj/item/storage/backpack/marine/corpsman/satchel
 	jobs_supported = list(SQUAD_CORPSMAN)
 
 /datum/loadout_item/back/corpsman_backpack
 	name = "Medical backpack"
-	desc = "The standard-issue backpack worn by TGMC corpsmen. You can recharge defibrillators by plugging them in. Carries more than a satchel but has a draw delay."
+	desc = "地球政府殖民地海军陆战队卫生兵的标准配发背包。你可以通过插入来为除颤器充电。比挎包容量更大，但有取出延迟。"
 	item_typepath = /obj/item/storage/backpack/marine/corpsman
 	jobs_supported = list(SQUAD_CORPSMAN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -144,7 +144,7 @@
 //engineer
 /datum/loadout_item/back/engineerpack
 	name = "Sentry welderpack"
-	desc = "A specialized backpack worn by TGMC technicians. It carries a fueltank for quick welder refueling. Loaded with a point defense sentry, excellent for defending areas or establishing killboxes."
+	desc = "地球政府殖民地海军陆战队技术员使用的专用背包。内置燃料罐，可快速为焊枪补充燃料。装载有哨戒炮，非常适合防御区域或建立火力封锁区。"
 	item_typepath = /obj/item/storage/backpack/marine/engineerpack
 	jobs_supported = list(SQUAD_ENGINEER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -167,7 +167,7 @@
 
 /datum/loadout_item/back/tech_backpack
 	name = "Demolition backpack"
-	desc = "The standard-issue backpack worn by TGMC technicians. Filled with a detpacks, C4 and grenades. Has a draw delay."
+	desc = "地球政府殖民地海军陆战队技术员的标准配发背包。内装拆弹包、C4炸药和手雷。有抽枪延迟。"
 	item_typepath = /obj/item/storage/backpack/marine/tech
 	jobs_supported = list(SQUAD_ENGINEER)
 

@@ -2,8 +2,8 @@
 * Morgue
 */
 /obj/structure/morgue
-	name = "morgue"
-	desc = "Used to keep bodies in untill someone fetches them."
+	name = "太平间"
+	desc = "用于存放尸体，直到有人来取走。"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "morgue1"
 	dir = EAST
@@ -117,8 +117,8 @@
 */
 
 /obj/structure/morgue_tray
-	name = "morgue tray"
-	desc = "Apply corpse before closing."
+	name = "太平间托盘"
+	desc = "关闭前请先处理尸体。"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "morguet"
 	density = TRUE
@@ -153,7 +153,7 @@
 		return
 	O.forceMove(loc)
 	if (user != O)
-		visible_message(span_warning("[user] stuffs [O] into [src]!"), null, null, 3)
+		visible_message(span_warning("[user] 将 [O] 塞进了 [src]！"), null, null, 3)
 
 
 
@@ -162,8 +162,8 @@
 */
 
 /obj/structure/morgue/crematorium
-	name = "crematorium"
-	desc = "A human incinerator. Works well on barbeque nights."
+	name = "焚化炉"
+	desc = "人类焚化炉。烧烤之夜的好帮手。"
 	icon_state = "crema1"
 	dir = SOUTH
 	tray_path = /obj/structure/morgue_tray/crematorium
@@ -174,7 +174,7 @@
 
 /obj/structure/morgue/crematorium/toggle_morgue(mob/user)
 	if (cremating)
-		to_chat(user, span_warning("It's locked."))
+		to_chat(user, span_warning("已上锁。"))
 		return
 	..()
 
@@ -195,9 +195,9 @@
 		return
 
 	if(length(contents) <= 1) //1 because the tray is inside.
-		visible_message(span_warning("You hear a hollow crackle."))
+		visible_message(span_warning("你听到一阵空洞的噼啪声。"))
 	else
-		visible_message(span_warning("You hear a roar as the crematorium activates."))
+		visible_message(span_warning("你听到一声咆哮，焚化炉启动了。"))
 
 		cremating = 1
 
@@ -231,8 +231,8 @@
 */
 
 /obj/structure/morgue_tray/crematorium
-	name = "crematorium tray"
-	desc = "Apply body before burning."
+	name = "焚化炉托盘"
+	desc = "涂抹全身后再进行焚烧。"
 	icon_state = "cremat"
 
 
@@ -250,7 +250,7 @@
 				if(!C.cremating)
 					C.cremate(user)
 	else
-		to_chat(user, span_warning("Access denied."))
+		to_chat(user, span_warning("访问被拒绝。"))
 
 
 
@@ -259,8 +259,8 @@
 */
 
 /obj/structure/morgue/sarcophagus
-	name = "sarcophagus"
-	desc = "Used to store mummies."
+	name = "石棺"
+	desc = "用于存放木乃伊。"
 	icon_state = "sarcophagus1"
 	morgue_type = "sarcophagus"
 	tray_path = /obj/structure/morgue_tray/sarcophagus
@@ -271,6 +271,6 @@
 */
 
 /obj/structure/morgue_tray/sarcophagus
-	name = "sarcophagus tray"
-	desc = "Apply corpse before closing."
+	name = "石棺托盘"
+	desc = "在关闭前应用尸体。"
 	icon_state = "sarcomat"

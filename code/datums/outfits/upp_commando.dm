@@ -1,6 +1,6 @@
 
 /datum/outfit/job/upp/commando/standard
-	name = "USL Elite Powder Monkey"
+	name = "联合太空鳞翅目精英火药猴"
 	jobtype = /datum/job/upp/commando/standard
 
 	id = /obj/item/card/id/silver
@@ -47,7 +47,7 @@
 
 
 /datum/outfit/job/upp/commando/medic
-	name = "USL Elite Surgeon"
+	name = "联合太空鳞翅目精英外科医生"
 	jobtype = /datum/job/upp/commando/medic
 
 	id = /obj/item/card/id/silver
@@ -95,7 +95,7 @@
 
 
 /datum/outfit/job/upp/commando/leader
-	name = "USL Elite Captain"
+	name = "联合太空鳞翅目精英舰长"
 	jobtype = /datum/job/upp/commando/leader
 
 	id = /obj/item/card/id/silver

@@ -2,7 +2,7 @@
 
 
 /obj/effect/landmark/lv624/fog_blocker
-	name = "fog blocker"
+	name = "雾障"
 	icon_state = "fog_spawn"
 
 
@@ -16,7 +16,7 @@
 	GLOB.fog_blocker_locations += loc
 
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn
-	name = "xeno spawn protection"
+	name = "异形生成保护"
 
 /obj/effect/landmark/lv624/fog_blocker/xeno_spawn/store_location()
 	GLOB.xeno_spawn_protection_locations += loc

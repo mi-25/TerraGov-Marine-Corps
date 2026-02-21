@@ -1,8 +1,8 @@
 //Random spawners for multiple grouped items such as a gun and it's associated ammo
 
 /obj/effect/spawner/random_set
-	name = "Random Object"
-	desc = "This item type is used to spawn random objects at round-start"
+	name = "随机物体"
+	desc = "此物品类型用于在回合开始时生成随机物品"
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "random_loot"
 	/// this variable determines the likelyhood that this random object will not spawn anything
@@ -27,7 +27,7 @@
 
 //restricted to ballistic weapons available on the ship, no auto-9s here
 /obj/effect/spawner/random_set/gun
-	name = "Random ballistic weapon set spawner"
+	name = "随机弹道武器生成器"
 	icon = 'icons/effects/random/weaponry.dmi'
 	icon_state = "random_rifle"
 
@@ -151,7 +151,7 @@
 
 //random rifles
 /obj/effect/spawner/random_set/rifle
-	name = "Random rifle set spawner"
+	name = "随机步枪套装生成器"
 	icon = 'icons/effects/random/weaponry.dmi'
 	icon_state = "random_rifle"
 
@@ -180,7 +180,7 @@
 
 //random shotguns
 /obj/effect/spawner/random_set/shotgun
-	name = "Random shotgun set spawner"
+	name = "随机霰弹枪套装生成器"
 	icon = 'icons/effects/random/weaponry.dmi'
 	icon_state = "random_shotgun"
 
@@ -219,7 +219,7 @@
 
 //random machineguns
 /obj/effect/spawner/random_set/machineguns
-	name = "Random machinegun set spawner"
+	name = "随机机枪架生成器"
 	icon = 'icons/effects/random/weaponry.dmi'
 	icon_state = "random_machinegun"
 
@@ -238,7 +238,7 @@
 
 //random sidearms
 /obj/effect/spawner/random_set/sidearms
-	name = "Random sidearm set spawner"
+	name = "随机副武器套装生成器"
 	icon = 'icons/effects/random/weaponry.dmi'
 	icon_state = "random_sidearm"
 

@@ -1,6 +1,6 @@
 /obj/machinery/computer/tram_controls
 	name = "tram controls"
-	desc = "An interface for the tram that lets you tell the tram where to go and hopefully it makes it there. I'm here to describe the controls to you, not to inspire confidence."
+	desc = "有轨电车控制界面，用于指定目的地并期望它能抵达。我在此说明操作方式，而非给予信心保证。"
 	icon_state = "tram_controls"
 	base_icon_state = "tram"
 	screen_overlay = TRAMSTATION_LINE_1
@@ -200,7 +200,7 @@
 	SIGNAL_HANDLER
 	switch(response_code)
 		if(REQUEST_SUCCESS)
-			say("The next station is: [response_info]")
+			say("下一站是：[response_info]")
 
 		if(REQUEST_FAIL)
 			if(!LAZYFIND(relevant, src))
@@ -208,11 +208,11 @@
 
 			switch(response_info)
 				if(NOT_IN_SERVICE)
-					say("The tram is not in service. Please contact the nearest engineer.")
+					say("电车未运行。请联系最近的工程师。")
 				if(INVALID_PLATFORM)
-					say("Configuration error. Please contact the nearest engineer.")
+					say("配置错误。请联系最近的工程师。")
 				if(INTERNAL_ERROR)
-					say("Tram controller error. Please contact the nearest engineer or crew member with telecommunications access to reset the controller.")
+					say("电车控制器错误。请联系最近拥有电信访问权限的工程师或船员重置控制器。")
 				else
 					return
 

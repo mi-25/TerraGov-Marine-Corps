@@ -1,6 +1,6 @@
 
 /obj/item/clothing/glasses
-	name = "glasses"
+	name = "护目镜"
 	icon = 'icons/obj/clothing/glasses.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/clothing/glasses_left.dmi',
@@ -87,14 +87,14 @@
 	return active	//For the UI button update
 
 /obj/item/clothing/glasses/science
-	name = "science goggles"
-	desc = "The goggles do nothing! Can be used as safety googles."
+	name = "科研护目镜"
+	desc = "这护目镜毫无用处！可用作安全护目镜。"
 	icon_state = "purple"
 	worn_icon_state = "glasses"
 
 /obj/item/clothing/glasses/eyepatch
-	name = "eyepatch"
-	desc = "Yarr."
+	name = "眼罩"
+	desc = "哟呵。"
 	icon_state = "eyepatch"
 	worn_icon_state = "eyepatch"
 	armor_protection_flags = NONE
@@ -106,13 +106,13 @@
 
 	if(istype(I, /obj/item/clothing/glasses/hud/health))
 		var/obj/item/clothing/glasses/hud/medpatch/P = new
-		to_chat(user, span_notice("You fasten the medical hud projector to the inside of the eyepatch."))
+		to_chat(user, span_notice("你将医疗HUD投影仪固定在眼罩内侧。"))
 		qdel(I)
 		qdel(src)
 		user.put_in_hands(P)
 	else if(istype(I, /obj/item/clothing/glasses/meson))
 		var/obj/item/clothing/glasses/meson/eyepatch/P = new
-		to_chat(user, span_notice("You fasten the meson projector to the inside of the eyepatch."))
+		to_chat(user, span_notice("你将介子投影仪固定在眼罩内侧。"))
 		qdel(I)
 		qdel(src)
 		user.put_in_hands(P)
@@ -121,14 +121,14 @@
 
 
 /obj/item/clothing/glasses/monocle
-	name = "monocle"
-	desc = "Such a dapper eyepiece!"
+	name = "单片眼镜"
+	desc = "多么时髦的单片眼镜！"
 	icon_state = "monocle"
 	armor_protection_flags = NONE
 
 /obj/item/clothing/glasses/material
-	name = "optical material scanner"
-	desc = "Very confusing glasses."
+	name = "光学材料扫描仪"
+	desc = "非常令人困惑的眼镜。"
 	icon_state = "material"
 	worn_icon_state = "glasses"
 	actions_types = list(/datum/action/item_action/toggle)
@@ -136,8 +136,8 @@
 	vision_flags = SEE_OBJS
 
 /obj/item/clothing/glasses/regular
-	name = "\improper regulation prescription glasses"
-	desc = "The Corps may call them Regulation Prescription Glasses but you know them as Rut Prevention Glasses."
+	name = "\improper 标准处方眼镜"
+	desc = "军方可能称它们为制式处方眼镜，但你心里清楚——这就是防呆眼镜。"
 	icon_state = "glasses"
 	worn_icon_state = "glasses"
 	prescription = TRUE
@@ -149,7 +149,7 @@
 
 	if(istype(I, /obj/item/clothing/glasses/hud/health))
 		var/obj/item/clothing/glasses/hud/medglasses/P = new
-		to_chat(user, span_notice("You fasten the medical hud projector to the inside of the glasses."))
+		to_chat(user, span_notice("你将医疗HUD投影仪固定在了眼镜内侧。"))
 		qdel(I)
 		qdel(src)
 		user.put_in_hands(P)
@@ -157,28 +157,28 @@
 		update_icon()
 
 /obj/item/clothing/glasses/regular/hipster
-	name = "prescription glasses"
-	desc = "Made by Uncool. Co."
+	name = "处方眼镜"
+	desc = "由 Uncool. Co. 制作。"
 	icon_state = "hipster_glasses"
 	worn_icon_state = "hipster_glasses"
 
 /obj/item/clothing/glasses/threedglasses
-	desc = "A long time ago, people used these glasses to makes images from screens threedimensional."
-	name = "3D glasses"
+	desc = "很久以前，人们用这种眼镜让屏幕上的图像呈现三维效果。"
+	name = "3D眼镜"
 	icon_state = "3d"
 	worn_icon_state = "3d"
 	armor_protection_flags = NONE
 
 /obj/item/clothing/glasses/gglasses
-	name = "green glasses"
-	desc = "Forest green glasses, like the kind you'd wear when hatching a nasty scheme."
+	name = "绿色护目镜"
+	desc = "森林绿眼镜，就像策划阴谋诡计时会戴的那种。"
 	icon_state = "gglasses"
 	worn_icon_state = "gglasses"
 	armor_protection_flags = NONE
 
 /obj/item/clothing/glasses/mgoggles
-	name = "marine ballistic goggles"
-	desc = "Standard issue TGMC goggles. Mostly used to decorate one's helmet."
+	name = "陆战队弹道护目镜"
+	desc = "标准配发的TGMC护目镜。主要用于装饰头盔。"
 	icon_state = "mgoggles"
 	worn_icon_state = "mgoggles"
 	soft_armor = list(MELEE = 40, BULLET = 40, LASER = 0, ENERGY = 15, BOMB = 35, BIO = 10, FIRE = 30, ACID = 30)
@@ -188,8 +188,8 @@
 
 
 /obj/item/clothing/glasses/mgoggles/prescription
-	name = "prescription marine ballistic goggles"
-	desc = "Standard issue TGMC goggles. Mostly used to decorate one's helmet. Contains prescription lenses in case you weren't sure if they were lame or not."
+	name = "处方陆战队防弹护目镜"
+	desc = "标准配发的TGMC护目镜。主要用于装饰头盔。内含处方镜片，以防你不确定它们是否很逊。"
 	prescription = TRUE
 
 /obj/item/clothing/glasses/mgoggles/attackby(obj/item/I, mob/user, params)
@@ -200,26 +200,26 @@
 	if(istype(I, /obj/item/clothing/glasses/hud/health))
 		if(prescription)
 			var/obj/item/clothing/glasses/hud/medgoggles/prescription/P = new
-			to_chat(user, span_notice("You fasten the medical hud projector to the inside of the goggles."))
+			to_chat(user, span_notice("你将医疗HUD投影仪固定在护目镜内侧。"))
 			qdel(I)
 			qdel(src)
 			user.put_in_hands(P)
 		else
 			var/obj/item/clothing/glasses/hud/medgoggles/S = new
-			to_chat(user, span_notice("You fasten the medical hud projector to the inside of the goggles."))
+			to_chat(user, span_notice("你将医疗HUD投影仪固定在护目镜内侧。"))
 			qdel(I)
 			qdel(src)
 			user.put_in_hands(S)
 	else if(istype(I, /obj/item/clothing/glasses/meson))
 		if(prescription)
 			var/obj/item/clothing/glasses/meson/enggoggles/prescription/P = new
-			to_chat(user, span_notice("You fasten the optical meson scanner to the inside of the goggles."))
+			to_chat(user, span_notice("你将光学介子扫描仪固定在护目镜内侧。"))
 			qdel(I)
 			qdel(src)
 			user.put_in_hands(P)
 		else
 			var/obj/item/clothing/glasses/meson/enggoggles/S = new
-			to_chat(user, span_notice("You fasten the optical meson scanner to the inside of the goggles."))
+			to_chat(user, span_notice("你将光学介子扫描仪固定在护目镜内侧。"))
 			qdel(I)
 			qdel(src)
 			user.put_in_hands(S)
@@ -227,8 +227,8 @@
 		update_icon()
 
 /obj/item/clothing/glasses/m42_goggles
-	name = "\improper M42 scout sight"
-	desc = "A headset and goggles system for the M42 Scout Rifle. Allows highlighted imaging of surroundings. Click it to toggle."
+	name = "\improper M42侦察瞄准镜"
+	desc = "M42侦察步枪用头戴式耳机与护目镜系统。可高亮显示周围环境影像。点击切换。"
 	icon = 'icons/obj/clothing/glasses.dmi'
 	icon_state = "m56_goggles"
 	deactive_state = "m56_goggles_0"
@@ -241,8 +241,8 @@
 //welding goggles
 
 /obj/item/clothing/glasses/welding
-	name = "welding goggles"
-	desc = "Protects the eyes from welders, approved by the mad scientist association."
+	name = "焊接护目镜"
+	desc = "保护眼睛免受焊接伤害，已获疯狂科学家协会认证。"
 	icon_state = "welding-g"
 	worn_icon_state = "welding-g"
 	actions_types = list(/datum/action/item_action/toggle)
@@ -281,7 +281,7 @@
 	eye_protection = 0
 	update_icon()
 	if(user)
-		to_chat(user, "You push [src] up out of your face.")
+		to_chat(user, "你将[src]从脸上推开。")
 
 ///Toggle the welding goggles off
 /obj/item/clothing/glasses/welding/proc/flip_down(mob/user)
@@ -290,7 +290,7 @@
 	eye_protection = initial(eye_protection)
 	update_icon()
 	if(user)
-		to_chat(user, "You flip [src] down to protect your eyes.")
+		to_chat(user, "你将[src]翻下以保护眼睛。")
 
 /obj/item/clothing/glasses/welding/update_icon_state()
 	icon_state = "[initial(icon_state)][!active ? "up" : ""]"
@@ -301,8 +301,8 @@
 	AddComponent(/datum/component/clothing_tint, TINT_5, FALSE)
 
 /obj/item/clothing/glasses/welding/superior
-	name = "superior welding goggles"
-	desc = "Welding goggles made from more expensive materials, strangely smells like potatoes."
+	name = "高级焊接护目镜"
+	desc = "采用更昂贵材料制成的焊接护目镜，奇怪的是闻起来有股土豆味。"
 	icon_state = "rwelding-g"
 	worn_icon_state = "rwelding-g"
 
@@ -313,8 +313,8 @@
 //sunglasses
 
 /obj/item/clothing/glasses/sunglasses
-	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Enhanced shielding blocks many flashes."
-	name = "sunglasses"
+	desc = "采用古老技术制造的护目镜，能提供基础的眼部防护。增强型护光镜片可阻挡多种强光。"
+	name = "太阳镜"
 	icon_state = "sun"
 	worn_icon_state = "sunglasses"
 	eye_protection = 1
@@ -325,8 +325,8 @@
 		AddComponent(/datum/component/clothing_tint, TINT_3)
 
 /obj/item/clothing/glasses/sunglasses/blindfold
-	name = "blindfold"
-	desc = "Covers the eyes, preventing sight."
+	name = "眼罩"
+	desc = "覆盖眼部，阻碍视线。"
 	icon_state = "blindfold"
 	worn_icon_state = "blindfold"
 	eye_protection = 2
@@ -336,20 +336,20 @@
 	AddComponent(/datum/component/clothing_tint, TINT_BLIND)
 
 /obj/item/clothing/glasses/sunglasses/prescription
-	name = "prescription sunglasses"
+	name = "处方太阳镜"
 	prescription = TRUE
 
 /obj/item/clothing/glasses/sunglasses/big
-	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Larger than average enhanced shielding blocks many flashes."
+	desc = "采用古老技术制造的护目镜，能提供基础的眼部防护。其增大的护盾能有效阻挡多数闪光。"
 	icon_state = "bigsunglasses"
 	worn_icon_state = "bigsunglasses"
 
 /obj/item/clothing/glasses/sunglasses/big/prescription
-	name = "prescription sunglasses"
+	name = "处方太阳镜"
 	prescription = TRUE
 
 /obj/item/clothing/glasses/sunglasses/fake
-	desc = "A pair of designer sunglasses. Doesn't seem like it'll block flashes."
+	desc = "一副设计师太阳镜。看起来似乎无法阻挡闪光。"
 	eye_protection = 0
 
 /obj/item/clothing/glasses/sunglasses/fake/attackby(obj/item/I, mob/user, params)
@@ -359,19 +359,19 @@
 
 	if(istype(I, /obj/item/clothing/glasses/hud/health))
 		var/obj/item/clothing/glasses/hud/medsunglasses/P = new
-		to_chat(user, span_notice("You fasten the medical hud projector to the inside of the glasses."))
+		to_chat(user, span_notice("你将医疗HUD投影仪固定在了眼镜内侧。"))
 		qdel(I)
 		qdel(src)
 		user.put_in_hands(P)
 	else if(istype(I, /obj/item/clothing/glasses/meson))
 		var/obj/item/clothing/glasses/meson/sunglasses/P = new
-		to_chat(user, span_notice("You fasten the optical meson scaner to the inside of the glasses."))
+		to_chat(user, span_notice("你将光学介子扫描仪固定在眼镜内侧。"))
 		qdel(I)
 		qdel(src)
 		user.put_in_hands(P)
 	else if(istype(I, /obj/item/clothing/glasses/night/m56_goggles))
 		var/obj/item/clothing/glasses/night/sunglasses/P = new
-		to_chat(user, span_notice("You fasten the KTLD sight to the inside of the glasses."))
+		to_chat(user, span_notice("你将KTLD瞄准镜固定在眼镜内侧。"))
 		qdel(I)
 		qdel(src)
 		user.put_in_hands(P)
@@ -379,28 +379,28 @@
 		update_icon()
 
 /obj/item/clothing/glasses/sunglasses/fake/prescription
-	name = "prescription sunglasses"
+	name = "处方太阳镜"
 	prescription = TRUE
 
 /obj/item/clothing/glasses/sunglasses/fake/big
-	name = "big sunglasses"
-	desc = "A pair of larger than average designer sunglasses. Doesn't seem like it'll block flashes."
+	name = "大墨镜"
+	desc = "一副比普通尺寸更大的设计师太阳镜。看起来似乎无法阻挡闪光。"
 	icon_state = "bigsunglasses"
 	worn_icon_state = "bigsunglasses"
 
 /obj/item/clothing/glasses/sunglasses/fake/big/prescription
-	name = "big prescription sunglasses"
+	name = "大号处方太阳镜"
 	prescription = TRUE
 
 /obj/item/clothing/glasses/sunglasses/sechud
-	name = "HUDSunglasses"
-	desc = "Sunglasses with a HUD."
+	name = "抬头显示器太阳镜"
+	desc = "带平视显示器的太阳镜。"
 	icon_state = "sunhud"
 	var/hud_type = DATA_HUD_SECURITY_ADVANCED
 
 /obj/item/clothing/glasses/sunglasses/sechud/eyepiece
-	name = "Security HUD Sight"
-	desc = "A standard eyepiece, but modified to display security information to the user visually. This makes it commonplace among military police, though other models exist."
+	name = "安全HUD视野"
+	desc = "一款标准目镜，但经过改装，可向用户视觉显示安全信息。这使其在宪兵中颇为常见，尽管也存在其他型号。"
 	icon_state = "securityhud"
 	worn_icon_state = "securityhud"
 
@@ -420,26 +420,26 @@
 
 
 /obj/item/clothing/glasses/sunglasses/sechud/tactical
-	name = "tactical HUD"
-	desc = "Flash-resistant goggles with inbuilt combat and security information."
+	name = "战术HUD"
+	desc = "内置战斗与安保信息的防闪光护目镜。"
 	icon_state = "swatgoggles"
 
 /obj/item/clothing/glasses/sunglasses/aviator
-	name = "aviator sunglasses"
-	desc = "A pair of aviator sunglasses."
+	name = "飞行员墨镜"
+	desc = "一副飞行员墨镜。"
 	icon_state = "aviator"
 	worn_icon_state = "aviator"
 
 /obj/item/clothing/glasses/sunglasses/aviator/yellow
-	name = "aviator sunglasses"
-	desc = "A pair of aviator sunglasses. Comes with yellow lens."
+	name = "飞行员墨镜"
+	desc = "一副飞行员太阳镜。配有黄色镜片。"
 	icon_state = "aviator_yellow"
 	worn_icon_state = "aviator_yellow"
 
 //todo rename this typepath so its not confused with glasses/night
 /obj/item/clothing/glasses/night_vision
-	name = "\improper BE-47 night vision goggles"
-	desc = "Goggles for seeing clearer in low light conditions and maintaining sight of the surrounding environment."
+	name = "\improper BE-47 夜视镜"
+	desc = "用于在低光条件下更清晰地观察并保持对周围环境的视野。"
 	icon_state = "night_vision"
 	deactive_state = "night_vision_off"
 	worn_layer = COLLAR_LAYER	//The sprites are designed to render over helmets
@@ -501,7 +501,7 @@
 		return
 
 	if(battery && (battery.charge > battery.maxcharge / 2))
-		balloon_alert(user, "battery already installed!")
+		balloon_alert(user, "电池已安装！")
 		return
 	//Hot swap!
 	eject_battery()
@@ -534,7 +534,7 @@
 	else
 		if(!battery || battery.charge < active_energy_cost)
 			if(user)
-				balloon_alert(user, "no power!")
+				balloon_alert(user, "没电了！")
 			return FALSE	//Don't activate
 		START_PROCESSING(SSobj, src)
 		active_sound.start(src)
@@ -568,8 +568,8 @@
 	return CHECK_BITFIELD(slot, ITEM_SLOT_EYES)
 
 /obj/item/clothing/glasses/night_vision/mounted
-	name = "\improper BE-35 night vision goggles"
-	desc = "Goggles for seeing clearer in low light conditions. Must remain attached to a helmet."
+	name = "\improper BE-35 夜视护目镜"
+	desc = "用于在低光条件下看得更清晰的护目镜。必须保持安装在头盔上。"
 	icon_state = "night_vision_mounted"
 	tint = COLOR_BLUE
 	vision_flags = NONE

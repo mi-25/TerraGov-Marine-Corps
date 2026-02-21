@@ -57,7 +57,7 @@
 	user.changeNext_move(CLICK_CD_MELEE) // Ugh. Ideally we shouldn't be setting cooldowns outside of click code.
 	user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 	playsound(loc, 'sound/weapons/tap.ogg', 40, TRUE, -1)
-	user.visible_message(span_danger("[user] hits [src]. Nothing happens."), null, null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_danger("[user]击中了[src]。毫无效果。"), null, null, COMBAT_MESSAGE_RANGE)
 	log_message("Attack by hand/paw (no damage). Attacker - [user].", LOG_MECHA, color="red")
 
 /obj/vehicle/sealed/mecha/bullet_act(atom/movable/projectile/proj, def_zone, piercing_hit) //wrapper
@@ -147,7 +147,7 @@
 	if(!disable_time)
 		return
 	if(!equipment_disabled && LAZYLEN(occupants)) //prevent spamming this message with back-to-back EMPs
-		to_chat(occupants, span_warning("Error -- Connection to equipment control unit has been lost."))
+		to_chat(occupants, span_warning("错误——与设备控制单元的连接已断开。"))
 	mecha_flags |= MECHA_EMPED
 	update_appearance(UPDATE_OVERLAYS)
 	var/time_left = timeleft(emp_timer)
@@ -187,10 +187,10 @@
 
 	if(istype(W, /obj/item/repairpack))
 		if(max_repairpacks <=0)
-			balloon_alert(user, "Repairpacks not supported")
+			balloon_alert(user, "维修包不受支持")
 			return
 		if(stored_repairpacks >= max_repairpacks)
-			balloon_alert(user, "Repairpacks full")
+			balloon_alert(user, "维修包已装满")
 			return
 		stored_repairpacks++
 		qdel(W)
@@ -201,9 +201,9 @@
 			if(internals_access_allowed(user))
 				ui_interact(user)
 				return
-			to_chat(user, span_warning("Invalid ID: Access denied."))
+			to_chat(user, span_warning("无效ID：访问被拒绝。"))
 			return
-		to_chat(user, span_warning("Maintenance protocols disabled by operator."))
+		to_chat(user, span_warning("维护协议已被操作员禁用。"))
 		return
 
 	if(istype(W, /obj/item/cell))
@@ -212,12 +212,12 @@
 				if(!user.transferItemToLoc(W, src))
 					return
 				var/obj/item/cell/C = W
-				to_chat(user, span_notice("You install the power cell."))
+				to_chat(user, span_notice("你装上了能量电池。"))
 				playsound(src, 'sound/items/screwdriver2.ogg', 50, FALSE)
 				cell = C
 				log_message("Power cell installed", LOG_MECHA)
 			else
-				to_chat(user, span_warning("There's already a power cell installed!"))
+				to_chat(user, span_warning("已经安装了一个能量电池！"))
 		return
 
 	if(istype(W, /obj/item/stock_parts/scanning_module))
@@ -225,13 +225,13 @@
 			if(!scanmod)
 				if(!user.transferItemToLoc(W, src))
 					return
-				to_chat(user, span_notice("You install the scanning module."))
+				to_chat(user, span_notice("你安装了扫描模块。"))
 				playsound(src, 'sound/items/screwdriver2.ogg', 50, FALSE)
 				scanmod = W
 				log_message("[W] installed", LOG_MECHA)
 				update_part_values()
 			else
-				to_chat(user, span_warning("There's already a scanning module installed!"))
+				to_chat(user, span_warning("已经安装了一个扫描模块！"))
 		return
 
 	if(istype(W, /obj/item/stock_parts/capacitor))
@@ -239,13 +239,13 @@
 			if(!capacitor)
 				if(!user.transferItemToLoc(W, src))
 					return
-				to_chat(user, span_notice("You install the capacitor."))
+				to_chat(user, span_notice("你安装了电容器。"))
 				playsound(src, 'sound/items/screwdriver2.ogg', 50, FALSE)
 				capacitor = W
 				log_message("[W] installed", LOG_MECHA)
 				update_part_values()
 			else
-				to_chat(user, span_warning("There's already a capacitor installed!"))
+				to_chat(user, span_warning("已经安装了电容器！"))
 		return
 
 	if(istype(W, /obj/item/mecha_parts))
@@ -282,22 +282,22 @@
 	. = TRUE
 	if(construction_state == MECHA_SECURE_BOLTS)
 		construction_state = MECHA_LOOSE_BOLTS
-		to_chat(user, span_notice("You undo the securing bolts."))
+		to_chat(user, span_notice("你松开了固定螺栓。"))
 		return
 	if(construction_state == MECHA_LOOSE_BOLTS)
 		construction_state = MECHA_SECURE_BOLTS
-		to_chat(user, span_notice("You tighten the securing bolts."))
+		to_chat(user, span_notice("你拧紧了固定螺栓。"))
 
 /obj/vehicle/sealed/mecha/crowbar_act(mob/living/user, obj/item/I)
 	..()
 	. = TRUE
 	if(construction_state == MECHA_LOOSE_BOLTS)
 		construction_state = MECHA_OPEN_HATCH
-		to_chat(user, span_notice("You open the hatch to the power unit."))
+		to_chat(user, span_notice("你打开了动力单元的舱门。"))
 		return
 	if(construction_state == MECHA_OPEN_HATCH)
 		construction_state = MECHA_LOOSE_BOLTS
-		to_chat(user, span_notice("You close the hatch to the power unit."))
+		to_chat(user, span_notice("你关上了动力单元的舱门。"))
 
 /obj/vehicle/sealed/mecha/welder_act(mob/living/user, obj/item/I)
 	return welder_repair_act(user, I, 100, 4 SECONDS, 0, SKILL_ENGINEER_ENGI, 2, 4 SECONDS)
@@ -329,7 +329,7 @@
 /obj/vehicle/sealed/mecha/proc/ammo_resupply(obj/item/mecha_ammo/reload_box, mob/user,fail_chat_override = FALSE)
 	if(!reload_box.rounds)
 		if(!fail_chat_override)
-			to_chat(user, span_warning("This box of ammo is empty!"))
+			to_chat(user, span_warning("这个弹药箱是空的！"))
 		return FALSE
 	var/found_gun
 	for(var/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/gun in flat_equipment)
@@ -366,7 +366,7 @@
 
 	if(!fail_chat_override)
 		if(found_gun)
-			to_chat(user, span_notice("You can't fit any more ammo of this type!"))
+			to_chat(user, span_notice("这种类型的弹药已经装不下了！"))
 		else
-			to_chat(user, span_notice("None of the equipment on this exosuit can use this ammo!"))
+			to_chat(user, span_notice("这身外骨骼上的任何装备都无法使用这种弹药！"))
 	return FALSE

@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(stickyban)
-	name = "Sticky Ban"
+	name = "粘性封禁"
 	flags = SS_NO_FIRE
 
 	var/list/cache = list()

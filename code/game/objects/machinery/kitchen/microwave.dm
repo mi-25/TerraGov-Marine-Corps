@@ -1,6 +1,6 @@
 
 /obj/machinery/microwave
-	name = "Microwave"
+	name = "微波炉"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "mw"
 	layer = GIB_LAYER
@@ -52,36 +52,36 @@
 		return
 
 	if(broken == 2 && isscrewdriver(I))
-		balloon_alert_to_viewers("fixing the microwave...")
+		balloon_alert_to_viewers("正在修理微波炉...")
 
 		if(!do_after(user,20, NONE, src, BUSY_ICON_BUILD))
 			return TRUE
 
-		balloon_alert_to_viewers("partially fixed")
+		balloon_alert_to_viewers("部分修复")
 		broken = 1
 
 	else if(broken == 1 && iswrench(I))
-		balloon_alert_to_viewers("fixing the microwave...")
+		balloon_alert_to_viewers("正在修理微波炉...")
 
 		if(!do_after(user,20, NONE, src, BUSY_ICON_BUILD))
 			return TRUE
 
-		balloon_alert_to_viewers("fully fixed")
+		balloon_alert_to_viewers("完全修复")
 		icon_state = "mw"
 		broken = 0
 		dirty = 0
 		ENABLE_BITFIELD(reagents.reagent_flags, OPENCONTAINER)
 
 	else if(broken > 2)
-		balloon_alert(user, "broken!")
+		balloon_alert(user, "已损坏！")
 		return TRUE
 
 	else if(dirty == 100)
 		if(!istype(I, /obj/item/reagent_containers/spray/cleaner))
-			balloon_alert(user, "too dirty!")
+			balloon_alert(user, "太脏了！")
 			return TRUE
 
-		balloon_alert_to_viewers("starts cleaning...")
+		balloon_alert_to_viewers("开始清理...")
 
 		if(!do_after(user,20, NONE, src, BUSY_ICON_BUILD))
 			return TRUE
@@ -93,18 +93,18 @@
 
 	else if(is_type_in_list(I, acceptable_items))
 		if(length(contents) >= max_n_of_items)
-			balloon_alert(user, "it's full!")
+			balloon_alert(user, "满了！")
 			return TRUE
 
 		if(istype(I, /obj/item/stack) && I:get_amount() > 1) // This is bad, but I can't think of how to change it
 			var/obj/item/stack/S = I
 			new S.type(src)
 			S.use(1)
-			balloon_alert(user, "added")
+			balloon_alert(user, "已添加")
 
 		else if(user.drop_held_item())
 			I.forceMove(src)
-			balloon_alert(user, "added")
+			balloon_alert(user, "已添加")
 
 	else if(istype(I,/obj/item/reagent_containers/glass) || \
 			istype(I,/obj/item/reagent_containers/food/drinks) || \
@@ -116,13 +116,13 @@
 		for(var/i in I.reagents.reagent_list)
 			var/datum/reagent/R = i
 			if(!(R.type in acceptable_reagents))
-				balloon_alert(user, "incompatible material!")
+				balloon_alert(user, "材料不兼容！")
 				return TRUE
 
 		return FALSE
 
 	else
-		balloon_alert(user, "can't cook anything with this!")
+		balloon_alert(user, "用这个什么都做不了！")
 
 	return TRUE
 
@@ -138,18 +138,18 @@
 	if(user.a_intent != INTENT_HARM)
 		return
 	if(user.grab_state <= GRAB_AGGRESSIVE)
-		to_chat(user, span_warning("You need a better grip to do that!"))
+		to_chat(user, span_warning("你需要握得更稳才能做到！"))
 		return
 	var/mob/living/grabbed_mob = grab.grabbed_thing
 	if(grabbed_mob.mob_size > MOB_SIZE_HUMAN)
-		to_chat(user, span_warning("They're too big to fit!"))
+		to_chat(user, span_warning("它们太大了，装不进去！"))
 		return
-	user.visible_message(span_danger("[user] starts to force [grabbed_mob] into [src]!"), span_notice("You start to force [grabbed_mob] into [src]!"))
+	user.visible_message(span_danger("[user]开始将[grabbed_mob]强行塞入[src]！"), span_notice("You start to force [grabbed_mob] into [src]!"))
 	if(!do_after(user, 3 SECONDS, NONE, src, BUSY_ICON_HOSTILE, extra_checks = CALLBACK(src, PROC_REF(microwave_victim), grabbed_mob, user)))
 		playsound(src.loc, 'sound/machines/ding.ogg', 25, 1)
 		return
 
-	user.visible_message(span_danger("[user] microwaves [grabbed_mob]!"), span_notice("You microwave [grabbed_mob]!"), "You hear sizzling.")
+	user.visible_message(span_danger("[user] 正在微波加热 [grabbed_mob]！"), span_notice("You microwave [grabbed_mob]!"), "You hear sizzling.")
 	log_combat(user, grabbed_mob, "microwaved")
 	playsound(src.loc, 'sound/machines/ding.ogg', 25, 1)
 	return TRUE
@@ -317,19 +317,19 @@
 	return 0
 
 /obj/machinery/microwave/proc/start()
-	src.balloon_alert_to_viewers("starting...")
+	src.balloon_alert_to_viewers("正在启动...")
 	src.operating = 1
 	src.icon_state = "mw1"
 	src.updateUsrDialog()
 
 /obj/machinery/microwave/proc/abort()
-	src.balloon_alert_to_viewers("aborted")
+	src.balloon_alert_to_viewers("已中止")
 	src.operating = 0 // Turn it off again aferwards
 	src.icon_state = "mw"
 	src.updateUsrDialog()
 
 /obj/machinery/microwave/proc/stop()
-	src.balloon_alert_to_viewers("complete")
+	src.balloon_alert_to_viewers("完成")
 	playsound(src.loc, 'sound/machines/ding.ogg', 25, 1)
 	src.operating = 0 // Turn it off again aferwards
 	src.icon_state = "mw"
@@ -341,7 +341,7 @@
 	if (src.reagents.total_volume)
 		src.dirty++
 	src.reagents.clear_reagents()
-	balloon_alert_to_viewers("contents cleared")
+	balloon_alert_to_viewers("内容已清空")
 	src.updateUsrDialog()
 
 /obj/machinery/microwave/proc/muck_start()
@@ -350,7 +350,7 @@
 
 /obj/machinery/microwave/proc/muck_finish()
 	playsound(src.loc, 'sound/machines/ding.ogg', 25, 1)
-	visible_message(span_warning("The microwave gets covered in muck!"))
+	visible_message(span_warning("微波炉被污物覆盖了！"))
 	dirty = 100 // Make it dirty so it can't be used util cleaned
 	DISABLE_BITFIELD(reagents.reagent_flags, OPENCONTAINER) //So you can't add condiments
 	icon_state = "mwbloody0" // Make it look dirty too
@@ -362,7 +362,7 @@
 	s.set_up(2, 1, src)
 	s.start()
 	icon_state = "mwb" // Make it look all busted up and shit
-	visible_message(span_warning("The microwave breaks!")) //Let them know they're stupid
+	visible_message(span_warning("微波炉坏了！")) //Let them know they're stupid
 	broken = 2 // Make it broken so it can't be used util fixed
 	DISABLE_BITFIELD(reagents.reagent_flags, OPENCONTAINER) //So you can't add condiments
 	operating = 0 // Turn it off again aferwards

@@ -1,6 +1,6 @@
 /obj/vehicle/ridden/bicycle
-	name = "bicycle"
-	desc = "Keep away from electricity."
+	name = "自行车"
+	desc = "远离电力。"
 	icon_state = "bicycle"
 
 /obj/vehicle/ridden/bicycle/Initialize(mapload)

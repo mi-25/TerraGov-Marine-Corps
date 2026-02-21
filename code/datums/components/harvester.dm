@@ -98,30 +98,30 @@
 		return
 
 	if(!isreagentcontainer(cont))
-		user.balloon_alert(user, "incompatible!")
+		user.balloon_alert(user, "不兼容！")
 		return
 
 	var/obj/item/reagent_containers/container = cont
 
 	if(!container.reagents.total_volume)
-		user.balloon_alert(user, "empty!")
+		user.balloon_alert(user, "空！")
 		return
 
 	if(length(container.reagents.reagent_list) > 1)
-		user.balloon_alert(user, "homogeneous mixture required!")
+		user.balloon_alert(user, "需要均匀混合物！")
 		return
 
 	var/datum/reagent/reagent_to_load = container.reagents.reagent_list[1].type
 
 	if(!loadable_reagents[reagent_to_load])
-		user.balloon_alert(user, "incompatible reagent—check description!")
+		user.balloon_alert(user, "不兼容的试剂——请检查描述！")
 		return
 
 	if(loaded_reagents[reagent_to_load] >= max_loadable_reagent_amount)
-		user.balloon_alert(user, "full!")
+		user.balloon_alert(user, "已满！")
 		return
 
-	user.balloon_alert(user, "filling up...")
+	user.balloon_alert(user, "正在填充...")
 	if(!do_after(user, 1 SECONDS, NONE, source, BUSY_ICON_BAR, null, PROGRESS_BRASS))
 		return
 
@@ -131,7 +131,7 @@
 	var/added_amount = min(container.reagents.total_volume, max_loadable_reagent_amount - loaded_reagents[reagent_to_load])
 	container.reagents.remove_reagent(reagent_to_load, added_amount)
 	loaded_reagents[reagent_to_load] += added_amount
-	user.balloon_alert(user, "[loaded_reagents[reagent_to_load]]u")
+	user.balloon_alert(user, "[loaded_reagents[reagent_to_load]]单位")
 	if(length(loaded_reagents) == 1)
 		update_selected_reagent(reagent_to_load)
 	if(istype(container, /obj/item/reagent_containers/pill))
@@ -144,21 +144,21 @@
 		return
 
 	if(!selected_reagent)
-		user.balloon_alert(user, "no reagent!")
+		user.balloon_alert(user, "没有试剂！")
 		return
 
 	var/use_amount = loadable_reagents[selected_reagent]
 
 	if(loaded_reagents[selected_reagent] < use_amount)
-		user.balloon_alert(user, "insufficient liquid!")
+		user.balloon_alert(user, "液体不足！")
 		return
 
 	if(user.do_actions)
 		return
 
-	to_chat(user, span_rose("You start filling up the small chambers along the blade's edge."))
+	to_chat(user, span_rose("你开始向刀刃边缘的小槽中注入液体。"))
 	if(!do_after(user, 2 SECONDS, IGNORE_USER_LOC_CHANGE, source, BUSY_ICON_BAR))
-		to_chat(user, span_rose("Due to the sudden movement, the safety mechanism siphons the substance back."))
+		to_chat(user, span_rose("由于突然移动，安全机制将物质抽回。"))
 		return
 
 	loaded_reagent = selected_reagent
@@ -171,7 +171,7 @@
 	user.update_inv_r_hand()
 	user.update_inv_l_hand()
 
-	user.balloon_alert(user, "loaded")
+	user.balloon_alert(user, "已装填")
 
 ///Updates the color of the overlay on top of the item sprite based on what chem is loaded in
 /datum/component/harvester/proc/update_loaded_color(datum/source, list/overlays_list)
@@ -237,7 +237,7 @@
 
 	if(!loaded_reagents[loaded_reagent])
 		update_selected_reagent(null)
-		user.balloon_alert(user, "[lowertext(loaded_reagent::name)]: empty")
+		user.balloon_alert(user, "[lowertext(loaded_reagent::name)]：空")
 	loaded_reagent = null
 
 	var/obj/item/item_parent = parent
@@ -257,7 +257,7 @@
 		return
 
 	if(target.stat == DEAD)
-		to_chat(user, span_rose("[target] is already dead."))
+		to_chat(user, span_rose("[target] 已经死亡。"))
 		return
 
 	if(!ishuman(target))
@@ -265,7 +265,7 @@
 	var/mob/living/carbon/carbon_target = target
 
 	if((carbon_target.species.species_flags & NO_CHEM_METABOLIZATION))
-		to_chat(user, span_rose("[target] Cannot process chemicals."))
+		to_chat(user, span_rose("[target] 无法处理化学物质。"))
 		return
 
 	to_chat(user, span_rose("You prepare to stab <b>[target != user ? "[target]" : "yourself"]</b>!"))
@@ -314,7 +314,7 @@
 	reagent_select_action.update_button_icon()
 
 /datum/action/harvester/reagent_select
-	name = "Select Reagent"
+	name = "选择试剂"
 	var/image/selected_reagent_overlay
 
 /datum/action/harvester/reagent_select/New(Target)

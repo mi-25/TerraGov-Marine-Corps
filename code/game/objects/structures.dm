@@ -75,7 +75,7 @@
 
 	if((atom_flags & ON_BORDER))
 		if(user_turf != destination_turf && user_turf != get_step(destination_turf, dir))
-			to_chat(user, span_warning("You need to be up against [src] to leap over."))
+			to_chat(user, span_warning("你需要紧贴[src]才能跃过。"))
 			return
 		if(user_turf == destination_turf)
 			destination_turf = get_step(destination_turf, dir) //we're moving from the objects turf to the one its facing
@@ -89,7 +89,7 @@
 			if(structure.allow_pass_flags & PASS_WALKOVER)
 				continue
 		if(object.density && (!(object.atom_flags & ON_BORDER) || object.dir & get_dir(src,user)))
-			to_chat(user, span_warning("There's \a [object.name] in the way."))
+			to_chat(user, span_warning("有\a [object.name]挡在路上。"))
 			return
 
 	for(var/obj/object in user_turf.contents)
@@ -98,7 +98,7 @@
 			if(structure.allow_pass_flags & PASS_WALKOVER)
 				continue
 		if(object.density && (object.atom_flags & ON_BORDER) && object.dir & get_dir(user, src))
-			to_chat(user, span_warning("There's \a [object.name] in the way."))
+			to_chat(user, span_warning("有\a [object.name]挡在路上。"))
 			return
 
 	return destination_turf
@@ -134,13 +134,13 @@
 			return //No spamming this on people.
 
 		M.Paralyze(2 SECONDS)
-		to_chat(M, span_warning("You topple as \the [src] moves under you!"))
+		to_chat(M, span_warning("你被脚下的\the [src]绊倒了！"))
 
 		if(prob(25))
 
 			var/damage = rand(15,30)
 			if(!ishuman(M))
-				to_chat(M, span_danger("You land heavily!"))
+				to_chat(M, span_danger("你重重地摔在地上！"))
 				M.apply_damage(damage, BRUTE)
 				UPDATEHEALTH(M)
 				return
@@ -161,10 +161,10 @@
 					affecting = H.get_limb("head")
 
 			if(affecting)
-				to_chat(M, span_danger("You land heavily on your [affecting.display_name]!"))
+				to_chat(M, span_danger("你重重地摔在了你的[affecting.display_name]上！"))
 				affecting.take_damage_limb(damage)
 			else
-				to_chat(H, span_danger("You land heavily!"))
+				to_chat(H, span_danger("你重重地摔在地上！"))
 				H.apply_damage(damage, BRUTE)
 
 			UPDATEHEALTH(H)
@@ -197,7 +197,7 @@
 
 /// For when a mob comes flying through the window, smash it and damage the mob
 /obj/structure/proc/smash_and_injure(mob/living/flying_mob, atom/oldloc, direction)
-	flying_mob.balloon_alert_to_viewers("smashed through!")
+	flying_mob.balloon_alert_to_viewers("砸穿了！")
 	flying_mob.apply_damage(damage = rand(5, 15), damagetype = BRUTE)
 	new /obj/effect/decal/cleanable/glass(get_step(flying_mob, flying_mob.dir))
 	deconstruct(disassembled = FALSE)

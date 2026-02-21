@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/xeno/boiler_gas
-	name = "glob of neurotoxin"
+	name = "神经毒素球"
 	icon_state = "boiler_neurotoxin"
 	ping = "ping_x"
 	///Key used for icon stuff during bombard ammo selection.
@@ -119,7 +119,7 @@
 	T.visible_message(danger_message)
 
 /datum/ammo/xeno/boiler_gas/corrosive
-	name = "glob of acid"
+	name = "酸液团"
 	icon_state = "boiler_corrosive"
 	sound_hit = SFX_ACID_HIT
 	sound_bounce = SFX_ACID_BOUNCE
@@ -152,7 +152,7 @@
 	smoke_system = new /datum/effect_system/smoke_spread/xeno/acid/opaque()
 
 /datum/ammo/xeno/boiler_gas/ozelomelyn
-	name = "glob of ozelomelyn"
+	name = "一团奥泽洛梅林"
 	icon_state = "boiler_ozelomelyn"
 	sound_hit = SFX_ACID_HIT
 	sound_bounce = SFX_ACID_BOUNCE
@@ -167,7 +167,7 @@
 	smoke_system = new /datum/effect_system/smoke_spread/xeno/ozelomelyn()
 
 /datum/ammo/xeno/boiler_gas/hemodile
-	name = "glob of hemodile"
+	name = "一团血凝剂"
 	icon_state = "boiler_hemodile"
 	sound_hit = SFX_ACID_HIT
 	sound_bounce = SFX_ACID_BOUNCE
@@ -182,7 +182,7 @@
 	smoke_system = new /datum/effect_system/smoke_spread/xeno/hemodile()
 
 /datum/ammo/xeno/boiler_gas/sanguinal
-	name = "glob of sanguinal"
+	name = "血块"
 	icon_state = "boiler_sanguinal"
 	sound_hit = SFX_ACID_HIT
 	sound_bounce = SFX_ACID_BOUNCE
@@ -197,7 +197,7 @@
 	smoke_system = new /datum/effect_system/smoke_spread/xeno/sanguinal()
 
 /datum/ammo/xeno/boiler_gas/fast
-	name = "fast glob of neurotoxin"
+	name = "快速神经毒素球"
 	icon_key = BOILER_GLOB_NEUROTOXIN_FAST
 	select_text = "We will now fire fast neurotoxic gas. This is nonlethal."
 	fixed_spread_range = 2
@@ -207,7 +207,7 @@
 	smoke_system = new /datum/effect_system/smoke_spread/xeno/neuro/light/fast()
 
 /datum/ammo/xeno/boiler_gas/corrosive/fast
-	name = "fast glob of acid"
+	name = "快速酸液团"
 	icon_key = BOILER_GLOB_CORROSIVE_FAST
 	select_text = "We will now fire fast corrosive acid. This is lethal!"
 	fixed_spread_range = 2
@@ -217,7 +217,7 @@
 	smoke_system = new /datum/effect_system/smoke_spread/xeno/acid/fast()
 
 /datum/ammo/xeno/boiler_gas/lance
-	name = "pressurized glob of gas"
+	name = "加压气体团"
 	icon_key = BOILER_GLOB_NEUROTOXIN_LANCE
 	select_text = "We will now fire a pressurized neurotoxic lance. This is barely nonlethal."
 	///As opposed to normal globs, this will pass by the target tile if they hit nothing.
@@ -237,7 +237,7 @@
 	shell_speed = 1.5
 
 /datum/ammo/xeno/boiler_gas/corrosive/lance
-	name = "pressurized glob of acid"
+	name = "加压酸液球"
 	icon_key = BOILER_GLOB_CORROSIVE_LANCE
 	select_text = "We will now fire a pressurized corrosive lance. This lethal!"
 	///As opposed to normal globs, this will pass by the target tile if they hit nothing.

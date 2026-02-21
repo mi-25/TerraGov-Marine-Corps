@@ -152,7 +152,7 @@ GLOBAL_LIST_INIT(ghost_forms, list("Default" = GHOST_DEFAULT_FORM, "Ghost Ian 1"
 	prefs.ghost_form = GLOB.ghost_forms[new_form]
 	prefs.save_preferences()
 
-	to_chat(src, span_notice("You will use the [new_form] ghost form when starting as an observer."))
+	to_chat(src, span_notice("你将使用[new_form]幽灵形态作为观察者开始游戏。"))
 
 	if(!isobserver(mob))
 		return
@@ -171,7 +171,7 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE, GHOST_ORBIT_TRIANGLE, GH
 	prefs.ghost_orbit = new_orbit
 	prefs.save_preferences()
 
-	to_chat(src, span_notice("You will use the [new_orbit] as a ghost."))
+	to_chat(src, span_notice("你将作为幽灵使用[new_orbit]。"))
 
 	if(!isobserver(mob))
 		return
@@ -190,7 +190,7 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 	prefs.ghost_others = new_others
 	prefs.save_preferences()
 
-	to_chat(src, span_notice("You will now see people who started as an observer as [new_others]."))
+	to_chat(src, span_notice("你现在会看到以观察者身份加入的玩家显示为[new_others]。"))
 
 	if(!isobserver(mob))
 		return

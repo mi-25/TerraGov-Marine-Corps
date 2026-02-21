@@ -74,7 +74,7 @@
 			return list(MECHA_R_BACK, MECHA_L_BACK, MECH_GREY_LEGS, MECH_GREY_TORSO, MECH_GREY_HEAD, MECH_GREY_R_ARM, MECH_GREY_L_ARM, MECHA_L_ARM, MECHA_R_ARM)
 
 /obj/vehicle/sealed/mecha/combat/greyscale
-	name = "Should not be visible"
+	name = "不应可见"
 	icon = 'icons/blanks/32x32.dmi'
 	base_icon_state = "nothing"
 	layer = ABOVE_ALL_MOB_LAYER
@@ -203,10 +203,10 @@
 
 /obj/vehicle/sealed/mecha/combat/greyscale/mob_try_enter(mob/entering_mob, mob/user, loc_override = FALSE)
 	if(is_wreck)
-		balloon_alert(entering_mob, "Destroyed")
+		balloon_alert(entering_mob, "已摧毁")
 		return FALSE
 	if((mecha_flags & MECHA_SKILL_LOCKED) && entering_mob.skills.getRating(SKILL_MECH) < SKILL_MECH_TRAINED)
-		balloon_alert(entering_mob, "You don't know how to pilot this")
+		balloon_alert(entering_mob, "你不会驾驶这个")
 		return FALSE
 	return ..()
 
@@ -284,11 +284,11 @@
 	if(last_move_dir == direction && last_mousedown_time + double_tap_timing > world.time)
 		if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_MECHA_DASH))
 			for(var/mob/occupant AS in return_drivers())
-				balloon_alert(occupant, "Dash cooldown ([(S_TIMER_COOLDOWN_TIMELEFT(src, COOLDOWN_MECHA_DASH) / 10)]s)")
+				balloon_alert(occupant, "冲刺冷却（[(S_TIMER_COOLDOWN_TIMELEFT(src, COOLDOWN_MECHA_DASH) / 10)]秒）")
 			return
 		if(!use_power(dash_power_consumption))
 			for(var/mob/occupant AS in return_drivers())
-				balloon_alert(occupant, "Not enough for dash")
+				balloon_alert(occupant, "冲刺能量不足")
 			return
 		S_TIMER_COOLDOWN_START(src, COOLDOWN_MECHA_DASH, dash_cooldown)
 		activate_dash(direction)
@@ -486,7 +486,7 @@
 	AddComponent(/datum/component/jump, _jump_duration = duration, _jump_cooldown = cooldown, _stamina_cost = cost, _jump_height = height, _jump_sound = sound, _jump_flags = flags, _jumper_allow_pass_flags = jump_pass_flags)
 
 /obj/vehicle/sealed/mecha/combat/greyscale/recon
-	name = "Recon Mecha"
+	name = "侦察机甲"
 	limbs = list(
 		MECH_GREY_TORSO = /datum/mech_limb/torso/recon,
 		MECH_GREY_HEAD = /datum/mech_limb/head/recon,
@@ -509,7 +509,7 @@
 	)
 
 /obj/vehicle/sealed/mecha/combat/greyscale/assault
-	name = "Assault Mecha"
+	name = "突击机甲"
 	limbs = list(
 		MECH_GREY_TORSO = /datum/mech_limb/torso/assault,
 		MECH_GREY_HEAD = /datum/mech_limb/head/assault,
@@ -532,7 +532,7 @@
 	)
 
 /obj/vehicle/sealed/mecha/combat/greyscale/vanguard
-	name = "Vanguard Mecha"
+	name = "先锋机甲"
 	limbs = list(
 		MECH_GREY_TORSO = /datum/mech_limb/torso/vanguard,
 		MECH_GREY_HEAD = /datum/mech_limb/head/vanguard,
@@ -548,7 +548,7 @@
 	facing_modifiers = list(VEHICLE_FRONT_ARMOUR = 0.5, VEHICLE_SIDE_ARMOUR = 1, VEHICLE_BACK_ARMOUR = 1.5)
 
 /obj/item/repairpack
-	name = "mech repairpack"
-	desc = "A mecha repair pack, consisting of various auto-extinguisher systems, materials and repair nano-scarabs."
+	name = "机甲维修包"
+	desc = "一套机甲维修包，包含多种自动灭火系统、材料和维修纳米甲虫。"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "armor_melee"

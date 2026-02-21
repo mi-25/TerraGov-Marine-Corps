@@ -11,7 +11,7 @@
 
 /datum/action/ability/activable/xeno/spray_acid/line/New(Target)
 	. = ..()
-	desc = "Spray a line of dangerous acid at your target up to [acid_spray_distance + 1] tiles away." // Check uses > therefore the actual distance is + 1
+	desc = "向你的目标喷射一道危险的酸液，最远可达[acid_spray_distance + 1]格。" // Check uses > therefore the actual distance is + 1
 
 /datum/action/ability/activable/xeno/spray_acid/line/use_ability(atom/A)
 	var/turf/target = get_turf(A)
@@ -108,7 +108,7 @@
 		sleep(0.2 SECONDS)
 
 /datum/action/ability/activable/xeno/spray_acid/line/on_cooldown_finish() //Give acid spray a proper cooldown notification
-	to_chat(owner, span_xenodanger("Our dermal pouches bloat with fresh acid; we can use acid spray again."))
+	to_chat(owner, span_xenodanger("我们的皮肤附包充满了新鲜酸液；我们可以再次使用酸液喷射了。"))
 	owner.playsound_local(owner, 'sound/voice/alien/drool2.ogg', 25, 0, 1)
 	return ..()
 
@@ -119,7 +119,7 @@
 	name = "Scatter Spit"
 	action_icon_state = "scatter_spit"
 	action_icon = 'icons/Xeno/actions/spitter.dmi'
-	desc = "Spits a spread of acid projectiles that splatter on the ground."
+	desc = "喷射一片酸液弹，在地面上溅射开来。"
 	ability_cost = 280
 	cooldown_duration = 5 SECONDS
 	keybinding_signals = list(
@@ -152,7 +152,7 @@
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "spitter_scatter_spits")
 
 /datum/action/ability/activable/xeno/scatter_spit/on_cooldown_finish()
-	to_chat(owner, span_xenodanger("Our auxiliary sacks fill to bursting; we can use scatter spit again."))
+	to_chat(owner, span_xenodanger("我们的副囊已充盈欲裂；可以再次使用散射吐息了。"))
 	owner.playsound_local(owner, 'sound/voice/alien/drool1.ogg', 25, 0, 1)
 	return ..()
 
@@ -186,7 +186,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	name = "Toss Grenade"
 	action_icon_state = "glob_grenade"
 	action_icon = 'icons/Xeno/actions/spitter.dmi'
-	desc = "Toss a biological grenade at your target. Has various effects depending on selection, right click to select which grenade to use. Stores up to 6 uses."
+	desc = "向你的目标投掷一枚生化手雷。根据选择产生不同效果，右键点击选择要使用的手雷类型。最多可储存6次使用次数。"
 	cooldown_duration = 2 SECONDS
 	ability_cost = 150
 	keybinding_signals = list(
@@ -246,11 +246,11 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	if(current_grenades <= 0)
 		// For balance reasons, no exchanging life for healing grenades. The reason: infinite healing grenades.
 		if(!health_loss_percentage_per_grenade || xeno_owner.selected_grenade == /obj/item/explosive/grenade/globadier/heal)
-			owner.balloon_alert(owner, "No grenades!")
+			owner.balloon_alert(owner, "不准用手雷！")
 			return fail_activate()
 		var/health_to_lose = xeno_owner.xeno_caste.max_health * health_loss_percentage_per_grenade;
 		if(xeno_owner.health_threshold_crit > xeno_owner.health - health_to_lose) // Hugbox to stop them from suiciding into critical.
-			owner.balloon_alert(owner, "Not enough health!")
+			owner.balloon_alert(owner, "生命值不足！")
 			return fail_activate()
 		xeno_owner.adjustBruteLoss(health_to_lose, TRUE)
 		current_grenades++
@@ -259,7 +259,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 		nade.det_time = max(0.5 SECONDS, nade.det_time + bonus_self_detonation_time)
 	nade.activate(owner)
 	nade.throw_at(target,GLOBADIER_GRENADE_THROW_RANGE,GLOBADIER_GRENADE_THROW_SPEED)
-	owner.visible_message(span_xenowarning("\The [owner] throws something towards \the [target]!"), \
+	owner.visible_message(span_xenowarning("\The [owner] 朝 \the [target] 扔出了什么东西！"), \
 	span_xenowarning("We throw a grenade towards \the [target]!"))
 	current_grenades--
 	timer = addtimer(CALLBACK(src, PROC_REF(regen_grenade)), grenade_cooldown, TIMER_UNIQUE|TIMER_STOPPABLE)
@@ -294,7 +294,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	if((current_grenades < max_grenades)) // Second if check as current_grenades has changed
 		timer = addtimer(CALLBACK(src, PROC_REF(regen_grenade)), grenade_cooldown, TIMER_UNIQUE|TIMER_STOPPABLE)
 		return
-	owner.balloon_alert(owner, "Max Grenades!")
+	owner.balloon_alert(owner, "最大手雷数量！")
 
 /// Handles selecting which grenade the xeno wants
 /datum/action/ability/activable/xeno/toss_grenade/proc/selectgrenade()
@@ -302,8 +302,8 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	if(!grenade_choice)
 		return
 	xeno_owner.selected_grenade = grenade_choice
-	to_chat(xeno_owner, span_info("Grenade Effects: " + grenade_choice.select_message))
-	to_chat(xeno_owner, span_info("Mine Effects: " + grenade_choice.mine_message))
+	to_chat(xeno_owner, span_info("手雷效果：" + grenade_choice.select_message))
+	to_chat(xeno_owner, span_info("地雷效果：" + grenade_choice.mine_message))
 
 // ***************************************
 // *********** Acid Grenade
@@ -311,7 +311,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 
 /obj/item/explosive/grenade/globadier
 	name = "acidic grenade"
-	desc = "A gross looking glob of acid"
+	desc = "一团恶心的酸液"
 	greyscale_colors = "#81ff92"
 	greyscale_config = /datum/greyscale_config/xenogrenade
 	det_time = 1 SECONDS
@@ -357,7 +357,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 
 /obj/item/explosive/grenade/globadier/incen
 	name = "melting grenade"
-	desc = "A swirling mix of lime and grape sparks"
+	desc = "一团青柠与葡萄色的火花旋涡"
 	greyscale_colors = "#9e1dd1"
 	det_time = 1.5 SECONDS
 	minetype = /obj/structure/xeno/acid_mine/incen_mine
@@ -375,7 +375,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 
 /obj/item/explosive/grenade/globadier/resin
 	name = "resin grenade"
-	desc = "A rapidly melting ball of xeno taffy"
+	desc = "一团正在快速熔化的异形太妃糖"
 	greyscale_colors = "#6808e6"
 	det_time = 1.5 SECONDS
 	minetype = /obj/structure/xeno/acid_mine/resin_mine
@@ -416,7 +416,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 
 /obj/item/explosive/grenade/globadier/gas
 	name = "gas grenade"
-	desc = "A smoking ball of acid"
+	desc = "一团冒烟的酸液球"
 	greyscale_colors = "#be340a"
 	det_time = 1.5 SECONDS
 	minetype = /obj/structure/xeno/acid_mine/neuro_mine
@@ -435,7 +435,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 
 /obj/item/explosive/grenade/globadier/heal
 	name = "healing grenade"
-	desc = "A shimmering orb of gelatin that glows with life."
+	desc = "一团闪烁着生命光芒的凝胶状球体。"
 	greyscale_colors = "#09ffde"
 	det_time = 4 SECONDS
 	minetype = /obj/structure/xeno/acid_mine/drain_mine
@@ -465,7 +465,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	name = "Place Mine"
 	action_icon_state = "acid_mine"
 	action_icon = 'icons/Xeno/actions/spitter.dmi'
-	desc = "Place an mine at your location. Its effects depend on your selected grenade"
+	desc = "在当前位置放置一枚地雷。其效果取决于你选择的手雷类型。"
 	cooldown_duration = 5 SECONDS
 	ability_cost = 150
 	///How many mines the ability can store at max
@@ -498,12 +498,12 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	var/turf/T = get_turf(owner)
 	if(!T || !T.is_weedable() || T.density)
 		if(!silent)
-			owner.balloon_alert(owner, "We can't do that here.")
+			owner.balloon_alert(owner, "这里不能这么做。")
 		return FALSE
 
 	if(!xeno_owner.loc_weeds_type)
 		if(!silent)
-			owner.balloon_alert(owner, "We must be on weeds!")
+			owner.balloon_alert(owner, "我们必须站在菌毯上！")
 		return FALSE
 
 	if(!T.check_alien_construction(owner, silent, /obj/structure/xeno/trap) || !T.check_disallow_alien_fortification(owner, silent))
@@ -547,7 +547,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 
 /datum/action/ability/xeno_action/acid_mine/action_activate()
 	if(current_charges <= 0)
-		owner.balloon_alert(owner, "No Mines!")
+		owner.balloon_alert(owner, "禁止布雷！")
 		return fail_activate()
 	var/turf/T = get_turf(owner)
 	new xeno_owner.selected_grenade.minetype(T)
@@ -577,7 +577,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 // ***************************************
 /datum/action/ability/xeno_action/acid_mine/gas_mine
 	name = "Gas Mine"
-	desc = "Place an gas mine at your location"
+	desc = "在你所在位置放置一枚气体地雷"
 	ability_cost = 200
 	max_charges = 3
 	current_charges = 3
@@ -590,7 +590,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 
 /datum/action/ability/xeno_action/acid_mine/gas_mine/action_activate()
 	if(current_charges <= 0)
-		owner.balloon_alert(owner, "No Mines!")
+		owner.balloon_alert(owner, "禁止布雷！")
 		return fail_activate()
 	var/turf/T = get_turf(owner)
 	new /obj/structure/xeno/acid_mine/gas_mine(T)
@@ -612,7 +612,7 @@ GLOBAL_LIST_INIT(globadier_images_list, list(
 	name = "Acid Rocket"
 	action_icon_state = "xadar"
 	action_icon = 'icons/Xeno/actions/spitter.dmi'
-	desc = "Fire an acid rocket, costing 30% of your current health and plasma, and dealing heavy damage where you aim it."
+	desc = "发射一枚酸液火箭，消耗你当前生命值和等离子体的30%，并对瞄准区域造成重创。"
 	cooldown_duration = 2 MINUTES
 	ability_cost = 200
 	keybinding_signals = list(

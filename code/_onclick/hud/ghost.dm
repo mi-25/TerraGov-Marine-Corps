@@ -6,7 +6,7 @@
 	flick(icon_state + "_anim", src)
 
 /atom/movable/screen/ghost/toggle_health_scan
-	name = "Toggle health scan"
+	name = "切换生命体征扫描"
 	icon_state = "scan_health"
 	base_icon_state = "scan_health"
 	screen_loc = ui_ghost_slot1
@@ -21,7 +21,7 @@
 	icon_state = "[base_icon_state][G.health_scan ? "_active" : ""]"
 
 /atom/movable/screen/ghost/follow_ghosts
-	name = "Follow"
+	name = "跟随"
 	icon_state = "follow_ghost"
 	screen_loc = ui_ghost_slot2
 
@@ -30,7 +30,7 @@
 	G.follow()
 
 /atom/movable/screen/ghost/teleport
-	name = "Teleport"
+	name = "传送"
 	icon_state = "teleport"
 	screen_loc = ui_ghost_slot4
 
@@ -39,7 +39,7 @@
 	G.teleport()
 
 /atom/movable/screen/ghost/zoom
-	name = "Toggle Zoom"
+	name = "切换缩放"
 	icon_state = "zoom_in"
 	base_icon_state = "zoom"
 	screen_loc = ui_ghost_slot5
@@ -72,7 +72,7 @@
 // 	G.follow_human()
 
 /atom/movable/screen/ghost/reenter_corpse
-	name = "Reenter corpse"
+	name = "重新进入尸体"
 	icon_state = "reenter_corpse"
 	screen_loc = ui_ghost_slot3
 

@@ -24,24 +24,24 @@
 	return SURGERY_CAN_USE
 
 /datum/surgery_step/cut_limb/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] is beginning to cut off [target]'s [affected.display_name] with \the [tool].") , \
+	user.visible_message(span_notice("[user] 正开始用 \the [tool] 切除 [target] 的 [affected.display_name]。") , \
 	span_notice("You are beginning to cut off [target]'s [affected.display_name] with \the [tool]."))
-	target.balloon_alert_to_viewers("Sawing...")
+	target.balloon_alert_to_viewers("锯切中...")
 	target.custom_pain("Your [affected.display_name] is being ripped apart!", 1)
 	..()
 
 /datum/surgery_step/cut_limb/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_notice("[user] cuts off [target]'s [affected.display_name] with \the [tool]."), \
+	user.visible_message(span_notice("[user]用\the [tool]切断了[target]的[affected.display_name]。"), \
 	span_notice("You cut off [target]'s [affected.display_name] with \the [tool]."))
-	target.balloon_alert_to_viewers("Success")
+	target.balloon_alert_to_viewers("成功")
 	affected.droplimb(1)
 	target.updatehealth()
 	return ..()
 
 /datum/surgery_step/generic/cut_limb/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/limb/affected)
-	user.visible_message(span_warning("[user]'s hand slips, sawing through the bone in [target]'s [affected.display_name] with \the [tool]!"), \
+	user.visible_message(span_warning("[user]的手一滑，用\the [tool]锯穿了[target]的[affected.display_name]骨头！"), \
 	span_warning("Your hand slips, sawing through the bone in [target]'s [affected.display_name] with \the [tool]!"))
-	target.balloon_alert_to_viewers("Slipped!")
+	target.balloon_alert_to_viewers("滑倒了！")
 	affected.createwound(CUT, 30)
 	affected.fracture()
 	affected.update_wounds()

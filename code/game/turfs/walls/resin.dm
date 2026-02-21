@@ -5,7 +5,7 @@
  */
 /turf/closed/wall/resin
 	name = RESIN_WALL
-	desc = "Weird slime solidified into a wall."
+	desc = "奇怪的粘液凝固成了一堵墙。"
 	icon = 'icons/obj/smooth_objects/resin-wall.dmi'
 	icon_state = "resin-wall-0"
 	walltype = "resin-wall"
@@ -78,8 +78,8 @@
 	return TRUE
 
 /turf/closed/wall/resin/thick
-	name = "thick resin wall"
-	desc = "Weird slime solidified into a thick wall."
+	name = "厚树脂墙"
+	desc = "奇怪的粘液凝固成了一堵厚墙。"
 	max_integrity = 300
 	icon_state = "thickresin0"
 	walltype = "thickresin"
@@ -90,8 +90,8 @@
 
 
 /turf/closed/wall/resin/membrane
-	name = "resin membrane"
-	desc = "Weird slime translucent enough to let light pass through."
+	name = "树脂膜"
+	desc = "一种奇怪的黏液，半透明到能让光线穿透。"
 	icon_state = "membrane0"
 	walltype = "membrane"
 	max_integrity = 120
@@ -108,8 +108,8 @@
 
 
 /turf/closed/wall/resin/membrane/thick
-	name = "thick resin membrane"
-	desc = "Weird thick slime just translucent enough to let light pass through."
+	name = "厚树脂膜"
+	desc = "奇怪的粘稠粘液，半透明到足以让光线透过。"
 	max_integrity = 240
 	icon_state = "thickmembrane0"
 	walltype = "thickmembrane"
@@ -135,21 +135,21 @@
 		SSresinshaping.quickbuild_points_by_hive[xeno_attacker.hivenumber]++
 		take_damage(max_integrity) // Ensure its destroyed
 		return
-	xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] starts tearing down \the [src]!"), \
+	xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] 开始撕毁 \the [src]！"), \
 	span_xenonotice("We start to tear down \the [src]."))
 	if(!do_after(xeno_attacker, 1 SECONDS, NONE, xeno_attacker, BUSY_ICON_GENERIC))
 		return
 	if(!istype(src)) // Prevent jumping to other turfs if do_after completes with the wall already gone
 		return
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] tears down \the [src]!"), \
+	xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] 撕毁了 \the [src]！"), \
 	span_xenonotice("We tear down \the [src]."))
 	playsound(src, SFX_ALIEN_RESIN_BREAK, 25)
 	take_damage(max_integrity) // Ensure its destroyed
 
 
 /turf/closed/wall/resin/attack_hand(mob/living/user)
-	to_chat(user, span_warning("You scrape ineffectively at \the [src]."))
+	to_chat(user, span_warning("你徒劳地刮擦着 \the [src]。"))
 	return TRUE
 
 /turf/closed/wall/resin/attackby(obj/item/I, mob/living/user, params)
@@ -249,23 +249,23 @@
 	max_integrity = 125
 
 /turf/closed/wall/resin/regenerating/special/bulletproof
-	name = "bulletproof resin wall"
-	desc = "Weird slime solidified into a wall. Looks shiny."
+	name = "防弹道树脂墙"
+	desc = "奇怪的粘液凝固成了一堵墙。看起来闪闪发光。"
 	max_upgradable_health = 250
 	soft_armor = list(MELEE = 0, BULLET = 110, LASER = 100, ENERGY = 100, BOMB = 20, BIO = 0, FIRE = 0, ACID = 0) //You aren't damaging this with bullets without alot of AP.
 	color = COLOR_WALL_BULLETPROOF
 
 /turf/closed/wall/resin/regenerating/special/fireproof
-	name = "fireproof resin wall"
-	desc = "Weird slime solidified into a wall. Very red."
+	name = "防火树脂墙"
+	desc = "奇怪的粘液凝固成了一堵墙。非常红。"
 	max_upgradable_health = 200
 	soft_armor = list(MELEE = 0, BULLET = 65, LASER = 75, ENERGY = 75, BOMB = 0, BIO = 0, FIRE = 200, ACID = 0)
 	color = COLOR_WALL_FIREPROOF
 	allow_pass_flags = NONE // To prevent fire from passing beyond it.
 
 /turf/closed/wall/resin/regenerating/special/hardy
-	name = "hardy resin wall"
-	desc = "Weird slime soldified into a wall. Looks sturdy."
+	name = "坚固树脂墙"
+	desc = "奇怪的粘液凝固成了一堵墙。看起来挺结实的。"
 	max_upgrade_per_tick = 12 //Upgrades faster, but if damaged at all it will be put on cooldown still to help against walling in combat.
 	soft_armor = list(MELEE = 80, BULLET = 30, LASER = 25, ENERGY = 75, BOMB = 80, BIO = 0, FIRE = 0, ACID = 0)
 	color = COLOR_WALL_HARDY

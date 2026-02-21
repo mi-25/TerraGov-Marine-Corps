@@ -1,6 +1,6 @@
 /obj/machinery/computer/som
-	name = "\improper SOM computer"
-	desc = "A fancy touch screen computer terminal."
+	name = "\improper 火星之子计算机"
+	desc = "一台精致的触摸屏计算机终端。"
 	density = TRUE
 	icon_state = "som_computer"
 	screen_overlay = "som_computer_emissive"
@@ -22,8 +22,8 @@
 		icon_state = "[initial(icon_state)]_on"
 
 /obj/machinery/computer/som_two
-	name = "\improper SOM console"
-	desc = "A computer console of some description."
+	name = "\improper 火星之子控制台"
+	desc = "某种计算机控制台。"
 	density = TRUE
 	icon_state = "som_console"
 	screen_overlay = "som_console_screen"

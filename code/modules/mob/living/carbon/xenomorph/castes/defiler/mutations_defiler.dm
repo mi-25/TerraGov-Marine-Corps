@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/panic_gas
 	name = "Panic Gas"
-	desc = "While you have more than 60/40/50% of your maximum plasma, getting staggered will consume that much plasma to release non-opaque gas of your last selected gas. This resets upon reaching maximum health."
+	desc = "当你的等离子体超过最大值的60/40/50%时，被击晕将消耗相应比例的等离子体，释放你最后选择的不透明气体。此效果在生命值回满时重置。"
 	/// For the first structure, the the percentage of maximum plasma that must be reached / consumed to trigger this effect.
 	var/percentage_initial = 0.7
 	/// For each structure, the percentage of maximum plasma that must be reached / consumed to trigger this effect.
@@ -64,7 +64,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/envenomed
 	name = "Envenomed"
-	desc = "All slashes against humans will consume 20 plasma and inject your selected reagent equal to 20/35/50% of a regular reagent slash. You no longer have the ability, Reagent Slash."
+	desc = "所有针对人类的斩击将消耗20点等离子体，并注入你选择的试剂，注入量相当于常规试剂斩击的20/35/50%。你不再拥有'试剂斩击'能力。"
 	/// For the first structure, the percentage of DEFILER_REAGENT_SLASH_INJECT_AMOUNT that will be injected upon slashing a carbon.
 	var/percentage_initial = 0.05
 	/// For each structure, the percentage of DEFILER_REAGENT_SLASH_INJECT_AMOUNT that will be injected upon slashing a carbon.
@@ -142,7 +142,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/wide_gas
 	name = "Wide Gas"
-	desc = "Emit Noxious Gas now emits non-opaque gas instead. The radius of the gas is increased by 0.7/1.3/1.9 tiles."
+	desc = "释放毒气现在会释放非不透明气体。气体半径增加0.7/1.3/1.9格。"
 	/// For each structure, the amount to increase the radius of the emitted gas from Emit Noxious Gas.
 	var/radius_initial = 0.1
 	/// For each structure, the amount to increase the radius of the emitted gas from Emit Noxious Gas.

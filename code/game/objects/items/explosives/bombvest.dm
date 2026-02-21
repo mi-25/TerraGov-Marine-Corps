@@ -1,6 +1,6 @@
 /obj/item/clothing/suit/storage/marine/boomvest
-	name = "tactical explosive vest"
-	desc = "Obviously someone just strapped a bomb to a marine harness and called it tactical. The light has been removed, and its switch used as the detonator.<br><span class='notice'>Control-Click to set a warcry.</span> <span class='warning'>This harness has no light, toggling it will detonate the vest! Riot shields prevent detonation of the tactical explosive vest!!</span>"
+	name = "战术炸药背心"
+	desc = "显然有人只是把炸弹绑在陆战队携行具上，就称之为战术装备。照明灯已被拆除，其开关被用作引爆器。<br><span class='notice'>按住Ctrl键点击可设置战吼。</span> <span class='warning'>此携行具没有照明灯，切换开关将引爆背心！防暴盾可防止战术爆炸背心引爆！！</span>"
 	icon_state = "boom_vest"
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0)
 	slowdown = 0
@@ -29,19 +29,19 @@
 /obj/item/clothing/suit/storage/marine/boomvest/attack_self(mob/user)
 	var/mob/living/carbon/human/activator = user
 	if(issynth(activator) && !CONFIG_GET(flag/allow_synthetic_gun_use))
-		balloon_alert(user, "against your programming!")
+		balloon_alert(user, "违背你的程序设定！")
 		return TRUE
 	if(user.alpha != 255)
-		balloon_alert(user, "disable your cloak!")
+		balloon_alert(user, "解除你的隐形！")
 		return TRUE
 	if(activator.wear_suit != src)
-		balloon_alert(user, "not wearing it!")
+		balloon_alert(user, "没穿着它！")
 		return FALSE
 	if(istype(activator.l_hand, /obj/item/weapon/shield/riot) || istype(activator.r_hand, /obj/item/weapon/shield/riot) || istype(activator.back, /obj/item/weapon/shield/riot))
-		balloon_alert(user, "drop your shield and wait!")
+		balloon_alert(user, "放下你的盾牌，等着！")
 		return FALSE
 	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_BOMBVEST_SHIELD_DROP))
-		balloon_alert(user, "dropped a shield too recently!")
+		balloon_alert(user, "放下盾牌的时间太短了！")
 		return FALSE
 	if(LAZYACCESS(user.do_actions, src))
 		return
@@ -71,7 +71,7 @@
 	var/new_bomb_message = stripped_input(user, "Select Warcry", "Warcry", null, 50)
 	var/filter_result = CAN_BYPASS_FILTER(user) ? null : is_ic_filtered_for_bombvests(new_bomb_message)
 	if(filter_result)
-		to_chat(user, span_info("This warcry is prohibited from IC chat."))
+		to_chat(user, span_info("此战吼禁止在角色扮演聊天中使用。"))
 		REPORT_CHAT_FILTER_TO_USER(src, filter_result)
 		log_filter("Bombvest", new_bomb_message, filter_result)
 		return
@@ -86,25 +86,25 @@
 		SSblackbox.record_feedback("tally", "passed_soft_ic_blocked_words", 1, lowertext(config.soft_ic_filter_regex.match))
 		log_filter("Soft IC (Passed)", new_bomb_message, filter_result)
 	bomb_message = new_bomb_message
-	to_chat(user, span_info("Warcry set to: \"[bomb_message]\"."))
+	to_chat(user, span_info("战吼设置为：'[bomb_message]'。"))
 
 //admin only
 /obj/item/clothing/suit/storage/marine/boomvest/ob_vest
-	name = "orbital bombardment vest"
-	desc = "This is your lieutenant speaking, I know exactly what those coordinates are for."
+	name = "轨道轰炸背心"
+	desc = "这里是你的副官在说话，我很清楚那些坐标是用来做什么的。"
 	detonate_time = 1 SECONDS
 
 /obj/item/clothing/suit/storage/marine/boomvest/ob_vest/attack_self(mob/user)
 	var/mob/living/carbon/human/activator = user
 	if(activator.wear_suit != src)
-		balloon_alert(user, "not wearing it!")
+		balloon_alert(user, "没穿着它！")
 		return FALSE
 	if(LAZYACCESS(user.do_actions, src))
 		return
 	if(!do_after(user, detonate_time, IGNORE_USER_LOC_CHANGE, src, BUSY_ICON_DANGER))
 		return FALSE
 	var/turf/target = get_turf(loc)
-	activator.say("I'M FIRING IT AS AN OB!!")
+	activator.say("我要把它当轨道轰炸发射！！")
 	message_admins("[activator] has detonated an Orbital Bombardment vest at [ADMIN_VERBOSEJMP(target)]")
 	log_game("[activator] has detonated an Orbital Bombardment vest at [AREACOORD(target)]")
 

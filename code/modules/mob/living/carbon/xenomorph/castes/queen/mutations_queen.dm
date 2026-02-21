@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/healthy_bulwark
 	name = "Healthy Bulwark"
-	desc = "Bulwark no longer grants armor. Bulwark now grants overheal of 60/80/100 for entering the affected area for the first time. This overheal is subtracted when leaving the affected area or when Bulwark ends."
+	desc = "壁垒不再提供护甲。壁垒现在为首次进入受影响区域的单位提供60/80/100点的过量治疗。当单位离开受影响区域或壁垒效果结束时，此过量治疗将被扣除。"
 	/// For the first structure, the amount of Overheal that Bulwark should be giving.
 	var/overheal_initial = 40
 	/// For each structure, the amount of Overheal that Bulwark should be giving.
@@ -86,7 +86,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/alternative_sting
 	name = "Alternative Sting"
-	desc = "Ozelomelyn Sting is replaced with Neurotoxin Sting. Each interval gives 10/20/30% more chemicals."
+	desc = "Ozelomelyn Sting 已被替换为 Neurotoxin Sting。每个间隔提供 10/20/30% 更多的化学物质。"
 	/// For each structure, the multiplier of Neurotoxin Sting's initial sting amount to add to the ability.
 	var/multiplier_per_structure = 0.1
 
@@ -139,7 +139,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/rallying_cry
 	name = "Rallying Cry"
-	desc = "Screech grant all xenomorphs within a 20-tile radius gain -0.3/-0.5/-0.7 speed for 4 seconds."
+	desc = "尖啸使20格范围内的所有异形获得-0.3/-0.5/-0.7速度，持续4秒。"
 	/// For the first structure, the amount to add to Screech's movement speed modifier.
 	var/movement_initial = -0.1
 	/// For each structure, the amount to add to Screech's movement speed modifier.

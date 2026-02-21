@@ -6,8 +6,8 @@
 */
 
 /obj/item/frame/table
-	name = "table parts"
-	desc = "A kit for a table, including a large, flat metal surface and four legs. Some assembly required."
+	name = "部件表"
+	desc = "一套桌子套件，包含一个大型平坦金属桌面和四条桌腿。需要自行组装。"
 	gender = PLURAL
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "table_parts"
@@ -36,11 +36,11 @@
 	else if(istype(I, /obj/item/stack/rods))
 		var/obj/item/stack/rods/R = I
 		if(!R.use(4))
-			to_chat(user, span_warning("You need at least four rods to reinforce [src]."))
+			to_chat(user, span_warning("需要至少四根钢筋来加固[src]。"))
 			return
 
 		new /obj/item/frame/table/reinforced(table_turf)
-		to_chat(user, span_notice("You reinforce [src]."))
+		to_chat(user, span_notice("你加固了[src]。"))
 		user.temporarilyRemoveItemFromInventory(src)
 		qdel(src)
 
@@ -48,21 +48,21 @@
 		var/obj/item/stack/sheet/wood/S = I
 
 		if(!S.use(2))
-			to_chat(user, span_warning("You need at least two wood sheets to swap the metal parts of [src]."))
+			to_chat(user, span_warning("你需要至少两块木板才能更换[src]的金属部件。"))
 			return
 
 		new /obj/item/frame/table/wood(table_turf)
 		new /obj/item/stack/sheet/metal(table_turf)
-		to_chat(user, span_notice("You replace the metal parts of [src]."))
+		to_chat(user, span_notice("你更换了[src]的金属部件。"))
 		user.temporarilyRemoveItemFromInventory(src)
 		qdel(src)
 
 /obj/item/frame/table/attack_self(mob/user)
 	if(locate(/obj/structure/table) in get_turf(user))
-		to_chat(user, span_warning("There is another table built in here already."))
+		to_chat(user, span_warning("这里已经建好了另一张桌子。"))
 		return
 	if(istype(get_area(loc), /area/shuttle))  //HANGAR/SHUTTLE BUILDING
-		to_chat(user, span_warning("No. This area is needed for the dropship."))
+		to_chat(user, span_warning("不行。这片区域是给运输机用的。"))
 		return
 
 	new table_type(user.loc)
@@ -88,8 +88,8 @@
 */
 
 /obj/item/frame/table/reinforced
-	name = "reinforced table parts"
-	desc = "A kit for a table, including a large, flat metal surface and four legs. This kit has side panels. Some assembly required."
+	name = "加固桌板"
+	desc = "一套桌子组件，包含一块大型平坦金属面板和四条桌腿。此套件包含侧板。需要自行组装。"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "reinf_tableparts"
 	table_type = /obj/structure/table/reinforced
@@ -100,8 +100,8 @@
 */
 
 /obj/item/frame/table/wood
-	name = "wooden table parts"
-	desc = "A kit for a table, including a large, flat wooden surface and four legs. Some assembly required."
+	name = "木制桌板"
+	desc = "一套桌子组件，包含一块大型平坦木质桌面和四条桌腿。需要自行组装。"
 	icon_state = "wood_tableparts"
 	atom_flags = null
 	table_type = /obj/structure/table/wood
@@ -117,7 +117,7 @@
 		if(!C.use(1))
 			return
 
-		to_chat(user, span_notice("You put a layer of carpet on [src]."))
+		to_chat(user, span_notice("你在[src]上铺了一层地毯。"))
 		new /obj/item/frame/table/gambling(get_turf(src))
 		qdel(src)
 
@@ -132,8 +132,8 @@
 */
 
 /obj/item/frame/table/gambling
-	name = "gamble table parts"
-	desc = "A kit for a table, including a large, flat wooden and carpet surface and four legs. Some assembly required."
+	name = "赌桌零件"
+	desc = "一套桌子套件，包含一个大型的木质和地毯平面以及四条桌腿。需要自行组装。"
 	icon_state = "gamble_tableparts"
 	atom_flags = null
 	table_type = /obj/structure/table/wood/gambling
@@ -145,7 +145,7 @@
 		return
 
 	if(iscrowbar(I))
-		to_chat(user, span_notice("You pry the carpet out of [src]."))
+		to_chat(user, span_notice("你把地毯从[src]里撬了出来。"))
 		new /obj/item/stack/tile/carpet(loc)
 		new /obj/item/frame/table/wood(loc)
 		qdel(src)
@@ -160,8 +160,8 @@
 */
 
 /obj/item/frame/rack
-	name = "rack parts"
-	desc = "A kit for a storage rack with multiple metal shelves. Relatively cheap, useful for mass storage. Some assembly required."
+	name = "机架零件"
+	desc = "一个带有多个金属搁板的储物架套件。价格相对便宜，适用于大规模存储。需要自行组装。"
 	icon = 'icons/obj/items/items.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/equipment/engineering_left.dmi',
@@ -183,11 +183,11 @@
 /obj/item/frame/rack/attack_self(mob/user as mob)
 
 	if(locate(/obj/structure/table) in user.loc || locate(/obj/structure/barricade) in user.loc)
-		to_chat(user, span_warning("There is already a structure here."))
+		to_chat(user, span_warning("这里已经有建筑了。"))
 		return
 
 	if(locate(/obj/structure/rack) in user.loc)
-		to_chat(user, span_warning("There already is a rack here."))
+		to_chat(user, span_warning("这里已经有一个枪架了。"))
 		return
 
 	new /obj/structure/rack(user.loc)

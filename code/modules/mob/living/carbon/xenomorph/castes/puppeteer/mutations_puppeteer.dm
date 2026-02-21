@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/flesh_for_life
 	name = "Flesh For Life"
-	desc = "If damage taken would put you into critical, lose 1.5/1.25/1x amount of plasma instead."
+	desc = "若所受伤害将使你进入濒危状态，则消耗1.5/1.25/1倍量的等离子体作为替代。"
 	/// For the first structure, the amount of plasma to consume for each point of damage.
 	var/plasma_per_damage_initial = 1.75
 	/// For each structure, the amount of plasma to consume for each point of damage.
@@ -44,7 +44,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/suffocating_presence
 	name = "Suffocating Presence"
-	desc = "Dreadful Presence will inflict a temporary effect that deals 4/6/8 stamina damage every second instead."
+	desc = "恐怖威压将施加一个临时效果，改为每秒造成4/6/8点耐力伤害。"
 	/// For the first structure, the amount of stamina damage that Dreadful Presence should be doing per second.
 	var/damage_initial = 2
 	/// For each structure, the amount of stamina damage that Dreadful Presence should be doing per second.
@@ -85,7 +85,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/shifting_costs
 	name = "Shifting Costs"
-	desc = "Stitch Puppet's cost is 20% of its original cost. Bestow Blessing costs 40/30/20% more."
+	desc = "缝合傀儡的成本是其原始成本的20%。赐福祝福的消耗增加40/30/20%。"
 	/// For the first structure, the multiplier to add as Stitch Puppet's initial ability cost to its current cost.
 	var/puppet_multiplier_initial = -0.8
 	/// For the first structure, the multiplier to add as Bestow Blessings' initial ability cost to its current cost.

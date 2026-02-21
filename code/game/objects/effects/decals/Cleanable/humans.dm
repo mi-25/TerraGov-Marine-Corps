@@ -1,8 +1,8 @@
 #define DRYING_TIME 5 MINUTES
 
 /obj/effect/decal/cleanable/blood
-	name = "blood"
-	desc = "It's thick and gooey. Perhaps it's the chef's cooking?"
+	name = "血液"
+	desc = "它又浓又黏。也许是厨师的杰作？"
 	gender = PLURAL
 	density = FALSE
 	anchored = TRUE
@@ -82,8 +82,8 @@
 	amount--
 
 /obj/effect/decal/cleanable/blood/proc/dry()
-		name = "dried [src.name]"
-		desc = "It's dry and crusty. Someone is not doing their job."
+		name = "干燥的[src.name]"
+		desc = "它又干又硬。有人没好好干活。"
 		color = adjust_brightness(color, -50)
 		amount = 0
 
@@ -101,7 +101,7 @@
 
 	var/taken = rand(1,amount)
 	amount -= taken
-	to_chat(H, span_notice("You get some of \the [src] on your hands."))
+	to_chat(H, span_notice("你的手上沾到了一些\the [src]。"))
 
 	H.add_blood(basecolor)
 	H.bloody_hands += taken
@@ -114,8 +114,8 @@
 	amount = 2
 
 /obj/effect/decal/cleanable/blood/drip
-	name = "drips of blood"
-	desc = "Some small drips of blood."
+	name = "血滴"
+	desc = "一些细小的血滴。"
 	gender = PLURAL
 	icon = 'icons/effects/drip.dmi'
 	icon_state = "1"
@@ -127,8 +127,8 @@
 	icon_state = "gib6"
 
 /obj/effect/decal/cleanable/blood/drip/tracking_fluid
-	name = "tracking fluid"
-	desc = "Tracking fluid from a tracking round."
+	name = "追踪液"
+	desc = "追踪弹的追踪液。"
 	basecolor = "#00FFFF"
 	amount = 1
 
@@ -139,15 +139,15 @@
 	. += emissive_appearance(icon, icon_state, src, reset_transform = FALSE)
 
 /obj/effect/decal/cleanable/blood/drip/tracking_fluid/dry()
-	name = "dried [name]"
-	desc = "Tracking fluid from a tracking round. It appears to have lost its color."
+	name = "干燥的[name]"
+	desc = "追踪弹的追踪液。看起来已经褪色了。"
 	color = adjust_brightness(color, -75)
 	amount = 0
 	update_appearance(UPDATE_ICON)
 
 /obj/effect/decal/cleanable/blood/writing
 	icon_state = "tracks"
-	desc = "It looks like a writing in blood."
+	desc = "看起来像是用血写成的。"
 	gender = NEUTER
 	random_icon_states = list("writing1","writing2","writing3","writing4","writing5")
 	amount = 0
@@ -167,8 +167,8 @@
 	. += "It reads: <font color='[basecolor]'>\"[message]\"<font>"
 
 /obj/effect/decal/cleanable/blood/gibs
-	name = "gibs"
-	desc = "They look bloody and gruesome."
+	name = "碎尸"
+	desc = "它们看起来血腥而恐怖。"
 	gender = PLURAL
 	density = FALSE
 	anchored = TRUE
@@ -226,8 +226,8 @@
 
 
 /obj/effect/decal/cleanable/mucus
-	name = "mucus"
-	desc = "Disgusting mucus."
+	name = "粘液"
+	desc = "恶心的粘液。"
 	gender = PLURAL
 	density = FALSE
 	anchored = TRUE

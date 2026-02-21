@@ -3,7 +3,7 @@
 //////////////////////////Poison stuff///////////////////////
 
 /datum/reagent/toxin
-	name = "Toxin"
+	name = "Toxin-毒素"
 	description = "A toxic chemical."
 	reagent_state = LIQUID
 	color = COLOR_TOXIN_TOXIN
@@ -22,14 +22,14 @@
 /datum/reagent/toxin/scannable
 
 /datum/reagent/toxin/hptoxin
-	name = "Toxin"
+	name = "Toxin-毒素"
 	description = "A toxic chemical."
 	custom_metabolism = REAGENTS_METABOLISM * 5
 	toxpwr = 1
 	taste_description = "alchemy" //just anti-pwr-game stuff, no sci-fi or anything
 
 /datum/reagent/toxin/sdtoxin
-	name = "Toxin"
+	name = "Toxin-毒素"
 	description = "A toxic chemical."
 	custom_metabolism = REAGENTS_METABOLISM * 5
 	toxpwr = 0
@@ -41,14 +41,14 @@
 
 
 /datum/reagent/toxin/amatoxin
-	name = "Amatoxin"
+	name = "Amatoxin-阿马毒素"
 	description = "A powerful poison derived from certain species of mushroom."
 	color = COLOR_TOXIN_AMATOXIN
 	toxpwr = 1
 	taste_description = "mushrooms"
 
 /datum/reagent/toxin/mutagen
-	name = "Unstable mutagen"
+	name = "Unstable mutagen-不稳定诱变剂"
 	description = "Might cause unpredictable mutations. Keep away from children."
 	color = COLOR_TOXIN_MUTAGEN
 	toxpwr = 0
@@ -60,7 +60,7 @@
 	return ..()
 
 /datum/reagent/toxin/phoron
-	name = "Phoron"
+	name = "Phoron-等离子体"
 	description = "Phoron in its liquid form."
 	color = COLOR_TOXIN_PHORON
 	toxpwr = 3
@@ -70,7 +70,7 @@
 	return ..()
 
 /datum/reagent/toxin/lexorin
-	name = "Lexorin"
+	name = "Lexorin-莱克索林"
 	description = "Lexorin temporarily stops respiration. Causes tissue damage."
 	color = COLOR_TOXIN_LEXORIN
 	toxpwr = 0
@@ -93,7 +93,7 @@
 	L.apply_damages(1, 0, 1)
 
 /datum/reagent/toxin/cyanide //Fast and Lethal
-	name = "Cyanide"
+	name = "Cyanide-氰化物"
 	description = "A highly toxic chemical."
 	color = COLOR_TOXIN_CYANIDE
 	toxpwr = 3
@@ -106,7 +106,7 @@
 	return ..()
 
 /datum/reagent/toxin/minttoxin
-	name = "Mint Toxin"
+	name = "Mint Toxin-薄荷毒素"
 	description = "Useful for dealing with undesirable customers."
 	color = COLOR_TOXIN_MINTTOXIN
 	toxpwr = 0
@@ -114,14 +114,14 @@
 	reagent_ui_priority = REAGENT_UI_MUNDANE // not currently implimented, so it's inert
 
 /datum/reagent/toxin/carpotoxin
-	name = "Carpotoxin"
+	name = "Carpotoxin-鲤鱼毒素"
 	description = "A deadly neurotoxin produced by the dreaded space carp."
 	color = COLOR_TOXIN_CARPOTOXIN
 	toxpwr = 2
 	taste_description = "fish"
 
 /datum/reagent/toxin/huskpowder
-	name = "Zombie Powder"
+	name = "Zombie Powder-僵尸粉"
 	description = "A strong neurotoxin that puts the subject into a death-like state."
 	reagent_state = SOLID
 	color = COLOR_TOXIN_HUSKPOWDER
@@ -143,7 +143,7 @@
 	return ..()
 
 /datum/reagent/toxin/mindbreaker
-	name = "Mindbreaker Toxin"
+	name = "Mindbreaker Toxin-精神破坏毒素"
 	description = "A powerful hallucinogen, it can cause fatal effects in users."
 	color = COLOR_TOXIN_MINDBREAKER
 	toxpwr = 0
@@ -171,23 +171,23 @@
 
 //Reagents used for plant fertilizers.
 /datum/reagent/toxin/fertilizer
-	name = "fertilizer"
+	name = "fertilizer-肥料"
 	description = "A chemical mix good for growing plants with."
 	toxpwr = 0.2 //It's not THAT poisonous.
 	color = COLOR_TOXIN_FERTILIZER
 	reagent_ui_priority = REAGENT_UI_SPACEA // current toxpwr formula makes it do 0.1 toxin, which will be healed by a healthy organ
 
 /datum/reagent/toxin/fertilizer/eznutrient
-	name = "EZ Nutrient"
+	name = "EZ Nutrient-EZ营养剂"
 
 /datum/reagent/toxin/fertilizer/left4zed
-	name = "Left-4-Zed"
+	name = "左4-僵尸"
 
 /datum/reagent/toxin/fertilizer/robustharvest
-	name = "Robust Harvest"
+	name = "Robust Harvest-强力收割"
 
 /datum/reagent/toxin/plantbgone
-	name = "Plant-B-Gone"
+	name = "Plant-B-Gone-除草剂"
 	description = "A harmful toxic mixture to kill plantlife. Do not ingest!"
 	color = COLOR_TOXIN_PLANTBGONE
 	toxpwr = 1
@@ -215,7 +215,7 @@
 			tray.update_icon()
 
 /datum/reagent/toxin/sleeptoxin
-	name = "Soporific"
+	name = "Soporific-催眠剂"
 	description = "An effective hypnotic used to treat insomnia."
 	color = COLOR_TOXIN_SLEEPTOXIN
 	toxpwr = 0
@@ -249,7 +249,7 @@
 	L.apply_damages(0, 0, 1, 1)
 
 /datum/reagent/toxin/chloralhydrate
-	name = "Chloral Hydrate"
+	name = "Chloral Hydrate-水合氯醛"
 	description = "A powerful sedative."
 	reagent_state = SOLID
 	color = COLOR_TOXIN_CHLORALHYDRATE
@@ -275,7 +275,7 @@
 	L.apply_damages(0, 0, 0, 2)
 
 /datum/reagent/toxin/potassium_chloride
-	name = "Potassium Chloride"
+	name = "Potassium Chloride-氯化钾"
 	description = "A delicious salt that stops the heart when injected into cardiac muscle."
 	reagent_state = SOLID
 	color = COLOR_TOXIN_POTASSIUM_CHLORIDE
@@ -298,7 +298,7 @@
 	return ..()
 
 /datum/reagent/toxin/potassium_chlorophoride
-	name = "Potassium Chlorophoride"
+	name = "Potassium Chlorophoride-氯酸钾"
 	description = "A specific chemical based on Potassium Chloride to stop the heart for surgery. Not safe to eat!"
 	color = COLOR_TOXIN_POTASSIUM_CHLORIDE
 	toxpwr = 2
@@ -319,7 +319,7 @@
 	return ..()
 
 /datum/reagent/toxin/pain
-	name = "Liquid Pain"
+	name = "Liquid Pain-痛苦精华"
 	description = "This is a chemical used to simulate specific pain levels for testing. Pain is equal to the total volume."
 	custom_metabolism = 0
 	toxpwr = 0
@@ -331,7 +331,7 @@
 	return ..()
 
 /datum/reagent/toxin/plasticide
-	name = "Plasticide"
+	name = "Plasticide-塑胶酸"
 	description = "Liquid plastic, do not eat."
 	color = COLOR_TOXIN_PLASTICIDE
 	toxpwr = 0.2
@@ -342,7 +342,7 @@
 	return ..()
 
 /datum/reagent/toxin/acid
-	name = "Sulphuric acid"
+	name = "Sulphuric acid-硫酸"
 	description = "A very corrosive mineral acid with the molecular formula H2SO4."
 	color = COLOR_TOXIN_ACID
 	toxpwr = 1
@@ -363,29 +363,29 @@
 		if(H.head)
 			if(prob(meltprob) && !CHECK_BITFIELD(H.head.resistance_flags, RESIST_ALL))
 				if(show_message)
-					to_chat(H, span_danger("Your headgear melts away but protects you from the acid!"))
+					to_chat(H, span_danger("你的头饰熔化了，但保护你免受酸液伤害！"))
 				qdel(H.head)
 				H.update_inv_head(0)
 				H.update_hair(0)
 			else if(show_message)
-				to_chat(H, span_warning("Your headgear protects you from the acid."))
+				to_chat(H, span_warning("你的头部装备保护你免受酸液伤害。"))
 			return
 
 		if(H.wear_mask)
 			if(prob(meltprob) && !CHECK_BITFIELD(H.wear_mask.resistance_flags, RESIST_ALL))
 				if(show_message)
-					to_chat(H, span_danger("Your mask melts away but protects you from the acid!"))
+					to_chat(H, span_danger("你的面罩熔化了，但保护你免受酸液伤害！"))
 				qdel(H.wear_mask)
 				H.update_inv_wear_mask(0)
 				H.update_hair(0)
 			else if(show_message)
-				to_chat(H, span_warning("Your mask protects you from the acid."))
+				to_chat(H, span_warning("你的面罩保护你免受酸液伤害。"))
 			return
 
 		if(H.glasses) //Doesn't protect you from the acid but can melt anyways!
 			if(prob(meltprob) && !CHECK_BITFIELD(H.glasses.resistance_flags, RESIST_ALL))
 				if(show_message)
-					to_chat(H, span_danger("Your glasses melts away!"))
+					to_chat(H, span_danger("你的眼镜熔化了！"))
 				qdel(H.glasses)
 				H.update_inv_glasses(0)
 
@@ -409,11 +409,11 @@
 		if(!CHECK_BITFIELD(O.resistance_flags, RESIST_ALL))
 			var/obj/effect/decal/cleanable/molten_item/I = new/obj/effect/decal/cleanable/molten_item(O.loc)
 			I.desc = "Looks like this was \an [O] some time ago."
-			O.visible_message(span_warning("\the [O] melts."), null, 5)
+			O.visible_message(span_warning("\the [O] 熔化了。"), null, 5)
 			qdel(O)
 
 /datum/reagent/toxin/acid/polyacid
-	name = "Polytrinic acid"
+	name = "Polytrinic acid-聚三硝基酸液"
 	description = "Polytrinic acid is a an extremely corrosive chemical substance."
 	color = COLOR_TOXIN_POLYACID
 	toxpwr = 2
@@ -421,7 +421,7 @@
 	taste_multi = 1.5
 
 /datum/reagent/toxin/nanites
-	name = "Nanomachines"
+	name = "Nanomachines-纳米机械"
 	description = "Microscopic construction robots designed to tear iron out of the surroundings and build jagged structures of wire when mixed into a foam. Drinking this is a bad idea."
 	taste_description = "poor life choices, followed by burning agony"
 	reagent_state = LIQUID
@@ -432,7 +432,7 @@
 	reagent_ui_priority = REAGENT_UI_IMMEDIATE
 
 /datum/reagent/toxin/nanites/on_mob_add(mob/living/L, metabolism)
-	to_chat(L, span_userdanger("Your body begins to twist and deform! Get out of the razorburn!"))
+	to_chat(L, span_userdanger("你的身体开始扭曲变形！快离开剃刀燃烧区域！"))
 	return ..()
 
 /datum/reagent/toxin/nanites/on_mob_life(mob/living/L, metabolism)
@@ -444,13 +444,13 @@
 		holder.remove_reagent(/datum/reagent/toxin/nanites, (current_cycle * 0.2) - 1)
 	if(volume > 100)
 		var/turf/location = get_turf(holder.my_atom)
-		location.visible_message(span_danger("Holy shit! They just exploded into a ball of razorwire! Dear god!"))
+		location.visible_message(span_danger("我的天！他们刚刚炸成了一团剃刀铁丝！上帝啊！"))
 		L.gib()
 		new /obj/structure/razorwire(location)
 	return ..()
 
 /datum/reagent/toxin/xeno_neurotoxin
-	name = "Neurotoxin"
+	name = "Neurotoxin-神经毒素"
 	description = "A debilitating nerve toxin. Impedes motor control in high doses. Causes progressive loss of mobility over time."
 	reagent_state = LIQUID
 	color = COLOR_TOXIN_XENO_NEUROTOXIN
@@ -496,7 +496,7 @@
 	return ..()
 
 /datum/reagent/toxin/xeno_hemodile //Slows its victim. The slow becomes twice as strong with each other xeno toxin in the victim's system.
-	name = "Hemodile"
+	name = "Hemodile-血蛭"
 	description = "Impedes motor functions and muscle response, causing slower movement."
 	reagent_state = LIQUID
 	color = COLOR_TOXIN_XENO_HEMODILE
@@ -515,13 +515,13 @@
 	switch(slowdown_multiplier) //Description varies in severity and probability with the multiplier
 		if(0 to 1)
 			if(prob(10))
-				to_chat(L, span_warning("You feel your legs tense up.") )
+				to_chat(L, span_warning("你感觉双腿绷紧了。") )
 		if(2 to 3.9)
 			if(prob(20))
-				to_chat(L, span_warning("You feel your legs go numb.") )
+				to_chat(L, span_warning("你感觉双腿失去了知觉。") )
 		if(4 to INFINITY)
 			if(prob(30))
-				to_chat(L, span_danger("You can barely feel your legs!") )
+				to_chat(L, span_danger("你的双腿几乎失去知觉了！") )
 
 	L.add_movespeed_modifier(MOVESPEED_ID_XENO_HEMODILE, TRUE, 0, NONE, TRUE, 1.5 * slowdown_multiplier)
 
@@ -532,7 +532,7 @@
 
 
 /datum/reagent/toxin/xeno_transvitox //when damage is received, converts brute/burn equal to 50% of damage received to tox damage
-	name = "Transvitox"
+	name = "Transvitox-转生毒素"
 	description = "Converts burn damage to toxin damage over time, and causes brute damage received to inflict extra toxin damage."
 	reagent_state = LIQUID
 	color = COLOR_TOXIN_XENO_TRANSVITOX
@@ -549,7 +549,7 @@
 		return ..()
 
 	if(prob(10))
-		to_chat(L, span_warning("You notice your wounds crusting over with disgusting green ichor.") )
+		to_chat(L, span_warning("你注意到自己的伤口上结了一层恶心的绿色脓痂。") )
 
 	var/tox_cap_multiplier = 0.5 //Because transvitox is obviously in blood already
 
@@ -587,7 +587,7 @@
 	L.setToxLoss(clamp(tox_loss + min(L.getBruteLoss(TRUE) * 0.1 * tox_cap_multiplier, damage * 0.1 * tox_cap_multiplier), tox_loss, DEFILER_TRANSVITOX_CAP)) //Deal bonus tox damage equal to a % of the lesser of the damage taken or the target's brute damage; capped at DEFILER_TRANSVITOX_CAP.
 
 /datum/reagent/toxin/xeno_sanguinal //deals brute damage and causes persistant bleeding. Causes additional damage for each other xeno chem in the system
-	name = "Sanguinal"
+	name = "Sanguinal-圣吉纳尔"
 	description = "Potent blood coloured toxin that causes constant bleeding and reacts with other xeno toxins to cause rapid tissue damage."
 	reagent_state = LIQUID
 	color = COLOR_TOXIN_XENO_SANGUINAL
@@ -620,7 +620,7 @@
 	return ..()
 
 /datum/reagent/toxin/xeno_ozelomelyn // deals capped toxloss and purges at a rapid rate
-	name = "Ozelomelyn"
+	name = "Ozelomelyn-奥泽洛梅林"
 	description = "A potent Xenomorph chemical that quickly purges other chemicals in a bloodstream, causing small scale poisoning in a organism that won't progress. Appears to be strangely water based.."
 	reagent_state = LIQUID
 	color = COLOR_TOXIN_XENO_OZELOMELYN
@@ -634,14 +634,14 @@
 	if(L.getToxLoss() < 40) // if our toxloss is below 40, do 0.75 tox damage.
 		L.adjustToxLoss(0.75)
 		if(prob(15))
-			to_chat(L, span_warning("Your veins feel like water and you can feel a growing itchy feeling in them!") )
+			to_chat(L, span_warning("你的血管感觉像水一样，你能感觉到里面有一种越来越痒的感觉！") )
 		return ..()
 	if(prob(15))
-		to_chat(L, span_warning("Your veins feel like water..") )
+		to_chat(L, span_warning("你的血管感觉像水一样流动……") )
 		return ..()
 
 /datum/reagent/zombium
-	name = "Zombium"
+	name = "Zombium-僵尸素"
 	description = "Powerful chemical able to raise the dead, origin is likely from an unidentified bioweapon."
 	reagent_state = LIQUID
 	color = COLOR_TOXIN_ZOMBIUM
@@ -685,7 +685,7 @@
 
 //SOM nerve agent
 /datum/reagent/toxin/satrapine
-	name = "Satrapine"
+	name = "Satrapine-萨特拉平"
 	description = "A nerve agent designed to incapacitate targets through debilitating pain. Its severity increases over time, causing various lung complications, and will purge common painkillers. Based on a chemical agent originally used against rebelling Martian colonists, improved by the SOM for their own use."
 	reagent_state = LIQUID
 	color = COLOR_TOXIN_SATRAPINE

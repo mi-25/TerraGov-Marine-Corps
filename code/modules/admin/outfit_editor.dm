@@ -166,7 +166,7 @@
 				wear_suit = new wear_suit //initial() doesn't like lists
 				options = wear_suit.allowed
 			if(!length(options)) //nothing will happen, but don't let the user think it's broken
-				to_chat(owner, span_warning("No options available for the current suit."))
+				to_chat(owner, span_warning("当前外骨骼无可用选项。"))
 
 		if("belt")
 			options = typesof(/obj/item/storage/belt)

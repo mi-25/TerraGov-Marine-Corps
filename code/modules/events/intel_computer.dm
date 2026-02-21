@@ -1,5 +1,5 @@
 /datum/round_event_control/intel_computer
-	name = "Intel computer activation"
+	name = "情报电脑激活"
 	typepath = /datum/round_event/intel_computer
 	weight = 25
 

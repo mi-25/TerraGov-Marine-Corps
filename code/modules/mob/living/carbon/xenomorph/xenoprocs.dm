@@ -97,7 +97,7 @@
 			else
 				if(X.nicknumber != xeno_name)
 					continue
-			to_chat(usr,span_notice("You will now track [X.name]"))
+			to_chat(usr,span_notice("你现在将追踪[X.name]"))
 			set_tracked(X)
 			break
 
@@ -106,7 +106,7 @@
 		for(var/obj/structure/xeno/silo/resin_silo AS in GLOB.xeno_resin_silos_by_hive[hivenumber])
 			if(num2text(resin_silo.number_silo) == silo_number)
 				set_tracked(resin_silo)
-				to_chat(usr,span_notice("You will now track [resin_silo.name]"))
+				to_chat(usr,span_notice("你现在正在追踪[resin_silo.name]"))
 				break
 
 	if(href_list["watch_xeno_name"])
@@ -217,14 +217,14 @@
 //A simple handler for checking your state. Used in pretty much all the procs.
 /mob/living/carbon/xenomorph/proc/check_state()
 	if(incapacitated() || lying_angle)
-		to_chat(src, span_warning("We cannot do this in our current state."))
+		to_chat(src, span_warning("以我们目前的状态无法做到。"))
 		return 0
 	return 1
 
 ///A simple handler for checking your state. Will ignore if the xeno is lying down
 /mob/living/carbon/xenomorph/proc/check_concious_state()
 	if(incapacitated())
-		to_chat(src, span_warning("We cannot do this in our current state."))
+		to_chat(src, span_warning("以我们目前的状态无法做到。"))
 		return FALSE
 	return TRUE
 
@@ -303,7 +303,7 @@
 		return
 
 	if(evolution_stored == xeno_caste.evolution_threshold)
-		to_chat(src, span_xenodanger("Our carapace crackles and our tendons strengthen. We are ready to evolve!"))
+		to_chat(src, span_xenodanger("我们的甲壳噼啪作响，肌腱愈发强韧。我们已准备好进化！"))
 		SEND_SOUND(src, sound('sound/effects/alien/evolve_ready.ogg'))
 
 
@@ -398,7 +398,7 @@
 	var/obj/item/clothing/mask/facehugger/F = get_active_held_item()
 	if(istype(F))
 		if(locate(/turf/closed/wall/resin) in loc)
-			to_chat(src, span_warning("We decide not to drop [F] after all."))
+			to_chat(src, span_warning("我们决定不投放[F]了。"))
 			return
 
 	. = ..()
@@ -408,10 +408,10 @@
 /mob/living/carbon/xenomorph/proc/handle_xeno_leader_pheromones(mob/living/carbon/xenomorph/ruler)
 	QDEL_NULL(leader_current_aura)
 	if(QDELETED(ruler) || !(xeno_flags & XENO_LEADER) || !ruler.current_aura || ruler.loc.z != loc.z) //We are no longer a leader, or the Queen attached to us has dropped from her ovi, disabled her pheromones or even died
-		to_chat(src, span_xenowarning("Our pheromones wane. The Ruler is no longer granting us her pheromones."))
+		to_chat(src, span_xenowarning("我们的信息素正在减弱。统治者不再向我们提供她的信息素。"))
 	else
 		leader_current_aura = SSaura.add_emitter(src, ruler.current_aura.aura_types.Copy(), ruler.current_aura.range, ruler.current_aura.strength, ruler.current_aura.duration, ruler.current_aura.faction, ruler.current_aura.hive_number)
-		to_chat(src, span_xenowarning("Our pheromones have changed. The Ruler has new plans for the Hive."))
+		to_chat(src, span_xenowarning("我们的信息素已经改变。统治者对蜂巢有了新的计划。"))
 
 
 /mob/living/carbon/xenomorph/proc/update_spits(skip_ammo_choice = FALSE)
@@ -457,7 +457,7 @@
 
 	var/damage = X.xeno_caste.acid_spray_damage_on_hit
 	INVOKE_ASYNC(src, PROC_REF(apply_acid_spray_damage), damage)
-	to_chat(src, span_xenodanger("\The [X] showers you in corrosive acid!"))
+	to_chat(src, span_xenodanger("\The [X] 向你泼洒腐蚀性酸液！"))
 
 /mob/living/carbon/proc/apply_acid_spray_damage(damage)
 	apply_damage(damage, BURN, null, ACID, updating_health = TRUE)
@@ -512,8 +512,8 @@
 		smoke_system.set_up(gas_range, get_turf(C))
 		smoke_system.start()
 	var/i = 1
-	to_chat(C, span_danger("You feel a tiny prick."))
-	to_chat(src, span_xenowarning("Our stinger injects our victim with [initial(toxin.name)]!"))
+	to_chat(C, span_danger("你感到一阵轻微的刺痛。"))
+	to_chat(src, span_xenowarning("我们的毒刺向受害者注入了[initial(toxin.name)]！"))
 	playsound(C, 'sound/effects/spray3.ogg', 15, TRUE)
 	playsound(C, SFX_ALIEN_DROOL, 15, TRUE)
 	do

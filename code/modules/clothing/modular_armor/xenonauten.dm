@@ -1,8 +1,8 @@
 // Xenonauten suits
 
 /obj/item/clothing/suit/modular/xenonauten
-	name = "\improper Xenonauten-M pattern armored vest"
-	desc = "A XN-M vest, also known as Xenonauten, a set vest with modular attachments made to work in many enviroments. This one seems to be a medium variant. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 异形猎手-M型防弹背心"
+	desc = "XN-M战术背心，亦称'异形猎手'，是一款配备模块化枪械配件的多功能背心，适用于多种作战环境。此型号为中型变体。Alt+点击以卸下已安装的配件。使用以开关内置手电筒。"
 	soft_armor = MARINE_ARMOR_MEDIUM
 	icon_state = "chest"
 	worn_icon_state = "chest"
@@ -120,8 +120,8 @@
 	)
 
 /obj/item/clothing/suit/modular/xenonauten/light
-	name = "\improper Xenonauten-L pattern armored vest"
-	desc = "A XN-L vest, also known as Xenonauten, a set vest with modular attachments made to work in many enviroments. This one seems to be a light variant. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 异形探索者-L型防弹背心"
+	desc = "XN-L 背心，又称异形猎手，是一款带有模块化枪械配件的多功能背心，设计用于多种环境作战。此型号为轻型变体。Alt+点击以移除已安装的配件。使用它来开关内置手电筒。"
 	soft_armor = MARINE_ARMOR_LIGHT
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	greyscale_config = /datum/greyscale_config/xenonaut/light
@@ -157,8 +157,8 @@
 	)
 
 /obj/item/clothing/suit/modular/xenonauten/heavy
-	name = "\improper Xenonauten-H pattern armored vest"
-	desc = "A XN-H vest, also known as Xenonauten, a set vest with modular attachments made to work in many enviroments. This one seems to be a heavy variant. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 异形猎手-H型防弹背心"
+	desc = "XN-H 战术背心，亦称'异形猎手'，是一款配备模块化枪械配件的多功能背心，适用于多种作战环境。此型号为重型变体。Alt+左键点击可卸下已安装的配件。使用它可开关内置手电筒。"
 	soft_armor = MARINE_ARMOR_HEAVY
 	slowdown = SLOWDOWN_ARMOR_HEAVY
 	greyscale_config = /datum/greyscale_config/xenonaut/heavy
@@ -236,8 +236,8 @@
 	)
 
 /obj/item/clothing/suit/modular/xenonauten/pilot
-	name = "\improper TerraGov standard flak jacket"
-	desc = "A flak jacket used by dropship pilots to protect themselves while flying in the cockpit. Excels in protecting the wearer against high-velocity solid projectiles."
+	name = "\improper 地球政府标准防弹背心"
+	desc = "空降艇飞行员在驾驶舱内飞行时使用的防弹背心。擅长保护穿戴者抵御高速实体弹丸。"
 	item_flags = NONE
 	soft_armor = list(MELEE = 40, BULLET = 50, LASER = 50, ENERGY = 25, BOMB = 30, BIO = 5, FIRE = 25, ACID = 30)
 	slowdown = 0.25
@@ -267,8 +267,8 @@
 	)
 
 /obj/item/clothing/suit/storage/marine/ballistic
-	name = "\improper Crasher multi-threat ballistic armor"
-	desc = "A reused design of a old body armor system from the 21st century."
+	name = "\improper 撞击者多威胁弹道护甲"
+	desc = "21世纪旧式防弹衣系统的再利用设计。"
 	soft_armor = list(MELEE = 40, BULLET = 50, LASER = 50, ENERGY = 25, BOMB = 30, BIO = 5, FIRE = 25, ACID = 30)
 	slowdown = 0.25
 	armor_protection_flags = CHEST|GROIN|ARMS|LEGS|FEET|HANDS
@@ -311,8 +311,8 @@
 
 //Xenonauten helmets
 /obj/item/clothing/head/modular/m10x
-	name = "\improper M10X pattern marine helmet"
-	desc = "A standard M10 Pattern Helmet with attach points. It reads on the label, 'The difference between an open-casket and closed-casket funeral. Wear on head for best results.'."
+	name = "\improper M10X型陆战队头盔"
+	desc = "一顶标准的M10型头盔，带有附件安装点。标签上写着：'开棺葬礼与闭棺葬礼的区别。戴在头上效果最佳。'"
 
 	item_state_worn = TRUE
 	soft_armor = MARINE_ARMOR_HEAVY
@@ -365,8 +365,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/module/fire_proof_helmet)
 
 /obj/item/clothing/head/modular/m10x/heavy
-	name = "\improper M10XE pattern marine helmet"
-	desc = "A standard M10XE Pattern Helmet. This is a modified version of the M10X helmet, offering an enclosed visor apparatus."
+	name = "\improper M10XE型陆战队头盔"
+	desc = "标准型 M10XE 式头盔。这是 M10X 头盔的改进型号，配备了封闭式面罩装置。"
 	worn_icon_state = "helm"
 	greyscale_config = /datum/greyscale_config/xenonaut/helm/heavy
 	starting_attachments = list(/obj/item/armor_module/armor/visor/marine/xenonaut, /obj/item/armor_module/storage/helmet)
@@ -388,8 +388,8 @@
 	)
 
 /obj/item/clothing/head/modular/m10x/leader
-	name = "\improper M11X pattern leader helmet"
-	desc = "A slightly fancier helmet for marine leaders. This one has cushioning to project your fragile brain."
+	name = "\improper M11X型班长头盔"
+	desc = "陆战队指挥官的专用头盔。这款头盔带有缓冲衬垫，能保护你脆弱的大脑。"
 	soft_armor = list(MELEE = 75, BULLET = 75, LASER = 75, ENERGY = 65, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
 
 /obj/item/clothing/head/modular/m10x/leader/antenna

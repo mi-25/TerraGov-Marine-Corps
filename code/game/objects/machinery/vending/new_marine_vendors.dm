@@ -1,5 +1,5 @@
 /obj/machinery/marine_selector
-	name = "\improper Theoretical Marine selector"
+	name = "\improper 理论陆战队员选择器"
 	desc = ""
 	icon = 'icons/obj/machines/vending.dmi'
 	density = TRUE
@@ -59,7 +59,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(!allowed(H))
-			to_chat(user, span_warning("Access denied. Your assigned role doesn't have access to this machinery."))
+			to_chat(user, span_warning("访问被拒绝。您的指定角色无权使用此设备。"))
 			return FALSE
 
 		var/obj/item/card/id/user_id = H.get_idcard()
@@ -70,11 +70,11 @@
 			return FALSE
 
 		if(lock_flags & JOB_LOCK && vendor_role && !istype(H.job, vendor_role))
-			to_chat(user, span_warning("Access denied. This vendor is heavily restricted."))
+			to_chat(user, span_warning("访问被拒绝。此贩卖机受到严格限制。"))
 			return FALSE
 
 		if(lock_flags & SQUAD_LOCK && (!H.assigned_squad || (squad_tag && H.assigned_squad.name != squad_tag)))
-			to_chat(user, span_warning("Access denied. Your assigned squad isn't allowed to access this machinery."))
+			to_chat(user, span_warning("访问被拒绝。您所属的小队无权操作此设备。"))
 			return FALSE
 
 	return TRUE
@@ -137,7 +137,7 @@
 	switch(action)
 		if("vend")
 			if(!allowed(usr))
-				to_chat(usr, span_warning("Access denied."))
+				to_chat(usr, span_warning("访问被拒绝。"))
 				if(icon_deny)
 					flick(icon_deny, src)
 				return
@@ -150,17 +150,17 @@
 			var/cost = L[3]
 
 			if(!(user_id.id_flags & CAN_BUY_LOADOUT)) //If you use the quick-e-quip, you cannot also use the GHMMEs
-				to_chat(usr, span_warning("Access denied. You have already vended a loadout."))
+				to_chat(usr, span_warning("访问被拒绝。您已领取过一套装备。"))
 				return FALSE
 			if(use_points && (item_category in user_id.marine_points) && user_id.marine_points[item_category] < cost)
-				to_chat(usr, span_warning("Not enough points."))
+				to_chat(usr, span_warning("点数不足。"))
 				if(icon_deny)
 					flick(icon_deny, src)
 				return
 
 			var/turf/T = loc
 			if(length(T.contents) > 25)
-				to_chat(usr, span_warning("The floor is too cluttered, make some space."))
+				to_chat(usr, span_warning("地面太杂乱，清理出一些空间。"))
 				if(icon_deny)
 					flick(icon_deny, src)
 				return
@@ -170,7 +170,7 @@
 					user_id.marine_buy_choices[item_category] -= 1
 				else
 					if(cost == 0)
-						to_chat(usr, span_warning("You can't buy things from this category anymore."))
+						to_chat(usr, span_warning("你无法再从该类别购买物品。"))
 						return
 
 			var/list/vended_items = list()
@@ -206,8 +206,8 @@
 			user_id.id_flags |= USED_GHMME
 
 /obj/machinery/marine_selector/clothes
-	name = "\improper GHMME Automated Closet"
-	desc = "An automated closet hooked up to a colossal storage unit of standard-issue uniform and armor."
+	name = "\improper GHMME 自动储物柜"
+	desc = "一个连接着标准制式军服和护甲巨型存储单元的自动化储物柜。"
 	icon_state = "marineuniform"
 	icon_vend = "marineuniform-vend"
 	icon_deny = "marineuniform-deny"
@@ -249,7 +249,7 @@
 
 
 /obj/machinery/marine_selector/clothes/engi
-	name = "\improper GHMME Automated Engineer Closet"
+	name = "\improper GHMME 自动化工程师储物柜"
 	req_access = list(ACCESS_MARINE_ENGPREP)
 	vendor_role = /datum/job/terragov/squad/engineer
 	gives_webbing = FALSE
@@ -280,7 +280,7 @@
 	lock_flags = JOB_LOCK
 
 /obj/machinery/marine_selector/clothes/medic
-	name = "\improper GHMME Automated Corpsman Closet"
+	name = "\improper GHMME 自动化卫生兵储物柜"
 	req_access = list(ACCESS_MARINE_MEDPREP)
 	vendor_role = /datum/job/terragov/squad/corpsman
 	gives_webbing = FALSE
@@ -312,7 +312,7 @@
 	lock_flags = JOB_LOCK
 
 /obj/machinery/marine_selector/clothes/smartgun
-	name = "\improper GHMME Automated Smartgunner Closet"
+	name = "\improper GHMME 自动化智能机枪手储物柜"
 	req_access = list(ACCESS_MARINE_SMARTPREP)
 	vendor_role = /datum/job/terragov/squad/smartgunner
 	gives_webbing = FALSE
@@ -343,7 +343,7 @@
 	lock_flags = JOB_LOCK
 
 /obj/machinery/marine_selector/clothes/leader
-	name = "\improper GHMME Automated Leader Closet"
+	name = "\improper GHMME 自动化班长装备柜"
 	req_access = list(ACCESS_MARINE_LEADER)
 	vendor_role = /datum/job/terragov/squad/leader
 	gives_webbing = FALSE
@@ -379,7 +379,7 @@
 	lock_flags = JOB_LOCK
 
 /obj/machinery/marine_selector/clothes/commander
-	name = "\improper GHMME Automated Commander Closet"
+	name = "\improper GHMME 自动化指挥官储物柜"
 	req_access = list(ACCESS_MARINE_COMMANDER)
 	vendor_role = /datum/job/terragov/command/fieldcommander
 	lock_flags = JOB_LOCK
@@ -458,8 +458,8 @@
 
 
 /obj/machinery/marine_selector/clothes/synth
-	name = "M57 Synthetic Equipment Vendor"
-	desc = "An automated synthetic equipment vendor hooked up to a modest storage unit."
+	name = "M57 合成人装备贩卖机"
+	desc = "一台连接着小型存储单元的自动化合成人装备贩卖机。"
 	icon_state = "synth"
 	icon_vend = "synth-vend"
 	icon_deny = "synth-deny"
@@ -480,14 +480,14 @@
 
 
 /obj/machinery/marine_selector/gear
-	name = "\improper NEXUS Automated Equipment Rack"
-	desc = "An automated equipment rack hooked up to a colossal storage unit."
+	name = "\improper NEXUS 自动化装备架"
+	desc = "连接着巨型存储单元的自动化装备架。"
 	icon_state = "marinearmory"
 	use_points = TRUE
 
 /obj/machinery/marine_selector/gear/medic
-	name = "\improper NEXUS automated medical equipment rack"
-	desc = "An automated equipment rack hooked up to a colossal storage of medical goods."
+	name = "\improper NEXUS 自动化医疗设备架"
+	desc = "一个自动化的装备架，连接着庞大的医疗物资存储库。"
 	icon_state = "medic"
 	icon_vend = "medic-vend"
 	icon_deny = "medic-deny"
@@ -504,8 +504,8 @@
 	lock_flags = JOB_LOCK
 
 /obj/machinery/marine_selector/gear/engi
-	name = "\improper NEXUS automated engineering equipment rack"
-	desc = "An automated equipment rack hooked up to a colossal storage of engineering-related goods."
+	name = "\improper NEXUS自动化工程设备架"
+	desc = "一个自动化的装备架，连接着庞大的工程物资存储库。"
 	icon_state = "engineer"
 	icon_vend = "engineer-vend"
 	icon_deny = "engineer-deny"
@@ -522,8 +522,8 @@
 	lock_flags = JOB_LOCK
 
 /obj/machinery/marine_selector/gear/smartgun
-	name = "\improper NEXUS automated smartgun equipment rack"
-	desc = "An automated equipment rack hooked up to a colossal storage of smartgun-related goods."
+	name = "\improper NEXUS 自动智能机枪装备架"
+	desc = "一个自动化的装备架，连接着一个庞大的智能机枪相关物资存储库。"
 	icon_state = "smartgunner"
 	icon_vend = "smartgunner-vend"
 	icon_deny = "smartgunner-deny"
@@ -540,8 +540,8 @@
 	lock_flags = JOB_LOCK
 
 /obj/machinery/marine_selector/gear/leader
-	name = "\improper NEXUS automated squad leader's equipment rack"
-	desc = "An automated equipment rack hooked up to a colossal storage of basic cat-herding devices."
+	name = "\improper NEXUS 自动化班长装备架"
+	desc = "一个自动装备架，连接着一个储存基础猫群驱赶设备的巨大仓库。"
 	icon_state = "squadleader"
 	icon_vend = "squadleader-vend"
 	icon_deny = "squadleader-deny"
@@ -558,8 +558,8 @@
 	lock_flags = JOB_LOCK
 
 /obj/machinery/marine_selector/gear/commander
-	name = "\improper NEXUS automated command equipment rack"
-	desc = "An automated equipment rack hooked up to a colossal storage unit of advanced cat-herding devices."
+	name = "\improper NEXUS 自动化指挥装备架"
+	desc = "一个自动化装备架，连接着一个巨大的先进猫群驱赶装置存储单元。"
 	icon_state = "squadleader"
 	icon_vend = "squadleader-vend"
 	icon_deny = "squadleader-deny"
@@ -709,7 +709,7 @@
 	)
 
 /obj/effect/vendor_bundle/stretcher
-	desc = "A standard-issue TerraGov Marine Corps corpsman medivac stretcher. Comes with an extra beacon, but multiple beds can be linked to one beacon."
+	desc = "地球政府殖民地海军陆战队标准配发的卫生兵医疗后送担架。附带一个额外的信标，但多张病床可以链接至同一个信标。"
 	gear_to_spawn = list(
 		/obj/item/roller/medevac,
 		/obj/item/medevac_beacon,
@@ -772,8 +772,8 @@
 	)
 
 /obj/effect/vendor_bundle/white_dress
-	name = "Full set of TGMC white dress uniform"
-	desc = "A standard-issue TerraGov Marine Corps white dress uniform. The starch in the fabric chafes a small amount but it pales in comparison to the pride you feel when you first put it on during graduation from boot camp. Doesn't seem to fit perfectly around the waist though."
+	name = "全套地球政府殖民地海军陆战队白色礼服制服"
+	desc = "一套标准配发的地球政府殖民地海军陆战队白色礼服。面料中的浆料有些磨人，但与你从新兵训练营毕业首次穿上它时感受到的自豪相比，这根本不算什么。不过腰身似乎不太合身。"
 	gear_to_spawn = list(
 		/obj/item/clothing/under/marine/whites,
 		/obj/item/clothing/suit/white_dress_jacket,
@@ -783,8 +783,8 @@
 	)
 
 /obj/effect/vendor_bundle/service_uniform
-	name = "Full set of TGMC service uniform"
-	desc = "A standard-issue TerraGov Marine Corps dress uniform. Sometimes, you hate wearing this since you remember wearing this to Infantry School and have to wear this when meeting a commissioned officer. This is what you wear when you are not deployed and are working in an office. Doesn't seem to fit perfectly around the waist."
+	name = "全套地球政府殖民地海军陆战队常服"
+	desc = "一套标准配发的地球政府殖民地海军陆战队常服。有时候你讨厌穿它，因为这会让你想起在步兵学校时不得不穿着它去见委任军官。这是你在非部署状态、在办公室工作时穿着的服装。腰身似乎不太合身。"
 	gear_to_spawn = list(
 		/obj/item/clothing/under/marine/service,
 		/obj/item/clothing/head/garrisoncap,
@@ -793,112 +793,112 @@
 	)
 
 /obj/effect/vendor_bundle/jaeger_light
-	desc = "A set of light scout pattern jaeger armor, including an armor suit and helmet."
+	desc = "一套轻型侦察型机甲护甲，包括护甲服和头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/marine/scout,
 		/obj/item/clothing/suit/modular/jaeger/light,
 	)
 
 /obj/effect/vendor_bundle/jaeger_skirmish
-	desc = "A set of light skirmisher pattern jaeger armor, including an armor suit and helmet."
+	desc = "一套轻型游骑兵式样的机甲护甲，包含护甲套装和头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/marine/skirmisher,
 		/obj/item/clothing/suit/modular/jaeger/light/skirmisher,
 	)
 
 /obj/effect/vendor_bundle/jaeger_infantry
-	desc = "A set of medium Infantry pattern jaeger armor, including an armor suit and helmet."
+	desc = "一套中型步兵型杰格装甲，包含装甲服和头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/marine,
 		/obj/item/clothing/suit/modular/jaeger,
 	)
 
 /obj/effect/vendor_bundle/jaeger_eva
-	desc = "A set of medium EVA pattern jaeger armor, including an armor suit and helmet."
+	desc = "一套中型EVA式样的机甲护甲，包含护甲服和头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/marine/eva,
 		/obj/item/clothing/suit/modular/jaeger/eva,
 	)
 
 /obj/effect/vendor_bundle/jaeger_hell_jumper
-	desc = "A set of medium Hell Jumper pattern jaeger armor, including an armor suit and helmet."
+	desc = "一套中型地狱伞兵式样的机甲护甲，包含护甲服和头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/marine/helljumper,
 		/obj/item/clothing/suit/modular/jaeger/helljumper,
 	)
 
 /obj/effect/vendor_bundle/jaeger_ranger
-	desc = "A set of medium Ranger pattern jaeger armor, including an armor suit and helmet."
+	desc = "一套中型游骑兵式样的机甲护甲，包含护甲服和头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/marine/ranger,
 		/obj/item/clothing/suit/modular/jaeger/ranger,
 	)
 
 /obj/effect/vendor_bundle/jaeger_gungnir
-	desc = "A set of Heavy Gungnir pattern jaeger armor, including an armor suit and helmet."
+	desc = "一套重型冈尼尔型机甲装甲，包含装甲服和头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/marine/gungnir,
 		/obj/item/clothing/suit/modular/jaeger/heavy,
 	)
 
 /obj/effect/vendor_bundle/jaeger_assault
-	desc = "A set of heavy Assault pattern jaeger armor, including an armor suit and helmet."
+	desc = "一套重型突击型机甲护甲，包含护甲套装和头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/marine/assault,
 		/obj/item/clothing/suit/modular/jaeger/heavy/assault,
 	)
 
 /obj/effect/vendor_bundle/jaeger_eod
-	desc = "A set of heavy EOD pattern jaeger armor, including an armor suit and helmet."
+	desc = "一套重型排爆型机甲护甲，包含护甲服和头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/marine/eod,
 		/obj/item/clothing/suit/modular/jaeger/heavy/eod,
 	)
 
 /obj/effect/vendor_bundle/xenonauten_light
-	desc = "A set of light Xenonauten pattern armor, including an armor suit and helmet."
+	desc = "一套轻型的异形猎人式护甲，包括一件护甲服和一顶头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/m10x,
 		/obj/item/clothing/suit/modular/xenonauten/light,
 	)
 
 /obj/effect/vendor_bundle/xenonauten_medium
-	desc = "A set of medium Xenonauten pattern armor, including an armor suit and helmet."
+	desc = "一套中等规格的异形作战护甲，包含护甲服和头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/m10x,
 		/obj/item/clothing/suit/modular/xenonauten,
 	)
 
 /obj/effect/vendor_bundle/xenonauten_heavy
-	desc = "A set of heavy Xenonauten pattern armor, including an armor suit and helmet."
+	desc = "一套重型异形猎人式护甲，包含护甲服和头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/m10x,
 		/obj/item/clothing/suit/modular/xenonauten/heavy,
 	)
 
 /obj/effect/vendor_bundle/xenonauten_light/leader
-	desc = "A set of light Xenonauten pattern armor, including an armor suit and a superior helmet."
+	desc = "一套轻便的异形陆战队式护甲，包括一件护甲服和一顶高级头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/m10x/leader,
 		/obj/item/clothing/suit/modular/xenonauten/light,
 	)
 
 /obj/effect/vendor_bundle/xenonauten_medium/leader
-	desc = "A set of medium Xenonauten pattern armor, including an armor suit and a superior helmet."
+	desc = "一套中等规格的异形战士护甲，包含一件护甲服和一顶高级头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/m10x/leader,
 		/obj/item/clothing/suit/modular/xenonauten,
 	)
 
 /obj/effect/vendor_bundle/xenonauten_heavy/leader
-	desc = "A set of heavy Xenonauten pattern armor, including an armor suit and a superior helmet."
+	desc = "一套重型异形猎人式护甲，包括一件护甲套装和一顶高级头盔。"
 	gear_to_spawn = list(
 		/obj/item/clothing/head/modular/m10x/leader,
 		/obj/item/clothing/suit/modular/xenonauten/heavy,
 	)
 
 /obj/effect/vendor_bundle/mimir
-	desc = "A set of anti-gas gear setup to protect one from gas threats."
+	desc = "一套防毒装备，用于保护穿戴者免受气体威胁。"
 	gear_to_spawn = list(
 		/obj/item/armor_module/module/mimir_environment_protection/mimir_helmet/mark1,
 		/obj/item/clothing/mask/gas/tactical,
@@ -906,7 +906,7 @@
 	)
 
 /obj/effect/vendor_bundle/vali
-	desc = "A set of specialized gear for close-quarters combat and enhanced chemical effectiveness."
+	desc = "一套专为近距离作战和强化化学效能设计的特种装备。"
 	gear_to_spawn = list(
 		/obj/item/armor_module/module/chemsystem,
 		/obj/item/storage/holster/blade/machete/full_harvester,
@@ -914,7 +914,7 @@
 	)
 
 /obj/effect/vendor_bundle/tyr
-	desc = "A set of specialized gear for improved close-quarters combat longevitiy."
+	desc = "一套用于提升近距离作战持久性的专用装备。"
 	gear_to_spawn = list(
 		/obj/item/armor_module/module/tyr_head,
 		/obj/item/armor_module/module/tyr_extra_armor/mark1,

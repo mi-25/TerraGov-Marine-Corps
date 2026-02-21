@@ -1,6 +1,6 @@
 /obj/item/explosive/grenade/sticky
-	name = "\improper M40 adhesive charge grenade"
-	desc = "Designed for use against various fast moving drones, this grenade will adhere to its target before detonating. It's fuse is set to 5 seconds."
+	name = "\improper M40粘性炸药手雷"
+	desc = "专为应对各类快速移动的工蜂设计，这枚手雷会在引爆前附着在目标上。其引信设定为5秒。"
 	icon_state = "grenade_sticky"
 	icon_state_mini = "grenade_round_orange"
 	worn_icon_state = "grenade_sticky"
@@ -38,8 +38,8 @@
 	AddComponent(/datum/component/sticky_item, icon, initial(icon_state) + "_stuck")
 
 /obj/item/explosive/grenade/sticky/trailblazer
-	name = "\improper M45 Trailblazer grenade"
-	desc = "Capsule based grenade that sticks to sufficiently hard surfaces, causing a trail of air combustable gel to form. It is set to detonate in 5 seconds."
+	name = "\improper M45 开拓者手雷"
+	desc = "基于胶囊的手雷，可粘附在足够坚硬的表面上，形成一条可燃凝胶轨迹。设定在5秒后引爆。"
 	icon_state = "grenade_sticky_fire"
 	icon_state_mini = "grenade_stick_orange"
 	worn_icon_state = "grenade_sticky_fire"
@@ -65,8 +65,8 @@
 	T.ignite(25, 25)
 
 /obj/item/explosive/grenade/sticky/cloaker
-	name = "\improper M45 Cloaker grenade"
-	desc = "Capsule based grenade that sticks to sufficiently hard surfaces, causing a trail of air combustable gel to form. This one creates cloaking smoke! It is set to detonate in 5 seconds."
+	name = "\improper M45 匿踪手雷"
+	desc = "基于胶囊的手雷，可粘附在足够坚硬的表面上，形成可燃凝胶轨迹。这款会产生遮蔽烟雾！设定在5秒后引爆。"
 	icon_state = "grenade_sticky_cloak"
 	icon_state_mini = "grenade_stick_green"
 	worn_icon_state = "grenade_sticky_cloak"
@@ -91,8 +91,8 @@
 	smoke.start()
 
 /obj/item/explosive/grenade/sticky/pmc
-	name = "\improper M50 adhesive charge grenade"
-	desc = "Designed for use against various fast moving drones, this grenade will adhere to its target before detonating. Produced for private security firms. It's fuse is set to 3 seconds."
+	name = "\improper M50粘性炸药手雷"
+	desc = "专为应对各种快速移动的工蜂而设计，这枚手雷会在引爆前附着在目标上。为私人安保公司生产。其引信设定为3秒。"
 	icon_state = "grenade_sticky_pmc"
 	icon_state_mini = "grenade_round_blue"
 	worn_icon_state = "grenade_sticky_pmc"

@@ -24,7 +24,7 @@
 	return TRUE
 
 /turf/closed/mineral
-	name = "rock"
+	name = "岩石"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "rock"
 	open_turf_type = /turf/open/floor/plating/ground/desertdam/cave/inner_cave_floor
@@ -58,7 +58,7 @@
 	if(isxenobehemoth(xeno_attacker))
 		xeno_attacker.do_attack_animation(src)
 		playsound(src, 'sound/effects/alien/behemoth/earth_pillar_eating.ogg', 10, TRUE)
-		xeno_attacker.visible_message(span_xenowarning("\The [xeno_attacker] eats away at the [src.name]!"), \
+		xeno_attacker.visible_message(span_xenowarning("\The [xeno_attacker] 正在啃噬 [src.name]！"), \
 		span_xenonotice(pick(
 			"We eat away at the stone. It tastes good, as expected of our primary diet.",
 			"Mmmmm... Delicious rock. A fitting meal for the hardiest of creatures.",
@@ -74,7 +74,7 @@
 	if(!isplasmacutter(I) || user.do_actions)
 		return FALSE
 	if(CHECK_BITFIELD(resistance_flags, PLASMACUTTER_IMMUNE) || CHECK_BITFIELD(resistance_flags, INDESTRUCTIBLE))
-		to_chat(user, span_warning("[I] can't cut through this!"))
+		to_chat(user, span_warning("[I] 切不开这个！"))
 		return FALSE
 	var/obj/item/tool/pickaxe/plasmacutter/plasmacutter = I
 	if(!plasmacutter.powered || (plasmacutter.item_flags & NOBLUDGEON))
@@ -90,7 +90,7 @@
 	return TRUE
 
 /turf/closed/mineral/smooth
-	name = "rock"
+	name = "岩石"
 	icon = 'icons/turf/walls/lvwall.dmi'
 	base_icon_state = "lvwall"
 	icon_state = "lvwall-0"
@@ -106,7 +106,7 @@
 	icon = 'icons/turf/walls/lvwall-phoron.dmi'
 
 /turf/closed/mineral/smooth/indestructible
-	name = "tough rock"
+	name = "坚固岩石"
 	resistance_flags = RESIST_ALL
 	icon_state = "wall-invincible"
 
@@ -137,7 +137,7 @@
 	base_icon_state = "darkfrostwall"
 
 /turf/closed/mineral/smooth/darkfrostwall/indestructible
-	name = "tough rock"
+	name = "坚固岩石"
 	resistance_flags = RESIST_ALL
 	icon_state = "wall-invincible"
 
@@ -160,7 +160,7 @@
 	base_icon_state = "ice_wall"
 
 /turf/closed/mineral/smooth/strata_wall/indestructible
-	name = "tough rock"
+	name = "坚固岩石"
 	resistance_flags = RESIST_ALL
 	icon_state = "wall-invincible"
 
@@ -175,19 +175,19 @@
 	icon_state = "wall-invincible"
 
 /turf/closed/mineral/bigred
-	name = "rock"
+	name = "岩石"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "redrock" //big red does not currently have its own 3/4ths cave tileset, so it uses the old one without smoothing
 
 /turf/closed/mineral/indestructible
-	name = "impenetrable rock"
+	name = "坚不可摧的岩石"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "rock_dark"
 	resistance_flags = RESIST_ALL
 
 //desertdam rock, seen in certain EORD maps. Surprisingly not seen in Desert Dam.
 /turf/closed/mineral/smooth/desertdamrockwall
-	name = "rockwall"
+	name = "岩壁"
 	icon = 'icons/turf/walls/cave.dmi'
 	icon_state = "cave-0"
 	color = "#c9a37b"
@@ -210,15 +210,15 @@
 
 //resin bone wall
 /turf/closed/mineral/smooth/resin_hard
-	name = "hardened resin wall"
-	desc = "This resin has solidified into a solid immovable mass, you can see the faint traces of what look like a dense xenomorph skeleton underneath the surface."
+	name = "硬化树脂墙"
+	desc = "这团树脂已经凝固成坚固的不可移动块体，你可以看到表面下隐约有类似致密异形骨骼的痕迹。"
 	icon = 'icons/turf/walls/resin_bone_wall.dmi'
 	icon_state = "resin_bone_wall-0"
 	base_icon_state = "resin_bone_wall"
 
 /turf/closed/mineral/smooth/resin_hard/indestructible
-	name = "ultra-hardened resin wall"
-	desc = "This resin has been soaked in some sort of acidic curing substance and solidified so much you doubt anything can remove it."
+	name = "超硬化树脂墙"
+	desc = "这处树脂似乎浸泡过某种酸性固化物质，已经硬化到难以清除的程度。"
 	resistance_flags = RESIST_ALL
 	icon_state = "wall-invincible"
 
@@ -248,8 +248,8 @@
 	icon_state = "wall-invincible"
 
 /turf/closed/mineral/smooth/engineerwall
-	name = "strange metal wall"
-	desc = "Nigh indestructible walls that make up the hull of an unknown ancient ship."
+	name = "奇怪的金属墙壁"
+	desc = "构成一艘未知古老飞船船体的近乎坚不可摧的墙壁。"
 	icon = 'icons/turf/walls/engineer_walls_turf.dmi'
 	icon_state = "engineer_walls_turf-255"
 	walltype = "wall"
@@ -260,8 +260,8 @@
 	icon_state = "wall-invincible"
 
 /turf/closed/mineral/smooth/jungletree
-	name = "dense jungle trees"
-	desc = "Some thick jungle trees, it looks impassible"
+	name = "茂密的丛林树木"
+	desc = "一些茂密的丛林树木，看起来无法通行"
 	icon = 'icons/turf/walls/junglewall.dmi'
 	icon_state = "wall-display"
 	base_icon_state = "junglewall"
@@ -279,7 +279,7 @@
 /turf/closed/gm
 	icon = 'icons/turf/walls/jungle.dmi'
 	icon_state = "junglewall-0"
-	desc = "Some thick jungle."
+	desc = "一片茂密的丛林。"
 	resistance_flags = UNACIDABLE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_FLORA)
@@ -298,7 +298,7 @@
 			ChangeTurf(/turf/open/ground/grass/weedable)
 
 /turf/closed/gm/dense
-	name = "dense jungle wall"
+	name = "茂密丛林墙壁"
 	resistance_flags = PLASMACUTTER_IMMUNE|UNACIDABLE
 	minimap_color = MINIMAP_BLACK
 	icon_state = "wall-dense"
@@ -312,7 +312,7 @@
 
 //Orange Border (What else am I meant to call it?)
 /turf/closed/perimeter
-	name = "wall"
+	name = "墙"
 	resistance_flags = RESIST_ALL
 	base_icon_state = "pwall"
 	icon_state = "pwall"
@@ -321,7 +321,7 @@
 
 //lava rock
 /turf/closed/brock
-	name = "basalt rock"
+	name = "玄武岩"
 	icon = 'icons/turf/lava.dmi'
 	icon_state = "brock"
 	open_turf_type = /turf/open/lavaland/basalt
@@ -347,10 +347,10 @@
 //ICE WALLS-----------------------------------//
 //Ice Wall
 /turf/closed/ice
-	name = "dense ice wall"
+	name = "致密冰墙"
 	icon = 'icons/turf/icewall.dmi'
 	icon_state = "Single"
-	desc = "It is very thick."
+	desc = "它非常厚实。"
 	open_turf_type = /turf/open/floor/plating/ground/ice
 
 /turf/closed/ice/add_debris_element()
@@ -376,10 +376,10 @@
 
 //volcanic glass wall
 /turf/closed/glass/thin
-	name = "volcanic glass wall"
+	name = "火山玻璃墙"
 	icon = 'icons/turf/icewalllight.dmi'
 	icon_state = "Single"
-	desc = "Hardened volcanic glass."
+	desc = "硬化火山玻璃。"
 	opacity = FALSE
 
 /turf/closed/glass/thin/single
@@ -402,10 +402,10 @@
 
 //Ice Thin Wall
 /turf/closed/ice/thin
-	name = "thin ice wall"
+	name = "薄冰墙"
 	icon = 'icons/turf/icewalllight.dmi'
 	icon_state = "Single"
-	desc = "It is very thin."
+	desc = "它非常薄。"
 	opacity = FALSE
 
 /turf/closed/ice/thin/single
@@ -430,7 +430,7 @@
 
 //Icy Rock
 /turf/closed/ice_rock
-	name = "Icy rock"
+	name = "冰岩"
 	icon = 'icons/turf/rockwall.dmi'
 	resistance_flags = PLASMACUTTER_IMMUNE|UNACIDABLE
 	open_turf_type = /turf/open/floor/plating/ground/ice
@@ -491,7 +491,7 @@
 //not a child of turf/closed/wall because shuttle walls are magical, don't smoothes with normal walls, etc
 
 /turf/closed/shuttle
-	name = "wall"
+	name = "墙"
 	icon_state = "wall1"
 	icon = 'icons/turf/shuttle.dmi'
 	resistance_flags = PLASMACUTTER_IMMUNE
@@ -562,7 +562,7 @@
 	icon_state = "rightengine_3"
 
 /turf/closed/shuttle/dropship1
-	name = "\improper Alamo"
+	name = "\improper 阿拉莫号"
 	icon = 'icons/turf/dropship.dmi'
 	icon_state = "1"
 	resistance_flags = RESIST_ALL|PLASMACUTTER_IMMUNE
@@ -664,7 +664,7 @@
 	icon_state = "shuttle_exterior_finback"
 
 /turf/closed/shuttle/dropship_white
-	name = "wall"
+	name = "墙"
 	icon = 'icons/turf/ert_shuttle.dmi'
 
 /turf/closed/shuttle/dropship_white/engine_corner
@@ -705,7 +705,7 @@
 
 
 /turf/closed/shuttle/dropship_dark
-	name = "wall"
+	name = "墙"
 	icon = 'icons/turf/ert_shuttle.dmi'
 
 /turf/closed/shuttle/dropship_dark/engine_corner
@@ -737,7 +737,7 @@
 
 
 /turf/closed/shuttle/dropship_regular
-	name = "wall"
+	name = "墙"
 	icon = 'icons/turf/ert_shuttle.dmi'
 
 /turf/closed/shuttle/dropship_regular/engine_corner
@@ -765,7 +765,7 @@
 	icon_state = "regular_shuttle_cockpit_window"
 
 /turf/closed/shuttle/dropship3
-	name = "\improper Triumph"
+	name = "\improper 凯旋"
 	icon = 'icons/turf/dropship.dmi'
 	icon_state = "1"
 
@@ -773,7 +773,7 @@
 	opacity = FALSE
 
 /turf/closed/shuttle/dropship2
-	name = "\improper Normandy"
+	name = "\improper 诺曼底"
 	icon = 'icons/turf/dropship2.dmi'
 	icon_state = "1"
 
@@ -929,7 +929,7 @@
 	opacity = FALSE
 
 /turf/closed/shuttle/dropship4
-	name = "\improper Normandy"
+	name = "\improper 诺曼底"
 	icon = 'icons/turf/dropship4.dmi'
 	icon_state = "1"
 
@@ -1115,12 +1115,12 @@
 	icon_state = "back1"
 
 /turf/closed/shuttle/tadpole
-	name = "\improper Tadpole"
+	name = "\improper 蝌蚪号"
 	icon = 'icons/turf/dropship2.dmi'
 	icon_state = "1"
 
 /turf/closed/shuttle/escapepod
-	name = "wall"
+	name = "墙"
 	icon = 'icons/turf/escapepods.dmi'
 	icon_state = "wall0"
 

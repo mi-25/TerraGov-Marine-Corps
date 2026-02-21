@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(vis_overlays)
-	name = "Vis contents overlays"
+	name = "可见内容叠加层"
 	wait = 1 MINUTES
 	priority = FIRE_PRIORITY_VIS
 

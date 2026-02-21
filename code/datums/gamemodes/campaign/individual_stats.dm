@@ -58,7 +58,7 @@
 	currency += amount
 	if(!current_mob)
 		return
-	to_chat(current_mob, span_warning("You have received a cash bonus of [amount]."))
+	to_chat(current_mob, span_warning("你获得了[amount]的现金奖励。"))
 
 ///uses some funtokens, returns the amount missing, if insufficient funds
 /datum/individual_stats/proc/use_funds(amount)
@@ -72,7 +72,7 @@
 	if(!istype(new_perk))
 		return FALSE
 	if(new_perk in unlocked_perks)
-		to_chat(user, span_warning("Perk already purchased."))
+		to_chat(user, span_warning("已购买该技能。"))
 		return FALSE
 	if(length(new_perk.prereq_perks))
 		var/perk_found
@@ -83,10 +83,10 @@
 					continue
 				perk_found = TRUE
 			if(!perk_found)
-				to_chat(user, span_warning("One or more prerequisites missing for this perk."))
+				to_chat(user, span_warning("此特技缺少一个或多个先决条件。"))
 				return FALSE
 	if(use_funds(new_perk.unlock_cost))
-		to_chat(user, span_warning("Insufficient funds for this perk."))
+		to_chat(user, span_warning("此特长的资金不足。"))
 		return FALSE
 
 	new_perk.unlock_bonus(user, src)
@@ -113,7 +113,7 @@
 		return FALSE
 	var/insufficient_credits = use_funds(isnum(cost_override) ? cost_override : item.unlock_cost)
 	if(insufficient_credits)
-		to_chat(user, span_warning("Requires [insufficient_credits] more credits."))
+		to_chat(user, span_warning("需要[insufficient_credits]更多信用点。"))
 		return FALSE
 	for(var/job_type in job_type_or_types)
 		if(!job_req_override && !(job_type in item.jobs_supported))
@@ -365,28 +365,28 @@
 			if(!job || !loadouts[job])
 				return
 			if(!istype(user) || user.stat)
-				to_chat(user, span_warning("Must be alive to do this!"))
+				to_chat(user, span_warning("必须活着才能这样做！"))
 				return
 			var/datum/campaign_mission/current_mission = get_current_mission()
 			if(!current_mission || current_mission.mission_state == MISSION_STATE_FINISHED)
-				to_chat(user, span_warning("Wait for the next mission to be selected!"))
+				to_chat(user, span_warning("等待下一场任务被选定！"))
 				return
 			var/obj/item/card/id/user_id = user.get_idcard()
 			if(!(user_id.id_flags & CAN_BUY_LOADOUT))
-				to_chat(user, span_warning("You have already selected a loadout for this mission."))
+				to_chat(user, span_warning("你已为此任务选好装备。"))
 				return
 			if(user.job.title != job)
-				to_chat(user, span_warning("Invalid job. This outfit is for [job]."))
+				to_chat(user, span_warning("无效职务。此装备适用于[job]。"))
 				return
 			if(!is_mainship_level(user.z))
-				to_chat(user, span_warning("You can't equip a new loadout in the field!"))
+				to_chat(user, span_warning("你不能在战场上更换新装备！"))
 				return
 			if(!loadouts[job].check_full_loadout())
-				to_chat(user, span_warning("Invalid loadout."))
+				to_chat(user, span_warning("无效的装备配置。"))
 				return
 			var/insufficient_credits = use_funds(loadouts[job].loadout_cost)
 			if(insufficient_credits)
-				to_chat(user, span_warning("Requires [insufficient_credits] more credits."))
+				to_chat(user, span_warning("需要[insufficient_credits]更多信用点。"))
 				return
 			loadouts[job].equip_loadout(user)
 			user.playsound_local(user, 'sound/effects/menu_click.ogg', 50)

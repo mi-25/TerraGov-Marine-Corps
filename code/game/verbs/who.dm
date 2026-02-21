@@ -146,5 +146,5 @@
 				mentmsg += "\t[C] - [C.holder.rank]\n"
 				num_mentors_online++
 
-	to_chat(src, "\n<b> Current Admins ([num_admins_online]):</b>\n[msg]")
-	to_chat(src, "\n<b> Current Mentors ([num_mentors_online]):</b>\n[mentmsg]<br>")
+	to_chat(src, "<b>当前在线管理员（[num_admins_online]）：</b>\n[msg]")
+	to_chat(src, "<b>当前导师（[num_mentors_online]）：</b>\n[mentmsg]<br>")

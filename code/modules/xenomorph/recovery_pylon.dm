@@ -1,6 +1,6 @@
 /obj/structure/xeno/recovery_pylon
-	name = "recovery pylon"
-	desc = "A resin pillar with a purple orb on the top. It pulsates with a faint hum."
+	name = "恢复塔"
+	desc = "一根顶端带有紫色球体的树脂柱。它随着微弱的嗡鸣声脉动。"
 	icon = 'icons/Xeno/2x2building.dmi'
 	icon_state = "recovery_pylon"
 	max_integrity = 100
@@ -24,7 +24,7 @@
 		radius = new_radius
 	if(new_damage_modifier > 0)
 		damage_modifier = new_damage_modifier
-		name = "hostile pylon"
+		name = "敌对尖塔"
 		add_atom_colour(LIGHT_COLOR_RED, FIXED_COLOR_PRIORITY)
 	GLOB.hive_datums[hivenumber].recovery_pylons += src
 	create_effects()
@@ -48,9 +48,9 @@
 /obj/structure/xeno/recovery_pylon/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(xeno_attacker.a_intent != INTENT_HARM || !(xeno_attacker.xeno_caste.caste_flags & CASTE_IS_BUILDER))
 		return ..()
-	balloon_alert(xeno_attacker, "Removing...")
+	balloon_alert(xeno_attacker, "移除中...")
 	if(!do_after(xeno_attacker, 2 SECONDS, IGNORE_HELD_ITEM, src, BUSY_ICON_HOSTILE))
-		balloon_alert(xeno_attacker, "Stopped removing.")
+		balloon_alert(xeno_attacker, "已停止移除。")
 		return
 	playsound(src, SFX_ALIEN_RESIN_BREAK, 25)
 	deconstruct(TRUE, xeno_attacker)

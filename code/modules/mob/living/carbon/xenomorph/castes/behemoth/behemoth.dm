@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/behemoth
 	caste_base_type = /datum/xeno_caste/behemoth
 	name = "Behemoth"
-	desc = "A resilient and equally ferocious monster that commands the earth itself."
+	desc = "一种坚韧且同样凶猛的怪物，能够号令大地本身。"
 	icon = 'icons/Xeno/castes/behemoth.dmi'
 	icon_state = "Behemoth Walking"
 	bubble_icon = "alienleft"

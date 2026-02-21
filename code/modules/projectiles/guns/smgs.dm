@@ -34,8 +34,8 @@
 // MP-19 Machinepistol. It fits here more.
 
 /obj/item/weapon/gun/smg/standard_machinepistol
-	name = "\improper MP-19 machinepistol"
-	desc = "The MP-19 is the TerraGov Marine Corps standard-issue machine pistol. It's known for it's low recoil and scatter when used one handed. It's usually carried by specialized troops who do not have the space to carry a much larger gun like medics and engineers. It uses 10x20mm caseless rounds."
+	name = "\improper MP-19 冲锋手枪"
+	desc = "MP-19是地球政府殖民地海军陆战队标准配发的冲锋手枪。它以单手持握时后坐力低、散射小而闻名。通常由没有空间携带更大枪支的特种部队人员携带，例如卫生兵和工程兵。它使用10x20mm无壳弹。"
 	icon_state = "t19"
 	worn_icon_state = "t19"
 	fire_sound = 'sound/weapons/guns/fire/tgmc/kinetic/gun_mp19.ogg'
@@ -97,8 +97,8 @@
 // War is hell. Not glorious.
 
 /obj/item/weapon/gun/smg/standard_smg
-	name = "\improper SMG-90 submachinegun"
-	desc = "The SMG-90 is the TerraGov Marine Corps standard issue SMG. Its known for it's compact size and ease of use inside the field. It's usually carried by troops who want a lightweight firearm to rush with. It uses 10x20mm caseless rounds."
+	name = "\improper SMG-90冲锋枪"
+	desc = "SMG-90是地球政府殖民地海军陆战队的标准制式冲锋枪。以其紧凑的尺寸和在战场上的易用性而闻名。通常由希望携带轻量级枪械进行突击的部队使用。它使用10x20毫米无壳弹。"
 	fire_sound = 'sound/weapons/guns/fire/tgmc/kinetic/gun_smg90.ogg'
 	icon_state = "t90"
 	worn_icon_state = "t90"
@@ -156,8 +156,8 @@
 //Da slapper.
 
 /obj/item/weapon/gun/smg/standard_heavysmg
-	name = "\improper SMG-45 heavy submachinegun"
-	desc = "The SMG-45 is a heavier than usual subgun used by the TerraGov Marine Corps. Best known for carrying a punch within a small package. It's usually carried by troops who want a lightweight firearm to rush with while beating a mean punch, however it struggles at range. It uses .41 AE caseless rounds."
+	name = "\improper SMG-45重型冲锋枪"
+	desc = "SMG-45是地球政府殖民地海军陆战队使用的一款比通常更重的冲锋枪。以其在小巧枪身内蕴含的强大威力而闻名。通常由希望携带轻量级枪械进行突击、同时又能造成可观伤害的部队使用，但其在远距离作战中表现不佳。它使用.41 AE无壳弹。"
 	icon = 'icons/obj/items/guns/submachineguns64.dmi'
 	icon_state = "t45"
 	worn_icon_state = "t45"
@@ -211,8 +211,8 @@
 //M-25 SMG
 
 /obj/item/weapon/gun/smg/m25
-	name = "\improper SMG-25 submachinegun"
-	desc = "The RivArms SMG-25 submachinegun, an update to a classic design. A light firearm capable of effective one-handed use that is ideal for close to medium range engagements. Uses 10x20mm rounds in a high capacity magazine."
+	name = "\improper SMG-25冲锋枪"
+	desc = "RivArms SMG-25冲锋枪，一款经典设计的更新。一种能够有效单手使用的轻型枪械，非常适合近中距离交战。使用10x20mm弹药，配备高容量弹匣。"
 	icon = 'icons/obj/items/guns/submachineguns64.dmi'
 	icon_state = "m25"
 	worn_icon_state = "m25"
@@ -274,8 +274,8 @@
 	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/attachable/compensator, /obj/item/weapon/gun/pistol/plasma_pistol)
 
 /obj/item/weapon/gun/smg/m25/elite
-	name = "\improper SMG-25B2 submachinegun"
-	desc = "The RivArms SMG-25 submachinegun, B2 variant. Has an integrated barrel charger. This reliable weapon fires armor piercing 10x20mm rounds and is used by elite troops."
+	name = "\improper SMG-25B2冲锋枪"
+	desc = "RivArms SMG-25冲锋枪，B2型。配备一体式枪管充电器。这种可靠的武器发射穿甲10x20毫米弹药，由精锐部队使用。"
 	icon_state = "m25b2"
 	worn_icon_state = "m25b2"
 	fire_sound = 'sound/weapons/guns/fire/smg_heavy.ogg'
@@ -318,8 +318,8 @@
 //SMG-27, based on the grease gun
 
 /obj/item/weapon/gun/smg/mp7
-	name = "\improper SMG-27 submachinegun"
-	desc = "An archaic design going back hundreds of years, the SMG-27 was common in its day. Today it sees limited use as cheap computer-printed replicas or family heirlooms, though it somehow got into the hands of colonial rebels."
+	name = "\improper SMG-27冲锋枪"
+	desc = "一种可追溯至数百年前的古老设计，SMG-27在其时代曾十分普遍。如今，它作为廉价的计算机打印复制品或家族传家宝而用途有限，尽管它不知何故落入了殖民地叛乱分子手中。"
 	icon_state = "mp7"
 	worn_icon_state = "mp7"
 	caliber = CALIBER_46X30 //codex
@@ -349,8 +349,8 @@
 //SKORPION //Based on the same thing.
 
 /obj/item/weapon/gun/smg/skorpion
-	name = "\improper CZ-81 submachinegun"
-	desc = "A robust, 20th century firearm that's a combination of pistol and submachinegun. Fires .32ACP caliber rounds from a 20 round magazine."
+	name = "\improper CZ-81冲锋枪"
+	desc = "一款坚固耐用的20世纪火器，兼具手枪和冲锋枪特性。使用20发弹匣发射.32ACP口径弹药。"
 	icon = 'icons/obj/items/guns/submachineguns64.dmi'
 	icon_state = "skorpion"
 	worn_icon_state = "skorpion"
@@ -390,8 +390,8 @@
 //PPSH //Based on the PPSh-41.
 
 /obj/item/weapon/gun/smg/ppsh
-	name = "\improper PPSh-17b submachinegun"
-	desc = "The PPSh-17b or \"Papasha\" is replica of a 20th century USSR model submachinegun that many terrorist organizations had copied all over the years. Despite its small-hitting firepower, its reliablity, extreme longevity and high firepower rate proves useful for the hands of the user."
+	name = "\improper PPSh-17b 冲锋枪"
+	desc = "PPSh-17b 或称'帕帕沙'是 20 世纪苏联型号冲锋枪的复制品，多年来被许多恐怖组织仿制。尽管其单发威力较小，但其可靠性、极高的耐用性和高射速在用户手中证明是有用的。"
 	icon = 'icons/obj/items/guns/submachineguns64.dmi'
 	icon_state = "ppsh"
 	worn_icon_state = "ppsh"
@@ -452,8 +452,8 @@
 //GENERIC UZI //Based on the uzi submachinegun, of course.
 
 /obj/item/weapon/gun/smg/uzi
-	name = "\improper SMG-2 submachinegun"
-	desc = "A cheap, reliable design and manufacture make this ubiquitous submachinegun useful despite the age. Put the fire selector to full auto for maximum firepower. Use two if you really want to go ham."
+	name = "\improper SMG-2冲锋枪"
+	desc = "这款冲锋枪设计廉价、制造可靠，尽管年代久远却依然实用。将快慢机调至全自动模式可获得最大火力。如果你真的想大干一场，不妨用上两把。"
 	icon_state = "uzi"
 	worn_icon_state = "uzi"
 	caliber = CALIBER_9X19 //codex
@@ -482,8 +482,8 @@
 // SOM SMG
 
 /obj/item/weapon/gun/smg/som
-	name = "\improper V-21 submachinegun"
-	desc = "The V-21 is the principal submachinegun used by the Sons of Mars, designed to be used effectively one or two handed with  a variable rate of fire. When fired at full speed it's performance is severely degraded unless used properly wielded, while the lower rate of fire can still be effectively used one handed when necessary. It uses 10x20mm caseless rounds."
+	name = "\improper V-21冲锋枪"
+	desc = "V-21是火星之子使用的主要冲锋枪，设计为可单手或双手有效使用，并具有可变射速。当以全速射击时，除非正确握持，否则其性能会严重下降，而较低射速在必要时仍可单手有效使用。它使用10x20毫米无壳弹。"
 	icon_state = "v21"
 	icon = 'icons/obj/items/guns/submachineguns64.dmi'
 	worn_icon_state = "v21"
@@ -579,8 +579,8 @@
 // PL-38, ICC Machinepistol
 
 /obj/item/weapon/gun/smg/icc_machinepistol
-	name = "\improper PL-38 machinepistol"
-	desc = "The PL-38 is a machinepistol used by rearline ICCAF personnel, it presents solid performance at longer ranges in a compact package, although suffers due to a slow rate of fire for its class. It uses 10x20mm caseless rounds."
+	name = "\improper PL-38 冲锋手枪"
+	desc = "PL-38是一款由ICCAF后方人员使用的冲锋手枪，它在紧凑的尺寸下提供了中远距离的可靠性能，但射速在本类别中偏慢。它使用10x20mm无壳弹。"
 	icon = 'icons/obj/items/guns/submachineguns64.dmi'
 	icon_state = "pl38"
 	worn_icon_state = "pl38"
@@ -643,8 +643,8 @@
 // L-40, ICC PDW
 
 /obj/item/weapon/gun/smg/icc_pdw
-	name = "\improper L-40 personal defense weapon"
-	desc = "The L-40 is the primer ICCAF submachinegun, generally termed as a 'PDW' due to its armor-piercing high velocity round, while it has adequate ranged performance, it is mostly tuned for at close quarters combat. It uses 4.6mm high velocity caseless rounds."
+	name = "\improper L-40 个人防卫武器"
+	desc = "L-40是ICCAF的主要冲锋枪，因其穿甲高速弹而通常被称为'PDW'，虽然具备足够的远程性能，但主要针对近距离战斗进行了调校。它使用4.6毫米高速无壳弹。"
 	icon = 'icons/obj/items/guns/submachineguns64.dmi'
 	icon_state = "l40"
 	worn_icon_state = "l40"
@@ -712,8 +712,8 @@
 // C17 Riot PDW, no longer in use with the VSD
 
 /obj/item/weapon/gun/smg/vsd_pdw
-	name = "\improper C17 Riot PDW"
-	desc = "The C17 PDW, made by Crash Core for civilian use. Fires Armor Piercing .45 ACP in a 55 round drum mag, somewhat good accuracy and firerate. Meant to contain prison riots, this has more kills than arrests."
+	name = "\improper C17防暴个人防卫武器"
+	desc = "C17 PDW，由Crash Core制造，供民用。使用.45 ACP穿甲弹，配备55发弹鼓，精度和射速尚可。本意用于镇压监狱暴动，但造成的击杀比逮捕更多。"
 	icon = 'icons/obj/items/guns/submachineguns.dmi'
 	icon_state = "c17"
 	worn_icon_state = "c17"
@@ -772,8 +772,8 @@
 // RA-VAL, PMC smg
 
 /obj/item/weapon/gun/smg/val
-	name = "\improper RA-VAL submachine gun"
-	desc = "The RA-VAL is a heavier than usual subgun used by the Nanotrasen Contractors. Best known for carrying a punch within a small package. It's usually carried by troops who want a lightweight firearm to rush with while beating a mean punch. However, it suffers at long range due to heavy bullet of 9x39mm caliber."
+	name = "\improper RA-VAL 冲锋枪"
+	desc = "RA-VAL是一款比常规冲锋枪更重的武器，由纳米传讯承包商使用。以其在小巧体积内蕴含的强大威力而闻名。通常由那些希望携带轻量级枪械进行突击，同时又能造成可观伤害的部队使用。然而，由于使用9x39毫米口径的重型弹道弹药，它在远距离作战中表现不佳。"
 	icon = 'icons/obj/items/guns/submachineguns64.dmi'
 	icon_state = "val"
 	worn_icon_state = "val"

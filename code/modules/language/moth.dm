@@ -1,6 +1,6 @@
 /datum/language/moth
-	name = "Lepidopterian"
-	desc = "The common language of moths, composed of various noises made of wing fluttering and clicks."
+	name = "联合太空鳞翅目"
+	desc = "飞蛾的通用语言，由翅膀扇动和咔哒声构成的各种声响。"
 	speech_verb = "flutters"
 	ask_verb = "clicks"
 	exclaim_verb = "buzzes"

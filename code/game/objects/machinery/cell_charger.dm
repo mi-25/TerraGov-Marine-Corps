@@ -1,6 +1,6 @@
 /obj/machinery/cell_charger
-	name = "heavy-duty cell charger"
-	desc = "A much more powerful version of the standard recharger that is specially designed for charging power cells."
+	name = "重型电池充电器"
+	desc = "标准充电器的强化版本，专为动力电池充电而设计。"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "ccharger0"
 	anchored = TRUE
@@ -45,11 +45,11 @@
 
 	if(istype(I, /obj/item/cell) && anchored)
 		if(istype(I, /obj/item/cell/night_vision_battery))
-			balloon_alert(user, "can't be recharged!")
+			balloon_alert(user, "无法重新充能！")
 			return
 
 		if(charging)
-			to_chat(user, span_warning("There is already a cell in the charger."))
+			to_chat(user, span_warning("充电器内已装有电池。"))
 			return
 
 		var/area/A = loc.loc
@@ -57,12 +57,12 @@
 			return
 
 		if(A.power_equip == 0) // There's no APC in this area, don't try to cheat power!
-			to_chat(user, span_warning("The [name] blinks red as you try to insert the cell!"))
+			to_chat(user, span_warning("[name]在你尝试插入电池时闪烁红光！"))
 			return
 
 		if(user.transferItemToLoc(I, src))
 			charging = I
-			user.visible_message("[user] inserts a cell into the charger.", "You insert a cell into the charger.")
+			user.visible_message("[user] 将电池插入充电器。", "You insert a cell into the charger.")
 			chargelevel = -1
 			start_processing()
 
@@ -70,7 +70,7 @@
 
 	else if(iswrench(I))
 		if(charging)
-			to_chat(user, span_warning("Remove the cell first!"))
+			to_chat(user, span_warning("先把电池拆下来！"))
 			return
 
 		anchored = !anchored
@@ -86,7 +86,7 @@
 		charging.update_icon()
 
 		src.charging = null
-		user.visible_message("[user] removes the cell from the charger.", "You remove the cell from the charger.")
+		user.visible_message("[user] 从充电器中取出了电池。", "You remove the cell from the charger.")
 		chargelevel = -1
 		updateicon()
 		stop_processing()

@@ -1,6 +1,6 @@
 /obj/item/explosive/grenade/phosphorus
-	name = "\improper M40 HPDP grenade"
-	desc = "The M40 HPDP is a small, but powerful phosphorus grenade. It is set to detonate in 2 seconds."
+	name = "\improper M40 HPDP 手雷"
+	desc = "M40 HPDP是一种小型但威力强大的磷质手雷。它设定在2秒后引爆。"
 	icon_state = "grenade_phos"
 	worn_icon_state = "grenade_phos"
 	det_time = 2 SECONDS
@@ -31,8 +31,8 @@
 	user?.record_war_crime()
 
 /obj/item/explosive/grenade/phosphorus/upp
-	name = "\improper Type 8 WP grenade"
-	desc = "A deadly gas grenade found within the ranks of the USL. Designed to spill white phosphorus on the target. It explodes 2 seconds after the pin has been pulled."
+	name = "\improper 8型白磷手雷"
+	desc = "一枚在联合太空鳞翅目部队中发现的致命气体手雷。设计用于向目标泼洒白磷。拉环后2秒爆炸。"
 	icon_state = "grenade_upp_wp"
 	worn_icon_state = "grenade_upp_wp"
 	arm_sound = 'sound/weapons/armbombpin_1.ogg'

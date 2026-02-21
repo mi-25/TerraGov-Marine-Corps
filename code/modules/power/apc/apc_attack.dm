@@ -4,7 +4,7 @@
 
 	if(effects)
 		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-		xeno_attacker.visible_message(span_danger("[xeno_attacker] slashes \the [src]!"), \
+		xeno_attacker.visible_message(span_danger("[xeno_attacker] 对 \the [src] 发动斩击！"), \
 		span_danger("We slash \the [src]!"), null, 5)
 		playsound(loc, SFX_ALIEN_CLAW_METAL, 25, 1)
 
@@ -13,12 +13,12 @@
 	if(beenhit >= pick(3, 4) && !CHECK_BITFIELD(machine_stat, PANEL_OPEN))
 		ENABLE_BITFIELD(machine_stat, PANEL_OPEN)
 		update_appearance()
-		visible_message(span_danger("\The [src]'s cover swings open, exposing the wires!"), null, null, 5)
+		visible_message(span_danger("\The [src]的盖子打开了，露出了里面的电线！"), null, null, 5)
 
 	else if(CHECK_BITFIELD(machine_stat, PANEL_OPEN) && !allcut)
 		wires.cut_all()
 		update_appearance()
-		visible_message(span_danger("\The [src]'s wires snap apart in a rain of sparks!"), null, null, 5)
+		visible_message(span_danger("\The [src]的电线在一阵火花雨中崩断！"), null, null, 5)
 		if(xeno_attacker.client)
 			var/datum/personal_statistics/personal_statistics = GLOB.personal_statistics_list[xeno_attacker.ckey]
 			personal_statistics.apcs_slashed++
@@ -33,51 +33,51 @@
 
 	if(istype(I, /obj/item/cell) && opened) //Trying to put a cell inside
 		if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-			user.visible_message(span_notice("[user] fumbles around figuring out how to fit [I] into [src]."),
+			user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何将 [I] 装进 [src]。"),
 			span_notice("You fumble around figuring out how to fit [I] into [src]."))
 			var/fumbling_time = 5 SECONDS * ( SKILL_ENGINEER_ENGI - user.skills.getRating(SKILL_ENGINEER) )
 			if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 				return
 
 		if(cell)
-			balloon_alert(user, "Already installed")
+			balloon_alert(user, "已安装")
 			return
 
 		if(machine_stat & MAINT)
-			balloon_alert(user, "No connector")
+			balloon_alert(user, "无连接器")
 			return
 
 		if(!user.transferItemToLoc(I, src))
 			return
 
 		set_cell(I)
-		user.visible_message("<span class='notice'>[user] inserts [I] into [src]!",
+		user.visible_message("<span class='notice'>[user] 将 [I] 插入 [src]！</span>",
 		"<span class='notice'>You insert [I] into [src]!")
 		chargecount = 0
 		update_appearance()
 
 	else if(istype(I, /obj/item/card/id)) //Trying to unlock the interface with an ID card
 		if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-			user.visible_message(span_notice("[user] fumbles around figuring out where to swipe [I] on [src]."),
+			user.visible_message(span_notice("[user] 笨手笨脚地摸索着该在 [src] 的哪个位置刷卡 [I]。"),
 			span_notice("You fumble around figuring out where to swipe [I] on [src]."))
 			var/fumbling_time = 3 SECONDS * ( SKILL_ENGINEER_ENGI - user.skills.getRating(SKILL_ENGINEER) )
 			if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 				return
 
 		if(opened)
-			balloon_alert(user, "Close the cover first")
+			balloon_alert(user, "先关上护盖")
 			return
 
 		if(CHECK_BITFIELD(machine_stat, PANEL_OPEN))
-			balloon_alert(user, "Close the panel first")
+			balloon_alert(user, "先关闭面板")
 			return
 
 		if(machine_stat & (BROKEN|MAINT))
-			balloon_alert(user, "Nothing happens")
+			balloon_alert(user, "无事发生")
 			return
 
 		if(!allowed(user))
-			balloon_alert(user, "Access denied")
+			balloon_alert(user, "访问被拒绝")
 			return
 
 		locked = !locked
@@ -88,21 +88,21 @@
 		var/obj/item/stack/cable_coil/C = I
 
 		if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-			balloon_alert_to_viewers("fumbles")
+			balloon_alert_to_viewers("笨拙地操作")
 			var/fumbling_time = 5 SECONDS * ( SKILL_ENGINEER_ENGI - user.skills.getRating(SKILL_ENGINEER) )
 			if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 				return
 
 		var/turf/T = get_turf(src)
 		if(T.intact_tile)
-			balloon_alert(user, "Remove the floor plating")
+			balloon_alert(user, "移除地板")
 			return
 
 		if(C.get_amount() < 10)
-			balloon_alert(user, "Not enough wires")
+			balloon_alert(user, "线材不足")
 			return
 
-		balloon_alert_to_viewers("starts wiring [src]")
+		balloon_alert_to_viewers("开始给 [src] 接线")
 		playsound(loc, 'sound/items/deconstruct.ogg', 25, 1)
 
 		if(!do_after(user, 20, NONE, src, BUSY_ICON_BUILD) || terminal || !opened || has_electronics == APC_ELECTRONICS_SECURED)
@@ -124,47 +124,47 @@
 
 	else if(istype(I, /obj/item/circuitboard/apc) && opened && has_electronics == APC_ELECTRONICS_MISSING && !(machine_stat & BROKEN))
 		if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-			balloon_alert_to_viewers("fumbles")
+			balloon_alert_to_viewers("笨手笨脚地")
 			var/fumbling_time = 5 SECONDS * ( SKILL_ENGINEER_ENGI - user.skills.getRating(SKILL_ENGINEER) )
 			if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 				return
 
-		balloon_alert_to_viewers("Tries to insert APC board into [src]")
+		balloon_alert_to_viewers("试图将 APC 电路板插入 [src]")
 		playsound(loc, 'sound/items/deconstruct.ogg', 25, 1)
 
 		if(!do_after(user, 15, NONE, src, BUSY_ICON_BUILD))
 			return
 
 		has_electronics = APC_ELECTRONICS_INSTALLED
-		balloon_alert_to_viewers("Inserts APC board into [src]")
+		balloon_alert_to_viewers("将 APC 电路板插入 [src]")
 		qdel(I)
 
 	else if(istype(I, /obj/item/circuitboard/apc) && opened && has_electronics == APC_ELECTRONICS_MISSING && (machine_stat & BROKEN))
 		if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-			balloon_alert_to_viewers("fumbles")
+			balloon_alert_to_viewers("笨拙地摆弄着")
 			var/fumbling_time = 5 SECONDS * ( SKILL_ENGINEER_ENGI - user.skills.getRating(SKILL_ENGINEER) )
 			if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 				return
 
-		balloon_alert(user, "Cannot, frame damaged")
+		balloon_alert(user, "无法，框架受损")
 
 	else if(istype(I, /obj/item/frame/apc) && opened && (machine_stat & BROKEN))
 		if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-			balloon_alert_to_viewers("fumbles")
+			balloon_alert_to_viewers("笨拙地摸索着")
 			var/fumbling_time = 5 SECONDS * ( SKILL_ENGINEER_ENGI - user.skills.getRating(SKILL_ENGINEER) )
 			if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 				return
 
 		if(has_electronics)
-			balloon_alert(user, "Cannot, electronics still inside")
+			balloon_alert(user, "无法，电子设备仍在内部")
 			return
 
-		balloon_alert_to_viewers("Begins replacing front panel")
+		balloon_alert_to_viewers("开始更换前面板")
 
 		if(!do_after(user, 50, NONE, src, BUSY_ICON_BUILD))
 			return
 
-		balloon_alert_to_viewers("Replaces front panel")
+		balloon_alert_to_viewers("更换前面板")
 		qdel(I)
 		DISABLE_BITFIELD(machine_stat, BROKEN)
 		if(opened == APC_COVER_REMOVED)
@@ -173,21 +173,21 @@
 
 	else if(istype(I, /obj/item/frame/apc) && opened)
 		if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-			balloon_alert_to_viewers("fumbles")
+			balloon_alert_to_viewers("笨拙地摆弄着")
 			var/fumbling_time = 5 SECONDS * ( SKILL_ENGINEER_ENGI - user.skills.getRating(SKILL_ENGINEER) )
 			if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 				return
 
 		if(opened == APC_COVER_REMOVED)
 			opened = APC_COVER_OPENED
-		balloon_alert_to_viewers("Replaces [src]'s front panel")
+		balloon_alert_to_viewers("更换[src]的前面板")
 		qdel(I)
 		update_appearance()
 
 	else
 		if(((machine_stat & BROKEN)) && !opened && I.force >= 5)
 			opened = APC_COVER_REMOVED
-			balloon_alert_to_viewers("Knocks down [src]'s panel")
+			balloon_alert_to_viewers("撞倒了[src]的面板")
 			update_appearance()
 		else
 			if(issilicon(user))
@@ -195,7 +195,7 @@
 
 			if(!opened && CHECK_BITFIELD(machine_stat, PANEL_OPEN) && (ismultitool(I) || iswirecutter(I)))
 				return attack_hand(user)
-			balloon_alert_to_viewers("Hits [src] with [I]")
+			balloon_alert_to_viewers("用[I]击中了[src]")
 
 //Attack with hand - remove cell (if cover open) or interact with the APC
 /obj/machinery/power/apc/attack_hand(mob/living/user)
@@ -205,11 +205,11 @@
 
 	if(opened && cell && !issilicon(user))
 		if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-			balloon_alert_to_viewers("fumbles")
+			balloon_alert_to_viewers("笨手笨脚地")
 			var/fumbling_time = 5 SECONDS * ( SKILL_ENGINEER_ENGI - user.skills.getRating(SKILL_ENGINEER) )
 			if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 				return
-		balloon_alert_to_viewers("Removes [src] from [src]")
+		balloon_alert_to_viewers("将[src]从[src]中移除")
 		user.put_in_hands(cell)
 		cell.update_appearance()
 		set_cell(null)
@@ -232,19 +232,19 @@
 		return
 
 	if(opened)
-		balloon_alert(user, "Close the cover first")
+		balloon_alert(user, "先关上枪机盖")
 		return
 
 	if(CHECK_BITFIELD(machine_stat, PANEL_OPEN))
-		balloon_alert(user, "Close the panel first")
+		balloon_alert(user, "先关闭面板")
 		return
 
 	if(machine_stat & (BROKEN|MAINT))
-		balloon_alert(user, "Nothing happens")
+		balloon_alert(user, "什么都没发生")
 		return
 
 	if(!allowed(user))
-		balloon_alert(user, "Access denied")
+		balloon_alert(user, "访问被拒绝")
 		return
 
 	locked = !locked

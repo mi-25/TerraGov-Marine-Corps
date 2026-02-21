@@ -2,8 +2,8 @@
 #define SOM_TANK_HOVER_HEIGHT -8
 
 /obj/vehicle/sealed/armored/multitile/som_tank
-	name = "\improper Malleus hover tank"
-	desc = "A terrifying behemoth, the Malleus pattern hover tank is the SOM's main battle tank. Combining excellent mobility and formidable weaponry, it has earned a fearsome reputation among TerraGov forces that have faced it."
+	name = "\improper 马勒斯悬浮坦克"
+	desc = "一种可怕的巨兽，马勒斯型悬浮坦克是火星之子的主战坦克。它结合了出色的机动性和强大的火力，在曾面对过它的地球政府部队中赢得了可怕的声誉。"
 	icon = 'icons/obj/armored/3x4/som_tank.dmi'
 	turret_icon = 'icons/obj/armored/3x4/som_tank_gun.dmi'
 	damage_icon_path = 'icons/obj/armored/3x4/tank_damage.dmi'

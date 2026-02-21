@@ -88,18 +88,18 @@
 // Beach
 
 /turf/open/beach
-	name = "beach"
+	name = "海滩"
 	icon = 'icons/misc/beach.dmi'
 	shoefootstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	mediumxenofootstep = FOOTSTEP_SAND
 
 /turf/open/beach/sand
-	name = "sand"
+	name = "沙"
 	icon_state = "sand"
 
 /turf/open/beach/coastline
-	name = "coastline"
+	name = "海岸线"
 	icon = 'icons/misc/beach2.dmi'
 	icon_state = "sandwater"
 
@@ -107,7 +107,7 @@
 //not a child of turf/open/floor because shuttle floors are magic and don't behave like real floors.
 
 /turf/open/shuttle
-	name = "floor"
+	name = "地板"
 	icon_state = "floor"
 	icon = 'icons/turf/shuttle.dmi'
 	allow_construction = FALSE
@@ -119,7 +119,7 @@
 /turf/open/shuttle/check_alien_construction(mob/living/builder, silent = FALSE, planned_building)
 	if(ispath(planned_building, /turf/closed/wall/)) // Shuttles move and will leave holes in the floor during transit
 		if(!silent)
-			to_chat(builder, span_warning("This place seems unable to support a wall."))
+			to_chat(builder, span_warning("此处似乎无法支撑墙体。"))
 		return FALSE
 	return ..()
 
@@ -127,7 +127,7 @@
 	icon_state = "floor7"
 
 /turf/open/shuttle/dropship
-	name = "floor"
+	name = "地板"
 	icon_state = "rasputin1"
 
 /turf/open/shuttle/dropship/two
@@ -253,7 +253,7 @@
 
 //not really plating, just the look
 /turf/open/shuttle/plating
-	name = "plating"
+	name = "甲板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "plating"
 
@@ -261,7 +261,7 @@
 	icon_state = "heatinggrate"
 
 /turf/open/shuttle/brig // Added this floor tile so that I have a seperate turf to check in the shuttle -- Polymorph
-	name = "Brig floor"        // Also added it into the 2x3 brig area of the shuttle.
+	name = "禁闭室甲板"        // Also added it into the 2x3 brig area of the shuttle.
 	icon_state = "floor4"
 
 /turf/open/shuttle/escapepod
@@ -326,18 +326,18 @@
 	baseturfs = /turf/open/liquid/lava
 
 /turf/open/lavaland/basalt
-	name = "basalt"
+	name = "玄武岩"
 	icon_state = "basalt"
 	shoefootstep = FOOTSTEP_GRAVEL
 	barefootstep = FOOTSTEP_GRAVEL
 	mediumxenofootstep = FOOTSTEP_GRAVEL
 
 /turf/open/lavaland/basalt/cave
-	name = "cave"
+	name = "洞穴"
 	icon_state = "basalt_to_cave"
 
 /turf/open/lavaland/basalt/cave/corner
-	name = "cave"
+	name = "洞穴"
 	icon_state = "basalt_to_cave_corner"
 
 /turf/open/lavaland/basalt/cave/autosmooth
@@ -358,11 +358,11 @@
 	)
 
 /turf/open/lavaland/basalt/dirt
-	name = "dirt"
+	name = "泥土"
 	icon_state = "basalt_to_dirt"
 
 /turf/open/lavaland/basalt/dirt/corner
-	name = "dirt"
+	name = "泥土"
 	icon_state = "basalt_to_dirt_corner"
 
 /turf/open/lavaland/basalt/dirt/autosmoothing

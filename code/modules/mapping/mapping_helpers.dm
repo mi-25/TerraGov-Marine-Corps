@@ -2,7 +2,7 @@
 
 
 /obj/effect/baseturf_helper //Set the baseturfs of every turf in the /area/ it is placed.
-	name = "baseturf editor"
+	name = "基地地形编辑器"
 	icon = 'icons/effects/mapping_helpers.dmi'
 	icon_state = ""
 	plane = POINT_PLANE
@@ -49,39 +49,39 @@
 
 
 /obj/effect/baseturf_helper/space
-	name = "space baseturf editor"
+	name = "太空基地地板编辑器"
 	baseturf = /turf/open/space
 /*
 /obj/effect/baseturf_helper/asteroid
-	name = "asteroid baseturf editor"
+	name = "小行星基底地形编辑器"
 	baseturf = /turf/open/floor/plating/asteroid
 
 /obj/effect/baseturf_helper/asteroid/airless
-	name = "asteroid airless baseturf editor"
+	name = "小行星无空气基底编辑器"
 	baseturf = /turf/open/floor/plating/asteroid/airless
 
 /obj/effect/baseturf_helper/asteroid/basalt
-	name = "asteroid basalt baseturf editor"
+	name = "小行星玄武岩基地层编辑器"
 	baseturf = /turf/open/floor/plating/asteroid/basalt
 
 /obj/effect/baseturf_helper/asteroid/snow
-	name = "asteroid snow baseturf editor"
+	name = "小行星雪地基砖编辑器"
 	baseturf = /turf/open/floor/plating/asteroid/snow
 
 /obj/effect/baseturf_helper/beach/sand
-	name = "beach sand baseturf editor"
+	name = "沙滩沙地基础地形编辑器"
 	baseturf = /turf/open/floor/plating/beach/sand
 
 /obj/effect/baseturf_helper/beach/water
-	name = "water baseturf editor"
+	name = "水域基底编辑器"
 	baseturf = /turf/open/floor/plating/beach/water
 
 /obj/effect/baseturf_helper/lava
-	name = "lava baseturf editor"
+	name = "熔岩基地图块编辑器"
 	baseturf = /turf/open/lava/smooth
 
 /obj/effect/baseturf_helper/lava_land/surface
-	name = "lavaland baseturf editor"
+	name = "熔岩地基地板编辑器"
 	baseturf = /turf/open/lava/smooth/lava_land_surface
 */
 
@@ -100,7 +100,7 @@
 	layer = DOOR_HELPER_LAYER
 
 /obj/effect/mapping_helpers/airlock/locked
-	name = "airlock lock helper"
+	name = "气闸锁辅助"
 	icon_state = "airlock_locked_helper"
 
 /obj/effect/mapping_helpers/airlock/locked/Initialize(mapload)
@@ -118,7 +118,7 @@
 	current_turf.atom_flags |= AI_BLOCKED
 
 /obj/effect/mapping_helpers/airlock/free_access
-	name = "airlock free access helper"
+	name = "气闸门自由访问助手"
 	icon_state = "airlock_free_access"
 
 /obj/effect/mapping_helpers/airlock/free_access/Initialize(mapload)
@@ -133,7 +133,7 @@
 	airlock.req_one_access = null
 
 /obj/effect/mapping_helpers/airlock/abandoned
-	name = "airlock abandoned helper"
+	name = "气闸门废弃助手"
 	icon_state = "airlock_abandoned_helper"
 
 /obj/effect/mapping_helpers/airlock/abandoned/Initialize(mapload)
@@ -151,7 +151,7 @@
 	current_turf.atom_flags |= AI_BLOCKED
 
 /obj/effect/mapping_helpers/airlock/welded
-	name = "airlock welded helper"
+	name = "气闸焊接辅助"
 	icon_state = "airlock_welded_helper"
 
 /obj/effect/mapping_helpers/airlock/welded/Initialize(mapload)
@@ -169,7 +169,7 @@
 	current_turf.atom_flags |= AI_BLOCKED
 
 /obj/effect/mapping_helpers/broken_apc
-	name = "broken apc helper"
+	name = "损坏的 APC 辅助器"
 	icon_state = "airlock_brokenapc_helper"
 	///chance that we actually break the APC
 	var/breakchance = 100
@@ -189,7 +189,7 @@
 	apc.do_break()
 
 /obj/effect/mapping_helpers/apc_unlocked
-	name = "apc unlocked interface helper"
+	name = "APC解锁界面助手"
 	icon_state = "apc_unlocked_interface_helper"
 
 /obj/effect/mapping_helpers/apc_unlocked/Initialize(mapload)
@@ -210,11 +210,11 @@
 	breakchance = 75
 
 /obj/effect/mapping_helpers/airlock_autoname
-	name = "airlock autoname helper"
+	name = "气闸门自动命名助手"
 	icon_state = "airlock_autoname_helper"
 
 /obj/effect/mapping_helpers/airlock/hackProof
-	name = "airlock block ai control helper"
+	name = "气闸门阻止AI控制辅助"
 	icon_state = "hackproof"
 
 /obj/effect/mapping_helpers/airlock/hackProof/Initialize(mapload)
@@ -238,7 +238,7 @@
 	door.name = get_area_name(door)
 
 /obj/effect/mapping_helpers/airlock/unres
-	name = "airlock unresctricted side helper"
+	name = "气闸门无限制侧辅助器"
 	icon_state = "airlock_unres_helper"
 
 /obj/effect/mapping_helpers/airlock/unres/Initialize(mapload)
@@ -248,7 +248,7 @@
 		return
 
 /obj/effect/mapping_helpers/area_flag_injector
-	name = "Area flag Injector"
+	name = "区域标记注射器"
 	icon_state = "area_flag_injector"
 	/// flags to inject to the area this is placed in
 	var/flag_type = NONE
@@ -277,7 +277,7 @@
 	flag_type = NO_CONSTRUCTION
 
 /obj/effect/mapping_helpers/simple_pipes
-	name = "Simple Pipes"
+	name = "简易管道"
 	late = TRUE
 	icon_state = "pipe-3"
 	var/piping_layer = 3
@@ -361,11 +361,11 @@
 	qdel(src)
 
 /obj/effect/mapping_helpers/light
-	name = "generic placeholder for light map helpers, do not place in game"
+	name = "通用占位符，用于光照贴图辅助工具，请勿在游戏中使用。"
 	layer = DOOR_HELPER_LAYER
 
 /obj/effect/mapping_helpers/light/broken
-	name = "light broken map helper"
+	name = "地图辅助工具已关闭"
 	icon_state = "light_flicker_broken"
 
 /obj/effect/mapping_helpers/light/broken/Initialize(mapload)
@@ -382,7 +382,7 @@
 	light.broken()
 
 /obj/effect/mapping_helpers/light/turnedoff
-	name = "light area turnoff helper"
+	name = "区域灯光关闭助手"
 	icon_state = "light_flicker_area_off"
 
 /obj/effect/mapping_helpers/light/turnedoff/Initialize(mapload)
@@ -393,7 +393,7 @@
 	area.update_icon()
 
 /obj/effect/mapping_helpers/light/flickering
-	name = "light flickering helper"
+	name = "灯光闪烁辅助"
 	icon_state = "light_flicker"
 
 /obj/effect/mapping_helpers/light/flickering/Initialize(mapload)
@@ -409,7 +409,7 @@
 
 ///enable random flickering on lights, to make this effect happen the light has be flickering in the first place
 /obj/effect/mapping_helpers/light/flickering/enable_random_flickering
-	name = "light enable random flicker timing helper"
+	name = "灯光启用随机闪烁计时辅助"
 	icon_state = "light_flicker_random"
 
 /obj/effect/mapping_helpers/light/flickering/enable_random_flickering/Initialize(mapload)
@@ -423,7 +423,7 @@
 		light.random_flicker = TRUE
 
 /obj/effect/mapping_helpers/light/flickering/flicker_random_settings
-	name = "light random flicker settings helper"
+	name = "灯光随机闪烁设置助手"
 	icon_state = "light_flicker_random_settings"
 	var/flicker_time_upper_max = 10 SECONDS
 	var/flicker_time_lower_min = 0.2 SECONDS
@@ -447,7 +447,7 @@
 	flicker_time_lower_min = 3 SECONDS
 
 /obj/effect/mapping_helpers/light/power
-	name = "light power helper"
+	name = "轻型电源助手"
 	icon_state = "light_flicker_power"
 	var/lighting_power = 1
 
@@ -466,7 +466,7 @@
 	lighting_power = 2.0
 
 /obj/effect/mapping_helpers/light/color
-	name = "light color mapping helper"
+	name = "灯光颜色映射助手"
 	icon_state = "light_flicker_color"
 	var/lighting_color = LIGHT_COLOR_WHITE
 
@@ -485,7 +485,7 @@
 	light_color = LIGHT_COLOR_ORANGE
 
 /obj/effect/mapping_helpers/light/bulb_colour
-	name = "light bulb color helper"
+	name = "灯泡颜色助手"
 	icon_state = "light_flicker_color_bulb"
 	var/bulb_colour = LIGHT_COLOR_WHITE
 
@@ -504,7 +504,7 @@
 	bulb_colour = LIGHT_COLOR_BLUE
 
 /obj/effect/mapping_helpers/light/brightness
-	name = "light brightness mapping helper"
+	name = "光照亮度映射辅助工具"
 	icon_state = "light_flicker_brightness"
 	var/brightness_intensity = 4
 
@@ -531,7 +531,7 @@
 	pipe.paint(pipe_color)
 
 /obj/effect/mapping_helpers/airlock/unres
-	name = "airlock unrestricted side helper"
+	name = "气闸门解锁侧辅助"
 	icon_state = "airlock_unres_helper"
 
 /obj/effect/mapping_helpers/airlock/unres/Initialize(mapload)
@@ -542,7 +542,7 @@
 	airlock.unres_sides ^= dir
 
 /obj/effect/mapping_helpers/airlock/cyclelink_helper
-	name = "airlock cyclelink helper"
+	name = "气闸循环链接助手"
 	icon_state = "airlock_cyclelink_helper"
 
 /obj/effect/mapping_helpers/airlock/cyclelink_helper/Initialize(mapload)
@@ -556,10 +556,10 @@
 		airlock.cyclelinkeddir = dir
 
 /obj/effect/mapping_helpers/barricade
-	name = "base barricade helper"
+	name = "基础路障辅助"
 
 /obj/effect/mapping_helpers/barricade/wired
-	name = "wired barricade helper"
+	name = "已布线的路障辅助工具"
 	icon_state = "barricade_wired"
 
 /obj/effect/mapping_helpers/barricade/wired/Initialize(mapload)
@@ -575,7 +575,7 @@
 	foundbarricade.wire()
 
 /obj/effect/mapping_helpers/barricade/bomb
-	name = "bomb armor barricade helper"
+	name = "爆炸护甲路障辅助"
 	icon_state = "barricade_bomb"
 
 /obj/effect/mapping_helpers/barricade/bomb/Initialize(mapload)
@@ -593,7 +593,7 @@
 	foundbarricade.update_icon()
 
 /obj/effect/mapping_helpers/barricade/acid
-	name = "acid armor barricade helper"
+	name = "酸液护甲路障辅助"
 	icon_state = "barricade_acid"
 
 /obj/effect/mapping_helpers/barricade/acid/Initialize(mapload)
@@ -612,7 +612,7 @@
 	foundbarricade.update_icon()
 
 /obj/effect/mapping_helpers/barricade/melee
-	name = "melee armor barricade helper"
+	name = "近战护甲路障辅助"
 	icon_state = "barricade_melee"
 
 /obj/effect/mapping_helpers/barricade/melee/Initialize(mapload)
@@ -630,7 +630,7 @@
 	foundbarricade.update_icon()
 
 /obj/effect/mapping_helpers/barricade/closed
-	name = "closed plasteel barricade helper"
+	name = "已关闭的塑钢路障辅助器"
 	icon_state = "barricade_closed"
 
 /obj/effect/mapping_helpers/barricade/closed/Initialize(mapload)
@@ -646,7 +646,7 @@
 	foundbarricade.toggle_open()
 
 /obj/effect/mapping_helpers/weld_vents
-	name = "vents welded helper"
+	name = "通风口焊接辅助"
 	icon_state = "airlock_welded_helper"
 	///probability we weld the vent
 	var/weld_chance = 100
@@ -691,7 +691,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 /*
 //This helper applies components to things on the map directly.
 /obj/effect/mapping_helpers/component_injector
-	name = "Component Injector"
+	name = "组件注射器"
 	late = TRUE
 	var/target_type
 	var/target_name
@@ -718,7 +718,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	return list(component_type)
 
 /obj/effect/mapping_helpers/component_injector/infective
-	name = "Infective Injector"
+	name = "感染注射器"
 	icon_state = "component_infective"
 	component_type = /datum/component/infective
 	var/disease_type

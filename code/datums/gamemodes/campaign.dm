@@ -33,11 +33,11 @@
 	var/list/respawn_timers = list()
 
 /datum/game_mode/hvh/campaign/announce()
-	to_chat(world, "<b>The current game mode is - Campaign!</b>")
+	to_chat(world, "<b>当前游戏模式为 - 战役！</b>")
 	to_chat(world, "<b>The fringe world of Palmaria is undergoing significant upheaval, with large portions of the population threatening to succeed from TerraGov. With the population on the brink of civil war, \
 	both TerraGov Marine Corp and the Sons of Mars forces are looking to intervene.")
-	to_chat(world, "<b>Fight for your faction across the planet, the campaign for Palmaria starts now!</b>")
-	to_chat(world, "<b>WIP, report bugs on the github!</b>")
+	to_chat(world, "<b>为你的阵营而战，帕尔马利亚战役现已打响！</b>")
+	to_chat(world, "<b>开发中，请在 GitHub 上报告错误！</b>")
 
 /datum/game_mode/hvh/campaign/pre_setup()
 	. = ..()
@@ -71,7 +71,7 @@
 
 	var/respawn_delay = CAMPAIGN_RESPAWN_TIME + stat_list[respawnee.faction]?.respawn_delay_modifier
 	if((player_death_times[respawnee.ckey] + respawn_delay) > world.time)
-		to_chat(respawnee, span_warning("Respawn timer has [round((player_death_times[respawnee.ckey] + respawn_delay - world.time) / 10)] seconds remaining."))
+		to_chat(respawnee, span_warning("重生计时器还剩 [round((player_death_times[respawnee.ckey] + respawn_delay - world.time) / 10)] 秒。"))
 		return
 
 	attempt_attrition_respawn(respawnee)
@@ -238,12 +238,12 @@
 	if(!user.client)
 		return
 	if(forced)
-		to_chat(user, "The teams are currently imbalanced, in favour of your team. Forced autobalance is on, so you may be swapped to the other team.")
+		to_chat(user, "当前队伍人数不平衡，对你方有利。强制自动平衡已启用，你可能会被换到另一队。")
 	else if(tgui_alert(user, "The teams are currently imbalanced, in favour of your team.", "Join the other team?", list("Stay on team", "Change team"), CAMPAIGN_AUTOBALANCE_DECISION_TIME, FALSE) != "Change team")
 		return
 	var/list/current_ratio = autobalance_check(1)
 	if(!current_ratio || current_ratio[2] == user.faction)
-		to_chat(user, span_warning("Team balance already corrected."))
+		to_chat(user, span_warning("团队平衡已修正。"))
 		return
 	LAZYREMOVE(GLOB.alive_human_list_faction[user.faction], user)
 	user.faction = new_faction //we set this first so the ghost's faction and subsequent job screen is correct, but it means we have to remove from the faction list above first.
@@ -383,7 +383,7 @@
 				return
 
 			if(!GLOB.enter_allowed)
-				to_chat(candidate, span_warning("Spawning currently disabled, please observe."))
+				to_chat(candidate, span_warning("当前已禁用生成，请观察。"))
 				return
 
 			var/mob/new_player/ready_candidate = new()
@@ -413,21 +413,21 @@
 ///Actually respawns the player, if still able
 /datum/game_mode/hvh/campaign/proc/attrition_respawn(mob/new_player/ready_candidate, datum/job/job_datum)
 	if(!ready_candidate.IsJobAvailable(job_datum, TRUE))
-		to_chat(usr, span_warning("Selected job is not available."))
+		to_chat(usr, span_warning("所选职位不可用。"))
 		return
 	if(!SSticker || SSticker.current_state != GAME_STATE_PLAYING)
-		to_chat(usr,span_warning("The round is either not ready, or has already finished!"))
+		to_chat(usr,span_warning("本回合尚未准备就绪，或已结束！"))
 		return
 	if(!GLOB.enter_allowed)
-		to_chat(usr, span_warning("Spawning currently disabled, please observe."))
+		to_chat(usr, span_warning("当前已禁用生成，请观察。"))
 		return
 	if(!SSjob.AssignRole(ready_candidate, job_datum, TRUE))
-		to_chat(usr, span_warning("Failed to assign selected role."))
+		to_chat(usr, span_warning("未能分配所选角色。"))
 		return
 
 	if(current_mission.mission_state == MISSION_STATE_ACTIVE)
 		if(stat_list[job_datum.faction].active_attrition_points < job_datum.job_cost)
-			to_chat(usr, span_warning("Unable to spawn. Insufficient attrition."))
+			to_chat(usr, span_warning("无法生成。损耗不足。"))
 			return
 		stat_list[job_datum.faction].active_attrition_points -= job_datum.job_cost
 	LateSpawn(ready_candidate)

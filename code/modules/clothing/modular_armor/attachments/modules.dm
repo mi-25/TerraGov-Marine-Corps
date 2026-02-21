@@ -3,8 +3,8 @@
  *	These include the helmet and regular armor modules. Basically these are the subtypes of any armor 'system'.
  */
 /obj/item/armor_module/module
-	name = "broken armor module"
-	desc = "You better be debugging."
+	name = "装甲模块损坏"
+	desc = "你最好是在调试。"
 
 
 /**
@@ -12,8 +12,8 @@
  */
 
 /obj/item/armor_module/module/pt_belt
-	name = "\improper physical training reflective belt"
-	desc = "Sergeant Major ordered marines to wear reflective belt to ensure marines' safety. You can speculate what danger entail a PT belt."
+	name = "\improper 体能训练反光腰带"
+	desc = "军士长命令陆战队员佩戴反光腰带以确保安全。你可以推测PT腰带能防范何种危险。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "pt_belt"
 	worn_icon_state = "pt_belt_a"
@@ -24,8 +24,8 @@
  * Shoulder lamp strength module
  */
 /obj/item/armor_module/module/better_shoulder_lamp
-	name = "\improper Baldur light amplification system"
-	desc = "Designed for mounting on modular armor. Substantially increases the power output of your modular armor's mounted flashlight. Be the light in the darkness."
+	name = "\improper 巴尔德尔光放大系统"
+	desc = "专为模块化装甲设计。大幅提升模块化装甲上安装的手电筒功率输出。成为黑暗中的光芒。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_lamp"
 	worn_icon_state = "mod_lamp_a"
@@ -38,9 +38,9 @@
  * Mini autodoc module
  */
 /obj/item/armor_module/module/valkyrie_autodoc
-	name = "\improper Valkyrie automedical system"
+	name = "\improper 瓦尔基里自动医疗系统"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
-	desc = "Designed for mounting on modular armor. This module has advanced medical systems that inject tricordrazine and tramadol based on the user's needs, as well as automatically securing the bones and body of the wearer, effectively splinting them until professional medical attention can be admistered. Will definitely impact mobility."
+	desc = "专为模块化装甲设计。该模块配备先进的医疗系统，可根据使用者需求注射三氯二嗪和曲马多，并能自动固定穿戴者的骨骼和身体，有效进行夹板固定直至获得专业医疗救治。必定会影响机动性。"
 	icon_state = "mod_autodoc"
 	worn_icon_state = "mod_autodoc_a"
 	slowdown = 0.3
@@ -61,9 +61,9 @@
 	return ..()
 
 /obj/item/armor_module/module/valkyrie_autodoc/som
-	name = "\improper Apollo automedical system"
+	name = "\improper 阿波罗自动医疗系统"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
-	desc = "Designed to be mounted on SOM combat armor, or internally inside Gorgon assault armor. This module has advanced medical systems that inject tricordrazine and tramadol based on the user's needs, as well as automatically securing the bones and body of the wearer, effectively splinting them until professional medical attention can be admistered. Will definitely impact mobility."
+	desc = "设计用于安装在SOM战斗护甲上，或内置于暴食者突击护甲内部。该模块配备先进的医疗系统，可根据使用者需求注射三卡多拉嗪和曲马多，并能自动固定穿戴者的骨骼和身体，有效起到夹板作用，直至获得专业医疗救治。肯定会影响机动性。"
 	icon_state = "mod_autodoc_som"
 	worn_icon_state = "mod_autodoc_som_a"
 	variants_by_parent_type = list(/obj/item/clothing/suit/modular/som/heavy/leader = "")
@@ -72,9 +72,9 @@
  * Fire poof module
 */
 /obj/item/armor_module/module/fire_proof
-	name = "\improper Surt thermal insulation system"
+	name = "\improper 瑟特隔热系统"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
-	desc = "Designed for mounting on modular armor. It shields you from the effects of fire, and prevents you from being set alight by any means. Wearing this in combination with the corresponding helmet module will render you completely impervious to fire. Will definitely impact mobility."
+	desc = "专为安装在模块化装甲上设计。它能保护你免受火焰效果影响，并防止你被任何方式点燃。将此模块与对应的头盔模块组合穿戴，将使你完全不受火焰伤害。肯定会影响机动性。"
 	icon_state = "mod_fire"
 	worn_icon_state = "mod_fire_a"
 	soft_armor = list(MELEE = -10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 40, ACID = -10)
@@ -93,8 +93,8 @@
 	return ..()
 
 /obj/item/armor_module/module/fire_proof_helmet
-	name = "\improper Surt thermal insulation system helmet module"
-	desc = "Designed for mounting on a modular helmet. It shields you from the effects of fire, and prevents you from being set alight by any means. Wearing this in combination with the corresponding helmet module will render you completely impervious to fire. Will definitely impact mobility."
+	name = "\improper 瑟特隔热系统头盔模块"
+	desc = "专为模块化头盔设计。它能保护你免受火焰影响，并防止你被任何方式点燃。将此模块与对应的头盔模块组合佩戴，将使你完全不受火焰伤害。肯定会影响机动性。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_fire_head"
 	worn_icon_state = "mod_fire_head_a"
@@ -103,8 +103,8 @@
 	variants_by_parent_type = list(/obj/item/clothing/head/modular/m10x = "mod_fire_head_xn", /obj/item/clothing/head/modular/tdf = "")
 
 /obj/item/armor_module/module/fire_proof/som
-	name = "\improper Hades incendiary insulation system"
-	desc = "Designed for mounting on modular SOM armor. It provides near-immunity to the effects of fire, and prevents you from being set alight by any means. Wearing this in combination with the corresponding helmet module will render you completely impervious to fire. Will not actually provide any resistance against volkite weaponry. Will impact mobility."
+	name = "\improper 哈迪斯燃烧隔热系统"
+	desc = "专为安装在模块化火星之子护甲上而设计。它能提供近乎免疫火焰效果的能力，并防止你以任何方式被点燃。将此模块与对应的头盔模块组合穿戴，将使你完全不受火焰伤害。实际上不会对伏尔克武器提供任何抗性。会影响机动性。"
 	icon_state = "mod_fire_som"
 	worn_icon_state = "mod_fire_som_a"
 	soft_armor = list(MELEE = -10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 35, ACID = -10)
@@ -114,8 +114,8 @@
 */
 
 /obj/item/armor_module/module/tyr_extra_armor
-	name = "\improper Tyr Mk.2 armor reinforcement system"
-	desc = "Designed for mounting on modular armor. A substantial amount of additional all-around armor plating designed to grant the user extra protection against any kind of threat. This newer version has improved protection, and will impact mobility less than its predecessor."
+	name = "\improper Tyr Mk.2 装甲强化系统"
+	desc = "专为模块化装甲设计。大量额外的全方位装甲板，旨在为用户提供针对各类威胁的额外防护。此新版改进了防护性能，且对机动性的影响小于前代。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_armor"
 	worn_icon_state = "mod_armor_a"
@@ -134,16 +134,16 @@
 	return ..()
 
 /obj/item/armor_module/module/tyr_extra_armor/mark1
-	name = "\improper Tyr Mk.1 armor reinforcement system"
-	desc = "Designed for mounting on modular armor. A decent amount of additional all-around armor plating designed to grant the user extra protection against any kind of threat. This older version has worse protection. Will greatly impact mobility."
+	name = "\improper 泰尔 Mk.1 型装甲强化系统"
+	desc = "专为模块化装甲设计。提供相当数量的全方位附加装甲板，旨在为用户提供针对各类威胁的额外防护。此旧版本防护性能较差。将极大影响机动性。"
 	icon_state = "mod_armor_lower"
 	worn_icon_state = "mod_armor_lower_a"
 	soft_armor = list(MELEE = 10, BULLET = 10, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 10, FIRE = 10, ACID = 10)
 	slowdown = 0.4
 
 /obj/item/armor_module/module/tyr_head
-	name = "\improper Tyr armor reinforcement system helmet module"
-	desc = "Designed for mounting on a modular helmet. A substantial amount of all-around armour plating designed to grant the user extra protection against any kind of threat."
+	name = "\improper 泰尔装甲强化系统头盔模块"
+	desc = "专为模块化头盔设计。采用全方位重型装甲板，旨在为用户提供针对各类威胁的额外防护。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "tyr_head"
 	worn_icon_state = "tyr_head_a"
@@ -152,8 +152,8 @@
 	variants_by_parent_type = list(/obj/item/clothing/head/modular/m10x = "tyr_head_xn", /obj/item/clothing/head/modular/tdf = "")
 
 /obj/item/armor_module/module/tyr_extra_armor/som
-	name = "\improper Lorica armor reinforcement system"
-	desc = "Designed for mounting on modular SOM armor. A substantial amount of additional armor plating designed to grant the user extra protection against all forms of damage. Will definitely impact mobility."
+	name = "\improper 洛里卡装甲强化系统"
+	desc = "专为安装在模块化火星之子装甲上设计。大量附加装甲板，旨在为用户提供针对所有伤害形式的额外防护。肯定会影响机动性。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "lorica_armor"
 	worn_icon_state = "lorica_armor_a"
@@ -165,8 +165,8 @@
 */
 
 /obj/item/armor_module/module/ballistic_armor
-	name = "\improper Hod ballistic deflection system"
-	desc = "Designed for mounting on modular armor. Contains large amounts of ballistic armor plating, as well as energetically reflective and thermally dissipative material that grant it a high level of defense against bullets and lasers alike. Will impact mobility."
+	name = "\improper 霍德弹道偏转系统"
+	desc = "专为模块化装甲设计。包含大量弹道装甲板，以及能量反射和热消散材料，使其对弹道和激光攻击均具有高等级防护。会影响机动性。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_ff"
 	worn_icon_state = "mod_ff_a"
@@ -175,8 +175,8 @@
 	slot = ATTACHMENT_SLOT_MODULE
 
 /obj/item/armor_module/module/hod_head
-	name = "\improper Hod ballistic deflection system helmet module"
-	desc = "Designed for mounting on a modular helmet. Contains large amounts of ballistic armor plating, as well as energetically reflective and thermally dissipative material that grant it a high level of defense against bullets and lasers alike. Will impact mobility."
+	name = "\improper 霍德弹道偏转系统头盔模块"
+	desc = "专为模块化头盔设计。包含大量弹道装甲板，以及能量反射和热消散材料，使其对弹道和激光攻击都具有高水平的防御能力。会影响机动性。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_ff_head"
 	worn_icon_state = "mod_ff_head_a"
@@ -187,8 +187,8 @@
  * Environment protection module
 */
 /obj/item/armor_module/module/mimir_environment_protection
-	name = "\improper Mimir Mk.2 environmental resistance system"
-	desc = "Designed for mounting on modular armor. This newer model provides great resistance to acid, as well as biological and radiological threats. Pairing this with a Mimir helmet module and a gas mask will make the user impervious to gas attacks. Will impact mobility."
+	name = "\improper 密米尔 Mk.2 环境抗性系统"
+	desc = "专为模块化装甲设计。这款新型号提供出色的酸液、生化及辐射威胁防护。与米米尔头盔模块和防毒面具搭配使用，可使穿戴者完全免疫毒气攻击。会影响机动性。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_biohazard"
 	worn_icon_state = "mod_biohazard_a"
@@ -216,8 +216,8 @@
 	return ..()
 
 /obj/item/armor_module/module/mimir_environment_protection/mimir_helmet
-	name = "\improper Mimir Mk.2 environmental resistance system helmet module"
-	desc = "Designed for mounting on a modular helmet. This newer model provides great resistance to acid, as well as biological and radiological threats. Pairing this with a Mimir suit module and a gas mask will make the user impervious to gas attacks."
+	name = "\improper 密米尔 Mk.2 型环境抗性系统头盔模块"
+	desc = "专为模块化头盔设计。这款新型号对酸液、生化及辐射威胁具有极佳的抗性。与米米尔防护服模块和防毒面具搭配使用，可使穿戴者免受毒气攻击。"
 	icon_state = "mimir_head"
 	worn_icon_state = "mimir_head_a"
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 40, FIRE = 0, ACID = 30)
@@ -226,22 +226,22 @@
 	variants_by_parent_type = list(/obj/item/clothing/head/modular/m10x = "mimir_head_xn", /obj/item/clothing/head/modular/tdf = "")
 
 /obj/item/armor_module/module/mimir_environment_protection/mark1
-	name = "\improper Mimir Mk.1 environmental resistance system"
-	desc = "Designed for mounting on modular armor. This older model provides minor resistance to acid, as well as biological, and radiological threats. Pairing this with a Mimir helmet module and mask will make the user highly resistant to gas attacks, but will not provide immunity. Will impact mobility."
+	name = "\improper 密米尔 Mk.1 环境抗性系统"
+	desc = "专为模块化装甲安装设计。这款旧型号对酸液、生化及辐射威胁提供轻微防护。与米米尔头盔模块和面罩搭配使用，可使穿戴者对气体攻击具有高度抗性，但无法提供完全免疫。会影响机动性。"
 	icon_state = "mod_biohazard"
 	worn_icon_state = "mod_biohazard_a"
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 15, FIRE = 0, ACID = 15)
 	slowdown = 0.2
 
 /obj/item/armor_module/module/mimir_environment_protection/mimir_helmet/mark1 //gas protection
-	name = "\improper Mimir Mk.1 environmental resistance system helmet module"
-	desc = "Designed for mounting on a modular helmet. This older model provides minor resistance to acid, as well as biological, and radiological threats. Pairing this with a Mimir helmet module and mask will make the user highly resistant to gas attacks, but will not provide immunity. Will impact mobility."
+	name = "\improper 密米尔 Mk.1 环境抗性系统头盔模块"
+	desc = "专为模块化头盔设计。这款旧型号对酸液、生化及辐射威胁提供轻微防护。与米米尔头盔模块和面罩搭配使用，可使穿戴者对气体攻击具有高度抗性，但无法提供完全免疫。会影响机动性。"
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 15, FIRE = 0, ACID = 15)
 
 //SOM version
 /obj/item/armor_module/module/mimir_environment_protection/som
-	name = "\improper Mithridatius hostile environment protection system"
-	desc = "Designed for mounting on modular SOM armor. This module appears to be designed to protect the user from the effects of radiological attacks, although it also provides improved resistance against other environmental threats such as acids and gasses. Pairing this with a Mithridatius helmet module and mask will make the user impervious to gas clouds. Will impact mobility."
+	name = "\improper 米特里达梯式恶劣环境防护系统"
+	desc = "专为安装在模块化火星之子装甲上而设计。该模块似乎旨在保护使用者免受辐射攻击的影响，同时也提供对酸液和毒气等其他环境威胁的增强抵抗力。将其与米特里达梯头盔模块和面罩搭配使用，可使使用者对毒气云免疫。会影响机动性。"
 	icon_state = "mithridatius"
 	worn_icon_state = "mithridatius_a"
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 25, FIRE = 0, ACID = 20)
@@ -251,8 +251,8 @@
 */
 
 /obj/item/armor_module/module/hlin_explosive_armor
-	name = "\improper Hlin explosive compensation system"
-	desc = "Designed for mounting on modular armor. Uses a complex set of armor plating and compensation to lessen the effect of explosions. Will impact mobility"
+	name = "\improper Hlin 爆炸补偿系统"
+	desc = "专为模块化装甲设计。采用复杂的装甲板和补偿系统来减轻爆炸效果。会影响机动性。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_boomimmune"
 	worn_icon_state = "mod_boomimmune_a"
@@ -266,8 +266,8 @@
 */
 
 /obj/item/armor_module/module/chemsystem
-	name = "\improper Vali chemical enhancement module"
-	desc = "Designed for mounting on modular armor. This experimental module runs on green blood taken from xenos with harvester class weapons; Green blood heals the user and boosts any chems in the suit injection system. \nUse the suit menu to connect harvester class weapons, control the injection system, find chem boost information, and more."
+	name = "\improper 瓦利化学增强模块"
+	desc = "专为模块化装甲设计。这个实验性模块使用由收割者级武器从异形身上提取的绿色血液供能；绿色血液能治疗使用者并增强防护服注射系统中的任何化学物质。\n使用防护服菜单连接收割者级武器、控制注射系统、查看化学增强信息等。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_chemsystem"
 	worn_icon_state = "mod_chemsystem_a"
@@ -305,8 +305,8 @@
 */////////////////////////
 
 /obj/item/armor_module/module/eshield
-	name = "\improper Svalinn energy shield system"
-	desc = "A brand new innovation in armor systems, this module creates a shield around the user that is capable of negating all damage at the cost of increased vulnerability to melee, biological, and acid attacks. If it sustains too much damage it will deactivate, and leave the user vulnerable until it recharges."
+	name = "\improper 斯瓦林能量护盾系统"
+	desc = "装甲系统的一项全新创新，该模块能在使用者周围生成一个护盾，能够抵消所有伤害，代价是增加对近战、生化和酸液攻击的脆弱性。如果承受过多伤害，它会停用，并在重新充能前让使用者处于脆弱状态。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_eshield"
 	worn_icon_state = "mod_eshield_a"
@@ -479,8 +479,8 @@
 
 //original Martian design, donutsteel
 /obj/item/armor_module/module/eshield/som
-	name = "\improper Aegis energy dispersion system"
-	desc = "A sophisticated shielding unit, designed to disperse the energy of incoming impacts, rendering them harmless to the user. If it sustains too much it will deactivate, and leave the user vulnerable. It is unclear if this was a purely  SOM designed module, or whether it was reverse engineered from the TGMC's 'Svalinn' shield system which was developed around the same time."
+	name = "\improper 埃癸斯能量扩散系统"
+	desc = "一套精密的护盾单元，旨在分散来袭冲击的能量，使其对使用者无害。如果承受过多伤害，它会停用，让使用者陷入脆弱状态。尚不清楚这究竟是纯粹的火星之子设计模块，还是从地球政府殖民地海军陆战队同期开发的'斯瓦林'护盾系统逆向工程而来。"
 
 /obj/item/armor_module/module/eshield/som/overclocked
 	max_shield_health = 75
@@ -494,8 +494,8 @@
 */
 
 /obj/item/armor_module/module/mirage
-	name = "\improper Loki illusion projection system"
-	desc = "Designed for mounting on modular armor. This module creates a holographic projection of the user while simultaneously rendering them invisible for a short duration, which can be used to distract enemies and draw their fire."
+	name = "\improper 洛基幻影投射系统"
+	desc = "专为模块化装甲设计。该模块会生成使用者的全息投影，同时让使用者在短时间内隐形，可用于分散敌人注意力并吸引火力。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_illusion"
 	worn_icon_state = "mod_illusion_a"
@@ -507,7 +507,7 @@
 
 /obj/item/armor_module/module/mirage/activate(mob/living/user)
 	if(!COOLDOWN_FINISHED(src, mirage_cooldown))
-		balloon_alert(user, "wait [COOLDOWN_TIMELEFT(src, mirage_cooldown)*0.1] seconds!")
+		balloon_alert(user, "等待 [COOLDOWN_TIMELEFT(src, mirage_cooldown)*0.1] 秒！")
 		return
 	var/alpha_mod = user.alpha * 0.95
 	user.alpha -= alpha_mod
@@ -527,8 +527,8 @@
 #define ARMORLOCK_GAS_TRANSFER_COEFF -1
 
 /obj/item/armor_module/module/armorlock
-	name = "\improper Thor armor lock system"
-	desc = "Designed for mounting on modular armor. This module seals gaps in the armor when activated, making the user unable to do any actions but increasing their armor."
+	name = "\improper 雷神装甲锁定系统"
+	desc = "专为模块化装甲设计。激活时，此模块会密封装甲间隙，使使用者无法进行任何动作，但会提升其护甲。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_armorlock"
 	worn_icon_state = "mod_armorlock_a"
@@ -550,7 +550,7 @@
 
 /obj/item/armor_module/module/armorlock/activate(mob/living/user)
 	if(!COOLDOWN_FINISHED(src, armorlock_cooldown))
-		balloon_alert(user, "wait [COOLDOWN_TIMELEFT(src, armorlock_cooldown)*0.1] seconds!")
+		balloon_alert(user, "等待 [COOLDOWN_TIMELEFT(src, armorlock_cooldown)*0.1] 秒！")
 		return
 
 	user.add_traits(list(TRAIT_HANDS_BLOCKED, TRAIT_STOPS_TANK_COLLISION, TRAIT_IMMOBILE, TRAIT_INCAPACITATED), REF(src))
@@ -574,8 +574,8 @@
 	user.status_flags &= ~GODMODE
 
 /obj/item/armor_module/module/style
-	name = "\improper Armor Equalizer"
-	desc = "Designed for mounting on conventional clothing, this grants it a level of reinforcement against attacks."
+	name = "\improper 护甲均衡器"
+	desc = "专为安装在常规衣物上设计，这使其具备一定程度的攻击防护能力。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_armor"
 	slot = ATTACHMENT_SLOT_CHESTPLATE
@@ -590,21 +590,21 @@
 	. += jointext(codex_info, "<br>")
 
 /obj/item/armor_module/module/style/light_armor
-	name = "\improper Light Armor Equalizer"
+	name = "\improper 轻型装甲均衡器"
 	icon_state = "style_light"
 	worn_icon_state = "style_light_a"
 	soft_armor = MARINE_ARMOR_LIGHT
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 
 /obj/item/armor_module/module/style/medium_armor
-	name = "\improper Medium Armor Equalizer"
+	name = "\improper 中型装甲均衡器"
 	icon_state = "style_medium"
 	worn_icon_state = "style_medium_a"
 	soft_armor = MARINE_ARMOR_MEDIUM
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
 
 /obj/item/armor_module/module/style/heavy_armor
-	name = "\improper Heavy Armor Equalizer"
+	name = "\improper 重型装甲均衡器"
 	icon_state = "style_heavy"
 	worn_icon_state = "style_heavy_a"
 	soft_armor = MARINE_ARMOR_HEAVY
@@ -614,8 +614,8 @@
  *   Helmet Modules
 */
 /obj/item/armor_module/module/welding
-	name = "\improper HM-3 welding visor helmet module"
-	desc = "Designed for mounting on a modular helmet. This module can be toggled on or off to function as welding protection for your delicate eyes."
+	name = "\improper HM-3 焊接面罩头盔模块"
+	desc = "专为模块化头盔设计。此模块可开关，作为焊接护具保护您脆弱的眼睛。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "welding_head"
 	worn_icon_state = "welding_head_a"
@@ -657,16 +657,16 @@
 	user.update_inv_head()
 
 /obj/item/armor_module/module/welding/som
-	name = "integrated welding visor helmet module"
-	desc = "Built in welding module for a SOM engineering helmet. This module can be toggled on or off to function as welding protection for your delicate eyes."
+	name = "集成式焊接面罩头盔模块"
+	desc = "火星之子工程头盔内置焊接模块。该模块可开关，为您的精密双眼提供焊接防护。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "welding_head_som"
 	worn_icon_state = "welding_head_som_a"
 	attach_features_flags = ATTACH_ACTIVATION|ATTACH_APPLY_ON_MOB
 
 /obj/item/armor_module/module/welding/superior
-	name = "\improper HM-33 superior welding visor helmet module"
-	desc = "Designed for mounting on a modular helmet. This more expensive module can be toggled on or off to function as welding protection for your delicate eyes, strangely smells like potatoes."
+	name = "\improper HM-33 高级焊接面罩头盔模块"
+	desc = "专为模块化头盔设计。这款价格更高的模块件可切换开关，为你的娇嫩双眼提供焊接保护，奇怪的是闻起来有股土豆味。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "welding_head"
 	worn_icon_state = "welding_head_a"
@@ -681,8 +681,8 @@
 	parent.AddComponent(/datum/component/clothing_tint, TINT_4, active)
 
 /obj/item/armor_module/module/binoculars
-	name = "\improper HM-6 binocular helmet module"
-	desc = "Designed for mounting on a modular helmet. Can be flipped down to view into the distance."
+	name = "\improper HM-6 双目头盔模块"
+	desc = "专为模块化头盔设计。可向下翻转以观察远处。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "binocular_head"
 	worn_icon_state = "binocular_head_a"
@@ -697,7 +697,7 @@
 
 /obj/item/armor_module/module/binoculars/activate(mob/living/user)
 	if(!(user.client.eye == user) && !(user.client.eye == user.loc))
-		to_chat(user, span_warning("You're looking through something else right now."))
+		to_chat(user, span_warning("你正在查看其他东西。"))
 		return
 	zoom(user)
 	if(active == zoom) //Zooming failed for some reason and didn't change
@@ -721,8 +721,8 @@
 	return COMSIG_MOB_CLICK_CANCELED
 
 /obj/item/armor_module/module/binoculars/artemis_mark_two // a little cheating with subtypes
-	name = "\improper Freyr Mk.2 visual assistance helmet system"
-	desc = "Designed for mounting on a modular helmet. The Freyr module is designed with an overlay visor that clarifies the user's vision, allowing them to see clearly even in the harshest of circumstances. This version is enhanced and allows the marine to peer through the visor, akin to binoculars."
+	name = "\improper 弗雷尔 Mk.2 视觉辅助头盔系统"
+	desc = "专为模块化头盔设计。弗雷尔模块配备增强型护目镜，可在最恶劣环境下提供清晰视野。此版本经过强化，使陆战队员能够透过护目镜进行观察，功能类似双筒望远镜。"
 	icon_state = "artemis_head"
 	worn_icon_state = "artemis_head_mk2_a"
 
@@ -731,8 +731,8 @@
 	parent.AddComponent(/datum/component/blur_protection)
 
 /obj/item/armor_module/module/artemis
-	name = "\improper Freyr Mk.1 visual assistance helmet system"
-	desc = "Designed for mounting on a modular helmet. The Freyr module is designed with an overlay visor that clarifies the user's vision, allowing them to see clearly even in the harshest of circumstances."
+	name = "\improper 弗雷尔 Mk.1 视觉辅助头盔系统"
+	desc = "专为模块化头盔设计。弗雷尔模块配备增强视觉的覆盖式面罩，即使在最恶劣的环境下也能让使用者清晰视物。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "artemis_head"
 	worn_icon_state = "artemis_head_a"
@@ -749,8 +749,8 @@
 #define COMMS_SETUP 2
 
 /obj/item/armor_module/module/antenna
-	name = "\improper HM-9 antenna helmet module"
-	desc = "Designed for mounting on a modular helmet. This module is able to shield against the interference of caves, allowing for normal messaging in shallow caves, and only minor interference when deep."
+	name = "\improper HM-9 天线头盔模块"
+	desc = "专为模块化头盔设计。此模块能够屏蔽洞穴干扰，在浅层洞穴中可实现正常通讯，深层洞穴中仅受轻微干扰。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "antenna_head"
 	worn_icon_state = "antenna_head_a"
@@ -784,7 +784,7 @@
 
 /obj/item/armor_module/module/antenna/activate(mob/living/user)
 	if(comms_setup == COMMS_SETTING)
-		to_chat(user, span_notice("Your Antenna module is still in the process of starting up!"))
+		to_chat(user, span_notice("你的天线模块仍在启动过程中！"))
 		return
 	if(comms_setup == COMMS_SETUP)
 		var/turf/location = get_turf(user)
@@ -795,7 +795,7 @@
 /obj/item/armor_module/module/antenna/proc/start_sync(mob/living/user)
 	if(comms_setup != COMMS_OFF) //Guh?
 		return
-	to_chat(user, span_notice("Setting up Antenna communication relay. Please wait."))
+	to_chat(user, span_notice("正在建立天线通信中继。请稍候。"))
 	comms_setup = COMMS_SETTING
 	startup_timer_id = addtimer(CALLBACK(src, PROC_REF(finish_startup), user), ANTENNA_SYNCING_TIME, TIMER_STOPPABLE)
 
@@ -811,8 +811,8 @@
 #undef COMMS_SETUP
 
 /obj/item/armor_module/module/night_vision
-	name = "\improper BE-35 night vision kit"
-	desc = "Installation kit for the BE-35 night vision system. Slightly impedes movement."
+	name = "\improper BE-35 夜视套件"
+	desc = "BE-35夜视系统安装套件。轻微阻碍移动。"
 	icon = 'icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "night_vision"
 	attach_features_flags = ATTACH_REMOVABLE|ATTACH_NO_HANDS
@@ -883,7 +883,7 @@
 	var/mob/living/carbon/human/wearer = user
 	if(wearer.glasses && !wearer.dropItemToGround(wearer.glasses))
 		//This only happens if the wearer has a head item that can't be dropped
-		to_chat(wearer, span_warning("Could not deploy night vision system due to [wearer.head]!"))
+		to_chat(wearer, span_warning("无法部署夜视系统，因为[wearer.head]！"))
 		return
 
 	INVOKE_ASYNC(wearer, TYPE_PROC_REF(/mob/living/carbon/human, equip_to_slot), attached_goggles, SLOT_GLASSES)

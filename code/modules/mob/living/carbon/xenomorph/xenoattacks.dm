@@ -11,7 +11,7 @@
 			S.emote("me", EMOTE_TYPE_VISIBLE, "[S.friendly] [src]")
 		else
 			M.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
-			visible_message(span_danger("[S] [S.attacktext] [src]!"), null, null, 5)
+			visible_message(span_danger("[S] [S.attacktext] [src]！"), null, null, 5)
 			var/damage = S.melee_damage
 			apply_damage(damage, BRUTE, blocked = MELEE, attacker = M)
 			UPDATEHEALTH(src)
@@ -36,10 +36,10 @@
 
 		if(INTENT_HELP)
 			if(stat == DEAD)
-				H.visible_message(span_warning("\The [H] pokes \the [src], but nothing happens."), \
+				H.visible_message(span_warning("\The [H]戳了戳\the [src]，但什么也没发生。"), \
 				span_warning("You poke \the [src], but nothing happens."), null, 5)
 			else
-				H.visible_message(span_notice("\The [H] pets \the [src]."), \
+				H.visible_message(span_notice("\The [H] 抚摸着 \the [src]。"), \
 					span_notice("You pet \the [src]."), null, 5)
 
 		if(INTENT_GRAB)
@@ -58,12 +58,12 @@
 			if(!H.melee_damage)
 				H.do_attack_animation(src)
 				playsound(loc, attack.miss_sound, 25, TRUE)
-				visible_message(span_danger("[H] tried to [pick(attack.attack_verb)] [src]!"), null, null, 5)
+				visible_message(span_danger("[H]试图[pick(attack.attack_verb)][src]！"), null, null, 5)
 				return FALSE
 
 			H.do_attack_animation(src, ATTACK_EFFECT_YELLOWPUNCH)
 			playsound(loc, attack.attack_sound, 25, TRUE)
-			visible_message(span_danger("[H] [pick(attack.attack_verb)] [src]!"), null, null, 5)
+			visible_message(span_danger("[H] [pick(attack.attack_verb)] [src]！"), null, null, 5)
 			apply_damage(melee_damage + attack.damage, BRUTE, blocked = MELEE, updating_health = TRUE, attacker = user)
 
 
@@ -81,14 +81,14 @@
 			if(on_fire)
 				fire_stacks = max(fire_stacks - 1, 0)
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 25, 1, 7)
-				xeno_attacker.visible_message(span_danger("[xeno_attacker] tries to put out the fire on [src]!"), \
+				xeno_attacker.visible_message(span_danger("[src]试图扑灭[xeno_attacker]身上的火焰！"), \
 					span_warning("We try to put out the fire on [src]!"), null, 5)
 				if(fire_stacks <= 0)
-					xeno_attacker.visible_message(span_danger("[xeno_attacker] has successfully extinguished the fire on [src]!"), \
+					xeno_attacker.visible_message(span_danger("[src]身上的火焰已被[xeno_attacker]成功扑灭！"), \
 						span_notice("We extinguished the fire on [src]."), null, 5)
 					ExtinguishMob()
 				return TRUE
-			xeno_attacker.visible_message(span_notice("\The [xeno_attacker] caresses \the [src] with its scythe-like arm."), \
+			xeno_attacker.visible_message(span_notice("\The [xeno_attacker] 用它镰刀般的手臂轻抚着 \the [src]。"), \
 			span_notice("We caress \the [src] with our scythe-like arm."), null, 5)
 			return TRUE
 		if(INTENT_GRAB)

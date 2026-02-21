@@ -24,12 +24,12 @@
 /datum/game_mode/infestation/crash/zombie/can_start(bypass_checks = FALSE)
 	if((!(config_tag in SSmapping.configs[GROUND_MAP].gamemodes) || (SSmapping.configs[GROUND_MAP].map_name in blacklist_ground_maps)) && !bypass_checks)
 		log_world("attempted to start [name] on "+SSmapping.configs[GROUND_MAP].map_name+" which doesn't support it.")
-		to_chat(world, "<b>Unable to start [name].</b> [SSmapping.configs[GROUND_MAP].map_name] isn't supported on [name].")
+		to_chat(world, "<b>无法启动[name]。</b>[SSmapping.configs[GROUND_MAP].map_name]不支持在[name]上运行。")
 		// start a gamemode vote, in theory this should never happen.
 		addtimer(CALLBACK(SSvote, TYPE_PROC_REF(/datum/controller/subsystem/vote, initiate_vote), "gamemode", "SERVER"), 10 SECONDS)
 		return FALSE
 	if(length(GLOB.ready_players) < required_players && !bypass_checks)
-		to_chat(world, "<b>Unable to start [name].</b> Not enough players, [required_players] players needed.")
+		to_chat(world, "<b>无法启动[name]。</b>玩家不足，需要[required_players]名玩家。")
 		return FALSE
 	if(!set_valid_job_types() && !bypass_checks)
 		return FALSE
@@ -140,7 +140,7 @@
 	return FALSE
 
 /datum/game_mode/infestation/crash/zombie/announce()
-	to_chat(world, span_round_header("The current map is - [SSmapping.configs[GROUND_MAP].map_name]!"))
+	to_chat(world, span_round_header("当前地图是 - [SSmapping.configs[GROUND_MAP].map_name]！"))
 	priority_announce("Scheduled for landing in T-10 Minutes. Prepare for landing. Phrenetic reports about an unidentified disease rapidly spreading throughout the site were received before it went silent. Your mission is to contain and destroy the source of the contagion by any means necessary, including use of the on-site nuclear device. Bio-warfare protocols active. Detonation Protocol Active, planet disposable. Marines disposable.",
 	title = "Mission classification: TOP SECRET",
 	type = ANNOUNCEMENT_PRIORITY,

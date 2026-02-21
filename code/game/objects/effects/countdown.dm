@@ -1,5 +1,5 @@
 /obj/effect/countdown
-	name = "countdown"
+	name = "倒计时"
 	desc = "We're leaving together\n\
 		But still it's farewell\n\
 		And maybe we'll come back\n\
@@ -64,7 +64,7 @@
 	return
 
 /obj/effect/countdown/nuclearbomb
-	name = "nuclear bomb countdown"
+	name = "核弹倒计时"
 	color = "#81FF14"
 
 /obj/effect/countdown/nuclearbomb/get_value()
@@ -77,7 +77,7 @@
 
 //campaign objective timer
 /obj/effect/countdown/campaign_objective
-	name = "objective countdown"
+	name = "目标倒计时"
 	color = "#d1d1d1"
 	invisibility = SEE_INVISIBLE_LIVING
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -90,7 +90,7 @@
 	return objective.get_time_left()
 
 /obj/effect/countdown/action_cooldown
-	name = "cooldown"
+	name = "冷却时间"
 	color = "#d1d1d1"
 	invisibility = SEE_INVISIBLE_LIVING
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT

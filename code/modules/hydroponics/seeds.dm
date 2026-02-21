@@ -30,7 +30,7 @@
 
 /obj/item/seeds/update_desc(updates)
 	. = ..()
-	desc = "It has a picture of [seed.display_name] on the front."
+	desc = "它的正面印有[seed.display_name]的图片。"
 
 /obj/item/seeds/poppyseed
 	name = "poppy seed"

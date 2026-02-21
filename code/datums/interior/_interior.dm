@@ -128,7 +128,7 @@
 #undef INTERIOR_BUFFER_TILES
 
 /area/interior
-	name = "ERROR AREA DO NOT USE"
+	name = "错误区域 请勿使用"
 	base_lighting_alpha = 128
 
 /turf/closed/interior

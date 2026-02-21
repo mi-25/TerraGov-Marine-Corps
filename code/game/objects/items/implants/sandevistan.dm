@@ -1,8 +1,8 @@
 #define SANDEVISTAN_IMPLANT "sandevistan_implant"
 
 /obj/item/implant/sandevistan
-	name = "sandevistan spinal implant"
-	desc = "Overloads your central nervous system in order to do everything faster. Careful not to overuse it."
+	name = "桑德维斯坦脊柱植入体"
+	desc = "超载你的中枢神经系统以加速一切行动。注意不要过度使用。"
 	icon_state = "imp_spinal"
 	implant_color = null
 	w_class = WEIGHT_CLASS_NORMAL
@@ -56,7 +56,7 @@
 		time_on = 0
 		STOP_PROCESSING(SSfastprocess, src)
 		if(exerted)
-			to_chat(implant_owner, "Your brains feels normal again.")
+			to_chat(implant_owner, "你的大脑感觉恢复正常了。")
 			exerted = FALSE
 		return
 
@@ -66,13 +66,13 @@
 	switch(time_on)
 		if(1 SECONDS to 2 SECONDS)
 			if(COOLDOWN_FINISHED(src, alertcooldown))
-				to_chat(implant_owner, span_alert("You feel your spine tingle."))
+				to_chat(implant_owner, span_alert("你感到脊背一阵发麻。"))
 				COOLDOWN_START(src, alertcooldown, 10 SECONDS)
 			implant_owner.hallucination += 2
 			implant_owner.adjustFireLoss(1)
 		if(2.1 SECONDS to 5 SECONDS)
 			if(COOLDOWN_FINISHED(src, alertcooldown) || !exerted)
-				to_chat(implant_owner, span_userdanger("Your spine and brain feel like they're burning!"))
+				to_chat(implant_owner, span_userdanger("你的脊柱和大脑感觉像在燃烧！"))
 				COOLDOWN_START(src, alertcooldown, 5 SECONDS)
 			exerted = TRUE
 			implant_owner.set_drugginess(10)
@@ -83,7 +83,7 @@
 			else
 				implant_owner.adjustFireLoss(2)
 		if(5.1 SECONDS to INFINITY)//no infinite abuse
-			to_chat(implant_owner, span_userdanger("You feel a slight sense of shame as your brain and spine rip themselves apart from overexertion."))
+			to_chat(implant_owner, span_userdanger("你感到一阵轻微的羞耻，因为你的大脑和脊椎因过度劳累而撕裂分离。"))
 			GLOB.round_statistics.sandevistan_gibs++
 			implant_owner.gib()
 			return

@@ -3,9 +3,9 @@
 	very flexible, but it gets the job done.
 */
 /obj/machinery/telecomms/allinone
-	name = "telecommunications mainframe"
+	name = "通信主控机"
 	icon_state = "comm_server"
-	desc = "A compact machine used for portable subspace telecommunications processing."
+	desc = "一种用于便携式子空间通信处理的紧凑型机器。"
 	density = TRUE
 	use_power = NO_POWER_USE
 	idle_power_usage = 0

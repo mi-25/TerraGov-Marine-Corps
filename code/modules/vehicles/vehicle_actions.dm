@@ -201,8 +201,8 @@
 	var/obj/vehicle/sealed/vehicle_entered_target
 
 /datum/action/vehicle/sealed/climb_out
-	name = "Climb Out"
-	desc = "Climb out of your vehicle!"
+	name = "爬出"
+	desc = "离开载具！"
 	action_icon_state = "car_eject"
 
 /datum/action/vehicle/sealed/climb_out/action_activate()
@@ -213,8 +213,8 @@
 	var/obj/vehicle/ridden/vehicle_ridden_target
 
 /datum/action/vehicle/sealed/remove_key
-	name = "Remove key"
-	desc = "Take your key out of the vehicle's ignition."
+	name = "移除按键"
+	desc = "将钥匙从车辆点火开关中取出。"
 	action_icon_state = "car_removekey"
 
 /datum/action/vehicle/sealed/remove_key/action_activate()
@@ -223,13 +223,13 @@
 
 //CLOWN CAR ACTION DATUMS
 /datum/action/vehicle/sealed/headlights
-	name = "Toggle Headlights"
-	desc = "Turn on your brights!"
+	name = "切换头灯"
+	desc = "打开远光灯！"
 	action_icon_state = "car_headlights"
 
 /datum/action/vehicle/sealed/headlights/action_activate()
 	. = ..()
-	to_chat(owner, span_notice("You flip the switch for the vehicle's headlights."))
+	to_chat(owner, span_notice("你打开了车辆的前灯开关。"))
 	vehicle_entered_target.headlights_toggle = !vehicle_entered_target.headlights_toggle
 	vehicle_entered_target.set_light_on(vehicle_entered_target.headlights_toggle)
 	vehicle_entered_target.update_icon()

@@ -8,9 +8,9 @@
 	Link to a subspace hub if it can't send to a server.
 */
 /obj/machinery/telecomms/bus
-	name = "bus mainframe"
+	name = "巴士主控系统"
 	icon_state = "bus"
-	desc = "A mighty piece of hardware used to send massive amounts of data quickly."
+	desc = "一款用于快速传输海量数据的强大硬件设备。"
 	telecomms_type = /obj/machinery/telecomms/bus
 	density = TRUE
 	use_power = IDLE_POWER_USE

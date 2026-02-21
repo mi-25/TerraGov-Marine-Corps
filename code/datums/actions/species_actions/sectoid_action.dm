@@ -6,9 +6,9 @@
 // *********** Mindmeld
 // ***************************************
 /datum/action/ability/activable/sectoid/mindmeld
-	name = "Mindmeld"
+	name = "心灵融合"
 	action_icon_state = "mindmeld"
-	desc = "Merge minds with the target, empowering both."
+	desc = "与目标融合意志，使双方都获得强化。"
 	cooldown_duration = 60 SECONDS
 	target_flags = ABILITY_MOB_TARGET
 	keybinding_signals = list(
@@ -44,31 +44,31 @@
 		return
 	if(!iscarbon(A))
 		if(!silent)
-			A.balloon_alert(owner, "not living!")
+			A.balloon_alert(owner, "非生命体！")
 		return FALSE
 	var/mob/living/carbon/carbon_target = A
 	if(owner.faction != carbon_target.faction)
 		if(!silent)
-			A.balloon_alert(owner, "hostile!")
+			A.balloon_alert(owner, "敌对目标！")
 		return FALSE
 	if(HAS_TRAIT(carbon_target, TRAIT_MINDMELDED))
 		if(!silent)
-			A.balloon_alert(owner, "already melded!")
+			A.balloon_alert(owner, "已融合！")
 		return FALSE
 	if((A.z != owner.z) || !line_of_sight(owner, A, max_range))
 		if(!silent)
-			owner.balloon_alert(owner, "out of sight!")
+			owner.balloon_alert(owner, "脱离视线！")
 		return FALSE
 	if(carbon_target.stat == DEAD)
 		if(!silent)
-			carbon_target.balloon_alert(owner, "already dead!")
+			carbon_target.balloon_alert(owner, "已经死亡！")
 		return FALSE
 
 /datum/action/ability/activable/sectoid/mindmeld/use_ability(atom/target)
 	var/mob/living/carbon/carbon_owner = owner
 	melded_mob = target
-	melded_mob.balloon_alert_to_viewers("mindmelded")
-	owner.balloon_alert_to_viewers("mindmelded")
+	melded_mob.balloon_alert_to_viewers("心灵融合")
+	owner.balloon_alert_to_viewers("心灵融合")
 	playsound(melded_mob, 'sound/effects/off_guard_ability.ogg', 50)
 
 	melded_mob.apply_status_effect(STATUS_EFFECT_MINDMEND, carbon_owner, max_range, accuracy_mod, health_mod, speed_mod, stun_resistance)
@@ -92,8 +92,8 @@
 	melded_mob = null
 
 /datum/action/ability/activable/sectoid/mindmeld/greater
-	name = "Greater Mindmeld"
-	desc = "Merge minds with the target, greatly empowering both."
+	name = "高等心灵融合"
+	desc = "与目标融合意志，大幅强化双方。"
 	max_range = 12
 	accuracy_mod = 40
 	health_mod = 70
@@ -102,9 +102,9 @@
 
 #define MINDFRAY_RANGE 8
 /datum/action/ability/activable/sectoid/mindfray
-	name = "Mindfray"
+	name = "精神折磨"
 	action_icon_state = "mindfray"
-	desc = "Muddles the mind of an enemy, making it harder for them to focus their aim for a while."
+	desc = "扰乱敌人的心智，使其在一段时间内难以集中瞄准。"
 	cooldown_duration = 20 SECONDS
 	target_flags = ABILITY_MOB_TARGET
 	keybinding_signals = list(
@@ -119,20 +119,20 @@
 		return
 	if(!iscarbon(A))
 		if(!silent)
-			A.balloon_alert(owner, "not living!")
+			A.balloon_alert(owner, "非生命体！")
 		return FALSE
 	if(!line_of_sight(owner, A, 9))
 		if(!silent)
-			owner.balloon_alert(owner, "out of sight!")
+			owner.balloon_alert(owner, "目标消失！")
 		return FALSE
 	if((A.z != owner.z) || get_dist(owner, A) > MINDFRAY_RANGE)
 		if(!silent)
-			A.balloon_alert(owner, "too far!")
+			A.balloon_alert(owner, "太远了！")
 		return FALSE
 	var/mob/living/carbon/carbon_target = A
 	if(carbon_target.stat == DEAD)
 		if(!silent)
-			carbon_target.balloon_alert(owner, "already dead!")
+			carbon_target.balloon_alert(owner, "已经死亡！")
 		return FALSE
 
 /datum/action/ability/activable/sectoid/mindfray/use_ability(atom/target)
@@ -141,7 +141,7 @@
 	carbon_target.apply_status_effect(STATUS_EFFECT_CONFUSED, 40)
 	carbon_target.apply_damage(damage, BURN, updating_health = TRUE, attacker = owner)
 	carbon_target.log_message("has been mindfrayed by [owner]", LOG_ATTACK, color="pink")
-	carbon_target.balloon_alert_to_viewers("confused")
+	carbon_target.balloon_alert_to_viewers("困惑")
 	playsound(carbon_target, 'sound/effects/off_guard_ability.ogg', 50)
 
 	add_cooldown()
@@ -154,9 +154,9 @@
 
 #define SECTOID_STASIS_RANGE 7
 /datum/action/ability/activable/sectoid/stasis
-	name = "stasis"
+	name = "停滞"
 	action_icon_state = "stasis"
-	desc = "We surround a living thing with a powerful psionic field, temporarily disabling them and protecting them from all harm."
+	desc = "我们用一个强大的灵能场包围一个活物，暂时使其失去行动能力，并保护其免受一切伤害。"
 	cooldown_duration = 20 SECONDS
 	target_flags = ABILITY_MOB_TARGET
 	use_state_flags = ABILITY_TARGET_SELF
@@ -174,20 +174,20 @@
 		return
 	if(!iscarbon(A))
 		if(!silent)
-			A.balloon_alert(owner, "not living!")
+			A.balloon_alert(owner, "非生命体！")
 		return FALSE
 	if((A.z != owner.z) || get_dist(owner, A) > SECTOID_STASIS_RANGE)
 		if(!silent)
-			A.balloon_alert(owner, "too far!")
+			A.balloon_alert(owner, "太远了！")
 		return FALSE
 	if(!line_of_sight(owner, A, SECTOID_STASIS_RANGE))
 		if(!silent)
-			owner.balloon_alert(owner, "out of sight!")
+			owner.balloon_alert(owner, "目标消失！")
 		return FALSE
 	var/mob/living/carbon/carbon_target = A
 	if(carbon_target.stat == DEAD)
 		if(!silent)
-			carbon_target.balloon_alert(owner, "already dead!")
+			carbon_target.balloon_alert(owner, "已经死亡！")
 		return FALSE
 
 /datum/action/ability/activable/sectoid/stasis/use_ability(atom/target)
@@ -198,7 +198,7 @@
 	particle_holder.particles.gravity = list(0, 2)
 
 	if(!do_after(owner, 0.5 SECONDS, IGNORE_HELD_ITEM|IGNORE_LOC_CHANGE, target, BUSY_ICON_DANGER) || !can_use_ability(target))
-		owner.balloon_alert(owner, "focus disrupted!")
+		owner.balloon_alert(owner, "专注力被打断！")
 		QDEL_NULL(particle_holder)
 		return fail_activate()
 
@@ -244,9 +244,9 @@
 
 #define SECTOID_REKNIT_RANGE 4
 /datum/action/ability/activable/sectoid/reknit_form
-	name = "Reknit Form"
+	name = "重塑形态"
 	action_icon_state = "reknit_form"
-	desc = "Flesh and bone runs like water at our will, healing horrendous damage with the power of our mind."
+	desc = "血肉与骨骼如流水般顺从我们的意志，以心灵之力治愈骇人的创伤。"
 	cooldown_duration = 60 SECONDS
 	target_flags = ABILITY_MOB_TARGET
 	use_state_flags = ABILITY_TARGET_SELF
@@ -264,15 +264,15 @@
 		return
 	if(!isliving(A))
 		if(!silent)
-			A.balloon_alert(owner, "not living!")
+			A.balloon_alert(owner, "非生命体！")
 		return FALSE
 	if((A.z != owner.z) || get_dist(owner, A) > SECTOID_REKNIT_RANGE)
 		if(!silent)
-			A.balloon_alert(owner, "too far!")
+			A.balloon_alert(owner, "太远了！")
 		return FALSE
 	if(!line_of_sight(owner, A, SECTOID_REKNIT_RANGE))
 		if(!silent)
-			owner.balloon_alert(owner, "out of sight!")
+			owner.balloon_alert(owner, "目标消失！")
 		return FALSE
 
 /datum/action/ability/activable/sectoid/reknit_form/use_ability(atom/target)
@@ -283,7 +283,7 @@
 	particle_holder.particles.gravity = list(0, 2)
 
 	if(!do_after(owner, 0.5 SECONDS, IGNORE_HELD_ITEM|IGNORE_LOC_CHANGE, target, BUSY_ICON_DANGER) || !can_use_ability(target))
-		owner.balloon_alert(owner, "focus disrupted!")
+		owner.balloon_alert(owner, "专注被打断！")
 		QDEL_NULL(particle_holder)
 		return fail_activate()
 
@@ -296,7 +296,7 @@
 	succeed_activate()
 
 /datum/action/ability/activable/sectoid/reknit_form/greater
-	name = "Greater Reknit Form"
+	name = "强效重组形态"
 	action_icon_state = "greater_reknit_form"
 	reknit_duration = 6 SECONDS
 
@@ -306,9 +306,9 @@
 
 #define SECTOID_FUSE_RANGE 6
 /datum/action/ability/activable/sectoid/fuse
-	name = "Fuse"
+	name = "引信"
 	action_icon_state = "fuse"
-	desc = "We reach out with our mind to trigger an explosive device."
+	desc = "我们用意念触发了一个爆炸装置。"
 	cooldown_duration = 45 SECONDS
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_ABILITY_FUSE,
@@ -322,11 +322,11 @@
 		return
 	if((A.z != owner.z) || get_dist(owner, A) > SECTOID_FUSE_RANGE)
 		if(!silent)
-			A.balloon_alert(owner, "too far!")
+			A.balloon_alert(owner, "太远了！")
 		return FALSE
 	if(!line_of_sight(owner, A, SECTOID_FUSE_RANGE))
 		if(!silent)
-			owner.balloon_alert(owner, "out of sight!")
+			owner.balloon_alert(owner, "目标消失！")
 		return FALSE
 
 /datum/action/ability/activable/sectoid/fuse/use_ability(atom/target)
@@ -337,7 +337,7 @@
 	particle_holder.particles.gravity = list(0, 2)
 
 	if(!do_after(owner, 0.5 SECONDS, IGNORE_HELD_ITEM|IGNORE_LOC_CHANGE, target, BUSY_ICON_DANGER) || !can_use_ability(target))
-		owner.balloon_alert(owner, "focus disrupted!")
+		owner.balloon_alert(owner, "专注力被打断！")
 		QDEL_NULL(particle_holder)
 		return fail_activate()
 
@@ -348,7 +348,7 @@
 	else
 		grenade_target = locate(/obj/item/explosive/grenade) in target.GetAllContents()
 		if(!grenade_target)
-			target.balloon_alert(owner, "no grenade found!")
+			target.balloon_alert(owner, "未找到手雷！")
 			return fail_activate()
 
 	grenade_target.activate(owner)
@@ -362,10 +362,10 @@
 // ***************************************
 
 /datum/action/ability/activable/psionic_interact
-	name = "Telekinesis"
+	name = "念力"
 	action_icon_state = "telekinesis"
 	action_icon = 'icons/mob/psionic_icons.dmi'
-	desc = "We manipulate things from a distance."
+	desc = "我们从远处操纵事物。"
 	cooldown_duration = 20 SECONDS
 	target_flags = ABILITY_MOB_TARGET
 	use_state_flags = ABILITY_TARGET_SELF
@@ -385,11 +385,11 @@
 		return
 	if((A.z != owner.z) || get_dist(owner, A) > range)
 		if(!silent)
-			A.balloon_alert(owner, "too far!")
+			A.balloon_alert(owner, "太远了！")
 		return FALSE
 	if(!line_of_sight(owner, A, range))
 		if(!silent)
-			owner.balloon_alert(owner, "out of sight!")
+			owner.balloon_alert(owner, "目标消失！")
 		return FALSE
 
 /datum/action/ability/activable/psionic_interact/use_ability(atom/target)
@@ -400,7 +400,7 @@
 	particle_holder.particles.gravity = list(0, 2)
 
 	if(!do_after(owner, 0.5 SECONDS, IGNORE_HELD_ITEM|IGNORE_LOC_CHANGE, target, BUSY_ICON_DANGER) || !can_use_ability(target))
-		owner.balloon_alert(owner, "focus disrupted!")
+		owner.balloon_alert(owner, "专注力被打断！")
 		QDEL_NULL(particle_holder)
 		return fail_activate()
 
@@ -425,26 +425,26 @@
 
 /obj/machinery/door/airlock/psi_act(psi_power, mob/living/user)
 	if(operating)
-		to_chat(user, span_warning("The airlock is already in motion."))
+		to_chat(user, span_warning("气闸门已在运行中。"))
 		return
 	if(welded)
-		to_chat(user, span_warning("The airlock is welded shut."))
+		to_chat(user, span_warning("气闸门已被焊死。"))
 		return
 	if(locked)
-		to_chat(user, span_warning("The airlock's bolts prevent it from being forced."))
+		to_chat(user, span_warning("气闸门的门栓防止其被强行打开。"))
 		return
 	if(psi_power < PSIONIC_INTERACTION_STRENGTH_STANDARD && hasPower())
-		to_chat(user, span_warning("The airlock's motors resist your efforts to force it."))
+		to_chat(user, span_warning("气闸门的电机抗拒着你强行开启它的努力。"))
 		return
 
 	return ..()
 
 /obj/machinery/door/firedoor/psi_act(psi_power, mob/living/user)
 	if(operating)
-		to_chat(user, span_warning("The firelock is already in motion."))
+		to_chat(user, span_warning("防火闸已在移动中。"))
 		return
 	if(blocked)
-		to_chat(user, span_warning("The firelock is welded shut."))
+		to_chat(user, span_warning("防火门已被焊死。"))
 		return
 
 	return ..()
@@ -468,9 +468,9 @@
 #define SECTOID_REANIMATE_RANGE 4
 #define SECTOID_REANIMATE_CHANNEL_TIME 1.5 SECONDS
 /datum/action/ability/activable/sectoid/reanimate
-	name = "Reanimate"
+	name = "复活"
 	action_icon_state = "reanimate"
-	desc = "With our psionic strength we turn the dead into our puppet, or revive a fallen ally."
+	desc = "凭借我们的灵能力量，我们将死者转化为傀儡，或复活倒下的盟友。"
 	cooldown_duration = 60 SECONDS
 	target_flags = ABILITY_MOB_TARGET
 	keybinding_signals = list(
@@ -496,19 +496,19 @@
 	var/mob/living/carbon/human/human_target = A
 	if(!istype(A))
 		if(!silent)
-			human_target.balloon_alert(owner, "invalid target!")
+			human_target.balloon_alert(owner, "无效目标！")
 		return FALSE
 	if(human_target.stat != DEAD)
 		if(!silent)
-			human_target.balloon_alert(owner, "still alive!")
+			human_target.balloon_alert(owner, "还活着！")
 		return FALSE
 	if((human_target.z != owner.z) || get_dist(owner, human_target) > SECTOID_REANIMATE_RANGE)
 		if(!silent)
-			human_target.balloon_alert(owner, "too far!")
+			human_target.balloon_alert(owner, "太远了！")
 		return FALSE
 	if(!line_of_sight(owner, human_target, SECTOID_REANIMATE_RANGE))
 		if(!silent)
-			owner.balloon_alert(owner, "out of sight!")
+			owner.balloon_alert(owner, "目标消失！")
 		return FALSE
 
 /datum/action/ability/activable/sectoid/reanimate/use_ability(atom/target)
@@ -522,7 +522,7 @@
 	target.add_filter("psi_reanimation", 3, outline_filter(1, COLOR_STRONG_MAGENTA))
 
 	if(!do_after(owner, SECTOID_REANIMATE_CHANNEL_TIME, IGNORE_HELD_ITEM|IGNORE_LOC_CHANGE, target, BUSY_ICON_DANGER) || !can_use_ability(target))
-		owner.balloon_alert(owner, "focus disrupted!")
+		owner.balloon_alert(owner, "专注力被打断！")
 		QDEL_NULL(particle_holder)
 		return fail_activate()
 
@@ -541,7 +541,7 @@
 		if(istype(radio))
 			radio.safety_protocol(src)
 	else
-		owner.balloon_alert(owner, "unrevivable!")
+		owner.balloon_alert(owner, "无法复活！")
 
 	QDEL_NULL(particle_holder)
 	playsound(owner, 'sound/effects/petrify_activate.ogg', 50)

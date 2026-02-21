@@ -1,5 +1,5 @@
 /datum/ammo/xeno/fireball
-	name = "fireball"
+	name = "火球"
 	icon_state = "xeno_fireball"
 	damage = 50
 	max_range = 5

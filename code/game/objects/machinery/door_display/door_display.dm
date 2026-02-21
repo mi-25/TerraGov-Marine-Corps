@@ -7,10 +7,10 @@
 //  Programmer: Veryinky
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /obj/machinery/door_display
-	name = "Door Display"
+	name = "门禁显示屏"
 	icon = 'icons/obj/status_display.dmi'
 	icon_state = "frame"
-	desc = "A remote control for a door."
+	desc = "一扇门的遥控器。"
 	anchored = TRUE
 	density = FALSE
 	var/open = FALSE		// If door is open.
@@ -243,13 +243,13 @@
 	return TRUE
 
 /obj/machinery/door_display/research_cell/cell
-	name = "Containment Cell Control"
+	name = "收容单元控制"
 	id = "Containment Cell"
 
 /obj/machinery/door_display/research_cell/cell/cell1
-	name = "Containment Cell 1 Control"
+	name = "收容单元1控制台"
 	id = "Containment Cell 1"
 
 /obj/machinery/door_display/research_cell/cell/cell2
-	name = "Containment Cell 2 Control"
+	name = "收容单元2控制台"
 	id = "Containment Cell 2"

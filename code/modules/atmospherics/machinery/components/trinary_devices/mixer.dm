@@ -2,8 +2,8 @@
 	icon_state = "mixer_off"
 	density = FALSE
 
-	name = "gas mixer"
-	desc = "Very useful for mixing gasses."
+	name = "气体混合器"
+	desc = "非常适合混合气体。"
 
 	can_unwrench = FALSE
 
@@ -50,7 +50,7 @@
 /obj/machinery/atmospherics/components/trinary/mixer/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational())
-		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
+		to_chat(user, span_warning("你无法拆卸[src]，请先关闭它！"))
 		return FALSE
 
 // mapping
@@ -96,7 +96,7 @@
 	icon_state = "mixer_on_f_map-3"
 
 /obj/machinery/atmospherics/components/trinary/mixer/airmix //For standard airmix to distro
-	name = "air mixer"
+	name = "空气混合器"
 	icon_state = "mixer_on"
 	node1_concentration = N2STANDARD
 	node2_concentration = O2STANDARD

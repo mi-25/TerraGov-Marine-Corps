@@ -37,7 +37,7 @@
 
 //print a testing-mode debug message to world.log and world
 #ifdef TESTING
-#define testing(msg) log_world("## TESTING: [msg]"); to_chat(world, "## TESTING: [msg]")
+#define testing(msg) log_world("## 测试中：[msg]"); to_chat(world, "## TESTING: [msg]")
 #else
 #define testing(msg)
 #endif

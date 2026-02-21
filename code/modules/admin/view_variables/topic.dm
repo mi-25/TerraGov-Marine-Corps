@@ -26,7 +26,7 @@
 
 		var/mob/M = locate(href_list["rename"]) in GLOB.mob_list
 		if(!istype(M))
-			to_chat(usr, "This can only be used on instances of type /mob", confidential = TRUE)
+			to_chat(usr, "这只能用于 /mob 类型的实例", confidential = TRUE)
 			return
 
 		var/new_name = stripped_input(usr,"What would you like to name this mob?","Input a name",M.real_name,MAX_NAME_LEN)
@@ -50,7 +50,7 @@
 
 		var/atom/A = locate(href_list["rotatedatum"])
 		if(!istype(A))
-			to_chat(usr, "This can only be done to instances of type /atom", confidential = TRUE)
+			to_chat(usr, "这只能对类型为 /atom 的实例执行", confidential = TRUE)
 			return
 
 		switch(href_list["rotatedir"])
@@ -77,7 +77,7 @@
 			return
 
 		if(!L)
-			to_chat(usr, "Mob doesn't exist anymore", confidential = TRUE)
+			to_chat(usr, "目标已不存在", confidential = TRUE)
 			return
 
 		var/newamt
@@ -101,7 +101,7 @@
 				L.adjustStaminaLoss(amount)
 				newamt = L.getStaminaLoss()
 			else
-				to_chat(usr, "You caused an error. DEBUG: Text:[Text] Mob:[L]", confidential = TRUE)
+				to_chat(usr, "你引发了一个错误。调试：文本：[Text] 实体：[L]", confidential = TRUE)
 				return
 
 		if(amount != 0)

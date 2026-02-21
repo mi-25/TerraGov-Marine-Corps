@@ -1,14 +1,14 @@
 
 ///random civilian clothing for flavor
 /obj/effect/spawner/random/clothing
-	name = "Random base clothing spawner"
+	name = "随机基础服装生成器"
 	icon = 'icons/effects/random/clothing.dmi'
 	icon_state = "random_clothes"
 	loot = list(
 		/obj/structure/prop/mainship/errorprop,
 	)
 /obj/effect/spawner/random/clothing/general
-	name = "Random clothing spawner"
+	name = "随机服装生成器"
 	icon_state = "random_clothes"
 	loot = list(
 		/obj/item/clothing/suit/bio_suit,
@@ -51,7 +51,7 @@
 
 ///random civilian hats for flavor
 /obj/effect/spawner/random/clothing/hats
-	name = "Random hat spawner"
+	name = "随机帽子生成器"
 	icon_state = "random_hat"
 	loot = list(
 		/obj/item/clothing/head/bandanna/red,
@@ -91,7 +91,7 @@
 	)
 
 /obj/effect/spawner/random/clothing/coloredgloves
-	name = "colored glove spawner"
+	name = "彩色手套生成器"
 	icon_state = "random_gloves"
 	spawn_scatter_radius = 1
 	spawn_random_offset = TRUE
@@ -113,7 +113,7 @@
 	)
 
 /obj/effect/spawner/random/clothing/darkgloves
-	name = "dark glove spawner"
+	name = "黑色手套生成器"
 	icon_state = "random_gloves"
 	spawn_loot_chance = 95
 	loot = list(
@@ -133,7 +133,7 @@
 	)
 
 /obj/effect/spawner/random/clothing/sunglasses
-	name = "sunglasses spawner"
+	name = "太阳镜生成器"
 	icon_state = "random_sunglasses"
 	spawn_random_offset = TRUE
 	spawn_loot_chance = 95

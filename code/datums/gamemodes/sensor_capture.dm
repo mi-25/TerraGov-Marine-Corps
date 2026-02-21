@@ -16,8 +16,8 @@
 		new /obj/structure/sensor_tower(T)
 
 /datum/game_mode/hvh/combat_patrol/sensor_capture/announce()
-	to_chat(world, "<b>The current game mode is - Sensor Capture!</b>")
-	to_chat(world, "<b>The SOM have launched an invasion to this sector. TerraGov and SOM forces fight over the sensor towers around the sector.</b>")
+	to_chat(world, "<b>当前游戏模式为 - 传感器夺取战！</b>")
+	to_chat(world, "<b>火星之子已向该星区发动入侵。地球政府与火星之子部队在该星区周围的传感器塔附近交战。</b>")
 
 /datum/game_mode/hvh/combat_patrol/sensor_capture/game_end_countdown()
 	if(game_timer == SENSOR_CAP_TIMER_PAUSED)

@@ -10,7 +10,7 @@
 
 /datum/action/ability/xeno_action/conqueror_dash
 	name = "Dash"
-	desc = "Move in a burst of speed. Double tap any movement direction to dash towards it."
+	desc = "快速移动。双击任意移动方向即可向其冲刺。"
 	action_type = ACTION_TOGGLE
 	action_icon = 'icons/Xeno/actions/wraith.dmi'
 	action_icon_state = "rewind"
@@ -312,7 +312,7 @@
 
 /datum/action/ability/activable/xeno/conqueror_will
 	name = "Conqueror's Will"
-	desc = "Imbue your punches with charged plasma. Upgrades attacks, and allows you to execute powerful combos while this ability is selected."
+	desc = "为你的拳击注入带电等离子体。升级攻击，并在选择此能力时允许你执行强力连击。"
 	action_icon = 'icons/Xeno/actions/warrior.dmi'
 	action_icon_state = "punch"
 	cooldown_duration = 10 SECONDS
@@ -350,7 +350,7 @@
 /datum/action/ability/activable/xeno/conqueror_will/on_cooldown_finish()
 	. = ..()
 	xeno_owner.playsound_local(xeno_owner, 'sound/effects/alien/new_larva.ogg', 30, 0)
-	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] ready")
+	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] 就绪")
 
 /// Toggles the combo display.
 /datum/action/ability/activable/xeno/conqueror_will/alternate_action_activate()
@@ -656,7 +656,7 @@
 
 /datum/action/ability/xeno_action/conqueror_endurance/New(Target)
 	. = ..()
-	desc = "Block attacks with your forearms, slowing you down and reducing damage received by [CONQUEROR_ENDURANCE_DAMAGE_REDUCTION * 100]%."
+	desc = "用前臂格挡攻击，这会减慢你的速度并减少[CONQUEROR_ENDURANCE_DAMAGE_REDUCTION * 100]%受到的伤害。"
 
 /datum/action/ability/xeno_action/conqueror_endurance/give_action(mob/living/L)
 	. = ..()
@@ -812,7 +812,7 @@
 
 /datum/action/ability/activable/xeno/conqueror_domination
 	name = "Domination"
-	desc = "Teleport towards a target location, distorting reality, and creating powerful shockwaves upon reappearing."
+	desc = "传送至目标位置，扭曲现实，并在重新出现时产生强大的冲击波。"
 	action_icon = 'icons/Xeno/actions/king.dmi'
 	action_icon_state = "conqueror_domination"
 	ability_cost = 120
@@ -830,7 +830,7 @@
 /datum/action/ability/activable/xeno/conqueror_domination/on_cooldown_finish()
 	. = ..()
 	xeno_owner.playsound_local(xeno_owner, 'sound/effects/alien/new_larva.ogg', 30, 0)
-	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] ready")
+	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] 就绪")
 
 /datum/action/ability/activable/xeno/conqueror_domination/can_use_action(silent, override_flags, selecting)
 	. = ..()
@@ -845,10 +845,10 @@
 /datum/action/ability/activable/xeno/conqueror_domination/use_ability(atom/atom_target)
 	var/turf/turf_target = isturf(atom_target) ? atom_target : atom_target.loc
 	if(isclosedturf(turf_target) || isspaceturf(turf_target) || isspacearea(get_area(turf_target)))
-		xeno_owner.balloon_alert(xeno_owner, "Cannot go there")
+		xeno_owner.balloon_alert(xeno_owner, "无法前往该处")
 		return
 	if(!line_of_sight(xeno_owner, turf_target) || IS_OPAQUE_TURF(turf_target))
-		xeno_owner.balloon_alert(xeno_owner, "No vision")
+		xeno_owner.balloon_alert(xeno_owner, "无视野")
 		return
 	var/check_distance = min(CONQUEROR_DOMINATION_CASTING_RANGE, get_dist(xeno_owner, turf_target))
 	var/list/valid_turfs = list()
@@ -864,7 +864,7 @@
 			continue
 		new /obj/effect/temp_visual/behemoth/warning/conqueror(turf_to_affect, CONQUEROR_DOMINATION_CASTING_DELAY)
 	if(!check_distance || !length(reappearance_turfs))
-		xeno_owner.balloon_alert(xeno_owner, "Cannot go there")
+		xeno_owner.balloon_alert(xeno_owner, "无法前往该处")
 		return
 	if(xeno_owner.buckled)
 		xeno_owner.buckled.unbuckle_mob(xeno_owner, TRUE)
@@ -931,7 +931,7 @@
 
 /datum/action/ability/xeno_action/conqueror_obliteration
 	name = "Obliteration"
-	desc = "Unleash your latent power. Creates an area of effect that will slowly expand. Activating the ability again will attack everyone caught within it."
+	desc = "释放你潜在的力量。创造一个会缓慢扩张的范围效果区域。再次激活该能力将攻击被困在其中的所有人。"
 	action_type = ACTION_TOGGLE
 	action_icon = 'icons/Xeno/actions/queen.dmi'
 	action_icon_state = "screech"
@@ -959,7 +959,7 @@
 /datum/action/ability/xeno_action/conqueror_obliteration/on_cooldown_finish()
 	. = ..()
 	xeno_owner.playsound_local(xeno_owner, 'sound/effects/alien/new_larva.ogg', 30, 0)
-	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] ready")
+	xeno_owner.balloon_alert(xeno_owner, "[initial(name)] 就绪")
 
 /datum/action/ability/xeno_action/conqueror_obliteration/can_use_action(silent, override_flags, selecting)
 	. = ..()

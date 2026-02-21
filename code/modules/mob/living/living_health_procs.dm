@@ -98,7 +98,7 @@
 		return
 
 	if(feedback)
-		visible_message(span_warning("\The [src] slumps to the ground, too weak to continue fighting."),
+		visible_message(span_warning("\The [src]瘫倒在地，虚弱得无法继续战斗。"),
 			span_warning("You slump to the ground, you're too exhausted to keep going..."))
 
 	ParalyzeNoChain(1 SECONDS) //Short stun

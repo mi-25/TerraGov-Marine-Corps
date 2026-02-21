@@ -15,7 +15,7 @@
 		set_resting(TRUE, FALSE)
 		return
 	if(do_actions)
-		balloon_alert(src, "Busy!")
+		balloon_alert(src, "忙！")
 		return
 	get_up()
 
@@ -24,7 +24,7 @@
 	if(!incapacitated(TRUE))
 		set_resting(FALSE, FALSE)
 	else
-		to_chat(src, span_notice("You fail to get up."))
+		to_chat(src, span_notice("你没能站起来。"))
 
 ///Actually handles toggling the resting state
 /mob/living/proc/set_resting(rest, silent = TRUE)
@@ -37,12 +37,12 @@
 	if(resting)
 		ADD_TRAIT(src, TRAIT_FLOORED, RESTING_TRAIT)
 		if(!silent)
-			to_chat(src, span_notice("You are now resting."))
+			to_chat(src, span_notice("你现在正在休息。"))
 		SEND_SIGNAL(src, COMSIG_XENOMORPH_REST)
 	else
 		REMOVE_TRAIT(src, TRAIT_FLOORED, RESTING_TRAIT)
 		if(!silent)
-			to_chat(src, span_notice("You get up."))
+			to_chat(src, span_notice("你站了起来。"))
 		SEND_SIGNAL(src, COMSIG_XENOMORPH_UNREST)
 	hud_used?.rest_icon?.update_icon()
 

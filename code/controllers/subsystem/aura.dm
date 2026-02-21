@@ -1,6 +1,6 @@
 /// Tracks aura emitters and tells them to pulse. Also used for creating new ones.
 SUBSYSTEM_DEF(aura)
-	name = "Auras"
+	name = "信息素"
 	wait = 2 SECONDS
 	flags = SS_NO_INIT
 	///Stores currently active aura_bearer datums

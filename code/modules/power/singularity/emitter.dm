@@ -1,8 +1,8 @@
 #define EMITTER_DAMAGE_POWER_TRANSFER 450 //used to transfer power to containment field generators
 
 /obj/machinery/power/emitter
-	name = "Emitter"
-	desc = "It is a heavy duty industrial laser."
+	name = "发射器"
+	desc = "这是一台重型工业激光器。"
 	icon = 'icons/obj/singularity.dmi'
 	icon_state = "emitter"
 	anchored = FALSE

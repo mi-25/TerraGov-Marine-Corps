@@ -1,10 +1,10 @@
 /atom/movable/stim_say_holder
 	tts_silicon_voice_effect = TRUE
 	speech_span = SPAN_ROBOT
-	name = "stimulant implant"
+	name = "兴奋剂植入体"
 
 /datum/action/supersoldier_stims
-	name = "Inject Stimulants"
+	name = "注射兴奋剂"
 	action_icon_state = "stim_menu"
 	interaction_flags = INTERACT_OBJ_UI
 	keybinding_signals = list(
@@ -127,11 +127,11 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 
 		if("add_to_sequence")
 			if(length(stim_sequence) >= MAX_ACTIVE_STIMS)
-				to_chat(owner, span_info("Cannot have more than [MAX_ACTIVE_STIMS] stims."))
+				to_chat(owner, span_info("不能拥有超过[MAX_ACTIVE_STIMS]个兴奋剂。"))
 				return FALSE
 			var/datum/stim/stim_type = GLOB.stim_type_lookup[stim_uid]
 			if((stim_uid in stim_sequence) && !(stim_type::stim_flags & STIM_ALLOW_DUPE))
-				to_chat(owner, span_info("Cannot duplicate this stim"))
+				to_chat(owner, span_info("无法复制此兴奋剂"))
 				return FALSE
 			stim_sequence += stim_uid
 			owner.client?.prefs.save_preferences()
@@ -142,7 +142,7 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 			if(!istext(new_name) || !length(new_name))
 				return FALSE
 			if(new_name in owner.client?.prefs.stim_sequences)
-				to_chat(owner, "That sequence already exists!")
+				to_chat(owner, "该序列已存在！")
 				return FALSE
 			owner.client?.prefs.stim_sequences[new_name] = list()
 			owner.client?.prefs.save_preferences()
@@ -183,7 +183,7 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 	stim.end_effects(owner)
 	qdel(stim)
 	if(length(active_stims) < 1)
-		owner.balloon_alert(owner, "stims finished")
+		owner.balloon_alert(owner, "兴奋剂注射完毕")
 
 /datum/stim
 	/// displayed in UI
@@ -213,11 +213,11 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 	for(var/datum/action/supersoldier_stims/stim AS in action.active_stims)
 		if((type == stim.type) && !(stim_flags & STIM_ALLOW_DUPE))
 			if(!silent)
-				owner.balloon_alert(owner, "cannot duplicate stim!")
+				owner.balloon_alert(owner, "无法复制兴奋剂！")
 			return FALSE
 	if(length(action.active_stims) >= MAX_ACTIVE_STIMS)
 		if(!silent)
-			owner.balloon_alert(owner, "too many stims!")
+			owner.balloon_alert(owner, "注射太多兴奋剂了！")
 		return FALSE
 	return TRUE
 
@@ -253,64 +253,64 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 	return ..()
 
 /datum/stim/trait/immediate_defib
-	name = "Immediate defibbrillation"
-	desc = "Auto-sets health to 1 below defib threshold upon defibrillation. Two consecutive uses will deal enough damage to destroy the user's heart."
+	name = "立即除颤"
+	desc = "自动将生命值设为除颤器阈值以下1点。连续使用两次将造成足够伤害摧毁使用者的心脏。"
 	cast_say = "Injecting tissue stimulants..."
 	stim_uid = "immediate_defib"
 	stim_flags = NONE
 	trait_type = TRAIT_IMMEDIATE_DEFIB
 
 /datum/stim/trait/instant_death
-	name = "Heartstopper"
-	desc = "When a users health reaches critical, instantly stops the users heart with an electric shock that causes enough oxygen damage to kill them."
+	name = "心脏骤停"
+	desc = "当用户生命值达到危急状态时，立即通过电击使其心脏停跳，造成足以致死的缺氧伤害。"
 	cast_say = "Injecting conditional poisons..."
 	stim_uid = "crit_is_death"
 	stim_flags = NONE
 	trait_type = TRAIT_CRIT_IS_DEATH
 
 /datum/stim/trait/no_ear_damage
-	name = "Ear Resistance"
-	desc = "Reinforces your ears, making you immune to ear damage while it is active."
+	name = "耳部抗性"
+	desc = "强化你的听觉，使其在激活期间免疫耳部伤害。"
 	cast_say = "Reinforcing auricle..."
 	stim_uid = "deafnessimmunity"
 	stim_flags = NONE
 	trait_type = TRAIT_EARDAMAGE_IMMUNE
 
 /datum/stim/trait/no_flashbang
-	name = "Flash Resistance"
-	desc = "Reinforces your eyes, making you immune to bright flashes while it is active. Does not make you immune to eye damage!"
+	name = "闪光抗性"
+	desc = "强化你的眼睛，使其在激活期间免疫强光闪烁。但不会让你免疫眼部伤害！"
 	cast_say = "Reinforcing oculus..."
 	stim_uid = "noflashbang"
 	stim_flags = NONE
 	trait_type = TRAIT_FLASHBANGIMMUNE
 
 /datum/stim/trait/no_footsteps
-	name = "Silent footsteps"
-	desc = "Remolds your feet temporarily, making your footsteps completely silent."
+	name = "无声脚步"
+	desc = "重塑你的双脚，使其暂时完全无声。"
 	cast_say = "Adjusting pedisurface..."
 	stim_uid = "nofootsteps"
 	stim_flags = NONE
 	trait_type = TRAIT_SILENT_FOOTSTEPS
 
 /datum/stim/trait/quick_getup
-	name = "Quick Getup"
-	desc = "Increases lower muscular responsivity, allowing you to get up quickly after lying down."
+	name = "快速起身"
+	desc = "增强下肢肌肉反应能力，使你在倒地后能迅速起身。"
 	cast_say = "Enhancing muscular responsiveness..."
 	stim_uid = "quickgetup"
 	stim_flags = NONE
 	trait_type = TRAIT_QUICK_GETUP
 
 /datum/stim/trait/tank_collision_immunity
-	name = "Vehicle Crash Immunity"
-	desc = "Enhances your body's weight, making you immune to being moved and damaged by vehicle collisions."
+	name = "载具撞击免疫"
+	desc = "强化你的身体重量，使你免疫载具撞击造成的移动和伤害。"
 	cast_say = "Increasing bone density..."
 	stim_uid = "tankcollisionimmunity"
 	stim_flags = NONE
 	trait_type = TRAIT_STOPS_TANK_COLLISION
 
 /datum/stim/portal_toggle
-	name = "Portal Vulnerability"
-	desc = "Inverts your dimensional alignment through a mix of targetted isotopes, making you immune to portals if you weren't already, and makes you able to go through them if you were."
+	name = "传送门弱点"
+	desc = "通过混合定向同位素反转你的维度对齐，如果你原本对传送门免疫，现在将不再免疫；如果你原本无法通过传送门，现在将能够通过。"
 	cast_say = "Inverting polarity..."
 	stim_uid = "portallchange"
 	stim_flags = NONE
@@ -324,8 +324,8 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 	return ..()
 
 /datum/stim/speed_increase
-	name = "Speed Increase"
-	desc = "Increases your speed of movement, making you walk and move passively faster."
+	name = "速度提升"
+	desc = "提升你的移动速度，使你行走和移动被动加快。"
 	cast_say = "Administering adrenaline..."
 	stim_uid = "speedincrease"
 	particles = /particles/stims/speed
@@ -340,8 +340,8 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 	return ..()
 
 /datum/stim/stam_usage_decrease
-	name = "Stamina Efficiency"
-	desc = "Increases your ease of movement, making you use up stamina slower."
+	name = "体力效率"
+	desc = "提升你的移动灵活性，让你消耗耐力更慢。"
 	cast_say = "Administering synephrine..."
 	stim_uid = "stamusedecrease"
 	stim_flags = STIM_ALLOW_DUPE
@@ -361,8 +361,8 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 
 
 /datum/stim/stamina_regen
-	name = "Stamina Recovery"
-	desc = "Increases your resistance to tiredness, making you use stamina more slowly."
+	name = "体力恢复"
+	desc = "提升你对疲劳的抵抗力，使你更缓慢地消耗体力。"
 	cast_say = "Administering amphetamines..."
 	stim_uid = "stamregenincrease"
 	stim_flags = STIM_ALLOW_DUPE
@@ -387,7 +387,7 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 	for(var/skill in max_skills)
 		if(owner.skills.getRating(skill) >= max_skills[skill])
 			if(!silent)
-				owner.balloon_alert(owner, "skill already too high!")
+				owner.balloon_alert(owner, "技能等级已过高！")
 			return FALSE
 
 /datum/stim/skills/finish_cast(mob/living/owner)
@@ -402,8 +402,8 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 	owner.set_skills(owner.skills.modifyRating(arglist(negativeskills)))
 
 /datum/stim/skills/melee
-	name = "Melee Skill"
-	desc = "Enhances your strikes with magic, increasing your skill in melee."
+	name = "近战技能"
+	desc = "用魔法强化你的攻击，提升你的近战技能。"
 	cast_say = "Neural reaction module loading..."
 	stim_uid = "meleeskillbuff"
 	stim_flags = STIM_ALLOW_DUPE
@@ -411,8 +411,8 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 	max_skills = list(SKILL_MELEE_WEAPONS = SKILL_MELEE_SUPER)
 
 /datum/stim/skills/powerloader
-	name = "Powerloader Skill"
-	desc = "Increase your skill at using power loaders."
+	name = "动力装载机技能"
+	desc = "提升你操作动力装载机的技能。"
 	cast_say = "Neural powerloader module loading..."
 	stim_uid = "powerloaderskillbuff"
 	stim_flags = STIM_ALLOW_DUPE
@@ -435,8 +435,8 @@ GLOBAL_LIST_INIT(stim_type_lookup, init_stims())
 	gradient = list(1, "#001eff", 2, "#00ffc3", "loop")
 
 /datum/stim/better_throw
-	name = "Longer Throw"
-	desc = "Increases your throwing strength, making you throw things further."
+	name = "投掷距离增加"
+	desc = "增强你的投掷力量，让你能把东西扔得更远。"
 	cast_say = "Administering muscle enhancers..."
 	stim_uid = "throwstrength"
 	stim_flags = NONE

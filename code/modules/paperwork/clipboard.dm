@@ -1,5 +1,5 @@
 /obj/item/clipboard
-	name = "clipboard"
+	name = "剪贴板"
 	icon = 'icons/obj/items/paper.dmi'
 	icon_state = "clipboard"
 	worn_icon_list = list(
@@ -56,7 +56,7 @@
 		I.forceMove(src)
 		if(istype(I, /obj/item/paper))
 			toppaper = I
-		to_chat(user, span_notice("You clip the [I] onto \the [src]."))
+		to_chat(user, span_notice("你将[I]装到\the [src]上。"))
 		update_icon()
 
 	else if(istype(toppaper) && istype(I, /obj/item/tool/pen))
@@ -112,7 +112,7 @@
 					if(usr.drop_held_item())
 						W.forceMove(src)
 						haspen = W
-						to_chat(usr, span_notice("You slot the pen into \the [src]."))
+						to_chat(usr, span_notice("你将笔插入\the [src]。"))
 
 		else if(href_list["write"])
 			var/obj/item/P = locate(href_list["write"])
@@ -161,7 +161,7 @@
 			var/obj/item/P = locate(href_list["top"])
 			if(P && (P.loc == src) && istype(P, /obj/item/paper) )
 				toppaper = P
-				to_chat(usr, span_notice("You move [P.name] to the top."))
+				to_chat(usr, span_notice("你将[P.name]移至顶部。"))
 
 		//Update everything
 		attack_self(usr)

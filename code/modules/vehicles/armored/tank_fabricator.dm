@@ -1,6 +1,6 @@
 /obj/machinery/tank_part_fabricator
-	name = "vehicle part fabricator"
-	desc = "A large automated 3D printer for producing new vehicle parts and maintaining old ones."
+	name = "载具部件制造机"
+	desc = "一台大型自动化3D打印机，用于制造新载具部件并维护旧部件。"
 	density = TRUE
 	anchored = TRUE
 	use_power = IDLE_POWER_USE

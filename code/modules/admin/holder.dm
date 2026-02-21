@@ -44,7 +44,7 @@
 		throw EXCEPTION("Admin datum created without a rank.")
 		return
 	target = ckey
-	name = "[ckey]'s admin datum ([R])"
+	name = "[ckey]的管理员数据（[R]）"
 	rank = R
 	href_token = GenerateToken()
 	if(R.rights & R_DEBUG) //grant profile access
@@ -132,7 +132,7 @@
 
 ADMIN_VERB(deadmin, R_NONE, "DeAdmin", "Shed your admin powers.", ADMIN_CATEGORY_MAIN)
 	user.holder.deactivate()
-	to_chat(user, span_interface("You are now a normal player."))
+	to_chat(user, span_interface("我现在是一名普通玩家。"))
 	log_admin("[key_name(user)] deadminned themselves.")
 	message_admins("[key_name_admin(user)] deadminned themselves.")
 
@@ -186,7 +186,7 @@ ADMIN_VERB(deadmin, R_NONE, "DeAdmin", "Shed your admin powers.", ADMIN_CATEGORY
 		if(usr.client.holder)
 			return TRUE
 		else if(show_msg)
-			to_chat(usr, span_warning("You are not a holder."))
+			to_chat(usr, span_warning("你不是持有者。"))
 	return FALSE
 
 
@@ -202,7 +202,7 @@ ADMIN_VERB(deadmin, R_NONE, "DeAdmin", "Shed your admin powers.", ADMIN_CATEGORY
 		if(other.holder)
 			return TRUE
 		else if(show_msg)
-			to_chat(usr, span_warning("You are not a holder."))
+			to_chat(usr, span_warning("你不是持有者。"))
 	return FALSE
 
 
@@ -218,7 +218,7 @@ ADMIN_VERB(deadmin, R_NONE, "DeAdmin", "Shed your admin powers.", ADMIN_CATEGORY
 			return TRUE
 		if(usr.client.holder.rank.rights != other.holder.rank.rights && ((usr.client.holder.rank.rights & other.holder.rank.rights) == other.holder.rank.rights))
 			return TRUE
-	to_chat(usr, span_warning("They have more or equal rights than you."))
+	to_chat(usr, span_warning("他们的权利比你多或相等。"))
 	return FALSE
 
 

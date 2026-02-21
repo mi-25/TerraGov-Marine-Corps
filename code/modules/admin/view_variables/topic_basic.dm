@@ -35,7 +35,7 @@
 			if (!C)
 				return
 			if(!target)
-				to_chat(usr, span_warning("The object you tried to expose to [C] no longer exists (nulled or hard-deled)"), confidential = TRUE)
+				to_chat(usr, span_warning("你试图暴露给[C]的对象已不存在（已置空或硬删除）"), confidential = TRUE)
 				return
 			message_admins("[key_name_admin(usr)] Showed [key_name_admin(C)] a <a href='byond://?_src_=vars;datumrefresh=[REF(target)]'>VV window</a>")
 			log_admin("Admin [key_name(usr)] Showed [key_name(C)] a VV window of a [target]")
@@ -69,7 +69,7 @@
 			return
 
 		if(QDELETED(src))
-			to_chat(usr, "That thing doesn't exist anymore!", confidential = TRUE)
+			to_chat(usr, "那东西已经不存在了！", confidential = TRUE)
 			return
 
 		var/add_source
@@ -114,7 +114,7 @@
 		if(!usr || path == "---Components---" || path == "---Elements---")
 			return
 		if(QDELETED(src))
-			to_chat(usr, "That thing doesn't exist anymore!")
+			to_chat(usr, "那东西已经不存在了！")
 			return
 		var/list/targets_to_remove_from = list(target)
 		if(mass_remove)

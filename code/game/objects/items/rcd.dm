@@ -1,6 +1,6 @@
 /obj/item/tool/rcd
-	name = "rapid-construction-device (RCD)"
-	desc = "A device used to rapidly build walls/floor."
+	name = "快速建造装置（RCD）"
+	desc = "用于快速建造墙壁/地板的装置。"
 	icon = 'icons/obj/items/tools.dmi'
 	icon_state = "rcd"
 	opacity = FALSE
@@ -14,8 +14,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_rcd
-	name = "compressed matter cartridge"
-	desc = "Highly compressed matter for the RCD."
+	name = "压缩物质弹匣"
+	desc = "RCD用高密度压缩物质。"
 	icon = 'icons/obj/items/tools.dmi'
 	icon_state = "rcd_ammo"
 	worn_icon_list = list(

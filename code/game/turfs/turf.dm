@@ -461,7 +461,7 @@
 			playsound(src, "sound/effects/glassbr1.ogg", 60, 1)
 			spawn(8)
 				if(amount >1)
-					visible_message(span_boldnotice("Shards of glass rain down from above!"))
+					visible_message(span_boldnotice("玻璃碎片如雨点般从上方落下！"))
 				for(var/i=1, i<=amount, i++)
 					new /obj/item/shard(pick(turfs))
 					new /obj/item/shard(pick(turfs))
@@ -469,14 +469,14 @@
 			playsound(src, "sound/effects/metal_crash.ogg", 60, 1)
 			spawn(8)
 				if(amount >1)
-					visible_message(span_boldnotice("Pieces of metal crash down from above!"))
+					visible_message(span_boldnotice("金属碎片从上方坠落！"))
 				for(var/i=1, i<=amount, i++)
 					new /obj/item/stack/sheet/metal(pick(turfs))
 		if(CEILING_UNDERGROUND, CEILING_DEEP_UNDERGROUND)
 			playsound(src, "sound/effects/meteorimpact.ogg", 60, 1)
 			spawn(8)
 				if(amount >1)
-					visible_message(span_boldnotice("Chunks of rock crash down from above!"))
+					visible_message(span_boldnotice("大块岩石从上方坠落！"))
 				for(var/i=1, i<=amount, i++)
 					new /obj/item/ore(pick(turfs))
 					new /obj/item/ore(pick(turfs))
@@ -595,7 +595,7 @@
 			break
 	if(prev_turf && !(flags & FALL_NO_MESSAGE))
 		for(var/mov_name in falling_mov_names)
-			prev_turf.visible_message(span_danger("[mov_name] falls through [prev_turf]!"))
+			prev_turf.visible_message(span_danger("[mov_name]从[prev_turf]坠落！"))
 	if(!(flags & FALL_INTERCEPTED) && zFall(falling, levels + 1))
 		return FALSE
 	for(var/atom/movable/falling_mov as anything in falling_movables)
@@ -615,7 +615,7 @@
 	var/area/ourarea = loc
 	if(ourarea.area_flags & DISALLOW_WEEDING)
 		if(!silent)
-			to_chat(builder, span_warning("We cannot build in this area before the talls are out!"))
+			to_chat(builder, span_warning("在那些高个子离开之前，我们不能在这里建造！"))
 		return FALSE
 	return TRUE
 
@@ -630,19 +630,19 @@
 			var/obj/item/clothing/mask/facehugger/hugger_check = O
 			if(hugger_check.stat != DEAD) //We don't care about dead huggers.
 				if(!silent)
-					to_chat(builder, span_warning("There is a little one here already. Best move it."))
+					to_chat(builder, span_warning("这里已经有一个小家伙了。最好把它移开。"))
 				return FALSE
 		if(istype(O, /obj/alien/egg))
 			if(!silent)
-				to_chat(builder, span_warning("There's already an egg here."))
+				to_chat(builder, span_warning("这里已经有一个卵了。"))
 			return FALSE
 		if(istype(O, /obj/structure/xeno))
 			if(!silent)
-				to_chat(builder, span_warning("There's already a resin structure here!"))
+				to_chat(builder, span_warning("这里已经有树脂结构了！"))
 			return FALSE
 		if(istype(O, /obj/structure/xeno/plant))
 			if(!silent)
-				to_chat(builder, span_warning("There is a plant growing here, destroying it would be a waste to the hive."))
+				to_chat(builder, span_warning("这里有一株植物，摧毁它会对蜂巢造成浪费。"))
 			return FALSE
 		if(istype(O, /obj/structure/mineral_door) || istype(O, /obj/structure/ladder) || istype(O, /obj/alien/resin))
 			has_obstacle = TRUE
@@ -673,13 +673,13 @@
 
 	if(density || has_obstacle)
 		if(!silent)
-			to_chat(builder, span_warning("There's something built here already."))
+			to_chat(builder, span_warning("这里已经建造了东西。"))
 		return FALSE
 	return TRUE
 
 /turf/closed/check_alien_construction(mob/living/builder, silent = FALSE, planned_building)
 	if(!silent)
-		to_chat(builder, span_warning("There's something built here already."))
+		to_chat(builder, span_warning("这里已经建造了东西。"))
 	return FALSE
 
 /turf/proc/can_dig_xeno_tunnel()
@@ -939,8 +939,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	baseturfs.Insert(1, new_baseturfs)
 
 /turf/baseturf_bottom
-	name = "Z-level baseturf placeholder"
-	desc = "Marker for z-level baseturf, usually resolves to space."
+	name = "Z层级基地图块占位符"
+	desc = "z层级基础地形标记，通常解析为太空。"
 	baseturfs = /turf/baseturf_bottom
 
 

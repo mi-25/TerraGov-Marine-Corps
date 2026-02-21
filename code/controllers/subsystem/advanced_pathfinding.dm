@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(advanced_pathfinding)
-	name = "Advanced Pathfinding"
+	name = "高级路径规划"
 	dependencies = list(
 		/datum/controller/subsystem/atoms,
 		/datum/controller/subsystem/mapping,
@@ -144,7 +144,7 @@ GLOBAL_LIST_EMPTY(goal_nodes)
 	return atoms_path
 
 /obj/effect/ai_node/goal
-	name = "AI goal"
+	name = "AI目标"
 	invisibility = INVISIBILITY_OBSERVER
 	faction = FACTION_XENO
 	///Who made that ai_node
@@ -195,11 +195,11 @@ GLOBAL_LIST_EMPTY(goal_nodes)
 	qdel(src)
 
 /obj/effect/ai_node/goal/zombie
-	name = "Ai zombie goal"
+	name = "AI僵尸目标"
 	faction = FACTION_ZOMBIE
 
 /obj/effect/ai_node/goal/neutral
-	name = "Ai human goal"
+	name = "人工智能人类目标"
 	faction = FACTION_NEUTRAL
 
 /obj/effect/ai_node/goal/tgmc

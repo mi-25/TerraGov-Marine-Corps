@@ -28,7 +28,7 @@
 
 /datum/loadout_item/uniform/marine_standard
 	name = "TDF uniform"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented marine uniform. You suspect it's not as robust-proof as advertised."
+	desc = "一套标准配发的、凯夫拉编织、经过危险品测试、电磁场增强的陆战队制服。你怀疑它并不像宣传的那样坚固耐用。"
 	item_typepath = /obj/item/clothing/under/tdf/black_vest
 	jobs_supported = list(SQUAD_MARINE, SQUAD_SMARTGUNNER, SQUAD_LEADER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -43,7 +43,7 @@
 //corpsman
 /datum/loadout_item/uniform/marine_corpsman
 	name = "corpsman fatigues"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented combat corpsman fatigues. You suspect it's not as robust-proof as advertised."
+	desc = "一套标准配发的、凯夫拉编织、经过危险品测试、电磁场增强的战斗卫生兵作训服。你怀疑它并不像广告宣传的那样坚固耐用。"
 	item_typepath = /obj/item/clothing/under/tdf/medic/corpman_vest
 	jobs_supported = list(SQUAD_CORPSMAN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -59,7 +59,7 @@
 //engineer
 /datum/loadout_item/uniform/marine_engineer
 	name = "Engineer fatigues"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented combat engineer fatigues. You suspect it's not as robust-proof as advertised."
+	desc = "一套标准配发的、凯夫拉编织、经过危险品测试、电磁场增强的战斗工程兵作训服。你怀疑它并不像宣传的那样坚固耐用。"
 	req_desc = "Requires a tool pouch. You ARE an engineer, right?"
 	item_typepath = /obj/item/clothing/under/tdf/black_vest
 	jobs_supported = list(SQUAD_ENGINEER)
@@ -68,7 +68,7 @@
 //FC
 /datum/loadout_item/uniform/field_commander
 	name = "FC uniform"
-	desc = "A special-issue, kevlar-weaved, hazmat-tested, EMF-augmented worn by a field-grade officer of the TGMC. You suspect it's not as robust-proof as advertised."
+	desc = "一件由TGMC战地军官穿着的特制、凯夫拉编织、防化测试、电磁场增强的装备。你怀疑它并不像宣传的那样坚固。"
 	item_typepath = /obj/item/clothing/under/tdf/black_vest
 	jobs_supported = list(FIELD_COMMANDER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -76,7 +76,7 @@
 //Staff officer
 /datum/loadout_item/uniform/staff_officer
 	name = "SO uniform"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented staff officer uniform. Do the navy proud."
+	desc = "一件标准配发的、凯夫拉编织的、经过危险品测试的、电磁场增强的参谋军官制服。为海军争光。"
 	item_typepath = /obj/item/clothing/under/marine/officer/bridge
 	jobs_supported = list(STAFF_OFFICER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -84,7 +84,7 @@
 //Captain
 /datum/loadout_item/uniform/captain_officer
 	name = "Captain uniform"
-	desc = "A special-issue, well-ironed, kevlar-weaved, hazmat-tested, EMF-augmented uniform worth of a TerraGov Naval Captain. Even looking at it the wrong way could result in being court-martialed."
+	desc = "一套特制、熨烫平整、凯夫拉编织、经过危险品测试、电磁场增强的地球政府海军舰长制服。哪怕只是多看一眼，都可能让你面临军事法庭的审判。"
 	item_typepath = /obj/item/clothing/under/marine/officer/command
 	jobs_supported = list(CAPTAIN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE

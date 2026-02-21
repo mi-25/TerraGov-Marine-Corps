@@ -103,12 +103,12 @@
 		else
 			tempo = sanitize_tempo(5) // default 120 BPM
 		if(length(lines) > MUSIC_MAXLINES)
-			to_chat(usr, "Too many lines!")
+			to_chat(usr, "行数过多！")
 			lines.Cut(MUSIC_MAXLINES + 1)
 		var/linenum = 1
 		for(var/l in lines)
 			if(length_char(l) > MUSIC_MAXLINECHARS)
-				to_chat(usr, "Line [linenum] too long!")
+				to_chat(usr, "第[linenum]行过长！")
 				lines.Remove(l)
 			else
 				linenum++

@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/sentinel
 	caste_base_type = /datum/xeno_caste/sentinel
 	name = "Sentinel"
-	desc = "A slithery, spitting kind of alien."
+	desc = "一种滑溜、会喷射的异形。"
 	icon = 'icons/Xeno/castes/sentinel.dmi'
 	icon_state = "Sentinel Walking"
 	bubble_icon = "alienleft"

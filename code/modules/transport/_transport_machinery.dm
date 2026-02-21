@@ -106,13 +106,13 @@
 /obj/machinery/transport/proc/try_fix_machine(obj/machinery/transport/machine, mob/living/user, obj/item/tool)
 	SHOULD_CALL_PARENT(TRUE)
 
-	machine.balloon_alert(user, "percussive maintenance...")
+	machine.balloon_alert(user, "敲打式维护...")
 	if(!tool.use_tool(machine, user, 7 SECONDS, volume = 50))
-		machine.balloon_alert(user, "interrupted!")
+		machine.balloon_alert(user, "已中断！")
 		return FALSE
 
 	playsound(src, 'sound/machines/synth/synth_yes.ogg', 75)
-	machine.balloon_alert(user, "success!")
+	machine.balloon_alert(user, "成功！")
 	UnregisterSignal(src, repair_signals)
 	LAZYNULL(repair_signals)
 	methods_to_fix = list()
@@ -126,12 +126,12 @@
 	if(user.a_intent == HARM)
 		return
 	if(atom_integrity >= max_integrity)
-		balloon_alert(user, "it doesn't need repairs!")
+		balloon_alert(user, "它不需要修理！")
 		return TRUE
-	balloon_alert(user, "repairing...")
+	balloon_alert(user, "修复中...")
 	if(!tool.use_tool(src, user, 4 SECONDS, amount = 0, volume=50))
 		return TRUE
-	balloon_alert(user, "repaired")
+	balloon_alert(user, "已修复")
 	atom_integrity = max_integrity
 	set_machine_stat(machine_stat & ~BROKEN)
 	update_appearance()
@@ -139,22 +139,22 @@
 
 /obj/item/wallframe/tram/try_build(obj/structure/tram/on_tram, mob/user)
 	if(get_dist(on_tram,user) > 1)
-		balloon_alert(user, "you are too far!")
+		balloon_alert(user, "你距离太远了！")
 		return
 
 	var/floor_to_tram = get_dir(user, on_tram)
 	if(!(floor_to_tram in GLOB.cardinals))
-		balloon_alert(user, "stand in line with tram wall!")
+		balloon_alert(user, "靠电车墙站好！")
 		return
 
 	var/turf/tram_turf = get_turf(user)
 	var/obj/structure/thermoplastic/tram_floor = locate() in tram_turf
 	if(!istype(tram_floor))
-		balloon_alert(user, "needs tram!")
+		balloon_alert(user, "需要电车！")
 		return
 
 	if(check_wall_item(tram_turf, floor_to_tram, wall_external))
-		balloon_alert(user, "already something here!")
+		balloon_alert(user, "已有内容！")
 		return
 
 	return TRUE
@@ -163,7 +163,7 @@
 /obj/item/wallframe/tram/attach(obj/structure/tram/on_tram, mob/user)
 	if(result_path)
 		playsound(src.loc, 'sound/machines/click.ogg', 75, TRUE)
-		user.visible_message(span_notice("[user.name] installs [src] on the tram."),
+		user.visible_message(span_notice("[user.name] 在电车上安装了 [src]。"),
 			span_notice("You install [src] on the tram."),
 			span_hear("You hear clicking."))
 		var/floor_to_tram = get_dir(user, on_tram)

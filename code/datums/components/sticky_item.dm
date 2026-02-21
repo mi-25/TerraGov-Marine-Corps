@@ -48,7 +48,7 @@
 	item_source.forceMove(target)
 	saved_overlay = stuck_overlay
 	stuck_to = target
-	target.visible_message(span_warning("[item_source] sticks to [target]!"))
+	target.visible_message(span_warning("[item_source]粘在了[target]身上！"))
 	RegisterSignal(stuck_to, COMSIG_QDELETING, PROC_REF(clean_refs))
 
 /// Called on throw impact via signal

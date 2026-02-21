@@ -1,6 +1,6 @@
 /obj/vehicle/sealed/mecha/working/ripley
-	desc = "Autonomous Power Loader Unit MK-I. Designed primarily around heavy lifting, the Ripley can be outfitted with utility equipment to fill a number of roles."
-	name = "\improper APLU MK-I \"Ripley\""
+	desc = "自主动力装载机单元MK-I。里普利主要设计用于重型搬运，可配备多种实用设备以执行不同任务。"
+	name = "\improper APLU MK-I 型「雷普利」"
 	icon_state = "ripley"
 	base_icon_state = "ripley"
 	silicon_icon_state = "ripley-empty"
@@ -57,8 +57,8 @@
 	return ..()
 
 /obj/vehicle/sealed/mecha/working/ripley/mk2
-	desc = "Autonomous Power Loader Unit MK-II. This prototype Ripley is refitted with a pressurized cabin, trading its prior speed for atmospheric protection and armor."
-	name = "\improper APLU MK-II \"Ripley\""
+	desc = "自主动力装载机单元MK-II。这款原型里普利经过改装，配备了加压驾驶舱，以牺牲先前速度为代价，换取了大气防护和装甲。"
+	name = "\improper APLU MK-II'雷普利'"
 	icon_state = "ripleymkii"
 	base_icon_state = "ripleymkii"
 	fast_pressure_step_in = 2 //step_in while in low pressure conditions
@@ -81,8 +81,8 @@
 	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/strafe)
 
 /obj/vehicle/sealed/mecha/working/ripley/deathripley
-	desc = "OH SHIT IT'S THE DEATHSQUAD WE'RE ALL GONNA DIE"
-	name = "\improper DEATH-RIPLEY"
+	desc = "卧槽是死亡小队我们都要完蛋了"
+	name = "\improper 死亡雷普利"
 	icon_state = "deathripley"
 	base_icon_state = "deathripley"
 	fast_pressure_step_in = 2 //step_in while in low pressure conditions
@@ -103,7 +103,7 @@
 	)
 
 /obj/vehicle/sealed/mecha/working/ripley/deathripley/real
-	desc = "OH SHIT IT'S THE DEATHSQUAD WE'RE ALL GONNA DIE. FOR REAL"
+	desc = "卧槽是死亡小队我们都要完蛋了。真的。"
 	equip_by_category = list(
 		MECHA_L_ARM = /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp/kill,
 		MECHA_R_ARM = null,
@@ -113,8 +113,8 @@
 	)
 
 /obj/vehicle/sealed/mecha/working/ripley/mining
-	desc = "An old, dusty mining Ripley."
-	name = "\improper APLU \"Miner\""
+	desc = "一台老旧、布满灰尘的采矿型雷普利。"
+	name = "\improper APLU「矿工」"
 
 /obj/vehicle/sealed/mecha/working/ripley/mining/Initialize(mapload)
 	. = ..()
@@ -134,8 +134,8 @@
 	HC.attach(src, TRUE)
 
 /obj/vehicle/sealed/mecha/working/ripley/cargo
-	desc = "An ailing, old, repurposed cargo hauler. Most of its equipment wires are frayed or missing and its frame is rusted."
-	name = "\improper APLU \"Big Bess\""
+	desc = "一艘老旧、状况不佳、经过改造的货运飞船。大部分设备线路都已磨损或缺失，船体框架锈迹斑斑。"
+	name = "\improper APLU'大贝丝'"
 	icon_state = "hauler"
 	base_icon_state = "hauler"
 	max_integrity = 100 //Has half the health of a normal RIPLEY mech, so it's harder to use as a weapon.
@@ -165,7 +165,7 @@
 	return ..()
 
 /obj/item/mecha_parts/mecha_equipment/ejector
-	name = "Cargo compartment"
+	name = "货舱"
 	equipment_slot = MECHA_UTILITY
 	detachable = FALSE
 
@@ -198,13 +198,13 @@
 
 
 /obj/vehicle/sealed/mecha/working/ripley/resisted_against(mob/living/user, obj/O)
-	to_chat(user, span_notice("You lean on the back of [O] and start pushing so it falls out of [src]."))
+	to_chat(user, span_notice("你靠在[O]的背上开始推，让它从[src]里掉出来。"))
 	if(do_after(user, 30 SECONDS, target = O))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || O.loc != src )
 			return
-		to_chat(user, span_notice("You successfully pushed [O] out of [src]!"))
+		to_chat(user, span_notice("你成功将[O]推出了[src]！"))
 		O.forceMove(drop_location())
 		LAZYREMOVE(cargo, O)
 	else
 		if(user.loc == src) //so we don't get the message if we resisted multiple times and succeeded.
-			to_chat(user, span_warning("You fail to push [O] out of [src]!"))
+			to_chat(user, span_warning("你没能把[O]推出[src]！"))

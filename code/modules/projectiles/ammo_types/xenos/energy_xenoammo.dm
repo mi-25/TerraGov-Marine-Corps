@@ -14,7 +14,7 @@
 	var/glow_color
 
 /datum/ammo/energy/xeno/psy_blast
-	name = "psychic blast"
+	name = "心灵冲击"
 	ammo_behavior_flags = AMMO_XENO|AMMO_TARGET_TURF|AMMO_BETTER_COVER_RNG|AMMO_ENERGY|AMMO_HITSCAN|AMMO_SKIPS_ALIENS
 	damage = 35
 	penetration = 10
@@ -74,7 +74,7 @@
 	drop_nade(target_turf.density ? get_step_towards(target_turf, proj) : target_turf, proj)
 
 /datum/ammo/energy/xeno/psy_blast/psy_lance
-	name = "psychic lance"
+	name = "心灵长矛"
 	ammo_behavior_flags = AMMO_XENO|AMMO_ENERGY|AMMO_HITSCAN|AMMO_PASS_THROUGH_MOVABLE
 	damage = 60
 	penetration = 50
@@ -107,7 +107,7 @@
 	return
 
 /datum/ammo/energy/xeno/psy_blast/psy_drain
-	name = "psychic drain"
+	name = "精神汲取"
 	damage = 24.5 // 35 * 0.7 = 24.5
 	damage_type = STAMINA
 	aoe_range = 1

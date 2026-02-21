@@ -1,6 +1,6 @@
 /turf/closed/wall/r_wall
-	name = "reinforced wall"
-	desc = "A huge chunk of reinforced metal used to seperate rooms."
+	name = "强化墙壁"
+	desc = "一大块用于分隔房间的加固金属板。"
 	icon = 'icons/turf/walls/rwall.dmi'
 	icon_state = "wall-reinforced"
 	base_icon_state = "rwall"
@@ -34,8 +34,8 @@
 	resistance_flags = RESIST_ALL
 
 /turf/closed/wall/r_wall/unmeltable
-	name = "heavy reinforced wall"
-	desc = "A huge chunk of ultra-reinforced metal used to seperate rooms. Looks virtually indestructible."
+	name = "重型加固墙"
+	desc = "一大块超强化金属，用于分隔房间。看起来几乎坚不可摧。"
 	icon_state = "wall-invincible"
 	walltype = "rwall"
 	resistance_flags = RESIST_ALL
@@ -53,7 +53,7 @@
 //Chigusa
 
 /turf/closed/wall/r_wall/chigusa
-	name = "facility wall"
+	name = "设施墙壁"
 	icon = 'icons/turf/walls/chigusa.dmi'
 	icon_state = "wall-reinforced"
 	walltype = "chigusa"
@@ -73,15 +73,15 @@
 //Prison
 
 /turf/closed/wall/r_wall/prison
-	name = "reinforced metal wall"
+	name = "强化金属墙"
 	icon = 'icons/turf/walls/gorg_prison_rwall_two.dmi'
 	walltype = "rwall"
 	base_icon_state = "rwall"
 	icon_state = "wall-reinforced"
 
 /turf/closed/wall/r_wall/prison_unmeltable
-	name = "heavy reinforced wall"
-	desc = "A huge chunk of ultra-reinforced metal used to seperate rooms. Looks virtually indestructible."
+	name = "重型加固墙"
+	desc = "一大块超强化金属，用于分隔房间。看起来几乎坚不可摧。"
 	icon = 'icons/turf/walls/gorg_prison_rwall_two.dmi'
 	icon_state = "wall-invincible"
 	walltype = "rwall"
@@ -108,8 +108,8 @@
 	base_icon_state = "white_research_wall"
 
 /turf/closed/wall/r_wall/urban
-	name = "reinforced metal walls"
-	desc = "A thick and chunky metal wall ribbed with reinforced steel. The surface is barren and imposing."
+	name = "强化金属墙壁"
+	desc = "一面厚重而粗犷的金属墙，表面布满加固钢肋。其表面光秃而令人生畏。"
 	icon = 'icons/turf/walls/hybrisa_colony_walls.dmi'
 	icon_state = "wall-reinforced"
 	walltype = "wall"
@@ -120,8 +120,8 @@
 	icon_state = "wall-invincible"
 
 /turf/closed/wall/r_wall/engineership
-	name = "strange metal wall"
-	desc = "Nigh indestructible walls that make up the hull of an unknown ancient ship."
+	name = "奇怪的金属墙壁"
+	desc = "构成一艘未知古老飞船船体的近乎坚不可摧的墙壁。"
 	icon = 'icons/turf/walls/engineer_walls.dmi'
 	icon_state = "engineer_walls-0"
 	walltype = "wall"

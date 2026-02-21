@@ -35,7 +35,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 			parent.element_chosen(choice,usr)
 
 /atom/movable/screen/radial/center
-	name = "Close Menu"
+	name = "关闭菜单"
 	icon_state = "radial_center"
 
 /atom/movable/screen/radial/center/MouseEntered(location, control, params)

@@ -1,5 +1,5 @@
 /area/space
-	name = "Space"
+	name = "太空"
 	requires_power = 1
 	always_unpowered = 1
 	base_lighting_alpha = 255
@@ -28,11 +28,11 @@
 	requires_power = 0
 
 /area/arrival/start
-	name = "Arrival Area"
+	name = "抵达区"
 	icon_state = "start"
 
 /area/admin
-	name = "Admin room"
+	name = "管理员室"
 	icon_state = "start"
 
 
@@ -48,7 +48,7 @@
 	minimap_color = MINIMAP_AREA_LZ
 
 /area/shuttle/arrival
-	name = "Abandoned Arrival Shuttle"
+	name = "废弃抵达穿梭机"
 
 /area/shuttle/arrival/pre_game
 	icon_state = "shuttle2"
@@ -57,22 +57,22 @@
 	icon_state = "shuttle"
 
 /area/shuttle/escape
-	name = "Abandoned Emergency Shuttle"
+	name = "废弃紧急穿梭机"
 
 /area/shuttle/escape/station
-	name = "Abandoned Emergency Shuttle Station"
+	name = "废弃紧急穿梭站"
 	icon_state = "shuttle2"
 
 /area/shuttle/escape/centcom
-	name = "Abandoned Emergency Shuttle Centcom"
+	name = "废弃紧急穿梭机 中央司令部"
 	icon_state = "shuttle"
 
 /area/shuttle/escape/transit // the area to pass through for 3 minute transit
-	name = "Abandoned Emergency Shuttle Transit"
+	name = "废弃紧急穿梭机转运区"
 	icon_state = "shuttle"
 
 /area/shuttle/escape_pod1
-	name = "Escape Pod One"
+	name = "逃生舱一号"
 
 /area/shuttle/escape_pod1/station
 	icon_state = "shuttle2"
@@ -84,7 +84,7 @@
 	icon_state = "shuttle"
 
 /area/shuttle/escape_pod2
-	name = "Escape Pod Two"
+	name = "逃生舱二号"
 
 /area/shuttle/escape_pod2/station
 	icon_state = "shuttle2"
@@ -96,7 +96,7 @@
 	icon_state = "shuttle"
 
 /area/shuttle/escape_pod3
-	name = "Escape Pod Three"
+	name = "逃生舱三号"
 
 /area/shuttle/escape_pod3/station
 	icon_state = "shuttle2"
@@ -108,7 +108,7 @@
 	icon_state = "shuttle"
 
 /area/shuttle/escape_pod5 //Pod 4 was lost to meteors
-	name = "Escape Pod Five"
+	name = "逃生舱五号"
 
 /area/shuttle/escape_pod5/station
 	icon_state = "shuttle2"
@@ -120,7 +120,7 @@
 	icon_state = "shuttle"
 
 /area/shuttle/mining
-	name = "abandoned Mining Shuttle"
+	name = "废弃采矿穿梭机"
 
 /area/shuttle/mining/station
 	icon_state = "shuttle2"
@@ -130,15 +130,15 @@
 
 /area/shuttle/transport1/centcom
 	icon_state = "shuttle"
-	name = "Abandoned Transport Shuttle Centcom"
+	name = "废弃运输穿梭机 中央司令部"
 
 /area/shuttle/transport1/station
 	icon_state = "shuttle"
-	name = "Abandoned Transport Shuttle"
+	name = "废弃运输穿梭机"
 
 
 /area/shuttle/prison/
-	name = "Abandoned Prison Shuttle"
+	name = "废弃监狱穿梭机"
 
 
 /area/shuttle/prison/station
@@ -150,77 +150,77 @@
 
 
 /area/shuttle/specops/centcom
-	name = "Abandoned Special Ops Shuttle"
+	name = "废弃特种作战穿梭机"
 	icon_state = "shuttlered"
 
 
 /area/shuttle/specops/station
-	name = "Abandoned Special Ops Shuttle"
+	name = "废弃特种作战穿梭机"
 	icon_state = "shuttlered2"
 
 
 /area/shuttle/syndicate_elite/mothership
-	name = "Abandoned Syndicate Elite Shuttle"
+	name = "废弃的辛迪加精英穿梭机"
 	icon_state = "shuttlered"
 
 
 /area/shuttle/syndicate_elite/station
-	name = "Abandoned Syndicate Elite Shuttle"
+	name = "废弃的辛迪加精英穿梭机"
 	icon_state = "shuttlered2"
 
 
 /area/shuttle/administration/centcom
-	name = "Abandoned Administration Shuttle Centcom"
+	name = "废弃的中央司令部穿梭机"
 	icon_state = "shuttlered"
 
 
 /area/shuttle/administration/station
-	name = "Abandoned Administration Shuttle"
+	name = "废弃行政穿梭机"
 	icon_state = "shuttlered2"
 
 
 /area/shuttle/thunderdome
-	name = "honk"
+	name = "鸣"
 
 
 /area/shuttle/thunderdome/grnshuttle
-	name = "Abandoned Thunderdome GRN Shuttle"
+	name = "废弃雷神竞技场绿色穿梭机"
 	icon_state = "green"
 
 
 /area/shuttle/thunderdome/grnshuttle/dome
-	name = "Abandoned GRN Shuttle"
+	name = "废弃的GRN穿梭机"
 	icon_state = "shuttlegrn"
 
 
 /area/shuttle/thunderdome/grnshuttle/station
-	name = "Abandoned GRN Station"
+	name = "废弃的GRN空间站"
 	icon_state = "shuttlegrn2"
 
 
 /area/shuttle/thunderdome/redshuttle
-	name = "Abandoned Thunderdome RED Shuttle"
+	name = "废弃雷神竞技场红色穿梭机"
 	icon_state = "red"
 
 
 /area/shuttle/thunderdome/redshuttle/dome
-	name = "Abandoned RED Shuttle"
+	name = "废弃的红色穿梭机"
 	icon_state = "shuttlered"
 
 
 /area/shuttle/thunderdome/redshuttle/station
-	name = "Abandoned RED Station"
+	name = "废弃的红色空间站"
 	icon_state = "shuttlered2"
 
 
 /area/shuttle/vox/station
-	name = "Abandoned Vox Skipjack"
+	name = "废弃的沃克斯跳帮船"
 	icon_state = "yellow"
 	requires_power = 0
 
 
 /area/start            // will be unused once kurper gets his login interface patch done
-	name = "start area"
+	name = "起始区域"
 	icon_state = "start"
 	requires_power = 0
 	static_lighting = FALSE
@@ -231,46 +231,46 @@
 	// Mobs should be able to see inside the testroom
 	static_lighting = FALSE
 	base_lighting_alpha = 255
-	name = "Test Room"
+	name = "测试房间"
 	icon_state = "test_room"
 
 
 /area/syndicate_mothership
-	name = "Abandoned Syndicate Base"
+	name = "废弃的辛迪加基地"
 	icon_state = "syndie-ship"
 	requires_power = 0
 
 
 /area/syndicate_mothership/control
-	name = "Abandoned Syndicate Control Room"
+	name = "废弃的辛迪加控制室"
 	icon_state = "syndie-control"
 
 
 /area/syndicate_mothership/elite_squad
-	name = "Abandoned Syndicate Elite Squad"
+	name = "被遗弃的辛迪加精英小队"
 	icon_state = "syndie-elite"
 
 
 /area/asteroid
-	name = "Abandoned Asteroid"
+	name = "废弃小行星"
 	icon_state = "asteroid"
 	requires_power = 0
 
 
 /area/asteroid/cave
-	name = "Abandoned Asteroid - Underground"
+	name = "废弃小行星 - 地下"
 	icon_state = "cave"
 	requires_power = 0
 	minimap_color = MINIMAP_AREA_CAVES
 
 
 /area/asteroid/artifactroom
-	name = "Abandoned Asteroid - Artifact"
+	name = "废弃小行星 - 遗迹"
 	icon_state = "cave"
 
 
 /area/tdome
-	name = "Abandoned Thunderdome"
+	name = "废弃的雷霆穹顶"
 	icon_state = "thunder"
 	requires_power = FALSE
 	base_lighting_alpha = 255
@@ -278,27 +278,27 @@
 
 
 /area/tdome/tdome1
-	name = "Abandoned Thunderdome (Team 1)"
+	name = "废弃雷霆穹顶（队伍1）"
 	icon_state = "green"
 
 
 /area/tdome/tdome2
-	name = "Abandoned Thunderdome (Team 2)"
+	name = "废弃的雷霆穹顶（第二队）"
 	icon_state = "yellow"
 
 
 /area/tdome/tdomeadmin
-	name = "Abandoned Thunderdome (Admin.)"
+	name = "废弃的雷霆穹顶（管理员。）"
 	icon_state = "purple"
 
 
 /area/tdome/tdomeobserve
-	name = "Abandoned Thunderdome (Observer.)"
+	name = "废弃的雷霆穹顶（观察者。）"
 	icon_state = "purple"
 
 
 /area/deathmatch
-	name = "End of Round Deathmatch Arena"
+	name = "回合结束死亡竞技场"
 	icon_state = "green"
 	base_lighting_alpha = 255
 
@@ -306,82 +306,82 @@
 
 
 /area/syndicate_station
-	name = "Abandoned Syndicate Station"
+	name = "废弃的辛迪加空间站"
 	icon_state = "yellow"
 	requires_power = 0
 
 /area/syndicate_station/start
-	name = "Abandoned Syndicate Forward Operating Base"
+	name = "废弃的辛迪加前线作战基地"
 	icon_state = "yellow"
 
 /area/syndicate_station/southwest
-	name = "Abandoned south-west of SS13"
+	name = "废弃于太空站13西南方向"
 	icon_state = "southwest"
 
 /area/syndicate_station/northwest
-	name = "Abandoned north-west of SS13"
+	name = "SS13西北方向废弃"
 	icon_state = "northwest"
 
 /area/syndicate_station/northeast
-	name = "Abandoned north-east of SS13"
+	name = "SS13东北方向废弃"
 	icon_state = "northeast"
 
 /area/syndicate_station/southeast
-	name = "Abandoned south-east of SS13"
+	name = "废弃于太空站13东南方向"
 	icon_state = "southeast"
 
 /area/syndicate_station/north
-	name = "Abandoned north of SS13"
+	name = "SS13 以北已废弃"
 	icon_state = "north"
 
 /area/syndicate_station/south
-	name = "Abandoned south of SS13"
+	name = "SS13以南的废弃区域"
 	icon_state = "south"
 
 /area/syndicate_station/commssat
-	name = "Abandoned south of the communication satellite"
+	name = "通讯卫星以南的废弃区域"
 	icon_state = "south"
 
 /area/syndicate_station/mining
-	name = "Abandoned north east of the mining asteroid"
+	name = "废弃于采矿小行星东北部"
 	icon_state = "north"
 
 /area/syndicate_station/transit
-	name = "Abandoned hyperspace"
+	name = "废弃超空间"
 	icon_state = "shuttle"
 
 /area/wizard_station
-	name = "Abandoned Wizard's Den"
+	name = "废弃巫师巢穴"
 	icon_state = "yellow"
 	requires_power = 0
 
 /area/vox_station/transit
-	name = "Abandoned hyperspace"
+	name = "废弃的超空间"
 	icon_state = "shuttle"
 	requires_power = 0
 
 /area/vox_station/southwest_solars
-	name = "Abandoned aft port solars"
+	name = "废弃的左舷后部太阳能阵列"
 	icon_state = "southwest"
 	requires_power = 0
 
 /area/vox_station/northwest_solars
-	name = "Abandoned fore port solars"
+	name = "废弃前部左舷太阳能阵列"
 	icon_state = "northwest"
 	requires_power = 0
 
 /area/vox_station/northeast_solars
-	name = "Abandoned fore starboard solars"
+	name = "废弃前右舷太阳能板"
 	icon_state = "northeast"
 	requires_power = 0
 
 /area/vox_station/southeast_solars
-	name = "Abandoned aft starboard solars"
+	name = "废弃的右舷后部太阳能阵列"
 	icon_state = "southeast"
 	requires_power = 0
 
 /area/vox_station/mining
-	name = "Abandoned nearby mining asteroid"
+	name = "废弃的附近采矿小行星"
 	icon_state = "north"
 	requires_power = 0
 
@@ -389,153 +389,153 @@
 //Maintenance
 
 /area/maintenance/aft
-	name = "Aft Maintenance"
+	name = "后部维护区"
 	icon_state = "amaint"
 
 /area/maintenance/fore
-	name = "Fore Maintenance"
+	name = "前部维护区"
 	icon_state = "fmaint"
 
 /area/maintenance/starboard
-	name = "Starboard Maintenance"
+	name = "右舷维护区"
 	icon_state = "smaint"
 
 /area/maintenance/port
-	name = "Port Maintenance"
+	name = "港口维护"
 	icon_state = "pmaint"
 
 /area/maintenance/atmos_control
-	name = "Atmospherics Maintenance"
+	name = "大气维护区"
 	icon_state = "fpmaint"
 
 /area/maintenance/fpmaint
-	name = "Fore Port Maintenance - 1"
+	name = "前部左舷维护区 - 1"
 	icon_state = "fpmaint"
 
 /area/maintenance/fpmaint2
-	name = "Fore Port Maintenance - 2"
+	name = "前部左舷维护区 - 2"
 	icon_state = "fpmaint"
 
 /area/maintenance/fsmaint
-	name = "Fore Starboard Maintenance - 1"
+	name = "前部右舷维护区 - 1"
 	icon_state = "fsmaint"
 
 /area/maintenance/fsmaint2
-	name = "Fore Starboard Maintenance - 2"
+	name = "前部右舷维护区 - 2"
 	icon_state = "fsmaint"
 
 /area/maintenance/asmaint
-	name = "Aft Starboard Maintenance"
+	name = "后部右舷维护区"
 	icon_state = "asmaint"
 
 /area/maintenance/engi_shuttle
-	name = "Engineering Shuttle Access"
+	name = "工程穿梭机权限"
 	icon_state = "maint_e_shuttle"
 
 /area/maintenance/engi_engine
-	name = "Engine Maintenance"
+	name = "引擎维护"
 	icon_state = "maint_engine"
 
 /area/maintenance/asmaint2
-	name = "Science Maintenance"
+	name = "科学部维护区"
 	icon_state = "asmaint"
 
 /area/maintenance/apmaint
-	name = "Cargo Maintenance"
+	name = "货物维护区"
 	icon_state = "apmaint"
 
 /area/maintenance/maintcentral
-	name = "Bridge Maintenance"
+	name = "舰桥维护"
 	icon_state = "maintcentral"
 
 /area/maintenance/arrivals
-	name = "Arrivals Maintenance"
+	name = "抵达区维护间"
 	icon_state = "maint_arrivals"
 
 /area/maintenance/bar
-	name = "Bar Maintenance"
+	name = "酒吧维护"
 	icon_state = "maint_bar"
 
 /area/maintenance/cargo
-	name = "Cargo Maintenance"
+	name = "货物维护区"
 	icon_state = "maint_cargo"
 
 /area/maintenance/disposal
-	name = "Waste Disposal"
+	name = "废物处理"
 	icon_state = "disposal"
 
 /area/maintenance/engineering
-	name = "Engineering Maintenance"
+	name = "工程维护"
 	icon_state = "maint_engineering"
 
 /area/maintenance/evahallway
-	name = "Abandoned EVA Maintenance"
+	name = "废弃的舱外活动维护区"
 	icon_state = "maint_eva"
 
 /area/maintenance/dormitory
-	name = "Dormitory Maintenance"
+	name = "宿舍区维护"
 	icon_state = "maint_dormitory"
 
 /area/maintenance/incinerator
-	name = "Abandoned Incinerator"
+	name = "废弃焚化炉"
 	icon_state = "disposal"
 
 /area/maintenance/locker
-	name = "Locker Room Maintenance"
+	name = "更衣室维护"
 	icon_state = "maint_locker"
 
 /area/maintenance/medbay
-	name = "Medbay Maintenance"
+	name = "医疗舱维护区"
 	icon_state = "maint_medbay"
 
 /area/maintenance/research_port
-	name = "Port Research Maintenance"
+	name = "港口研究维护区"
 	icon_state = "maint_research_port"
 
 /area/maintenance/research_starboard
-	name = "Starboard Research Maintenance"
+	name = "右舷研究维护区"
 	icon_state = "maint_research_starboard"
 
 /area/maintenance/research_shuttle
-	name = "Research Shuttle Dock Maintenance"
+	name = "研究穿梭机停靠维护"
 	icon_state = "maint_research_shuttle"
 
 /area/maintenance/security_port
-	name = "Port Security Maintenance"
+	name = "港口安保维护"
 	icon_state = "maint_security_port"
 
 /area/maintenance/security_starboard
-	name = "Starboard Security Maintenance"
+	name = "右舷安保维护区"
 	icon_state = "maint_security_starboard"
 
 /area/maintenance/storage
-	name = "Atmospherics"
+	name = "大气系统"
 	icon_state = "green"
 
 // SUBSTATIONS (Subtype of maint, that should let them serve as shielded area during radstorm)
 
 
 /area/maintenance/substation
-	name = "Substation"
+	name = "变电站"
 	icon_state = "substation"
 
 /area/maintenance/substation/engineering // Probably will be connected to engineering SMES room, as wires cannot be crossed properly without them sharing powernets.
-	name = "Engineering Substation"
+	name = "工程分电站"
 
 /area/maintenance/substation/medical_science // Medbay and Science. Each has it's own separated machinery, but it originates from the same room.
-	name = "Medical Research Substation"
+	name = "医学研究分站"
 
 /area/maintenance/substation/civilian_east // Bar, kitchen, dorms, ...
-	name = "Civilian East Substation"
+	name = "东区民用变电站"
 
 /area/maintenance/substation/civilian_west // Cargo, PTS, locker room, probably arrivals, ...)
-	name = "Civilian West Substation"
+	name = "民用西区变电站"
 
 /area/maintenance/substation/command // AI and central cluster. This one will be between HoP office and meeting room (probably).
-	name = "Command Substation"
+	name = "指挥分站"
 
 /area/maintenance/substation/security // Security, Brig, Permabrig, etc.
-	name = "Security Substation"
+	name = "安全子站"
 
 
 
@@ -543,190 +543,190 @@
 //Hallway
 
 /area/hallway/primary/fore
-	name = "Abandoned Fore Primary Hallway"
+	name = "废弃前部主走廊"
 	icon_state = "hallF"
 
 /area/hallway/primary/starboard
-	name = "Abandoned Starboard Primary Hallway"
+	name = "废弃右舷主走廊"
 	icon_state = "hallS"
 
 /area/hallway/primary/aft
-	name = "Abandoned Aft Primary Hallway"
+	name = "废弃后部主走廊"
 	icon_state = "hallA"
 
 /area/hallway/primary/port
-	name = "Abandoned Port Primary Hallway"
+	name = "废弃港口主走廊"
 	icon_state = "hallP"
 
 /area/hallway/primary/central_one
-	name = "Abandoned Central Primary Hallway"
+	name = "废弃中央主走廊"
 	icon_state = "hallC1"
 	ambience = list('sound/ambience/signal.ogg','sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg')
 
 /area/hallway/primary/central_two
-	name = "Abandoned Central Primary Hallway"
+	name = "废弃中央主走廊"
 	icon_state = "hallC2"
 
 /area/hallway/primary/central_three
-	name = "Abandoned Central Primary Hallway"
+	name = "废弃中央主走廊"
 	icon_state = "hallC3"
 
 /area/hallway/secondary/exit
-	name = "Abandoned Escape Shuttle Hallway"
+	name = "废弃逃生穿梭机走廊"
 	icon_state = "escape"
 
 /area/hallway/secondary/construction
-	name = "Abandoned Construction Area"
+	name = "废弃施工区"
 	icon_state = "construction"
 
 /area/hallway/secondary/entry
-	name = "Abandoned Arrival Shuttle Hallway"
+	name = "废弃抵达区穿梭机走廊"
 	icon_state = "entry"
 
 //Command
 
 /area/bridge
-	name = "Abandoned Bridge"
+	name = "废弃桥梁"
 	icon_state = "bridge"
 
 /area/bridge/meeting_room
-	name = "Abandoned Heads of Staff Meeting Room"
+	name = "废弃的部门主管会议室"
 	icon_state = "bridge"
 
 
 /area/crew_quarters/captain
-	name = "Abandoned Captain's Office"
+	name = "废弃的舰长办公室"
 	icon_state = "captain"
 
 /area/crew_quarters/heads/hop
-	name = "Abandoned Head of Personnel's Office"
+	name = "废弃的人事主管办公室"
 	icon_state = "head_quarters"
 
 /area/crew_quarters/heads/hor
-	name = "Abandoned Research Director's Office"
+	name = "废弃的研究主管办公室"
 	icon_state = "head_quarters"
 
 /area/crew_quarters/heads/chief
-	name = "Abandoned Chief Engineer's Office"
+	name = "废弃的首席工程师办公室"
 	icon_state = "head_quarters"
 
 /area/crew_quarters/heads/hos
-	name = "Abandoned Head of Security's Office"
+	name = "废弃的安保主管办公室"
 	icon_state = "head_quarters"
 
 /area/crew_quarters/heads/cmo
-	name = "Abandoned Chief Medical Officer's Office"
+	name = "废弃的首席医疗官办公室"
 	icon_state = "head_quarters"
 
 /area/crew_quarters/courtroom
-	name = "Abandoned Courtroom"
+	name = "废弃法庭"
 	icon_state = "courtroom"
 
 /area/mint
-	name = "Abandoned Mint"
+	name = "废弃铸币厂"
 	icon_state = "green"
 
 /area/comms
-	name = "Abandoned Communications Relay"
+	name = "废弃通讯中继站"
 	icon_state = "tcomsatcham"
 
 /area/server
-	name = "Abandoned Messaging Server Room"
+	name = "废弃通讯服务器室"
 	icon_state = "server"
 
 //Crew
 
 /area/crew_quarters
-	name = "Abandoned Dormitories"
+	name = "废弃宿舍区"
 	icon_state = "Sleep"
 
 /area/crew_quarters/toilet
-	name = "Abandoned Dormitory Toilets"
+	name = "废弃宿舍厕所"
 	icon_state = "toilet"
 
 /area/crew_quarters/sleep
-	name = "Abandoned Dormitories"
+	name = "废弃宿舍区"
 	icon_state = "Sleep"
 
 /area/crew_quarters/sleep/engi
-	name = "Abandoned Engineering Dormitories"
+	name = "废弃工程宿舍区"
 	icon_state = "Sleep"
 
 /area/crew_quarters/sleep/engi_wash
-	name = "Abandoned Engineering Washroom"
+	name = "废弃工程部盥洗室"
 	icon_state = "toilet"
 
 /area/crew_quarters/sleep/sec
-	name = "Abandoned Security Dormitories"
+	name = "废弃安保宿舍区"
 	icon_state = "Sleep"
 
 /area/crew_quarters/sleep/bedrooms
-	name = "Abandoned Dormitory Bedroom"
+	name = "废弃宿舍卧室"
 	icon_state = "Sleep"
 
 /area/crew_quarters/sleep/cryo
-	name = "Abandoned Cryogenic Storage"
+	name = "废弃低温储存室"
 	icon_state = "Sleep"
 
 /area/crew_quarters/sleep_male
-	name = "Abandoned Male Dorm"
+	name = "废弃男性宿舍"
 	icon_state = "Sleep"
 /*
 /area/crew_quarters/sleep_male/toilet_male
-	name = "Abandoned Male Toilets"
+	name = "废弃男厕"
 	icon_state = "toilet"
 
 /area/crew_quarters/sleep_female
-	name = "Abandoned Female Dorm"
+	name = "废弃女性宿舍"
 	icon_state = "Sleep"
 
 /area/crew_quarters/sleep_female/toilet_female
-	name = "Abandoned Female Toilets"
+	name = "废弃女厕"
 	icon_state = "toilet"
 */
 /area/crew_quarters/locker
-	name = "Abandoned Locker Room"
+	name = "废弃更衣室"
 	icon_state = "locker"
 
 /area/crew_quarters/locker/locker_toilet
-	name = "Abandoned Locker Toilets"
+	name = "废弃的储物柜厕所"
 	icon_state = "toilet"
 
 /area/crew_quarters/fitness
-	name = "Abandoned Fitness Room"
+	name = "废弃健身房"
 	icon_state = "fitness"
 
 /area/crew_quarters/cafeteria
-	name = "Abandoned Cafeteria"
+	name = "废弃食堂"
 	icon_state = "cafeteria"
 
 /area/crew_quarters/kitchen
-	name = "Abandoned Kitchen"
+	name = "废弃厨房"
 	icon_state = "kitchen"
 
 /area/crew_quarters/bar
-	name = "Abandoned Bar"
+	name = "废弃酒吧"
 	icon_state = "bar"
 
 /area/crew_quarters/theatre
-	name = "Abandoned Theatre"
+	name = "废弃剧院"
 	icon_state = "Theatre"
 
 /area/library
-	name = "Abandoned Library"
+	name = "废弃图书馆"
 	icon_state = "library"
 
 /area/chapel/main
-	name = "Abandoned Chapel"
+	name = "废弃教堂"
 	icon_state = "chapel"
 	ambience = list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg','sound/ambience/ambicha4.ogg')
 
 /area/chapel/office
-	name = "Abandoned Chapel Office"
+	name = "废弃小教堂办公室"
 	icon_state = "chapeloffice"
 
 /area/lawoffice
-	name = "Abandoned Internal Affairs"
+	name = "废弃的内部事务部"
 	icon_state = "law"
 
 
@@ -736,94 +736,94 @@
 
 
 /area/holodeck
-	name = "Abandoned Holodeck"
+	name = "废弃的全息甲板"
 	icon_state = "Holodeck"
 	static_lighting = FALSE
 	base_lighting_alpha = 255
 	always_unpowered = TRUE
 
 /area/holodeck/alphadeck
-	name = "Abandoned Holodeck Alpha"
+	name = "废弃的全息甲板阿尔法"
 
 /area/holodeck/source_plating
-	name = "Abandoned Holodeck - Off"
+	name = "废弃全息甲板 - 关闭"
 	icon_state = "Holodeck"
 
 /area/holodeck/source_emptycourt
-	name = "Abandoned Holodeck - Empty Court"
+	name = "废弃全息甲板 - 空置球场"
 
 /area/holodeck/source_boxingcourt
-	name = "Abandoned Holodeck - Boxing Court"
+	name = "废弃全息甲板 - 拳击场"
 
 /area/holodeck/source_basketball
-	name = "Abandoned Holodeck - Basketball Court"
+	name = "废弃全息甲板 - 篮球场"
 
 /area/holodeck/source_thunderdomecourt
-	name = "Abandoned Holodeck - Thunderdome Court"
+	name = "废弃全息甲板 - 雷霆穹顶法庭"
 
 /area/holodeck/source_beach
-	name = "Abandoned Holodeck - Beach"
+	name = "废弃全息甲板 - 海滩"
 	icon_state = "Holodeck" // Lazy.
 
 /area/holodeck/source_burntest
-	name = "Abandoned Holodeck - Atmospheric Burn Test"
+	name = "废弃全息甲板 - 大气燃烧测试"
 
 /area/holodeck/source_wildlife
-	name = "Abandoned Holodeck - Wildlife Simulation"
+	name = "废弃全息甲板 - 野生动物模拟"
 
 /area/holodeck/source_meetinghall
-	name = "Abandoned Holodeck - Meeting Hall"
+	name = "废弃全息甲板 - 会议厅"
 
 /area/holodeck/source_theatre
-	name = "Abandoned Holodeck - Theatre"
+	name = "废弃全息甲板 - 剧院"
 
 /area/holodeck/source_picnicarea
-	name = "Abandoned Holodeck - Picnic Area"
+	name = "废弃全息甲板 - 野餐区"
 
 /area/holodeck/source_snowfield
-	name = "Abandoned Holodeck - Snow Field"
+	name = "废弃全息甲板 - 雪原"
 
 /area/holodeck/source_desert
-	name = "Abandoned Holodeck - Desert"
+	name = "废弃全息甲板 - 沙漠"
 
 /area/holodeck/source_space
-	name = "Abandoned Holodeck - Space"
+	name = "废弃全息甲板 - 太空"
 
 
 /area/maintenance/auxsolarport
-	name = "Fore Port Solar Maintenance"
+	name = "前部左舷太阳能维护区"
 	icon_state = "SolarcontrolP"
 
 /area/maintenance/starboardsolar
-	name = "Aft Starboard Solar Maintenance"
+	name = "后部右舷太阳能维护区"
 	icon_state = "SolarcontrolS"
 
 /area/maintenance/portsolar
-	name = "Aft Port Solar Maintenance"
+	name = "后部左舷太阳能维护区"
 	icon_state = "SolarcontrolP"
 
 /area/maintenance/auxsolarstarboard
-	name = "Fore Starboard Solar Maintenance"
+	name = "前部右舷太阳能维护区"
 	icon_state = "SolarcontrolS"
 
 /area/maintenance/foresolar
-	name = "Fore Solar Maintenance"
+	name = "前部太阳能维护区"
 	icon_state = "SolarcontrolA"
 
 /area/assembly/chargebay
-	name = "Abandoned Mech Bay"
+	name = "废弃机甲库"
 	icon_state = "mechbay"
 
 /area/assembly/showroom
-	name = "Abandoned Robotics Showroom"
+	name = "废弃机器人展厅"
 	icon_state = "showroom"
 
 /area/assembly/robotics
-	name = "Abandoned Robotics Lab"
+	name = "废弃机器人实验室"
 	icon_state = "ass_line"
 
 /area/assembly/assembly_line //Derelict Assembly Line
-	name = "Abandoned Assembly Line"
+	name = "废弃装配线"
 	icon_state = "ass_line"
 	power_equip = 0
 	power_light = 0
@@ -832,17 +832,17 @@
 //Teleporter
 
 /area/teleporter
-	name = "Abandoned Teleporter"
+	name = "废弃传送器"
 	icon_state = "teleporter"
 
 
 /area/gateway
-	name = "Abandoned Gateway"
+	name = "废弃的星门"
 	icon_state = "teleporter"
 
 
 /area/AIsattele
-	name = "Abandoned AI Satellite Teleporter Room"
+	name = "废弃AI卫星传送室"
 	icon_state = "teleporter"
 
 	ambience = list('sound/ambience/ambimalf.ogg')
@@ -852,124 +852,124 @@
 	minimap_color = MINIMAP_AREA_MEDBAY
 
 /area/medical/medbay
-	name = "Abandoned Medbay"
+	name = "废弃医疗站"
 	icon_state = "medbay"
 
 
 //Medbay is a large area, these additional areas help level out APC load.
 /area/medical/medbay2
-	name = "Abandoned Medbay"
+	name = "废弃医疗站"
 	icon_state = "medbay2"
 
 
 /area/medical/medbay3
-	name = "Abandoned Medbay"
+	name = "废弃医疗站"
 	icon_state = "medbay3"
 
 
 /area/medical/biostorage
-	name = "Abandoned Secondary Storage"
+	name = "废弃次级仓库"
 	icon_state = "medbay2"
 
 
 /area/medical/reception
-	name = "Abandoned Medbay Reception"
+	name = "废弃医疗站接待处"
 	icon_state = "medbay"
 
 
 /area/medical/psych
-	name = "Abandoned Psych Room"
+	name = "废弃心理室"
 	icon_state = "medbay3"
 
 
 /area/crew_quarters/medbreak
-	name = "Abandoned Break Room"
+	name = "废弃休息室"
 	icon_state = "medbay3"
 
 
 /area/medical/patients_rooms
-	name = "Abandoned Patient's Rooms"
+	name = "废弃病房"
 	icon_state = "patients"
 
 /area/medical/ward
-	name = "Abandoned Recovery Ward"
+	name = "废弃回收病房"
 	icon_state = "patients"
 
 /area/medical/patient_a
-	name = "Abandoned Isolation A"
+	name = "废弃隔离区A"
 	icon_state = "patients"
 
 /area/medical/patient_b
-	name = "Abandoned Isolation B"
+	name = "废弃隔离区B"
 	icon_state = "patients"
 
 /area/medical/patient_c
-	name = "Abandoned Isolation C"
+	name = "废弃隔离区C"
 	icon_state = "patients"
 
 /area/medical/patient_wing
-	name = "Abandoned Patient Wing"
+	name = "废弃病患区"
 	icon_state = "patients"
 
 /area/medical/cmostore
-	name = "Abandoned Secure Storage"
+	name = "废弃安全储存室"
 	icon_state = "CMO"
 
 /area/medical/robotics
-	name = "Abandoned Robotics"
+	name = "废弃机器人学"
 	icon_state = "medresearch"
 
 /area/medical/virology
-	name = "Abandoned Virology"
+	name = "废弃病毒实验室"
 	icon_state = "virology"
 
 /area/medical/virologyaccess
-	name = "Abandoned Virology Access"
+	name = "废弃病毒学通道"
 	icon_state = "virology"
 
 /area/medical/morgue
-	name = "Abandoned Morgue"
+	name = "废弃停尸间"
 	icon_state = "morgue"
 	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg')
 
 /area/medical/chemistry
-	name = "Abandoned Chemistry"
+	name = "废弃化学实验室"
 	icon_state = "chem"
 
 /area/medical/surgery
-	name = "Abandoned Operating Theatre 1"
+	name = "废弃手术室 1"
 	icon_state = "surgery"
 
 /area/medical/surgery2
-	name = "Abandoned Operating Theatre 2"
+	name = "废弃手术室 2"
 	icon_state = "surgery"
 
 /area/medical/surgeryobs
-	name = "Abandoned Operation Observation Room"
+	name = "废弃作战观察室"
 	icon_state = "surgery"
 
 /area/medical/surgeryprep
-	name = "Abandoned Pre-Op Prep Room"
+	name = "废弃术前准备室"
 	icon_state = "surgery"
 
 /area/medical/cryo
-	name = "Abandoned Cryogenics"
+	name = "废弃低温休眠舱"
 	icon_state = "cryo"
 
 /area/medical/exam_room
-	name = "Abandoned Exam Room"
+	name = "废弃检查室"
 	icon_state = "exam_room"
 
 /area/medical/genetics
-	name = "Abandoned Genetics Lab"
+	name = "废弃遗传学实验室"
 	icon_state = "genetics"
 
 /area/medical/genetics_cloning
-	name = "Abandoned Cloning Lab"
+	name = "废弃克隆实验室"
 	icon_state = "cloning"
 
 /area/medical/sleeper
-	name = "Abandoned Emergency Treatment Centre"
+	name = "废弃急救中心"
 	icon_state = "exam_room"
 
 //Security
@@ -977,124 +977,124 @@
 	minimap_color = MINIMAP_AREA_SEC
 
 /area/security/main
-	name = "Abandoned Security Office"
+	name = "废弃安保办公室"
 	icon_state = "security"
 
 /area/security/lobby
-	name = "Abandoned Security lobby"
+	name = "废弃的安保大厅"
 	icon_state = "security"
 
 /area/security/brig
-	name = "Abandoned Brig"
+	name = "废弃的禁闭室"
 	icon_state = "brig"
 
 /area/security/prison
-	name = "Abandoned Prison Wing"
+	name = "废弃监狱区"
 	icon_state = "sec_prison"
 
 
 /area/security/warden
-	name = "Abandoned Warden"
+	name = "废弃典狱长"
 	icon_state = "Warden"
 
 /area/security/armoury
-	name = "Abandoned Armory"
+	name = "废弃军械库"
 	icon_state = "Warden"
 
 /area/security/detectives_office
-	name = "Abandoned Detective's Office"
+	name = "废弃侦探事务所"
 	icon_state = "detective"
 
 /area/security/range
-	name = "Abandoned Firing Range"
+	name = "废弃射击场"
 	icon_state = "firingrange"
 
 /area/security/tactical
-	name = "Abandoned Tactical Equipment"
+	name = "废弃战术装备"
 	icon_state = "Tactical"
 
 /area/security/nuke_storage
-	name = "Abandoned Vault"
+	name = "废弃金库"
 	icon_state = "nuke_storage"
 
 /area/security/checkpoint
-	name = "Abandoned Security Checkpoint"
+	name = "废弃安全检查站"
 	icon_state = "checkpoint1"
 
 /area/security/checkpoint2
-	name = "Abandoned Security Checkpoint"
+	name = "废弃安检站"
 	icon_state = "security"
 
 /area/security/checkpoint/supply
-	name = "Security Post - Cargo Bay"
+	name = "安全哨站 - 货舱"
 	icon_state = "checkpoint1"
 
 /area/security/checkpoint/engineering
-	name = "Security Post - Engineering"
+	name = "工程安全哨站"
 	icon_state = "checkpoint1"
 
 /area/security/checkpoint/medical
-	name = "Security Post - Medbay"
+	name = "医疗区 - 安全哨站"
 	icon_state = "checkpoint1"
 
 /area/security/checkpoint/science
-	name = "Security Post - Science"
+	name = "科研区 - 安全哨站"
 	icon_state = "checkpoint1"
 
 /area/security/vacantoffice
-	name = "Abandoned Vacant Office"
+	name = "废弃空置办公室"
 	icon_state = "security"
 
 /area/security/vacantoffice2
-	name = "Abandoned Vacant Office"
+	name = "废弃空置办公室"
 	icon_state = "security"
 
 /area/quartermaster
-	name = "Abandoned Quartermasters"
+	name = "废弃的补给站"
 	icon_state = "quart"
 
 ///////////WORK IN PROGRESS//////////
 
 /area/quartermaster/sorting
-	name = "Abandoned Delivery Office"
+	name = "废弃的快递办公室"
 	icon_state = "quartstorage"
 
 ////////////WORK IN PROGRESS//////////
 
 /area/quartermaster/office
-	name = "Abandoned Cargo Office"
+	name = "废弃的货运办公室"
 	icon_state = "quartoffice"
 
 /area/quartermaster/storage
-	name = "Abandoned Cargo Bay"
+	name = "废弃货舱"
 	icon_state = "quartstorage"
 
 /area/quartermaster/qm
-	name = "Abandoned Quartermaster's Office"
+	name = "废弃的补给官办公室"
 	icon_state = "quart"
 
 /area/quartermaster/miningdock
-	name = "Abandoned Mining Dock"
+	name = "废弃采矿码头"
 	icon_state = "mining"
 
 /area/quartermaster/miningstorage
-	name = "Abandoned Mining Storage"
+	name = "废弃采矿仓库"
 	icon_state = "green"
 
 /area/quartermaster/mechbay
-	name = "Abandoned Mech Bay"
+	name = "废弃机甲库"
 	icon_state = "yellow"
 
 /area/janitor/
-	name = "Abandoned Custodial Closet"
+	name = "废弃的保洁间"
 	icon_state = "janitor"
 
 /area/hydroponics
-	name = "Abandoned Hydroponics"
+	name = "废弃水培区"
 	icon_state = "hydro"
 
 /area/hydroponics/garden
-	name = "Abandoned Garden"
+	name = "废弃花园"
 	icon_state = "garden"
 
 //rnd (Research and Development
@@ -1102,106 +1102,106 @@
 	minimap_color = MINIMAP_AREA_RESEARCH
 
 /area/rnd/research
-	name = "Abandoned Research and Development"
+	name = "废弃研发部"
 	icon_state = "research"
 
 /area/rnd/docking
-	name = "Abandoned Research Dock"
+	name = "废弃研究码头"
 	icon_state = "research_dock"
 
 /area/rnd/lab
-	name = "Abandoned Research Lab"
+	name = "废弃研究实验室"
 	icon_state = "toxlab"
 
 /area/rnd/rdoffice
-	name = "Abandoned Research Director's Office"
+	name = "废弃的研究主管办公室"
 	icon_state = "head_quarters"
 
 /area/rnd/supermatter
-	name = "Abandoned Supermatter Lab"
+	name = "废弃超物质实验室"
 	icon_state = "toxlab"
 
 /area/rnd/xenobiology
-	name = "Abandoned Xenobiology Lab"
+	name = "废弃异形生物学实验室"
 	icon_state = "xeno_lab"
 
 /area/rnd/xenobiology/xenoflora_storage
-	name = "Abandoned Xenoflora Storage"
+	name = "废弃异形植物储存室"
 	icon_state = "xeno_f_store"
 
 /area/rnd/xenobiology/xenoflora
-	name = "Abandoned Xenoflora Lab"
+	name = "废弃异形植物实验室"
 	icon_state = "xeno_f_lab"
 
 /area/rnd/storage
-	name = "Abandoned Toxins Storage"
+	name = "废弃毒素储存室"
 	icon_state = "toxstorage"
 
 /area/rnd/test_area
-	name = "Abandoned Toxins Test Area"
+	name = "废弃毒素测试区"
 	icon_state = "toxtest"
 
 /area/rnd/mixing
-	name = "Abandoned Toxins Mixing Room"
+	name = "废弃毒素混合室"
 	icon_state = "toxmix"
 
 /area/rnd/misc_lab
-	name = "Abandoned Miscellaneous Research"
+	name = "废弃杂项研究"
 	icon_state = "toxmisc"
 
 /area/toxins/server
-	name = "Abandoned Server Room"
+	name = "废弃服务器机房"
 	icon_state = "server"
 
 //Storage
 
 /area/storage/tools
-	name = "Auxiliary Tool Storage"
+	name = "辅助工具储存柜"
 	icon_state = "storage"
 
 /area/storage/primary
-	name = "Primary Tool Storage"
+	name = "主要工具储存区"
 	icon_state = "primarystorage"
 
 /area/storage/autolathe
-	name = "Autolathe Storage"
+	name = "自动制造机存储"
 	icon_state = "storage"
 
 /area/storage/art
-	name = "Art Supply Storage"
+	name = "美术用品储藏室"
 	icon_state = "storage"
 
 /area/storage/auxillary
-	name = "Auxillary Storage"
+	name = "辅助存储"
 	icon_state = "auxstorage"
 
 /area/storage/eva
-	name = "EVA Storage"
+	name = "EVA 存储"
 	icon_state = "eva"
 
 /area/storage/secure
-	name = "Secure Storage"
+	name = "安全储物室"
 	icon_state = "storage"
 
 /area/storage/emergency
-	name = "Starboard Emergency Storage"
+	name = "右舷应急储物舱"
 	icon_state = "emergencystorage"
 
 /area/storage/emergency2
-	name = "Port Emergency Storage"
+	name = "港口应急储存室"
 	icon_state = "emergencystorage"
 
 /area/storage/emergency3
-	name = "Central Emergency Storage"
+	name = "中央应急物资库"
 	icon_state = "emergencystorage"
 
 /area/storage/tech
-	name = "Technical Storage"
+	name = "技术存储区"
 	icon_state = "auxstorage"
 
 /area/storage/testroom
 	requires_power = 0
-	name = "Abandoned Test Room"
+	name = "废弃测试室"
 	icon_state = "storage"
 	area_flags = NO_DROPPOD
 
@@ -1209,93 +1209,93 @@
 //DJSTATION
 
 /area/djstation
-	name = "Abandoned Listening Post"
+	name = "废弃监听站"
 	icon_state = "LP"
 
 /area/djstation/solars
-	name = "Abandoned Listening Post Solars"
+	name = "废弃监听站太阳能板"
 	icon_state = "LPS"
 
 
 //Construction
 
 /area/construction
-	name = "Abandoned Construction Area"
+	name = "废弃施工区"
 	icon_state = "yellow"
 
 /area/construction/supplyshuttle
-	name = "Abandoned Supply Shuttle"
+	name = "废弃补给穿梭机"
 	icon_state = "yellow"
 
 /area/construction/quarters
-	name = "Abandoned Engineer's Quarters"
+	name = "废弃工程师宿舍"
 	icon_state = "yellow"
 
 /area/construction/qmaint
-	name = "Maintenance"
+	name = "维护"
 	icon_state = "yellow"
 
 /area/construction/hallway
-	name = "Abandoned Hallway"
+	name = "废弃走廊"
 	icon_state = "yellow"
 
 /area/construction/solars
-	name = "Abandoned Solar Panels"
+	name = "废弃的太阳能板"
 	icon_state = "yellow"
 
 /area/construction/solarscontrol
-	name = "Abandoned Solar Panel Control"
+	name = "废弃太阳能电池板控制台"
 	icon_state = "yellow"
 
 /area/construction/Storage
-	name = "Construction Site Storage"
+	name = "施工场地储物区"
 	icon_state = "yellow"
 
 //AI
 
 /area/ai_monitored/storage/eva
-	name = "EVA Storage"
+	name = "EVA 存储"
 	icon_state = "eva"
 
 /area/ai_monitored/storage/secure
-	name = "Secure Storage"
+	name = "安全储物室"
 	icon_state = "storage"
 
 /area/ai_monitored/storage/emergency
-	name = "Emergency Storage"
+	name = "应急储物柜"
 	icon_state = "storage"
 
 /area/turret_protected/ai_upload
-	name = "Abandoned AI Upload Chamber"
+	name = "废弃的AI上传室"
 	icon_state = "ai_upload"
 	ambience = list('sound/ambience/ambimalf.ogg')
 
 /area/turret_protected/ai_upload_foyer
-	name = "AI Upload Access"
+	name = "AI上传访问"
 	icon_state = "ai_foyer"
 	ambience = list('sound/ambience/ambimalf.ogg')
 
 /area/turret_protected/ai_server_room
-	name = "AI Server Room"
+	name = "AI服务器室"
 	icon_state = "ai_server"
 
 /area/turret_protected/ai
-	name = "Abandoned AI Chamber"
+	name = "废弃AI舱室"
 	icon_state = "ai_chamber"
 	ambience = list('sound/ambience/ambimalf.ogg')
 
 /area/turret_protected/ai_cyborg_station
-	name = "Abandoned Cyborg Station"
+	name = "废弃的赛博格空间站"
 	icon_state = "ai_cyborg"
 
 /area/turret_protected/aisat
-	name = "Abandoned AI Satellite"
+	name = "废弃AI卫星"
 	icon_state = "ai"
 
 /area/sensor_tower_1
-	name = "Sensor tower 1"
+	name = "传感器塔1"
 	icon_state = "sensor"
 
 /area/sensor_tower_2
-	name = "Sensor tower 2"
+	name = "传感器塔2"
 	icon_state = "sensor"

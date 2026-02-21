@@ -1,8 +1,8 @@
 //No relation to slugcat
 
 /mob/living/simple_animal/catslug
-	name = "catslug"
-	desc = "It's a cat . . . Thing from another planet, maybe from another world. You think it's not dangerous, but you can't be sure. The researcher should know more about this creature."
+	name = "猫蛞蝓"
+	desc = "这是一只猫……来自另一个星球的东西，也许来自另一个世界。你觉得它并不危险，但你不能确定。研究员应该更了解这种生物。"
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "catslug"
 	icon_living = "catslug"
@@ -21,9 +21,9 @@
 	AddComponent(/datum/component/companion)
 
 /mob/living/simple_animal/catslug/newt
-	name = "Newt"
+	name = "蝾螈"
 	real_name = "Newt"
-	desc = "You recalled in another PowerPoint presentation that military loves to use that Newt is a survivor from the current Xenomorph menace. Researchers found this poor thing amidst its kins, possibly gutted by xenomorphs. Who knows if Newt is the last of her kind."
+	desc = "你想起在另一份PPT演示中，军方喜欢用纽特作为当前异形威胁中的幸存者案例。研究人员在其同类中发现了这个可怜的小东西，很可能被异形开膛破肚了。谁知道纽特是不是她族群的最后幸存者。"
 	icon_state = "catslug"
 	icon_living = "catslug"
 	icon_dead = "catslug_dead"

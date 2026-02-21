@@ -1,6 +1,6 @@
 /obj/item/assembly/infra
-	name = "infrared emitter"
-	desc = "Emits a visible or invisible beam and is triggered when the beam is interrupted."
+	name = "红外发射器"
+	desc = "发射一道可见或不可见的光束，光束被中断时触发。"
 	icon_state = "infrared"
 	is_position_sensitive = TRUE
 
@@ -229,7 +229,7 @@
 
 /***************************IBeam*********************************/
 /obj/effect/beam/i_beam
-	name = "infrared beam"
+	name = "红外光束"
 	icon = 'icons/obj/items/projectiles.dmi'
 	icon_state = "ibeam"
 	var/obj/item/assembly/infra/master

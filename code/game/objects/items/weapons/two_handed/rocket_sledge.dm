@@ -1,6 +1,6 @@
 /obj/item/weapon/twohanded/rocketsledge
-	name = "rocket sledge"
-	desc = "Fitted with a rocket booster at the head, the rocket sledge would deliver a tremendously powerful impact, easily crushing your enemies. Uses fuel to power itself. Press AltClick to tighten your grip. Press Unique Action to change modes."
+	name = "火箭撬"
+	desc = "火箭撬头部装有火箭助推器，能产生威力巨大的冲击力，轻松碾碎敌人。使用燃料作为动力。按下Alt+左键可握紧撬棍。按下特殊动作键可切换模式。"
 	icon_state = "rocketsledge"
 	worn_icon_state = "rocketsledge"
 	force = 30
@@ -78,34 +78,34 @@
 		stun = crush_stun_amount
 		paralyze = crush_paralyze_amount
 		knockback = 0
-		balloon_alert(user, "mode: CRUSH")
+		balloon_alert(user, "模式：碾压")
 		playsound(loc, 'sound/machines/switch.ogg', 25)
 		return
 
 	stun = knockback_stun_amount
 	paralyze = knockback_paralyze_amount
 	knockback = 1
-	balloon_alert(user, "mode: KNOCKBACK")
+	balloon_alert(user, "模式：击退")
 	playsound(loc, 'sound/machines/switch.ogg', 25)
 
 /obj/item/weapon/twohanded/rocketsledge/attack(mob/living/carbon/M, mob/living/carbon/user as mob)
 	if(!CHECK_BITFIELD(item_flags, WIELDED))
-		to_chat(user, span_warning("You need a more secure grip to use [src]!"))
+		to_chat(user, span_warning("你需要更稳固的握持才能使用[src]！"))
 		return
 
 	if(M.status_flags & INCORPOREAL || user.status_flags & INCORPOREAL)
 		return
 
 	if(reagents.get_reagent_amount(/datum/reagent/fuel) < fuel_used)
-		to_chat(user, span_warning("\The [src] doesn't have enough fuel!"))
+		to_chat(user, span_warning("\The [src] 燃料不足！"))
 		return ..()
 
 	M.apply_damage(additional_damage, BRUTE, user.zone_selected, updating_health = TRUE, attacker = user)
-	M.visible_message(span_danger("[user]'s rocket sledge hits [M.name], smashing them!"), span_userdanger("[user]'s rocket sledge smashes you!"))
+	M.visible_message(span_danger("[user]的火箭重锤击中[M.name]，将其砸得粉碎！"), span_userdanger("[user]'s rocket sledge smashes you!"))
 
 	if(reagents.get_reagent_amount(/datum/reagent/fuel) < fuel_used * 2)
 		playsound(loc, 'sound/items/weldingtool_off.ogg', 50)
-		to_chat(user, span_warning("\The [src] shuts off, using last bits of fuel!"))
+		to_chat(user, span_warning("\The [src] 熄火了，燃料耗尽！"))
 		update_icon()
 	else
 		playsound(loc, 'sound/weapons/rocket_sledge.ogg', 50, TRUE)

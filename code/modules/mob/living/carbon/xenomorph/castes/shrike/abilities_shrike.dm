@@ -5,7 +5,7 @@
 // ***************************************
 /datum/action/ability/xeno_action/call_of_the_burrowed
 	name = "Call of the Burrowed"
-	desc = "Attempts to summon all currently burrowed larva."
+	desc = "尝试召唤所有当前潜伏的幼虫。"
 	action_icon_state = "larva_growth"
 	action_icon = 'icons/Xeno/actions/leader.dmi'
 	ability_cost = 400
@@ -18,17 +18,17 @@
 
 /datum/action/ability/xeno_action/call_of_the_burrowed/action_activate()
 	if(!isnormalhive(xeno_owner.hive))
-		to_chat(xeno_owner, span_warning("Burrowed larva? What a strange concept... It's not for our hive."))
+		to_chat(xeno_owner, span_warning("埋藏的幼虫？真是个奇怪的概念……这不适合我们的蜂巢。"))
 		return FALSE
 	var/datum/job/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
 	var/stored_larva = xeno_job.total_positions - xeno_job.current_positions
 	if(!stored_larva)
-		to_chat(xeno_owner, span_warning("Our hive currently has no burrowed to call forth!"))
+		to_chat(xeno_owner, span_warning("我们的蜂巢目前没有可召唤的潜藏者！"))
 		return FALSE
 
 	playsound(xeno_owner,'sound/magic/invoke_general.ogg', 75, TRUE)
 	new /obj/effect/temp_visual/telekinesis(get_turf(xeno_owner))
-	xeno_owner.visible_message(span_xenowarning("A strange buzzing hum starts to emanate from \the [xeno_owner]!"), \
+	xeno_owner.visible_message(span_xenowarning("一阵奇怪的嗡嗡声开始从\the [xeno_owner]身上散发出来！"), \
 	span_xenodanger("We call forth the larvas to rise from their slumber!"))
 
 	if(stored_larva)
@@ -81,10 +81,10 @@
 
 /datum/action/ability/activable/xeno/psychic_fling/New(Target)
 	. = ..()
-	desc = "Sends an enemy or an item flying [SHRIKE_FLING_DISTANCE] tiles away. A [SHRIKE_FLING_RANGE] tile ranged ability. Stuns for [stun_duration / (1 SECONDS)] seconds."
+	desc = "将敌人或物品甩出[SHRIKE_FLING_DISTANCE]格远。这是一个[SHRIKE_FLING_RANGE]格射程的技能。造成[stun_duration / (1 SECONDS)]秒的眩晕。"
 
 /datum/action/ability/activable/xeno/psychic_fling/on_cooldown_finish()
-	to_chat(owner, span_notice("We gather enough mental strength to fling something again."))
+	to_chat(owner, span_notice("我们积蓄了足够的精神力量，可以再次甩投物体。"))
 	return ..()
 
 /datum/action/ability/activable/xeno/psychic_fling/can_use_ability(atom/movable/target, silent = FALSE, override_flags)
@@ -102,7 +102,7 @@
 	var/max_dist = SHRIKE_FLING_RANGE //the distance only goes to 3 now, since this is more of a utility then an attack.
 	if(!line_of_sight(owner, target, max_dist))
 		if(!silent)
-			to_chat(owner, span_warning("We must get closer to fling, our mind cannot reach this far."))
+			to_chat(owner, span_warning("我们必须靠近才能甩投，我们的意志无法触及这么远。"))
 		return FALSE
 	if(ishuman(target))
 		var/mob/living/carbon/human/victim = target
@@ -116,9 +116,9 @@
 	GLOB.round_statistics.psychic_flings++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "psychic_flings")
 
-	xeno_owner.visible_message(span_xenowarning("A strange and violent psychic aura is suddenly emitted from \the [xeno_owner]!"), \
+	xeno_owner.visible_message(span_xenowarning("一股陌生而暴戾的心灵灵能突然从\the [xeno_owner]身上散发出来！"), \
 		span_xenowarning("We violently fling [movable_target] with the power of our mind!"))
-	movable_target.visible_message(span_xenowarning("[movable_target] is violently flung away by an unseen force!"), \
+	movable_target.visible_message(span_xenowarning("[movable_target]被一股无形的力量猛烈地甩飞出去！"), \
 		span_xenowarning("You are violently flung to the side by an unseen force!"))
 	playsound(xeno_owner, 'sound/effects/magic.ogg', 75, 1)
 	playsound(movable_target, 'sound/weapons/alien_claw_block.ogg', 75, 1)
@@ -232,10 +232,10 @@
 
 /datum/action/ability/activable/xeno/unrelenting_force/New(Target)
 	. = ..()
-	desc = "Unleashes our raw psychic power, pushing aside anyone who stands in our path for [throwing_distance] tiles. Stuns for [SHRIKE_PARALYZE_DURATION / (1 SECONDS)] seconds."
+	desc = "释放我们原始的心灵力量，将挡在路上的任何人推开[throwing_distance]格。造成[SHRIKE_PARALYZE_DURATION / (1 SECONDS)]秒的眩晕。"
 
 /datum/action/ability/activable/xeno/unrelenting_force/on_cooldown_finish()
-	to_chat(owner, span_notice("Our mind is ready to unleash another blast of force."))
+	to_chat(owner, span_notice("我们的意志已准备好释放另一波力量冲击。"))
 	return ..()
 
 /datum/action/ability/activable/xeno/unrelenting_force/use_ability(atom/target)
@@ -309,7 +309,7 @@
 		affected_projectile.fire_at(shooter = xeno_owner, source = get_step(xeno_owner, starting_direction), angle = bounced_angle, recursivity = TRUE)
 		damage_deflected += affected_projectile.damage
 
-	owner.visible_message(span_xenowarning("[owner] sends out a huge blast of psychic energy!"), \
+	owner.visible_message(span_xenowarning("[owner]释放出一股巨大的心灵能量冲击！"), \
 	span_xenowarning("We send out a huge blast of psychic energy!"))
 
 	playsound(owner,'sound/effects/bamf.ogg', 75, TRUE)
@@ -340,7 +340,7 @@
 	name = "Psychic Cure"
 	action_icon_state = "heal_xeno"
 	action_icon = 'icons/Xeno/actions/drone.dmi'
-	desc = "Heal and remove debuffs from a target."
+	desc = "治疗目标并移除其负面状态。"
 	cooldown_duration = 1 MINUTES
 	ability_cost = 200
 	keybinding_signals = list(
@@ -365,7 +365,7 @@
 	var/delayed_status_timer
 
 /datum/action/ability/activable/xeno/psychic_cure/on_cooldown_finish()
-	to_chat(owner, span_notice("We gather enough mental strength to cure sisters again."))
+	to_chat(owner, span_notice("我们已积蓄足够的精神力量，再次治愈姐妹们。"))
 	return ..()
 
 /datum/action/ability/activable/xeno/psychic_cure/can_use_ability(atom/target, silent = FALSE, override_flags)
@@ -381,18 +381,18 @@
 	var/mob/living/carbon/xenomorph/patient = target
 	if(!CHECK_BITFIELD(use_state_flags|override_flags, ABILITY_IGNORE_DEAD_TARGET) && patient.stat == DEAD)
 		if(!silent)
-			to_chat(owner, span_warning("It's too late. This sister won't be coming back."))
+			to_chat(owner, span_warning("太迟了。这位姐妹回不来了。"))
 		return FALSE
 
 /datum/action/ability/activable/xeno/psychic_cure/proc/check_distance(atom/target, silent)
 	var/dist = get_dist(owner, target)
 	if(dist > heal_range)
 		if(!silent)
-			to_chat(owner, span_warning("Too far for our reach... We need to be [dist - heal_range] steps closer!"))
+			to_chat(owner, span_warning("距离太远，无法触及……我们需要再靠近 [dist - heal_range] 步！"))
 		return FALSE
 	else if(!line_of_sight(owner, target))
 		if(!silent)
-			to_chat(owner, span_warning("We can't focus properly without a clear line of sight!"))
+			to_chat(owner, span_warning("没有清晰的视线，我们无法有效瞄准！"))
 		return FALSE
 	return TRUE
 
@@ -409,9 +409,9 @@
 		personal_statistics.heals++
 	GLOB.round_statistics.psychic_cures++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "psychic_cures")
-	owner.visible_message(span_xenowarning("A strange psychic aura is suddenly emitted from \the [owner]!"), \
+	owner.visible_message(span_xenowarning("一股诡异的灵能光环突然从\the [owner]身上散发出来！"), \
 	span_xenowarning("We cure [target] with the power of our mind!"))
-	target.visible_message(span_xenowarning("[target] suddenly shimmers in a chill light."), \
+	target.visible_message(span_xenowarning("[target] 突然在寒光中闪烁。"), \
 	span_xenowarning("We feel a sudden soothing chill."))
 
 	playsound(target,'sound/effects/magic.ogg', 75, 1)
@@ -496,7 +496,7 @@
 	name = "Place acid well"
 	action_icon_state = "place_trap"
 	action_icon = 'icons/Xeno/actions/construction.dmi'
-	desc = "Place an acid well that can put out fires."
+	desc = "放置一个能扑灭火焰的酸液池。"
 	ability_cost = 400
 	cooldown_duration = 2 MINUTES
 	keybinding_signals = list(
@@ -509,12 +509,12 @@
 	var/turf/T = get_turf(owner)
 	if(!T || !T.is_weedable() || T.density)
 		if(!silent)
-			to_chat(owner, span_warning("We can't do that here."))
+			to_chat(owner, span_warning("这里不能这么做。"))
 		return FALSE
 
 	if(!xeno_owner.loc_weeds_type)
 		if(!silent)
-			to_chat(owner, span_warning("We can only shape on weeds. We must find some resin before we start building!"))
+			to_chat(owner, span_warning("我们只能在菌毯上建造。必须先找到一些树脂才能开始建造！"))
 		return FALSE
 
 	if(!T.check_alien_construction(owner, silent, /obj/structure/xeno/acidwell))
@@ -530,7 +530,7 @@
 	playsound(T, SFX_ALIEN_RESIN_BUILD, 25)
 	new /obj/structure/xeno/acidwell(T, owner)
 
-	to_chat(owner, span_xenonotice("We place an acid well; it can be filled with more acid."))
+	to_chat(owner, span_xenonotice("我们放置一个酸液井；它可以容纳更多酸液。"))
 	GLOB.round_statistics.xeno_acid_wells++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "xeno_acid_wells")
 	owner.record_traps_created()
@@ -559,10 +559,10 @@
 
 /datum/action/ability/activable/xeno/psychic_vortex/New(Target)
 	. = ..()
-	desc = "After a [VORTEX_INITIAL_CHARGE / (1 SECONDS)] second windup, channel a sizable vortex of psychic energy, drawing in any items and enemies [VORTEX_RANGE] tiles away."
+	desc = "经过[VORTEX_INITIAL_CHARGE / (1 SECONDS)]秒的准备后，引导一股强大的心灵能量漩涡，将[VORTEX_RANGE]格范围内的所有物品和敌人吸入其中。"
 
 /datum/action/ability/activable/xeno/psychic_vortex/on_cooldown_finish()
-	to_chat(owner, span_notice("Our mind is ready to unleash another chaotic vortex of energy."))
+	to_chat(owner, span_notice("我们的意志已准备好释放另一股混乱的能量涡流。"))
 	return ..()
 
 /datum/action/ability/activable/xeno/psychic_vortex/use_ability(atom/target)
@@ -632,7 +632,7 @@
 	name = "Psychic Choke"
 	action_icon_state = "fling"
 	action_icon = 'icons/Xeno/actions/shrike.dmi'
-	desc = "Channel at a distance to hold a human in your psychic grasp."
+	desc = "远距离施放念力，将人类牢牢控制在你的精神掌控之中。"
 	cooldown_duration = 12 SECONDS
 	ability_cost = 100
 	keybinding_signals = list(
@@ -658,21 +658,21 @@
 	switch(dist)
 		if(-1 to 1)
 			if(!silent)
-				xeno_owner.balloon_alert(target, "Too close!")
+				xeno_owner.balloon_alert(target, "太近了！")
 			return FALSE
 		if(2 to 3)
 			if(!line_of_sight(xeno_owner, target, 3))
 				if(!silent)
-					xeno_owner.balloon_alert(target, "Not in line of sight!")
+					xeno_owner.balloon_alert(target, "不在视线范围内！")
 				return FALSE
 		if(4 to INFINITY)
 			if(!silent)
-				xeno_owner.balloon_alert(target, "Too far!")
+				xeno_owner.balloon_alert(target, "距离太远！")
 			return FALSE
 	var/mob/living/carbon/human/human_target = target
 	if(human_target.stat == DEAD)
 		if(!silent)
-			xeno_owner.balloon_alert(target, "Already dead!")
+			xeno_owner.balloon_alert(target, "已经死了！")
 		return FALSE
 
 /datum/action/ability/activable/xeno/psychic_choke/use_ability(atom/target)
@@ -681,9 +681,9 @@
 	choked_human = target
 	xeno_owner.face_atom(choked_human)
 
-	xeno_owner.visible_message(span_xenowarning("A strange and violent psychic aura is suddenly emitted from \the [xeno_owner]!"), \
+	xeno_owner.visible_message(span_xenowarning("一股陌生而暴戾的心灵灵压突然从\the [xeno_owner]身上散发出来！"), \
 		span_xenowarning("We choke [choked_human] with the power of our mind!"))
-	choked_human.visible_message(span_xenowarning("[choked_human] is suddenly grabbed by the neck by an unseen force!"), \
+	choked_human.visible_message(span_xenowarning("[choked_human] 的脖子突然被一股看不见的力量扼住了！"), \
 		span_xenowarning("You are suddenly grabbed by an unseen force!"))
 	playsound(xeno_owner, 'sound/effects/magic.ogg', 75, 1)
 

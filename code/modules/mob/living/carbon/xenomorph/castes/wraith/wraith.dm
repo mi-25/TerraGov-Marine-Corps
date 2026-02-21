@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/wraith
 	caste_base_type = /datum/xeno_caste/wraith
 	name = "Wraith"
-	desc = "A strange tendriled alien. The air around it warps and shimmers like a heat mirage."
+	desc = "一个长着奇怪触须的外星生物。它周围的空气像热浪般扭曲闪烁。"
 	icon = 'icons/Xeno/castes/wraith.dmi'
 	icon_state = "Wraith Walking"
 	bubble_icon = "alienleft"

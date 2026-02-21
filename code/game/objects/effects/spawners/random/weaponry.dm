@@ -1,5 +1,5 @@
 /obj/effect/spawner/random/weaponry
-	name = "Random base clothing spawner"
+	name = "随机基础服装生成器"
 	icon = 'icons/effects/random/weaponry.dmi'
 	icon_state = "random_sidearm"
 	loot = list(
@@ -7,7 +7,7 @@
 	)
 
 /obj/effect/spawner/random/weaponry/gun //restricted to ballistic weapons available on the ship, no auto-9s here
-	name = "Random ballistic ammunition spawner"
+	name = "随机弹道弹药生成器"
 	icon_state = "random_rifle"
 	loot = list(
 		/obj/item/weapon/gun/rifle/standard_assaultrifle,
@@ -38,7 +38,7 @@
 
 ///random shotguns
 /obj/effect/spawner/random/weaponry/gun/shotgun
-	name = "Random shotgun spawner"
+	name = "随机霰弹枪生成器"
 	icon_state = "random_shotgun"
 	loot = list(
 		/obj/item/weapon/gun/shotgun/pump/lever/repeater,
@@ -51,7 +51,7 @@
 	)
 
 /obj/effect/spawner/random/weaponry/gun/egun
-	name = "Random energy gun spawner"
+	name = "随机能量枪生成器"
 	icon_state = "random_egun"
 	loot = list(
 		/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = 25,
@@ -68,7 +68,7 @@
 
 ///random machineguns
 /obj/effect/spawner/random/weaponry/gun/machineguns
-	name = "Random machinegun spawner"
+	name = "随机机枪生成器"
 	icon_state = "random_machinegun"
 	loot = list(
 		/obj/item/weapon/gun/rifle/standard_lmg,
@@ -78,7 +78,7 @@
 
 ///random rifles
 /obj/effect/spawner/random/weaponry/gun/rifles
-	name = "Random rifle spawner"
+	name = "随机步枪生成器"
 	icon_state = "random_rifle"
 	loot = list(
 		/obj/item/weapon/gun/rifle/standard_assaultrifle,
@@ -89,7 +89,7 @@
 
 ///random sidearms
 /obj/effect/spawner/random/weaponry/gun/sidearms
-	name = "Random sidearm spawner"
+	name = "随机副武器生成器"
 	icon_state = "random_sidearm"
 	loot = list(
 		/obj/item/weapon/gun/pistol/standard_pistol,
@@ -102,7 +102,7 @@
 
 ///random melee weapons
 /obj/effect/spawner/random/weaponry/melee
-	name = "Random melee weapons spawner"
+	name = "随机近战武器生成器"
 	icon_state = "random_melee"
 	loot = list(
 		/obj/item/weapon/sword/machete,
@@ -118,7 +118,7 @@
 	)
 
 /obj/effect/spawner/random/weaponry/shiv
-	name = "Random shiv spawner"
+	name = "随机砍刀生成器"
 	icon_state = "random_shiv"
 	spawn_loot_chance = 5
 	spawn_random_offset = TRUE
@@ -133,7 +133,7 @@
 
 ///random ammunition
 /obj/effect/spawner/random/weaponry/ammo
-	name = "Random ballistic ammunition spawner"
+	name = "随机弹道弹药生成器"
 	icon_state = "random_ammo"
 	loot = list(
 		/obj/item/ammo_magazine/rifle/standard_assaultrifle,
@@ -163,7 +163,7 @@
 
 ///random shotgun ammunition
 /obj/effect/spawner/random/weaponry/ammo/shotgun
-	name = "Random shotgun ammunition spawner"
+	name = "随机霰弹枪弹药生成器"
 	icon_state = "random_shotgun_ammo"
 	loot = list(
 		/obj/item/ammo_magazine/shotgun/buckshot = 10,
@@ -173,7 +173,7 @@
 
 ///random machinegun ammunition
 /obj/effect/spawner/random/weaponry/ammo/machinegun
-	name = "Random machinegun ammunition spawner"
+	name = "随机机枪弹药生成器"
 	icon_state = "random_machinegun_ammo"
 	loot = list(
 		/obj/item/ammo_magazine/standard_lmg,
@@ -184,7 +184,7 @@
 
 ///random rifle ammunition
 /obj/effect/spawner/random/weaponry/ammo/rifle
-	name = "Random rifle ammunition spawner"
+	name = "随机步枪弹药生成器"
 	icon_state = "random_rifle_ammo"
 	loot = list(
 		/obj/item/ammo_magazine/rifle/standard_assaultrifle,
@@ -195,7 +195,7 @@
 
 ///random sidearm ammunition
 /obj/effect/spawner/random/weaponry/ammo/sidearm
-	name = "Random sidearm ammunition spawner"
+	name = "随机副武器弹药生成器"
 	icon_state = "random_sidearm_ammo"
 	loot = list(
 		/obj/item/ammo_magazine/pistol/standard_pistol,
@@ -208,7 +208,7 @@
 	)
 
 /obj/effect/spawner/random/weaponry/explosive/plastiqueexplosive
-	name = "plastique explosive spawner"
+	name = "塑胶炸药生成器"
 	icon_state = "random_plastiqueexplosive"
 	spawn_loot_chance = 45
 	loot = list(
@@ -228,7 +228,7 @@
 	spawn_loot_count = 4
 
 /obj/effect/spawner/random/weaponry/explosive/grenade
-	name = "grenade spawner"
+	name = "手雷生成器"
 	icon_state = "random_grenade"
 	spawn_loot_chance = 90
 	loot = list(
@@ -250,7 +250,7 @@
 	spawn_loot_count = 4
 
 /obj/effect/spawner/random/weaponry/explosive/rocketlauncher
-	name = "rocket launcher spawner"
+	name = "火箭发射器生成器"
 	icon_state = "random_rocketlauncher"
 	spawn_loot_chance = 95
 	spawn_random_offset = TRUE
@@ -261,7 +261,7 @@
 	)
 
 /obj/effect/spawner/random/weaponry/weapon_recharger
-	name = "random weapon recharger"
+	name = "随机武器充能器"
 	icon_state = "random_wrecharger"
 	spawn_loot_chance = 45
 	loot = list(

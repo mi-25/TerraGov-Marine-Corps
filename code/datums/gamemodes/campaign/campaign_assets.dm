@@ -92,13 +92,13 @@
 	if(!(asset_flags & ASSET_ACTIVATED_EFFECT))
 		return TRUE
 	if((asset_flags & ASSET_CONSUMED))
-		to_chat(user, span_warning("This asset is inactive."))
+		to_chat(user, span_warning("该资产未激活。"))
 		return TRUE
 	if(uses <= 0)
-		to_chat(user, span_warning("No further uses of this assets available."))
+		to_chat(user, span_warning("该资产已无可用次数。"))
 		return TRUE
 	if(asset_flags & ASSET_DISABLED)
-		to_chat(user, span_warning("External interferance prevents the activation of this asset."))
+		to_chat(user, span_warning("外部干扰阻止了该资产的激活。"))
 		return TRUE
 	if((asset_flags & ASSET_DISALLOW_REPEAT_USE) && (asset_flags & ASSET_ACTIVE))
 		to_chat(user, span_warning(already_active_message))
@@ -107,7 +107,7 @@
 		var/datum/game_mode/hvh/campaign/mode = SSticker.mode
 		var/datum/campaign_mission/current_mission = mode.current_mission
 		if(!current_mission || (current_mission.mission_state == MISSION_STATE_NEW) || (current_mission.mission_state == MISSION_STATE_FINISHED))
-			to_chat(user, span_warning("Unavailable until next mission confirmed."))
+			to_chat(user, span_warning("确认下一任务前不可用。"))
 			return TRUE
 		if(blacklist_mission_flags & current_mission.mission_flags)
 			to_chat(user, span_warning(blacklist_message))

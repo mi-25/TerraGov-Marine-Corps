@@ -12,7 +12,7 @@
 
 /// Status display which can show images and scrolling text.
 /obj/machinery/status_display
-	name = "status display"
+	name = "状态显示屏"
 	desc = null
 	icon = 'icons/obj/status_display.dmi'
 	icon_state = "frame"
@@ -136,8 +136,8 @@
 
 // Pictograph display which the AI can use to emote.
 /obj/machinery/status_display/ai
-	name = "\improper AI display"
-	desc = "A small screen which the AI can use to present itself."
+	name = "\improper AI显示界面"
+	desc = "一块供AI展示自身的小屏幕。"
 
 	var/mode = SD_BLANK
 	var/emotion = "Neutral"

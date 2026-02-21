@@ -51,8 +51,8 @@
 	alpha = 140
 
 /obj/effect/turf_decal/sandedge
-	name = "dirt"
-	desc = "A dirty pile, it looks thinner in certain areas."
+	name = "泥土"
+	desc = "一堆脏污，某些区域看起来更薄。"
 	icon = 'icons/turf/bigred.dmi'
 	icon_state = "sandedge"
 
@@ -63,7 +63,7 @@
 	icon_state = "sandcorner2"
 
 /obj/effect/turf_decal/sandytile
-	name = "sand"
+	name = "沙"
 	icon = 'icons/turf/ground_map.dmi'
 	icon_state = "sandyfloor"
 
@@ -71,7 +71,7 @@
 	icon_state = "sandyplating"
 
 /obj/effect/turf_decal/riverdecal
-	name = "river"
+	name = "河流"
 	layer = XENO_WEEDS_LAYER
 	icon = 'icons/turf/ground_map.dmi'
 	icon_state = "riverdecal"

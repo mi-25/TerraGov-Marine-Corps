@@ -1,7 +1,7 @@
 
 /obj/structure/fluff/tram_rail
-	name = "tram rail"
-	desc = "Great for trams, not so great for skating."
+	name = "电车导轨"
+	desc = "适合电车，不适合滑冰。"
 	icon = 'icons/obj/tram/tram_rails.dmi'
 	icon_state = "rail"
 	layer = TRAM_RAIL_LAYER
@@ -10,21 +10,21 @@
 	obj_flags = NONE
 
 /obj/structure/fluff/tram_rail/floor
-	name = "tram rail protective cover"
+	name = "有轨电车导轨防护罩"
 	icon_state = "rail_floor"
 
 /obj/structure/fluff/tram_rail/end
 	icon_state = "railend"
 
 /obj/structure/fluff/tram_rail/electric
-	desc = "Great for trams, not so great for skating. This one is a power rail."
+	desc = "适合有轨电车，不适合滑板。这是一条动力导轨。"
 
 /obj/structure/fluff/tram_rail/anchor
-	name = "tram rail anchor"
+	name = "电车轨道锚"
 	icon_state = "anchor"
 
 /obj/structure/fluff/tram_rail/electric/anchor
-	name = "tram rail anchor"
+	name = "电车轨道锚"
 	icon_state = "anchor"
 
 /obj/structure/fluff/tram_rail/electric/attack_hand(mob/living/user, list/modifiers)

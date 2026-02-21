@@ -1,7 +1,7 @@
 //Baseline portable generator. Has all the default handling. Not intended to be used on it's own (since it generates unlimited power).
 /obj/machinery/power/port_gen
-	name = "portable generator"
-	desc = "A portable generator for emergency backup power."
+	name = "便携式发电机"
+	desc = "便携式应急备用发电机。"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "portgen0"
 	density = TRUE
@@ -93,7 +93,7 @@
 // P.A.C.M.A.N //
 /////////////////
 /obj/machinery/power/port_gen/pacman
-	name = "\improper P.A.C.M.A.N.-type portable generator"
+	name = "\improper P.A.C.M.A.N.型便携式发电机"
 	circuit = /obj/item/circuitboard/machine/pacman
 	var/sheets = 0
 	var/max_sheets = 10
@@ -198,9 +198,9 @@
 		var/obj/item/stack/addstack = O
 		var/amount = min((max_sheets - sheets), addstack.amount)
 		if(amount < 1)
-			to_chat(user, span_notice("The [src.name] is full!"))
+			to_chat(user, span_notice("[src.name]已满！"))
 			return
-		to_chat(user, span_notice("You add [amount] sheets to the [src.name]."))
+		to_chat(user, span_notice("你将[amount]张板材添加到[src.name]中。"))
 		sheets += amount
 		addstack.use(amount)
 		return
@@ -209,11 +209,11 @@
 			if(!anchored)
 				anchored = TRUE
 				connect_to_network()
-				to_chat(user, span_notice("You secure the generator to the floor."))
+				to_chat(user, span_notice("你将发电机固定在地板上。"))
 			else if(anchored)
 				anchored = FALSE
 				disconnect_from_network()
-				to_chat(user, span_notice("You unsecure the generator from the floor."))
+				to_chat(user, span_notice("你已将发电机从地板上解固。"))
 
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			return
@@ -221,9 +221,9 @@
 			TOGGLE_BITFIELD(machine_stat, PANEL_OPEN)
 			O.play_tool_sound(src)
 			if(machine_stat & PANEL_OPEN)
-				to_chat(user, span_notice("You open the access panel."))
+				to_chat(user, span_notice("你打开了检修面板。"))
 			else
-				to_chat(user, span_notice("You close the access panel."))
+				to_chat(user, span_notice("你关闭了检修面板。"))
 			return
 		//else if(default_deconstruction_crowbar(O))
 		//	return
@@ -280,7 +280,7 @@
 				. = TRUE
 
 /obj/machinery/power/port_gen/pacman/super
-	name = "\improper S.U.P.E.R.P.A.C.M.A.N.-type portable generator"
+	name = "\improper S.U.P.E.R.P.A.C.M.A.N.型便携式发电机"
 	icon_state = "portgen1"
 	base_icon = "portgen1"
 	circuit = /obj/item/circuitboard/machine/pacman/super
@@ -292,7 +292,7 @@
 	explosion(loc, 4, explosion_cause=src)
 
 /obj/machinery/power/port_gen/pacman/mrs
-	name = "\improper M.R.S.P.A.C.M.A.N.-type portable generator"
+	name = "\improper M.R.S.P.A.C.M.A.N.型便携式发电机"
 	base_icon = "portgen2"
 	icon_state = "portgen2"
 	circuit = /obj/item/circuitboard/machine/pacman/mrs
@@ -304,7 +304,7 @@
 	explosion(loc, 4, explosion_cause=src)
 
 /obj/machinery/power/port_gen/pacman/mobile_power
-	name = "\improper A.D.V.P.A.C.M.A.N.-type portable generator"
+	name = "\improper A.D.V.P.A.C.M.A.N.型便携式发电机"
 
 /obj/machinery/power/port_gen/pacman/mobile_power/Initialize(mapload)
 	. = ..()

@@ -5,11 +5,11 @@
 	if(dna_lock)
 		var/mob/living/carbon/entering_carbon = entering_mob
 		if(md5(REF(entering_carbon)) != dna_lock)
-			to_chat(entering_mob, span_warning("Access denied. [name] is secured with a DNA lock."))
+			to_chat(entering_mob, span_warning("访问被拒绝。[name] 已通过DNA锁锁定。"))
 			log_message("Permission denied (DNA LOCK).", LOG_MECHA)
 			return
 	if(!operation_allowed(entering_mob))
-		to_chat(entering_mob, span_warning("Access denied. Insufficient operation keycodes."))
+		to_chat(entering_mob, span_warning("访问被拒绝。操作密钥码不足。"))
 		log_message("Permission denied (No keycode).", LOG_MECHA)
 		return
 	. = ..()
@@ -18,19 +18,19 @@
 
 /obj/vehicle/sealed/mecha/enter_checks(mob/entering_mob, loc_override = FALSE)
 	if(obj_integrity <= 0)
-		to_chat(entering_mob, span_warning("You cannot get in the [src], it has been destroyed!"))
+		to_chat(entering_mob, span_warning("你无法进入[src]，它已被摧毁！"))
 		return FALSE
 	if(entering_mob.buckled)
-		to_chat(entering_mob, span_warning("You can't enter the exosuit while buckled."))
+		to_chat(entering_mob, span_warning("你被固定时无法进入外骨骼。"))
 		log_message("Permission denied (Buckled).", LOG_MECHA)
 		return FALSE
 	if(LAZYLEN(entering_mob.buckled_mobs))
-		to_chat(entering_mob, span_warning("You can't enter the exosuit with other creatures attached to you!"))
+		to_chat(entering_mob, span_warning("你不能在其它生物附着于你身上时进入外骨骼！"))
 		log_message("Permission denied (Attached mobs).", LOG_MECHA)
 		return FALSE
 	var/obj/item/I = entering_mob.get_item_by_slot(SLOT_BACK)
 	if(I && istype(I, /obj/item/jetpack_marine))
-		to_chat(entering_mob, span_warning("Something on your back prevents you from entering the mech!"))
+		to_chat(entering_mob, span_warning("你背上的东西让你无法进入机甲！"))
 		return FALSE
 	return ..()
 
@@ -119,11 +119,11 @@
 	update_icon()
 
 /obj/vehicle/sealed/mecha/resisted_against(mob/living/user)
-	to_chat(user, span_notice("You begin the ejection procedure. Equipment is disabled during this process. Hold still to finish ejecting."))
+	to_chat(user, span_notice("你开始弹射程序。此过程中设备将被禁用。保持静止以完成弹射。"))
 	is_currently_ejecting = TRUE
 	if(do_after(user, exit_delay, NONE, src))
-		to_chat(user, span_notice("You exit the mech."))
+		to_chat(user, span_notice("你离开了机甲。"))
 		mob_exit(user, TRUE)
 	else
-		to_chat(user, span_notice("You stop exiting the mech. Weapons are enabled again."))
+		to_chat(user, span_notice("你停止了离开机甲。武器已重新启用。"))
 	is_currently_ejecting = FALSE

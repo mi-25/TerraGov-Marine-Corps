@@ -1,8 +1,8 @@
 // Roofing
 
 /turf/open/floor/roof
-	name = "roof"
-	desc = "Old roofing."
+	name = "屋顶"
+	desc = "旧屋顶。"
 	mediumxenofootstep = FOOTSTEP_ROOF
 	barefootstep = FOOTSTEP_ROOF
 	shoefootstep = FOOTSTEP_ROOF

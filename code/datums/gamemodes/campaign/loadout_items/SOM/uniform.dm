@@ -1,20 +1,20 @@
 /datum/loadout_item/uniform/som_standard
 	name = "SOM uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies."
+	desc = "火星之子军人的标准制服。其设计明显源自旧时采矿殖民地使用的采矿服。"
 	item_typepath = /obj/item/clothing/under/som/webbing
 	jobs_supported = list(SOM_SQUAD_MARINE)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/uniform/som_veteran
 	name = "SOM veteran uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has markings indicating specialist status."
+	desc = "火星之子军事人员的标准制服。其设计明显源自旧采矿殖民地使用的采矿服。这件带有专家身份的标识。"
 	item_typepath = /obj/item/clothing/under/som/veteran/webbing
 	jobs_supported = list(SOM_SQUAD_VETERAN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/uniform/som_leader
 	name = "SOM leader uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has leadership markings."
+	desc = "火星之子军事人员的标准制服。其设计明显源自旧采矿殖民地使用的采矿服。这件带有领导标识。"
 	item_typepath = /obj/item/clothing/under/som/leader/webbing
 	jobs_supported = list(SOM_SQUAD_LEADER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -22,7 +22,7 @@
 //corpsman
 /datum/loadout_item/uniform/som_medic
 	name = "SOM medical uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies. This one has medical markings."
+	desc = "火星之子军事人员的标准制服。其设计明显源自旧采矿殖民地使用的采矿服。这件带有医疗标识。"
 	item_typepath = /obj/item/clothing/under/som/medic/vest
 	jobs_supported = list(SOM_SQUAD_CORPSMAN)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
@@ -38,7 +38,7 @@
 //engineer
 /datum/loadout_item/uniform/som_engineer
 	name = "SOM uniform"
-	desc = "The standard uniform of SOM military personnel. Its design shows a clear lineage from mining uniforms used in the old mining colonies."
+	desc = "火星之子军人的标准制服。其设计明显源自旧采矿殖民地使用的采矿服。"
 	req_desc = "Requires a tool pouch. You ARE an engineer, right?"
 	item_typepath = /obj/item/clothing/under/som/webbing
 	jobs_supported = list(SOM_SQUAD_ENGINEER)
@@ -46,21 +46,21 @@
 
 /datum/loadout_item/uniform/som_field_commander
 	name = "Officer uniform"
-	desc = "The distinct black uniform befitting a SOM field officer."
+	desc = "火星之子战地军官专属的黑色制服。"
 	item_typepath = /obj/item/clothing/under/som/officer/webbing
 	jobs_supported = list(SOM_FIELD_COMMANDER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/uniform/som_officer
 	name = "Officer uniform"
-	desc = "The distinct black uniform of a SOM officer. Usually worn by junior officers."
+	desc = "火星之子军官的独特黑色制服。通常由初级军官穿着。"
 	item_typepath = /obj/item/clothing/under/som/officer
 	jobs_supported = list(SOM_STAFF_OFFICER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE
 
 /datum/loadout_item/uniform/som_senior_officer
 	name = "Officer uniform"
-	desc = "The distinct jacketed black uniform of a SOM officer. Usually worn by senior officers."
+	desc = "火星之子军官标志性的黑色夹克制服。通常由高级军官穿着。"
 	item_typepath = /obj/item/clothing/under/som/officer/senior
 	jobs_supported = list(SOM_COMMANDER)
 	loadout_item_flags = LOADOUT_ITEM_ROUNDSTART_OPTION|LOADOUT_ITEM_DEFAULT_CHOICE

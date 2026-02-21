@@ -29,7 +29,7 @@
 
 /datum/action/ability/activable/xeno/stomp/New(Target)
 	. = ..()
-	desc = "Knocks adjacent targets away and down, targets take increased damage and stun when stomped on. Stuns for [CRUSHER_STOMP_PARALYZE / (1 SECONDS)] seconds, [CRUSHER_STOMP_PARALYZE_LONG / (1 SECONDS)] when stomped on."
+	desc = "击退并击倒邻近目标，被践踏的目标会受到额外伤害和眩晕。眩晕持续[CRUSHER_STOMP_PARALYZE / (1 SECONDS)]秒，被践踏时持续[CRUSHER_STOMP_PARALYZE_LONG / (1 SECONDS)]秒。"
 
 /datum/action/ability/activable/xeno/stomp/use_ability(atom/A)
 	succeed_activate()
@@ -39,7 +39,7 @@
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "crusher_stomps")
 
 	playsound(get_turf(xeno_owner), 'sound/effects/bang.ogg', 25, 0)
-	xeno_owner.visible_message(span_xenodanger("[xeno_owner] smashes into the ground!"), \
+	xeno_owner.visible_message(span_xenodanger("[xeno_owner] 猛砸在地面上！"), \
 		span_xenodanger("We smash into the ground!"))
 	xeno_owner.create_stomp() // Adds the visual effect. Wom wom wom.
 
@@ -53,12 +53,12 @@
 		var/distance = get_dist(xeno_owner, nearby_living)
 		nearby_living.take_overall_damage(stomp_damage / max(1, distance + stomp_falloff), BRUTE, MELEE, updating_health = TRUE, max_limbs = 3)
 		if(distance == 0)
-			to_chat(nearby_living, span_userdanger("You are stomped on by [xeno_owner]!"))
+			to_chat(nearby_living, span_userdanger("你被 [xeno_owner] 践踏了！"))
 			shake_camera(nearby_living, 3, 3)
 			nearby_living.Paralyze(distance_bonus_allowed ? CRUSHER_STOMP_PARALYZE_LONG : CRUSHER_STOMP_PARALYZE)
 		else
 			step_away(nearby_living, xeno_owner, 1) // Knock away if they're adjacent.
-			to_chat(nearby_living, span_userdanger("You reel from the shockwave of [xeno_owner]'s stomp!"))
+			to_chat(nearby_living, span_userdanger("你被[xeno_owner]的践踏冲击波震得踉跄后退！"))
 			shake_camera(nearby_living, 2, 2)
 			nearby_living.Paralyze(CRUSHER_STOMP_PARALYZE)
 
@@ -83,7 +83,7 @@
 	name = "Crest Toss"
 	action_icon_state = "cresttoss"
 	action_icon = 'icons/Xeno/actions/crusher.dmi'
-	desc = "Fling an adjacent target over and behind you, or away from you while on harm intent. Also works over barricades."
+	desc = "将相邻目标甩投至你身后，或在伤害意图下将其甩离。也可用于甩投越过路障。"
 	ability_cost = 75
 	cooldown_duration = 12 SECONDS
 	keybinding_signals = list(
@@ -94,7 +94,7 @@
 	var/ally_cooldown_multiplier = 1
 
 /datum/action/ability/activable/xeno/cresttoss/on_cooldown_finish()
-	to_chat(xeno_owner, span_xenowarning("<b>We can now crest toss again.</b>"))
+	to_chat(xeno_owner, span_xenowarning("<b>我们现在可以再次使用抛掷了。</b>"))
 	playsound(xeno_owner, 'sound/effects/alien/new_larva.ogg', 50, 0, 1)
 	return ..()
 
@@ -122,10 +122,10 @@
 
 	if(!xeno_owner.issamexenohive(A)) //xenos should be able to fling xenos into xeno passable areas!
 		for(var/obj/effect/forcefield/fog/fog in throw_origin)
-			A.balloon_alert(xeno_owner, "there's fog there!")
+			A.balloon_alert(xeno_owner, "那里有雾！")
 			return fail_activate()
 	if(A.move_resist >= MOVE_FORCE_OVERPOWERING)
-		A.balloon_alert(xeno_owner, "too heavy!")
+		A.balloon_alert(xeno_owner, "太重了！")
 		return fail_activate()
 	if(isliving(A))
 		var/mob/living/L = A
@@ -150,7 +150,7 @@
 
 	xeno_owner.icon_state = "Crusher Charging"  //Momentarily lower the crest for visual effect
 
-	xeno_owner.visible_message(span_xenowarning("\The [xeno_owner] flings [A] away with its crest[big_mob_message]!"), \
+	xeno_owner.visible_message(span_xenowarning("\The [xeno_owner] 用它的冠饰将 [A] 甩投出去[big_mob_message]！"), \
 	span_xenowarning("We fling [A] away with our crest[big_mob_message]!"))
 
 	succeed_activate()
@@ -190,7 +190,7 @@
 	name = "Rapid Advance"
 	action_icon_state = "crest_defense"
 	action_icon = 'icons/Xeno/actions/defender.dmi'
-	desc = "Charges up the crushers charge in place, then unleashes the full bulk of the crusher at the target location. Does not crush in diagonal directions."
+	desc = "蓄力准备碾压者的冲锋，然后向目标位置释放碾压者的全部力量。无法向对角线方向碾压。"
 	ability_cost = 175
 	cooldown_duration = 30 SECONDS
 	keybinding_signals = list(
@@ -200,7 +200,7 @@
 	var/advance_range = 7
 
 /datum/action/ability/activable/xeno/advance/on_cooldown_finish()
-	to_chat(owner, span_xenowarning("<b>We can now rapidly charge forward again.</b>"))
+	to_chat(owner, span_xenowarning("<b>我们现在可以再次快速向前冲锋了。</b>"))
 	playsound(owner, 'sound/effects/alien/new_larva.ogg', 50, 0, 1)
 	return ..()
 

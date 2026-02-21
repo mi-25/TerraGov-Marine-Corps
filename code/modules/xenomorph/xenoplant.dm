@@ -1,7 +1,7 @@
 
 ///Those structures need time to grow and are supposed to be extremely weak healh-wise
 /obj/structure/xeno/plant
-	name = "Xeno Plant"
+	name = "异形植物"
 	max_integrity = 5
 	icon = 'icons/Xeno/plants.dmi'
 	interaction_flags = INTERACT_CHECK_INCAPACITATED
@@ -21,7 +21,7 @@
 	if(!.)
 		return FALSE
 	if(!mature && isxeno(user))
-		balloon_alert(user, "Not fully grown")
+		balloon_alert(user, "尚未完全成熟")
 		return FALSE
 
 /obj/structure/xeno/plant/update_icon_state()
@@ -51,7 +51,7 @@
 		return FALSE
 
 	if(xeno_attacker.a_intent == INTENT_HARM && isxenodrone(xeno_attacker))
-		balloon_alert(xeno_attacker, "Uprooted the plant")
+		balloon_alert(xeno_attacker, "拔除了植物")
 		xeno_attacker.do_attack_animation(src)
 		deconstruct(TRUE)
 		return FALSE
@@ -60,8 +60,8 @@
 	return TRUE
 
 /obj/structure/xeno/plant/heal_fruit
-	name = "life fruit"
-	desc = "It would almost be appetizing wasn't it for the green colour and the shifting fluids inside..."
+	name = "生命果实"
+	desc = "要不是这绿色的外观和里面晃动的液体，它看起来几乎挺诱人的……"
 	icon_state = "heal_fruit_immature"
 	mature_icon_state = "heal_fruit"
 	///Minimum amount of health recovered
@@ -74,11 +74,11 @@
 		var/datum/effect_system/smoke_spread/xeno/acid/light/plant_explosion = new(get_turf(src))
 		plant_explosion.set_up(1,src)
 		plant_explosion.start()
-		visible_message(span_danger("[src] bursts, releasing toxic gas!"))
+		visible_message(span_danger("[src]爆裂开来，释放出有毒气体！"))
 	return ..()
 
 /obj/structure/xeno/plant/heal_fruit/on_use(mob/user)
-	balloon_alert(user, "Consuming...")
+	balloon_alert(user, "正在吞噬...")
 	if(!do_after(user, 2 SECONDS, IGNORE_HELD_ITEM, src))
 		return FALSE
 	if(!isxeno(user))
@@ -89,14 +89,14 @@
 	var/heal_amount = max(healing_amount_min, healing_amount_max_health_scaling * X.xeno_caste.max_health)
 	HEAL_XENO_DAMAGE(X, heal_amount, FALSE)
 	playsound(user, SFX_ALIEN_DROOL, 25)
-	balloon_alert(X, "Health restored")
-	to_chat(X, span_xenowarning("We feel a sudden soothing chill as [src] tends to our wounds."))
+	balloon_alert(X, "生命值已恢复")
+	to_chat(X, span_xenowarning("我们感到一阵突如其来的舒缓凉意，[src]正在处理我们的伤口。"))
 
 	return ..()
 
 /obj/structure/xeno/plant/armor_fruit
-	name = "hard fruit"
-	desc = "The contents of this fruit are protected by a tough outer shell."
+	name = "硬果"
+	desc = "这颗果实的内容物被一层坚硬的外壳保护着。"
 	icon_state = "armor_fruit_immature"
 	mature_icon_state = "armor_fruit"
 	///How much total sunder should we remove
@@ -113,29 +113,29 @@
 				far_away_lands = next_turf
 
 			nearby_human.throw_at(far_away_lands, 7, spin = TRUE)
-			to_chat(nearby_human, span_warning("[src] bursts, releasing a strong gust of pressurised gas!"))
+			to_chat(nearby_human, span_warning("[src] 爆裂开来，释放出一股强烈的加压气体！"))
 			nearby_human.adjust_stagger(1.5 SECONDS)
 			nearby_human.apply_damage(15, BRUTE, "chest", BOMB, attacker = blame_mob)
 	return ..()
 
 /obj/structure/xeno/plant/armor_fruit/on_use(mob/user)
-	balloon_alert(user, "Consuming...")
+	balloon_alert(user, "正在吞噬...")
 	if(!do_after(user, 2 SECONDS, IGNORE_HELD_ITEM, src))
 		return FALSE
 	if(!isxeno(user))
 		deconstruct(FALSE)
 		return TRUE
 
-	balloon_alert(user, "Armor restored")
-	to_chat(user, span_xenowarning("We shed our shattered scales as new ones grow to replace them!"))
+	balloon_alert(user, "护甲已恢复")
+	to_chat(user, span_xenowarning("我们褪去破碎的鳞片，新生的鳞甲将取而代之！"))
 	var/mob/living/carbon/xenomorph/X = user
 	X.adjust_sunder(-sunder_removal)
 	playsound(user, SFX_ALIEN_DROOL, 25)
 	return ..()
 
 /obj/structure/xeno/plant/plasma_fruit
-	name = "power fruit"
-	desc = "A cyan fruit, beating like a creature's heart"
+	name = "能量果实"
+	desc = "一颗青色的果实，搏动着如同生物的心脏"
 	icon_state = "plasma_fruit_immature"
 	mature_icon_state = "plasma_fruit"
 	///How much bonus plasma should we restore during the duration, 1 being 100% from base regen
@@ -148,7 +148,7 @@
 		var/datum/effect_system/smoke_spread/xeno/pyrogen_fire/light/plant_explosion = new(get_turf(src))
 		plant_explosion.set_up(1, src)
 		plant_explosion.start()
-		visible_message(span_warning("[src] bursts, releasing blue hot gas!"))
+		visible_message(span_warning("[src] 爆裂开来，释放出炽热的蓝色气体！"))
 	return ..()
 
 /obj/structure/xeno/plant/plasma_fruit/can_interact(mob/user)
@@ -159,11 +159,11 @@
 		return
 	var/mob/living/carbon/xenomorph/X = user
 	if(X.has_status_effect(STATUS_EFFECT_PLASMA_SURGE))
-		balloon_alert(X, "Already increased plasma regen")
+		balloon_alert(X, "已提升等离子体恢复")
 		return FALSE
 
 /obj/structure/xeno/plant/plasma_fruit/on_use(mob/user)
-	balloon_alert(user, "Consuming...")
+	balloon_alert(user, "正在吞噬...")
 	if(!do_after(user, 2 SECONDS, IGNORE_HELD_ITEM, src))
 		return FALSE
 	if(!isxeno(user))
@@ -172,18 +172,18 @@
 
 	var/mob/living/carbon/xenomorph/X = user
 	if(!(X.xeno_caste.can_flags & CASTE_CAN_BE_GIVEN_PLASMA))
-		to_chat(X, span_xenowarning("But our body rejects the fruit, we do not share the same plasma type!"))
+		to_chat(X, span_xenowarning("但我们的身体排斥这果实，我们的等离子体类型并不相同！"))
 		return FALSE
 	X.apply_status_effect(/datum/status_effect/plasma_surge, X.xeno_caste.plasma_max, bonus_regen, duration)
-	balloon_alert(X, "Plasma restored")
-	to_chat(X, span_xenowarning("[src] Restores our plasma reserves, our organism is on overdrive!"))
+	balloon_alert(X, "等离子体已恢复")
+	to_chat(X, span_xenowarning("[src] 恢复了我们的等离子体储备，我们的机体正在超负荷运转！"))
 	playsound(user, SFX_ALIEN_DROOL, 25)
 	return ..()
 
 
 /obj/structure/xeno/plant/stealth_plant
-	name = "night shade"
-	desc = "A beautiful flower, what purpose it could serve to the alien hive is beyond you however..."
+	name = "夜影"
+	desc = "一朵美丽的花，但它对异形蜂巢有何用处，你却不得而知……"
 	icon_state = "stealth_plant_immature"
 	mature_icon_state = "stealth_plant"
 	maturation_time = 4 MINUTES
@@ -226,19 +226,19 @@
 	if(!.)
 		return FALSE
 	if(ishuman(user))
-		balloon_alert(user, "Nothing happens")
-		to_chat(user, span_notice("You caress [src]'s petals, nothing happens."))
+		balloon_alert(user, "无事发生")
+		to_chat(user, span_notice("你轻抚[src]的花瓣，什么也没发生。"))
 		return FALSE
 	if(on_cooldown)
-		balloon_alert(user, "Not ready yet")
-		to_chat(user, span_xenowarning("[src] soft light shimmers, we should give it more time to recover!"))
+		balloon_alert(user, "尚未就绪")
+		to_chat(user, span_xenowarning("[src] 的柔和光芒在闪烁，我们应该给它更多时间恢复！"))
 		return FALSE
 
 /obj/structure/xeno/plant/stealth_plant/on_use(mob/user)
-	balloon_alert(user, "Shaking...")
+	balloon_alert(user, "颤抖着...")
 	if(!do_after(user, 2 SECONDS, IGNORE_HELD_ITEM, src))
 		return FALSE
-	visible_message(span_danger("[src] releases a burst of glowing pollen!"))
+	visible_message(span_danger("[src]释放出一阵发光的孢子！"))
 	veil()
 	return TRUE
 
@@ -250,8 +250,8 @@
 				continue
 			X.set_alpha_source(ALPHA_SOURCE_NIGHTSHADE, HUNTER_STEALTH_RUN_ALPHA)
 			new /obj/effect/temp_visual/alien_fruit_eaten(get_turf(X))
-			balloon_alert(X, "We now blend in")
-			to_chat(X, span_xenowarning("The pollen from [src] reacts with our scales, we are blending with our surroundings!"))
+			balloon_alert(X, "我们现在融入其中")
+			to_chat(X, span_xenowarning("[src]的花粉与我们的鳞片发生反应，我们正在与周围环境融为一体！"))
 			camouflaged_xenos.Add(X)
 	on_cooldown = TRUE
 	addtimer(CALLBACK(src, PROC_REF(unveil)), active_camouflage_duration)
@@ -259,12 +259,12 @@
 
 ///Called when veil() can be used once again
 /obj/structure/xeno/plant/stealth_plant/proc/ready()
-	visible_message(span_danger("[src] petals shift in hue, it is ready to release more pollen."))
+	visible_message(span_danger("[src]的花瓣颜色发生变化，它已准备好释放更多花粉。"))
 	on_cooldown = FALSE
 
 ///Reveals all xenos hidden by veil()
 /obj/structure/xeno/plant/stealth_plant/proc/unveil()
 	for(var/mob/living/carbon/xenomorph/X AS in camouflaged_xenos)
 		X.remove_alpha_source(ALPHA_SOURCE_NIGHTSHADE)
-		balloon_alert(X, "Effect wears off")
-		to_chat(X, span_xenowarning("The effect of [src] wears off!"))
+		balloon_alert(X, "效果消失")
+		to_chat(X, span_xenowarning("[src]的效果消失了！"))

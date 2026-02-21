@@ -1,6 +1,6 @@
 /obj/machinery/mech_bay_recharge_port
-	name = "mech bay power port"
-	desc = "This port recharges a mech's internal power cell."
+	name = "机甲库电源接口"
+	desc = "这个端口可为机甲内部电池充电。"
 	density = TRUE
 	dir = EAST
 	icon = 'icons/mecha/mech_bay.dmi'
@@ -70,8 +70,8 @@
 	return ..()
 
 /obj/machinery/computer/mech_bay_power_console
-	name = "mech bay power control console"
-	desc = "Displays the status of mechs connected to the recharge station."
+	name = "机甲库电力控制台"
+	desc = "显示与充电站连接的机甲状态。"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	screen_overlay = "recharge_comp"

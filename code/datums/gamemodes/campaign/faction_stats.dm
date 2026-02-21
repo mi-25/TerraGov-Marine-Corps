@@ -493,10 +493,10 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 	switch(action)
 		if("set_attrition_points")
 			if(!is_leadership_role(user))
-				to_chat(user, span_warning("Only leadership roles can do this."))
+				to_chat(user, span_warning("只有领导职位才能执行此操作。"))
 				return
 			if((current_mode.current_mission?.mission_state != MISSION_STATE_NEW) && (current_mode.current_mission?.mission_state != MISSION_STATE_LOADED))
-				to_chat(user, span_warning("Current mission already ongoing, unable to assign more personnel at this time."))
+				to_chat(user, span_warning("当前任务正在进行中，此时无法增派人员。"))
 				return
 			var/combined_attrition = total_attrition_points + active_attrition_points
 			var/choice = tgui_input_number(user, "How much manpower would you like to dedicate to this mission?", "Attrition Point selection", 0, combined_attrition, 0, 60 SECONDS)
@@ -504,14 +504,14 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 				return
 			//check again so you can't just hold the window open
 			if((current_mode.current_mission?.mission_state != MISSION_STATE_NEW) && (current_mode.current_mission?.mission_state != MISSION_STATE_LOADED))
-				to_chat(user, span_warning("Current mission already ongoing, unable to assign more personnel at this time."))
+				to_chat(user, span_warning("当前任务已在执行中，此时无法增派人员。"))
 				return
 			set_attrition(choice, user)
 			return TRUE
 
 		if("set_next_mission")
 			if(user != faction_leader)
-				to_chat(user, span_warning("Only your faction's commander can do this."))
+				to_chat(user, span_warning("只有你所属阵营的指挥官才能执行此操作。"))
 				return
 			var/new_mission = text2path(params["new_mission"])
 			if(!new_mission)
@@ -520,10 +520,10 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 				return
 			var/datum/campaign_mission/choice = available_missions[new_mission]
 			if(current_mode.current_mission?.mission_state != MISSION_STATE_FINISHED)
-				to_chat(user, span_warning("Current mission still ongoing!"))
+				to_chat(user, span_warning("当前任务仍在进行中！"))
 				return
 			if(!(stats_flags & CAMPAIGN_TEAM_MISSION_SELECT_ALLOWED))
-				to_chat(user, span_warning("The opposing side has the initiative, win a mission to regain it."))
+				to_chat(user, span_warning("敌方掌握了主动权，赢得一场任务以夺回控制权。"))
 				return
 			current_mode.load_new_mission(choice)
 			available_missions -= new_mission
@@ -539,10 +539,10 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 			var/datum/campaign_asset/choice = faction_assets[selected_asset]
 			if(!is_leadership_role(user))
 				if(!(choice.asset_flags & ASSET_SL_AVAILABLE))
-					to_chat(user, span_warning("Only leadership roles can do this."))
+					to_chat(user, span_warning("只有领导角色才能执行此操作。"))
 					return
 				if(!(ismarineleaderjob(user.job) || issommarineleaderjob(user.job)))
-					to_chat(user, span_warning("Only squad leaders and above can do this."))
+					to_chat(user, span_warning("只有班长及以上军衔才能执行此操作。"))
 					return
 			if(!choice.attempt_activatation(user))
 				return
@@ -550,12 +550,12 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 				faction_member.playsound_local(null, 'sound/effects/CIC_order.ogg', 30, 1)
 				var/portrait = choice.asset_portrait ? choice.asset_portrait : faction_portrait
 				faction_member.play_screen_text(HUD_ANNOUNCEMENT_FORMATTING("OVERWATCH", "[choice.name] asset activated", LEFT_ALIGN_TEXT), portrait)
-				to_chat(faction_member, span_warning("[user] has activated the [choice.name] campaign asset."))
+				to_chat(faction_member, span_warning("[user] 已激活 [choice.name] 战役资产。"))
 			return TRUE
 
 		if("purchase_reward")
 			if(!is_leadership_role(user))
-				to_chat(user, span_warning("Only leadership roles can do this."))
+				to_chat(user, span_warning("只有领导职位才能执行此操作。"))
 				return
 			var/datum/campaign_asset/selected_asset = text2path(params["selected_reward"])
 			if(!selected_asset)
@@ -563,13 +563,13 @@ GLOBAL_LIST_INIT(campaign_mission_pool, list(
 			if(!(selected_asset in purchasable_assets))
 				return
 			if(initial(selected_asset.cost) > total_attrition_points)
-				to_chat(user, span_warning("[initial(selected_asset.cost) - total_attrition_points] more attrition points required."))
+				to_chat(user, span_warning("还需要 [initial(selected_asset.cost) - total_attrition_points] 点损耗点数。"))
 				return
 			add_asset(selected_asset)
 			total_attrition_points -= initial(selected_asset.cost)
 			for(var/mob/living/carbon/human/faction_member in GLOB.alive_human_list_faction[faction])
 				faction_member.playsound_local(null, 'sound/effects/CIC_order.ogg', 30, 1)
-				to_chat(faction_member, span_warning("[user] has purchased the [initial(selected_asset.name)] campaign asset."))
+				to_chat(faction_member, span_warning("[user] 已购买 [initial(selected_asset.name)] 战役资产。"))
 			update_static_data_for_all_viewers()
 			return TRUE
 

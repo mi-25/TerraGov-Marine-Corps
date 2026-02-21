@@ -1,8 +1,8 @@
 #define MAX_SUPPLY_DROPS 4
 
 /obj/machinery/computer/supplydrop_console
-	name = "supply drop console"
-	desc = "used by shipside staff to issue supply drops to squad beacons"
+	name = "补给空投控制台"
+	desc = "供舰上人员使用，用于向小队信标投放补给"
 	icon_state = "supplydrop"
 	screen_overlay = "supplydrop_screen"
 	interaction_flags = INTERACT_MACHINE_TGUI
@@ -156,8 +156,8 @@
 	x_offset = clamp(round(x_offset), -5, 5)
 	y_offset = clamp(round(y_offset), -5, 5)
 
-	supply_pad.visible_message(span_boldnotice("The supply drop is now loading into the launch tube! Stand by!"))
-	supply_pad.visible_message(span_warning("\The [supply_pad] whirrs as it beings to load the supply drop into a bluespace launch tube. Stand clear!"))
+	supply_pad.visible_message(span_boldnotice("补给空投正在装入发射管！请待命！"))
+	supply_pad.visible_message(span_warning("\The [supply_pad] 发出嗡鸣声，开始将补给空投装载进蓝空间发射管。请远离！"))
 	for(var/obj/C in supplies)
 		C.anchored = TRUE //to avoid accidental pushes
 	playsound(supply_pad.loc, 'sound/effects/bamf.ogg', 50, TRUE)

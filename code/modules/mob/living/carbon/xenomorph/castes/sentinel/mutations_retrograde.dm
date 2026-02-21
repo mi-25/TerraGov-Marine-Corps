@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/gaseous_blood
 	name = "Gaseous Blood"
-	desc = "Everytime you take damage, you emit non-opaque light neurotoxin gas with a radius of 2. This can happen once every 8/6/4 seconds."
+	desc = "每次受到伤害时，你都会释放半径为2的非不透明神经毒素气体。该效果每8/6/4秒可触发一次。"
 	/// For the first structure, the cooldown in deciseconds.
 	var/cooldown_initial = 10 SECONDS
 	/// For each structure, the increased cooldown in deciseconds.
@@ -49,7 +49,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/toxic_claws
 	name = "Toxic Claws"
-	desc = "You gain an ability that makes your slashes inject 6/7/8u Neurotoxin for the next 3 slashes. You no longer have the ability Neurotoxin Sting."
+	desc = "你获得一项能力，使你的下3次斩击注入6/7/8单位神经毒素。你不再拥有神经毒素刺击能力。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/veil/toxic_spillage
 	)
@@ -103,7 +103,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/toxic_spillage
 	name = "Toxic Spillage"
-	desc = "Neurotoxin Sting injects 25% as much neurotoxin. It creates non-opaque light neurotoxin gas spreading out up to 2/3/4 tiles on use."
+	desc = "神经毒素刺击注入的神经毒素量减少25%。使用时会产生不透明的轻型神经毒素气体，扩散范围可达2/3/4格。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/spur/toxic_claws
 	)

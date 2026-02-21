@@ -174,7 +174,7 @@
 					continue
 				if(!living_rider.l_hand || !living_rider.r_hand)
 					continue
-			balloon_alert(living_rider, "poor grip!")
+			balloon_alert(living_rider, "握持不稳！")
 			throw_dist = 3
 
 		var/away_dir = REVERSE_DIR(get_dir(tank_desant, root) || pick(GLOB.alldirs))

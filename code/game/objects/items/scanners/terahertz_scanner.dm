@@ -1,6 +1,6 @@
 /obj/item/t_scanner
-	name = "\improper T-ray scanner"
-	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes."
+	name = "\improper T射线扫描仪"
+	desc = "一种太赫兹射线发射器和扫描仪，用于探测地板下的物体，例如电缆和管道。"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "t-ray0"
 	var/on = 0

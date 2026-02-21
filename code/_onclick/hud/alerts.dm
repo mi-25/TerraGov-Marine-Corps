@@ -99,8 +99,8 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 /atom/movable/screen/alert
 	icon = 'icons/mob/screen_alert.dmi'
 	icon_state = "default"
-	name = "Alert"
-	desc = "Something seems to have gone wrong with this alert, so report this bug please"
+	name = "警报"
+	desc = "此警报似乎出现了问题，请报告此错误"
 	mouse_opacity = MOUSE_OPACITY_ICON
 	boxed_message_style = "boxed_message blue_box"
 	var/timeout = 0 //If set to a number, this alert will clear itself after that many deciseconds
@@ -127,8 +127,8 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 //GHOSTS
 //TODO: expand this system to replace the pollCandidates/CheckAntagonist/"choose quickly"/etc Yes/No messages
 /atom/movable/screen/alert/notify_action
-	name = "Notification"
-	desc = "A new notification. You can enter it."
+	name = "通知"
+	desc = "新通知。您可以进入。"
 	icon_state = "template"
 	timeout = 15 SECONDS
 	boxed_message_style = "boxed_message purple_box"
@@ -166,13 +166,13 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 //OBJECT-BASED
 
 /atom/movable/screen/alert/restrained/buckled
-	name = "Buckled"
-	desc = "You've been buckled to something. Click the alert to unbuckle unless you're handcuffed."
+	name = "已固定"
+	desc = "你已被固定在某物上。点击提示解除固定，除非你被铐住。"
 	icon_state = "buckled"
 
 /atom/movable/screen/alert/restrained/handcuffed
-	name = "Handcuffed"
-	desc = "You're handcuffed and can't act. If anyone drags you, you won't be able to move. Click the alert to free yourself."
+	name = "被铐住"
+	desc = "你被铐住了，无法行动。如果有人拖拽你，你将无法移动。点击警报来挣脱。"
 	boxed_message_style = "boxed_message red_box"
 
 /atom/movable/screen/alert/restrained/Click()
@@ -222,33 +222,33 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 
 //MECHS
 /atom/movable/screen/alert/nocell
-	name = "Missing Power Cell"
-	desc = "Unit has no power cell. No modules available until a power cell is reinstalled. Robotics may provide assistance."
+	name = "缺少能量电池"
+	desc = "单位没有电源电池。在重新安装电源电池之前，所有模块均不可用。机器人技术部门可提供协助。"
 	icon_state = "no_cell"
 	boxed_message_style = "boxed_message red_box"
 
 /atom/movable/screen/alert/emptycell
-	name = "Out of Power"
-	desc = "Unit's power cell has no charge remaining. No modules available until power cell is recharged."
+	name = "能量耗尽"
+	desc = "单位电源单元电量已耗尽。电源单元重新充电前，所有模块均不可用。"
 	icon_state = "empty_cell"
 	boxed_message_style = "boxed_message red_box"
 
 /atom/movable/screen/alert/lowcell
-	name = "Low Charge"
-	desc = "Unit's power cell is running low."
+	name = "电量不足"
+	desc = "单位能量电池电量不足。"
 	icon_state = "low_cell"
 	boxed_message_style = "boxed_message red_box"
 
 /atom/movable/screen/alert/low_mech_integrity
-	name = "Mech Damaged"
-	desc = "Mech integrity is low."
+	name = "机甲受损"
+	desc = "机甲完整性低。"
 	icon_state = "low_mech_integrity"
 	boxed_message_style = "boxed_message red_box"
 
 // HUMAN WARNINGS
 /atom/movable/screen/alert/fire
-	name = "On Fire"
-	desc = "You're on fire. Stop, drop and roll to put the fire out, or use a fire extinguisher."
+	name = "着火"
+	desc = "你着火了。停下、卧倒、打滚来扑灭火焰，或者使用灭火器。"
 	icon_state = "fire"
 	boxed_message_style = "boxed_message red_box"
 
@@ -260,44 +260,44 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 	L.resist()
 
 /atom/movable/screen/alert/not_enough_oxy
-	name = "Choking"
-	desc = "You're not getting enough O2. This can be from internal damage or critical condition. Find a solution before you pass out or even die!"
+	name = "窒息"
+	desc = "氧气摄入不足。这可能是由于内部损伤或危急状况所致。在你昏迷甚至死亡之前，赶紧想办法解决！"
 	icon_state = ALERT_NOT_ENOUGH_OXYGEN
 
 /atom/movable/screen/alert/hot
-	name = "Too Hot"
-	desc = "You're flaming hot! Try to extinguish yourself, and then take Kelotane to cool you down!"
+	name = "太烫了"
+	desc = "你身上着火了！快想办法灭火，然后服用凯洛坦来降温！"
 	icon_state = "hot"
 
 /atom/movable/screen/alert/cold
-	name = "Too Cold"
-	desc = "You're freezing cold! Get somewhere warmer, and layer up next time you go somewhere cold!"
+	name = "太冷了"
+	desc = "你冻得发抖！快找个暖和的地方，下次去寒冷的地方记得多穿几层！"
 	icon_state = "cold"
 
 /atom/movable/screen/alert/lowpressure
-	name = "Low Pressure"
-	desc = "The air around you is hazardously thin! Get inside as soon as possible!"
+	name = "低压"
+	desc = "你周围的空气异常稀薄！请尽快进入室内！"
 	icon_state = "lowpressure"
 
 /atom/movable/screen/alert/highpressure
-	name = "High Pressure"
-	desc = "The air around you is hazardously thick."
+	name = "高压"
+	desc = "你周围的空气异常浓稠，十分危险。"
 	icon_state = "highpressure"
 
 /atom/movable/screen/alert/hungry
-	name = "Hungry"
-	desc = "You could use a bite to eat. Movement speed reduced."
+	name = "饥饿"
+	desc = "你需要吃点东西。移动速度降低。"
 	icon_state = "hungry"
 	boxed_message_style = "boxed_message"
 
 /atom/movable/screen/alert/starving
-	name = "Starving"
-	desc = "You could eat a horse right now. Movement speed significantly reduced."
+	name = "饥饿"
+	desc = "你现在饿得能吃下一匹马。移动速度显著降低。"
 	icon_state = "starving"
 	boxed_message_style = "boxed_message red_box"
 
 /atom/movable/screen/alert/stuffed
-	name = "Stuffed"
-	desc = "You had a bit too much to eat. Work out to lose the extra nutrition. Movement speed reduced."
+	name = "填充"
+	desc = "你吃得有点太多了。运动一下来消耗多余营养吧。移动速度降低。"
 	icon_state = "stuffed"
 	boxed_message_style = "boxed_message green_box"

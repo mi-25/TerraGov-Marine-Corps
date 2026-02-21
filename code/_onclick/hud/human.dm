@@ -1,5 +1,5 @@
 /atom/movable/screen/human/equip
-	name = "equip"
+	name = "装备"
 	icon_state = "act_equip"
 	screen_loc = ui_swaphand1
 

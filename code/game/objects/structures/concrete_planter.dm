@@ -1,6 +1,6 @@
 /obj/structure/concrete_planter
-	name = "concrete seated planter"
-	desc = "A decorative concrete planter."
+	name = "混凝土固定式种植槽"
+	desc = "一个装饰性的混凝土花盆。"
 	icon = 'icons/obj/structures/prop/concrete_planter.dmi'
 	icon_state = "planter"
 	density = TRUE
@@ -28,11 +28,11 @@
 		bound_height = 32
 
 /obj/structure/concrete_planter/seat
-	name = "concrete seated planter"
-	desc = "A decorative concrete planter with seating attached. The seats are fitted with synthetic leather, they've faded in time."
+	name = "混凝土固定式种植槽"
+	desc = "一个装饰性的混凝土花盆，附带座位。座椅采用合成皮革包裹，随着时间流逝已经褪色。"
 	icon_state = "planter_seats"
 
 /obj/structure/concrete_planter/double_seat
-	name = "concrete seated planter"
-	desc = "A decorative concrete planter with seating attached on both sides. The seats are fitted with synthetic leather, they've faded in time."
+	name = "混凝土固定式种植槽"
+	desc = "一个装饰性的混凝土花盆，两侧都附有座位。座椅采用合成皮革制成，随着时间的推移已经褪色。"
 	icon_state = "planter_double_seats"

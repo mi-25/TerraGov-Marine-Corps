@@ -1,7 +1,7 @@
 /obj/structure/door_assembly
 	icon = 'icons/obj/doors/door_assembly.dmi'
 
-	name = "airlock assembly"
+	name = "气闸门组件"
 	icon_state = "door_as_0"
 	anchored = FALSE
 	density = TRUE
@@ -149,51 +149,51 @@
 	else if(iswelder(I) && (istext(glass) || glass == 1 || !anchored))
 		var/obj/item/tool/weldingtool/WT = I
 		if(!WT.remove_fuel(0, user))
-			to_chat(user, span_notice("You need more welding fuel."))
+			to_chat(user, span_notice("你需要更多焊接燃料。"))
 			return
 
 		playsound(loc, 'sound/items/welder2.ogg', 25, 1)
 		if(istext(glass))
-			user.visible_message("[user] welds the [glass] plating off the airlock assembly.", "You start to weld the [glass] plating off the airlock assembly.")
+			user.visible_message("[user]将[glass]板从气闸组件上焊下。", "You start to weld the [glass] plating off the airlock assembly.")
 			if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD))
 				return
 
 			if(!WT.isOn())
 				return
-			to_chat(user, span_notice("You welded the [glass] plating off!"))
+			to_chat(user, span_notice("你把[glass]板焊接下来了！"))
 			var/M = text2path("/obj/item/stack/sheet/mineral/[glass]")
 			new M(loc, 2)
 			glass = 0
 
 		else if(glass == 1)
-			user.visible_message("[user] welds the glass panel out of the airlock assembly.", "You start to weld the glass panel out of the airlock assembly.")
+			user.visible_message("[user] 将玻璃面板从气闸组件上焊下。", "You start to weld the glass panel out of the airlock assembly.")
 			if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD))
 				return
 
 			if(!WT.isOn())
 				return
-			to_chat(user, span_notice("You welded the glass panel out!"))
+			to_chat(user, span_notice("你把玻璃板焊开了！"))
 			new /obj/item/stack/sheet/glass/reinforced(loc)
 			glass = 0
 
 		else if(!anchored)
-			user.visible_message("[user] dissassembles the airlock assembly.", "You start to dissassemble the airlock assembly.")
+			user.visible_message("[user] 拆解了气闸组件。", "You start to dissassemble the airlock assembly.")
 			if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD))
 				return
 
 			if(!WT.isOn())
 				return
 
-			to_chat(user, span_notice("You dissasembled the airlock assembly!"))
+			to_chat(user, span_notice("你拆解了气闸组件！"))
 			new /obj/item/stack/sheet/metal(loc, 4)
 			qdel(src)
 
 	else if(iswrench(I) && state == 0)
 		playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
 		if(anchored)
-			user.visible_message("[user] unsecures the airlock assembly from the floor.", "You start to unsecure the airlock assembly from the floor.")
+			user.visible_message("[user] 将气闸组件从地板上卸下。", "You start to unsecure the airlock assembly from the floor.")
 		else
-			user.visible_message("[user] secures the airlock assembly to the floor.", "You start to secure the airlock assembly to the floor.")
+			user.visible_message("[user]将气闸组件固定在地板上。", "You start to secure the airlock assembly to the floor.")
 
 		if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD))
 			return
@@ -204,10 +204,10 @@
 	else if(iscablecoil(I) && state == 0 && anchored)
 		var/obj/item/stack/cable_coil/C = I
 		if(C.get_amount() < 1)
-			to_chat(user, span_warning("You need one length of coil to wire the airlock assembly."))
+			to_chat(user, span_warning("你需要一卷电线来连接气闸组件。"))
 			return
 
-		user.visible_message("[user] wires the airlock assembly.", "You start to wire the airlock assembly.")
+		user.visible_message("[user] 正在连接气闸组件。", "You start to wire the airlock assembly.")
 
 		if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD) || state != 0 || !anchored)
 			return
@@ -216,43 +216,43 @@
 			return
 
 		state = 1
-		to_chat(user, span_notice("You wire the airlock."))
+		to_chat(user, span_notice("你给气闸门接上了电线。"))
 
 	else if(iswirecutter(I) && state == 1 )
 		playsound(loc, 'sound/items/wirecutter.ogg', 25, 1)
-		user.visible_message("[user] cuts the wires from the airlock assembly.", "You start to cut the wires from airlock assembly.")
+		user.visible_message("[user]切断了气闸组件的电线。", "You start to cut the wires from airlock assembly.")
 
 		if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD))
 			return
 
-		to_chat(user, span_notice("You cut the airlock wires.!"))
+		to_chat(user, span_notice("你剪断了气闸门的电线！"))
 		new /obj/item/stack/cable_coil(loc, 1)
 		state = 0
 
 	else if(istype(I, /obj/item/circuitboard/airlock) && state == 1 && I.icon_state != "door_electronics_smoked")
 		playsound(loc, 'sound/items/screwdriver.ogg', 25, 1)
-		user.visible_message("[user] installs the electronics into the airlock assembly.", "You start to install electronics into the airlock assembly.")
+		user.visible_message("[user] 将电子元件安装到气闸组件中。", "You start to install electronics into the airlock assembly.")
 
 		if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD))
 			return
 
 		user.drop_held_item()
 		I.forceMove(src)
-		to_chat(user, span_notice("You installed the airlock electronics!"))
+		to_chat(user, span_notice("你安装了气闸电子元件！"))
 		state = 2
-		name = "Near finished Airlock Assembly"
+		name = "气闸组装接近完成"
 		electronics = I
 
 	else if(iscrowbar(I) && state == 2)
 		playsound(loc, 'sound/items/crowbar.ogg', 25, 1)
-		user.visible_message("[user] removes the electronics from the airlock assembly.", "You start to remove the electronics from the airlock assembly.")
+		user.visible_message("[user]从气闸组件中拆除了电子元件。", "You start to remove the electronics from the airlock assembly.")
 
 		if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD))
 			return
 
-		to_chat(user, span_notice("You removed the airlock electronics!"))
+		to_chat(user, span_notice("你拆除了气闸门的电子元件！"))
 		state = 1
-		name = "Wired Airlock Assembly"
+		name = "有线气闸组件"
 		var/obj/item/circuitboard/airlock/AE
 
 		if(!electronics)
@@ -269,14 +269,14 @@
 
 		if(istype(S, /obj/item/stack/sheet/glass/reinforced))
 			playsound(loc, 'sound/items/crowbar.ogg', 25, 1)
-			user.visible_message("[user] adds [S.name] to the airlock assembly.", "You start to install [S.name] into the airlock assembly.")
+			user.visible_message("[user] 将 [S.name] 添加到气闸组件中。", "You start to install [S.name] into the airlock assembly.")
 			if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD) && !glass)
 				return
 
 			if(!S.use(1))
 				return
 
-			to_chat(user, span_notice("You installed reinforced glass windows into the airlock assembly."))
+			to_chat(user, span_notice("你已将强化玻璃窗安装到气闸组件中。"))
 			glass = 1
 
 		else if(istype(S, /obj/item/stack/sheet/mineral) && S.sheettype)
@@ -285,24 +285,24 @@
 				return
 
 			playsound(loc, 'sound/items/crowbar.ogg', 25, 1)
-			user.visible_message("[user] adds [S.name] to the airlock assembly.", "You start to install [S.name] into the airlock assembly.")
+			user.visible_message("[user] 将 [S.name] 添加到气闸组件中。", "You start to install [S.name] into the airlock assembly.")
 			if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD) && !glass)
 				return
 
 			if(!S.use(2))
 				return
 
-			to_chat(user, span_notice("You installed [M] plating into the airlock assembly."))
+			to_chat(user, span_notice("你已将[M]护板安装到气闸组件中。"))
 			glass = "[M]"
 
 	else if(isscrewdriver(I) && state == 2 )
 		playsound(loc, 'sound/items/screwdriver.ogg', 25, 1)
-		to_chat(user, span_notice("Now finishing the airlock."))
+		to_chat(user, span_notice("正在完成气闸门。"))
 
 		if(!do_after(user, 40, NONE, src, BUSY_ICON_BUILD))
 			return
 
-		to_chat(user, span_notice("You finish the airlock!"))
+		to_chat(user, span_notice("你完成了气闸门！"))
 		var/path
 		if(istext(glass))
 			path = text2path("/obj/machinery/door/airlock/[glass]")
@@ -338,9 +338,9 @@
 	switch (state)
 		if(0)
 			if (anchored)
-				name = "Secured "
+				name = "已固定"
 		if(1)
-			name = "Wired "
+			name = "已连接"
 		if(2)
-			name = "Near Finished "
+			name = "即将完成"
 	name += "[glass == 1 ? "Window " : ""][istext(glass) ? "[glass] Airlock" : base_name] Assembly"

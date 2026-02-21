@@ -2,7 +2,7 @@
 // All reagents related to medicine
 
 /datum/reagent/medicine
-	name = "Medicine"
+	name = "Medicine-医疗"
 	reagent_state = LIQUID
 	taste_description = "bitterness"
 	reagent_ui_priority = REAGENT_UI_MEDICINE
@@ -15,7 +15,7 @@
 	return ..()
 
 /datum/reagent/medicine/inaprovaline
-	name = "Inaprovaline"
+	name = "Inaprovaline-伊那普洛林"
 	description = "Inaprovaline is a synaptic stimulant and cardiostimulant. Commonly used to stabilize patients."
 	color = COLOR_REAGENT_INAPROVALINE
 	overdose_threshold = REAGENTS_OVERDOSE*2
@@ -29,7 +29,7 @@
 	if(TIMER_COOLDOWN_RUNNING(L, name) || L.stat == DEAD)
 		return
 	if(L.health < H.health_threshold_crit && volume > 14) //If you are in crit, and someone injects at least 15u into you at once, you will heal 30% of your physical damage instantly.
-		to_chat(L, span_userdanger("You feel a rush of energy as stimulants course through your veins!"))
+		to_chat(L, span_userdanger("你感到一股能量涌遍全身，兴奋剂正在你的血管中奔流！"))
 		L.adjustBruteLoss(-L.getBruteLoss(TRUE) * 0.30)
 		L.adjustFireLoss(-L.getFireLoss(TRUE) * 0.30)
 		L.jitter(5)
@@ -64,7 +64,7 @@
 	return ..()
 
 /datum/reagent/medicine/ryetalyn
-	name = "Ryetalyn"
+	name = "Ryetalyn-莱特林"
 	description = "Ryetalyn is a long-duration shield against toxic chemicals."
 	reagent_state = SOLID
 	color = COLOR_REAGENT_RYETALYN
@@ -97,7 +97,7 @@
 	L.apply_damage(3*effect_str, CLONE)
 
 /datum/reagent/medicine/paracetamol
-	name = "Paracetamol"
+	name = "Paracetamol-扑热息痛"
 	description = "Most probably know this as Tylenol, but this chemical is a mild, simple painkiller, good for enduring heavy labor. Do not mix with Tramadol."
 	color = COLOR_REAGENT_PARACETAMOL
 	custom_metabolism = REAGENTS_METABOLISM * 0.125
@@ -123,7 +123,7 @@
 	L.apply_damage(3*effect_str, TOX)
 
 /datum/reagent/medicine/tramadol
-	name = "Tramadol"
+	name = "Tramadol-曲马多"
 	description = "A simple, yet effective painkiller."
 	color = COLOR_REAGENT_TRAMADOL
 	custom_metabolism = REAGENTS_METABOLISM * 0.5
@@ -146,7 +146,7 @@
 	L.apply_damage(3*effect_str, TOX)
 
 /datum/reagent/medicine/oxycodone
-	name = "Oxycodone"
+	name = "Oxycodone-羟考酮"
 	description = "An effective and very addictive painkiller."
 	color = COLOR_REAGENT_OXYCODONE
 	custom_metabolism = REAGENTS_METABOLISM * 1.25
@@ -158,7 +158,7 @@
 	if(TIMER_COOLDOWN_RUNNING(L, name))
 		return
 	L.adjustStaminaLoss(-20*effect_str)
-	to_chat(L, span_userdanger("You feel a burst of energy revitalize you all of a sudden! You can do anything!"))
+	to_chat(L, span_userdanger("你突然感到一股能量迸发，让你重获新生！你无所不能！"))
 
 /datum/reagent/medicine/oxycodone/on_mob_life(mob/living/L, metabolism)
 	L.reagent_pain_modifier += PAIN_REDUCTION_SUPER_HEAVY
@@ -184,7 +184,7 @@
 			E.take_damage(3*effect_str, TRUE)
 
 /datum/reagent/medicine/oxycodone/on_mob_delete(mob/living/L, metabolism)
-	to_chat(L, span_userdanger("The room spins slightly as you start to come down off your painkillers!"))
+	to_chat(L, span_userdanger("房间开始微微旋转，你的止痛药效果正在消退！"))
 	TIMER_COOLDOWN_START(L, name, 60 SECONDS)
 
 /datum/reagent/medicine/oxycodone/ai_should_use(mob/living/target, inject_vol)
@@ -193,7 +193,7 @@
 	return ..()
 
 /datum/reagent/medicine/hydrocodone
-	name = "Hydrocodone"
+	name = "Hydrocodone-氢可酮"
 	description = "An effective but very short lasting painkiller only made by autodocs."
 	color = COLOR_REAGENT_HYDROCODONE
 	custom_metabolism = REAGENTS_METABOLISM * 2
@@ -214,7 +214,7 @@
 	L.adjustBrainLoss(1.5*effect_str, TRUE)
 
 /datum/reagent/medicine/leporazine
-	name = "Leporazine"
+	name = "Leporazine-莱珀嗪"
 	description = "Leporazine can be use to stabilize an individuals body temperature."
 	color = COLOR_REAGENT_LEPORAZINE
 	overdose_threshold = REAGENTS_OVERDOSE
@@ -236,7 +236,7 @@
 	L.drowsyness = max(L.drowsyness, 30)
 
 /datum/reagent/medicine/kelotane
-	name = "Kelotane"
+	name = "Kelotane-凯洛坦"
 	description = "Kelotane is a drug used to treat burns."
 	color = COLOR_REAGENT_KELOTANE
 	purge_list = list(/datum/reagent/medicine/ryetalyn)
@@ -264,7 +264,7 @@
 	L.apply_damages(2*effect_str, 0, 2*effect_str)
 
 /datum/reagent/medicine/dermaline
-	name = "Dermaline"
+	name = "Dermaline-德马林"
 	description = "Dermaline is the next step in burn medication. Works twice as good as kelotane and enables the body to restore even the direst heat-damaged tissue."
 	color = COLOR_REAGENT_DERMALINE
 	overdose_threshold = REAGENTS_OVERDOSE*0.5
@@ -297,7 +297,7 @@
 	return ..()
 
 /datum/reagent/medicine/saline_glucose
-	name = "Saline-Glucose"
+	name = "生理盐水-葡萄糖"
 	description = "Saline-Glucose can be used to restore blood in a pinch."
 	color = COLOR_REAGENT_SALINE_GLUCOSE
 	custom_metabolism = REAGENTS_METABOLISM * 2
@@ -317,7 +317,7 @@
 	L.apply_damages(1, 0, 1)
 
 /datum/reagent/medicine/dexalin
-	name = "Dexalin"
+	name = "Dexalin-地克沙林"
 	description = "Dexalin is used in the treatment of oxygen deprivation."
 	color = COLOR_REAGENT_DEXALIN
 	overdose_threshold = REAGENTS_OVERDOSE
@@ -335,7 +335,7 @@
 	L.apply_damages(2*effect_str, 0, 2*effect_str)
 
 /datum/reagent/medicine/dexalinplus
-	name = "Dexalin Plus"
+	name = "Dexalin Plus-地克沙林加强剂"
 	description = "Dexalin Plus is used in the treatment of oxygen deprivation. It is highly effective."
 	color = COLOR_REAGENT_DEXALINPLUS
 	overdose_threshold = REAGENTS_OVERDOSE/2
@@ -353,7 +353,7 @@
 	L.apply_damages(2*effect_str, 0, 3*effect_str)
 
 /datum/reagent/medicine/tricordrazine
-	name = "Tricordrazine"
+	name = "Tricordrazine-三卡德嗪"
 	description = "Tricordrazine is a highly potent stimulant, originally derived from cordrazine. Can be used to treat a wide range of injuries."
 	color = COLOR_REAGENT_TRICORDRAZINE
 	purge_list = list(/datum/reagent/medicine/ryetalyn)
@@ -382,7 +382,7 @@
 	L.apply_damages(3*effect_str, 3*effect_str, 3*effect_str)
 
 /datum/reagent/medicine/dylovene
-	name = "Dylovene"
+	name = "Dylovene-地洛维宁"
 	description = "Dylovene is a broad-spectrum antitoxin."
 	color = COLOR_REAGENT_DYLOVENE
 	purge_list = list(/datum/reagent/toxin, /datum/reagent/medicine/research/stimulon, /datum/reagent/consumable/atomiccoffee, /datum/reagent/medicine/paracetamol, /datum/reagent/medicine/larvaway)
@@ -427,7 +427,7 @@
 	return ..()
 
 /datum/reagent/medicine/adminordrazine //An OP chemical for admins
-	name = "Adminordrazine"
+	name = "Adminordrazine-管理员神药"
 	description = "It's magic. We don't have to explain it."
 	color = COLOR_REAGENT_ADMINORDRAZINE
 	taste_description = "badmins"
@@ -460,7 +460,7 @@
 	return ..()
 
 /datum/reagent/medicine/synaptizine
-	name = "Synaptizine"
+	name = "Synaptizine-突触素"
 	description = "Synaptizine is a commonly used performance-enhancing drug with minimal side effects."
 	color = COLOR_REAGENT_SYNAPTIZINE
 	overdose_threshold = REAGENTS_OVERDOSE/5
@@ -474,7 +474,7 @@
 	if(TIMER_COOLDOWN_RUNNING(L, name))
 		return
 	L.adjustStaminaLoss(-30*effect_str)
-	to_chat(L, span_userdanger("You feel a burst of energy as the stimulants course through you! Time to go!"))
+	to_chat(L, span_userdanger("你感到一股能量迸发，兴奋剂在你体内奔涌！是时候行动了！"))
 
 /datum/reagent/medicine/synaptizine/on_mob_life(mob/living/L, metabolism)
 	L.reagent_shock_modifier += PAIN_REDUCTION_MEDIUM
@@ -500,7 +500,7 @@
 	L.apply_damages(effect_str, effect_str, effect_str)
 
 /datum/reagent/medicine/synaptizine/on_mob_delete(mob/living/L, metabolism)
-	to_chat(L, span_userdanger("The room spins as you start to come down off your stimulants!"))
+	to_chat(L, span_userdanger("房间开始旋转，你的兴奋剂效果正在消退！"))
 	TIMER_COOLDOWN_START(L, name, 60 SECONDS)
 
 /datum/reagent/medicine/synaptizine/ai_should_use(mob/living/target, inject_vol)
@@ -509,7 +509,7 @@
 	return ..()
 
 /datum/reagent/medicine/neuraline //injected by neurostimulator implant and medic-only injector
-	name = "Neuraline"
+	name = "Neuraline-神经素"
 	description = "A chemical cocktail tailored to enhance or dampen specific neural processes."
 	color = COLOR_REAGENT_NEURALINE
 	custom_metabolism = REAGENTS_METABOLISM * 2
@@ -522,7 +522,7 @@
 	if(TIMER_COOLDOWN_RUNNING(L, name) || L.stat == DEAD)
 		return
 	if(L.health < H.health_threshold_crit && volume > 3) //If you are in crit, and someone injects at least 3u into you, you will heal 20% of your physical damage instantly.
-		to_chat(L, span_userdanger("You feel a rush of energy as stimulants course through your veins!"))
+		to_chat(L, span_userdanger("你感到一股能量涌遍全身，兴奋剂正在你的血管中奔流！"))
 		L.adjustBruteLoss(-L.getBruteLoss(TRUE) * 0.20)
 		L.adjustFireLoss(-L.getFireLoss(TRUE) * 0.20)
 		L.jitter(10)
@@ -562,7 +562,7 @@
 	return ..()
 
 /datum/reagent/medicine/hyronalin
-	name = "Hyronalin"
+	name = "Hyronalin-海洛那林"
 	description = "Hyronalin is a medicinal drug used to counter the effect of toxin poisoning."
 	color = COLOR_REAGENT_HYRONALIN
 	custom_metabolism = REAGENTS_METABOLISM
@@ -580,7 +580,7 @@
 	L.apply_damages(0, effect_str, effect_str)
 
 /datum/reagent/medicine/arithrazine
-	name = "Arithrazine"
+	name = "Arithrazine-阿里斯嗪"
 	description = "Arithrazine is a component medicine capable of healing minor amounts of toxin poisoning."
 	color = COLOR_REAGENT_ARITHRAZINE
 	custom_metabolism = REAGENTS_METABOLISM
@@ -600,7 +600,7 @@
 	L.apply_damages(effect_str, effect_str, 2*effect_str)
 
 /datum/reagent/medicine/russian_red
-	name = "Russian Red"
+	name = "Russian Red-俄罗斯红"
 	description = "An emergency generic treatment with extreme side effects."
 	color = COLOR_REAGENT_RUSSIAN_RED
 	custom_metabolism = REAGENTS_METABOLISM * 5
@@ -613,7 +613,7 @@
 	if(TIMER_COOLDOWN_RUNNING(L, name) || L.stat == DEAD)
 		return
 	if(L.health < H.health_threshold_crit && volume > 9) //If you are in crit, and someone injects at least 9u into you, you will heal 20% of your physical damage instantly.
-		to_chat(L, span_userdanger("You feel a rush of energy as stimulants course through your veins!"))
+		to_chat(L, span_userdanger("你感到一股能量涌遍全身，兴奋剂正在你的血管中奔流！"))
 		L.adjustBruteLoss(-L.getBruteLoss(TRUE) * 0.20)
 		L.adjustFireLoss(-L.getFireLoss(TRUE) * 0.20)
 		L.jitter(10)
@@ -641,7 +641,7 @@
 	return ..()
 
 /datum/reagent/medicine/alkysine
-	name = "Alkysine"
+	name = "Alkysine-阿尔克辛"
 	description = "Alkysine is a drug used to lessen the damage to neurological and auditory tissue after a catastrophic injury. Can heal brain and ear tissue."
 	color = COLOR_REAGENT_ALKYSINE
 	custom_metabolism = REAGENTS_METABOLISM * 0.25
@@ -666,7 +666,7 @@
 	return ..()
 
 /datum/reagent/medicine/imidazoline
-	name = "Imidazoline"
+	name = "Imidazoline-咪唑啉"
 	description = "Heals eye damage"
 	color = COLOR_REAGENT_IMIDAZOLINE
 	overdose_threshold = REAGENTS_OVERDOSE
@@ -695,7 +695,7 @@
 	return ..()
 
 /datum/reagent/medicine/peridaxon_plus
-	name = "Peridaxon Plus"
+	name = "Peridaxon Plus-强化培多克松"
 	description = "Used to heal severely damaged internal organs in the field. Moderately toxic. Do not self-administer."
 	color = COLOR_REAGENT_PERIDAXON_PLUS
 	overdose_threshold = REAGENTS_OVERDOSE/30
@@ -728,7 +728,7 @@
 	return ..()
 
 /datum/reagent/medicine/bicaridine
-	name = "Bicaridine"
+	name = "Bicaridine-比卡瑞丁"
 	description = "Bicaridine is an analgesic medication and can be used to treat blunt trauma."
 	color = COLOR_REAGENT_BICARIDINE
 	purge_list = list(/datum/reagent/medicine/ryetalyn)
@@ -754,7 +754,7 @@
 	L.apply_damages(effect_str, 3*effect_str, 2*effect_str)
 
 /datum/reagent/medicine/meralyne
-	name = "Meralyne"
+	name = "Meralyne-梅拉琳"
 	description = "Meralyne is a concentrated form of bicaridine and can be used to treat extensive blunt trauma."
 	color = COLOR_REAGENT_MERALYNE
 	overdose_threshold = REAGENTS_OVERDOSE*0.5
@@ -785,7 +785,7 @@
 	return ..()
 
 /datum/reagent/medicine/quickclot
-	name = "Quick Clot"
+	name = "Quick Clot-快速凝血剂"
 	description = "A chemical designed to quickly arrest all sorts of bleeding by encouraging coagulation. Can rectify internal bleeding at cryogenic temperatures."
 	color = COLOR_REAGENT_QUICKCLOT
 	overdose_threshold = REAGENTS_OVERDOSE/2 //Was 4, now 6 //Now 15
@@ -816,7 +816,7 @@
 	return ..()
 
 /datum/reagent/medicine/quickclotplus
-	name = "Quick Clot Plus"
+	name = "Quick Clot Plus-快速凝血剂增强型"
 	description = "A chemical designed to quickly and painfully remove internal bleeding by encouraging coagulation. Should not be self-administered."
 	color = COLOR_REAGENT_QUICKCLOTPLUS
 	overdose_threshold = REAGENTS_OVERDOSE/5 //6u
@@ -835,7 +835,7 @@
 
 /datum/reagent/medicine/quickclotplus/on_mob_delete(mob/living/L, metabolism)
 	if(target_IB)
-		to_chat(L, span_warning("The searing pain in your [target_IB.parent_limb.display_name] returns to a dull ache..."))
+		to_chat(L, span_warning("你[target_IB.parent_limb.display_name]处灼烧般的剧痛减轻为隐隐作痛……"))
 		UnregisterSignal(target_IB, COMSIG_QDELETING)
 		target_IB = null
 
@@ -849,7 +849,7 @@
 		return ..()
 	ticks_left--
 	if(!ticks_left)
-		to_chat(L, span_alert("The searing pain in your [target_IB.parent_limb.display_name] peaks, then slowly fades away entirely."))
+		to_chat(L, span_alert("你[target_IB.parent_limb.display_name]处灼烧般的剧痛达到顶峰，随后慢慢完全消退。"))
 		target_IB.parent_limb.createwound(CUT, target_IB.damage / 2)
 		UnregisterSignal(target_IB, COMSIG_QDELETING)
 		QDEL_NULL(target_IB)
@@ -871,7 +871,7 @@
 		if(target_IB)
 			break
 	if(target_IB)
-		to_chat(body, span_userdanger("The deep ache in your [target_IB.parent_limb.display_name] erupts into searing pain!"))
+		to_chat(body, span_userdanger("你[target_IB.parent_limb.display_name]深处的隐痛骤然爆发为灼烧般的剧痛！"))
 		ticks_left = ticks_to_cure_IB
 
 ///If something else removes the wound before the drug finishes with it, we need to clean references.
@@ -895,7 +895,7 @@
 	return ..()
 
 /datum/reagent/medicine/nanoblood
-	name = "Nanoblood"
+	name = "Nanoblood-纳米血液"
 	description = "A chemical designed to massively boost the body's natural blood restoration rate. Causes fatigue and minor toxic effects."
 	color = COLOR_REAGENT_NANOBLOOD
 	overdose_threshold = REAGENTS_OVERDOSE/5 //6u
@@ -927,7 +927,7 @@
 	return ..()
 
 /datum/reagent/medicine/ultrazine
-	name = "Ultrazine"
+	name = "Ultrazine-超能素"
 	description = "A highly-potent, long-lasting combination CNS and muscle stimulant. Extremely addictive."
 	color = COLOR_REAGENT_ULTRAZINE
 	custom_metabolism = REAGENTS_METABOLISM * 0.0835
@@ -1030,7 +1030,7 @@
 	return ..()
 
 /datum/reagent/medicine/cryoxadone
-	name = "Cryoxadone"
+	name = "Cryoxadone-冷冻剂"
 	description = "A chemical mixture with almost magical healing powers. Its main limitation is that the targets body temperature must be under 170K for it to metabolise correctly."
 	reagent_state = LIQUID
 	color = COLOR_REAGENT_CRYOXADONE
@@ -1046,7 +1046,7 @@
 	return ..()
 
 /datum/reagent/medicine/clonexadone
-	name = "Clonexadone"
+	name = "Clonexadone-克隆克萨酮"
 	description = "A liquid compound similar to that used in the cloning process. Can be used to 'finish' the cloning process when used in conjunction with a cryo tube."
 	color = COLOR_REAGENT_CLONEXADONE
 	taste_description = "muscle"
@@ -1062,7 +1062,7 @@
 	return ..()
 
 /datum/reagent/medicine/rezadone
-	name = "Rezadone"
+	name = "Rezadone-雷扎酮"
 	description = "A powder derived from fish toxin, this substance can effectively treat genetic damage in humanoids, though excessive consumption has side effects."
 	reagent_state = SOLID
 	color = COLOR_REAGENT_REZADONE
@@ -1102,7 +1102,7 @@
 	return ..()
 
 /datum/reagent/medicine/spaceacillin
-	name = "Spaceacillin"
+	name = "Spaceacillin-太空青霉素"
 	description = "An all-purpose antiviral agent."
 	color = COLOR_REAGENT_SPACEACILLIN
 	custom_metabolism = REAGENTS_METABOLISM * 0.05
@@ -1122,7 +1122,7 @@
 	return ..()
 
 /datum/reagent/medicine/polyhexanide
-	name = "Polyhexanide"
+	name = "Polyhexanide-聚己酰胺"
 	description = "A sterilizing agent designed for internal use. Powerful, but dangerous."
 	color = COLOR_REAGENT_POLYHEXANIDE
 	custom_metabolism = REAGENTS_METABOLISM * 2
@@ -1145,7 +1145,7 @@
 	L.apply_damage(2*effect_str, TOX)
 
 /datum/reagent/medicine/larvaway
-	name = "Larvaway"
+	name = "Larvaway-幼虫驱离剂"
 	description = "A proprietary blend of antibiotics and antifungal agents designed to inhibit the growth of xenomorph embryos. Builds up toxicity over time."
 	color = COLOR_REAGENT_LARVAWAY
 	custom_metabolism = REAGENTS_METABOLISM * 0.5
@@ -1175,7 +1175,7 @@
 
 
 /datum/reagent/medicine/ethylredoxrazine	// FUCK YOU, ALCOHOL
-	name = "Ethylredoxrazine"
+	name = "Ethylredoxrazine-乙红氧嗪"
 	description = "A powerful oxidizer that reacts with ethanol."
 	reagent_state = SOLID
 	color = COLOR_REAGENT_ETHYLREDOXRAZINE
@@ -1200,7 +1200,7 @@
 	L.apply_damage(2*effect_str, TOX)
 
 /datum/reagent/hypervene // this isn't under /medicine so things that purge /datum/reagent/medicine like neuro/larval don't purge it
-	name = "Hypervene"
+	name = "Hypervene-超凡"
 	description = "Quickly purges the body of toxin damage, radiation and all other chemicals. Causes significant pain."
 	color = COLOR_REAGENT_HYPERVENE
 	overdose_threshold = REAGENTS_OVERDOSE * 0.5
@@ -1232,7 +1232,7 @@
 
 
 /datum/reagent/medicine/roulettium
-	name = "Roulettium"
+	name = "Roulettium-轮盘素"
 	description = "The concentrated essence of unga. Unsafe to ingest in any quantity"
 	color = COLOR_REAGENT_ROULETTIUM
 	custom_metabolism = REAGENTS_METABOLISM * 0.5
@@ -1249,7 +1249,7 @@
 		L.adjustBruteLoss(1200*effect_str) //the big oof. No, it's not kill or gib, I want them to nugget.
 
 /datum/reagent/medicine/lemoline
-	name = "Lemoline"
+	name = "Lemoline-莱莫林"
 	description = "A concentrated set of powders used to enhance other medicine in chemical recipes. Has no use on its own."
 	reagent_state = LIQUID
 	color = COLOR_REAGENT_LEMOLINE
@@ -1257,7 +1257,7 @@
 	reagent_ui_priority = REAGENT_UI_BASE
 
 /datum/reagent/medicine/bihexajuline
-	name = "Bihexajuline"
+	name = "Bihexajuline-比海克萨朱林"
 	description = "Accelerates natural bone repair in a low temperature environment. Causes severe pain."
 	color = COLOR_REAGENT_BIHEXAJULINE
 	taste_description = "skim milk"
@@ -1290,46 +1290,46 @@
 
 
 /datum/reagent/medicine/research
-	name = "Research precursor" //nothing with this subtype should be added to vendors
+	name = "Research precursor-研究前体" //nothing with this subtype should be added to vendors
 	reagent_state = LIQUID
 	taste_description = "bitterness"
 	reagent_ui_priority = REAGENT_UI_IMMEDIATE
 
 
 /datum/reagent/medicine/research/quietus
-	name = "Quietus"
+	name = "Quietus-寂静"
 	description = "This is a latent poison, designed to quickly and painlessly kill you in the event that you become unable to fight. Never washes out on it's own, must be purged."
 	color = COLOR_REAGENT_QUIETUS
 	custom_metabolism = 0
 	taste_description = "Victory"
 
 /datum/reagent/medicine/research/quietus/on_mob_add(mob/living/L, metabolism)
-	to_chat(L, span_userdanger("You feel like this shot will negatively affect your revival prospects."))
+	to_chat(L, span_userdanger("你感觉这一枪会严重影响你的复活前景。"))
 
 /datum/reagent/medicine/research/quietus/on_mob_life(mob/living/L, metabolism)
 	switch(current_cycle)
 		if(1 to 59)
 			L.adjustStaminaLoss(1*effect_str)
 			if(prob(5))
-				to_chat(L, span_notice("You feel weakened by a poison."))
+				to_chat(L, span_notice("你感到被毒素削弱了。"))
 		if(60)
-			to_chat(L, span_warning("You feel the poison settle into your body."))
+			to_chat(L, span_warning("你感到毒素在体内沉淀。"))
 		if(61 to INFINITY)
 			if(L.stat == UNCONSCIOUS)
 				L.adjustOxyLoss(25*effect_str)
-				to_chat(L, span_userdanger("You fade into blackness as your lungs seize up!"))
+				to_chat(L, span_userdanger("你的肺部痉挛，意识陷入黑暗！"))
 			if(prob(5))
 				L.adjustStaminaLoss(1*effect_str)
 	return ..()
 
 /datum/reagent/medicine/research/quietus/on_mob_delete(mob/living/L, metabolism)
-	to_chat(L, span_danger("You convulse as your body violently rejects the suicide drug!"))
+	to_chat(L, span_danger("你的身体剧烈抽搐，猛烈地排斥着自杀药物！"))
 	L.adjustToxLoss(30*effect_str)
 
 
 
 /datum/reagent/medicine/research/somolent
-	name = "Somolent"
+	name = "Somolent-昏睡"
 	description = "This is a highly potent regenerative drug, designed to heal critically injured personnel. Only functions on unconscious or sleeping people."
 	color = COLOR_REAGENT_SOMOLENT
 	overdose_threshold = REAGENTS_OVERDOSE
@@ -1341,9 +1341,9 @@
 			if(L.stat == UNCONSCIOUS)
 				L.heal_overall_damage(0.4*current_cycle*effect_str, 0.4*current_cycle*effect_str)
 			if(prob(20) && L.stat != UNCONSCIOUS)
-				to_chat(L, span_notice("You feel as though you should be sleeping for the medicine to work."))
+				to_chat(L, span_notice("你感觉应该睡一觉才能让药物生效。"))
 		if(25)
-			to_chat(L, span_notice("You feel very sleepy all of a sudden."))
+			to_chat(L, span_notice("你突然感到非常困倦。"))
 		if(26 to INFINITY)
 			if(L.stat == UNCONSCIOUS)
 				L.heal_overall_damage(10*effect_str, 10*effect_str)
@@ -1357,7 +1357,7 @@
 	holder.remove_reagent(/datum/reagent/medicine/research/somolent, 1)
 
 /datum/reagent/medicalnanites
-	name = "Medical nanites"
+	name = "Medical nanites-医疗纳米机器人"
 	description = "These are a batch of construction nanites altered for in-vivo replication. They can heal wounds using the iron present in the bloodstream. Medical care is recommended during injection."
 	color = COLOR_REAGENT_MEDICALNANITES
 	custom_metabolism = 0
@@ -1379,7 +1379,7 @@
 	purge_rate = 5
 
 /datum/reagent/medicalnanites/on_mob_add(mob/living/L, metabolism)
-	to_chat(L, span_userdanger("You feel like you should stay near medical help until this shot settles in."))
+	to_chat(L, span_userdanger("你感觉应该待在医疗救助点附近，直到这针药剂完全生效。"))
 
 /datum/reagent/medicalnanites/on_mob_life(mob/living/L, metabolism)
 	switch(current_cycle)
@@ -1389,9 +1389,9 @@
 			L.adjustStaminaLoss(1.5 * effect_str)
 			L.reagents.add_reagent(/datum/reagent/medicalnanites, 0.4)
 			if(prob(5))
-				to_chat(L, span_notice("You feel intense itching!"))
+				to_chat(L, span_notice("你感到剧烈的瘙痒！"))
 		if(76)
-			to_chat(L, span_warning("The pain rapidly subsides. Looks like they've adapted to you."))
+			to_chat(L, span_warning("疼痛迅速消退。看来它们已经适应你了。"))
 		if(77 to INFINITY)
 			if(volume < 30) //smol injection will self-replicate up to 30u using 240u of blood.
 				L.reagents.add_reagent(/datum/reagent/medicalnanites, 0.15)
@@ -1408,13 +1408,13 @@
 				L.heal_overall_damage(3 * effect_str, 0)
 				holder.remove_reagent(/datum/reagent/medicalnanites, 0.5)
 				if(prob(10))
-					to_chat(L, span_notice("Your cuts and bruises begin to scab over rapidly!"))
+					to_chat(L, span_notice("你的伤口和瘀伤开始迅速结痂！"))
 
 			if(volume > 5 && (L.getFireLoss(organic_only = TRUE) >= 3)) // same but for burn
 				L.heal_overall_damage(0, 3 * effect_str)
 				holder.remove_reagent(/datum/reagent/medicalnanites, 0.5)
 				if(prob(10))
-					to_chat(L, span_notice("Your burns begin to slough off, revealing healthy tissue!"))
+					to_chat(L, span_notice("你的烧伤开始脱落，露出了健康的组织！"))
 	return ..()
 
 /datum/reagent/medicalnanites/overdose_process(mob/living/L, metabolism)
@@ -1422,16 +1422,16 @@
 	holder.remove_reagent(/datum/reagent/medicalnanites, 0.25)
 
 /datum/reagent/medicalnanites/on_mob_delete(mob/living/L, metabolism)
-	to_chat(L, span_userdanger("Your nanites have been fully purged! They no longer affect you."))
+	to_chat(L, span_userdanger("你的纳米机器人已被完全清除！它们不再影响你。"))
 
 /datum/reagent/medicine/research/stimulon
-	name = "Stimulon"
+	name = "Stimulon-兴奋剂"
 	description = "A chemical designed to boost running by driving your body beyond it's normal limits. Can have unpredictable side effects, caution recommended."
 	color = COLOR_REAGENT_STIMULON
 	custom_metabolism = 0
 
 /datum/reagent/medicine/research/stimulon/on_mob_add(mob/living/L, metabolism)
-	to_chat(L, span_userdanger("You feel jittery and fast! Time to MOVE!"))
+	to_chat(L, span_userdanger("你感到焦躁不安，动作变快了！是时候行动了！"))
 	. = ..()
 	L.add_movespeed_modifier(type, TRUE, 0, NONE, TRUE, -1)
 	L.adjustCloneLoss(10*effect_str)
@@ -1439,7 +1439,7 @@
 /datum/reagent/medicine/research/stimulon/on_mob_delete(mob/living/L, metabolism)
 	L.remove_movespeed_modifier(type)
 	L.Paralyze(2 SECONDS)
-	to_chat(L, span_warning("You reel as the stimulant departs your bloodstream!"))
+	to_chat(L, span_warning("你感到一阵眩晕，兴奋剂的效果正从血液中消退！"))
 
 /datum/reagent/medicine/research/stimulon/on_mob_life(mob/living/L, metabolism)
 	L.adjustStaminaLoss(1*effect_str)
@@ -1451,13 +1451,13 @@
 		L.reagents.add_reagent(/datum/reagent/medicine/research/stimulon, 0.5)
 	switch(current_cycle)
 		if(20)//avg cloneloss of 1/tick and 10 additional units made
-			to_chat(L, span_userdanger("You start to ache and cramp as your muscles wear out. You should probably remove this drug soon."))
+			to_chat(L, span_userdanger("你开始感到疼痛和痉挛，因为你的肌肉已经疲惫不堪。你最好尽快停用这种药物。"))
 		if (21 to INFINITY)
 			L.jitter(5)
 	return ..()
 
 /datum/reagent/medicine/regrow
-	name = "Re-grow"
+	name = "Re-grow-再生"
 	description = "Re-grow is rare and unusual drug that stimulates the rapid (and horrifically painful) regeneration of missing limbs."
 	color = COLOR_REAGENT_SYNAPTIZINE
 	overdose_threshold = REAGENTS_OVERDOSE/5
@@ -1475,7 +1475,7 @@
 			continue
 		limb_regrown = TRUE
 		limb.biotize()
-		to_chat(human, span_userdanger("You feel unbelievable pain as your [limb.display_name] regrows before your eyes!"))
+		to_chat(human, span_userdanger("你感到难以置信的剧痛，眼睁睁看着你的[limb.display_name]重新长了出来！"))
 		human.jitter(10)
 		human.Paralyze(1 SECONDS)
 		human.adjustStaminaLoss(20)
@@ -1499,7 +1499,7 @@
 	L.apply_damages(effect_str, effect_str, effect_str * 4)
 
 /datum/reagent/medicine/experimental_medical_salve
-	name = "Experimental Medical Salve"
+	name = "Experimental Medical Salve-实验性医疗药膏"
 	description = "A new drug made by BioCourse Pharmaceuticals. Quickly restores health and stamina initially, then lesser healing before purging itself."
 	color = COLOR_REAGENT_EMSALVE
 	custom_metabolism = REAGENTS_METABOLISM * 0.1 //since it purges itself this prevents people from using one unit to spam the early healing

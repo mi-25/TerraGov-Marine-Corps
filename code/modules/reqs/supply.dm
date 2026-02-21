@@ -17,7 +17,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	var/faction = FACTION_TERRAGOV
 
 /obj/item/paper/manifest
-	name = "Supply Manifest"
+	name = "补给清单"
 
 /obj/docking_port/stationary/supply
 	id = "supply_home"
@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	height = 5
 
 /obj/docking_port/mobile/supply
-	name = "supply shuttle"
+	name = "补给穿梭机"
 	id = SHUTTLE_SUPPLY
 	callTime = 15 SECONDS
 
@@ -208,8 +208,8 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 			qdel(AM)
 
 /obj/item/supplytablet
-	name = "ASRS tablet"
-	desc = "A tablet for an Automated Storage and Retrieval System"
+	name = "ASRS平板"
+	desc = "自动化存储与检索系统平板电脑"
 	icon_state = "req_tablet_off"
 	req_access = list(ACCESS_MARINE_CARGO)
 	equip_slot_flags = ITEM_SLOT_POCKET
@@ -235,8 +235,8 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	return SU.interact(user)
 
 /obj/machinery/computer/supplycomp
-	name = "ASRS console"
-	desc = "A console for an Automated Storage and Retrieval System"
+	name = "ASRS控制台"
+	desc = "自动化存储与检索系统控制台"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	screen_overlay = "supply"
@@ -481,7 +481,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 				return
 			if(is_mainship_level(supply_shuttle.z))
 				if (!supply_shuttle.check_blacklist())
-					to_chat(usr, "For safety reasons, the Automated Storage and Retrieval System cannot store live, friendlies, classified nuclear weaponry or homing beacons.")
+					to_chat(usr, "出于安全考虑，自动化存储检索系统无法存放活体生物、友军单位、机密核武器或归航信标。")
 					playsound(supply_shuttle.return_center_turf(), 'sound/machines/buzz-two.ogg', 50, 0)
 				else
 					playsound(supply_shuttle.return_center_turf(), 'sound/machines/elevator_move.ogg', 50, 0)
@@ -545,7 +545,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	return SSpoints.request_shopping_cart[user.ckey]
 
 /obj/machinery/computer/ordercomp
-	name = "Supply ordering console"
+	name = "补给订购控制台"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	screen_overlay = "request"
@@ -564,8 +564,8 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	return SU.interact(user)
 
 /obj/item/storage/backpack/marine/radiopack
-	name = "\improper TGMC radio operator backpack"
-	desc = "A backpack that resembles the ones old-age radio operator marines would use. It has a supply ordering console installed on it, and a retractable antenna to receive supply drops."
+	name = "\improper 地球政府殖民地海军陆战队无线电操作员背包"
+	desc = "一款仿照旧时代无线电操作员陆战队员使用的背包。它内置了补给订购控制台，并配有可伸缩天线以接收补给空投。"
 	icon_state = "radiopack"
 	worn_icon_state = "radiopack"
 	///Var for the window pop-up
@@ -598,7 +598,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	var/obj/vehicle/sealed/armored/tanktype = veh_ui.current_veh_type
 	var/is_assault = initial(tanktype.armored_flags) & ARMORED_PURCHASABLE_ASSAULT
 	if(GLOB.purchased_tanks[user.faction]?["[is_assault]"])
-		to_chat(usr, span_danger("A vehicle of this type has already been purchased!"))
+		to_chat(usr, span_danger("已购买同类型载具！"))
 		return
 	if(!GLOB.purchased_tanks[user.faction])
 		GLOB.purchased_tanks[user.faction] = list()
@@ -800,7 +800,7 @@ GLOBAL_LIST_EMPTY(purchased_tanks)
 			var/obj/vehicle/sealed/armored/tank_type = newtype
 			var/is_assault = initial(tank_type.armored_flags) & ARMORED_PURCHASABLE_ASSAULT
 			if(GLOB.purchased_tanks[usr.faction]?["[is_assault]"])
-				to_chat(usr, span_danger("A vehicle of this type has already been purchased!"))
+				to_chat(usr, span_danger("已购买同类型载具！"))
 				return
 			current_veh_type = newtype
 			current_primary = null

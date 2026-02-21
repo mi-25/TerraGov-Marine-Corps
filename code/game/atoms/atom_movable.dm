@@ -249,7 +249,7 @@
 	SHOULD_CALL_PARENT(TRUE)
 	if(!(impact_flags & ZIMPACT_NO_MESSAGE))
 		visible_message(
-			span_danger("[src] crashes into [impacted_turf]!"),
+			span_danger("[src] 撞上了 [impacted_turf]！"),
 			span_userdanger("You crash into [impacted_turf]!"),
 		)
 	if(!(impact_flags & ZIMPACT_NO_SPIN))
@@ -348,7 +348,7 @@
 		destination = get_step_multiz(start, direction)
 		if(!destination)
 			if(z_move_flags & ZMOVE_FEEDBACK)
-				to_chat(rider || src, span_warning("There's nowhere to go in that direction!"))
+				to_chat(rider || src, span_warning("那个方向无路可走！"))
 			return FALSE
 	if(SEND_SIGNAL(src, COMSIG_CAN_Z_MOVE, start, destination) & COMPONENT_CANT_Z_MOVE)
 		return FALSE
@@ -357,13 +357,13 @@
 	if(z_move_flags & ZMOVE_CAN_FLY_CHECKS && !((pass_flags & Z_FLYING) == Z_FLYING) && get_gravity())
 		if(z_move_flags & ZMOVE_FEEDBACK)
 			if(rider)
-				to_chat(rider, span_warning("[src] [p_are()] incapable of flight."))
+				to_chat(rider, span_warning("[src] [p_are()] 无法飞行。"))
 			else
-				to_chat(src, span_warning("You are not Superman."))
+				to_chat(src, span_warning("你不是超人。"))
 		return FALSE
 	if((!(z_move_flags & ZMOVE_IGNORE_OBSTACLES) && !(start.zPassOut(direction) && destination.zPassIn(direction))) || (!(z_move_flags & ZMOVE_ALLOW_ANCHORED) && anchored))
 		if(z_move_flags & ZMOVE_FEEDBACK)
-			to_chat(rider || src, span_warning("You couldn't move there!"))
+			to_chat(rider || src, span_warning("你无法移动到那里！"))
 		return FALSE
 	return destination //used by some child types checks and zMove()
 
@@ -1077,7 +1077,7 @@
 						qdel(Obj)
 					CHECK_TICK
 				if(!i)
-					to_chat(usr, "No objects of this type exist")
+					to_chat(usr, "不存在此类型的物体")
 					return
 			if("Type and subtypes")
 				for(var/obj/Obj in world)
@@ -1086,7 +1086,7 @@
 						qdel(Obj)
 					CHECK_TICK
 				if(!i)
-					to_chat(usr, "No objects of this type exist")
+					to_chat(usr, "不存在此类型的物体")
 					return
 		log_admin("[key_name(usr)] deleted all objects of type[strict ? "" : " and subtypes"] of [O_type] ([i] objects deleted).")
 		message_admins("[ADMIN_TPMONTY(usr)] deleted all objects of type[strict ? "" : " and subtypes"] of [O_type] ([i] objects deleted).")
@@ -1273,7 +1273,7 @@
 			M.set_glide_size(glide_size)
 		log_combat(src, M, "grabbed", addition = "passive grab")
 		if(!suppress_message)
-			visible_message(span_warning("[src] has grabbed [M] passively!"))
+			visible_message(span_warning("[src] 已被动抓住 [M]！"))
 	else
 		pulling.set_glide_size(glide_size)
 	return TRUE
@@ -1486,13 +1486,13 @@
 /atom/movable/proc/force_push(atom/movable/pushed_atom, force = move_force, direction, silent = FALSE)
 	. = pushed_atom.force_pushed(src, force, direction)
 	if(!silent && .)
-		visible_message(span_warning("[src] forcefully pushes against [pushed_atom]!"), span_warning("You forcefully push against [pushed_atom]!"))
+		visible_message(span_warning("[src] 用力推开了 [pushed_atom]！"), span_warning("You forcefully push against [pushed_atom]!"))
 
 ///returns bool for if we want to get handle move crushing, return is bool if we can move an anchored obj
 /atom/movable/proc/move_crush(atom/movable/crushed_atom, force = move_force, direction, silent = FALSE)
 	. = crushed_atom.move_crushed(src, force, direction)
 	if(!silent && .)
-		visible_message(span_danger("[src] crushes past [crushed_atom]!"), span_danger("You crush [crushed_atom]!"))
+		visible_message(span_danger("[src] 碾过了 [crushed_atom]！"), span_danger("You crush [crushed_atom]!"))
 
 ///returns bool for if we want to get crushed
 /atom/movable/proc/move_crushed(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)

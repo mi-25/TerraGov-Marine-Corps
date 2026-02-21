@@ -43,17 +43,17 @@
 /mob/proc/say_dead(message)
 	if(!check_rights(R_ADMIN, FALSE))
 		if(!GLOB.dsay_allowed)
-			to_chat(src, span_warning("Deadchat is globally muted"))
+			to_chat(src, span_warning("全局聊天已静音"))
 			return
 		if(client)
 			if(client.prefs.muted & MUTE_DEADCHAT)
-				to_chat(src, span_danger("You cannot talk in deadchat (muted)."))
+				to_chat(src, span_danger("你无法在死亡频道发言（已禁言）。"))
 				return
 			if(client?.prefs && !(client.prefs.toggles_chat & CHAT_DEAD))
-				to_chat(src, span_warning("You have deadchat muted."))
+				to_chat(src, span_warning("你已屏蔽死亡聊天。"))
 				return
 			if(is_banned_from(ckey, "Deadchat"))
-				to_chat(src, span_warning("You are banned from deadchat."))
+				to_chat(src, span_warning("你已被禁止使用死亡聊天频道。"))
 				return
 			if(client.handle_spam_prevention(message, MUTE_DEADCHAT))
 				return

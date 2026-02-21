@@ -1,6 +1,6 @@
 //MARINE COMMAND CLOSET
 /obj/structure/closet/secure_closet/captain
-	name = "captain's locker"
+	name = "舰长储物柜"
 	req_access = list(ACCESS_MARINE_CAPTAIN)
 	icon_state = "secure_locked_commander"
 	icon_closed = "secure_unlocked_commander"
@@ -24,16 +24,16 @@
 	new /obj/item/storage/holster/belt/mateba/officer/full(src)
 
 /obj/structure/closet/secure_closet/securecom
-	name = "captain's secure box"
+	name = "舰长的保险箱"
 	req_access = list(ACCESS_MARINE_CAPTAIN)
-	desc = "You could probably get court-marshaled just by looking at this..."
+	desc = "光是看一眼这个，你恐怕就要被送上军事法庭了……"
 	icon_state = "commander_safe"
 	icon_opened = "commander_safe_open"
 	icon_closed = "commander_safe"
 	icon_locked = "commander_safe"
 
 /obj/structure/closet/secure_closet/staff_officer
-	name = "staff officer's locker"
+	name = "参谋军官储物柜"
 	req_access = list(ACCESS_MARINE_LOGISTICS)
 	icon_state = "secure_locked_staff"
 	icon_closed = "secure_unlocked_staff"
@@ -59,7 +59,7 @@
 	new /obj/item/storage/backpack/marine/satchel/officer_cloak(src)
 
 /obj/structure/closet/secure_closet/pilot_officer
-	name = "pilot officer's locker"
+	name = "飞行员的储物柜"
 	req_access = list(ACCESS_MARINE_PILOT)
 	icon_state = "secure_locked_pilot"
 	icon_closed = "secure_unlocked_pilot"
@@ -87,7 +87,7 @@
 
 /**********************Military Police Gear**************************/
 /obj/structure/closet/secure_closet/military_police
-	name = "military police's locker"
+	name = "宪兵的储物柜"
 	req_access = list(ACCESS_MARINE_BRIG)
 	icon_state = "secure_locked_police"
 	icon_closed = "secure_unlocked_police"
@@ -116,7 +116,7 @@
 
 //MARINE SHIP MEDICAL CLOSET
 /obj/structure/closet/secure_closet/medical_doctor
-	name = "medical doctor's locker"
+	name = "医生的储物柜"
 	req_access = list(ACCESS_MARINE_MEDBAY)
 	icon_state = "secure_locked_medical"
 	icon_closed = "secure_unlocked_medical"
@@ -145,7 +145,7 @@
 
 //ALAMAYER CARGO CLOSET
 /obj/structure/closet/secure_closet/req_officer
-	name = "\improper RO's Locker"
+	name = "\improper 补给军官储物柜"
 	req_access = list(ACCESS_MARINE_RO)
 	icon_state = "secure_locked_cargo"
 	icon_closed = "secure_unlocked_cargo"
@@ -171,7 +171,7 @@
 	new /obj/item/flash(src)
 
 /obj/structure/closet/secure_closet/shiptech
-	name = "Requisitions' Locker"
+	name = "补给储物柜"
 	req_access = list(ACCESS_MARINE_CARGO)
 	icon_state = "secure_locked_cargo"
 	icon_closed = "secure_unlocked_cargo"

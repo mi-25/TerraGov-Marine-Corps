@@ -1,16 +1,16 @@
 /// Breaks the targets bones
 /datum/smite/boneless
-	name = "Boneless"
+	name = "无骨"
 
 /datum/smite/boneless/effect(client/user, mob/living/carbon/human/target)
 	. = ..()
 
 	if (!ishuman(target))
-		to_chat(user, span_warning("This must be used on a human."), confidential = TRUE)
+		to_chat(user, span_warning("这必须对人类使用。"), confidential = TRUE)
 		return
 	
 	var/timer = 2 SECONDS
-	to_chat(target,span_userdanger("Your bones break in a spray of blood, sending bone fragments everywhere!"))
+	to_chat(target,span_userdanger("你的骨头在血雾中碎裂，骨片四处飞溅！"))
 	for(var/datum/limb/limb_to_break AS in target.limbs)
 		if(limb_to_break.limb_status & (LIMB_BROKEN | LIMB_DESTROYED | LIMB_AMPUTATED))
 			continue

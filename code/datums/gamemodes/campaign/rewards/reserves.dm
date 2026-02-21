@@ -1,6 +1,6 @@
 /datum/campaign_asset/strategic_reserves
 	name = "Strategic Reserve"
-	desc = "Emergency reserve forces"
+	desc = "紧急预备队"
 	detailed_desc = "A strategic reserve force is activated to bolster your numbers, increasing your active attrition significantly. Additionally, the respawn delay for your team is reduced by 90 seconds. Can only be used when the opponent has initiated a mission, and only once per campaign."
 	ui_icon = "reserve_force"
 	uses = 1
@@ -15,10 +15,10 @@
 	var/datum/game_mode/hvh/campaign/mode = SSticker.mode
 	var/datum/campaign_mission/current_mission = mode.current_mission
 	if(current_mission.mission_state != MISSION_STATE_ACTIVE) //we specifically want ONLY the active state, not the new state
-		to_chat(faction.faction_leader, span_warning("You cannot call in the strategic reserve before the mission starts!"))
+		to_chat(faction.faction_leader, span_warning("在任务开始前，你无法呼叫战略预备队！"))
 		return TRUE
 	if(current_mission.hostile_faction != faction.faction)
-		to_chat(faction.faction_leader, span_warning("You can only call in the strategic reserve when defending!"))
+		to_chat(faction.faction_leader, span_warning("你只能在防守时呼叫战略预备队！"))
 		return TRUE
 
 /datum/campaign_asset/strategic_reserves/activated_effect()
@@ -31,7 +31,7 @@
 
 /datum/campaign_asset/tactical_reserves
 	name = "Rapid reserves"
-	desc = "Reserves are able to immediately deploy"
+	desc = "预备队可立即部署"
 	detailed_desc = "Tactical reserves undergo emergency rapid mobilisation to bolster your forces. All currently dead players on your team can immediately respawn, if attrition is available."
 	ui_icon = "respawn"
 	uses = 1
@@ -45,7 +45,7 @@
 	var/datum/game_mode/hvh/campaign/mode = SSticker.mode
 	var/datum/campaign_mission/current_mission = mode.current_mission
 	if(current_mission.mission_state != MISSION_STATE_ACTIVE) //we specifically want ONLY the active state, not the new state
-		to_chat(faction.faction_leader, span_warning("You cannot call in tactical reserve before the mission starts!"))
+		to_chat(faction.faction_leader, span_warning("任务开始前无法呼叫战术预备队！"))
 		return TRUE
 
 /datum/campaign_asset/tactical_reserves/activated_effect()
@@ -60,7 +60,7 @@
 		mode.respawn_timers[candidate.ckey] = null
 		mode.player_respawn(candidate)
 
-		to_chat(candidate, "<span class='warning'>Tactical reserves mobilised. You can now respawn immediately if possible.<spawn>")
+		to_chat(candidate, "<span class='warning'>战术预备队已动员。如果可能，你现在可以立即重生。<spawn>")
 		candidate.playsound_local(null, 'sound/ambience/votestart.ogg', 50)
 
 

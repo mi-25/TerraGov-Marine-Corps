@@ -2,7 +2,7 @@
 
 
 /obj/machinery/bodyscanner
-	name = "Body Scanner"
+	name = "身体扫描仪"
 	icon = 'icons/obj/machines/cryogenics.dmi'
 	icon_state = "body_scanner"
 	density = TRUE
@@ -66,10 +66,10 @@
 	if(!ishuman(target) || !ishuman(user) || user.incapacitated(TRUE))
 		return
 	if(occupant)
-		to_chat(user, span_boldnotice("The scanner is already occupied!"))
+		to_chat(user, span_boldnotice("扫描仪已被占用！"))
 		return
 	if(target.abiotic())
-		to_chat(user, span_boldnotice("Subject cannot have abiotic items on."))
+		to_chat(user, span_boldnotice("受试者不能穿戴非生物物品。"))
 		return
 	target.forceMove(src)
 	occupant = target
@@ -123,7 +123,7 @@
 	if(.)
 		return
 	if(occupant)
-		to_chat(user, span_warning("The scanner is already occupied!"))
+		to_chat(user, span_warning("扫描仪已被占用！"))
 		return
 
 	var/mob/grabbed_mob
@@ -132,7 +132,7 @@
 	else if(istype(grab.grabbed_thing, /obj/structure/closet/bodybag/cryobag))
 		var/obj/structure/closet/bodybag/cryobag/cryobag = grab.grabbed_thing
 		if(!cryobag.bodybag_occupant)
-			to_chat(user, span_warning("The stasis bag is empty!"))
+			to_chat(user, span_warning("停滞袋是空的！"))
 			return
 		grabbed_mob = cryobag.bodybag_occupant
 		cryobag.open()
@@ -142,7 +142,7 @@
 		return
 
 	if(grabbed_mob.abiotic())
-		to_chat(user, span_warning("Subject cannot have abiotic items on."))
+		to_chat(user, span_warning("受试者不能穿戴非生化物品。"))
 		return
 
 	grabbed_mob.forceMove(src)
@@ -154,11 +154,11 @@
 
 /obj/machinery/bodyscanner/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(!occupant)
-		to_chat(xeno_attacker, span_xenowarning("There is nothing of interest in there."))
+		to_chat(xeno_attacker, span_xenowarning("里面没什么值得注意的东西。"))
 		return
 	if(xeno_attacker.status_flags & INCORPOREAL || xeno_attacker.do_actions)
 		return
-	visible_message(span_warning("[xeno_attacker] begins to pry the [src]'s cover!"), 3)
+	visible_message(span_warning("[xeno_attacker] 开始撬开 [src] 的盖子！"), 3)
 	playsound(src,'sound/effects/metal_creaking.ogg', 25, 1)
 	if(!do_after(xeno_attacker, 2 SECONDS))
 		return
@@ -189,7 +189,7 @@
 			qdel(src)
 
 /obj/machinery/computer/body_scanconsole
-	name = "Body Scanner Console"
+	name = "身体扫描仪控制台"
 	icon = 'icons/obj/machines/cryogenics.dmi'
 	icon_state = "body_scannerconsole"
 	screen_overlay = "body_scannerconsole_emissive"

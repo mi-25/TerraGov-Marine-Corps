@@ -8,8 +8,8 @@ you're looking back on the different shotgun projectiles available. In short of 
 one type of shotgun ammo, but I think it helps in referencing it. ~N
 */
 /obj/item/ammo_magazine/shotgun
-	name = "box of 12 gauge shotgun slugs"
-	desc = "A box filled with heavy shotgun shells. A timeless classic. 12 Gauge."
+	name = "一盒12号霰弹枪独头弹"
+	desc = "装满重型霰弹枪弹的盒子。永恒的经典。12号口径。"
 	icon_state = "slugs"
 	icon = 'icons/obj/items/ammo/shotgun.dmi'
 	default_ammo = /datum/ammo/bullet/shotgun/slug
@@ -19,50 +19,50 @@ one type of shotgun ammo, but I think it helps in referencing it. ~N
 	icon_state_mini = "slugs"
 
 /obj/item/ammo_magazine/shotgun/incendiary
-	name = "box of 12 gauge incendiary slugs"
-	desc = "A box filled with self-detonating incendiary shotgun rounds. 12 Gauge."
+	name = "12号口径燃烧独头弹盒"
+	desc = "一个装满自爆燃烧霰弹枪弹药的盒子。12号口径。"
 	icon_state = "incendiary"
 	default_ammo = /datum/ammo/bullet/shotgun/incendiary
 	icon_state_mini = "incendiary"
 
 /obj/item/ammo_magazine/shotgun/buckshot
-	name = "box of 12 gauge buckshot shells"
-	desc = "A box filled with buckshot spread shotgun shells. 12 Gauge."
+	name = "12号鹿弹弹匣"
+	desc = "一个装满鹿弹霰弹枪弹的盒子。12号口径。"
 	icon_state = "buckshot"
 	default_ammo = /datum/ammo/bullet/shotgun/buckshot
 	icon_state_mini = "buckshot"
 
 /obj/item/ammo_magazine/shotgun/flechette
-	name = "box of 12 gauge flechette shells"
-	desc = "A box filled with flechette shotgun shells. 12 Gauge."
+	name = "12号霰弹箭弹箱"
+	desc = "装满霰弹枪箭弹的弹药箱。12号口径。"
 	icon_state = "flechette"
 	default_ammo = /datum/ammo/bullet/shotgun/flechette
 	icon_state_mini = "flechette"
 
 /obj/item/ammo_magazine/shotgun/beanbag
-	name = "box of 12 gauge beanbag slugs"
-	desc = "A box filled with beanbag shotgun shells used for non-lethal crowd control. 12 Gauge."
+	name = "12号口径豆袋弹盒"
+	desc = "一个装满豆袋弹霰弹枪弹的盒子，用于非致命人群控制。12号口径。"
 	icon_state = "beanbag"
 	default_ammo = /datum/ammo/bullet/shotgun/beanbag
 	icon_state_mini = "beanbag"
 
 /obj/item/ammo_magazine/shotgun/tracker
-	name = "box of 12 gauge tracker shells"
-	desc = "A box filled with tracker shotgun shells. 12 Gauge."
+	name = "12号径追踪弹弹匣"
+	desc = "装满追踪者霰弹枪弹的盒子。12号口径。"
 	icon_state = "tracking"
 	default_ammo = /datum/ammo/bullet/shotgun/tracker
 	icon_state_mini = "tracking"
 
 /obj/item/ammo_magazine/shotgun/blank
-	name = "box of 12 gauge blank shells"
-	desc = "A box filled with blank shotgun shells. 12 Gauge."
+	name = "12号口径空包弹盒"
+	desc = "装满空包弹的霰弹枪弹盒。12号口径。"
 	icon_state = "blank"
 	default_ammo = /datum/ammo/bullet/shotgun/blank
 	icon_state_mini = "blank"
 
 /obj/item/ammo_magazine/rifle/bolt
-	name = "box of 7.62x54mmR rifle rounds"
-	desc = "A box filled with rifle bullets."
+	name = "7.62x54mmR 步枪弹匣盒"
+	desc = "装满步枪弹道的板条箱。"
 	icon_state = "7.62" //Thank you Alterist
 	icon = 'icons/obj/items/ammo/packet.dmi'
 	default_ammo = /datum/ammo/bullet/sniper/svd
@@ -72,8 +72,8 @@ one type of shotgun ammo, but I think it helps in referencing it. ~N
 	icon_state_mini = "mosin"
 
 /obj/item/ammo_magazine/rifle/boltclip //Nearly 1:1 copy of above
-	name = "clip of 7.62x54mmR rifle rounds"
-	desc = "A Disposible Stripper clip filled with rifle bullets."
+	name = "7.62x54mmR 步枪弹匣"
+	desc = "一个装满步枪弹道的可抛弃式弹夹。"
 	icon_state = "clip"
 	default_ammo = /datum/ammo/bullet/sniper/svd
 	caliber = CALIBER_762X54
@@ -82,8 +82,8 @@ one type of shotgun ammo, but I think it helps in referencing it. ~N
 	icon_state_mini = "clips"
 
 /obj/item/ammo_magazine/rifle/martini
-	name = "box of .557/440 rifle rounds"
-	desc = "A box filled with rifle bullets."
+	name = "一盒 .557/440 步枪弹"
+	desc = "装满步枪弹道的板条箱。"
 	icon_state = ".557"
 	icon = 'icons/obj/items/ammo/packet.dmi'
 	default_ammo = /datum/ammo/bullet/sniper/martini
@@ -93,8 +93,8 @@ one type of shotgun ammo, but I think it helps in referencing it. ~N
 	icon_state_mini = "martini"
 
 /obj/item/ammo_magazine/pistol/derringer
-	name = "box of .40 rimfire pistol rounds"
-	desc = "A box filled with pistol bullets."
+	name = ".40 边缘发火手枪弹盒"
+	desc = "装满手枪弹道的盒子。"
 	icon_state = "derringer"
 	icon = 'icons/obj/items/ammo/packet.dmi'
 	default_ammo = /datum/ammo/bullet/pistol/superheavy/derringer
@@ -104,8 +104,8 @@ one type of shotgun ammo, but I think it helps in referencing it. ~N
 	icon_state_mini = "ammo_packet"
 
 /obj/item/ammo_magazine/shotgun/mbx900
-	name = "box of .410 sabot shells"
-	desc = "A box filled with .410 sabot rounds."
+	name = ".410 破甲弹盒"
+	desc = "一个装满 .410 脱壳弹的盒子。"
 	icon_state = "mbx900_sabot"
 	default_ammo = /datum/ammo/bullet/shotgun/mbx900_sabot
 	caliber = CALIBER_410
@@ -114,30 +114,30 @@ one type of shotgun ammo, but I think it helps in referencing it. ~N
 	icon_state_mini = "mbx900_sabot"
 
 /obj/item/ammo_magazine/shotgun/mbx900/buckshot
-	name = "box of .410 buckshot shells"
-	desc = "A box filled with .410 buckshot rounds."
+	name = ".410鹿弹弹匣"
+	desc = "一个装满.410鹿弹的盒子。"
 	icon_state = "mbx900_buckshot"
 	default_ammo = /datum/ammo/bullet/shotgun/mbx900_buckshot
 	icon_state_mini = "mbx900_buckshot"
 
 /obj/item/ammo_magazine/shotgun/mbx900/tracking
-	name = "box of .410 tracker shells"
-	desc = "A box filled with .410 tracker rounds."
+	name = ".410追踪弹盒"
+	desc = "一个装满 .410 追踪弹的盒子。"
 	icon_state = "mbx900_tracker"
 	default_ammo = /datum/ammo/bullet/shotgun/mbx900_tracker
 	icon_state_mini = "mbx900_tracker"
 
 /obj/item/ammo_magazine/shotgun/heavy_buckshot
-	name = "box of 6 gauge buckshot shells"
-	desc = "A box filled with buckshot spread shotgun shells. 6 Gauge."
+	name = "6号鹿弹弹匣"
+	desc = "一个装满鹿弹散布霰弹枪弹的盒子。6号口径。"
 	caliber = CALIBER_6G
 	icon_state = "heavy_shotgun_buckshot"
 	default_ammo = /datum/ammo/bullet/shotgun/heavy_buckshot
 	icon_state_mini = "buckshot_heavy"
 
 /obj/item/ammo_magazine/shotgun/barrikada
-	name = "box of 6 gauge 'Barrikada' shells"
-	desc = "A box filled with high velocity shotgun slugs nicknamed 'Barrikada'. Rated to break through basically everything up to including tank engines. 6 Gauge."
+	name = "一盒6号口径'巴里卡达'霰弹"
+	desc = "一个装满高速霰弹枪独头弹的盒子，绰号'巴里卡达'。据称能击穿几乎所有东西，包括坦克引擎。6号口径。"
 	caliber = CALIBER_6G
 	icon_state = "heavy_shotgun_barrikada"
 	default_ammo = /datum/ammo/bullet/shotgun/barrikada_slug

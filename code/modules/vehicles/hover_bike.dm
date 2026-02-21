@@ -1,6 +1,6 @@
 /obj/vehicle/ridden/hover_bike
-	name = "hover bike"
-	desc = "A SOM light hovercraft. Used to swiftly carry up to 2 soldiers over the roughest of terrain, or light defences. Is typically armed with a pair of forwarded mounted weapons. Favoured for rapid assaults."
+	name = "悬浮摩托"
+	desc = "火星之子轻型悬浮载具。用于在崎岖地形或轻型防御工事上快速运送最多2名士兵。通常配备一对前向固定武器。适用于快速突击。"
 	icon = 'icons/obj/vehicles/hover_bike.dmi'
 	icon_state = "hover_bike"
 	max_integrity = 325

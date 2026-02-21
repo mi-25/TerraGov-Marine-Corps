@@ -1,6 +1,6 @@
 /obj/item/storage/pill_bottle/dice
-	name = "pack of dice"
-	desc = "It's a small container with dice inside."
+	name = "一包骰子"
+	desc = "这是一个装有骰子的小容器。"
 
 /obj/item/storage/pill_bottle/dice/PopulateContents()
 	new /obj/item/toy/dice(src)
@@ -13,8 +13,8 @@
 /obj/item/storage/donut_box
 	icon = 'icons/obj/items/food/donuts.dmi'
 	icon_state = "donutbox"
-	name = "\improper Yum! donuts"
-	desc = "A box of mouth watering \"<i>Yum!</i>\" brand donuts."
+	name = "\improper 美味！甜甜圈"
+	desc = "一盒令人垂涎欲滴的'<i>Yum!</i>'牌甜甜圈。"
 	///How many items spawn in src
 	var/startswith = 6
 	var/open = 0

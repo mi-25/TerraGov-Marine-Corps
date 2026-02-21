@@ -1,6 +1,6 @@
 /obj/structure/xeno/resin_gargoyle
-	name = "resin gargoyle"
-	desc = "A resin monument to your tresspass. Alerts the xenomorph hive when an enemy approaches."
+	name = "树脂石像鬼"
+	desc = "你入侵的树脂纪念碑。当敌人接近时会向异形蜂巢发出警报。"
 	icon = 'icons/Xeno/2x2building.dmi'
 	icon_state = "gargoyle"
 	max_integrity = 100

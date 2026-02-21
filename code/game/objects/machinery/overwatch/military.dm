@@ -181,46 +181,46 @@
 		if("message")
 			if(current_squad && operator == usr)
 				if(TIMER_COOLDOWN_RUNNING(operator, COOLDOWN_HUD_ORDER))
-					to_chat(operator, span_warning("You've sent an announcement or message too recently!"))
+					to_chat(operator, span_warning("你发送公告或消息过于频繁！"))
 					return
 				var/input = tgui_input_text(operator, "Please write a message to announce to the squad:", "Squad Message", max_length = MAX_COMMAND_MESSAGE_LENGTH)
 				if(input)
 					current_squad.message_squad(input, operator) //message, adds username
 					if(issilicon(operator))
-						to_chat(operator, span_boldnotice("Message sent to all Marines of squad '[current_squad]'."))
-					visible_message(span_boldnotice("Message sent to all Marines of squad '[current_squad]'."))
+						to_chat(operator, span_boldnotice("已发送给'[current_squad]'小队所有陆战队员。"))
+					visible_message(span_boldnotice("已发送给'[current_squad]'小队所有陆战队员。"))
 		if("sl_message")
 			if(current_squad && operator == usr)
 				if(TIMER_COOLDOWN_RUNNING(operator, COOLDOWN_HUD_ORDER))
-					to_chat(operator, span_warning("You've sent an announcement or message too recently!"))
+					to_chat(operator, span_warning("你发送公告或消息过于频繁！"))
 					return
 				var/input = tgui_input_text(operator, "Please write a message to announce to the squad leader:", "SL Message", max_length = MAX_COMMAND_MESSAGE_LENGTH)
 				if(input)
 					TIMER_COOLDOWN_START(operator, COOLDOWN_HUD_ORDER, CIC_ORDER_COOLDOWN)
 					message_member(current_squad.squad_leader, input, operator)
 					if(issilicon(operator))
-						to_chat(operator, span_boldnotice("Message sent to Squad Leader [current_squad.squad_leader] of squad '[current_squad]'."))
-					visible_message(span_boldnotice("Message sent to Squad Leader [current_squad.squad_leader] of squad '[current_squad]'."))
+						to_chat(operator, span_boldnotice("已发送给[current_squad]班的班长[current_squad.squad_leader]。"))
+					visible_message(span_boldnotice("已发送给[current_squad]班的班长[current_squad.squad_leader]。"))
 		if("set_primary")
 			var/input = tgui_input_text(operator, "What will be the squad's primary objective?", "Primary Objective", max_length = MAX_COMMAND_MESSAGE_LENGTH * 0.75)
 			if( is_ic_filtered(input) || NON_ASCII_CHECK(input))
-				to_chat(operator, span_boldnotice("Message invalid. Check your message does not contain filtered words or characters."))
+				to_chat(operator, span_boldnotice("消息无效。请检查您的消息是否包含被过滤的词语或字符。"))
 				return
 			current_squad.primary_objective = input + " ([worldtime2text()])"
 			current_squad.message_squad("Primary objective updated; see game panel for details.")
 			if(issilicon(operator))
-				to_chat(operator, span_boldnotice("Primary objective of squad '[current_squad]' set."))
-			visible_message(span_boldnotice("Primary objective of squad '[current_squad]' set."))
+				to_chat(operator, span_boldnotice("小队'[current_squad]'的主要目标已设定。"))
+			visible_message(span_boldnotice("小队'[current_squad]'的主要目标已设定。"))
 		if("set_secondary")
 			var/input = tgui_input_text(operator, "What will be the squad's secondary objective?", "Secondary Objective", max_length = MAX_COMMAND_MESSAGE_LENGTH * 0.75)
 			if( is_ic_filtered(input) || NON_ASCII_CHECK(input))
-				to_chat(operator, span_boldnotice("Message invalid. Check your message does not contain filtered words or characters."))
+				to_chat(operator, span_boldnotice("消息无效。请检查您的消息是否包含被过滤的词语或字符。"))
 				return
 			current_squad.secondary_objective = input + " ([worldtime2text()])"
 			current_squad.message_squad("Secondary objective updated; see game panel for details.")
 			if(issilicon(operator))
-				to_chat(operator, span_boldnotice("Secondary objective of squad '[current_squad]' set."))
-			visible_message(span_boldnotice("Secondary objective of squad '[current_squad]' set."))
+				to_chat(operator, span_boldnotice("'[current_squad]' 班次要目标已设定。"))
+			visible_message(span_boldnotice("'[current_squad]'班次要目标已设定。"))
 		if("change_lead")
 			if(operator != usr)
 				return
@@ -349,7 +349,7 @@
 	switch(choice)
 		if(MESSAGE_SINGLE)
 			if(TIMER_COOLDOWN_RUNNING(operator, COOLDOWN_HUD_ORDER))
-				to_chat(operator, span_warning("You've sent an announcement or message too recently!"))
+				to_chat(operator, span_warning("你发送公告或消息过于频繁！"))
 				return
 			var/input = tgui_input_text(source, "Please write a message to announce to this marine:", "CIC Message", max_length = MAX_COMMAND_MESSAGE_LENGTH)
 			message_member(human_target, input, source)
@@ -375,7 +375,7 @@
 			attempt_spotlight(source, turf_target, params)
 		if(MESSAGE_NEAR)
 			if(TIMER_COOLDOWN_RUNNING(operator, COOLDOWN_HUD_ORDER))
-				to_chat(operator, span_warning("You've sent an announcement or message too recently!"))
+				to_chat(operator, span_warning("你发送公告或消息过于频繁！"))
 				return
 			var/input = tgui_input_text(source, "Please write a message to announce to all marines nearby:", "CIC Proximity Message", max_length = MAX_COMMAND_MESSAGE_LENGTH)
 			for(var/mob/living/carbon/human/target in GLOB.alive_human_list_faction[faction])
@@ -392,7 +392,7 @@
 			switch(choice)
 				if(MESSAGE_SQUAD)
 					if(TIMER_COOLDOWN_RUNNING(operator, COOLDOWN_HUD_ORDER))
-						to_chat(operator, span_warning("You've sent an announcement or message too recently!"))
+						to_chat(operator, span_warning("你发送公告或消息过于频繁！"))
 						return
 					var/input = tgui_input_text(source, "Please write a message to announce to the squad:", "Squad Message", max_length = MAX_COMMAND_MESSAGE_LENGTH)
 					if(input)
@@ -424,11 +424,11 @@
 		return
 
 	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_ORBITAL_SPOTLIGHT))
-		to_chat(source, span_notice("The Orbital spotlight is still recharging."))
+		to_chat(source, span_notice("轨道聚光灯仍在充能中。"))
 		return
 	var/area/place = get_area(A)
 	if(istype(place) && place.ceiling >= CEILING_UNDERGROUND)
-		to_chat(source, span_warning("You cannot illuminate this place. It is probably underground."))
+		to_chat(source, span_warning("你无法照亮此地。这里很可能位于地下。"))
 		return
 	var/turf/target = get_turf(A)
 	if(!target)
@@ -436,14 +436,14 @@
 	new /obj/effect/overwatch_light(target)
 	use_power(10000)	//Huge light needs big power. Still less than autodocs.
 	TIMER_COOLDOWN_START(src, COOLDOWN_ORBITAL_SPOTLIGHT, SPOTLIGHT_COOLDOWN_DURATION)
-	to_chat(source, span_notice("Orbital spotlight activated. Duration : [SPOTLIGHT_DURATION / 10] Seconds"))
+	to_chat(source, span_notice("轨道聚光灯已激活。持续时间：[SPOTLIGHT_DURATION / 10] 秒"))
 
 //Print order visual to all marines squad hud and give them an arrow to follow the waypoint
 /obj/machinery/computer/camera_advanced/overwatch/military/proc/send_order(datum/source, atom/target)
 	SIGNAL_HANDLER
 	if(!current_order)
 		var/mob/user = source
-		to_chat(user, span_warning("You have no order selected."))
+		to_chat(user, span_warning("你没有选择任何命令。"))
 		return
 	current_order.send_order(target, faction = faction)
 
@@ -485,13 +485,13 @@
 	var/warhead_type = GLOB.orbital_cannon?.tray.warhead.name	//For the AI and Admin logs.
 
 	for(var/mob/living/silicon/ai/AI AS in GLOB.ai_list)
-		to_chat(AI, span_warning("NOTICE - Orbital bombardment triggered from overwatch consoles. Warhead type: [warhead_type]. Target: [AREACOORD_NO_Z(T)]"))
+		to_chat(AI, span_warning("注意 - 轨道轰炸已从监控终端触发。弹头类型：[warhead_type]。目标：[AREACOORD_NO_Z(T)]"))
 		playsound(AI,'sound/machines/triple_beep.ogg', 25, 1, 20)
 
 	if(A)
 		log_attack("[key_name(operator)] fired a [warhead_type]in for squad [current_squad] in [AREACOORD(T)].")
 		message_admins("[ADMIN_TPMONTY(operator)] fired a [warhead_type]for squad [current_squad] in [ADMIN_VERBOSEJMP(T)].")
-	visible_message(span_boldnotice("Orbital bombardment request accepted. Orbital cannons are now calibrating."))
+	visible_message(span_boldnotice("轨道轰炸请求已接受。轨道炮正在校准中。"))
 	send_to_squads("ORBITAL BOMBARDMENT INBOUND AT [get_area(selected_target)]! Type: [warhead_type]!")
 	if(selected_target)
 		playsound(selected_target.loc,'sound/effects/alert.ogg', 50, 1, 20)  //mostly used to warn xenos as the new ob sounds have a quiet beginning
@@ -503,12 +503,12 @@
 	SIGNAL_HANDLER
 	if(!operator)
 		return
-	to_chat(operator, span_notice("Orbital Bombardment laser detected. Target: [AREACOORD_NO_Z(incoming_laser)]"))
+	to_chat(operator, span_notice("轨道轰炸激光已探测到。目标：[AREACOORD_NO_Z(incoming_laser)]"))
 	operator.playsound_local(source, 'sound/effects/binoctarget.ogg', 15)
 
 ///About to fire
 /obj/machinery/computer/camera_advanced/overwatch/military/proc/do_fire_bombard(turf/T, user)
-	visible_message(span_boldnotice("Orbital bombardment has fired! Impact imminent!"))
+	visible_message(span_boldnotice("轨道轰炸已发射！撞击即将来临！"))
 	addtimer(CALLBACK(src, PROC_REF(do_land_bombard), T, user), 2.5 SECONDS)
 
 ///Randomises OB impact location a little and tells the OB cannon to fire
@@ -544,11 +544,11 @@
 	else
 		target_squad.message_squad("Acting Squad Leader updated to [target.real_name].")
 		if(issilicon(source))
-			to_chat(source, span_boldnotice("[target.real_name] is the new Squad Leader of squad '[target_squad]'! Logging to enlistment file."))
-		visible_message(span_boldnotice("[target.real_name] is the new Squad Leader of squad '[target_squad]'! Logging to enlistment file."))
+			to_chat(source, span_boldnotice("[target.real_name] 现在是 '[target_squad]' 班的班长！已记录至入伍档案。"))
+		visible_message(span_boldnotice("[target.real_name] 现在是 '[target_squad]' 班的班长！已记录至入伍档案。"))
 
 	to_chat(target, "[icon2html(src, target)] <font size='3' color='blue'><B>\[Overwatch\]: You've been promoted to \'[(ismarineleaderjob(target.job) || issommarineleaderjob(target.job)) ? "SQUAD LEADER" : "ACTING SQUAD LEADER"]\' for [target_squad.name]. Your headset has access to the command channel (:v).</B></font>")
-	to_chat(source, "[icon2html(src, source)] [target.real_name] is [target_squad]'s new leader!")
+	to_chat(source, "[icon2html(src, source)] [target.real_name] 现在是 [target_squad] 的新任班长！")
 	target_squad.promote_leader(target)
 
 ///Marks a marine for insubordination
@@ -575,9 +575,9 @@
 						else
 							R.fields["ma_crim"] += "Insubordination."
 						if(issilicon(operator))
-							to_chat(operator, span_boldnotice("[wanted_marine] has been reported for insubordination. Logging to enlistment file."))
-						visible_message(span_boldnotice("[wanted_marine] has been reported for insubordination. Logging to enlistment file."))
-						to_chat(wanted_marine, "[icon2html(src, wanted_marine)] <font size='3' color='blue'><B>\[Overwatch\]:</b> You've been reported for insubordination by your overwatch officer.</font>")
+							to_chat(operator, span_boldnotice("[wanted_marine] 因违抗命令被上报。已记录至入伍档案。"))
+						visible_message(span_boldnotice("[wanted_marine] 因违抗命令被上报。已记录至入伍档案。"))
+						to_chat(wanted_marine, "[icon2html(src, wanted_marine)] <font size='3' color='blue'><B>\[Overwatch\]:</b> 你的监督军官报告了你的抗命行为。</font>")
 						wanted_marine.sec_hud_set_security_status()
 					return
 
@@ -630,9 +630,9 @@
 
 	transfer_marine.hud_set_job()
 	if(issilicon(source))
-		to_chat(source, span_boldnotice("[transfer_marine] has been transfered from squad '[old_squad]' to squad '[new_squad]'. Logging to enlistment file."))
-	visible_message(span_boldnotice("[transfer_marine] has been transfered from squad '[old_squad]' to squad '[new_squad]'. Logging to enlistment file."))
-	to_chat(transfer_marine, "[icon2html(src, transfer_marine)] <font size='3' color='blue'><B>\[Overwatch\]:</b> You've been transfered to [new_squad]!</font>")
+		to_chat(source, span_boldnotice("[transfer_marine] 已从 '[old_squad]' 班调至 '[new_squad]' 班。记录至入伍档案。"))
+	visible_message(span_boldnotice("[transfer_marine] 已从 '[old_squad]' 班调至 '[new_squad]' 班。记录至入伍档案。"))
+	to_chat(transfer_marine, "[icon2html(src, transfer_marine)] <font size='3' color='blue'><B>\[Overwatch\]:</b> 你已被调往[new_squad]！</font>")
 
 ///Messages a specific individual
 /obj/machinery/computer/camera_advanced/overwatch/military/proc/message_member(mob/living/target, message, mob/living/carbon/human/sender)
@@ -641,7 +641,7 @@
 	. = TRUE
 
 	target.playsound_local(target, "sound/machines/dotprinter.ogg", 35)
-	to_chat(target, span_notice("<b><i>New message from [sender.real_name]:</b> [message]</i>"))
+	to_chat(target, span_notice("<b><i>[sender.real_name] 发来的新消息：</b> [message]</i>"))
 	target.play_screen_text(HUD_ANNOUNCEMENT_FORMATTING("CIC MESSAGE FROM [sender.real_name]", capitalize(message), LEFT_ALIGN_TEXT), new /atom/movable/screen/text/screen_text/picture/potrait/custom_mugshot(null, null, sender), "#32cd32")
 
 	var/list/tts_listeners = filter_tts_listeners(sender, target, null, RADIO_TTS_COMMAND)

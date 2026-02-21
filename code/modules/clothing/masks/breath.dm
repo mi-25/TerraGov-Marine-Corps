@@ -1,6 +1,6 @@
 /obj/item/clothing/mask/breath
-	desc = "A close-fitting mask that can be connected to an air supply."
-	name = "breath mask"
+	desc = "一副可连接供气系统的贴合面罩。"
+	name = "呼吸面罩"
 	icon_state = "breath"
 	worn_icon_state = "breath"
 	inventory_flags = COVERMOUTH
@@ -22,19 +22,19 @@
 			gas_transfer_coefficient = 1 //gas is now escaping to the turf and vice versa
 			inventory_flags &= ~(COVERMOUTH)
 			icon_state = "breathdown"
-			to_chat(usr, "Your mask is now hanging on your neck.")
+			to_chat(usr, "你的面罩现在挂在脖子上了。")
 
 		else
 			src.hanging = !src.hanging
 			gas_transfer_coefficient = 0.10
 			inventory_flags |= COVERMOUTH
 			icon_state = "breath"
-			to_chat(usr, "You pull the mask up to cover your face.")
+			to_chat(usr, "你将面罩拉上来遮住脸。")
 		update_clothing_icon()
 
 /obj/item/clothing/mask/breath/medical
-	desc = "A close-fitting sterile mask that can be connected to an air supply."
-	name = "medical mask"
+	desc = "一种贴合紧密的无菌面罩，可连接至供气系统。"
+	name = "医用口罩"
 	icon_state = "medical"
 	worn_icon_state = "medical"
 	permeability_coefficient = 0.01
@@ -44,8 +44,8 @@
 //REBREATHER
 
 /obj/item/clothing/mask/rebreather
-	name = "rebreather"
-	desc = "A close-fitting device that instantly heats or cools down air when you inhale so it doesn't damage your lungs."
+	name = "呼吸器"
+	desc = "一种贴合面部的装置，能在你吸气时瞬间加热或冷却空气，避免损伤肺部。"
 	icon_state = "rebreather"
 	worn_icon_state = "rebreather"
 	armor_protection_flags = NONE
@@ -55,8 +55,8 @@
 	permeability_coefficient = 0.01
 
 /obj/item/clothing/mask/rebreather/scarf
-	name = "heat absorbent coif"
-	desc = "A close-fitting cap that covers the top, back, and sides of the head. Can also be adjusted to cover the lower part of the face so it keeps the user warm in harsh conditions."
+	name = "隔热头罩"
+	desc = "一顶贴合头部的帽子，覆盖头顶、后脑和两侧。也可调整以覆盖面部下半部分，在恶劣条件下为用户保暖。"
 	icon_state = "coif"
 	worn_icon_state = "coif"
 	inv_hide_flags = HIDEALLHAIR|HIDEEARS
@@ -67,8 +67,8 @@
 	worn_icon_state = "coif_fl"
 
 /obj/item/clothing/mask/bandanna
-	name = "tan bandanna"
-	desc = "A colored, resilient, and insulating cloth to cover your face from the elements. This one is Desert Tan"
+	name = "棕褐色头巾"
+	desc = "一种彩色、耐用且具有隔热功能的布料，用于保护面部免受恶劣环境影响。这款为沙漠棕褐色。"
 	icon_state = "bandanna"
 	worn_icon_state = "bandanna"
 	armor_protection_flags = FACE
@@ -97,49 +97,49 @@
 	update_action_button_icons()
 
 /obj/item/clothing/mask/bandanna/green
-	name = "green bandanna"
-	desc = "A colored, resilient, and insulating cloth to cover your face from the elements. This one is Jungle Green"
+	name = "绿色头巾"
+	desc = "一种彩色、耐用且具有隔热功能的布料，用于保护面部免受恶劣环境影响。这款为丛林绿色。"
 	icon_state = "m_bandanna"
 	worn_icon_state = "m_bandanna"
 
 /obj/item/clothing/mask/bandanna/white
-	name = "white bandanna"
-	desc = "A colored, resilient, and insulating cloth to cover your face from the elements. This one is Snow White"
+	name = "白色头巾"
+	desc = "一种彩色、耐用且具有隔热功能的布料，用于保护面部免受恶劣环境影响。这款为雪白色。"
 	icon_state = "s_bandanna"
 	worn_icon_state = "s_bandanna"
 
 /obj/item/clothing/mask/bandanna/black
-	name = "black bandanna"
-	desc = "A colored, resilient, and insulating cloth to cover your face from the elements. This one is Spec Ops Black"
+	name = "黑色头巾"
+	desc = "一种彩色、耐用且具有隔热功能的布料，用于保护面部免受恶劣环境影响。这款是特战黑色。"
 	icon_state = "k_bandanna"
 	worn_icon_state = "k_bandanna"
 
 /obj/item/clothing/mask/bandanna/skull
-	name = "skull bandanna"
-	desc = "A colored, resilient, and insulating cloth to cover your face from the elements. This one is black with a white Skull on it."
+	name = "骷髅头巾"
+	desc = "一种彩色、耐用且隔热的布料，用于保护面部免受恶劣环境影响。这款为黑色，上面印有白色骷髅图案。"
 	icon_state = "skull_bandanna"
 	worn_icon_state = "skull_bandanna"
 
 /obj/item/clothing/mask/bandanna/alpha
-	name = "red bandanna"
-	desc = "A colored, resilient, and insulating cloth to cover your face from the elements. This one is colored Cherry Red."
+	name = "红色头巾"
+	desc = "一块彩色、耐用且隔热的布料，用于保护面部免受恶劣环境影响。这款为樱桃红色。"
 	icon_state = "alpha_bandanna"
 	worn_icon_state = "alpha_bandanna"
 
 /obj/item/clothing/mask/bandanna/bravo
-	name = "yellow bandanna"
-	desc = "A colored, resilient, and insulating cloth to cover your face from the elements. This one is colored Banana Yellow."
+	name = "黄色头巾"
+	desc = "一种彩色、耐用且具有隔热效果的布料，用于保护面部免受恶劣环境影响。这款为香蕉黄色。"
 	icon_state = "bravo_bandanna"
 	worn_icon_state = "bravo_bandanna"
 
 /obj/item/clothing/mask/bandanna/charlie
-	name = "purple bandanna"
-	desc = "A colored, resilient, and insulating cloth to cover your face from the elements. This one is colored Grape Purple."
+	name = "紫色头巾"
+	desc = "一种彩色、耐用且具有隔热功能的布料，用于保护面部免受恶劣环境影响。这款为葡萄紫色。"
 	icon_state = "charlie_bandanna"
 	worn_icon_state = "charlie_bandanna"
 
 /obj/item/clothing/mask/bandanna/delta
-	name = "blue bandanna"
-	desc = "A colored, resilient, and insulating cloth to cover your face from the elements. This one is colored Blueberry Blue."
+	name = "蓝色头巾"
+	desc = "一块彩色、耐用且隔热的布料，用于保护面部免受恶劣环境影响。这款为蓝莓蓝色。"
 	icon_state = "delta_bandanna"
 	worn_icon_state = "delta_bandanna"

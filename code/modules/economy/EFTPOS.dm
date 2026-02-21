@@ -1,6 +1,6 @@
 /obj/item/eftpos
-	name = "EFTPOS scanner"
-	desc = "Swipe your ID card to make purchases electronically."
+	name = "电子资金转账销售点扫描器"
+	desc = "请刷卡进行电子支付。"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "eftpos"
 	var/machine_id = ""
@@ -146,7 +146,7 @@
 			return
 
 		playsound(src, 'sound/machines/chime.ogg', 25, 1)
-		visible_message("[icon2html(src, viewers(src))] The [src] chimes.")
+		visible_message("[icon2html(src, viewers(src))] [src] 发出鸣响。")
 		transaction_paid = TRUE
 
 		//transfer the money
@@ -242,7 +242,7 @@
 /obj/item/eftpos/proc/scan_card(obj/item/card/I)
 	if (istype(I, /obj/item/card/id))
 		var/obj/item/card/id/C = I
-		visible_message(span_info("[usr] swipes a card through [src]."))
+		visible_message(span_info("[usr] 在 [src] 上刷了一下卡。"))
 		if(transaction_locked && !transaction_paid)
 			if(linked_account)
 				if(!linked_account.suspended)
@@ -256,7 +256,7 @@
 						if(!D.suspended)
 							if(transaction_amount <= D.money)
 								playsound(src, 'sound/machines/chime.ogg', 25, 1)
-								src.visible_message("[icon2html(src, viewers(src))] The [src] chimes.")
+								src.visible_message("[icon2html(src, viewers(src))] [src] 发出鸣响。")
 								transaction_paid = 1
 
 								//transfer the money

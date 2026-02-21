@@ -4,7 +4,7 @@
 
 /datum/mutation_upgrade/shell/scout
 	name = "Scout"
-	desc = "You gain 5/10/15 armor in all categories. You lose this armor if you've been on weeds for longer than 5 seconds."
+	desc = "你在所有类别获得5/10/15点护甲。如果你离开菌毯超过5秒，你将失去此护甲。"
 	/// For each structure, the additional amount of armor for all categories when entering weeds.
 	var/armor_per_structure = 5
 	/// The attached armor that been given, if any.
@@ -75,7 +75,7 @@
 
 /datum/mutation_upgrade/shell/together_in_claws
 	name = "Together In Claws"
-	desc = "While connected with Essence Link, you heal for 10/15/20% of your partner's damage when they slash a human."
+	desc = "与精华链接连接时，当你的伙伴对一名人类进行斩击时，你会恢复其伤害的10/15/20%。"
 	/// For the first structure, the percentage to lifesteal.
 	var/percentage_initial = 0.05
 	/// For each structure, the additional percentage to lifesteal.
@@ -120,7 +120,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/revenge
 	name = "Revenge"
-	desc = "While connected with Essence Link and it ends due to death, the survivor temporarily gains 75/100/125% additional melee damage for 10 seconds."
+	desc = "当与精华链接连接且因死亡而结束时，幸存者暂时获得75/100/125%的额外近战伤害，持续10秒。"
 	/// For the first structure, the melee damage multiplier to increase by.
 	var/modifier_initial = 0.5
 	/// For each structure, the additional melee damage multiplier to increase by.
@@ -168,7 +168,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/saving_grace
 	name = "Saving Grace"
-	desc = "Salve Heal has no cast time on your Essence Link partner if they qualify for bonus healing. Bonus healing multiplier is increased by an additive of 1/2/3."
+	desc = "若你的精华链接伙伴符合额外治疗条件，则'治疗之潮'对其无施法时间。额外治疗倍率增加1/2/3点。"
 	/// For each structure, the multiplier as an additive to increase the bonus healing by.
 	var/multiplier_per_structure = 1
 
@@ -204,7 +204,7 @@
 
 /datum/mutation_upgrade/veil/vitality_transfer
 	name = "Vitality Transfer"
-	desc = "While connected with Essence Link, you can manually disconnect to heal your partner for 5/10/15% of their maximum health multiplied by the attunement amount. However, you take true damage equal to the amount healed. This damage can kill you."
+	desc = "当与精华链接连接时，你可以手动断开连接，为你的伙伴恢复其最大生命值的5/10/15%，该数值乘以协调度。然而，你将承受等同于治疗量的真实伤害。此伤害可致命。"
 	/// For each structure, the additional percentage of maximum health to heal by.
 	var/percentage_per_structure = 0.05
 

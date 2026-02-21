@@ -4,8 +4,8 @@ GLOBAL_LIST_EMPTY(ghost_images_simple) //this is a list of all ghost images as t
 GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 /mob/dead/observer
-	name = "ghost"
-	desc = "It's a g-g-g-g-ghooooost!"
+	name = "鬼魂"
+	desc = "是、是、是、是鬼魂！"
 	icon = 'icons/mob/ghost.dmi'
 	icon_state = "ghost"
 	plane = GHOST_PLANE
@@ -180,7 +180,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	else if(href_list["claim"])
 		var/mob/living/target = locate(href_list["claim"]) in GLOB.offered_mob_list
 		if(!istype(target))
-			to_chat(usr, span_warning("Invalid target."))
+			to_chat(usr, span_warning("无效目标。"))
 			return
 
 		target.take_over(src)
@@ -200,7 +200,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 		var/datum/hive_status/normal/HS = GLOB.hive_datums[XENO_HIVE_NORMAL]
 		if(LAZYFIND(HS.candidates, ghost.client))
-			to_chat(ghost, span_warning("You are already in the queue to become a Xenomorph."))
+			to_chat(ghost, span_warning("你已在成为异形的队列中。"))
 			return
 
 		switch(tgui_alert(ghost, "What would you like to do?", "Burrowed larva source available", list("Join as Larva", "Cancel"), 0))
@@ -365,17 +365,17 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		return FALSE
 
 	if(isnull(can_reenter_corpse))
-		to_chat(src, span_warning("You cannot re-enter your body."))
+		to_chat(src, span_warning("你无法重新进入自己的身体。"))
 		return FALSE
 
 	var/mob/old_mob = can_reenter_corpse.resolve()
 
 	if(!mind || QDELETED(old_mob))
-		to_chat(src, span_warning("You have no body."))
+		to_chat(src, span_warning("你没有身体。"))
 		return FALSE
 
 	if(old_mob.key)
-		to_chat(src, span_warning("Another consciousness is in your body...It is resisting you."))
+		to_chat(src, span_warning("另一个意识正在你的体内……它在抗拒你。"))
 		return FALSE
 
 	client.view_size.set_default(get_screen_size(client.prefs.widescreenpref))//Let's reset so people can't become allseeing gods
@@ -460,7 +460,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	set name = "Take Offered Mob"
 
 	if(!length(GLOB.offered_mob_list))
-		to_chat(src, span_warning("There are currently no mobs being offered."))
+		to_chat(src, span_warning("当前没有可供选择的单位。"))
 		return
 
 	var/mob/living/L = tgui_input_list(usr, "Choose which mob you want to take over.", "Offered Mob", sortNames(GLOB.offered_mob_list))
@@ -468,7 +468,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		return
 
 	if(!istype(L))
-		to_chat(src, span_warning("Mob already taken."))
+		to_chat(src, span_warning("目标已被占用。"))
 		return
 
 	switch(tgui_alert(usr, "Take over mob named: [L.real_name][L.job ? " | Job: [L.job]" : ""]", "Offered Mob", list("Yes", "No", "Follow")))
@@ -678,10 +678,10 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 		if(ishuman(human_current))
 			human_current.set_undefibbable(TRUE)
 		can_reenter_corpse = null
-		to_chat(usr, span_boldwarning("You can no longer be revived."))
+		to_chat(usr, span_boldwarning("你已无法被复活。"))
 		return
 
-	to_chat(usr, span_warning("You already can't be revived."))
+	to_chat(usr, span_warning("你已经无法被复活了。"))
 
 
 /mob/dead/observer/verb/toggle_inquisition()
@@ -692,9 +692,9 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	inquisitive_ghost = !inquisitive_ghost
 
 	if(inquisitive_ghost)
-		to_chat(src, span_notice("You will now examine everything you click on."))
+		to_chat(src, span_notice("你现在将检查点击的所有物品。"))
 	else
-		to_chat(src, span_notice("You will no longer examine things you click on."))
+		to_chat(src, span_notice("你将不再检查你点击的物品。"))
 
 /// Toggle for whether you health-scan living beings on click as observer.
 /mob/dead/observer/verb/toggle_health_scan()
@@ -703,11 +703,11 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	set desc = "Toggles whether you health-scan living beings on click"
 
 	if(health_scan)
-		to_chat(src, span_notice("Health scan disabled."))
+		to_chat(src, span_notice("生命体征扫描已禁用。"))
 		health_scan = FALSE
 		QDEL_NULL(scanner_functionality)
 	else
-		to_chat(src, span_notice("Health scan enabled."))
+		to_chat(src, span_notice("生命体征扫描已启用。"))
 		health_scan = TRUE
 		scanner_functionality = new(src, SKILL_MEDICAL_UNTRAINED)
 
@@ -716,19 +716,19 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	set category = "Ghost"
 
 	if(!SSticker.mode)
-		to_chat(usr, span_warning("Please wait for the round to begin first."))
+		to_chat(usr, span_warning("请等待回合开始。"))
 		return
 
 	if(is_banned_from(ckey, ROLE_VALHALLA))
-		to_chat(usr, span_notice("You are banned from Valhalla!"))
+		to_chat(usr, span_notice("你被瓦尔哈拉封禁了！"))
 		return
 
 	if(!GLOB.valhalla_allowed)
-		to_chat(usr, span_notice("Valhalla is currently disabled!"))
+		to_chat(usr, span_notice("瓦尔哈拉当前已禁用！"))
 		return
 
 	if(stat != DEAD)
-		to_chat(usr, span_boldnotice("You must be dead to use this!"))
+		to_chat(usr, span_boldnotice("你必须死亡才能使用这个！"))
 		return
 
 	var/choice = tgui_input_list(usr, "You are about to embark to the ghastly walls of Valhalla. This will make you unrevivable. Xenomorph or Marine?", "Join Valhalla", list("Xenomorph", "Marine"))

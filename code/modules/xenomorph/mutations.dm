@@ -1,6 +1,6 @@
 /obj/structure/xeno/mutation_chamber
-	name = "mutation chamber"
-	desc = "You shouldn't see this!"
+	name = "突变室"
+	desc = "你不该看到这个！"
 	icon = 'icons/Xeno/1x1building.dmi'
 	icon_state = "shell_chamber"
 	max_integrity = 500
@@ -12,8 +12,8 @@
 	SSminimaps.add_marker(src, MINIMAP_FLAG_XENO, image('icons/UI_icons/map_blips.dmi', null, "mutation_chamber", MINIMAP_BLIPS_LAYER))
 
 /obj/structure/xeno/mutation_chamber/shell
-	name = "Shell Chamber"
-	desc = "A mash of bone, rock, and lots of resin."
+	name = "弹膛"
+	desc = "骨头、岩石和大量树脂的混合物。"
 	icon_state = "shell_chamber"
 
 /obj/structure/xeno/mutation_chamber/shell/Initialize(mapload, _hivenumber)
@@ -30,8 +30,8 @@
 	return ..()
 
 /obj/structure/xeno/mutation_chamber/spur
-	name = "Spur Chamber"
-	desc = "It pulses with energy."
+	name = "刺针弹膛"
+	desc = "它散发着能量脉动。"
 	icon_state = "spur_chamber"
 
 /obj/structure/xeno/mutation_chamber/spur/Initialize(mapload, _hivenumber)
@@ -48,8 +48,8 @@
 	return ..()
 
 /obj/structure/xeno/mutation_chamber/veil
-	name = "Veil Chamber"
-	desc = "It bulges with whatever is inside it."
+	name = "帷幕室"
+	desc = "它因内部的东西而鼓胀。"
 	icon_state = "veil_chamber"
 
 /obj/structure/xeno/mutation_chamber/veil/Initialize(mapload, _hivenumber)

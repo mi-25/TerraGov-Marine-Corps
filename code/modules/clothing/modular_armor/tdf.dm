@@ -1,8 +1,8 @@
 //tdf modular armour
 
 /obj/item/clothing/suit/modular/tdf
-	name = "\improper Knight class medium armor"
-	desc = "The Knight medium combat armor is the standard issue armor given to TDF infantry. Provides good protection without minor impairment to the users mobility. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 骑士级中型护甲"
+	desc = "骑士中型战斗护甲是TDF步兵的标准配发护甲。提供良好防护，同时对使用者的机动性影响较小。Alt+点击移除已安装的配件。使用它来切换内置手电筒。"
 	soft_armor = MARINE_ARMOR_MEDIUM
 	icon = 'icons/mob/modular/tdf_armor.dmi'
 	worn_icon_list = list(
@@ -115,8 +115,8 @@
 	)
 
 /obj/item/clothing/suit/modular/tdf/light
-	name = "\improper Pawn class light armor"
-	desc = "The Pawn light combat armor is the standard issue armor given to TDF recon units and assault units for their mobility. Provides good protection without minor impairment to the users mobility. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 兵卒级轻型护甲"
+	desc = "兵卒轻型战斗装甲是TDF侦察单位和突击单位配发的标准装备，旨在保持机动性。提供良好防护的同时对使用者的机动性影响较小。Alt+点击可移除附件物品。使用可切换内置手电筒。"
 	soft_armor = MARINE_ARMOR_LIGHT
 	icon_state = "tdf_light"
 	worn_icon_state = "tdf_light"
@@ -153,8 +153,8 @@
 	)
 
 /obj/item/clothing/suit/modular/tdf/heavy
-	name = "\improper Bishop class heavy armor"
-	desc = "A heavy piece of armor. Provides excellent protection however it does reduce mobility somewhat. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 主教级重型护甲"
+	desc = "一件重型护甲。提供卓越的防护，但会略微降低机动性。Alt+点击以移除附件。使用它来切换内置手电筒。"
 	soft_armor = MARINE_ARMOR_HEAVY
 	icon_state = "tdf_heavy"
 	worn_icon_state = "tdf_heavy"
@@ -227,8 +227,8 @@
 	)
 
 /obj/item/clothing/suit/modular/tdf/heavy/leader
-	name = "\improper Queen class leader armor"
-	desc = "A heavy piece of armor. Provides excellent protection however it does reduce mobility somewhat. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 异形女王阶级领袖护甲"
+	desc = "一件重型护甲。提供卓越的防护，但会略微降低机动性。Alt+点击以移除已安装的配件。使用它来开关内置手电筒。"
 	icon_state = "tdf_leader"
 	worn_icon_state = "tdf_leader"
 
@@ -245,8 +245,8 @@
 	)
 
 /obj/item/clothing/suit/modular/tdf/robot
-	name = "\improper Clubs class heavy chassis"
-	desc = "Heavy armor plating designed for self mounting on TDF combat robotics. It has self-sealing bolts for mounting on robotic owners inside. Alt-Click to remove attached items. Use it to toggle the built-in flashlight."
+	name = "\improper 棍棒级重型底盘"
+	desc = "专为TDF战斗机器人自行安装设计的重型装甲板。配有自密封螺栓，用于安装在内部的机器人所有者身上。Alt+点击移除已安装物品。使用它来切换内置手电筒。"
 	species_exception = list(/datum/species/robot)
 	icon_state = "tdf_robot"
 	worn_icon_state = "tdf_robot"
@@ -256,7 +256,7 @@
 /obj/item/clothing/suit/modular/tdf/robot/mob_can_equip(mob/user, slot, warning = TRUE, override_nodrop = FALSE, bitslot = FALSE)
 	. = ..()
 	if(!isrobot(user))
-		to_chat(user, span_warning("You can't equip this as it requires mounting bolts on your body!"))
+		to_chat(user, span_warning("你无法装备此物品，因为它需要在你的身体上安装固定螺栓！"))
 		return FALSE
 
 /obj/item/clothing/suit/modular/tdf/robot/shield_overclocked
@@ -275,8 +275,8 @@
 //helmet
 
 /obj/item/clothing/head/modular/tdf
-	name = "\improper Pawn Class Helmet"
-	desc = "The standard combat helmet worn by TDF combat troops. Comes with an integrated hud and AR to provide situational awareness to the wearer."
+	name = "\improper 兵卒级头盔"
+	desc = "TDF作战部队配备的标准作战头盔。配有集成式抬头显示器和增强现实系统，为穿戴者提供战场态势感知。"
 	icon = 'icons/mob/modular/tdf_helmets.dmi'
 	worn_icon_list = list(
 		slot_head_str = 'icons/mob/modular/tdf_helmets.dmi',
@@ -331,14 +331,14 @@
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/module/mimir_environment_protection/mimir_helmet/mark1)
 
 /obj/item/clothing/head/modular/tdf/medium
-	name = "\improper Knight Class Helmet"
+	name = "\improper 骑士级头盔"
 	icon_state = "tdf_helmet_medium"
 	worn_icon_state = "tdf_helmet_medium"
 	soft_armor = MARINE_ARMOR_HEAVY
 
 /obj/item/clothing/head/modular/tdf/heavy
-	name = "\improper Bishop Class Helmet"
-	desc = "A bulky helmet paired with the 'Tyr' armor module, for added on additional protection at the cost of significant weight and reduced flexibility."
+	name = "\improper 主教级头盔"
+	desc = "一款与'提尔'装甲模块配套的厚重头盔，以显著增加重量和降低灵活性为代价，提供额外的防护。"
 	icon_state = "tdf_helmet_heavy"
 	worn_icon_state = "tdf_helmet_heavy"
 	soft_armor = list(MELEE = 55, BULLET = 75, LASER = 75, ENERGY = 75, BOMB = 60, BIO = 60, FIRE = 55, ACID = 70)
@@ -347,27 +347,27 @@
 	soft_armor = list(MELEE = 60, BULLET = 80, LASER = 80, ENERGY = 75, BOMB = 60, BIO = 60, FIRE = 55, ACID = 75)
 
 /obj/item/clothing/head/modular/tdf/pyro
-	name = "\improper Jester Class Helmet"
-	desc = "A bulky helmet with an integrated gas mask and a 'Surt' armor module for fireproofing, fielded to TDF flamethrower operators."
+	name = "\improper 小丑级头盔"
+	desc = "一款配备集成式防毒面具和'苏尔特'防火装甲模块的笨重头盔，配发给TDF火焰喷射器操作员使用。"
 	icon_state = "tdf_helmet_pyro"
 	worn_icon_state = "tdf_helmet_pyro"
 	soft_armor = list(MELEE = 45, BULLET = 65, LASER = 60, ENERGY = 60, BOMB = 50, BIO = 50, FIRE = 100, ACID = 50)
 
 /obj/item/clothing/head/modular/tdf/leader
-	name = "\improper Queen Class Helmet"
-	desc = "A helmet with additional protection and comfort, designed for TDF squad leaders and other command units."
+	name = "\improper 异形女王阶级头盔"
+	desc = "为TDF班长及其他指挥单位设计的头盔，提供额外防护和舒适性。"
 	icon_state = "tdf_helmet_leader"
 	worn_icon_state = "tdf_helmet_leader"
 	soft_armor = list(MELEE = 75, BULLET = 75, LASER = 75, ENERGY = 65, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
 
 /obj/item/clothing/head/modular/tdf/leader/fcdr
-	name = "\improper King Class Helmet"
+	name = "\improper 异形之王阶级头盔"
 	icon_state = "tdf_helmet_fc"
 	worn_icon_state = "tdf_helmet_fc"
 
 /obj/item/clothing/head/modular/tdf/sg
-	name = "\improper Spade Class Helmet"
-	desc = "A helmet loaded with sensors and targeting computers to assist the smartgun at shooting things."
+	name = "\improper 工兵级头盔"
+	desc = "装有传感器和瞄准计算机的头盔，用于辅助智能机枪射击目标。"
 	icon_state = "tdf_helmet_sg"
 	worn_icon_state = "tdf_helmet_sg"
 
@@ -375,15 +375,15 @@
 	soft_armor = list(MELEE = 60, BULLET = 80, LASER = 80, ENERGY = 75, BOMB = 60, BIO = 60, FIRE = 55, ACID = 75)
 
 /obj/item/clothing/head/modular/tdf/medic
-	name = "\improper Heart Class Helmet"
-	desc = "A distinct helmet paired with the 'Mimir' armor module for additional protection against biological attacks, helps indicate your a medic and also helps indicate you as a priority target."
+	name = "\improper 心脏级头盔"
+	desc = "一款独特的头盔，与'米米尔'装甲模块配对，提供额外的生化攻击防护，既能表明你的医疗兵身份，也能让你成为优先目标。"
 	icon_state = "tdf_helmet_medic"
 	worn_icon_state = "tdf_helmet_medic"
 	soft_armor = list(MELEE = 45, BULLET = 65, LASER = 60, ENERGY = 60, BOMB = 50, BIO = 75, FIRE = 50, ACID = 70)
 
 /obj/item/clothing/head/modular/tdf/engi
-	name = "\improper Rook Class Helmet"
-	desc = "A helmet specialized for engineers paired with a welding flash protection system integrated within."
+	name = "\improper 新兵级头盔"
+	desc = "专为工程兵设计的头盔，配有内置焊接闪光防护系统。"
 	icon_state = "tdf_helmet_engi"
 	worn_icon_state = "tdf_helmet_engi"
 
@@ -391,8 +391,8 @@
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/module/welding)
 
 /obj/item/clothing/head/modular/tdf/robot
-	name = "\improper Clubs Class Helmet"
-	desc = "Heavy armor plating designed for self mounting on the upper half of TDF combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	name = "\improper 棍棒级头盔"
+	desc = "专为TDF战斗机器人上半身自行安装设计的重型装甲板。配有自密封螺栓，用于安装在内部的机器人所有者身上。"
 	species_exception = list(/datum/species/robot)
 	icon_state = "tdf_helmet_robot"
 	worn_icon_state = "tdf_helmet_robot"
@@ -401,6 +401,6 @@
 /obj/item/clothing/head/modular/tdf/robot/mob_can_equip(mob/user, slot, warning = TRUE, override_nodrop = FALSE, bitslot = FALSE)
 	. = ..()
 	if(!isrobot(user))
-		to_chat(user, span_warning("You can't equip this as it requires mounting bolts on your body!"))
+		to_chat(user, span_warning("你无法装备此物品，因为它需要在你的身体上安装固定螺栓！"))
 		return FALSE
 

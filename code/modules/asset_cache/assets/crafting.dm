@@ -1,6 +1,6 @@
 ///Representative icons for the contents of each crafting recipe
 /datum/asset/spritesheet/crafting
-	name = "crafting"
+	name = "制作"
 
 /datum/asset/spritesheet/crafting/create_spritesheets()
 	var/id = 1
@@ -9,7 +9,7 @@
 	add_tool_icons()
 
 /datum/asset/spritesheet/crafting/cooking
-	name = "cooking"
+	name = "烹饪"
 
 /datum/asset/spritesheet/crafting/cooking/create_spritesheets()
 	var/id = 1

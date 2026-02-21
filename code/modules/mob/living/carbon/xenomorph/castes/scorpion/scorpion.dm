@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/scorpion
 	caste_base_type = /datum/xeno_caste/scorpion
 	name = "Scorpion"
-	desc = "An eerie, four-legged alien with a hollow tail. A green, jelly-like texture characterizes its eyes and underbelly."
+	desc = "一只诡异的四足外星生物，长着中空的尾巴。它的眼睛和下腹部呈现出一种绿色的胶状质感。"
 	icon = 'icons/Xeno/castes/scorpion.dmi'
 	icon_state = "Scorpion Walking"
 	health = 200

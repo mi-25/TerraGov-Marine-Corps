@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(monitor)
-	name = "Monitor"
+	name = "监控"
 	init_stage = INITSTAGE_EARLY
 	runlevels = RUNLEVEL_GAME
 	wait = 3 MINUTES

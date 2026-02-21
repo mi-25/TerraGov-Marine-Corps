@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/acid_release
 	name = "Acid Release"
-	desc = "Upon entering critical, release stunning acid in a radius of 2/3/4 tiles. This resets upon reaching full health."
+	desc = "进入濒危状态时，在2/3/4格范围内释放眩晕酸液。此效果在生命值回满时重置。"
 	/// For the first structure, the radius in which stunning acid is created.
 	var/radius_initial = 1
 	/// For each structure, the additional radius in which stunning acid is created.
@@ -54,7 +54,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/fully_acid
 	name = "Fully Acid"
-	desc = "All of your stash damage is burn damage and is now checked against acid. You inflict 1/2/3 additional melting acid stacks."
+	desc = "你的所有储存伤害均为燃烧伤害，现在会检查酸液抗性。你额外施加1/2/3层熔化酸液效果。"
 	/// For each structure, the additional stacks of melting acid.
 	var/stacks_per_structure = 1
 
@@ -95,7 +95,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/acid_reserves
 	name = "Acid Reserves"
-	desc = "Corrosive Acid is now applied 50/75/100% faster."
+	desc = "腐蚀酸液现在应用速度加快50/75/100%。"
 	/// For the first structure, the percentage to speed up Corrosive Acid by.
 	var/speedup_initial = 0.25
 	/// For each structure, the additional percentage to speed up Corrosive Acid by.

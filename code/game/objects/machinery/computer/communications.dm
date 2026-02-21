@@ -14,8 +14,8 @@
 
 // The communications computer
 /obj/machinery/computer/communications
-	name = "communications console"
-	desc = "This can be used for various important functions."
+	name = "通讯控制台"
+	desc = "这可用于各种重要功能。"
 	icon_state = "computer_small"
 	screen_overlay = "comm"
 	req_access = list(ACCESS_MARINE_BRIDGE)
@@ -84,19 +84,19 @@
 				if((ACCESS_MARINE_CAPTAIN in I.access) || (ACCESS_MARINE_BRIDGE in I.access)) //Let heads change the alert level.
 					switch_alert_level(tmp_alertlevel)
 				else
-					to_chat(usr, span_warning("You are not authorized to do this."))
+					to_chat(usr, span_warning("你无权执行此操作。"))
 				tmp_alertlevel = SEC_LEVEL_GREEN //Reset to green.
 				state = STATE_DEFAULT
 			else
-				to_chat(usr, span_warning("You need to swipe your ID."))
+				to_chat(usr, span_warning("你需要刷卡验证身份。"))
 
 		if("announce")
 			if(authenticated == 2)
 				if(TIMER_COOLDOWN_RUNNING(usr, COOLDOWN_HUD_ORDER))
-					to_chat(usr, span_warning("You've sent an announcement or message too recently!"))
+					to_chat(usr, span_warning("你发送公告或消息过于频繁！"))
 					return
 				if(world.time < cooldown_message + COOLDOWN_COMM_MESSAGE)
-					to_chat(usr, span_warning("Please allow at least [COOLDOWN_COMM_MESSAGE*0.1] second\s to pass between announcements."))
+					to_chat(usr, span_warning("请确保公告之间至少间隔 [COOLDOWN_COMM_MESSAGE*0.1] 秒。"))
 					return FALSE
 
 				var/input = tgui_input_text(usr, "Please write a message to announce to the station crew.", "Priority Announcement", "",multiline = TRUE, encode = FALSE, max_length = 100)
@@ -105,14 +105,14 @@
 
 				var/filter_result = CAN_BYPASS_FILTER(usr) ? null : is_ic_filtered(input)
 				if(filter_result)
-					to_chat(usr, span_warning("That announcement contained a word prohibited in IC chat! Consider reviewing the server rules.\n<span replaceRegex='show_filtered_ic_chat'>\"[input]\"</span>"))
+					to_chat(usr, span_warning("该公告包含IC聊天禁用词汇！请查阅服务器规则。\n<span replaceRegex='show_filtered_ic_chat'>'[input]'</span>"))
 					SSblackbox.record_feedback(FEEDBACK_TALLY, "ic_blocked_words", 1, lowertext(config.ic_filter_regex.match))
 					REPORT_CHAT_FILTER_TO_USER(src, filter_result)
 					log_filter("IC", input, filter_result)
 					return FALSE
 
 				if(NON_ASCII_CHECK(input))
-					to_chat(usr, span_warning("That announcement contained characters prohibited in IC chat! Consider reviewing the server rules."))
+					to_chat(usr, span_warning("该公告包含角色扮演聊天中禁止使用的字符！请查阅服务器规则。"))
 					return FALSE
 
 				var/mob/living/carbon/human/sender = usr
@@ -124,40 +124,40 @@
 
 		if("award")
 			if(!isliving(usr))
-				to_chat(usr, span_warning("Only the Captain can award medals."))
+				to_chat(usr, span_warning("只有舰长才能授予勋章。"))
 				return
 			var/mob/living/user = usr
 			if(!ismarinecaptainjob(user.job))
-				to_chat(usr, span_warning("Only the Captain can award medals."))
+				to_chat(usr, span_warning("只有舰长才能授予勋章。"))
 				return
 
 			if(give_medal_award(loc))
-				visible_message(span_notice("[src] prints a medal."))
+				visible_message(span_notice("[src] 打印出一枚勋章。"))
 
 		if("evacuation_start")
 			if(state == STATE_EVACUATION)
 				if(world.time < EVACUATION_TIME_LOCK) //Cannot call it early in the round.
-					to_chat(usr, span_warning("TGMC protocol does not allow immediate evacuation. Please wait another [round((EVACUATION_TIME_LOCK-world.time)/600)] minutes before trying again."))
+					to_chat(usr, span_warning("地球政府殖民地海军陆战队协议不允许立即撤离。请再等待 [round((EVACUATION_TIME_LOCK-world.time)/600)] 分钟后再试。"))
 					return FALSE
 
 				if(!SSticker?.mode)
-					to_chat(usr, span_warning("The [SSmapping.configs[SHIP_MAP].map_name]'s distress beacon must be activated prior to evacuation taking place."))
+					to_chat(usr, span_warning("[SSmapping.configs[SHIP_MAP].map_name]的求救信标必须在撤离开始前激活。"))
 					return FALSE
 
 				if(SSsecurity_level.get_current_level_as_number() < SEC_LEVEL_RED)
-					to_chat(usr, span_warning("The ship must be under red alert in order to enact evacuation procedures."))
+					to_chat(usr, span_warning("必须处于红色警报状态才能启动疏散程序。"))
 					return FALSE
 
 				if(SSevacuation.scuttle_flags & FLAGS_SDEVAC_TIMELOCK)
-					to_chat(usr, span_warning("The sensors do not detect a sufficient threat present."))
+					to_chat(usr, span_warning("传感器未检测到足够威胁。"))
 					return FALSE
 
 				if(SSevacuation.scuttle_flags & FLAGS_EVACUATION_DENY)
-					to_chat(usr, span_warning("The TGMC has placed a lock on deploying the evacuation pods."))
+					to_chat(usr, span_warning("地球政府殖民地海军陆战队已锁定逃生舱的部署。"))
 					return FALSE
 
 				if(!SSevacuation.initiate_evacuation())
-					to_chat(usr, span_warning("You are unable to initiate an evacuation procedure right now!"))
+					to_chat(usr, span_warning("你现在无法启动撤离程序！"))
 					return FALSE
 
 				if(!SSevacuation.dest_master)
@@ -174,7 +174,7 @@
 		if("delta_cancel")
 			if(state == STATE_EVACUATION_CANCEL)
 				if(!SSevacuation.cancel_evacuation())
-					to_chat(usr, span_warning("You are unable to cancel the evacuation right now!"))
+					to_chat(usr, span_warning("你现在无法取消撤离！"))
 					return FALSE
 
 				spawn(35)//some time between AI announcements for evac cancel and SD cancel.
@@ -201,11 +201,11 @@
 					return FALSE //Not a game mode?
 
 				if(just_called || SSticker.mode.waiting_for_candidates)
-					to_chat(usr, span_warning("The distress beacon has been just launched."))
+					to_chat(usr, span_warning("求救信标刚刚发射。"))
 					return FALSE
 
 				if(SSticker.mode.on_distress_cooldown)
-					to_chat(usr, span_warning("The distress beacon is currently recalibrating."))
+					to_chat(usr, span_warning("求救信标正在重新校准。"))
 					return FALSE
 
 				var/Ship[] = SSticker.mode.count_humans_and_xenos(SSmapping.levels_by_trait(ZTRAIT_MARINE_MAIN_SHIP))
@@ -215,7 +215,7 @@
 				var/AllMarines[] = All[1]
 				var/AllXenos[] = All[2]
 				if((AllXenos < round(AllMarines * 0.8)) && (ShipXenos < round(ShipMarines * 0.5))) //If there's less humans (weighted) than xenos, humans get home-turf advantage
-					to_chat(usr, span_warning("The sensors aren't picking up enough of a threat to warrant a distress beacon."))
+					to_chat(usr, span_warning("传感器未检测到足以启动求救信标的威胁。"))
 					return FALSE
 
 				SSticker.mode.distress_cancelled = FALSE
@@ -295,7 +295,7 @@
 		if("messageTGMC")
 			if(authenticated == 2)
 				if(world.time < cooldown_central + COOLDOWN_COMM_CENTRAL)
-					to_chat(usr, span_warning("Arrays recycling.  Please stand by."))
+					to_chat(usr, span_warning("阵列回收中。请稍候。"))
 					return FALSE
 
 				var/msg = tgui_input_text(usr, "Please choose a message to transmit to the TGMC High Command.  Please be aware that this process is very expensive, and abuse will lead to termination.  Transmission does not guarantee a response. There is a small delay before you may send another message. Be clear and concise.", "To abort, send an empty message.", "", encode = FALSE)
@@ -304,7 +304,7 @@
 
 
 				tgmc_message(msg, usr)
-				to_chat(usr, span_notice("Message transmitted."))
+				to_chat(usr, span_notice("消息已发送。"))
 				usr.log_talk(msg, LOG_SAY, tag = "TGMC announcement")
 				cooldown_central = world.time
 

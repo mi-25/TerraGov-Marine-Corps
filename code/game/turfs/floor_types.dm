@@ -169,8 +169,8 @@
 
 //Cargo elevator
 /turf/open/floor/mainship/empty
-	name = "empty space"
-	desc = "There seems to be an awful lot of machinery down below"
+	name = "空位"
+	desc = "下面似乎有大量的机械设备。"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "1"
 	hull_floor = TRUE
@@ -188,7 +188,7 @@
 //Others
 /turf/open/floor/mainship/terragov
 	icon_state = "logo_central"
-	name = "\improper TerraGov logo"
+	name = "\improper 地球政府徽标"
 
 /turf/open/floor/mainship/terragov/west
 	icon_state = "logo_directional_west"
@@ -246,7 +246,7 @@
 /turf/open/floor/mainship_hull
 	icon = 'icons/turf/mainship.dmi'
 	icon_state = "outerhull"
-	name = "hull"
+	name = "船体"
 	hull_floor = TRUE
 
 /turf/open/floor/mainship_hull/dir
@@ -255,7 +255,7 @@
 /turf/open/floor/mainship_hull/gray
 	icon = 'icons/turf/mainship.dmi'
 	icon_state = "outerhull_gray"
-	name = "hull"
+	name = "船体"
 	hull_floor = TRUE
 
 /turf/open/floor/mainship_hull/gray/dir
@@ -310,7 +310,7 @@
 	icon_state = "freezerfloor"
 
 /turf/open/floor/light
-	name = "Light floor"
+	name = "轻型地板"
 	icon_state = "light_on"
 	floor_tile = /obj/item/stack/tile/light
 
@@ -321,7 +321,7 @@
 	icon_state = "plating"
 
 /turf/open/floor/wood
-	name = "wood floor"
+	name = "木地板"
 	icon = 'icons/turf/wood_floor.dmi'
 	icon_state = "wood"
 	floor_tile = /obj/item/stack/tile/wood
@@ -445,7 +445,7 @@
 	icon_state = "clockwork"
 
 /turf/open/floor/engine
-	name = "reinforced floor"
+	name = "强化地板"
 	icon_state = "engine"
 	breakable_tile = FALSE
 	burnable_tile = FALSE
@@ -460,12 +460,12 @@
 		return
 
 	if(iswrench(I))
-		user.visible_message(span_notice("[user] starts removing [src]'s protective cover."),
+		user.visible_message(span_notice("[user]开始移除[src]的防护罩。"),
 		span_notice("You start removing [src]'s protective cover."))
 		playsound(src, 'sound/items/ratchet.ogg', 25, 1)
 
 		if(LAZYLEN(user.do_actions))
-			balloon_alert(user, "busy!")
+			balloon_alert(user, "忙！")
 			return
 		if(!do_after(user, 3 SECONDS, NONE, src, BUSY_ICON_BUILD))
 			return
@@ -476,23 +476,23 @@
 /turf/open/floor/engine/nitrogen
 
 /turf/open/floor/engine/cult
-	name = "engraved floor"
+	name = "雕刻地板"
 	icon_state = "cult"
 
 /turf/open/floor/engine/vacuum
-	name = "vacuum floor"
+	name = "真空地板"
 	icon_state = "engine"
 
 /turf/open/floor/engine/atmos
-	name = "vacuum floor"
+	name = "真空地板"
 	icon_state = "darkgraytile"
 
 /turf/open/floor/engine/atmosdark
-	name = "vacuum floor"
+	name = "真空地板"
 	icon_state = "dark"
 
 /turf/open/floor/engine/mars/exterior
-	name = "floor"
+	name = "地板"
 	icon_state = "ironsand1"
 
 /turf/open/floor/scorched
@@ -541,7 +541,7 @@
 	icon_state = "asteroid"
 
 /turf/open/floor/grass
-	name = "Grass patch"
+	name = "草皮"
 	icon_state = "grass"
 	floor_tile = /obj/item/stack/tile/grass
 	shoefootstep = FOOTSTEP_GRASS
@@ -1067,7 +1067,7 @@
 	icon_state = "white_cyan4"
 
 /turf/open/floor/carpet
-	name = "Carpet"
+	name = "地毯"
 	icon = 'icons/turf/floors/carpet.dmi'
 	base_icon_state = "carpet"
 	icon_state = "carpet-0"
@@ -1366,7 +1366,7 @@
 
 
 /turf/open/floor/mech_bay_recharge_floor
-	name = "Mech Bay Recharge Station"
+	name = "机甲库充能站"
 	icon = 'icons/mecha/mech_bay.dmi'
 	icon_state = "recharge_floor"
 
@@ -1704,13 +1704,13 @@
 
 
 /turf/open/hybrisa
-	name = "floor"
+	name = "地板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "hybrisa"
 
 
 /turf/open/floor/hybrisa
-	name = "floor"
+	name = "地板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "hybrisa"
 
@@ -1719,7 +1719,7 @@
 
 
 /turf/open/urban/street
-	name = "floor"
+	name = "地板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "cement1"
 	baseturfs = /turf/open/urban/street/asphalt
@@ -1769,20 +1769,20 @@
 // Unweedable
 
 /turf/open/urban/street/underground_unweedable
-	name = "floor"
+	name = "地板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "underground"
 	baseturfs = /turf/open/urban/street/asphalt
 
 /turf/open/urban/metal/underground_unweedable
-	name = "floor"
+	name = "地板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "podfloor"
 
 // Engineer Ship Hull
 /turf/open/engineership/ship_hull
-	name = "strange metal wall"
-	desc = "Nigh indestructible walls that make up the hull of an unknown ancient ship."
+	name = "奇怪的金属墙壁"
+	desc = "构成一艘未知古老飞船船体的近乎坚不可摧的墙壁。"
 	icon = 'icons/turf/engineership.dmi'
 	icon_state = "engineerwallfloor1"
 	baseturfs = /turf/open/urban/street/asphalt
@@ -1791,7 +1791,7 @@
 
 
 /turf/open/floor/urban/carpet
-	name = "floor"
+	name = "地板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "carpetred"
 
@@ -1844,7 +1844,7 @@
 // Tile
 
 /turf/open/floor/urban/tile
-	name = "floor"
+	name = "地面"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "supermartfloor1"
 
@@ -1935,7 +1935,7 @@
 // Wood
 
 /turf/open/floor/urban/wood
-	name = "floor"
+	name = "地板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "darkerwood"
 
@@ -1956,7 +1956,7 @@
 
 
 /turf/open/floor/urban/metal
-	name = "floor"
+	name = "地板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "bluemetal1"
 
@@ -2027,7 +2027,7 @@
 
 
 /turf/open/urban/dropship
-	name = "floor"
+	name = "地板"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "dropshipfloor1"
 
@@ -2058,8 +2058,8 @@
 // Engineer tiles
 
 /turf/open/engineership
-	name = "floor"
-	desc = "A strange metal floor, unlike any metal you've seen before."
+	name = "地板"
+	desc = "一种奇特的金属地板，与你见过的任何金属都不同。"
 	icon = 'icons/turf/engineership.dmi'
 	icon_state = "hybrisa"
 	baseturfs = /turf/open/urban/street/asphalt
@@ -2108,8 +2108,8 @@
 
 // Pillars
 /turf/open/engineership/pillars
-	name = "strange metal pillar"
-	desc = "A strange metal pillar, unlike any metal you've seen before."
+	name = "奇怪的金属柱"
+	desc = "一根奇特的金属柱，与你见过的任何金属都不同。"
 	icon_state = "eng_pillar1"
 
 /turf/open/engineership/pillars/north/pillar1
@@ -2163,7 +2163,7 @@
 // Hybrisa auto-turf
 
 /turf/open/urbanshale
-	name = "shale"
+	name = "页岩"
 	icon = 'icons/turf/auto_shaledesaturated.dmi'
 	mediumxenofootstep = FOOTSTEP_GRAVEL
 	barefootstep = FOOTSTEP_GRAVEL

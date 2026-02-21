@@ -13,8 +13,8 @@
 * Emergency Closet
 */
 /obj/structure/closet/emcloset
-	name = "emergency closet"
-	desc = "It's a storage unit for emergency breathmasks."
+	name = "应急储物柜"
+	desc = "这是一个用于存放应急呼吸面罩的储存单元。"
 	icon_state = "emergency"
 	icon_closed = "emergency"
 	icon_opened = "emergencyopen"
@@ -55,8 +55,8 @@
 * Fire Closet
 */
 /obj/structure/closet/firecloset
-	name = "fire-safety closet"
-	desc = "It's a storage unit for fire-fighting supplies."
+	name = "消防器材柜"
+	desc = "这是一个消防用品的储存单元。"
 	icon_state = "firecloset"
 	icon_closed = "firecloset"
 	icon_opened = "fireclosetopen"
@@ -88,8 +88,8 @@
 * Tool Closet
 */
 /obj/structure/closet/toolcloset
-	name = "tool closet"
-	desc = "It's a storage unit for tools."
+	name = "工具柜"
+	desc = "这是一个工具储存单元。"
 	icon_state = "toolcloset"
 	icon_closed = "toolcloset"
 	icon_opened = "toolclosetopen"
@@ -111,8 +111,8 @@
 * Radiation Closet
 */
 /obj/structure/closet/radiation
-	name = "radiation suit closet"
-	desc = "It's a storage unit for rad-protective suits."
+	name = "防辐射服储物柜"
+	desc = "这是一个辐射防护服储存单元。"
 	icon_state = "radsuitcloset"
 	icon_opened = "radsuitclosetopen"
 	icon_closed = "radsuitcloset"
@@ -128,8 +128,8 @@
 * Bombsuit closet
 */
 /obj/structure/closet/bombcloset
-	name = "\improper EOD closet"
-	desc = "It's a storage unit for explosion-protective suits."
+	name = "\improper 爆炸物处理储物柜"
+	desc = "这是一个用于存放防爆服的储存单元。"
 	icon_state = "bombsuit"
 	icon_closed = "bombsuit"
 	icon_opened = "bombsuitopen"
@@ -142,8 +142,8 @@
 
 
 /obj/structure/closet/bombclosetsecurity
-	name = "\improper EOD closet"
-	desc = "It's a storage unit for explosion-protective suits."
+	name = "\improper 爆炸物处理储物柜"
+	desc = "这是一个防爆服的储存单元。"
 	icon_state = "bombsuitsec"
 	icon_closed = "bombsuitsec"
 	icon_opened = "bombsuitsecopen"

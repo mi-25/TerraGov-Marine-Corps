@@ -10,8 +10,8 @@
 // APC FRAME
 
 /obj/item/frame/apc
-	name = "APC frame"
-	desc = "Used for repairing or building APCs"
+	name = "APC框架"
+	desc = "用于维修或建造APC。"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "apc_frame"
 	atom_flags = CONDUCT
@@ -34,25 +34,25 @@
 	var/turf/loc = get_turf(user)
 	var/area/A = get_area(loc)
 	if (!isfloorturf(loc))
-		loc.balloon_alert(user, "not right here!")
+		loc.balloon_alert(user, "不在这里！")
 		return
 	if (A.requires_power == 0 || istype(A, /area/space))
-		balloon_alert(user, "unsuitable area!")
+		balloon_alert(user, "不适合的区域！")
 		return
 	if (A.get_apc())
-		balloon_alert(user, "APC already present!")
+		balloon_alert(user, "APC已存在！")
 		return //only one APC per area
 	if (A.always_unpowered)
-		balloon_alert(user, "unsuitable area!")
+		balloon_alert(user, "区域不合适！")
 		return
 	for(var/obj/machinery/power/terminal/T in loc)
 		if (T.master)
-			balloon_alert(user, "occupied spot!")
+			balloon_alert(user, "位置已被占用！")
 			return
 		else
 			var/obj/item/stack/cable_coil/C = new /obj/item/stack/cable_coil(loc)
 			C.amount = 10
-			balloon_alert(user, "cuts cables")
+			balloon_alert(user, "切断电缆")
 			qdel(T)
 	new /obj/machinery/power/apc(loc, ndir, 1)
 	qdel(src)

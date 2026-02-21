@@ -14,7 +14,7 @@
 
 /datum/action/ability/activable/xeno/web_spit
 	name = "Web Spit"
-	desc = "Spit a web to your target, this causes different effects depending on where you hit. Spitting the head causes the target to be temporarily blind, body and arms will cause the target to be weakened, and legs will snare the target for a brief while."
+	desc = "向你的目标喷射蛛网，根据命中部位产生不同效果。命中头部会使目标暂时失明，命中躯干和手臂会使目标虚弱，命中腿部会使目标短暂被困。"
 	action_icon_state = "web_spit"
 	action_icon = 'icons/Xeno/actions/widow.dmi'
 	ability_cost = 125
@@ -40,7 +40,7 @@
 
 /datum/action/ability/activable/xeno/leash_ball
 	name = "Leash Ball"
-	desc = "Spit a huge web ball that snares groups of targets for a brief while."
+	desc = "喷射一个巨大的蛛网球，短暂地困住一群目标。"
 	action_icon_state = "leash_ball"
 	action_icon = 'icons/Xeno/actions/widow.dmi'
 	ability_cost = 250
@@ -67,7 +67,7 @@
 	name = "Snaring Web"
 	icon = 'icons/Xeno/Effects.dmi'
 	icon_state = "aoe_leash"
-	desc = "Sticky and icky. Destroy it when you are stuck!"
+	desc = "黏糊糊的，真恶心。被粘住就赶紧破坏掉！"
 	destroy_sound = SFX_ALIEN_RESIN_BREAK
 	max_integrity = 75
 	layer = ABOVE_ALL_MOB_LAYER
@@ -125,13 +125,13 @@
 	if(xeno_attacker.status_flags & INCORPOREAL)
 		return
 	if(HAS_TRAIT(xeno_attacker, TRAIT_WEB_PULLER))
-		xeno_attacker.balloon_alert(xeno_attacker, "pulling...")
-		xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] starts to pull in the leashes from \the [src]!"), \
+		xeno_attacker.balloon_alert(xeno_attacker, "拖拽中...")
+		xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] 开始从 \the [src] 身上收回牵引索！"), \
 			span_xenonotice("We grab hold of all of the leashes from \the [src]..."))
 		if(!do_after(xeno_attacker, 1 SECONDS, NONE, xeno_attacker, BUSY_ICON_DANGER) || QDELETED(src))
 			return
-		xeno_attacker.balloon_alert(xeno_attacker, "yanked!")
-		xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] yanks all the leashes from \the [src]!"), \
+		xeno_attacker.balloon_alert(xeno_attacker, "拽出来了！")
+		xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] 从 \the [src] 身上扯下了所有的牵引索！"), \
 			span_xenonotice("We yank all the leashes from \the [src]!"))
 		playsound(src, 'sound/voice/alien/pounce.ogg', 25, TRUE)
 		for(var/mob/living/carbon/human/human_mob in leash_victims)
@@ -140,11 +140,11 @@
 			human_mob.throw_at(src, get_dist(src, human_mob), 2, xeno_attacker)
 			human_mob.Paralyze(0.5 SECONDS)
 	else
-		xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] starts tearing down \the [src]!"), \
+		xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] 开始拆除 \the [src]！"), \
 			span_xenonotice("We start to tear down \the [src]."))
 		if(!do_after(xeno_attacker, 1 SECONDS, NONE, xeno_attacker, BUSY_ICON_GENERIC) || QDELETED(src))
 			return
-		xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] yanks all the leashes from \the [src]!"), \
+		xeno_attacker.visible_message(span_xenonotice("\The [xeno_attacker] 从 \the [src] 身上扯下了所有的牵引索！"), \
 			span_xenonotice("We pull down \the [src]."))
 	playsound(src, SFX_ALIEN_RESIN_BREAK, 25)
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
@@ -156,7 +156,7 @@
 
 /datum/action/ability/xeno_action/create_spiderling
 	name = "Birth Spiderling"
-	desc = "Give birth to a spiderling after a short charge-up. The spiderlings will follow you until death. You can only deploy 5 spiderlings at one time. On alt-use, if any charges of Cannibalise are stored, create a spiderling at no plasma cost or cooldown."
+	desc = "经过短暂蓄力后产下一只幼蛛。幼蛛会跟随你直到死亡。你一次最多只能部署5只幼蛛。在备用使用模式下，若储存有任意次数的同类相食充能，则无需消耗等离子体且无冷却时间地创造一只幼蛛。"
 	action_icon_state = "spawn_spiderling"
 	action_icon = 'icons/Xeno/actions/widow.dmi'
 	ability_cost = 100
@@ -175,7 +175,7 @@
 /datum/action/ability/xeno_action/create_spiderling/give_action(mob/living/L)
 	. = ..()
 	var/max_spiderlings = xeno_owner?.xeno_caste.max_spiderlings ? xeno_owner.xeno_caste.max_spiderlings : 5
-	desc = "Give birth to a spiderling after a short charge-up. The spiderlings will follow you until death. You can only deploy [max_spiderlings] spiderlings at one time. On alt-use, if any charges of Cannibalise are stored, create a spiderling at no plasma cost or cooldown."
+	desc = "经过短暂蓄力后产下一只幼蛛。幼蛛会跟随你直至死亡。你一次最多只能部署 [max_spiderlings] 只幼蛛。在备用使用模式下，若储存有任何'同类相食'充能，则免费且无冷却时间地创造一只幼蛛。"
 
 /datum/action/ability/xeno_action/create_spiderling/can_use_action(silent, override_flags, selecting)
 	. = ..()
@@ -183,7 +183,7 @@
 		return FALSE
 	if(length(spiderlings) >= xeno_owner.xeno_caste.max_spiderlings)
 		if(!silent)
-			xeno_owner.balloon_alert(xeno_owner, "Max Spiderlings")
+			xeno_owner.balloon_alert(xeno_owner, "最大蜘蛛幼体数")
 		return FALSE
 
 /// The action to create spiderlings
@@ -197,10 +197,10 @@
 
 /datum/action/ability/xeno_action/create_spiderling/alternate_action_activate()
 	if(cannibalise_charges <= 0)
-		xeno_owner.balloon_alert(xeno_owner, "No charges remaining!")
+		xeno_owner.balloon_alert(xeno_owner, "没有剩余电荷！")
 		return
 	if(length(spiderlings) >= xeno_owner.xeno_caste.max_spiderlings)
-		xeno_owner.balloon_alert(xeno_owner, "Max Spiderlings")
+		xeno_owner.balloon_alert(xeno_owner, "最大蜘蛛幼体数")
 		return
 	INVOKE_ASYNC(src, PROC_REF(use_cannibalise))
 	return COMSIG_KB_ACTIVATED
@@ -210,14 +210,14 @@
 	if(!do_after(owner, 0.5 SECONDS, NONE, owner, BUSY_ICON_DANGER))
 		return FALSE
 	if(cannibalise_charges <= 0)
-		xeno_owner.balloon_alert(xeno_owner, "No charges remaining!")
+		xeno_owner.balloon_alert(xeno_owner, "没有剩余电荷！")
 		return
 	if(length(spiderlings) >= xeno_owner.xeno_caste.max_spiderlings)
-		xeno_owner.balloon_alert(xeno_owner, "Max Spiderlings")
+		xeno_owner.balloon_alert(xeno_owner, "最大蜘蛛幼体数")
 		return
 	add_spiderling()
 	cannibalise_charges -= 1
-	owner.balloon_alert(owner, "[cannibalise_charges]/3 charges remaining")
+	owner.balloon_alert(owner, "[cannibalise_charges]/3 次充能剩余")
 
 /// Adds spiderlings to spiderling list and registers them for death so we can remove them later
 /datum/action/ability/xeno_action/create_spiderling/proc/add_spiderling()
@@ -241,7 +241,7 @@
 
 /datum/action/ability/activable/xeno/spiderling_mark
 	name = "Spiderling Mark"
-	desc = "Send your spawn on a valid target, they will automatically destroy themselves out of sheer fury after 15 seconds."
+	desc = "将你的傀儡传送到一个有效目标处，它们将在15秒后因纯粹的狂怒而自动毁灭。"
 	action_icon_state = "spiderling_mark"
 	action_icon = 'icons/Xeno/actions/widow.dmi'
 	ability_cost = 50
@@ -256,19 +256,19 @@
 	owner.unbuckle_all_mobs(TRUE)
 	var/datum/action/ability/xeno_action/create_spiderling/create_spiderling_action = owner.actions_by_path[/datum/action/ability/xeno_action/create_spiderling]
 	if(length(create_spiderling_action.spiderlings) <= 0)
-		owner.balloon_alert(owner, "No spiderlings")
+		owner.balloon_alert(owner, "没有蜘蛛幼体")
 		return fail_activate()
 	if(!isturf(A) && !istype(A, /obj/alien/weeds))
-		owner.balloon_alert(owner, "Spiderlings attacking " + A.name)
+		owner.balloon_alert(owner, "蜘蛛幼体正在攻击" + A.name)
 	else
 		for(var/item in A) //Autoaim at humans if weeds or turfs are clicked
 			if(!ishuman(item))
 				continue
 			A = item
-			owner.balloon_alert(owner, "Spiderlings attacking " + A.name)
+			owner.balloon_alert(owner, "蜘蛛幼体正在攻击" + A.name)
 			break
 		if(!ishuman(A)) //If no human found, cancel ability
-			owner.balloon_alert(owner, "Nothing to attack, cancelled")
+			owner.balloon_alert(owner, "没有可攻击目标，已取消")
 			return fail_activate()
 
 	succeed_activate()
@@ -281,7 +281,7 @@
 
 /datum/action/ability/xeno_action/burrow
 	name = "Burrow"
-	desc = "Burrow into the ground, allowing you and your active spiderlings to hide in plain sight. You cannot use abilities, attack nor move while burrowed. Use the ability again to unburrow if you're already burrowed."
+	desc = "钻入地下，让你和你活跃的蜘蛛幼体能够隐藏在众目睽睽之下。钻地时，你无法使用能力、攻击或移动。如果已经钻地，再次使用此能力可以钻出地面。"
 	action_icon_state = "burrow"
 	action_icon = 'icons/Xeno/actions/widow.dmi'
 	ability_cost = 0
@@ -307,7 +307,7 @@
 /datum/action/ability/xeno_action/burrow/proc/xeno_burrow(datum/source, damage_amount, mob/living/attacker)
 	SIGNAL_HANDLER
 	if(!HAS_TRAIT(xeno_owner, TRAIT_BURROWED))
-		to_chat(xeno_owner, span_xenowarning("We start burrowing into the ground..."))
+		to_chat(xeno_owner, span_xenowarning("我们开始向地下掘进..."))
 		INVOKE_ASYNC(src, PROC_REF(xeno_burrow_doafter))
 		return
 	UnregisterSignal(xeno_owner, COMSIG_XENOMORPH_TAKING_DAMAGE)
@@ -329,7 +329,7 @@
 /datum/action/ability/xeno_action/burrow/proc/xeno_burrow_doafter()
 	if(!do_after(owner, 3 SECONDS, NONE, null, BUSY_ICON_DANGER))
 		return
-	to_chat(owner, span_xenowarning("We are now burrowed, hidden in plain sight and ready to strike."))
+	to_chat(owner, span_xenowarning("我们现已潜伏，藏于无形，随时准备出击。"))
 	// This part here actually burrows the xeno
 	owner.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	owner.density = FALSE
@@ -351,7 +351,7 @@
 // ***************************************
 /datum/action/ability/xeno_action/attach_spiderlings
 	name = "Attach Spiderlings"
-	desc = "Attach your current spiderlings to you "
+	desc = "将你当前的蜘蛛幼体附着于自身"
 	action_icon_state = "attach_spiderling"
 	action_icon = 'icons/Xeno/actions/widow.dmi'
 	ability_cost = 0
@@ -372,7 +372,7 @@
 		return
 	var/datum/action/ability/xeno_action/create_spiderling/create_spiderling_action = xeno_owner.actions_by_path[/datum/action/ability/xeno_action/create_spiderling]
 	if(!(length(create_spiderling_action.spiderlings)))
-		xeno_owner.balloon_alert(xeno_owner, "No spiderlings")
+		xeno_owner.balloon_alert(xeno_owner, "没有蜘蛛幼体")
 		return fail_activate()
 	var/list/mob/living/carbon/xenomorph/spiderling/remaining_spiderlings = create_spiderling_action.spiderlings.Copy()
 	// First make the spiderlings stop what they are doing and return to the widow
@@ -400,7 +400,7 @@
 // ***************************************
 /datum/action/ability/activable/xeno/cannibalise
 	name = "Cannibalise Spiderling"
-	desc = "Consume one of your children, storing their biomass for future use. If any charges of Cannibalise are stored, alt-use of Birth Spiderling will create one spiderling in exchange for one charge of Cannibalise. Up to three charges of Cannibalise may be stored at once."
+	desc = "吞噬你的一个子嗣，将其生物质储存以备后用。如果储存了任何'同类相食'充能，对'产下蛛魔'进行备用操作将消耗一次'同类相食'充能来创造一个蛛魔。最多可同时储存三次'同类相食'充能。"
 	action_icon_state = "cannibalise_spiderling"
 	action_icon = 'icons/Xeno/actions/widow.dmi'
 	ability_cost = 150
@@ -414,10 +414,10 @@
 	if(!.)
 		return
 	if(!owner.Adjacent(A))
-		owner.balloon_alert(owner, "Not adjacent")
+		owner.balloon_alert(owner, "未相邻")
 		return FALSE
 	if(!istype(A, /mob/living/carbon/xenomorph/spiderling))
-		owner.balloon_alert(owner, "We can't cannibalise this")
+		owner.balloon_alert(owner, "我们无法吞噬这个")
 		return FALSE
 	return TRUE
 
@@ -433,9 +433,9 @@
 
 	if(create_spiderling_action.cannibalise_charges < 3)
 		create_spiderling_action.cannibalise_charges += 1
-		owner.balloon_alert(owner, "[create_spiderling_action.cannibalise_charges]/3 charges")
+		owner.balloon_alert(owner, "[create_spiderling_action.cannibalise_charges]/3 充能")
 	else
-		owner.balloon_alert(owner, "We're full, no charges gained!")
+		owner.balloon_alert(owner, "已满员，未获得充能！")
 	playsound(owner.loc, 'sound/items/eatfood.ogg', 15, TRUE)
 	succeed_activate()
 	add_cooldown()
@@ -445,7 +445,7 @@
 // ***************************************
 /datum/action/ability/activable/xeno/web_hook
 	name = "Web Hook"
-	desc = "Shoot out a web and pull it to traverse forward"
+	desc = "射出蛛网并拉动它以向前移动"
 	action_icon_state = "web_hook"
 	action_icon = 'icons/Xeno/actions/widow.dmi'
 	ability_cost = 200
@@ -461,17 +461,17 @@
 	if(!.)
 		return
 	if(isliving(A))
-		owner.balloon_alert(owner, "We can't attach to that")
+		owner.balloon_alert(owner, "我们无法连接到那个")
 		return FALSE
 	if(!isturf(A))
 		return FALSE
 	if(get_dist(owner, A) <= WIDOW_WEB_HOOK_MIN_RANGE)
-		owner.balloon_alert(owner, "Too close")
+		owner.balloon_alert(owner, "太近了")
 		return FALSE
 	var/turf/current = get_turf(owner)
 	var/turf/target_turf = get_turf(A)
 	if(get_dist(current, target_turf) > WIDOW_WEB_HOOK_RANGE)
-		owner.balloon_alert(owner, "Too far")
+		owner.balloon_alert(owner, "距离过远")
 		return FALSE
 	current = get_step_towards(current, target_turf)
 

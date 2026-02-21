@@ -130,7 +130,7 @@ ADMIN_VERB(centcom_podlauncher, R_FUN, "Config/Launch Supplypod", "Configure and
 				turfs.Add(T) //Fill a list with turfs in the area
 			var/turf/T = SAFEPICK(turfs) //Only teleport if the list isn't empty
 			if(!T) //If the list is empty, error and cancel
-				to_chat(M, "Nowhere to jump to!")
+				to_chat(M, "无处可跳！")
 				return
 			M.forceMove(T) //Perform the actual teleport
 			log_admin("[key_name(usr)] jumped to [AREACOORD(A)]")
@@ -139,7 +139,7 @@ ADMIN_VERB(centcom_podlauncher, R_FUN, "Config/Launch Supplypod", "Configure and
 		if("teleportBack") //After teleporting to centcom, this button allows the user to teleport to the last spot they were at.
 			var/mob/M = holder.mob
 			if (!oldTurf) //If theres no turf to go back to, error and cancel
-				to_chat(M, "Nowhere to jump to!")
+				to_chat(M, "无处可跳！")
 				return
 			M.forceMove(oldTurf) //Perform the actual teleport
 			log_admin("[key_name(usr)] jumped to [AREACOORD(oldTurf)]")
@@ -444,7 +444,7 @@ ADMIN_VERB(centcom_podlauncher, R_FUN, "Config/Launch Supplypod", "Configure and
 			else
 				return //if target is null and we don't have a specific target, cancel
 			if (effectAnnounce)
-				to_chat(GLOB.observer_list, "A special package is being launched at the station!")
+				to_chat(GLOB.observer_list, "一个特殊包裹正在发射到空间站！")
 			var/list/bouttaDie = list()
 			for (var/mob/living/M in target)
 				bouttaDie.Add(M)
@@ -469,7 +469,7 @@ ADMIN_VERB(centcom_podlauncher, R_FUN, "Config/Launch Supplypod", "Configure and
 
 /datum/centcom_podlauncher/proc/createOrderedArea(area/A) //This assumes the area passed in is a continuous square
 	if (isnull(A)) //If theres no supplypod bay mapped into centcom, throw an error
-		to_chat(holder.mob, "No /area/centcom/supplypod/loading/one (or /two or /three or /four) in the world! You can make one yourself (then refresh) for now, but yell at a mapper to fix this, today!")
+		to_chat(holder.mob, "世界中不存在 /area/centcom/supplypod/loading/one（或 /two、/three、/four）区域！你现在可以自己创建一个（然后刷新），但今天必须让地图制作者修复这个问题！")
 		CRASH("No /area/centcom/supplypod/loading/one (or /two or /three or /four) has been mapped into the centcom z-level!")
 	orderedArea = list()
 	if (A.has_contained_turfs()) //Go through the area passed into the proc, and figure out the top left and bottom right corners by calculating max and min values

@@ -1,6 +1,6 @@
 /obj/item/implantcase
-	name = "glass case"
-	desc = "A case containing an implant."
+	name = "玻璃展示柜"
+	desc = "一个装有植入体的箱子。"
 	icon = 'icons/obj/items/implants.dmi'
 	icon_state = "implantcase-0"
 	worn_icon_list = list(
@@ -53,11 +53,11 @@
 			return
 
 		if(imp.reagents.total_volume >= imp.reagents.maximum_volume)
-			to_chat(user, span_warning("[src] is full."))
+			to_chat(user, span_warning("[src]已满。"))
 			return
 
 		I.reagents.trans_to(imp, 5)
-		to_chat(user, span_notice("You inject 5 units of the solution. The syringe now contains [I.reagents.total_volume] units."))
+		to_chat(user, span_notice("你注射了5单位溶液。注射器现在含有[I.reagents.total_volume]单位。"))
 
 	else if(istype(I, /obj/item/implanter))
 		var/obj/item/implanter/M = I

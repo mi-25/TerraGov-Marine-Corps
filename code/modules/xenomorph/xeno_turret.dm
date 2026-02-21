@@ -2,8 +2,8 @@
 /obj/structure/xeno/xeno_turret
 	icon = 'icons/Xeno/acid_turret.dmi'
 	icon_state = XENO_TURRET_ACID_ICONSTATE
-	name = "acid turret"
-	desc = "A menacing looking construct of resin, it seems to be alive. It fires acid against intruders."
+	name = "酸液炮塔"
+	desc = "一个由树脂构成的威胁性构造体，它似乎具有生命。它会向入侵者喷射酸液。"
 	bound_width = 32
 	bound_height = 32
 	obj_integrity = 600
@@ -216,18 +216,18 @@
 	update_minimap_icon()
 
 /obj/structure/xeno/xeno_turret/sticky
-	name = "Sticky resin turret"
+	name = "粘性树脂炮塔"
 	icon = 'icons/Xeno/acid_turret.dmi'
 	icon_state = XENO_TURRET_STICKY_ICONSTATE
-	desc = "A menacing looking construct of resin, it seems to be alive. It fires resin against intruders."
+	desc = "一个由树脂构成的威胁性构造体，它似乎具有生命。它会向入侵者发射树脂。"
 	light_initial_color = LIGHT_COLOR_PURPLE
 	ammo = /datum/ammo/xeno/sticky/turret
 	firerate = 5
 
 /obj/structure/xeno/xeno_turret/hugger_turret
-	name = "hugger turret"
+	name = "抱脸虫炮塔"
 	icon_state = "hugger_turret"
-	desc = "A menacing looking construct of resin, it seems to be alive. It fires huggers against intruders."
+	desc = "一个由树脂构成的威胁性构造体，它似乎具有生命。它会向入侵者发射抱脸虫。"
 	obj_integrity = 400
 	max_integrity = 400
 	light_initial_color = LIGHT_COLOR_BROWN

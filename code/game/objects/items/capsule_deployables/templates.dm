@@ -43,7 +43,7 @@
 	return SHELTER_DEPLOY_ALLOWED
 
 /datum/map_template/capsule/barricade
-	name = "Barricade Capsule"
+	name = "路障胶囊"
 	shelter_id = "barricade_capsule"
 	description = "A simple barricade field fortification, good in a pinch."
 	mappath = "_maps/templates/capsule_1.dmm"

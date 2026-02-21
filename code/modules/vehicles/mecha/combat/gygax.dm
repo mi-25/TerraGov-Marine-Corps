@@ -1,6 +1,6 @@
 /obj/vehicle/sealed/mecha/combat/gygax
-	desc = "A lightweight, security exosuit. Popular among private and corporate security."
-	name = "\improper Gygax"
+	desc = "轻量型安保外骨骼。在私人和企业安保中颇受欢迎。"
+	name = "\improper 吉格斯"
 	icon_state = "gygax"
 	base_icon_state = "gygax"
 	allow_diagonal_movement = TRUE
@@ -25,7 +25,7 @@
 	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_overload_mode)
 
 /datum/action/vehicle/sealed/mecha/mech_overload_mode
-	name = "Toggle leg actuators overload"
+	name = "切换腿部执行器过载"
 	action_icon_state = "mech_overload_off"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_MECHABILITY_TOGGLE_ACTUATORS,
@@ -57,17 +57,17 @@
 			chassis.speed_mod = 1
 		chassis.move_delay -= chassis.speed_mod
 		chassis.step_energy_drain = max(chassis.overload_step_energy_drain_min,chassis.step_energy_drain*chassis.leg_overload_coeff)
-		chassis.balloon_alert(owner,"leg actuators overloaded")
+		chassis.balloon_alert(owner,"腿部执行器过载")
 	else
 		chassis.move_delay += chassis.speed_mod
 		chassis.step_energy_drain = chassis.normal_step_energy_drain
-		chassis.balloon_alert(owner, "you disable the overload")
+		chassis.balloon_alert(owner, "你关闭了过载")
 	update_button_icon()
 	chassis.update_appearance(UPDATE_OVERLAYS)
 
 /obj/vehicle/sealed/mecha/combat/gygax/dark
-	desc = "A lightweight exosuit, painted in a dark scheme. This model appears to have some modifications."
-	name = "\improper Dark Gygax"
+	desc = "一套轻量化外骨骼，采用深色涂装。此型号似乎经过了一些改装。"
+	name = "\improper 黑暗吉格克斯"
 	icon_state = "darkgygax"
 	base_icon_state = "darkgygax"
 	max_integrity = 300

@@ -80,7 +80,7 @@ The Grenade Launchers
 	if(!.)
 		return FALSE
 	if(get_dist(target, gun_user) <= 2)
-		to_chat(gun_user, span_warning("[src] beeps a warning noise. You are too close!"))
+		to_chat(gun_user, span_warning("[src] 发出警告的哔哔声。你靠得太近了！"))
 		return FALSE
 
 
@@ -90,7 +90,7 @@ The Grenade Launchers
 	var/obj/item/explosive/grenade/grenade_to_launch = object_to_fire
 	var/turf/user_turf = get_turf(src)
 	grenade_to_launch.forceMove(user_turf)
-	gun_user?.visible_message(span_danger("[gun_user] fires a grenade from [gun_user?.p_their()] [src.name]!"), span_warning("You fire [src]!"))
+	gun_user?.visible_message(span_danger("[gun_user]从[gun_user?.p_their()]的[src.name]发射了一枚手雷！"), span_warning("You fire [src]!"))
 	log_bomber(gun_user, "fired a grenade ([grenade_to_launch]) from", src, "at [AREACOORD(user_turf)]")
 	play_fire_sound(loc)
 	grenade_to_launch.launched_det_time()
@@ -121,8 +121,8 @@ The Grenade Launchers
 //GL-70 Grenade Launcher.
 
 /obj/item/weapon/gun/grenade_launcher/multinade_launcher
-	name = "\improper GL-70 grenade launcher"
-	desc = "The GL-70 is the standard grenade launcher used by the TerraGov Marine Corps for area denial and big explosions."
+	name = "\improper GL-70 榴弹发射器"
+	desc = "GL-70是地球政府殖民地海军陆战队用于区域拒止和大范围爆炸的标准手雷发射器。"
 	icon = 'icons/obj/items/guns/special64.dmi'
 	icon_state = "t70"
 	worn_icon_state = "t70"
@@ -151,7 +151,7 @@ The Grenade Launchers
 	default_ammo_type = null
 
 /obj/item/weapon/gun/grenade_launcher/multinade_launcher/erp
-	name = "\improper PL-70 assault pie launcher"
+	name = "\improper PL-70 突击派发射器"
 	icon_state = "t70_erp"
 	worn_icon_state = "t70_erp"
 	fire_animation = "t70_erp_fire"
@@ -159,8 +159,8 @@ The Grenade Launchers
 	default_ammo_type = /obj/item/explosive/grenade/creampie
 
 /obj/item/weapon/gun/grenade_launcher/underslung
-	name = "underslung grenade launcher"
-	desc = "A weapon-mounted, reloadable, two-shot grenade launcher."
+	name = "下挂式榴弹发射器"
+	desc = "一款武器下挂式、可重新装填的双发手雷发射器。"
 	icon = 'icons/obj/items/guns/attachments/gun.dmi'
 	icon_state = "grenade"
 	max_shells = 2 //codex
@@ -215,8 +215,8 @@ The Grenade Launchers
 	icon_state = NONE
 
 /obj/item/weapon/gun/grenade_launcher/underslung/battle_rifle
-	name = "\improper BR-64 underslung grenade launcher"
-	desc = "A weapon-mounted, reloadable, two-shot grenade launcher designed to fit the BR-64."
+	name = "\improper BR-64 下挂式榴弹发射器"
+	desc = "一款可装填、双发、可安装在武器上的手雷发射器，专为BR-64设计。"
 	icon_state = "t64_grenade"
 	pixel_shift_x = 21
 	pixel_shift_y = 15
@@ -230,8 +230,8 @@ The Grenade Launchers
 	attach_features_flags = ATTACH_REMOVABLE
 
 /obj/item/weapon/gun/grenade_launcher/single_shot
-	name = "\improper GL-81 grenade launcher"
-	desc = "A lightweight, single-shot grenade launcher used by the TerraGov Marine Corps for area denial and big explosions."
+	name = "\improper GL-81 榴弹发射器"
+	desc = "一款轻量型单发手雷发射器，由地球政府殖民地海军陆战队使用，用于区域封锁和大规模爆炸。"
 	icon_state = "m81"
 	worn_icon_state = "m81"
 	max_shells = 1 //codex
@@ -250,15 +250,15 @@ The Grenade Launchers
 
 
 /obj/item/weapon/gun/grenade_launcher/single_shot/riot
-	name = "\improper GL-81 riot grenade launcher"
-	desc = "A lightweight, single-shot grenade launcher to launch tear gas grenades. Used by Nanotrasen security during riots."
+	name = "\improper GL-81防暴手雷发射器"
+	desc = "一种轻便的单发手雷发射器，用于发射催泪瓦斯手雷。纳米传讯安保部门在骚乱期间使用。"
 	default_ammo_type = null
 	allowed_ammo_types = list(/obj/item/explosive/grenade/chem_grenade)
 	req_access = list(ACCESS_MARINE_BRIG)
 
 /obj/item/weapon/gun/grenade_launcher/single_shot/flare
-	name = "flare gun"
-	desc = "A gun that fires flares. Replace with flares. Simple! Equipped with long range irons."
+	name = "信号枪"
+	desc = "一把发射照明弹的枪。换上照明弹即可。简单！配备远程机械瞄具。"
 	icon_state = "flaregun"
 	worn_icon_state = "gun"
 	fire_sound = 'sound/weapons/guns/fire/flare.ogg'
@@ -272,6 +272,6 @@ The Grenade Launchers
 	starting_attachment_types = list(/obj/item/attachable/scope/unremovable/flaregun)
 
 /obj/item/weapon/gun/grenade_launcher/single_shot/flare/marine
-	name = "M30E2 flare gun"
-	desc = "A very tiny flaregun that fires flares equipped with long range irons, the mass amounts of markings on the back and barrel denote it as owned by the TGMC."
+	name = "M30E2 信号枪"
+	desc = "一把非常小巧的信号枪，发射配备远程机械瞄具的信号弹，枪身和枪管上大量的标记表明它属于地球政府殖民地海军陆战队。"
 	icon_state = "marine_flaregun"

@@ -1,7 +1,7 @@
 /obj/item/stack/nanopaste
-	name = "nanopaste"
+	name = "纳米胶"
 	singular_name = "nanite swarm"
-	desc = "A tube of paste containing swarms of repair nanites. Very effective in repairing robotic machinery."
+	desc = "一管含有修复纳米机器人集群的膏体。对修复机器人机械非常有效。"
 	icon = 'icons/obj/items/surgery_tools.dmi'
 	icon_state = "tube"
 	amount = 10
@@ -30,10 +30,10 @@
 					user.visible_message(span_notice("[user] applies some nanite paste at [user != M ? "[M]'s" : ""] [S.display_name] with [src]."),\
 					span_notice("You apply some nanite paste at [user == M ? "your" : "[M]'s"] [S.display_name]."))
 				else
-					to_chat(user, span_notice("Nothing to fix here."))
+					to_chat(user, span_notice("无需修复。"))
 		else
 			if (H.can_be_operated_on())
 				if (do_surgery(H,user,src))
 					return
 			else
-				to_chat(user, span_notice("Nothing to fix in here."))
+				to_chat(user, span_notice("这里没什么需要修理的。"))

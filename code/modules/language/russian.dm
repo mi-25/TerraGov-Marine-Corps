@@ -1,6 +1,6 @@
 /datum/language/russian
-	name = "Russian"
-	desc = "An East Slavic language from Earth."
+	name = "俄语"
+	desc = "一种来自地球的东斯拉夫语言。"
 	speech_verb = "says"
 	key = "3"
 

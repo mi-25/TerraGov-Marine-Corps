@@ -1,5 +1,5 @@
 /datum/tgs_chat_command/ahelp
-	name = "ahelp"
+	name = "管理员求助"
 	help_text = "<ckey|ticket #> <message|ticket <close|resolve|icissue|reject|reopen|tier <ticket #>|list>>"
 	admin_only = TRUE
 
@@ -22,7 +22,7 @@
 
 
 /datum/tgs_chat_command/namecheck
-	name = "namecheck"
+	name = "名称检查"
 	help_text = "Returns info on the specified target"
 	admin_only = TRUE
 
@@ -37,7 +37,7 @@
 
 
 /datum/tgs_chat_command/adminwho
-	name = "adminwho"
+	name = "管理员列表"
 	help_text = "Lists administrators currently on the server"
 	admin_only = TRUE
 
@@ -62,7 +62,7 @@
 
 
 /datum/tgs_chat_command/reload_admins
-	name = "reload_admins"
+	name = "重新加载管理员"
 	help_text = "Forces the server to reload admins."
 	admin_only = TRUE
 

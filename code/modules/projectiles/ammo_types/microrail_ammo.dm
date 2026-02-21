@@ -27,21 +27,21 @@
 
 //piercing scatter shot
 /datum/ammo/bullet/micro_rail/airburst
-	name = "micro grenade"
+	name = "微型手雷"
 	handful_icon_state = "micro_grenade_airburst"
 	hud_state = "grenade_airburst"
 	bonus_projectiles_type = /datum/ammo/bullet/micro_rail_spread
 
 //incendiary piercing scatter shot
 /datum/ammo/bullet/micro_rail/dragonbreath
-	name = "micro grenade"
+	name = "微型手雷"
 	handful_icon_state = "micro_grenade_incendiary"
 	hud_state = "grenade_fire"
 	bonus_projectiles_type = /datum/ammo/bullet/micro_rail_spread/incendiary
 
 //cluster grenade. Bomblets explode in a rough cone pattern
 /datum/ammo/bullet/micro_rail/cluster
-	name = "micro grenade"
+	name = "微型手雷"
 	handful_icon_state = "micro_grenade_cluster"
 	hud_state = "grenade_he"
 	bonus_projectiles_type = /datum/ammo/micro_rail_cluster
@@ -49,7 +49,7 @@
 
 //creates a literal smokescreen
 /datum/ammo/bullet/micro_rail/smoke_burst
-	name = "micro grenade"
+	name = "微型手雷"
 	handful_icon_state = "micro_grenade_smoke"
 	hud_state = "grenade_smoke"
 	bonus_projectiles_type = /datum/ammo/smoke_burst
@@ -69,7 +69,7 @@
 
 //submunitions for micro grenades
 /datum/ammo/bullet/micro_rail_spread
-	name = "Shrapnel"
+	name = "破片"
 	icon_state = "flechette"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOB
 	accuracy_variation = 5
@@ -84,7 +84,7 @@
 	staggerstun(target_mob, proj, stagger = 1 SECONDS, slowdown = 0.5)
 
 /datum/ammo/bullet/micro_rail_spread/incendiary
-	name = "incendiary flechette"
+	name = "燃烧霰弹"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_PASS_THROUGH_MOB|AMMO_INCENDIARY|AMMO_LEAVE_TURF
 	damage = 15
 	penetration = 5
@@ -104,7 +104,7 @@
 		drop_flame(target_turf)
 
 /datum/ammo/micro_rail_cluster
-	name = "bomblet"
+	name = "爆炸子母弹"
 	icon_state = "bullet"
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_LEAVE_TURF
 	sound_hit = SFX_BALLISTIC_HIT
@@ -140,7 +140,7 @@
 		for(var/target in target_turf)
 			if(isliving(target))
 				var/mob/living/living_target = target
-				living_target.visible_message(span_danger("[living_target] is hit by the bomblet blast!"),
+				living_target.visible_message(span_danger("[living_target] 被小炸弹的爆炸击中！"),
 					isxeno(living_target) ? span_xenodanger("We are hit by the bomblet blast!") : span_userdanger("you are hit by the bomblet blast!"))
 				living_target.apply_damages(explosion_damage * 0.5, explosion_damage * 0.5, 0, 0, 0, blocked = BOMB, updating_health = TRUE, attacker = proj.firer)
 				staggerstun(living_target, proj, stagger = stagger_amount, slowdown = slow_amount)
@@ -167,7 +167,7 @@
 	detonate(target_turf.density ? proj.loc : target_turf, proj)
 
 /datum/ammo/smoke_burst
-	name = "micro smoke canister"
+	name = "微型烟雾罐"
 	icon_state = "bullet"
 	ammo_behavior_flags = AMMO_BALLISTIC
 	sound_hit = SFX_BALLISTIC_HIT

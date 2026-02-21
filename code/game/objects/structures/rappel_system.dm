@@ -15,7 +15,7 @@
 
 //Rappel target selection action
 /datum/action/innate/rappel_designate
-	name = "Designate rappel point"
+	name = "设置速降点"
 	action_icon = 'icons/mob/actions/actions_mecha.dmi'
 	action_icon_state = "mech_zoom_on"
 	var/obj/structure/dropship_equipment/shuttle/rappel_system/origin
@@ -47,8 +47,8 @@
 //The actual system you put on the tadpole
 /obj/structure/dropship_equipment/shuttle/rappel_system
 	equip_category = DROPSHIP_CREW_WEAPON
-	name = "rappel deployment system"
-	desc = "A system that deploys rappel ropes to go up or down fast, without the need for the Tadpole to land. You need to designate the rappel point at the navigation computer."
+	name = "速降部署系统"
+	desc = "一种无需蝌蚪号降落即可快速上下部署速降绳索的系统。你需要在导航计算机上指定速降点。"
 	dropship_equipment_flags = IS_INTERACTABLE
 	icon_state = "rappel_hatch_locked"
 
@@ -100,38 +100,38 @@
 //Human interaction with the rappel system; this is how people rappel down
 /obj/structure/dropship_equipment/shuttle/rappel_system/attack_hand(mob/living/carbon/human/user)
 	if(!rope)
-		to_chat(user, span_userdanger("\The [src]'s rope does not exist. Adminhelp this."))
+		to_chat(user, span_userdanger("\The [src]的绳索不存在。请向管理员报告。"))
 		attack_rappel() //If rope can't be found, default to a visibly broken state
 
 	switch(rappel_condition)
 		if(RAPPEL_CONDITION_DAMAGED)
-			balloon_alert(user, "the cord needs replacing!")
+			balloon_alert(user, "这绳子需要更换！")
 			return
 		if(RAPPEL_CONDITION_DISABLED)
-			balloon_alert(user, "the system is disabled!")
+			balloon_alert(user, "系统已禁用！")
 			return
 
 	var/obj/machinery/computer/camera_advanced/shuttle_docker/minidropship/linked_dropship = linked_shuttle?.shuttle_computer
 	if(linked_dropship?.fly_state != SHUTTLE_IN_ATMOSPHERE)
-		balloon_alert(user, "not in-flight!")
+		balloon_alert(user, "未在飞行中！")
 		return
 
 	switch(rappel_state)
 		if(RAPPEL_STATE_LOCKED)
-			balloon_alert(user, "no rappel deployed!")
+			balloon_alert(user, "未部署速降绳！")
 			return
 		if(RAPPEL_STATE_RETRACTING)
-			balloon_alert(user, "rappel retracting!")
+			balloon_alert(user, "速降索正在收回！")
 			return
 
 	var/turf/target_turf = get_turf(rope)
 	if(target_turf.density)
-		balloon_alert(user, "that's a wall!")
+		balloon_alert(user, "那是堵墙！")
 		return
 
 	var/area/target_area = get_area(target_turf)
 	if(target_area.ceiling > CEILING_GLASS)
-		balloon_alert(user, "too deep underground!")
+		balloon_alert(user, "地下太深了！")
 		return
 
 	rappel_state = RAPPEL_STATE_IN_USE
@@ -143,7 +143,7 @@
 
 	var/passed_skillcheck = TRUE
 	if(user.skills.getRating(SKILL_COMBAT) < SKILL_COMBAT_DEFAULT)
-		rope.balloon_alert(user, "you fumble around figuring out how to use the rappel system...")
+		rope.balloon_alert(user, "你笨手笨脚地摸索着如何使用速降系统……")
 		if(!do_after(user, 3 SECONDS, NONE, rope, BUSY_ICON_UNSKILLED) && !user.lying_angle && !user.anchored && rappel_state >= RAPPEL_STATE_USABLE && rappel_condition == RAPPEL_CONDITION_GOOD)
 			passed_skillcheck = FALSE
 
@@ -170,9 +170,9 @@
 
 	if(istype(I, /obj/item/spare_cord))
 		if(rappel_condition != RAPPEL_CONDITION_DAMAGED)
-			balloon_alert(user, "the cord isn't damaged!")
+			balloon_alert(user, "线缆没有损坏！")
 			return
-		balloon_alert(user, "replacing the rappel cord...")
+		balloon_alert(user, "正在更换速降绳...")
 		if(!do_after(user, 2 SECONDS, NONE, src, BUSY_ICON_GENERIC))
 			return
 		if(!rope) //If the rappel is bugged, fix it
@@ -180,7 +180,7 @@
 		rappel_condition = RAPPEL_CONDITION_DISABLED
 		update_icon_state()
 		addtimer(CALLBACK(src, PROC_REF(self_repair)), RAPPEL_REPAIR_TIME)
-		balloon_alert(user, "replaced")
+		balloon_alert(user, "已替换")
 		QDEL_NULL(I)
 		return
 
@@ -198,7 +198,7 @@
 	if(disabled_smoke)
 		QDEL_NULL(disabled_smoke)
 	update_icon_state()
-	balloon_alert_to_viewers("pings happily—self repair complete")
+	balloon_alert_to_viewers("愉快地发出哔哔声——自我修复完成")
 	playsound(src, 'sound/machines/ping.ogg', 50, FALSE)
 
 ///Human animation for dropping down
@@ -236,8 +236,8 @@
 	playsound(target, 'sound/effects/rappel.ogg', 50, TRUE)
 	playsound(src, 'sound/effects/rappel.ogg', 50, TRUE)
 	target.balloon_alert_to_viewers("!!!")
-	target.visible_message(span_userdanger("You see a dropship fly overhead and begin dropping ropes!"))
-	balloon_alert_to_viewers("hisses and unlocks!")
+	target.visible_message(span_userdanger("你看到一架运输机从头顶飞过，开始投放绳索！"))
+	balloon_alert_to_viewers("嘶嘶作响并解锁了！")
 
 ///Feedback for when PO manually retracts the rope. Leads back into retract_rope after sounds and balloon alerts are done.
 /obj/structure/dropship_equipment/shuttle/rappel_system/proc/pre_retract()
@@ -249,8 +249,8 @@
 	rope.update_icon_state()
 
 	playsound(src, 'sound/machines/hiss.ogg', 25)
-	balloon_alert_to_viewers("hums as the rope reels in")
-	rope.balloon_alert_to_viewers("starts reeling up...")
+	balloon_alert_to_viewers("绳索卷回时发出嗡嗡声")
+	rope.balloon_alert_to_viewers("开始收线...")
 
 	addtimer(CALLBACK(src, PROC_REF(retract_rope)), 5 SECONDS)
 
@@ -268,8 +268,8 @@
 	rappel_state = RAPPEL_STATE_LOCKED
 	update_icon_state()
 	var/turf/target = get_turf(rope)
-	target.balloon_alert_to_viewers("retracted")
-	balloon_alert_to_viewers("clicks locked as the ropes reel back")
+	target.balloon_alert_to_viewers("已收回")
+	balloon_alert_to_viewers("绳索回卷时发出咔哒声锁定")
 	playsound(target, 'sound/effects/tadpolehovering.ogg', 100, TRUE, falloff = 2.5)
 	playsound(target, 'sound/effects/rappel.ogg', 50, TRUE)
 	playsound(src, 'sound/effects/rappel.ogg', 50, TRUE)
@@ -286,8 +286,8 @@
 /obj/structure/dropship_equipment/shuttle/rappel_system/on_launch()
 	if(rappel_condition == RAPPEL_CONDITION_HOOKED) //Tadpole is moving with ropes hooked, so the ropes will snap
 		var/turf/target_floor = get_turf(rope)
-		target_floor.balloon_alert_to_viewers("the rope is ripped out from above!")
-		balloon_alert_to_viewers("the rope is ripped out from under!")
+		target_floor.balloon_alert_to_viewers("绳索从上方被扯断了！")
+		balloon_alert_to_viewers("绳索从下方被扯断了！")
 		break_rappel()
 		return
 
@@ -303,9 +303,9 @@
 		rappel_state = RAPPEL_STATE_USABLE
 		previously_retracting = TRUE
 	update_icon_state()
-	attacker.balloon_alert(attacker, "disabling the sky-rope system...")
+	attacker.balloon_alert(attacker, "正在停用天钩系统...")
 	step(attacker, get_dir(attacker, rope))
-	balloon_alert_to_viewers("the system is visibly buckling!")
+	balloon_alert_to_viewers("系统明显在崩溃！")
 	playsound(rope, 'sound/effects/grillehit.ogg', 50, TRUE)
 	playsound(src, 'sound/effects/grillehit.ogg', 50, TRUE)
 	Shake(duration = 2.5 SECONDS)
@@ -313,13 +313,13 @@
 		rappel_condition = RAPPEL_CONDITION_GOOD
 		rappel_state = RAPPEL_STATE_USABLE
 		update_icon_state()
-		balloon_alert_to_viewers("the system stops buckling...")
+		balloon_alert_to_viewers("系统停止固定...")
 		if(previously_retracting)
 			pre_retract()
 		return
 
-	attacker.balloon_alert_to_viewers("rappel cord ripped out!", "sky-rope disabled")
-	visible_message(span_boldwarning("You hear a horrible screeching sound as something under \the [src] breaks!"))
+	attacker.balloon_alert_to_viewers("速降绳已断裂！", "sky-rope disabled")
+	visible_message(span_boldwarning("你听到一阵可怕的尖啸声，\the [src]下面的某个东西坏了！"))
 	break_rappel()
 
 ///Disables the rappel system, retracting any active ropes in the process.
@@ -352,7 +352,7 @@
 ///Created by the rappel system on init and stored in the rappel system when it's not in use
 /obj/effect/rappel_rope/tadpole
 	icon = 'icons/obj/structures/prop/mainship.dmi'
-	name = "tadpole rappel rope"
+	name = "蝌蚪号速降绳"
 	light_system = STATIC_LIGHT
 	light_power = 0.5
 	light_range = 2
@@ -384,9 +384,9 @@
 		return
 
 	if(LinkBlocked(get_turf(user), get_turf(src)))
-		user.balloon_alert(user, "blocked!")
+		user.balloon_alert(user, "被阻挡了！")
 		return
-	user.balloon_alert(user, "clipping...")
+	user.balloon_alert(user, "正在剪辑...")
 
 	if(user.skills.getRating(SKILL_COMBAT) < SKILL_COMBAT_DEFAULT)
 		if(!do_after(user, 3 SECONDS, NONE, src, BUSY_ICON_UNSKILLED) || user.lying_angle || user.anchored)
@@ -410,8 +410,8 @@
 
 ///Replacement rappel cord, necessary to fully repair a damaged rappel system
 /obj/item/spare_cord
-	name = "replacement rappel cord box"
-	desc = "A box full of expensive, plasteel-infused spare rappel cord for a rappel system. Click on a rappel system to replace any damaged cord, making the system functional again."
+	name = "备用速降绳箱"
+	desc = "一箱昂贵的、注入塑钢的备用垂降绳索，用于垂降系统。点击垂降系统可替换任何损坏的绳索，使系统恢复功能。"
 	icon = 'icons/obj/structures/prop/mainship.dmi'
 	icon_state = "cordbox"
 	w_class = WEIGHT_CLASS_BULKY

@@ -2,7 +2,7 @@
 // SPACE VINES (Note that this code is very similar to Biomass code)
 /obj/effect/plantsegment
 	name = "space vines"
-	desc = "An extremely expansionistic species of vine."
+	desc = "一种极具扩张性的藤蔓物种。"
 	icon = 'icons/effects/spacevines.dmi'
 	icon_state = "Light1"
 	anchored = TRUE
@@ -77,7 +77,7 @@
 	if(!prob(seed ? min(max(0,100 - seed.potency),100) : 50))
 		var/text = pick("rips","tears","pulls")
 		user.visible_message(
-			span_notice("[user.name] [text] at [src]."),
+			span_notice("[user.name] [text]了[src]。"),
 			span_notice("You [text] at [src]."),
 			span_warning("You hear shredding and ripping."))
 		return FALSE
@@ -86,12 +86,12 @@
 		CRASH("[user] attempted to free [prisoner] by attacking [src], but it was buckled to [prisoner.buckled].")
 	if(prisoner != user)
 		prisoner.visible_message(
-			span_notice("[user.name] frees [prisoner.name] from [src]."),
+			span_notice("[user.name]将[prisoner.name]从[src]中释放出来。"),
 			span_notice("[user.name] frees you from [src]."),
 			span_warning("You hear shredding and ripping."))
 	else
 		prisoner.visible_message(
-			span_notice("[prisoner.name] struggles free of [src]."),
+			span_notice("[prisoner.name]挣脱了[src]。"),
 			span_notice("You untangle [src] from around yourself."),
 			span_warning("You hear shredding and ripping."))
 	unbuckle_mob(prisoner)
@@ -134,7 +134,7 @@
 
 			// Drink some blood/cause some brute.
 			if(seed.carnivorous == 2)
-				to_chat(victim, span_danger("\The [src] pierces your flesh greedily!"))
+				to_chat(victim, span_danger("\The [src]贪婪地刺穿了你的血肉！"))
 
 				var/damage = rand(round(seed.potency/2),seed.potency)
 				if(!ishuman(victim))
@@ -152,7 +152,7 @@
 
 			// Inject some chems.
 			if(length(seed.chems) && ishuman(victim))
-				to_chat(victim, span_danger("You feel something seeping into your skin!"))
+				to_chat(victim, span_danger("你感觉有什么东西渗入了你的皮肤！"))
 				for(var/rid in seed.chems)
 					var/injecting = clamp(seed.potency * 0.2, 1, 5)
 					victim.reagents.add_reagent(rid, injecting)

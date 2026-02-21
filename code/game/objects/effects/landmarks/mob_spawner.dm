@@ -1,6 +1,6 @@
 //One off mob spawners
 /obj/effect/landmark/mob_spawner
-	name = "MOB SPAWNER"
+	name = "MOB 生成器"
 	///The type of mob to spawn
 	var/mob/living/mob_spawn
 	///Spawn probability
@@ -13,14 +13,14 @@
 	qdel(src)
 
 /obj/effect/landmark/mob_spawner/monkey
-	name = "monkey spawner"
+	name = "猴子生成器"
 	icon = 'icons/mob/human_races/r_monkey.dmi'
 	icon_state = "monke"
 	mob_spawn = /mob/living/carbon/human/species/monkey
 	spawn_prob = 50
 
 /obj/effect/landmark/mob_spawner/farwa
-	name = "farwa spawner"
+	name = "法瓦生成器"
 	icon = 'icons/mob/human_races/r_farwa.dmi'
 	icon_state = "monke"
 	mob_spawn = /mob/living/carbon/human/species/monkey/farwa

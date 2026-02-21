@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/comforting_acid
 	name = "Comforting Acid"
-	desc = "Toxic Slash will cause humans to passively heal you for 1/1.5/2 health per stack of Intoxicated as long you are adjacent to them."
+	desc = "剧毒斩击会使人类在中毒状态下，只要与你相邻，就会每层中毒状态为你被动恢复1/1.5/2点生命值。"
 	/// For the first structure, the health to heal.
 	var/healing_initial = 0.5
 	/// For each structure, the additional health to heal.
@@ -41,7 +41,7 @@
 
 /datum/mutation_upgrade/shell/healing_sting
 	name = "Healing Sting"
-	desc = "Drain Sting now heals 150/175/200% of its original value. Any leftover healing is converted to overheal health."
+	desc = "汲取毒刺现在治疗其原始值的150/175/200%。任何剩余的治疗量将转化为过量生命值。"
 	/// For the first structure, the multiplier to add to Drain Sting's healing.
 	var/multiplier_initial = 0.25
 	/// For each structure, the additional multiplier to add to Drain Sting's healing.
@@ -79,7 +79,7 @@
 
 /datum/mutation_upgrade/shell/constant_surge
 	name = "Constant Surge"
-	desc = "Drain Sting always triggers Drain Surge. Drain Surge only gives 1/1.25/1.5 soft armor for each Intoxicated stack."
+	desc = "汲取之刺必定触发汲取涌动。汲取涌动每层醉酒状态仅提供1/1.25/1.5点软护甲。"
 	/// For the first structure, the amount of soft armor that Drain Surge gives for each Intoxicated stack.
 	var/armor_initial = 0.75
 	/// For each structure, the additional amount of soft armor that Drain Surge gives for each Intoxicated stack.
@@ -122,7 +122,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/acidic_slasher
 	name = "Acidic Slasher"
-	desc = "Your attack delay will be 0.05/0.1/0.15s faster and will always apply 1/2/3 stacks of Intoxicated against humans, but all melee damage is reduced by 50%."
+	desc = "你的攻击延迟将加快0.05/0.1/0.15秒，并且对人类的攻击总会施加1/2/3层中毒效果，但所有近战伤害降低50%。"
 	/// For each structure, the amount of deciseconds to decrease their next move by.
 	var/attack_speed_decrease_per_structure = 0.5
 	/// For each structure, the amount of intoxicated to apply.
@@ -168,7 +168,7 @@
 
 /datum/mutation_upgrade/spur/far_sting
 	name = "Far Sting"
-	desc = "Drain Sting can be used at targets 1 additional tile away. If the target is at maximum range, Drain Sting is 50/75/100% effective."
+	desc = "汲取毒刺可在额外1格距离内使用。若目标处于最大射程，汲取毒刺的效果为50/75/100%。"
 	/// For the first structure, the range to increase by.
 	var/range_initial = 1
 	/// For each structure, the effectiveness of Drain Sting at a range that isn't upclose.
@@ -210,7 +210,7 @@
 
 /datum/mutation_upgrade/spur/imbued_claws
 	name = "Imbued Claws"
-	desc = "Drain Surge's armor is converted to a melee damage modifier. The melee damage modifier is further increased by 0/15/30%."
+	desc = "汲取涌流的护甲值转化为近战伤害修正。近战伤害修正额外提升0/15/30%。"
 	/// For the first structure, the amount to increase the strength of Drain Surge (which is then converted to melee damage modifier).
 	var/modifier_initial = -15
 	/// For each structure, the additional amount to increase the strength of Drain Surge.
@@ -253,7 +253,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/toxic_compatibility
 	name = "Toxic Compatibility"
-	desc = "Every 5/4/3u of xeno-chemicals in your target will count as one stack of Intoxicated when calculating the the strength of your Drain Sting."
+	desc = "目标体内每含有5/4/3单位的异形化学物质，在计算你的汲取毒刺强度时，将计为一层中毒效果。"
 	/// For each structure, the additional amount of xeno-chemicals to convert to one stack of Intoxicated.
 	var/amount_per_structure = -1
 
@@ -283,7 +283,7 @@
 
 /datum/mutation_upgrade/veil/toxic_blood
 	name = "Toxic Blood"
-	desc = "Every 80/60/40 damage you take, 1 stacks of Intoxicated will be applied to nearby humans."
+	desc = "每受到80/60/40点伤害，你将对附近的人类施加1层中毒效果。"
 	/// For the first structure, the damage needed to be taken.
 	var/damage_initial = 100
 	/// For each structure, the damage needed to be taken.
@@ -334,7 +334,7 @@
 
 /datum/mutation_upgrade/veil/automatic_sting
 	name = "Automatic Sting"
-	desc = "Drain Sting starts at 3/5/7 Intoxication stacks. It is automatically used against slashed humans if there are 12 Intoxication stacks or more."
+	desc = "汲取之刺从3/5/7层中毒效果开始生效。如果中毒层数达到12层或以上，将对被斩击的人类自动使用。"
 	/// For the first structure, the amount of Intoxicated stacks worth of potency that Drain Sting starts off at.
 	var/stacks_initial = 1
 	/// For each structure, the additional amount of Intoxicated stacks worth of potency that Drain Sting starts off at.

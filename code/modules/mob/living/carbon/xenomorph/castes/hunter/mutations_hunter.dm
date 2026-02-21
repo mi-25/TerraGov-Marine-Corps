@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/fleeting_mirage
 	name = "Fleeting Mirage"
-	desc = "Upon reaching 25/40/55% health, a mirage will appear and run away from you. That mirage takes priority when mirage swapping."
+	desc = "当生命值降至25/40/55%时，一个幻象会出现并逃离你。该幻象在幻象交换时拥有优先权。"
 	/// For the first structure, the maximum health threshold that the owner must be reach / be below of in order for the Illusion will appear.
 	var/health_threshold_initial = 0.1
 	/// For each structure, the maximum health threshold that the owner must be reach / be below of in order for the Illusion will appear.
@@ -73,7 +73,7 @@
 
 /datum/mutation_upgrade/shell/splitting_mirage
 	name = "Splitting Mirage"
-	desc = "Mirage will instead cause your slashes to create an illusion for the next 12/14/16 seconds. These illusions disappear when the time is up."
+	desc = "幻影将改为使你的斩击在接下来的12/14/16秒内制造幻象。这些幻象在时间结束后消失。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/veil/mirage_flood
 	)
@@ -118,7 +118,7 @@
 
 /datum/mutation_upgrade/shell/cloaking_mirage
 	name = "Cloaking Mirage"
-	desc = "Mirage will instead creates cloaking gas for 12/14/16 seconds in a radius of 2."
+	desc = "幻影将改为在半径2范围内制造持续12/14/16秒的隐形气体。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/veil/mirage_flood
 	)
@@ -162,7 +162,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/debilitating_strike
 	name = "Debilitating Strike"
-	desc = "Stealth's sneak attack no longer stuns. 1.25/1.5/1.75x of your slash damage is added onto sneak attack instead."
+	desc = "潜行攻击不再造成眩晕。取而代之的是，斩击伤害的1.25/1.5/1.75倍会附加到潜行攻击上。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/veil/faceblind
 	)
@@ -205,7 +205,7 @@
 
 /datum/mutation_upgrade/spur/ambush
 	name = "Ambush"
-	desc = "Stealth's movement cost is 300% of its original value. While at the maximum stealth power, your next sneak attack has an additional 15/22.5/30 AP."
+	desc = "潜行状态下的移动消耗为原始值的300%。当潜行能量达到最大值时，你的下一次偷袭攻击将额外获得15/22.5/30点穿甲。"
 	/// For the first structure, the amount of AP that a maximum powered stealth will get.
 	var/ap_initial = 7.5
 	/// For each structure, the additional amount of AP that a maximum powered stealth will get.
@@ -245,7 +245,7 @@
 
 /datum/mutation_upgrade/spur/maul
 	name = "Maul"
-	desc = "Pounce no longer stuns, but now slashes your target which can trigger sneak attack. Pounce's cooldown is set to 60/50/40% of its original value."
+	desc = "猛扑不再造成眩晕，而是对目标发动斩击，可触发偷袭效果。猛扑的冷却时间调整为原值的60/50/40%。"
 	/// For the first structure, the multiplier of Pounce's cooldown duration to add to it.
 	var/multiplier_initial = -0.3
 	/// For each structure, the additional multiplier of Pounce's cooldown duration to add to it.
@@ -287,7 +287,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/one_target
 	name = "One Target"
-	desc = "The effects of Silence against your Hunter's Mark target last 2.5/2.75/3x as long."
+	desc = "沉默效果对您猎人印记目标的影响持续时间延长至2.5/2.75/3倍。"
 	/// For the first structure, the multiplier to add to Silence's effectiveness against the Hunter's Mark target.
 	var/multiplier_initial = 0.75
 	/// For each structure, the multiplier to add to Silence's effectiveness against the Hunter's Mark target.
@@ -325,7 +325,7 @@
 
 /datum/mutation_upgrade/veil/mirage_flood
 	name = "Mirage Flood"
-	desc = "Mirage creates 4 additional illusions, but the duration is reduced by 5/3/1 seconds."
+	desc = "幻象额外制造4个分身，但持续时间减少5/3/1秒。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/shell/splitting_mirage,
 		/datum/mutation_upgrade/shell/cloaking_mirage
@@ -368,7 +368,7 @@
 
 /datum/mutation_upgrade/veil/faceblind
 	name = "Faceblind"
-	desc = "Stealth's sneak attack causes temporary blindness, but no longer stuns. Mirage's cooldown is set to 90/80/70% of its original value."
+	desc = "潜行者的偷袭会造成暂时性失明，但不再造成眩晕。幻象的冷却时间调整为原值的90/80/70%。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/spur/debilitating_strike
 	)

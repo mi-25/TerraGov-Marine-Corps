@@ -1,6 +1,6 @@
 /obj/item/attachable/foldable
-	name = "foldable stock"
-	desc = "A foldable stock. You shouldn't see this."
+	name = "折叠枪托"
+	desc = "可折叠枪托。你不应该看到这个。"
 	icon = 'icons/obj/items/guns/attachments/stock.dmi'
 	slot = ATTACHMENT_SLOT_STOCK
 	attach_features_flags = ATTACH_REMOVABLE|ATTACH_ACTIVATION
@@ -69,8 +69,8 @@
 		icon_state = "[initial(icon_state)]_open"
 
 /obj/item/attachable/foldable/skorpion_stock
-	name = "\improper Skorpion submachinegun wooden stock"
-	desc = "A foldable wire stock for a Skorpion submachinegun"
+	name = "\improper 蝎式冲锋枪木质枪托"
+	desc = "蝎式冲锋枪的可折叠钢丝枪托"
 	icon = 'icons/obj/items/guns/attachments/stock_64.dmi'
 	icon_state = "skorpion"
 	attach_features_flags = ATTACH_ACTIVATION
@@ -85,8 +85,8 @@
 	accuracy_unwielded_mod = -0.1
 
 /obj/item/attachable/foldable/t19stock
-	name = "\improper MP-19 machinepistol stock"
-	desc = "A submachinegun stock distributed in small numbers to TGMC forces. Compatible with the MP-19, this stock reduces recoil and improves accuracy, but at a reduction to handling and agility. Seemingly a bit more effective in a brawl."
+	name = "\improper MP-19 冲锋手枪枪托"
+	desc = "一款少量配发给地球政府殖民地海军陆战队部队的冲锋枪枪托。与MP-19兼容，这款枪托能降低后坐力并提高精度，但会牺牲操控性和敏捷性。似乎在近身格斗中效果略好一些。"
 	attach_features_flags = ATTACH_ACTIVATION
 	wield_delay_mod = 0.1 SECONDS
 	melee_mod = 5
@@ -99,8 +99,8 @@
 	scatter_unwielded_mod = 4
 
 /obj/item/attachable/foldable/som_carbine
-	name = "\improper V-34 carbine stock"
-	desc = "A side folding stock built into the V-34 carbine. The gun is designed to be fired with the stock deployed, but can be done without, with some difficulty."
+	name = "\improper V-34卡宾枪枪托"
+	desc = "V-34卡宾枪内置的侧折叠枪托。该枪设计为展开枪托时射击，但也可在未展开状态下使用，只是较为困难。"
 	attach_features_flags = ATTACH_ACTIVATION
 	wield_delay_mod = 0.1 SECONDS
 	melee_mod = 5
@@ -112,8 +112,8 @@
 	aim_speed_mod = 0.05
 
 /obj/item/attachable/foldable/icc_machinepistol
-	name = "\improper PL-38 machinepistol stock"
-	desc = "A submachinegun stock found on ICC subguns, this stock reduces recoil and improves accuracy, but at a reduction to handling and agility. Seemingly a bit more effective in a brawl."
+	name = "\improper PL-38 冲锋手枪枪托"
+	desc = "ICC冲锋枪枪托，这种枪托能减少后坐力并提升精度，但会降低操控性和灵活性。似乎在近身格斗中效果略好一些。"
 	attach_features_flags = ATTACH_ACTIVATION
 	wield_delay_mod = 0.1 SECONDS
 	melee_mod = 5
@@ -127,8 +127,8 @@
 	scatter_unwielded_mod = 4
 
 /obj/item/attachable/foldable/t35stock
-	name = "\improper SH-35 stock"
-	desc = "A non-standard heavy stock for the SH-35 shotgun. Less quick and more cumbersome than the standard issue stakeout, but reduces recoil and improves accuracy. Allegedly makes a pretty good club in a fight too."
+	name = "\improper SH-35枪托"
+	desc = "SH-35霰弹枪的非标准重型枪托。比标准执勤型枪托更笨重、操作更慢，但能降低后坐力并提升精度。据说在近战中也能当不错的棍棒使用。"
 	icon = 'icons/obj/items/guns/attachments/stock_64.dmi'
 	icon_state = "t35"
 	attach_features_flags = ATTACH_ACTIVATION
@@ -138,8 +138,8 @@
 	scatter_mod = -2
 
 /obj/item/attachable/foldable/bipod
-	name = "bipod"
-	desc = "A simple set of telescopic poles to keep a weapon stabilized during firing. \nGreatly increases accuracy and reduces recoil and scatter when properly placed, but also increases weapon size."
+	name = "两脚架"
+	desc = "一套简单的伸缩杆，用于在射击时稳定武器。\n正确放置时可大幅提升精度并减少后坐力和散射，但也会增加武器尺寸。"
 	icon = 'icons/obj/items/guns/attachments/underbarrel.dmi'
 	icon_state = "bipod"
 	slot = ATTACHMENT_SLOT_UNDER
@@ -154,7 +154,7 @@
 /obj/item/attachable/foldable/bipod/activate(mob/living/user, turn_off)
 	if(folded && !(master_gun.item_flags & WIELDED)) //no one handed bipod use
 		if(user)
-			balloon_alert(user, "Unwielded")
+			balloon_alert(user, "未就绪")
 		return
 
 	. = ..()
@@ -162,13 +162,13 @@
 	if(folded)
 		UnregisterSignal(master_gun, list(COMSIG_ITEM_DROPPED, COMSIG_ITEM_EQUIPPED, COMSIG_ITEM_UNWIELD))
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
-		to_chat(user, span_notice("You retract [src]."))
+		to_chat(user, span_notice("你收回了[src]。"))
 		return
 
 	if(user)
 		RegisterSignals(master_gun, list(COMSIG_ITEM_DROPPED, COMSIG_ITEM_EQUIPPED, COMSIG_ITEM_UNWIELD), PROC_REF(retract_bipod))
 		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(retract_bipod))
-		to_chat(user, span_notice("You deploy [src]."))
+		to_chat(user, span_notice("你部署了[src]。"))
 
 ///Signal handler for forced undeployment
 /obj/item/attachable/foldable/bipod/proc/retract_bipod(datum/source, mob/living/user)
@@ -176,4 +176,4 @@
 	deploy_time = 0
 	INVOKE_ASYNC(src, PROC_REF(activate), (istype(user) ? user : source), TRUE)
 	deploy_time = initial(deploy_time)
-	to_chat(user, span_warning("Losing support, the bipod retracts!"))
+	to_chat(user, span_warning("失去支撑，两脚架收起！"))

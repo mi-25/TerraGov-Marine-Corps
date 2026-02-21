@@ -1,11 +1,11 @@
 /datum/emergency_call/erp
-	name = "Emergency Response Pranksters"
+	name = "紧急响应恶作剧者"
 	base_probability = 0
 
 /datum/emergency_call/erp/print_backstory(mob/living/carbon/human/H)
-	to_chat(H, "<B>You are a prankster, of the Emergency Response Pranksters, a dedicated responder to whatever situation needs entertainment</b>")
-	to_chat(H, "<B>Recently a beacon has been sent from [SSmapping.configs[SHIP_MAP].map_name], a plea for PRANKING and ENTERTAINMENT!</b>")
-	to_chat(H, "<B>Entertain the good people of the TGMC there and make sure all non-TGMC anti-fun-sources are PRANKED & eliminated post-haste!</b>")
+	to_chat(H, "<B>你是一名恶作剧者，隶属于紧急响应恶作剧者组织，专门负责为任何需要娱乐的场合提供欢乐</B>")
+	to_chat(H, "<B>刚刚从[SSmapping.configs[SHIP_MAP].map_name]发出了一个信标，请求恶作剧和娱乐！</b>")
+	to_chat(H, "<B>为那里的TGMC好人们助兴，确保所有非TGMC的反乐趣源头都被恶搞并迅速清除！</b>")
 
 /datum/emergency_call/erp/create_member(datum/mind/M)
 	. = ..()

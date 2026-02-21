@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/bullet/turret
-	name = "autocannon bullet"
+	name = "自动炮 弹道"
 	icon_state = "bullet_red"
 	bullet_color = COLOR_SOFT_RED
 	hud_state = "rifle"
@@ -20,19 +20,19 @@
 	icon_state = "bullet"
 
 /datum/ammo/bullet/turret/gauss
-	name = "heavy gauss turret slug"
+	name = "重型高斯炮台炮弹"
 	hud_state = "rifle_heavy"
 	damage = 60
 
 /datum/ammo/bullet/turret/mini
-	name = "small caliber autocannon bullet"
+	name = "小口径自动炮弹道"
 	damage = 20
 	penetration = 20
 	ammo_behavior_flags = AMMO_BALLISTIC
 
 
 /datum/ammo/bullet/turret/sniper
-	name = "antimaterial bullet"
+	name = "反器材弹道"
 	icon_state = "bullet_large_red"
 	bullet_color = COLOR_SOFT_RED
 	ammo_behavior_flags = AMMO_SNIPER
@@ -42,7 +42,7 @@
 	sundering = 5
 
 /datum/ammo/bullet/turret/buckshot
-	name = "turret buckshot shell"
+	name = "哨戒炮鹿弹"
 	icon_state = "buckshot"
 	hud_state = "shotgun_buckshot"
 	bonus_projectiles_type = /datum/ammo/bullet/turret/spread
@@ -57,14 +57,14 @@
 	staggerstun(target_mob, proj, knockback = 1, max_range = 4)
 
 /datum/ammo/bullet/turret/spread
-	name = "additional buckshot"
+	name = "额外鹿弹"
 	max_range = 10
 	damage = 20
 	penetration = 40
 	damage_falloff = 1
 
 /datum/ammo/flamer
-	name = "flame turret glob"
+	name = "火焰炮塔弹"
 	icon_state = "pulse0"
 	hud_state = "flame"
 	hud_state_empty = "flame_empty"

@@ -1,6 +1,6 @@
 /obj/item/radio/intercom
-	name = "station intercom"
-	desc = "Talk through this. To speak directly into an intercom next to you, use :i."
+	name = "站内通讯"
+	desc = "仔细听好。要直接对着你旁边的对讲机说话，请使用 :i。"
 	icon = 'icons/obj/machines/radio.dmi'
 	icon_state = "intercom"
 	anchored = TRUE
@@ -102,7 +102,7 @@
 			check_light()
 
 /obj/item/radio/intercom/general
-	name = "General Listening Channel"
+	name = "通用监听频道"
 	anyai = TRUE
 	freerange = TRUE
 
@@ -112,14 +112,14 @@
 	frequency = FREQ_CIV_GENERAL
 
 /obj/item/radio/intercom/dropship
-	name = "\improper Alamo dropship intercom"
+	name = "\improper 阿拉莫号运输机内部通信"
 	canhear_range = 7
 	frequency = FREQ_DROPSHIP_1
 
 /obj/item/radio/intercom/dropship/normandy
-	name = "\improper Normandy dropship intercom"
+	name = "\improper 诺曼底号运输船内部通讯"
 	frequency = FREQ_DROPSHIP_2
 
 /obj/item/radio/intercom/dropship/triumph
-	name = "\improper Triumph dropship intercom"
+	name = "\improper 凯旋号运输机内部通信"
 	frequency = FREQ_DROPSHIP_2

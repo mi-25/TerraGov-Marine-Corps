@@ -1,5 +1,5 @@
 /obj/effect/spawner/random/food_or_drink
-	name = "Random base food or drink spawner"
+	name = "随机基础食物或饮料生成器"
 	icon = 'icons/effects/random/food_or_drink.dmi'
 	icon_state = "random_burger"
 	loot = list(
@@ -7,7 +7,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/donut
-	name = "Random donut spawner"
+	name = "随机甜甜圈生成器"
 	icon_state = "random_donut"
 	spawn_loot_chance = 95
 	loot = list(
@@ -47,7 +47,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/burger
-	name = "Random burger spawner"
+	name = "随机汉堡生成器"
 	icon_state = "random_burger"
 	spawn_loot_chance = 95
 	loot = list(
@@ -56,7 +56,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/burger/bunweighted
-	name = "Random burger bun spawner"
+	name = "随机汉堡面包生成器"
 	icon_state = "random_burger_bun"
 	spawn_loot_chance = 95
 	loot = list(
@@ -65,7 +65,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/burger/normal
-	name = "Random normal burger spawner"
+	name = "随机普通汉堡生成器"
 	icon_state = "random_burger_normal"
 	loot = list(
 		/obj/item/reagent_containers/food/snacks/burger/plain = 40,
@@ -78,7 +78,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/burger/weird
-	name = "Random weird burger spawner"
+	name = "随机奇怪汉堡生成器"
 	icon_state = "random_burger_weird"
 	loot = list(
 		/obj/item/reagent_containers/food/snacks/burger/tofu,
@@ -107,7 +107,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/packagedbar
-	name = "Random food bar spawner"
+	name = "随机食物棒生成器"
 	icon_state = "random_foodbar"
 	loot = list(
 		/obj/item/reagent_containers/food/snacks/wrapped/booniebars = 26,
@@ -119,7 +119,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/packagedbar/candyweighted
-	name = "Random candy bar spawner"
+	name = "随机糖果棒生成器"
 	icon_state = "random_foodbar_candy"
 	loot = list(
 		/obj/item/reagent_containers/food/snacks/candy = 75,
@@ -130,7 +130,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/cheesewedge
-	name = "Random cheese wedge spawner"
+	name = "随机奶酪楔生成器"
 	icon_state = "random_cheesewedge"
 	loot = list(
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 80,
@@ -140,7 +140,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/kitchenknife
-	name = "Random kitchen knife spawner"
+	name = "随机厨房刀具生成器"
 	icon_state = "random_knife"
 	loot = list(
 		/obj/item/tool/kitchen/knife = 9,
@@ -148,7 +148,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/kitchenknife/butcherweighted
-	name = "Random kitchen knife spawner"
+	name = "随机厨房刀具生成器"
 	icon_state = "random_knife_butcher"
 	loot = list(
 		/obj/item/tool/kitchen/knife/butcher = 9,
@@ -156,7 +156,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/kitchen
-	name = "Random kitchen utensil spawner"
+	name = "随机厨房用具生成器"
 	icon_state = "random_utensil"
 	loot = list(
 		/obj/item/tool/kitchen/utensil/fork = 20,
@@ -170,7 +170,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/drink_cans
-	name = "Random Drink Cans"
+	name = "随机饮料罐"
 	icon_state = "random_can"
 	loot = list(
 		/obj/item/reagent_containers/food/drinks/cans/cola,
@@ -201,7 +201,7 @@
 
 ///Booze in a bottle. Glass. Classy.
 /obj/effect/spawner/random/food_or_drink/drink_alcohol_bottle
-	name = "Random Alcoholic Drink Bottle"
+	name = "随机酒精饮料瓶"
 	icon_state = "random_bottle"
 	loot = list(
 		/obj/item/reagent_containers/food/drinks/bottle/gin,
@@ -228,7 +228,7 @@
 
 ///Stuff that's more like candies and all. Stale the hunger or buy in a vending machine.
 /obj/effect/spawner/random/food_or_drink/sugary_snack
-	name = "Random Sugary Snacks"
+	name = "随机甜味零食"
 	icon_state = "random_sugary"
 	loot = list(
 		/obj/item/reagent_containers/food/snacks/donut,
@@ -266,7 +266,7 @@
 
 ///Stuff you might expect to eat in the street.
 /obj/effect/spawner/random/food_or_drink/outdoors_snacks
-	name = "Random Outdoors snack"
+	name = "随机户外零食"
 	icon_state = "random_outdoors_snack"
 	spawn_random_offset = TRUE
 	loot = list(
@@ -295,7 +295,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/beer
-	name = "beer spawner"
+	name = "啤酒生成器"
 	icon_state = "random_beer"
 	loot = list(
 		/obj/item/reagent_containers/food/drinks/cans/beer,
@@ -346,7 +346,7 @@
 	)
 
 /obj/effect/spawner/random/food_or_drink/bread
-	name = "Random bread spawner"
+	name = "随机面包生成器"
 	icon_state = "random_bread"
 	loot = list(
 		/obj/item/reagent_containers/food/snacks/baguette = 45,

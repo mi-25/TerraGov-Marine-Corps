@@ -1,8 +1,8 @@
 
 
 /turf/closed/wall
-	name = "wall"
-	desc = "A huge chunk of metal used to seperate rooms."
+	name = "墙"
+	desc = "用于分隔房间的巨大金属块。"
 	icon = 'icons/turf/walls/regular_wall.dmi'
 	icon_state = "metal-0"
 	baseturfs = /turf/open/floor/plating
@@ -65,7 +65,7 @@
 
 	for(var/obj/item/explosive/mine/M in src)
 		if(M)
-			visible_message(span_warning("\The [M] is sealed inside the wall as it is built"))
+			visible_message(span_warning("\The [M] 在建造时被封入墙内。"))
 			qdel(M)
 
 /turf/closed/wall/Destroy(force)
@@ -283,16 +283,16 @@
 /turf/closed/wall/attack_animal(mob/living/M as mob)
 	if(M.wall_smash)
 		if((isrwallturf(src)) || (resistance_flags & INDESTRUCTIBLE))
-			to_chat(M, span_warning("This [name] is far too strong for you to destroy."))
+			to_chat(M, span_warning("这个[name]对你来说太强大了，无法摧毁。"))
 			return
 		else
 			if((prob(40)))
-				M.visible_message(span_danger("[M] smashes through [src]."),
+				M.visible_message(span_danger("[M] 砸穿了 [src]。"),
 				span_danger("You smash through the wall."))
 				dismantle_wall(1)
 				return
 			else
-				M.visible_message(span_warning("[M] smashes against [src]."),
+				M.visible_message(span_warning("[M] 猛撞在 [src] 上。"),
 				span_warning("You smash against the wall."))
 				take_damage(rand(25, 75))
 				return
@@ -304,7 +304,7 @@
 		return
 
 	if(!ishuman(user))
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
+		to_chat(user, span_warning("你没有足够的灵巧度来完成这个动作！"))
 		return
 
 	else if(istype(I, /obj/item/frame/apc))
@@ -340,15 +340,15 @@
 	else if(wall_integrity < max_integrity && iswelder(I))
 		var/obj/item/tool/weldingtool/WT = I
 		if(!WT.remove_fuel(0, user))
-			to_chat(user, span_warning("You need more welding fuel to complete this task."))
+			to_chat(user, span_warning("你需要更多焊接燃料来完成此任务。"))
 			return
 
-		user.visible_message(span_notice("[user] starts repairing the damage to [src]."),
+		user.visible_message(span_notice("[user]开始修复[src]的损伤。"),
 		span_notice("You start repairing the damage to [src]."))
 		if(!I.use_tool(src, user, 5 SECONDS, 1, 25, null, BUSY_ICON_FRIENDLY)|| !iswallturf(src))
 			return
 
-		user.visible_message(span_notice("[user] finishes repairing the damage to [src]."),
+		user.visible_message(span_notice("[user]完成了对[src]的损伤修复。"),
 		span_notice("You finish repairing the damage to [src]."))
 		repair_damage(250, user)
 
@@ -358,7 +358,7 @@
 			if(0)
 				if(iswelder(I))
 					var/obj/item/tool/weldingtool/WT = I
-					user.visible_message(span_notice("[user] begins slicing through the outer plating."),
+					user.visible_message(span_notice("[user]开始切割外层护板。"),
 					span_notice("You begin slicing through the outer plating."))
 					if(!I.use_tool(src, user, 6 SECONDS, 1, 25, null, BUSY_ICON_BUILD))
 						return
@@ -366,11 +366,11 @@
 						return
 
 					d_state = 1
-					user.visible_message(span_notice("[user] slices through the outer plating."),
+					user.visible_message(span_notice("[user]切开了外层护板。"),
 					span_notice("You slice through the outer plating."))
 			if(1)
 				if(isscrewdriver(I))
-					user.visible_message(span_notice("[user] begins removing the support lines."),
+					user.visible_message(span_notice("[user]开始拆除支撑索。"),
 					span_notice("You begin removing the support lines."))
 					playsound(src, 'sound/items/screwdriver.ogg', 25, 1)
 
@@ -381,12 +381,12 @@
 						return
 
 					d_state = 2
-					user.visible_message(span_notice("[user] removes the support lines."),
+					user.visible_message(span_notice("[user] 移除了支撑线。"),
 					span_notice("You remove the support lines."))
 			if(2)
 				if(iswelder(I))
 					var/obj/item/tool/weldingtool/WT = I
-					user.visible_message(span_notice("[user] begins slicing through the metal cover."),
+					user.visible_message(span_notice("[user]开始切割金属盖板。"),
 					span_notice("You begin slicing through the metal cover."))
 
 					if(!I.use_tool(src, user, 6 SECONDS, 1, 25, null, BUSY_ICON_BUILD))
@@ -396,11 +396,11 @@
 						return
 
 					d_state = 3
-					user.visible_message(span_notice("[user] presses firmly on the cover, dislodging it."),
+					user.visible_message(span_notice("[user] 用力按压外壳，将其卸下。"),
 					span_notice("You press firmly on the cover, dislodging it."))
 			if(3)
 				if(iscrowbar(I))
-					user.visible_message(span_notice("[user] struggles to pry off the cover."),
+					user.visible_message(span_notice("[user] 费力地撬开盖子。"),
 					span_notice("You struggle to pry off the cover."))
 					playsound(src, 'sound/items/crowbar.ogg', 25, 1)
 
@@ -411,11 +411,11 @@
 						return
 
 					d_state = 4
-					user.visible_message(span_notice("[user] pries off the cover."),
+					user.visible_message(span_notice("[user]撬开了盖子。"),
 					span_notice("You pry off the cover."))
 			if(4)
 				if(iswrench(I))
-					user.visible_message(span_notice("[user] starts loosening the anchoring bolts securing the support rods."),
+					user.visible_message(span_notice("[user]开始拧松固定支撑杆的锚固螺栓。"),
 					span_notice("You start loosening the anchoring bolts securing the support rods."))
 					playsound(src, 'sound/items/ratchet.ogg', 25, 1)
 
@@ -426,11 +426,11 @@
 						return
 
 					d_state = 5
-					user.visible_message(span_notice("[user] removes the bolts anchoring the support rods."),
+					user.visible_message(span_notice("[user] 拆除了固定支撑杆的螺栓。"),
 					span_notice("You remove the bolts anchoring the support rods."))
 			if(5)
 				if(iswirecutter(I))
-					user.visible_message(span_notice("[user] begins uncrimping the hydraulic lines."),
+					user.visible_message(span_notice("[user]开始疏通液压管线。"),
 					span_notice("You begin uncrimping the hydraulic lines."))
 					playsound(src, 'sound/items/wirecutter.ogg', 25, 1)
 
@@ -441,11 +441,11 @@
 						return
 
 					d_state = 6
-					user.visible_message(span_notice("[user] finishes uncrimping the hydraulic lines."),
+					user.visible_message(span_notice("[user]完成了液压管路的修复。"),
 					span_notice("You finish uncrimping the hydraulic lines."))
 			if(6)
 				if(iscrowbar(I))
-					user.visible_message(span_notice("[user] struggles to pry off the inner sheath."),
+					user.visible_message(span_notice("[user] 费力地撬开内鞘。"),
 					span_notice("You struggle to pry off the inner sheath."))
 					playsound(src, 'sound/items/crowbar.ogg', 25, 1)
 
@@ -456,12 +456,12 @@
 						return
 
 					d_state = 7
-					user.visible_message(span_notice("[user] pries off the inner sheath."),
+					user.visible_message(span_notice("[user]撬开了内鞘。"),
 					span_notice("You pry off the inner sheath."))
 			if(7)
 				if(iswelder(I))
 					var/obj/item/tool/weldingtool/WT = I
-					user.visible_message(span_notice("[user] begins slicing through the final layer."),
+					user.visible_message(span_notice("[user] 开始切割最后一层。"),
 					span_notice("You begin slicing through the final layer."))
 
 					if(!I.use_tool(src, user, 6 SECONDS, 1, 25, null, BUSY_ICON_BUILD))
@@ -471,7 +471,7 @@
 						return
 
 					new /obj/item/stack/rods(src)
-					user.visible_message(span_notice("The support rods drop out as [user] slices through the final layer."),
+					user.visible_message(span_notice("支撑杆随着[user]切穿最后一层而脱落。"),
 					span_notice("The support rods drop out as you slice through the final layer."))
 					dismantle_wall()
 
@@ -494,18 +494,18 @@
 	switch(state)
 		if(GRAB_PASSIVE)
 			damage += base_damage
-			grabbed_mob.visible_message(span_warning("[user] slams [grabbed_mob] against [src]!"))
+			grabbed_mob.visible_message(span_warning("[user] 将 [grabbed_mob] 猛撞在 [src] 上！"))
 			log_combat(user, grabbed_mob, "slammed", "", "against [src]")
 		if(GRAB_AGGRESSIVE)
 			damage += base_damage * 1.5
-			grabbed_mob.visible_message(span_danger("[user] bashes [grabbed_mob] against [src]!"))
+			grabbed_mob.visible_message(span_danger("[user]将[grabbed_mob]猛撞在[src]上！"))
 			log_combat(user, grabbed_mob, "bashed", "", "against [src]")
 			if(prob(50))
 				grabbed_mob.Paralyze(2 SECONDS)
 				user.drop_held_item()
 		if(GRAB_NECK)
 			damage += base_damage * 2
-			grabbed_mob.visible_message(span_danger("<big>[user] crushes [grabbed_mob] against [src]!</big>"))
+			grabbed_mob.visible_message(span_danger("<big>[user]将[grabbed_mob]狠狠砸在[src]上！</big>"))
 			log_combat(user, grabbed_mob, "crushed", "", "against [src]")
 			grabbed_mob.Paralyze(2 SECONDS)
 			user.drop_held_item()

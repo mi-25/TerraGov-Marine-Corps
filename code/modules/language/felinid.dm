@@ -1,6 +1,6 @@
 /datum/language/felinid
-	name = "Felinid"
-	desc = "The common language of felinids, composed of cat noises."
+	name = "菲林人"
+	desc = "菲林人通用语，由猫科动物的叫声组成。"
 	speech_verb = "meows"
 	ask_verb = "pawnders"
 	exclaim_verb = "hisses"

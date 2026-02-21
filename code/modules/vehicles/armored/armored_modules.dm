@@ -4,8 +4,8 @@
  * Attached to the tank and provide abilities/ passive upgrades
  */
 /obj/item/tank_module
-	name = "Tank Module"
-	desc = "Yell at the admin that spawned this in please."
+	name = "坦克模块"
+	desc = "请向生成这个的管理员投诉。"
 	icon = 'icons/obj/armored/hardpoint_modules.dmi'
 	icon_state = "ltb_cannon"
 	///Special behavior flags
@@ -26,7 +26,7 @@
 		return FALSE
 	var/slot = is_driver_module ? vehicle.driver_utility_module : vehicle.gunner_utility_module
 	if(slot)
-		user?.balloon_alert(user, "module slot full")
+		user?.balloon_alert(user, "模块槽位已满")
 		return FALSE
 	user?.temporarilyRemoveItemFromInventory(src)
 	forceMove(vehicle)
@@ -65,8 +65,8 @@
 
 
 /obj/item/tank_module/overdrive
-	name = "overdrive module"
-	desc = "A module that enhances the speed of armored combat vehicles by increasing fuel efficiency."
+	name = "过载模块"
+	desc = "提升装甲战斗车辆速度的模块，通过提高燃油效率实现。"
 	icon_state = "overdrive"
 	attached_to_hull = TRUE
 
@@ -81,8 +81,8 @@
 	return ..()
 
 /obj/item/tank_module/passenger
-	name = "passenger module"
-	desc = "A module that increases the carrying capacity of a vehicle with extra seats."
+	name = "乘客舱模块"
+	desc = "提升车辆载客量的模块，增加额外座位。"
 	icon_state = "uninstalled APC frieght carriage"
 
 /obj/item/tank_module/passenger/on_equip(obj/vehicle/sealed/armored/vehicle, mob/living/user)
@@ -97,8 +97,8 @@
 
 
 /obj/item/tank_module/ability
-	name = "Ability Module"
-	desc = "You shouldnt be seeing this."
+	name = "能力模块"
+	desc = "你不应该看到这个。"
 	icon_state = "overdrive"
 	///typepaths for the ability we want to grant
 	var/ability_to_grant
@@ -122,16 +122,16 @@
 	return ..()
 
 /obj/item/tank_module/ability/zoom
-	name = "zoom module"
-	desc = "Allows gunners to see further while looking through it. Weapons cannot be used while looking through it."
+	name = "变焦模块"
+	desc = "允许射手在透过它观察时看得更远。透过它观察时无法使用武器。"
 	icon_state = "zoom"
 	is_driver_module = FALSE
 	flag_controller = VEHICLE_CONTROL_EQUIPMENT
 	ability_to_grant = /datum/action/vehicle/sealed/armored/zoom
 
 /obj/item/tank_module/ability/smoke_launcher
-	name = "smoke launcher module"
-	desc = "Allows the driver to launch a smokescreen in front of the tank."
+	name = "烟雾发射器模块"
+	desc = "允许驾驶员在坦克前方释放烟雾弹幕。"
 	icon_state = "smoke_launcher"
 	tank_mod_flags = TANK_MOD_NOT_FABRICABLE
 	is_driver_module = TRUE
@@ -139,8 +139,8 @@
 	ability_to_grant = /datum/action/vehicle/sealed/armored/smoke_screen
 
 /obj/item/tank_module/ability/tesla
-	name = "tesla module"
-	desc = "Allows the driver to briefly electrify the vehicle's hull. Good for unwanted guests."
+	name = "特斯拉模块"
+	desc = "允许驾驶员短暂电击载具外壳。适用于不速之客。"
 	icon_state = "smoke_launcher"
 	tank_mod_flags = TANK_MOD_NOT_FABRICABLE
 	is_driver_module = TRUE
@@ -148,8 +148,8 @@
 	ability_to_grant = /datum/action/vehicle/sealed/armored/tesla
 
 /obj/item/tank_module/interior
-	name = "generic interior module"
-	desc = "you shouldnt see this"
+	name = "通用内部模块"
+	desc = "你不应该看到这个"
 	is_driver_module = TRUE
 	///max occupants to set when adding this module
 	var/set_max_occupants
@@ -169,7 +169,7 @@
 		return
 	if(LAZYLEN(vehicle.occupants))
 		if(user)
-			balloon_alert(user, "occupants still inside")
+			balloon_alert(user, "仍有乘员在内")
 		return FALSE
 	QDEL_NULL(vehicle.interior)
 	vehicle.interior = new interior_typepath(vehicle, CALLBACK(vehicle, TYPE_PROC_REF(/obj/vehicle/sealed/armored, interior_exit)))
@@ -179,7 +179,7 @@
 /obj/item/tank_module/interior/on_unequip(mob/user)
 	if(LAZYLEN(owner.occupants))
 		if(user)
-			balloon_alert(user, "occupants still inside")
+			balloon_alert(user, "仍有乘员在内")
 		return FALSE
 	QDEL_NULL(owner.interior)
 	var/init_type = initial(owner.interior)
@@ -190,15 +190,15 @@
 	return ..()
 
 /obj/item/tank_module/interior/medical
-	name = "medical interior"
-	desc = "A medical interior package, stocked with a operating table and a medical vendor."
+	name = "医疗舱室"
+	desc = "医疗舱内装包，配备手术台和医疗贩卖机。"
 	icon_state = "medical_interior"
 	interior_typepath = /datum/interior/armored/medical
 	set_max_occupants = 12
 
 /obj/item/tank_module/interior/clone_bay
-	name = "clone bay interior"
-	desc = "A clone interior package, designed for the rapid production of cheap clone soldiers."
+	name = "克隆舱内部"
+	desc = "克隆舱内部组件套装，专为快速生产廉价克隆士兵而设计。"
 	icon_state = "cloner_interior"
 	interior_typepath = /datum/interior/armored/clone_bay
 	set_max_occupants = 12

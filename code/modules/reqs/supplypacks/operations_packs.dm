@@ -6,37 +6,37 @@ OPERATIONS
 	containertype = /obj/structure/closet/crate
 
 /datum/supply_packs/operations/beacons_supply
-	name = "Supply beacon"
+	name = "补给信标"
 	contains = list(/obj/item/supply_beacon)
 	cost = 100
 
 /datum/supply_packs/operations/fulton_extraction_pack
-	name = "Fulton extraction pack"
+	name = "富尔顿回收包"
 	contains = list(/obj/item/fulton_extraction_pack)
 	cost = 100
 
 /datum/supply_packs/operations/tank_fulton
-	name = "Heavy vehicle Fulton extraction pack"
+	name = "重型载具富尔顿回收包"
 	contains = list(/obj/item/fulton_extraction_pack/tank)
 	cost = 400
 
 /datum/supply_packs/operations/autominer
-	name = "Autominer upgrade"
+	name = "自动采矿机升级"
 	contains = list(/obj/item/minerupgrade/automatic)
 	cost = 50
 
 /datum/supply_packs/operations/miningwelloverclock
-	name = "Mining well reinforcement upgrade"
+	name = "矿井加固升级"
 	contains = list(/obj/item/minerupgrade/reinforcement)
 	cost = 50
 
 /datum/supply_packs/operations/miningwellresistance
-	name = "Mining well overclock upgrade"
+	name = "矿井超频升级"
 	contains = list(/obj/item/minerupgrade/overclock)
 	cost = 50
 
 /datum/supply_packs/operations/binoculars_tactical
-	name = "Tactical binoculars crate"
+	name = "战术望远镜板条箱"
 	contains = list(
 		/obj/item/binoculars/tactical,
 		/obj/item/encryptionkey/cas,
@@ -45,25 +45,25 @@ OPERATIONS
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/operations/pinpointer
-	name = "Xeno structure tracker crate"
+	name = "异形建筑追踪板条箱"
 	contains = list(/obj/item/pinpointer)
 	cost = 200
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/operations/xeno_iff_tag
-	name = "Xenomorph IFF tag crate" //Intended for corrupted or friendly rounies as rounds sometimes turn out. Avoid abuse or I'll have to admin-only it, which is no fun!
+	name = "异形敌我识别标签板条箱" //Intended for corrupted or friendly rounies as rounds sometimes turn out. Avoid abuse or I'll have to admin-only it, which is no fun!
 	notes = "Contains an IFF tag used to mark a xenomorph as friendly to IFF systems. Warning: Nanotrasen is not responsible for incidents related to attaching this to hostile entities."
 	contains = list(/obj/item/xeno_iff_tag)
 	access = ACCESS_MARINE_BRIDGE //Better be safe.
 	cost = 130
 
 /datum/supply_packs/operations/flare_crate
-	name = "Surplus flare crate"
+	name = "剩余信号弹板条箱"
 	contains = list(/obj/structure/largecrate/supply/supplies/flares)
 	cost = 75
 
 /datum/supply_packs/operations/deployable_camera
-	name = "3 deployable cameras"
+	name = "3个可部署摄像头"
 	contains = list(
 		/obj/item/deployable_camera,
 		/obj/item/deployable_camera,
@@ -72,12 +72,12 @@ OPERATIONS
 	cost = 20
 
 /datum/supply_packs/operations/exportpad
-	name = "ASRS bluespace export point"
+	name = "ASRS 超空间出口点"
 	contains = list(/obj/machinery/exportpad)
 	cost = 300
 
 /datum/supply_packs/operations/warhead_cluster
-	name = "Cluster orbital warhead"
+	name = "集束轨道弹头"
 	contains = list(/obj/structure/ob_ammo/warhead/cluster)
 	cost = 200
 	access = ACCESS_MARINE_ENGINEERING
@@ -85,7 +85,7 @@ OPERATIONS
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/operations/warhead_explosive
-	name = "HE orbital warhead"
+	name = "HE轨道弹头"
 	contains = list(/obj/structure/ob_ammo/warhead/explosive)
 	cost = 300
 	access = ACCESS_MARINE_ENGINEERING
@@ -93,7 +93,7 @@ OPERATIONS
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/operations/warhead_incendiary
-	name = "Incendiary orbital warhead"
+	name = "燃烧弹轨道弹头"
 	contains = list(/obj/structure/ob_ammo/warhead/incendiary)
 	cost = 200
 	access = ACCESS_MARINE_ENGINEERING
@@ -101,7 +101,7 @@ OPERATIONS
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/operations/warhead_plasmaloss
-	name = "Plasma draining orbital warhead"
+	name = "等离子体抽取轨道弹头"
 	contains = list(/obj/structure/ob_ammo/warhead/plasmaloss)
 	cost = 150
 	access = ACCESS_MARINE_ENGINEERING
@@ -109,7 +109,7 @@ OPERATIONS
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/operations/ob_fuel
-	name = "Solid fuel"
+	name = "固体燃料"
 	contains = list(/obj/structure/ob_ammo/ob_fuel)
 	cost = 50
 	access = ACCESS_MARINE_ENGINEERING
@@ -117,34 +117,34 @@ OPERATIONS
 	available_against_xeno_only = TRUE
 
 /datum/supply_packs/operations/droppod
-	name = "Zeus orbital drop pod"
+	name = "宙斯轨道空投舱"
 	contains = list(/obj/structure/droppod)
 	containertype = null
 	cost = 50
 
 /datum/supply_packs/operations/droppod_leader
-	name = "Zeus command drop pod"
+	name = "宙斯指令空降舱"
 	contains = list(/obj/structure/droppod/leader)
 	containertype = null
 	cost = 100
 
 /datum/supply_packs/operations/researchcomp
-	name = "Research console"
+	name = "研究控制台"
 	contains = list(/obj/machinery/researchcomp)
 	containertype = null
 	cost = 200
 
 /datum/supply_packs/operations/supply_tablet
-	name = "Supply tablet"
+	name = "补给平板"
 	contains = list(/obj/item/supplytablet)
 	cost = 50
 
 /datum/supply_packs/operations/tadpole_electronics
-	name = "Tadpole navigation electronics"
+	name = "蝌蚪号导航电子设备"
 	contains = list(/obj/item/circuitboard/tadpole)
 	cost = 750
 
 /datum/supply_packs/operations/rappel_rope
-	name = "Tadpole rappel system cord"
+	name = "蝌蚪号速降系统绳索"
 	contains = list(/obj/item/spare_cord)
 	cost = 300

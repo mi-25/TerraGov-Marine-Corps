@@ -2,7 +2,7 @@
 #define TRACKING_ID_SOM_COMMANDER "som-commander"
 
 SUBSYSTEM_DEF(direction)
-	name = "Direction"
+	name = "方向"
 	priority = FIRE_PRIORITY_DIRECTION
 	runlevels = RUNLEVEL_GAME|RUNLEVEL_POSTGAME
 	wait = 1 SECONDS

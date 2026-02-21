@@ -88,7 +88,7 @@
 		return
 	if(!anchored && (move_resist < MOVE_FORCE_STRONG))
 		step(src, AM.dir)
-	visible_message(span_warning("[src] was hit by [AM]."), visible_message_flags = COMBAT_MESSAGE)
+	visible_message(span_warning("[src]被[AM]击中了。"), visible_message_flags = COMBAT_MESSAGE)
 	var/tforce = 0
 	if(ismob(AM))
 		tforce = 40
@@ -105,7 +105,7 @@
 	if(proj.damage < 1)
 		return
 	if(proj.damage > 30)
-		visible_message(span_warning("\The [src] is damaged by \the [proj]!"), visible_message_flags = COMBAT_MESSAGE)
+		visible_message(span_warning("\The [src] 被 \the [proj] 损坏了！"), visible_message_flags = COMBAT_MESSAGE)
 	take_damage(proj.damage, proj.ammo.damage_type, proj.ammo.armor_type, 0, REVERSE_DIR(proj.dir), proj.ammo.penetration, isliving(proj.firer) ? proj.firer : null)
 
 
@@ -137,10 +137,10 @@
 	if(SEND_SIGNAL(src, COMSIG_OBJ_ATTACK_ALIEN, xeno_attacker, damage_amount) & COMPONENT_NO_ATTACK_ALIEN)
 		return FALSE
 	if(!(resistance_flags & XENO_DAMAGEABLE))
-		to_chat(xeno_attacker, span_warning("We stare at \the [src] cluelessly."))
+		to_chat(xeno_attacker, span_warning("我们茫然地盯着\the [src]。"))
 		return FALSE
 	if(effects)
-		xeno_attacker.visible_message(span_danger("[xeno_attacker] has slashed [src]!"),
+		xeno_attacker.visible_message(span_danger("[xeno_attacker] 对 [src] 发动了斩击！"),
 		span_danger("We slash [src]!"))
 		xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
 		playsound(loc, SFX_ALIEN_CLAW_METAL, 25)
@@ -148,7 +148,7 @@
 	return TRUE
 
 /obj/attack_larva(mob/living/carbon/xenomorph/larva/L)
-	L.visible_message(span_danger("[L] nudges its head against [src]."), \
+	L.visible_message(span_danger("[L] 用头轻轻蹭了蹭 [src]。"), \
 	span_danger("You nudge your head against [src]."))
 
 

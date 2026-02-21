@@ -125,7 +125,7 @@
 	if(user)
 		var/skill = user.skills.getRating(SKILL_ENGINEER)
 		if(skill < SKILL_ENGINEER_ENGI)
-			user.visible_message(span_notice("[user] fumbles around figuring out the wiring."),
+			user.visible_message(span_notice("[user] 笨手笨脚地摸索着线路。"),
 			span_notice("You fumble around figuring out the wiring."))
 			if(!do_after(user, 2 SECONDS * (SKILL_ENGINEER_ENGI - skill), NONE, holder, BUSY_ICON_UNSKILLED))
 				return
@@ -157,7 +157,7 @@
 	if(user) //Signalers skip pulse delay
 		var/skill = user.skills.getRating(SKILL_ENGINEER)
 		if(skill < SKILL_ENGINEER_ENGI)
-			user.visible_message(span_notice("[usr] fumbles around figuring out the wiring."),
+			user.visible_message(span_notice("[usr] 笨手笨脚地摸索着线路。"),
 			span_notice("You fumble around figuring out the wiring."))
 			if(!do_after(user, 2 SECONDS * (SKILL_ENGINEER_ENGI - skill), NONE, holder, BUSY_ICON_UNSKILLED) || is_cut(wire))
 				return
@@ -288,7 +288,7 @@
 				cut_color(target_wire)
 				. = TRUE
 			else
-				holder.balloon_alert(L, "need wirecutters!")
+				holder.balloon_alert(L, "需要钢丝钳！")
 		if("pulse")
 			I = L.is_holding_tool_quality(TOOL_MULTITOOL)
 			if(I || IsAdminGhost(usr))
@@ -297,7 +297,7 @@
 				pulse_color(target_wire, L)
 				. = TRUE
 			else
-				holder.balloon_alert(L, "need a multitool!")
+				holder.balloon_alert(L, "需要一把多功能工具！")
 		if("attach")
 			if(is_attached(target_wire))
 				I = detach_assembly(target_wire)
@@ -315,6 +315,6 @@
 							A.forceMove(L.drop_location())
 						. = TRUE
 					else
-						holder.balloon_alert(L, "need an attachable assembly!")
+						holder.balloon_alert(L, "需要可装配组件！")
 
 #undef MAXIMUM_EMP_WIRES

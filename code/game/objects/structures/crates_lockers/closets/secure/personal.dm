@@ -1,6 +1,6 @@
 /obj/structure/closet/secure_closet/personal
-	desc = "It's a secure locker for personnel. The first card swiped gains control."
-	name = "personal closet"
+	desc = "这是一个人员安全储物柜。首次刷卡者获得控制权。"
+	name = "个人储物柜"
 	req_access = list(ACCESS_CIVILIAN_PUBLIC)
 	var/registered_name = null
 
@@ -12,10 +12,10 @@
 		new /obj/item/storage/backpack/satchel/norm(src)
 
 /obj/structure/closet/secure_closet/personal/patient
-	name = "Patient's Closet"
+	name = "患者衣柜"
 
 /obj/structure/closet/secure_closet/personal/morgue
-	name = "Morgue Closet"
+	name = "太平间壁橱"
 
 /obj/structure/closet/secure_closet/personal/patient/Initialize(mapload)
 	. = ..()
@@ -61,7 +61,7 @@
 		if (W) W.loc = src.loc
 	else if(istype(W, /obj/item/card/id))
 		if(src.broken)
-			to_chat(user, span_warning("It appears to be broken."))
+			to_chat(user, span_warning("它看起来坏了。"))
 			return
 		var/obj/item/card/id/I = W
 		if(!I || !I.registered_name)	return
@@ -75,9 +75,9 @@
 				src.registered_name = I.registered_name
 				src.desc = "Owned by [I.registered_name]."
 		else
-			to_chat(user, span_warning("Access Denied"))
+			to_chat(user, span_warning("访问被拒绝"))
 		return
-	to_chat(user, span_warning("Access Denied"))
+	to_chat(user, span_warning("访问被拒绝"))
 
 
 /obj/structure/closet/secure_closet/personal/verb/reset()
@@ -89,9 +89,9 @@
 	if(!ishuman(usr))
 		return
 	if (src.locked || !src.registered_name)
-		to_chat(usr, span_warning("You need to unlock it first."))
+		to_chat(usr, span_warning("你需要先解锁它。"))
 	else if (src.broken)
-		to_chat(usr, span_warning("It appears to be broken."))
+		to_chat(usr, span_warning("它看起来坏了。"))
 	else
 		if (src.opened)
 			if(!src.close())

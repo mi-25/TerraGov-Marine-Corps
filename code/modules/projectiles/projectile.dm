@@ -23,7 +23,7 @@
 
 //The actual bullet objects.
 /atom/movable/projectile
-	name = "projectile"
+	name = "抛射物"
 	icon = 'icons/obj/items/projectiles.dmi'
 	icon_state = "bullet"
 	density = FALSE
@@ -1309,7 +1309,7 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 		current_bulletholes++
 
 	if(damage >= 100)
-		visible_message(span_warning("[src] is damaged by [proj]!"), visible_message_flags = COMBAT_MESSAGE)
+		visible_message(span_warning("[src] 被 [proj] 击伤了！"), visible_message_flags = COMBAT_MESSAGE)
 	take_damage(damage)
 	return TRUE
 

@@ -16,36 +16,36 @@
 	var/weed_kill_str = 0
 
 /obj/item/tool/plantspray/weeds // -- Skie
-	name = "weed-spray"
-	desc = "It's a toxic mixture, in spray form, to kill small weeds."
+	name = "菌毯喷雾"
+	desc = "这是一种有毒混合物，喷雾形式，用于清除小型菌毯。"
 	icon_state = "weedspray"
 	weed_kill_str = 6
 
 /obj/item/tool/plantspray/pests
-	name = "pest-spray"
-	desc = "It's some pest eliminator spray! <I>Do not inhale!</I>"
+	name = "害虫喷雾"
+	desc = "这是某种害虫清除喷雾！<I>请勿吸入！</I>"
 	icon_state = "pestspray"
 	pest_kill_str = 6
 
 /obj/item/tool/plantspray/pests/old
-	name = "bottle of pestkiller"
+	name = "杀虫剂瓶"
 	icon = 'icons/obj/items/chemistry.dmi'
 	icon_state = "bottle16"
 
 /obj/item/tool/plantspray/pests/old/carbaryl
-	name = "bottle of carbaryl"
+	name = "卡巴立瓶"
 	icon_state = "bottle16"
 	toxicity = 4
 	pest_kill_str = 2
 
 /obj/item/tool/plantspray/pests/old/lindane
-	name = "bottle of lindane"
+	name = "林丹杀虫剂瓶"
 	icon_state = "bottle18"
 	toxicity = 6
 	pest_kill_str = 4
 
 /obj/item/tool/plantspray/pests/old/phosmet
-	name = "bottle of phosmet"
+	name = "磷酰胺瓶"
 	icon_state = "bottle15"
 	toxicity = 8
 	pest_kill_str = 7
@@ -53,33 +53,33 @@
 
 
 /obj/item/tool/weedkiller
-	name = "bottle of weedkiller"
+	name = "除草剂瓶"
 	icon = 'icons/obj/items/chemistry.dmi'
 	icon_state = "bottle16"
 	var/toxicity = 0
 	var/weed_kill_str = 0
 
 /obj/item/tool/weedkiller/triclopyr
-	name = "bottle of glyphosate"
+	name = "草甘膦瓶"
 	icon_state = "bottle16"
 	toxicity = 4
 	weed_kill_str = 2
 
 /obj/item/tool/weedkiller/lindane
-	name = "bottle of triclopyr"
+	name = "三氯吡氧乙酸瓶"
 	icon_state = "bottle18"
 	toxicity = 6
 	weed_kill_str = 4
 
 /obj/item/tool/weedkiller/D24
-	name = "bottle of 2,4-D"
+	name = "2,4-D 除草剂瓶"
 	icon_state = "bottle15"
 	toxicity = 8
 	weed_kill_str = 7
 
 /obj/item/tool/minihoe // -- Numbers
-	name = "mini hoe"
-	desc = "It's used for removing weeds or scratching your back."
+	name = "迷你锄"
+	desc = "用于清除菌毯或挠背。"
 	icon = 'icons/obj/items/tools.dmi'
 	icon_state = "hoe"
 	worn_icon_state = "hoe"
@@ -92,8 +92,8 @@
 
 //Hatchets and things to kill kudzu
 /obj/item/tool/hatchet
-	name = "hatchet"
-	desc = "A sharp hand hatchet, commonly used to cut things apart, be it timber or other objects. Often found in the hands of woodsmen, scouts, and looters."
+	name = "手斧"
+	desc = "一把锋利的手斧，常用于劈砍物体，无论是木材还是其他东西。常见于伐木工、侦察兵和掠夺者手中。"
 	icon = 'icons/obj/items/tools.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/weapons/melee_left.dmi',
@@ -115,8 +115,8 @@
 	return ..()
 
 /obj/item/tool/scythe
-	name = "scythe"
-	desc = "A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow."
+	name = "镰刀"
+	desc = "一把锋利弯曲的刀刃安装在长长的纤维金属手柄上，这件工具让你轻松收割所播种之物。"
 	icon = 'icons/obj/items/tools.dmi'
 	icon_state = "scythe"
 	force = 35

@@ -1,6 +1,6 @@
 //Use turfs for solid parts BUT use structures otherwise so we can see through
 /turf/closed/shuttle/cas
-	name = "\improper Condor Jet"
+	name = "\improper 秃鹫喷气机"
 	icon = 'icons/turf/cas.dmi'
 	icon_state = "1"
 	appearance_flags = TILE_BOUND|KEEP_TOGETHER
@@ -73,8 +73,8 @@
 	icon_state = "cas_plane_backpiece"
 
 /turf/closed/shuttle/cas/computer
-	name = "Condor piloting computer"
-	desc = "Does not support Pinball."
+	name = "秃鹰号驾驶计算机"
+	desc = "不支持弹球。"
 	icon_state = "cockpit"
 
 /turf/closed/shuttle/cas/computer/Initialize(mapload)
@@ -173,7 +173,7 @@
 
 ///Base cas plane structure, we use this instead of turfs if we want to peek onto the turfs below
 /obj/structure/caspart
-	name = "\improper Condor Jet"
+	name = "\improper 秃鹫喷气机"
 	icon = 'icons/turf/cas.dmi'
 	icon_state = "2"
 	layer = OBJ_LAYER
@@ -203,8 +203,8 @@
 	add_overlay(overlay)
 
 /obj/structure/caspart/minigun
-	name = "\improper Condor Jet minigun"
-	desc = " A terrifying radial-mounted GAU-30mm minigun. You don't want to be on the wrong end of this."
+	name = "\improper 秃鹫喷气式机枪"
+	desc = "一门恐怖的径向安装GAU-30毫米加特林机枪。你绝不会想站在它的枪口所指之处。"
 	icon_state = "1"
 	///static weapon we start with at the tip
 	var/static_weapon_type = /obj/structure/dropship_equipment/cas/weapon/heavygun/radial_cas

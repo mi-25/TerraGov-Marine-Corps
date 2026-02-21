@@ -1,7 +1,7 @@
 
 /datum/action/ability
 	///If you are going to add an explanation for an ability. don't use stats, give a very brief explanation of how to use it.
-	desc = "This ability can not be found in codex."
+	desc = "该能力无法在法典中找到。"
 	action_icon = 'icons/Xeno/actions/general.dmi'
 	///The cost of using this ability. Typically a plasma cost for xenos
 	var/ability_cost = 0
@@ -60,43 +60,43 @@
 
 	if(!(to_check_flags & ABILITY_IGNORE_COOLDOWN) && !action_cooldown_finished())
 		if(!silent)
-			carbon_owner.balloon_alert(carbon_owner, "wait [cooldown_remaining()] seconds!")
+			carbon_owner.balloon_alert(carbon_owner, "等待 [cooldown_remaining()] 秒！")
 		return FALSE
 
 	if(!(to_check_flags & ABILITY_USE_INCAP) && carbon_owner.incapacitated())
 		if(!silent)
-			carbon_owner.balloon_alert(carbon_owner, "incapacitated!")
+			carbon_owner.balloon_alert(carbon_owner, "丧失行动能力！")
 		return FALSE
 
 	if(!(to_check_flags & ABILITY_USE_LYING) && carbon_owner.lying_angle)
 		if(!silent)
-			carbon_owner.balloon_alert(carbon_owner, "lying down!")
+			carbon_owner.balloon_alert(carbon_owner, "躺下！")
 		return FALSE
 
 	if(!(to_check_flags & ABILITY_USE_BUCKLED) && carbon_owner.buckled)
 		if(!silent)
-			carbon_owner.balloon_alert(carbon_owner, "buckled!")
+			carbon_owner.balloon_alert(carbon_owner, "已固定！")
 		return FALSE
 
 	if(!(to_check_flags & ABILITY_USE_STAGGERED) && carbon_owner.IsStaggered())
 		if(!silent)
-			carbon_owner.balloon_alert(carbon_owner, "staggered!")
+			carbon_owner.balloon_alert(carbon_owner, "踉跄了！")
 		return FALSE
 
 
 	if(!(to_check_flags & ABILITY_USE_NOTTURF) && !isturf(carbon_owner.loc))
 		if(!silent)
-			carbon_owner.balloon_alert(carbon_owner, "not right here!")
+			carbon_owner.balloon_alert(carbon_owner, "不在这里！")
 		return FALSE
 
 	if(!(to_check_flags & ABILITY_USE_BUSY) && carbon_owner.do_actions)
 		if(!silent)
-			carbon_owner.balloon_alert(carbon_owner, "busy!")
+			carbon_owner.balloon_alert(carbon_owner, "忙！")
 		return FALSE
 
 	if(!(to_check_flags & ABILITY_USE_BURROWED) && HAS_TRAIT(carbon_owner, TRAIT_BURROWED))
 		if(!silent)
-			carbon_owner.balloon_alert(carbon_owner, "burrowed!")
+			carbon_owner.balloon_alert(carbon_owner, "已潜伏！")
 		return FALSE
 
 	if(!(to_check_flags & ABILITY_USE_SOLIDOBJECT))
@@ -106,14 +106,14 @@
 		if(isclosedturf(current_turf))
 			if(!silent)
 				//Not converted to balloon alert as xeno.dm's balloon alert is simultaneously called and will overlap.
-				to_chat(owner, span_warning("We can't do this while in a solid object!"))
+				to_chat(owner, span_warning("我们无法在固体物体内进行轨道轰炸！"))
 			return FALSE
 		for(var/obj/turf_object in current_turf.contents)
 			if(!turf_object.density || !turf_object.opacity)
 				continue
 			if(!silent)
 				//Same as above.
-				to_chat(owner, span_warning("We can't do this while in a solid object!"))
+				to_chat(owner, span_warning("我们无法在固体物体内进行轨道轰炸！"))
 			return FALSE
 
 	return TRUE

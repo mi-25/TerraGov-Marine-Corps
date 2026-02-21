@@ -3,8 +3,8 @@
 #define BLINK_DRIVE_CHARGE_TIME 2 SECONDS
 
 /obj/item/blink_drive
-	name = "blink drive"
-	desc = "A portable Bluespace Displacement Drive, otherwise known as a blink drive. Can teleport the user across short distances with a degree of unreliability, with potentially fatal results. Teleporting past 5 tiles, to tiles out of sight or rapid use of the drive add variance to the teleportation destination. <b>Alt right click or middleclick to teleport to a destination when the blink drive is equipped.</b>"
+	name = "跃迁引擎"
+	desc = "便携式蓝移置换驱动器，又称闪现驱动器。可将使用者短距离传送，但有一定不可靠性，可能导致致命后果。传送超过5格、传送到视线外或快速使用该驱动器会增加传送目的地的偏差。<b>装备闪现驱动器时，按住Alt键并右键或中键点击可传送至目标位置。</b>"
 	icon = 'icons/obj/items/jetpack.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/equipment/backpacks_left.dmi',
@@ -83,7 +83,7 @@
 ///Handles the actual teleportation
 /obj/item/blink_drive/proc/teleport(atom/A, mob/user)
 	if(charges <= 0)
-		user.balloon_alert(user, "no charge!")
+		user.balloon_alert(user, "没有充能！")
 		playsound(src, 'sound/items/blink_empty.ogg', 25, 1)
 		return
 	var/turf/target_turf = get_turf(A)
@@ -94,7 +94,7 @@
 	var/target_distance = get_dist(user, target_turf)
 
 	if(target_distance > BLINK_DRIVE_RANGE)
-		user.balloon_alert(user, "too far!")
+		user.balloon_alert(user, "太远了！")
 		return
 
 	user.face_atom(target_turf)
@@ -115,7 +115,7 @@
 			return
 		if(pulled_target != user.pulling)
 			return
-		user.balloon_alert(user, "pulled someone through")
+		user.balloon_alert(user, "将某人拖拽穿过")
 
 	teleport_debuff_aoe(user)
 	user.forceMove(target_turf)
@@ -158,7 +158,7 @@
 	for(var/mob/living/living_target in range(1, teleporter))
 		living_target.adjust_stagger(1 SECONDS)
 		living_target.add_slowdown(1)
-		to_chat(living_target, span_warning("You feel nauseous as reality warps around you!"))
+		to_chat(living_target, span_warning("你感到一阵恶心，周围的现实开始扭曲！"))
 
 //codex stuff
 /obj/item/blink_drive/get_mechanics_info()
@@ -194,9 +194,9 @@
 	. += jointext(traits, "<br>")
 
 /datum/action/ability/activable/item_toggle/blink_drive
-	name = "Use Blink Drive"
+	name = "使用闪现驱动器"
 	action_icon_state = "axe_sweep"
-	desc = "Teleport a short distance instantly."
+	desc = "瞬间短距离传送。"
 	use_state_flags = ABILITY_USE_STAGGERED|ABILITY_USE_BUSY
 	keybinding_signals = list(KEYBINDING_NORMAL = COMSIG_ITEM_TOGGLE_BLINKDRIVE)
 
@@ -205,7 +205,7 @@
 	if(carbon_owner.incapacitated() || carbon_owner.lying_angle)
 		return FALSE
 	if(is_mainship_level(carbon_owner.z))
-		carbon_owner.balloon_alert(carbon_owner, "can't use that here!")
+		carbon_owner.balloon_alert(carbon_owner, "这里不能用那个！")
 		return FALSE
 	return ..()
 

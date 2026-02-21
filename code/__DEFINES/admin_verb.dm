@@ -64,7 +64,7 @@ _ADMIN_VERB(verb_path_name, verb_permissions, verb_name, verb_desc, verb_categor
  * This is an example of how to use the above macro:
  * ```
  * ADMIN_VERB(name_of_verb, R_ADMIN, "Verb Name", "Verb Desc", "Verb Category", mob/target in world)
- *     to_chat(user, "Hello!")
+ *     to_chat(user, "你好！")
  * ```
  * Note the implied `client/user` argument that is injected into the verb.
  * Also note that byond is shit and you cannot multi-line the macro call.

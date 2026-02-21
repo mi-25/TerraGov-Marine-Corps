@@ -11,7 +11,7 @@
 	var/mob/living/carbon/human/H = A
 
 	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_CHEW))
-		to_chat(H, span_warning("You can't bite your hand again yet..."))
+		to_chat(H, span_warning("你还不能再次咬自己的手……"))
 		return
 
 	if (!H.handcuffed)
@@ -54,7 +54,7 @@
 
 	var/datum/limb/temp = get_limb(hand ? "l_hand" : "r_hand")
 	if(temp && !temp.is_usable())
-		to_chat(src, "<span class='notice'>You try to move your [temp.display_name], but cannot!")
+		to_chat(src, "<span class='notice'>你试图移动你的[temp.display_name]，但无法做到！</span>")
 		return
 
 	if(LAZYACCESS(modifiers, "right"))

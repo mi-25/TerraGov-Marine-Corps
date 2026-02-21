@@ -59,10 +59,10 @@
 		reagents.reaction(M, INGEST)
 		reagents.trans_to(M, reagents.total_volume)
 		if(M == user)
-			visible_message(span_notice("[user] eats some [loaded] from \the [src]."))
+			visible_message(span_notice("[user] 从 \the [src] 中吃了一些 [loaded]。"))
 			M.reagents.add_reagent(/datum/reagent/consumable/nutriment, 1)
 		else
-			visible_message(span_notice("[user] feeds [M] some [loaded] from \the [src]"))
+			visible_message(span_notice("[user]用\the [src]给[M]喂了一些[loaded]"))
 			M.reagents.add_reagent(/datum/reagent/consumable/nutriment, 1)
 		playsound(M.loc,'sound/items/eatfood.ogg', 15, 1)
 		QDEL_NULL(loaded)
@@ -76,24 +76,24 @@
 	attack_hand(xeno_attacker)
 
 /obj/item/tool/kitchen/utensil/fork
-	name = "fork"
-	desc = "It's a fork. Sure is pointy."
+	name = "分叉"
+	desc = "这是一把叉子。确实很尖。"
 	icon_state = "fork"
 
 /obj/item/tool/kitchen/utensil/pfork
-	name = "plastic fork"
-	desc = "Yay, no washing up to do."
+	name = "塑料叉"
+	desc = "太好了，不用洗碗了。"
 	icon_state = "pfork"
 
 /obj/item/tool/kitchen/utensil/spoon
-	name = "spoon"
-	desc = "It's a spoon. You can see your own upside-down face in the reflection."
+	name = "勺子"
+	desc = "这是一把勺子。你可以在反光中看到自己倒过来的脸。"
 	icon_state = "spoon"
 	attack_verb = list("attacks", "pokes")
 
 /obj/item/tool/kitchen/utensil/pspoon
-	name = "plastic spoon"
-	desc = "It's a plastic spoon. How dull."
+	name = "塑料勺"
+	desc = "这是一把塑料勺子。真没劲。"
 	icon_state = "pspoon"
 	attack_verb = list("attacks", "pokes")
 
@@ -101,8 +101,8 @@
 * Knives
 */
 /obj/item/tool/kitchen/utensil/knife
-	name = "knife"
-	desc = "Can cut through any food."
+	name = "求生刀"
+	desc = "能切开任何食物。"
 	icon_state = "knife"
 	force = 10
 	throwforce = 10
@@ -120,8 +120,8 @@
 	return ..()
 
 /obj/item/tool/kitchen/utensil/pknife
-	name = "plastic knife"
-	desc = "The bluntest of blades."
+	name = "塑料刀"
+	desc = "最钝的刀刃。"
 	icon_state = "pknife"
 	force = 10
 	throwforce = 10
@@ -130,9 +130,9 @@
 * Kitchen knives
 */
 /obj/item/tool/kitchen/knife
-	name = "kitchen knife"
+	name = "厨房刀"
 	icon_state = "knife"
-	desc = "A general purpose Chef's Knife made by SpaceCook Incorporated. Guaranteed to stay sharp for years to come."
+	desc = "太空厨具公司生产的通用厨师刀。保证多年锋利如初。"
 	atom_flags = CONDUCT
 	sharp = IS_SHARP_ITEM_ACCURATE
 	edge = 1
@@ -150,8 +150,8 @@
 	return BRUTELOSS
 
 /obj/item/tool/kitchen/knife/ritual
-	name = "ritual knife"
-	desc = "The unearthly energies that once powered this blade are now dormant."
+	name = "仪式匕首"
+	desc = "曾为这把剑刃提供动力的超凡能量现已沉寂。"
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
 
@@ -159,9 +159,9 @@
 * Bucher's cleaver
 */
 /obj/item/tool/kitchen/knife/butcher
-	name = "butcher's cleaver"
+	name = "屠夫砍刀"
 	icon_state = "butch"
-	desc = "A huge thing used for chopping and chopping up meat. This includes clowns and clown-by-products."
+	desc = "用于切剁肉类的大型工具。这包括小丑以及小丑副产品。"
 	atom_flags = CONDUCT
 	force = 35
 	w_class = WEIGHT_CLASS_SMALL
@@ -178,8 +178,8 @@
 */
 
 /obj/item/tool/kitchen/rollingpin
-	name = "rolling pin"
-	desc = "Used to knock out the Bartender."
+	name = "擀面杖"
+	desc = "用于击晕酒保。"
 	icon_state = "rolling_pin"
 	force = 8
 	throwforce = 10

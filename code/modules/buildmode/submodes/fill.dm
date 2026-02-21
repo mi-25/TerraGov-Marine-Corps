@@ -29,7 +29,7 @@
 
 /datum/buildmode_mode/selection/fill/handle_click(client/user, params, obj/object)
 	if(isnull(objholder))
-		to_chat(user, span_warning("Select an object type first."))
+		to_chat(user, span_warning("请先选择目标类型。"))
 		deselect_region()
 		return
 	return ..()

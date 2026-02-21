@@ -2,7 +2,7 @@
 GLOBAL_LIST_EMPTY(explosions)
 
 SUBSYSTEM_DEF(explosions)
-	name = "Explosions"
+	name = "爆炸"
 	priority = FIRE_PRIORITY_EXPLOSIONS
 	wait = 1
 	flags = SS_TICKER|SS_NO_INIT
@@ -280,12 +280,12 @@ SUBSYSTEM_DEF(explosions)
 	else
 		if(flame_range > 0) //this proc shouldn't be used for flames only, but here we are
 			if(usr)
-				to_chat(usr, span_narsiesmall("Please don't use explosions for flames-only, use flame_radius()"))
+				to_chat(usr, span_narsiesmall("请勿对仅限火焰使用爆炸，请使用 flame_radius()"))
 			stack_trace("Please don't use explosions for flames-only, use flame_radius()")
 			flameturf += turfs_in_range
 		if(throw_range > 0) //admemes, what have you done
 			if(usr)
-				to_chat(usr, span_narsie("Stop using explosions for memes!"))
+				to_chat(usr, span_narsie("别再用爆炸来搞笑了！"))
 			stack_trace("Please don't use explosions for throws")
 			for(var/t in turfs_in_range)
 				var/turf/throw_turf = t

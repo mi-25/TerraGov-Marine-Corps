@@ -11,8 +11,8 @@
 	//node2 is output port
 	//node1 is input port
 
-	name = "dual-port air vent"
-	desc = "Has a valve and pump attached to it. There are two ports."
+	name = "双端口通风口"
+	desc = "带有一个阀门和泵。有两个接口。"
 
 	level = 1
 	var/frequency = 0
@@ -41,7 +41,7 @@
 
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume
-	name = "large dual-port air vent"
+	name = "大型双口通风口"
 
 // Mapping
 

@@ -1,6 +1,6 @@
 /obj/item/explosive/grenade/incendiary
-	name = "\improper M40 HIDP incendiary grenade"
-	desc = "The M40 HIDP is a small, but deceptively strong incendiary grenade. It is set to detonate in 4 seconds."
+	name = "\improper M40 HIDP 燃烧手雷"
+	desc = "M40 HIDP是一种小型但威力惊人的燃烧手雷。它设定在4秒后引爆。"
 	icon_state = "grenade_fire"
 	worn_icon_state = "grenade_fire"
 	det_time = 4 SECONDS
@@ -23,14 +23,14 @@
 		turf_to_flame.ignite(randfloat(burn_duration*0.75, burn_duration), burn_intensity, colour, burn_damage, fire_stacks, fire_type)
 
 /obj/item/explosive/grenade/incendiary/som
-	name = "\improper S30-I incendiary grenade"
-	desc = "A reliable incendiary grenade utilised by SOM forces. Based off the S30 platform shared by most SOM grenades. Designed for hand or grenade launcher use."
+	name = "\improper S30-I 燃烧手雷"
+	desc = "火星之子部队使用的可靠燃烧手雷。基于大多数火星之子手雷共用的S30平台设计。适用于手投或枪榴弹发射器使用。"
 	icon_state = "grenade_fire_som"
 	worn_icon_state = "grenade_fire_som"
 
 /obj/item/explosive/grenade/incendiary/molotov
-	name = "improvised firebomb"
-	desc = "A potent, improvised firebomb, coupled with a pinch of gunpowder. Cheap, very effective, and deadly in confined spaces. Commonly found in the hands of rebels and terrorists. It can be difficult to predict how many seconds you have before it goes off, so be careful. Chances are, it might explode in your face."
+	name = "简易燃烧弹"
+	desc = "一种强效的简易燃烧弹，掺入少量火药。廉价、高效，在密闭空间中尤为致命。常见于叛乱分子和恐怖分子之手。很难预测它会在几秒后爆炸，务必小心。很可能在你面前就炸开。"
 	icon_state = "molotov"
 	worn_icon_state = "molotov"
 	arm_sound = 'sound/items/welder2.ogg'

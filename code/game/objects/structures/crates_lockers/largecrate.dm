@@ -1,6 +1,6 @@
 /obj/structure/largecrate
-	name = "large crate"
-	desc = "A hefty wooden crate."
+	name = "大型板条箱"
+	desc = "一个沉重的木质板条箱。"
 	icon = 'icons/obj/structures/crates.dmi'
 	icon_state = "densecrate"
 	obj_flags = parent_type::obj_flags|BLOCK_Z_OUT_DOWN|BLOCK_Z_IN_UP
@@ -38,7 +38,7 @@
 
 /obj/structure/largecrate/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
-	user.visible_message(span_notice("[user] pries \the [src] open."),
+	user.visible_message(span_notice("[user]撬开了\the [src]。"),
 		span_notice("You pry open \the [src]."),
 		span_notice("You hear splitting wood."))
 	new /obj/item/stack/sheet/wood/five(loc)
@@ -65,21 +65,21 @@
 
 
 /obj/structure/largecrate/cow
-	name = "cow crate"
+	name = "牛板条箱"
 	icon_state = "lisacrate"
 	spawn_type = /mob/living/simple_animal/cow
 	spawn_amount = 1
 
 
 /obj/structure/largecrate/goat
-	name = "goat crate"
+	name = "山羊板条箱"
 	icon_state = "lisacrate"
 	spawn_type = /mob/living/simple_animal/hostile/retaliate/goat
 	spawn_amount = 1
 
 
 /obj/structure/largecrate/chick
-	name = "chicken crate"
+	name = "鸡肉板条箱"
 	icon_state = "lisacrate"
 	spawn_type = /mob/living/simple_animal/chick
 	spawn_amount = 4
@@ -91,7 +91,7 @@
 
 //Possibly the most generically named procs in history. congrats
 /obj/structure/largecrate/random
-	name = "supply crate"
+	name = "补给板条箱"
 	var/num_things = 0
 	var/list/stuff = list(
 						/obj/item/cell/high,
@@ -122,13 +122,13 @@
 		new thing(src)
 
 /obj/structure/largecrate/random/case
-	name = "storage case"
-	desc = "A black storage case."
+	name = "储存箱"
+	desc = "一个黑色的储存箱。"
 	icon_state = "case"
 
 /obj/structure/largecrate/random/case/double
-	name = "cases"
-	desc = "A stack of black storage cases."
+	name = "近距空中支援"
+	desc = "一摞黑色储物箱。"
 	icon_state = "case_double"
 
 /obj/structure/largecrate/random/case/double/deconstruct(disassembled = TRUE, mob/living/blame_mob)
@@ -137,50 +137,50 @@
 	return ..()
 
 /obj/structure/largecrate/random/case/small
-	name = "small cases"
-	desc = "Two small black storage cases."
+	name = "小型近距空中支援"
+	desc = "两个黑色小储物箱。"
 	icon_state = "case_small"
 
 /obj/structure/largecrate/random/mini
-	name = "small crate"
-	desc = "The large supply crate's cousin, 1st removed."
+	name = "小型板条箱"
+	desc = "大型补给板条箱的近亲，第一代分支。"
 	icon_state = "mini_crate"
 	density = FALSE
 
 /obj/structure/largecrate/random/mini/chest
-	desc = "A small plastic crate wrapped with securing elastic straps."
+	desc = "一个用弹性固定带包裹的小型塑料板条箱。"
 	icon_state = "mini_chest"
-	name = "small chest"
+	name = "小型胸甲"
 
 /obj/structure/largecrate/random/mini/chest/b
 	icon_state = "mini_chest_b"
-	name = "small chest"
+	name = "小型胸部"
 
 /obj/structure/largecrate/random/mini/chest/c
 	icon_state = "mini_chest_c"
-	name = "small chest"
+	name = "小型胸甲"
 
 /obj/structure/largecrate/random/mini/wooden
-	desc = "A small wooden crate. Two supporting ribs cross this one's frame."
+	desc = "一个小型木制板条箱。两条支撑肋条横跨其框架。"
 	icon_state = "mini_wooden"
-	name = "wooden crate"
+	name = "木制板条箱"
 
 /obj/structure/largecrate/random/mini/small_case
-	desc = "A small hard-shell case. What could be inside?"
+	desc = "一个小巧的硬壳箱。里面会是什么呢？"
 	icon_state = "mini_case"
-	name = "small case"
+	name = "小型近距空中支援"
 
 /obj/structure/largecrate/random/mini/small_case/b
 	icon_state = "mini_case_b"
-	name = "small case"
+	name = "小型近距空中支援"
 
 /obj/structure/largecrate/random/mini/small_case/c
 	icon_state = "mini_case_c"
-	name = "small case"
+	name = "小型近距空中支援"
 
 /obj/structure/largecrate/random/mini/ammo
-	desc = "A small metal crate. Here, Freeman ammo!"
-	name = "small ammocase"
+	desc = "一个小型金属板条箱。来，弗里曼，弹药！"
+	name = "小型弹药箱"
 	icon_state = "mini_ammo"
 	stuff = list(
 		/obj/item/ammo_magazine/pistol,
@@ -193,9 +193,9 @@
 	)
 
 /obj/structure/largecrate/random/mini/med
-	desc = "A small metal crate containing medical supplies."
+	desc = "一个装有医疗物资的小型金属板条箱。"
 	icon_state = "mini_medcase"
-	name = "small medcase"
+	name = "小型医疗箱"
 	num_things = 1 //funny lootbox tho.
 	stuff = list(
 		/obj/item/storage/pill_bottle/packet/tricordrazine,
@@ -222,7 +222,7 @@
 		return TRUE
 	if(!welder.remove_fuel(1, user))
 		return TRUE
-	user.visible_message(span_notice("[user] welds \the [src] open."),
+	user.visible_message(span_notice("[user] 将 \the [src] 焊开。"),
 		span_notice("You weld open \the [src]."),
 		span_notice("You hear loud hissing and the sound of metal falling over."))
 	playsound(loc, 'sound/items/welder2.ogg', 25, TRUE)
@@ -238,50 +238,50 @@
 	AddElement(/datum/element/debris, DEBRIS_SPARKS, -40, 8, 1)
 
 /obj/structure/largecrate/random/barrel
-	name = "blue barrel"
-	desc = "A blue storage barrel"
+	name = "蓝色枪管"
+	desc = "一个蓝色储物桶"
 	icon_state = "barrel_blue"
 	hit_sound = 'sound/effects/metalhit.ogg'
 	dropmetal = FALSE
 
 /obj/structure/largecrate/random/barrel/blue
-	name = "blue barrel"
-	desc = "A blue storage barrel"
+	name = "蓝色枪管"
+	desc = "一个蓝色储物桶"
 	icon_state = "barrel_blue"
 
 /obj/structure/largecrate/random/barrel/red //lame non explosive version
-	name = "red barrel"
-	desc = "A red storage barrel"
+	name = "红色枪管"
+	desc = "一个红色储存桶"
 	icon_state = "barrel_red"
 
 /obj/structure/largecrate/random/barrel/green
-	name = "green barrel"
-	desc = "A green storage barrel"
+	name = "绿色枪管"
+	desc = "一个绿色储存桶"
 	icon_state = "barrel_green"
 
 /obj/structure/largecrate/random/barrel/yellow
-	name = "yellow barrel"
-	desc = "A yellow storage barrel"
+	name = "黄色枪管"
+	desc = "一个黄色储存桶"
 	icon_state = "barrel_yellow"
 
 /obj/structure/largecrate/random/barrel/white
-	name = "white barrel"
-	desc = "A white storage barrel"
+	name = "白色枪管"
+	desc = "一个白色储存桶"
 	icon_state = "barrel_white"
 
 /obj/structure/largecrate/random/barrel/black
-	name = "black barrel"
-	desc = "A black storage barrel"
+	name = "黑色枪管"
+	desc = "一个黑色存储桶"
 	icon_state = "barrel_black"
 
 /obj/structure/largecrate/random/barrel/brown
-	name = "black brown"
-	desc = "A black storage barrel"
+	name = "黑色 棕色"
+	desc = "一个黑色存储桶"
 	icon_state = "barrel_brown"
 
 /obj/structure/largecrate/random/secure
-	name = "secure supply crate"
-	desc = "A secure crate."
+	name = "安全补给板条箱"
+	desc = "一个安全的板条箱。"
 	icon_state = "secure_crate_strapped"
 	var/strapped = 1
 
@@ -294,11 +294,11 @@
 
 /obj/structure/largecrate/random/secure/wirecutter_act(mob/living/user, obj/item/I)
 	. = ..()
-	to_chat(user, span_notice("You begin to cut the straps off \the [src]..."))
+	to_chat(user, span_notice("你开始割断\the [src]上的绑带……"))
 	if(!do_after(user, 1.5 SECONDS, NONE, src, BUSY_ICON_GENERIC))
 		return TRUE
 	playsound(loc, 'sound/items/wirecutter.ogg', 25, 1)
-	to_chat(user, span_notice("You cut the straps away."))
+	to_chat(user, span_notice("你割断了绑带。"))
 	icon_state = "secure_crate"
 	strapped = FALSE
 	return TRUE
@@ -309,7 +309,7 @@
 	. += span_notice("You need something sharp to cut off the straps.")
 
 /obj/structure/largecrate/guns
-	name = "\improper TGMC firearms crate (x3)"
+	name = "\improper 地球政府殖民地海军陆战队火焰武器板条箱 (x3)"
 	var/num_guns = 3
 	var/num_mags = 3
 	var/list/stuff = list(
@@ -342,7 +342,7 @@
 /obj/structure/largecrate/guns/russian
 	num_guns = 1
 	num_mags = 1
-	name = "\improper Nagant-Yamasaki firearm crate"
+	name = "\improper 纳甘特-山崎枪械板条箱"
 	stuff = list(
 		/obj/item/weapon/gun/revolver/upp = /obj/item/ammo_magazine/revolver/upp,
 		/obj/item/weapon/gun/pistol/c99 = /obj/item/ammo_magazine/pistol/c99,
@@ -356,7 +356,7 @@
 /obj/structure/largecrate/guns/merc
 	num_guns = 1
 	num_mags = 1
-	name = "\improper Black market firearm crate"
+	name = "\improper 黑市枪械板条箱"
 	stuff = list(
 		/obj/item/weapon/gun/pistol/holdout = /obj/item/ammo_magazine/pistol/holdout,
 		/obj/item/weapon/gun/pistol/highpower = /obj/item/ammo_magazine/pistol/highpower,

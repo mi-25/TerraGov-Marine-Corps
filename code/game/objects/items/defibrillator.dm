@@ -1,6 +1,6 @@
 /obj/item/defibrillator
-	name = "emergency defibrillator"
-	desc = "A device that delivers powerful shocks to resuscitate incapacitated patients."
+	name = "紧急除颤器"
+	desc = "一种通过释放强力电击来复苏失去行动能力患者的设备。"
 	icon = 'icons/obj/items/defibrillator.dmi'
 	icon_state = "defib"
 	worn_icon_state = "defib"
@@ -27,7 +27,7 @@
 
 
 /obj/item/defibrillator/suicide_act(mob/user)
-	user.visible_message(span_danger("[user] is putting the live paddles on [user.p_their()] chest! It looks like [user.p_theyre()] trying to commit suicide."))
+	user.visible_message(span_danger("[user]正在将活体电极片放在[user.p_their()]胸口！看起来[user.p_theyre()]想要自杀。"))
 	return (FIRELOSS)
 
 
@@ -100,7 +100,7 @@
 	//Job knowledge requirement
 	var/skill = user.skills.getRating(SKILL_MEDICAL)
 	if(skill < SKILL_MEDICAL_PRACTICED)
-		user.visible_message(span_notice("[user] fumbles around figuring out how to use [src]."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何使用[src]。"),
 		span_notice("You fumble around figuring out how to use [src]."))
 		if(!do_after(user, SKILL_TASK_AVERAGE - (SKILL_TASK_VERY_EASY * skill), NONE, src, BUSY_ICON_UNSKILLED))
 			return
@@ -137,33 +137,33 @@
 ///Proc for checking that the defib is ready to operate
 /obj/item/defibrillator/proc/defib_ready(mob/living/carbon/human/patient, mob/living/carbon/human/user)
 	if(!ready)
-		balloon_alert(user, "take the paddles out!")
+		balloon_alert(user, "把除颤板拿出来！")
 		return FALSE
 	if(!ishuman(patient))
-		balloon_alert(user, "that's not a human!")
+		balloon_alert(user, "那不是人类！")
 		return FALSE
 	if(patient.stat != DEAD)
-		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] buzzes: Patient is not in a valid state. Operation aborted."))
+		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] 发出嗡嗡声：患者状态无效。操作已中止。"))
 		return FALSE
 	if(patient.wear_suit && (patient.wear_suit.atom_flags & CONDUCT)) // something conductive on their chest
-		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] buzzes: Paddles registering >100,000 ohms. Remove interfering suit or armor and try again."))
+		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] 发出嗡嗡声：电极板电阻 >100,000 欧姆。请移除干扰的防护服或护甲后重试。"))
 		return FALSE
 	return TRUE
 
 ///Split proc that actually does the defibrillation. Separated to be used more easily by medical gloves
 /obj/item/defibrillator/proc/defibrillate(mob/living/carbon/human/patient, mob/living/carbon/human/user)
 	if(user.do_actions) //Currently doing something
-		balloon_alert(user, "busy!")
+		balloon_alert(user, "忙！")
 		return
 
 	if(!COOLDOWN_FINISHED(src, defib_cooldown))
-		balloon_alert(user, "recharging!")
+		balloon_alert(user, "正在充能！")
 		return
 
 	//job knowledge requirement
 	var/medical_skill = user.skills.getRating(SKILL_MEDICAL)
 	if(medical_skill < SKILL_MEDICAL_PRACTICED)
-		user.visible_message(span_notice("[user] fumbles around figuring out how to use [src]."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着如何使用 [src]。"),
 		span_notice("You fumble around figuring out how to use [src]."))
 		var/fumbling_time = SKILL_TASK_AVERAGE - (SKILL_TASK_VERY_EASY * medical_skill) // 3 seconds with medical skill, 5 without
 		if(!do_after(user, fumbling_time, NONE, patient, BUSY_ICON_UNSKILLED))
@@ -172,8 +172,8 @@
 	var/defib_heal_amt = DEFIBRILLATOR_HEALING_TIMES_SKILL(medical_skill, defibrillator_healing)
 
 	if(dcell.charge <= charge_cost)
-		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] buzzes: Internal battery depleted. Seek recharger. Cannot analyze nor administer shock."))
-		to_chat(user, span_boldwarning("You can recharge the defibrillator by click-dragging it onto a corpsman backpack or satchel, or putting it in a recharger."))
+		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] 发出嗡嗡声：内部电池耗尽。请寻找充电器。无法分析或进行电击。"))
+		to_chat(user, span_boldwarning("你可以通过将除颤器拖拽到卫生兵的背包或挎包上，或将其放入充电器中来为其充电。"))
 		return
 
 	if(!defib_ready(patient, user))
@@ -191,7 +191,7 @@
 		if(DEFIB_FAIL_BRAINDEAD)
 			fail_reason = "Patient's general condition does not allow revival. Further attempts futile."
 	if(fail_reason)
-		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] buzzes: Resuscitation impossible - [fail_reason]"))
+		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] 发出蜂鸣声：复苏不可行 - [fail_reason]"))
 		return
 
 	var/mob/dead/observer/ghost = patient.get_ghost()
@@ -206,12 +206,12 @@
 		), ghost_sound = 'sound/effects/gladosmarinerevive.ogg')
 		ghost.reenter_corpse()
 
-	user.visible_message(span_notice("[user] starts setting up the paddles on [patient]'s chest."),
+	user.visible_message(span_notice("[user]开始将除颤电极片放置在[patient]的胸口。"),
 	span_notice("You start setting up the paddles on [patient]'s chest."))
 	playsound(get_turf(src),'sound/items/defib_charge.ogg', 45, 0) // Don't vary this, it should be exactly 7 seconds
 
 	if(!do_after(user, 7 SECONDS, NONE, patient, BUSY_ICON_FRIENDLY, BUSY_ICON_MEDICAL))
-		to_chat(user, span_warning("You stop setting up the paddles on [patient]'s chest."))
+		to_chat(user, span_warning("你停止在[patient]的胸口放置除颤电极板。"))
 		return
 
 	if(!defib_ready(patient, user)) // we're doing this again just in case something has changed
@@ -223,9 +223,9 @@
 	dcell.use(charge_cost)
 	update_icon()
 	playsound(get_turf(src), 'sound/items/defib_release.ogg', 45, 1)
-	user.visible_message(span_notice("[user] shocks [patient] with the paddles."),
+	user.visible_message(span_notice("[user]用除颤器电击[patient]。"),
 	span_notice("You shock [patient] with the paddles."))
-	patient.visible_message(span_warning("[patient]'s body convulses a bit."))
+	patient.visible_message(span_warning("[patient]的身体抽搐了一下。"))
 
 	COOLDOWN_START(src, defib_cooldown, DEFIBRILLATOR_COOLDOWN)
 
@@ -276,7 +276,7 @@
 			fail_reason = "Vital signs are weak. Repair damage and try again."
 
 	if(fail_reason)
-		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] buzzes: Resuscitation failed - [fail_reason]"))
+		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] 发出嗡嗡声：复苏失败 - [fail_reason]"))
 		playsound(src, 'sound/items/defib_failed.ogg', 45, FALSE)
 		return
 
@@ -285,10 +285,10 @@
 		ghost.reenter_corpse()
 
 	if(!patient.client)
-		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] buzzes: No soul detected. Patient may not appear alert temporarily or permanently."))
+		user.visible_message(span_warning("[icon2html(src, viewers(user))] \The [src] 发出嗡嗡声：未检测到灵魂。患者可能暂时或永久失去意识。"))
 
-	to_chat(patient, span_notice("<i><font size=4>You suddenly feel a spark and your consciousness returns, dragging you back to the mortal plane...</font></i>"))
-	user.visible_message(span_notice("[icon2html(src, viewers(user))] \The [src] beeps: Resuscitation successful."))
+	to_chat(patient, span_notice("<i><font size=4>你突然感到一阵火花，意识回归，将你拖回了凡尘俗世……</font></i>"))
+	user.visible_message(span_notice("[icon2html(src, viewers(user))] \The [src] 发出哔哔声：复苏成功。"))
 	playsound(get_turf(src), 'sound/items/defib_success.ogg', 45, 0)
 	patient.updatehealth()
 	patient.resuscitate() // time for a smoke
@@ -320,8 +320,8 @@
 	notify_ghosts("<b>[user]</b> has brought <b>[patient.name]</b> back to life!", source = patient, action = NOTIFY_ORBIT)
 
 /obj/item/defibrillator/civi
-	name = "emergency defibrillator"
-	desc = "A device that delivers powerful shocks to resuscitate incapacitated patients. This one appears to be a civillian model."
+	name = "紧急除颤器"
+	desc = "一种通过强力电击来复苏失去行动能力患者的设备。这似乎是民用型号。"
 	icon_state = "civ_defib"
 	worn_icon_state = "defib"
 

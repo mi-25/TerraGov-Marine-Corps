@@ -1,5 +1,5 @@
 /obj/item/stack/sheet
-	name = "sheet"
+	name = "表格"
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/items/stacks_left.dmi',
 		slot_r_hand_str = 'icons/mob/inhands/items/stacks_right.dmi',

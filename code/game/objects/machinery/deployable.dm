@@ -56,7 +56,7 @@
 
 /obj/machinery/deployable/disassemble(mob/user)
 	if(get_self_acid())
-		balloon_alert(user, "it's melting!")
+		balloon_alert(user, "它正在熔化！")
 		return
 	return ..()
 
@@ -74,7 +74,7 @@
 	if(!_internal_item)
 		return
 	if(CHECK_BITFIELD(_internal_item.item_flags, DEPLOYED_WRENCH_DISASSEMBLE))
-		to_chat(user, span_notice("You cannot disassemble [src] without a wrench."))
+		to_chat(user, span_notice("没有扳手无法拆卸[src]。"))
 		return
 	disassemble(user)
 

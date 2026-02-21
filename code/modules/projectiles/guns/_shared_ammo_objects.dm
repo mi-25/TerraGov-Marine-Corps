@@ -6,8 +6,8 @@
 /////////////////////////////
 // Base type , meant to be overridden
 /obj/fire
-	name = "fire"
-	desc = "Ouch!"
+	name = "火焰"
+	desc = "哎哟！"
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	icon = 'icons/effects/fire.dmi'
@@ -194,12 +194,12 @@
 	burn_ticks -= 10
 	playsound(src, 'sound/weapons/thudswoosh.ogg', 25, 1, 7)
 
-	xeno_attacker.visible_message(span_danger("[xeno_attacker] tries to put out the fire!"), \
+	xeno_attacker.visible_message(span_danger("[xeno_attacker] 试图扑灭火焰！"), \
 		span_warning("We try to put out the fire!"), null, 5)
 	if(burn_ticks > 0)
 		update_appearance(UPDATE_ICON)
 		return
-	xeno_attacker.visible_message(span_danger("[xeno_attacker] has successfully extinguished the fire!"), \
+	xeno_attacker.visible_message(span_danger("[xeno_attacker] 成功扑灭了火焰！"), \
 		span_notice("We extinguished the fire."), null, 5)
 	qdel(src)
 
@@ -208,8 +208,8 @@
 ///////////////////////////////
 
 /obj/fire/melting_fire
-	name = "melting fire"
-	desc = "It feels cold to the touch, yet it burns."
+	name = "熔化火焰"
+	desc = "触感冰冷，却灼烧难耐。"
 	icon_state = "xeno_fire"
 	flame_color = "purple"
 	light_on = FALSE
@@ -239,7 +239,7 @@
 	if(human_affected.pass_flags & PASS_FIRE)
 		return
 	if(human_affected.soft_armor.getRating(FIRE) >= 100)
-		to_chat(human_affected, span_warning("You are untouched by the flames."))
+		to_chat(human_affected, span_warning("火焰未能伤你分毫。"))
 		return
 	handle_human(human_affected)
 
@@ -257,8 +257,8 @@
 ///////////////////////////////
 
 /obj/fire/melting_fire/shattering
-	name = "shattering fire"
-	desc = "Cold to the touch, it rapidly spreads cracks through anything it contacts."
+	name = "碎裂火焰"
+	desc = "触感冰冷，它能迅速在接触的任何物体上蔓延裂纹。"
 	icon_state = "violet_1"
 	flame_color = "violet"
 
@@ -267,8 +267,8 @@
 	affected_human.apply_status_effect(STATUS_EFFECT_SHATTER, 3 SECONDS)
 
 /obj/fire/melting_fire/melting_acid
-	name = "melting acid fire"
-	desc = "Cold to the touch, it burns in more ways than one."
+	name = "熔化酸液火焰"
+	desc = "触感冰冷，却以不止一种方式灼烧着。"
 	icon_state = "green_1"
 	flame_color = "green"
 

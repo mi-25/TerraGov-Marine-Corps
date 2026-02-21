@@ -10,8 +10,8 @@
 * Filing Cabinets
 */
 /obj/structure/filingcabinet
-	name = "filing cabinet"
-	desc = "A large cabinet with drawers."
+	name = "文件柜"
+	desc = "一个带抽屉的大柜子。"
 	icon = 'icons/obj/structures/misc.dmi'
 	icon_state = "filingcabinet"
 	density = TRUE
@@ -24,7 +24,7 @@
 	density = FALSE
 
 /obj/structure/filingcabinet/chestdrawer
-	name = "chest drawer"
+	name = "胸部抽屉"
 	icon_state = "chestdrawer"
 
 
@@ -48,7 +48,7 @@
 		if(!user.transferItemToLoc(I, src))
 			return
 
-		to_chat(user, span_notice("You put [I] in [src]."))
+		to_chat(user, span_notice("你将[I]放入[src]。"))
 		icon_state = "[initial(icon_state)]-open"
 		sleep(0.5 SECONDS)
 		icon_state = initial(icon_state)
@@ -60,7 +60,7 @@
 		to_chat(user, span_notice("You [anchored ? "wrench" : "unwrench"] \the [src]."))
 
 	else
-		to_chat(user, span_notice("You can't put [I] in [src]!"))
+		to_chat(user, span_notice("你不能把[I]放进[src]里！"))
 
 
 /obj/structure/filingcabinet/attack_hand(mob/living/user)
@@ -68,7 +68,7 @@
 	if(.)
 		return
 	if(length(contents) <= 0)
-		to_chat(user, span_notice("\The [src] is empty."))
+		to_chat(user, span_notice("\The [src]是空的。"))
 		return
 
 	user.set_interaction(src)

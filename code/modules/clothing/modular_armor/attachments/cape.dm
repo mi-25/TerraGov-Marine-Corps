@@ -2,8 +2,8 @@
 #define HOOD "hood"
 
 /obj/item/armor_module/armor/cape
-	name = "\improper 6E Chameleon cape"
-	desc = "A chromatic cape to improve on the design of the 7E badge, this cape is capable of two colors, for all your fashion needs. It also is equipped with thermal insulators so it will double as a blanket. \n Interact with facepaint to color and change variant. Attaches onto a uniform. Activate it to toggle the hood."
+	name = "\improper 6E变色龙斗篷"
+	desc = "一款改进自7E徽章设计的变色斗篷，这款斗篷能呈现两种颜色，满足你所有的时尚需求。它还配备了隔热层，因此也能当作毯子使用。\n与面部彩绘互动可进行染色和更改样式。可附着在制服上。激活它以切换兜帽状态。"
 	icon_state = "cape"
 	slot = ATTACHMENT_SLOT_CAPE
 	attachment_layer = CAPE_LAYER
@@ -222,8 +222,8 @@
 	user.update_inv_w_uniform()
 
 /obj/item/armor_module/armor/cape/kama
-	name = "\improper 6E Chameleon kama"
-	desc = "A chromatic kama to improve on the design of the 7E badge, this kama is capable of two colors, for all your fashion needs. Hanged from the belt, it serves to flourish the lower extremities.  \n Interact with facepaint to color. Attaches onto a uniform."
+	name = "\improper 6E变色龙袈裟"
+	desc = "一款改进7E徽章设计的彩色腰布，这款腰布能呈现两种颜色，满足你所有的时尚需求。悬挂于腰带上，用于装饰下半身。\n与面部彩绘互动可改变颜色。可附着在制服上。"
 	slot = ATTACHMENT_SLOT_KAMA
 	attachment_layer = KAMA_LAYER
 	attach_features_flags = ATTACH_REMOVABLE|ATTACH_SAME_ICON|ATTACH_APPLY_ON_MOB|ATTACH_NO_HANDS
@@ -253,8 +253,8 @@
 
 
 /obj/item/armor_module/armor/cape_highlight
-	name = "Cape Highlight"
-	desc = "A cape to improve on the design of the 7E badge, this cape is capable of six colors, for all your fashion needs. This variation of the cape functions more as a scarf. \n Interact with facepaint to color. Attaches onto a uniform. Activate it to toggle the hood."
+	name = "披风高亮"
+	desc = "对7E徽章设计的改进款披风，这款披风拥有六种颜色，满足你所有的时尚需求。这款披风变体更像是一条围巾。\n与面部迷彩互动可改变颜色。可附着在制服上。激活以切换兜帽状态。"
 	icon_state = "highlight"
 	slot = ATTACHMENT_SLOT_CAPE_HIGHLIGHT
 	attach_features_flags = ATTACH_SAME_ICON|ATTACH_APPLY_ON_MOB|ATTACH_NO_HANDS

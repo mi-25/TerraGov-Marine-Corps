@@ -1,13 +1,13 @@
 // VSD
 /datum/emergency_call/vsd
-	name = "Vyacheslav Security Detail PMCs"
+	name = "维亚切斯拉夫安保特遣队PMC"
 	base_probability = 26
 	alignement_factor = 0
 
 /datum/emergency_call/vsd/print_backstory(mob/living/carbon/human/H)
-	to_chat(H, "<B>You are a member of the Syndicate's personal guns. The Vyacheslav Security Detail. You are here to take down this corporate scum by any means necessary. Kill anything in your path.</b>")
-	to_chat(H, "<B>You are equipped with Ballistic Armor to counter some of TerraGov's weaponry. Jaeger's armor has a weakness, aim for the head and just below that chest plate. Jaeger has a weakness to 5.56.</b>")
-	to_chat(H, "<B>A TerraGov vessel has entered Syndicate and I.C.C. airspace. You're here to take down the ship. Goodluck.</b>")
+	to_chat(H, "<B>你是辛迪加私人武装的一员，隶属于维亚切斯拉夫安保分队。你的任务是不惜一切代价消灭这些企业渣滓。清除前进道路上的一切障碍。</b>")
+	to_chat(H, "<B>你装备了弹道护甲以对抗地球政府的一些武器。耶格尔的护甲有弱点，瞄准头部和胸甲正下方。耶格尔对5.56口径弹药有弱点。</b>")
+	to_chat(H, "<B>一艘地球政府舰船已进入辛迪加和星际商业委员会空域。你们的任务是击沉这艘船。祝好运。</B>")
 	to_chat(H, "")
 
 /datum/emergency_call/vsd/create_member(datum/mind/M)
@@ -30,13 +30,13 @@
 		leader = H
 		var/datum/job/J = SSjob.GetJobType(/datum/job/vsd/leader)
 		H.apply_assigned_role_to_spawn(J)
-		to_chat(H, "<p style='font-size:1.5em'><span class='notice'>You are the leader of the Vyacheslav 'Death Squad' group. Lead your men to victory, leave no trace. Hoorah!</notice></p>")
+		to_chat(H, "<p style='font-size:1.5em'><span class='notice'>你是'死亡小队'维亚切斯拉夫小组的指挥官。带领你的部下走向胜利，不留痕迹。呼哈！</span></p>")
 		return
 
 	if(medics < max_medics)
 		var/datum/job/J = SSjob.GetJobType(/datum/job/vsd/medic)
 		H.apply_assigned_role_to_spawn(J)
-		to_chat(H, "<p style='font-size:1.5em'><span class='notice'>You are the lifeline of the group. You are equiped to treat yourself and others, take much care with your comrades. Hoorah!</notice></p>")
+		to_chat(H, "<p style='font-size:1.5em'><span class='notice'>你是队伍的生命线。你装备齐全，能够治疗自己和他人，务必照顾好你的战友。呼啦！</span></p>")
 		medics++
 		return
 
@@ -49,4 +49,4 @@
 
 	var/datum/job/J = SSjob.GetJobType(/datum/job/vsd/standard)
 	H.apply_assigned_role_to_spawn(J)
-	to_chat(H, "<p style='font-size:1.5em'><span class='notice'>You are a trained Vyacheslav operative. You are no disposable. You are trained in every way possible to counter TGMC's weaponries. We will not accept any casualties here. Good luck grunt, Hoorah!</notice></p>")
+	to_chat(H, "<p style='font-size:1.5em'><span class='notice'>你是一名训练有素的维亚切斯拉夫特工。你不是消耗品。你接受了全方位的训练，以应对地球政府殖民地海军陆战队的各种武器。我们不会接受任何伤亡。祝你好运，士兵，呼啦！</notice></p>")

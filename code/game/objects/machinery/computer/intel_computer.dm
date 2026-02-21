@@ -1,11 +1,11 @@
 /obj/item/circuitboard/computer/intel_computer
-	name = "circuit board (intel computer)"
+	name = "电路板（情报计算机）"
 	build_path = /obj/machinery/computer/intel_computer
 
 
 /obj/machinery/computer/intel_computer
-	name = "Intelligence computer"
-	desc = "A computer used to access the colonies central database. TGMC Intel division will occasionally request remote data retrieval from these computers"
+	name = "情报计算机"
+	desc = "用于访问殖民地中央数据库的计算机。地球政府殖民地海军陆战队情报部门偶尔会要求从这些计算机进行远程数据检索。"
 	icon_state = "intel_computer"
 	screen_overlay = "intel_computer_screen"
 	circuit = /obj/item/circuitboard/computer/intel_computer
@@ -48,7 +48,7 @@
 	if (machine_stat & NOPOWER)
 		printing = FALSE
 		update_minimap_icon()
-		visible_message("<b>[src]</b> shuts down as it loses power. Any running programs will now exit.")
+		visible_message("<b>[src]</b> 因电力耗尽而关闭。所有正在运行的程序现已退出。")
 		if(progress >= 50)
 			progress = 50
 		else
@@ -72,7 +72,7 @@
 
 /obj/machinery/computer/intel_computer/interact(mob/user)
 	if(!active)
-		to_chat(user, span_notice("This terminal has nothing of use on it."))
+		to_chat(user, span_notice("这个终端上没有任何有用的东西。"))
 		return
 	return ..()
 

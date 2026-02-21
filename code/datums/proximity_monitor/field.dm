@@ -165,8 +165,8 @@
 
 //DEBUG FIELD ITEM
 /obj/item/multitool/field_debug
-	name = "strange multitool"
-	desc = "Seems to project a colored field!"
+	name = "奇怪的多功能工具"
+	desc = "似乎投射出了一个彩色力场！"
 	var/operating = FALSE
 	var/range_to_use = 5
 	var/datum/proximity_monitor/advanced/debug/current = null

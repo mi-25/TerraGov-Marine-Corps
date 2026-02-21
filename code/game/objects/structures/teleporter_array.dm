@@ -1,6 +1,6 @@
 /obj/structure/teleporter_array
-	name = "Teleporter Array"
-	desc = "A large scale teleporter array, capable of transporting an entire squad directly to the battlefield."
+	name = "传送器阵列"
+	desc = "一套大型传送阵列，能够将整支小队直接传送至战场。"
 	icon = 'icons/obj/structures/teleporter.dmi'
 	icon_state = "teleporter"
 	obj_flags = NONE
@@ -88,22 +88,22 @@
 //starts the teleportation process
 /obj/structure/teleporter_array/proc/activate()
 	if(teleporter_status == TELEPORTER_ARRAY_INOPERABLE)
-		to_chat(controller, span_warning("The Bluespace drive that powers the Teleporter Array has been destroyed! The Array is no longer functional."))
+		to_chat(controller, span_warning("为传送阵列供能的超空间驱动器已被摧毁！阵列现已无法运作。"))
 		return
 	if(teleporter_status == TELEPORTER_ARRAY_IN_USE)
-		to_chat(controller, span_warning("The Teleporter Array is already running!"))
+		to_chat(controller, span_warning("传送阵列已在运行中！"))
 		return
 	if(teleporter_status == TELEPORTER_ARRAY_INACTIVE)
-		to_chat(controller, span_warning("The Teleporter Array is not currently available for our use."))
+		to_chat(controller, span_warning("传送阵列目前无法供我们使用。"))
 		return
 	if(!charges)
-		to_chat(controller, span_warning("The Teleporter Array has no charges remaining. Buy and activate more using attrition."))
+		to_chat(controller, span_warning("传送阵列能量已耗尽。请使用消耗点数购买并激活更多能量。"))
 		return
 	if(!target_turf)
-		to_chat(controller, span_warning("The Teleporter Array Has no destination set."))
+		to_chat(controller, span_warning("传送阵列未设置目的地。"))
 		return
 
-	visible_message(span_danger("Teleporter Array activated. Destination: [target_turf.loc]."))
+	visible_message(span_danger("传送阵列已激活。目的地：[target_turf.loc]。"))
 	var/list/turf/turfs_affected = list()
 	var/turf/central_turf = get_turf(src)
 	for(var/turf/affected_turf in RANGE_TURFS(range, central_turf))
@@ -119,7 +119,7 @@
 ///Visual indicators for the teleporter about to fire
 /obj/structure/teleporter_array/proc/do_startup()
 	new /obj/effect/temp_visual/teleporter_array(get_turf(src))
-	visible_message(span_danger("You feel a vibration build in the air as the teleporter array comes to life."))
+	visible_message(span_danger("你感觉到空气开始震动，传送阵列启动了。"))
 
 ///does the actual teleport
 /obj/structure/teleporter_array/proc/do_teleport(list/turfs_affected)
@@ -135,7 +135,7 @@
 	for(var/mob/living/victim AS in destination_mobs)
 		victim.adjust_stagger(3 SECONDS)
 		victim.add_slowdown(3)
-		to_chat(victim, span_warning("You feel nauseous as reality warps around you!"))
+		to_chat(victim, span_warning("你感到一阵恶心，周围的现实开始扭曲！"))
 
 	playsound(target_turf, 'sound/magic/lightningbolt.ogg', 75, 0)
 	playsound(src, 'sound/magic/lightningbolt.ogg', 75, 0)
@@ -150,7 +150,7 @@
 			new /obj/effect/temp_visual/blink_drive(AM.loc)
 			if(!ismob(AM))
 				continue
-			to_chat(AM, span_warning("You feel reality warp around you as the teleporter array activates!"))
+			to_chat(AM, span_warning("你感到周围的空间开始扭曲，传送阵列启动了！"))
 			if(AM.loc.density)
 				var/mob/victim = AM
 				victim.emote("gored")
@@ -163,7 +163,7 @@
 		affected_turf.remove_filter("wraith_magic")
 
 /datum/action/innate/activate_teleporter
-	name = "Activate teleporter array"
+	name = "启动传送阵列"
 	action_icon = 'icons/mob/actions/actions_mecha.dmi'
 	action_icon_state = "land"
 
@@ -173,7 +173,7 @@
 	teleporter.activate()
 
 /datum/action/innate/set_teleport_target
-	name = "Set teleportation target"
+	name = "设置传送目标"
 	action_icon = 'icons/mob/actions/actions_mecha.dmi'
 	action_icon_state = "mech_zoom_on"
 	///Locks activating this action again while choosing to prevent signal shenanigan runtimes.
@@ -188,7 +188,7 @@
 	. = ..()
 	var/obj/structure/teleporter_array/teleporter = target
 	if(!teleporter.targetted_zlevel)
-		to_chat(owner, span_danger("No active combat zone detected."))
+		to_chat(owner, span_danger("未检测到活跃交战区。"))
 		return
 	var/atom/movable/screen/minimap/map = SSminimaps.fetch_minimap_object(teleporter.targetted_zlevel, GLOB.faction_to_minimap_flag[owner.faction])
 	owner.client.screen += map
@@ -200,10 +200,10 @@
 		return
 	var/turf/chosen_turf = locate(polled_coords[1], polled_coords[2], teleporter.targetted_zlevel)
 	if(chosen_turf.density || isspaceturf(chosen_turf))
-		to_chat(owner, "Invalid location selected")
+		to_chat(owner, "所选位置无效")
 	else
 		teleporter.target_turf = chosen_turf
-		to_chat(owner, span_danger("Target location locked in at: [chosen_turf.loc]"))
+		to_chat(owner, span_danger("目标位置已锁定于：[chosen_turf.loc]"))
 	owner.client?.screen -= map
 	choosing = FALSE
 

@@ -3,8 +3,8 @@
 #define FUEL_INDICATOR_HALF_FULL 20
 
 /obj/item/jetpack_marine
-	name = "marine jetpack"
-	desc = "A high powered jetpack with enough fuel to send a person flying for a short while. It allows for fast and agile movement on the battlefield. <b>Alt right click or middleclick to fly to a destination when the jetpack is equipped.</b>"
+	name = "陆战队喷气背包"
+	desc = "一款高功率喷气背包，携带的燃料足以让人短距离飞行。它能在战场上实现快速敏捷的移动。<b>装备喷气背包时，按住Alt键并右键点击或中键点击可飞向目的地。</b>"
 	icon = 'icons/obj/items/jetpack.dmi'
 	icon_state = "jetpack_marine"
 	worn_icon_list = list(
@@ -54,10 +54,10 @@
 
 /obj/item/jetpack_marine/can_refuel(atom/refueler, fuel_type, mob/user)
 	if(fuel_left == fuel_max)
-		user?.balloon_alert(user, "full")
+		user?.balloon_alert(user, "已满")
 		return FALSE
 	if(fuel_type != get_fueltype())
-		user?.balloon_alert(user, "wrong fuel")
+		user?.balloon_alert(user, "燃料错误")
 		return FALSE
 	return TRUE
 
@@ -66,7 +66,7 @@
 	refueler.reagents.remove_reagent(fuel_type, fuel_transfer_amount)
 	fuel_left += fuel_transfer_amount
 	playsound(loc, 'sound/effects/refill.ogg', 25, 1, 3)
-	user?.balloon_alert(user, "refilled")
+	user?.balloon_alert(user, "已补充")
 	change_fuel_indicator()
 	update_icon()
 
@@ -145,9 +145,9 @@
 	fuel_indicator = 0
 
 /datum/action/ability/activable/item_toggle/jetpack
-	name = "Use jetpack"
+	name = "使用喷气背包"
 	action_icon_state = "axe_sweep"
-	desc = "Briefly fly using your jetpack."
+	desc = "短暂使用你的喷气背包飞行。"
 	use_state_flags = ABILITY_USE_STAGGERED|ABILITY_USE_BUSY
 	keybinding_signals = list(KEYBINDING_NORMAL = COMSIG_ITEM_TOGGLE_JETPACK)
 
@@ -164,7 +164,7 @@
 		return FALSE
 	var/obj/item/jetpack_marine/jetpack = holder_item
 	if(jetpack.fuel_left < FUEL_USE)
-		carbon_owner.balloon_alert(carbon_owner, "no fuel!")
+		carbon_owner.balloon_alert(carbon_owner, "没有燃料！")
 		return
 	return ..()
 
@@ -187,8 +187,8 @@
 	return TRUE
 
 /obj/item/jetpack_marine/heavy
-	name = "heavy lift jetpack"
-	desc = "An upgraded jetpack with enough fuel to send a person flying for a short while with extreme force. It provides better mobility for heavy users and enough thrust to be used in an aggressive manner. <b>Alt right click or middleclick to fly to a destination when the jetpack is equipped. Will collide with hostiles</b>"
+	name = "重型起重喷气背包"
+	desc = "一款升级版喷气背包，拥有足够燃料，能以极大力量将人短距离发射飞行。它为重型使用者提供更好的机动性，并具备足够的推力用于攻击性用途。<b>装备喷气背包时，按住Alt键并右键或中键点击可飞向目标地点。会与敌对目标发生碰撞</b>"
 	cooldown_time = 5 SECONDS
 	speed = 2
 
@@ -234,7 +234,7 @@
 			human_user.Knockdown(0.5 SECONDS)
 			human_user.set_throwing(FALSE)
 			INVOKE_NEXT_TICK(human_user, TYPE_PROC_REF(/atom/movable, knockback), human_target, 1, 5, null, MOVE_FORCE_VERY_STRONG)
-			human_user.visible_message(span_danger("[human_user] crashes into [hit_mob]!"))
+			human_user.visible_message(span_danger("[human_user] 撞上了 [hit_mob]！"))
 			return COMPONENT_MOVABLE_PREBUMP_STOPPED
 
 	var/knockdown_duration = 0.5 SECONDS
@@ -247,7 +247,7 @@
 		hit_mob.Knockdown(knockdown_duration)
 		human_user.forceMove(get_turf(hit_mob))
 	hit_mob.apply_damage(40, BRUTE, BODY_ZONE_CHEST, MELEE, updating_health = TRUE, attacker = human_user)
-	hit_mob.visible_message(span_danger("[human_user] slams into [hit_mob]!"))
+	hit_mob.visible_message(span_danger("[human_user] 猛撞在 [hit_mob] 身上！"))
 
 	human_user.set_throwing(FALSE)
 	return COMPONENT_MOVABLE_PREBUMP_STOPPED

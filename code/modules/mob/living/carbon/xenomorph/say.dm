@@ -37,7 +37,7 @@
 	if(!hive)
 		return
 	if(hivenumber == XENO_HIVE_NORMAL && !hive.living_xeno_ruler && hive.get_hivemind_conduit_death_timer() && timeleft(hive.get_hivemind_conduit_death_timer()) > hive.get_total_hivemind_conduit_time() * 0.5)
-		to_chat(src, span_warning("The ruler is dead. The hivemind is weakened. Despair!"))
+		to_chat(src, span_warning("统治者已死。蜂巢意志被削弱了。绝望！"))
 		return
 
 	message = render_hivemind_message(message)

@@ -1,5 +1,5 @@
 /datum/action/skill/issue_order
-	name = "Issue Order"
+	name = "下达命令"
 	skill_name = SKILL_LEADERSHIP
 	action_icon = 'icons/mob/order_icons.dmi'
 	skill_min = SKILL_LEAD_TRAINED
@@ -57,7 +57,7 @@
 	SEND_SIGNAL(owner, COMSIG_SKILL_ORDER_OFF_CD, src)
 
 /datum/action/skill/issue_order/move
-	name = "Issue Move Order"
+	name = "下达移动命令"
 	order_type = AURA_HUMAN_MOVE
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_MOVEORDER,
@@ -68,7 +68,7 @@
 	//the fact the only arg is the current walk to target is not ideal... add a new arg of goal_node?
 
 /datum/action/skill/issue_order/hold
-	name = "Issue Hold Order"
+	name = "发布扣押令"
 	order_type = AURA_HUMAN_HOLD
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_HOLDORDER,
@@ -85,7 +85,7 @@
 	return ..()
 
 /datum/action/skill/issue_order/focus
-	name = "Issue Focus Order"
+	name = "发布任务指令"
 	order_type = AURA_HUMAN_FOCUS
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_KB_FOCUSORDER,
@@ -95,7 +95,7 @@
 	return FALSE //test only
 
 /datum/action/skill/toggle_orders
-	name = "Show/Hide Order Options"
+	name = "显示/隐藏命令选项"
 	skill_name = SKILL_LEADERSHIP
 	skill_min = SKILL_LEAD_TRAINED
 	var/orders_visible = TRUE
@@ -123,31 +123,31 @@
 	set hidden = TRUE
 
 	if(skills.getRating(SKILL_LEADERSHIP) < SKILL_LEAD_TRAINED)
-		to_chat(src, span_warning("You are not competent enough in leadership to issue an order."))
+		to_chat(src, span_warning("你没有足够的领导能力来下达命令。"))
 		return
 
 	if(stat)
-		to_chat(src, span_warning("You cannot give an order in your current state."))
+		to_chat(src, span_warning("你无法在当前状态下下达命令。"))
 		return
 
 	if(IsMute())
-		to_chat(src, span_warning("You cannot give an order while muted."))
+		to_chat(src, span_warning("你被禁言时无法下达命令。"))
 		return
 
 	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_SKILL_ORDERS))
-		to_chat(src, span_warning("You have recently given an order. Calm down."))
+		to_chat(src, span_warning("你刚刚下达过命令。冷静一下。"))
 		return
 
 	if(!command_aura)
 		command_aura = tgui_input_list(src, "Choose an order", items = command_aura_allowed + "help")
 		if(command_aura == "help")
-			to_chat(src, span_notice("<br>Orders give a buff to nearby marines for a short period of time, followed by a cooldown, as follows:<br><B>Move</B> - Increased mobility and chance to dodge projectiles.<br><B>Hold</B> - Increased resistance to pain and combat wounds.<br><B>Focus</B> - Increased gun accuracy and effective range.<br>"))
+			to_chat(src, span_notice("<br>命令会在短时间内为附近陆战队员提供增益效果，随后进入冷却，具体如下：<br><B>前进</B> - 提升机动性和闪避弹道的几率。<br><B>坚守</B> - 提升对疼痛和战斗创伤的抵抗力。<br><B>专注</B> - 提升枪械精度和有效射程。<br>"))
 			return
 		if(!command_aura)
 			return
 
 	if(TIMER_COOLDOWN_RUNNING(src, COOLDOWN_SKILL_ORDERS))
-		to_chat(src, span_warning("You have recently given an order. Calm down."))
+		to_chat(src, span_warning("你刚刚下达过命令。冷静一下。"))
 		return
 
 	if(!(command_aura in command_aura_allowed))

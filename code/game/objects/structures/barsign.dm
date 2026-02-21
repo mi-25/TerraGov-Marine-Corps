@@ -3,8 +3,8 @@
 	icon_state = "off"
 
 /obj/structure/sign/double/barsign/carp
-	name = "The Drunk Carp"
-	desc = "The Drunk Carp, Bar and Grill"
+	name = "醉醺醺的鲤鱼"
+	desc = "醉鲤酒吧与烧烤"
 	icon_state = "thedrunkcarp"
 
 /obj/structure/sign/double/barsign/Initialize(mapload)

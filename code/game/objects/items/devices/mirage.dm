@@ -1,6 +1,6 @@
 /obj/item/explosive/grenade/mirage
-	name = "mirage grenade"
-	desc = "A special device that, when activated, produces a pair of holographic copies of the user."
+	name = "幻影手雷"
+	desc = "一种特殊装置，激活时会产生使用者的全息影像分身。"
 	icon_state = "delivery"
 	worn_icon_state = "delivery"
 	dangerous = FALSE

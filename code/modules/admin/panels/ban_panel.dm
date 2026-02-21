@@ -40,7 +40,7 @@
 		muteunmute = "muted"
 		C.prefs.muted |= mute_type
 
-	to_chat(C, span_boldannounce("You have been [muteunmute] from [mute_string]."))
+	to_chat(C, span_boldannounce("你已被[muteunmute] [mute_string]。"))
 
 	// If someone gets muted from ahelps while they have an active ticket lets add an interaction for the admins so they know it happened.
 	// If you open a ticket with someone who is spamming they will likely get muted from ahelps straight away.
@@ -347,7 +347,7 @@ ADMIN_VERB(ban_panel, R_BAN, "Ban Panel", "Opens the Ban panel.", ADMIN_CATEGORY
 		return
 
 	if(!SSdbcore.Connect())
-		to_chat(usr, span_danger("Failed to establish database connection."))
+		to_chat(usr, span_danger("数据库连接失败。"))
 		return
 
 	var/list/error_state = list()
@@ -466,7 +466,7 @@ ADMIN_VERB(ban_panel, R_BAN, "Ban Panel", "Opens the Ban panel.", ADMIN_CATEGORY
 	if(!check_rights(R_BAN))
 		return
 	if(!SSdbcore.Connect())
-		to_chat(usr, span_danger("Failed to establish database connection."))
+		to_chat(usr, span_danger("数据库连接失败。"))
 		return
 	var/player_ckey = ckey(player_key)
 	if(player_ckey)
@@ -513,7 +513,7 @@ ADMIN_VERB(ban_panel, R_BAN, "Ban Panel", "Opens the Ban panel.", ADMIN_CATEGORY
 			if(R_EVERYTHING && !(R_EVERYTHING & rank.can_edit_rights)) //edit rights are a more effective way to check hierarchical rank since many non-headmins have R_PERMISSIONS now
 				max_adminbans = MAX_ADMINBANS_PER_HEADMIN
 			if(adminban_count >= max_adminbans)
-				to_chat(usr, span_danger("You've already logged [max_adminbans] admin ban(s) or more. Do not abuse this function!"))
+				to_chat(usr, span_danger("你已经记录了[max_adminbans]次或更多的管理员封禁。请勿滥用此功能！"))
 				qdel(query_check_adminban_count)
 				return
 		qdel(query_check_adminban_count)
@@ -603,7 +603,7 @@ ADMIN_VERB(unban_panel, R_BAN, "Unban Panel", "Opens the Ban panel.", ADMIN_CATE
 		return
 
 	if(!SSdbcore.Connect())
-		to_chat(usr, span_danger("Failed to establish database connection."))
+		to_chat(usr, span_danger("数据库连接失败。"))
 		return
 
 	var/datum/browser/panel = new(usr.client.mob, "unbanpanel", "Unban Panel", 850, 600)
@@ -748,7 +748,7 @@ ADMIN_VERB(unban_panel, R_BAN, "Unban Panel", "Opens the Ban panel.", ADMIN_CATE
 	if(!check_rights(R_BAN))
 		return
 	if(!SSdbcore.Connect())
-		to_chat(usr, span_danger("Failed to establish database connection."))
+		to_chat(usr, span_danger("数据库连接失败。"))
 		return
 	var/target = ban_target_string(player_key, player_ip, player_cid)
 	if(alert(usr, "Please confirm unban of [target] from [role].", "Unban confirmation", "Yes", "No") == "No")
@@ -773,11 +773,11 @@ ADMIN_VERB(unban_panel, R_BAN, "Unban Panel", "Opens the Ban panel.", ADMIN_CATE
 	var/client/C = GLOB.directory[player_key]
 	if(C)
 		build_ban_cache(C)
-		to_chat(C, "<span class='boldannounce'>[usr.client.key] has removed a ban from [role] for your key.")
+		to_chat(C, "<span class='boldannounce'>[usr.client.key] 已为你的密钥移除了针对 [role] 的封禁。")
 	for(var/client/i in GLOB.clients - C)
 		if(i.address == player_ip || i.computer_id == player_cid)
 			build_ban_cache(i)
-			to_chat(i, "<span class='boldannounce'>[usr.client.key] has removed a ban from [role] for your IP or CID.")
+			to_chat(i, "<span class='boldannounce'>[usr.client.key] 已为你的 IP 或 CID 解除了针对 [role] 的封禁。")
 	SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/unban_panel, player_key, admin_key, player_ip, player_cid, page)
 
 
@@ -785,7 +785,7 @@ ADMIN_VERB(unban_panel, R_BAN, "Unban Panel", "Opens the Ban panel.", ADMIN_CATE
 	if(!check_rights(R_BAN))
 		return
 	if(!SSdbcore.Connect())
-		to_chat(usr, span_danger("Failed to establish database connection."))
+		to_chat(usr, span_danger("数据库连接失败。"))
 		return
 	var/player_ckey = ckey(player_key)
 	var/bantime
@@ -838,7 +838,7 @@ ADMIN_VERB(unban_panel, R_BAN, "Unban Panel", "Opens the Ban panel.", ADMIN_CATE
 			if(R_EVERYTHING && !(R_EVERYTHING & rank.can_edit_rights)) //edit rights are a more effective way to check hierarchical rank since many non-headmins have R_PERMISSIONS now
 				max_adminbans = MAX_ADMINBANS_PER_HEADMIN
 			if(adminban_count >= max_adminbans)
-				to_chat(usr, span_danger("You've already logged [max_adminbans] admin ban(s) or more. Do not abuse this function!"))
+				to_chat(usr, span_danger("你已经记录了[max_adminbans]次或更多管理员封禁。请勿滥用此功能！"))
 				qdel(query_check_adminban_count)
 				return
 		qdel(query_check_adminban_count)
@@ -906,11 +906,11 @@ ADMIN_VERB(unban_panel, R_BAN, "Unban Panel", "Opens the Ban panel.", ADMIN_CATE
 	var/client/C = GLOB.directory[old_key]
 	if(C)
 		build_ban_cache(C)
-		to_chat(C, span_boldannounce("[usr.client.key] has edited the [changes_keys_text] of a ban for your key."))
+		to_chat(C, span_boldannounce("[usr.client.key] 已编辑了针对您密钥的封禁的[changes_keys_text]。"))
 	for(var/client/i in GLOB.clients - C)
 		if(i.address == old_ip || i.computer_id == old_cid)
 			build_ban_cache(i)
-			to_chat(i, span_boldannounce("[usr.client.key] has edited the [changes_keys_text] of a ban for your IP or CID."))
+			to_chat(i, span_boldannounce("[usr.client.key] 已编辑了针对您的 IP 或 CID 封禁的 [changes_keys_text]。"))
 	SSadmin_verbs.dynamic_invoke_verb(usr, /datum/admin_verb/unban_panel, player_key, null, null, null, page)
 
 
@@ -918,7 +918,7 @@ ADMIN_VERB(unban_panel, R_BAN, "Unban Panel", "Opens the Ban panel.", ADMIN_CATE
 	if(!check_rights(R_BAN))
 		return
 	if(!SSdbcore.Connect())
-		to_chat(usr, span_danger("Failed to establish database connection."))
+		to_chat(usr, span_danger("数据库连接失败。"))
 		return
 	var/datum/db_query/query_get_ban_edits = SSdbcore.NewQuery({"
 		SELECT edits FROM [format_table_name("ban")] WHERE id = :ban_id

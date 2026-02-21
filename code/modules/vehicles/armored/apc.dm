@@ -1,6 +1,6 @@
 /obj/vehicle/sealed/armored/multitile/apc
-	name = "\improper APC - Athena"
-	desc = "An unarmed command APC designed to command and transport troops in the battlefield."
+	name = "\improper 雅典娜号装甲运兵车"
+	desc = "一款用于战场指挥和运输部队的非武装指挥型装甲运兵车。"
 	icon = 'icons/obj/armored/3x3/apc.dmi'
 	icon_state = "apc"
 	damage_icon_path = 'icons/obj/armored/3x3/apc_damage_overlay.dmi'

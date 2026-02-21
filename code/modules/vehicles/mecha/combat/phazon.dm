@@ -1,6 +1,6 @@
 /obj/vehicle/sealed/mecha/combat/phazon
-	desc = "This is a Phazon exosuit. The pinnacle of scientific research and pride of Nanotrasen, it uses cutting edge bluespace technology and expensive materials."
-	name = "\improper Phazon"
+	desc = "这是一台法扎恩动力外骨骼。这是纳米传讯科学研究的巅峰与骄傲，它采用了最前沿的蓝空科技和昂贵的材料。"
+	name = "\improper 法扎"
 	icon_state = "phazon"
 	base_icon_state = "phazon"
 	move_delay = 2
@@ -25,7 +25,7 @@
 	initialize_passenger_action_type(/datum/action/vehicle/sealed/mecha/mech_switch_damtype)
 
 /datum/action/vehicle/sealed/mecha/mech_switch_damtype
-	name = "Reconfigure arm microtool arrays"
+	name = "重新配置手臂微工具阵列"
 	action_icon_state = "mech_damtype_brute"
 
 /datum/action/vehicle/sealed/mecha/mech_switch_damtype/action_activate(trigger_flags)
@@ -35,20 +35,20 @@
 	switch(chassis.damtype)
 		if(TOX)
 			new_damtype = BRUTE
-			chassis.balloon_alert(owner, "your punches will now deal brute damage")
+			chassis.balloon_alert(owner, "你的拳击现在会造成钝击伤害")
 		if(BRUTE)
 			new_damtype = BURN
-			chassis.balloon_alert(owner, "your punches will now deal burn damage")
+			chassis.balloon_alert(owner, "你的拳击现在会造成灼烧伤害")
 		if(BURN)
 			new_damtype = TOX
-			chassis.balloon_alert(owner,"your punches will now deal toxin damage")
+			chassis.balloon_alert(owner,"你的拳击现在会造成毒素伤害")
 	chassis.damtype = new_damtype
 	action_icon_state = "mech_damtype_[new_damtype]"
 	playsound(chassis, 'sound/mecha/mechmove01.ogg', 50, TRUE)
 	update_button_icon()
 
 /datum/action/vehicle/sealed/mecha/mech_toggle_phasing
-	name = "Toggle Phasing"
+	name = "切换相位"
 	action_icon_state = "mech_phasing_off"
 
 /datum/action/vehicle/sealed/mecha/mech_toggle_phasing/action_activate(trigger_flags)

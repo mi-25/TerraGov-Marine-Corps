@@ -7,10 +7,10 @@
 #define FUSION_ENGINE_HEAVY_DAMAGE 3
 
 /obj/machinery/power/fusion_engine
-	name = "\improper S-52 fusion reactor"
+	name = "\improper S-52聚变反应堆"
 	icon = 'icons/obj/machines/fusion_engine.dmi'
 	icon_state = "off"
-	desc = "A Westingland S-52 Fusion Reactor.  Takes fuels cells and converts them to power for the ship.  Also produces a large amount of heat."
+	desc = "一台威斯汀兰S-52聚变反应堆。它消耗燃料棒并将其转化为飞船所需的电力。同时也会产生大量热量。"
 	resistance_flags = UNACIDABLE
 	anchored = TRUE
 	density = TRUE
@@ -68,7 +68,7 @@
 			stop_processing()
 		return FALSE
 	if(fusion_cell.fuel_amount <= 0)
-		balloon_alert_to_viewers("Is out of fuel")
+		balloon_alert_to_viewers("燃料耗尽")
 		fuel_rate = 0
 		is_on = FALSE
 		power_gen_percent = 0
@@ -81,13 +81,13 @@
 
 		switch(power_gen_percent) //Flavor text!
 			if(10)
-				balloon_alert_to_viewers("begins to whirr as it powers up")
+				balloon_alert_to_viewers("开始嗡嗡作响，正在启动")
 				fuel_rate = FUSION_ENGINE_FULL_STRENGTH_FULL_RATE * 0.1
 			if(50)
-				balloon_alert_to_viewers("hums as it reaches half capacity")
+				balloon_alert_to_viewers("容量达到一半时发出嗡鸣声")
 				fuel_rate = FUSION_ENGINE_FULL_STRENGTH_FULL_RATE * 0.5
 			if(100)
-				balloon_alert_to_viewers("rumbles as it reaches full strength")
+				balloon_alert_to_viewers("当它达到完全强度时发出隆隆声")
 				fuel_rate = FUSION_ENGINE_FULL_STRENGTH_FULL_RATE
 
 
@@ -100,7 +100,7 @@
 	if(.)
 		return
 	if(!ishuman(user))
-		balloon_alert(user, "You can't use that")
+		balloon_alert(user, "你无法使用那个")
 		return FALSE
 	interact_hand(user)
 
@@ -111,16 +111,16 @@
 /obj/machinery/power/fusion_engine/proc/interact_hand(mob/living/user)
 	switch(buildstate)
 		if(FUSION_ENGINE_HEAVY_DAMAGE)
-			balloon_alert(user, "Use blowtorch to start repairs")
+			balloon_alert(user, "使用喷灯开始维修")
 			return FALSE
 		if(FUSION_ENGINE_MEDIUM_DAMAGE)
-			balloon_alert(user, "Use wirecutters to fix the circuitry")
+			balloon_alert(user, "使用钢丝钳修复电路")
 			return FALSE
 		if(FUSION_ENGINE_LIGHT_DAMAGE)
-			balloon_alert(user, "Use a wrench to finish the repair")
+			balloon_alert(user, "使用扳手完成修理")
 			return FALSE
 	if(is_on)
-		balloon_alert_to_viewers("[usr] shuts off the generator.")
+		balloon_alert_to_viewers("[usr] 关闭了发电机。")
 		is_on = FALSE
 		power_gen_percent = 0
 		update_icon()
@@ -128,15 +128,15 @@
 		return TRUE
 
 	if(!fusion_cell)
-		balloon_alert(user, "Can't, requires a fuel cell")
+		balloon_alert(user, "无法，需要燃料电池")
 		return FALSE
 	if(!fusion_cell.fuel_amount)
-		balloon_alert(user, "Fuel cell is empty")
+		balloon_alert(user, "燃料单元已空")
 		return FALSE
 
 	if(fusion_cell.fuel_amount <= 10)
-		balloon_alert_to_viewers("Fuel levels critically low")
-	balloon_alert_to_viewers("turns the generator on")
+		balloon_alert_to_viewers("燃料水平严重不足")
+	balloon_alert_to_viewers("启动发电机")
 	fuel_rate = FUSION_ENGINE_FULL_STRENGTH_FULL_RATE * 0.1
 
 	is_on = TRUE
@@ -149,17 +149,17 @@
 		return ..()
 
 	if(is_on)
-		balloon_alert(user, "Cannot, needs turned off first")
+		balloon_alert(user, "无法，需要先关闭")
 		return
 
 	if(fusion_cell)
-		balloon_alert(user, "Need to remove fuel cell first")
+		balloon_alert(user, "需要先移除燃料单元")
 		return
 
 	if(user.transferItemToLoc(I, src))
 		fusion_cell = I
 		update_icon()
-		balloon_alert(user, "You load the [src] with the [I].")
+		balloon_alert(user, "你将[I]装填进[src]。")
 
 /obj/machinery/power/fusion_engine/welder_act(mob/living/user, obj/item/O)
 	. = ..()
@@ -168,25 +168,25 @@
 
 	var/obj/item/tool/weldingtool/WT = O
 	if(buildstate != FUSION_ENGINE_HEAVY_DAMAGE)
-		balloon_alert(user, "Doesn't need welding")
+		balloon_alert(user, "无需焊接")
 		return FALSE
 
 	if(!(WT.remove_fuel(1, user)))
-		balloon_alert(user, "Need more welding fuel")
+		balloon_alert(user, "需要更多焊接燃料")
 		return FALSE
 
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		balloon_alert_to_viewers("Fumbles with [src]'s internals")
+		balloon_alert_to_viewers("笨手笨脚地摆弄着 [src] 的内部结构")
 		var/fumbling_time = 10 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED, extra_checks = CALLBACK(WT, TYPE_PROC_REF(/obj/item/tool/weldingtool, isOn))))
 			return FALSE
-	balloon_alert_to_viewers("Starts welding some damage")
+	balloon_alert_to_viewers("开始焊接一些损伤")
 	if(!O.use_tool(src, user, 20 SECONDS - (user.skills.getRating(SKILL_ENGINEER) * 3 SECONDS), 2, 25, null, BUSY_ICON_BUILD))
 		return FALSE
 	if(buildstate != FUSION_ENGINE_HEAVY_DAMAGE || is_on)
 		return FALSE
 	buildstate = FUSION_ENGINE_MEDIUM_DAMAGE
-	balloon_alert_to_viewers("[user] starts welds some damage")
+	balloon_alert_to_viewers("[user]开始焊接一些损伤")
 	update_icon()
 	record_generator_repairs(user)
 	return TRUE
@@ -198,26 +198,26 @@
 		return FALSE
 
 	if(is_on)
-		balloon_alert(user, "Turn it off first!")
+		balloon_alert(user, "先把它关掉！")
 		return FALSE
 
 	if(buildstate != FUSION_ENGINE_MEDIUM_DAMAGE)
-		balloon_alert(user, "Doesn't need wire adjustments")
+		balloon_alert(user, "无需调整线缆")
 		return FALSE
 
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		balloon_alert_to_viewers("Fumbles with [src]'s wiring")
+		balloon_alert_to_viewers("笨拙地摆弄着[src]的线路")
 		var/fumbling_time = 10 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 			return FALSE
 
 	playsound(loc, 'sound/items/wirecutter.ogg', 25, 1)
-	balloon_alert_to_viewers("Starts securing [src]'s wiring")
+	balloon_alert_to_viewers("开始固定[src]的线路")
 	if(!do_after(user,  10 SECONDS - (user.skills.getRating(SKILL_ENGINEER) * 2 SECONDS), NONE, src, BUSY_ICON_BUILD) || buildstate != FUSION_ENGINE_MEDIUM_DAMAGE || is_on)
 		return FALSE
 	playsound(loc, 'sound/items/wirecutter.ogg', 25, 1)
 	buildstate = FUSION_ENGINE_LIGHT_DAMAGE
-	balloon_alert_to_viewers("Secures [src]'s wiring")
+	balloon_alert_to_viewers("固定[src]的线路")
 	update_icon()
 	record_generator_repairs(user)
 	return TRUE
@@ -228,21 +228,21 @@
 		return FALSE
 
 	if(buildstate != FUSION_ENGINE_LIGHT_DAMAGE)
-		balloon_alert(user, "Doesn't need pipe adjustments")
+		balloon_alert(user, "无需调整管道")
 		return FALSE
 
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		balloon_alert_to_viewers("Fumbles with [src]'s tubing")
+		balloon_alert_to_viewers("笨拙地摆弄着[src]的软管")
 		var/fumbling_time = 10 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 			return FALSE
 	playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
-	balloon_alert_to_viewers("Starts repairing [src]'s tubing")
+	balloon_alert_to_viewers("开始修复[src]的管路")
 	if(!do_after(user,  15 SECONDS - (user.skills.getRating(SKILL_ENGINEER) * 3 SECONDS), NONE, src, BUSY_ICON_BUILD) && buildstate == FUSION_ENGINE_LIGHT_DAMAGE && !is_on)
 		return FALSE
 	playsound(loc, 'sound/items/ratchet.ogg', 25, 1)
 	buildstate = FUSION_ENGINE_NO_DAMAGE
-	balloon_alert_to_viewers("Repairs [src]'s tubing")
+	balloon_alert_to_viewers("修复[src]的管路")
 	update_icon()
 	record_generator_repairs(user)
 	return TRUE
@@ -250,25 +250,25 @@
 /obj/machinery/power/fusion_engine/crowbar_act(mob/living/user, obj/item/O)
 	. = ..()
 	if(buildstate != FUSION_ENGINE_NO_DAMAGE)
-		balloon_alert(user, "You must repair the generator first")
+		balloon_alert(user, "你必须先修理发电机")
 		return
 	if(is_on)
-		balloon_alert(user, "You must turn the generator off first")
+		balloon_alert(user, "你必须先关闭发电机")
 		return
 	if(!fusion_cell)
-		balloon_alert(user, "There is no cell to remove")
+		balloon_alert(user, "没有可移除的电池")
 		return
 
 	if(user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		balloon_alert_to_viewers("Fumbles with [src]'s fuel bay")
+		balloon_alert_to_viewers("笨拙地摆弄着[src]的燃料舱")
 		var/fumbling_time = 10 SECONDS - 2 SECONDS * user.skills.getRating(SKILL_ENGINEER)
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
 			return FALSE
 	playsound(loc, 'sound/items/crowbar.ogg', 25, 1)
-	balloon_alert_to_viewers("Starts prying [src]'s fuel bay open")
+	balloon_alert_to_viewers("开始撬开[src]的燃料舱")
 	if(!do_after(user, 10 SECONDS - (user.skills.getRating(SKILL_ENGINEER) * 2 SECONDS), NONE, src, BUSY_ICON_BUILD) && buildstate == FUSION_ENGINE_NO_DAMAGE && !is_on && fusion_cell)
 		return FALSE
-	balloon_alert_to_viewers("Pries [src]'s fuel bay open and removes the cell")
+	balloon_alert_to_viewers("撬开[src]的燃料舱并取出电池")
 	fusion_cell.update_icon()
 	user.put_in_hands(fusion_cell)
 	fusion_cell = null
@@ -349,10 +349,10 @@
 
 //FUEL CELL
 /obj/item/fuel_cell
-	name = "\improper WL-6 universal fuel cell"
+	name = "\improper WL-6 通用燃料电池"
 	icon = 'icons/obj/items/fuel_cell.dmi'
 	icon_state = "cell-empty"
-	desc = "A rechargable fuel cell designed to work as a power source for the Cheyenne-Class transport or for Westingland S-52 Reactors."
+	desc = "一种可充电燃料电池，设计用作夏延级运输机或威斯汀兰S-52反应堆的电源。"
 	/// The amount of fuel currently in the cell
 	var/fuel_amount = 0
 	/// The maximum amount of fuel the cell holds

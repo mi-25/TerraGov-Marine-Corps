@@ -12,9 +12,9 @@
  */
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/pistol
-	name = "\improper Cottus pistol"
+	name = "\improper 科特斯手枪"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "The smallest weapon available to mechs. It packs a small punch, but allows the mech to achieve higher mobility."
+	desc = "机甲可用的最小型武器。威力不大，但能让机甲获得更高的机动性。"
 	icon_state = "pistol"
 	fire_sound = 'sound/mecha/weapons/mech_pistol.ogg'
 	muzzle_iconstate = "muzzle_flash"
@@ -37,9 +37,9 @@
 	fire_mode = GUN_FIREMODE_SEMIAUTO
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/burstpistol
-	name = "\improper Crius burst pistol"
+	name = "\improper 克里乌斯连发手枪"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "A burstfiring weapon fitted for mechs. Offers higher mobility and accuracy than larger weapons, but reduced damage."
+	desc = "为机甲配备的连发武器。相比大型武器，机动性和精度更高，但伤害较低。"
 	icon_state = "burstpistol"
 	fire_sound = 'sound/mecha/weapons/mech_pistol.ogg'
 	muzzle_iconstate = "muzzle_flash"
@@ -64,9 +64,9 @@
 	fire_mode = GUN_FIREMODE_AUTOBURST
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/smg
-	name = "\improper Coeus submachine gun"
+	name = "\improper 科俄斯冲锋枪"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "As the smallest autofiring weapon, it offers improved mobility but less firepower than most of it's larger cousins."
+	desc = "作为最小的自动射击武器，它提供了比大多数大型同类武器更好的机动性，但火力较弱。"
 	icon_state = "smg"
 	muzzle_iconstate = "muzzle_flash"
 	fire_sound = 'sound/mecha/weapons/mech_smg.ogg'
@@ -96,9 +96,9 @@
 	cooldown_key = MECH_COOLDOWN_KEY_RAPIDFIRE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/burstrifle
-	name = "\improper Tethys burst rifle"
+	name = "\improper 忒提斯点射步枪"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "Medium-sized mech assault weapon. Similar to the Cronus assault rifle, but fires in bursts."
+	desc = "中型机甲突击武器。类似克洛诺斯突击步枪，但以点射模式开火。"
 	icon_state = "burstrifle"
 	fire_sound = 'sound/mecha/weapons/mech_rifle.ogg'
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
@@ -122,9 +122,9 @@
 	fire_mode = GUN_FIREMODE_AUTOBURST
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/assault_rifle
-	name = "\improper Cronus assault rifle"
+	name = "\improper 克罗努斯突击步枪"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "The stock-and-standard extra-sized multipurpose rifle for TGMC mech units."
+	desc = "地球政府殖民地海军陆战队机甲部队标配的加大尺寸多用途步枪。"
 	icon_state = "assaultrifle"
 	fire_sound = 'sound/mecha/weapons/mech_rifle.ogg'
 	mech_flags = EXOSUIT_MODULE_GREYSCALE|EXOSUIT_MODULE_VENDABLE
@@ -153,9 +153,9 @@
 	cooldown_key = MECH_COOLDOWN_KEY_RAPIDFIRE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/shotgun
-	name = "\improper Phoebe shotgun"
+	name = "\improper 菲比霰弹枪"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "The TGMC classic weapon, but bigger and better! Fires plus-sized buckshot for high damage in close combat."
+	desc = "地球政府殖民地海军陆战队的经典武器，但更大更强！发射加号尺寸的鹿弹，在近战中造成高额伤害。"
 	icon_state = "shotgun"
 	fire_sound = 'sound/mecha/weapons/mech_shotgun.ogg'
 	mech_flags = EXOSUIT_MODULE_GREYSCALE|EXOSUIT_MODULE_VENDABLE
@@ -184,9 +184,9 @@
 	cooldown_key = MECH_COOLDOWN_KEY_HIGHALPHASTRIKE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/greyscale_lmg
-	name = "\improper Briareus LMG"
+	name = "\improper 布里阿柔斯轻机枪"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "A massive hulk of metal that fires base-bleed LMG rounds. Like the standard LMG, but bigger, better and heavier."
+	desc = "一个巨大的金属块，发射底排式轻机枪子弹。就像标准轻机枪一样，但更大、更好、更重。"
 	icon_state = "lmg"
 	fire_sound = 'sound/mecha/weapons/mech_lmg.ogg'
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
@@ -208,9 +208,9 @@
 	fire_mode = GUN_FIREMODE_AUTOMATIC
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/light_cannon
-	name = "\improper Leto light autocannon"
+	name = "\improper 莱托轻型自动炮"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "A drum-fed autocannon that fires fragmentation rounds that burst in a frontal cone when the bullet impacts. Extra effective against clusters of enemies."
+	desc = "一种弹鼓供弹的自动炮，发射破片弹，弹道命中时会在前方锥形区域内爆炸。对集群敌人特别有效。"
 	icon_state = "lightcannon"
 	fire_sound = 'sound/mecha/weapons/mech_light_cannon.ogg'
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
@@ -232,9 +232,9 @@
 	fire_mode = GUN_FIREMODE_AUTOMATIC
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser_rifle
-	name = "\improper Aegaeon laser rifle"
+	name = "\improper 埃该翁激光步枪"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "Standard mech laser rifle. Does not require amnmo refills and shoots highly accurate lasers that immediately hit, but deals slightly less damage compared to similar weapons."
+	desc = "标准机甲激光步枪。无需补充弹药，发射高精度激光，能够立即命中目标，但相比同类武器造成的伤害略低。"
 	icon_state = "lasermg"
 	fire_sound = 'sound/mecha/weapons/mech_laser_heavy.ogg'
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
@@ -252,9 +252,9 @@
 	fire_mode = GUN_FIREMODE_AUTOMATIC
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser_projector
-	name = "\improper Gyges laser projector"
+	name = "\improper 盖吉斯激光投射器"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "A laser projector, capable of burstfiring. Does not require amnmo refills and shoots highly accurate lasers that immediately hit, but deals slightly less damage compared to similar weapons."
+	desc = "激光投影器，能够进行点射。无需补充弹药，发射高精度激光，可立即命中目标，但与同类武器相比造成的伤害略低。"
 	icon_state = "laserrifle"
 	fire_sound = 'sound/mecha/weapons/mech_laser_heavy.ogg'
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
@@ -274,9 +274,9 @@
 	fire_mode = GUN_FIREMODE_AUTOBURST
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser_smg
-	name = "\improper Mnemosyne laser SMG"
+	name = "\improper 记忆女神激光冲锋枪"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "Standard mech laser SMG. Does not require amnmo refills and shoots highly accurate lasers that immediately hit, but deals slightly less damage compared to similar weapons. More mobile than the laser rifle."
+	desc = "标准机甲激光冲锋枪。无需补充弹药，发射高精度激光，可立即命中目标，但相比同类武器伤害略低。比激光步枪更灵活。"
 	icon_state = "lasersmg"
 	fire_sound = 'sound/mecha/weapons/mech_laser_light.ogg'
 	flash_offsets = list(
@@ -294,9 +294,9 @@
 	fire_mode = GUN_FIREMODE_AUTOMATIC
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/heavy_cannon
-	name = "\improper Themis heavy cannon"
+	name = "\improper 忒弥斯重型加农炮"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "Nothing says \"Go to hell\" like a tank cannon mounted on a war robot. Packs a big punch despite needing a reload after each shot."
+	desc = "没有什么比装在战争机器人上的坦克炮更能表达'下地狱去吧'的意思了。尽管每发之后都需要重新装填，但威力巨大。"
 	icon_state = "heavycannon"
 	fire_sound = 'sound/mecha/weapons/mech_heavy_cannon.ogg'
 	flash_offsets = list(
@@ -322,9 +322,9 @@
 	projectile_to_fire.def_zone = BODY_ZONE_CHEST //no delimb spam
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/minigun
-	name = "\improper Rhea vulcan cannon"
+	name = "\improper 瑞亚火神炮"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "Mobility isn't needed when you can just hide behind a hail of bullets! Requires windup before firing."
+	desc = "当你能够躲在弹幕之后时，机动性就不再是必需品！发射前需要蓄力。"
 	icon_state = "minigun"
 	fire_sound = 'sound/mecha/weapons/mech_minigun.ogg'
 	windup_sound = 'sound/weapons/guns/fire/tank_minigun_start.ogg'
@@ -348,9 +348,9 @@
 	fire_mode = GUN_FIREMODE_AUTOMATIC
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/sniper
-	name = "\improper Oceanus sniper rifle"
+	name = "\improper 海洋狙击步枪"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "A anti-tank rifle only capable of being wielded by mechs. Originally designed for fighting small armored vehicles, but works just as well against similarly sized creatures. Has IFF."
+	desc = "一款仅限机甲使用的反坦克步枪。最初设计用于对抗小型装甲车辆，但对体型相近的生物同样有效。配备敌我识别系统。"
 	icon_state = "sniper"
 	fire_sound = 'sound/mecha/weapons/mech_sniper.ogg'
 	flash_offsets = list(
@@ -372,8 +372,8 @@
 	fire_mode = GUN_FIREMODE_SEMIAUTO
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/heavyrocket
-	name = "\improper Hyperion heavy rocket launcher"
-	desc = "The TGMC's definitive answer to whether a bigger boom is better. Fires heavy AP rockets."
+	name = "\improper 亥伯龙重型火箭发射器"
+	desc = "地球政府殖民地海军陆战队对于'爆炸越大越好'这一问题的最终答案。发射重型穿甲火箭。"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
 	icon_state = "rocketlauncher"
 	fire_sound = 'sound/mecha/weapons/mech_rpg.ogg'
@@ -396,9 +396,9 @@
 	fire_mode = GUN_FIREMODE_SEMIAUTO
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/flamethrower
-	name = "\improper Helios flamethrower"
+	name = "\improper 赫利俄斯喷火器"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "A specialized flamer for mounting on mechs. Bad mobility, but the additional napalm more than makes up for it."
+	desc = "一种专为机甲设计的喷火器。机动性较差，但额外的凝固汽油足以弥补这一缺陷。"
 	icon_state = "flamer"
 	fire_sound = 'sound/mecha/weapons/mech_flamer.ogg'
 	flash_offsets = list(
@@ -425,9 +425,9 @@
 	fire_mode = GUN_FIREMODE_AUTOMATIC
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/rpg
-	name = "\improper Iapetus missile pod"
+	name = "\improper 土卫八导弹舱"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "A mech missile pod. Does not hold a lot of spare ammo and requires frequent external refills. But hey, exploding missiles all the way!"
+	desc = "一个机甲导弹舱。备用弹药不多，需要频繁从外部补充。不过嘛，爆炸导弹一路走起！"
 	icon_state = "rpg"
 	fire_sound = 'sound/mecha/weapons/mech_rpg.ogg'
 	flash_offsets = list(
@@ -457,9 +457,9 @@
 	cooldown_key = MECH_COOLDOWN_KEY_HIGHALPHASTRIKE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/microrocket
-	name = "\improper Asteria microrocket pod"
+	name = "\improper 阿斯特里亚微型火箭吊舱"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "A mech micromissile pod. Launches a barrage of microrockets that home on the target."
+	desc = "一个机甲微型导弹舱。发射一连串微型火箭，可自动追踪目标。"
 	icon_state = "tow"
 	fire_sound = 'sound/mecha/weapons/mech_rpg.ogg'
 	flash_offsets_core = list(
@@ -493,9 +493,9 @@
 #define LASER_DASH_RANGE_ENHANCED 5
 
 /obj/item/mecha_parts/mecha_equipment/laser_sword
-	name = "\improper Bright laser blade"
+	name = "\improper 明亮激光剑刃"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
-	desc = "A specialized mech laser blade made out of plasma. Its compact size allows fast, short-ranged attacks. When activated, overloads the leg actuators to dash forward, before cutting with the superheated plasma beam."
+	desc = "一种由等离子体制成的专用机甲激光刃。其紧凑的尺寸允许快速、短程的攻击。激活时，会使腿部执行器过载向前冲刺，然后用超热的等离子体光束进行切割。"
 	icon_state = "lasersword"
 	mech_flags = EXOSUIT_MODULE_GREYSCALE|EXOSUIT_MODULE_VENDABLE
 	max_integrity = 400
@@ -624,8 +624,8 @@
 	source.a_intent = old_intent
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser_spear
-	name = "\improper Sunbeam particle piercer"
-	desc = "A spear made of compressed energy for the TGMC Combat Mech. A melee weapon for strong defense at short-to-medium range. Extends a spear of superheated plasma upon activation, piericing everything in its path. A melee core will increase both its range and power. It is a top-of-the-line melee weapon of TGMC's fine line of mecha close-range offensive capability."
+	name = "\improper 日光束粒子刺穿器"
+	desc = "为地球政府殖民地海军陆战队战斗机甲设计的压缩能量长矛。一种用于中短距离强力防御的近战武器。激活时会延伸出一支超高温等离子体长矛，刺穿路径上的一切。近战核心将同时提升其射程和威力。这是地球政府殖民地海军陆战队精良机甲近战攻击能力系列中的顶级近战武器。"
 	icon = 'icons/mecha/mecha_equipment_64x32.dmi'
 	icon_state = "lance"
 	fire_sound = 'sound/mecha/weapons/laser_sword.ogg'

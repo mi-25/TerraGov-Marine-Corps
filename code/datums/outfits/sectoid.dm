@@ -1,5 +1,5 @@
 /datum/outfit/job/sectoid
-	name = "Sectoid Grunt"
+	name = "脑魔步兵"
 	jobtype = /datum/job/sectoid
 
 	id = /obj/item/card/id
@@ -44,7 +44,7 @@
 	)
 
 /datum/outfit/job/sectoid/leader
-	name = "Sectoid Leader"
+	name = "脑魔首领"
 	jobtype = /datum/job/sectoid/leader
 	wear_suit = /obj/item/clothing/suit/armor/sectoid/shield
 	abilities = list(

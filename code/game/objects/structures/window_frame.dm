@@ -1,6 +1,6 @@
 /obj/structure/window_frame
-	name = "window frame"
-	desc = "A big hole in the wall that used to sport a large window. Can be vaulted through"
+	name = "窗框"
+	desc = "墙上曾装有大窗户的大洞。可以翻越通过。"
 	icon = 'icons/obj/smooth_objects/regular_window_frame.dmi'
 	icon_state = "white_window_frame-0"
 	base_icon_state = "white_window_frame"
@@ -65,16 +65,16 @@
 	if(istype(I, sheet_type))
 		var/obj/item/stack/sheet/sheet = I
 		if(sheet.get_amount() < 2)
-			to_chat(user, span_warning("You need more [I] to install a new window."))
+			to_chat(user, span_warning("你需要更多[I]来安装新窗户。"))
 			return
-		user.visible_message(span_notice("[user] starts installing a new glass window on the frame."), \
+		user.visible_message(span_notice("[user]开始在窗框上安装新的玻璃窗。"), \
 		span_notice("You start installing a new window on the frame."))
 		playsound(src, 'sound/items/deconstruct.ogg', 25, 1)
 
 		if(!do_after(user, 2 SECONDS, NONE, src, BUSY_ICON_BUILD))
 			return
 
-		user.visible_message(span_notice("[user] installs a new glass window on the frame."), \
+		user.visible_message(span_notice("[user] 在窗框上安装了一扇新的玻璃窗。"), \
 		span_notice("You install a new window on the frame."))
 		sheet.use(2)
 		new window_type(loc) //This only works on Theseus windows!
@@ -89,19 +89,19 @@
 	if(user.do_actions)
 		return
 	if(user.grab_state < GRAB_AGGRESSIVE)
-		to_chat(user, span_warning("You need a better grip to do that!"))
+		to_chat(user, span_warning("你需要握得更稳才能做到！"))
 		return
 
 	var/mob/living/grabbed_mob = grab.grabbed_thing
 	if(get_dist(src, grabbed_mob) > 1)
-		to_chat(user, span_warning("[grabbed_mob] needs to be next to [src]."))
+		to_chat(user, span_warning("[grabbed_mob] 需要紧挨着 [src]。"))
 		return
-	user.visible_message(span_notice("[user] starts pulling [grabbed_mob] onto [src]."),
+	user.visible_message(span_notice("[user] 开始将 [grabbed_mob] 拖上 [src]。"),
 	span_notice("You start pulling [grabbed_mob] onto [src]!"))
 	if(!do_after(user, 2 SECONDS, NONE, grabbed_mob, BUSY_ICON_GENERIC))
 		return
 	grabbed_mob.Paralyze(2 SECONDS)
-	user.visible_message(span_warning("[user] pulls [grabbed_mob] onto [src]."),
+	user.visible_message(span_warning("[user]将[grabbed_mob]拉上[src]。"),
 	span_notice("You pull [grabbed_mob] onto [src]."))
 	grabbed_mob.forceMove(loc)
 	return TRUE

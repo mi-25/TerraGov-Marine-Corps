@@ -4,12 +4,12 @@
 
 // -- Print disk computer
 /obj/item/circuitboard/computer/nuke_disk_generator
-	name = "circuit board (nuke disk generator)"
+	name = "电路板（核弹盘生成器）"
 	build_path = /obj/machinery/computer/code_generator/nuke
 
 /obj/machinery/computer/code_generator/nuke
-	name = "nuke disk generator"
-	desc = "A secure terminal used to retrieve nuclear authentication codes and print them onto disks."
+	name = "核弹盘生成器"
+	desc = "用于获取核认证码并将其打印到磁盘上的安全终端。"
 	icon_state = "computer"
 	screen_overlay = "nuke_red"
 	broken_icon = "computer_red_broken"
@@ -50,10 +50,10 @@
 	running = FALSE
 
 	if(completed_segments == total_segments)
-		say("Program retrieval successful. Standing by to print...")
+		say("程序检索成功。待命打印中...")
 		return
 
-	say("Program run has concluded! Standing by...")
+	say("程序运行已结束！待命中...")
 
 	if(iscrashgamemode(SSticker.mode))
 		if(iszombiecrashgamemode(SSticker.mode))
@@ -76,36 +76,36 @@
 	SSpoints.dropship_points += disk_cycle_reward/10
 	GLOB.round_statistics.points_from_objectives += disk_cycle_reward
 
-	say("Program has execution has rewarded [disk_cycle_reward] requisitions points!")
+	say("程序执行已奖励 [disk_cycle_reward] 补给点！")
 
 /obj/machinery/computer/code_generator/nuke/start_final(mob/user)
 	busy = TRUE
 
-	user.visible_message(span_notice("[user] inserts a floppy disk into the [src] and begins to type..."),
+	user.visible_message(span_notice("[user] 将一张软盘插入 [src] 并开始输入……"),
 	span_notice("You insert a floppy disk into the [src] and begin to type..."))
 	if(!do_after(user, printing_time, NONE, src, BUSY_ICON_GENERIC, null, null, CALLBACK(src, TYPE_PROC_REF(/datum, process))))
 		busy = FALSE
 		return
 
 	new disk_type(get_turf(src))
-	visible_message(span_notice("[src] beeps, and spits out a [key_color] floppy disk!"))
+	visible_message(span_notice("[src] 哔哔作响，吐出了一张 [key_color] 软盘！"))
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_DISK_GENERATED, src)
 	busy = FALSE
 
 /obj/machinery/computer/code_generator/nuke/red
-	name = "red nuke disk generator"
+	name = "红色核弹盘生成器"
 	disk_type = /obj/item/disk/nuclear/red
 	key_color = "red"
 
 /obj/machinery/computer/code_generator/nuke/green
-	name = "green nuke disk generator"
+	name = "绿色核弹盘生成器"
 	screen_overlay = "nuke_green"
 	broken_icon = "computer_broken"
 	disk_type = /obj/item/disk/nuclear/green
 	key_color = "green"
 
 /obj/machinery/computer/code_generator/nuke/blue
-	name = "blue nuke disk generator"
+	name = "蓝色核弹盘生成器"
 	screen_overlay = "nuke_blue"
 	broken_icon = "computer_blue_broken"
 	disk_type = /obj/item/disk/nuclear/blue
@@ -121,8 +121,8 @@ GLOBAL_LIST_INIT(nuke_disk_generator_types, list(
 /obj/structure/nuke_disk_candidate
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "nuke_rand"
-	name = "computer"
-	desc = "Some dusty old computer. Looks non-functional"
+	name = "电脑"
+	desc = "一台布满灰尘的旧电脑。看起来已经无法使用了。"
 	density = TRUE
 	anchored = TRUE
 	resistance_flags = RESIST_ALL

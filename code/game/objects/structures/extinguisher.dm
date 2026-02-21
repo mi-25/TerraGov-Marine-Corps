@@ -1,6 +1,6 @@
 /obj/structure/extinguisher_cabinet
-	name = "extinguisher cabinet"
-	desc = "A small wall mounted cabinet designed to hold a fire extinguisher."
+	name = "灭火器柜"
+	desc = "一个安装在墙上的小型壁柜，用于存放灭火器。"
 	icon = 'icons/obj/wallframes.dmi'
 	icon_state = "extinguisher"
 	pixel_x = -16
@@ -40,7 +40,7 @@
 		user.drop_held_item()
 		contents += I
 		has_extinguisher = I
-		to_chat(user, span_notice("You place [I] in [src]."))
+		to_chat(user, span_notice("你将[I]放入[src]。"))
 
 	opened = !opened
 
@@ -53,7 +53,7 @@
 		return
 	if(has_extinguisher)
 		user.put_in_hands(has_extinguisher)
-		to_chat(user, span_notice("You take [has_extinguisher] from [src]."))
+		to_chat(user, span_notice("你从[src]拿走了[has_extinguisher]。"))
 		has_extinguisher = null
 		opened = 1
 	else

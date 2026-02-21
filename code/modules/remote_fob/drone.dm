@@ -5,7 +5,7 @@ GLOBAL_LIST_INIT(blocked_remotebuild_objs, typecacheof(list(/obj/machinery/compu
 /////////////////////////////// Drone Mob
 
 /mob/camera/aiEye/remote/fobdrone
-	name = "Remote Construction Drone"
+	name = "远程建造工蜂"
 	icon = 'icons/obj/machines/fob.dmi'
 	icon_state = "drone"
 	use_static = FALSE

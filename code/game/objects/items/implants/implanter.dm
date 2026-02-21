@@ -1,5 +1,5 @@
 /obj/item/implanter
-	name = "implanter"
+	name = "植入器"
 	icon = 'icons/obj/items/implants.dmi'
 	icon_state = "implanter0"
 	worn_icon_list = list(
@@ -36,49 +36,49 @@
 	if(!ishuman(target))
 		return FALSE
 	if(!imp)
-		to_chat(user, span_warning("There is no implant in the [src]!"))
+		to_chat(user, span_warning("[src] 中没有植入物！"))
 		return FALSE
-	user.visible_message(span_warning("[user] is attemping to implant [target]."), span_notice("You're attemping to implant [target]."))
+	user.visible_message(span_warning("[user] 正试图植入 [target]。"), span_notice("You're attemping to implant [target]."))
 
 	if(!do_after(user, 5 SECONDS, NONE, target, BUSY_ICON_GENERIC) || !imp)
-		to_chat(user, span_notice("You failed to implant [target]."))
+		to_chat(user, span_notice("你未能将[target]植入。"))
 		return FALSE
 
 	if(!imp.try_implant(target, user))
-		to_chat(user, span_notice("You fail to implant [target]."))
+		to_chat(user, span_notice("你未能将[target]植入。"))
 		return FALSE
-	target.visible_message(span_warning("[target] has been implanted by [user]."))
+	target.visible_message(span_warning("[target]已被[user]植入。"))
 	log_combat(user, target, "implanted", src)
 	imp = null
 	update_icon()
 	return TRUE
 
 /obj/item/implanter/neurostim
-	name = "neurostim implanter"
+	name = "神经刺激植入器"
 	imp = /obj/item/implant/neurostim
 
 /obj/item/implanter/chem
-	name = "chem implant implanter"
+	name = "化学植入注射器"
 	imp = /obj/item/implant/chem
 
 /obj/item/implanter/chem/blood
-	name = "blood recovery implant implanter"
+	name = "血液恢复植入体注射器"
 	imp = /obj/item/implant/chem/blood
 
 /obj/item/implanter/cloak
-	name = "cloak implant implanter"
+	name = "隐形植入物注射器"
 	imp = /obj/item/implant/cloak
 
 /obj/item/implanter/blade
-	name = "blade implant implanter"
+	name = "刀片植入器"
 	imp = /obj/item/implant/deployitem/blade
 
 /obj/item/implanter/suicide_dust
-	name = "Self-Gibbing implant"
+	name = "自爆植入体"
 	imp = /obj/item/implant/suicide_dust
 
 /obj/item/implanter/sandevistan
-	name = "sandevistan implanter"
+	name = "桑德维斯坦植入器"
 	icon_state = "imp_spinal"
 	w_class = WEIGHT_CLASS_NORMAL
 	imp = /obj/item/implant/sandevistan
@@ -94,7 +94,7 @@
 	qdel(src)
 
 /obj/item/implanter/jump_mod
-	name = "fortified ankles implant"
+	name = "强化脚踝植入体"
 	imp = /obj/item/implant/jump_mod
 
 /obj/effect/supply_drop/jump_mod/Initialize(mapload)

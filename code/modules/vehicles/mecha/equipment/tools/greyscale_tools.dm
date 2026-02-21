@@ -1,6 +1,6 @@
 /obj/item/mecha_parts/mecha_equipment/armor/booster
-	name = "medium booster"
-	desc = "Determines boosting speed and power. Balanced option. Sets dash consumption to 200 and dash range to 3, and boost consumption per step to 50."
+	name = "中型助推器"
+	desc = "决定冲刺速度和力量。平衡选项。将冲刺消耗设为200，冲刺距离设为3，每步冲刺消耗设为50。"
 	icon_state = "armor_melee"
 	iconstate_name = "armor_melee"
 	protect_name = "Medium Booster"
@@ -39,8 +39,8 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/armor/booster/lightweight
-	name = "lightweight booster"
-	desc = "Determines boosting speed and power. Lightweight option. Sets dash consumption to 300 and dash range to 4, and boost consumption per step to 25. Provides about half the speed boost."
+	name = "轻型助推器"
+	desc = "决定冲刺速度和力量。轻量化选项。将冲刺消耗设为300，冲刺距离设为4，每步冲刺消耗设为25。提供约一半的速度加成。"
 	icon_state = "armor_acid"
 	iconstate_name = "armor_acid"
 	protect_name = "Lightweight Booster"
@@ -52,8 +52,8 @@
 	dash_cooldown = 7 SECONDS
 
 /obj/item/mecha_parts/mecha_equipment/generator/greyscale
-	name = "phoron engine"
-	desc = "An advanced Nanotrasen phoron engine core prototype designed for TGMC advanced mech exosuits. Optimimized for energy storage."
+	name = "等离子体引擎"
+	desc = "一款为地球政府殖民地海军陆战队先进机甲外骨骼设计的先进纳米传讯等离子体引擎核心原型。针对能量存储进行了优化。"
 	icon_state = "phoron_engine"
 	mech_flags = EXOSUIT_MODULE_GREYSCALE|EXOSUIT_MODULE_VENDABLE
 	rechargerate = 0
@@ -72,15 +72,15 @@
 	return ..()
 
 /obj/item/mecha_parts/mecha_equipment/generator/greyscale/heavy
-	name = "fusion engine"
-	desc = "A highly experimental phoron fusion core. Optimized for energy generation."
+	name = "聚变引擎"
+	desc = "一个高度实验性的等离子体聚变核心。专为能量生成优化。"
 	icon_state = "phoron_engine_adv"
 	weight = 110
 	cell_type = /obj/item/cell/mecha/medium
 
 /obj/item/mecha_parts/mecha_equipment/melee_core
-	name = "melee core"
-	desc = "A bluespace orion-sperkov converter. Through science you can't be bothered to understand, makes mechs faster and their weapons able to draw more power, making them more dangerous. However this comes at the cost of not being able to use projectile and laser weaponry."
+	name = "近战核心"
+	desc = "一个蓝空间猎户座-斯佩尔科夫转换器。通过你懒得去理解的科学原理，它能让机甲更快，并使它们的武器能够汲取更多能量，从而更具威胁性。然而，其代价是无法使用弹道和激光武器。"
 	icon_state = "melee_core"
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
 	equipment_slot = MECHA_UTILITY
@@ -95,8 +95,8 @@
 
 
 /obj/item/mecha_parts/mecha_equipment/ability
-	name = "generic mech ability"
-	desc = "You shouldnt be seeing this"
+	name = "通用机甲能力"
+	desc = "你不应该看到这个"
 	equipment_slot = MECHA_UTILITY
 	///if given, a single flag of who we want this ability to be granted to
 	var/flag_controller = NONE
@@ -118,14 +118,14 @@
 	return ..()
 
 /obj/item/mecha_parts/mecha_equipment/ability/zoom
-	name = "enhanced zoom"
-	desc = "A magnifying module that allows the pilot to see much further than with the standard optics. Night vision not included."
+	name = "增强缩放"
+	desc = "一个放大模块，能让驾驶员看得比标准光学设备远得多。不包含夜视功能。"
 	icon_state = "zoom"
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
 	ability_to_grant = /datum/action/vehicle/sealed/mecha/mech_zoom
 
 /obj/item/mecha_parts/mecha_equipment/ability/smoke
-	name = "generic smoke module"
+	name = "通用烟雾模块"
 	ability_to_grant = /datum/action/vehicle/sealed/mecha/mech_smoke
 	///smoke type to spawn when this ability is activated
 	var/smoke_type
@@ -150,48 +150,48 @@
 	return ..()
 
 /obj/item/mecha_parts/mecha_equipment/ability/smoke/tanglefoot
-	name = "tanglefoot generator"
-	desc = "A tanglefoot smoke generator capable of dispensing large amounts of non-lethal gas that saps the energy from any xenoform creatures it touches."
+	name = "缠足发生器"
+	desc = "一种能够释放大量非致命性气体的缠足烟雾发生器，会吸干任何接触到的异形生物的能量。"
 	icon_state = "tfoot_gas"
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
 	ability_to_grant = /datum/action/vehicle/sealed/mecha/mech_smoke
 	smoke_type = /datum/effect_system/smoke_spread/plasmaloss
 
 /obj/item/mecha_parts/mecha_equipment/ability/smoke/cloak_smoke
-	name = "smoke generator"
-	desc = "A multiple launch module that generates a large amount of cloaking smoke to disguise nearby friendlies. Sadly, huge robots are too difficult to hide with it."
+	name = "烟雾发生器"
+	desc = "一种多管发射模块，能产生大量遮蔽烟雾来掩护附近的友军。可惜的是，巨大的机器人用它来隐藏还是太困难了。"
 	icon_state = "smoke_gas"
 	mech_flags = EXOSUIT_MODULE_GREYSCALE
 	ability_to_grant = /datum/action/vehicle/sealed/mecha/mech_smoke
 	smoke_type = /datum/effect_system/smoke_spread/tactical
 
 /obj/item/mecha_parts/mecha_equipment/ability/assault_armor
-	name = "assault armor"
-	desc = "A laser core that allows a core purge to emit a burst of lasers around the mecha. Slows mecha while charging."
+	name = "突击护甲"
+	desc = "一个激光核心，允许核心净化时在机甲周围发射激光爆发。充能时会减慢机甲速度。"
 	weight = 80
 	icon_state = "assaultarmor"
 	mech_flags = EXOSUIT_MODULE_GREYSCALE|EXOSUIT_MODULE_VENDABLE
 	ability_to_grant = /datum/action/vehicle/sealed/mecha/assault_armor
 
 /obj/item/mecha_parts/mecha_equipment/ability/cloak
-	name = "cloak module"
-	desc = "A mech stealth cloaking device. Cannot fire while cloaked, and cloaking drains energy."
+	name = "隐形模块"
+	desc = "机甲隐形装置。隐形时无法开火，且隐形会消耗能量。"
 	weight = 70
 	icon_state = "cloak"
 	mech_flags = EXOSUIT_MODULE_GREYSCALE|EXOSUIT_MODULE_VENDABLE
 	ability_to_grant = /datum/action/vehicle/sealed/mecha/cloak
 
 /obj/item/mecha_parts/mecha_equipment/ability/overboost
-	name = "overboost module"
-	desc = "A mech overboost device. Allows overloading the leg accumulators to dash in a direction, throwing back anyone hit by the mech."
+	name = "过载模块"
+	desc = "机甲过载推进装置。允许超载腿部蓄能器向指定方向冲刺，击退被机甲撞到的任何人。"
 	weight = 70
 	icon_state = "overboost"
 	mech_flags = EXOSUIT_MODULE_GREYSCALE|EXOSUIT_MODULE_VENDABLE
 	ability_to_grant = /datum/action/vehicle/sealed/mecha/overboost
 
 /obj/item/mecha_parts/mecha_equipment/ability/pulsearmor
-	name = "pulse armor module"
-	desc = "A mech module that when activated, creates a shield that slowly decays. Costs energy to activate."
+	name = "脉冲护甲模块"
+	desc = "一个机甲模块，激活时会产生一个缓慢衰减的护盾。激活需要消耗能量。"
 	weight = 70
 	icon_state = "pulsearmor"
 	mech_flags = EXOSUIT_MODULE_GREYSCALE|EXOSUIT_MODULE_VENDABLE

@@ -1,6 +1,6 @@
 // Clickable stat() button.
 /obj/effect/statclick
-	name = "Initializing..."
+	name = "正在初始化..."
 	blocks_emissive = EMISSIVE_BLOCK_NONE
 	var/target
 

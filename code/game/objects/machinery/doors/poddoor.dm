@@ -1,6 +1,6 @@
 /obj/machinery/door/poddoor
-	name = "\improper Podlock"
-	desc = "That looks like it doesn't open easily."
+	name = "\improper 舱门锁"
+	desc = "看起来那东西不容易打开。"
 	icon = 'icons/obj/doors/rapid_pdoor.dmi'
 	icon_state = "pdoor1"
 	soft_armor = list(MELEE = 50, BULLET = 100, LASER = 100, ENERGY = 100, BOMB = 50, BIO = 100, FIRE = 100, ACID = 70)
@@ -69,35 +69,35 @@
 	icon_state = "pdoor0"
 
 /obj/machinery/door/poddoor/opened/bridge
-	name = "Bridge Blast Doors"
+	name = "舰桥防爆门"
 	id = "bridge blast"
 
 /obj/machinery/door/poddoor/opened/sb
-	name = "Blast Doors"
+	name = "防爆门"
 	id = "sb blast"
 
 /obj/machinery/door/poddoor/opened/port
-	name = "Blast Doors"
+	name = "防爆门"
 	id = "port blast"
 
 /obj/machinery/door/poddoor/opened/engine
-	name = "Engine Room Blast Door"
+	name = "引擎室防爆门"
 	id = "EngineBlast"
 
 /obj/machinery/door/poddoor/opened/security
-	name = "Security Blast Door"
+	name = "安全防爆门"
 	id = "Secure Gate"
 
 /obj/machinery/door/poddoor/opened/isolation
-	name = "Isolation Cell Lockdown"
+	name = "隔离牢房封锁"
 	id = "IsoLock"
 
 /obj/machinery/door/poddoor/opened/east
-	name = "Blast Door"
+	name = "防爆门"
 	id = "eastblast"
 
 /obj/machinery/door/poddoor/telecomms
-	name = "Telecomms Emergency Window"
+	name = "电信紧急窗口"
 	id = "tcomwind"
 
 /obj/machinery/door/poddoor/two_tile_hor
@@ -112,14 +112,14 @@
 	id = "execution"
 
 /obj/machinery/door/poddoor/two_tile_hor/rocinante
-	name = "Rocinante Cargo Bay Door"
+	name = "罗西南多号货舱门"
 	icon_state = "pdoor0"
 	density = FALSE
 	opacity = FALSE
 	id = "pirate_cargo"
 
 /obj/machinery/door/poddoor/two_tile_hor/teleporter
-	name = "teleporter chamber blast door"
+	name = "传送室防爆门"
 	icon_state = "pdoor0"
 	density = FALSE
 	opacity = FALSE
@@ -187,51 +187,51 @@
 
 
 /obj/machinery/door/poddoor/mainship/ai
-	name = "\improper AI Core Shutters"
+	name = "\improper 人工智能核心防护板"
 	icon_state = "pdoor0"
 
 /obj/machinery/door/poddoor/mainship/ai/exterior
-	name = "\improper AI Core Shutters"
+	name = "\improper 人工智能核心防护板"
 	id = "ailockdownexterior"
 	icon_state = "pdoor0"
 
 /obj/machinery/door/poddoor/mainship/ai/interior
-	name = "\improper AI Core Shutters"
+	name = "\improper 人工智能核心防护板"
 	id = "ailockdowninterior"
 	icon_state = "pdoor0"
 
 /obj/machinery/door/poddoor/mainship/ammo
-	name = "\improper Ammunition Storage"
+	name = "\improper 弹药储存"
 	id = "ammo2"
 
 /obj/machinery/door/poddoor/mainship/droppod
-	name = "\improper Drop pod Bay"
+	name = "\improper 空降舱舱段"
 	id = "droppod"
 
 /obj/machinery/door/poddoor/mainship/open/cic
-	name = "\improper Combat Information Center Blast Door"
+	name = "\improper 作战信息中心防爆门"
 	id = "cic_lockdown"
 
 /obj/machinery/door/poddoor/mainship/hangar
-	name = "\improper Hangar Lockdown"
+	name = "\improper 机库封锁"
 	id = "hangar_lockdown"
 
 /obj/machinery/door/poddoor/mainship/hangar/second
-	name = "\improper Hangar Shutters"
+	name = "\improper 机库舱门"
 	id = "hangar_shutters"
 
 /obj/machinery/door/poddoor/mainship/mech
-	name = "\improper Mech Shutters"
+	name = "\improper 机甲舱门"
 	id = "mech_shutters"
 	resistance_flags = PLASMACUTTER_IMMUNE
 
 /obj/machinery/door/poddoor/mainship/vehicle
-	name = "\improper Vehicle Bay Shutters"
+	name = "\improper 载具舱门"
 	id = "vehicle_shutters"
 	resistance_flags = PLASMACUTTER_IMMUNE
 
 /obj/machinery/door/poddoor/mainship/umbilical
-	name = "Umbilical Airlock"
+	name = "脐带气闸"
 	resistance_flags = RESIST_ALL
 
 
@@ -249,7 +249,7 @@
 
 /obj/machinery/door/poddoor/timed_late
 	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
-	name = "Timed Emergency Shutters"
+	name = "定时紧急防护板"
 	use_power = FALSE
 	resistance_flags = DROPSHIP_IMMUNE|RESIST_ALL
 
@@ -260,8 +260,8 @@
 
 
 /obj/machinery/door/poddoor/timed_late/containment
-	name = "Containment shutters"
-	desc = "Safety shutters triggered by some kind of lockdown event."
+	name = "收容闸门"
+	desc = "安全闸门因某种封锁事件触发。"
 	resistance_flags = DROPSHIP_IMMUNE|RESIST_ALL
 	open_layer = ABOVE_NORMAL_TURF_LAYER //No longer needs to be interacted with.
 	closed_layer = ABOVE_WINDOW_LAYER //Higher than usual, this is only around on the start of the round.
@@ -296,8 +296,8 @@ GLOBAL_LIST_INIT(faction_to_campaign_door_signal, list(
 ))
 
 /obj/machinery/door/poddoor/campaign
-	name = "secure blast door"
-	desc = "Safety shutters designed to withstand any punishment. You're not forcing your way past this."
+	name = "加固防爆门"
+	desc = "安全闸门设计用于承受任何冲击。你不可能强行通过这里。"
 	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	use_power = FALSE
 	resistance_flags = DROPSHIP_IMMUNE|RESIST_ALL
@@ -314,8 +314,8 @@ GLOBAL_LIST_INIT(faction_to_campaign_door_signal, list(
 	faction = FACTION_SOM
 
 /obj/machinery/door/poddoor/nt_lockdown
-	name = "secure blast door"
-	desc = "Safety shutters designed to withstand any punishment. You're not forcing your way past this."
+	name = "加固防爆门"
+	desc = "安全闸门设计用于承受任何冲击。你不可能强行通过这里。"
 	icon = 'icons/obj/doors/mainship/blastdoors_shutters.dmi'
 	use_power = FALSE
 	resistance_flags = DROPSHIP_IMMUNE|RESIST_ALL

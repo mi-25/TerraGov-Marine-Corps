@@ -16,7 +16,7 @@
 //To do: Allow corpses to appear mangled, bloody, etc. Allow customizing the bodies appearance (they're all bald and white right now).
 
 /obj/effect/landmark/corpsespawner
-	name = "Unknown"
+	name = "未知"
 	icon_state = "skullmarker"
 	///type of victim death, used for determining what kind of overlays and effects a corpse should have
 	var/death_type = COCOONED_DEATH
@@ -153,7 +153,7 @@
 // I'll work on making a list of corpses people request for maps, or that I think will be commonly used. Syndicate operatives for example.
 
 /obj/effect/landmark/corpsespawner/syndicatesoldier
-	name = "Syndicate Operative"
+	name = "辛迪加特工"
 	corpseuniform = /obj/item/clothing/under/syndicate
 	corpsesuit = /obj/item/clothing/suit/armor/vest
 	corpseshoes = /obj/item/clothing/shoes/swat
@@ -173,7 +173,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/syndicatecommando
-	name = "Syndicate Commando"
+	name = "辛迪加突击队"
 	corpseuniform = /obj/item/clothing/under/syndicate
 	corpsesuit = /obj/item/clothing/suit/space/rig/syndi
 	corpseshoes = /obj/item/clothing/shoes/swat
@@ -194,7 +194,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/pirate
-	name = "Pirate"
+	name = "海盗"
 	corpseuniform = /obj/item/clothing/under/syndicate
 	corpsesuit = /obj/item/clothing/suit/armor/vest
 	corpseshoes = /obj/item/clothing/shoes/swat
@@ -211,7 +211,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/realpirate
-	name = "Pirate"
+	name = "海盗"
 	corpseuniform = /obj/item/clothing/under/pirate
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpseglasses = /obj/item/clothing/glasses/eyepatch
@@ -224,7 +224,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/realpirate/ranged
-	name = "Pirate Gunner"
+	name = "海盗枪手"
 	corpsesuit = /obj/item/clothing/suit/pirate
 	corpsehelmet = /obj/item/clothing/head/pirate
 
@@ -236,7 +236,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/russian
-	name = "Russian"
+	name = "俄语"
 	corpseuniform = /obj/item/clothing/under/soviet
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpsehelmet = /obj/item/clothing/head/bearpelt
@@ -259,7 +259,7 @@
 ///////////Civilians//////////////////////
 
 /obj/effect/landmark/corpsespawner/prisoner
-	name = "Prisoner"
+	name = "囚犯"
 	corpseuniform = /obj/item/clothing/under/rank/prisoner
 	corpseshoes = /obj/item/clothing/shoes/orange
 	corpseid = 1
@@ -272,7 +272,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/chef
-	name = "Chef"
+	name = "厨师"
 	corpseuniform = /obj/item/clothing/under/rank/chef
 	corpsesuit = /obj/item/clothing/suit/storage/chef/classic
 	corpseshoes = /obj/item/clothing/shoes/black
@@ -289,7 +289,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/doctor
-	name = "Doctor"
+	name = "医生"
 	corpseuniform = /obj/item/clothing/under/colonist
 	corpsesuit = /obj/item/clothing/suit/storage/labcoat
 	corpseback = /obj/item/storage/backpack/corpsman
@@ -306,7 +306,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/engineer
-	name = "Engineer"
+	name = "工程兵"
 	corpseuniform = /obj/item/clothing/under/colonist
 	corpseback = /obj/item/storage/backpack/industrial
 	corpseshoes = /obj/item/clothing/shoes/orange
@@ -335,7 +335,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/scientist
-	name = "Scientist"
+	name = "科学家"
 	corpseuniform = /obj/item/clothing/under/marine/officer/researcher
 	corpsesuit = /obj/item/clothing/suit/storage/labcoat
 	corpseback = /obj/item/storage/backpack
@@ -391,7 +391,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/prison_security
-	name = "Prison Guard"
+	name = "狱警"
 	corpseuniform = /obj/item/clothing/under/rank/security
 	corpseshoes = /obj/item/clothing/shoes/jackboots
 	corpsegloves = /obj/item/clothing/gloves/black
@@ -407,7 +407,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/pmc
-	name = "Unknown PMC"
+	name = "未知PMC"
 	corpseuniform = /obj/item/clothing/under/marine/veteran/pmc
 	corpseshoes = /obj/item/clothing/shoes/marine/pmc
 	corpseback = /obj/item/storage/backpack/satchel/pmc
@@ -426,7 +426,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/colonist
-	name = "Colonist"
+	name = "殖民者"
 	corpseuniform = /obj/item/clothing/under/colonist
 	corpseshoes = /obj/item/clothing/shoes/black
 
@@ -440,7 +440,7 @@
 	can_be_zombie = FALSE
 
 /obj/effect/landmark/corpsespawner/roboticist
-	name = "Roboticist"
+	name = "机器人技术员"
 	corpseuniform = /obj/item/clothing/under/rank/roboticist
 	corpsesuit = /obj/item/clothing/suit/storage/labcoat/science
 	corpsebelt = /obj/item/storage/belt/utility/full
@@ -459,7 +459,7 @@
 /////////////////Officers//////////////////////
 
 /obj/effect/landmark/corpsespawner/bridgeofficer
-	name = "Staff Officer"
+	name = "参谋军官"
 	corpseuniform = /obj/item/clothing/under/rank/centcom_officer
 	corpsesuit = /obj/item/clothing/suit/armor/bulletproof
 	corpseshoes = /obj/item/clothing/shoes/black
@@ -475,7 +475,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/commander
-	name = "Commander"
+	name = "指挥官"
 	corpseuniform = /obj/item/clothing/under/rank/centcom_commander
 	corpsesuit = /obj/item/clothing/suit/armor/bulletproof
 	corpseglasses = /obj/item/clothing/glasses/eyepatch
@@ -495,7 +495,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/PMC
-	name = "Private Security Officer"
+	name = "安保军官"
 	corpseuniform = /obj/item/clothing/under/marine/veteran/pmc
 	corpsesuit = /obj/item/clothing/suit/armor/bulletproof
 	corpseback = /obj/item/storage/backpack/satchel/pmc
@@ -521,7 +521,7 @@
 /////////////////Marine//////////////////////
 
 /obj/effect/landmark/corpsespawner/marine
-	name = "Marine"
+	name = "陆战队员"
 	corpseuniform = /obj/item/clothing/under/marine
 	corpsesuit = /obj/item/clothing/suit/modular/xenonauten/light
 	corpseback = /obj/item/storage/backpack/satchel
@@ -538,7 +538,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/marine/engineer
-	name = "Marine Engineer"
+	name = "陆战队工程兵"
 	corpseuniform = /obj/item/clothing/under/marine
 	corpsesuit = /obj/item/clothing/suit/modular/xenonauten/light
 	corpseback = /obj/item/storage/backpack/marine/engineerpack
@@ -559,7 +559,7 @@
 	can_be_zombie = FALSE
 
 /obj/effect/landmark/corpsespawner/marine/corpsman
-	name = "Marine Corpsman"
+	name = "陆战队卫生兵"
 	corpseuniform = /obj/item/clothing/under/marine/corpsman
 	corpsesuit = /obj/item/clothing/suit/modular/xenonauten/light
 	corpseback = /obj/item/storage/backpack/corpsman
@@ -577,7 +577,7 @@
 	death_type = REGULAR_DEATH
 
 /obj/effect/landmark/corpsespawner/tdf
-	name = "TDF Marine"
+	name = "地球防卫军陆战队员"
 	corpseuniform = /obj/item/clothing/under/tdf
 	corpsesuit = /obj/item/clothing/suit/modular/tdf
 	corpsemask = /obj/item/clothing/mask/rebreather
@@ -587,7 +587,7 @@
 	corpsepocket1 = /obj/item/tool/lighter/zippo
 
 /obj/effect/landmark/corpsespawner/assistant
-	name = "Assistant"
+	name = "助理"
 	corpseuniform = /obj/item/clothing/under/color/grey
 	corpseback = /obj/item/storage/backpack
 	corpsemask = /obj/item/clothing/mask/gas
@@ -603,7 +603,7 @@
 
 //SOM
 /obj/effect/landmark/corpsespawner/som
-	name = "SOM marine"
+	name = "火星之子陆战队员"
 	corpseuniform = /obj/item/clothing/under/som
 	corpsesuit = /obj/item/clothing/suit/modular/som
 	corpseback = /obj/item/storage/backpack/satchel/som
@@ -617,7 +617,7 @@
 	death_type = CHESTBURST_DEATH
 
 /obj/effect/landmark/corpsespawner/som_officer
-	name = "SOM staff officer"
+	name = "火星之子参谋军官"
 	corpseuniform = /obj/item/clothing/under/som/officer
 	corpsesuit = /obj/item/clothing/suit/modular/som
 	corpsemask = /obj/item/clothing/mask/gas
@@ -628,7 +628,7 @@
 
 //ICC
 /obj/effect/landmark/corpsespawner/icc
-	name = "ICC infantry"
+	name = "ICC步兵"
 	corpseuniform = /obj/item/clothing/under/som
 	corpsesuit = /obj/item/clothing/suit/modular/som
 	corpsemask = /obj/item/clothing/mask/gas
@@ -638,7 +638,7 @@
 	corpsepocket1 = /obj/item/tool/lighter/zippo
 
 /obj/effect/landmark/corpsespawner/icc_officer
-	name = "ICC leader"
+	name = "ICC领袖"
 	corpseuniform = /obj/item/clothing/under/icc
 	corpsesuit = /obj/item/clothing/suit/storage/marine/icc/guard
 	corpsemask = /obj/item/clothing/mask/gas/icc
@@ -649,7 +649,7 @@
 
 // VSD
 /obj/effect/landmark/corpsespawner/vsd_standard
-	name = "Vyacheslav operative"
+	name = "维亚切斯拉夫特工"
 	corpseuniform = /obj/item/clothing/under/vsd/webbing
 	corpsesuit = /obj/item/clothing/suit/storage/marine/vsd
 	corpsemask = /obj/item/clothing/mask/gas/vsd
@@ -658,7 +658,7 @@
 	corpseshoes = /obj/item/clothing/shoes/marine/vsd
 
 /obj/effect/landmark/corpsespawner/vsd_command
-	name = "Vyacheslav officer"
+	name = "维亚切斯拉夫军官"
 	corpseuniform = /obj/item/clothing/under/vsd/officer/webbing
 	corpsesuit = /obj/item/clothing/suit/storage/marine/vsd/alt
 	corpsemask = /obj/item/clothing/mask/gas/vsd
@@ -667,7 +667,7 @@
 	corpseshoes = /obj/item/clothing/shoes/marine/vsd
 
 /obj/effect/landmark/corpsespawner/vsd_spy
-	name = "Unknown marine" // this guy is literally no different than a regular marine body btw
+	name = "未知陆战队员" // this guy is literally no different than a regular marine body btw
 	corpseuniform = /obj/item/clothing/under/marine
 	corpsesuit = /obj/item/clothing/suit/modular/xenonauten/light
 	corpseback = /obj/item/storage/backpack/satchel
@@ -678,7 +678,7 @@
 
 // Freelancer
 /obj/effect/landmark/corpsespawner/freelancer
-	name = "Freelancer mercenary"
+	name = "自由佣兵"
 	corpseuniform = /obj/item/clothing/under/marine/veteran/freelancer
 	corpsesuit = /obj/item/clothing/suit/storage/marine/freelancer
 	corpsemask = /obj/item/clothing/mask/gas/tactical/freelancer
@@ -687,7 +687,7 @@
 	corpseshoes = /obj/item/clothing/shoes/marine/brown
 
 /obj/effect/landmark/corpsespawner/freelancer_officer
-	name = "Freelancer mercenary"
+	name = "自由佣兵"
 	corpseuniform = /obj/item/clothing/under/marine/veteran/freelancer
 	corpsesuit = /obj/item/clothing/suit/storage/marine/freelancer/heavy
 	corpsemask = /obj/item/clothing/mask/gas/tactical/freelancer

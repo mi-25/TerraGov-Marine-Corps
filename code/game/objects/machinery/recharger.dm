@@ -1,5 +1,5 @@
 /obj/machinery/recharger
-	name = "recharger"
+	name = "充能器"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "recharger"
 	anchored = TRUE
@@ -26,7 +26,7 @@
 
 	if(iswrench(I))
 		if(charging)
-			to_chat(user, span_warning("Remove [charging] first!"))
+			to_chat(user, span_warning("先移除[charging]！"))
 			return
 		anchored = !anchored
 		to_chat(user, "You [anchored ? "attached" : "detached"] the recharger.")
@@ -41,13 +41,13 @@
 	// Checks to make sure he's not in space doing it, and that the area got proper power.
 	var/area/A = get_area(src)
 	if(!isarea(A) || (A.power_equip == 0 && A.requires_power))
-		to_chat(user, span_warning("The [name] blinks red as you try to insert the item!"))
+		to_chat(user, span_warning("[name]在你尝试插入物品时闪烁红光！"))
 		return
 
 	if(istype(I, /obj/item/defibrillator))
 		var/obj/item/defibrillator/D = I
 		if(D.ready)
-			to_chat(user, span_warning("It won't fit, put the paddles back into [D] first!"))
+			to_chat(user, span_warning("放不进去，先把电极板放回[D]里！"))
 			return
 
 	if(!user.transferItemToLoc(I, src))

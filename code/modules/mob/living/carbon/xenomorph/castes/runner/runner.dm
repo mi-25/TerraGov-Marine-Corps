@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/runner
 	caste_base_type = /datum/xeno_caste/runner
 	name = "Runner"
-	desc = "A small red alien that looks like it could run fairly quickly..."
+	desc = "一只体型小巧的红色异形，看起来能跑得相当快……"
 	icon = 'icons/Xeno/castes/runner.dmi' //They are now like, 2x1 or something
 	icon_state = "Runner Walking"
 	bubble_icon = "alienleft"
@@ -31,7 +31,7 @@
 	/// Runner should not be able to slash while evading.
 	var/datum/action/ability/xeno_action/evasion/evasion_action = actions_by_path[/datum/action/ability/xeno_action/evasion]
 	if(evasion_action?.evade_active)
-		balloon_alert(src, "Cannot slash while evading")
+		balloon_alert(src, "无法在闪避时进行斩击")
 		return
 	return ..()
 
@@ -40,7 +40,7 @@
 	if(!ishuman(over))
 		return
 	if(!back)
-		balloon_alert(over,"This runner isn't wearing a saddle!")
+		balloon_alert(over,"这只奔跑者没有装鞍！")
 		return
 	if(!do_after(over, 3 SECONDS, NONE, src))
 		return

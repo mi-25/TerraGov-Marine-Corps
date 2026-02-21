@@ -1,7 +1,7 @@
 /obj/item/organ/brain
-	name = "brain"
+	name = "大脑"
 	max_integrity = 400 //They need to live awhile longer than other organs.
-	desc = "A piece of juicy meat found in a person's head."
+	desc = "在人的头部发现的一块多汁的肉。"
 	icon_state = "brain2"
 	atom_flags = NONE
 	force = 1
@@ -16,14 +16,14 @@
 	var/mob/living/brain/brainmob = null
 
 /obj/item/organ/brain/xeno
-	name = "thinkpan"
-	desc = "It looks kind of like an enormous wad of purple bubblegum."
+	name = "思维面板"
+	desc = "它看起来像一大团紫色的泡泡糖。"
 	icon = 'icons/mob/alien.dmi'
 	icon_state = "chitin"
 
 
 /obj/item/organ/brain/proc/transfer_identity(mob/living/carbon/H)
-	name = "[H]'s brain"
+	name = "[H]的大脑"
 	brainmob = new(src)
 	brainmob.name = H.real_name
 	brainmob.real_name = H.real_name
@@ -31,7 +31,7 @@
 	if(H.mind)
 		H.mind.transfer_to(brainmob)
 
-	to_chat(brainmob, span_notice("You feel slightly disoriented. That's normal when you're just a brain."))
+	to_chat(brainmob, span_notice("你感到有些晕眩。这很正常，毕竟你现在只是个大脑。"))
 
 /obj/item/organ/brain/examine(mob/user)
 	. = ..()

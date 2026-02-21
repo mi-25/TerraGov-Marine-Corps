@@ -11,8 +11,8 @@
 * Oxygen
 */
 /obj/item/tank/oxygen
-	name = "oxygen tank"
-	desc = "A tank of oxygen."
+	name = "氧气罐"
+	desc = "一罐氧气。"
 	icon_state = "oxygen"
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 	gas_type = GAS_TYPE_OXYGEN
@@ -20,11 +20,11 @@
 
 
 /obj/item/tank/oxygen/yellow
-	desc = "A tank of oxygen, this one is yellow."
+	desc = "一罐氧气，这个是黄色的。"
 	icon_state = "oxygen_f"
 
 /obj/item/tank/oxygen/red
-	desc = "A tank of oxygen, this one is red."
+	desc = "一罐氧气，这个是红色的。"
 	icon_state = "oxygen_fr"
 
 
@@ -32,8 +32,8 @@
 * Anesthetic
 */
 /obj/item/tank/anesthetic
-	name = "anesthetic tank"
-	desc = "A tank with an N2O/O2 gas mix."
+	name = "麻醉气罐"
+	desc = "装有 N2O/O2 混合气体的储罐。"
 	icon_state = "anesthetic"
 	worn_icon_state = "anesthetic"
 	gas_type = GAS_TYPE_N2O
@@ -43,8 +43,8 @@
 * Air
 */
 /obj/item/tank/air
-	name = "air tank"
-	desc = "Mixed anyone?"
+	name = "气罐"
+	desc = "有人混编吗？"
 	icon_state = "oxygen"
 
 
@@ -52,8 +52,8 @@
 * Phoron
 */
 /obj/item/tank/phoron
-	name = "phoron tank"
-	desc = "Contains dangerous phoron. Do not inhale. Warning: extremely flammable."
+	name = "等离子体罐"
+	desc = "内含危险等离子体。请勿吸入。警告：极度易燃。"
 	icon_state = "phoron"
 	atom_flags = CONDUCT
 	equip_slot_flags = NONE	//they have no straps!
@@ -64,8 +64,8 @@
 * Emergency Oxygen
 */
 /obj/item/tank/emergency_oxygen
-	name = "emergency oxygen tank"
-	desc = "Used for emergencies. Contains very little oxygen, so try to conserve it until you actually need it."
+	name = "应急氧气罐"
+	desc = "用于紧急情况。内含氧气极少，请尽量节省使用，直到真正需要时。"
 	icon_state = "emergency"
 	atom_flags = CONDUCT
 	equip_slot_flags = ITEM_SLOT_BELT
@@ -85,14 +85,14 @@
 		SEND_SOUND(user, sound('sound/effects/alert.ogg'))
 
 /obj/item/tank/emergency_oxygen/engi
-	name = "extended-capacity emergency oxygen tank"
+	name = "扩容应急氧气罐"
 	icon_state = "emergency_engi"
 	volume = 6
 	pressure = 5*ONE_ATMOSPHERE
 	pressure_full = 5*ONE_ATMOSPHERE
 
 /obj/item/tank/emergency_oxygen/double
-	name = "double emergency oxygen tank"
+	name = "双联应急氧气罐"
 	icon_state = "emergency_double"
 	volume = 10
 	pressure = 5*ONE_ATMOSPHERE
@@ -102,8 +102,8 @@
 * Nitrogen
 */
 /obj/item/tank/nitrogen
-	name = "nitrogen tank"
-	desc = "A tank of nitrogen."
+	name = "氮气罐"
+	desc = "一罐氮气。"
 	icon_state = "oxygen_fr"
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 	gas_type = GAS_TYPE_NITROGEN

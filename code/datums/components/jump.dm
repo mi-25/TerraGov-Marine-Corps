@@ -105,9 +105,9 @@
 			return FALSE
 		if(stamina_cost && (living_jumper.getStaminaLoss() > -stamina_cost))
 			if(isrobot(living_jumper) || issynth(living_jumper))
-				to_chat(living_jumper, span_warning("Your leg servos do not allow you to jump!"))
+				to_chat(living_jumper, span_warning("你的腿部伺服系统不允许你跳跃！"))
 				return FALSE
-			to_chat(living_jumper, span_warning("Catch your breath!"))
+			to_chat(living_jumper, span_warning("喘口气！"))
 			return FALSE
 	return TRUE
 

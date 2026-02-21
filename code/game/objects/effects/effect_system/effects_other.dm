@@ -18,7 +18,7 @@
 /datum/effect_system/reagents_explosion/start()
 	var/turf/_location = location?.resolve()
 	if(explosion_message)
-		_location.visible_message(span_danger("The solution violently explodes!"), \
+		_location.visible_message(span_danger("溶液剧烈爆炸了！"), \
 								span_hear("You hear an explosion!"))
 
 	dyn_explosion(_location, amount, flashing_factor)

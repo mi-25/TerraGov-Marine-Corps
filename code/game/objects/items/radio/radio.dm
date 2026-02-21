@@ -1,6 +1,6 @@
 /obj/item/radio
 	icon = 'icons/obj/items/radio.dmi'
-	name = "station bounced radio"
+	name = "站点无线电弹回"
 	icon_state = "walkietalkie"
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/equipment/tools_left.dmi',
@@ -403,9 +403,9 @@
 	if(isscrewdriver(I) && !subspace_transmission)
 		unscrewed = !unscrewed
 		if(unscrewed)
-			to_chat(user, span_notice("The radio can now be attached and modified!"))
+			to_chat(user, span_notice("无线电现在可以安装和改装了！"))
 		else
-			to_chat(user, span_notice("The radio can no longer be modified or attached!"))
+			to_chat(user, span_notice("无线电已无法修改或安装！"))
 
 /obj/item/radio/proc/recalculateChannels()
 	channels = list()

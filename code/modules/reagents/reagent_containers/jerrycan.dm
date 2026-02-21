@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/jerrycan
-	name = "\improper jerry can"
-	desc = "A can filled with fuel to light things on fire. It has Absolut Jerry stamped in the side."
+	name = "\improper 油桶"
+	desc = "一个装满燃料的罐子，用于点燃物品。侧面印有'绝对杰瑞'字样。"
 	icon = 'icons/obj/items/tank.dmi'
 	icon_state = "canister"
 	w_class = WEIGHT_CLASS_BULKY
@@ -23,23 +23,23 @@
 	if(A.density)
 		return
 	if(!reagents.total_volume)
-		to_chat(user, span_warning("Theres no fuel left in [src]!"))
+		to_chat(user, span_warning("[src]里没有燃料了！"))
 		return
 	new /obj/effect/decal/cleanable/liquid_fuel(A, fuel_usage/2)
 	reagents.remove_reagent(/datum/reagent/fuel, fuel_usage)
-	user.visible_message(span_notice("[user] splashes some fuel on \the [A]"), span_notice("You splash some fuel on [A]"))
+	user.visible_message(span_notice("[user] 往 \the [A] 上泼了些燃料"), span_notice("You splash some fuel on [A]"))
 	log_attack("[key_name(user)] has splashed fuel on  [A] in [AREACOORD(user)]")
 	A.add_fingerprint(user, "attack_turf", "doused with fuel from [src]")
 
 /obj/item/reagent_containers/jerrycan/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!reagents.total_volume)
-		to_chat(user, span_warning("Theres no fuel left in [src]!"))
+		to_chat(user, span_warning("[src]里没有燃料了！"))
 		return
 	M.adjust_fire_stacks(10)
 	reagents.remove_reagent(/datum/reagent/fuel, fuel_usage)
-	user.visible_message(span_notice("[user] splashes some fuel on [M]"), span_notice("You splash some fuel on [M]"), ignored_mob = M)
-	to_chat(M, "<span class='warning'>[user] drenches you in fuel from [src]!<span>")
+	user.visible_message(span_notice("[user]往[M]身上泼了一些燃料"), span_notice("You splash some fuel on [M]"), ignored_mob = M)
+	to_chat(M, "<span class='warning'>[user]用[src]把你浇了个透！<span>")
 	log_attack("[key_name(user)] has doused [M] in fuel in [AREACOORD(user)]")
 
 /obj/item/reagent_containers/jerrycan/attack_obj(obj/target_object, mob/living/user)

@@ -123,7 +123,7 @@
 		if(plasma_stored < pheromone_cost)
 			use_plasma(plasma_stored, FALSE)
 			QDEL_NULL(current_aura)
-			src.balloon_alert(src, "no plasma, emitting stopped!")
+			src.balloon_alert(src, "没有等离子体，发射已停止！")
 		else
 			use_plasma(pheromone_cost * seconds_per_tick * XENO_PER_SECOND_LIFE_MOD, FALSE)
 
@@ -187,7 +187,7 @@
 			updatehealth() //unused while atmos is off
 			throw_alert(ALERT_FIRE, /atom/movable/screen/alert/fire)
 			if(prob(20))
-				to_chat(src, span_warning("We feel a searing heat!"))
+				to_chat(src, span_warning("我们感到一阵灼热！"))
 		else
 			clear_alert(ALERT_FIRE)
 

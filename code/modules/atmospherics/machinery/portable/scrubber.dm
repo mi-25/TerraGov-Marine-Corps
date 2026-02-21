@@ -1,5 +1,5 @@
 /obj/machinery/portable_atmospherics/scrubber
-	name = "portable air scrubber"
+	name = "便携式空气净化器"
 	icon_state = "pscrubber:0"
 	density = TRUE
 
@@ -34,7 +34,7 @@
 	update_icon()
 
 /obj/machinery/portable_atmospherics/scrubber/huge
-	name = "huge air scrubber"
+	name = "大型空气净化器"
 	icon_state = "scrubber:0"
 	anchored = TRUE
 	active_power_usage = 500

@@ -2,7 +2,7 @@
 	plane = PLANE_SPACE
 	layer = SPACE_LAYER
 	icon = 'icons/turf/space.dmi'
-	name = "\proper space"
+	name = "\proper 太空"
 	icon_state = "0"
 	can_bloody = FALSE
 	light_power = 0.25
@@ -80,14 +80,14 @@
 		if(!R.use(1))
 			return
 
-		to_chat(user, span_notice("Constructing support lattice ..."))
+		to_chat(user, span_notice("正在构建支撑框架..."))
 		playsound(src, 'sound/weapons/genhit.ogg', 25, 1)
 		ReplaceWithLattice()
 
 	else if(istype(I, /obj/item/stack/tile/plasteel))
 		var/obj/structure/lattice/L = locate(/obj/structure/lattice) in src
 		if(!L)
-			to_chat(user, span_warning("The plating is going to need some support."))
+			to_chat(user, span_warning("这块装甲板需要加固。"))
 			return
 
 		var/obj/item/stack/tile/plasteel/S = I
@@ -118,7 +118,7 @@
 
 /turf/open/space/sea //used on prison for flavor
 	icon = 'icons/misc/beach.dmi'
-	name = "sea"
+	name = "海"
 	icon_state = "seadeep"
 	plane = FLOOR_PLANE
 

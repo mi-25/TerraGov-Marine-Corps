@@ -1,6 +1,6 @@
 /obj/item/ammo_magazine/box12x40mm
-	name = "box of 12x40mm"
-	desc = "A box containing 200 rounds of 12x40mm caseless."
+	name = "12x40毫米弹药箱"
+	desc = "一个装有200发12x40毫米无壳弹的弹药箱。"
 	caliber = CALIBER_12X40
 	icon_state = "ltbcannon_4"
 	icon = 'icons/obj/items/ammo/misc.dmi'
@@ -11,8 +11,8 @@
 	icon_state_mini = "ammo_packet"
 
 /obj/item/ammo_magazine/box11x35mm
-	name = "box of 11x35mm"
-	desc = "A box containing 200 rounds of 11x35mm caseless."
+	name = "11x35毫米弹药箱"
+	desc = "一个装有200发11x35毫米无壳弹的弹药箱。"
 	caliber = CALIBER_11X35
 	icon_state = "ltbcannon_4"
 	icon = 'icons/obj/items/ammo/misc.dmi'

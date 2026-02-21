@@ -6,8 +6,8 @@
 #define NUKE_STAGE_BOLTS_REMOVED 5
 
 /obj/machinery/nuclearbomb
-	name = "nuclear fission explosive"
-	desc = "You probably shouldn't stick around to see if this is armed."
+	name = "核裂变炸药"
+	desc = "你最好别待在这儿看它是不是已经激活了。"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "nuclearbomb0"
 	density = TRUE
@@ -74,7 +74,7 @@
 	disable(key_name(user))
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NUKE_DEFUSED, src, user)
 
-	user.visible_message(span_boldwarning("[user] disabled the nuke"),
+	user.visible_message(span_boldwarning("[user] 解除了核弹的激活状态"),
 	"You disabled the nuke.")
 
 ///Disables nuke timer
@@ -140,10 +140,10 @@
 		return FALSE
 
 	if(!timer_enabled)
-		to_chat(xeno_attacker, span_warning("\The [src] is soundly asleep. We better not disturb it."))
+		to_chat(xeno_attacker, span_warning("\The [src] 正酣睡着。我们最好别打扰它。"))
 		return
 
-	xeno_attacker.visible_message(span_boldwarning("[xeno_attacker] begins to slash delicately at the nuke."),
+	xeno_attacker.visible_message(span_boldwarning("[xeno_attacker] 开始小心翼翼地斩击核弹。"),
 	"You start slashing delicately at the nuke.")
 	if(!do_after(xeno_attacker, 5 SECONDS, NONE, src, BUSY_ICON_DANGER, BUSY_ICON_HOSTILE))
 		return
@@ -178,12 +178,12 @@
 
 	if(removal_stage < NUKE_STAGE_BOLTS_REMOVED)
 		if(anchored)
-			visible_message(span_warning("With a loud beep, lights flicker on the [src]'s display panel. It's working!"))
+			visible_message(span_warning("随着一声响亮的哔声，[src]的显示面板上灯光闪烁。它启动了！"))
 		else
 			anchored = TRUE
-			visible_message(span_warning("With a steely snap, bolts slide out of [src] and anchor it to the flooring!"))
+			visible_message(span_warning("随着一声钢铁的脆响，螺栓从[src]中滑出，将其牢牢固定在地板上！"))
 	else
-		visible_message(span_warning("\The [src] makes a highly unpleasant crunching noise. It looks like the anchoring bolts have been cut."))
+		visible_message(span_warning("\The [src]发出令人极度不适的碎裂声。看起来固定螺栓已经被切断了。"))
 	if(!lighthack)
 		flick("nuclearbombc", src)
 		icon_state = "nuclearbomb1"
@@ -263,21 +263,21 @@
 	if(exploded)
 		return
 	if(safety)
-		balloon_alert(user, "safety is still on!")
+		balloon_alert(user, "保险还开着！")
 		return
 	if(!anchored)
-		balloon_alert(user, "anchors not set!")
+		balloon_alert(user, "锚点未设置！")
 		return
 	var/area/area = get_area(src)
 	if(get_area_name(area) in GLOB.nuke_ineligible_site)
-		balloon_alert(user, "ineligible detonation site!")
+		balloon_alert(user, "无效引爆地点！")
 		return
 	if(!timer_enabled)
 		enable(key_name(user))
-		balloon_alert(user, "timer started")
+		balloon_alert(user, "计时器已启动")
 	else
 		disable(key_name(user))
-		balloon_alert(user, "timer stopped")
+		balloon_alert(user, "计时器已停止")
 
 	if(!lighthack)
 		icon_state = (timer_enabled) ? "nuclearbomb2" : "nuclearbomb1"
@@ -291,29 +291,29 @@
 /obj/machinery/nuclearbomb/proc/toggle_safety(mob/user)
 	safety = !safety
 	if(safety)
-		balloon_alert(user, "safety enabled")
+		balloon_alert(user, "保险已开启")
 		disable(key_name(user))
 	else
-		balloon_alert(user, "safety disabled")
+		balloon_alert(user, "保险关闭")
 
 ///Toggles the anchor bolts on or off
 /obj/machinery/nuclearbomb/proc/toggle_anchor(mob/user)
 	if(removal_stage == NUKE_STAGE_BOLTS_REMOVED)
 		anchored = FALSE
-		visible_message(span_warning("\The [src] makes a highly unpleasant crunching noise. It looks like the anchoring bolts have been cut."))
+		visible_message(span_warning("\The [src] 发出极其难听的嘎吱声。看起来固定螺栓已经被切断了。"))
 		return
 	if(istype(get_area(loc), /area/shuttle))
-		balloon_alert(user, "unsuitable location!")
+		balloon_alert(user, "位置不合适！")
 		return
 
 	anchored = !anchored
 	if(anchored)
-		balloon_alert(user, "anchored")
-		visible_message(span_warning("With a steely snap, bolts slide out of [src] and anchor it to the flooring."))
+		balloon_alert(user, "已固定")
+		visible_message(span_warning("随着一声钢铁般的脆响，螺栓从[src]中滑出，将其锚固在地板上。"))
 		log_game("[user] has anchored the nuke at [AREACOORD(src)]")
 	else
-		balloon_alert(user, "unanchored")
-		visible_message(span_warning("The anchoring bolts slide back into the depths of [src]."))
+		balloon_alert(user, "未固定")
+		visible_message(span_warning("固定螺栓滑回[src]的深处。"))
 		disable(key_name(user))
 		log_game("[user] has unanchored the nuke at [AREACOORD(src)]")
 

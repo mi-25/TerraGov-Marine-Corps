@@ -5,7 +5,7 @@
 	name = "Baneling Explode"
 	action_icon_state = "baneling_explode"
 	action_icon = 'icons/Xeno/actions/baneling.dmi'
-	desc = "Explode and spread dangerous toxins to hinder or kill your foes. You die."
+	desc = "爆炸并扩散危险毒素以阻碍或杀死你的敌人。你会死亡。"
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_BANELING_EXPLODE,
 	)
@@ -69,7 +69,7 @@
 /datum/action/ability/xeno_action/select_reagent/baneling
 	name = "Choose Explosion Reagent"
 	action_icon_state = "select_reagent0"
-	desc = "Select which reagent will be released when you explode."
+	desc = "选择你爆炸时释放的试剂。"
 	ability_cost = 0
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_BANELING_CHOOSE_REAGENT,

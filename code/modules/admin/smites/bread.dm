@@ -3,7 +3,7 @@
 
 /// Turns the target into bread
 /datum/smite/bread
-	name = "Bread"
+	name = "面包"
 
 /datum/smite/bread/effect(client/user, mob/living/target)
 	. = ..()

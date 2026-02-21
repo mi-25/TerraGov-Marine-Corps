@@ -1,6 +1,6 @@
 // Camera mob, used by AI camera. TODO really needa a refactor up to recent tg code
 /mob/camera
-	name = "camera mob"
+	name = "摄像头"
 	density = FALSE
 	move_force = INFINITY
 	move_resist = INFINITY
@@ -72,11 +72,11 @@
 	set category = "IC"
 
 	if(zMove(UP, z_move_flags = ZMOVE_FEEDBACK))
-		to_chat(src, span_notice("You move upwards."))
+		to_chat(src, span_notice("你向上移动。"))
 
 /mob/camera/down()
 	set name = "Move Down"
 	set category = "IC"
 
 	if(zMove(DOWN, z_move_flags = ZMOVE_FEEDBACK))
-		to_chat(src, span_notice("You move down."))
+		to_chat(src, span_notice("你向下移动。"))

@@ -1,5 +1,5 @@
 /obj/structure/paper_bin
-	name = "paper bin"
+	name = "纸篓"
 	icon = 'icons/obj/items/paper.dmi'
 	density = FALSE
 	anchored = FALSE
@@ -26,7 +26,7 @@
 			return
 
 	if(amount < 1)
-		to_chat(user, span_notice("[src] is empty!"))
+		to_chat(user, span_notice("[src]是空的！"))
 		return
 
 	amount--
@@ -43,7 +43,7 @@
 
 	P.forceMove(user.loc)
 	user.put_in_hands(P)
-	to_chat(user, span_notice("You take [P] out of the [src]."))
+	to_chat(user, span_notice("你将[P]从[src]中取出。"))
 
 
 /obj/structure/paper_bin/attackby(obj/item/I, mob/user, params)
@@ -55,7 +55,7 @@
 		if(!user.transferItemToLoc(I, src))
 			return
 
-		to_chat(user, span_notice("You put [I] in [src]."))
+		to_chat(user, span_notice("你将[I]放入[src]。"))
 		LAZYADD(papers, I)
 		amount++
 

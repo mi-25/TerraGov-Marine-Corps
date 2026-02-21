@@ -87,11 +87,11 @@
 			var/area/area = get_area(location)
 			var/turf/open/placement_loc = location
 			if(!placement_loc.allow_construction || area.area_flags & NO_CONSTRUCTION) // long ass series of checks to prevent things like deployable shields on alamo
-				user.balloon_alert(user, "unsuitable area!")
+				user.balloon_alert(user, "区域不合适！")
 				return
 
 		if(LinkBlocked(get_turf(user), location))
-			location.balloon_alert(user, "no room here!")
+			location.balloon_alert(user, "这里没位置了！")
 			return
 		var/newdir = get_dir(user, location)
 		if(deploy_type.atom_flags & ON_BORDER)
@@ -102,17 +102,17 @@
 					continue
 				if(object.dir != newdir)
 					continue
-				location.balloon_alert(user, "no room here!")
+				location.balloon_alert(user, "这里没位置了！")
 				return
 		if(user.do_actions)
-			user.balloon_alert(user, "busy!")
+			user.balloon_alert(user, "忙！")
 			return
-		user.balloon_alert(user, "deploying...")
+		user.balloon_alert(user, "部署中...")
 		user.setDir(newdir) //Face towards deploy location for ease of deploy.
 		if(!do_after(user, deploy_time, NONE, item_to_deploy, BUSY_ICON_BUILD))
 			return
 		if(LinkBlocked(get_turf(user), location))
-			location.balloon_alert(user, "no room here!")
+			location.balloon_alert(user, "这里没位置了！")
 			return
 		user.temporarilyRemoveItemFromInventory(item_to_deploy)
 
@@ -136,7 +136,7 @@
 	deployed_machine.update_appearance()
 
 	if(user && item_to_deploy.loc == user)
-		item_to_deploy.balloon_alert(user, "deployed!")
+		item_to_deploy.balloon_alert(user, "已部署！")
 		user.transferItemToLoc(item_to_deploy, deployed_machine, TRUE)
 		if(user.client.prefs.toggles_gameplay & AUTO_INTERACT_DEPLOYABLES)
 			deployed_machine.interact(user)
@@ -176,7 +176,7 @@
 	if(istype(deployed_machine, /obj/machinery/deployable/mounted/sentry))
 		sentry = deployed_machine
 	sentry?.set_on(FALSE)
-	user.balloon_alert(user, "disassembling...")
+	user.balloon_alert(user, "拆卸中...")
 	if(!do_after(user, undeploy_time, NONE, deployed_machine, BUSY_ICON_BUILD))
 		sentry?.set_on(TRUE)
 		return

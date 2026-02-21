@@ -1,6 +1,6 @@
 //Fires five times every second.
 
 PROCESSING_SUBSYSTEM_DEF(fastprocess)
-	name = "Fast Processing"
+	name = "快速处理"
 	wait = 2
 	stat_tag = "FP"

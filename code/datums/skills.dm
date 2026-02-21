@@ -230,20 +230,20 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	)
 
 /datum/skills/civilian
-	name = "Civilian"
+	name = "平民"
 	unarmed = SKILL_UNARMED_WEAK
 	combat = SKILL_COMBAT_UNTRAINED
 	melee_weapons = SKILL_MELEE_WEAK
 
 /datum/skills/civilian/survivor
-	name = "Survivor"
+	name = "幸存者"
 	engineer = SKILL_ENGINEER_ENGI //to hack airlocks so they're never stuck in a room.
 	combat = SKILL_COMBAT_DEFAULT
 	construction = SKILL_CONSTRUCTION_METAL
 	medical = SKILL_MEDICAL_NOVICE
 
 /datum/skills/civilian/survivor/master
-	name = "Survivor"
+	name = "幸存者"
 	combat = SKILL_COMBAT_DEFAULT
 	medical = SKILL_MEDICAL_PRACTICED
 	construction = SKILL_CONSTRUCTION_ADVANCED
@@ -254,34 +254,34 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	stamina = SKILL_STAMINA_TRAINED
 
 /datum/skills/civilian/survivor/doctor
-	name = "Survivor Doctor"
+	name = "幸存者医生"
 	medical = SKILL_MEDICAL_COMPETENT
 	surgery = SKILL_SURGERY_EXPERT
 	combat = SKILL_COMBAT_UNTRAINED
 
 /datum/skills/civilian/survivor/scientist
-	name = "Survivor Scientist"
+	name = "幸存科学家"
 	medical = SKILL_MEDICAL_PRACTICED
 	surgery = SKILL_SURGERY_PROFESSIONAL
 	combat = SKILL_COMBAT_UNTRAINED
 
 /datum/skills/civilian/survivor/chef
-	name = "Survivor Chef"
+	name = "幸存者厨师"
 	melee_weapons = SKILL_MELEE_TRAINED
 	combat = SKILL_COMBAT_UNTRAINED
 
 /datum/skills/civilian/survivor/miner
-	name = "Survivor Miner"
+	name = "幸存矿工"
 	powerloader = SKILL_POWERLOADER_TRAINED
 	melee_weapons = SKILL_MELEE_TRAINED
 
 /datum/skills/civilian/survivor/atmos
-	name = "Survivor Atmos Tech"
+	name = "幸存者大气技术员"
 	engineer = SKILL_ENGINEER_EXPERT
 	construction = SKILL_CONSTRUCTION_EXPERT
 
 /datum/skills/civilian/survivor/marshal
-	name = "Survivor Marshal"
+	name = "幸存者警长"
 	unarmed = SKILL_UNARMED_MP
 	combat = SKILL_COMBAT_DEFAULT
 	melee_weapons = SKILL_MELEE_DEFAULT
@@ -302,18 +302,18 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	surgery = SKILL_SURGERY_TRAINED
 
 /datum/skills/combat_medic/crafty
-	name = "Crafty Combat Medic"
+	name = "精明的战斗卫生兵"
 	construction = SKILL_CONSTRUCTION_METAL
 	engineer = SKILL_ENGINEER_METAL
 
 /datum/skills/combat_medic/special_forces
-	name = "Special Operations Medic"
+	name = "特种作战医疗兵"
 	construction = SKILL_CONSTRUCTION_METAL
 	engineer = SKILL_ENGINEER_METAL
 	smgs = SKILL_SMGS_TRAINED
 
 /datum/skills/doctor
-	name = "Doctor"
+	name = "医生"
 	unarmed = SKILL_UNARMED_WEAK
 	combat = SKILL_COMBAT_UNTRAINED
 	medical = SKILL_MEDICAL_EXPERT
@@ -321,7 +321,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	melee_weapons = SKILL_MELEE_WEAK
 
 /datum/skills/researcher
-	name = "Researcher"
+	name = "医学研究员"
 	unarmed = SKILL_UNARMED_WEAK
 	combat = SKILL_COMBAT_UNTRAINED
 	medical = SKILL_MEDICAL_EXPERT
@@ -329,7 +329,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	melee_weapons = SKILL_MELEE_WEAK
 
 /datum/skills/cmo
-	name = "CMO"
+	name = "首席医疗官"
 	unarmed = SKILL_UNARMED_WEAK
 	combat = SKILL_COMBAT_UNTRAINED
 	leadership = SKILL_LEAD_TRAINED
@@ -339,7 +339,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	police = SKILL_POLICE_MP
 
 /datum/skills/ai
-	name = "AI"
+	name = "人工智能"
 	engineer = SKILL_ENGINEER_EXPERT
 	construction = SKILL_CONSTRUCTION_EXPERT
 	combat = SKILL_COMBAT_UNTRAINED
@@ -365,7 +365,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	powerloader = SKILL_POWERLOADER_MASTER
 
 /datum/skills/early_synthetic
-	name = "Early Synthetic"
+	name = "早期合成人"
 	engineer = SKILL_ENGINEER_MASTER
 	construction = SKILL_CONSTRUCTION_MASTER
 	combat = SKILL_COMBAT_UNTRAINED
@@ -403,7 +403,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	unarmed = SKILL_UNARMED_TRAINED
 
 /datum/skills/veteran
-	name = "TGMC Retired Veteran"
+	name = "地球政府殖民地海军陆战队退役老兵"
 	engineer = SKILL_ENGINEER_ENGI //to fix CIC apc.
 	construction = SKILL_CONSTRUCTION_PLASTEEL
 	leadership = SKILL_LEAD_MASTER
@@ -416,7 +416,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	rifles = SKILL_RIFLES_TRAINED
 
 /datum/skills/veteran_captain
-	name = "TGMC Retired Veteran Expedition Leader"
+	name = "地球政府殖民地海军陆战队退役老兵远征队长"
 	leadership = SKILL_LEAD_MASTER
 	police = SKILL_POLICE_MP
 	medical = SKILL_MEDICAL_COMPETENT
@@ -481,7 +481,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	powerloader = SKILL_POWERLOADER_MASTER
 
 /datum/skills/ro
-	name = "Requisition Officer"
+	name = "补给军官"
 	construction = SKILL_CONSTRUCTION_PLASTEEL
 	leadership = SKILL_LEAD_TRAINED
 	powerloader = SKILL_POWERLOADER_MASTER
@@ -494,28 +494,28 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	powerloader = SKILL_POWERLOADER_MASTER
 
 /datum/skills/pmc
-	name = "PMC Private"
+	name = "PMC 列兵"
 	construction = SKILL_CONSTRUCTION_METAL
 	engineer = SKILL_ENGINEER_METAL
 
 /datum/skills/crafty
-	name = "Crafty Private"
+	name = "机灵列兵"
 	construction = SKILL_CONSTRUCTION_METAL
 	engineer = SKILL_ENGINEER_METAL
 
 /datum/skills/craftier
-	name = "Craftier Private"
+	name = "狡猾的列兵"
 	construction = SKILL_CONSTRUCTION_PLASTEEL
 	engineer = SKILL_ENGINEER_ENGI
 
 /datum/skills/freelancer_veteran
-	name = "freelancer veteran"
+	name = "自由佣兵老兵"
 	construction = SKILL_CONSTRUCTION_METAL
 	engineer = SKILL_ENGINEER_METAL
 	medical = SKILL_MEDICAL_NOVICE
 
 /datum/skills/special_forces_standard
-	name = "Special Response Force Standard"
+	name = "特别反应部队标准型"
 	construction = SKILL_CONSTRUCTION_METAL
 	engineer = SKILL_ENGINEER_METAL
 	police = SKILL_POLICE_MP
@@ -531,13 +531,13 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	surgery = SKILL_SURGERY_AMATEUR
 
 /datum/skills/sl/clf
-	name = "CLF leader"
+	name = "殖民地解放阵线领袖"
 	construction = SKILL_CONSTRUCTION_METAL
 	engineer = SKILL_ENGINEER_METAL
 	leadership = SKILL_LEAD_TRAINED
 
 /datum/skills/sl/upp
-	name = "UPP Leader"
+	name = "UPP 领袖"
 	combat = SKILL_COMBAT_TRAINED
 	medical = SKILL_MEDICAL_PRACTICED
 	surgery = SKILL_SURGERY_AMATEUR
@@ -548,7 +548,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	heavy_weapons = SKILL_HEAVY_WEAPONS_TRAINED
 
 /datum/skills/sl/pmc
-	name = "PMC Leader"
+	name = "PMC队长"
 	combat = SKILL_COMBAT_TRAINED
 	smartgun = SKILL_SMART_TRAINED
 	pistols = SKILL_PISTOLS_TRAINED
@@ -558,12 +558,12 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	heavy_weapons = SKILL_HEAVY_WEAPONS_TRAINED
 
 /datum/skills/sl/pmc/special_forces
-	name = "Special Force Leader"
+	name = "特种部队队长"
 	police = SKILL_POLICE_MP
 	smgs = SKILL_SMGS_TRAINED
 
 /datum/skills/sl/icc
-	name = "ICC Leader"
+	name = "ICC 领袖"
 	combat = SKILL_COMBAT_TRAINED
 	shotguns = SKILL_SHOTGUNS_TRAINED
 	heavy_weapons = SKILL_HEAVY_WEAPONS_TRAINED
@@ -580,12 +580,12 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	melee_weapons = SKILL_MELEE_TRAINED
 
 /datum/skills/specialist/pmc
-	name = "PMC Specialist"
+	name = "PMC专家"
 	engineer = SKILL_ENGINEER_METAL
 	pistols = SKILL_PISTOLS_TRAINED
 
 /datum/skills/specialist/upp
-	name = "UPP Specialist"
+	name = "火星之子专家"
 	combat = SKILL_COMBAT_TRAINED
 	pistols = SKILL_PISTOLS_TRAINED
 	smgs = SKILL_SMGS_TRAINED
@@ -599,7 +599,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	leadership = SKILL_LEAD_BEGINNER
 
 /datum/skills/smartgunner/pmc
-	name = "PMC Smartgunner"
+	name = "PMC智能机枪手"
 	unarmed = SKILL_UNARMED_TRAINED
 	construction = SKILL_CONSTRUCTION_METAL
 	combat = SKILL_COMBAT_TRAINED
@@ -613,7 +613,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	heavy_weapons = SKILL_HEAVY_WEAPONS_TRAINED
 
 /datum/skills/commando
-	name = "Commando"
+	name = "突击队员"
 	unarmed = 3
 	engineer = SKILL_ENGINEER_ENGI
 	construction = SKILL_CONSTRUCTION_PLASTEEL
@@ -629,16 +629,16 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	heavy_weapons = SKILL_HEAVY_WEAPONS_TRAINED
 
 /datum/skills/commando/medic
-	name = "Commando Medic"
+	name = "突击队卫生兵"
 	medical = SKILL_MEDICAL_PRACTICED
 	surgery = SKILL_SURGERY_TRAINED
 
 /datum/skills/commando/leader
-	name ="Commando Leader"
+	name ="突击队长"
 	leadership = SKILL_LEAD_TRAINED
 
 /datum/skills/mercenary
-	name = "Mercenary"
+	name = "自由佣兵"
 	unarmed = SKILL_UNARMED_MP
 	engineer = SKILL_ENGINEER_ENGI
 	construction = SKILL_CONSTRUCTION_PLASTEEL
@@ -654,7 +654,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	heavy_weapons = SKILL_HEAVY_WEAPONS_TRAINED
 
 /datum/skills/admiral
-	name = "Admiral"
+	name = "上将"
 	construction = SKILL_CONSTRUCTION_PLASTEEL
 	leadership = SKILL_LEAD_MASTER
 	medical = SKILL_MEDICAL_PRACTICED
@@ -663,7 +663,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	powerloader = SKILL_POWERLOADER_TRAINED
 
 /datum/skills/spatial_agent
-	name = "Spatial Agent"
+	name = "空间特工"
 	engineer = SKILL_ENGINEER_MASTER
 	construction = SKILL_CONSTRUCTION_MASTER
 	combat = SKILL_COMBAT_TRAINED
@@ -686,7 +686,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 
 /* Deathsquad */
 /datum/skills/deathsquad
-	name = "Deathsquad Elite"
+	name = "死亡小队精英"
 	unarmed = SKILL_UNARMED_TRAINED
 	construction = SKILL_CONSTRUCTION_METAL
 	combat = SKILL_COMBAT_TRAINED
@@ -702,7 +702,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	surgery = SKILL_SURGERY_TRAINED
 
 /datum/skills/smartgunner/deathsquad
-	name = "Deathsquad Elite Gunner"
+	name = "死亡小队精英枪手"
 	unarmed = SKILL_UNARMED_TRAINED
 	construction = SKILL_CONSTRUCTION_METAL
 	combat = SKILL_COMBAT_TRAINED
@@ -718,7 +718,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	surgery = SKILL_SURGERY_TRAINED
 
 /datum/skills/sl/deathsquad
-	name = "Deathsquad Elite Captain"
+	name = "死亡小队精英舰长"
 	unarmed = SKILL_UNARMED_TRAINED
 	construction = SKILL_CONSTRUCTION_METAL
 	combat = SKILL_COMBAT_TRAINED
@@ -736,7 +736,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 /*======  I.o.M.  ======*/
 
 /datum/skills/imperial
-	name = "Guardsman"
+	name = "卫兵"
 	unarmed = SKILL_UNARMED_TRAINED
 	melee_weapons = SKILL_MELEE_TRAINED
 
@@ -744,7 +744,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	rifles = SKILL_RIFLES_TRAINED
 
 /datum/skills/imperial/sl
-	name = "Guardsman Sergeant" // veteran guardsman, practically better in all
+	name = "卫队军士" // veteran guardsman, practically better in all
 
 	heavy_weapons = SKILL_HEAVY_WEAPONS_TRAINED
 	smartgun = SKILL_SMART_USE // can use smartgun
@@ -757,13 +757,13 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	surgery = SKILL_SURGERY_TRAINED
 
 /datum/skills/imperial/medicae
-	name = "Guardsman Medicae" // medic
+	name = "卫队医疗兵" // medic
 	leadership = SKILL_LEAD_BEGINNER // normal medics have it
 	medical = SKILL_MEDICAL_COMPETENT
 	surgery = SKILL_SURGERY_PROFESSIONAL
 
 /datum/skills/imperial/astartes
-	name = "Space Marine"
+	name = "陆战队员"
 	unarmed = SKILL_UNARMED_MASTER
 	melee_weapons = SKILL_MELEE_SUPER
 
@@ -784,7 +784,7 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	powerloader = SKILL_POWERLOADER_DABBLING
 
 /datum/skills/imperial/astartes/apothecary
-	name = "Space Marine Apothecary" // a slightly less stronger space marine with medical skills
+	name = "陆战队药剂师" // a slightly less stronger space marine with medical skills
 	unarmed = 4 // below SKILL_UNARMED_MASTER, no define for it
 	melee_weapons = SKILL_MELEE_TRAINED
 
@@ -793,17 +793,17 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 
 /* Vat growns */
 /datum/skills/vatgrown
-	name = "Vat Grown"
+	name = "培养槽培育"
 	// default skills
 
 /datum/skills/vatgrown/early
-	name = "Vat Grown"
+	name = "培养槽培育"
 	unarmed = SKILL_UNARMED_WEAK
 	combat = SKILL_COMBAT_UNTRAINED
 	melee_weapons = SKILL_MELEE_WEAK
 
 /datum/skills/sectoid
-	name = "Sectoid"
+	name = "脑魔"
 
 	unarmed = SKILL_UNARMED_WEAK
 	engineer = SKILL_ENGINEER_ENGI
@@ -819,13 +819,13 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	heavy_weapons = SKILL_HEAVY_WEAPONS_TRAINED
 
 /datum/skills/skeleton
-	name = "Skeleton"
+	name = "骷髅"
 	unarmed = SKILL_UNARMED_TRAINED
 	melee_weapons = SKILL_MELEE_TRAINED
 
 //SOM veterans
 /datum/skills/som_veteran
-	name = "SOM Veteran"
+	name = "火星之子老兵"
 	leadership = SKILL_LEAD_BEGINNER
 	unarmed = SKILL_UNARMED_TRAINED
 	melee_weapons = SKILL_MELEE_TRAINED
@@ -842,19 +842,19 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	stamina = SKILL_STAMINA_TRAINED
 
 /datum/skills/som_veteran/sl
-	name = "SOM Leader"
+	name = "火星之子队长"
 	construction = SKILL_CONSTRUCTION_PLASTEEL
 	engineer = SKILL_ENGINEER_PLASTEEL
 	leadership = SKILL_LEAD_EXPERT
 
 /datum/skills/som_veteran/medic
-	name = "SOM Medic"
+	name = "火星之子医疗兵"
 	medical = SKILL_MEDICAL_PRACTICED
 	surgery = SKILL_SURGERY_TRAINED
 
 //ERP Pranksters
 /datum/skills/prankster
-	name = "ERP Prankster"
+	name = "ERP恶作剧者"
 	unarmed = SKILL_UNARMED_TRAINED
 	melee_weapons = SKILL_MELEE_TRAINED
 	combat = SKILL_COMBAT_TRAINED
@@ -866,16 +866,16 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	smartgun = SKILL_SMART_DEFAULT
 
 /datum/skills/prankster/boobookisser
-	name = "ERP Boo-boo Kisser"
+	name = "ERP 亲亲抱抱治疗师"
 	medical = SKILL_MEDICAL_PRACTICED
 	surgery = SKILL_SURGERY_TRAINED
 
 /datum/skills/prankster/piethrower
-	name = "ERP Pie thrower"
+	name = "ERP 馅饼发射器"
 	heavy_weapons = SKILL_HEAVY_WEAPONS_TRAINED
 
 /datum/skills/prankster/masterprankster
-	name = "ERP Master Prankster"
+	name = "ERP恶作剧大师"
 	construction = SKILL_CONSTRUCTION_PLASTEEL
 	engineer = SKILL_ENGINEER_PLASTEEL
 	leadership = SKILL_LEAD_EXPERT

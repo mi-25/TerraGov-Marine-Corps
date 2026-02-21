@@ -1,6 +1,6 @@
 /obj/structure/cable/multilayer/multiz //This bridges powernets betwen Z levels
-	name = "multi z layer cable hub"
-	desc = "A flexible, superconducting insulated multi Z layer hub for heavy-duty multi Z power transfer."
+	name = "多层电缆枢纽"
+	desc = "一种灵活、超导、绝缘的多Z层集线器，用于重型多Z电力传输。"
 	icon = 'icons/obj/power.dmi'
 	icon_state = "cablerelay-on"
 	cable_layer = CABLE_LAYER_1|CABLE_LAYER_2|CABLE_LAYER_3

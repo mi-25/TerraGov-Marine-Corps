@@ -184,7 +184,7 @@
 
 /obj/structure/weapon_x_pod
 	name = "pod"
-	desc = "A unadorned metal pod of some kind. Seems kind of ominous."
+	desc = "某种朴素的金属舱。看起来有点不祥。"
 	icon = 'icons/obj/structures/campaign/tall_structures.dmi'
 	icon_state = "nt_pod"
 	density = TRUE

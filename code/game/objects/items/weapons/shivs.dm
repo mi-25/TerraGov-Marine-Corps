@@ -1,8 +1,8 @@
 /obj/item/weapon/shiv
-	name = "glass shiv"
+	name = "玻璃匕首"
 	icon = 'icons/obj/items/weapons/knives.dmi'
 	icon_state = "shiv"
-	desc = "A makeshift glass shiv."
+	desc = "一把临时制作的玻璃匕首。"
 	attack_verb = list("shanks", "shivs", "slashes", "stabs", "cuts", "rips")
 	hitsound = 'sound/weapons/slash.ogg'
 	atom_flags = CONDUCT
@@ -20,12 +20,12 @@
 
 /obj/item/weapon/shiv/plasma
 	icon_state = "plasmashiv"
-	desc = "A makeshift plasma glass shiv."
+	desc = "一把临时制作的等离子体玻璃刀。"
 
 /obj/item/weapon/shiv/titanium
 	icon_state = "titaniumshiv"
-	desc = "A makeshift titanium shiv."
+	desc = "一把临时制作的钛合金刀。"
 
 /obj/item/weapon/shiv/plastitanium
 	icon_state = "plastitaniumshiv"
-	desc = "A makeshift plastitanium glass shiv."
+	desc = "一把临时制作的塑钛玻璃刀。"

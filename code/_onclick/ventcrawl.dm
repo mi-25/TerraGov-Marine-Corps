@@ -9,7 +9,7 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, typecacheof(list(
 		if(is_type_in_list(U, GLOB.ventcrawl_machinery) && Adjacent(U))
 			pipes |= U
 	if(!pipes || !length(pipes))
-		balloon_alert(src, "no pipes in range!")
+		balloon_alert(src, "范围内没有管道！")
 		return
 	if(length(pipes) == 1)
 		pipe = pipes[1]
@@ -23,7 +23,7 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, typecacheof(list(
 	if(!HAS_TRAIT(src, TRAIT_CAN_VENTCRAWL) || !Adjacent(A) || !canmove)
 		return
 	if(stat)
-		to_chat(src, "You must be conscious to do this!")
+		to_chat(src, "你必须保持清醒才能这么做！")
 		return
 
 	var/obj/machinery/atmospherics/components/unary/vent_found
@@ -60,7 +60,7 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, typecacheof(list(
 				if(length(items_list))
 					failed = TRUE
 				if(failed)
-					to_chat(src, span_warning("You can't crawl around in the ventilation ducts with items!"))
+					to_chat(src, span_warning("你不能带着物品在通风管道里爬行！"))
 					return
 
 
@@ -73,7 +73,7 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, typecacheof(list(
 			update_pipe_vision()
 			log_game("[src] Crawled into the vent at [AREACOORD(vent_found)]")
 	else
-		to_chat(src, span_warning("This ventilation duct is not connected to anything!"))
+		to_chat(src, span_warning("这个通风管道没有连接到任何东西！"))
 
 
 /mob/living/proc/add_ventcrawl(obj/machinery/atmospherics/starting_machine)

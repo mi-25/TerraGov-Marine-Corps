@@ -42,7 +42,7 @@
 
 ///Image that appears at the Xeno Rally target; only Xenos can see it
 /obj/effect/temp_visual/xenomorph/xeno_tracker_target
-	name = "xeno tracker target"
+	name = "异形追踪器目标"
 	icon_state = "nothing"
 	duration = XENO_HEALTH_ALERT_POINTER_DURATION
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -112,7 +112,7 @@ GLOBAL_DATUM_INIT(flare_particles, /particles/flare_smoke, new)
 /obj/effect/temp_visual/above_flare/Initialize(mapload)
 	. = ..()
 	particles = GLOB.flare_particles
-	loc.visible_message(span_warning("You see a tiny flash, and then a blindingly bright light from a flare as it lights off in the sky!"))
+	loc.visible_message(span_warning("你看到一道微小的闪光，随后一支照明弹在空中点燃，发出令人目眩的强光！"))
 	playsound(loc, 'sound/weapons/guns/fire/flare.ogg', 50, 1, 4)
 	animate(src, time = duration, pixel_y = 0)
 
@@ -137,8 +137,8 @@ GLOBAL_DATUM_INIT(flare_particles, /particles/flare_smoke, new)
 /obj/effect/temp_visual/oppose_shatter
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "oppose_shatter"
-	name = "veined terrain"
-	desc = "blood rushes below the ground, forcing it upwards."
+	name = "脉络地形"
+	desc = "血液在地下涌动，迫使地面向上隆起。"
 	layer = BLASTDOOR_LAYER
 	pixel_x = -32
 	pixel_y = -32
@@ -223,8 +223,8 @@ GLOBAL_DATUM_INIT(flare_particles, /particles/flare_smoke, new)
 	gib_splatter.particles.count = 0
 
 /obj/effect/temp_visual/leap_dust
-	name = "dust"
-	desc = "It's just a dust cloud!"
+	name = "灰尘"
+	desc = "那只是团尘云！"
 	icon = 'icons/effects/64x64.dmi'
 	icon_state = "leap_cloud"
 	layer = BELOW_MOB_LAYER

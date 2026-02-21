@@ -1,7 +1,7 @@
 /// A cheap little roomba that runs around and keeps prep clean to decrease maptick and prep always being a fucking mess
 /obj/machinery/bot/roomba
-	name = "Nanotrasen roomba"
-	desc = "A robot vacuum cleaner designed by Nanotrasen. The roomba is designed to keep areas clean from dirty marines."
+	name = "纳米传讯扫地机器人"
+	desc = "一款由纳米传讯设计的机器人吸尘器。这款扫地机器人旨在清理陆战队员留下的脏污。"
 	icon = 'icons/obj/aibots.dmi'
 	icon_state = "roomba"
 	voice_filter = "alimiter=0.9,acompressor=threshold=0.2:ratio=20:attack=10:release=50:makeup=2,highpass=f=1000"
@@ -82,7 +82,7 @@
 
 /obj/machinery/bot/roomba/attack_hand(mob/living/user)
 	if(!CONFIG_GET(flag/fun_allowed))
-		visible_message(span_notice("[user] lovingly pats the [src]."), span_notice("You lovingly pat the [src]."))
+		visible_message(span_notice("[user] 怜爱地拍了拍 [src]。"), span_notice("You lovingly pat the [src]."))
 		return
 	if(user.a_intent != INTENT_HARM)
 		return
@@ -98,13 +98,13 @@
 		return
 	if(!istype(I, /obj/item/explosive/mine) || claymore)
 		return
-	visible_message(span_warning("[user] begins to try to attach [I] to [src]..."))
+	visible_message(span_warning("[user]开始尝试将[I]安装到[src]上..."))
 	stop_processing()
 	if(!do_after(user, 1 SECONDS, NONE, src, BUSY_ICON_HOSTILE))
 		start_processing()
 		return
 	start_processing()
-	visible_message(span_warning("[user] slams [I]'s prongs through [src]!"))
+	visible_message(span_warning("[user]将[I]的尖刺狠狠刺入[src]！"))
 	log_game("[user] has armed [src] with a claymore at [AREACOORD(src)]")
 	user.temporarilyRemoveItemFromInventory(I)
 	I.forceMove(src)
@@ -131,8 +131,8 @@
 		qdel(sucker)
 
 /obj/machinery/bot/roomba/valhalla/eord
-	name = "final boss roomba"
-	desc = "You weep in terror at the sight of this perfect feat of engineering. It sucks up both items and dead creatures alike."
+	name = "最终BOSS扫地机器人"
+	desc = "你在这完美的工程壮举面前恐惧地哭泣。它能同时吞噬物品和死去的生物。"
 	resistance_flags = RESIST_ALL
 
 /obj/machinery/bot/roomba/valhalla/eord/suck_items()

@@ -21,8 +21,8 @@
 	var/game_timer_delay = 5 MINUTES
 
 /datum/game_mode/hvh/combat_patrol/announce()
-	to_chat(world, "<b>The current game mode is - Combat Patrol!</b>")
-	to_chat(world, "<b>The TGMC and SOM both lay claim to this planet. Across contested areas, small combat patrols frequently clash in their bid to enforce their respective claims. Seek and destroy any hostiles you encounter, good hunting!</b>")
+	to_chat(world, "<b>当前游戏模式为 - 战斗巡逻！</b>")
+	to_chat(world, "<b>地球政府殖民地海军陆战队和火星之子都宣称拥有这颗星球的主权。在争议区域，双方的小型战斗巡逻队经常为了执行各自的主张而发生冲突。搜索并摧毁你遇到的任何敌对目标，祝狩猎顺利！</b>")
 
 /datum/game_mode/hvh/combat_patrol/setup_blockers()
 	. = ..()

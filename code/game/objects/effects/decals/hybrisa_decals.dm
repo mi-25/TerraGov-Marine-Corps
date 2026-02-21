@@ -39,125 +39,125 @@
 
 // Dam Roadlines smaller
 /obj/effect/urban/decal/road/road_edge
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal1"
 
 /obj/effect/urban/decal/road/road_edge/two
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal2"
 
 /obj/effect/urban/decal/road/road_edge/three
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal3"
 
 /obj/effect/urban/decal/road/road_edge/four
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal4"
 
 /obj/effect/urban/decal/road/road_edge/five
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal5"
 
 /obj/effect/urban/decal/road/road_edge/six
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal6"
 
 /obj/effect/urban/decal/road/road_edge/seven
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal7"
 
 /obj/effect/urban/decal/road/road_edge/eight
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal8"
 
 /obj/effect/urban/decal/road/road_edge/nine
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal9"
 
 /obj/effect/urban/decal/road/road_edge/ten
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal10"
 
 /obj/effect/urban/decal/road/road_edge/eleven
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal11"
 
 /obj/effect/urban/decal/road/road_edge/twelve
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_edge_decal12"
 
 /obj/effect/urban/decal/road/road_stop
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_stop_decal"
 
 /obj/effect/urban/decal/road/road_stop/one
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_stop_decal1"
 
 /obj/effect/urban/decal/road/road_stop/two
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_stop_decal2"
 
 /obj/effect/urban/decal/road/road_stop/three
-	name = "road"
+	name = "道路"
 	icon_state = "thin_road_stop_decal3"
 
 /obj/effect/urban/decal/road/road_stop/five
-	name = "road"
+	name = "道路"
 	icon_state = "thin_stop_decal5"
 
 /////
 
 /obj/effect/urban/decal/road/road_edge/regular
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal1"
 
 /obj/effect/urban/decal/road/road_edge/regular/two
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal2"
 
 /obj/effect/urban/decal/road/road_edge/regular/three
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal3"
 
 /obj/effect/urban/decal/road/road_edge/regular/four
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal4"
 
 /obj/effect/urban/decal/road/road_edge/regular/five
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal5"
 
 /obj/effect/urban/decal/road/road_edge/regular/six
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal6"
 
 /obj/effect/urban/decal/road/road_edge/regular/seven
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal7"
 
 /obj/effect/urban/decal/road/road_edge/regular/eight
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal8"
 
 /obj/effect/urban/decal/road/road_edge/regular/nine
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal9"
 
 /obj/effect/urban/decal/road/road_edge/regular/ten
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal10"
 
 /obj/effect/urban/decal/road/road_edge/regular/eleven
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal11"
 
 /obj/effect/urban/decal/road/road_edge/regular/twelve
-	name = "road"
+	name = "道路"
 	icon_state = "road_edge_decal12"
 
 /obj/effect/urban/decal/road/road_stop/regular/five
-	name = "road"
+	name = "道路"
 	icon_state = "thin_stop_decal5"
 
 // Double Roadlines
@@ -235,19 +235,19 @@
 
 // Angled Warning-Stripes
 /obj/effect/urban/decal/warningstripes_angled
-	name = "warning stripes"
+	name = "警告条纹"
 	icon = 'icons/turf/desertdam_map.dmi'
 	icon_state = "warningstripes_angled"
 /obj/effect/urban/decal/warningstripes_angled_corner
-	name = "warning stripes"
+	name = "警告条纹"
 	icon = 'icons/turf/desertdam_map.dmi'
 	icon_state = "warningstripes_angled_corner"
 
 // Grate
 
 /obj/effect/urban/decal/grate
-	name = "solid metal grate"
-	desc = "A metal grate."
+	name = "实心金属格栅"
+	desc = "一个金属格栅。"
 	icon = 'icons/turf/desertdam_map.dmi'
 	icon_state = "zhalfgrate1"
 
@@ -284,8 +284,8 @@
 	icon_state = "tiremarks"
 
 /obj/effect/urban/decal/trash //curse you zenith for never defining any of your 16 trash additions
-	name = "garbage"
-	desc = "Some trash plastered to the ground."
+	name = "垃圾"
+	desc = "一些粘在地上的垃圾。"
 	icon = 'icons/turf/desertdam_map.dmi'
 	icon_state = "trash_1"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -344,6 +344,6 @@
 	icon_state = "engPlatform_corners"
 
 /obj/effect/urban/decal/egg_base
-	name = "strange goop"
+	name = "奇怪的粘液"
 	icon = 'icons/obj/structures/prop/urban/urbanrandomprops.dmi'
 	icon_state = "egg_base"

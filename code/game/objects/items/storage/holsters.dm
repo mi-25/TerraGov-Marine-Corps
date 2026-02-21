@@ -6,8 +6,8 @@
 
 ///Parent item for all holster type storage items
 /obj/item/storage/holster
-	name = "holster"
-	desc = "Holds stuff, and sometimes goes swoosh."
+	name = "枪套"
+	desc = "用来装东西，有时还能嗖嗖作响。"
 	icon = 'icons/obj/items/storage/holster.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	equip_slot_flags = ITEM_SLOT_BACK
@@ -89,8 +89,8 @@
 
 //backpack type holster items
 /obj/item/storage/holster/backholster
-	name = "backpack holster"
-	desc = "You wear this on your back and put items into it. Usually one special item too."
+	name = "背包枪套"
+	desc = "你把它背在背上，然后把物品放进去。通常还能放一件特殊物品。"
 	icon = 'icons/obj/items/storage/backholster.dmi'
 	worn_icon_list = list(
 		slot_l_hand_str = 'icons/mob/inhands/equipment/backpacks_left.dmi',
@@ -120,8 +120,8 @@
 
 ///RR bag
 /obj/item/storage/holster/backholster/rpg
-	name = "\improper TGMC rocket bag"
-	desc = "This backpack can hold 4 67mm shells, in addition to a recoiless launcher."
+	name = "\improper 地球政府殖民地海军陆战队火箭包"
+	desc = "这个背包除了能装无后坐力炮外，还能容纳4枚67毫米炮弹。"
 	icon_state = "marine_rocket"
 	w_class = WEIGHT_CLASS_HUGE
 	storage_type = /datum/storage/holster/backholster/rpg
@@ -159,8 +159,8 @@
 	new /obj/item/weapon/gun/launcher/rocket/recoillessrifle/heam(src)
 
 /obj/item/storage/holster/backholster/rpg/freelancer
-	name = "\improper Freelancer rocket bag"
-	desc = "This backpack can hold 6 67mm shells, in addition to a recoiless launcher."
+	name = "\improper 自由佣兵火箭背包"
+	desc = "这个背包可以容纳6发67毫米炮弹，外加一门无后坐力炮。"
 	icon_state = "freelancer_rocket"
 	storage_type = /datum/storage/holster/backholster/rpg/freelancer
 
@@ -174,8 +174,8 @@
 	new /obj/item/weapon/gun/launcher/rocket/recoillessrifle(src)
 
 /obj/item/storage/holster/backholster/rpg/som
-	name = "\improper SOM RPG bag"
-	desc = "This backpack can hold 4 RPGs, in addition to a RPG launcher."
+	name = "\improper 火星之子火箭发射器背包"
+	desc = "这个背包除了能装下一具火箭发射器外，还能容纳4枚火箭弹。"
 	icon_state = "som_rocket"
 	holsterable_allowed = list(
 		/obj/item/weapon/gun/launcher/rocket/som,
@@ -205,8 +205,8 @@
 	new /obj/item/weapon/gun/launcher/rocket/som/heat(src)
 
 /obj/item/storage/holster/backholster/mortar
-	name = "\improper TGMC mortar bag"
-	desc = "This backpack can hold 11 80mm mortar shells, in addition to the mortar itself."
+	name = "\improper 地球政府殖民地海军陆战队迫击炮包"
+	desc = "这个背包除了能装下迫击炮本身外，还能容纳11枚80毫米迫击炮弹。"
 	icon_state = "marinepackt"
 	w_class = WEIGHT_CLASS_BULKY
 	holsterable_allowed = list(/obj/item/mortar_kit)
@@ -224,8 +224,8 @@
 	new /obj/item/mortar_kit(src)
 
 /obj/item/storage/holster/backholster/flamer
-	name = "\improper TGMC flamethrower bag"
-	desc = "This backpack can carry its accompanying flamethrower as well as a modest general storage capacity. Automatically refuels it's accompanying flamethrower."
+	name = "\improper TGMC 喷火器背包"
+	desc = "这个背包可以容纳其配套的喷火器，并提供适度的通用存储容量。会自动为其配套的喷火器补充燃料。"
 	icon_state = "pyro_bag"
 	w_class = WEIGHT_CLASS_BULKY
 	holsterable_allowed = list(/obj/item/weapon/gun/flamer/big_flamer/marinestandard/engineer)
@@ -253,12 +253,12 @@
 ///swords
 /obj/item/storage/holster/blade
 	///used only for storage path purposes
-	name = "\improper default holster"
-	desc = "You shouldn't see this."
+	name = "\improper 默认枪套"
+	desc = "你不应该看到这个。"
 
 /obj/item/storage/holster/blade/machete
-	name = "\improper H5 pattern M2132 machete scabbard"
-	desc = "A large leather scabbard used to carry a M2132 machete. It can be strapped to the back, waist or armor."
+	name = "\improper H5型M2132砍刀刀鞘"
+	desc = "一个用于携带M2132砍刀的大型皮质刀鞘。可固定在背部、腰部或护甲上。"
 	icon_state = "machete_holster"
 	equip_slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_BACK
 	holsterable_allowed = list(
@@ -280,14 +280,14 @@
 	new /obj/item/weapon/sword/machete/alt(src)
 
 /obj/item/storage/holster/blade/machete/full_harvester
-	name = "H5 Pattern M2132 harvester scabbard"
+	name = "H5型M2132收割者刀鞘"
 
 /obj/item/storage/holster/blade/machete/full_harvester/PopulateContents()
 	new /obj/item/weapon/sword/harvester(src)
 
 /obj/item/storage/holster/blade/katana
-	name = "\improper katana scabbard"
-	desc = "A large, vibrantly colored katana scabbard used to carry a japanese sword. It can be strapped to the back, waist or armor. Because of the sturdy wood casing of the scabbard, it makes an okay defensive weapon in a pinch."
+	name = "\improper 武士刀刀鞘"
+	desc = "一个色彩鲜艳的大型武士刀鞘，用于携带日本刀。可以固定在背部、腰部或护甲上。由于刀鞘坚固的木制外壳，在紧急情况下也可作为凑合的防御武器。"
 	icon_state = "katana_holster"
 	force = 12
 	attack_verb = list("bludgeons", "strikes", "cracks")
@@ -302,8 +302,8 @@
 	new /obj/item/weapon/sword/katana(src)
 
 /obj/item/storage/holster/blade/officer
-	name = "\improper officer's sword scabbard"
-	desc = "A large leather scabbard used to carry a sword. Appears to be a reproduction, rather than an original. It can be strapped to the waist or to armor."
+	name = "\improper 军官佩剑剑鞘"
+	desc = "一个用于携带剑的大型皮革剑鞘。看起来是复制品，而非原品。可系在腰间或装甲上。"
 	icon_state = "officer_sheath"
 	equip_slot_flags = ITEM_SLOT_BELT
 	holsterable_allowed = list(/obj/item/weapon/sword/officersword)
@@ -318,8 +318,8 @@
 //guns
 
 /obj/item/storage/holster/m37
-	name = "\improper L44 shotgun scabbard"
-	desc = "A large leather holster allowing the storage of any shotgun. It contains harnesses that allow it to be secured to the back for easy storage."
+	name = "\improper L44霰弹枪枪套"
+	desc = "一个大型皮制枪套，可容纳任何霰弹枪。内含背带系统，可固定在背部以便于存放。"
 	icon_state = "m37_holster"
 	holsterable_allowed = list(
 		/obj/item/weapon/gun/shotgun/combat,
@@ -337,8 +337,8 @@
 	new /obj/item/weapon/gun/shotgun/pump(src)
 
 /obj/item/storage/holster/t35
-	name = "\improper L44 SH-35 scabbard"
-	desc = "A large leather holster allowing the storage of an SH-35 Shotgun. It contains harnesses that allow it to be secured to the back for easy storage."
+	name = "\improper L44 SH-35 刀鞘"
+	desc = "一个大型皮制枪套，可容纳SH-35霰弹枪。它包含背带，可将其固定在背部以便于存放。"
 	icon_state = "t35_holster"
 	holsterable_allowed = list(/obj/item/weapon/gun/shotgun/pump/t35)
 
@@ -352,8 +352,8 @@
 	new /obj/item/weapon/gun/shotgun/pump/t35(src)
 
 /obj/item/storage/holster/m25
-	name = "\improper M276 pattern M25 holster rig"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version is designed for the M25 SMG, and features a larger frame to support the gun. Due to its unorthodox design, it isn't a very common sight, and is only specially issued."
+	name = "\improper M276型M25手枪套携行具"
+	desc = "M276是地球政府殖民地海军陆战队的标准负重装备。它由一个带有各种夹扣的模块化腰带组成。此版本专为M25冲锋枪设计，并采用更大的框架以支撑该枪。由于其非正统的设计，它并不常见，仅为特殊配发。"
 	icon_state = "m25_holster"
 	equip_slot_flags = ITEM_SLOT_BELT
 	holsterable_allowed = list(
@@ -369,8 +369,8 @@
 	new /obj/item/weapon/gun/smg/m25(src)
 
 /obj/item/storage/holster/t19
-	name = "\improper M276 pattern MP-19 holster rig"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version is designed for the MP-19 SMG, and features a larger frame to support the gun. Due to its unorthodox design, it isn't a very common sight, and is only specially issued."
+	name = "\improper M276型MP-19手枪套携行具"
+	desc = "M276是TGMC的标准携行装备。它由一个模块化腰带和各种夹扣组成。此版本专为MP-19冲锋枪设计，采用更大的框架以支撑该枪。由于其非正统的设计，它并不常见，仅作为特殊配发。"
 	icon_state = "t19_holster"
 	equip_slot_flags = ITEM_SLOT_BELT
 	holsterable_allowed = list(
@@ -384,8 +384,8 @@
 	new /obj/item/weapon/gun/smg/standard_machinepistol(src)
 
 /obj/item/storage/holster/flarepouch
-	name = "flare pouch"
-	desc = "A pouch designed to hold flares and a single flaregun. Refillable with a M94 flare pack."
+	name = "照明弹附包"
+	desc = "专为存放照明弹和一把信号枪设计的附包。可使用M94照明弹包补充。"
 	equip_slot_flags = ITEM_SLOT_POCKET
 	icon = 'icons/obj/clothing/pouches.dmi'
 	icon_state = "flare"
@@ -411,8 +411,8 @@
 
 
 /obj/item/storage/holster/icc_mg
-	name = "\improper ML-41 scabbard (10x26mm)"
-	desc = "A backpack holster allowing the storage of any a ML-41 Assault Machinegun, also carries ammo for the other portion of the system."
+	name = "\improper ML-41 刀鞘（10x26mm）"
+	desc = "一个背包式枪套，可容纳任何ML-41突击机枪，并为系统的另一部分携带弹药。"
 	icon_state = "icc_bagmg"
 	icon = 'icons/obj/items/storage/backholster.dmi'
 	holsterable_allowed = list(
@@ -430,8 +430,8 @@
 ////////////////////////////// GUN BELTS /////////////////////////////////////
 
 /obj/item/storage/holster/belt
-	name = "pistol belt"
-	desc = "A belt-holster assembly that allows one to hold a pistol and two magazines."
+	name = "手枪腰带"
+	desc = "一种腰带式枪套组件，可容纳一把手枪和两个弹匣。"
 	icon_state = "m4a3_holster"
 	equip_slot_flags = ITEM_SLOT_BELT
 	item_flags = HAS_UNDERLAY
@@ -444,16 +444,16 @@
 
 //This deliniates between belt/gun/pistol and belt/gun/revolver
 /obj/item/storage/holster/belt/pistol
-	name = "generic pistol belt"
-	desc = "A pistol belt that is not a revolver belt"
+	name = "通用手枪腰带"
+	desc = "一条非左轮手枪的手枪腰带"
 
 /obj/item/storage/holster/belt/pistol/Initialize(mapload, ...)
 	. = ..()
 	AddComponent(/datum/component/tac_reload_storage)
 
 /obj/item/storage/holster/belt/pistol/m4a3
-	name = "\improper M4A3 holster rig"
-	desc = "The M4A3 is a common holster belt. It consists of a modular belt with various clips. This version has a holster assembly that allows one to carry a handgun. It also contains side pouches that can store 9mm or .45 magazines."
+	name = "\improper M4A3手枪套携行具"
+	desc = "M4A3是一种常见的枪套腰带。它由一条带有各种夹扣的模块化腰带组成。此版本带有一个枪套组件，可以携带手枪。它还包含侧附包，可以存放9毫米或.45口径弹匣。"
 
 /obj/item/storage/holster/belt/pistol/m4a3/full/PopulateContents()
 	new /obj/item/weapon/gun/pistol/rt3(src)
@@ -510,8 +510,8 @@
 	new /obj/item/ammo_magazine/pistol/vp78(src)
 
 /obj/item/storage/holster/belt/pistol/m4a3/som
-	name = "\improper S19 holster rig"
-	desc = "A belt with origins dating back to old colony security holster rigs."
+	name = "\improper S19枪套携行具"
+	desc = "一条可追溯至旧殖民地安保枪套装备的腰带。"
 	icon_state = "som_belt_pistol"
 
 /obj/item/storage/holster/belt/pistol/m4a3/som/Initialize(mapload, ...)
@@ -536,8 +536,8 @@
 	new /obj/item/cell/lasgun/volkite/small(src)
 
 /obj/item/storage/holster/belt/pistol/m4a3/som/fancy
-	name = "\improper S19-B holster rig"
-	desc = "A quality pistol belt of a style typically seen worn by SOM officers. It looks old, but well looked after."
+	name = "\improper S19-B 枪套携行具"
+	desc = "一款质量上乘的手枪腰带，采用火星之子军官常见的款式。看起来有些年头，但保养得很好。"
 	icon_state = "som_belt_pistol_fancy"
 
 /obj/item/storage/holster/belt/pistol/m4a3/som/fancy/fieldcommander/PopulateContents()
@@ -550,17 +550,17 @@
 	new /obj/item/cell/lasgun/volkite/small(src)
 
 /obj/item/storage/holster/belt/pistol/stand
-	name = "\improper M276 pattern M4A3 holster rig"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version has a holster assembly that allows one to carry the M4A3 comfortably secure. It also contains side pouches that can store 9mm or .45 magazines."
+	name = "\improper M276型M4A3手枪套携行具"
+	desc = "M276是TGMC的标准负重装备。它由一条模块化腰带和各种夹扣组成。这个版本配备了一个枪套组件，可以舒适安全地携带M4A3手枪。它还包含侧附包，可以存放9毫米或.45口径弹匣。"
 
 /obj/item/storage/holster/belt/pistol/standard_pistol
-	name = "\improper T457 pattern pistol holster rig"
-	desc = "The T457 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips."
+	name = "\improper T457型手枪携行具"
+	desc = "T457是地球政府殖民地海军陆战队的标准承载装备。它由一个带有多个附包的模块化腰带组成。"
 	icon_state = "tp14_holster"
 
 /obj/item/storage/holster/belt/revolver/standard_revolver
-	name = "\improper T457 pattern revolver holster rig"
-	desc = "The T457 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips."
+	name = "\improper T457型转轮手枪携行套组"
+	desc = "T457是地球政府殖民地海军陆战队的标准承载装备。它由一个带有多个附包的模块化腰带组成。"
 	icon_state = "tp44_holster"
 
 /obj/item/storage/holster/belt/revolver/standard_revolver/Initialize(mapload, ...)
@@ -574,8 +574,8 @@
 	))
 
 /obj/item/storage/holster/belt/m44
-	name = "\improper M276 pattern M44 holster rig"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version is for the M44 magnum revolver, along with three pouches for speedloaders."
+	name = "\improper M276型M44手枪套携行具"
+	desc = "M276是TGMC的标准负重装备。它由一条模块化腰带和各种夹扣组成。此版本适用于M44马格南左轮手枪，并配有三个用于快速装弹器的附包。"
 	icon_state = "m44_holster"
 	storage_type = /datum/storage/holster/belt/m44
 
@@ -589,8 +589,8 @@
 	new /obj/item/ammo_magazine/revolver/single_action/m44(src)
 
 /obj/item/storage/holster/belt/mateba
-	name = "\improper M276 pattern Mateba holster rig"
-	desc = "The M276 is the standard load-bearing equipment of the TGMC. It consists of a modular belt with various clips. This version is for the powerful Mateba magnum revolver, along with three pouches for speedloaders."
+	name = "\improper M276型马特巴手枪套携行具"
+	desc = "M276是TGMC的标准负重装备。它由一条模块化腰带和各种夹扣组成。此版本适用于强大的马特巴马格南左轮手枪，并配有可容纳三个快速装弹器的附包。"
 	icon_state = "mateba_holster"
 	storage_type = /datum/storage/holster/belt/mateba
 
@@ -629,8 +629,8 @@
 	new /obj/item/ammo_magazine/revolver/mateba(src)
 
 /obj/item/storage/holster/belt/korovin
-	name = "\improper Type 41 pistol holster rig"
-	desc = "A modification of the standard UPP pouch rig to carry a single Korovin PK-9 pistol. It also contains side pouches that can store .22 magazines, either hollowpoints or tranquilizers."
+	name = "\improper 41式手枪携行具"
+	desc = "这是标准UPP附包携行具的改进型号，用于携带一把科罗温PK-9手枪。它还包含侧袋，可存放.22口径弹匣，无论是空尖弹还是麻醉弹。"
 	icon_state = "korovin_holster"
 	storage_type = /datum/storage/holster/belt/korovin
 
@@ -653,8 +653,8 @@
 	new /obj/item/ammo_magazine/pistol/c99(src)
 
 /obj/item/storage/holster/belt/ts34
-	name = "\improper M276 pattern SH-34 shotgun holster rig"
-	desc = "A purpose built belt-holster assembly that holds a SH-34 shotgun and one shell box or 2 handfuls."
+	name = "\improper M276型SH-34霰弹枪携行具"
+	desc = "专门设计的腰带式枪套组件，可容纳一把SH-34霰弹枪以及一个弹药盒或两把弹药。"
 	icon_state = "ts34_holster"
 	w_class = WEIGHT_CLASS_BULKY
 	storage_type = /datum/storage/holster/belt/ts34
@@ -665,8 +665,8 @@
 	new /obj/item/ammo_magazine/shotgun/buckshot(src)
 
 /obj/item/storage/holster/belt/pistol/smart_pistol
-	name = "\improper SP-13 holster rig"
-	desc = "A holster belt, which holds SP-13 smart machinepistol and magazines for it."
+	name = "\improper SP-13 枪套携行具"
+	desc = "一个枪套腰带，可容纳SP-13智能冲锋手枪及其弹匣。"
 
 /obj/item/storage/holster/belt/pistol/smart_pistol/full/Initialize(mapload)
 	. = ..()

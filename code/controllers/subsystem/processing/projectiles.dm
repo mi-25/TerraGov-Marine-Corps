@@ -1,5 +1,5 @@
 PROCESSING_SUBSYSTEM_DEF(projectiles)
-	name = "Projectiles"
+	name = "弹道武器"
 	wait = 2
 	stat_tag = "PP"
 	flags = SS_NO_INIT|SS_TICKER

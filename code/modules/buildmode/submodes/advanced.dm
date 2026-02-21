@@ -34,14 +34,14 @@
 		if(LAZYACCESS(modifiers, ALT_CLICK))
 			if(istype(object, /turf) || istype(object, /obj) || istype(object, /mob))
 				selected_type = object.type
-				to_chat(user, span_notice("[initial(object.name)] ([object.type]) selected."))
+				to_chat(user, span_notice("[initial(object.name)] ([object.type]) 已选择。"))
 				BM.preview_selected_item(selected_type)
 				return
-			to_chat(user, span_notice("[initial(object.name)] is not a turf, object, or mob! Please select again."))
+			to_chat(user, span_notice("[initial(object.name)] 不是地形、物体或生物！请重新选择。"))
 			return
 
 		if(isnull(selected_type))
-			to_chat(user, span_warning("Select object type first."))
+			to_chat(user, span_warning("请先选择目标类型。"))
 			return
 
 		if(ispath(selected_type, /turf))
@@ -72,4 +72,4 @@
 		qdel(object)
 
 	log_admin("Build Mode: [key_name(user)] deleted [object] at [AREACOORD(object)]")
-	to_chat(user, span_notice("Success."))
+	to_chat(user, span_notice("成功。"))

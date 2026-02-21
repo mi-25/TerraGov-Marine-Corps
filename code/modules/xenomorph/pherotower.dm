@@ -1,7 +1,7 @@
 
 /obj/structure/xeno/pherotower
-	name = "pheromone tower"
-	desc = "A resin formation that looks like a small pillar. A faint, weird smell can be perceived from it."
+	name = "信息素塔"
+	desc = "一个看起来像小柱子的树脂构造。可以从中闻到一股微弱而奇怪的气味。"
 	icon = 'icons/Xeno/1x1building.dmi'
 	icon_state = "recoverytower"
 	obj_integrity = 400

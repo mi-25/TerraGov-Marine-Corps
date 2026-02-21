@@ -1,11 +1,11 @@
 //Colonist ERT with only basic items for events.
 /datum/emergency_call/colonist
-	name = "Colonists"
+	name = "殖民者"
 
 
 /datum/emergency_call/colonist/print_backstory(mob/living/carbon/human/H)
-	to_chat(H, "<B>You are a simple colonist hoping to be something else.</b>")
-	to_chat(H, "<B>Follow all instructions assigned by the staff or your leader in-character.</b>")
+	to_chat(H, "<B>你是一个普通的殖民者，渴望成为别样的人。</b>")
+	to_chat(H, "<B>请遵循工作人员或你的角色内领导分配的所有指示。</b>")
 
 
 /datum/emergency_call/colonist/create_member(datum/mind/M)

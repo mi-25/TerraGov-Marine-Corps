@@ -1,7 +1,7 @@
 /mob/living/carbon/xenomorph/boiler
 	caste_base_type = /datum/xeno_caste/boiler
 	name = "Boiler"
-	desc = "A huge, grotesque xenomorph covered in glowing, oozing acid slime."
+	desc = "一个巨大的、怪异的异形，全身覆盖着发光、渗出的酸液粘液。"
 	icon = 'icons/Xeno/castes/boiler.dmi'
 	icon_state = "Boiler Walking"
 	bubble_icon = "alienroyal"
@@ -29,7 +29,7 @@
 // *********** Gibbing behaviour
 // ***************************************
 /mob/living/carbon/xenomorph/boiler/gib()
-	visible_message(span_danger("[src] begins to bulge grotesquely, and explodes in a cloud of corrosive gas!"))
+	visible_message(span_danger("[src]开始怪异地膨胀，并在腐蚀性气体云中爆炸！"))
 	var/datum/effect_system/smoke_spread/xeno/smoke = new /datum/effect_system/smoke_spread/xeno/acid/opaque(src)
 	smoke.set_up(2, get_turf(src))
 	smoke.start()

@@ -1,7 +1,7 @@
 //The effect when you wrap a dead body in gift wrap
 /obj/effect/spresent
-	name = "strange present"
-	desc = "It's a ... present?"
+	name = "奇怪的礼物"
+	desc = "这是……礼物？"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "strangepresent"
 	density = TRUE
@@ -9,13 +9,13 @@
 
 
 /obj/effect/beam
-	name = "beam"
+	name = "光束"
 	var/def_zone
 	allow_pass_flags = PASS_LOW_STRUCTURE
 
 
 /obj/effect/begin
-	name = "begin"
+	name = "开始"
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "begin"
 	anchored = TRUE
@@ -24,7 +24,7 @@
 
 
 /obj/effect/list_container
-	name = "list container"
+	name = "列表容器"
 
 /obj/effect/list_container/mobl
 	name = "mobl"
@@ -33,8 +33,8 @@
 	var/list/container = list(  )
 
 /obj/effect/projection
-	name = "Projection"
-	desc = "This looks like a projection of something."
+	name = "投影"
+	desc = "这看起来像是某种东西的投影。"
 	anchored = TRUE
 
 /obj/effect/soundplayer
@@ -109,8 +109,8 @@
 	resistance_flags = RESIST_ALL | PROJECTILE_IMMUNE
 
 /obj/effect/forcefield/fog
-	name = "dense fog"
-	desc = "It looks way too dangerous to traverse. Best wait until it has cleared up."
+	name = "浓雾"
+	desc = "看起来穿越那里太危险了。最好等它平息下来再行动。"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "smoke"
 	opacity = TRUE
@@ -127,7 +127,7 @@
 
 
 /obj/effect/forcefield/fog/attack_hand(mob/living/user)
-	to_chat(user, span_notice("You peer through the fog, but it's impossible to tell what's on the other side..."))
+	to_chat(user, span_notice("你透过迷雾望去，但完全无法看清另一侧有什么……"))
 	return TRUE
 
 
@@ -152,8 +152,8 @@
 	return FALSE
 
 /obj/effect/forcefield/fog/passable_fog
-	name = "fog"
-	desc = "It looks dangerous to traverse."
+	name = "迷雾"
+	desc = "穿越这里看起来很危险。"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "smoke"
 	density = FALSE
@@ -208,8 +208,8 @@
 
 
 /obj/effect/dummy/lighting_obj
-	name = "lighting fx obj"
-	desc = "Tell a coder if you're seeing this."
+	name = "照明特效物体"
+	desc = "如果你看到这个，请告诉程序员。"
 	icon_state = "nothing"
 	light_color = "#FFFFFF"
 	light_range = MINIMUM_USEFUL_LIGHT_RANGE
@@ -230,7 +230,7 @@
 
 
 /obj/effect/dummy/lighting_obj/moblight
-	name = "mob lighting fx"
+	name = "mob 照明特效"
 
 
 /obj/effect/dummy/lighting_obj/moblight/Initialize(mapload, _color, _range, _power, _duration)

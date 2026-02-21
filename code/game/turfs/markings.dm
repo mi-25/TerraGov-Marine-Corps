@@ -517,7 +517,7 @@
 	color = "#FFFFFF"
 
 /obj/effect/turf_decal/trimline/white/line
-	name = "trim decal"
+	name = "清理涂鸦"
 	icon_state = "trimline"
 
 /obj/effect/turf_decal/trimline/white/corner

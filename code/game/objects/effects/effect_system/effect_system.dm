@@ -73,7 +73,7 @@ steam.start() -- spawns the effect
 */
 /////////////////////////////////////////////
 /obj/effect/particle_effect/steam
-	name = "steam"
+	name = "蒸汽"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "extinguish"
 	density = FALSE
@@ -102,7 +102,7 @@ steam.start() -- spawns the effect
 /////////////////////////////////////////////
 
 /obj/effect/particle_effect/sparks
-	name = "sparks"
+	name = "电火花"
 	icon_state = "sparks"
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
@@ -167,7 +167,7 @@ steam.start() -- spawns the effect
 /////////////////////////////////////////////
 
 /obj/effect/particle_effect/ion_trails
-	name = "ion trails"
+	name = "离子尾迹"
 	icon_state = "ion_trails"
 	anchored = TRUE
 

@@ -1,5 +1,5 @@
 /obj/effect/landmark/campaign_structure/tele_blocker
-	name = "\improper Bluespace quantum disruption emitter"
+	name = "\improper 蓝移量子干扰发射器"
 	icon = 'icons/obj/structures/campaign/blockers.dmi'
 	icon_state = "tele_blocker"
 	pixel_w = -16
@@ -11,8 +11,8 @@
 	)
 
 /obj/structure/campaign_deployblocker
-	name = "\improper Bluespace quantum disruption emitter"
-	desc = "A cutting edge piece of technology designed to disrupt long range bluespace interference in a given radius. The SOM's long range teleporters are unlikely to work here while this is active."
+	name = "\improper 蓝移量子干扰发射器"
+	desc = "一款尖端科技设备，旨在干扰特定半径内的远距离蓝空间通讯。在此设备激活期间，火星之子的远距离传送器很可能无法在此区域正常工作。"
 	density = TRUE
 	anchored = TRUE
 	atom_flags = CRITICAL_ATOM
@@ -60,7 +60,7 @@
 	GLOB.campaign_structures -= src
 
 /obj/effect/landmark/campaign_structure/drop_blocker
-	name = "TELEBLOCKER"
+	name = "传送阻断器"
 	icon = 'icons/obj/structures/campaign/blockers.dmi'
 	icon_state = "drop_blocker"
 	pixel_w = -16
@@ -72,8 +72,8 @@
 	spawn_object = /obj/structure/campaign_deployblocker/drop_blocker
 
 /obj/structure/campaign_deployblocker/drop_blocker
-	name = "drop pod guidance disruptor array"
-	desc = "A sophisticated device intended to severely disrupt drop pod guidance systems, rendering them unusable while the tower stands."
+	name = "空降舱制导干扰阵列"
+	desc = "一种精密设备，旨在严重干扰空降舱制导系统，使其在塔楼矗立期间无法使用。"
 	icon_state = "drop_blocker"
 	pixel_w = -16
 	to_remove_flags = MISSION_DISALLOW_DROPPODS

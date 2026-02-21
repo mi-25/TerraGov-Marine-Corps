@@ -1,8 +1,8 @@
 GLOBAL_DATUM_INIT(squad_selector, /datum/squad_selector, new)
 
 /obj/machinery/computer/squad_selector
-	name = "squad selection console"
-	desc = "A console for squad management. Allows users to join a squad."
+	name = "小队选择控制台"
+	desc = "小队管理控制台。允许用户加入小队。"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	screen_overlay = "syndishuttle"

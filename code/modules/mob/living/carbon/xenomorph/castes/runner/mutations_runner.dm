@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/upfront_evasion
 	name = "Upfront Evasion"
-	desc = "Evasion is now 1/2/3 seconds longer, but no longer can auto-refresh."
+	desc = "闪避冷却时间延长至1/2/3秒，但不再能自动刷新。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/shell/ingrained_evasion
 	)
@@ -47,7 +47,7 @@
 
 /datum/mutation_upgrade/shell/borrowed_time
 	name = "Borrowed Time"
-	desc = "Your critical threshold is decreased by 100. While you have negative health, you are slowed, staggered and cannot slash attack. If you have negative health for more than 2/3/4s, your critical threshold is increased back until you reach full health."
+	desc = "你的重伤阈值降低100点。当生命值为负时，你会减速、踉跄且无法进行斩击攻击。若生命值持续为负超过2/3/4秒，你的重伤阈值将逐渐恢复，直至生命值回满。"
 	/// For the first structure, the amount of deciseconds that they can keep the critical threshold once they get negative health.
 	var/duration_initial = 1 SECONDS
 	/// For each structure, the amount of deciseconds that they can keep the critical threshold once they get negative health.
@@ -85,7 +85,7 @@
 	critical_threshold_boosted = !critical_threshold_boosted
 	if(critical_threshold_boosted)
 		if(!silent)
-			xenomorph_owner.balloon_alert(xenomorph_owner, "Borrowed time ready!");
+			xenomorph_owner.balloon_alert(xenomorph_owner, "借来的时间准备就绪！");
 		xenomorph_owner.health_threshold_crit -= critical_threshold_amount
 		return
 	xenomorph_owner.health_threshold_crit += critical_threshold_amount
@@ -108,7 +108,7 @@
 	xenomorph_owner.Stagger(borrowed_time_length)
 	critical_threshold_timer = addtimer(CALLBACK(src, PROC_REF(reverse_critical_threshold)), borrowed_time_length, TIMER_UNIQUE|TIMER_STOPPABLE)
 	INVOKE_ASYNC(xenomorph_owner, TYPE_PROC_REF(/mob, emote), "roar")
-	xenomorph_owner.balloon_alert(xenomorph_owner, "On borrowed time!");
+	xenomorph_owner.balloon_alert(xenomorph_owner, "苟延残喘！");
 
 /// Effectively removes the effects of this mutation ands its active effect.
 /datum/mutation_upgrade/shell/borrowed_time/proc/reverse_critical_threshold()
@@ -125,7 +125,7 @@
 
 /datum/mutation_upgrade/shell/ingrained_evasion
 	name = "Ingrained Evasion"
-	desc = "You lose the ability, Evasion. You have a 30/40/50% to dodge projectiles with similar conditions as Evasion. Highly accurate projectiles will reduce your dodge chance."
+	desc = "你失去了能力：闪避。你有30/40/50%的几率闪避弹道攻击，条件与闪避类似。高精度弹道攻击会降低你的闪避几率。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/shell/upfront_evasion,
 		/datum/mutation_upgrade/veil/passing_glance
@@ -211,7 +211,7 @@
 
 /// Handles dodge effects and visuals.
 /datum/mutation_upgrade/shell/ingrained_evasion/proc/dodge_fx(atom/movable/proj)
-	xenomorph_owner.visible_message(span_warning("[xenomorph_owner] effortlessly dodges the [proj.name]!"), span_xenodanger("We effortlessly dodge the [proj.name]!"))
+	xenomorph_owner.visible_message(span_warning("[xenomorph_owner] 轻松躲开了 [proj.name]！"), span_xenodanger("We effortlessly dodge the [proj.name]!"))
 	xenomorph_owner.add_filter("ingrained_evasion", 2, gauss_blur_filter(5))
 	addtimer(CALLBACK(xenomorph_owner, TYPE_PROC_REF(/datum, remove_filter), "ingrained_evasion"), 0.5 SECONDS)
 	xenomorph_owner.do_jitter_animation(4000)
@@ -231,7 +231,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/sneak_attack
 	name = "Sneak Attack"
-	desc = "Pounce will slash your target for 1/1.25/1.5x damage if it was started in dim light."
+	desc = "猛扑若在昏暗光线下发动，将对目标造成1/1.25/1.5倍斩击伤害。"
 	/// For the first structure, the amount to increase Pounce's dim light damage multiplier.
 	var/multiplier_initial = 0.75
 	/// For each structure, the amount to increase Pounce's dim light damage multiplier.
@@ -269,7 +269,7 @@
 
 /datum/mutation_upgrade/spur/right_here
 	name = "Right Here"
-	desc = "Pounce will slash your target for 0.5/0.75/1x slash damage based on the distance traveled. Every tile beyond the first reduces the amount by 20%."
+	desc = "猛扑会根据移动距离对目标造成0.5/0.75/1倍斩击伤害。每超出第一格距离，伤害减少20%。"
 	/// For the first structure, the amount to increase Pounce's distance damage multiplier.
 	var/multiplier_initial = 0.25
 	/// For each structure, the amount to increase Pounce's distance damage multiplier.
@@ -307,7 +307,7 @@
 
 /datum/mutation_upgrade/spur/mutilate
 	name = "Mutilate"
-	desc = "Savage's plasma-to-damage conversion rate is increased by 0.05/0.1/0.15. Savage will consume all of your plasma."
+	desc = "蛮牛的等离子体伤害转化率提升0.05/0.1/0.15。蛮牛会消耗你所有的等离子体。"
 	/// For each structure, the amount to increase Savage's plasma-to-damage conversion rate.
 	var/conversion_rate_per_structure = 0.05
 
@@ -332,7 +332,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/headslam
 	name = "Head Slam"
-	desc = "Pounce stuns only for 25% as long. It now confuses and blurs your target's vision for 1/2/3 seconds."
+	desc = "猛扑的眩晕时间缩短至25%。现在会使目标视线模糊和混乱1/2/3秒。"
 	/// The amount to multiply all stun and immobilize duration by.
 	var/stun_duration_multiplier = 0.25
 	/// For each structure, the amount of deciseconds to confuse and the potency of blur by (divided by 5).
@@ -372,7 +372,7 @@
 
 /datum/mutation_upgrade/veil/frenzy
 	name = "Frenzy"
-	desc = "Savage's damage is converted to a buff that increases your melee damage for 7 seconds. For each point of damage, your melee damage multiplier is increased by 0.5/0.75/1%."
+	desc = "蛮牛的伤害会转化为增益效果，在7秒内提升你的近战伤害。每点伤害会使你的近战伤害倍率增加0.5/0.75/1%。"
 	/// For the first structure, the rate in which Savage damage is converted to melee damage multiplier.
 	var/conversion_rate_initial = 0.0025
 	/// For each structure, the rate in which Savage damage is converted to melee damage multiplier.
@@ -410,7 +410,7 @@
 
 /datum/mutation_upgrade/veil/passing_glance
 	name = "Passing Glance"
-	desc = "While Evasion is on, moving onto the same location as a standing human will confuse them for 2/3/4 seconds. This can only happens once per human."
+	desc = "开启闪避时，移动到站立人类所在位置会使其迷惑2/3/4秒。每名人类仅会受此效果影响一次。"
 	conflicting_mutation_types = list(
 		/datum/mutation_upgrade/shell/upfront_evasion,
 	)

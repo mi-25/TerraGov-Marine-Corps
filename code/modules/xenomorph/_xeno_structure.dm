@@ -54,7 +54,7 @@
 			take_damage(35, BRUTE, BOMB)
 
 /obj/structure/xeno/attack_hand(mob/living/user)
-	balloon_alert(user, "You only scrape at it")
+	balloon_alert(user, "你只是在刮擦它")
 	return TRUE
 
 /obj/structure/xeno/fire_act(burn_level)
@@ -104,7 +104,7 @@
 	if(!do_after(xeno_attacker, 3 SECONDS, NONE, src))
 		return
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_CLAW)
-	balloon_alert_to_viewers("\The [xeno_attacker] tears down \the [src]!", "We tear down \the [src].")
+	balloon_alert_to_viewers("\The [xeno_attacker] 撕毁了 \the [src]！", "We tear down \the [src].")
 	playsound(src, SFX_ALIEN_RESIN_BREAK, 25)
 	take_damage(max_integrity) // Ensure its destroyed
 

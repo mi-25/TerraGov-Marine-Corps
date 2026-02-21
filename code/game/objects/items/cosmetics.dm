@@ -1,7 +1,7 @@
 /obj/item/facepaint
 	gender = PLURAL
-	name = "customization kit"
-	desc = "A kit designed for customizing various pieces of armor and clothing. Comes with facepaint!"
+	name = "定制套件"
+	desc = "一套用于定制各类护甲和服装的套件。附赠面部迷彩！"
 	icon = 'icons/obj/items/cosmetics.dmi'
 	icon_state = "camo"
 	var/paint_color = "green"
@@ -9,24 +9,24 @@
 	var/uses = 100
 
 /obj/item/facepaint/green
-	name = "Green customization kit"
+	name = "绿色定制套件"
 	paint_color = "green"
 	icon_state = "green_camo"
 
 
 /obj/item/facepaint/brown
-	name = "Brown customization kit"
+	name = "棕色定制套件"
 	paint_color = "brown"
 	icon_state = "brown_camo"
 
 /obj/item/facepaint/black
-	name = "Black customization kit"
-	desc = "A kit designed for customizing various pieces of armor and clothing. Comes with eye black!"
+	name = "黑色定制套件"
+	desc = "一套用于定制各类护甲和服装的套件。附赠眼部伪装油彩！"
 	paint_color = "black"
 	icon_state = "black_camo"
 
 /obj/item/facepaint/sniper
-	name = "Fullbody customization kit"
+	name = "全身定制套件"
 	paint_color = "full"
 	icon_state = "full_camo"
 
@@ -34,16 +34,16 @@
 /obj/item/facepaint/attack(mob/M, mob/user)
 	. = ..()
 	if(!ishuman(M))
-		to_chat(user, span_warning("This doesn't have a human face..."))
+		to_chat(user, span_warning("这没有人类的面孔..."))
 		return
 
 	var/mob/living/carbon/human/attacked_human = M
 	if(attacked_human.makeup_style)	//if they already have lipstick on
-		to_chat(user, span_warning("You need to wipe the old paint off with paper first!"))
+		to_chat(user, span_warning("你得先用纸把旧漆擦掉！"))
 		return
 
 	if(attacked_human != user && attacked_human.client)
-		user.visible_message(span_notice("[user] is trying to apply [src] on [attacked_human]'s face..."), span_notice("You attempt to apply [src] on [attacked_human]..."))
+		user.visible_message(span_notice("[user]正试图将[src]敷在[attacked_human]的脸上..."), span_notice("You attempt to apply [src] on [attacked_human]..."))
 		if(tgui_alert(attacked_human, "Apply makeup", "Will you allow [user] to paint your face?", list("Yes","No")) != "Yes")
 			return
 		if(!user || loc != user || !user.Adjacent(attacked_human))
@@ -55,7 +55,7 @@
 /obj/item/facepaint/proc/paint_face(mob/living/carbon/human/H, mob/user)
 	if(!H || !user)
 		return //In case they're passed as null.
-	user.visible_message(span_notice("[user] carefully applies [src] on [H]'s face."), \
+	user.visible_message(span_notice("[user]小心翼翼地将[src]敷在[H]的脸上。"), \
 						span_notice("You apply [src]."))
 	H.makeup_style = paint_color
 	H.alpha = max(0, initial(H.alpha) - 1) // decreases your alpha by 1

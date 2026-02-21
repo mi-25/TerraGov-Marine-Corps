@@ -7,7 +7,7 @@
 
 //Used by spraybottles.
 /obj/effect/decal/chempuff
-	name = "chemicals"
+	name = "化学品"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "chempuff"
 	allow_pass_flags = PASS_LOW_STRUCTURE|PASS_GRILLE

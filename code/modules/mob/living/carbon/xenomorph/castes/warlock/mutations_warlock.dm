@@ -3,7 +3,7 @@
 //*********************//
 /datum/mutation_upgrade/shell/cautious_mind
 	name = "Cautious Mind"
-	desc = "Psychic Shield will attempt to detonate if it was automatically canceled while the shield is intact. The detonation cost is now 125/100/75% of its original cost."
+	desc = "心灵护盾若在护盾完好时被自动取消，将尝试引爆。引爆消耗现为其原始消耗的125/100/75%。"
 	/// For the first structure,the multiplier of Psychic Shield's initial ability cost to add to the ability cost.
 	var/cost_multiplier_initial = 0.5
 	/// For each structure, the multiplier of Psychic Shield's initial ability cost to add to the ability cost.
@@ -46,7 +46,7 @@
 //*********************//
 /datum/mutation_upgrade/spur/draining_blast
 	name = "Draining Blast"
-	desc = "Psychic Blast now switch to a different type of beam called Psychic Drain; it deals 0.7x stamina damage, briefly knockdowns on direct impact, and knockback on non-direct impact. Psychic Drain's cooldown is 95/90/85% of its original cooldown."
+	desc = "心灵冲击现在切换为一种名为心灵汲取的新型光束；它造成0.7倍耐力伤害，直接命中时造成短暂击倒，非直接命中时造成击退。心灵汲取的冷却时间是原冷却时间的95/90/85%。"
 	/// For each structure, the multiplier to add to Psychic Blast's cooldown.
 	var/multiplier_per_structure = -0.05
 
@@ -85,7 +85,7 @@
 //*********************//
 /datum/mutation_upgrade/veil/mobile_mind
 	name = "Mobile Mind"
-	desc = "Psychic Shield no longer forces you to remain still to keep the shield up. However, the shield sizzles out when manually detonating and slows you down by 0.8/0.6/0.4 while it is active."
+	desc = "心灵护盾不再要求你保持静止来维持护盾。然而，手动引爆时护盾会嘶嘶作响地消散，并且在护盾激活期间会使你的速度降低0.8/0.6/0.4。"
 	/// For the first structure, the amount to increase Psychic Shield's movement speed modifier by.
 	var/movespeed_initial = 1
 	/// For each structure, the amount to increase Psychic Shield's movement speed modifier by.

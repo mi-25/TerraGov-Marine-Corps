@@ -3,8 +3,8 @@
 	var/card_icon = "card_back"
 
 /obj/item/toy/deck
-	name = "deck of cards"
-	desc = "A simple deck of playing cards."
+	name = "扑克牌"
+	desc = "一副简单的扑克牌。"
 	icon = 'icons/obj/items/playing_cards.dmi'
 	icon_state = "deck"
 	w_class = WEIGHT_CLASS_TINY
@@ -41,7 +41,7 @@
 			cards += P
 		update_icon()
 		qdel(I)
-		to_chat(user, "You place your cards on the bottom of the deck.")
+		to_chat(user, "你将牌放到了牌堆底部。")
 
 /obj/item/toy/deck/update_icon_state()
 	. = ..()
@@ -73,7 +73,7 @@
 		return
 
 	if(!length(cards))
-		to_chat(usr, "There are no cards in the deck.")
+		to_chat(usr, "牌堆中没有牌。")
 		return
 
 	var/obj/item/toy/handcard/H
@@ -92,8 +92,8 @@
 	cards -= P
 	H.update_icon()
 	update_icon()
-	user.visible_message("\The [user] draws a card.")
-	to_chat(user, "It's the [P].")
+	user.visible_message("\The [user] 抽了一张牌。")
+	to_chat(user, "这是[P]。")
 
 /obj/item/toy/deck/verb/deal_card()
 
@@ -105,7 +105,7 @@
 	if(usr.stat || !Adjacent(usr)) return
 
 	if(!length(cards))
-		to_chat(usr, "There are no cards in the deck.")
+		to_chat(usr, "牌堆中没有牌。")
 		return
 
 	var/list/players = list()
@@ -134,15 +134,15 @@
 	H.update_icon()
 	update_icon()
 	if(user==target)
-		user.visible_message("\The [user] deals a card to [user.p_them()]self.")
+		user.visible_message("\The [user] 发了一张牌给[user.p_them()]自己。")
 	else
-		user.visible_message("\The [user] deals a card to \the [target].")
+		user.visible_message("\The [user] 发了一张牌给 \the [target]。")
 	H.throw_at(get_step(target,target.dir),10,1,H)
 
 /obj/item/toy/deck/attack_self(mob/user)
 	. = ..()
 	shuffle_inplace(cards)
-	user.visible_message("\The [user] shuffles [src].")
+	user.visible_message("\The [user] 洗牌 [src]。")
 
 /obj/item/toy/deck/MouseDrop(atom/over)
 	if(!usr || !over) return
@@ -151,15 +151,15 @@
 	if(!ishuman(over) || !(over in viewers(3))) return
 
 	if(!length(cards))
-		to_chat(usr, "There are no cards in the deck.")
+		to_chat(usr, "牌堆中没有牌。")
 		return
 
 	deal_at(usr, over)
 
 
 /obj/item/toy/handcard
-	name = "hand of cards"
-	desc = "Some playing cards."
+	name = "手牌"
+	desc = "一副扑克牌。"
 	icon_state = "empty"
 	w_class = WEIGHT_CLASS_TINY
 
@@ -232,7 +232,7 @@
 	H.concealed = 0
 	H.update_icon()
 	update_icon()
-	user.visible_message("\The [user] plays \the [discarding].")
+	user.visible_message("\The [user] 打出了 \the [discarding]。")
 	H.forceMove(get_step(user, user.dir))
 
 	if(!length(cards))
@@ -255,16 +255,16 @@
 /obj/item/toy/handcard/update_name(updates)
 	. = ..()
 	if(length(cards) > 1)
-		name = "hand of cards"
+		name = "手牌"
 	else
-		name = "a playing card"
+		name = "一张扑克牌"
 
 /obj/item/toy/handcard/update_desc(updates)
 	. = ..()
 	if(length(cards) > 1)
-		desc = "Some playing cards."
+		desc = "一些扑克牌。"
 	else
-		desc = "A playing card."
+		desc = "一张扑克牌。"
 
 /obj/item/toy/handcard/update_overlays()
 	. = ..()
@@ -322,8 +322,8 @@
 
 
 /obj/item/toy/deck/kotahi
-	name = "KOTAHI deck"
-	desc = "A flashy deck of Nanotrasen KOTAHI playing cards. Usually sold alongside crayon packages."
+	name = "KOTAHI甲板"
+	desc = "一副炫目的纳米传讯KOTAHI扑克牌。通常与蜡笔套装一同出售。"
 	icon = 'icons/obj/items/kotahi_cards.dmi'
 	icon_state = "deck"
 	card_type = "kotahi"
@@ -381,16 +381,16 @@
 
 // purely cosmetic for helmet stuff, can't be stacked with normal cards
 /obj/item/toy/card/ace/hearts
-	name = "Ancient Ace of Hearts card"
-	desc = "An ancient copy of an Ace of Hearts from a deck of playing cards."
+	name = "古老的红心A卡牌"
+	desc = "一副扑克牌中红桃A的古老复制品。"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "ace_of_hearts"
 	worn_icon_state = "ace_of_hearts"
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/toy/card/ace/spades
-	name = "Ancient Ace of Spades card"
-	desc = "An ancient copy of an Ace of Spades from a deck of playing cards."
+	name = "古老的黑桃A卡牌"
+	desc = "一副扑克牌中黑桃A的古老复制品。"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "ace_of_spades"
 	worn_icon_state = "ace_of_spades"

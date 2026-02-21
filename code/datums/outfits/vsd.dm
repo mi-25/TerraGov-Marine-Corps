@@ -1,7 +1,7 @@
 
 //outfits
 /datum/outfit/job/vsd/standard
-	name = "VSD Standard"
+	name = "VSD 标准"
 	jobtype = /datum/job/vsd/standard
 
 	id = /obj/item/card/id/silver
@@ -197,7 +197,7 @@
 
 //outfits
 /datum/outfit/job/vsd/engineer
-	name = "VSD Engineer"
+	name = "VSD工程师"
 	jobtype = /datum/job/vsd/engineer
 
 	id = /obj/item/card/id/silver
@@ -275,7 +275,7 @@
 
 //outfits
 /datum/outfit/job/vsd/medic
-	name = "VSD Medic"
+	name = "VSD 医疗兵"
 	jobtype = /datum/job/vsd/medic
 
 	id = /obj/item/card/id/silver
@@ -389,7 +389,7 @@
 
 //outfits
 /datum/outfit/job/vsd/spec
-	name = "VSD Specialist"
+	name = "VSD专家"
 	jobtype = /datum/job/vsd/spec
 
 	id = /obj/item/card/id/silver
@@ -549,7 +549,7 @@
 //juggernaut outfits
 
 /datum/outfit/job/vsd/juggernaut
-	name = "VSD Juggernaut"
+	name = "VSD 主宰者"
 	jobtype = /datum/job/vsd/juggernaut
 
 	id = /obj/item/card/id/silver
@@ -655,7 +655,7 @@
 
 //SL outfits
 /datum/outfit/job/vsd/leader
-	name = "VSD Squad Leader"
+	name = "陆战队班长"
 	jobtype = /datum/job/vsd/leader
 
 	id = /obj/item/card/id/silver

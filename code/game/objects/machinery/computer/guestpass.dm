@@ -2,8 +2,8 @@
 //Guest pass ////////////////////////////////
 /////////////////////////////////////////////
 /obj/item/card/id/guest
-	name = "guest pass"
-	desc = "Allows temporary access to station areas. It looks like its broken."
+	name = "访客通行证"
+	desc = "允许临时进入空间站区域。它看起来已经损坏了。"
 	icon_state = "guest"
 
 	var/reason = "NOT SPECIFIED"
@@ -20,7 +20,7 @@
 /////////////////////////////////////////////
 
 /obj/machinery/computer/guestpass
-	name = "guest pass terminal"
+	name = "访客通行证终端"
 	icon_state = "computer_small"
 	screen_overlay = "guest"
 	density = FALSE

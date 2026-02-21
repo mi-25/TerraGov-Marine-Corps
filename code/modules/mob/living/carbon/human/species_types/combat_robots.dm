@@ -99,7 +99,7 @@
 	if(!howner.getBruteLoss() && !howner.getFireLoss())
 		return
 	howner.apply_status_effect(STATUS_EFFECT_REPAIR_MODE, 10 SECONDS)
-	howner.balloon_alert_to_viewers("repairing...")
+	howner.balloon_alert_to_viewers("修复中...")
 
 /datum/species/robot/alpharii
 	name = "Hammerhead Combat Robot"

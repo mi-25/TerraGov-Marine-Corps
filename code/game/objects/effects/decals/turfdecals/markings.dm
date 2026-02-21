@@ -218,36 +218,36 @@
 
 /obj/effect/turf_decal/strata_decals/catwalk/prison //For finding and replacing prison catwalk objects since they nasty
 	icon_state = "catwalk"
-	name = "catwalk"
+	name = "网格走道"
 	layer = CATWALK_LAYER
-	desc = "These things have no depth to them, are they just, painted on?"
+	desc = "这些东西完全没有立体感，难道只是画上去的？"
 
 //////////////////OUTDOOR STUFF/////////////////
 
 /obj/effect/turf_decal/strata_decals/rocks
 	icon_state = ""
-	name = "some rocks"
-	desc = "A collection of sad little rocks."
+	name = "一些岩石"
+	desc = "一堆可怜的小石头。"
 
 /obj/effect/turf_decal/strata_decals/rocks/ice
 	icon_state = ""
-	name = "some ice rocks"
-	desc = "A smattering of ice and rock littered about haphazardly."
+	name = "一些冰岩"
+	desc = "散落的冰岩杂乱无章地分布着。"
 
 /obj/effect/turf_decal/strata_decals/rocks/ice/ice1
 	icon_state = "icerock"
 
 /obj/effect/turf_decal/strata_decals/grasses
 	icon_state = "tufts"
-	name = "some foliage"
-	desc = "A few brave tufts of snow grass."
+	name = "一些植被"
+	desc = "几簇勇敢的雪草。"
 
 ////////////////INDOORS STUFF////////////////////
 
 /obj/effect/turf_decal/strata_decals/grime
 	icon_state = ""
-	name = "a stain"
-	desc = "A nasty looking brown stain, could be coffee, soot, water damage. Who knows."
+	name = "污渍"
+	desc = "一块难看的棕色污渍，可能是咖啡、煤烟或水渍。谁知道呢。"
 
 /obj/effect/turf_decal/strata_decals/grime/grime1
 	icon_state = "grime1"
@@ -262,8 +262,8 @@
 	icon_state = "grime4"
 
 /obj/effect/turf_decal/tape
-	name = "tape"
-	desc = "It's some tape cordoning off an area"
+	name = "胶带"
+	desc = "这是一段用于隔离区域的警戒带。"
 	icon = 'icons/obj/policetape.dmi'
 	icon_state = "police_h"
 

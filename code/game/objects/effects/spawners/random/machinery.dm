@@ -1,5 +1,5 @@
 /obj/effect/spawner/random/machinery
-	name = "Random base machinery spawner"
+	name = "随机基础机械生成器"
 	icon = 'icons/effects/random/machinery.dmi'
 	icon_state = "random_frame"
 	loot = list(
@@ -7,7 +7,7 @@
 	)
 
 /obj/effect/spawner/random/machinery/status_display
-	name = "random status display spawner"
+	name = "随机状态显示生成器"
 	icon_state = "random_status_display"
 	spawn_loot_chance = 95
 	loot = list(
@@ -15,7 +15,7 @@
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer
-	name = "Generic broken computer spawner"
+	name = "通用损坏电脑生成器"
 	icon_state = "random_broke_computer"
 	loot = list(
 		/obj/structure/prop/computer/broken = 20,
@@ -30,42 +30,42 @@
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/genetics
-	name = "Genetics console or broken computer spawner"
+	name = "基因控制台或损坏电脑生成器"
 	loot = list(
 		/obj/machinery/prop/computer/dna = 75,
 		/obj/effect/spawner/random/machinery/random_broken_computer = 25,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/crewmonitor
-	name = "Crew monitor or broken computer spawner"
+	name = "船员监控器或损坏的电脑生成器"
 	loot = list(
 		/obj/machinery/prop/computer/crew = 65,
 		/obj/effect/spawner/random/machinery/random_broken_computer = 35,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/solars
-	name = "Solars computer or broken computer spawner"
+	name = "太阳能板电脑或损坏的电脑生成器"
 	loot = list(
 		/obj/machinery/computer/solars = 80,
 		/obj/effect/spawner/random/machinery/random_broken_computer = 20,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/rdconsole
-	name = "RD console or broken computer spawner"
+	name = "RD控制台或损坏电脑生成器"
 	loot = list(
 		/obj/machinery/prop/computer/rdconsole = 85,
 		/obj/effect/spawner/random/machinery/random_broken_computer = 15,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/medicalrecords
-	name = "Medical records or broken computer spawner"
+	name = "医疗记录或损坏的电脑生成器"
 	loot = list(
 		/obj/machinery/computer/med_data = 75,
 		/obj/effect/spawner/random/machinery/random_broken_computer = 25,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/intel
-	name = "Intel computer or broken computer spawner"
+	name = "情报电脑或损坏电脑生成器"
 	icon_state = "random_intel_computer"
 	loot = list(
 		/obj/machinery/computer/intel_computer = 90,
@@ -73,7 +73,7 @@
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/small
-	name = "Generic small broken computer spawner"
+	name = "通用小型损坏电脑生成器"
 	icon_state = "random_broke_computer_small"
 	loot = list(
 		/obj/structure/prop/computer/broken/eleven = 20,
@@ -89,63 +89,63 @@
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/small/meddata
-	name = "Medical data or broken computer spawner"
+	name = "医疗数据或损坏的电脑生成器"
 	loot = list(
 		/obj/machinery/computer/med_data/laptop = 85,
 		/obj/effect/spawner/random/machinery/random_broken_computer/small = 15,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/small/security
-	name = "Security console or broken computer spawner"
+	name = "安全控制台或损坏电脑生成器"
 	loot = list(
 		/obj/machinery/computer/security = 65,
 		/obj/effect/spawner/random/machinery/random_broken_computer/small = 35,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/small/comms
-	name = "Comms console prop or broken computer spawner"
+	name = "通讯控制台道具或损坏的电脑生成器"
 	loot = list(
 		/obj/effect/spawner/random/machinery/random_broken_computer/small = 9,
 		/obj/machinery/prop/computer/communications = 1,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/small/securityrecords
-	name = "Security records or broken computer spawner"
+	name = "安全记录或损坏的电脑生成器"
 	loot = list(
 		/obj/machinery/computer/security = 85,
 		/obj/effect/spawner/random/machinery/random_broken_computer/small = 15,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/small/stationalert
-	name = "Station alert or broken computer spawner"
+	name = "站点警报或损坏的电脑生成器"
 	loot = list(
 		/obj/machinery/computer/station_alert = 85,
 		/obj/effect/spawner/random/machinery/random_broken_computer/small = 15,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/small/atmosalert
-	name = "Atmos alert or broken computer spawner"
+	name = "大气警报或损坏的计算机生成器"
 	loot = list(
 		/obj/machinery/computer/atmos_alert = 85,
 		/obj/effect/spawner/random/machinery/random_broken_computer/small = 15,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/small/operatingcomputer
-	name = "Operating computer or broken computer spawner"
+	name = "操作电脑或损坏的电脑生成器"
 	loot = list(
 		/obj/machinery/computer/operating = 85,
 		/obj/effect/spawner/random/machinery/random_broken_computer/small = 15,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/small/emails
-	name = "Email computer or broken computer spawner"
+	name = "电子邮件电脑或损坏的电脑生成器"
 	loot = list(
 		/obj/machinery/computer/emails = 80,
 		/obj/effect/spawner/random/machinery/random_broken_computer/small = 15,
 	)
 
 /obj/effect/spawner/random/machinery/random_broken_computer/small/pc
-	name = "Personal computer or broken computer spawner"
+	name = "个人电脑或损坏电脑生成器"
 	loot = list(
 		/obj/machinery/prop/computer/PC = 95,
 		/obj/effect/spawner/random/machinery/random_broken_computer/small = 15,
@@ -153,7 +153,7 @@
 
 
 /obj/effect/spawner/random/machinery/disposal
-	name = "disposal spawner"
+	name = "垃圾处理生成器"
 	icon_state = "random_disposal"
 	spawn_loot_chance = 90
 	loot = list(
@@ -163,7 +163,7 @@
 	)
 
 /obj/effect/spawner/random/machinery/hydrotray
-	name = "hydro tray spawner"
+	name = "水培托盘生成器"
 	icon_state = "random_hydrotray"
 	spawn_loot_chance = 65
 	loot = list(
@@ -173,7 +173,7 @@
 	)
 
 /obj/effect/spawner/random/machinery/microwave
-	name = "microwave spawner"
+	name = "微波炉生成器"
 	icon_state = "random_microwave"
 	spawn_loot_chance = 85
 	loot = list(
@@ -182,7 +182,7 @@
 	)
 
 /obj/effect/spawner/random/machinery/photocopier
-	name = "filing photocopier or metal spawner"
+	name = "归档复印机或金属生成器"
 	icon_state = "random_photocopier"
 	spawn_loot_chance = 45
 	loot = list(
@@ -195,7 +195,7 @@
 
 
 /obj/effect/spawner/random/machinery/machine_frame
-	name = "machine frame spawner"
+	name = "机器框架生成器"
 	icon_state = "random_frame"
 	spawn_loot_chance = 50
 	loot = list(
@@ -207,7 +207,7 @@
 	)
 
 /obj/effect/spawner/random/machinery/dead_ai
-	name = "dead ai spawner"
+	name = "死亡AI生成器"
 	icon_state = "random_dead_ai"
 	spawn_loot_chance = 15
 	loot = list(
@@ -215,7 +215,7 @@
 	)
 
 /obj/effect/spawner/random/machinery/cryo
-	name = "cryo spawner"
+	name = "低温休眠生成器"
 	icon_state = "random_cryo"
 	spawn_loot_chance = 45
 	loot = list(
@@ -225,7 +225,7 @@
 	)
 
 /obj/effect/spawner/random/machinery/motorbike
-	name = "random motorcycle spawner"
+	name = "随机摩托车生成器"
 	icon_state = "random_motorbike"
 	loot = list(
 		/obj/vehicle/ridden/motorbike,

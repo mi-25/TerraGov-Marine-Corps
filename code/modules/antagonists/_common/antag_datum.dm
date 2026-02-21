@@ -217,5 +217,5 @@ GLOBAL_LIST_EMPTY(antagonists)
 			. += A.owner
 
 /datum/action/objectives
-	name = "Generic Objective Button"
+	name = "通用目标按钮"
 	action_icon_state = "62"

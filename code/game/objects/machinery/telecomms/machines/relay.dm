@@ -6,9 +6,9 @@
 	with a HUB, the only other machine that can send/receive pass Z levels.
 */
 /obj/machinery/telecomms/relay
-	name = "telecommunication relay"
+	name = "电信中继站"
 	icon_state = "relay"
-	desc = "A mighty piece of hardware used to send massive amounts of data far away."
+	desc = "一款强大的硬件设备，用于远距离传输海量数据。"
 	telecomms_type = /obj/machinery/telecomms/relay
 	density = TRUE
 	use_power = IDLE_POWER_USE

@@ -5,7 +5,7 @@
 */
 
 /datum/ammo/mortar
-	name = "80mm shell"
+	name = "80毫米炮弹"
 	icon_state = "mortar"
 	ammo_behavior_flags = AMMO_TARGET_TURF|AMMO_PASS_THROUGH_TURF|AMMO_PASS_THROUGH_MOVABLE
 	shell_speed = 0.75
@@ -47,7 +47,7 @@
 	playsound(T, 'sound/weapons/guns/fire/flare.ogg', 50, 1, 4)
 
 /datum/ammo/mortar/howi
-	name = "150mm shell"
+	name = "150毫米炮弹"
 	icon_state = "howi"
 
 /datum/ammo/mortar/howi/drop_nade(turf/T)
@@ -59,7 +59,7 @@
 	playsound(T, 'sound/weapons/guns/fire/flamethrower2.ogg', 35, 1, 4)
 
 /datum/ammo/mortar/smoke/howi
-	name = "150mm shell"
+	name = "150毫米炮弹"
 	icon_state = "howi"
 
 /datum/ammo/mortar/smoke/howi/wp
@@ -85,7 +85,7 @@
 	smoke.start()
 
 /datum/ammo/mortar/rocket
-	name = "rocket"
+	name = "火箭弹"
 	icon_state = "rocket"
 	shell_speed = 1.5
 

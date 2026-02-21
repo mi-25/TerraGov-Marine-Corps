@@ -6,8 +6,8 @@ GLOBAL_DATUM(orbital_cannon, /obj/structure/orbital_cannon)
 GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 
 /obj/structure/orbital_cannon
-	name = "\improper Orbital Cannon"
-	desc = "The TGMC Orbital Cannon System. Used for shooting large targets on the planet that is orbited. It accelerates its payload with solid fuel for devastating results upon impact."
+	name = "\improper 轨道炮"
+	desc = "地球政府殖民地海军陆战队轨道炮系统。用于轰击所环绕行星上的大型目标。它使用固体燃料加速弹头，撞击时产生毁灭性效果。"
 	icon = 'icons/obj/machines/artillery.dmi'
 	icon_state = "OBC_unloaded"
 	density = TRUE
@@ -65,15 +65,15 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 
 	if(!tray.warhead)
 		if(user)
-			to_chat(user, span_warning("No warhead in the tray, loading operation cancelled."))
+			to_chat(user, span_warning("弹头托盘内无弹头，装填操作已取消。"))
 		return
 
 	if(tray.fuel_amt < 1)
-		to_chat(user, span_warning("No solid fuel in the tray, loading operation cancelled."))
+		to_chat(user, span_warning("托盘内无固体燃料，装填操作已取消。"))
 		return
 
 	if(loaded_tray)
-		to_chat(user, span_warning("The tray is already loaded."))
+		to_chat(user, span_warning("托盘已装填完毕。"))
 		return
 
 	tray.forceMove(src)
@@ -102,11 +102,11 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 		return
 
 	if(chambered_tray)
-		to_chat(user, span_warning("The tray cannot be unloaded after its chambered, fire the gun first."))
+		to_chat(user, span_warning("弹匣装填后无法卸下，请先开火。"))
 		return
 
 	if(!loaded_tray)
-		to_chat(user, span_warning("The tray is not loaded."))
+		to_chat(user, span_warning("托盘未装填。"))
 		return
 
 	flick("OBC_unloading",src)
@@ -134,7 +134,7 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 	set waitfor = 0
 
 	if(!loaded_tray)
-		to_chat(user, span_warning("You need to load the tray before chambering it."))
+		to_chat(user, span_warning("你需要先装填弹匣，然后才能上膛。"))
 		return
 
 	if(ob_cannon_busy)
@@ -146,12 +146,12 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 		return
 	if(!tray.warhead)
 		if(user)
-			to_chat(user, span_warning("No warhead in the tray, cancelling chambering operation."))
+			to_chat(user, span_warning("弹头托盘内无弹头，取消装填操作。"))
 		return
 
 	if(tray.fuel_amt < 1)
 		if(user)
-			to_chat(user, span_warning("No solid fuel in the tray, cancelling chambering operation."))
+			to_chat(user, span_warning("托盘内无固体燃料，取消装填操作。"))
 		return
 
 	flick("OBC_chambering",src)
@@ -179,7 +179,7 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 			if(get_dist(src, current_mob) > 20)
 				current_mob.playsound_local(current_mob, 'sound/effects/obalarm.ogg', 25)
 			shake_camera(current_mob, 0.7 SECONDS)
-			to_chat(current_mob, span_warning("The deck of the [SSmapping.configs[SHIP_MAP].map_name] shudders as her orbital cannon opens fire."))
+			to_chat(current_mob, span_warning("[SSmapping.configs[SHIP_MAP].map_name]的甲板随着其轨道炮开火而震颤。"))
 			continue
 		if(current_mob.z != target.z)
 			continue
@@ -246,8 +246,8 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 	update_icon()
 
 /obj/structure/orbital_tray
-	name = "loading tray"
-	desc = "The orbital cannon's loading tray."
+	name = "装填托盘"
+	desc = "轨道炮的装填托盘。"
 	icon = 'icons/obj/structures/prop/mainship_64.dmi'
 	icon_state = "cannon_tray"
 	density = TRUE
@@ -287,21 +287,21 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 
 		if(OA.is_solid_fuel)
 			if(fuel_amt >= 6)
-				to_chat(user, span_warning("[src] can't accept more solid fuel."))
+				to_chat(user, span_warning("[src]无法容纳更多固体燃料。"))
 				return
 
 			if(!warhead)
-				to_chat(user, span_warning("A warhead must be placed in [src] first."))
+				to_chat(user, span_warning("必须先在[src]中放置弹头。"))
 				return
 			fuel_amt++
 			qdel(OA)
 		else
 			if(warhead)
-				to_chat(user, span_warning("[src] already has a warhead."))
+				to_chat(user, span_warning("[src] 已装有弹头。"))
 				return
 			warhead = OA
 
-		to_chat(user, span_notice("You load [OA] into [src]."))
+		to_chat(user, span_notice("你将[OA]装填进[src]。"))
 		playsound(src, 'sound/machines/hydraulics_1.ogg', 40, 1)
 
 		if(!QDELETED(OA))
@@ -323,12 +323,12 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 
 	attached_clamp.update_icon()
 	playsound(loc, 'sound/machines/hydraulics_2.ogg', 40, 1)
-	to_chat(user, span_notice("You grab [attached_clamp.loaded] with [attached_clamp]."))
+	to_chat(user, span_notice("你用[attached_clamp]抓住了[attached_clamp.loaded]。"))
 	update_icon()
 
 
 /obj/structure/ob_ammo
-	name = "theoretical ob ammo"
+	name = "理论OB弹药"
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
@@ -349,7 +349,7 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 
 
 /obj/structure/ob_ammo/warhead
-	name = "theoretical orbital ammo"
+	name = "理论轨道弹药"
 	var/warhead_kind
 
 ///Explode the warhead
@@ -357,7 +357,7 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 	return
 
 /obj/structure/ob_ammo/warhead/explosive
-	name = "\improper HE orbital warhead"
+	name = "\improper 高爆轨道弹头"
 	warhead_kind = "explosive"
 	icon_state = "ob_warhead_1"
 
@@ -368,7 +368,7 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 
 
 /obj/structure/ob_ammo/warhead/incendiary
-	name = "\improper Incendiary orbital warhead"
+	name = "\improper 燃烧型轨道弹头"
 	warhead_kind = "incendiary"
 	icon_state = "ob_warhead_2"
 
@@ -382,7 +382,7 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 	warcrime.start()
 
 /obj/structure/ob_ammo/warhead/cluster
-	name = "\improper Cluster orbital warhead"
+	name = "\improper 集束轨道弹头"
 	warhead_kind = "cluster"
 	icon_state = "ob_warhead_3"
 
@@ -398,7 +398,7 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 		sleep(0.1 SECONDS)
 
 /obj/structure/ob_ammo/warhead/plasmaloss
-	name = "\improper Plasma draining orbital warhead"
+	name = "\improper 等离子体汲取轨道弹头"
 	warhead_kind = "plasma"
 	icon_state = "ob_warhead_4"
 
@@ -410,7 +410,7 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 	smoke.start()
 
 /obj/structure/ob_ammo/ob_fuel
-	name = "solid fuel"
+	name = "固体燃料"
 	icon_state = "ob_fuel"
 	is_solid_fuel = TRUE
 
@@ -424,8 +424,8 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 
 
 /obj/machinery/computer/orbital_cannon_console
-	name = "\improper Orbital Cannon Console"
-	desc = "The console controlling the orbital cannon loading systems."
+	name = "\improper 轨道炮控制台"
+	desc = "控制轨道炮装填系统的控制台。"
 	icon_state = "ob_console"
 	screen_overlay = "ob_console_screen"
 	dir = WEST
@@ -455,7 +455,7 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 		return
 
 	if(!isobserver(user) && user.skills.getRating(SKILL_ENGINEER) < SKILL_ENGINEER_ENGI)
-		user.visible_message(span_notice("[user] fumbles around figuring out how to use the console."),
+		user.visible_message(span_notice("[user] 笨手笨脚地摸索着控制台的使用方法。"),
 		span_notice("You fumble around figuring out how to use the console."))
 		var/fumbling_time = 5 SECONDS * ( SKILL_ENGINEER_ENGI - user.skills.getRating(SKILL_ENGINEER) )
 		if(!do_after(user, fumbling_time, NONE, src, BUSY_ICON_UNSKILLED))
@@ -522,8 +522,8 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 
 
 /obj/structure/ship_rail_gun
-	name = "\improper Rail Gun"
-	desc = "A powerful ship-to-ship weapon sometimes used for ground support at reduced efficiency."
+	name = "\improper 导轨枪"
+	desc = "一种强大的舰对舰武器，有时用于地面支援，但效率会降低。"
 	icon = 'icons/obj/machines/artillery.dmi'
 	icon_state = "Railgun"
 	density = TRUE
@@ -557,7 +557,7 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 	if(cannon_busy && !ignore_cooldown)
 		return
 	if(!rail_gun_ammo?.ammo_count)
-		to_chat(user, span_warning("[src] has ran out of ammo."))
+		to_chat(user, span_warning("[src] 的弹药已耗尽。"))
 		return
 	flick("Railgun_firing",src)
 	cannon_busy = TRUE
@@ -569,7 +569,7 @@ GLOBAL_DATUM(rail_gun, /obj/structure/ship_rail_gun)
 	playsound(loc, 'sound/weapons/guns/fire/pred_plasma_shot.ogg', 70, 1)
 	var/turf/target = locate(T.x + rand(-4, 4), T.y + rand(-4, 4), T.z)
 	for(var/mob/living/silicon/ai/AI AS in GLOB.ai_list)
-		to_chat(AI, span_notice("NOTICE - \The [src] has fired."))
+		to_chat(AI, span_notice("注意 - \The [src] 已开火。"))
 	rail_gun_ammo.ammo_count = max(0, rail_gun_ammo.ammo_count - rail_gun_ammo.ammo_used_per_firing)
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/structure/ship_rail_gun, impact_rail_gun), target), 1 SECONDS + (RG_FLY_TIME * (GLOB.current_orbit/3)))
 

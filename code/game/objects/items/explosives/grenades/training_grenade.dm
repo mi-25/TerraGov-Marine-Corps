@@ -1,6 +1,6 @@
 /obj/item/explosive/grenade/training
-	name = "M07 training grenade"
-	desc = "A harmless reusable version of the M40 HEDP, used for training. Capable of being loaded in the any grenade launcher, or thrown by hand."
+	name = "M07训练手雷"
+	desc = "M40 HEDP的无害可重复使用训练版本。可装入任何榴弹发射器，或用手投掷。"
 	icon_state = "training_grenade"
 	worn_icon_state = "training_grenade"
 	hud_state = "grenade_dummy"

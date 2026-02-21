@@ -14,7 +14,7 @@
 		holder = target
 	holder_item = holder
 	if(!name)
-		name = "Use [target]"
+		name = "使用 [target]"
 	button.name = name
 
 /datum/action/ability/activable/item_toggle/Destroy()

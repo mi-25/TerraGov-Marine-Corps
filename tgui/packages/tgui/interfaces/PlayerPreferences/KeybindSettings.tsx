@@ -182,7 +182,7 @@ const KeybindingPreference = (props) => {
   const { act, data } = useBackend<KeybindPreferenceData>();
   const { key_bindings } = data;
   const { keybind } = props;
-  const current = key_bindings[keybind.name];
+  const current = key_bindings?.[keybind.name];
   return (
     <LabeledList.Item label={keybind.display_name}>
       {current &&
@@ -242,14 +242,14 @@ const CustomSentence = (props) => {
   const { act, data } = useBackend<KeybindPreferenceData>();
   const { key_bindings, custom_emotes } = data;
   const { keybind, setCaptureSentence } = props;
-  const current = key_bindings[keybind.name];
-  const currentSentence = custom_emotes[keybind.name];
+  const current = key_bindings?.[keybind.name];
+  const currentSentence = custom_emotes?.[keybind.name];
   return (
     <LabeledList.Item label={keybind.display_name}>
       <Button.Checkbox
         inline
         content="Say"
-        checked={currentSentence.emote_type === 'say'}
+        checked={currentSentence?.emote_type === 'say'}
         onClick={() =>
           act('setEmoteType', { emote_type: 'say', name: keybind.name })
         }
@@ -257,7 +257,7 @@ const CustomSentence = (props) => {
       <Button.Checkbox
         inline
         content="Me"
-        checked={currentSentence.emote_type === 'me'}
+        checked={currentSentence?.emote_type === 'me'}
         onClick={() =>
           act('setEmoteType', { emote_type: 'me', name: keybind.name })
         }

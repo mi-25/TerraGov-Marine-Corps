@@ -1,6 +1,6 @@
 /obj/item/implantpad
-	name = "implantpad"
-	desc = "Used to modify implants."
+	name = "植入体平板"
+	desc = "用于改造植入体。"
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "implantpad-0"
 	worn_icon_list = list(

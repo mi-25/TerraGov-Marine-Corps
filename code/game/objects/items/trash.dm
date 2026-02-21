@@ -3,105 +3,105 @@
 /obj/item/trash
 	icon = 'icons/obj/items/trash.dmi'
 	w_class = WEIGHT_CLASS_SMALL
-	desc = "This is rubbish."
+	desc = "这简直是垃圾。"
 
 /obj/item/trash/raisins
 	name = "4no raisins"
 	icon_state= "4no_raisins"
 
 /obj/item/trash/pillpacket
-	name = "crumpled pill packet"
-	desc = "After healing a lot of damage, the empty packet is laid to rest"
+	name = "压皱的药片包装"
+	desc = "治疗了大量伤害后，空置的医疗包被放置妥当"
 	icon = 'icons/obj/items/trash.dmi'
 	icon_state = "pillpacketempty"
 
 /obj/item/trash/candy
-	name = "Candy"
+	name = "糖果"
 	icon_state= "candy"
 
 /obj/item/trash/cheesie
-	name = "Cheesie honkers"
+	name = "芝士味喇叭"
 	icon_state = "cheesie_honkers"
 
 /obj/item/trash/chips
-	name = "Chips"
+	name = "芯片"
 	icon_state = "chips"
 
 /obj/item/trash/popcorn
-	name = "Popcorn"
+	name = "爆米花"
 	icon_state = "popcorn"
 
 /obj/item/trash/sosjerky
-	name = "Scaredy's Private Reserve Beef Jerky"
+	name = "Scaredy's 私人珍藏牛肉干"
 	icon_state = "sosjerky"
 
 /obj/item/trash/syndi_cakes
-	name = "Syndi cakes"
+	name = "辛迪蛋糕"
 	icon_state = "syndi_cakes"
 
 /obj/item/trash/waffles
-	name = "Waffles"
+	name = "华夫饼"
 	icon_state = "waffles"
 
 /obj/item/trash/plate
-	name = "Plate"
+	name = "护甲板"
 	icon_state = "plate"
 
 /obj/item/trash/snack_bowl
-	name = "Snack bowl"
+	name = "零食碗"
 	icon_state = "snack_bowl"
 
 /obj/item/trash/pistachios
-	name = "Pistachios pack"
+	name = "开心果包"
 	icon_state = "pistachios_pack"
 
 /obj/item/trash/semki
-	name = "Semki pack"
+	name = "塞姆基背包"
 	icon_state = "semki_pack"
 
 /obj/item/trash/tray
-	name = "Tray"
+	name = "托盘"
 	icon_state = "tray"
 
 /obj/item/trash/candle
-	name = "candle"
+	name = "蜡烛"
 	icon = 'icons/obj/items/candle.dmi'
 	icon_state = "candle4"
 
 /obj/item/trash/can
-	name = "crushed can"
+	name = "压扁的罐子"
 	icon_state = "cola"
 	resistance_flags = NONE
 
 /obj/item/trash/liquidfood
-	name = "\improper \"LiquidFood\" ration"
+	name = "\improper 流食口粮"
 	icon_state = "liquidfood"
 
 /obj/item/trash/burger
-	name = "Burger wrapper"
+	name = "汉堡包装纸"
 	icon_state = "burger"
-	desc = "A greasy plastic film that once held a Cheeseburger. Packaged by the Nanotrasen Corporation."
+	desc = "一层曾经装着芝士汉堡的油腻塑料薄膜。由纳米传讯公司包装。"
 
 /obj/item/trash/buritto
-	name = "Burrito wrapper"
+	name = "卷饼包装纸"
 	icon_state = "burrito"
-	desc = "A foul smelling plastic film that once held a microwave burrito. Packaged by the Nanotrasen Corporation."
+	desc = "一股恶臭的塑料薄膜，曾经装着微波炉玉米煎饼。由纳米传讯公司包装。"
 
 /obj/item/trash/hotdog
-	name = "Hotdog wrapper"
+	name = "热狗包装纸"
 	icon_state = "hotdog"
-	desc = "A musty plastic film that once held a hotdog. Packaged by the Nanotrasen Corporation."
+	desc = "曾用来包装热狗的陈旧塑料薄膜。由纳米传讯公司包装。"
 
 /obj/item/trash/kepler
-	name = "Kepler wrapper"
+	name = "开普勒封装器"
 	icon_state = "kepler"
 
 /obj/item/trash/eat
-	name = "EAT bar wrapper"
+	name = "EAT能量棒包装纸"
 	icon_state = "eat"
 
 /obj/item/trash/fortunecookie
-	name = "Fortune cookie fortune"
+	name = "幸运饼干签语"
 	icon_state = "fortune" //Thank you Alterist
 
 /obj/item/trash/fortunecookie/Initialize(mapload, ...)
@@ -109,8 +109,8 @@
 	desc = "The fortune reads. <br>[span_tip("[pick(SSstrings.get_list_from_file("tips/marine"))]")]"
 
 /obj/item/trash/c_tube
-	name = "cardboard tube"
-	desc = "A tube... of cardboard."
+	name = "纸板管"
+	desc = "一个纸板……做的管子。"
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "c_tube"
 	throwforce = 1
@@ -119,8 +119,8 @@
 
 
 /obj/item/trash/cigbutt
-	name = "cigarette butt"
-	desc = "A manky old cigarette butt."
+	name = "烟蒂"
+	desc = "一根脏兮兮的旧烟蒂。"
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "cigbutt"
 	w_class = WEIGHT_CLASS_TINY
@@ -133,82 +133,82 @@
 	transform = turn(transform,rand(0,360))
 
 /obj/item/trash/cigbutt/cigarbutt
-	name = "cigar butt"
-	desc = "A manky old cigar butt."
+	name = "烟蒂"
+	desc = "一根发霉的旧雪茄烟蒂。"
 	icon_state = "cigarbutt"
 
 
 /obj/item/trash/tgmc_tray
-	name = "\improper TGMC tray"
-	desc = "Finished with its tour of duty"
+	name = "\improper 地球政府殖民地海军陆战队托盘"
+	desc = "已完成服役期"
 	icon_state = "MREtray"
 
 /obj/item/trash/boonie
-	name = "boonie bar wrapper"
-	desc = "A minty green wrapper. Reminds you of another terrible decision involving minty green, but you can't remember what..."
+	name = "奔尼帽包布"
+	desc = "一个薄荷绿色的包装纸。让你想起了另一个涉及薄荷绿色的糟糕决定，但你想不起来具体是什么了……"
 	icon_state = "boonie_trash"
 
 /obj/item/trash/chunk
-	name = "chunk bar box"
-	desc = "An empty box from a chunk bar. Significantly less heavy."
+	name = "区块条框"
+	desc = "一块能量棒的空包装盒。重量明显减轻。"
 	icon_state = "chunk_trash"
 
 /obj/item/trash/barcaridine
-	name = "barcaridine bar wrapper"
-	desc = "An empty wrapper from a barcaridine bar. You notice the inside has several medical labels. You're not sure if you care or not about that."
+	name = "巴卡拉丁棒包装纸"
+	desc = "一个巴卡拉丁能量棒的空包装纸。你注意到内层有几个医疗标签。你不太确定自己是否在意这个。"
 	icon_state = "barcardine_trash"
 
 /obj/item/trash/berrybar
-	name = "berry bar wrapper"
-	desc = "An empty wrapper from a berry bar. You notice the inside has several medical labels and ingredients but You're not sure if you care or not about that."
+	name = "浆果能量棒包装纸"
+	desc = "一个浆果能量棒的空包装纸。你注意到内包装上有几个医疗标签和成分说明，但你不确定自己是否在意这些。"
 	icon_state = "berrybar_trash"
 
 /obj/item/trash/mre
-	name = "\improper crumbled TGMC MRE"
-	desc = "It has done its part for the TGMC. Have you?"
+	name = "\improper 压碎的TGMC单兵即食口粮"
+	desc = "它已为地球政府殖民地海军陆战队尽了自己的职责。你呢？"
 	icon = 'icons/obj/items/trash.dmi'
 	icon_state = "mealpackempty"
 
 /obj/item/trash/mre/som
-	name = "\improper crumbled SOM MFR"
-	desc = "It has done its part for the SOM. Have you?"
+	name = "\improper 碎裂的火星之子MFR"
+	desc = "它已为火星之子尽了自己的职责。你呢？"
 	icon_state = "som_mealpackempty"
 
 /obj/item/trash/nt_chips
-	name = "\improper Nanotrasen Pepper Chips"
+	name = "\improper 纳米传讯胡椒薯片"
 	icon_state = "nt_chips_pepper"
-	desc = "An oily empty bag that once held Nanotrasen Chips."
+	desc = "一个油腻的空袋子，曾经装着纳米传讯薯片。"
 
 /obj/item/trash/nt_chips/pepper
-	name = "\improper Nanotrasen Pepper Chips"
+	name = "\improper 纳米传讯胡椒薯片"
 	icon_state = "nt_chips_pepper"
-	desc = "An oily empty bag that once held Nanotrasen Pepper Chips."
+	desc = "一个油腻的空袋子，曾经装着纳米传讯胡椒薯片。"
 
 /obj/item/trash/crushed_cup
-	name = "crushed cup"
-	desc = "A sad crushed and destroyed cup. It's now useless trash. What a waste."
+	name = "压碎的杯子"
+	desc = "一个被压扁毁坏的杯子。现在它只是无用的垃圾。真是浪费。"
 	icon_state = "crushed_solocup"
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("bludgeons", "whacks", "slaps")
 
 /obj/item/trash/trashbag
-	name = "trash bag"
-	desc = "It's the heavy-duty black polymer kind. Time to take out the trash!"
+	name = "垃圾袋"
+	desc = "这是重型黑色聚合物材质。是时候清理垃圾了！"
 	icon_state = "ztrashbag"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 1
 
 /obj/item/trash/crushed_wbottle
-	name = "crushed waterbottle"
-	desc = "Overpriced 'Spring' water. Bottled by the Nanotrasen Corporation."
+	name = "压扁的水瓶"
+	desc = "纳米传讯公司灌装的'春泉'牌高价水。"
 	icon_state = "waterbottle_crushed"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 1
 
 /obj/item/trash/crushed_bottle
-	name = "crushed bottle"
-	desc = "A crushed bottle, it's hard to see the label."
+	name = "压碎的瓶子"
+	desc = "一个被压碎的瓶子，很难看清标签。"
 	icon_state = "blank_can_crushed"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 1
@@ -323,15 +323,15 @@
 
 // Cuppa Joe's Trash
 /obj/item/trash/cuppa_joes/lid
-	name = "Cuppa Joe's coffee cup lid"
-	desc = "Have you got the CuppaJoe Smile? Stay perky! Freeze-dried CuppaJoe's Coffee."
+	name = "乔咖啡杯盖"
+	desc = "你有CuppaJoe的微笑吗？保持活力！冻干CuppaJoe咖啡。"
 	icon_state = "coffeecuppajoelid"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 1
 
 /obj/item/trash/cuppa_joes/empty_cup
-	name = "Empty Cuppa Joe's coffee cup"
-	desc = "Have you got the CuppaJoe Smile? Stay perky! Freeze-dried CuppaJoe's Coffee."
+	name = "清空乔咖啡杯"
+	desc = "你拥有CuppaJoe的微笑吗？保持活力！冻干CuppaJoe咖啡。"
 	icon_state = "coffeecuppajoenolid"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 1
@@ -343,29 +343,29 @@
 
 // Cuppa Joes no random axis
 /obj/item/trash/cuppa_joes_static/lid
-	name = "Cuppa Joe's coffee cup lid"
-	desc = "Have you got the CuppaJoe Smile? Stay perky! Freeze-dried CuppaJoe's Coffee."
+	name = "乔咖啡杯盖"
+	desc = "你有CuppaJoe的微笑吗？保持活力！冻干CuppaJoe咖啡。"
 	icon_state = "coffeecuppajoelid"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 1
 
 /obj/item/trash/cuppa_joes_static/empty_cup
-	name = "Empty Cuppa Joe's coffee cup"
-	desc = "Have you got the CuppaJoe Smile? Stay perky! Freeze-dried CuppaJoe's Coffee."
+	name = "清空乔的咖啡杯"
+	desc = "你拥有CuppaJoe的微笑吗？保持活力！冻干CuppaJoe咖啡。"
 	icon_state = "coffeecuppajoenolid"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 1
 
 /obj/item/trash/cuppa_joes_static/empty_cup_stack
-	name = "Empty Cuppa Joe's coffee cup stack"
-	desc = "Have you got the CuppaJoe Smile? Stay perky! Freeze-dried CuppaJoe's Coffee."
+	name = "空杯乔咖啡杯堆"
+	desc = "你有CuppaJoe的微笑吗？保持活力！冻干CuppaJoe咖啡。"
 	icon_state = "coffeecuppajoestacknolid"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 1
 
 /obj/item/trash/cuppa_joes_static/lid_stack
-	name = "Cuppa Joe's coffee cup lid stack"
-	desc = "Have you got the CuppaJoe Smile? Stay perky! Freeze-dried CuppaJoe's Coffee."
+	name = "乔氏咖啡杯盖叠"
+	desc = "你有CuppaJoe微笑吗？保持活力！冻干CuppaJoe咖啡。"
 	icon_state = "coffeecuppajoelidstack"
 	w_class = WEIGHT_CLASS_TINY
 	throwforce = 1

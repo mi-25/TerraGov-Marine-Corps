@@ -1,7 +1,7 @@
 //LV ground
 
 /turf/open/ground //Basic groundmap turf parent
-	name = "ground dirt"
+	name = "地面泥土"
 	icon = 'icons/turf/ground_map.dmi'
 	icon_state = "desert"
 	///Number of icon state variation this turf has
@@ -33,7 +33,7 @@
 	icon_state = "grassbeach_corner2"
 
 /turf/open/ground/coast
-	name = "coastline"
+	name = "海岸线"
 	icon_state = "beach"
 	shoefootstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
@@ -55,8 +55,8 @@
 	allow_construction = FALSE
 	var/vines_spawn = TRUE
 	var/plants_spawn = FALSE
-	name = "wet grass"
-	desc = "Thick, long wet grass"
+	name = "湿草地"
+	desc = "茂密、修长、湿润的草地"
 	icon = 'icons/turf/jungle.dmi'
 	icon_state = "grass1"
 	var/icon_spawn_state = "grass1"
@@ -94,7 +94,7 @@
 	if(probability <= 0)
 		return
 
-	//to_chat(world, span_notice("Spread([probability])"))
+	//to_chat(world, span_notice("散布([probability])"))
 	for(var/turf/open/ground/jungle/J in orange(1, src))
 		if(!J.vines_spawn)
 			continue
@@ -117,8 +117,8 @@
 
 /turf/open/ground/jungle/path
 	vines_spawn = FALSE
-	name = "dirt"
-	desc = "it is very dirty."
+	name = "泥土"
+	desc = "它非常脏。"
 	icon = 'icons/turf/jungle.dmi'
 	icon_state = "grass_path"
 	icon_spawn_state = "dirt"
@@ -133,7 +133,7 @@
 
 //ELEVATOR SHAFT-----------------------------------//
 /turf/open/ground/empty
-	name = "empty space"
+	name = "空位"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "black"
 	density = TRUE

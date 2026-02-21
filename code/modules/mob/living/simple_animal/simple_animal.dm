@@ -1,5 +1,5 @@
 /mob/living/simple_animal
-	name = "animal"
+	name = "动物"
 	icon = 'icons/mob/animal.dmi'
 	health = 20
 	maxHealth = 20
@@ -176,7 +176,7 @@
 		if(INTENT_HELP)
 			if(health <= 0)
 				return FALSE
-			visible_message(span_notice("[user] [response_help] [src]."))
+			visible_message(span_notice("[user] [response_help] [src]。"))
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 		if(INTENT_GRAB)
@@ -185,7 +185,7 @@
 		if(INTENT_HARM, INTENT_DISARM)
 			user.do_attack_animation(src)
 			user.do_attack_animation(src, ATTACK_EFFECT_KICK)
-			visible_message(span_danger("[user] [response_harm] [src]!"),
+			visible_message(span_danger("[user] [response_harm] [src]！"),
 			span_userdanger("[user] [response_harm] [src]!"))
 			playsound(loc, attacked_sound, 25, 1, -1)
 			attack_threshold_check(harm_intent_damage)
@@ -200,12 +200,12 @@
 		return
 	if(xeno_attacker.a_intent == INTENT_DISARM)
 		playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
-		visible_message(span_danger("[xeno_attacker] [response_disarm] [name]!"), \
+		visible_message(span_danger("[xeno_attacker] [response_disarm] [name]！"), \
 				span_userdanger("[xeno_attacker] [response_disarm] [name]!"))
 		log_combat(xeno_attacker, src, "disarmed")
 	else
 		var/damage = rand(15, 30)
-		visible_message(span_danger("[xeno_attacker] has slashed at [src]!"), \
+		visible_message(span_danger("[xeno_attacker] 对 [src] 发动了斩击！"), \
 				span_userdanger("[xeno_attacker] has slashed at [src]!"))
 		playsound(loc, 'sound/weapons/slice.ogg', 25, 1, -1)
 		attack_threshold_check(damage)
@@ -253,7 +253,7 @@
 		temp_damage *= damage_coeff[damagetype]
 
 	if(temp_damage >= 0 && temp_damage <= force_threshold)
-		visible_message(span_warning("[src] looks unharmed."))
+		visible_message(span_warning("[src]看起来毫发无伤。"))
 		return FALSE
 	else
 		apply_damage(damage, damagetype, blocked = armorcheck)

@@ -5,8 +5,8 @@
 #define TESLA_TURRET_COST_ACTIVE 100
 
 /obj/item/tesla_turret
-	name = "tesla turret"
-	desc = "A turret that drains plasma of nearby xenomorphs."
+	name = "特斯拉炮塔"
+	desc = "一座能吸取附近异形等离子体的炮塔。"
 	icon = 'icons/obj/machines/deployable/sentry/tesla.dmi'
 	icon_state = "tesla_coil_handheld"
 	max_integrity = 200
@@ -52,10 +52,10 @@
 	if(!in_range(src, user))
 		return
 	if(!battery)
-		balloon_alert(user, "no battery!")
+		balloon_alert(user, "没有电池！")
 		return
 	user.put_in_hands(battery)
-	balloon_alert(user, "removed battery")
+	balloon_alert(user, "已移除电池")
 	battery = null
 
 /obj/item/tesla_turret/attack_hand_alternate(mob/living/user)
@@ -63,10 +63,10 @@
 	if(!in_range(src, user))
 		return
 	if(!battery)
-		balloon_alert(user, "no battery!")
+		balloon_alert(user, "没有电池！")
 		return
 	user.put_in_hands(battery)
-	balloon_alert(user, "removed battery")
+	balloon_alert(user, "已移除电池")
 	battery = null
 
 /obj/item/tesla_turret/attackby(obj/item/cell/inserting_item, mob/user, params)
@@ -74,10 +74,10 @@
 	if(!istype(inserting_item))
 		return
 	if(istype(inserting_item, /obj/item/cell/lasgun))
-		balloon_alert(user, "won't fit!")
+		balloon_alert(user, "装不下！")
 		return
 	if(battery)
-		balloon_alert(user, "already has one!")
+		balloon_alert(user, "已经有一个了！")
 		return
 	if(!user.temporarilyRemoveItemFromInventory(inserting_item))
 		return
@@ -147,10 +147,10 @@
 	if(!istype(inserting_item))
 		return
 	if(istype(inserting_item, /obj/item/cell/lasgun))
-		balloon_alert(user, "won't fit!")
+		balloon_alert(user, "装不下！")
 		return
 	if(battery)
-		balloon_alert(user, "already has one!")
+		balloon_alert(user, "已经有一个了！")
 		return
 	if(!user.temporarilyRemoveItemFromInventory(inserting_item))
 		return
@@ -165,14 +165,14 @@
 	if(!in_range(src, user))
 		return
 	if(!battery)
-		balloon_alert(user, "no battery!")
+		balloon_alert(user, "没有电池！")
 		return
 	if(active)
-		balloon_alert(user, "turn it off first!")
+		balloon_alert(user, "先把它关掉！")
 		return
 	user.put_in_hands(battery)
 	battery = null
-	balloon_alert(user, "removed battery")
+	balloon_alert(user, "已移除电池")
 	update_appearance(UPDATE_ICON)
 
 /obj/machinery/deployable/tesla_turret/interact(mob/user)
@@ -180,10 +180,10 @@
 	if(isdead(user))
 		return
 	if(!battery)
-		balloon_alert(user, "no battery!")
+		balloon_alert(user, "没有电池！")
 		return
 	if(!battery.use(0))
-		balloon_alert(user, "no power!")
+		balloon_alert(user, "没电了！")
 		return
 	toggle(!active)
 
@@ -192,21 +192,21 @@
 		active = TRUE
 		START_PROCESSING(SSobj, src)
 		if(!silent)
-			balloon_alert_to_viewers("turned on")
+			balloon_alert_to_viewers("已开启")
 	else
 		active = FALSE
 		STOP_PROCESSING(SSobj, src)
 		if(!silent)
-			balloon_alert_to_viewers("turned off")
+			balloon_alert_to_viewers("已关闭")
 	update_appearance(UPDATE_OVERLAYS)
 
 /obj/machinery/deployable/tesla_turret/process()
 	if(!battery || !active || !battery.use(0))
-		balloon_alert_to_viewers("shuts off")
+		balloon_alert_to_viewers("关闭")
 		toggle(FALSE, TRUE)
 		return
 	if(!battery.use(passive_cost))
-		balloon_alert_to_viewers("shuts off")
+		balloon_alert_to_viewers("关闭")
 		toggle(FALSE, TRUE)
 		hud_set_tesla_battery()
 		return
@@ -226,9 +226,9 @@
 /obj/machinery/deployable/tesla_turret/disassemble(mob/marine)
 	if(active)
 		if(shock(marine, 70))
-			to_chat(marine, span_userdanger("You're shocked by \the [src]!"))
+			to_chat(marine, span_userdanger("你被\the [src]电击了！"))
 		else
-			balloon_alert(marine, "turn it off first!")
+			balloon_alert(marine, "先把它关掉！")
 		return
 	return ..()
 

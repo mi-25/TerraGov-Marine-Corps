@@ -1,8 +1,8 @@
 // the power monitoring computer
 // for the moment, just report the status of all APCs in the same powernet
 /obj/machinery/power/monitor
-	name = "power monitoring computer"
-	desc = "It monitors power levels across the station."
+	name = "电力监控计算机"
+	desc = "它监控着全站的电力水平。"
 	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	//computer stuff
@@ -19,10 +19,10 @@
 	var/screen_overlay = "power"
 
 /obj/machinery/power/monitor/core
-	name = "Core Power Monitoring"
+	name = "核心电力监控"
 
 /obj/machinery/power/monitor/grid
-	name = "Main Power Grid Monitoring"
+	name = "主电网监控"
 
 /obj/machinery/power/monitor/Initialize(mapload)
 	. = ..()
@@ -121,12 +121,12 @@
 		for(var/obj/C in src)
 			C.forceMove(loc)
 		if(machine_stat & BROKEN)
-			to_chat(user, span_notice("The broken glass falls out."))
+			to_chat(user, span_notice("碎玻璃掉落出来。"))
 			new /obj/item/shard(loc)
 			A.state = 3
 			A.icon_state = "3"
 		else
-			to_chat(user, span_notice("You disconnect the monitor."))
+			to_chat(user, span_notice("你断开了监视器的连接。"))
 			A.state = 4
 			A.icon_state = "4"
 		M.deconstruct(src)

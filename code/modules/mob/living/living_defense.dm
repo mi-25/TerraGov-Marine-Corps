@@ -33,15 +33,15 @@
 	switch(state)
 		if(GRAB_PASSIVE)
 			damage += base_damage
-			grabbed_mob.visible_message(span_warning("[user] slams [grabbed_mob] against [src]!"))
+			grabbed_mob.visible_message(span_warning("[user] 将 [grabbed_mob] 猛撞在 [src] 上！"))
 			log_combat(user, grabbed_mob, "slammed", "", "against [src]")
 		if(GRAB_AGGRESSIVE)
 			damage += base_damage * 1.5
-			grabbed_mob.visible_message(span_danger("[user] bashes [grabbed_mob] against [src]!"))
+			grabbed_mob.visible_message(span_danger("[user] 将 [grabbed_mob] 猛撞在 [src] 上！"))
 			log_combat(user, grabbed_mob, "bashed", "", "against [src]")
 		if(GRAB_NECK)
 			damage += base_damage * 2
-			grabbed_mob.visible_message(span_danger("<big>[user] crushes [grabbed_mob] against [src]!</big>"))
+			grabbed_mob.visible_message(span_danger("<big>[user]将[grabbed_mob]狠狠砸在[src]上！</big>"))
 			log_combat(user, grabbed_mob, "crushed", "", "against [src]")
 	grabbed_mob.apply_damage(damage, blocked = MELEE, updating_health = TRUE, attacker = user)
 	apply_damage(damage, blocked = MELEE, updating_health = TRUE, attacker = user)
@@ -72,7 +72,7 @@
 		O.set_throwing(FALSE)
 		apply_damage(O.throwforce*(speed * 0.2), O.damtype, BODY_ZONE_CHEST, MELEE, is_sharp(O), has_edge(O), TRUE, O.penetration)
 
-	visible_message(span_warning("[src] has been hit by [AM]."), null, null, 5)
+	visible_message(span_warning("[src]被[AM]击中了。"), null, null, 5)
 	if(ismob(AM.thrower))
 		var/mob/M = AM.thrower
 		if(M.client)
@@ -85,7 +85,7 @@
 		if(W.sharp && prob(W.embedding.embed_chance))
 			W.embed_into(src)
 	if(AM.throw_source)
-		visible_message(span_warning("[src] staggers under the impact!"),span_warning("You stagger under the impact!"), null, 5)
+		visible_message(span_warning("[src] 在冲击下踉跄后退！"),span_warning("You stagger under the impact!"), null, 5)
 		src.throw_at(get_edge_target_turf(src, get_dir(AM.throw_source, src)), 1, speed * 0.5)
 
 /mob/living/turf_collision(turf/T, speed)
@@ -120,8 +120,8 @@
 	if(fire_stacks > 0 && !on_fire)
 		on_fire = TRUE
 		RegisterSignal(src, COMSIG_LIVING_DO_RESIST, PROC_REF(resist_fire))
-		to_chat(src, span_danger("You are on fire! Use Resist to put yourself out!"))
-		visible_message(span_danger("[src] bursts into flames!"), isxeno(src) ? span_xenodanger("You burst into flames!") : span_userdanger("You burst into flames!"))
+		to_chat(src, span_danger("你着火了！使用抵抗来扑灭火焰！"))
+		visible_message(span_danger("[src] 突然燃起火焰！"), isxeno(src) ? span_xenodanger("You burst into flames!") : span_userdanger("You burst into flames!"))
 		update_fire()
 		SEND_SIGNAL(src, COMSIG_LIVING_IGNITED, fire_stacks)
 		return TRUE
@@ -212,11 +212,11 @@
 	if(pass_flags & PASS_FIRE)
 		return FALSE
 	if(soft_armor.getRating(FIRE) >= 100)
-		to_chat(src, span_warning("You are untouched by the flames."))
+		to_chat(src, span_warning("火焰未能伤你分毫。"))
 		return FALSE
 
 	take_overall_damage(rand(10, burn_level), BURN, FIRE, updating_health = TRUE, max_limbs = 4)
-	to_chat(src, span_warning("You are burned!"))
+	to_chat(src, span_warning("你被烧伤了！"))
 
 	. = TRUE
 	adjust_fire_stacks(burn_level)
@@ -230,14 +230,14 @@
 	fire_stacks = max(fire_stacks - rand(3, 6), 0)
 	var/turf/T = get_turf(src)
 	if(istype(T, /turf/open/floor/plating/ground/snow))
-		visible_message(span_danger("[src] rolls in the snow, putting themselves out!"), \
+		visible_message(span_danger("[src]在雪地里打滚，扑灭了身上的火！"), \
 		span_notice("You extinguish yourself in the snow!"), null, 5)
 		ExtinguishMob()
 	else
-		visible_message(span_danger("[src] rolls on the floor, trying to put themselves out!"), \
+		visible_message(span_danger("[src]在地上打滚，试图扑灭身上的火焰！"), \
 		span_notice("You stop, drop, and roll!"), null, 5)
 		if(fire_stacks <= 0)
-			visible_message(span_danger("[src] has successfully extinguished themselves!"), \
+			visible_message(span_danger("[src] 成功扑灭了身上的火焰！"), \
 			span_notice("You extinguish yourself."), null, 5)
 			ExtinguishMob()
 	Paralyze(3 SECONDS)
@@ -271,10 +271,10 @@
 		ExtinguishMob()
 	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_BLISTERING))
 		adjustFireLoss(15 * bio_protection)
-		to_chat(src, span_danger("It feels as if you've been dumped into an open fire!"))
+		to_chat(src, span_danger("感觉就像被扔进了火堆里！"))
 	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_XENO_ACID))
 		if(prob(25 * acid_protection))
-			to_chat(src, span_danger("Your skin feels like it is melting away!"))
+			to_chat(src, span_danger("你的皮肤感觉像在融化！"))
 		adjustFireLoss(max(S.strength * rand(20, 23) * acid_protection - acid_hard_protection, 0))
 	if(CHECK_BITFIELD(S.smoke_traits, SMOKE_XENO_TOXIC))
 		if(HAS_TRAIT(src, TRAIT_INTOXICATION_IMMUNE))
@@ -315,7 +315,7 @@
 	add_slowdown(rad_strength * 0.5)
 	blur_eyes(rad_strength) //adds a visual indicator that you've just been irradiated
 	adjust_radiation(rad_strength * 20) //Radiation status effect, duration is in deciseconds
-	to_chat(src, span_warning("Your body tingles as you suddenly feel the strength drain from your body!"))
+	to_chat(src, span_warning("你的身体一阵刺痛，突然感到力量从体内流失！"))
 
 /**
  * A proc triggered by callback when someone gets slammed by the tram and lands somewhere.
@@ -329,13 +329,13 @@
 
 	if(isplatingturf(loc))
 		var/turf/open/floor/smashed_plating = loc
-		visible_message(span_danger("[src] is thrown violently into [smashed_plating], smashing through it and punching straight through!"),
+		visible_message(span_danger("[src]被猛烈地抛入[smashed_plating]，将其砸穿并径直冲了过去！"),
 				span_userdanger("You're thrown violently into [smashed_plating], smashing through it and punching straight through!"))
 		apply_damage(rand(5,20), BRUTE, BODY_ZONE_CHEST)
 		smashed_plating.ScrapeAway(1)
 
 	for(var/obj/structure/lattice/lattice in loc)
-		visible_message(span_danger("[src] is thrown violently into [lattice], smashing through it and punching straight through!"),
+		visible_message(span_danger("[src]被猛烈地抛向[lattice]，将其撞得粉碎并径直穿透！"),
 			span_userdanger("You're thrown violently into [lattice], smashing through it and punching straight through!"))
 		apply_damage(rand(5,10), BRUTE, BODY_ZONE_CHEST)
 		lattice.deconstruct(FALSE)

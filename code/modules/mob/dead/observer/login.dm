@@ -52,7 +52,7 @@
 		mini.give_action(src)
 
 	if(length(GLOB.offered_mob_list))
-		to_chat(src, span_boldnotice("There's mobs available for taking! Ghost > Take Offered Mob"))
+		to_chat(src, span_boldnotice("有可用的角色可接管！幽灵 > 接管提供的角色"))
 
 ///Warn the ghost and send them into their body after a few seconds
 /mob/dead/observer/proc/revived_while_away()

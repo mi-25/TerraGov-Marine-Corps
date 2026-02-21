@@ -5,7 +5,7 @@
 	hive.upgrade_xeno(src, upgrade, newlevel)
 	upgrade = newlevel
 	if(!silent)
-		visible_message(span_xenonotice("\The [src] begins to twist and contort."), \
+		visible_message(span_xenonotice("\The [src]开始扭曲变形。"), \
 		span_xenonotice("We begin to twist and contort."))
 		do_jitter_animation(1000)
 	set_datum(FALSE)

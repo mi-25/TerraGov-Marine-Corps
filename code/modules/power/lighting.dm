@@ -2,11 +2,11 @@
 #define LIGHTING_POWER_FACTOR 10
 
 /obj/machinery/light
-	name = "light fixture"
+	name = "照明灯具"
 	icon = 'icons/obj/lighting.dmi'
 	base_icon_state = "tube"
 	icon_state = "tube_empty"
-	desc = "A lighting fixture."
+	desc = "一盏照明灯具。"
 	anchored = TRUE
 	layer = FLY_LAYER
 	use_power = ACTIVE_POWER_USE
@@ -150,16 +150,16 @@
 
 	if(istype(I, /obj/item/light_bulb))
 		if(status != LIGHT_EMPTY)
-			to_chat(user, "There is a [fitting] already inserted.")
+			to_chat(user, "已插入[fitting]。")
 			return
 
 		var/obj/item/light_bulb/L = I
 		if(!istype(L, light_type))
-			to_chat(user, "This type of light requires a [fitting].")
+			to_chat(user, "这种灯需要一个[fitting]。")
 			return
 
 		status = L.status
-		to_chat(user, "You insert \the [L].")
+		to_chat(user, "你将\the [L]插入。")
 		switchcount = L.switchcount
 		rigged = L.rigged
 		brightness = L.brightness
@@ -175,7 +175,7 @@
 		return
 
 	if(status == LIGHT_EMPTY && has_power() && (I.atom_flags & CONDUCT))
-		to_chat(user, "You stick \the [I] into the light socket!")
+		to_chat(user, "你把\the [I]插进了灯座里！")
 		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread(src)
 		s.set_up(3, 1, loc)
 		s.start()
@@ -191,7 +191,7 @@
 	if(!prob(1 + I.force * 5))
 		return
 
-	visible_message("[user] smashed the light!", "You hit the light, and it smashes!")
+	visible_message("[user] 砸碎了灯！", "You hit the light, and it smashes!")
 	if(light_on && (I.atom_flags & CONDUCT) && prob(12))
 		electrocute_mob(user, get_area(src), src, 0.3)
 	broken()
@@ -200,11 +200,11 @@
 	if(user.a_intent == INTENT_HARM)
 		return FALSE
 	if(status != LIGHT_EMPTY)
-		balloon_alert(user, "Remove bulb first")
+		balloon_alert(user, "先取下灯泡")
 		return TRUE
 
 	playsound(loc, 'sound/items/screwdriver.ogg', 25, 1)
-	user.visible_message("[user] opens [src]'s casing.", \
+	user.visible_message("[user] 打开了 [src] 的机匣。", \
 		"You open [src]'s casing.", "You hear a noise.")
 	var/obj/machinery/light_construct/newlight
 	switch(fitting)
@@ -225,7 +225,7 @@
 	if(status == LIGHT_BROKEN)
 		return FALSE
 	xeno_attacker.do_attack_animation(src, ATTACK_EFFECT_SMASH)
-	xeno_attacker.visible_message(span_danger("\The [xeno_attacker] smashes [src]!"), \
+	xeno_attacker.visible_message(span_danger("\The [xeno_attacker] 猛击了 [src]！"), \
 	span_danger("We smash [src]!"), null, 5)
 	broken()
 
@@ -234,13 +234,13 @@
 	if(.)
 		return
 	if(status == LIGHT_EMPTY)
-		to_chat(user, "There is no [fitting] in this light.")
+		to_chat(user, "这盏灯里没有[fitting]。")
 		return
 
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
 		if(H.species.can_shred(H))
-			visible_message(span_warning("[user] smashed the light!"), null, "You hear a tinkle of breaking glass")
+			visible_message(span_warning("[user] 砸碎了灯！"), null, "You hear a tinkle of breaking glass")
 			broken()
 			return
 
@@ -259,12 +259,12 @@
 			prot = 1
 
 		if(prot > 0 || isrobot(H) || (limb_check.limb_status & LIMB_ROBOT))
-			to_chat(user, "You remove the light [fitting].")
+			to_chat(user, "你拆下了[fitting]灯。")
 		else
-			to_chat(user, "You try to remove the light [fitting], but it's too hot and you don't want to burn your hand.")
+			to_chat(user, "你试图取下灯[fitting]，但它太烫了，你不想烫伤手。")
 			return
 	else
-		to_chat(user, "You remove the light [fitting].")
+		to_chat(user, "你拆下了[fitting]灯。")
 
 	var/obj/item/light_bulb/L = new light_type()
 	L.status = status
@@ -430,7 +430,7 @@
 	base_icon_state = "bulb"
 	fitting = "bulb"
 	brightness = 4
-	desc = "A small lighting fixture."
+	desc = "一个小型照明装置。"
 	light_type = /obj/item/light_bulb/bulb
 
 /// Changes the light's appearance based on the security level when [COMSIG_SECURITY_LEVEL_CHANGED] sends a signal
@@ -479,11 +479,11 @@
 	base_icon_state = "bulb"
 	fitting = "bulb"
 	brightness = 4
-	desc = "A small lighting fixture."
+	desc = "一个小型照明装置。"
 	light_type = /obj/item/light_bulb/bulb
 
 /obj/machinery/light/spot
-	name = "spotlight"
+	name = "聚光灯"
 	fitting = "large tube"
 	light_type = /obj/item/light_bulb/tube/large
 	brightness = 12
@@ -498,7 +498,7 @@
 	icon_state = "tube_empty"
 	light_color = LIGHT_COLOR_BLUE_FLAME
 	bulb_colour = LIGHT_COLOR_BLUE_FLAME
-	desc = "A lighting fixture that is fitted with a bright blue fluorescent light tube. Looking at it for too long makes your eyes go watery."
+	desc = "一盏装有明亮蓝色荧光灯管的照明装置。盯着它看太久会让你的眼睛变得湿润。"
 	light_type = /obj/item/light_bulb/tube/blue
 
 /obj/machinery/light/small/blue
@@ -506,14 +506,14 @@
 	bulb_colour = LIGHT_COLOR_BLUE_FLAME
 	fitting = "bbulb"
 	brightness = 4
-	desc = "A small lighting fixture that is fitted with a bright blue fluorescent light bulb. Looking at it for too long makes your eyes go watery."
+	desc = "一盏小型照明装置，配有明亮的蓝色荧光灯泡。盯着看太久会让你的眼睛变得湿润。"
 	light_type = /obj/item/light_bulb/bulb/blue
 
 /obj/machinery/light/spot/blue
-	name = "spotlight"
+	name = "聚光灯"
 	light_color = LIGHT_COLOR_BLUE_FLAME
 	bulb_colour = LIGHT_COLOR_BLUE_FLAME
-	desc = "A wide light fixture fitted with a large, blue, very bright fluorescent light tube. You want to sneeze just looking at it."
+	desc = "一个宽大的灯具，装有一根大型、蓝色、非常明亮的荧光灯管。光是看着它你就想打喷嚏。"
 	fitting = "large tube"
 	light_type = /obj/item/light_bulb/tube/large
 	brightness = 12
@@ -524,8 +524,8 @@
 	update(FALSE)
 
 /obj/machinery/light/floor
-	name = "floor light"
-	desc = "A tube light fixture set into the floor. Rated for foot traffic."
+	name = "地板灯"
+	desc = "嵌入地板的管状照明装置。可承受人员踩踏。"
 	icon_state = "floortube_empty"
 	base_icon_state = "floortube"
 	layer = MAP_SWITCH(ABOVE_OPEN_TURF_LAYER, LOW_OBJ_LAYER)
@@ -536,10 +536,10 @@
 
 //not directly related stuff
 /obj/machinery/landinglight
-	name = "landing light"
+	name = "着陆灯"
 	icon = 'icons/obj/landinglights.dmi'
 	icon_state = "landingstripe"
-	desc = "A landing light, if it's flashing stay clear!"
+	desc = "着陆指示灯，如果它在闪烁，请保持距离！"
 	anchored = TRUE
 	density = FALSE
 	layer = BELOW_TABLE_LAYER
@@ -585,8 +585,8 @@
 	id = SHUTTLE_TADPOLE
 
 /obj/machinery/floor_warn_light
-	name = "alarm light"
-	desc = "If this is on you should probably be running!"
+	name = "警报灯"
+	desc = "如果这玩意儿在你身上，你最好赶紧跑！"
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "rotating_alarm"
 	light_system = HYBRID_LIGHT
@@ -596,7 +596,7 @@
 	light_range = 4
 
 /obj/machinery/floor_warn_light/self_destruct
-	name = "self destruct alarm light"
+	name = "自毁警报灯"
 	icon_state = "rotating_alarm_off"
 	light_power = 0
 	light_range = 0

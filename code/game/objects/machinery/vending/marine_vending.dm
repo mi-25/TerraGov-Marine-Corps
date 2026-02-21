@@ -1,6 +1,6 @@
 /obj/machinery/vending/weapon
-	name = "automated weapons rack"
-	desc = "An automated weapon rack hooked up to a colossal storage of standard-issue weapons."
+	name = "自动化武器架"
+	desc = "一个自动武器架，连接着海量的标准制式武器存储库。"
 	icon_state = "marinearmory"
 	icon_vend = "marinearmory-vend"
 	icon_deny = "marinearmory"
@@ -680,8 +680,8 @@
 	)
 
 /obj/machinery/vending/cigarette
-	name = "cigarette machine" //OCD had to be uppercase to look nice with the new formating
-	desc = "A specialized vending machine designed to contribute to your slow and uncomfortable death."
+	name = "香烟贩卖机" //OCD had to be uppercase to look nice with the new formating
+	desc = "一台专门设计的自动贩卖机，旨在助你缓慢而痛苦地走向死亡。"
 	product_slogans = "There's no better time to start smokin'.;\
 		Smoke now, and win the adoration of your peers.;\
 		They beat cancer centuries ago, so smoke away.;\
@@ -739,8 +739,8 @@
 	)
 
 /obj/machinery/vending/cargo_supply
-	name = "\improper Operational Supplies Vendor"
-	desc = "A large vendor for dispensing specialty and bulk supplies. Restricted to cargo personnel only."
+	name = "\improper 作战物资供应商"
+	desc = "一个用于分发特种和批量物资的大型自动售货机。仅限补给人员使用。"
 	icon_state = "requisitionop"
 	icon_vend = "requisitionop-vend"
 	icon_deny = "requisitionop-deny"
@@ -836,8 +836,8 @@
 	)
 
 /obj/machinery/vending/lasgun
-	name = "\improper Terra Experimental cell field charger"
-	desc = "An automated power cell dispenser and charger. Used to recharge energy weapon power cells, including in the field. Has an internal battery that charges off the power grid when wrenched down."
+	name = "\improper 地球政府实验型电池场充电器"
+	desc = "一个自动能量电池分发器和充电器。用于为能量武器电池充电，包括在战场上使用。内置电池，在固定后可从电网充电。"
 	icon_state = "lascharger"
 	icon_vend = "lascharger-vend"
 	icon_deny = "lascharger-deny"
@@ -879,8 +879,8 @@
 	. += "Internal battery charge: <b>[machine_current_charge]</b>/<b>[machine_max_charge]</b>"
 
 /obj/machinery/vending/marineFood
-	name = "\improper Marine Food and Drinks Vendor"
-	desc = "Standard Issue Food and Drinks Vendor, containing standard military food and drinks."
+	name = "\improper 陆战队食品饮料贩卖机"
+	desc = "标准配给食品饮料贩卖机，内含标准军用食品和饮料。"
 	icon_state = "sustenance"
 	icon_vend = "sustenance-vend"
 	icon_deny = "sustenance-deny"
@@ -909,7 +909,7 @@
 	use_power = NO_POWER_USE
 
 /obj/machinery/vending/marineFood/som
-	name = "\improper SOM Food and Drinks Vendor"
+	name = "\improper 火星之子食品饮料贩卖机"
 	faction = FACTION_SOM
 	products = list(
 		/obj/item/reagent_containers/food/snacks/protein_pack/som = -1,
@@ -918,8 +918,8 @@
 	)
 
 /obj/machinery/vending/MarineMed
-	name = "\improper MarineMed"
-	desc = "Marine Medical drug dispenser - Provided by Nanotrasen Pharmaceuticals Division(TM)."
+	name = "\improper 陆战队医疗"
+	desc = "陆战队医疗药物分发器 - 由纳米传讯制药部门(TM)提供。"
 	icon_state = "marinemed"
 	icon_vend = "marinemed-vend"
 	icon_deny = "marinemed-deny"
@@ -1025,8 +1025,8 @@
 	)
 
 /obj/machinery/vending/MarineMed/Blood
-	name = "\improper MM Blood Dispenser"
-	desc = "Marine Med brand Blood Pack dispensery."
+	name = "\improper MM 血液分配器"
+	desc = "陆战队医疗牌血包分发器。"
 	icon_state = "bloodvendor"
 	icon_vend = "bloodvendor-vend"
 	icon_deny = "bloodvendor-deny"
@@ -1056,8 +1056,8 @@
 			if(!length(temp_list)) break
 
 /obj/machinery/vending/armor_supply
-	name = "\improper Surplus Armor Equipment Vendor"
-	desc = "An automated equipment rack hooked up to a colossal storage of armor and accessories. Nanotrasen designed a new vendor that utilizes bluespace technology to send surplus equipment from outer colonies' sweatshops to your hands! Be grateful."
+	name = "\improper 剩余护甲装备贩卖机"
+	desc = "一个连接着庞大护甲和配件存储库的自动化装备架。纳米传讯设计了一种新型贩卖机，利用蓝空技术将外环殖民地血汗工厂的剩余装备送到你手中！心怀感激吧。"
 	icon_state = "surplus_armor"
 	icon_vend = "surplus_armor_vend"
 	icon_deny = "surplus_armor_deny"
@@ -1214,8 +1214,8 @@
 	use_power = NO_POWER_USE
 
 /obj/machinery/vending/uniform_supply
-	name = "\improper Surplus Clothing Vendor"
-	desc = "An automated equipment rack hooked up to a colossal storage of clothing and accessories. Nanotrasen designed a new vendor that utilizes bluespace technology to send surplus equipment from outer colonies' sweatshops to your hands! Be grateful."
+	name = "\improper 剩余衣物贩卖机"
+	desc = "一台自动装备架，连接着庞大的服装与配件存储库。纳米传讯设计的新型贩卖机运用蓝空技术，将外环殖民地血汗工厂的过剩装备直接送到你手中！心怀感激吧。"
 	icon_state = "surplus_clothes"
 	icon_vend = "surplus_clothes_vend"
 	icon_deny = "surplus_clothes_deny"
@@ -1414,8 +1414,8 @@
 	use_power = NO_POWER_USE
 
 /obj/machinery/vending/dress_supply
-	name = "\improper TerraGovTech dress uniform vendor"
-	desc = "An automated rack hooked up to a colossal storage of dress uniforms."
+	name = "\improper 地球政府科技礼服自动售货机"
+	desc = "一个自动衣架，连接着一个巨大的礼服储藏库。"
 	icon_state = "marineuniform"
 	icon_vend = "marineuniform_vend"
 	icon_deny = "marineuniform"
@@ -1442,8 +1442,8 @@
 	use_power = NO_POWER_USE
 
 /obj/machinery/vending/valhalla_req
-	name = "\improper TerraGovTech requisition vendor"
-	desc = "An automated rack hooked up to a colossal storage of items."
+	name = "\improper 地球政府科技补给售货机"
+	desc = "连接着庞大物品存储库的自动化货架。"
 	icon_state = "requisitionop"
 	resistance_flags = INDESTRUCTIBLE
 	use_power = NO_POWER_USE
@@ -1647,8 +1647,8 @@
 	)
 
 /obj/machinery/vending/valhalla_seasonal_req
-	name = "\improper TerraGovTech seasonal vendor"
-	desc = "An automated rack hooked up to a colossal storage of items."
+	name = "\improper 地球政府科技季节性供应商"
+	desc = "一个连接着庞大物品存储库的自动化货架。"
 	icon_state = "requisitionop"
 	resistance_flags = INDESTRUCTIBLE
 	use_power = NO_POWER_USE
@@ -1849,8 +1849,8 @@
 	)
 
 /obj/machinery/vending/valhalla_reqtorio
-	name = "\improper TerraGovTech reqtorio vendor"
-	desc = "An automated rack hooked up to a colossal storage of items."
+	name = "\improper 地球政府科技补给贩卖机"
+	desc = "连接着庞大物品存储库的自动化货架。"
 	icon_state = "requisitionop"
 	resistance_flags = INDESTRUCTIBLE
 	use_power = NO_POWER_USE
@@ -1964,8 +1964,8 @@
 	)
 
 /obj/machinery/vending/tool
-	name = "YouTool"
-	desc = "Tools for tools."
+	name = "工具"
+	desc = "工具的工具。"
 	icon_state = "tool"
 	icon_deny = "tool-deny"
 	icon_vend = "tool-vend"
@@ -1988,8 +1988,8 @@
 	resistance_flags = INDESTRUCTIBLE
 
 /obj/machinery/vending/mech_vendor
-	name = "\improper Mech equipment vendor"
-	desc = "An automated rack hooked up to a colossal storage of items."
+	name = "\improper 机甲装备供应商"
+	desc = "一个连接着庞大物品存储库的自动化货架。"
 	icon_state = "requisitionop"
 	resistance_flags = INDESTRUCTIBLE
 	use_power = NO_POWER_USE

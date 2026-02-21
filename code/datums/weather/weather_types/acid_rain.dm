@@ -1,7 +1,7 @@
 //Acid rain is part of the natural weather cycle in the humid forests of LV, and cause acid damage to anyone unprotected.
 /datum/weather/acid_rain
-	name = "acid rain"
-	desc = "The planet's thunderstorms are by nature acidic, and will incinerate anyone standing beneath them without protection."
+	name = "酸液雨"
+	desc = "这颗行星的雷暴天然带有酸液，任何未受保护站在其下方的人都会被烧成灰烬。"
 
 	telegraph_duration = 600
 	telegraph_message = span_userdanger("Thunder rumbles far above. You hear acidic droplets hissing against the canopy. Seek shelter!")
@@ -52,7 +52,7 @@
 		return
 	if(prob(L.modify_by_armor(100, ACID)))
 		L.adjustFireLoss(7)
-		to_chat(L, span_danger("You feel the acid rain melting you away!"))
+		to_chat(L, span_danger("你感觉酸液雨正在将你融化！"))
 	L.wash()
 	if(L.fire_stacks > -20)
 		L.fire_stacks = max(-20, L.fire_stacks - 1)

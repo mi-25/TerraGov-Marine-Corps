@@ -13,8 +13,8 @@
 #define RES_TIER_RARE "rare"
 
 /obj/machinery/researchcomp
-	name = "research console"
-	desc = "A console for performing complex computations. Release the stabilizers to move it around."
+	name = "研究控制台"
+	desc = "用于执行复杂计算的操控台。松开稳定器即可移动。"
 	icon = 'icons/obj/machines/bepis.dmi'
 	icon_state = "chamber"
 	interaction_flags = INTERACT_MACHINE_TGUI
@@ -145,7 +145,7 @@
 	switch(action)
 		if("switch_anchored")
 			if (researching)
-				to_chat(usr, span_notice("It is currently researching."))
+				to_chat(usr, span_notice("正在研究中。"))
 				return
 
 			setAnchored(!anchored)
@@ -153,13 +153,13 @@
 
 		if("start_research")
 			if (!anchored)
-				to_chat(usr, span_notice("It needs to be fastened before researching."))
+				to_chat(usr, span_notice("需要先固定才能研究。"))
 				return
 			if (!init_resource)
-				to_chat(usr, span_notice("You have no resource to begin research."))
+				to_chat(usr, span_notice("你没有资源来开始研究。"))
 				return
 			if (researching)
-				to_chat(usr, span_notice("It is already researching something."))
+				to_chat(usr, span_notice("它已经在研究某物了。"))
 				return
 
 			start_research(usr, 5 SECONDS)
@@ -224,7 +224,7 @@
 ///
 
 /obj/item/research_resource
-	name = "Unknown substance"
+	name = "未知物质"
 	icon_state = "coin-mythril"
 	color = "#e2a4dd"
 	///Type of research the item is used for
@@ -238,7 +238,7 @@
 	)
 
 /obj/item/research_resource/money
-	desc = "Unidentified substance. The random data it provides could probably secure some funding."
+	desc = "不明物质。它提供的随机数据或许能争取到一些经费。"
 	research_type = RES_MONEY
 	reward_probs = list(
 		RES_TIER_BASIC = 100,
@@ -248,7 +248,7 @@
 	)
 
 /obj/item/research_resource/xeno
-	name = "Xenomorph research material"
+	name = "异形研究材料"
 	research_type = RES_XENO
 	icon = 'icons/obj/alien_autopsy.dmi'
 	icon_state = "sample_0"
@@ -270,7 +270,7 @@
 ///
 
 /obj/item/research_product
-	name = "money"
+	name = "资金"
 	icon_state = "coin_uranium"
 	///Points provided for exporting the product
 	var/export_points = 1
@@ -285,17 +285,17 @@
 	. += span_notice("Rewards export points, as the name suggests.")
 
 /obj/item/research_product/money/basic
-	name = "credits - 50"
+	name = "积分 - 50"
 	export_points = 50
 
 /obj/item/research_product/money/common
-	name = "credits - 100"
+	name = "积分 - 100"
 	export_points = 100
 
 /obj/item/research_product/money/uncommon
-	name = "credits - 200"
+	name = "积分 - 200"
 	export_points = 200
 
 /obj/item/research_product/money/rare
-	name = "credits - 400"
+	name = "积分 - 400"
 	export_points = 400

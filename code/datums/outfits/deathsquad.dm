@@ -1,5 +1,5 @@
 /datum/outfit/job/deathsquad/standard
-	name = "Deathsquad Standard"
+	name = "死亡小队标准"
 	jobtype = /datum/job/deathsquad/standard
 	id = /obj/item/card/id/silver
 	belt = /obj/item/weapon/gun/energy/lasgun/pulse
@@ -54,7 +54,7 @@
 	)
 
 /datum/outfit/job/deathsquad/leader
-	name = "Deathsquad Leader"
+	name = "死亡小队队长"
 	jobtype = /datum/job/deathsquad/leader
 	id = /obj/item/card/id/silver
 	belt = /obj/item/weapon/gun/energy/lasgun/pulse
@@ -110,7 +110,7 @@
 
 
 /datum/outfit/job/deathsquad/gunner
-	name = "Deathsquad Gunner"
+	name = "死亡小队枪手"
 	jobtype = /datum/job/deathsquad/gunner
 	id = /obj/item/card/id/silver
 	belt = /obj/item/weapon/gun/energy/lasgun/pulse

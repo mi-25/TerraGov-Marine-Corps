@@ -1,6 +1,6 @@
 /obj/structure/closet/walllocker
-	name = "wall locker"
-	desc = "A wall mounted storage locker."
+	name = "储物柜"
+	desc = "壁挂式储物柜。"
 	icon = 'icons/obj/wallframes.dmi'
 	icon_state = "walllocker"
 	pixel_x = -16
@@ -29,11 +29,11 @@
 			pixel_x = 32
 
 /obj/structure/closet/walllocker/emerglocker //wall mounted emergency closet
-	name = "emergency locker"
+	name = "应急储物柜"
 	icon_state = "emerg"
 	icon_closed = "emerg"
 	icon_opened = "emergopen"
-	desc = "A wall mounted locker with emergency supplies."
+	desc = "一个装有应急物资的壁挂式储物柜。"
 	overlay_welded = "emergwelded"
 
 /obj/structure/closet/walllocker/emerglocker/full // spawners
@@ -44,8 +44,8 @@
 		new /obj/item/clothing/mask/gas(src)
 
 /obj/structure/closet/walllocker/hydrant //wall mounted fire closet
-	name = "fire-safety locker"
-	desc = "A wall mounted storage unit for fire-fighting supplies."
+	name = "消防储物柜"
+	desc = "用于存放消防用品的壁挂式储物单元。"
 	icon_state = "hydrant"
 	icon_closed = "hydrant"
 	icon_opened = "hydrantopen"
@@ -68,8 +68,8 @@
 	new /obj/item/clothing/head/hardhat/red(src)
 
 /obj/structure/closet/walllocker/medical_wall //wall mounted medical closet
-	name = "first-aid locker"
-	desc = "A wall mounted storage unit for first aid supplies."
+	name = "急救柜"
+	desc = "用于存放急救用品的壁挂式储存单元。"
 	icon_state = "medical_wall"
 	icon_closed = "medical_wall"
 	icon_opened = "medical_wallopen"
@@ -85,8 +85,8 @@
 ///////// SECURE WALL LOCKERS /////////
 
 /obj/structure/closet/secure_closet/walllocker
-	name = "secure wall locker"
-	desc = "It's an immobile card-locked storage unit."
+	name = "安全储物柜"
+	desc = "这是一个固定的刷卡锁定存储单元。"
 	icon = 'icons/obj/wallframes.dmi'
 	pixel_x = -16
 	pixel_y = -16
@@ -119,8 +119,8 @@
 			pixel_x += 32
 
 /obj/structure/closet/secure_closet/walllocker/medical
-	name = "first aid closet"
-	desc = "It's a secure wall-mounted storage unit for first aid supplies."
+	name = "急救柜"
+	desc = "这是一个用于存放急救物资的壁挂式安全储存单元。"
 	icon_state = "medical_wall_sec1"
 	icon_closed = "medical_wall_sec"
 	icon_locked = "medical_wall_sec1"
@@ -143,8 +143,8 @@
 ///////////PERSONAL SECURE WALL LOCKER///////////////
 
 /obj/structure/closet/secure_closet/personal/walllocker // different path.
-	name = "personal wall locker"
-	desc = "It's a secure wall locker for personnel. The first card swiped gains control."
+	name = "个人储物柜"
+	desc = "这是一个供人员使用的安全壁柜。首次刷卡者获得控制权。"
 	icon = 'icons/obj/wallframes.dmi'
 	icon_state = "sec_locker1"
 	pixel_x = -16

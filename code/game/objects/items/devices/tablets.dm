@@ -1,6 +1,6 @@
 /obj/item/hud_tablet
-	name = "hud tablet"
-	desc = "A tablet with a live feed to a number of headset cameras"
+	name = "平视显示平板"
+	desc = "一个平板电脑，可实时查看多个耳机摄像头的画面"
 	icon_state = "req_tablet_off"
 	equip_slot_flags = ITEM_SLOT_POCKET
 	w_class = WEIGHT_CLASS_SMALL
@@ -90,7 +90,7 @@
 
 /obj/item/hud_tablet/interact(mob/user)
 	if(!allowed(user))
-		to_chat(user, span_warning("Access denied, unauthorized user."))
+		to_chat(user, span_warning("访问被拒绝，未授权用户。"))
 		return TRUE
 	return ..()
 
@@ -185,44 +185,44 @@
 	cam_screen.show_camera(visible_turfs, size_x, size_y)
 
 /obj/item/hud_tablet/alpha
-	name = "alpha hud tablet"
+	name = "阿尔法HUD平板"
 	network = list("alpha")
 
 /obj/item/hud_tablet/bravo
-	name = "bravo hud tablet"
+	name = "布拉沃班平板"
 	network = list("bravo")
 
 /obj/item/hud_tablet/charlie
-	name = "charlie hud tablet"
+	name = "查理HUD平板"
 	network = list("charlie")
 
 /obj/item/hud_tablet/delta
-	name = "delta hud tablet"
+	name = "德尔塔小队平板"
 	network = list("delta")
 
 /obj/item/hud_tablet/leadership
-	name = "captain's hud tablet"
+	name = "舰长的平视显示器平板"
 	network = list("marinesl", "marine", "marinemainship")
 	max_view_dist = WORLD_VIEW_NUM
 
 /obj/item/hud_tablet/fieldcommand
-	name = "field commander's hud tablet"
+	name = "战地指挥官的平视显示器平板"
 	network = list("marinesl", "marine")
 	max_view_dist = WORLD_VIEW_NUM
 
 /obj/item/hud_tablet/pilot
-	name = "pilot officers's hud tablet"
+	name = "飞行员的平视显示平板"
 	network = list("dropship1")
 	max_view_dist = WORLD_VIEW_NUM
 
 /obj/item/hud_tablet/transportofficer
-	name = "transport officer's hud tablet"
+	name = "运输军官的平视显示器平板"
 	network = list("dropship2")
 	max_view_dist = WORLD_VIEW_NUM
 
 /obj/item/hud_tablet/artillery
-	name = "artillery impact hud tablet"
-	desc = "A handy tablet with a live feed to several TGMC satellites. Provides a view of all artillery on the battlefield. Transmits a video of the impact site whenever a shot is fired, so that hits may be observed by the loader or spotter."
+	name = "火炮命中指示平板"
+	desc = "一款便捷的平板电脑，可实时接收多颗TGMC卫星的直播画面。提供战场上所有火炮的视野。每当开火时，会传输弹着点的视频，以便装填手或观测员观察命中情况。"
 	network = list("terragovartillery") //This shows cameras of all mortars, so don't add this to HvH
 	max_view_dist = WORLD_VIEW_NUM
 
