@@ -68,16 +68,30 @@ NAME_AS_KEY_FILE_PATTERNS = [
     'controllers/subsystem/processing/instruments.dm',
     # 肢体/器官系统：get_limb() 用 limb.name 做匹配
     'modules/organs/',
+    # HUD screen objects: name 被 put_storage_in_hand() 用作 switch 匹配键
+    '_onclick/hud/screen_objects/',
+    '_onclick/hud/',
 ]
 
+# name 值精确黑名单：无论在哪个文件中，这些 name 值都不能翻译
+NAME_EXACT_BLACKLIST = {
+    "l_hand", "r_hand",           # storage.dm put_storage_in_hand() switch 键
+    "right", "left",              # activate_hand() 匹配
+}
 
-def should_skip_name_entry(filepath: str, context: str) -> bool:
+
+def should_skip_name_entry(filepath: str, context: str, original: str = '') -> bool:
     """
     判断是否应跳过某个 name 类型的条目。
     当 name 属性在特定文件中被用作内部标识符时，翻译会破坏运行时查找。
+    也检查精确黑名单中的 name 值。
     """
     if context != 'name':
         return False
+    # 精确值黑名单
+    if original in NAME_EXACT_BLACKLIST:
+        return True
+    # 路径模式匹配
     for pattern in NAME_AS_KEY_FILE_PATTERNS:
         if pattern in filepath:
             return True
@@ -295,6 +309,24 @@ def inject_translation(line_content: str, original: str, translation: str) -> st
     return None  # 未找到匹配
 
 
+def inject_multiline_translation(full_content: str, original: str, translation: str) -> str:
+    """
+    在全文中替换多行文本块 {"original"} → {"translation"}。
+    用于 html_description、bioscan 等跨行文本。
+    """
+    # 安全检查：中文双引号替换为单引号
+    translation = translation.replace('\u201c', "'").replace('\u201d', "'")
+    # 安全检查：译文不能包含未转义的英文双引号
+    if '"' in translation and '"}' not in translation:
+        return None
+
+    target = '{"' + original + '"}'
+    if target in full_content:
+        replacement = '{"' + translation + '"}'
+        return full_content.replace(target, replacement, 1)
+    return None
+
+
 def process_file(filepath: str, entries: list, source_dir: str, backup_dir: str,
                  dry_run: bool, force: bool) -> dict:
     """
@@ -311,20 +343,69 @@ def process_file(filepath: str, entries: list, source_dir: str, backup_dir: str,
     try:
         with open(abs_path, 'r', encoding='utf-8', errors='replace') as f:
             lines = f.readlines()
+            full_content = ''.join(lines)
     except Exception as e:
         stats['errors'].append(f"无法读取 {abs_path}: {e}")
         return stats
 
-    # 按行号索引条目
+    # 分离多行文本条目和单行条目
+    multiline_entries = [e for e in entries if e.get('context') == 'multiline_text']
+    singleline_entries = [e for e in entries if e.get('context') != 'multiline_text']
+
+    modified = False
+
+    # 先处理多行文本块（全文替换）
+    for entry in multiline_entries:
+        original = entry['original']
+        translation = entry['translation']
+
+        if not translation:
+            stats['skipped'] += 1
+            continue
+
+        if should_skip_name_entry(filepath, entry.get('context', ''), original):
+            stats['skipped'] += 1
+            continue
+
+        translation = auto_fix_translation(original, translation)
+
+        if not force:
+            is_valid, missing, extra = validate_placeholders(original, translation)
+            if not is_valid:
+                stats['skipped'] += 1
+                msg = f"  [占位符不匹配] {entry['id']}: 缺少 {missing}"
+                if dry_run:
+                    print(msg)
+                stats['errors'].append(msg)
+                continue
+
+        result = inject_multiline_translation(full_content, original, translation)
+        if result is not None:
+            if dry_run:
+                print(f"  [DRY RUN 多行] {filepath}:{entry.get('line', '?')}")
+                print(f"    - \"{original[:80]}...\"")
+                print(f"    + \"{translation[:80]}...\"")
+            else:
+                full_content = result
+                modified = True
+            stats['injected'] += 1
+        else:
+            stats['not_found'] += 1
+            if dry_run:
+                print(f"  [未找到 多行] {entry['id']}: \"{original[:50]}...\"")
+
+    # 如果多行替换修改了内容，重新拆分为行
+    if modified:
+        lines = full_content.splitlines(True)
+
+    # 按行号索引单行条目
     line_map = defaultdict(list)
-    for entry in entries:
+    for entry in singleline_entries:
         try:
             line_num = int(entry['line'])
             line_map[line_num].append(entry)
         except (ValueError, KeyError):
             stats['errors'].append(f"无效行号: {entry.get('id', '?')}")
-
-    modified = False
 
     for line_num, line_entries in sorted(line_map.items()):
         if line_num < 1 or line_num > len(lines):
@@ -345,7 +426,7 @@ def process_file(filepath: str, entries: list, source_dir: str, backup_dir: str,
                 continue
 
             # 跳过 name 属性在特定文件中的翻译（这些 name 被用作内部标识符）
-            if should_skip_name_entry(filepath, entry.get('context', '')):
+            if should_skip_name_entry(filepath, entry.get('context', ''), original):
                 stats['skipped'] += 1
                 continue
 

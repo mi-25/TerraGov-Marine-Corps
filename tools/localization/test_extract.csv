@@ -1,0 +1,311 @@
+﻿id,file,line,context,original,translation,status,error
+3a6d43b3,datums/jobs/job/job.dm,169,spawn_message,As the <b>[title]</b> you answer to [supervisors]. Special circumstances may change this.,作为<b>[title]</b>，你向[supervisors]负责。特殊情况可能会改变这一点。,translated,
+11f09324,datums/jobs/job/job.dm,172,spawn_message,"Prefix your message with <b>;</b> to speak on the default radio channel—in most cases this is your squad radio if you are playing a Squad role, \
+							if you are playing a role without a Squad like Field Commander it will use the Common radio. For additional prefixes, examine your headset.",在消息前加上 <b>;</b> 可在默认无线电频道发言——在大多数情况下，如果你扮演的是小队角色，这就是你的小队无线电；\如果你扮演的是没有小队的角色，例如战地指挥官，则会使用公共无线电。要了解其他前缀，请检查你的耳机。,translated,
+338ccd36,datums/jobs/job/job.dm,176,spawn_message,"If you have to disconnect, please take a hypersleep pod. If you can't make it there, <b><u>adminhelp</u></b> using F1 or the Adminhelp verb.",如果你必须断开连接，请使用超眠舱。如果无法到达那里，请使用F1键或Adminhelp指令<b><u>向管理员求助</u></b>。,translated,
+2f47e9ac,datums/jobs/job/job.dm,171,spawn_header,<b>Radio</b>,<b>无线电</b>,translated,
+ab57a0e0,datums/jobs/job/job.dm,175,spawn_header,<big>You Are Playing an Important Job</big>,<big>你正在扮演一个关键职位</big>,translated,
+b489067d,datums/jobs/job/job.dm,171,separator,[span_role_header(,[span_role_header(,translated,
+d458b8b7,datums/jobs/job/job.dm,175,separator,[span_role_header(,[span_role_header(,translated,
+4eecb667,datums/jobs/job/marines.dm,83,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+1c241524,datums/jobs/job/marines.dm,126,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+c6e26282,datums/jobs/job/marines.dm,186,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+1801fc0a,datums/jobs/job/marines.dm,244,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+d4ea7628,datums/jobs/job/marines.dm,294,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+bfb85102,datums/jobs/job/marines.dm,334,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+06490bff,datums/jobs/job/marines.dm,83,separator,[span_role_header(,[span_role_header(,translated,
+7e53d322,datums/jobs/job/marines.dm,126,separator,[span_role_header(,[span_role_header(,translated,
+067b8bdf,datums/jobs/job/marines.dm,186,separator,[span_role_header(,[span_role_header(,translated,
+4be2cc55,datums/jobs/job/marines.dm,244,separator,[span_role_header(,[span_role_header(,translated,
+ba13b4a7,datums/jobs/job/marines.dm,294,separator,[span_role_header(,[span_role_header(,translated,
+fe0e9f31,datums/jobs/job/marines.dm,334,separator,[span_role_header(,[span_role_header(,translated,
+69e4482b,datums/jobs/job/marines.dm,84,append_text,"You are a rank-and-file marine of the TGMC, and that is your strength. What you lack alone, you gain standing shoulder to shoulder with the men and women of the TerraGov Marine Corps. Ooh-rah!",你是一名地球政府殖民地海军陆战队的普通陆战队员，而这正是你的力量所在。你独自一人所欠缺的，在与地球政府海军陆战队的男女士兵并肩作战时便能获得。呜-哈！,translated,
+5cb3fa50,datums/jobs/job/marines.dm,127,append_text,"You have the equipment and skill to build fortifications, reroute power lines, and bunker down. Your squaddies will look to you when it comes to construction in the field of battle.",你拥有建造防御工事、重新布线以及构筑掩体的装备与技能。在战场上的建造任务中，你的班组成员将仰赖于你。,translated,
+7b92bec6,datums/jobs/job/marines.dm,187,append_text,"You must tend the wounds of your squad mates and make sure they are healthy and active. You may not be a fully-fledged doctor, but you stand between life and death when it matters.",你必须照料小队战友的伤势，确保他们保持健康与战斗力。你或许不是正式医生，但在生死攸关的时刻，你就是那道生命防线。,translated,
+ae28c78c,datums/jobs/job/marines.dm,245,append_text,"Your job is to provide IFF weapons support. <b>Your bullets cannot hit friendlies,</b> and for this reason it's advisable to stay behind your fellow marines unless they are stagnant.",你的任务是提供敌我识别武器支援。<b>你的弹道无法击中友军，</b>因此建议停留在陆战队员后方，除非他们停滞不前。,translated,
+49084eb0,datums/jobs/job/marines.dm,295,append_text,"You are the very rare and valuable weapon expert, trained to use special equipment. You can serve a variety of roles, so choose carefully.",你是极其稀有且宝贵的武器专家，受过使用特种装备的训练。你能胜任多种角色，请谨慎选择。,translated,
+2822d5d2,datums/jobs/job/marines.dm,335,append_text,"You are responsible for the men and women of your squad. Make sure they are on task, working together, and communicating. You are also in charge of communicating with command and letting them know about the situation first hand. Keep out of harm's way.",你对你班里的男女士兵负责。确保他们专注于任务、协同作战并保持沟通。你还负责与指挥部沟通，向他们第一时间汇报现场情况。注意自身安全。,translated,
+c1c853ed,datums/jobs/job/marines.dm,49,multiline_text,"
+		<b>Difficulty</b>: Easy<br /><br />
+		<b>You answer to the</b> acting Squad Leader<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		TerraGov’s Squad Marines make up the bread and butter of Terra's fighting forces. They are fitted with the standard arsenal that the TGMC offers, and they can take up a variety of roles, being a sniper, a pyrotechnician, a machinegunner, rifleman and more. They’re often high in numbers and divided into squads, but they’re the lowest ranking individuals, with a low degree of skill, not adapt to engineering or medical roles. Still, they are not limited to the arsenal they can take on the field to deal whatever threat that lurks against Terra.
+		<br /><br />
+		<b>Duty</b>: Carry out orders made by your acting Squad Leader, deal with any threats that oppose the TGMC.
+	",<b>难度</b>：简单<br /><br /><b>你听从</b> 现任班长的指挥<br /><br /><b>解锁要求</b>：初始角色<br /><br /><b>游戏模式可用性</b>：坠机、核战争<br /><br /><br />地球政府的陆战队员构成了地球战斗力量的中坚。他们配备着TGMC提供的标准武器库，并能承担多种角色，例如狙击手、爆破手、机枪手、步枪手等等。他们通常人数众多，被编入各个小队，但他们是军衔最低的个体，技能水平有限，不擅长工程或医疗职责。尽管如此，他们并不局限于携带上战场的武器库，足以应对任何潜伏着威胁地球的敌人。<br /><br /><b>职责</b>：执行你的现任班长下达的命令，处理任何反对TGMC的威胁。,translated,
+c5375c98,datums/jobs/job/marines.dm,113,multiline_text,"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> acting Squad Leader<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		A mastermind of on-field construction, often regarded as the answer on whether the FOB succeeds or not, Squad Engineers are the people who construct the Forward Operating Base (FOB) and guard whatever threat that endangers the marines. In addition to this, they are also in charge of repairing power generators on the field as well as mining drills for requisitions. They have a high degree of engineering skill, meaning they can deploy and repair barricades faster than regular marines.
+		<br /><br />
+		<b>Duty</b>: Construct and reinforce the FOB that has been ordered by your acting Squad Leader, fix power generators and mining drills in the AO and stay on guard for any dangers that threaten your FOB.
+	",<b>难度</b>：中等<br /><br /><b>你的上级</b>：代理班长<br /><br /><b>解锁要求</b>：初始角色<br /><br /><b>可用游戏模式</b>：坠机、核战争<br /><br /><br />作为战场建设的专家，通常被视为决定前线作战基地成败的关键，工程兵负责建造前线作战基地并守卫任何威胁陆战队的危险。除此之外，他们还负责修复战场上的发电机以及用于补给的采矿钻机。他们拥有高超的工程技能，这意味着他们能比普通陆战队员更快地部署和修复路障。<br /><br /><b>职责</b>：根据代理班长的命令建造并加固前线作战基地，在行动区域内修复发电机和采矿钻机，并时刻警惕任何威胁你方前线作战基地的危险。,translated,
+bb5d1860,datums/jobs/job/marines.dm,173,multiline_text,"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to the</b> acting Squad Leader<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		Corpsman are the vital line between life and death of a marine’s life should a marine be wounded in battle, if provided they do not run away. While marines treat themselves, it is the corpsmen who will treat injuries beyond what a normal person can do. With a higher degree of medical skill compared to a normal marine, they are capable of doing medical actions faster and reviving with defibrillators will heal more on each attempt. They can also perform surgery, in an event if there are no acting medical officers onboard.
+		<br /><br />
+		<b>Duty</b>: Tend the injuries of your fellow marines or related personnel, keep them at fighting strength. Evacuate those who are incapacitated or rendered incapable of fighting due to severe wounds or larvae infections.
+	",<b>难度</b>：困难<br /><br /><b>你的上级是</b> 现任班长<br /><br /><b>解锁要求</b>：初始角色<br /><br /><b>可用游戏模式</b>：坠机、核战争<br /><br /><br />卫生兵是陆战队员在战斗中负伤时（前提是他们没有逃跑）生死攸关的生命线。虽然陆战队员可以进行自我治疗，但处理超出常人能力的伤势则是卫生兵的职责。相比普通陆战队员，他们拥有更高的医疗技能，能够更快地执行医疗动作，并且使用除颤器进行复苏时，每次尝试能恢复更多生命值。如果船上没有现任医疗官，他们也能进行外科手术。<br /><br /><b>职责</b>：治疗你的陆战队员同袍或相关人员的伤势，保持他们的战斗力。后送那些因重伤或幼虫感染而丧失行动能力或无法战斗的人员。,translated,
+cebe5abf,datums/jobs/job/marines.dm,231,multiline_text,"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> acting Squad Leader<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		When it comes to heavy firepower during the early stages of an operation, TGMC has provided the squad with Smartgunners. They are those who trained to operate smart weapons, built-in IFF weapons that provides covering and suppressive fire even directly behind the marines. Squad Smartgunners are best when fighting behind marines, as they can act as shields or during a hectic crossfire.
+		<br /><br />
+		<b>Duty</b>: Be the backline of your pointmen, provide heavy weapons support with your smart weapon.
+	",<b>难度</b>：中等<br /><br />		<b>你向</b> 代理班长<b>负责</b><br /><br />		<b>解锁要求</b>：初始职位<br /><br />		<b>可用游戏模式</b>：坠机、核战争<br /><br /><br />		在行动初期需要重型火力时，地球政府殖民地海军陆战队为小队配备了智能机枪手。他们是受过操作智能武器训练的人员，这种内置敌我识别系统的武器即使在陆战队员身后也能提供掩护和压制火力。小队智能机枪手最适合在陆战队员身后作战，因为他们可以充当盾牌，或在激烈的交火中发挥作用。		<br /><br />		<b>职责</b>：作为你尖兵的防线后盾，用你的智能武器提供重型武器支援。,translated,
+58ee3db2,datums/jobs/job/marines.dm,321,multiline_text,"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 3 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		Squad Leaders are basically the boss of any able-bodied squad. Though while they are not trained compared to engineers, corpsmen and smartgunners, they are (usually) capable of leading the squad. They have access to command assets such as a ship railgun, orbital bombardment as examples.
+		<br /><br />
+		<b>Duty</b>: Be a responsible leader of your squad, make sure your squad communicates frequently all the time and ensure they are working together for the task at hand. Stay safe, as you’re a valuable leader.
+	",<b>难度</b>：困难<br /><br /><b>你的上级是</b> 现任指挥层<br /><br /><b>解锁要求</b>：3小时游戏时长（任意职位）<br /><br /><b>游戏模式可用性</b>：坠机模式，核战争模式<br /><br /><br />班长本质上就是任何健全小队的头儿。虽然他们不像工程兵、卫生兵和智能机枪手那样受过专门训练，但他们（通常）有能力领导小队。他们可以使用指挥资产，例如舰载轨道炮、轨道轰炸等。<br /><br /><b>职责</b>：成为你小队中负责任的领导者，确保你的小队始终保持频繁沟通，并确保他们为手头的任务协同工作。注意安全，因为你是一位宝贵的领导者。,translated,
+a0b2125b,datums/jobs/job/shipside.dm,47,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+eb9f8d8c,datums/jobs/job/shipside.dm,119,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+a71e8f8c,datums/jobs/job/shipside.dm,191,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+e6e11e33,datums/jobs/job/shipside.dm,271,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+e2dc2dab,datums/jobs/job/shipside.dm,327,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+7c0ea7c2,datums/jobs/job/shipside.dm,363,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+78e7eb1d,datums/jobs/job/shipside.dm,438,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+5349ba57,datums/jobs/job/shipside.dm,493,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+f0692f00,datums/jobs/job/shipside.dm,579,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+6c1906f7,datums/jobs/job/shipside.dm,636,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+18bb257e,datums/jobs/job/shipside.dm,707,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+cd744e25,datums/jobs/job/shipside.dm,759,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+6d6805c5,datums/jobs/job/shipside.dm,841,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+dc8f25da,datums/jobs/job/shipside.dm,882,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+24adf56b,datums/jobs/job/shipside.dm,968,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+96741b09,datums/jobs/job/shipside.dm,1046,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+5d41e6c2,datums/jobs/job/shipside.dm,1088,spawn_header,<b>[title] Information</b>,<b>[title] 信息</b>,translated,
+5a0fb832,datums/jobs/job/shipside.dm,47,separator,[span_role_header(,[span_role_header(,translated,
+6c1fd5b4,datums/jobs/job/shipside.dm,119,separator,[span_role_header(,[span_role_header(,translated,
+d2168e57,datums/jobs/job/shipside.dm,191,separator,[span_role_header(,[span_role_header(,translated,
+7f0509c0,datums/jobs/job/shipside.dm,271,separator,[span_role_header(,[span_role_header(,translated,
+bc234230,datums/jobs/job/shipside.dm,327,separator,[span_role_header(,[span_role_header(,translated,
+61761d0a,datums/jobs/job/shipside.dm,363,separator,[span_role_header(,[span_role_header(,translated,
+5d6073e3,datums/jobs/job/shipside.dm,438,separator,[span_role_header(,[span_role_header(,translated,
+94179081,datums/jobs/job/shipside.dm,493,separator,[span_role_header(,[span_role_header(,translated,
+b19e76ce,datums/jobs/job/shipside.dm,579,separator,[span_role_header(,[span_role_header(,translated,
+c18599d5,datums/jobs/job/shipside.dm,636,separator,[span_role_header(,[span_role_header(,translated,
+7556baa6,datums/jobs/job/shipside.dm,707,separator,[span_role_header(,[span_role_header(,translated,
+310f17b7,datums/jobs/job/shipside.dm,759,separator,[span_role_header(,[span_role_header(,translated,
+9339e300,datums/jobs/job/shipside.dm,841,separator,[span_role_header(,[span_role_header(,translated,
+96fed416,datums/jobs/job/shipside.dm,882,separator,[span_role_header(,[span_role_header(,translated,
+ba58052d,datums/jobs/job/shipside.dm,968,separator,[span_role_header(,[span_role_header(,translated,
+503d5773,datums/jobs/job/shipside.dm,1046,separator,[span_role_header(,[span_role_header(,translated,
+251e8213,datums/jobs/job/shipside.dm,1088,separator,[span_role_header(,[span_role_header(,translated,
+16aab324,datums/jobs/job/shipside.dm,364,append_text,"You are the operator of a very expensive and valuable Mech, and are trained and expected to use it in the field of combat. You can serve your Division in a variety of roles, so choose carefully.",你是一台极其昂贵且价值不菲的机甲的驾驶员，经过训练并被要求在战场上使用它。你可以在多种岗位上为你的部门效力，请谨慎选择。,translated,
+4f2bda77,datums/jobs/job/shipside.dm,439,append_text,"You are an Assault Crewman. You operate the TGMC's armored assault vehicles along with your partner, and in some cases a \""willing\"" loader. Make sure that you work as a team to advance the front!",你是一名突击艇船员。你与你的搭档，有时还包括一名'自愿'的装填手，共同操作TGMC的装甲突击载具。务必确保团队协作，推进前线！,translated,
+22008ff0,datums/jobs/job/shipside.dm,494,append_text,You are a Transport Crewman. You operate the TGMC's transport vehciles to ensure that marines and equipment gets to the front in a timely and safe manner.,你是一名运输机组成员。你负责操作地球政府殖民地海军陆战队的运输载具，确保陆战队员和装备能够及时、安全地抵达前线。,translated,
+56653ffa,datums/jobs/job/shipside.dm,637,append_text,"Your job is to make sure the ship is operational, you should firstly focus on manning the requisitions line and later on to be ready to send supplies for marines who are groundside.",你的职责是确保舰船正常运作，你首先应专注于管理补给线，随后随时准备为地面陆战队员运送物资。,translated,
+acd821e4,datums/jobs/job/shipside.dm,1047,append_text,"Your primary job is to support and assist all TGMC departments and personnel on-board. \
+		In addition, being a Synthetic gives you knowledge in every field and specialization possible on-board the ship.",你的主要职责是支援和协助舰上所有地球政府殖民地海军陆战队部门及人员。\		此外，作为合成人，你拥有舰上所有可能领域和专业的知识。,translated,
+5d924507,datums/jobs/job/shipside.dm,36,multiline_text,"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to</b> TGMC High Command<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Lead the TGMC platoon and complete your mission. Support the marines and communicate with your command staff, execute orders.
+	",<b>难度</b>：困难<br /><br /><b>你的上级</b>：地球政府殖民地海军陆战队最高指挥部<br /><br /><b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br /><b>可用游戏模式</b>：核战争<br /><br /><br /><b>职责</b>：领导地球政府殖民地海军陆战队排并完成你的任务。支援陆战队员并与你的指挥人员沟通，执行命令。,translated,
+8b29c1e8,datums/jobs/job/shipside.dm,48,multiline_text,"As the Captain of the [SSmapping.configs[SHIP_MAP].map_name] you are held by higher standard and are expected to act competently.
+While you may support Nanotrasen, you report to TGMC High Command, not the company.
+Your primary task is the safety of the ship and her crew, and ensuring the survival and success of the Marines.
+Your first order of business should be briefing the marines on the mission they are about to undertake.
+You should not be voluntarily leaving your vessel under any circumstances. <b>A Captain goes down with their ship.</b>
+If you require any help, use <b>Mentorhelp</b> to ask mentors about what you're supposed to do.
+Godspeed, Captain! And remember, you are not above the law.",作为[SSmapping.configs[SHIP_MAP].map_name]的舰长，你被寄予更高的期望，并被要求行事干练。虽然你可能支持纳米传讯，但你向地球政府殖民地海军陆战队最高指挥部汇报，而非该公司。你的首要任务是保障舰船及其船员的安全，并确保陆战队员的生存与任务成功。你的第一要务应是向陆战队员简要介绍他们即将执行的任务。在任何情况下，你都不应自愿离开你的舰船。<b>舰长应与舰船共存亡。</b>如果你需要任何帮助，请使用<b>Mentorhelp</b>向导师咨询你该做什么。祝你好运，舰长！请记住，你并不凌驾于法律之上。,translated,
+77ec8f6b,datums/jobs/job/shipside.dm,108,multiline_text,"
+		<b>Difficulty</b>:Very Hard<br /><br />
+		<b>You answer to the</b> Captain<br /><br />
+		<b>Unlock Requirement</b>: 10 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		<b>Duty</b>: Lead your platoon on the field. Take advantage of the military staff and assets you will need for the mission, keep good relations between command and the marines. Assist the captain if available.
+	",<b>难度</b>：极难<br /><br />		<b>你向</b>舰长<b>汇报</b><br /><br />		<b>解锁要求</b>：10小时游戏时间（任意职位）<br /><br />		<b>可用游戏模式</b>：坠机、核战争<br /><br /><br />		<b>职责</b>：在战场上领导你的排。利用任务所需的军事人员和装备，维持指挥部与陆战队员之间的良好关系。若舰长在场，则协助其工作。,translated,
+3759f1a4,datums/jobs/job/shipside.dm,120,multiline_text,"You are charged with overseeing the operation on the ground, and are the highest-ranked deployed marine.
+Your duties are to ensure marines hold when ordered, and push when they are cowering behind barricades.
+Do not ask your men to do anything you would not do side by side with them.
+Make the TGMC proud!",你负责监督地面行动，是部署部队中军衔最高的军官。  你的职责是确保陆战队员在接到命令时坚守阵地，并在他们畏缩于路障后方时督促他们推进。  不要命令你的部下做任何你不愿与他们并肩作战的事。  为地球政府殖民地海军陆战队争光！,translated,
+34ab2cd9,datums/jobs/job/shipside.dm,179,multiline_text,"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> Captain<br /><br />
+		<b>Unlock Requirement</b>: 3 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Take charge of one of the four squads, be their eyes and ears providing intel and additional shipside support via Orbital Bombardments.
+	",<b>难度</b>：中等<br /><br /><b>你的上级是</b>舰长<br /><br /><b>解锁要求</b>：3小时游戏时长（任意职位）<br /><br /><b>可用游戏模式</b>：核战争<br /><br /><br /><b>职责</b>：指挥四个小队之一，作为他们的耳目，提供情报并通过轨道轰炸提供额外的舰上支援。,translated,
+e939ff06,datums/jobs/job/shipside.dm,192,multiline_text,"Your job is to monitor the marines, man the CIC, and listen to your superior officers.
+You are in charge of logistics and the overwatch system. You are also in line to take command after the captain.",你的职责是监控陆战队员，值守指挥信息中心，并听从上级军官的指示。你负责后勤和监控系统。在舰长之后，你是指挥序列中的下一顺位。,translated,
+913e66eb,datums/jobs/job/shipside.dm,241,multiline_text,"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Pilot the Tadpole, a versatile dropship capable of fulfilling roles ranging from ambulance to mobile bunker.
+	",<b>难度</b>：困难<br /><br /><b>你的上级</b>：代理指挥层<br /><br /><b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：驾驶蝌蚪号，这是一种多功能空降艇，能够承担从救护车到移动堡垒的各种角色。,translated,
+7be9925e,datums/jobs/job/shipside.dm,272,multiline_text,"Your job is to provide mobile dropship support with the Tadpole, which is capable of both mass-transporting marines as well as holding vast amounts of equipment on it.
+Try to ensure the Tadpole's survival. In the case of its destruction, you may request a repair board from requisitions or perform the role of Combat Engineer.",你的职责是使用蝌蚪号提供机动空降支援，该舰艇既能大规模运输陆战队员，也能搭载大量装备。请尽力确保蝌蚪号的存活。若其被摧毁，你可向补给部门申请维修面板，或担任战斗工兵的角色。,translated,
+5ec33cc3,datums/jobs/job/shipside.dm,295,multiline_text,"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Pilot the Condor, a modular attack aircraft that provides close air support with a variety of weapons ranging from the inbuilt gatling to wing mounted rockets.
+	",<b>难度</b>：中等<br /><br />		<b>你向</b> 代理指挥层负责<br /><br />		<b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br />		<b>游戏模式可用性</b>：核战争<br /><br /><br />		<b>职责</b>：驾驶秃鹰式攻击机，这是一种模块化攻击机，可使用多种武器提供近距空中支援，从内置加特林到机翼挂载的火箭。,translated,
+8ce099d6,datums/jobs/job/shipside.dm,328,multiline_text,"Your job is to support marines with close air support via the Condor.
+You are expected to use the Condor as the Alamo is able to be ran automatically, though at some points you will be required to take control of the Alamo for the operation's success, though highly unlikely.
+Though you are an officer, your authority is limited to the dropship and the Condor, where you have authority over the enlisted personnel.",你的职责是通过'秃鹰'号战机为陆战队提供近距空中支援。预计你将主要操作'秃鹰'号，因为'阿拉莫'号可以自动运行，但在某些情况下，为了任务的成功，你可能需要接管'阿拉莫'号的控制权，尽管这种情况极不可能发生。虽然你是一名军官，但你的权限仅限于空投船和'秃鹰'号战机，在此范围内你对士兵拥有指挥权。,translated,
+691f42b0,datums/jobs/job/shipside.dm,352,multiline_text,"
+		<b>Difficulty</b>:Very Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Act as the spearhead of the operation
+	",<b>难度</b>：极难<br /><br /><b>你向</b> 代理指挥人员负责<br /><br /><b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：作为行动的矛头,translated,
+e296651c,datums/jobs/job/shipside.dm,421,multiline_text,"
+		<b>Difficulty</b>:Very Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Provide heavy fire support
+	",<b>难度</b>：极难<br /><br /><b>您向</b> 代理指挥人员负责<br /><br /><b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：提供重型火力支援,translated,
+461eb334,datums/jobs/job/shipside.dm,482,multiline_text,"
+		<b>Difficulty</b>:Very Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Transport and support the frontline troops
+	",<b>难度</b>：极难<br /><br />		<b>你向</b> 代理指挥层汇报<br /><br />		<b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br />		<b>游戏模式可用性</b>：核战争<br /><br /><br />		<b>职责</b>：运输并支援前线部队,translated,
+ad11fdd1,datums/jobs/job/shipside.dm,547,multiline_text,"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 10 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Supervise the engineers and technicians on duty. Overview the ship’s engine. Teach what’s right and what’s wrong about engineering, cut corners and find places in any FOB that can easily be destroyed.
+	",<b>难度</b>：困难<br /><br /><b>你的上级是</b>代理指挥层<br /><br /><b>解锁要求</b>：10小时游戏时长（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：监督值班的工程师和技术员。总览舰船引擎。教导工程方面的正确与错误做法，寻找捷径，并找出任何前线作战基地中容易被摧毁的位置。,translated,
+8811358b,datums/jobs/job/shipside.dm,580,multiline_text,"Your job is to maintain the ship's engine and keep everything running.
+If you have no idea how to set up the engine, or it's your first time, <b>mentorhelp</b> so that a mentor can assist you.
+You are also next in the chain of command, should the bridge crew fall in the line of duty.",你的职责是维护舰船引擎并确保一切正常运行。如果你不知道如何设置引擎，或者这是你第一次操作，请<b>寻求导师帮助</b>，以便导师能协助你。如果舰桥人员在执行任务时阵亡，你也是指挥链中的下一顺位接替者。,translated,
+95242965,datums/jobs/job/shipside.dm,604,multiline_text,"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> Chief Ship Engineer<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Maintain the ship, be in charge of the engines. Be the secondary engineer to a forward operating base, prepare the shipside defenses if needed. Help the Pilot Officer in preparing the dropship.
+	",<b>难度</b>：中等<br /><br /><b>你的上级是</b>首席舰船工程师<br /><br /><b>解锁要求</b>：初始职位<br /><br /><b>可用游戏模式</b>：核战争<br /><br /><br /><b>职责</b>：维护舰船，负责引擎。作为前线作战基地的辅助工程师，必要时准备舰上防御。协助飞行员准备运输机。,translated,
+3e232f99,datums/jobs/job/shipside.dm,674,multiline_text,"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 1 hour playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		Requisition supplies to the battlefield. Ensure that the marines are reparing miners for more points. Supply the marines with deluxe equipment to ensure success.
+	",<b>难度</b>：中等<br /><br /><b>你的上级是</b> 代理指挥层<br /><br /><b>解锁要求</b>：1小时游戏时间（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br />向战场提供补给。确保陆战队员修复矿机以获得更多点数。为陆战队员提供豪华装备以确保任务成功。,translated,
+c8554682,datums/jobs/job/shipside.dm,708,multiline_text,"Your job is to dispense supplies to the marines, including weapon attachments.
+While you may request paperwork for supplies, do not go out of your way to screw with marines, unless you want to get deposed.
+A happy ship is a well-functioning ship.",你的职责是为陆战队员分发补给，包括枪械配件。虽然你可以要求提供补给申请文件，但不要刻意刁难陆战队员，除非你想被撤职。一艘士气高昂的船才能高效运转。,translated,
+74cf5459,datums/jobs/job/shipside.dm,747,multiline_text,"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 10 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		<b>Duty</b>: Communicate and lead your fellow medical staff (if available), supervise the medical department. Coordinate and teach fellow medical staff and corpsmen what they’re doing for treating an injury. Be the sole doctor in the Canterbury.
+	",<b>难度</b>：困难<br /><br /><b>你的上级是</b> 代理指挥层<br /><br /><b>解锁要求</b>：10小时游戏时长（任意职位）<br /><br /><b>游戏模式可用性</b>：坠机模式，核战争模式<br /><br /><br /><b>职责</b>：与你的医疗同僚（如果有的话）沟通并领导他们，监督医疗部门。协调并指导医疗同僚和卫生兵如何处理伤势。成为坎特伯雷号上唯一的医生。,translated,
+8896a6a3,datums/jobs/job/shipside.dm,760,multiline_text,"You are the chief medical officer aboard the [SSmapping.configs[SHIP_MAP].map_name] and supervisor to the medical department.
+You have final authority over the medical department, medications, and treatments.
+Make sure that the doctors and nurses are doing their jobs and keeping the marines healthy and strong.",你是[SSmapping.configs[SHIP_MAP].map_name]号上的首席医疗官，也是医疗部门的负责人。你对医疗部门、药物和治疗拥有最终决定权。确保医生和护士们各司其职，让陆战队员们保持健康强壮。,translated,
+5432b7a0,datums/jobs/job/shipside.dm,809,multiline_text,"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> Chief Medical Officer<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Tend severely wounded patients to your aid in the form of surgery, repair broken bones and damaged organs, fix internal bleeding and prevent the birth of a xenomorph larva. Develop superior healing medicines.
+	",<b>难度</b>：中等<br /><br />		<b>你的上级是</b>首席医疗官<br /><br />		<b>解锁要求</b>：初始职位<br /><br />		<b>可用游戏模式</b>：核战争<br /><br /><br />		<b>职责</b>：通过手术形式救治重伤患者，修复骨折和受损器官，处理内出血并防止异形幼虫诞生。研发高级治疗药物。,translated,
+174d03a4,datums/jobs/job/shipside.dm,842,multiline_text,"You are a doctor stationed aboard the [SSmapping.configs[SHIP_MAP].map_name].
+You are tasked with keeping the marines healthy and strong, usually in the form of surgery.
+You are also an expert when it comes to medication and treatment. If you do not know what you are doing, <b>mentorhelp</b> so a mentor can assist you.",你是一名驻扎在[SSmapping.configs[SHIP_MAP].map_name]上的医生。你的任务是保持陆战队员的健康与强壮，通常以手术形式进行。你也是药物和治疗方面的专家。如果你不清楚该怎么做，请<b>mentorhelp</b>，以便导师能协助你。,translated,
+7930d424,datums/jobs/job/shipside.dm,870,multiline_text,"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> Nanotrasen Corporate Office<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Research extraterrestrial life aboard the ship if provided by Nanotrasen/TerraGov, synthesize chemicals for the benefit of the marines. Find out the cause of why and when. Learn new things for humankind. Act as a secondary medical officer in practice.
+	",<b>难度</b>：中等<br /><br /><b>你的上级是</b>纳米传讯企业办公室<br /><br /><b>解锁要求</b>：初始角色<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：研究船上由纳米传讯/地球政府提供的外星生命，为陆战队员的利益合成化学品。查明事件的原因和时间。为人类学习新知识。在实践中担任辅助医疗官。,translated,
+facc9b23,datums/jobs/job/shipside.dm,883,multiline_text,"You are a civilian, working for the Nanotrasen Corporation, but you are still subject to the military chain of command.
+You are tasked with deploying with the marines and researching the remains of the colony to get funding for Requisitions.
+You are free to use any new technology you discover as you want, or give them out to the marines.
+If shipside medbay is unstaffed, you should consider working as a regular doctor until someone else is available to take over.
+It is also recommended that you gear up like a regular marine, or your 'internship' might be ending early...",[相关术语：King=异形之王、Nanotrasen=纳米传讯、Requisition=补给]你是一名平民，受雇于纳米传讯公司，但仍需服从军事指挥链。你的任务是随陆战队一同部署，并研究殖民地的残骸，为补给部门获取资金。你可以自由使用你发现的任何新技术，或者将它们分发给陆战队员。如果舰上医疗室无人值守，你应该考虑暂时担任普通医生，直到有其他人员接手。同时建议你像普通陆战队员一样装备自己，否则你的'实习期'可能会提前结束……,translated,
+db06dd4a,datums/jobs/job/shipside.dm,935,multiline_text,"
+		<b>Difficulty</b>: Hard (varies)<br /><br />
+		<b>You answer to the</b> Nanotrasen Corporate Office<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Manage relations between Nanotrasen and TerraGov Marine Corps. Report your findings via faxes. Reply if you’re called.
+	",<b>难度</b>：困难（视情况而定）<br /><br /><b>你的上级是</b>纳米传讯企业办公室<br /><br /><b>解锁要求</b>：初始角色<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：管理纳米传讯与地球政府殖民地海军陆战队之间的关系。通过传真报告你的发现。收到呼叫时予以回复。,translated,
+2b655849,datums/jobs/job/shipside.dm,969,multiline_text,"As a representative of Nanotrasen Corporation you are expected to stay professional and loyal to the corporation at all times.
+You are not required to follow military orders; however, you cannot give military orders.
+Your primary job is to observe and report back your findings to Nanotrasen. Follow regular game rules unless told otherwise by your superiors.
+Use your office fax machine to communicate with corporate headquarters or to acquire new directives. You may not receive anything back (especially if the game staff are absent or otherwise busy), and this is normal.",作为纳米传讯公司的代表，你必须始终保持专业态度，并对公司保持忠诚。你无需遵守军事命令；然而，你也不能下达军事命令。你的主要工作是观察并向纳米传讯汇报你的发现。除非上级另有指示，否则请遵守常规游戏规则。使用你办公室的传真机与公司总部沟通或获取新指令。你可能收不到任何回复（尤其是在游戏管理员缺席或忙碌时），这属于正常情况。,translated,
+23170e07,datums/jobs/job/shipside.dm,1001,multiline_text,"
+		<b>Difficulty</b>: Soul Crushing<br /><br />
+		<b>You answer to the</b> acting Command Staff and the human crew<br /><br />
+		<b>Unlock Requirement</b>: 10 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		<b>Duty</b>: Support and assist in every department of the TerraGov Marine Corps, use your incredibly developed skills to help the marines during their missions. You can talk to other synthetics or the AI on the :n channel. Serve your purpose.
+	",<b>难度</b>：灵魂粉碎级<br /><br /><b>你听命于</b> 代理指挥层及全体人类船员<br /><br /><b>解锁要求</b>：10小时游戏时长（任意职位）<br /><br /><b>游戏模式可用性</b>：坠毁、核战争<br /><br /><br /><b>职责</b>：在地球政府殖民地海军陆战队的各个部门提供支持与协助，运用你极其发达的技能帮助陆战队员完成任务。你可以在 :n 频道与其他合成人或人工智能交流。履行你的使命。,translated,
+920d61b9,datums/jobs/job/shipside.dm,1070,multiline_text,"
+		<b>Difficulty</b>: Easy<br /><br />
+		<b>You answer to the</b> acting Command Staff and the human crew<br /><br />
+		<b>Unlock Requirement</b>: 3 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Assist the crew whenever you’re needed, be the doorknob of the ship. Recon the areas for threats via cameras, report your findings to the crew at various communication channels. Follow your laws.
+	",<b>难度</b>：简单<br /><br /><b>你听命于</b> 代理指挥层和人类船员<br /><br /><b>解锁要求</b>：3小时游戏时间（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：在需要时协助船员，成为舰船的'门把手'。通过摄像头侦察区域威胁，通过各种通讯渠道向船员报告你的发现。遵守你的定律。,translated,
+675a6f23,datums/jobs/job/shipside.dm,1089,multiline_text,"Your primary job is to support and assist all TGMC departments and personnel on-board.
+However, your vision is limited through cameras from the ship or to marines groundside.
+Recon any threats and report findings at various communication channels.
+If you require any help, use <b>Mentorhelp</b> to ask mentors about what you're supposed to do.",你的主要职责是支援和协助舰上所有地球政府殖民地海军陆战队部门及人员。然而，你的视野仅限于舰船摄像头或地面陆战队员的视角。侦察任何威胁，并通过各种通讯渠道报告发现。如果你需要任何帮助，请使用<b>导师求助</b>向导师询问你应该做什么。,translated,
+26d14ce7,datums/gamemodes/infestation.dm,72,to_chat,生化扫描仪器仍在根据上次使用进行重新校准。,生化扫描仪器仍在根据上次使用进行重新校准。,translated,
+7c355e4b,datums/gamemodes/infestation.dm,75,to_chat,正在扫描敌对生命体...,正在扫描敌对生命体...,translated,
+a8b05ce9,datums/gamemodes/infestation.dm,154,to_chat,信号分析显示敌方动向与数量细节极佳。,Signal analysis shows excellent detail on enemy movements and numbers.,translated,
+c32197d9,datums/gamemodes/infestation.dm,157,to_chat,由于舰船高度变化，我们的生化扫描仪器检测到轻微数据异常，部分敌对活动信息可能不准确。,"Due to ship altitude changes, our bio-scanning instruments are detecting minor data anomalies; some hostile activity information may be inaccurate.",translated,
+bb93f1c4,datums/gamemodes/infestation.dm,160,to_chat,由于舰船高度变化，我们的生化扫描读数检测到严重数据损坏，信息已严重失真。,由于舰船高度变化，我们的生化扫描读数检测到严重数据损坏，信息已严重失真。,translated,
+279b70ba,datums/gamemodes/infestation.dm,324,to_chat,<b>无法启动[name]。</b>未找到异形候选者。,<b>无法启动[name]。</b>未找到异形候选者。,translated,
+40ff2e15,datums/gamemodes/infestation.dm,346,to_chat,当前地图是 - [SSmapping.configs[GROUND_MAP].map_name]！,当前地图是 - [SSmapping.configs[GROUND_MAP].map_name]！,translated,
+5a91ed99,datums/gamemodes/infestation.dm,359,announce_title,Planetary Warhead Disengaged,行星级弹头已解除,translated,
+9d2d7da1,datums/gamemodes/infestation.dm,375,announce_title,Planetary Warhead Detonation Confirmed,行星级弹头引爆确认,translated,
+0d846465,datums/gamemodes/infestation.dm,124,alert_field,Queen Mother Report,异形女王母体报告,translated,
+9d72dbe5,datums/gamemodes/infestation.dm,125,alert_field,The Queen Mother reaches into your mind...,母后女王探入了你的脑海...,translated,
+938e658e,datums/gamemodes/infestation.dm,127,alert_field,"To my children and their Queen,<br>I sense [hosts_shipside ? ",致我的子嗣与异形女王，<br>我感知到[hosts_shipside ?,translated,
+4d825d9c,datums/gamemodes/infestation.dm,174,alert_field,Detailed Bioscan,详细生化扫描,translated,
+ef9804ea,datums/gamemodes/infestation.dm,337,alert_field,High Command Update,最高指挥部更新,translated,
+a209bf7a,datums/gamemodes/infestation.dm,338,alert_field,"Good morning, marines.",早上好，陆战队员们。,translated,
+d473a7df,datums/gamemodes/infestation.dm,339,alert_field,Cryosleep disengaged by TGMC High Command.<br><br>ATTN: [SSmapping.configs[SHIP_MAP].map_name].<br>[SSmapping.configs[GROUND_MAP].announce_text],低温休眠已由地球政府殖民地海军陆战队最高指挥部解除。<br><br>致：[SSmapping.configs[SHIP_MAP].map_name]。<br>[SSmapping.configs[GROUND_MAP].announce_text],translated,
+408a7162,datums/gamemodes/infestation.dm,137,multiline_text,"Bioscan complete. Sensors indicate [numXenosShip || ""no""] unknown lifeform signature[numXenosShip > 1 ? ""s"":""""] \
+	present on the ship[BIOSCAN_LOCATION(show_locations, xeno_location_shipside)], [xenos_planetside ? ""approximately [xenos_planetside]"":""no""] \
+	signature[xenos_planetside > 1 ? ""s"":""""] located elsewhere[BIOSCAN_LOCATION(show_locations, xeno_location_planetside)] and [numXenosTransit || ""no""] \
+	unknown lifeform signature[numXenosTransit > 1 ? ""s"":""""] in transit.","生化扫描完成。传感器显示船上有[numXenosShip || ""无""]个未知生命体信号[numXenosShip > 1 ? ""s"":""""][BIOSCAN_LOCATION(show_locations, xeno_location_shipside)]，其他地方有[xenos_planetside ? ""约[xenos_planetside]个"":""无""]信号[xenos_planetside > 1 ? ""s"":""""][BIOSCAN_LOCATION(show_locations, xeno_location_planetside)]，以及[numXenosTransit || ""无""]个未知生命体信号[numXenosTransit > 1 ? ""s"":""""]正在运输途中。",translated,
+e0cc10ad,datums/gamemodes/infestation.dm,175,multiline_text,"[numXenosPlanet] xeno\s on the planet.
+[numXenosShip] xeno\s on the ship.
+[numXenosTransit] xeno\s in transit.
+
+[numHostsPlanet] human\s on the planet.
+[numHostsShip] human\s on the ship.
+[numHostsTransit] human\s in transit.",[numXenosPlanet] 名异形在行星上。[numXenosShip] 名异形在舰船上。[numXenosTransit] 名异形在运输途中。[numHostsPlanet] 名人类在行星上。[numHostsShip] 名人类在舰船上。[numHostsTransit] 名人类在运输途中。,translated,
+86eca53f,datums/gamemodes/hvh.dm,3,name,HvH base mode,HvH 基础模式,translated,
+293a1ffb,datums/gamemodes/hvh.dm,174,alert_field,Detailed Bioscan,详细生化扫描,translated,
+b7f1e97d,datums/gamemodes/hvh.dm,153,multiline_text,"Bioscan complete.
+
+Sensors indicate [num_tgmc_delta || ""no""] unknown lifeform signature[num_tgmc_delta > 1 ? ""s"":""""] present in the area of operations[tgmc_location ? "", including one at: [tgmc_location]"":""""]","生化扫描完成。传感器显示作战区域内存在[num_tgmc_delta || ""无""]个未知生命体信号[num_tgmc_delta > 1 ? """":""""][tgmc_location ? ""，其中一处位于：[tgmc_location]"":""""]。",translated,
+f634cc1d,datums/gamemodes/hvh.dm,162,multiline_text,"Bioscan complete.
+
+Sensors indicate [num_som_delta || ""no""] unknown lifeform signature[num_som_delta > 1 ? ""s"":""""] present in the area of operations[som_location ? "", including one at: [som_location]"":""""]","生物扫描完成。传感器显示作战区域内存在[num_som_delta || ""无""]个未知生命体信号[num_som_delta > 1 ? """":""""][som_location ? ""，其中一处位于：[som_location]"":""""]。",translated,
+fabfa6c3,datums/gamemodes/hvh.dm,175,multiline_text,"[num_som] SOM alive.
+[num_tgmc] Marine\s alive.",[num_som] 名火星之子存活。[num_tgmc] 名陆战队员存活。,translated,

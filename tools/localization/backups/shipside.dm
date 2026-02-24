@@ -33,13 +33,25 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：困难<br /><br /><b>你的上级</b>：地球政府殖民地海军陆战队最高指挥部<br /><br /><b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br /><b>可用游戏模式</b>：核战争<br /><br /><br /><b>职责</b>：领导地球政府殖民地海军陆战队排并完成你的任务。支援陆战队员并与你的指挥人员沟通，执行命令。"}
+	html_description = {"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to</b> TGMC High Command<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Lead the TGMC platoon and complete your mission. Support the marines and communicate with your command staff, execute orders.
+	"}
 	minimap_icon = "captain"
 
 /datum/job/terragov/command/captain/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"作为[SSmapping.configs[SHIP_MAP].map_name]的舰长，你被寄予更高的期望，并被要求行事干练。虽然你可能支持纳米传讯，但你向地球政府殖民地海军陆战队最高指挥部汇报，而非该公司。你的首要任务是保障舰船及其船员的安全，并确保陆战队员的生存与任务成功。你的第一要务应是向陆战队员简要介绍他们即将执行的任务。在任何情况下，你都不应自愿离开你的舰船。<b>舰长应与舰船共存亡。</b>如果你需要任何帮助，请使用<b>Mentorhelp</b>向导师咨询你该做什么。祝你好运，舰长！请记住，你并不凌驾于法律之上。"}
+	. += {"As the Captain of the [SSmapping.configs[SHIP_MAP].map_name] you are held by higher standard and are expected to act competently.
+While you may support Nanotrasen, you report to TGMC High Command, not the company.
+Your primary task is the safety of the ship and her crew, and ensuring the survival and success of the Marines.
+Your first order of business should be briefing the marines on the mission they are about to undertake.
+You should not be voluntarily leaving your vessel under any circumstances. <b>A Captain goes down with their ship.</b>
+If you require any help, use <b>Mentorhelp</b> to ask mentors about what you're supposed to do.
+Godspeed, Captain! And remember, you are not above the law."}
 
 /datum/job/terragov/command/captain/after_spawn(mob/living/new_mob, mob/user, latejoin)
 	. = ..()
@@ -93,13 +105,22 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：极难<br /><br />		<b>你向</b>舰长<b>汇报</b><br /><br />		<b>解锁要求</b>：10小时游戏时间（任意职位）<br /><br />		<b>可用游戏模式</b>：坠机、核战争<br /><br /><br />		<b>职责</b>：在战场上领导你的排。利用任务所需的军事人员和装备，维持指挥部与陆战队员之间的良好关系。若舰长在场，则协助其工作。"}
+	html_description = {"
+		<b>Difficulty</b>:Very Hard<br /><br />
+		<b>You answer to the</b> Captain<br /><br />
+		<b>Unlock Requirement</b>: 10 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		<b>Duty</b>: Lead your platoon on the field. Take advantage of the military staff and assets you will need for the mission, keep good relations between command and the marines. Assist the captain if available.
+	"}
 	minimap_icon = "fieldcommander"
 
 /datum/job/terragov/command/fieldcommander/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"你负责监督地面行动，是部署部队中军衔最高的军官。  你的职责是确保陆战队员在接到命令时坚守阵地，并在他们畏缩于路障后方时督促他们推进。  不要命令你的部下做任何你不愿与他们并肩作战的事。  为地球政府殖民地海军陆战队争光！"}
+	. += {"You are charged with overseeing the operation on the ground, and are the highest-ranked deployed marine.
+Your duties are to ensure marines hold when ordered, and push when they are cowering behind barricades.
+Do not ask your men to do anything you would not do side by side with them.
+Make the TGMC proud!"}
 
 /datum/job/terragov/command/fieldcommander/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
@@ -155,14 +176,21 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：中等<br /><br /><b>你的上级是</b>舰长<br /><br /><b>解锁要求</b>：3小时游戏时长（任意职位）<br /><br /><b>可用游戏模式</b>：核战争<br /><br /><br /><b>职责</b>：指挥四个小队之一，作为他们的耳目，提供情报并通过轨道轰炸提供额外的舰上支援。"}
+	html_description = {"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> Captain<br /><br />
+		<b>Unlock Requirement</b>: 3 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Take charge of one of the four squads, be their eyes and ears providing intel and additional shipside support via Orbital Bombardments.
+	"}
 
 	minimap_icon = "staffofficer"
 
 /datum/job/terragov/command/staffofficer/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"你的职责是监控陆战队员，值守指挥信息中心，并听从上级军官的指示。你负责后勤和监控系统。在舰长之后，你是指挥序列中的下一顺位。"}
+	. += {"Your job is to monitor the marines, man the CIC, and listen to your superior officers.
+You are in charge of logistics and the overwatch system. You are also in line to take command after the captain."}
 
 /datum/job/terragov/command/staffofficer/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
@@ -210,7 +238,13 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：困难<br /><br /><b>你的上级</b>：代理指挥层<br /><br /><b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：驾驶蝌蚪号，这是一种多功能空降艇，能够承担从救护车到移动堡垒的各种角色。"}
+	html_description = {"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Pilot the Tadpole, a versatile dropship capable of fulfilling roles ranging from ambulance to mobile bunker.
+	"}
 	minimap_icon = "transportofficer"
 
 /datum/job/terragov/command/transportofficer/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
@@ -235,7 +269,8 @@
 /datum/job/terragov/command/transportofficer/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"你的职责是使用蝌蚪号提供机动空降支援，该舰艇既能大规模运输陆战队员，也能搭载大量装备。请尽力确保蝌蚪号的存活。若其被摧毁，你可向补给部门申请维修面板，或担任战斗工兵的角色。"}
+	. += {"Your job is to provide mobile dropship support with the Tadpole, which is capable of both mass-transporting marines as well as holding vast amounts of equipment on it.
+Try to ensure the Tadpole's survival. In the case of its destruction, you may request a repair board from requisitions or perform the role of Combat Engineer."}
 
 //Pilot Officer
 /datum/job/terragov/command/pilot
@@ -257,7 +292,13 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：中等<br /><br />		<b>你向</b> 代理指挥层负责<br /><br />		<b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br />		<b>游戏模式可用性</b>：核战争<br /><br /><br />		<b>职责</b>：驾驶秃鹰式攻击机，这是一种模块化攻击机，可使用多种武器提供近距空中支援，从内置加特林到机翼挂载的火箭。"}
+	html_description = {"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Pilot the Condor, a modular attack aircraft that provides close air support with a variety of weapons ranging from the inbuilt gatling to wing mounted rockets.
+	"}
 	minimap_icon = "pilot"
 
 /datum/job/terragov/command/pilot/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
@@ -284,7 +325,9 @@
 /datum/job/terragov/command/pilot/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"你的职责是通过'秃鹰'号战机为陆战队提供近距空中支援。预计你将主要操作'秃鹰'号，因为'阿拉莫'号可以自动运行，但在某些情况下，为了任务的成功，你可能需要接管'阿拉莫'号的控制权，尽管这种情况极不可能发生。虽然你是一名军官，但你的权限仅限于空投船和'秃鹰'号战机，在此范围内你对士兵拥有指挥权。"}
+	. += {"Your job is to support marines with close air support via the Condor.
+You are expected to use the Condor as the Alamo is able to be ran automatically, though at some points you will be required to take control of the Alamo for the operation's success, though highly unlikely.
+Though you are an officer, your authority is limited to the dropship and the Condor, where you have authority over the enlisted personnel."}
 
 
 //Mech pilot
@@ -306,7 +349,13 @@
 		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：极难<br /><br /><b>你向</b> 代理指挥人员负责<br /><br /><b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：作为行动的矛头"}
+	html_description = {"
+		<b>Difficulty</b>:Very Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Act as the spearhead of the operation
+	"}
 	minimap_icon = "mech_pilot"
 
 /datum/job/terragov/command/mech_pilot/get_spawn_message_information(mob/M)
@@ -369,7 +418,13 @@
 		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：极难<br /><br /><b>您向</b> 代理指挥人员负责<br /><br /><b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：提供重型火力支援"}
+	html_description = {"
+		<b>Difficulty</b>:Very Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Provide heavy fire support
+	"}
 	minimap_icon = "assault_crew"
 
 /datum/job/terragov/command/assault_crewman/on_pre_setup()
@@ -424,7 +479,13 @@
 		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：极难<br /><br />		<b>你向</b> 代理指挥层汇报<br /><br />		<b>解锁要求</b>：25小时游戏时间（任意职位）<br /><br />		<b>游戏模式可用性</b>：核战争<br /><br /><br />		<b>职责</b>：运输并支援前线部队"}
+	html_description = {"
+		<b>Difficulty</b>:Very Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 25 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Transport and support the frontline troops
+	"}
 	minimap_icon = "transport_crew"
 
 /datum/job/terragov/command/transport_crewman/get_spawn_message_information(mob/M)
@@ -483,7 +544,13 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：困难<br /><br /><b>你的上级是</b>代理指挥层<br /><br /><b>解锁要求</b>：10小时游戏时长（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：监督值班的工程师和技术员。总览舰船引擎。教导工程方面的正确与错误做法，寻找捷径，并找出任何前线作战基地中容易被摧毁的位置。"}
+	html_description = {"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 10 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Supervise the engineers and technicians on duty. Overview the ship’s engine. Teach what’s right and what’s wrong about engineering, cut corners and find places in any FOB that can easily be destroyed.
+	"}
 	minimap_icon = "cse"
 
 /datum/job/terragov/engineering/chief/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
@@ -510,7 +577,9 @@
 /datum/job/terragov/engineering/chief/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"你的职责是维护舰船引擎并确保一切正常运行。如果你不知道如何设置引擎，或者这是你第一次操作，请<b>寻求导师帮助</b>，以便导师能协助你。如果舰桥人员在执行任务时阵亡，你也是指挥链中的下一顺位接替者。"}
+	. += {"Your job is to maintain the ship's engine and keep everything running.
+If you have no idea how to set up the engine, or it's your first time, <b>mentorhelp</b> so that a mentor can assist you.
+You are also next in the chain of command, should the bridge crew fall in the line of duty."}
 
 
 //Ship Engineer
@@ -532,7 +601,13 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：中等<br /><br /><b>你的上级是</b>首席舰船工程师<br /><br /><b>解锁要求</b>：初始职位<br /><br /><b>可用游戏模式</b>：核战争<br /><br /><br /><b>职责</b>：维护舰船，负责引擎。作为前线作战基地的辅助工程师，必要时准备舰上防御。协助飞行员准备运输机。"}
+	html_description = {"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> Chief Ship Engineer<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Maintain the ship, be in charge of the engines. Be the secondary engineer to a forward operating base, prepare the shipside defenses if needed. Help the Pilot Officer in preparing the dropship.
+	"}
 	minimap_icon = "st"
 
 /datum/job/terragov/engineering/tech/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
@@ -596,7 +671,13 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：中等<br /><br /><b>你的上级是</b> 代理指挥层<br /><br /><b>解锁要求</b>：1小时游戏时间（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br />向战场提供补给。确保陆战队员修复矿机以获得更多点数。为陆战队员提供豪华装备以确保任务成功。"}
+	html_description = {"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 1 hour playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		Requisition supplies to the battlefield. Ensure that the marines are reparing miners for more points. Supply the marines with deluxe equipment to ensure success.
+	"}
 	minimap_icon = "requisition"
 
 
@@ -624,7 +705,9 @@
 /datum/job/terragov/requisitions/officer/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"你的职责是为陆战队员分发补给，包括枪械配件。虽然你可以要求提供补给申请文件，但不要刻意刁难陆战队员，除非你想被撤职。一艘士气高昂的船才能高效运转。"}
+	. += {"Your job is to dispense supplies to the marines, including weapon attachments.
+While you may request paperwork for supplies, do not go out of your way to screw with marines, unless you want to get deposed.
+A happy ship is a well-functioning ship."}
 
 
 
@@ -661,14 +744,22 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：困难<br /><br /><b>你的上级是</b> 代理指挥层<br /><br /><b>解锁要求</b>：10小时游戏时长（任意职位）<br /><br /><b>游戏模式可用性</b>：坠机模式，核战争模式<br /><br /><br /><b>职责</b>：与你的医疗同僚（如果有的话）沟通并领导他们，监督医疗部门。协调并指导医疗同僚和卫生兵如何处理伤势。成为坎特伯雷号上唯一的医生。"}
+	html_description = {"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 10 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		<b>Duty</b>: Communicate and lead your fellow medical staff (if available), supervise the medical department. Coordinate and teach fellow medical staff and corpsmen what they’re doing for treating an injury. Be the sole doctor in the Canterbury.
+	"}
 	minimap_icon = "chief_medical"
 
 
 /datum/job/terragov/medical/professor/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"你是[SSmapping.configs[SHIP_MAP].map_name]号上的首席医疗官，也是医疗部门的负责人。你对医疗部门、药物和治疗拥有最终决定权。确保医生和护士们各司其职，让陆战队员们保持健康强壮。"}
+	. += {"You are the chief medical officer aboard the [SSmapping.configs[SHIP_MAP].map_name] and supervisor to the medical department.
+You have final authority over the medical department, medications, and treatments.
+Make sure that the doctors and nurses are doing their jobs and keeping the marines healthy and strong."}
 
 /datum/job/terragov/medical/professor/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
@@ -715,7 +806,13 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：中等<br /><br />		<b>你的上级是</b>首席医疗官<br /><br />		<b>解锁要求</b>：初始职位<br /><br />		<b>可用游戏模式</b>：核战争<br /><br /><br />		<b>职责</b>：通过手术形式救治重伤患者，修复骨折和受损器官，处理内出血并防止异形幼虫诞生。研发高级治疗药物。"}
+	html_description = {"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> Chief Medical Officer<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Tend severely wounded patients to your aid in the form of surgery, repair broken bones and damaged organs, fix internal bleeding and prevent the birth of a xenomorph larva. Develop superior healing medicines.
+	"}
 	minimap_icon = "medical"
 
 /datum/job/terragov/medical/medicalofficer/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
@@ -742,7 +839,9 @@
 /datum/job/terragov/medical/medicalofficer/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"你是一名驻扎在[SSmapping.configs[SHIP_MAP].map_name]上的医生。你的任务是保持陆战队员的健康与强壮，通常以手术形式进行。你也是药物和治疗方面的专家。如果你不清楚该怎么做，请<b>mentorhelp</b>，以便导师能协助你。"}
+	. += {"You are a doctor stationed aboard the [SSmapping.configs[SHIP_MAP].map_name].
+You are tasked with keeping the marines healthy and strong, usually in the form of surgery.
+You are also an expert when it comes to medication and treatment. If you do not know what you are doing, <b>mentorhelp</b> so a mentor can assist you."}
 
 //Researcher
 /datum/job/terragov/medical/researcher
@@ -768,14 +867,24 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：中等<br /><br /><b>你的上级是</b>纳米传讯企业办公室<br /><br /><b>解锁要求</b>：初始角色<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：研究船上由纳米传讯/地球政府提供的外星生命，为陆战队员的利益合成化学品。查明事件的原因和时间。为人类学习新知识。在实践中担任辅助医疗官。"}
+	html_description = {"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> Nanotrasen Corporate Office<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Research extraterrestrial life aboard the ship if provided by Nanotrasen/TerraGov, synthesize chemicals for the benefit of the marines. Find out the cause of why and when. Learn new things for humankind. Act as a secondary medical officer in practice.
+	"}
 	minimap_icon = "researcher"
 
 
 /datum/job/terragov/medical/researcher/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"你是一名平民，受雇于纳米传讯公司，但仍需服从军事指挥链。你的任务是随陆战队一同部署，并研究殖民地的残骸，为补给部门获取资金。你可以自由使用你发现的任何新技术，或者将它们分发给陆战队员。如果舰上医疗室无人值守，你应该考虑暂时担任普通医生，直到有其他人员接手。同时建议你像普通陆战队员一样装备自己，否则你的'实习期'可能会提前结束……"}
+	. += {"You are a civilian, working for the Nanotrasen Corporation, but you are still subject to the military chain of command.
+You are tasked with deploying with the marines and researching the remains of the colony to get funding for Requisitions.
+You are free to use any new technology you discover as you want, or give them out to the marines.
+If shipside medbay is unstaffed, you should consider working as a regular doctor until someone else is available to take over.
+It is also recommended that you gear up like a regular marine, or your 'internship' might be ending early..."}
 
 /datum/job/terragov/medical/researcher/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
@@ -823,7 +932,13 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：困难（视情况而定）<br /><br /><b>你的上级是</b>纳米传讯企业办公室<br /><br /><b>解锁要求</b>：初始角色<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：管理纳米传讯与地球政府殖民地海军陆战队之间的关系。通过传真报告你的发现。收到呼叫时予以回复。"}
+	html_description = {"
+		<b>Difficulty</b>: Hard (varies)<br /><br />
+		<b>You answer to the</b> Nanotrasen Corporate Office<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Manage relations between Nanotrasen and TerraGov Marine Corps. Report your findings via faxes. Reply if you’re called.
+	"}
 	minimap_icon = "cl"
 
 /datum/job/terragov/civilian/liaison/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
@@ -851,7 +966,10 @@
 /datum/job/terragov/civilian/liaison/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"作为纳米传讯公司的代表，你必须始终保持专业态度，并对公司保持忠诚。你无需遵守军事命令；然而，你也不能下达军事命令。你的主要工作是观察并向纳米传讯汇报你的发现。除非上级另有指示，否则请遵守常规游戏规则。使用你办公室的传真机与公司总部沟通或获取新指令。你可能收不到任何回复（尤其是在游戏管理员缺席或忙碌时），这属于正常情况。"}
+	. += {"As a representative of Nanotrasen Corporation you are expected to stay professional and loyal to the corporation at all times.
+You are not required to follow military orders; however, you cannot give military orders.
+Your primary job is to observe and report back your findings to Nanotrasen. Follow regular game rules unless told otherwise by your superiors.
+Use your office fax machine to communicate with corporate headquarters or to acquire new directives. You may not receive anything back (especially if the game staff are absent or otherwise busy), and this is normal."}
 
 /datum/job/terragov/silicon
 	job_category = JOB_CAT_SILICON
@@ -880,7 +998,13 @@
 		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：灵魂粉碎级<br /><br /><b>你听命于</b> 代理指挥层及全体人类船员<br /><br /><b>解锁要求</b>：10小时游戏时长（任意职位）<br /><br /><b>游戏模式可用性</b>：坠毁、核战争<br /><br /><br /><b>职责</b>：在地球政府殖民地海军陆战队的各个部门提供支持与协助，运用你极其发达的技能帮助陆战队员完成任务。你可以在 :n 频道与其他合成人或人工智能交流。履行你的使命。"}
+	html_description = {"
+		<b>Difficulty</b>: Soul Crushing<br /><br />
+		<b>You answer to the</b> acting Command Staff and the human crew<br /><br />
+		<b>Unlock Requirement</b>: 10 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		<b>Duty</b>: Support and assist in every department of the TerraGov Marine Corps, use your incredibly developed skills to help the marines during their missions. You can talk to other synthetics or the AI on the :n channel. Serve your purpose.
+	"}
 	minimap_icon = "synth"
 
 /datum/job/terragov/silicon/synthetic/get_special_name(client/preference_source)
@@ -943,7 +1067,13 @@
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：简单<br /><br /><b>你听命于</b> 代理指挥层和人类船员<br /><br /><b>解锁要求</b>：3小时游戏时间（任意职位）<br /><br /><b>游戏模式可用性</b>：核战争<br /><br /><br /><b>职责</b>：在需要时协助船员，成为舰船的'门把手'。通过摄像头侦察区域威胁，通过各种通讯渠道向船员报告你的发现。遵守你的定律。"}
+	html_description = {"
+		<b>Difficulty</b>: Easy<br /><br />
+		<b>You answer to the</b> acting Command Staff and the human crew<br /><br />
+		<b>Unlock Requirement</b>: 3 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Nuclear War<br /><br /><br />
+		<b>Duty</b>: Assist the crew whenever you’re needed, be the doorknob of the ship. Recon the areas for threats via cameras, report your findings to the crew at various communication channels. Follow your laws.
+	"}
 
 
 /datum/job/terragov/silicon/ai/get_special_name(client/preference_source)
@@ -956,7 +1086,10 @@
 /datum/job/terragov/silicon/ai/get_spawn_message_information(mob/M)
 	. = ..()
 	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
-	. += {"你的主要职责是支援和协助舰上所有地球政府殖民地海军陆战队部门及人员。然而，你的视野仅限于舰船摄像头或地面陆战队员的视角。侦察任何威胁，并通过各种通讯渠道报告发现。如果你需要任何帮助，请使用<b>导师求助</b>向导师询问你应该做什么。"}
+	. += {"Your primary job is to support and assist all TGMC departments and personnel on-board.
+However, your vision is limited through cameras from the ship or to marines groundside.
+Recon any threats and report findings at various communication channels.
+If you require any help, use <b>Mentorhelp</b> to ask mentors about what you're supposed to do."}
 
 /datum/job/terragov/silicon/ai/announce(mob/living/announced_mob)
 	. = ..()

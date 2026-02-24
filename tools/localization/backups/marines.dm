@@ -46,7 +46,15 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：简单<br /><br /><b>你听从</b> 现任班长的指挥<br /><br /><b>解锁要求</b>：初始角色<br /><br /><b>游戏模式可用性</b>：坠机、核战争<br /><br /><br />地球政府的陆战队员构成了地球战斗力量的中坚。他们配备着TGMC提供的标准武器库，并能承担多种角色，例如狙击手、爆破手、机枪手、步枪手等等。他们通常人数众多，被编入各个小队，但他们是军衔最低的个体，技能水平有限，不擅长工程或医疗职责。尽管如此，他们并不局限于携带上战场的武器库，足以应对任何潜伏着威胁地球的敌人。<br /><br /><b>职责</b>：执行你的现任班长下达的命令，处理任何反对TGMC的威胁。"}
+	html_description = {"
+		<b>Difficulty</b>: Easy<br /><br />
+		<b>You answer to the</b> acting Squad Leader<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		TerraGov’s Squad Marines make up the bread and butter of Terra's fighting forces. They are fitted with the standard arsenal that the TGMC offers, and they can take up a variety of roles, being a sniper, a pyrotechnician, a machinegunner, rifleman and more. They’re often high in numbers and divided into squads, but they’re the lowest ranking individuals, with a low degree of skill, not adapt to engineering or medical roles. Still, they are not limited to the arsenal they can take on the field to deal whatever threat that lurks against Terra.
+		<br /><br />
+		<b>Duty</b>: Carry out orders made by your acting Squad Leader, deal with any threats that oppose the TGMC.
+	"}
 	minimap_icon = "private"
 
 /datum/job/terragov/squad/standard/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
@@ -102,7 +110,15 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
 	job_points_needed = 5
-	html_description = {"<b>难度</b>：中等<br /><br /><b>你的上级</b>：代理班长<br /><br /><b>解锁要求</b>：初始角色<br /><br /><b>可用游戏模式</b>：坠机、核战争<br /><br /><br />作为战场建设的专家，通常被视为决定前线作战基地成败的关键，工程兵负责建造前线作战基地并守卫任何威胁陆战队的危险。除此之外，他们还负责修复战场上的发电机以及用于补给的采矿钻机。他们拥有高超的工程技能，这意味着他们能比普通陆战队员更快地部署和修复路障。<br /><br /><b>职责</b>：根据代理班长的命令建造并加固前线作战基地，在行动区域内修复发电机和采矿钻机，并时刻警惕任何威胁你方前线作战基地的危险。"}
+	html_description = {"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> acting Squad Leader<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		A mastermind of on-field construction, often regarded as the answer on whether the FOB succeeds or not, Squad Engineers are the people who construct the Forward Operating Base (FOB) and guard whatever threat that endangers the marines. In addition to this, they are also in charge of repairing power generators on the field as well as mining drills for requisitions. They have a high degree of engineering skill, meaning they can deploy and repair barricades faster than regular marines.
+		<br /><br />
+		<b>Duty</b>: Construct and reinforce the FOB that has been ordered by your acting Squad Leader, fix power generators and mining drills in the AO and stay on guard for any dangers that threaten your FOB.
+	"}
 	minimap_icon = "engi"
 
 /datum/job/terragov/squad/engineer/get_spawn_message_information(mob/M)
@@ -154,7 +170,15 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
 	)
 	job_points_needed = 5
-	html_description = {"<b>难度</b>：困难<br /><br /><b>你的上级是</b> 现任班长<br /><br /><b>解锁要求</b>：初始角色<br /><br /><b>可用游戏模式</b>：坠机、核战争<br /><br /><br />卫生兵是陆战队员在战斗中负伤时（前提是他们没有逃跑）生死攸关的生命线。虽然陆战队员可以进行自我治疗，但处理超出常人能力的伤势则是卫生兵的职责。相比普通陆战队员，他们拥有更高的医疗技能，能够更快地执行医疗动作，并且使用除颤器进行复苏时，每次尝试能恢复更多生命值。如果船上没有现任医疗官，他们也能进行外科手术。<br /><br /><b>职责</b>：治疗你的陆战队员同袍或相关人员的伤势，保持他们的战斗力。后送那些因重伤或幼虫感染而丧失行动能力或无法战斗的人员。"}
+	html_description = {"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to the</b> acting Squad Leader<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		Corpsman are the vital line between life and death of a marine’s life should a marine be wounded in battle, if provided they do not run away. While marines treat themselves, it is the corpsmen who will treat injuries beyond what a normal person can do. With a higher degree of medical skill compared to a normal marine, they are capable of doing medical actions faster and reviving with defibrillators will heal more on each attempt. They can also perform surgery, in an event if there are no acting medical officers onboard.
+		<br /><br />
+		<b>Duty</b>: Tend the injuries of your fellow marines or related personnel, keep them at fighting strength. Evacuate those who are incapacitated or rendered incapable of fighting due to severe wounds or larvae infections.
+	"}
 	minimap_icon = "medic"
 
 /datum/job/terragov/squad/corpsman/get_spawn_message_information(mob/M)
@@ -204,7 +228,15 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
 	)
 	job_points_needed = 10 //Redefined via config.
-	html_description = {"<b>难度</b>：中等<br /><br />		<b>你向</b> 代理班长<b>负责</b><br /><br />		<b>解锁要求</b>：初始职位<br /><br />		<b>可用游戏模式</b>：坠机、核战争<br /><br /><br />		在行动初期需要重型火力时，地球政府殖民地海军陆战队为小队配备了智能机枪手。他们是受过操作智能武器训练的人员，这种内置敌我识别系统的武器即使在陆战队员身后也能提供掩护和压制火力。小队智能机枪手最适合在陆战队员身后作战，因为他们可以充当盾牌，或在激烈的交火中发挥作用。		<br /><br />		<b>职责</b>：作为你尖兵的防线后盾，用你的智能武器提供重型武器支援。"}
+	html_description = {"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> acting Squad Leader<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		When it comes to heavy firepower during the early stages of an operation, TGMC has provided the squad with Smartgunners. They are those who trained to operate smart weapons, built-in IFF weapons that provides covering and suppressive fire even directly behind the marines. Squad Smartgunners are best when fighting behind marines, as they can act as shields or during a hectic crossfire.
+		<br /><br />
+		<b>Duty</b>: Be the backline of your pointmen, provide heavy weapons support with your smart weapon.
+	"}
 	minimap_icon = "smartgunner"
 
 /datum/job/terragov/squad/smartgunner/get_spawn_message_information(mob/M)
@@ -286,12 +318,20 @@ Make your way to the cafeteria for some post-cryosleep chow, and then get equipp
 		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
 		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
 	)
-	html_description = {"<b>难度</b>：困难<br /><br /><b>你的上级是</b> 现任指挥层<br /><br /><b>解锁要求</b>：3小时游戏时长（任意职位）<br /><br /><b>游戏模式可用性</b>：坠机模式，核战争模式<br /><br /><br />班长本质上就是任何健全小队的头儿。虽然他们不像工程兵、卫生兵和智能机枪手那样受过专门训练，但他们（通常）有能力领导小队。他们可以使用指挥资产，例如舰载轨道炮、轨道轰炸等。<br /><br /><b>职责</b>：成为你小队中负责任的领导者，确保你的小队始终保持频繁沟通，并确保他们为手头的任务协同工作。注意安全，因为你是一位宝贵的领导者。"}
+	html_description = {"
+		<b>Difficulty</b>: Hard<br /><br />
+		<b>You answer to the</b> acting Command Staff<br /><br />
+		<b>Unlock Requirement</b>: 3 hours playtime (any role)<br /><br />
+		<b>Gamemode Availability</b>: Crash, Nuclear War<br /><br /><br />
+		Squad Leaders are basically the boss of any able-bodied squad. Though while they are not trained compared to engineers, corpsmen and smartgunners, they are (usually) capable of leading the squad. They have access to command assets such as a ship railgun, orbital bombardment as examples.
+		<br /><br />
+		<b>Duty</b>: Be a responsible leader of your squad, make sure your squad communicates frequently all the time and ensure they are working together for the task at hand. Stay safe, as you’re a valuable leader.
+	"}
 	minimap_icon = "leader"
 
 /datum/job/terragov/squad/leader/get_spawn_message_information(mob/M)
 	. = ..()
-	. += separator_hr("[span_role_header("<b>[title] 信息</b>")]")
+	. += separator_hr("[span_role_header("<b>[title] Information</b>")]")
 	. += "You are responsible for the men and women of your squad. Make sure they are on task, working together, and communicating. You are also in charge of communicating with command and letting them know about the situation first hand. Keep out of harm's way."
 
 /datum/job/terragov/squad/leader/after_spawn(mob/living/carbon/C, mob/user, latejoin = FALSE)

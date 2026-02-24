@@ -166,14 +166,14 @@ GLOBAL_PROTECT(exp_specialmap)
 /datum/job/proc/get_spawn_message_information(mob/new_player)
 	SHOULD_CALL_PARENT(TRUE)
 	. = list()
-	. += span_role_body("作为<b>[title]</b>，你向[supervisors]负责。特殊情况可能会改变这一点。")
+	. += span_role_body("As the <b>[title]</b> you answer to [supervisors]. Special circumstances may change this.")
 	if(!(job_flags & JOB_FLAG_NOHEADSET))
-		. += separator_hr("[span_role_header("<b>无线电</b>")]")
+		. += separator_hr("[span_role_header("<b>Radio</b>")]")
 		. += span_role_body("Prefix your message with <b>;</b> to speak on the default radio channel—in most cases this is your squad radio if you are playing a Squad role, \
 							if you are playing a role without a Squad like Field Commander it will use the Common radio. For additional prefixes, examine your headset.")
 	if(req_admin_notify)
-		. += separator_hr("[span_role_header("<big>你正在扮演一个关键职位</big>")]")
-		. += span_role_body("如果你必须断开连接，请使用超眠舱。如果无法到达那里，请使用F1键或Adminhelp指令<b><u>向管理员求助</u></b>。")
+		. += separator_hr("[span_role_header("<big>You Are Playing an Important Job</big>")]")
+		. += span_role_body("If you have to disconnect, please take a hypersleep pod. If you can't make it there, <b><u>adminhelp</u></b> using F1 or the Adminhelp verb.")
 
 
 /datum/job/proc/get_special_name(client/preference_source)

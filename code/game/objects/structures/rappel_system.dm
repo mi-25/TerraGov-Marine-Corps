@@ -47,7 +47,7 @@
 //The actual system you put on the tadpole
 /obj/structure/dropship_equipment/shuttle/rappel_system
 	equip_category = DROPSHIP_CREW_WEAPON
-	name = "速降部署系统"
+	name = "rappel deployment system-速降部署系统"
 	desc = "一种无需蝌蚪号降落即可快速上下部署速降绳索的系统。你需要在导航计算机上指定速降点。"
 	dropship_equipment_flags = IS_INTERACTABLE
 	icon_state = "rappel_hatch_locked"

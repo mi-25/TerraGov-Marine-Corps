@@ -121,10 +121,10 @@
 		for(var/mob/hearer in GLOB.alive_xeno_list_hive[XENO_HIVE_NORMAL])
 			SEND_SOUND(hearer, sound)
 			to_chat(hearer, assemble_alert(
-				title = "异形女王母体报告",
-				subtitle = "母后女王探入了你的脑海...",
+				title = "Queen Mother Report",
+				subtitle = "The Queen Mother reaches into your mind...",
 
-				message = "致我的子嗣与异形女王，<br>我感知到[hosts_shipside ?"approximately [hosts_shipside]":"no"] \
+				message = "To my children and their Queen,<br>I sense [hosts_shipside ? "approximately [hosts_shipside]":"no"] \
 				host[hosts_shipside > 1 ? "s":""] in the metal hive[BIOSCAN_LOCATION(show_locations, host_location_shipside)], \
 				[numHostsPlanet || "none"] scattered elsewhere[BIOSCAN_LOCATION(show_locations, host_location_planetside)] and \
 				[hosts_transit ? "approximately [hosts_transit]":"no"] host[hosts_transit > 1 ? "s":""] on the metal bird in transit.",
@@ -151,10 +151,10 @@
 
 		switch(GLOB.current_orbit)
 			if(1)
-				to_chat(usr, span_warning("Signal analysis shows excellent detail on enemy movements and numbers."))
+				to_chat(usr, span_warning("信号分析显示敌方动向与数量细节极佳。"))
 				return
 			if(3)
-				to_chat(usr, span_warning("Due to ship altitude changes, our bio-scanning instruments are detecting minor data anomalies; some hostile activity information may be inaccurate."))
+				to_chat(usr, span_warning("由于舰船高度变化，我们的生化扫描仪器检测到轻微数据异常，部分敌对活动信息可能不准确。"))
 				return
 			if(5)
 				to_chat(usr, span_warning("由于舰船高度变化，我们的生化扫描读数检测到严重数据损坏，信息已严重失真。"))
@@ -171,8 +171,14 @@
 
 	for(var/mob/hearer in GLOB.observer_list)
 		to_chat(hearer, assemble_alert(
-			title = "详细生化扫描",
-			message = {"[numXenosPlanet] 名异形在行星上。[numXenosShip] 名异形在舰船上。[numXenosTransit] 名异形在运输途中。[numHostsPlanet] 名人类在行星上。[numHostsShip] 名人类在舰船上。[numHostsTransit] 名人类在运输途中。"},
+			title = "Detailed Bioscan",
+			message = {"[numXenosPlanet] xeno\s on the planet.
+[numXenosShip] xeno\s on the ship.
+[numXenosTransit] xeno\s in transit.
+
+[numHostsPlanet] human\s on the planet.
+[numHostsShip] human\s on the ship.
+[numHostsTransit] human\s in transit."},
 			color_override = "purple"
 		))
 

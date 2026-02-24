@@ -8,7 +8,7 @@ $include resources.txt
 SERVER_NAME Something
 
 ## Hosted by name for unix platforms.
-HOSTEDBY yournamehere
+HOSTEDBY 为泰拉服役
 
 ## The title of the main window.
 TITLE Change Me

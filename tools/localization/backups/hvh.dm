@@ -171,8 +171,9 @@ Sensors indicate [num_som_delta || "no"] unknown lifeform signature[num_som_delt
 	for(var/i in GLOB.observer_list)
 		var/mob/M = i
 		to_chat(M, assemble_alert(
-			title = "详细生化扫描",
-			message = {"[num_som] 名火星之子存活。[num_tgmc] 名陆战队员存活。"},
+			title = "Detailed Bioscan",
+			message = {"[num_som] SOM alive.
+[num_tgmc] Marine\s alive."},
 			color_override = "orange"
 		))
 

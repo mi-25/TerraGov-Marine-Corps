@@ -171,13 +171,13 @@ export const Menu = (props: MenuProps) => {
               <MenuButton
                 icon="clipboard-list"
                 menuname={StaticMenus.Requests}
-                disablecondition={!requests.length}
+                disablecondition={!requests?.length}
                 selectedMenu={selectedMenu}
                 setSelectedMenu={setSelectedMenu}
               />
             </Stack.Item>
             <Stack.Item mt={textcentermargin}>
-              {requests.length} pending
+              {requests?.length ?? 0} pending
             </Stack.Item>
           </Stack>
         </Stack.Item>
@@ -185,7 +185,7 @@ export const Menu = (props: MenuProps) => {
           <MenuButton
             icon="clipboard-check"
             menuname={StaticMenus.ApprovedRequests}
-            disablecondition={!approvedrequests.length}
+            disablecondition={!approvedrequests?.length}
             selectedMenu={selectedMenu}
             setSelectedMenu={setSelectedMenu}
           />
@@ -194,7 +194,7 @@ export const Menu = (props: MenuProps) => {
           <MenuButton
             icon="trash"
             menuname={StaticMenus.DeniedRequests}
-            disablecondition={!deniedrequests.length}
+            disablecondition={!deniedrequests?.length}
             selectedMenu={selectedMenu}
             setSelectedMenu={setSelectedMenu}
           />

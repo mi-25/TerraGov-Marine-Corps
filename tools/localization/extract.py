@@ -51,7 +51,43 @@ EXTRACT_PATTERNS = [
         r'\bsay\s*\(\s*"((?:[^"\\]|\\.)*)"',
         re.DOTALL
     ), 'say'),
+    # span_role_body("msg") — 职业 spawn 消息
+    (re.compile(
+        r'span_role_body\s*\(\s*"((?:[^"\\]|\\.)*)"',
+        re.DOTALL
+    ), 'spawn_message'),
+    # span_role_header("msg")
+    (re.compile(
+        r'span_role_header\s*\(\s*"((?:[^"\\]|\\.)*)"',
+        re.DOTALL
+    ), 'spawn_header'),
+    # separator_hr("msg")
+    (re.compile(
+        r'separator_hr\s*\(\s*"((?:[^"\\]|\\.)*)"',
+        re.DOTALL
+    ), 'separator'),
+    # . += "msg" (get_spawn_message_information 中的追加文本)
+    (re.compile(
+        r'\.\s*\+=\s*"((?:[^"\\]|\\.)*)"',
+        re.DOTALL
+    ), 'append_text'),
+    # priority_announce 的标题参数
+    (re.compile(
+        r'priority_announce\s*\([^,]+,\s*"((?:[^"\\]|\\.)*)"',
+        re.DOTALL
+    ), 'announce_title'),
+    # assemble_alert 的 title/subtitle/message 字段（仅匹配缩进的赋值，排除 comm_title 等）
+    (re.compile(
+        r'(?<!\w)(?:title|subtitle|message)\s*=\s*"((?:[^"\\]|\\.)*)"',
+        re.DOTALL
+    ), 'alert_field'),
 ]
+
+# 多行文本块提取模式（单独处理，因为跨行）
+MULTILINE_TEXT_PATTERN = re.compile(
+    r'=\s*\{"((?:[^}]|\}(?!"))*?)"\}',
+    re.DOTALL
+)
 
 # 应跳过的属性赋值模式（非玩家可见）
 SKIP_PROPERTY_PATTERN = re.compile(
@@ -102,6 +138,7 @@ def extract_strings_from_file(filepath: str, root_dir: str) -> list:
         print(f"[警告] 无法读取文件 {filepath}: {e}", file=sys.stderr)
         return results
 
+    # 标准单行模式提取
     for pattern, context in EXTRACT_PATTERNS:
         for match in pattern.finditer(content):
             text = match.group(1)
@@ -130,6 +167,24 @@ def extract_strings_from_file(filepath: str, root_dir: str) -> list:
                 'status': 'pending',
                 'error': '',
             })
+
+    # 多行文本块提取 {"..."}
+    for match in MULTILINE_TEXT_PATTERN.finditer(content):
+        text = match.group(1)
+        if should_skip_text(text):
+            continue
+        line_start = content[:match.start()].count('\n') + 1
+        entry_id = generate_id(rel_path, line_start, text)
+        results.append({
+            'id': entry_id,
+            'file': rel_path,
+            'line': line_start,
+            'context': 'multiline_text',
+            'original': text,
+            'translation': '',
+            'status': 'pending',
+            'error': '',
+        })
 
     return results
 
@@ -200,6 +255,11 @@ def main():
         action='store_true',
         help='增量模式：追加到已有 CSV，跳过已存在的条目'
     )
+    parser.add_argument(
+        '--files',
+        default=None,
+        help='只提取指定文件（逗号分隔的相对路径，如 datums/jobs/job/job.dm,datums/gamemodes/infestation.dm）'
+    )
 
     args = parser.parse_args()
 
@@ -209,8 +269,20 @@ def main():
         sys.exit(1)
 
     # 收集文件
-    dm_files = collect_dm_files(source_dir, args.pattern)
-    print(f"找到 {len(dm_files)} 个 .dm 文件")
+    if args.files:
+        # 指定文件模式
+        file_list = [f.strip() for f in args.files.split(',') if f.strip()]
+        dm_files = []
+        for f in file_list:
+            abs_f = os.path.join(source_dir, f.replace('/', os.sep))
+            if os.path.exists(abs_f):
+                dm_files.append(abs_f)
+            else:
+                print(f"[警告] 文件不存在: {abs_f}", file=sys.stderr)
+        print(f"指定 {len(dm_files)} 个文件")
+    else:
+        dm_files = collect_dm_files(source_dir, args.pattern)
+        print(f"找到 {len(dm_files)} 个 .dm 文件")
 
     # 加载已有 ID（增量模式）
     existing_ids = set()

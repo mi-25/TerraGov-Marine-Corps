@@ -325,7 +325,7 @@
 //////////////////////////////////// nade launcher //////////////////////////////////////
 /obj/structure/dropship_equipment/shuttle/nade_launcher
 	equip_category = DROPSHIP_WEAPON
-	name = "榴弹发射器系统"
+	name = "grenade launcher system-榴弹发射器系统"
 	desc = "一种系统，可在控制台激活时部署任何已输入的手雷。适用于运输机的武器挂载点。需要使用动力装载机来搬运它。"
 	icon_state = "nade_system"
 	dropship_equipment_flags = IS_INTERACTABLE
@@ -413,7 +413,7 @@
 
 /obj/structure/dropship_equipment/shuttle/tangle_emitter
 	equip_category = DROPSHIP_WEAPON
-	name = "一次性缠足发射器"
+	name = "disposable tanglefoot emitter-一次性缠足发射器"
 	desc = "一种可在着陆时释放缠足网以支持激进着陆姿态的系统。每十分钟仅能使用一次。可安装在运输机的武器挂点上。需要使用动力装载机来搬运。"
 	icon_state = "tfoot_system"
 	point_cost = 150
@@ -497,7 +497,7 @@
 
 /obj/structure/dropship_equipment/shuttle/sentry_holder
 	equip_category = DROPSHIP_WEAPON
-	name = "哨戒炮部署系统"
+	name = "sentry deployment system-哨戒炮部署系统"
 	desc = "一个可部署哨戒炮的箱子。可安装在运输机的武器挂点上。需要动力装载机才能搬运。"
 	icon_state = "sentry_system"
 	dropship_equipment_flags = IS_INTERACTABLE
@@ -660,14 +660,14 @@
 		return TRUE
 
 /obj/structure/dropship_equipment/shuttle/weapon_holder/machinegun
-	name = "机枪部署系统"
+	name = "machinegun deployment system-机枪部署系统"
 	desc = "一个可部署改装型HSG-102班组机枪的箱子。适用于运输机的班组武器挂载点。需要使用动力装载机来搬运。"
 	icon_state = "mg_system"
 	point_cost = 300
 	deployable_type = /obj/item/weapon/gun/hsg_102/hsg_nest
 
 /obj/structure/dropship_equipment/shuttle/weapon_holder/minigun
-	name = "机枪部署系统"
+	name = "minigun deployment system-机枪部署系统"
 	desc = "一个装有改装型MG-2005班组支援型转管机枪的箱子。可安装在运输机的班组武器挂点上。需要动力装载机才能搬运。"
 	icon_state = "minigun_system"
 	point_cost = 0 //this removes it from the fabricator
@@ -675,7 +675,7 @@
 	undeployed_icon_state = "minigun_system"
 
 /obj/structure/dropship_equipment/shuttle/weapon_holder/heavylaser
-	name = "重型激光部署系统"
+	name = "heavy laser deployment system-重型激光部署系统"
 	desc = "一个可部署改装型TE-9001班组重型激光器的箱子。适用于运输船的班组武器安装点。需要动力装载机才能搬运。"
 	icon_state = "hl_system"
 	point_cost = 0 //this removes it from the fabricator
@@ -683,7 +683,7 @@
 	undeployed_icon_state = "hl_system"
 
 /obj/structure/dropship_equipment/shuttle/weapon_holder/mortar_holder
-	name = "双管迫击炮部署系统"
+	name = "double barrel mortar deployment system-双管迫击炮部署系统"
 	desc = "一个可部署TA-55DB迫击炮的箱子。可安装在运输船的班组支援武器挂点上。需要动力装载机才能搬运。"
 	icon_state = "mortar_system"
 	point_cost = 300
@@ -875,7 +875,7 @@
 			icon_state = "30mm_cannon"
 
 /obj/structure/dropship_equipment/cas/weapon/heavygun/radial_cas
-	name = "秃鹰喷气式转管机枪"
+	name = "Condor Jet Radial minigun-秃鹰喷气式转管机枪"
 	point_cost = 0
 	dropship_equipment_flags = USES_AMMO|IS_WEAPON|IS_INTERACTABLE|IS_NOT_REMOVABLE
 
@@ -884,7 +884,7 @@
 	ammo_equipped = new /obj/structure/ship_ammo/cas/heavygun(src)
 
 /obj/structure/dropship_equipment/cas/weapon/rocket_pod
-	name = "火箭巢"
+	name = "rocket pod-火箭巢"
 	icon_state = "rocket_pod"
 	desc = "一种能够发射单发激光制导火箭的火箭巢武器系统。移动它需要某种起重设备。"
 	firing_sound = 'sound/weapons/gunship_rocket.ogg'
@@ -908,7 +908,7 @@
 
 
 /obj/structure/dropship_equipment/cas/weapon/minirocket_pod
-	name = "微型火箭巢"
+	name = "minirocket pod-微型火箭巢"
 	icon_state = "minirocket_pod"
 	desc = "一种能够发射六枚激光制导迷你火箭的迷你火箭巢。移动它需要某种起重设备。"
 	icon = 'icons/obj/structures/prop/mainship_64.dmi'
@@ -933,7 +933,7 @@
 		ammo_equipped = null
 
 /obj/structure/dropship_equipment/cas/weapon/laser_beam_gun
-	name = "激光束枪"
+	name = "laser beam-激光束枪"
 	icon_state = "laser_beam"
 	desc = "采用地球政府殖民地海军陆战队最新获取的尖端技术，它能以接近光速发射电池供能的脉冲激光束，点燃所有接触到的物体。移动此设备需要某种起重装置。"
 	icon = 'icons/obj/structures/prop/mainship_64.dmi'
@@ -956,7 +956,7 @@
 
 
 /obj/structure/dropship_equipment/cas/weapon/launch_bay //This isn't printable, so having it under CAS shouldn't cause issues
-	name = "发射舱"
+	name = "launch bay-发射舱"
 	icon_state = "launch_bay"
 	desc = "一个用于投放特种弹药的发射舱。可安装在运输机的乘员武器槽位中。移动此物需要某种起重设备。"
 	icon = 'icons/obj/structures/prop/mainship.dmi'
@@ -981,7 +981,7 @@
 //////////////// OTHER EQUIPMENT /////////////////
 
 /obj/structure/dropship_equipment/shuttle/operatingtable
-	name = "\improper 运输机手术台部署系统"
+	name = "\improper Dropship Operating Table Deployment System-运输机手术台部署系统"
 	desc = "用于高级医疗程序。可安装在运输机的班组武器挂点上。需要动力装载机才能搬运。"
 	equip_category = DROPSHIP_CREW_WEAPON
 	icon = 'icons/obj/surgery.dmi'
@@ -1015,7 +1015,7 @@
 	icon_state = "table2-idle"
 
 /obj/structure/dropship_equipment/cas/weapon/bomblet_pod
-	name = "集束炸弹荚"
+	name = "bomblet pod-集束炸弹荚"
 	icon_state = "bomblet_pod"
 	desc = "一台能够发射多达40枚小型炸弹的气动投掷机，通常被称为'子炸弹'。移动它需要某种起重设备。"
 	icon = 'icons/obj/structures/prop/mainship_64.dmi'
@@ -1035,7 +1035,7 @@
 		icon_state = "bomblet_pod"
 
 /obj/structure/dropship_equipment/cas/weapon/bomb_pod
-	name = "炸弹舱"
+	name = "bomb pod-炸弹舱"
 	icon_state = "bomb_pod"
 	desc = "一个能够发射数枚大型炸弹的炸弹舱。移动它需要某种起重设备。"
 	icon = 'icons/obj/structures/prop/mainship_64.dmi'

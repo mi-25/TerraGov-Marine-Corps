@@ -258,6 +258,11 @@ def should_skip_entry(entry: dict, config) -> bool:
     if config.skip_text:
         if re.search(config.skip_text, entry.get('original', '')):
             return True
+    # context 过滤：只翻译指定类型的条目
+    if getattr(config, 'context_filter', None):
+        allowed = [c.strip() for c in config.context_filter.split(',')]
+        if entry.get('context', '') not in allowed:
+            return True
     return False
 
 
@@ -517,6 +522,11 @@ def main():
         type=int,
         default=1,
         help='并发线程数（默认: 1，建议 5-10，过高可能触发限流）'
+    )
+    parser.add_argument(
+        '--context-filter',
+        default=None,
+        help='只翻译指定 context 类型（逗号分隔，如 spawn_message,multiline_text,alert_field）'
     )
 
     args = parser.parse_args()
