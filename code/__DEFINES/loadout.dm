@@ -1,30 +1,30 @@
 
-#define CAT_ESS "必需品"
-#define CAT_STD "标准装备"
-#define CAT_SHO "鞋子"
-#define CAT_HEL "帽子"
-#define CAT_AMR "护甲"
-#define CAT_GLO "手套"
-#define CAT_EAR "耳"
-#define CAT_BAK "背包"
-#define CAT_POU "袋类"
-#define CAT_WEB "织带"
-#define CAT_BEL "腰带"
-#define CAT_GLA "眼镜"
-#define CAT_MAS "面具"
-#define CAT_MOD "耶格存储模块"
-#define CAT_ARMMOD "耶格尔装甲模块"
+#define CAT_ESS "ESSENTIALS"
+#define CAT_STD "STANDARD EQUIPMENT"
+#define CAT_SHO "SHOES"
+#define CAT_HEL "HATS"
+#define CAT_AMR "ARMOR"
+#define CAT_GLO "GLOVES"
+#define CAT_EAR "EAR"
+#define CAT_BAK "BACKPACK"
+#define CAT_POU "POUCHES"
+#define CAT_WEB "WEBBING"
+#define CAT_BEL "BELT"
+#define CAT_GLA "GLASSES"
+#define CAT_MAS "MASKS"
+#define CAT_MOD "JAEGER STORAGE MODULES"
+#define CAT_ARMMOD "JAEGER ARMOR MODULES"
 
-#define CAT_MEDSUP "医疗物资"
-#define CAT_ENGSUP "工程物资"
-#define CAT_LEDSUP "队长补给"
-#define CAT_SGSUP "智能枪手补给"
-#define CAT_FCSUP "指挥官补给"
-#define CAT_LOAD "装备配置"
+#define CAT_MEDSUP "MEDICAL SUPPLIES"
+#define CAT_ENGSUP "ENGINEERING SUPPLIES"
+#define CAT_LEDSUP "LEADER SUPPLIES"
+#define CAT_SGSUP "SMARTGUNNER SUPPLIES"
+#define CAT_FCSUP "COMMANDER SUPPLIES"
+#define CAT_LOAD "LOADOUT"
 
 // Synth Special Categories
-#define CAT_SMR "套装与护甲" // Synth's suits
-#define CAT_SHN "帽子" // Synth's non-protective hats
+#define CAT_SMR "SUITS AND ARMOR" // Synth's suits
+#define CAT_SHN "HATS" // Synth's non-protective hats
 
 #define VENDOR_FACTION_NEUTRAL "Neutral"
 #define VENDOR_FACTION_CRASH "Crash"
